@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <div class="brand">Relate<span>IQ</span></div>
+
+    <div id="logged-out" class="panel">
+      <p class="hint">Log in to enable Message Coach on WhatsApp Web and Messenger.</p>
+      <input type="email" id="email" placeholder="Email" autocomplete="username" />
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+      <button id="login-btn" class="btn">Log in</button>
+      <p id="login-error" class="error" style="display:none;"></p>
+    </div>
+
+    <div id="logged-in" class="panel" style="display:none;">
+      <p class="hint">Logged in as <strong id="user-email"></strong></p>
+      <p class="hint small">
+        Open WhatsApp Web or Messenger and look for the round RelateIQ button near your message box —
+        it appears once you've typed something.
+      </p>
+      <button id="logout-btn" class="btn btn-ghost">Log out</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

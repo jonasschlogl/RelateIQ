@@ -35,14 +35,43 @@ async function rewrite() {
     });
     const data = await safeJson(res);
 
-    if (!res.ok || !data.result) {
+    if (!res.ok || !data.rewrite) {
       resultBox.innerHTML = '<span class="placeholder">Nothing here yet.</span>';
       errorBox.textContent = data.error || "Something went wrong. Please try again.";
       errorBox.style.display = "block";
       return;
     }
 
-    resultBox.textContent = data.result;
+    resultBox.innerHTML = "";
+
+    const rewriteEl = document.createElement("div");
+    rewriteEl.className = "coach-rewrite";
+    rewriteEl.textContent = data.rewrite;
+    resultBox.appendChild(rewriteEl);
+
+    const copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "btn btn-ghost btn-sm coach-copy-btn";
+    copyBtn.textContent = "Copy";
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard?.writeText(data.rewrite).then(() => {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 1500);
+      });
+    });
+    resultBox.appendChild(copyBtn);
+
+    if (data.why) {
+      const whyLabel = document.createElement("div");
+      whyLabel.className = "coach-why-label";
+      whyLabel.textContent = "Why this works better";
+      resultBox.appendChild(whyLabel);
+
+      const whyEl = document.createElement("p");
+      whyEl.className = "coach-why";
+      whyEl.textContent = data.why;
+      resultBox.appendChild(whyEl);
+    }
   } catch (err) {
     resultBox.innerHTML = '<span class="placeholder">Nothing here yet.</span>';
     errorBox.textContent = "Couldn't connect to the server.";

@@ -4,6 +4,7 @@ let partners = [];
 let currentMode = "coach"; // 'coach' | 'practice' — mirrors the mode of whatever is on screen
 let currentConvCtx = { mode: "coach", partnerName: null };
 let isSending = false;
+let currentConvHasUserMessage = false; // drives whether the "Export for therapist" button shows
 
 // Attachments (images, screen recordings, other files) picked but not yet sent
 let pendingAttachments = [];
@@ -26,6 +27,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("new-chat-btn")?.addEventListener("click", () => startNewChat(currentMode));
   document.getElementById("send-btn")?.addEventListener("click", sendMessage);
   document.getElementById("debrief-btn")?.addEventListener("click", () => startNewChat("coach"));
+  document.getElementById("export-summary-btn")?.addEventListener("click", () => {
+    if (!currentConversationId) return;
+    window.open("summary.html?id=" + encodeURIComponent(currentConversationId), "_blank");
+  });
   document.getElementById("attach-btn")?.addEventListener("click", () => document.getElementById("file-input")?.click());
   document.getElementById("file-input")?.addEventListener("change", handleFilesSelected);
 
@@ -95,6 +100,7 @@ function setActiveTab(mode) {
         ? "Type what you'd actually say…"
         : "Tell me what's going on in your relationship…";
   }
+  updateExportButtonVisibility();
 }
 
 function showComposer(visible) {
@@ -102,6 +108,12 @@ function showComposer(visible) {
   const disclaimer = document.getElementById("chat-disclaimer");
   if (area) area.style.display = visible ? "flex" : "none";
   if (disclaimer) disclaimer.style.display = visible ? "block" : "none";
+}
+
+function updateExportButtonVisibility() {
+  const btn = document.getElementById("export-summary-btn");
+  if (!btn) return;
+  btn.style.display = currentMode === "coach" && currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
 }
 
 function showPartnerBanner(visible, name) {
@@ -526,6 +538,7 @@ async function startNewChat(mode) {
     });
     currentConversationId = conv.id;
     currentConvCtx = { mode: "coach", partnerName: null };
+    currentConvHasUserMessage = false;
     setActiveTab("coach");
     showPartnerBanner(false);
     showComposer(true);
@@ -547,6 +560,7 @@ async function openConversation(id, preloadedConv) {
 
     currentConversationId = conv.id;
     currentConvCtx = { mode: conv.mode || "coach", partnerName: conv.partnerName || null };
+    currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
     showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName);
@@ -667,6 +681,11 @@ async function sendMessage() {
 
     thinkingBubble.closest(".message-row")?.remove();
     appendMessage("assistant", data.reply, true, currentConvCtx);
+
+    if (currentConvCtx.mode === "coach" && !currentConvHasUserMessage) {
+      currentConvHasUserMessage = true;
+      updateExportButtonVisibility();
+    }
 
     const idx = conversations.findIndex((c) => c.id === currentConversationId);
     if (idx > -1 && data.title) {

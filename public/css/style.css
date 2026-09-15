@@ -603,6 +603,315 @@ section {
   color: var(--text-faint);
 }
 
+/* Hero stats strip */
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  flex-wrap: wrap;
+  margin: 8px auto 0;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero-stat span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  max-width: 120px;
+  margin: 2px auto 0;
+}
+
+/* Compare table */
+
+.compare-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table thead th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.compare-table td:first-child {
+  color: var(--text-muted);
+  white-space: normal;
+}
+
+.compare-table .compare-highlight {
+  background: rgba(209, 160, 90, 0.1);
+}
+
+.compare-table th.compare-highlight {
+  color: var(--accent-1);
+}
+
+.compare-table .yes {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.compare-table .no {
+  color: var(--text-faint);
+}
+
+.compare-table .partial {
+  color: var(--text-muted);
+}
+
+.compare-note {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--text-faint);
+  max-width: 560px;
+  margin: 24px auto 0;
+}
+
+/* Trust row */
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.trust-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.trust-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--accent-1);
+}
+
+.trust-item h3 {
+  font-size: 14.5px;
+  margin-bottom: 2px;
+}
+
+.trust-item p {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Mission / approach block */
+
+.mission-block {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-block .section-tag {
+  display: inline-block;
+}
+
+.mission-block p {
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Therapist summary export                                                */
+/* ---------------------------------------------------------------------- */
+
+.summary-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.summary-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-actions-right {
+  display: flex;
+  gap: 10px;
+}
+
+.summary-paper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.summary-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-brand {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.summary-header h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.summary-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.summary-loading,
+.summary-generated-at {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+}
+
+.summary-section {
+  font-size: 16px;
+  margin: 26px 0 8px;
+}
+
+.summary-section:first-child {
+  margin-top: 0;
+}
+
+#summary-state p {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+#summary-state ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+}
+
+#summary-state li {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.summary-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.summary-disclaimer {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+@media print {
+  .no-print,
+  .site-nav,
+  .sidebar,
+  .site-footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #1a140d;
+  }
+
+  .summary-shell {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .summary-paper {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .summary-header,
+  .summary-footer {
+    border-color: #ddd;
+  }
+
+  .summary-subtitle,
+  .summary-loading,
+  .summary-generated-at,
+  .summary-disclaimer {
+    color: #555;
+  }
+
+  .summary-section,
+  #summary-state p,
+  #summary-state li,
+  .summary-header h1 {
+    color: #1a140d;
+  }
+
+  .brand span {
+    -webkit-text-fill-color: #1a140d;
+    background: none;
+  }
+}
+
 /* ---------------------------------------------------------------------- */
 /* Auth pages                                                               */
 /* ---------------------------------------------------------------------- */
@@ -1419,6 +1728,35 @@ section {
   color: var(--text-faint);
 }
 
+.coach-rewrite {
+  white-space: pre-wrap;
+  color: var(--text);
+}
+
+.coach-copy-btn {
+  margin-top: 12px;
+  padding: 6px 14px;
+}
+
+.coach-why-label {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.coach-why {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 .tool-tips {
   margin-top: 16px;
   padding-top: 16px;
@@ -1758,6 +2096,14 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .trust-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stats {
+    gap: 28px 36px;
+  }
+
   .nav-links {
     display: none;
   }
@@ -1795,6 +2141,10 @@ section {
 @media (max-width: 640px) {
   section {
     padding: 56px 0;
+  }
+
+  .trust-row {
+    grid-template-columns: 1fr;
   }
 
   .app-shell {

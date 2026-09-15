@@ -155,20 +155,54 @@ Your style:
 - Be honest even when it means an uncomfortable truth — but always with respect and without moralizing.
 - Never diagnose mental health conditions, and never claim to replace professional therapy.
 - If the user describes signs of violence, abuse, or self-harm, respond with calm and empathy, take it seriously, and gently suggest seeking a professional or a helpline in their country.
-- Reply in the language the user writes in.
+- Always reply in the same language as the user's most recent message — detect it automatically from what they write, the same way ChatGPT does. Never ask which language to use, and never mention that you're doing this. If they switch languages mid-conversation, switch with them.
 - Keep answers focused and readable — favor shorter, clear responses over long essays.`;
 
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
 
-Never diagnose, moralize, or lecture. If the draft describes abuse directed at the user, gently note that and suggest professional support instead of just rewriting it.
+Never diagnose, moralize, or lecture. If the draft describes abuse directed at the user, gently note that in "why" and suggest professional support instead of just rewriting it.
 
-Reply in the same language as the draft message. Use exactly this format, nothing before or after it:
+Always write both fields in the same language as the draft message — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
 
-Rewritten message:
-<the rewritten message only, ready to send>
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"rewrite": "<the rewritten message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, no bullet points>"}`;
 
-Why this works better:
-<2-4 short sentences of plain-text explanation, no bullet points>`;
+const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute — not therapeutic advice, and not a diagnosis.
+
+Structure the summary as four short, clearly labeled sections, in this order:
+
+What's going on
+2-4 sentences summarizing the situation(s) discussed, in the user's own framing — don't editorialize.
+
+Recurring themes
+A short bullet list (dash-prefixed lines) of anything that came up more than once across the conversation. If nothing recurs, write "Nothing that recurred within this conversation" for this section instead of inventing a pattern.
+
+What they've already tried or considered
+1-3 short bullet points. Omit this whole section (including its label) if the transcript doesn't contain anything like this.
+
+Possible discussion points for a session
+2-4 short bullet points phrased as open options ("Might be worth exploring...", "Could be worth naming...") rather than directives or conclusions.
+
+Rules:
+- Never diagnose a mental health or relationship condition, and never use clinical labels or jargon beyond terms the user themselves used.
+- Never invent details, quotes, or patterns that aren't actually in the transcript.
+- Plain text only — no markdown symbols like ** or #, just the section labels and dash-prefixed bullets exactly as shown above.
+- Keep the whole thing under roughly 300 words.
+- Write the summary in the same language as the transcript — detect it automatically, the same way ChatGPT does.`;
+
+// Renders a conversation's messages as compact plain text for the summary
+// prompt above. Caps both the number of turns and each turn's length so a
+// very long conversation still produces a bounded, affordable request.
+function buildConversationTranscript(conv) {
+  const turns = (conv.messages || []).slice(-120);
+  return turns
+    .map((m) => {
+      const speaker = m.role === "user" ? "User" : "Coach";
+      const text = String(m.content || "").slice(0, 1500);
+      return `${speaker}: ${text || "(no text — attachment only)"}`;
+    })
+    .join("\n\n");
+}
 
 function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
@@ -182,7 +216,7 @@ Rules:
 - Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
 - React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality — this is what makes the practice useful. But never model abuse, cruelty for its own sake, or anything humiliating.
 - Keep replies texting-length — a sentence or two, occasionally more if the moment calls for it. Not essays.
-- Reply in the language the user writes in.`;
+- Always reply in the same language the user writes in — detect it automatically, the same way ChatGPT does. Never ask which language to use. If they switch languages mid-conversation, switch with them.`;
 }
 
 // ---------------------------------------------------------------------------
@@ -766,6 +800,69 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 });
 
 // ---------------------------------------------------------------------------
+// Therapist summary — turns a Coach Chat conversation into a short,
+// professional-reader summary the user can export/print to bring to a real
+// therapist. Cached on the conversation after first generation so re-opening
+// it doesn't cost another AI call or another day's free-tier usage; pass
+// { regenerate: true } to force a fresh one.
+// ---------------------------------------------------------------------------
+
+app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
+  try {
+    const db = req.db;
+    const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+    if (!conv) return res.status(404).json({ error: "Conversation not found." });
+
+    if (conv.mode === "practice") {
+      return res.status(400).json({
+        error: "Summaries are available for Coach Chat conversations — Partner Practice is a rehearsal, not a real conversation with your partner, so it isn't something to bring to a therapist as fact.",
+      });
+    }
+
+    const userMessageCount = (conv.messages || []).filter((m) => m.role === "user").length;
+    if (userMessageCount === 0) {
+      return res.status(400).json({ error: "Add a bit more to the conversation before exporting a summary." });
+    }
+
+    const regenerate = !!(req.body && req.body.regenerate);
+    if (conv.therapistSummary && !regenerate) {
+      return res.json({
+        summary: conv.therapistSummary,
+        generatedAt: conv.therapistSummaryAt,
+        conversationTitle: conv.title,
+        cached: true,
+      });
+    }
+
+    const user = db.users.find((u) => u.id === req.user.id);
+    if (isOverDailyLimit(user, res)) return;
+
+    const transcript = buildConversationTranscript(conv);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: THERAPIST_SUMMARY_SYSTEM_PROMPT },
+        { role: "user", content: `Conversation transcript:\n"""\n${transcript}\n"""` },
+      ],
+      temperature: 0.4,
+    });
+
+    const summary = completion.choices[0]?.message?.content?.trim() || "Couldn't generate a summary right now.";
+    const generatedAt = new Date().toISOString();
+
+    conv.therapistSummary = summary;
+    conv.therapistSummaryAt = generatedAt;
+    if (user.plan === "free") user.usage.count += 1;
+    writeDb(db);
+
+    res.json({ summary, generatedAt, conversationTitle: conv.title, cached: false, usage: user.usage });
+  } catch (err) {
+    console.error("Therapist summary error:", err.message);
+    res.status(500).json({ error: "Couldn't generate a summary right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // Message Coach — one-off rewrite tool, not tied to a saved conversation
 // ---------------------------------------------------------------------------
 
@@ -790,14 +887,30 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
         },
       ],
       temperature: 0.7,
+      response_format: { type: "json_object" },
     });
 
-    const result = completion.choices[0]?.message?.content?.trim() || "Sorry, couldn't generate a rewrite right now.";
+    // Structured JSON (rather than a labeled-text block) so callers — the
+    // website, and the browser extension's WhatsApp/Messenger integration —
+    // can reliably pull out just the rewrite to use, in any language,
+    // without parsing labels that themselves get translated.
+    let parsed = {};
+    try {
+      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      parsed = {};
+    }
+    const rewrite = String(parsed.rewrite || "").trim();
+    const why = String(parsed.why || "").trim();
+
+    if (!rewrite) {
+      return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
+    }
 
     if (user.plan === "free") user.usage.count += 1;
     writeDb(db);
 
-    res.json({ result, usage: user.usage });
+    res.json({ rewrite, why, usage: user.usage });
   } catch (err) {
     console.error("Message coach error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
