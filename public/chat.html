@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat · RelateIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="index.html" class="brand">Relate<span>IQ</span></a>
+        <button class="btn btn-primary btn-block" id="new-chat-btn">+ New chat</button>
+      </div>
+
+      <div class="sidebar-history" id="history"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-section-label">Tools</div>
+        <a href="message-coach.html" class="sidebar-link">✍️ Message Coach</a>
+        <a href="quiz.html" class="sidebar-link">🧭 Attachment Quiz</a>
+        <a href="dashboard.html" class="sidebar-link">My account</a>
+        <button class="sidebar-link" id="logout-btn">Log out</button>
+      </div>
+    </aside>
+
+    <main class="chat-wrapper">
+      <header class="chat-topbar">
+        <div class="mode-tabs" id="mode-tabs">
+          <button class="mode-tab active" data-mode="coach" type="button">💬 Coach</button>
+          <button class="mode-tab" data-mode="practice" type="button">🎭 Practice</button>
+        </div>
+        <div class="topbar-account">
+          <a href="dashboard.html" class="plan-badge" id="plan-badge" title="Manage your plan"></a>
+          <span id="user-label" class="user-label"></span>
+        </div>
+      </header>
+
+      <div class="partner-banner" id="partner-banner" style="display:none;">
+        <span>Practicing a conversation with <strong id="partner-banner-name"></strong></span>
+        <button class="btn btn-ghost btn-sm" id="debrief-btn" type="button">Debrief with Coach</button>
+      </div>
+
+      <div id="chat" class="chat-messages"></div>
+
+      <div class="input-area" id="input-area">
+        <div class="attachment-preview" id="attachment-preview" style="display:none;"></div>
+        <div class="composer-row" id="composer">
+          <input type="file" id="file-input" multiple style="display:none;" />
+          <button class="attach-btn" id="attach-btn" type="button" title="Attach a photo, screen recording, or file">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a5 5 0 01-7.07-7.07l9.19-9.19a3.5 3.5 0 014.95 4.95L9.64 17.62a2 2 0 01-2.83-2.83l8.49-8.49"/></svg>
+          </button>
+          <textarea id="input" placeholder="Tell me what's going on in your relationship…" rows="1"></textarea>
+          <button class="btn btn-primary" id="send-btn">Send</button>
+        </div>
+      </div>
+      <p class="chat-disclaimer" id="chat-disclaimer">RelateIQ is an AI tool for support, not a replacement for professional therapy. Attachments: up to 3 files, 15MB total per message.</p>
+    </main>
+  </div>
+
+  <script src="js/shared.js?v=4"></script>
+  <script src="js/chat.js?v=6"></script>
+</body>
+</html>

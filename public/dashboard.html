@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My account · RelateIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="index.html" class="brand">Relate<span>IQ</span></a>
+    <nav class="nav-links">
+      <a href="chat.html">Chat</a>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="dashboard-card profile-card">
+      <h1 id="profile-name">…</h1>
+      <p class="text-muted" id="profile-email"></p>
+
+      <div class="profile-meta">
+        <div><span class="label">Plan</span><span id="profile-plan">—</span></div>
+        <div><span class="label">Member since</span><span id="profile-since">—</span></div>
+        <div id="attachment-meta" style="display:none;">
+          <span class="label">Attachment style</span>
+          <span class="attachment-badge" id="attachment-badge">—</span>
+        </div>
+      </div>
+
+      <div class="usage-box" id="usage-box" style="display:none;">
+        <span class="label">Today's AI messages (Free plan)</span>
+        <span id="usage-count">0 / 8</span>
+      </div>
+
+      <div class="billing-actions" id="billing-actions"></div>
+    </section>
+
+    <section class="dashboard-card checkin-card" id="checkin-card" style="display:none;">
+      <div class="dashboard-card-header">
+        <h2>Daily check-in</h2>
+        <span class="section-tag" style="margin:0;">Optional</span>
+      </div>
+      <p class="text-muted" style="margin-bottom:0;">A completely optional prompt to help you notice how the relationship is actually going. Skip it anytime — nothing depends on it.</p>
+      <div id="checkin-body"></div>
+    </section>
+
+    <section class="dashboard-card">
+      <div class="dashboard-card-header">
+        <h2>Explore RelateIQ</h2>
+      </div>
+      <div class="modes-grid">
+        <a href="chat.html" class="mode-card">
+          <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+          <span class="mode-card-tag">Chat</span>
+          <h3>Coach Chat</h3>
+          <p>Talk through what's going on and get concrete, grounded advice.</p>
+        </a>
+
+        <a href="chat.html?mode=practice" class="mode-card">
+          <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <span class="mode-card-tag">Roleplay</span>
+          <h3>Partner Practice</h3>
+          <p>Rehearse a real conversation with an AI roleplaying as your partner.</p>
+        </a>
+
+        <a href="message-coach.html" class="mode-card">
+          <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <span class="mode-card-tag">Tool</span>
+          <h3>Message Coach</h3>
+          <p>Paste a tricky message and get a calmer, clearer rewrite before you hit send.</p>
+        </a>
+
+        <a href="quiz.html" class="mode-card">
+          <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 .3c0 1.7-2.2 2-2.4 3.7M12 17h.01"/></svg></div>
+          <span class="mode-card-tag">Optional</span>
+          <h3>Attachment Style Quiz</h3>
+          <p>A short, informal quiz to understand your patterns in relationships.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="dashboard-card">
+      <div class="dashboard-card-header">
+        <h2>Your conversations</h2>
+        <a href="chat.html?new=1" class="btn btn-primary btn-sm">+ New</a>
+      </div>
+      <div id="conversation-list" class="conversation-list"></div>
+    </section>
+  </main>
+
+  <script src="js/shared.js?v=4"></script>
+  <script src="js/dashboard.js?v=5"></script>
+</body>
+</html>

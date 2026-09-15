@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Coach · RelateIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="index.html" class="brand">Relate<span>IQ</span></a>
+    <nav class="nav-links">
+      <a href="chat.html">Chat</a>
+      <a href="dashboard.html">My account</a>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="tool-page">
+    <div class="tool-header">
+      <span class="section-tag">Message Coach</span>
+      <h1>Say it in a way that actually lands</h1>
+      <p class="text-muted">Paste a message you're about to send, add a bit of context if you want, and get a calmer, clearer rewrite — grounded in the Gottman Method and Nonviolent Communication.</p>
+    </div>
+
+    <div class="tool-split">
+      <div class="tool-card">
+        <h3>Your draft</h3>
+        <input type="text" id="context-input" maxlength="200" placeholder="Context (optional) — e.g. after an argument about chores" />
+        <textarea id="draft-input" maxlength="2000" placeholder="Paste or write the message you're about to send…"></textarea>
+        <div class="form-error" id="form-error" style="display:none; margin-top:12px;"></div>
+        <button class="btn btn-gradient btn-block" id="rewrite-btn" style="margin-top:14px;">Rewrite it</button>
+      </div>
+
+      <div class="tool-card">
+        <h3>Suggested rewrite</h3>
+        <div class="tool-result" id="result">
+          <span class="placeholder">Your rewritten message will show up here.</span>
+        </div>
+        <div class="tool-tips">Tip: the more context you give (what led up to this, how they usually react), the more useful the rewrite will be.</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/shared.js?v=4"></script>
+  <script src="js/message-coach.js?v=1"></script>
+</body>
+</html>
