@@ -124,3 +124,92 @@
   border: 1px solid rgba(250, 235, 215, 0.18);
   color: #f6efe4;
 }
+
+/* Per-chat "smart replies" toggle — a small pill to the left of the FAB, at
+   the same height. Off by default for every chat; the user opts in per
+   conversation. Always shown (once a compose box is found) rather than
+   only-while-typing, since it matters most exactly when nothing is typed
+   yet. Hidden while the coach panel is open so the two never overlap. */
+#relateiq-consent-toggle {
+  position: fixed;
+  right: 78px;
+  bottom: 122px;
+  z-index: 999999;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(250, 235, 215, 0.22);
+  background: rgba(36, 29, 20, 0.92);
+  color: #b6a795;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+#relateiq-consent-toggle.relateiq-on {
+  color: #1a140d;
+  background: linear-gradient(135deg, #d1a05a, #a8455c);
+  border-color: transparent;
+}
+
+/* Automatic smart-reply chips — appear above the FAB, near the compose box,
+   once the other person has sent a message and this chat has "smart
+   replies" turned on. Clicking a chip inserts it into the compose box; it
+   never sends anything on its own. Shares the panel's anchor point since
+   the two are never meant to be open at the same time (hidden-while-panel
+   rule below), and hides itself while the user is drafting their own reply
+   (relateiq-hidden-by-draft, toggled from shared.js). */
+#relateiq-chips {
+  position: fixed;
+  right: 24px;
+  bottom: 166px;
+  z-index: 999998;
+  max-width: 280px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+#relateiq-chips.visible {
+  display: flex;
+}
+
+#relateiq-chips.relateiq-hidden-by-draft {
+  display: none !important;
+}
+
+#relateiq-chips.relateiq-chips-loading {
+  opacity: 0.55;
+}
+
+/* The coach panel and the automatic chips/toggle are never meant to be
+   visible at the same time — opening one hides the others so nothing
+   overlaps. panel/toggle/chips are siblings in that DOM order (see
+   relateiqBuildUI in shared.js), so a general sibling selector is enough. */
+#relateiq-panel.visible ~ #relateiq-consent-toggle,
+#relateiq-panel.visible ~ #relateiq-chips {
+  display: none !important;
+}
+
+.relateiq-chip {
+  max-width: 100%;
+  padding: 8px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(250, 235, 215, 0.18);
+  background: #241d14;
+  color: #f6efe4;
+  font-size: 12.5px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.relateiq-chip:hover {
+  border-color: rgba(209, 160, 90, 0.6);
+}

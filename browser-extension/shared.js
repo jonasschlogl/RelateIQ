@@ -1,7 +1,23 @@
-// Shared engine used by both content-whatsapp.js and content-messenger.js.
-// Each of those files just calls relateiqInit(selectors) with its own list
-// of compose-box selectors — everything else (the floating button, the
-// panel, talking to background.js) is identical between the two sites.
+// Shared engine used by content-whatsapp.js, content-messenger.js and
+// content-instagram.js. Each of those files just calls relateiqInit(config)
+// with its own platform name and selectors — everything else (the floating
+// button, the coach panel, the automatic smart-reply chips, the per-chat
+// consent toggle, talking to background.js) is identical across the three.
+//
+// config shape:
+// {
+//   platform: "whatsapp" | "messenger" | "instagram",
+//   composeSelectors: [selector, ...],       // tried in order
+//   messageRowSelectors: [selector, ...],     // tried in order, first that
+//                                              // matches >0 elements wins
+//   messageTextSelector: selector | null,     // within a row, optional
+//   chatTitleSelectors: [selector, ...],      // used to key the per-chat
+//                                              // "smart replies" toggle
+//   threadIdFromUrl: (pathname) => id | null, // optional, more stable than
+//                                              // chatTitleSelectors when the
+//                                              // site puts a thread id in
+//                                              // the URL (Messenger, IG)
+// }
 
 function relateiqGetOrCreateRoot() {
   let root = document.getElementById("relateiq-root");
@@ -43,7 +59,23 @@ function relateiqBuildUI() {
     });
   }
 
-  return { fab, panel };
+  let toggle = document.getElementById("relateiq-consent-toggle");
+  if (!toggle) {
+    toggle = document.createElement("button");
+    toggle.id = "relateiq-consent-toggle";
+    toggle.type = "button";
+    toggle.textContent = "Smart replies: off";
+    root.appendChild(toggle);
+  }
+
+  let chips = document.getElementById("relateiq-chips");
+  if (!chips) {
+    chips = document.createElement("div");
+    chips.id = "relateiq-chips";
+    root.appendChild(chips);
+  }
+
+  return { fab, panel, toggle, chips };
 }
 
 function relateiqEscapeHtml(str) {
@@ -71,7 +103,7 @@ function relateiqShowPanel(panel, { bodyHtml, actions }) {
 // tried in order, since a platform's own markup/testids can change between
 // releases and having several fallbacks keeps this working longer.
 function relateiqFindFirst(selectors) {
-  for (const sel of selectors) {
+  for (const sel of selectors || []) {
     try {
       const el = document.querySelector(sel);
       if (el && el.isConnected) return el;
@@ -80,6 +112,21 @@ function relateiqFindFirst(selectors) {
     }
   }
   return null;
+}
+
+// Same idea as relateiqFindFirst, but for a list of elements: tries each
+// selector in order and returns the first one that actually matches
+// something, rather than always querying the first selector only.
+function relateiqFindAllFirst(selectors) {
+  for (const sel of selectors || []) {
+    try {
+      const list = document.querySelectorAll(sel);
+      if (list && list.length) return Array.from(list);
+    } catch (e) {
+      /* an invalid selector on this page — skip it */
+    }
+  }
+  return [];
 }
 
 // Reads the plain-text content of a contenteditable compose box. innerText
@@ -164,9 +211,9 @@ async function relateiqCopyText(text) {
   }
 }
 
-function relateiqSendCoachRequest(draft) {
+function relateiqSendCoachRequest(draft, messages) {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: "relateiq:coachMessage", draft }, (response) => {
+    chrome.runtime.sendMessage({ type: "relateiq:coachMessage", draft, messages }, (response) => {
       if (chrome.runtime.lastError) {
         resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
         return;
@@ -176,23 +223,236 @@ function relateiqSendCoachRequest(draft) {
   });
 }
 
-// Wires up the floating button + panel against whichever element on the
-// page currently matches `selectors`. Safe to call once per content script;
-// it re-checks the DOM on an interval and via MutationObserver, since both
-// WhatsApp Web and Messenger are single-page apps that swap the compose box
-// out (e.g. when you switch chats) without a full page reload.
-function relateiqInit(selectors) {
-  const { fab, panel } = relateiqBuildUI();
+function relateiqSendSuggestRequest(messages) {
+  return new Promise((resolve) => {
+    chrome.runtime.sendMessage({ type: "relateiq:suggestReplies", messages }, (response) => {
+      if (chrome.runtime.lastError) {
+        resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
+        return;
+      }
+      resolve(response || { ok: false, error: "No response from RelateIQ." });
+    });
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Reading the conversation — best effort, degrades gracefully
+// ---------------------------------------------------------------------------
+
+// A handful of lines that are almost certainly a date/timestamp separator
+// rather than an actual message, so they don't pollute the transcript sent
+// to the AI (e.g. WhatsApp/Messenger render "Today", "12:04 PM", or a plain
+// date as their own row in the message list).
+const RELATEIQ_NOISE_LINE = /^(today|yesterday|\d{1,2}:\d{2}(\s?[ap]m)?|\d{1,2}\/\d{1,2}\/\d{2,4}|[a-z]+ \d{1,2}(,\s?\d{4})?)$/i;
+
+// Right-aligned vs. left-aligned is the one visual convention every one of
+// these chat UIs share for "sent by me" vs. "sent by them" — far more
+// stable across redesigns than any class name or data-testid. Compares the
+// message bubble's horizontal center against its row's horizontal center.
+function relateiqDetectDirection(row, bubbleEl) {
+  try {
+    const rowRect = row.getBoundingClientRect();
+    const bubbleRect = (bubbleEl || row).getBoundingClientRect();
+    if (!rowRect.width || !bubbleRect.width) return "them";
+    const rowCenter = rowRect.left + rowRect.width / 2;
+    const bubbleCenter = bubbleRect.left + bubbleRect.width / 2;
+    return bubbleCenter > rowCenter ? "me" : "them";
+  } catch (e) {
+    return "them";
+  }
+}
+
+// Pulls the last `maxMessages` messages currently rendered on screen as
+// [{from: "me"|"them", text}], oldest first. This only ever reads what's
+// already visible in the DOM — it never scrolls the chat or fetches
+// anything — and if the site's markup doesn't match any of the configured
+// selectors it simply returns an empty array rather than throwing, so a
+// platform redesign silently turns off the context-aware features instead
+// of breaking anything else.
+function relateiqExtractRecentMessages(config, maxMessages) {
+  const rows = relateiqFindAllFirst(config.messageRowSelectors || []);
+  if (!rows.length) return [];
+
+  const out = [];
+  for (const row of rows) {
+    if (!row.isConnected) continue;
+    let textEl = row;
+    if (config.messageTextSelector) {
+      const found = row.querySelector(config.messageTextSelector);
+      if (found) textEl = found;
+    }
+    const text = (textEl.innerText || textEl.textContent || "").replace(/ /g, " ").trim();
+    if (!text || RELATEIQ_NOISE_LINE.test(text)) continue;
+
+    const from = relateiqDetectDirection(row, textEl);
+    const last = out[out.length - 1];
+    if (last && last.from === from && last.text === text) continue; // de-dupe accessibility echoes
+    out.push({ from, text: text.slice(0, 600) });
+  }
+  return out.slice(-maxMessages);
+}
+
+// ---------------------------------------------------------------------------
+// Per-chat "smart replies" consent — off by default, remembered per chat
+// ---------------------------------------------------------------------------
+
+// Identifies "this chat" well enough to remember a per-chat toggle. Prefers
+// a thread id straight from the URL (Messenger and Instagram both put one
+// there); WhatsApp Web doesn't, so it falls back to the visible chat header
+// text, and finally to the tab title. None of these are a perfect unique
+// key (two contacts with the same name would share a toggle state) but
+// that's an acceptable trade-off for a convenience setting, not a security
+// boundary — the actual privacy control is that it defaults to OFF.
+function relateiqGetThreadKey(config) {
+  if (typeof config.threadIdFromUrl === "function") {
+    try {
+      const id = config.threadIdFromUrl(location.pathname);
+      if (id) return `${config.platform}:${id}`;
+    } catch (e) {
+      /* fall through */
+    }
+  }
+  const header = relateiqFindFirst(config.chatTitleSelectors || []);
+  if (header) {
+    const text = (header.innerText || header.textContent || "").trim();
+    if (text) return `${config.platform}:${text}`;
+  }
+  if (document.title) return `${config.platform}:${document.title}`;
+  return `${config.platform}:default`;
+}
+
+async function relateiqGetChatConsent(threadKey) {
+  const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
+  return !!(relateiq_chat_consent && relateiq_chat_consent[threadKey]);
+}
+
+async function relateiqSetChatConsent(threadKey, enabled) {
+  const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
+  const next = Object.assign({}, relateiq_chat_consent || {});
+  if (enabled) {
+    next[threadKey] = true;
+  } else {
+    delete next[threadKey];
+  }
+  await chrome.storage.local.set({ relateiq_chat_consent: next });
+}
+
+// ---------------------------------------------------------------------------
+// Wiring it all up against the live page
+// ---------------------------------------------------------------------------
+
+// Wires up the floating button, coach panel, consent toggle and smart-reply
+// chips against whichever elements on the page currently match `config`'s
+// selectors. Safe to call once per content script; it re-checks the DOM on
+// an interval and via MutationObserver, since WhatsApp Web, Messenger and
+// Instagram are all single-page apps that swap the compose box and message
+// list out (e.g. when you switch chats) without a full page reload.
+function relateiqInit(config) {
+  const { fab, panel, toggle, chips } = relateiqBuildUI();
+
   let composeEl = null;
   let boundEl = null;
+  let threadKey = null;
+  let consentEnabled = false;
+  let lastSuggestSignature = null;
+  let isFetchingSuggestions = false;
+  let cachedSuggestions = null;
 
   function updateFabVisibility() {
     const hasText = composeEl && relateiqGetComposeText(composeEl).length > 0;
     fab.classList.toggle("visible", !!hasText);
+    // Chips propose what to send next — once the user is drafting their own
+    // reply, get out of the way rather than competing with the FAB.
+    chips.classList.toggle("relateiq-hidden-by-draft", !!hasText);
   }
 
+  function renderChips(suggestions) {
+    cachedSuggestions = suggestions;
+    if (!suggestions || !suggestions.length) {
+      chips.innerHTML = "";
+      chips.classList.remove("visible");
+      return;
+    }
+    chips.innerHTML = suggestions
+      .map(
+        (text, i) =>
+          `<button type="button" class="relateiq-chip" data-i="${i}" title="${relateiqEscapeHtml(text)}">${relateiqEscapeHtml(
+            text.length > 90 ? text.slice(0, 87) + "…" : text
+          )}</button>`
+      )
+      .join("");
+    chips.querySelectorAll(".relateiq-chip").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        if (!composeEl) return;
+        relateiqSetComposeText(composeEl, suggestions[i]);
+        chips.classList.remove("visible");
+      });
+    });
+    chips.classList.add("visible");
+  }
+
+  async function updateSuggestions() {
+    if (!consentEnabled || !composeEl) {
+      chips.classList.remove("visible");
+      return;
+    }
+    if (relateiqGetComposeText(composeEl).length > 0) return; // handled by updateFabVisibility's hide
+
+    const recent = relateiqExtractRecentMessages(config, 16);
+    if (!recent.length || recent[recent.length - 1].from !== "them") {
+      chips.classList.remove("visible");
+      return;
+    }
+
+    const signature = recent
+      .slice(-3)
+      .map((m) => m.from + ":" + m.text)
+      .join("|");
+    if (signature === lastSuggestSignature) {
+      if (cachedSuggestions) renderChips(cachedSuggestions);
+      return;
+    }
+    if (isFetchingSuggestions) return;
+
+    isFetchingSuggestions = true;
+    lastSuggestSignature = signature;
+    chips.classList.add("relateiq-chips-loading");
+    const response = await relateiqSendSuggestRequest(recent);
+    chips.classList.remove("relateiq-chips-loading");
+    isFetchingSuggestions = false;
+
+    if (!response.ok) {
+      renderChips(null);
+      return;
+    }
+    renderChips(response.suggestions);
+  }
+
+  async function updateConsentUi() {
+    const newKey = relateiqGetThreadKey(config);
+    if (newKey === threadKey) return;
+    threadKey = newKey;
+    lastSuggestSignature = null;
+    cachedSuggestions = null;
+    chips.classList.remove("visible");
+    consentEnabled = await relateiqGetChatConsent(threadKey);
+    toggle.textContent = consentEnabled ? "Smart replies: on" : "Smart replies: off";
+    toggle.classList.toggle("relateiq-on", consentEnabled);
+  }
+
+  toggle.addEventListener("click", async () => {
+    if (!threadKey) return;
+    consentEnabled = !consentEnabled;
+    await relateiqSetChatConsent(threadKey, consentEnabled);
+    toggle.textContent = consentEnabled ? "Smart replies: on" : "Smart replies: off";
+    toggle.classList.toggle("relateiq-on", consentEnabled);
+    lastSuggestSignature = null; // force a fresh fetch now that it's on
+    if (!consentEnabled) chips.classList.remove("visible");
+    updateSuggestions();
+  });
+
   function updateComposeEl() {
-    const found = relateiqFindFirst(selectors);
+    const found = relateiqFindFirst(config.composeSelectors);
     if (found !== composeEl) {
       composeEl = found;
     }
@@ -202,17 +462,23 @@ function relateiqInit(selectors) {
       boundEl = composeEl;
     }
     updateFabVisibility();
+    updateConsentUi();
+    updateSuggestions();
   }
 
   fab.addEventListener("click", async () => {
-    if (!composeEl) return;
-    const draft = relateiqGetComposeText(composeEl);
-    if (!draft) return;
+    const draft = composeEl ? relateiqGetComposeText(composeEl) : "";
+    const recentMessages = relateiqExtractRecentMessages(config, 16);
+
+    if (!draft && !recentMessages.length) return; // nothing to work with yet
 
     fab.classList.add("loading");
-    relateiqShowPanel(panel, { bodyHtml: "<p>Thinking about the best way to say this…</p>", actions: [] });
+    relateiqShowPanel(panel, {
+      bodyHtml: draft ? "<p>Thinking about the best way to say this…</p>" : "<p>Reading the conversation so far…</p>",
+      actions: [],
+    });
 
-    const response = await relateiqSendCoachRequest(draft);
+    const response = await relateiqSendCoachRequest(draft, recentMessages);
     fab.classList.remove("loading");
 
     if (!response.ok) {

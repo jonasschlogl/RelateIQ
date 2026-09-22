@@ -209,12 +209,59 @@ Your style:
 
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
 
-Never diagnose, moralize, or lecture. If the draft describes abuse directed at the user, gently note that in "why" and suggest professional support instead of just rewriting it.
+You may be given a draft message to rewrite, or recent messages from the conversation (a transcript, oldest first, each line labeled "Them:" or "Me:"), or both.
 
-Always write both fields in the same language as the draft message — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
+- If a draft is given: rewrite THAT draft. Use the transcript (if given) only to understand tone and context, not to change what the user is trying to say.
+- If NO draft is given but a transcript is: the user hasn't written anything yet and wants a suggestion for what to send next. Read the transcript and propose one natural, appropriate reply to the other person's most recent message, written as if it were the user's own words in their voice. Put that proposed reply in "rewrite" exactly as you would a rewritten draft.
+
+Never diagnose, moralize, or lecture. If the draft or transcript describes abuse directed at the user, gently note that in "why" and suggest professional support instead of just rewriting it.
+
+Always write both fields in the same language as the draft message (or, if none was given, the same language as the transcript) — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"rewrite": "<the rewritten message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, no bullet points>"}`;
+{"rewrite": "<the rewritten or proposed message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, or why you proposed this reply, no bullet points>"}`;
+
+// Suggests 2-3 short, distinct reply options based on a recent chat
+// transcript alone (no draft) — powers the browser extension's automatic
+// "smart reply" chips, which appear near the compose box on WhatsApp
+// Web / Messenger / Instagram DMs after the other person sends a message.
+// Kept as a separate prompt/endpoint from message-coach (which always
+// returns exactly one rewrite) since chips need several short options at
+// once, in a lighter, more scannable style than a full coached message.
+const CHAT_SUGGEST_SYSTEM_PROMPT = `You suggest short, natural reply options for someone in the middle of a real conversation with their partner, based on the recent messages of that conversation (a transcript, oldest first, each line labeled "Them:" or "Me:").
+
+Propose 2 to 3 DIFFERENT short replies to the other person's most recent message — different in substance or tone (e.g. one warmer/more affirming, one that asks a clarifying question, one that sets a boundary or names a need), not just reworded versions of each other. Each should be something the user could tap and send as-is, in their own natural voice — casual chat length, not an essay. Ground them in Nonviolent Communication and the Gottman Method where relevant, but don't make every option sound therapy-speak — at least one should just be a normal, warm, everyday reply.
+
+Never diagnose, moralize, or lecture. If the transcript describes abuse directed at the user, respond with just ONE suggestion that gently acknowledges it and suggests reaching out to a trusted person or professional, instead of proposing casual replies.
+
+Write every suggestion in the same language as the transcript — detect it automatically, without asking or mentioning it.
+
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"suggestions": ["<first reply option, ready to send>", "<second reply option, ready to send>"]}`;
+
+// Turns the extension's [{from:"me"|"them", text}] transcript array into the
+// compact "Them: ...\nMe: ..." text block both prompts above expect. Shared
+// by /api/message-coach (when called with `messages` instead of/alongside a
+// draft) and /api/message-coach/suggestions. Trims to the last N messages
+// and caps each message's length so a very long conversation or a hostile
+// payload can't blow up the prompt (or the OpenAI bill).
+const CHAT_TRANSCRIPT_MAX_MESSAGES = 16;
+const CHAT_TRANSCRIPT_MAX_CHARS_PER_MESSAGE = 600;
+
+function buildChatTranscript(messages) {
+  if (!Array.isArray(messages)) return "";
+  const trimmed = messages.slice(-CHAT_TRANSCRIPT_MAX_MESSAGES);
+  return trimmed
+    .map((m) => {
+      const from = m && m.from === "me" ? "Me" : "Them";
+      const text = String((m && m.text) || "")
+        .trim()
+        .slice(0, CHAT_TRANSCRIPT_MAX_CHARS_PER_MESSAGE);
+      return text ? `${from}: ${text}` : null;
+    })
+    .filter(Boolean)
+    .join("\n");
+}
 
 const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute — not therapeutic advice, and not a diagnosis.
 
@@ -1345,23 +1392,30 @@ async function generateInsightsForDigest(db, user, coachConversations) {
 
 app.post("/api/message-coach", authMiddleware, async (req, res) => {
   try {
-    const { draft, context } = req.body || {};
-    if (!draft || !String(draft).trim()) {
-      return res.status(400).json({ error: "Paste a message to get feedback on." });
+    const { draft, context, messages } = req.body || {};
+    const trimmedDraft = String(draft || "").trim();
+    const transcript = buildChatTranscript(messages);
+
+    // Either a draft to rewrite, or a chat transcript to propose a reply
+    // from, is required — both empty means there's nothing to work with.
+    if (!trimmedDraft && !transcript) {
+      return res.status(400).json({ error: "Paste a message, or open a conversation with a few messages in it, to get feedback." });
     }
 
     const db = req.db;
     const user = db.users.find((u) => u.id === req.user.id);
     if (isOverDailyLimit(user, res)) return;
 
+    const contextBlock = [String(context || "").trim(), transcript].filter(Boolean).join("\n\n") || "(none given)";
+    const userContent = trimmedDraft
+      ? `Context (optional, may be empty):\n${contextBlock}\n\nDraft message:\n"""${trimmedDraft}"""`
+      : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`;
+
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
-        {
-          role: "user",
-          content: `Context (optional, may be empty): ${String(context || "").trim() || "(none given)"}\n\nDraft message:\n"""${String(draft).trim()}"""`,
-        },
+        { role: "user", content: userContent },
       ],
       temperature: 0.7,
       response_format: { type: "json_object" },
@@ -1391,6 +1445,59 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
   } catch (err) {
     console.error("Message coach error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
+  }
+});
+
+// Powers the browser extension's automatic "smart reply" chips: given the
+// last few messages of a WhatsApp/Messenger/Instagram conversation, returns
+// 2-3 short, distinct reply options the user can tap to insert (never
+// auto-sent). Deliberately its own endpoint rather than a mode of
+// /api/message-coach above, since it always returns several short options
+// instead of one full rewrite. Shares the same free-plan daily cap —
+// counted as ordinary AI usage, same as any other coaching call.
+app.post("/api/message-coach/suggestions", authMiddleware, async (req, res) => {
+  try {
+    const { messages } = req.body || {};
+    const transcript = buildChatTranscript(messages);
+    if (!transcript) {
+      return res.status(400).json({ error: "No conversation messages were given to suggest a reply from." });
+    }
+
+    const db = req.db;
+    const user = db.users.find((u) => u.id === req.user.id);
+    if (isOverDailyLimit(user, res)) return;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: CHAT_SUGGEST_SYSTEM_PROMPT },
+        { role: "user", content: `Conversation so far:\n${transcript}` },
+      ],
+      temperature: 0.85,
+      response_format: { type: "json_object" },
+    });
+
+    let parsed = {};
+    try {
+      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      parsed = {};
+    }
+    const suggestions = Array.isArray(parsed.suggestions)
+      ? parsed.suggestions.map((s) => String(s || "").trim()).filter(Boolean).slice(0, 3)
+      : [];
+
+    if (!suggestions.length) {
+      return res.status(500).json({ error: "Couldn't come up with suggestions right now. Please try again." });
+    }
+
+    if (user.plan === "free") user.usage.count += 1;
+    writeDb(db);
+
+    res.json({ suggestions, usage: user.usage });
+  } catch (err) {
+    console.error("Chat suggestions error:", err.message);
+    res.status(500).json({ error: "Couldn't get suggestions right now. Please try again." });
   }
 });
 
