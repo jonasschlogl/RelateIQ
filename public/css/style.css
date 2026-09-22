@@ -2891,3 +2891,86 @@ body.js-reveal .reveal-item.revealed {
     max-width: 95%;
   }
 }
+
+/* ---------------------------------------------------------------------- */
+/* Streaks, email preferences, referrals                                   */
+/* ---------------------------------------------------------------------- */
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(209, 160, 90, 0.14);
+  border: 1px solid rgba(209, 160, 90, 0.35);
+  color: var(--accent-1);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.email-prefs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.email-prefs .label {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.email-pref-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.email-pref-toggle input {
+  accent-color: var(--accent-1);
+  width: 15px;
+  height: 15px;
+}
+
+.referral-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 14px;
+}
+
+.referral-box span {
+  font-size: 13px;
+  color: var(--text-muted);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.referral-stats {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .referral-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .referral-box span {
+    white-space: normal;
+    word-break: break-all;
+  }
+}

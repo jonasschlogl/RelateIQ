@@ -60,6 +60,29 @@ function consumePendingPlan() {
   }
 }
 
+// Referral links point at register.html?ref=CODE, but someone might land on
+// the homepage first and click through to register.html without the query
+// string — so every page captures ?ref= into storage on load, and register
+// picks it up from there regardless of which page it came in on.
+(function captureReferralFromUrl() {
+  try {
+    const code = new URLSearchParams(window.location.search).get("ref");
+    if (code) localStorage.setItem("relateiq_referral_code", code.trim());
+  } catch (e) {
+    /* ignore storage errors */
+  }
+})();
+
+function consumePendingReferral() {
+  try {
+    const code = localStorage.getItem("relateiq_referral_code");
+    if (code) localStorage.removeItem("relateiq_referral_code");
+    return code;
+  } catch (e) {
+    return null;
+  }
+}
+
 // Starts a Stripe Checkout flow for the given plan ("pro" | "premium") and
 // redirects the browser to it. Returns once the redirect has been kicked
 // off (or the request has failed and an alert shown) so callers can restore

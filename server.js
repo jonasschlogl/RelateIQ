@@ -10,6 +10,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Stripe from "stripe";
 import { readDb, writeDb, generateId } from "./lib/store.js";
+import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
 
 dotenv.config();
 
@@ -41,7 +42,7 @@ app.use(cors());
 // signature, so this route is registered BEFORE the global express.json()
 // parser below (which would otherwise consume the body and break
 // verification). It's the one route in this file that isn't JSON-parsed.
-app.post("/api/billing/webhook", express.raw({ type: "application/json" }), (req, res) => {
+app.post("/api/billing/webhook", express.raw({ type: "application/json" }), async (req, res) => {
   if (!stripe || !process.env.STRIPE_WEBHOOK_SECRET) return res.status(503).end();
 
   let event;
@@ -61,11 +62,20 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), (req
       const userId = session.client_reference_id || session.metadata?.userId;
       const user = db.users.find((u) => u.id === userId);
       if (user && session.subscription) {
+        const wasFree = user.plan === "free" || !user.plan;
         user.stripeCustomerId = session.customer;
         user.stripeSubscriptionId = session.subscription;
         user.subscriptionStatus = "active";
         if (session.metadata?.plan) user.plan = session.metadata.plan;
         writeDb(db);
+
+        // First time this user has ever converted to paid — this is the
+        // one moment a referral reward can fire, so it can't be triggered
+        // more than once per referred user.
+        if (wasFree && session.metadata?.plan) {
+          const priceId = PLAN_TO_STRIPE_PRICE[session.metadata.plan];
+          if (priceId) await grantReferralRewardIfDue(db, user, priceId);
+        }
       }
     } else if (event.type === "customer.subscription.updated") {
       const sub = event.data.object;
@@ -149,6 +159,16 @@ if (!process.env.OPENAI_API_KEY) {
 }
 if (!process.env.JWT_SECRET) {
   console.warn("⚠️  JWT_SECRET is not set in .env — set your own random string before deploying to production.");
+}
+if (!process.env.DB_PATH) {
+  console.warn(
+    "⚠️  DB_PATH is not set — data/db.json is being stored inside the app's own container filesystem. " +
+      "On Railway this does NOT survive a redeploy unless you've mounted a persistent Volume and pointed " +
+      "DB_PATH at a file inside it. See README for setup."
+  );
+}
+if (!process.env.RESEND_API_KEY) {
+  console.warn("⚠️  RESEND_API_KEY is not set — check-in reminder and weekly digest emails will not be sent.");
 }
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -436,6 +456,11 @@ function publicUser(user) {
     attachmentStyle: user.attachmentStyle || null,
     hasBilling: !!user.stripeCustomerId,
     subscriptionStatus: user.subscriptionStatus || null,
+    // Undefined/missing means "not yet opted out" — treat as true so
+    // accounts created before this feature existed default to opted-in,
+    // same as brand-new ones.
+    emailCheckinReminders: user.emailCheckinReminders !== false,
+    emailWeeklyDigest: user.emailWeeklyDigest !== false,
   };
 }
 
@@ -490,12 +515,109 @@ function isOverDailyLimit(user, res) {
 }
 
 // ---------------------------------------------------------------------------
+// Referrals — invite a friend, both get a free month once they subscribe
+// ---------------------------------------------------------------------------
+
+function generateUniqueReferralCode(db) {
+  let code;
+  do {
+    code = crypto.randomBytes(4).toString("hex");
+  } while (db.users.some((u) => u.referralCode === code));
+  return code;
+}
+
+// Ensures a Stripe customer exists for this user and applies a negative
+// balance transaction to it — Stripe automatically applies a credit balance
+// to the customer's *next* invoice, whether or not they have an active
+// subscription yet, so this works even for a referrer who's still on Free.
+async function creditOneMonth(db, targetUser, amountCents, description) {
+  let customerId = targetUser.stripeCustomerId;
+  if (!customerId) {
+    const customer = await stripe.customers.create({
+      email: targetUser.email,
+      name: targetUser.name,
+      metadata: { userId: targetUser.id },
+    });
+    customerId = customer.id;
+    targetUser.stripeCustomerId = customerId;
+  }
+  await stripe.customers.createBalanceTransaction(customerId, {
+    amount: -Math.abs(amountCents),
+    currency: "usd",
+    description,
+  });
+}
+
+// Called right after a user's checkout completes for the very first time
+// (free -> paid). If they were referred, credits BOTH accounts one free
+// month — valued at the price of the plan that was just subscribed to,
+// since that's the plan action that actually triggered the reward. Never
+// fires twice for the same referred user (referralRewardGranted guards it).
+async function grantReferralRewardIfDue(db, user, priceId) {
+  if (!stripe || !user.referredBy || user.referralRewardGranted) return;
+  const referrer = db.users.find((u) => u.id === user.referredBy);
+  if (!referrer) return;
+
+  try {
+    const price = await stripe.prices.retrieve(priceId);
+    const amount = price?.unit_amount;
+    if (!amount) return;
+
+    await creditOneMonth(db, user, amount, "Thanks for joining through a RelateIQ invite — 1 month on us");
+    await creditOneMonth(db, referrer, amount, "Thanks for inviting a friend to RelateIQ — 1 month on us");
+
+    user.referralRewardGranted = true;
+    writeDb(db);
+  } catch (err) {
+    console.error("Referral reward error:", err);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Check-in streak
+// ---------------------------------------------------------------------------
+
+function dateKeyFor(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+// Counts consecutive answered days up to today. If today isn't answered
+// yet, counting starts from yesterday instead — so an in-progress streak
+// doesn't visibly drop to 0 before the day is even over.
+function computeCheckinStreak(checkins, userId) {
+  const answeredDates = new Set(checkins.filter((c) => c.userId === userId && c.answer).map((c) => c.date));
+  if (!answeredDates.size) return 0;
+
+  const cursor = new Date();
+  if (!answeredDates.has(dateKeyFor(cursor))) {
+    cursor.setUTCDate(cursor.getUTCDate() - 1);
+  }
+
+  let streak = 0;
+  while (answeredDates.has(dateKeyFor(cursor))) {
+    streak += 1;
+    cursor.setUTCDate(cursor.getUTCDate() - 1);
+  }
+  return streak;
+}
+
+// ---------------------------------------------------------------------------
+// Email unsubscribe links — a signed, scoped token (not a login token) so
+// clicking it from an inbox can flip one preference off without a session.
+// ---------------------------------------------------------------------------
+
+function unsubscribeLink(user, kind) {
+  const token = jwt.sign({ sub: user.id, scope: "email-unsub", kind }, JWT_SECRET, { expiresIn: "365d" });
+  return `${APP_URL}/api/email/unsubscribe?token=${encodeURIComponent(token)}`;
+}
+
+// ---------------------------------------------------------------------------
 // auth
 // ---------------------------------------------------------------------------
 
 app.post("/api/auth/register", (req, res) => {
   try {
-    const { email, password, name } = req.body || {};
+    const { email, password, name, referralCode } = req.body || {};
     if (!email || !password) {
       return res.status(400).json({ error: "Email and password are required." });
     }
@@ -507,6 +629,11 @@ app.post("/api/auth/register", (req, res) => {
     const normalizedEmail = String(email).trim().toLowerCase();
     if (db.users.some((u) => u.email === normalizedEmail)) {
       return res.status(409).json({ error: "An account with this email already exists." });
+    }
+
+    let referrer = null;
+    if (referralCode) {
+      referrer = db.users.find((u) => u.referralCode === String(referralCode).trim().toLowerCase()) || null;
     }
 
     const user = {
@@ -521,6 +648,11 @@ app.post("/api/auth/register", (req, res) => {
       stripeCustomerId: null,
       stripeSubscriptionId: null,
       subscriptionStatus: null,
+      referralCode: generateUniqueReferralCode(db),
+      referredBy: referrer ? referrer.id : null,
+      referralRewardGranted: false,
+      emailCheckinReminders: true,
+      emailWeeklyDigest: true,
     };
 
     db.users.push(user);
@@ -559,6 +691,39 @@ app.post("/api/auth/login", (req, res) => {
 
 app.get("/api/me", authMiddleware, (req, res) => {
   res.json(publicUser(req.user));
+});
+
+app.post("/api/me/email-preferences", authMiddleware, (req, res) => {
+  const db = req.db;
+  const { checkinReminders, weeklyDigest } = req.body || {};
+  if (checkinReminders !== undefined) req.user.emailCheckinReminders = !!checkinReminders;
+  if (weeklyDigest !== undefined) req.user.emailWeeklyDigest = !!weeklyDigest;
+  writeDb(db);
+  res.json({
+    emailCheckinReminders: req.user.emailCheckinReminders !== false,
+    emailWeeklyDigest: req.user.emailWeeklyDigest !== false,
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Referrals
+// ---------------------------------------------------------------------------
+
+app.get("/api/referrals", authMiddleware, (req, res) => {
+  const db = req.db;
+  // Backfills a code for accounts created before this feature existed.
+  if (!req.user.referralCode) {
+    req.user.referralCode = generateUniqueReferralCode(db);
+    writeDb(db);
+  }
+
+  const referred = db.users.filter((u) => u.referredBy === req.user.id);
+  res.json({
+    code: req.user.referralCode,
+    link: `${APP_URL}/register.html?ref=${req.user.referralCode}`,
+    referredCount: referred.length,
+    rewardedCount: referred.filter((u) => u.referralRewardGranted).length,
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -947,25 +1112,7 @@ app.post("/api/insights", authMiddleware, async (req, res) => {
 
     if (isOverDailyLimit(user, res)) return;
 
-    const digest = buildInsightsDigest(coachConversations);
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: INSIGHTS_SYSTEM_PROMPT },
-        { role: "user", content: `Conversations (newest first):\n"""\n${digest}\n"""` },
-      ],
-      temperature: 0.4,
-      response_format: { type: "json_object" },
-    });
-
-    let parsed = {};
-    try {
-      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    } catch (err) {
-      parsed = {};
-    }
-    const patterns = Array.isArray(parsed.patterns) ? parsed.patterns.slice(0, 4) : [];
-    const note = String(parsed.note || "").trim();
+    const { patterns, note } = await generateInsightsRaw(coachConversations);
     const generatedAt = new Date().toISOString();
 
     user.insights = { patterns, note };
@@ -986,6 +1133,53 @@ app.post("/api/insights", authMiddleware, async (req, res) => {
     res.status(500).json({ error: "Couldn't generate insights right now. Please try again." });
   }
 });
+
+// Bare OpenAI call for the insights feature, with no caching or usage-limit
+// logic of its own — both the /api/insights route (user-triggered, gated by
+// isOverDailyLimit) and the weekly digest cron job (background, its own
+// staleness check) call this and layer their own caching on top.
+async function generateInsightsRaw(coachConversations) {
+  const digest = buildInsightsDigest(coachConversations);
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: INSIGHTS_SYSTEM_PROMPT },
+      { role: "user", content: `Conversations (newest first):\n"""\n${digest}\n"""` },
+    ],
+    temperature: 0.4,
+    response_format: { type: "json_object" },
+  });
+
+  let parsed = {};
+  try {
+    parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+  } catch (err) {
+    parsed = {};
+  }
+  return {
+    patterns: Array.isArray(parsed.patterns) ? parsed.patterns.slice(0, 4) : [],
+    note: String(parsed.note || "").trim(),
+  };
+}
+
+// Used by the weekly digest job only: reuses cached insights if they were
+// generated within the last 6 days, otherwise generates fresh ones. Doesn't
+// touch user.usage — a background digest shouldn't eat into someone's daily
+// AI-message limit the way an action they took themselves would.
+async function generateInsightsForDigest(db, user, coachConversations) {
+  if (user.insights && user.insightsAt) {
+    const ageMs = Date.now() - new Date(user.insightsAt).getTime();
+    if (ageMs < 6 * 24 * 60 * 60 * 1000) {
+      return { patterns: user.insights.patterns, note: user.insights.note };
+    }
+  }
+
+  const { patterns, note } = await generateInsightsRaw(coachConversations);
+  user.insights = { patterns, note };
+  user.insightsAt = new Date().toISOString();
+  writeDb(db);
+  return { patterns, note };
+}
 
 // ---------------------------------------------------------------------------
 // Message Coach — one-off rewrite tool, not tied to a saved conversation
@@ -1153,6 +1347,7 @@ app.get("/api/checkin/today", authMiddleware, (req, res) => {
   const today = todayKey();
   const question = checkinQuestionForDate(today);
   const existing = req.db.checkins.find((c) => c.userId === req.user.id && c.date === today);
+  const streak = computeCheckinStreak(req.db.checkins, req.user.id);
 
   if (existing) {
     return res.json({
@@ -1161,10 +1356,11 @@ app.get("/api/checkin/today", authMiddleware, (req, res) => {
       answered: !!existing.answer,
       skipped: !!existing.skipped,
       answer: existing.answer || null,
+      streak,
     });
   }
 
-  res.json({ date: today, question, answered: false, skipped: false, answer: null });
+  res.json({ date: today, question, answered: false, skipped: false, answer: null, streak });
 });
 
 app.post("/api/checkin", authMiddleware, (req, res) => {
@@ -1413,6 +1609,137 @@ app.get("/api/public/shares/:token", (req, res) => {
     updatedAt: share.updatedAt,
   });
 });
+
+// ---------------------------------------------------------------------------
+// Email unsubscribe — reached straight from an inbox, so no login required.
+// The token is scope-limited (see unsubscribeLink above) and only ever
+// flips one preference off for the one user it was signed for.
+// ---------------------------------------------------------------------------
+
+app.get("/api/email/unsubscribe", (req, res) => {
+  const rawToken = req.query.token;
+  try {
+    const payload = jwt.verify(String(rawToken || ""), JWT_SECRET);
+    if (payload.scope !== "email-unsub") throw new Error("wrong token scope");
+
+    const db = readDb();
+    const user = db.users.find((u) => u.id === payload.sub);
+    if (user) {
+      if (payload.kind === "digest") user.emailWeeklyDigest = false;
+      else user.emailCheckinReminders = false;
+      writeDb(db);
+    }
+
+    res.send(`<!DOCTYPE html>
+<html><body style="font-family:-apple-system,BlinkMacSystemFont,sans-serif; background:#17130f; color:#f6efe4; padding:60px 20px; text-align:center;">
+  <h2 style="font-family:Georgia,serif;">You're unsubscribed</h2>
+  <p style="color:#b6a795;">You won't get this email again. You can turn it back on anytime from your RelateIQ account page.</p>
+</body></html>`);
+  } catch (err) {
+    res.status(400).send("This unsubscribe link is invalid or has expired.");
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Scheduled emails — daily check-in reminder, weekly insights digest. No
+// external cron needed: this always-on web service just checks every 15
+// minutes whether it's time to run today's/this week's job, using a marker
+// persisted in the db so a redeploy/restart never causes a duplicate send
+// within the same day.
+// ---------------------------------------------------------------------------
+
+const DAILY_REMINDER_HOUR_UTC = 17;
+const WEEKLY_DIGEST_DAY_UTC = 1; // Monday (0 = Sunday)
+const WEEKLY_DIGEST_HOUR_UTC = 9;
+
+async function runDailyCheckinReminders() {
+  const db = readDb();
+  const today = todayKey();
+  const question = checkinQuestionForDate(today);
+  const candidates = db.users.filter((u) => u.email && u.emailCheckinReminders !== false);
+
+  for (const user of candidates) {
+    const already = db.checkins.find((c) => c.userId === user.id && c.date === today);
+    if (already) continue;
+
+    const html = emailShell({
+      unsubscribeUrl: unsubscribeLink(user, "checkin"),
+      bodyHtml: `
+        <p>Hey ${escapeForEmail(user.name)},</p>
+        <p>Today's check-in question:</p>
+        <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(question)}"</p>
+        <p><a href="${APP_URL}/dashboard.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Answer it →</a></p>
+      `,
+    });
+
+    await sendEmail({ to: user.email, subject: "Today's RelateIQ check-in", html });
+  }
+}
+
+async function runWeeklyInsightsDigest() {
+  const db = readDb();
+  const candidates = db.users.filter((u) => u.email && u.emailWeeklyDigest !== false);
+
+  for (const user of candidates) {
+    const coachConversations = db.conversations
+      .filter(
+        (c) => c.userId === user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user")
+      )
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    if (coachConversations.length < INSIGHTS_MIN_CONVERSATIONS) continue;
+
+    try {
+      const { patterns } = await generateInsightsForDigest(db, user, coachConversations);
+      if (!patterns.length) continue;
+
+      const itemsHtml = patterns
+        .map(
+          (p) =>
+            `<p style="margin:0 0 12px;"><strong style="color:#f6efe4;">${escapeForEmail(p.title)}</strong><br/><span style="color:#b6a795;">${escapeForEmail(p.description)}</span></p>`
+        )
+        .join("");
+
+      const html = emailShell({
+        unsubscribeUrl: unsubscribeLink(user, "digest"),
+        bodyHtml: `
+          <p>Hey ${escapeForEmail(user.name)},</p>
+          <p>Here's what RelateIQ noticed across your conversations this week:</p>
+          ${itemsHtml}
+          <p><a href="${APP_URL}/insights.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">See full insights →</a></p>
+        `,
+      });
+
+      await sendEmail({ to: user.email, subject: "Your weekly RelateIQ insights", html });
+    } catch (err) {
+      console.error(`Weekly digest failed for user ${user.id}:`, err.message);
+    }
+  }
+}
+
+function emailJobsDueCheck() {
+  const db = readDb();
+  const now = new Date();
+  const today = todayKey();
+
+  if (now.getUTCHours() >= DAILY_REMINDER_HOUR_UTC && db.emailJobs.lastDailyReminder !== today) {
+    db.emailJobs.lastDailyReminder = today;
+    writeDb(db);
+    runDailyCheckinReminders().catch((err) => console.error("Daily reminder job failed:", err));
+  }
+
+  if (
+    now.getUTCDay() === WEEKLY_DIGEST_DAY_UTC &&
+    now.getUTCHours() >= WEEKLY_DIGEST_HOUR_UTC &&
+    db.emailJobs.lastWeeklyDigest !== today
+  ) {
+    db.emailJobs.lastWeeklyDigest = today;
+    writeDb(db);
+    runWeeklyInsightsDigest().catch((err) => console.error("Weekly digest job failed:", err));
+  }
+}
+
+setInterval(emailJobsDueCheck, 15 * 60 * 1000);
 
 // Safety net: catches anything not already handled by a route's own
 // try/catch (e.g. a thrown error in a synchronous helper) so the client

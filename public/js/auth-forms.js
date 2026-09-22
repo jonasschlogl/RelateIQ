@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.textContent = "Creating account…";
 
       try {
+        const referralCode = consumePendingReferral();
         const res = await fetch("/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password }),
+          body: JSON.stringify({ name, email, password, referralCode }),
         });
         const data = await safeJson(res);
         if (!res.ok) throw new Error(data.error || "Registration failed.");

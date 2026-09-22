@@ -194,6 +194,7 @@ function renderDetail() {
     delBtn.type = "button";
     delBtn.className = "share-item-delete";
     delBtn.title = "Remove from share";
+    delBtn.setAttribute("aria-label", "Remove from share");
     delBtn.textContent = "✕";
     delBtn.addEventListener("click", () => deleteItem(item.id));
 

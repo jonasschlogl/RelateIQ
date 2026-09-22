@@ -29,11 +29,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     renderBillingActions(me);
+    wireEmailPreferences(me);
   } catch (err) {
     console.error(err);
   }
 
   loadCheckin();
+  loadReferrals();
 
   try {
     const convRes = await authFetch("/api/conversations");
@@ -115,6 +117,15 @@ async function loadCheckin() {
 
 function renderCheckin(data) {
   const body = document.getElementById("checkin-body");
+  const streakBadge = document.getElementById("streak-badge");
+  if (streakBadge) {
+    if (data.streak > 0) {
+      streakBadge.style.display = "inline-flex";
+      streakBadge.textContent = `🔥 ${data.streak} day${data.streak === 1 ? "" : "s"}`;
+    } else {
+      streakBadge.style.display = "none";
+    }
+  }
 
   if (data.answered) {
     body.innerHTML = `
@@ -220,6 +231,72 @@ function renderBillingActions(me) {
         btn.textContent = original;
       });
     });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Email preferences
+// ---------------------------------------------------------------------------
+
+function wireEmailPreferences(me) {
+  const checkinBox = document.getElementById("pref-checkin");
+  const digestBox = document.getElementById("pref-digest");
+  if (!checkinBox || !digestBox) return;
+
+  checkinBox.checked = me.emailCheckinReminders !== false;
+  digestBox.checked = me.emailWeeklyDigest !== false;
+
+  async function save() {
+    try {
+      await authFetch("/api/me/email-preferences", {
+        method: "POST",
+        body: JSON.stringify({
+          checkinReminders: checkinBox.checked,
+          weeklyDigest: digestBox.checked,
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  checkinBox.addEventListener("change", save);
+  digestBox.addEventListener("change", save);
+}
+
+// ---------------------------------------------------------------------------
+// Referrals — invite a friend, both get a free month when they subscribe
+// ---------------------------------------------------------------------------
+
+async function loadReferrals() {
+  const linkText = document.getElementById("referral-link-text");
+  const statsText = document.getElementById("referral-stats");
+  const copyBtn = document.getElementById("copy-referral-btn");
+  if (!linkText) return;
+
+  try {
+    const res = await authFetch("/api/referrals");
+    const data = await safeJson(res);
+    if (!res.ok) {
+      linkText.textContent = data.error || "Couldn't load your invite link.";
+      return;
+    }
+
+    linkText.textContent = data.link;
+
+    if (data.referredCount > 0) {
+      statsText.style.display = "block";
+      statsText.textContent = `${data.referredCount} friend${data.referredCount === 1 ? "" : "s"} joined through your link · ${data.rewardedCount} free month${data.rewardedCount === 1 ? "" : "s"} earned`;
+    }
+
+    copyBtn?.addEventListener("click", () => {
+      navigator.clipboard?.writeText(data.link).then(() => {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy link"), 1500);
+      });
+    });
+  } catch (err) {
+    linkText.textContent = "Couldn't connect to the server.";
   }
 }
 

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=14" />
+  <link rel="stylesheet" href="css/style.css?v=15" />
 </head>
 <body>
 
@@ -43,15 +43,42 @@
       </div>
 
       <div class="billing-actions" id="billing-actions"></div>
+
+      <div class="email-prefs" id="email-prefs">
+        <span class="label">Email me</span>
+        <label class="email-pref-toggle">
+          <input type="checkbox" id="pref-checkin" checked />
+          Daily check-in reminders
+        </label>
+        <label class="email-pref-toggle">
+          <input type="checkbox" id="pref-digest" checked />
+          Weekly insights digest
+        </label>
+      </div>
     </section>
 
     <section class="dashboard-card checkin-card" id="checkin-card" style="display:none;">
       <div class="dashboard-card-header">
         <h2>Daily check-in</h2>
-        <span class="section-tag" style="margin:0;">Optional</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="streak-badge" id="streak-badge" style="display:none;"></span>
+          <span class="section-tag" style="margin:0;">Optional</span>
+        </div>
       </div>
       <p class="text-muted" style="margin-bottom:0;">A completely optional prompt to help you notice how the relationship is actually going. Skip it anytime — nothing depends on it.</p>
       <div id="checkin-body"></div>
+    </section>
+
+    <section class="dashboard-card">
+      <div class="dashboard-card-header">
+        <h2>Invite a friend or partner</h2>
+      </div>
+      <p class="text-muted">When someone you invite subscribes to a paid plan, you both get a month free.</p>
+      <div class="referral-box">
+        <span id="referral-link-text">Loading your invite link…</span>
+        <button class="btn btn-gradient btn-sm" id="copy-referral-btn" type="button">Copy link</button>
+      </div>
+      <p class="text-muted referral-stats" id="referral-stats" style="display:none;"></p>
     </section>
 
     <section class="dashboard-card">
@@ -112,7 +139,7 @@
     </section>
   </main>
 
-  <script src="js/shared.js?v=6"></script>
-  <script src="js/dashboard.js?v=5"></script>
+  <script src="js/shared.js?v=7"></script>
+  <script src="js/dashboard.js?v=6"></script>
 </body>
 </html>
