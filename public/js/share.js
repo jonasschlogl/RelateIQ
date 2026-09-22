@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("delete-share-btn")?.addEventListener("click", deleteShare);
   document.getElementById("add-item-btn")?.addEventListener("click", addItem);
   document.getElementById("share-title-input")?.addEventListener("change", saveTitle);
+  document.getElementById("pick-conversation-btn")?.addEventListener("click", openConversationModal);
 
   try {
     const raw = sessionStorage.getItem("relateiq_pending_share_item");
@@ -155,11 +156,39 @@ function renderDetail() {
     const type = document.createElement("span");
     type.className = "share-item-type";
     type.textContent = itemTypeLabel(item.type);
-    const text = document.createElement("p");
-    text.className = "share-item-text";
-    text.textContent = item.text;
     body.appendChild(type);
-    body.appendChild(text);
+
+    if (item.type === "conversation") {
+      const count = Array.isArray(item.messages) ? item.messages.length : 0;
+      const title = document.createElement("p");
+      title.className = "share-item-text";
+      title.textContent = `${item.text} (${count} message${count === 1 ? "" : "s"})`;
+      body.appendChild(title);
+
+      const transcriptWrap = document.createElement("div");
+      transcriptWrap.style.display = "none";
+      transcriptWrap.style.marginTop = "10px";
+      transcriptWrap.innerHTML = renderTranscriptHtml(item.messages);
+
+      const toggleBtn = document.createElement("button");
+      toggleBtn.type = "button";
+      toggleBtn.className = "btn btn-ghost btn-sm";
+      toggleBtn.style.marginTop = "8px";
+      toggleBtn.textContent = "View transcript";
+      toggleBtn.addEventListener("click", () => {
+        const showing = transcriptWrap.style.display !== "none";
+        transcriptWrap.style.display = showing ? "none" : "block";
+        toggleBtn.textContent = showing ? "View transcript" : "Hide transcript";
+      });
+
+      body.appendChild(toggleBtn);
+      body.appendChild(transcriptWrap);
+    } else {
+      const text = document.createElement("p");
+      text.className = "share-item-text";
+      text.textContent = item.text;
+      body.appendChild(text);
+    }
 
     const delBtn = document.createElement("button");
     delBtn.type = "button";
@@ -177,6 +206,7 @@ function renderDetail() {
 function itemTypeLabel(type) {
   if (type === "message-rewrite") return "Message rewrite";
   if (type === "debrief") return "Practice takeaway";
+  if (type === "conversation") return "Whole conversation";
   return "Note";
 }
 
@@ -292,5 +322,148 @@ async function deleteItem(itemId) {
     }
   } catch (e) {
     /* ignore */
+  }
+}
+
+// --- "Share a whole conversation" modal ------------------------------------
+// Three steps: pick a conversation -> preview its full transcript -> confirm.
+// The confirm step only fires after the user has actually seen every
+// message, since sharing a whole conversation is a much bigger disclosure
+// than adding one hand-picked item.
+
+function closeConversationModal() {
+  document.getElementById("conversation-modal").style.display = "none";
+}
+
+function wireModalCancel() {
+  document.getElementById("modal-cancel-btn")?.addEventListener("click", closeConversationModal);
+}
+
+async function openConversationModal() {
+  const modal = document.getElementById("conversation-modal");
+  const body = document.getElementById("conversation-modal-body");
+  modal.style.display = "flex";
+  body.innerHTML = '<p class="text-muted">Loading your conversations…</p>';
+
+  try {
+    const res = await authFetch("/api/conversations");
+    const data = await safeJson(res);
+    if (!res.ok) {
+      body.innerHTML = `<p class="text-muted">${escapeHtml(data.error || "Couldn't load your conversations.")}</p><div class="modal-close-row"><button class="btn btn-ghost btn-sm" id="modal-cancel-btn" type="button">Close</button></div>`;
+      wireModalCancel();
+      return;
+    }
+    renderConversationList(data);
+  } catch (e) {
+    body.innerHTML = '<p class="text-muted">Couldn\'t connect to the server.</p>';
+  }
+}
+
+function renderConversationList(conversations) {
+  const body = document.getElementById("conversation-modal-body");
+
+  if (!conversations.length) {
+    body.innerHTML =
+      '<h2>Choose a conversation</h2><p class="text-muted">You don\'t have any conversations yet.</p><div class="modal-close-row"><button class="btn btn-ghost btn-sm" id="modal-cancel-btn" type="button">Close</button></div>';
+    wireModalCancel();
+    return;
+  }
+
+  const rowsHtml = conversations
+    .map(
+      (c) => `
+      <div class="conversation-pick-row" data-id="${escapeHtml(c.id)}">
+        <div>
+          <div>${escapeHtml(c.title || "Conversation")}</div>
+          <div class="conversation-pick-meta">${c.mode === "practice" ? "Practice" : "Coach"} · ${formatShareDate(c.updatedAt)}</div>
+        </div>
+        <span class="text-muted">Preview →</span>
+      </div>`
+    )
+    .join("");
+
+  body.innerHTML = `
+    <h2>Choose a conversation</h2>
+    <p class="text-muted">Pick one to preview the whole thing before sharing it.</p>
+    <div class="conversation-pick-list">${rowsHtml}</div>
+    <div class="modal-close-row"><button class="btn btn-ghost btn-sm" id="modal-cancel-btn" type="button">Cancel</button></div>
+  `;
+  wireModalCancel();
+
+  body.querySelectorAll(".conversation-pick-row").forEach((row) => {
+    row.addEventListener("click", () => previewConversation(row.getAttribute("data-id")));
+  });
+}
+
+async function previewConversation(conversationId) {
+  const body = document.getElementById("conversation-modal-body");
+  body.innerHTML = '<p class="text-muted">Loading conversation…</p>';
+  try {
+    const res = await authFetch(`/api/conversations/${conversationId}`);
+    const data = await safeJson(res);
+    if (!res.ok) {
+      body.innerHTML = `<p class="text-muted">${escapeHtml(data.error || "Couldn't load that conversation.")}</p><div class="modal-close-row"><button class="btn btn-ghost btn-sm" id="modal-cancel-btn" type="button">Close</button></div>`;
+      wireModalCancel();
+      return;
+    }
+    renderConversationPreview(data);
+  } catch (e) {
+    body.innerHTML = '<p class="text-muted">Couldn\'t connect to the server.</p>';
+  }
+}
+
+function renderConversationPreview(conv) {
+  const body = document.getElementById("conversation-modal-body");
+  body.innerHTML = `
+    <h2>${escapeHtml(conv.title || "Conversation")}</h2>
+    <div class="share-conversation-warning">Everything below will be visible to anyone with the share link — check it over before sharing.</div>
+    ${renderTranscriptHtml(conv.messages)}
+    <div class="modal-close-row">
+      <button class="btn btn-ghost btn-sm" id="modal-back-btn" type="button">← Back</button>
+      <button class="btn btn-gradient btn-sm" id="modal-confirm-btn" type="button">Share this conversation</button>
+    </div>
+  `;
+  document.getElementById("modal-back-btn")?.addEventListener("click", openConversationModal);
+  document.getElementById("modal-confirm-btn")?.addEventListener("click", () => confirmShareConversation(conv.id));
+}
+
+async function confirmShareConversation(conversationId) {
+  if (!currentShare) return;
+  const confirmBtn = document.getElementById("modal-confirm-btn");
+  if (confirmBtn) {
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = "Sharing…";
+  }
+  try {
+    const res = await authFetch(`/api/shares/${currentShare.id}/items/from-conversation`, {
+      method: "POST",
+      body: JSON.stringify({ conversationId }),
+    });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      alert(data.error || "Couldn't add that conversation.");
+      if (confirmBtn) {
+        confirmBtn.disabled = false;
+        confirmBtn.textContent = "Share this conversation";
+      }
+      return;
+    }
+    currentShare = data;
+    closeConversationModal();
+    renderDetail();
+  } catch (e) {
+    alert("Couldn't connect to the server.");
+    if (confirmBtn) {
+      confirmBtn.disabled = false;
+      confirmBtn.textContent = "Share this conversation";
+    }
+  }
+}
+
+function formatShareDate(iso) {
+  try {
+    return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  } catch (e) {
+    return "";
   }
 }

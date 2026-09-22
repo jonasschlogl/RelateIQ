@@ -1217,7 +1217,7 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
 
 const MAX_SHARES_PER_USER = 10;
 const MAX_ITEMS_PER_SHARE = 30;
-const SHARE_ITEM_TYPES = new Set(["note", "message-rewrite", "debrief"]);
+const SHARE_ITEM_TYPES = new Set(["note", "message-rewrite", "debrief", "conversation"]);
 
 function publicShare(share) {
   return {
@@ -1336,6 +1336,51 @@ app.post("/api/shares/:id/items", authMiddleware, (req, res) => {
   }
 });
 
+// Adds an entire conversation to a share, as a point-in-time snapshot — not
+// a live link to the conversation. This matters: if it were live, a message
+// the user writes into that same conversation *after* sharing the link
+// would silently become visible to the partner too, without the user ever
+// choosing to share it. The frontend also requires the user to preview the
+// full transcript before calling this, so nothing goes out unseen.
+app.post("/api/shares/:id/items/from-conversation", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+    if (!share) return res.status(404).json({ error: "Share not found." });
+
+    const { conversationId } = req.body || {};
+    const conv = db.conversations.find((c) => c.id === conversationId && c.userId === req.user.id);
+    if (!conv) return res.status(404).json({ error: "Conversation not found." });
+
+    if (share.items.length >= MAX_ITEMS_PER_SHARE) {
+      return res.status(403).json({ error: `A share can hold up to ${MAX_ITEMS_PER_SHARE} items.` });
+    }
+
+    const messages = (conv.messages || [])
+      .filter((m) => m && m.content && String(m.content).trim())
+      .map((m) => ({ role: m.role === "user" ? "user" : "assistant", content: String(m.content).trim() }));
+
+    if (!messages.length) {
+      return res.status(400).json({ error: "This conversation doesn't have any messages yet." });
+    }
+
+    const item = {
+      id: generateId("item"),
+      type: "conversation",
+      text: conv.title || "Conversation",
+      messages,
+      createdAt: new Date().toISOString(),
+    };
+    share.items.push(item);
+    share.updatedAt = new Date().toISOString();
+    writeDb(db);
+    res.json(publicShare(share));
+  } catch (err) {
+    console.error("Add conversation share item error:", err);
+    res.status(500).json({ error: "Couldn't add that conversation. Please try again." });
+  }
+});
+
 app.delete("/api/shares/:id/items/:itemId", authMiddleware, (req, res) => {
   const db = req.db;
   const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
@@ -1359,7 +1404,12 @@ app.get("/api/public/shares/:token", (req, res) => {
   }
   res.json({
     title: share.title,
-    items: share.items.map((i) => ({ type: i.type, text: i.text, createdAt: i.createdAt })),
+    items: share.items.map((i) => ({
+      type: i.type,
+      text: i.text,
+      messages: i.type === "conversation" ? i.messages : undefined,
+      createdAt: i.createdAt,
+    })),
     updatedAt: share.updatedAt,
   });
 });

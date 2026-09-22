@@ -129,6 +129,29 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Renders a read-only transcript of conversation messages. Used by the
+// "share a whole conversation" feature: the owner's preview-before-sharing
+// modal, the collapsed item in their share editor, and the partner's
+// read-only view all render a conversation the same way from this one
+// function, so what the owner previews is exactly what the partner sees.
+function renderTranscriptHtml(messages) {
+  const list = Array.isArray(messages) ? messages : [];
+  const visible = list.filter((m) => m && m.content && String(m.content).trim());
+  if (!visible.length) {
+    return '<p class="transcript-empty">No messages in this conversation.</p>';
+  }
+  return (
+    '<div class="transcript">' +
+    visible
+      .map((m) => {
+        const role = m.role === "user" ? "role-user" : "role-assistant";
+        return `<div class="transcript-msg ${role}">${escapeHtml(m.content)}</div>`;
+      })
+      .join("") +
+    "</div>"
+  );
+}
+
 // Wires a mic button to dictate into a text input/textarea using the Web
 // Speech API. This is a progressive enhancement only — Firefox and some
 // browsers don't support it at all, so the button hides itself rather than

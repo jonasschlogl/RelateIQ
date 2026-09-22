@@ -31,15 +31,21 @@ function renderShared(data) {
   const stateEl = document.getElementById("shared-state");
 
   const itemsHtml = data.items.length
-    ? data.items.map(
-        (item) => `
+    ? data.items
+        .map((item) => {
+          const bodyHtml =
+            item.type === "conversation"
+              ? `<p class="share-item-text" style="margin-bottom:10px;">${escapeHtml(item.text)}</p>${renderTranscriptHtml(item.messages)}`
+              : `<p class="share-item-text">${escapeHtml(item.text)}</p>`;
+          return `
       <div class="share-item-row share-item-row-readonly">
         <div class="share-item-body">
           <span class="share-item-type">${escapeHtml(itemTypeLabel(item.type))}</span>
-          <p class="share-item-text">${escapeHtml(item.text)}</p>
+          ${bodyHtml}
         </div>
-      </div>`
-      ).join("")
+      </div>`;
+        })
+        .join("")
     : '<p class="text-muted">Nothing has been added to this share yet.</p>';
 
   stateEl.innerHTML = `
@@ -55,5 +61,6 @@ function renderShared(data) {
 function itemTypeLabel(type) {
   if (type === "message-rewrite") return "Message rewrite";
   if (type === "debrief") return "Practice takeaway";
+  if (type === "conversation") return "Whole conversation";
   return "Note";
 }
