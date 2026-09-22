@@ -62,6 +62,23 @@ async function rewrite() {
     });
     resultBox.appendChild(copyBtn);
 
+    const shareBtn = document.createElement("button");
+    shareBtn.type = "button";
+    shareBtn.className = "btn btn-ghost btn-sm coach-copy-btn";
+    shareBtn.textContent = "Share with partner";
+    shareBtn.addEventListener("click", () => {
+      try {
+        sessionStorage.setItem(
+          "relateiq_pending_share_item",
+          JSON.stringify({ type: "message-rewrite", text: data.rewrite })
+        );
+      } catch (e) {
+        /* ignore storage errors */
+      }
+      window.location.href = "share.html";
+    });
+    resultBox.appendChild(shareBtn);
+
     if (data.why) {
       const whyLabel = document.createElement("div");
       whyLabel.className = "coach-why-label";

@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attachment Style Quiz · RelateIQ</title>
+  <title>Shared with you · RelateIQ</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Someone using RelateIQ shared this with you directly." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -18,26 +20,25 @@
   <header class="site-nav">
     <a href="index.html" class="brand">Relate<span>IQ</span></a>
     <nav class="nav-links">
-      <a href="chat.html">Chat</a>
-      <a href="dashboard.html">My account</a>
-      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+      <a href="index.html">What's RelateIQ?</a>
     </nav>
   </header>
 
   <main class="tool-page">
-    <div class="tool-header">
-      <span class="section-tag">Optional · takes ~2 minutes</span>
-      <h1>What's your attachment style?</h1>
-      <p class="text-muted">A short, informal quiz — not a diagnosis — to help you understand patterns in how you connect, worry, and pull away in relationships. Entirely optional, and you can stop anytime.</p>
-      <a href="dashboard.html" class="text-muted" style="font-size:13px; text-decoration:underline;">Skip for now →</a>
+    <div id="shared-state">
+      <p class="summary-loading">Loading…</p>
     </div>
-
-    <div class="quiz-progress"><div class="quiz-progress-bar" id="progress-bar" style="width:0%;"></div></div>
-
-    <div id="quiz-body"></div>
   </main>
 
+  <footer class="site-footer">
+    <p class="footer-disclaimer">
+      RelateIQ is an AI tool for personal growth and does not replace professional psychological or therapeutic
+      care. If you're in a crisis, please contact a professional or a helpline in your country.
+    </p>
+    <p class="footer-copy">© 2026 RelateIQ</p>
+  </footer>
+
   <script src="js/shared.js?v=5"></script>
-  <script src="js/quiz.js?v=1"></script>
+  <script src="js/shared-view.js?v=1"></script>
 </body>
 </html>

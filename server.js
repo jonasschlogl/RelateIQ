@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
+import crypto from "crypto";
 import { fileURLToPath } from "url";
 import OpenAI from "openai";
 import bcrypt from "bcryptjs";
@@ -1202,6 +1203,165 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
     console.error("Checkin error:", err);
     res.status(500).json({ error: "Couldn't save your check-in. Please try again." });
   }
+});
+
+// ---------------------------------------------------------------------------
+// Partner sharing — a read-only link the user builds by hand, item by item.
+// The partner never needs an account. Nothing here is ever populated
+// automatically from a conversation or summary — every item is text the
+// user explicitly wrote or pasted in, because a Coach Chat conversation can
+// contain complaints about the partner that were never meant for them to
+// read. Keep it that way: this feature must never gain a "share this whole
+// conversation/summary" shortcut without a real reconsideration of privacy.
+// ---------------------------------------------------------------------------
+
+const MAX_SHARES_PER_USER = 10;
+const MAX_ITEMS_PER_SHARE = 30;
+const SHARE_ITEM_TYPES = new Set(["note", "message-rewrite", "debrief"]);
+
+function publicShare(share) {
+  return {
+    id: share.id,
+    title: share.title,
+    token: share.token,
+    items: share.items,
+    revoked: !!share.revoked,
+    createdAt: share.createdAt,
+    updatedAt: share.updatedAt,
+  };
+}
+
+app.get("/api/shares", authMiddleware, (req, res) => {
+  const list = req.db.shares
+    .filter((s) => s.userId === req.user.id)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .map(publicShare);
+  res.json(list);
+});
+
+app.post("/api/shares", authMiddleware, (req, res) => {
+  try {
+    const { title } = req.body || {};
+    const db = req.db;
+    const existingCount = db.shares.filter((s) => s.userId === req.user.id).length;
+    if (existingCount >= MAX_SHARES_PER_USER) {
+      return res.status(403).json({
+        error: `You can have up to ${MAX_SHARES_PER_USER} shares at once. Delete an old one to make room.`,
+      });
+    }
+
+    const now = new Date().toISOString();
+    const share = {
+      id: generateId("share"),
+      userId: req.user.id,
+      title: String(title || "").trim().slice(0, 80) || "Untitled share",
+      token: crypto.randomBytes(24).toString("hex"),
+      items: [],
+      revoked: false,
+      createdAt: now,
+      updatedAt: now,
+    };
+    db.shares.push(share);
+    writeDb(db);
+    res.json(publicShare(share));
+  } catch (err) {
+    console.error("Create share error:", err);
+    res.status(500).json({ error: "Couldn't create that share. Please try again." });
+  }
+});
+
+app.get("/api/shares/:id", authMiddleware, (req, res) => {
+  const share = req.db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+  if (!share) return res.status(404).json({ error: "Share not found." });
+  res.json(publicShare(share));
+});
+
+app.patch("/api/shares/:id", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+    if (!share) return res.status(404).json({ error: "Share not found." });
+
+    const { title, revoked } = req.body || {};
+    if (title !== undefined) {
+      if (!String(title).trim()) return res.status(400).json({ error: "Give this share a title." });
+      share.title = String(title).trim().slice(0, 80);
+    }
+    if (revoked !== undefined) share.revoked = !!revoked;
+    share.updatedAt = new Date().toISOString();
+    writeDb(db);
+    res.json(publicShare(share));
+  } catch (err) {
+    console.error("Update share error:", err);
+    res.status(500).json({ error: "Couldn't update that share. Please try again." });
+  }
+});
+
+app.delete("/api/shares/:id", authMiddleware, (req, res) => {
+  const db = req.db;
+  const idx = db.shares.findIndex((s) => s.id === req.params.id && s.userId === req.user.id);
+  if (idx === -1) return res.status(404).json({ error: "Share not found." });
+  db.shares.splice(idx, 1);
+  writeDb(db);
+  res.json({ ok: true });
+});
+
+app.post("/api/shares/:id/items", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+    if (!share) return res.status(404).json({ error: "Share not found." });
+
+    const { text, type } = req.body || {};
+    if (!text || !String(text).trim()) {
+      return res.status(400).json({ error: "Write something to add first." });
+    }
+    if (share.items.length >= MAX_ITEMS_PER_SHARE) {
+      return res.status(403).json({ error: `A share can hold up to ${MAX_ITEMS_PER_SHARE} items.` });
+    }
+
+    const item = {
+      id: generateId("item"),
+      type: SHARE_ITEM_TYPES.has(type) ? type : "note",
+      text: String(text).trim().slice(0, 3000),
+      createdAt: new Date().toISOString(),
+    };
+    share.items.push(item);
+    share.updatedAt = new Date().toISOString();
+    writeDb(db);
+    res.json(publicShare(share));
+  } catch (err) {
+    console.error("Add share item error:", err);
+    res.status(500).json({ error: "Couldn't add that. Please try again." });
+  }
+});
+
+app.delete("/api/shares/:id/items/:itemId", authMiddleware, (req, res) => {
+  const db = req.db;
+  const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+  if (!share) return res.status(404).json({ error: "Share not found." });
+  const idx = share.items.findIndex((i) => i.id === req.params.itemId);
+  if (idx === -1) return res.status(404).json({ error: "Item not found." });
+  share.items.splice(idx, 1);
+  share.updatedAt = new Date().toISOString();
+  writeDb(db);
+  res.json(publicShare(share));
+});
+
+// Public, unauthenticated — this is what the partner opens. Gated by the
+// share's token (a long random string, not sequential/guessable) rather
+// than its id, and only ever returns items the user explicitly added.
+app.get("/api/public/shares/:token", (req, res) => {
+  const db = readDb();
+  const share = db.shares.find((s) => s.token === req.params.token);
+  if (!share || share.revoked) {
+    return res.status(404).json({ error: "This share link isn't available. It may have been removed or revoked." });
+  }
+  res.json({
+    title: share.title,
+    items: share.items.map((i) => ({ type: i.type, text: i.text, createdAt: i.createdAt })),
+    updatedAt: share.updatedAt,
+  });
 });
 
 // Safety net: catches anything not already handled by a route's own
