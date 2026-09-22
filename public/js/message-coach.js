@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   requireAuth();
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("rewrite-btn")?.addEventListener("click", rewrite);
+  wireVoiceInput(document.getElementById("draft-mic-btn"), document.getElementById("draft-input"));
 });
 
 async function rewrite() {

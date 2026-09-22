@@ -213,6 +213,38 @@ function buildConversationTranscript(conv) {
     .join("\n\n");
 }
 
+const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns — not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
+
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"patterns": [{"title": "<short label for the pattern, 3-6 words, in the user's language>", "description": "<2-3 plain-text sentences describing the pattern and, if it's reasonably clear, a gentle guess at why it might keep showing up>"}], "note": "<1-2 short, warm, non-clinical sentences overall, or an empty string if nothing meaningful stood out>"}
+
+Rules:
+- Only include a pattern if it genuinely shows up across more than one of the conversations below — never invent one just to fill space. Returning fewer than 4 patterns, or even zero, is completely fine if that's honestly what's there.
+- Never diagnose a mental health or relationship condition, and never use clinical jargon or labels the user hasn't used themselves.
+- Never quote a conversation word-for-word — paraphrase everything.
+- Return at most 4 patterns, ordered by how often they show up.
+- Write everything in the same language the conversations are mostly written in — detect it automatically, the same way ChatGPT does.`;
+
+// Builds a compact, per-conversation digest across several Coach Chat
+// conversations for the insights prompt above. Caps both how many
+// conversations are considered and how much of each is included, so this
+// stays a bounded, affordable request even for a very active user — this
+// is about spotting recurring themes, not a full transcript review.
+function buildInsightsDigest(conversations) {
+  const recent = conversations.slice(0, 15); // caller sorts newest-first
+  return recent
+    .map((conv, i) => {
+      const date = conv.createdAt ? String(conv.createdAt).slice(0, 10) : "undated";
+      const userLines = (conv.messages || [])
+        .filter((m) => m.role === "user")
+        .slice(0, 12)
+        .map((m) => String(m.content || "").slice(0, 300))
+        .filter(Boolean);
+      return `Conversation ${i + 1} (${date}):\n${userLines.join("\n") || "(no text)"}`;
+    })
+    .join("\n\n---\n\n");
+}
+
 function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
   const context = (partner.context || "").trim();
@@ -870,6 +902,87 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
   } catch (err) {
     console.error("Therapist summary error:", err.message);
     res.status(500).json({ error: "Couldn't generate a summary right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Insights — looks across a user's Coach Chat conversations (not Practice,
+// which is rehearsal rather than real events) for recurring patterns.
+// Cached on the user record and regenerated on demand, same shape as the
+// therapist summary above.
+// ---------------------------------------------------------------------------
+
+const INSIGHTS_MIN_CONVERSATIONS = 3;
+
+app.post("/api/insights", authMiddleware, async (req, res) => {
+  try {
+    const db = req.db;
+    const user = db.users.find((u) => u.id === req.user.id);
+
+    const coachConversations = db.conversations
+      .filter(
+        (c) => c.userId === req.user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user")
+      )
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    if (coachConversations.length < INSIGHTS_MIN_CONVERSATIONS) {
+      return res.json({
+        notEnoughData: true,
+        conversationCount: coachConversations.length,
+        needed: INSIGHTS_MIN_CONVERSATIONS,
+      });
+    }
+
+    const regenerate = !!(req.body && req.body.regenerate);
+    if (user.insights && !regenerate) {
+      return res.json({
+        patterns: user.insights.patterns,
+        note: user.insights.note,
+        generatedAt: user.insightsAt,
+        conversationCount: coachConversations.length,
+        cached: true,
+      });
+    }
+
+    if (isOverDailyLimit(user, res)) return;
+
+    const digest = buildInsightsDigest(coachConversations);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: INSIGHTS_SYSTEM_PROMPT },
+        { role: "user", content: `Conversations (newest first):\n"""\n${digest}\n"""` },
+      ],
+      temperature: 0.4,
+      response_format: { type: "json_object" },
+    });
+
+    let parsed = {};
+    try {
+      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      parsed = {};
+    }
+    const patterns = Array.isArray(parsed.patterns) ? parsed.patterns.slice(0, 4) : [];
+    const note = String(parsed.note || "").trim();
+    const generatedAt = new Date().toISOString();
+
+    user.insights = { patterns, note };
+    user.insightsAt = generatedAt;
+    if (user.plan === "free") user.usage.count += 1;
+    writeDb(db);
+
+    res.json({
+      patterns,
+      note,
+      generatedAt,
+      conversationCount: coachConversations.length,
+      cached: false,
+      usage: user.usage,
+    });
+  } catch (err) {
+    console.error("Insights error:", err.message);
+    res.status(500).json({ error: "Couldn't generate insights right now. Please try again." });
   }
 });
 

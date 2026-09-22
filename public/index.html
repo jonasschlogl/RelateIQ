@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=11" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
 </head>
 <body>
 
@@ -81,7 +81,12 @@
         <div class="tool-split">
           <div class="tool-card">
             <h3>Your draft</h3>
-            <textarea id="hero-demo-input" maxlength="400" rows="5">You never help around the house and I'm sick of it.</textarea>
+            <div class="textarea-wrap">
+              <textarea id="hero-demo-input" maxlength="400" rows="5">You never help around the house and I'm sick of it.</textarea>
+              <button class="mic-btn mic-btn-floating" id="hero-demo-mic-btn" type="button" title="Dictate a message">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </button>
+            </div>
             <p class="hero-demo-error" id="hero-demo-error" style="display:none;"></p>
             <button class="btn btn-gradient btn-block" id="hero-demo-btn" type="button" style="margin-top:14px;">Rewrite it</button>
             <p class="hero-demo-note" id="hero-demo-note">3 free rewrites a day here, no account needed. The full app gives you 8 a day, free.</p>
@@ -147,7 +152,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.5C.5 7.5 3 4 6.5 4c2 0 3.5 1.5 4.5 3 1-1.5 2.5-3 4.5-3C19 4 21.5 7.5 19.5 11.5 17 15.65 12 20 12 20z"/></svg>
             </div>
             <h3>Remembers your relationship</h3>
-            <p>No re-explaining the whole backstory every time — it picks up exactly where you left off, conversation after conversation.</p>
+            <p>No re-explaining the whole backstory every time — it picks up exactly where you left off, and after a few conversations it can point out recurring patterns you might not notice on your own.</p>
           </div>
 
           <div class="feature-card">
@@ -233,6 +238,40 @@
       </div>
     </section>
 
+    <section id="therapist-export">
+      <div class="container">
+        <div class="feature-split">
+          <div class="feature-split-text">
+            <span class="section-tag">Built for real therapy, too</span>
+            <h2>Walk into your next session already caught up</h2>
+            <p>Most AI relationship apps stop at the chat window. RelateIQ can turn any Coach Chat conversation into a structured, therapist-ready summary — so instead of spending the first ten minutes re-explaining what happened, you hand your therapist a page that already says it.</p>
+            <ul class="feature-split-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Generated from your actual conversation, not a generic template</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Structured into sections a therapist can scan in under a minute</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Yours to download, print, or open on your phone — nothing is sent anywhere automatically</li>
+            </ul>
+            <a href="register.html" class="btn btn-gradient" data-cta>Try Coach Chat free</a>
+          </div>
+
+          <div class="feature-split-visual" aria-hidden="true">
+            <div class="summary-paper mini-summary">
+              <div class="summary-header">
+                <div class="summary-brand">Relate<span style="color: var(--accent-1)">IQ</span></div>
+                <h1>Session Summary</h1>
+                <p class="summary-subtitle">For sharing with a licensed therapist</p>
+              </div>
+              <h3 class="summary-section">What's going on</h3>
+              <p>Recurring tension around dividing household responsibilities, escalating over the past three weeks. Both partners report feeling unheard during the two most recent conversations.</p>
+              <h3 class="summary-section">Patterns noticed</h3>
+              <p>Both partners tend to withdraw rather than raise the issue directly, which delays resolution and lets frustration build between conversations.</p>
+              <h3 class="summary-section">What's been tried</h3>
+              <p>One direct conversation two weeks ago that ended without a concrete agreement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="compare">
       <div class="container">
         <div class="section-head">
@@ -275,6 +314,12 @@
                 <td class="compare-highlight yes">Yes</td>
                 <td class="no">No</td>
                 <td class="no">No</td>
+              </tr>
+              <tr>
+                <td>Generates a therapist-ready summary</td>
+                <td class="compare-highlight yes">Yes</td>
+                <td class="no">No</td>
+                <td class="na">N/A</td>
               </tr>
               <tr>
                 <td>Wait time to get support</td>
@@ -436,6 +481,7 @@
             ready when you are, grounded in methods real therapists actually use, and honest about where its job
             ends and a professional's begins.</p>
           <p class="mission-signature">— Built by Jonas, after one too many 11pm conversations that would've gone better with a clearer head.</p>
+          <a href="method.html" class="btn btn-ghost btn-sm" style="margin-top:22px;">Read our method &amp; sources</a>
         </div>
       </div>
     </section>
@@ -515,7 +561,7 @@
 
   <a href="register.html" class="floating-cta" id="floating-cta" data-cta>Get started free</a>
 
-  <script src="js/shared.js?v=4"></script>
-  <script src="js/landing.js?v=5"></script>
+  <script src="js/shared.js?v=5"></script>
+  <script src="js/landing.js?v=6"></script>
 </body>
 </html>

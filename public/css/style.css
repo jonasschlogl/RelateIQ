@@ -721,6 +721,10 @@ section {
   color: var(--text-muted);
 }
 
+.compare-table .na {
+  color: var(--text-faint);
+}
+
 /* Icon prefixes so the table reads at a glance, not just by parsing words. */
 .compare-table .yes::before {
   content: "✓";
@@ -773,6 +777,46 @@ section {
   font-style: italic;
   font-size: 15px;
   color: var(--text-muted);
+}
+
+/* Our Method page */
+
+.method-block {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.method-block:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.method-block h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.method-sources {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.method-sources a {
+  color: var(--accent-1);
+}
+
+.method-honesty {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+}
+
+.method-honesty h3 {
+  margin-bottom: 12px;
 }
 
 /* Trust row */
@@ -1485,6 +1529,70 @@ section {
   height: 18px;
 }
 
+.mic-btn {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.mic-btn:hover {
+  border-color: var(--accent-1);
+  color: var(--text);
+}
+
+.mic-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mic-btn.listening {
+  border-color: var(--danger);
+  color: var(--danger);
+  background: var(--danger-bg);
+  animation: mic-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes mic-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(193, 101, 90, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(193, 101, 90, 0);
+  }
+}
+
+.textarea-wrap {
+  position: relative;
+}
+
+.mic-btn-floating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+}
+
+.mic-btn-floating svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mic-btn.listening {
+    animation: none;
+  }
+}
+
 .attachment-preview {
   display: flex;
   flex-wrap: wrap;
@@ -1988,6 +2096,80 @@ section {
   letter-spacing: 0.04em;
   color: var(--accent-2);
   margin-bottom: 6px;
+}
+
+/* Feature split (therapist export, and any future single-feature deep-dive) */
+
+.feature-split {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.feature-split-text .section-tag {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature-split-text h2 {
+  margin-bottom: 14px;
+}
+
+.feature-split-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 26px;
+}
+
+.feature-split-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+
+.feature-split-list li svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  stroke: var(--success);
+}
+
+.feature-split-visual .mini-summary {
+  padding: 26px;
+  font-size: 13px;
+  transform: scale(1);
+}
+
+.feature-split-visual .mini-summary .summary-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+.feature-split-visual .mini-summary .summary-header h1 {
+  font-size: 20px;
+}
+
+.feature-split-visual .mini-summary .summary-section {
+  font-size: 14px;
+  margin: 18px 0 6px;
+}
+
+.feature-split-visual .mini-summary p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .feature-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 /* Check-in card */

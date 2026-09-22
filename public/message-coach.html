@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=11" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
 </head>
 <body>
 
@@ -35,7 +35,12 @@
       <div class="tool-card">
         <h3>Your draft</h3>
         <input type="text" id="context-input" maxlength="200" placeholder="Context (optional) — e.g. after an argument about chores" />
-        <textarea id="draft-input" maxlength="2000" placeholder="Paste or write the message you're about to send…"></textarea>
+        <div class="textarea-wrap">
+          <textarea id="draft-input" maxlength="2000" placeholder="Paste or write the message you're about to send…"></textarea>
+          <button class="mic-btn mic-btn-floating" id="draft-mic-btn" type="button" title="Dictate a message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </button>
+        </div>
         <div class="form-error" id="form-error" style="display:none; margin-top:12px;"></div>
         <button class="btn btn-gradient btn-block" id="rewrite-btn" style="margin-top:14px;">Rewrite it</button>
       </div>
@@ -50,7 +55,7 @@
     </div>
   </main>
 
-  <script src="js/shared.js?v=4"></script>
-  <script src="js/message-coach.js?v=2"></script>
+  <script src="js/shared.js?v=5"></script>
+  <script src="js/message-coach.js?v=3"></script>
 </body>
 </html>

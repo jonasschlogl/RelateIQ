@@ -129,6 +129,88 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Wires a mic button to dictate into a text input/textarea using the Web
+// Speech API. This is a progressive enhancement only — Firefox and some
+// browsers don't support it at all, so the button hides itself rather than
+// sitting there broken. Dictated text is appended after whatever's already
+// in the field (so it plays nicely with someone who typed part of a message
+// and wants to finish it by voice), and interim (not-yet-final) results are
+// shown live so it doesn't feel like it's stalled.
+function wireVoiceInput(buttonEl, fieldEl) {
+  if (!buttonEl || !fieldEl) return;
+  const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognitionCtor) {
+    buttonEl.style.display = "none";
+    return;
+  }
+
+  let recognition = null;
+  let listening = false;
+  let baseText = "";
+
+  function stop() {
+    try {
+      recognition?.stop();
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  buttonEl.addEventListener("click", () => {
+    if (listening) {
+      stop();
+      return;
+    }
+
+    recognition = new SpeechRecognitionCtor();
+    recognition.lang = document.documentElement.lang || navigator.language || "en-US";
+    recognition.continuous = true;
+    recognition.interimResults = true;
+
+    baseText = fieldEl.value;
+    if (baseText && !/\s$/.test(baseText)) baseText += " ";
+
+    recognition.addEventListener("start", () => {
+      listening = true;
+      buttonEl.classList.add("listening");
+      buttonEl.setAttribute("title", "Stop dictating");
+    });
+
+    recognition.addEventListener("result", (event) => {
+      let interim = "";
+      let final = "";
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          final += transcript;
+        } else {
+          interim += transcript;
+        }
+      }
+      if (final) {
+        baseText += final;
+        if (!/\s$/.test(baseText)) baseText += " ";
+      }
+      fieldEl.value = baseText + interim;
+      fieldEl.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+
+    const reset = () => {
+      listening = false;
+      buttonEl.classList.remove("listening");
+      buttonEl.setAttribute("title", "Dictate a message");
+    };
+    recognition.addEventListener("end", reset);
+    recognition.addEventListener("error", reset);
+
+    try {
+      recognition.start();
+    } catch (e) {
+      reset();
+    }
+  });
+}
+
 async function safeJson(res) {
   let text = "";
   try {

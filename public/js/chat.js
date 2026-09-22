@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   document.getElementById("attach-btn")?.addEventListener("click", () => document.getElementById("file-input")?.click());
   document.getElementById("file-input")?.addEventListener("change", handleFilesSelected);
+  wireVoiceInput(document.getElementById("mic-btn"), document.getElementById("input"));
 
   // Only the real mode tabs (Coach/Practice) switch mode in-page — the
   // Message Coach / Attachment Quiz tabs are plain links to their own pages

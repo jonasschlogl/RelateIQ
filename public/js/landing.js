@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initFloatingCta();
   initHeroDemo();
+  wireVoiceInput(document.getElementById("hero-demo-mic-btn"), document.getElementById("hero-demo-input"));
 });
 
 // Fades individual cards/rows in as they scroll into view. Progressive
@@ -62,7 +63,7 @@ function initScrollReveal() {
   if (!("IntersectionObserver" in window)) return;
 
   const targets = document.querySelectorAll(
-    ".feature-card, .mode-card, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block"
+    ".feature-card, .mode-card, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block, .feature-split"
   );
   if (targets.length === 0) return;
 
