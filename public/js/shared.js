@@ -257,6 +257,31 @@ function wireVoiceInput(buttonEl, fieldEl) {
   });
 }
 
+// Registers the service worker on every page (needed before any push
+// subscription can happen) — this alone never prompts for permission or
+// subscribes to anything, so it's safe to run unconditionally on load.
+// Browsers without support (or this running over plain HTTP in local dev)
+// just silently skip it.
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").catch(() => {
+    /* not fatal — push notifications just won't be available */
+  });
+}
+
+// Converts a VAPID public key (base64url, as the server hands it out) into
+// the Uint8Array the PushManager.subscribe() applicationServerKey expects.
+// Standard Web Push boilerplate.
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+  for (let i = 0; i < rawData.length; i++) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+
 async function safeJson(res) {
   let text = "";
   try {

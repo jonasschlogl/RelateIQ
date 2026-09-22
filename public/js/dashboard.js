@@ -30,12 +30,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     renderBillingActions(me);
     wireEmailPreferences(me);
+
+    if (me.isAdmin) {
+      document.getElementById("nav-admin").style.display = "inline";
+    }
   } catch (err) {
     console.error(err);
   }
 
   loadCheckin();
   loadReferrals();
+  wirePushNotifications();
 
   try {
     const convRes = await authFetch("/api/conversations");
@@ -262,6 +267,108 @@ function wireEmailPreferences(me) {
 
   checkinBox.addEventListener("change", save);
   digestBox.addEventListener("change", save);
+}
+
+// ---------------------------------------------------------------------------
+// Browser push notifications — progressive enhancement, same spirit as the
+// mic buttons elsewhere: the button hides itself if the browser can't do
+// push at all, and every failure path just leaves the toggle in its
+// current state rather than breaking the rest of the page.
+// ---------------------------------------------------------------------------
+
+async function wirePushNotifications() {
+  const btn = document.getElementById("push-toggle-btn");
+  const status = document.getElementById("push-status");
+  if (!btn) return;
+
+  if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
+    btn.style.display = "none";
+    if (status) status.textContent = "Not supported in this browser.";
+    return;
+  }
+
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    const existing = await reg.pushManager.getSubscription();
+    renderPushState(!!existing);
+
+    btn.addEventListener("click", async () => {
+      const reg2 = await navigator.serviceWorker.ready;
+      const current = await reg2.pushManager.getSubscription();
+      if (current) {
+        await disablePush(current);
+      } else {
+        await enablePush(reg2);
+      }
+    });
+  } catch (err) {
+    console.error(err);
+    if (status) status.textContent = "Couldn't check notification status.";
+  }
+}
+
+function renderPushState(enabled) {
+  const btn = document.getElementById("push-toggle-btn");
+  const status = document.getElementById("push-status");
+  if (!btn) return;
+  if (enabled) {
+    btn.textContent = "Disable notifications";
+    if (status) status.textContent = "✓ Enabled on this browser";
+  } else {
+    btn.textContent = "Enable notifications";
+    if (status) status.textContent = "";
+  }
+}
+
+async function enablePush(reg) {
+  const btn = document.getElementById("push-toggle-btn");
+  const status = document.getElementById("push-status");
+  btn.disabled = true;
+
+  try {
+    const keyRes = await fetch("/api/push/vapid-public-key");
+    const keyData = await safeJson(keyRes);
+    if (!keyData.publicKey) {
+      status.textContent = "Notifications aren't set up on this server yet.";
+      return;
+    }
+
+    const permission = await Notification.requestPermission();
+    if (permission !== "granted") {
+      status.textContent = "Notifications were blocked — allow them from your browser's site settings to enable.";
+      return;
+    }
+
+    const subscription = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(keyData.publicKey),
+    });
+
+    await authFetch("/api/push/subscribe", { method: "POST", body: JSON.stringify(subscription) });
+    renderPushState(true);
+  } catch (err) {
+    console.error(err);
+    status.textContent = "Couldn't enable notifications.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function disablePush(subscription) {
+  const btn = document.getElementById("push-toggle-btn");
+  btn.disabled = true;
+  try {
+    await authFetch("/api/push/unsubscribe", {
+      method: "POST",
+      body: JSON.stringify({ endpoint: subscription.endpoint }),
+    });
+    await subscription.unsubscribe();
+    renderPushState(false);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    btn.disabled = false;
+  }
 }
 
 // ---------------------------------------------------------------------------

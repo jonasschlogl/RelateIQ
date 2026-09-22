@@ -11,6 +11,7 @@ import jwt from "jsonwebtoken";
 import Stripe from "stripe";
 import { readDb, writeDb, generateId } from "./lib/store.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
+import webpush from "web-push";
 
 dotenv.config();
 
@@ -169,6 +170,24 @@ if (!process.env.DB_PATH) {
 }
 if (!process.env.RESEND_API_KEY) {
   console.warn("⚠️  RESEND_API_KEY is not set — check-in reminder and weekly digest emails will not be sent.");
+}
+if (!process.env.ADMIN_EMAILS) {
+  console.warn("⚠️  ADMIN_EMAILS is not set — the /admin.html growth dashboard will refuse everyone.");
+}
+
+// Web Push (browser notifications) — optional, same pattern as Resend
+// above: without both VAPID keys set, sendPushToUser() below just no-ops
+// instead of throwing, so the rest of the app runs fine without it.
+let pushConfigured = false;
+if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
+  webpush.setVapidDetails(
+    process.env.VAPID_SUBJECT || "mailto:support@example.com",
+    process.env.VAPID_PUBLIC_KEY,
+    process.env.VAPID_PRIVATE_KEY
+  );
+  pushConfigured = true;
+} else {
+  console.warn("⚠️  VAPID_PUBLIC_KEY/VAPID_PRIVATE_KEY are not set — browser push notifications will not be sent.");
 }
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -461,6 +480,11 @@ function publicUser(user) {
     // same as brand-new ones.
     emailCheckinReminders: user.emailCheckinReminders !== false,
     emailWeeklyDigest: user.emailWeeklyDigest !== false,
+    isAdmin: (process.env.ADMIN_EMAILS || "")
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean)
+      .includes(user.email),
   };
 }
 
@@ -495,6 +519,21 @@ function authMiddleware(req, res, next) {
   } catch (err) {
     return res.status(401).json({ error: "Invalid or expired session." });
   }
+}
+
+// Gates /api/admin/* — must already be authMiddleware'd (needs req.user).
+// Deliberately simple: a comma-separated allowlist of emails in an env var,
+// not a role stored in the db, so granting/revoking admin access is a
+// Railway env change, not a data migration.
+function adminMiddleware(req, res, next) {
+  const allowed = (process.env.ADMIN_EMAILS || "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  if (!allowed.includes(req.user.email)) {
+    return res.status(403).json({ error: "Not authorized." });
+  }
+  next();
 }
 
 // Shared free-tier gate for every endpoint that makes an OpenAI call.
@@ -723,6 +762,125 @@ app.get("/api/referrals", authMiddleware, (req, res) => {
     link: `${APP_URL}/register.html?ref=${req.user.referralCode}`,
     referredCount: referred.length,
     rewardedCount: referred.filter((u) => u.referralRewardGranted).length,
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Push notifications — browser subscription management. Sending happens
+// from the scheduled jobs below (sendPushToUser); these routes only manage
+// the subscription record itself.
+// ---------------------------------------------------------------------------
+
+// Public: the frontend needs this to construct a PushManager.subscribe()
+// call, before the visitor is necessarily logged in to anything sensitive.
+app.get("/api/push/vapid-public-key", (req, res) => {
+  res.json({ publicKey: process.env.VAPID_PUBLIC_KEY || null });
+});
+
+app.post("/api/push/subscribe", authMiddleware, (req, res) => {
+  const db = req.db;
+  const subscription = req.body;
+  if (!subscription || !subscription.endpoint) {
+    return res.status(400).json({ error: "Invalid push subscription." });
+  }
+
+  const existingIdx = db.pushSubscriptions.findIndex(
+    (s) => s.userId === req.user.id && s.subscription.endpoint === subscription.endpoint
+  );
+  const record = {
+    id: existingIdx >= 0 ? db.pushSubscriptions[existingIdx].id : generateId("push"),
+    userId: req.user.id,
+    subscription,
+    createdAt: new Date().toISOString(),
+  };
+  if (existingIdx >= 0) db.pushSubscriptions[existingIdx] = record;
+  else db.pushSubscriptions.push(record);
+  writeDb(db);
+  res.json({ ok: true });
+});
+
+app.post("/api/push/unsubscribe", authMiddleware, (req, res) => {
+  const db = req.db;
+  const { endpoint } = req.body || {};
+  db.pushSubscriptions = db.pushSubscriptions.filter(
+    (s) => !(s.userId === req.user.id && (!endpoint || s.subscription.endpoint === endpoint))
+  );
+  writeDb(db);
+  res.json({ ok: true });
+});
+
+// ---------------------------------------------------------------------------
+// Admin / growth stats — gated by adminMiddleware (ADMIN_EMAILS). Everything
+// here is computed on the fly from the existing collections; nothing extra
+// is tracked or stored just for this dashboard.
+// ---------------------------------------------------------------------------
+
+app.get("/api/admin/stats", authMiddleware, adminMiddleware, (req, res) => {
+  const db = req.db;
+  const now = Date.now();
+  const DAY = 24 * 60 * 60 * 1000;
+
+  const totalUsers = db.users.length;
+  const newToday = db.users.filter((u) => (u.createdAt || "").slice(0, 10) === todayKey()).length;
+  const newThisWeek = db.users.filter((u) => u.createdAt && now - new Date(u.createdAt).getTime() < 7 * DAY).length;
+
+  const planCounts = { free: 0, pro: 0, premium: 0 };
+  db.users.forEach((u) => {
+    planCounts[u.plan] = (planCounts[u.plan] || 0) + 1;
+  });
+  const payingCount = (planCounts.pro || 0) + (planCounts.premium || 0);
+  const conversionRate = totalUsers ? payingCount / totalUsers : 0;
+
+  // "Active this week" = did something (sent a coach/practice message, or
+  // checked in) in the last 7 days. The closest proxy to WAU this app has,
+  // since there's no separate session/analytics tracking.
+  const activeUserIds = new Set();
+  db.conversations.forEach((c) => {
+    const lastMsgAt = (c.messages || []).reduce((max, m) => {
+      const t = m.at ? new Date(m.at).getTime() : 0;
+      return t > max ? t : max;
+    }, 0);
+    if (lastMsgAt && now - lastMsgAt < 7 * DAY) activeUserIds.add(c.userId);
+  });
+  db.checkins.forEach((c) => {
+    if (c.date && now - new Date(c.date).getTime() < 7 * DAY) activeUserIds.add(c.userId);
+  });
+
+  const referredTotal = db.users.filter((u) => u.referredBy).length;
+  const referredRewarded = db.users.filter((u) => u.referralRewardGranted).length;
+
+  const conversationsTotal = db.conversations.length;
+  const coachConvos = db.conversations.filter((c) => c.mode !== "practice").length;
+  const practiceConvos = conversationsTotal - coachConvos;
+
+  const sharesTotal = db.shares.length;
+  const shareItemsTotal = db.shares.reduce((sum, s) => sum + (s.items ? s.items.length : 0), 0);
+
+  // Daily signups for the last 30 days, oldest first — feeds the chart.
+  const signupsByDay = [];
+  for (let i = 29; i >= 0; i--) {
+    const key = new Date(now - i * DAY).toISOString().slice(0, 10);
+    const count = db.users.filter((u) => (u.createdAt || "").slice(0, 10) === key).length;
+    signupsByDay.push({ date: key, count });
+  }
+
+  res.json({
+    totalUsers,
+    newToday,
+    newThisWeek,
+    planCounts,
+    payingCount,
+    conversionRate,
+    activeThisWeek: activeUserIds.size,
+    referredTotal,
+    referredRewarded,
+    conversationsTotal,
+    coachConvos,
+    practiceConvos,
+    sharesTotal,
+    shareItemsTotal,
+    pushSubCount: db.pushSubscriptions.length,
+    signupsByDay,
   });
 });
 
@@ -1652,33 +1810,76 @@ const DAILY_REMINDER_HOUR_UTC = 17;
 const WEEKLY_DIGEST_DAY_UTC = 1; // Monday (0 = Sunday)
 const WEEKLY_DIGEST_HOUR_UTC = 9;
 
+// Sends a browser push to every subscription this user has (usually one,
+// but a person can subscribe from more than one browser/device). A 404/410
+// from the push service means that browser has permanently invalidated the
+// subscription (uninstalled, cleared site data, etc.) — those get pruned;
+// anything else is just logged, since one bad subscription shouldn't stop
+// the rest of the batch.
+async function sendPushToUser(db, userId, { title, body, url }) {
+  if (!pushConfigured) return;
+  const subs = db.pushSubscriptions.filter((s) => s.userId === userId);
+  if (!subs.length) return;
+
+  const payload = JSON.stringify({ title, body, url: url || "/dashboard.html" });
+  let changed = false;
+
+  for (const sub of subs) {
+    try {
+      await webpush.sendNotification(sub.subscription, payload);
+    } catch (err) {
+      if (err.statusCode === 404 || err.statusCode === 410) {
+        db.pushSubscriptions = db.pushSubscriptions.filter((s) => s.id !== sub.id);
+        changed = true;
+      } else {
+        console.error("Push send error:", err.message);
+      }
+    }
+  }
+
+  if (changed) writeDb(db);
+}
+
 async function runDailyCheckinReminders() {
   const db = readDb();
   const today = todayKey();
   const question = checkinQuestionForDate(today);
-  const candidates = db.users.filter((u) => u.email && u.emailCheckinReminders !== false);
 
-  for (const user of candidates) {
-    const already = db.checkins.find((c) => c.userId === user.id && c.date === today);
-    if (already) continue;
+  // Anyone who hasn't checked in today is a candidate — email and push are
+  // independent channels, each only sent if that user is actually opted
+  // into (or, for push, subscribed to) it.
+  const notYetCheckedIn = db.users.filter((u) => !db.checkins.some((c) => c.userId === u.id && c.date === today));
 
-    const html = emailShell({
-      unsubscribeUrl: unsubscribeLink(user, "checkin"),
-      bodyHtml: `
-        <p>Hey ${escapeForEmail(user.name)},</p>
-        <p>Today's check-in question:</p>
-        <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(question)}"</p>
-        <p><a href="${APP_URL}/dashboard.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Answer it →</a></p>
-      `,
+  for (const user of notYetCheckedIn) {
+    if (user.email && user.emailCheckinReminders !== false) {
+      const html = emailShell({
+        unsubscribeUrl: unsubscribeLink(user, "checkin"),
+        bodyHtml: `
+          <p>Hey ${escapeForEmail(user.name)},</p>
+          <p>Today's check-in question:</p>
+          <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(question)}"</p>
+          <p><a href="${APP_URL}/dashboard.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Answer it →</a></p>
+        `,
+      });
+      await sendEmail({ to: user.email, subject: "Today's RelateIQ check-in", html });
+    }
+
+    await sendPushToUser(db, user.id, {
+      title: "Today's RelateIQ check-in",
+      body: question,
+      url: "/dashboard.html",
     });
-
-    await sendEmail({ to: user.email, subject: "Today's RelateIQ check-in", html });
   }
 }
 
 async function runWeeklyInsightsDigest() {
   const db = readDb();
-  const candidates = db.users.filter((u) => u.email && u.emailWeeklyDigest !== false);
+  // A user is a candidate if EITHER channel is live for them — email opt-in
+  // or an active push subscription — since the two are independent below.
+  const candidates = db.users.filter(
+    (u) =>
+      (u.email && u.emailWeeklyDigest !== false) || db.pushSubscriptions.some((s) => s.userId === u.id)
+  );
 
   for (const user of candidates) {
     const coachConversations = db.conversations
@@ -1693,24 +1894,31 @@ async function runWeeklyInsightsDigest() {
       const { patterns } = await generateInsightsForDigest(db, user, coachConversations);
       if (!patterns.length) continue;
 
-      const itemsHtml = patterns
-        .map(
-          (p) =>
-            `<p style="margin:0 0 12px;"><strong style="color:#f6efe4;">${escapeForEmail(p.title)}</strong><br/><span style="color:#b6a795;">${escapeForEmail(p.description)}</span></p>`
-        )
-        .join("");
+      if (user.email && user.emailWeeklyDigest !== false) {
+        const itemsHtml = patterns
+          .map(
+            (p) =>
+              `<p style="margin:0 0 12px;"><strong style="color:#f6efe4;">${escapeForEmail(p.title)}</strong><br/><span style="color:#b6a795;">${escapeForEmail(p.description)}</span></p>`
+          )
+          .join("");
 
-      const html = emailShell({
-        unsubscribeUrl: unsubscribeLink(user, "digest"),
-        bodyHtml: `
-          <p>Hey ${escapeForEmail(user.name)},</p>
-          <p>Here's what RelateIQ noticed across your conversations this week:</p>
-          ${itemsHtml}
-          <p><a href="${APP_URL}/insights.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">See full insights →</a></p>
-        `,
+        const html = emailShell({
+          unsubscribeUrl: unsubscribeLink(user, "digest"),
+          bodyHtml: `
+            <p>Hey ${escapeForEmail(user.name)},</p>
+            <p>Here's what RelateIQ noticed across your conversations this week:</p>
+            ${itemsHtml}
+            <p><a href="${APP_URL}/insights.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">See full insights →</a></p>
+          `,
+        });
+        await sendEmail({ to: user.email, subject: "Your weekly RelateIQ insights", html });
+      }
+
+      await sendPushToUser(db, user.id, {
+        title: "Your weekly RelateIQ insights",
+        body: patterns[0]?.title || "New patterns spotted across your conversations this week.",
+        url: "/insights.html",
       });
-
-      await sendEmail({ to: user.email, subject: "Your weekly RelateIQ insights", html });
     } catch (err) {
       console.error(`Weekly digest failed for user ${user.id}:`, err.message);
     }

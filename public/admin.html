@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared with you · RelateIQ</title>
+  <title>Admin · RelateIQ</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Someone using RelateIQ shared this with you directly." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -20,25 +19,24 @@
   <header class="site-nav">
     <a href="index.html" class="brand">Relate<span>IQ</span></a>
     <nav class="nav-links">
-      <a href="index.html">What's RelateIQ?</a>
+      <a href="dashboard.html">My account</a>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
 
-  <main class="tool-page">
-    <div id="shared-state">
-      <p class="summary-loading">Loading…</p>
+  <main class="tool-page" style="max-width:1040px;">
+    <div class="tool-header" style="text-align:left; max-width:none; margin:0 0 24px;">
+      <span class="section-tag">Admin</span>
+      <h1 style="font-size:26px;">Growth dashboard</h1>
+      <p class="text-muted" style="margin-bottom:0;">Internal metrics, computed live from the database — only visible to admin accounts.</p>
+    </div>
+
+    <div id="admin-state">
+      <p class="text-muted">Loading…</p>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p class="footer-disclaimer">
-      RelateIQ is an AI tool for personal growth and does not replace professional psychological or therapeutic
-      care. If you're in a crisis, please contact a professional or a helpline in your country.
-    </p>
-    <p class="footer-copy">© 2026 RelateIQ</p>
-  </footer>
-
   <script src="js/shared.js?v=8"></script>
-  <script src="js/shared-view.js?v=2"></script>
+  <script src="js/admin.js?v=1"></script>
 </body>
 </html>
