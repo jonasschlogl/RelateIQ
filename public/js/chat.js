@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("attach-btn")?.addEventListener("click", () => document.getElementById("file-input")?.click());
   document.getElementById("file-input")?.addEventListener("change", handleFilesSelected);
 
-  document.querySelectorAll(".mode-tab").forEach((tab) => {
+  // Only the real mode tabs (Coach/Practice) switch mode in-page — the
+  // Message Coach / Attachment Quiz tabs are plain links to their own pages
+  // (no data-mode), so they're excluded here and just navigate normally.
+  document.querySelectorAll(".mode-tab[data-mode]").forEach((tab) => {
     tab.addEventListener("click", () => {
       const mode = tab.dataset.mode;
       if (mode === "practice") {
