@@ -115,8 +115,10 @@ const FREE_DAILY_LIMIT = 8;
 // "premium") to leave it unlimited.
 const PARTNER_PROFILE_LIMITS = { free: 1, pro: 5 };
 
-// Attachments (images, screen recordings, other files) on chat messages
-const MAX_FILES_PER_MESSAGE = 3;
+// Attachments (images, screen recordings, other files) on chat messages —
+// how many a single message can carry, by plan. Omit a plan here to fall
+// back to the free limit, same convention as PARTNER_PROFILE_LIMITS above.
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 3 };
 const MAX_TOTAL_UPLOAD_MB = 15;
 const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 // Defaults to public/uploads for local dev. On a host with a persistent
@@ -249,15 +251,17 @@ function formatBytes(bytes) {
 // under public/uploads/<userId>/, and returns their saved metadata. Throws
 // a { status, message } object on any validation failure, which callers
 // turn straight into an HTTP error response.
-function saveIncomingAttachments(userId, rawAttachments) {
+function saveIncomingAttachments(user, rawAttachments) {
   const incoming = Array.isArray(rawAttachments) ? rawAttachments : [];
   if (incoming.length === 0) return [];
 
-  if (incoming.length > MAX_FILES_PER_MESSAGE) {
-    throw { status: 400, message: `You can attach up to ${MAX_FILES_PER_MESSAGE} files per message.` };
+  const limit = MAX_FILES_PER_MESSAGE_BY_PLAN[user.plan] ?? MAX_FILES_PER_MESSAGE_BY_PLAN.free;
+  if (incoming.length > limit) {
+    const upgradeHint = user.plan === "free" ? " Upgrade to Pro for up to 3 files per message." : "";
+    throw { status: 400, message: `You can attach up to ${limit} file${limit === 1 ? "" : "s"} per message.${upgradeHint}` };
   }
 
-  const userDir = path.join(UPLOADS_DIR, userId);
+  const userDir = path.join(UPLOADS_DIR, user.id);
   fs.mkdirSync(userDir, { recursive: true });
 
   let totalBytes = 0;
@@ -735,7 +739,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
   let savedAttachments;
   try {
-    savedAttachments = saveIncomingAttachments(req.user.id, rawAttachments);
+    savedAttachments = saveIncomingAttachments(user, rawAttachments);
   } catch (err) {
     return res.status(err.status || 400).json({ error: err.message || "Couldn't process the attached file(s)." });
   }

@@ -92,13 +92,76 @@ function relateiqGetComposeText(el) {
 
 // Replaces a contenteditable compose box's content the way a real person
 // typing would. Setting el.textContent directly is invisible to WhatsApp's
-// and Messenger's own React-based editors — they only pick up input that
-// goes through the browser's real edit commands, so execCommand (despite
-// being deprecated elsewhere) is the reliable way to do this here.
+// and Messenger's own React-based editors — they only notice input that
+// goes through a real edit command or a real paste event. Tries execCommand
+// first (works on most contenteditable implementations), verifies it
+// actually landed, and falls back to a synthetic paste event (which is what
+// React/Draft/Lexical-style editors like WhatsApp's and Messenger's actually
+// listen to) if it didn't. Returns true/false so the caller can tell the
+// user when neither worked, rather than silently doing nothing.
 function relateiqSetComposeText(el, text) {
   el.focus();
-  document.execCommand("selectAll", false, null);
-  document.execCommand("insertText", false, text);
+
+  try {
+    document.execCommand("selectAll", false, null);
+    document.execCommand("insertText", false, text);
+  } catch (e) {
+    /* fall through to the paste-event strategy below */
+  }
+
+  if (relateiqComposeTextLooksLike(el, text)) return true;
+
+  try {
+    const dt = new DataTransfer();
+    dt.setData("text/plain", text);
+    el.focus();
+    document.execCommand("selectAll", false, null);
+    document.execCommand("delete", false, null);
+    const pasteEvent = new ClipboardEvent("paste", { bubbles: true, cancelable: true, clipboardData: dt });
+    el.dispatchEvent(pasteEvent);
+  } catch (e) {
+    /* neither strategy is supported here */
+  }
+
+  return relateiqComposeTextLooksLike(el, text);
+}
+
+// Loose check (not exact-match — the editor may add its own formatting)
+// used to tell whether a text-insertion attempt actually landed.
+function relateiqComposeTextLooksLike(el, text) {
+  const now = relateiqGetComposeText(el);
+  const probe = text.slice(0, Math.min(24, text.length)).trim();
+  return probe.length > 0 && now.includes(probe);
+}
+
+// Copies text to the clipboard. Tries the modern Clipboard API first, but
+// that can silently fail inside a content script on some pages (permissions
+// policy, focus quirks), so it falls back to the older but very reliable
+// hidden-textarea + execCommand("copy") trick. Returns true/false.
+async function relateiqCopyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    /* fall through to the execCommand fallback below */
+  }
+
+  try {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    textarea.style.top = "0";
+    textarea.style.left = "0";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    const ok = document.execCommand("copy");
+    textarea.remove();
+    return ok;
+  } catch (e) {
+    return false;
+  }
 }
 
 function relateiqSendCoachRequest(draft) {
@@ -173,15 +236,31 @@ function relateiqInit(selectors) {
         {
           label: "Use this",
           primary: true,
-          onClick: () => {
-            if (composeEl) relateiqSetComposeText(composeEl, rewrite);
-            panel.classList.remove("visible");
+          onClick: async (event) => {
+            const btn = event.currentTarget;
+            const inserted = composeEl ? relateiqSetComposeText(composeEl, rewrite) : false;
+            if (inserted) {
+              panel.classList.remove("visible");
+              return;
+            }
+            // Couldn't insert it directly (the site's compose box didn't
+            // respond the way we expected) — copy it instead so the user
+            // isn't stuck with nothing, and say so clearly rather than
+            // failing silently.
+            const copied = await relateiqCopyText(rewrite);
+            btn.textContent = copied ? "Couldn't insert — copied instead, press Ctrl+V" : "Couldn't insert or copy — select the text above";
           },
         },
         {
           label: "Copy",
-          onClick: () => {
-            navigator.clipboard?.writeText(rewrite).catch(() => {});
+          onClick: async (event) => {
+            const btn = event.currentTarget;
+            const original = btn.textContent;
+            const ok = await relateiqCopyText(rewrite);
+            btn.textContent = ok ? "Copied!" : "Couldn't copy — select the text above";
+            setTimeout(() => {
+              btn.textContent = original;
+            }, 1800);
           },
         },
         { label: "Dismiss", onClick: () => panel.classList.remove("visible") },

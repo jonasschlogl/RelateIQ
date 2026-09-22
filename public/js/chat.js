@@ -9,7 +9,12 @@ let currentConvHasUserMessage = false; // drives whether the "Export for therapi
 // Attachments (images, screen recordings, other files) picked but not yet sent
 let pendingAttachments = [];
 let composerErrorTimeout = null;
-const MAX_FILES_PER_MESSAGE = 3;
+// Mirrors MAX_FILES_PER_MESSAGE_BY_PLAN in server.js — keep the two in sync.
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 3 };
+function maxFilesPerMessage() {
+  const plan = getUser()?.plan;
+  return MAX_FILES_PER_MESSAGE_BY_PLAN[plan] ?? MAX_FILES_PER_MESSAGE_BY_PLAN.free;
+}
 const MAX_TOTAL_UPLOAD_BYTES = 15 * 1024 * 1024;
 const TRASH_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m5 0V4a2 2 0 012-2h0a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
@@ -22,6 +27,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (userLabel && user) userLabel.textContent = user.name || user.email;
   renderPlanBadge(user?.plan);
   refreshPlanBadge();
+
+  const disclaimer = document.getElementById("chat-disclaimer");
+  if (disclaimer) {
+    const limit = maxFilesPerMessage();
+    disclaimer.textContent += ` Attachments: up to ${limit} file${limit === 1 ? "" : "s"}, 15MB total per message.`;
+  }
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("new-chat-btn")?.addEventListener("click", () => startNewChat(currentMode));
@@ -174,9 +185,11 @@ async function handleFilesSelected(event) {
   const files = Array.from(event.target.files || []);
   event.target.value = ""; // allow re-selecting the same file later
 
+  const limit = maxFilesPerMessage();
   for (const file of files) {
-    if (pendingAttachments.length >= MAX_FILES_PER_MESSAGE) {
-      showComposerError(`You can attach up to ${MAX_FILES_PER_MESSAGE} files per message.`);
+    if (pendingAttachments.length >= limit) {
+      const upgradeHint = getUser()?.plan === "free" ? " Upgrade to Pro for up to 3 files per message." : "";
+      showComposerError(`You can attach up to ${limit} file${limit === 1 ? "" : "s"} per message.${upgradeHint}`);
       break;
     }
     const currentTotal = pendingAttachments.reduce((sum, a) => sum + a.size, 0);
