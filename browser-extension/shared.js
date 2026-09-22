@@ -137,39 +137,62 @@ function relateiqGetComposeText(el) {
   return (el.innerText || el.textContent || "").replace(/ /g, " ").trim();
 }
 
-// Replaces a contenteditable compose box's content the way a real person
-// typing would. Setting el.textContent directly is invisible to WhatsApp's
-// and Messenger's own React-based editors — they only notice input that
-// goes through a real edit command or a real paste event. Tries execCommand
-// first (works on most contenteditable implementations), verifies it
-// actually landed, and falls back to a synthetic paste event (which is what
-// React/Draft/Lexical-style editors like WhatsApp's and Messenger's actually
-// listen to) if it didn't. Returns true/false so the caller can tell the
-// user when neither worked, rather than silently doing nothing.
-function relateiqSetComposeText(el, text) {
-  el.focus();
+function relateiqSleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
+// Selects everything in a contenteditable compose box and deletes it. Used
+// before EVERY insertion attempt below (not just when something is known to
+// already be there) so neither insertion strategy can ever end up appending
+// on top of the other's result.
+function relateiqClearComposeText(el) {
+  el.focus();
   try {
     document.execCommand("selectAll", false, null);
+    document.execCommand("delete", false, null);
+  } catch (e) {
+    /* ignore — the insertion attempt below still gets a chance to work */
+  }
+}
+
+// Replaces a contenteditable compose box's content the way a real person
+// typing would. Setting el.textContent directly is invisible to WhatsApp's,
+// Messenger's and Instagram's own React/Lexical-based editors — they only
+// notice input that goes through a real edit command or a real paste event.
+// Tries execCommand first (works on most contenteditable implementations),
+// then falls back to a synthetic paste event if that didn't land.
+//
+// This is async and awaits a short pause before checking whether an attempt
+// landed. That pause matters: these editors can take a tick to reflect an
+// execCommand change in el.innerText, so checking synchronously right after
+// insertText sometimes reported "didn't land" even though it had — which
+// then ran the paste fallback too, inserting the same text a second time on
+// top of the first. Clearing again immediately before the paste fallback
+// (in addition to before the first attempt) closes that gap for good, even
+// if a future timing quirk reintroduces a similar false negative.
+async function relateiqSetComposeText(el, text) {
+  relateiqClearComposeText(el);
+  try {
     document.execCommand("insertText", false, text);
   } catch (e) {
     /* fall through to the paste-event strategy below */
   }
 
+  await relateiqSleep(30);
   if (relateiqComposeTextLooksLike(el, text)) return true;
 
+  relateiqClearComposeText(el);
   try {
     const dt = new DataTransfer();
     dt.setData("text/plain", text);
     el.focus();
-    document.execCommand("selectAll", false, null);
-    document.execCommand("delete", false, null);
     const pasteEvent = new ClipboardEvent("paste", { bubbles: true, cancelable: true, clipboardData: dt });
     el.dispatchEvent(pasteEvent);
   } catch (e) {
     /* neither strategy is supported here */
   }
 
+  await relateiqSleep(30);
   return relateiqComposeTextLooksLike(el, text);
 }
 
@@ -213,25 +236,41 @@ async function relateiqCopyText(text) {
 
 function relateiqSendCoachRequest(draft, messages) {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: "relateiq:coachMessage", draft, messages }, (response) => {
-      if (chrome.runtime.lastError) {
-        resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
-        return;
-      }
-      resolve(response || { ok: false, error: "No response from RelateIQ." });
-    });
+    if (!relateiqExtensionContextValid()) {
+      resolve({ ok: false, error: "This tab needs a refresh after the last extension update — reload the page and try again." });
+      return;
+    }
+    try {
+      chrome.runtime.sendMessage({ type: "relateiq:coachMessage", draft, messages }, (response) => {
+        if (chrome.runtime.lastError) {
+          resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
+          return;
+        }
+        resolve(response || { ok: false, error: "No response from RelateIQ." });
+      });
+    } catch (e) {
+      resolve({ ok: false, error: "This tab needs a refresh after the last extension update — reload the page and try again." });
+    }
   });
 }
 
 function relateiqSendSuggestRequest(messages) {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: "relateiq:suggestReplies", messages }, (response) => {
-      if (chrome.runtime.lastError) {
-        resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
-        return;
-      }
-      resolve(response || { ok: false, error: "No response from RelateIQ." });
-    });
+    if (!relateiqExtensionContextValid()) {
+      resolve({ ok: false, error: "This tab needs a refresh after the last extension update — reload the page and try again." });
+      return;
+    }
+    try {
+      chrome.runtime.sendMessage({ type: "relateiq:suggestReplies", messages }, (response) => {
+        if (chrome.runtime.lastError) {
+          resolve({ ok: false, error: "Couldn't reach the RelateIQ extension. Try reloading the page." });
+          return;
+        }
+        resolve(response || { ok: false, error: "No response from RelateIQ." });
+      });
+    } catch (e) {
+      resolve({ ok: false, error: "This tab needs a refresh after the last extension update — reload the page and try again." });
+    }
   });
 }
 
@@ -321,20 +360,45 @@ function relateiqGetThreadKey(config) {
   return `${config.platform}:default`;
 }
 
+// True once the extension has been reloaded/updated (from chrome://extensions
+// or an auto-update) while this content script's tab was already open. When
+// that happens, every chrome.* call this already-running copy of the script
+// makes throws "Extension context invalidated" — there's no way to recover
+// short of the page itself being reloaded, so every function below that
+// touches a chrome.* API checks this first and fails quietly instead of
+// throwing an unhandled rejection into the extension's error log every 1.5s.
+function relateiqExtensionContextValid() {
+  try {
+    return !!(chrome && chrome.runtime && chrome.runtime.id);
+  } catch (e) {
+    return false;
+  }
+}
+
 async function relateiqGetChatConsent(threadKey) {
-  const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
-  return !!(relateiq_chat_consent && relateiq_chat_consent[threadKey]);
+  if (!relateiqExtensionContextValid()) return false;
+  try {
+    const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
+    return !!(relateiq_chat_consent && relateiq_chat_consent[threadKey]);
+  } catch (e) {
+    return false;
+  }
 }
 
 async function relateiqSetChatConsent(threadKey, enabled) {
-  const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
-  const next = Object.assign({}, relateiq_chat_consent || {});
-  if (enabled) {
-    next[threadKey] = true;
-  } else {
-    delete next[threadKey];
+  if (!relateiqExtensionContextValid()) return;
+  try {
+    const { relateiq_chat_consent } = await chrome.storage.local.get("relateiq_chat_consent");
+    const next = Object.assign({}, relateiq_chat_consent || {});
+    if (enabled) {
+      next[threadKey] = true;
+    } else {
+      delete next[threadKey];
+    }
+    await chrome.storage.local.set({ relateiq_chat_consent: next });
+  } catch (e) {
+    /* context went away mid-write — nothing to do but drop it */
   }
-  await chrome.storage.local.set({ relateiq_chat_consent: next });
 }
 
 // ---------------------------------------------------------------------------
@@ -382,9 +446,9 @@ function relateiqInit(config) {
       )
       .join("");
     chips.querySelectorAll(".relateiq-chip").forEach((btn, i) => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", async () => {
         if (!composeEl) return;
-        relateiqSetComposeText(composeEl, suggestions[i]);
+        await relateiqSetComposeText(composeEl, suggestions[i]);
         chips.classList.remove("visible");
       });
     });
@@ -452,6 +516,17 @@ function relateiqInit(config) {
   });
 
   function updateComposeEl() {
+    // The extension was reloaded/updated while this tab was already open —
+    // this copy of the script can never talk to it again. Stop polling
+    // instead of continuing to throw "Extension context invalidated" every
+    // 1.5s; a page refresh (which the RelateIQ error messages above now
+    // prompt for) starts a fresh, working copy.
+    if (!relateiqExtensionContextValid()) {
+      observer.disconnect();
+      clearInterval(pollTimer);
+      return;
+    }
+
     const found = relateiqFindFirst(config.composeSelectors);
     if (found !== composeEl) {
       composeEl = found;
@@ -504,7 +579,7 @@ function relateiqInit(config) {
           primary: true,
           onClick: async (event) => {
             const btn = event.currentTarget;
-            const inserted = composeEl ? relateiqSetComposeText(composeEl, rewrite) : false;
+            const inserted = composeEl ? await relateiqSetComposeText(composeEl, rewrite) : false;
             if (inserted) {
               panel.classList.remove("visible");
               return;
@@ -536,6 +611,6 @@ function relateiqInit(config) {
 
   const observer = new MutationObserver(() => updateComposeEl());
   observer.observe(document.body, { childList: true, subtree: true });
-  setInterval(updateComposeEl, 1500); // belt-and-suspenders in case the observer misses a change
+  const pollTimer = setInterval(updateComposeEl, 1500); // belt-and-suspenders in case the observer misses a change
   updateComposeEl();
 }
