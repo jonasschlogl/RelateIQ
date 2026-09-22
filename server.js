@@ -15,6 +15,13 @@ dotenv.config();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
+// Railway (and most hosts) put the app behind a reverse proxy, so without
+// this Express sees every request as coming from that proxy's internal IP —
+// which would make the per-IP demo rate limit below apply to the whole site
+// at once instead of per visitor. This makes req.ip read the real client IP
+// from X-Forwarded-For.
+app.set("trust proxy", true);
+
 // Stripe is optional at boot — if STRIPE_SECRET_KEY isn't set yet, the app
 // still starts and every billing route replies with a clear 503 instead of
 // crashing. Set STRIPE_SECRET_KEY (and the price/webhook vars below) in
@@ -917,6 +924,85 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     res.json({ rewrite, why, usage: user.usage });
   } catch (err) {
     console.error("Message coach error:", err.message);
+    res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Public Message Coach demo — no login required, lets a visitor try the
+// rewrite on the landing page itself before signing up. Rate-limited per IP
+// (in memory — resets on redeploy/restart, which is fine for a demo) rather
+// than per account, since there's no account yet. Kept deliberately separate
+// from /api/message-coach above rather than sharing a helper, so tightening
+// or removing this public route later can never accidentally affect the
+// authenticated one.
+// ---------------------------------------------------------------------------
+
+const DEMO_DAILY_LIMIT = 3;
+const DEMO_MAX_CHARS = 400;
+const demoUsageByIp = new Map(); // ip -> { date: "YYYY-MM-DD", count }
+
+function demoUsageToday(ip) {
+  const today = new Date().toISOString().slice(0, 10);
+  const entry = demoUsageByIp.get(ip);
+  if (!entry || entry.date !== today) return 0;
+  return entry.count;
+}
+
+function recordDemoUsage(ip) {
+  const today = new Date().toISOString().slice(0, 10);
+  const entry = demoUsageByIp.get(ip);
+  const count = entry && entry.date === today ? entry.count + 1 : 1;
+  demoUsageByIp.set(ip, { date: today, count });
+  return count;
+}
+
+app.post("/api/public/message-coach-demo", async (req, res) => {
+  try {
+    const ip = req.ip || "unknown";
+    const usedSoFar = demoUsageToday(ip);
+    if (usedSoFar >= DEMO_DAILY_LIMIT) {
+      return res.status(429).json({
+        error: "You've used all 3 free demo rewrites for today. Create a free account for 8 a day, every day.",
+        limitReached: true,
+      });
+    }
+
+    const draft = String((req.body || {}).draft || "").trim();
+    if (!draft) {
+      return res.status(400).json({ error: "Paste a message to get feedback on." });
+    }
+    if (draft.length > DEMO_MAX_CHARS) {
+      return res.status(400).json({ error: `Keep the demo message under ${DEMO_MAX_CHARS} characters — the full app has no limit.` });
+    }
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
+        { role: "user", content: `Context (optional, may be empty): (none given)\n\nDraft message:\n"""${draft}"""` },
+      ],
+      temperature: 0.7,
+      response_format: { type: "json_object" },
+    });
+
+    let parsed = {};
+    try {
+      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      parsed = {};
+    }
+    const rewrite = String(parsed.rewrite || "").trim();
+    const why = String(parsed.why || "").trim();
+
+    if (!rewrite) {
+      return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
+    }
+
+    const usedNow = recordDemoUsage(ip);
+    res.json({ rewrite, why, remaining: Math.max(0, DEMO_DAILY_LIMIT - usedNow) });
+  } catch (err) {
+    console.error("Message coach demo error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
   }
 });

@@ -8,10 +8,22 @@
   <meta property="og:title" content="RelateIQ — AI Relationship Coach" />
   <meta property="og:description" content="An AI relationship coach that remembers your story — grounded in real frameworks, available 24/7, free to start." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://terrific-spirit-production.up.railway.app/" />
+  <meta property="og:image" content="https://terrific-spirit-production.up.railway.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RelateIQ — AI Relationship Coach" />
+  <meta name="twitter:description" content="An AI relationship coach that remembers your story — grounded in real frameworks, available 24/7, free to start." />
+  <meta name="twitter:image" content="https://terrific-spirit-production.up.railway.app/og-image.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
 </head>
 <body>
 
@@ -19,6 +31,7 @@
     <a href="index.html" class="brand">Relate<span>IQ</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
+      <a href="#try-it">Try it free</a>
       <a href="#features">Features</a>
       <a href="#modes">Modes</a>
       <a href="#compare">Compare</a>
@@ -54,6 +67,33 @@
       <div class="hero-mock" aria-hidden="true">
         <div class="mock-row user"><div class="bubble">My partner has been short and distant with me the last few weeks. I don't know if I should bring it up.</div></div>
         <div class="mock-row ai"><div class="bubble">That sounds frustrating to sit with. Before we figure out next steps — has anything been going on for them lately (work, stress, health) that could explain it? And how do they usually act when they're overwhelmed?</div></div>
+      </div>
+    </section>
+
+    <section id="try-it">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Try it yourself</span>
+          <h2>Watch Message Coach rewrite a real message</h2>
+          <p>No sign-up needed — paste something you're actually about to send, or just try the example below.</p>
+        </div>
+
+        <div class="tool-split">
+          <div class="tool-card">
+            <h3>Your draft</h3>
+            <textarea id="hero-demo-input" maxlength="400" rows="5">You never help around the house and I'm sick of it.</textarea>
+            <p class="hero-demo-error" id="hero-demo-error" style="display:none;"></p>
+            <button class="btn btn-gradient btn-block" id="hero-demo-btn" type="button" style="margin-top:14px;">Rewrite it</button>
+            <p class="hero-demo-note" id="hero-demo-note">3 free rewrites a day here, no account needed. The full app gives you 8 a day, free.</p>
+          </div>
+
+          <div class="tool-card">
+            <h3>Suggested rewrite</h3>
+            <div class="tool-result" id="hero-demo-result">
+              <span class="placeholder">Click "Rewrite it" to see the difference.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -395,6 +435,7 @@
             on your own. No manufactured urgency to keep you chatting longer than you need to — just a coach that's
             ready when you are, grounded in methods real therapists actually use, and honest about where its job
             ends and a professional's begins.</p>
+          <p class="mission-signature">— Built by Jonas, after one too many 11pm conversations that would've gone better with a clearer head.</p>
         </div>
       </div>
     </section>
@@ -472,7 +513,9 @@
     <p class="footer-copy">© 2026 RelateIQ</p>
   </footer>
 
+  <a href="register.html" class="floating-cta" id="floating-cta" data-cta>Get started free</a>
+
   <script src="js/shared.js?v=4"></script>
-  <script src="js/landing.js?v=4"></script>
+  <script src="js/landing.js?v=5"></script>
 </body>
 </html>
