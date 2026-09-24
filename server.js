@@ -457,11 +457,18 @@ function buildInsightsDigest(conversations) {
 // tagged per-partner, so the model is explicitly told the target partner's
 // name plus the OTHER partner names to exclude, and asked to keep confidence
 // low/general rather than guess when it can't tell them apart.
+//
+// Fully automatic, no button: this runs by itself whenever a practice
+// conversation is started (see learnPartnerProfileIfStale, called from
+// POST /api/conversations), and only re-calls the model when there's new
+// Coach Chat activity since the last time it ran — so it stays current
+// without a user ever having to trigger it, and without re-running (and
+// re-billing) on every single practice session once nothing has changed.
 // ---------------------------------------------------------------------------
 
 const MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING = 8;
 
-const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here — you're extracting what the user has said, across many separate conversations, about how this specific partner tends to act, communicate, and react.
+const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly — including sounding like them — in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here — you're extracting what the user has said, across many separate conversations, about how this specific partner tends to act, communicate, and react.
 
 You will be given:
 - The target partner's name (and optionally other context about them the user already provided).
@@ -469,13 +476,14 @@ You will be given:
 - A set of the user's own messages from past Coach Chat conversations (their side only — the AI coach's replies are not included).
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "confidence": "low"|"medium"|"high"}
+{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "voice": "<a short note on specifically how they phrase things — word choice, message length, punctuation/emoji habits, typical phrases — but ONLY if the user's messages actually reveal this, e.g. by quoting or closely describing their wording. Empty string if nothing like that is in the material.>", "confidence": "low"|"medium"|"high"}
 
 Rules:
 - Only include what's actually supported by the messages. If they don't say much specifically about this partner (too little material, or it's ambiguous which partner is meant), set "confidence":"low" and keep "profile" short and general rather than inventing detail — or return an empty "profile" if there's truly nothing usable.
-- Write it as usable acting notes for a roleplay — concrete behavioral tendencies ("gets quiet and short when money comes up", "needs a few minutes before responding to anything emotional") rather than clinical labels.
+- Write "profile" as usable acting notes for a roleplay — concrete behavioral tendencies ("gets quiet and short when money comes up", "needs a few minutes before responding to anything emotional") rather than clinical labels.
+- "voice" is specifically about HOW they'd phrase a text, not what they tend to do — never fill it in by guessing from the behavioral profile alone; leave it empty rather than invent a texting style that was never actually described.
 - Never invent specific past events that weren't described. Paraphrase and generalize instead of quoting verbatim.
-- Do not mention "the user" or "Coach Chat" in the profile text itself — write it as a direct description of the partner, the way the traits field of a profile would read.
+- Do not mention "the user" or "Coach Chat" in the profile/voice text itself — write both as a direct description of the partner, the way the traits field of a profile would read.
 - Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
 
 // Same shape/caps as buildInsightsDigest above — bounded and affordable
@@ -497,17 +505,85 @@ function buildPartnerLearningDigest(conversations) {
     .join("\n\n---\n\n");
 }
 
+// Called automatically from POST /api/conversations right before a practice
+// session starts — never from a user-facing button. Mutates `partner` in
+// place and leaves it to the caller to writeDb(). Fails open: any error
+// (including the OpenAI call itself) just leaves the partner's existing
+// learned profile (or lack of one) untouched rather than blocking the user
+// from starting their practice conversation.
+async function learnPartnerProfileIfStale(db, userId, partner) {
+  const coachConversations = db.conversations
+    .filter((c) => c.userId === userId && c.mode !== "practice")
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  if (coachConversations.length === 0) return;
+
+  const newestActivity = coachConversations.reduce((max, c) => {
+    const t = new Date(c.updatedAt || c.createdAt || 0).getTime();
+    return t > max ? t : max;
+  }, 0);
+  const lastLearnedAt = partner.learnedProfileUpdatedAt ? new Date(partner.learnedProfileUpdatedAt).getTime() : 0;
+  if (partner.learnedProfile && lastLearnedAt >= newestActivity) return; // already up to date, nothing new to learn from
+
+  const totalUserMessages = coachConversations.reduce(
+    (sum, c) => sum + (c.messages || []).filter((m) => m.role === "user").length,
+    0
+  );
+  if (totalUserMessages < MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING) return; // not enough material yet — quietly skip, try again next time
+
+  try {
+    const digest = buildPartnerLearningDigest(coachConversations);
+    const otherNames = db.partnerProfiles
+      .filter((p) => p.userId === userId && p.id !== partner.id)
+      .map((p) => p.name)
+      .filter(Boolean);
+
+    const userContent = `Target partner's name: ${partner.name}${partner.context ? ` (context: ${partner.context})` : ""}
+${otherNames.length ? `Other partner profiles this user has — exclude content that is clearly about one of these instead: ${otherNames.join(", ")}` : "This is the user's only partner profile."}
+
+Past Coach Chat messages (the user's own words, most recent conversations first):
+"""
+${digest}
+"""`;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: PARTNER_LEARN_SYSTEM_PROMPT },
+        { role: "user", content: userContent },
+      ],
+      temperature: 0.4,
+      response_format: { type: "json_object" },
+    });
+
+    const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    const profile = String(parsed.profile || "").trim().slice(0, 800);
+    const voice = String(parsed.voice || "").trim().slice(0, 300);
+    const confidence = ["low", "medium", "high"].includes(parsed.confidence) ? parsed.confidence : "low";
+
+    if (profile) {
+      partner.learnedProfile = profile;
+      partner.learnedVoice = voice || null;
+      partner.learnedProfileConfidence = confidence;
+      partner.learnedProfileUpdatedAt = new Date().toISOString();
+    }
+  } catch (err) {
+    console.error("Partner auto-learn error:", err.message);
+    // Fail open — leave the partner's profile as it was, don't block practice mode.
+  }
+}
+
 function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
   const context = (partner.context || "").trim();
   const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
   const learnedNote = (partner.learnedProfile || "").trim();
+  const voiceNote = (partner.voice || "").trim();
   const scenario = (partner.scenario || "").trim();
 
   return `You are role-playing as "${partner.name}", the user's romantic partner${context ? ` (${context})` : ""}, inside a private practice/rehearsal space the user opened on purpose to practice a real conversation.
 
 Personality and traits to embody: ${traits}.
-${learnedNote ? `\nWhat RelateIQ has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
+${learnedNote ? `\nWhat RelateIQ has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
 Rules:
 - Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts — short, natural, imperfect. Not like an assistant.
 - Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
@@ -769,6 +845,7 @@ function publicPartner(p) {
     context: p.context,
     attachmentStyle: p.attachmentStyle || null,
     learnedProfile: p.learnedProfile || null,
+    learnedVoice: p.learnedVoice || null,
     learnedProfileConfidence: p.learnedProfileConfidence || null,
     learnedProfileUpdatedAt: p.learnedProfileUpdatedAt || null,
     createdAt: p.createdAt,
@@ -1331,73 +1408,6 @@ app.delete("/api/partners/:id", authMiddleware, (req, res) => {
   res.json({ ok: true });
 });
 
-// Learns (or re-learns) a partner's behavioral profile from the user's own
-// past Coach Chat messages — see PARTNER_LEARN_SYSTEM_PROMPT above for why.
-// Always uses the fast model regardless of plan, same as Insights and the
-// safety classifier: this is a background extraction task, not a live
-// coaching reply the user is waiting on and judging the quality of.
-app.post("/api/partners/:id/learn", authMiddleware, async (req, res) => {
-  try {
-    const db = req.db;
-    const partner = db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
-    if (!partner) return res.status(404).json({ error: "Partner profile not found." });
-
-    const coachConversations = db.conversations
-      .filter((c) => c.userId === req.user.id && c.mode !== "practice")
-      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-    const totalUserMessages = coachConversations.reduce(
-      (sum, c) => sum + (c.messages || []).filter((m) => m.role === "user").length,
-      0
-    );
-    if (totalUserMessages < MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING) {
-      return res.json({ notEnoughData: true, needed: MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING, have: totalUserMessages });
-    }
-
-    const digest = buildPartnerLearningDigest(coachConversations);
-    const otherNames = db.partnerProfiles
-      .filter((p) => p.userId === req.user.id && p.id !== partner.id)
-      .map((p) => p.name)
-      .filter(Boolean);
-
-    const userContent = `Target partner's name: ${partner.name}${partner.context ? ` (context: ${partner.context})` : ""}
-${otherNames.length ? `Other partner profiles this user has — exclude content that is clearly about one of these instead: ${otherNames.join(", ")}` : "This is the user's only partner profile."}
-
-Past Coach Chat messages (the user's own words, most recent conversations first):
-"""
-${digest}
-"""`;
-
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: PARTNER_LEARN_SYSTEM_PROMPT },
-        { role: "user", content: userContent },
-      ],
-      temperature: 0.4,
-      response_format: { type: "json_object" },
-    });
-
-    const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    const profile = String(parsed.profile || "").trim().slice(0, 800);
-    const confidence = ["low", "medium", "high"].includes(parsed.confidence) ? parsed.confidence : "low";
-
-    if (!profile) {
-      return res.json({ notEnoughData: true, needed: MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING, have: totalUserMessages });
-    }
-
-    partner.learnedProfile = profile;
-    partner.learnedProfileConfidence = confidence;
-    partner.learnedProfileUpdatedAt = new Date().toISOString();
-    writeDb(db);
-
-    res.json(publicPartner(partner));
-  } catch (err) {
-    console.error("Partner learn error:", err);
-    res.status(500).json({ error: "Couldn't learn from your chats right now. Please try again." });
-  }
-});
-
 // ---------------------------------------------------------------------------
 // conversations (Coach mode + Practice mode)
 // ---------------------------------------------------------------------------
@@ -1417,7 +1427,7 @@ app.get("/api/conversations", authMiddleware, (req, res) => {
   res.json(list);
 });
 
-app.post("/api/conversations", authMiddleware, (req, res) => {
+app.post("/api/conversations", authMiddleware, async (req, res) => {
   const db = req.db;
   const { mode, partnerProfileId, scenario } = req.body || {};
   const isPractice = mode === "practice";
@@ -1435,6 +1445,13 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
         upgradeRequired: true,
       });
     }
+
+    // Fully automatic — no button. If there's new Coach Chat activity since
+    // the last time this partner was learned (or it's never been learned),
+    // this refreshes it before the rehearsal starts. See
+    // learnPartnerProfileIfStale above for the staleness check and why it
+    // fails open instead of blocking the conversation on an AI hiccup.
+    await learnPartnerProfileIfStale(db, req.user.id, partner);
   }
 
   // Snapshotted at conversation-start time, same as partnerName/partnerTraits/
@@ -1452,6 +1469,7 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
     partnerContext: partner ? partner.context : null,
     partnerAttachmentStyle: partner ? partner.attachmentStyle || null : null,
     partnerLearnedProfile: partner ? partner.learnedProfile || null : null,
+    partnerLearnedVoice: partner ? partner.learnedVoice || null : null,
     scenario: isPractice ? String(scenario || "").trim().slice(0, 300) || null : null,
     title: isPractice ? `Practice with ${partner.name}` : "New conversation",
     messages: [],
@@ -1538,6 +1556,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         context: conv.partnerContext,
         attachmentStyle: conv.partnerAttachmentStyle,
         learnedProfile: conv.partnerLearnedProfile,
+        voice: conv.partnerLearnedVoice,
         scenario: conv.scenario,
       })
     : COACH_SYSTEM_PROMPT;

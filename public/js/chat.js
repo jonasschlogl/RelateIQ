@@ -601,75 +601,36 @@ function buildPartnerCard(p) {
   return card;
 }
 
-// Lets RelateIQ learn (or re-learn) this partner's behavioral profile from
-// the user's own past Coach Chat messages, instead of only what's manually
-// typed into traits/context — see PARTNER_LEARN_SYSTEM_PROMPT in server.js.
-// Separate from the card above so its button clicks don't also start a
-// practice conversation.
+// Purely informational — RelateIQ learns this partner's behavioral profile
+// from the user's own past Coach Chat messages fully automatically, in the
+// background, right before a practice session starts (see
+// learnPartnerProfileIfStale in server.js). There's nothing to click to make
+// it happen; this row just shows what it has already noticed, if anything,
+// with a quiet "view" toggle — never a button that triggers the learning
+// itself. Renders nothing at all for a partner it hasn't learned about yet
+// (e.g. brand new, or not enough Coach Chat history), so the list stays
+// clean instead of nagging.
 function buildPartnerLearnRow(p) {
   const row = document.createElement("div");
   row.className = "partner-learn-row";
-
-  const hasLearned = !!p.learnedProfile;
-  const btnLabel = hasLearned ? "🔄 Update from my chats" : "🧠 Learn from my chats";
-  const metaLabel = hasLearned ? `Learned ${formatShortDate(p.learnedProfileUpdatedAt)} — ` : "";
+  if (!p.learnedProfile) return row; // empty — nothing to show yet
 
   row.innerHTML = `
-    <div class="partner-learn-controls">
-      <button class="partner-learn-btn" type="button">${btnLabel}</button>
-      ${hasLearned ? `<span class="partner-learn-meta">${escapeHtml(metaLabel)}<button class="partner-learn-toggle" type="button">what RelateIQ has noticed</button></span>` : ""}
-    </div>
+    <span class="partner-learn-meta">RelateIQ has picked up on a few things about ${escapeHtml(p.name)} from your chats (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button></span>
     <div class="partner-learned-box" style="display:none;"></div>
   `;
 
-  const learnBtn = row.querySelector(".partner-learn-btn");
   const box = row.querySelector(".partner-learned-box");
-
-  learnBtn.addEventListener("click", async (e) => {
-    e.stopPropagation();
-    learnBtn.disabled = true;
-    const originalText = learnBtn.textContent;
-    learnBtn.textContent = "Reading your chats…";
-    try {
-      const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}/learn`, { method: "POST" });
-      const data = await safeJson(res);
-      if (!res.ok) {
-        learnBtn.textContent = originalText;
-        learnBtn.disabled = false;
-        alert(data.error || "Couldn't learn from your chats right now.");
-        return;
-      }
-      if (data.notEnoughData) {
-        learnBtn.textContent = originalText;
-        learnBtn.disabled = false;
-        box.style.display = "block";
-        box.textContent = `Not quite enough Coach Chat history yet (${data.have || 0}/${data.needed} messages) — the more you talk to Coach about the relationship, the better this gets.`;
-        return;
-      }
-      const idx = partners.findIndex((x) => x.id === p.id);
-      if (idx !== -1) partners[idx] = data;
-      const newRow = buildPartnerLearnRow(data);
-      row.replaceWith(newRow);
-      newRow.querySelector(".partner-learned-box").style.display = "block";
-      newRow.querySelector(".partner-learned-box").textContent = data.learnedProfile;
-    } catch (err) {
-      console.error(err);
-      learnBtn.textContent = originalText;
-      learnBtn.disabled = false;
-      alert("Couldn't connect to the server.");
-    }
-  });
-
   const toggleBtn = row.querySelector(".partner-learn-toggle");
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const showing = box.style.display !== "none";
-      box.style.display = showing ? "none" : "block";
-      box.textContent = p.learnedProfile || "";
-      toggleBtn.textContent = showing ? "what RelateIQ has noticed" : "hide";
-    });
-  }
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const showing = box.style.display !== "none";
+    box.style.display = showing ? "none" : "block";
+    if (!showing) {
+      box.textContent = [p.learnedProfile, p.learnedVoice ? `Voice: ${p.learnedVoice}` : ""].filter(Boolean).join("\n\n");
+    }
+    toggleBtn.textContent = showing ? "view" : "hide";
+  });
 
   return row;
 }
