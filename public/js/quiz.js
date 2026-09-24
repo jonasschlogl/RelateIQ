@@ -158,6 +158,14 @@ function renderResult(name, desc) {
         <div class="style-name">${escapeHtml(name)}</div>
         <p class="quiz-result-desc">${escapeHtml(desc)}</p>
         <p class="quiz-result-desc" style="font-size:13px; color:var(--text-faint);">This is a lightweight self-reflection tool, not a clinical assessment. Attachment styles can also shift over time and vary by relationship.</p>
+
+        <div class="quiz-compare-box">
+          <h3 style="font-size:16px; margin-bottom:6px;">See how your styles interact</h3>
+          <p class="text-muted" style="font-size:13.5px; margin-bottom:14px;">Send your partner a link — they take a short version of this quiz (no account needed), and once they answer, you'll both see how your two styles tend to interact.</p>
+          <button class="btn btn-gradient btn-sm" id="make-compare-btn" type="button">Get a link for my partner</button>
+          <div id="compare-link-area"></div>
+        </div>
+
         <div class="hero-cta">
           <a href="dashboard.html" class="btn btn-gradient">Go to my account</a>
           <button class="btn btn-ghost" id="retake-btn" type="button">Retake quiz</button>
@@ -173,4 +181,46 @@ function renderResult(name, desc) {
     tally.disorganized = 0;
     renderQuestion();
   });
+  document.getElementById("make-compare-btn").addEventListener("click", createCompareLink);
+}
+
+async function createCompareLink() {
+  const btn = document.getElementById("make-compare-btn");
+  const area = document.getElementById("compare-link-area");
+  btn.disabled = true;
+  btn.textContent = "Creating link…";
+  try {
+    const res = await authFetch("/api/compare", { method: "POST" });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      area.innerHTML = `<p class="form-error" style="display:block; margin-top:12px;">${escapeHtml(data.error || "Couldn't create that link. Please try again.")}</p>`;
+      btn.disabled = false;
+      btn.textContent = "Get a link for my partner";
+      return;
+    }
+    const link = `${window.location.origin}/compare-view.html?token=${encodeURIComponent(data.token)}`;
+    btn.style.display = "none";
+    area.innerHTML = `
+      <div class="share-link-box" style="margin-top:14px; margin-bottom:0;">
+        <span id="compare-link-text">${escapeHtml(link)}</span>
+        <button class="btn btn-gradient btn-sm" id="copy-compare-link-btn" type="button">Copy link</button>
+      </div>
+      <p class="text-muted" style="font-size:12.5px; margin-top:10px; margin-bottom:0;">Save this link somewhere — once your partner answers, you can reopen it yourself anytime to see the result.</p>
+    `;
+    document.getElementById("copy-compare-link-btn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(link);
+        const copyBtn = document.getElementById("copy-compare-link-btn");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => { copyBtn.textContent = "Copy link"; }, 1800);
+      } catch (e) {
+        // Clipboard API can be unavailable (e.g. non-HTTPS) — the link text is
+        // still selectable/visible, so this is a soft failure, not a dead end.
+      }
+    });
+  } catch (err) {
+    area.innerHTML = `<p class="form-error" style="display:block; margin-top:12px;">Couldn't create that link. Please try again.</p>`;
+    btn.disabled = false;
+    btn.textContent = "Get a link for my partner";
+  }
 }

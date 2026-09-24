@@ -2099,6 +2099,36 @@ section {
   font-size: 15px;
 }
 
+.quiz-compare-box {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  padding: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.compat-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 18px;
+}
+
+.compat-pair .compat-style-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--accent-1);
+}
+
+.compat-pair .compat-plus {
+  color: var(--text-faint);
+  font-size: 15px;
+}
+
 /* ---------------------------------------------------------------------- */
 /* Modes hub (grid of entry points, shown on dashboard)                    */
 /* ---------------------------------------------------------------------- */

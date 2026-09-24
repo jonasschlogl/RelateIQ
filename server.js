@@ -518,6 +518,36 @@ const ATTACHMENT_STYLES = {
   },
 };
 
+// Hand-written, not AI-generated — attachment styles are a fixed set of 4,
+// so every one of the 10 unordered pairings can just be written once and
+// reused, which is both cheaper and more reliable than calling the model
+// for something that never actually changes. Keyed by the two style names
+// sorted alphabetically and joined with "|" (see compatKey below), so each
+// pairing only needs one entry regardless of which partner has which style.
+const ATTACHMENT_COMPAT = {
+  "secure|secure": "Attachment research points to this as the easiest pairing to sustain — you can each ask for what you need and tolerate your partner doing the same, without conflict automatically feeling like a threat to the relationship itself. The risk here isn't conflict, it's coasting: a secure-secure pair can go a long time without deliberately checking in, simply because nothing ever feels urgent enough to force the conversation.",
+  "anxious|secure": "A secure partner's steadiness is genuinely reassuring to an anxious one — but only if it's paired with plain, consistent communication rather than an assumption that the anxious partner should already feel secure. A silence the secure partner reads as \"nothing\" can read as danger to the anxious one, so naming things out loud matters more here than it would with another secure partner.",
+  "avoidant|secure": "A secure partner's patience tends to earn the trust that lets an avoidant partner slowly lower their guard — but not on a schedule. Pushing for closeness faster than an avoidant partner sets the pace themselves usually backfires; the secure partner's consistency does more of the work here than any direct request could.",
+  "disorganized|secure": "A secure partner offers a steadiness that a disorganized partner both wants and, in an intense moment, may struggle to fully trust. This pairing tends to improve slowly, through months of consistency, rather than through any single reassuring conversation — disorganized attachment tends to soften from repeated proof, not from being told it's safe.",
+  "anxious|anxious": "Two anxious partners can create a closeness that feels intense and mutual at first, but a delay in one person's response can trigger a spiral in the other — who then seeks even more reassurance, sometimes faster than either can actually give it. Naming the spiral out loud the moment it starts tends to defuse it faster than either partner quietly trying to reassure the other.",
+  "anxious|avoidant": "One of the most studied and most difficult pairings: the anxious partner's push for closeness can read as pressure to the avoidant one, who pulls back — which then reads as confirmation of exactly what the anxious partner was afraid of, so they push harder. Breaking the cycle usually starts with the avoidant partner naming *when* they'll re-engage instead of just going quiet, and the anxious partner practicing tolerating a stated pause without treating it as rejection.",
+  "anxious|disorganized": "An anxious partner's need for reassurance meets a disorganized partner who genuinely wants to give it, but who can sometimes struggle to get close enough to in the moment without their own alarm kicking in — so the anxious partner's reassurance-seeking can accidentally trigger the very withdrawal they're afraid of. Slowing down how fast reassurance is expected to arrive tends to help both sides.",
+  "avoidant|avoidant": "Two avoidant partners often mistake giving each other space for closeness, which can work smoothly for a long stretch — but it can also leave both people under-practiced at naming needs when something actually does go wrong, since neither one is used to being the one who pushes to talk it through.",
+  "avoidant|disorganized": "An avoidant partner's instinct to handle things alone can look, to a disorganized partner, uncomfortably like being shut out — which activates the same alarm a disorganized partner feels whenever closeness turns unpredictable. Small, low-stakes check-ins tend to land better here than one big vulnerable conversation, since they build trust in smaller, safer doses.",
+  "disorganized|disorganized": "Two disorganized partners can find that each other's push-pull rhythm feels familiar rather than confusing — but a hard moment can flare into both partners pulling away or lashing out at once, with neither able to be the steady one. Having a specific, agreed-on way to pause and reconnect later matters more in this pairing than in almost any other.",
+};
+
+function compatKey(a, b) {
+  return [a, b].sort().join("|");
+}
+
+function compatText(a, b) {
+  return (
+    ATTACHMENT_COMPAT[compatKey(a, b)] ||
+    "Every pairing has its own rhythm — the label matters less than noticing the pattern together and naming it when it shows up."
+  );
+}
+
 const CHECKIN_QUESTIONS = [
   "What's one small thing your partner did recently that you appreciated, even if you didn't say it out loud?",
   "Is there something you've been meaning to bring up but keep putting off? What's stopping you?",
@@ -1971,6 +2001,145 @@ app.get("/api/public/shares/:token", (req, res) => {
     })),
     updatedAt: share.updatedAt,
   });
+});
+
+// ---------------------------------------------------------------------------
+// Attachment style comparison — lets someone who's taken the quiz generate a
+// link their partner can open with no account, take a short version of the
+// same quiz themselves, and see how their two styles tend to interact. Each
+// side's style is a snapshot taken the moment they answer (same pattern as
+// conversation shares above), so a later retake of the quiz never silently
+// changes a link someone already has. The owner's style is only revealed
+// once the partner has answered too — a two-way reveal, not a one-sided peek.
+// ---------------------------------------------------------------------------
+
+const MAX_COMPARES_PER_USER = 5;
+
+function publicCompare(compare) {
+  return {
+    id: compare.id,
+    token: compare.token,
+    ownerStyle: compare.ownerStyle,
+    partnerStyle: compare.partnerStyle || null,
+    partnerRespondedAt: compare.partnerRespondedAt || null,
+    revoked: !!compare.revoked,
+    createdAt: compare.createdAt,
+  };
+}
+
+app.post("/api/compare", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const user = db.users.find((u) => u.id === req.user.id);
+    if (!user.attachmentStyle) {
+      return res.status(400).json({ error: "Take the Attachment Style Quiz first — then you can compare results with your partner." });
+    }
+
+    const existingCount = db.compares.filter((c) => c.userId === req.user.id).length;
+    if (existingCount >= MAX_COMPARES_PER_USER) {
+      return res.status(403).json({
+        error: `You can have up to ${MAX_COMPARES_PER_USER} comparison links at once. Delete an old one to make room.`,
+      });
+    }
+
+    const compare = {
+      id: generateId("cmp"),
+      userId: req.user.id,
+      token: crypto.randomBytes(24).toString("hex"),
+      ownerStyle: user.attachmentStyle,
+      partnerStyle: null,
+      partnerRespondedAt: null,
+      revoked: false,
+      createdAt: new Date().toISOString(),
+    };
+    db.compares.push(compare);
+    writeDb(db);
+    res.json(publicCompare(compare));
+  } catch (err) {
+    console.error("Create compare error:", err);
+    res.status(500).json({ error: "Couldn't create that link. Please try again." });
+  }
+});
+
+app.get("/api/compare", authMiddleware, (req, res) => {
+  const list = req.db.compares
+    .filter((c) => c.userId === req.user.id)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .map(publicCompare);
+  res.json(list);
+});
+
+app.patch("/api/compare/:id", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const compare = db.compares.find((c) => c.id === req.params.id && c.userId === req.user.id);
+    if (!compare) return res.status(404).json({ error: "Comparison link not found." });
+    const { revoked } = req.body || {};
+    if (revoked !== undefined) compare.revoked = !!revoked;
+    writeDb(db);
+    res.json(publicCompare(compare));
+  } catch (err) {
+    console.error("Update compare error:", err);
+    res.status(500).json({ error: "Couldn't update that link. Please try again." });
+  }
+});
+
+app.delete("/api/compare/:id", authMiddleware, (req, res) => {
+  const db = req.db;
+  const idx = db.compares.findIndex((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (idx === -1) return res.status(404).json({ error: "Comparison link not found." });
+  db.compares.splice(idx, 1);
+  writeDb(db);
+  res.json({ ok: true });
+});
+
+// Public, unauthenticated — what the partner opens. Never reveals the
+// owner's style until the partner has answered their own short quiz.
+app.get("/api/public/compare/:token", (req, res) => {
+  const db = readDb();
+  const compare = db.compares.find((c) => c.token === req.params.token);
+  if (!compare || compare.revoked) {
+    return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
+  }
+  if (!compare.partnerStyle) {
+    return res.json({ answered: false, ownerStyle: null, partnerStyle: null, compatText: null });
+  }
+  res.json({
+    answered: true,
+    ownerStyle: { key: compare.ownerStyle, ...ATTACHMENT_STYLES[compare.ownerStyle] },
+    partnerStyle: { key: compare.partnerStyle, ...ATTACHMENT_STYLES[compare.partnerStyle] },
+    compatText: compatText(compare.ownerStyle, compare.partnerStyle),
+  });
+});
+
+// Public, unauthenticated — the partner submits their own short quiz result
+// here. Can be answered more than once (a genuine retake), which simply
+// overwrites the previous answer; there's no account to protect on this side.
+app.post("/api/public/compare/:token/respond", (req, res) => {
+  try {
+    const db = readDb();
+    const compare = db.compares.find((c) => c.token === req.params.token);
+    if (!compare || compare.revoked) {
+      return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
+    }
+    const { style } = req.body || {};
+    if (!ATTACHMENT_STYLES[style]) {
+      return res.status(400).json({ error: "Unknown attachment style." });
+    }
+    compare.partnerStyle = style;
+    compare.partnerRespondedAt = new Date().toISOString();
+    writeDb(db);
+
+    res.json({
+      answered: true,
+      ownerStyle: { key: compare.ownerStyle, ...ATTACHMENT_STYLES[compare.ownerStyle] },
+      partnerStyle: { key: style, ...ATTACHMENT_STYLES[style] },
+      compatText: compatText(compare.ownerStyle, style),
+    });
+  } catch (err) {
+    console.error("Compare respond error:", err);
+    res.status(500).json({ error: "Couldn't save your answer. Please try again." });
+  }
 });
 
 // ---------------------------------------------------------------------------

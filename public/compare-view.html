@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared with you · RelateIQ</title>
+  <title>Attachment style comparison · RelateIQ</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Someone using RelateIQ shared this with you directly." />
+  <meta name="description" content="Someone using RelateIQ wants to compare attachment styles with you." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -26,7 +26,8 @@
   </header>
 
   <main class="tool-page">
-    <div id="shared-state">
+    <div class="quiz-progress" id="compare-progress" style="display:none;"><div class="quiz-progress-bar" id="compare-progress-bar" style="width:0%;"></div></div>
+    <div id="compare-state">
       <p class="summary-loading">Loading…</p>
     </div>
   </main>
@@ -40,6 +41,6 @@
   </footer>
 
   <script src="js/shared.js?v=9"></script>
-  <script src="js/shared-view.js?v=2"></script>
+  <script src="js/compare-view.js?v=1"></script>
 </body>
 </html>
