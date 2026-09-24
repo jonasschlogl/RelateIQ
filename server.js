@@ -452,34 +452,39 @@ function buildInsightsDigest(conversations) {
 // into the traits/context fields. This is the same idea as Insights above —
 // an AI reading across the user's own past conversations to notice
 // recurring things — just aimed at one specific relationship instead of
-// coaching patterns in general. A user can have several partner profiles
-// (an ex, a current partner, etc.), and their Coach Chat history isn't
-// tagged per-partner, so the model is explicitly told the target partner's
-// name plus the OTHER partner names to exclude, and asked to keep confidence
-// low/general rather than guess when it can't tell them apart.
+// coaching patterns in general.
 //
-// Fully automatic, no button: this runs by itself whenever a practice
-// conversation is started (see learnPartnerProfileIfStale, called from
-// POST /api/conversations), and only re-calls the model when there's new
-// Coach Chat activity since the last time it ran — so it stays current
-// without a user ever having to trigger it, and without re-running (and
-// re-billing) on every single practice session once nothing has changed.
+// The hard problem: a user can have more than one partner profile (an ex, a
+// current partner), and Coach Chat is just "talk to an AI coach about your
+// relationship" — the user very often never actually names who they mean.
+// Asking the model to guess from context is unreliable exactly when it
+// matters most (misattributing one relationship's dynamics to a different
+// partner would make Practice Mode actively worse, not better). So this
+// does NOT rely on the model to disambiguate:
+//   - With exactly one partner profile, there's nothing to disambiguate —
+//     all Coach Chat history is safely about that one relationship.
+//   - With more than one, only conversations the user has explicitly tagged
+//     (conv.aboutPartnerId, set via PATCH /api/conversations/:id — see the
+//     coach-tag-bar UI in chat.js) are used for that partner. Untagged
+//     conversations are simply not used for learning until tagged — never
+//     guessed. A user can tag old conversations retroactively at any time,
+//     not just new ones.
+//
+// Fully automatic otherwise, no button: this runs by itself whenever a
+// practice conversation is started (see learnPartnerProfileIfStale, called
+// from POST /api/conversations), and only re-calls the model when there's
+// new *usable* Coach Chat activity since the last time it ran.
 // ---------------------------------------------------------------------------
 
 const MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING = 8;
 
-const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly — including sounding like them — in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here — you're extracting what the user has said, across many separate conversations, about how this specific partner tends to act, communicate, and react.
-
-You will be given:
-- The target partner's name (and optionally other context about them the user already provided).
-- The names of the user's OTHER partner profiles, if any — content that is clearly about one of THOSE partners must be excluded.
-- A set of the user's own messages from past Coach Chat conversations (their side only — the AI coach's replies are not included).
+const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly — including sounding like them — in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here — you're extracting what the user has said about how this specific partner tends to act, communicate, and react. Every message you're given has already been confirmed (by the user, not by you) to be about this one partner, so you don't need to guess who is being discussed — just extract what's actually there.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
 {"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "voice": "<a short note on specifically how they phrase things — word choice, message length, punctuation/emoji habits, typical phrases — but ONLY if the user's messages actually reveal this, e.g. by quoting or closely describing their wording. Empty string if nothing like that is in the material.>", "confidence": "low"|"medium"|"high"}
 
 Rules:
-- Only include what's actually supported by the messages. If they don't say much specifically about this partner (too little material, or it's ambiguous which partner is meant), set "confidence":"low" and keep "profile" short and general rather than inventing detail — or return an empty "profile" if there's truly nothing usable.
+- Only include what's actually supported by the messages. If there isn't much to go on, set "confidence":"low" and keep "profile" short and general rather than inventing detail — or return an empty "profile" if there's truly nothing usable.
 - Write "profile" as usable acting notes for a roleplay — concrete behavioral tendencies ("gets quiet and short when money comes up", "needs a few minutes before responding to anything emotional") rather than clinical labels.
 - "voice" is specifically about HOW they'd phrase a text, not what they tend to do — never fill it in by guessing from the behavioral profile alone; leave it empty rather than invent a texting style that was never actually described.
 - Never invent specific past events that weren't described. Paraphrase and generalize instead of quoting verbatim.
@@ -512,9 +517,17 @@ function buildPartnerLearningDigest(conversations) {
 // learned profile (or lack of one) untouched rather than blocking the user
 // from starting their practice conversation.
 async function learnPartnerProfileIfStale(db, userId, partner) {
-  const coachConversations = db.conversations
+  const userHasMultiplePartners = db.partnerProfiles.filter((p) => p.userId === userId).length > 1;
+
+  let coachConversations = db.conversations
     .filter((c) => c.userId === userId && c.mode !== "practice")
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  // See the block comment above: with more than one partner profile, only
+  // conversations explicitly tagged to THIS partner are usable material.
+  if (userHasMultiplePartners) {
+    coachConversations = coachConversations.filter((c) => c.aboutPartnerId === partner.id);
+  }
   if (coachConversations.length === 0) return;
 
   const newestActivity = coachConversations.reduce((max, c) => {
@@ -532,15 +545,9 @@ async function learnPartnerProfileIfStale(db, userId, partner) {
 
   try {
     const digest = buildPartnerLearningDigest(coachConversations);
-    const otherNames = db.partnerProfiles
-      .filter((p) => p.userId === userId && p.id !== partner.id)
-      .map((p) => p.name)
-      .filter(Boolean);
-
     const userContent = `Target partner's name: ${partner.name}${partner.context ? ` (context: ${partner.context})` : ""}
-${otherNames.length ? `Other partner profiles this user has — exclude content that is clearly about one of these instead: ${otherNames.join(", ")}` : "This is the user's only partner profile."}
 
-Past Coach Chat messages (the user's own words, most recent conversations first):
+Past Coach Chat messages, already confirmed to be about this partner (the user's own words, most recent conversations first):
 """
 ${digest}
 """`;
@@ -1423,6 +1430,7 @@ app.get("/api/conversations", authMiddleware, (req, res) => {
       createdAt: c.createdAt,
       mode: c.mode || "coach",
       partnerName: c.partnerName || null,
+      aboutPartnerId: c.aboutPartnerId || null,
     }));
   res.json(list);
 });
@@ -1471,6 +1479,14 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     partnerLearnedProfile: partner ? partner.learnedProfile || null : null,
     partnerLearnedVoice: partner ? partner.learnedVoice || null : null,
     scenario: isPractice ? String(scenario || "").trim().slice(0, 300) || null : null,
+    // Which relationship a Coach Chat conversation is about — nullable,
+    // meaningless for Practice mode (that already has partnerProfileId).
+    // Only matters once a user has more than one partner profile; see
+    // learnPartnerProfileIfStale for why this exists at all: without it,
+    // there's no way to know which partner a coaching conversation refers
+    // to, so automatic learning can't safely be attributed. Settable here
+    // at creation or any time after via PATCH /api/conversations/:id.
+    aboutPartnerId: null,
     title: isPractice ? `Practice with ${partner.name}` : "New conversation",
     messages: [],
     createdAt: new Date().toISOString(),
@@ -1482,6 +1498,31 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   }
   writeDb(db);
   res.json(conv);
+});
+
+// Tags (or untags) which partner profile a Coach Chat conversation is about.
+// Self-reported by the user, not AI-guessed — see the comment on
+// learnPartnerProfileIfStale for why a guess isn't good enough once someone
+// has more than one partner profile. Works on any past conversation too, so
+// a user can go back and tag older Coach Chat history, not just new chats.
+app.patch("/api/conversations/:id", authMiddleware, (req, res) => {
+  const db = req.db;
+  const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (!conv) return res.status(404).json({ error: "Conversation not found." });
+  if (conv.mode === "practice") {
+    return res.status(400).json({ error: "Practice conversations already belong to a partner profile." });
+  }
+
+  const { aboutPartnerId } = req.body || {};
+  if (aboutPartnerId === null || aboutPartnerId === undefined || aboutPartnerId === "") {
+    conv.aboutPartnerId = null;
+  } else {
+    const partner = db.partnerProfiles.find((p) => p.id === aboutPartnerId && p.userId === req.user.id);
+    if (!partner) return res.status(400).json({ error: "Partner profile not found." });
+    conv.aboutPartnerId = partner.id;
+  }
+  writeDb(db);
+  res.json({ id: conv.id, aboutPartnerId: conv.aboutPartnerId });
 });
 
 app.get("/api/conversations/:id", authMiddleware, (req, res) => {

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=26" />
+  <link rel="stylesheet" href="css/style.css?v=27" />
 </head>
 <body>
 
@@ -69,6 +69,11 @@
         <button class="btn btn-ghost btn-sm" id="debrief-btn" type="button">Debrief with Coach</button>
       </div>
 
+      <div class="coach-tag-bar" id="coach-tag-bar" style="display:none;">
+        <span class="coach-tag-label">This conversation is about:</span>
+        <div class="coach-tag-chips" id="coach-tag-chips"></div>
+      </div>
+
       <div id="chat" class="chat-messages"></div>
 
       <div class="input-area" id="input-area">
@@ -90,6 +95,6 @@
   </div>
 
   <script src="js/shared.js?v=9"></script>
-  <script src="js/chat.js?v=17"></script>
+  <script src="js/chat.js?v=18"></script>
 </body>
 </html>

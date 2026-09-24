@@ -92,8 +92,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (mode === "practice") {
         setActiveTab("practice");
         currentConversationId = null;
+        currentConvCtx = { mode: "practice", partnerName: null };
         showPartnerBanner(false);
         showComposer(false);
+        renderCoachTagBar();
         renderHistory();
         renderPracticeSetup();
       } else {
@@ -115,14 +117,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     input.style.height = Math.min(input.scrollHeight, 140) + "px";
   });
 
-  await loadConversations();
+  // Loaded here (not just inside the Practice setup screen) because Coach
+  // Chat also needs to know how many partner profiles exist, to decide
+  // whether the "who is this about" tag bar is even relevant — see
+  // renderCoachTagBar. Harmless/cheap for users with 0-1 partner profiles,
+  // which is the common case.
+  await Promise.all([loadConversations(), loadPartners()]);
 
   const params = new URLSearchParams(window.location.search);
   const requested = params.get("c");
   if (params.get("mode") === "practice") {
     setActiveTab("practice");
+    currentConvCtx = { mode: "practice", partnerName: null };
     showPartnerBanner(false);
     showComposer(false);
+    renderCoachTagBar();
     renderPracticeSetup();
   } else if (params.get("new") === "1") {
     await startNewChat("coach");
@@ -193,6 +202,57 @@ function showPartnerBanner(visible, name, scenario) {
       }
     }
   }
+}
+
+// Lets the user say which partner profile a Coach Chat conversation is
+// about — self-reported, not guessed. Only shown when it actually matters:
+// a Coach Chat conversation, with more than one partner profile to choose
+// between. With 0 or 1 partner profiles there's nothing to disambiguate, so
+// this stays hidden and the automatic partner-learning in server.js just
+// uses all Coach Chat history for that one relationship — see
+// learnPartnerProfileIfStale in server.js for why this distinction exists.
+function renderCoachTagBar() {
+  const bar = document.getElementById("coach-tag-bar");
+  if (!bar) return;
+
+  if (currentConvCtx.mode !== "coach" || !currentConversationId || partners.length <= 1) {
+    bar.style.display = "none";
+    return;
+  }
+
+  bar.style.display = "flex";
+  const chipsDiv = document.getElementById("coach-tag-chips");
+  const current = currentConvCtx.aboutPartnerId || null;
+  const options = [...partners.map((p) => ({ id: p.id, label: p.name })), { id: null, label: "Not sure" }];
+
+  chipsDiv.innerHTML = options
+    .map(
+      (opt) =>
+        `<button type="button" class="coach-tag-chip${opt.id === current ? " active" : ""}" data-id="${opt.id ? escapeHtml(opt.id) : ""}">${escapeHtml(opt.label)}</button>`
+    )
+    .join("");
+
+  chipsDiv.querySelectorAll(".coach-tag-chip").forEach((chip) => {
+    chip.addEventListener("click", async () => {
+      const newId = chip.dataset.id || null;
+      if (newId === (currentConvCtx.aboutPartnerId || null)) return;
+      chip.disabled = true;
+      try {
+        const res = await authFetch(`/api/conversations/${encodeURIComponent(currentConversationId)}`, {
+          method: "PATCH",
+          body: JSON.stringify({ aboutPartnerId: newId }),
+        });
+        if (!res.ok) return;
+        currentConvCtx.aboutPartnerId = newId;
+        const entry = conversations.find((c) => c.id === currentConversationId);
+        if (entry) entry.aboutPartnerId = newId;
+        renderCoachTagBar();
+      } catch (err) {
+        console.error(err);
+        chip.disabled = false;
+      }
+    });
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -686,13 +746,15 @@ async function startNewChat(mode) {
       createdAt: conv.createdAt,
       mode: "coach",
       partnerName: null,
+      aboutPartnerId: null,
     });
     currentConversationId = conv.id;
-    currentConvCtx = { mode: "coach", partnerName: null };
+    currentConvCtx = { mode: "coach", partnerName: null, aboutPartnerId: null };
     currentConvHasUserMessage = false;
     setActiveTab("coach");
     showPartnerBanner(false);
     showComposer(true);
+    renderCoachTagBar();
     renderHistory();
     renderEmptyState();
   } catch (err) {
@@ -710,11 +772,17 @@ async function openConversation(id, preloadedConv) {
     }
 
     currentConversationId = conv.id;
-    currentConvCtx = { mode: conv.mode || "coach", partnerName: conv.partnerName || null, scenario: conv.scenario || null };
+    currentConvCtx = {
+      mode: conv.mode || "coach",
+      partnerName: conv.partnerName || null,
+      scenario: conv.scenario || null,
+      aboutPartnerId: conv.aboutPartnerId || null,
+    };
     currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
     showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario);
+    renderCoachTagBar();
     renderHistory();
 
     const chatDiv = document.getElementById("chat");
