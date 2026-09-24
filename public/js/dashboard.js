@@ -249,7 +249,26 @@ function wireEmailPreferences(me) {
   if (!checkinBox || !digestBox) return;
 
   checkinBox.checked = me.emailCheckinReminders !== false;
-  digestBox.checked = me.emailWeeklyDigest !== false;
+
+  // The automated weekly digest is a Pro+ perk (see server.js's
+  // runWeeklyInsightsDigest) — a Free account never gets one sent
+  // regardless of this checkbox, so show it locked with an upgrade hint
+  // rather than letting someone opt into something that silently never
+  // arrives.
+  const isFree = me.plan === "free";
+  digestBox.checked = !isFree && me.emailWeeklyDigest !== false;
+  digestBox.disabled = isFree;
+
+  if (isFree) {
+    const digestLabel = digestBox.closest(".email-pref-toggle");
+    if (digestLabel && !digestLabel.querySelector(".pref-upgrade-hint")) {
+      const hint = document.createElement("a");
+      hint.href = "index.html#pricing";
+      hint.className = "pref-upgrade-hint";
+      hint.textContent = "Pro feature — upgrade";
+      digestLabel.appendChild(hint);
+    }
+  }
 
   async function save() {
     try {

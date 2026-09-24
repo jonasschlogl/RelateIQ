@@ -130,6 +130,26 @@ const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me-in-production";
 const FREE_DAILY_LIMIT = 8;
 
+// Free-plan limits BEYOND the shared daily AI-message pool above. Coach
+// Chat (the everyday "come back and talk it through" habit loop) stays
+// generous — that's what gets people using this enough to tell a friend.
+// The scarce resources on Free are the higher-"wow", more shareable
+// moments: attaching an actual screenshot of a conversation with your
+// partner for RelateIQ to read, and a full Partner Practice rehearsal —
+// these are lifetime counts (not daily), so a Free account gets a real
+// taste of each before hitting the upgrade prompt. Deliberately not set to
+// "1 and never again" this early — a brand-new product still needs people
+// to experience enough value to want to come back and tell someone else;
+// tighten these once there's real signal on where people drop off vs.
+// convert.
+const FREE_LIFETIME_ATTACHMENT_LIMIT = 3; // files/photos a Free account can ever attach, combined across all conversations
+const FREE_LIFETIME_PRACTICE_CONVERSATIONS = 1; // Partner Practice rehearsals a Free account can start
+const FREE_LIFETIME_MESSAGE_COACH_USES = 3; // Message Coach rewrites/proposals a Free account can request from the website tool
+// (the browser extension's automatic smart-reply chips are deliberately left
+// off this cap and stay on the general daily AI pool below — they fire
+// passively while chatting, so a lifetime cap this small would burn out in
+// minutes rather than reflecting a deliberate "try the feature" choice)
+
 // Partner profiles (Practice mode) allowed per plan — omit a plan here (e.g.
 // "premium") to leave it unlimited.
 const PARTNER_PROFILE_LIMITS = { free: 1, pro: 5 };
@@ -137,9 +157,25 @@ const PARTNER_PROFILE_LIMITS = { free: 1, pro: 5 };
 // Attachments (images, screen recordings, other files) on chat messages —
 // how many a single message can carry, by plan. Omit a plan here to fall
 // back to the free limit, same convention as PARTNER_PROFILE_LIMITS above.
-const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 3 };
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
 const MAX_TOTAL_UPLOAD_MB = 15;
 const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
+
+// Premium's headline differentiator: the live, interactive coaching
+// surfaces (Coach Chat, Partner Practice, Message Coach) call a noticeably
+// stronger model for Premium subscribers — real, felt quality (more
+// specific, more nuanced replies), not just a bigger usage cap. Free and
+// Pro share the fast/inexpensive model everywhere. Insights, the therapist
+// summary, and the public demo stay on the fast model regardless of plan —
+// they're extraction/summarization tasks, not the "hear me out and
+// respond" moments where model quality is actually noticeable, and keeping
+// them off the pricier model keeps the cost of those unlimited-on-Pro+
+// features predictable.
+const STANDARD_MODEL = "gpt-4o-mini";
+const PREMIUM_MODEL = "gpt-4o";
+function modelForPlan(plan) {
+  return plan === "premium" ? PREMIUM_MODEL : STANDARD_MODEL;
+}
 // Defaults to public/uploads for local dev. On a host with a persistent
 // volume (so uploaded files survive a redeploy), set UPLOADS_DIR to a path
 // inside that volume — the /uploads route below serves straight from here
@@ -527,6 +563,14 @@ function publicUser(user) {
     // same as brand-new ones.
     emailCheckinReminders: user.emailCheckinReminders !== false,
     emailWeeklyDigest: user.emailWeeklyDigest !== false,
+    // Lifetime, Free-plan-only allowances — null on Pro/Premium (unlimited,
+    // nothing to show). Missing/undefined counts as 0 for accounts created
+    // before these fields existed.
+    attachments: user.plan === "free" ? { used: user.lifetimeAttachmentCount || 0, limit: FREE_LIFETIME_ATTACHMENT_LIMIT } : null,
+    practiceConversations:
+      user.plan === "free" ? { used: user.lifetimePracticeConversations || 0, limit: FREE_LIFETIME_PRACTICE_CONVERSATIONS } : null,
+    messageCoachUses:
+      user.plan === "free" ? { used: user.lifetimeMessageCoachUses || 0, limit: FREE_LIFETIME_MESSAGE_COACH_USES } : null,
     isAdmin: (process.env.ADMIN_EMAILS || "")
       .split(",")
       .map((e) => e.trim().toLowerCase())
@@ -594,6 +638,24 @@ function isOverDailyLimit(user, res) {
   if (user.usage.count >= FREE_DAILY_LIMIT) {
     res.status(429).json({
       error: `You've reached the Free plan's daily limit of ${FREE_DAILY_LIMIT} AI messages. Try again tomorrow, or upgrade to Pro.`,
+    });
+    return true;
+  }
+  return false;
+}
+
+// Message Coach (paste a draft, or open a conversation and ask for a
+// proposed reply) is a Free-plan lifetime allowance, separate from and much
+// smaller than the daily AI-message pool above. This is the "send a
+// screenshot of your argument, see what RelateIQ suggests" moment — the
+// feature most likely to make someone want to keep using this, so Free
+// gets a real taste of it before the upgrade prompt.
+function isOverMessageCoachLifetimeLimit(user, res) {
+  if (user.plan !== "free") return false;
+  if ((user.lifetimeMessageCoachUses || 0) >= FREE_LIFETIME_MESSAGE_COACH_USES) {
+    res.status(403).json({
+      error: `You've used all ${FREE_LIFETIME_MESSAGE_COACH_USES} free Message Coach uses included in the Free plan. Upgrade to Pro for unlimited use.`,
+      upgradeRequired: true,
     });
     return true;
   }
@@ -739,6 +801,9 @@ app.post("/api/auth/register", (req, res) => {
       referralRewardGranted: false,
       emailCheckinReminders: true,
       emailWeeklyDigest: true,
+      lifetimeAttachmentCount: 0,
+      lifetimePracticeConversations: 0,
+      lifetimeMessageCoachUses: 0,
     };
 
     db.users.push(user);
@@ -1095,6 +1160,13 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
     if (!partner) {
       return res.status(400).json({ error: "Select or create a partner profile to start a practice conversation." });
     }
+
+    if (req.user.plan === "free" && (req.user.lifetimePracticeConversations || 0) >= FREE_LIFETIME_PRACTICE_CONVERSATIONS) {
+      return res.status(403).json({
+        error: `The Free plan includes ${FREE_LIFETIME_PRACTICE_CONVERSATIONS} Partner Practice rehearsal${FREE_LIFETIME_PRACTICE_CONVERSATIONS === 1 ? "" : "s"} to try it out. Upgrade to Pro for unlimited Partner Practice.`,
+        upgradeRequired: true,
+      });
+    }
   }
 
   const conv = {
@@ -1111,6 +1183,9 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
     updatedAt: new Date().toISOString(),
   };
   db.conversations.push(conv);
+  if (isPractice && req.user.plan === "free") {
+    req.user.lifetimePracticeConversations = (req.user.lifetimePracticeConversations || 0) + 1;
+  }
   writeDb(db);
   res.json(conv);
 });
@@ -1147,11 +1222,29 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   const user = db.users.find((u) => u.id === req.user.id);
   if (isOverDailyLimit(user, res)) return;
 
+  if (hasAttachments && user.plan === "free") {
+    const usedSoFar = user.lifetimeAttachmentCount || 0;
+    if (usedSoFar + rawAttachments.length > FREE_LIFETIME_ATTACHMENT_LIMIT) {
+      const remaining = Math.max(0, FREE_LIFETIME_ATTACHMENT_LIMIT - usedSoFar);
+      return res.status(403).json({
+        error:
+          remaining > 0
+            ? `The Free plan includes ${FREE_LIFETIME_ATTACHMENT_LIMIT} file/photo attachments total, and you have ${remaining} left — try attaching fewer files, or upgrade to Pro for unlimited attachments.`
+            : `You've used all ${FREE_LIFETIME_ATTACHMENT_LIMIT} file/photo attachments included in the Free plan. Upgrade to Pro for unlimited attachments.`,
+        upgradeRequired: true,
+      });
+    }
+  }
+
   let savedAttachments;
   try {
     savedAttachments = saveIncomingAttachments(user, rawAttachments);
   } catch (err) {
     return res.status(err.status || 400).json({ error: err.message || "Couldn't process the attached file(s)." });
+  }
+
+  if (hasAttachments && user.plan === "free") {
+    user.lifetimeAttachmentCount = (user.lifetimeAttachmentCount || 0) + savedAttachments.length;
   }
 
   conv.messages.push({
@@ -1175,7 +1268,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     const latestContent = buildModelContent(text, savedAttachments);
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: modelForPlan(user.plan),
       messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
       temperature: isPractice ? 0.95 : 0.8,
     });
@@ -1405,6 +1498,7 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     const db = req.db;
     const user = db.users.find((u) => u.id === req.user.id);
     if (isOverDailyLimit(user, res)) return;
+    if (isOverMessageCoachLifetimeLimit(user, res)) return;
 
     const contextBlock = [String(context || "").trim(), transcript].filter(Boolean).join("\n\n") || "(none given)";
     const userContent = trimmedDraft
@@ -1412,7 +1506,7 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
       : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: modelForPlan(user.plan),
       messages: [
         { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
         { role: "user", content: userContent },
@@ -1438,7 +1532,10 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
       return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
     }
 
-    if (user.plan === "free") user.usage.count += 1;
+    if (user.plan === "free") {
+      user.usage.count += 1;
+      user.lifetimeMessageCoachUses = (user.lifetimeMessageCoachUses || 0) + 1;
+    }
     writeDb(db);
 
     res.json({ rewrite, why, usage: user.usage });
@@ -1468,7 +1565,7 @@ app.post("/api/message-coach/suggestions", authMiddleware, async (req, res) => {
     if (isOverDailyLimit(user, res)) return;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: modelForPlan(user.plan),
       messages: [
         { role: "system", content: CHAT_SUGGEST_SYSTEM_PROMPT },
         { role: "user", content: `Conversation so far:\n${transcript}` },
@@ -1981,11 +2078,17 @@ async function runDailyCheckinReminders() {
 
 async function runWeeklyInsightsDigest() {
   const db = readDb();
-  // A user is a candidate if EITHER channel is live for them — email opt-in
-  // or an active push subscription — since the two are independent below.
+  // The automated weekly digest (email and/or push) is a Pro+ perk — Free
+  // users can still generate Insights manually in-app once they have
+  // enough conversations, but RelateIQ coming to them proactively every
+  // week is part of what upgrading buys. A user is a candidate if they're
+  // on a paid plan AND either delivery channel is live for them — email
+  // opt-in or an active push subscription — since the two are independent
+  // below.
   const candidates = db.users.filter(
     (u) =>
-      (u.email && u.emailWeeklyDigest !== false) || db.pushSubscriptions.some((s) => s.userId === u.id)
+      u.plan !== "free" &&
+      ((u.email && u.emailWeeklyDigest !== false) || db.pushSubscriptions.some((s) => s.userId === u.id))
   );
 
   for (const user of candidates) {

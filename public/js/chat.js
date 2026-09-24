@@ -10,7 +10,7 @@ let currentConvHasUserMessage = false; // drives whether the "Export for therapi
 let pendingAttachments = [];
 let composerErrorTimeout = null;
 // Mirrors MAX_FILES_PER_MESSAGE_BY_PLAN in server.js — keep the two in sync.
-const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 3 };
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
 function maxFilesPerMessage() {
   const plan = getUser()?.plan;
   return MAX_FILES_PER_MESSAGE_BY_PLAN[plan] ?? MAX_FILES_PER_MESSAGE_BY_PLAN.free;

@@ -3138,6 +3138,23 @@ body.js-reveal .reveal-item.revealed {
   height: 15px;
 }
 
+.email-pref-toggle input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pref-upgrade-hint {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent-1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pref-upgrade-hint:hover {
+  text-decoration: underline;
+}
+
 .referral-box {
   display: flex;
   align-items: center;
