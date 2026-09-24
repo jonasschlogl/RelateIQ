@@ -90,6 +90,22 @@ async function rewrite() {
       whyEl.textContent = data.why;
       resultBox.appendChild(whyEl);
     }
+
+    // Fixed, hand-checked resources — see safetyBlockFor() in server.js.
+    // Shown alongside the rewrite, never instead of it.
+    if (data.safety) {
+      const card = document.createElement("div");
+      card.className = "safety-notice";
+      const heading = document.createElement("div");
+      heading.className = "safety-notice-heading";
+      heading.textContent = data.safety.heading || "Please reach out to real support";
+      const body = document.createElement("div");
+      body.className = "safety-notice-body";
+      body.innerText = data.safety.body || "";
+      card.appendChild(heading);
+      card.appendChild(body);
+      resultBox.appendChild(card);
+    }
   } catch (err) {
     resultBox.innerHTML = '<span class="placeholder">Nothing here yet.</span>';
     errorBox.textContent = "Couldn't connect to the server.";

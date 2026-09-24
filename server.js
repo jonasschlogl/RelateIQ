@@ -299,6 +299,84 @@ function buildChatTranscript(messages) {
     .join("\n");
 }
 
+// ---------------------------------------------------------------------------
+// Safety net — a small, separate, cheap classifier call (not the main
+// coaching model) that checks whether a message describes the user's own
+// real self-harm risk or an abusive/unsafe relationship, and if so attaches
+// a fixed, hand-verified set of real crisis resources to the response. Kept
+// deliberately separate from COACH_SYSTEM_PROMPT/MESSAGE_COACH_SYSTEM_PROMPT
+// (which already ask the main model to respond gently to this kind of
+// disclosure) because relying on the coaching model alone means the actual
+// phone numbers/links depend on the model remembering them correctly every
+// time — this makes them guaranteed and consistent instead. The main
+// coaching reply is NOT replaced or blocked; this rides alongside it.
+// ---------------------------------------------------------------------------
+
+const SAFETY_CLASSIFIER_PROMPT = `You are a safety classifier for a relationship-coaching app. You will be shown one message a user wrote about their own life. Decide whether it contains a genuine signal of one of these, based only on what the user describes about their OWN current situation — not a hypothetical question, not fiction or roleplay, not a clearly resolved past event:
+
+- "self_harm": the user describes current suicidal thoughts, a plan or intent to harm themselves, or is in an active self-harm crisis right now.
+- "abuse": the user describes being physically hurt, threatened, controlled, or is currently unsafe because of a partner or family member.
+- neither applies.
+
+Respond with ONLY a JSON object, no other text: {"level": "urgent"|"concern"|"none", "category": "self_harm"|"abuse"|null}
+
+- "urgent": an active, current crisis — happening now or imminent (e.g. "I want to end my life tonight", "he's here right now and I'm scared", "I just took some pills").
+- "concern": describes real self-harm history/ideation or an abusive/controlling relationship pattern, but not an active emergency right now.
+- "none": no such signal — this covers the vast majority of messages, including ordinary relationship conflict, jealousy, arguments, sadness, or venting that doesn't rise to this level. When in doubt between "concern" and "none", prefer "none".
+
+If level is "none", category must be null.`;
+
+async function assessSafety(text) {
+  const trimmed = String(text || "").trim();
+  if (!trimmed) return { level: "none", category: null };
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: SAFETY_CLASSIFIER_PROMPT },
+        { role: "user", content: trimmed.slice(0, 4000) },
+      ],
+      temperature: 0,
+      max_tokens: 30,
+      response_format: { type: "json_object" },
+    });
+    const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    const level = ["urgent", "concern", "none"].includes(parsed.level) ? parsed.level : "none";
+    const category = ["self_harm", "abuse"].includes(parsed.category) ? parsed.category : null;
+    return level === "none" ? { level: "none", category: null } : { level, category };
+  } catch (err) {
+    console.error("Safety classifier error:", err.message);
+    // Fail open (as "none") rather than blocking the user's message if this
+    // check itself errors — the coaching prompts' own built-in guidance for
+    // this situation still applies either way.
+    return { level: "none", category: null };
+  }
+}
+
+// Fixed, hand-checked resources — not model-generated, so the phone numbers
+// and links can't drift or get hallucinated. Kept intentionally short and
+// international rather than trying to cover every country: 112 (EU-wide
+// emergency), 988 (US), 116 006 (EU-harmonized victim support, live in most
+// but not yet all member states), and a maintained directory for anywhere
+// else. Verified current as of September 2026 — worth a periodic recheck.
+const SAFETY_RESOURCES = {
+  self_harm: {
+    heading: "Please reach out to real support",
+    body: "What you described sounds serious, and you deserve support from a real person right now, not just a reply from an app.\n\n– In the EU: call 112 for emergency help.\n– In the US: call or text 988 (Suicide & Crisis Lifeline), 24/7.\n– Anywhere else: the International Association for Suicide Prevention keeps an up-to-date directory of crisis lines by country at iasp.info/resources/Crisis_Centres",
+  },
+  abuse: {
+    heading: "Please reach out to real support",
+    body: "What you described matters, and it's more than an app can actually help with.\n\n– If you're in immediate danger: call 112 (EU) or your local emergency number right now.\n– In the EU, 116 006 is the harmonized, free, confidential victim support helpline, live in most member states.\n– The Council of Europe keeps a list of national domestic-violence helplines at coe.int/en/web/istanbul-convention/help-lines",
+  },
+};
+
+function safetyBlockFor(safety) {
+  if (!safety || safety.level === "none") return null;
+  const resource = SAFETY_RESOURCES[safety.category];
+  if (!resource) return null;
+  return { level: safety.level, heading: resource.heading, body: resource.body };
+}
+
 const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute — not therapeutic advice, and not a diagnosis.
 
 Structure the summary as four short, clearly labeled sections, in this order:
@@ -1298,11 +1376,14 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     const priorHistory = conv.messages.slice(-21, -1).map((m) => ({ role: m.role, content: m.content }));
     const latestContent = buildModelContent(text, savedAttachments);
 
-    const completion = await openai.chat.completions.create({
-      model: modelForPlan(user.plan),
-      messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
-      temperature: isPractice ? 0.95 : 0.8,
-    });
+    const [completion, safety] = await Promise.all([
+      openai.chat.completions.create({
+        model: modelForPlan(user.plan),
+        messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
+        temperature: isPractice ? 0.95 : 0.8,
+      }),
+      hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
+    ]);
 
     const reply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
 
@@ -1328,6 +1409,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       partnerName: conv.partnerName,
       attachments: savedAttachments.map(stripInternalFields),
       usage: user.usage,
+      safety: safetyBlockFor(safety),
     });
   } catch (err) {
     console.error("OpenAI error:", err.message);
@@ -1536,15 +1618,18 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
       ? `Context (optional, may be empty):\n${contextBlock}\n\nDraft message:\n"""${trimmedDraft}"""`
       : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`;
 
-    const completion = await openai.chat.completions.create({
-      model: modelForPlan(user.plan),
-      messages: [
-        { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
-        { role: "user", content: userContent },
-      ],
-      temperature: 0.7,
-      response_format: { type: "json_object" },
-    });
+    const [completion, safety] = await Promise.all([
+      openai.chat.completions.create({
+        model: modelForPlan(user.plan),
+        messages: [
+          { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
+          { role: "user", content: userContent },
+        ],
+        temperature: 0.7,
+        response_format: { type: "json_object" },
+      }),
+      assessSafety([trimmedDraft, transcript].filter(Boolean).join("\n")),
+    ]);
 
     // Structured JSON (rather than a labeled-text block) so callers — the
     // website, and the browser extension's WhatsApp/Messenger integration —
@@ -1569,7 +1654,7 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     }
     writeDb(db);
 
-    res.json({ rewrite, why, usage: user.usage });
+    res.json({ rewrite, why, usage: user.usage, safety: safetyBlockFor(safety) });
   } catch (err) {
     console.error("Message coach error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
