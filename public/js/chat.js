@@ -19,6 +19,20 @@ const MAX_TOTAL_UPLOAD_BYTES = 15 * 1024 * 1024;
 const TRASH_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m5 0V4a2 2 0 012-2h0a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
 
+// The full desktop placeholder text ("Tell me what's going on in your
+// relationship…") is too long to fit on one line in the composer at phone
+// widths, and the box only reserves room for a single line — so it used to
+// get visually clipped mid-word. A shorter phone-only variant keeps the
+// placeholder fully visible instead of growing the box to fit 2-3 lines of
+// placeholder text.
+function composerPlaceholder(mode) {
+  const isNarrow = window.matchMedia("(max-width: 640px)").matches;
+  if (mode === "practice") {
+    return isNarrow ? "Type what you'd say…" : "Type what you'd actually say…";
+  }
+  return isNarrow ? "What's going on?" : "Tell me what's going on in your relationship…";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
@@ -33,6 +47,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const limit = maxFilesPerMessage();
     disclaimer.textContent += ` Attachments: up to ${limit} file${limit === 1 ? "" : "s"}, 15MB total per message.`;
   }
+
+  // Covers the empty-state landing (no conversations yet), which never
+  // calls setActiveTab() and so would otherwise keep the static long
+  // placeholder from the HTML. Also keeps it correct across an orientation
+  // change / window resize.
+  const inputEl0 = document.getElementById("input");
+  if (inputEl0) inputEl0.placeholder = composerPlaceholder(currentMode);
+  window.addEventListener("resize", () => {
+    const el = document.getElementById("input");
+    if (el && document.activeElement !== el) el.placeholder = composerPlaceholder(currentMode);
+  });
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("new-chat-btn")?.addEventListener("click", () => {
@@ -123,10 +148,7 @@ function setActiveTab(mode) {
   if (newBtn) newBtn.textContent = mode === "practice" ? "+ New practice" : "+ New chat";
   const input = document.getElementById("input");
   if (input) {
-    input.placeholder =
-      mode === "practice"
-        ? "Type what you'd actually say…"
-        : "Tell me what's going on in your relationship…";
+    input.placeholder = composerPlaceholder(mode);
   }
   updateExportButtonVisibility();
 }
@@ -686,11 +708,27 @@ function typeText(element, text, speed = 12) {
 
 async function sendMessage() {
   if (isSending) return;
-  if (!currentConversationId) return;
 
   const input = document.getElementById("input");
   const message = input.value.trim();
   if (!message && pendingAttachments.length === 0) return;
+
+  if (!currentConversationId) {
+    // ChatGPT-style: typing a first message and hitting Enter/Send starts a
+    // new conversation on its own, instead of requiring an explicit "+ New
+    // chat" click first. Practice mode can't auto-start this way since it
+    // needs a partner profile picked first — its composer is hidden until
+    // a practice conversation already exists, so this only really applies
+    // to Coach mode's empty-state landing.
+    if (currentMode === "practice") return;
+    isSending = true;
+    await startNewChat("coach");
+    isSending = false;
+    if (!currentConversationId) {
+      showComposerError("Couldn't start a new conversation. Please try again.");
+      return;
+    }
+  }
 
   isSending = true;
   input.value = "";
