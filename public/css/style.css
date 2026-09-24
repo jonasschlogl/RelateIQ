@@ -2408,6 +2408,26 @@ section {
 }
 
 @media (max-width: 640px) {
+  /* Every text input/textarea on the site is sized under 16px for a tight
+     visual fit (14-15px) — but iOS Safari auto-zooms the whole page in
+     whenever a field smaller than 16px is focused, which is jarring on a
+     phone and has to be manually zoomed back out. Forcing 16px here (and
+     only here, on mobile) kills the auto-zoom without touching any of the
+     tuned desktop sizing. !important is deliberate: there are a dozen
+     differently-scoped input/textarea rules across this file and this
+     needs to win over all of them uniformly. */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
   section {
     padding: 56px 0;
   }
@@ -2459,6 +2479,18 @@ section {
     border-radius: var(--radius);
     justify-content: center;
   }
+
+  .topbar-account {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partner-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+  }
 }
 
 /* ---------------------------------------------------------------------- */
@@ -2499,11 +2531,14 @@ section {
 
 @media (max-width: 640px) {
   .floating-cta {
-    left: 16px;
+    /* Stays a compact pill (not a full-width bar) even on mobile — full
+       width made it big enough to fully obscure section headings as it
+       scrolled past them, which is a worse trade than a slightly smaller
+       tap target. */
     right: 16px;
     bottom: 16px;
-    justify-content: center;
-    text-align: center;
+    padding: 12px 20px;
+    font-size: 13.5px;
   }
 }
 
@@ -2765,6 +2800,30 @@ body.js-reveal .reveal-item.revealed {
   .share-link-box span {
     white-space: normal;
     word-break: break-all;
+  }
+
+  .summary-paper {
+    padding: 22px;
+  }
+
+  .tool-card {
+    padding: 18px;
+  }
+
+  .quiz-question {
+    padding: 22px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .modal-card {
+    padding: 20px;
+  }
+
+  .modal-overlay {
+    padding: 14px;
   }
 }
 

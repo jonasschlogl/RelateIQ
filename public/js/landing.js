@@ -2,11 +2,8 @@
 // and wire up the Pro/Premium pricing buttons to Stripe Checkout.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("nav-menu");
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => menu.classList.toggle("open"));
-  }
+  // The #nav-toggle/#nav-menu hamburger click handler now lives in
+  // shared.js (loaded on every page, not just this one) — see there.
 
   document.querySelectorAll("[data-plan]").forEach((btn) => {
     btn.addEventListener("click", () => {

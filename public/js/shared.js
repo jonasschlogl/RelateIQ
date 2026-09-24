@@ -126,6 +126,20 @@ function requireAuth() {
   }
 }
 
+// Wires up the mobile hamburger menu (a #nav-toggle button that shows/hides
+// a #nav-menu of nav links) on any page that has one. Lives here — rather
+// than in a page-specific script — since the .site-nav header, and the CSS
+// that hides .nav-links and shows .nav-toggle under 900px, is shared by
+// nearly every page: the toggle needs to work everywhere that header
+// appears, not just on the landing page.
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => menu.classList.toggle("open"));
+  }
+});
+
 async function authFetch(url, options = {}) {
   const token = getToken();
   const headers = Object.assign({ "Content-Type": "application/json" }, options.headers || {});
