@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=23" />
+  <link rel="stylesheet" href="css/style.css?v=24" />
 </head>
 <body>
 
@@ -62,7 +62,10 @@
       </header>
 
       <div class="partner-banner" id="partner-banner" style="display:none;">
-        <span>Practicing a conversation with <strong id="partner-banner-name"></strong></span>
+        <div class="partner-banner-text">
+          <span>Practicing a conversation with <strong id="partner-banner-name"></strong></span>
+          <span class="partner-banner-scenario" id="partner-banner-scenario" style="display:none;"></span>
+        </div>
         <button class="btn btn-ghost btn-sm" id="debrief-btn" type="button">Debrief with Coach</button>
       </div>
 
@@ -87,6 +90,6 @@
   </div>
 
   <script src="js/shared.js?v=9"></script>
-  <script src="js/chat.js?v=14"></script>
+  <script src="js/chat.js?v=15"></script>
 </body>
 </html>

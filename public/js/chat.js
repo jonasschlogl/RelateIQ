@@ -176,13 +176,22 @@ function updateExportButtonVisibility() {
   btn.style.display = currentMode === "coach" && currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
 }
 
-function showPartnerBanner(visible, name) {
+function showPartnerBanner(visible, name, scenario) {
   const banner = document.getElementById("partner-banner");
   if (!banner) return;
   banner.style.display = visible ? "flex" : "none";
   if (visible) {
     const nameEl = document.getElementById("partner-banner-name");
     if (nameEl) nameEl.textContent = name || "your partner";
+    const scenarioEl = document.getElementById("partner-banner-scenario");
+    if (scenarioEl) {
+      if (scenario) {
+        scenarioEl.textContent = `Practicing: ${scenario}`;
+        scenarioEl.style.display = "block";
+      } else {
+        scenarioEl.style.display = "none";
+      }
+    }
   }
 }
 
@@ -472,6 +481,10 @@ async function renderPracticeSetup() {
     <div class="practice-setup" id="practice-setup">
       <h2>Practice a real conversation</h2>
       <p class="text-muted">Pick who you want to practice talking to. The AI will roleplay as them, in character, so you can rehearse before the real thing.</p>
+      <div class="practice-scenario-box">
+        <label for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
+        <input type="text" id="practice-scenario" maxlength="300" placeholder="e.g. asking for more help with the kids without it turning into a fight" autocomplete="off" />
+      </div>
       <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
       <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
       <form class="partner-form" id="partner-form" style="display:none;">
@@ -482,6 +495,15 @@ async function renderPracticeSetup() {
         <textarea id="partner-traits" rows="3" maxlength="500" placeholder="e.g. warm but avoids conflict, gets quiet when stressed, jokes to deflect difficult topics"></textarea>
         <label for="partner-context">Context (optional)</label>
         <input type="text" id="partner-context" maxlength="200" placeholder="e.g. together 2 years, we just moved in together" autocomplete="off" />
+        <label for="partner-attachment">Their attachment style <span class="text-muted">(optional — if you know it, e.g. from the Attachment Quiz)</span></label>
+        <select id="partner-attachment">
+          <option value="">Not sure / skip</option>
+          <option value="secure">Secure</option>
+          <option value="anxious">Anxious</option>
+          <option value="avoidant">Avoidant</option>
+          <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
+        </select>
+        <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelateIQ plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
         <button type="submit" class="btn btn-gradient btn-block">Save &amp; start practicing</button>
       </form>
     </div>
@@ -497,6 +519,7 @@ async function renderPracticeSetup() {
     const name = document.getElementById("partner-name").value.trim();
     const traits = document.getElementById("partner-traits").value.trim();
     const context = document.getElementById("partner-context").value.trim();
+    const attachmentStyle = document.getElementById("partner-attachment").value;
     const errorBox = document.getElementById("partner-form-error");
     errorBox.style.display = "none";
 
@@ -505,7 +528,7 @@ async function renderPracticeSetup() {
     try {
       const res = await authFetch("/api/partners", {
         method: "POST",
-        body: JSON.stringify({ name, traits, context }),
+        body: JSON.stringify({ name, traits, context, attachmentStyle }),
       });
       const partner = await safeJson(res);
       if (!res.ok) {
@@ -525,6 +548,16 @@ async function renderPracticeSetup() {
   renderPartnerList();
 }
 
+// Mirrors ATTACHMENT_STYLES in server.js — kept in sync manually, same
+// duplication pattern as COMPARE_QUESTIONS in compare-view.js (no shared
+// module system between server and client here).
+const ATTACHMENT_STYLE_LABELS = {
+  secure: "Secure",
+  anxious: "Anxious",
+  avoidant: "Avoidant",
+  disorganized: "Disorganized",
+};
+
 function renderPartnerList() {
   const listDiv = document.getElementById("partner-list");
   if (!listDiv) return;
@@ -536,11 +569,12 @@ function renderPartnerList() {
   }
 
   partners.forEach((p) => {
+    const styleLabel = ATTACHMENT_STYLE_LABELS[p.attachmentStyle];
     const card = document.createElement("div");
     card.className = "partner-card";
     card.innerHTML = `
       <div>
-        <div class="partner-name">${escapeHtml(p.name)}</div>
+        <div class="partner-name">${escapeHtml(p.name)}${styleLabel ? ` <span class="partner-style-tag">${escapeHtml(styleLabel)}</span>` : ""}</div>
         <div class="partner-context">${escapeHtml(p.context || p.traits || "")}</div>
       </div>
       <span class="text-faint">Practice →</span>
@@ -552,9 +586,10 @@ function renderPartnerList() {
 
 async function selectPartnerAndStart(partnerId) {
   try {
+    const scenario = document.getElementById("practice-scenario")?.value.trim() || "";
     const res = await authFetch("/api/conversations", {
       method: "POST",
-      body: JSON.stringify({ mode: "practice", partnerProfileId: partnerId }),
+      body: JSON.stringify({ mode: "practice", partnerProfileId: partnerId, scenario }),
     });
     const conv = await safeJson(res);
     if (!res.ok) {
@@ -624,11 +659,11 @@ async function openConversation(id, preloadedConv) {
     }
 
     currentConversationId = conv.id;
-    currentConvCtx = { mode: conv.mode || "coach", partnerName: conv.partnerName || null };
+    currentConvCtx = { mode: conv.mode || "coach", partnerName: conv.partnerName || null, scenario: conv.scenario || null };
     currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
-    showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName);
+    showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario);
     renderHistory();
 
     const chatDiv = document.getElementById("chat");

@@ -449,10 +449,13 @@ function buildInsightsDigest(conversations) {
 function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
   const context = (partner.context || "").trim();
+  const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
+  const scenario = (partner.scenario || "").trim();
+
   return `You are role-playing as "${partner.name}", the user's romantic partner${context ? ` (${context})` : ""}, inside a private practice/rehearsal space the user opened on purpose to practice a real conversation.
 
 Personality and traits to embody: ${traits}.
-
+${attachmentNote ? `\n${attachmentNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
 Rules:
 - Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts — short, natural, imperfect. Not like an assistant.
 - Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
@@ -596,6 +599,25 @@ const ATTACHMENT_STYLES = {
   },
 };
 
+// Hand-written, not AI-generated — same reasoning as ATTACHMENT_COMPAT below:
+// only 4 fixed styles exist, so each is written once here rather than asked
+// of the model per request. This is a *separate* set of descriptions from
+// ATTACHMENT_STYLES.desc above: that one describes how the quiz-taker
+// experiences their own style, this one describes how a partner *behaves in
+// a live back-and-forth conversation* — what actually shows up in dialogue —
+// since Practice Mode needs behavioral cues to roleplay convincingly, not a
+// first-person self-description.
+const PARTNER_ATTACHMENT_BEHAVIOR = {
+  secure: "This partner's attachment style is Secure: when conflict comes up they stay engaged rather than shutting down or escalating. They can say plainly when something bothered them, they don't need repeated reassurance to feel okay, and they don't stonewall — though they're still a real person who can be tired, distracted, or short with you sometimes.",
+  anxious: "This partner's attachment style is Anxious: they notice small shifts — a short reply, a slower response, a change in tone — and it genuinely unsettles them. In this conversation they may ask for reassurance more than once, read into your wording, or want things stated plainly rather than assumed. This isn't neediness for its own sake — connection matters a lot to them and its absence is uncomfortable.",
+  avoidant: "This partner's attachment style is Avoidant: when things get emotionally intense, their instinct is to create space — shorter replies, changing the subject, or wanting a minute before continuing. They're not indifferent, but they process things internally first, and being pushed to \"talk about it right now\" can make them pull back further rather than open up.",
+  disorganized: "This partner's attachment style is Disorganized (Fearful-Avoidant): they want closeness and want to protect themselves from it, sometimes within the same exchange. They might respond warmly and then suddenly get guarded, or bring up an old hurt when the moment feels too vulnerable. Play this as genuinely how it feels from the inside, not as inconsistency for effect.",
+};
+
+function partnerAttachmentBehavior(styleKey) {
+  return PARTNER_ATTACHMENT_BEHAVIOR[styleKey] || "";
+}
+
 // Hand-written, not AI-generated — attachment styles are a fixed set of 4,
 // so every one of the 10 unordered pairings can just be written once and
 // reused, which is both cheaper and more reliable than calling the model
@@ -688,7 +710,7 @@ function publicUser(user) {
 }
 
 function publicPartner(p) {
-  return { id: p.id, name: p.name, traits: p.traits, context: p.context, createdAt: p.createdAt };
+  return { id: p.id, name: p.name, traits: p.traits, context: p.context, attachmentStyle: p.attachmentStyle || null, createdAt: p.createdAt };
 }
 
 function planLabel(plan) {
@@ -1196,7 +1218,7 @@ app.get("/api/partners", authMiddleware, (req, res) => {
 
 app.post("/api/partners", authMiddleware, (req, res) => {
   try {
-    const { name, traits, context } = req.body || {};
+    const { name, traits, context, attachmentStyle } = req.body || {};
     if (!name || !String(name).trim()) {
       return res.status(400).json({ error: "Give your partner profile a name." });
     }
@@ -1213,12 +1235,20 @@ app.post("/api/partners", authMiddleware, (req, res) => {
       }
     }
 
+    // attachmentStyle is optional — the user may not know it or may not have
+    // had their partner take the quiz. Only accept one of the 4 real keys;
+    // anything else (including "", undefined, or a tampered value) is stored
+    // as null, meaning "not sure / skip" — Practice Mode simply omits the
+    // behavioral guidance in that case rather than guessing.
+    const validStyle = Object.prototype.hasOwnProperty.call(ATTACHMENT_STYLES, attachmentStyle) ? attachmentStyle : null;
+
     const partner = {
       id: generateId("partner"),
       userId: req.user.id,
       name: String(name).trim().slice(0, 60),
       traits: String(traits || "").trim().slice(0, 500),
       context: String(context || "").trim().slice(0, 200),
+      attachmentStyle: validStyle,
       createdAt: new Date().toISOString(),
     };
     db.partnerProfiles.push(partner);
@@ -1260,7 +1290,7 @@ app.get("/api/conversations", authMiddleware, (req, res) => {
 
 app.post("/api/conversations", authMiddleware, (req, res) => {
   const db = req.db;
-  const { mode, partnerProfileId } = req.body || {};
+  const { mode, partnerProfileId, scenario } = req.body || {};
   const isPractice = mode === "practice";
 
   let partner = null;
@@ -1278,6 +1308,11 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
     }
   }
 
+  // Snapshotted at conversation-start time, same as partnerName/partnerTraits/
+  // partnerContext below — later edits to the partner profile (or retaking
+  // the compat quiz) shouldn't silently rewrite a rehearsal already in
+  // progress. The scenario is per-conversation, not per-profile: what the
+  // user wants to practice today is often different each time.
   const conv = {
     id: generateId("conv"),
     userId: req.user.id,
@@ -1286,6 +1321,8 @@ app.post("/api/conversations", authMiddleware, (req, res) => {
     partnerName: partner ? partner.name : null,
     partnerTraits: partner ? partner.traits : null,
     partnerContext: partner ? partner.context : null,
+    partnerAttachmentStyle: partner ? partner.attachmentStyle || null : null,
+    scenario: isPractice ? String(scenario || "").trim().slice(0, 300) || null : null,
     title: isPractice ? `Practice with ${partner.name}` : "New conversation",
     messages: [],
     createdAt: new Date().toISOString(),
@@ -1365,7 +1402,13 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
   const isPractice = conv.mode === "practice";
   const systemPrompt = isPractice
-    ? buildPartnerSystemPrompt({ name: conv.partnerName || "your partner", traits: conv.partnerTraits, context: conv.partnerContext })
+    ? buildPartnerSystemPrompt({
+        name: conv.partnerName || "your partner",
+        traits: conv.partnerTraits,
+        context: conv.partnerContext,
+        attachmentStyle: conv.partnerAttachmentStyle,
+        scenario: conv.scenario,
+      })
     : COACH_SYSTEM_PROMPT;
 
   try {
