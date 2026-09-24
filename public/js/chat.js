@@ -548,6 +548,15 @@ async function renderPracticeSetup() {
   renderPartnerList();
 }
 
+function formatShortDate(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  } catch (e) {
+    return "";
+  }
+}
+
 // Mirrors ATTACHMENT_STYLES in server.js — kept in sync manually, same
 // duplication pattern as COMPARE_QUESTIONS in compare-view.js (no shared
 // module system between server and client here).
@@ -569,19 +578,100 @@ function renderPartnerList() {
   }
 
   partners.forEach((p) => {
-    const styleLabel = ATTACHMENT_STYLE_LABELS[p.attachmentStyle];
-    const card = document.createElement("div");
-    card.className = "partner-card";
-    card.innerHTML = `
-      <div>
-        <div class="partner-name">${escapeHtml(p.name)}${styleLabel ? ` <span class="partner-style-tag">${escapeHtml(styleLabel)}</span>` : ""}</div>
-        <div class="partner-context">${escapeHtml(p.context || p.traits || "")}</div>
-      </div>
-      <span class="text-faint">Practice →</span>
-    `;
-    card.onclick = () => selectPartnerAndStart(p.id);
-    listDiv.appendChild(card);
+    const wrap = document.createElement("div");
+    wrap.className = "partner-card-wrap";
+    wrap.appendChild(buildPartnerCard(p));
+    wrap.appendChild(buildPartnerLearnRow(p));
+    listDiv.appendChild(wrap);
   });
+}
+
+function buildPartnerCard(p) {
+  const styleLabel = ATTACHMENT_STYLE_LABELS[p.attachmentStyle];
+  const card = document.createElement("div");
+  card.className = "partner-card";
+  card.innerHTML = `
+    <div>
+      <div class="partner-name">${escapeHtml(p.name)}${styleLabel ? ` <span class="partner-style-tag">${escapeHtml(styleLabel)}</span>` : ""}</div>
+      <div class="partner-context">${escapeHtml(p.context || p.traits || "")}</div>
+    </div>
+    <span class="text-faint">Practice →</span>
+  `;
+  card.onclick = () => selectPartnerAndStart(p.id);
+  return card;
+}
+
+// Lets RelateIQ learn (or re-learn) this partner's behavioral profile from
+// the user's own past Coach Chat messages, instead of only what's manually
+// typed into traits/context — see PARTNER_LEARN_SYSTEM_PROMPT in server.js.
+// Separate from the card above so its button clicks don't also start a
+// practice conversation.
+function buildPartnerLearnRow(p) {
+  const row = document.createElement("div");
+  row.className = "partner-learn-row";
+
+  const hasLearned = !!p.learnedProfile;
+  const btnLabel = hasLearned ? "🔄 Update from my chats" : "🧠 Learn from my chats";
+  const metaLabel = hasLearned ? `Learned ${formatShortDate(p.learnedProfileUpdatedAt)} — ` : "";
+
+  row.innerHTML = `
+    <div class="partner-learn-controls">
+      <button class="partner-learn-btn" type="button">${btnLabel}</button>
+      ${hasLearned ? `<span class="partner-learn-meta">${escapeHtml(metaLabel)}<button class="partner-learn-toggle" type="button">what RelateIQ has noticed</button></span>` : ""}
+    </div>
+    <div class="partner-learned-box" style="display:none;"></div>
+  `;
+
+  const learnBtn = row.querySelector(".partner-learn-btn");
+  const box = row.querySelector(".partner-learned-box");
+
+  learnBtn.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    learnBtn.disabled = true;
+    const originalText = learnBtn.textContent;
+    learnBtn.textContent = "Reading your chats…";
+    try {
+      const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}/learn`, { method: "POST" });
+      const data = await safeJson(res);
+      if (!res.ok) {
+        learnBtn.textContent = originalText;
+        learnBtn.disabled = false;
+        alert(data.error || "Couldn't learn from your chats right now.");
+        return;
+      }
+      if (data.notEnoughData) {
+        learnBtn.textContent = originalText;
+        learnBtn.disabled = false;
+        box.style.display = "block";
+        box.textContent = `Not quite enough Coach Chat history yet (${data.have || 0}/${data.needed} messages) — the more you talk to Coach about the relationship, the better this gets.`;
+        return;
+      }
+      const idx = partners.findIndex((x) => x.id === p.id);
+      if (idx !== -1) partners[idx] = data;
+      const newRow = buildPartnerLearnRow(data);
+      row.replaceWith(newRow);
+      newRow.querySelector(".partner-learned-box").style.display = "block";
+      newRow.querySelector(".partner-learned-box").textContent = data.learnedProfile;
+    } catch (err) {
+      console.error(err);
+      learnBtn.textContent = originalText;
+      learnBtn.disabled = false;
+      alert("Couldn't connect to the server.");
+    }
+  });
+
+  const toggleBtn = row.querySelector(".partner-learn-toggle");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const showing = box.style.display !== "none";
+      box.style.display = showing ? "none" : "block";
+      box.textContent = p.learnedProfile || "";
+      toggleBtn.textContent = showing ? "what RelateIQ has noticed" : "hide";
+    });
+  }
+
+  return row;
 }
 
 async function selectPartnerAndStart(partnerId) {
