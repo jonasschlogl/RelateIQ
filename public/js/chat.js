@@ -35,8 +35,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
-  document.getElementById("new-chat-btn")?.addEventListener("click", () => startNewChat(currentMode));
+  document.getElementById("new-chat-btn")?.addEventListener("click", () => {
+    startNewChat(currentMode);
+    closeSidebarDrawer();
+  });
   document.getElementById("send-btn")?.addEventListener("click", sendMessage);
+
+  // Mobile off-canvas drawer (harmless no-op on desktop, where the sidebar
+  // is always visible and .open has no matching CSS rule).
+  document.getElementById("sidebar-toggle")?.addEventListener("click", openSidebarDrawer);
+  document.getElementById("sidebar-close-btn")?.addEventListener("click", closeSidebarDrawer);
+  document.getElementById("sidebar-backdrop")?.addEventListener("click", closeSidebarDrawer);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeSidebarDrawer();
+  });
   document.getElementById("debrief-btn")?.addEventListener("click", () => startNewChat("coach"));
   document.getElementById("export-summary-btn")?.addEventListener("click", () => {
     if (!currentConversationId) return;
@@ -62,6 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       } else {
         startNewChat("coach");
       }
+      closeSidebarDrawer();
     });
   });
 
@@ -116,6 +129,16 @@ function setActiveTab(mode) {
         : "Tell me what's going on in your relationship…";
   }
   updateExportButtonVisibility();
+}
+
+function openSidebarDrawer() {
+  document.getElementById("sidebar")?.classList.add("open");
+  document.getElementById("sidebar-backdrop")?.classList.add("open");
+}
+
+function closeSidebarDrawer() {
+  document.getElementById("sidebar")?.classList.remove("open");
+  document.getElementById("sidebar-backdrop")?.classList.remove("open");
 }
 
 function showComposer(visible) {
@@ -358,7 +381,10 @@ function renderHistory() {
     });
     div.appendChild(deleteBtn);
 
-    div.addEventListener("click", () => openConversation(c.id));
+    div.addEventListener("click", () => {
+      openConversation(c.id);
+      closeSidebarDrawer();
+    });
     historyDiv.appendChild(div);
   });
 }

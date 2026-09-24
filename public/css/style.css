@@ -1287,6 +1287,68 @@ section {
   color: var(--text);
 }
 
+/* Off-canvas drawer chrome — hidden on desktop, where the sidebar is
+   always visible in the flex row. Only the 640px media query below turns
+   these on and gives the sidebar its fixed-position drawer behavior. */
+
+.sidebar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sidebar-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+
+.sidebar-toggle:hover {
+  background: var(--surface-hover);
+}
+
+.sidebar-close-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.sidebar-close-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+.sidebar-modes {
+  display: none;
+}
+
 .chat-wrapper {
   flex: 1;
   display: flex;
@@ -2444,16 +2506,89 @@ section {
   }
 
   .app-shell {
-    flex-direction: column;
     height: 100vh;
+    height: 100dvh;
+    position: relative;
+    overflow: hidden;
   }
 
+  /* ChatGPT-style off-canvas drawer: the sidebar is pulled fully off-screen
+     by default and slides in over the chat (never squishes it) when opened
+     via the hamburger button. A tap on the dimmed backdrop, the close (✕)
+     button, or picking anything inside the drawer closes it again. */
+
   .sidebar {
-    width: 100%;
-    height: auto;
-    max-height: 40vh;
-    border-right: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 84%;
+    max-width: 320px;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    z-index: 60;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle,
+  .sidebar-close-btn {
+    display: inline-flex;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 14, 8, 0.55);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .sidebar-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* The mode switcher relocates into the drawer, below the chat history —
+     the topbar's copy of it is hidden so it isn't shown twice. */
+
+  .chat-topbar .mode-tabs {
+    display: none;
+  }
+
+  .sidebar-modes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 0;
+    margin: 4px 0 8px;
+    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sidebar-modes .mode-tab {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    background: none;
+  }
+
+  .sidebar-modes .mode-tab.active {
+    background: var(--accent-grad);
+    color: #1a140d;
   }
 
   .chat-messages,
@@ -2469,20 +2604,14 @@ section {
   }
 
   .chat-topbar {
-    flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
-  }
-
-  .mode-tabs {
-    flex-wrap: wrap;
-    border-radius: var(--radius);
-    justify-content: center;
+    padding: 12px 16px;
   }
 
   .topbar-account {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .partner-banner {

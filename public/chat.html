@@ -11,18 +11,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
 </head>
 <body>
 
   <div class="app-shell">
-    <aside class="sidebar">
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-top">
-        <a href="index.html" class="brand">Relate<span>IQ</span></a>
+        <div class="sidebar-top-row">
+          <a href="index.html" class="brand">Relate<span>IQ</span></a>
+          <button class="sidebar-close-btn" id="sidebar-close-btn" type="button" aria-label="Close menu">✕</button>
+        </div>
         <button class="btn btn-primary btn-block" id="new-chat-btn">+ New chat</button>
       </div>
 
       <div class="sidebar-history" id="history"></div>
+
+      <nav class="sidebar-modes" id="sidebar-modes">
+        <button class="mode-tab active" data-mode="coach" type="button">💬 Coach</button>
+        <button class="mode-tab" data-mode="practice" type="button">🎭 Practice</button>
+        <a href="message-coach.html" class="mode-tab">✍️ Message Coach</a>
+        <a href="quiz.html" class="mode-tab">🧭 Attachment Quiz</a>
+        <a href="insights.html" class="mode-tab">📊 Insights</a>
+      </nav>
 
       <div class="sidebar-bottom">
         <a href="share.html" class="sidebar-link">Share with partner</a>
@@ -33,6 +46,7 @@
 
     <main class="chat-wrapper">
       <header class="chat-topbar">
+        <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-label="Open menu">☰</button>
         <div class="mode-tabs" id="mode-tabs">
           <button class="mode-tab active" data-mode="coach" type="button">💬 Coach</button>
           <button class="mode-tab" data-mode="practice" type="button">🎭 Practice</button>
@@ -73,6 +87,6 @@
   </div>
 
   <script src="js/shared.js?v=9"></script>
-  <script src="js/chat.js?v=10"></script>
+  <script src="js/chat.js?v=11"></script>
 </body>
 </html>
