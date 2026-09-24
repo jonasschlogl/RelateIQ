@@ -678,7 +678,7 @@ function generateUniqueReferralCode(db) {
 // balance transaction to it — Stripe automatically applies a credit balance
 // to the customer's *next* invoice, whether or not they have an active
 // subscription yet, so this works even for a referrer who's still on Free.
-async function creditOneMonth(db, targetUser, amountCents, description) {
+async function creditOneMonth(db, targetUser, amountCents, currency, description) {
   let customerId = targetUser.stripeCustomerId;
   if (!customerId) {
     const customer = await stripe.customers.create({
@@ -691,7 +691,7 @@ async function creditOneMonth(db, targetUser, amountCents, description) {
   }
   await stripe.customers.createBalanceTransaction(customerId, {
     amount: -Math.abs(amountCents),
-    currency: "usd",
+    currency,
     description,
   });
 }
@@ -709,10 +709,11 @@ async function grantReferralRewardIfDue(db, user, priceId) {
   try {
     const price = await stripe.prices.retrieve(priceId);
     const amount = price?.unit_amount;
+    const currency = price?.currency || "eur";
     if (!amount) return;
 
-    await creditOneMonth(db, user, amount, "Thanks for joining through a RelateIQ invite — 1 month on us");
-    await creditOneMonth(db, referrer, amount, "Thanks for inviting a friend to RelateIQ — 1 month on us");
+    await creditOneMonth(db, user, amount, currency, "Thanks for joining through a RelateIQ invite — 1 month on us");
+    await creditOneMonth(db, referrer, amount, currency, "Thanks for inviting a friend to RelateIQ — 1 month on us");
 
     user.referralRewardGranted = true;
     writeDb(db);
