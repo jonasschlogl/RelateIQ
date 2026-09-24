@@ -2156,6 +2156,55 @@ section {
   white-space: pre-line;
 }
 
+/* Connection-score trend chart (Insights page) */
+
+.trend-tooltip {
+  position: absolute;
+  top: 4px;
+  transform: translateX(-50%);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 12px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+}
+
+.trend-tooltip strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.trend-tooltip span {
+  color: var(--text-faint);
+}
+
+.trend-list {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-top: 10px;
+}
+
+.trend-list-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.trend-list-row:last-child {
+  border-bottom: none;
+}
+
 /* ---------------------------------------------------------------------- */
 /* Modes hub (grid of entry points, shown on dashboard)                    */
 /* ---------------------------------------------------------------------- */
@@ -2326,6 +2375,45 @@ section {
 .checkin-done {
   font-size: 14px;
   color: var(--text-muted);
+}
+
+.checkin-score-done {
+  font-size: 13px;
+  color: var(--accent-1);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.checkin-score-row {
+  margin-bottom: 14px;
+}
+
+.checkin-score-row > label {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.checkin-score-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkin-score-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent-1);
+  height: 4px;
+  cursor: pointer;
+}
+
+.checkin-score-value {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--accent-1);
+  min-width: 18px;
+  text-align: right;
 }
 
 .checkin-actions {

@@ -1834,16 +1834,17 @@ app.get("/api/checkin/today", authMiddleware, (req, res) => {
       answered: !!existing.answer,
       skipped: !!existing.skipped,
       answer: existing.answer || null,
+      score: existing.score ?? null,
       streak,
     });
   }
 
-  res.json({ date: today, question, answered: false, skipped: false, answer: null, streak });
+  res.json({ date: today, question, answered: false, skipped: false, answer: null, score: null, streak });
 });
 
 app.post("/api/checkin", authMiddleware, (req, res) => {
   try {
-    const { answer, skip } = req.body || {};
+    const { answer, skip, score } = req.body || {};
     const db = req.db;
     const today = todayKey();
     const question = checkinQuestionForDate(today);
@@ -1856,6 +1857,7 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
         date: today,
         question,
         answer: null,
+        score: null,
         skipped: false,
         createdAt: new Date().toISOString(),
       };
@@ -1867,16 +1869,43 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
     } else if (answer && String(answer).trim()) {
       entry.answer = String(answer).trim().slice(0, 2000);
       entry.answeredAt = new Date().toISOString();
+      const numericScore = Number(score);
+      if (Number.isInteger(numericScore) && numericScore >= 1 && numericScore <= 10) {
+        entry.score = numericScore;
+      }
     } else {
       return res.status(400).json({ error: "Write a short answer, or skip for today." });
     }
 
     writeDb(db);
-    res.json({ date: entry.date, question: entry.question, answered: !!entry.answer, skipped: entry.skipped, answer: entry.answer });
+    res.json({
+      date: entry.date,
+      question: entry.question,
+      answered: !!entry.answer,
+      skipped: entry.skipped,
+      answer: entry.answer,
+      score: entry.score ?? null,
+    });
   } catch (err) {
     console.error("Checkin error:", err);
     res.status(500).json({ error: "Couldn't save your check-in. Please try again." });
   }
+});
+
+// Powers the trend chart on the Insights page — the daily check-in's
+// optional 1-10 connection score, plotted over time. Deliberately NOT
+// AI-derived: a self-reported number the user typed is more honest and
+// far cheaper than trying to infer "mood" from chat text, and it's data
+// the app already collects for free as part of the existing check-in flow.
+const CHECKIN_HISTORY_MAX_DAYS = 90;
+
+app.get("/api/checkin/history", authMiddleware, (req, res) => {
+  const list = req.db.checkins
+    .filter((c) => c.userId === req.user.id && typeof c.score === "number")
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(-CHECKIN_HISTORY_MAX_DAYS)
+    .map((c) => ({ date: c.date, score: c.score }));
+  res.json({ entries: list });
 });
 
 // ---------------------------------------------------------------------------

@@ -133,8 +133,10 @@ function renderCheckin(data) {
   }
 
   if (data.answered) {
+    const scoreLine = typeof data.score === "number" ? `<p class="checkin-score-done">Connection today: ${data.score}/10</p>` : "";
     body.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
+      ${scoreLine}
       <p class="checkin-done">✓ You checked in today: "${escapeHtml(data.answer)}"</p>
     `;
     return;
@@ -159,6 +161,14 @@ function renderCheckinForm(question) {
   const body = document.getElementById("checkin-body");
   body.innerHTML = `
     <p class="checkin-question">${escapeHtml(question)}</p>
+    <div class="checkin-score-row">
+      <label for="checkin-score-input">How connected do you feel today?</label>
+      <div class="checkin-score-slider-row">
+        <input type="range" id="checkin-score-input" min="1" max="10" step="1" value="5" />
+        <span class="checkin-score-value" id="checkin-score-value">5</span>
+        <span class="text-muted" style="font-size:11.5px;">/10</span>
+      </div>
+    </div>
     <div class="checkin-answer">
       <textarea id="checkin-input" maxlength="2000" placeholder="Totally optional — write a sentence or two, or just skip."></textarea>
     </div>
@@ -167,6 +177,11 @@ function renderCheckinForm(question) {
       <button class="btn btn-ghost btn-sm" id="checkin-skip-btn" type="button">Skip today</button>
     </div>
   `;
+  const scoreInput = document.getElementById("checkin-score-input");
+  const scoreValue = document.getElementById("checkin-score-value");
+  scoreInput.addEventListener("input", () => {
+    scoreValue.textContent = scoreInput.value;
+  });
   document.getElementById("checkin-save-btn").addEventListener("click", () => submitCheckin(false));
   document.getElementById("checkin-skip-btn").addEventListener("click", () => submitCheckin(true));
 }
@@ -179,6 +194,8 @@ async function submitCheckin(skip) {
     const val = document.getElementById("checkin-input").value.trim();
     if (!val) return;
     payload.answer = val;
+    const scoreInput = document.getElementById("checkin-score-input");
+    if (scoreInput) payload.score = Number(scoreInput.value);
   }
 
   try {
