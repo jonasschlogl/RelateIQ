@@ -35,6 +35,9 @@
     <div class="tool-split">
       <div class="tool-card">
         <h3>Your draft</h3>
+        <select id="partner-select" style="display:none; margin-bottom:12px;">
+          <option value="">Who is this for? (optional)</option>
+        </select>
         <input type="text" id="context-input" maxlength="200" placeholder="Context (optional) — e.g. after an argument about chores" />
         <div class="textarea-wrap">
           <textarea id="draft-input" maxlength="2000" placeholder="Paste or write the message you're about to send…"></textarea>
@@ -51,7 +54,7 @@
         <div class="tool-result" id="result">
           <span class="placeholder">Your rewritten message will show up here.</span>
         </div>
-        <div class="tool-tips">Tip: the more context you give (what led up to this, how they usually react), the more useful the rewrite will be.</div>
+        <div class="tool-tips">Tip: the more context you give (what led up to this, how they usually react), the more useful the rewrite will be. If you've set up a partner profile in Partner Practice, pick them above for advice tailored to them specifically.</div>
       </div>
     </div>
   </main>

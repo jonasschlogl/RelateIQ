@@ -187,20 +187,34 @@ const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
 const MAX_TOTAL_UPLOAD_MB = 15;
 const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 
-// Premium's headline differentiator: the live, interactive coaching
-// surfaces (Coach Chat, Partner Practice, Message Coach) call a noticeably
-// stronger model for Premium subscribers — real, felt quality (more
-// specific, more nuanced replies), not just a bigger usage cap. Free and
-// Pro share the fast/inexpensive model everywhere. Insights, the therapist
-// summary, and the public demo stay on the fast model regardless of plan —
-// they're extraction/summarization tasks, not the "hear me out and
-// respond" moments where model quality is actually noticeable, and keeping
-// them off the pricier model keeps the cost of those unlimited-on-Pro+
-// features predictable.
+// Premium's headline differentiator: Coach Chat and Message Coach call a
+// noticeably stronger model for Premium subscribers — real, felt quality
+// (more specific, more nuanced replies), not just a bigger usage cap. Free
+// and Pro share the fast/inexpensive model on those two surfaces. Insights,
+// the therapist summary, and the public demo stay on the fast model
+// regardless of plan — they're extraction/summarization tasks, not the
+// "hear me out and respond" moments where model quality is actually
+// noticeable, and keeping them off the pricier model keeps the cost of
+// those unlimited-on-Pro+ features predictable.
 const STANDARD_MODEL = "gpt-4o-mini";
 const PREMIUM_MODEL = "gpt-4o";
 function modelForPlan(plan) {
   return plan === "premium" ? PREMIUM_MODEL : STANDARD_MODEL;
+}
+
+// Partner Practice is the one surface where this splits differently: it's
+// the app's flagship, most-differentiated feature (realistic, personalized
+// roleplay), so the model quality bar for it is higher across the board —
+// Pro gets the strong model here too, not just Premium. Free stays on the
+// fast model, which is a small, deliberate exception rather than an
+// oversight: Free gets exactly one lifetime rehearsal (see
+// FREE_LIFETIME_PRACTICE_CONVERSATIONS below) to try the feature, so the
+// cost of upgrading that single try is negligible either way, and it's
+// still a meaningful reason to upgrade off Free. Premium's edge over Pro
+// stays in Coach Chat, Message Coach, and unlimited partner profiles (see
+// PARTNER_PROFILE_LIMITS) — Practice itself is just "good" starting at Pro.
+function modelForPractice(plan) {
+  return plan === "free" ? STANDARD_MODEL : PREMIUM_MODEL;
 }
 // Defaults to public/uploads for local dev. On a host with a persistent
 // volume (so uploaded files survive a redeploy), set UPLOADS_DIR to a path
@@ -271,17 +285,17 @@ Your style:
 
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
 
-You may be given a draft message to rewrite, or recent messages from the conversation (a transcript, oldest first, each line labeled "Them:" or "Me:"), or both.
+You may be given a draft message to rewrite, or recent messages from the conversation (a transcript, oldest first, each line labeled "Them:" or "Me:"), or both. You may also be given a profile of the specific partner this message is for (their traits, attachment style, and/or things RelateIQ has learned about how they communicate) — when given, use it to actually shape the rewrite and advice, not just as background color: word it in a way that's more likely to land well with THIS specific person given how they tend to react, and let "insight" draw directly on what's known about them.
 
 - If a draft is given: rewrite THAT draft. Use the transcript (if given) only to understand tone and context, not to change what the user is trying to say.
 - If NO draft is given but a transcript is: the user hasn't written anything yet and wants a suggestion for what to send next. Read the transcript and propose one natural, appropriate reply to the other person's most recent message, written as if it were the user's own words in their voice. Put that proposed reply in "rewrite" exactly as you would a rewritten draft.
 
 Never diagnose, moralize, or lecture. If the draft or transcript describes abuse directed at the user, gently note that in "why" and suggest professional support instead of just rewriting it.
 
-Always write both fields in the same language as the draft message (or, if none was given, the same language as the transcript) — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
+Always write every field in the same language as the draft message (or, if none was given, the same language as the transcript) — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"rewrite": "<the rewritten or proposed message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, or why you proposed this reply, no bullet points>"}`;
+{"rewrite": "<the rewritten or proposed message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, or why you proposed this reply, no bullet points>", "insight": "<1-3 short plain-text sentences of real strategic advice about the underlying situation — what's likely actually going on beneath this message, a dynamic or pattern worth naming, or what to realistically expect/watch for when this lands — genuine relationship coaching, not just a note about wording. Empty string only if there's truly nothing more useful to add beyond the rewrite itself.>"}`;
 
 // Suggests 2-3 short, distinct reply options based on a recent chat
 // transcript alone (no draft) — powers the browser extension's automatic
@@ -440,6 +454,37 @@ function buildConversationTranscript(conv) {
     .join("\n\n");
 }
 
+// Same shape as buildConversationTranscript above, but labels the AI's
+// turns with the partner's actual name instead of "Coach" — this transcript
+// is a rehearsal of what the partner would say, not coaching, so the
+// debrief prompt below reads it correctly as a two-person practice scene.
+function buildPracticeTranscript(conv) {
+  const turns = (conv.messages || []).slice(-120);
+  const partnerLabel = conv.partnerName || "Partner";
+  return turns
+    .map((m) => {
+      const speaker = m.role === "user" ? "User" : partnerLabel;
+      const text = String(m.content || "").slice(0, 1500);
+      return `${speaker}: ${text || "(no text — attachment only)"}`;
+    })
+    .join("\n\n");
+}
+
+// Used by POST /api/conversations/:id/debrief — a short, practical readout
+// after a Partner Practice rehearsal, aimed at the REAL conversation the
+// user is preparing for, not at critiquing the roleplay as a performance.
+const PRACTICE_DEBRIEF_SYSTEM_PROMPT = `You are debriefing a user after a private rehearsal: they just practiced an upcoming real conversation with their partner by roleplaying it against an AI playing that partner's likely reactions. Your job is to give them a short, honest, useful readout — like a coach watching a rehearsal — that helps with the REAL conversation still to come.
+
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"wentWell": "<1-2 short sentences on what the user did well in the rehearsal — specific, not generic praise>", "watchFor": "<1-2 short sentences on a real risk or pattern that showed up — a moment they got defensive, missed an opening, escalated, or a reaction from the partner worth being ready for>", "tip": "<1-2 short sentences: one concrete, specific thing to try differently in the real conversation>"}
+
+Rules:
+- Ground every field in what ACTUALLY happened in the transcript below — never generic relationship advice that could apply to anyone.
+- Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelateIQ about them — not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
+- Be honest and specific even about what didn't go well, but stay warm and constructive — this is meant to help, not to grade.
+- If the rehearsal was too short or too shallow to say anything specific and honest, keep each field brief and general rather than inventing detail, but still fill in all three.
+- Write in the same language as the transcript — detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
+
 const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns — not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
@@ -517,6 +562,79 @@ Rules:
 - Do not mention "the user" or "Coach Chat" in the profile/voice text itself — write both as a direct description of the partner, the way the traits field of a profile would read.
 - Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
 
+// Used by POST /api/partners/:id/learn-from-messages — the user pastes in
+// REAL messages actually sent by their partner (a WhatsApp/iMessage export,
+// screenshots transcribed by hand, whatever they have), rather than the
+// profile being inferred secondhand from what the user told Coach Chat
+// about them. This is why the confidence/voice rules read differently from
+// PARTNER_LEARN_SYSTEM_PROMPT above: with the partner's own actual wording
+// in hand, "voice" (phrasing, length, punctuation/emoji habits) can and
+// should be filled in confidently instead of staying empty by default.
+const PARTNER_LEARN_FROM_REAL_TEXT_SYSTEM_PROMPT = `You are reading REAL messages actually written by a user's partner (pasted in directly by the user — a chat export or transcribed messages, not a description) to build a short behavioral profile of that partner for a private roleplay/rehearsal feature. You are NOT summarizing the user and NOT giving advice — you're extracting how this specific partner actually communicates, straight from their own words.
+
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "voice": "<a specific note on how they actually phrase things — word choice, typical message length, punctuation/emoji/abbreviation habits, recurring phrases — grounded directly in the pasted messages>", "confidence": "low"|"medium"|"high"}
+
+Rules:
+- These are the partner's own real words, so "voice" should be concrete and specific, not hedged — quote or closely paraphrase a couple of characteristic turns of phrase if any stand out.
+- "confidence" should usually be "medium" or "high" here (this is direct evidence, not inference) — use "low" only if the pasted text is very short or too generic to say much.
+- Only include messages that are clearly FROM the partner (a two-sided chat export includes the user's own messages too — ignore those for "voice", though they can inform "profile" as context for how the partner responds).
+- Never invent specific past events beyond what's shown. Paraphrase and generalize the profile; only "voice" should stay close to their literal wording.
+- Do not mention "the user," "a chat export," or "pasted messages" in the profile/voice text itself — write both as a direct description of the partner.
+- Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+
+const PARTNER_REAL_MESSAGES_MAX_CHARS = 12000;
+const PARTNER_REAL_MESSAGES_MIN_CHARS = 40;
+
+// Called from POST /api/partners/:id/learn-from-messages. Unlike
+// learnPartnerProfileIfStale (fully automatic, runs on inferred Coach Chat
+// mentions), this is an explicit user action — they chose to paste in real
+// messages — so it always re-runs and overwrites whatever was there before,
+// and marks the result learnedProfileSource: "real_messages" so
+// learnPartnerProfileIfStale knows not to later overwrite it with a lower-
+// quality inferred version (see the guard at the top of that function).
+async function learnPartnerProfileFromRealMessages(partner, rawText) {
+  const trimmed = String(rawText || "").trim();
+  if (trimmed.length < PARTNER_REAL_MESSAGES_MIN_CHARS) {
+    throw Object.assign(new Error("Paste a bit more — at least a few real messages — for this to work."), { status: 400 });
+  }
+  const capped = trimmed.slice(0, PARTNER_REAL_MESSAGES_MAX_CHARS);
+
+  const userContent = `Partner's name: ${partner.name}${partner.context ? ` (context: ${partner.context})` : ""}
+
+Pasted messages (may include both sides of the conversation):
+"""
+${capped}
+"""`;
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: PARTNER_LEARN_FROM_REAL_TEXT_SYSTEM_PROMPT },
+      { role: "user", content: userContent },
+    ],
+    temperature: 0.3,
+    response_format: { type: "json_object" },
+  });
+
+  const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+  const profile = String(parsed.profile || "").trim().slice(0, 800);
+  const voice = String(parsed.voice || "").trim().slice(0, 300);
+  const confidence = ["low", "medium", "high"].includes(parsed.confidence) ? parsed.confidence : "medium";
+
+  if (!profile) {
+    throw Object.assign(new Error("Couldn't pick up on much from that — try pasting a longer or more typical stretch of messages."), { status: 400 });
+  }
+
+  partner.learnedProfile = profile;
+  partner.learnedVoice = voice || null;
+  partner.learnedProfileConfidence = confidence;
+  partner.learnedProfileUpdatedAt = new Date().toISOString();
+  partner.learnedProfileSource = "real_messages";
+  savePartnerProfile(partner);
+  return partner;
+}
+
 // Same shape/caps as buildInsightsDigest above — bounded and affordable
 // even for a very active user.
 function buildPartnerLearningDigest(conversations) {
@@ -544,6 +662,14 @@ function buildPartnerLearningDigest(conversations) {
 // one) untouched rather than blocking the user from starting their practice
 // conversation.
 async function learnPartnerProfileIfStale(db, userId, partner) {
+  // A profile built from the partner's own real, pasted-in messages (see
+  // learnPartnerProfileFromRealMessages / POST /api/partners/:id/learn-from-messages)
+  // is direct evidence and higher quality than anything inferred secondhand
+  // from what the user told Coach Chat — never let this automatic,
+  // background process quietly downgrade it. The user can always paste in
+  // fresh real messages later to update it explicitly.
+  if (partner.learnedProfileSource === "real_messages") return;
+
   const userHasMultiplePartners = db.partnerProfiles.filter((p) => p.userId === userId).length > 1;
 
   let coachConversations = db.conversations
@@ -599,6 +725,7 @@ ${digest}
       partner.learnedVoice = voice || null;
       partner.learnedProfileConfidence = confidence;
       partner.learnedProfileUpdatedAt = new Date().toISOString();
+      partner.learnedProfileSource = "coach_chat";
       savePartnerProfile(partner);
     }
   } catch (err) {
@@ -883,6 +1010,7 @@ function publicPartner(p) {
     learnedVoice: p.learnedVoice || null,
     learnedProfileConfidence: p.learnedProfileConfidence || null,
     learnedProfileUpdatedAt: p.learnedProfileUpdatedAt || null,
+    learnedProfileSource: p.learnedProfileSource || null,
     createdAt: p.createdAt,
   };
 }
@@ -1441,6 +1569,31 @@ app.delete("/api/partners/:id", authMiddleware, (req, res) => {
   res.json({ ok: true });
 });
 
+// Explicit, user-triggered version of the automatic Coach-Chat-based
+// learning above: the user pastes in real messages their partner actually
+// sent (a chat export, transcribed screenshots, whatever they have), and
+// RelateIQ extracts a behavioral + voice profile straight from that —
+// higher fidelity than anything inferred secondhand, since it's the
+// partner's own real wording. Not gated by the daily AI-message limit or
+// any plan-based cap (same precedent as the automatic version), just by the
+// input length caps in learnPartnerProfileFromRealMessages itself.
+app.post("/api/partners/:id/learn-from-messages", authMiddleware, async (req, res) => {
+  try {
+    const partner = req.db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
+    if (!partner) return res.status(404).json({ error: "Partner profile not found." });
+
+    const { messages } = req.body || {};
+    await learnPartnerProfileFromRealMessages(partner, messages);
+    res.json(publicPartner(partner));
+  } catch (err) {
+    if (err && err.status === 400) {
+      return res.status(400).json({ error: err.message });
+    }
+    console.error("Learn from real messages error:", err.message);
+    res.status(500).json({ error: "Couldn't learn from those messages right now. Please try again." });
+  }
+});
+
 // ---------------------------------------------------------------------------
 // conversations (Coach mode + Practice mode)
 // ---------------------------------------------------------------------------
@@ -1649,7 +1802,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
     const [completion, safety] = await Promise.all([
       openai.chat.completions.create({
-        model: modelForPlan(user.plan),
+        model: isPractice ? modelForPractice(user.plan) : modelForPlan(user.plan),
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
         temperature: isPractice ? 0.95 : 0.8,
       }),
@@ -1749,6 +1902,83 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
   } catch (err) {
     console.error("Therapist summary error:", err.message);
     res.status(500).json({ error: "Couldn't generate a summary right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Practice debrief — the Partner Practice counterpart to the therapist
+// summary above: a short, structured readout of a rehearsal (what went
+// well, what to watch for, one concrete tip), aimed at the real
+// conversation still to come. Same caching pattern: generated once,
+// cached on the conversation, { regenerate: true } forces a fresh one.
+// ---------------------------------------------------------------------------
+
+const PRACTICE_DEBRIEF_MIN_USER_MESSAGES = 2;
+
+app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
+  try {
+    const db = req.db;
+    const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+    if (!conv) return res.status(404).json({ error: "Conversation not found." });
+
+    if (conv.mode !== "practice") {
+      return res.status(400).json({
+        error: "A debrief is available for Partner Practice rehearsals — this is a Coach Chat conversation, not a rehearsal.",
+      });
+    }
+
+    const userMessageCount = (conv.messages || []).filter((m) => m.role === "user").length;
+    if (userMessageCount < PRACTICE_DEBRIEF_MIN_USER_MESSAGES) {
+      return res.status(400).json({ error: "Practice the conversation a bit more before asking for a debrief — a couple more exchanges will give a lot more to work with." });
+    }
+
+    const regenerate = !!(req.body && req.body.regenerate);
+    if (conv.practiceDebrief && !regenerate) {
+      return res.json({ ...JSON.parse(conv.practiceDebrief), generatedAt: conv.practiceDebriefAt, cached: true });
+    }
+
+    const user = db.users.find((u) => u.id === req.user.id);
+    if (isOverDailyLimit(user, res)) return;
+
+    const transcript = buildPracticeTranscript(conv);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: PRACTICE_DEBRIEF_SYSTEM_PROMPT },
+        {
+          role: "user",
+          content: `Partner's name (roleplayed by the AI): ${conv.partnerName || "the partner"}\n\nRehearsal transcript:\n"""\n${transcript}\n"""`,
+        },
+      ],
+      temperature: 0.5,
+      response_format: { type: "json_object" },
+    });
+
+    let parsed = {};
+    try {
+      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      parsed = {};
+    }
+    const debrief = {
+      wentWell: String(parsed.wentWell || "").trim(),
+      watchFor: String(parsed.watchFor || "").trim(),
+      tip: String(parsed.tip || "").trim(),
+    };
+    if (!debrief.wentWell && !debrief.watchFor && !debrief.tip) {
+      return res.status(500).json({ error: "Couldn't generate a debrief right now. Please try again." });
+    }
+
+    const generatedAt = new Date().toISOString();
+    conv.practiceDebrief = JSON.stringify(debrief);
+    conv.practiceDebriefAt = generatedAt;
+    saveConversation(conv);
+    if (user.plan === "free") bumpFreeUsage(user);
+
+    res.json({ ...debrief, generatedAt, cached: false, usage: user.usage });
+  } catch (err) {
+    console.error("Practice debrief error:", err.message);
+    res.status(500).json({ error: "Couldn't generate a debrief right now. Please try again." });
   }
 });
 
@@ -1871,9 +2101,28 @@ async function generateInsightsForDigest(user, coachConversations) {
 // Message Coach — one-off rewrite tool, not tied to a saved conversation
 // ---------------------------------------------------------------------------
 
+// Turns a partner profile into a plain descriptive block for the Message
+// Coach prompt (as opposed to buildPartnerSystemPrompt, which turns one
+// into ROLEPLAY instructions for Partner Practice) — traits, attachment
+// behavior, and anything RelateIQ has learned, so the rewrite and "insight"
+// can actually be shaped around this specific person instead of staying
+// generic. Returns "" when the partner has nothing usable yet, so the
+// caller can omit the section entirely rather than send an empty one.
+function buildPartnerContextBlock(partner) {
+  if (!partner) return "";
+  const parts = [];
+  if (partner.traits) parts.push(`Personality/traits: ${partner.traits}`);
+  if (partner.context) parts.push(`Relationship context: ${partner.context}`);
+  const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
+  if (attachmentNote) parts.push(attachmentNote);
+  if (partner.learnedProfile) parts.push(`What RelateIQ has learned about how they communicate: ${partner.learnedProfile}`);
+  if (partner.learnedVoice) parts.push(`How they specifically tend to phrase things: ${partner.learnedVoice}`);
+  return parts.length ? parts.join("\n") : "";
+}
+
 app.post("/api/message-coach", authMiddleware, async (req, res) => {
   try {
-    const { draft, context, messages } = req.body || {};
+    const { draft, context, messages, partnerProfileId } = req.body || {};
     const trimmedDraft = String(draft || "").trim();
     const transcript = buildChatTranscript(messages);
 
@@ -1888,10 +2137,25 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     if (isOverDailyLimit(user, res)) return;
     if (isOverMessageCoachLifetimeLimit(user, res)) return;
 
+    // Optional — the user picks which partner profile this message is
+    // about (see buildPartnerContextBlock above) so the rewrite and
+    // "insight" are shaped around this specific person instead of staying
+    // generic. Silently ignored (not an error) if the id doesn't match one
+    // of the user's own partner profiles.
+    const partner = partnerProfileId
+      ? db.partnerProfiles.find((p) => p.id === partnerProfileId && p.userId === req.user.id)
+      : null;
+    const partnerBlock = buildPartnerContextBlock(partner);
+
     const contextBlock = [String(context || "").trim(), transcript].filter(Boolean).join("\n\n") || "(none given)";
-    const userContent = trimmedDraft
-      ? `Context (optional, may be empty):\n${contextBlock}\n\nDraft message:\n"""${trimmedDraft}"""`
-      : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`;
+    const userContent = [
+      partnerBlock ? `About the partner this message is for (use this to shape the advice):\n${partnerBlock}` : "",
+      trimmedDraft
+        ? `Context (optional, may be empty):\n${contextBlock}\n\nDraft message:\n"""${trimmedDraft}"""`
+        : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`,
+    ]
+      .filter(Boolean)
+      .join("\n\n");
 
     const [completion, safety] = await Promise.all([
       openai.chat.completions.create({
@@ -1918,6 +2182,7 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     }
     const rewrite = String(parsed.rewrite || "").trim();
     const why = String(parsed.why || "").trim();
+    const insight = String(parsed.insight || "").trim();
 
     if (!rewrite) {
       return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
@@ -1928,7 +2193,7 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
       incrementUserColumn(user.id, "lifetimeMessageCoachUses", 1);
     }
 
-    res.json({ rewrite, why, usage: user.usage, safety: safetyBlockFor(safety) });
+    res.json({ rewrite, why, insight, usage: user.usage, safety: safetyBlockFor(safety) });
   } catch (err) {
     console.error("Message coach error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
@@ -2053,13 +2318,14 @@ app.post("/api/public/message-coach-demo", async (req, res) => {
     }
     const rewrite = String(parsed.rewrite || "").trim();
     const why = String(parsed.why || "").trim();
+    const insight = String(parsed.insight || "").trim();
 
     if (!rewrite) {
       return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
     }
 
     const usedNow = recordDemoUsage(ip);
-    res.json({ rewrite, why, remaining: Math.max(0, DEMO_DAILY_LIMIT - usedNow) });
+    res.json({ rewrite, why, insight, remaining: Math.max(0, DEMO_DAILY_LIMIT - usedNow) });
   } catch (err) {
     console.error("Message coach demo error:", err.message);
     res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });

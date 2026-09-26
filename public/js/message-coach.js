@@ -5,13 +5,41 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("rewrite-btn")?.addEventListener("click", rewrite);
   wireVoiceInput(document.getElementById("draft-mic-btn"), document.getElementById("draft-input"));
+  loadPartnersForPicker();
 });
+
+// Populates the "Who is this for?" picker from the user's Partner Practice
+// profiles, so a message-coach request can be personalized (see
+// buildPartnerContextBlock in server.js). Stays hidden entirely for a user
+// with no partner profiles yet, rather than showing an empty/pointless
+// dropdown.
+async function loadPartnersForPicker() {
+  const select = document.getElementById("partner-select");
+  if (!select) return;
+  try {
+    const res = await authFetch("/api/partners");
+    const partners = await safeJson(res);
+    if (!res.ok || !Array.isArray(partners) || partners.length === 0) return;
+
+    partners.forEach((p) => {
+      const opt = document.createElement("option");
+      opt.value = p.id;
+      opt.textContent = p.name;
+      select.appendChild(opt);
+    });
+    select.style.display = "block";
+  } catch (err) {
+    // Quietly leave the picker hidden — this is a nice-to-have, not
+    // something worth surfacing an error for.
+  }
+}
 
 async function rewrite() {
   if (isRewriting) return;
 
   const draft = document.getElementById("draft-input").value.trim();
   const context = document.getElementById("context-input").value.trim();
+  const partnerProfileId = document.getElementById("partner-select")?.value || undefined;
   const errorBox = document.getElementById("form-error");
   const resultBox = document.getElementById("result");
   const btn = document.getElementById("rewrite-btn");
@@ -32,7 +60,7 @@ async function rewrite() {
   try {
     const res = await authFetch("/api/message-coach", {
       method: "POST",
-      body: JSON.stringify({ draft, context }),
+      body: JSON.stringify({ draft, context, partnerProfileId }),
     });
     const data = await safeJson(res);
 
@@ -89,6 +117,22 @@ async function rewrite() {
       whyEl.className = "coach-why";
       whyEl.textContent = data.why;
       resultBox.appendChild(whyEl);
+    }
+
+    // The bigger-picture strategic note (see the "insight" field in
+    // MESSAGE_COACH_SYSTEM_PROMPT, server.js) — real advice about the
+    // situation, not just about the wording, shown as its own section so
+    // it doesn't blur together with "why this works better" above.
+    if (data.insight) {
+      const insightLabel = document.createElement("div");
+      insightLabel.className = "coach-why-label";
+      insightLabel.textContent = "What's really going on";
+      resultBox.appendChild(insightLabel);
+
+      const insightEl = document.createElement("p");
+      insightEl.className = "coach-why";
+      insightEl.textContent = data.insight;
+      resultBox.appendChild(insightEl);
     }
 
     // Fixed, hand-checked resources — see safetyBlockFor() in server.js.

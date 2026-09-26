@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeSidebarDrawer();
   });
-  document.getElementById("debrief-btn")?.addEventListener("click", () => startNewChat("coach"));
+  document.getElementById("debrief-btn")?.addEventListener("click", requestPracticeDebrief);
   document.getElementById("export-summary-btn")?.addEventListener("click", () => {
     if (!currentConversationId) return;
     window.open("summary.html?id=" + encodeURIComponent(currentConversationId), "_blank");
@@ -673,26 +673,112 @@ function buildPartnerCard(p) {
 function buildPartnerLearnRow(p) {
   const row = document.createElement("div");
   row.className = "partner-learn-row";
-  if (!p.learnedProfile) return row; // empty — nothing to show yet
 
-  row.innerHTML = `
-    <span class="partner-learn-meta">RelateIQ has picked up on a few things about ${escapeHtml(p.name)} from your chats (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button></span>
-    <div class="partner-learned-box" style="display:none;"></div>
-  `;
+  // Purely informational half — what RelateIQ already knows, if anything.
+  // Renders nothing here for a partner it hasn't learned about yet (e.g.
+  // brand new, or not enough material), so the list stays clean instead of
+  // nagging. The wording distinguishes a profile built from real, pasted-in
+  // messages (higher fidelity) from one inferred from Coach Chat mentions.
+  if (p.learnedProfile) {
+    const sourceLabel = p.learnedProfileSource === "real_messages" ? "from the real messages you added" : "from your chats";
+    const info = document.createElement("span");
+    info.className = "partner-learn-meta";
+    info.innerHTML = `RelateIQ has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button>`;
+    const box = document.createElement("div");
+    box.className = "partner-learned-box";
+    box.style.display = "none";
+    row.appendChild(info);
+    row.appendChild(box);
 
-  const box = row.querySelector(".partner-learned-box");
-  const toggleBtn = row.querySelector(".partner-learn-toggle");
-  toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const showing = box.style.display !== "none";
-    box.style.display = showing ? "none" : "block";
-    if (!showing) {
-      box.textContent = [p.learnedProfile, p.learnedVoice ? `Voice: ${p.learnedVoice}` : ""].filter(Boolean).join("\n\n");
-    }
-    toggleBtn.textContent = showing ? "view" : "hide";
-  });
+    const toggleBtn = info.querySelector(".partner-learn-toggle");
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const showing = box.style.display !== "none";
+      box.style.display = showing ? "none" : "block";
+      if (!showing) {
+        box.textContent = [p.learnedProfile, p.learnedVoice ? `Voice: ${p.learnedVoice}` : ""].filter(Boolean).join("\n\n");
+      }
+      toggleBtn.textContent = showing ? "view" : "hide";
+    });
+  }
+
+  row.appendChild(buildImportMessagesRow(p));
 
   return row;
+}
+
+// Explicit, user-triggered counterpart to the automatic learning above: lets
+// the user paste in real messages their partner actually sent (a chat
+// export, transcribed screenshots, whatever they have) for a more accurate
+// profile than anything inferred secondhand from Coach Chat. See POST
+// /api/partners/:id/learn-from-messages in server.js.
+function buildImportMessagesRow(p) {
+  const wrap = document.createElement("div");
+  wrap.className = "partner-import-row";
+
+  const toggleBtn = document.createElement("button");
+  toggleBtn.type = "button";
+  toggleBtn.className = "partner-learn-toggle partner-import-toggle";
+  toggleBtn.textContent = p.learnedProfileSource === "real_messages" ? "+ Update with more real messages" : "+ Add real messages for a more accurate profile";
+  wrap.appendChild(toggleBtn);
+
+  const form = document.createElement("div");
+  form.className = "partner-import-form";
+  form.style.display = "none";
+  form.innerHTML = `
+    <p class="text-muted" style="font-size:12px; margin:6px 0;">Paste in real messages ${escapeHtml(p.name)} actually sent you — a chat export, or just copy-pasted texts. RelateIQ will pick up on how they actually write, not just how you've described them.</p>
+    <textarea class="partner-import-textarea" rows="5" maxlength="12000" placeholder="Paste messages here…"></textarea>
+    <div class="form-error partner-import-error" style="display:none;"></div>
+    <button type="button" class="btn btn-gradient btn-sm partner-import-submit">Learn from these messages</button>
+  `;
+  wrap.appendChild(form);
+
+  const textarea = form.querySelector(".partner-import-textarea");
+  const errorBox = form.querySelector(".partner-import-error");
+  const submitBtn = form.querySelector(".partner-import-submit");
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const showing = form.style.display !== "none";
+    form.style.display = showing ? "none" : "block";
+  });
+  textarea.addEventListener("click", (e) => e.stopPropagation());
+
+  submitBtn.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    const messages = textarea.value.trim();
+    errorBox.style.display = "none";
+    if (!messages) {
+      errorBox.textContent = "Paste a few messages first.";
+      errorBox.style.display = "block";
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Learning…";
+    try {
+      const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}/learn-from-messages`, {
+        method: "POST",
+        body: JSON.stringify({ messages }),
+      });
+      const updated = await safeJson(res);
+      if (!res.ok) {
+        errorBox.textContent = updated.error || "Couldn't learn from those messages right now.";
+        errorBox.style.display = "block";
+        return;
+      }
+      const idx = partners.findIndex((x) => x.id === p.id);
+      if (idx !== -1) partners[idx] = updated;
+      renderPartnerList();
+    } catch (err) {
+      errorBox.textContent = "Couldn't connect to the server.";
+      errorBox.style.display = "block";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Learn from these messages";
+    }
+  });
+
+  return wrap;
 }
 
 async function selectPartnerAndStart(partnerId) {
@@ -863,6 +949,93 @@ function appendSafetyNotice(safety) {
   body.innerText = safety.body || "";
   card.appendChild(heading);
   card.appendChild(body);
+  chatDiv.appendChild(card);
+  chatDiv.scrollTop = chatDiv.scrollHeight;
+}
+
+let isFetchingDebrief = false;
+
+// Wired to the "Get feedback" button in the practice banner (see
+// #debrief-btn in chat.html). Calls the new debrief endpoint and renders
+// the result as a card at the end of the rehearsal — a real, specific
+// readout (what went well, what to watch for, a concrete tip), not just a
+// hand-off to Coach Chat. A "Talk it through with Coach" link inside the
+// card still offers that hand-off for anyone who wants to go deeper.
+async function requestPracticeDebrief() {
+  if (isFetchingDebrief || !currentConversationId) return;
+  isFetchingDebrief = true;
+  const btn = document.getElementById("debrief-btn");
+  const originalLabel = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Getting feedback…";
+  }
+
+  try {
+    const res = await authFetch(`/api/conversations/${encodeURIComponent(currentConversationId)}/debrief`, {
+      method: "POST",
+      body: JSON.stringify({}),
+    });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      alert(data.error || "Couldn't generate a debrief right now.");
+      return;
+    }
+    appendPracticeDebrief(data);
+  } catch (err) {
+    console.error(err);
+    alert("Couldn't connect to the server.");
+  } finally {
+    isFetchingDebrief = false;
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  }
+}
+
+function appendPracticeDebrief(debrief) {
+  const chatDiv = document.getElementById("chat");
+  if (!chatDiv) return;
+
+  const card = document.createElement("div");
+  card.className = "practice-debrief-card";
+
+  const heading = document.createElement("div");
+  heading.className = "practice-debrief-heading";
+  heading.textContent = "📋 Feedback on this rehearsal";
+  card.appendChild(heading);
+
+  const sections = [
+    ["What went well", debrief.wentWell],
+    ["Watch for", debrief.watchFor],
+    ["Try this in the real conversation", debrief.tip],
+  ];
+  sections.forEach(([label, text]) => {
+    if (!text) return;
+    const section = document.createElement("div");
+    section.className = "practice-debrief-section";
+    const labelEl = document.createElement("div");
+    labelEl.className = "practice-debrief-label";
+    labelEl.textContent = label;
+    const textEl = document.createElement("p");
+    textEl.className = "practice-debrief-text";
+    textEl.textContent = text;
+    section.appendChild(labelEl);
+    section.appendChild(textEl);
+    card.appendChild(section);
+  });
+
+  const footer = document.createElement("div");
+  footer.className = "practice-debrief-footer";
+  const coachLink = document.createElement("button");
+  coachLink.type = "button";
+  coachLink.className = "btn btn-ghost btn-sm";
+  coachLink.textContent = "Talk it through with Coach →";
+  coachLink.addEventListener("click", () => startNewChat("coach"));
+  footer.appendChild(coachLink);
+  card.appendChild(footer);
+
   chatDiv.appendChild(card);
   chatDiv.scrollTop = chatDiv.scrollHeight;
 }
