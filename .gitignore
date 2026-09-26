@@ -1,4 +1,7 @@
 node_modules/
 .env
 data/db.json
+data/relateiq.sqlite
+data/relateiq.sqlite-wal
+data/relateiq.sqlite-shm
 public/uploads/

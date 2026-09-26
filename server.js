@@ -9,7 +9,35 @@ import OpenAI from "openai";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Stripe from "stripe";
-import { readDb, writeDb, generateId } from "./lib/store.js";
+import {
+  loadDb,
+  generateId,
+  getUserById,
+  getUserByEmail,
+  getUserByStripeCustomerId,
+  getUserByReferralCode,
+  saveUser,
+  incrementUserUsage,
+  incrementUserColumn,
+  saveConversation,
+  deleteConversation,
+  appendConversationMessages,
+  savePartnerProfile,
+  deletePartnerProfile,
+  saveCheckin,
+  saveShare,
+  deleteShare,
+  getShareByToken,
+  saveCompare,
+  deleteCompare,
+  getCompareByToken,
+  savePushSubscription,
+  deletePushSubscription,
+  deletePushSubscriptionsForUser,
+  getPushSubscriptionsForUser,
+  getEmailJobs,
+  setEmailJobField,
+} from "./lib/store.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
 import webpush from "web-push";
 
@@ -56,31 +84,29 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
   }
 
   try {
-    const db = readDb();
-
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       const userId = session.client_reference_id || session.metadata?.userId;
-      const user = db.users.find((u) => u.id === userId);
+      const user = getUserById(userId);
       if (user && session.subscription) {
         const wasFree = user.plan === "free" || !user.plan;
         user.stripeCustomerId = session.customer;
         user.stripeSubscriptionId = session.subscription;
         user.subscriptionStatus = "active";
         if (session.metadata?.plan) user.plan = session.metadata.plan;
-        writeDb(db);
+        saveUser(user);
 
         // First time this user has ever converted to paid — this is the
         // one moment a referral reward can fire, so it can't be triggered
         // more than once per referred user.
         if (wasFree && session.metadata?.plan) {
           const priceId = PLAN_TO_STRIPE_PRICE[session.metadata.plan];
-          if (priceId) await grantReferralRewardIfDue(db, user, priceId);
+          if (priceId) await grantReferralRewardIfDue(user, priceId);
         }
       }
     } else if (event.type === "customer.subscription.updated") {
       const sub = event.data.object;
-      const user = db.users.find((u) => u.stripeCustomerId === sub.customer);
+      const user = getUserByStripeCustomerId(sub.customer);
       if (user) {
         const priceId = sub.items?.data?.[0]?.price?.id;
         const mappedPlan = STRIPE_PRICE_TO_PLAN[priceId];
@@ -91,16 +117,16 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
         } else if (["canceled", "unpaid", "incomplete_expired"].includes(sub.status)) {
           user.plan = "free";
         }
-        writeDb(db);
+        saveUser(user);
       }
     } else if (event.type === "customer.subscription.deleted") {
       const sub = event.data.object;
-      const user = db.users.find((u) => u.stripeCustomerId === sub.customer);
+      const user = getUserByStripeCustomerId(sub.customer);
       if (user) {
         user.plan = "free";
         user.subscriptionStatus = "canceled";
         user.stripeSubscriptionId = null;
-        writeDb(db);
+        saveUser(user);
       }
     }
   } catch (err) {
@@ -199,7 +225,7 @@ if (!process.env.JWT_SECRET) {
 }
 if (!process.env.DB_PATH) {
   console.warn(
-    "⚠️  DB_PATH is not set — data/db.json is being stored inside the app's own container filesystem. " +
+    "⚠️  DB_PATH is not set — data/relateiq.sqlite is being stored inside the app's own container filesystem. " +
       "On Railway this does NOT survive a redeploy unless you've mounted a persistent Volume and pointed " +
       "DB_PATH at a file inside it. See README for setup."
   );
@@ -512,10 +538,11 @@ function buildPartnerLearningDigest(conversations) {
 
 // Called automatically from POST /api/conversations right before a practice
 // session starts — never from a user-facing button. Mutates `partner` in
-// place and leaves it to the caller to writeDb(). Fails open: any error
-// (including the OpenAI call itself) just leaves the partner's existing
-// learned profile (or lack of one) untouched rather than blocking the user
-// from starting their practice conversation.
+// place and persists it itself (via savePartnerProfile) when it actually
+// learns something new. Fails open: any error (including the OpenAI call
+// itself) just leaves the partner's existing learned profile (or lack of
+// one) untouched rather than blocking the user from starting their practice
+// conversation.
 async function learnPartnerProfileIfStale(db, userId, partner) {
   const userHasMultiplePartners = db.partnerProfiles.filter((p) => p.userId === userId).length > 1;
 
@@ -572,6 +599,7 @@ ${digest}
       partner.learnedVoice = voice || null;
       partner.learnedProfileConfidence = confidence;
       partner.learnedProfileUpdatedAt = new Date().toISOString();
+      savePartnerProfile(partner);
     }
   } catch (err) {
     console.error("Partner auto-learn error:", err.message);
@@ -672,10 +700,10 @@ function saveIncomingAttachments(user, rawAttachments) {
       mimeType,
       size: buffer.length,
       kind: attachmentKind(mimeType, safeName),
-      url: `/uploads/${userId}/${filename}`,
+      url: `/uploads/${user.id}/${filename}`,
       // Not persisted to the DB — only used for this one OpenAI call below,
       // so images/text files can be fed to the model without re-reading
-      // from disk (and without ever storing raw base64 in data/db.json).
+      // from disk (and without ever storing raw base64 in the database).
       _dataUrl: att.dataUrl,
     });
   }
@@ -877,7 +905,7 @@ function authMiddleware(req, res, next) {
   if (!token) return res.status(401).json({ error: "You need to be logged in." });
   try {
     const payload = jwt.verify(token, JWT_SECRET);
-    const db = readDb();
+    const db = loadDb();
     const user = db.users.find((u) => u.id === payload.sub);
     if (!user) return res.status(401).json({ error: "Invalid session." });
     req.user = user;
@@ -920,6 +948,18 @@ function isOverDailyLimit(user, res) {
   return false;
 }
 
+// Call once an AI call has actually succeeded and should count against the
+// free-plan daily limit. Persists the increment atomically (see
+// incrementUserUsage in lib/store.js — a single UPDATE that resets-or-
+// increments in one statement, so two concurrent requests can't stomp on
+// each other's count) and also updates the in-memory `user.usage` so the
+// response the caller sends back reflects the new count.
+function bumpFreeUsage(user) {
+  const today = todayKey();
+  incrementUserUsage(user.id, today);
+  user.usage = { date: today, count: (user.usage?.date === today ? user.usage.count : 0) + 1 };
+}
+
 // Message Coach (paste a draft, or open a conversation and ask for a
 // proposed reply) is a Free-plan lifetime allowance, separate from and much
 // smaller than the daily AI-message pool above. This is the "send a
@@ -954,7 +994,7 @@ function generateUniqueReferralCode(db) {
 // balance transaction to it — Stripe automatically applies a credit balance
 // to the customer's *next* invoice, whether or not they have an active
 // subscription yet, so this works even for a referrer who's still on Free.
-async function creditOneMonth(db, targetUser, amountCents, currency, description) {
+async function creditOneMonth(targetUser, amountCents, currency, description) {
   let customerId = targetUser.stripeCustomerId;
   if (!customerId) {
     const customer = await stripe.customers.create({
@@ -977,9 +1017,9 @@ async function creditOneMonth(db, targetUser, amountCents, currency, description
 // month — valued at the price of the plan that was just subscribed to,
 // since that's the plan action that actually triggered the reward. Never
 // fires twice for the same referred user (referralRewardGranted guards it).
-async function grantReferralRewardIfDue(db, user, priceId) {
+async function grantReferralRewardIfDue(user, priceId) {
   if (!stripe || !user.referredBy || user.referralRewardGranted) return;
-  const referrer = db.users.find((u) => u.id === user.referredBy);
+  const referrer = getUserById(user.referredBy);
   if (!referrer) return;
 
   try {
@@ -988,11 +1028,12 @@ async function grantReferralRewardIfDue(db, user, priceId) {
     const currency = price?.currency || "eur";
     if (!amount) return;
 
-    await creditOneMonth(db, user, amount, currency, "Thanks for joining through a RelateIQ invite — 1 month on us");
-    await creditOneMonth(db, referrer, amount, currency, "Thanks for inviting a friend to RelateIQ — 1 month on us");
+    await creditOneMonth(user, amount, currency, "Thanks for joining through a RelateIQ invite — 1 month on us");
+    await creditOneMonth(referrer, amount, currency, "Thanks for inviting a friend to RelateIQ — 1 month on us");
 
     user.referralRewardGranted = true;
-    writeDb(db);
+    saveUser(user);
+    saveUser(referrer);
   } catch (err) {
     console.error("Referral reward error:", err);
   }
@@ -1050,7 +1091,7 @@ app.post("/api/auth/register", (req, res) => {
       return res.status(400).json({ error: "Password must be at least 8 characters." });
     }
 
-    const db = readDb();
+    const db = loadDb();
     const normalizedEmail = String(email).trim().toLowerCase();
     if (db.users.some((u) => u.email === normalizedEmail)) {
       return res.status(409).json({ error: "An account with this email already exists." });
@@ -1058,7 +1099,7 @@ app.post("/api/auth/register", (req, res) => {
 
     let referrer = null;
     if (referralCode) {
-      referrer = db.users.find((u) => u.referralCode === String(referralCode).trim().toLowerCase()) || null;
+      referrer = getUserByReferralCode(String(referralCode).trim().toLowerCase()) || null;
     }
 
     const user = {
@@ -1083,8 +1124,7 @@ app.post("/api/auth/register", (req, res) => {
       lifetimeMessageCoachUses: 0,
     };
 
-    db.users.push(user);
-    writeDb(db);
+    saveUser(user);
 
     const token = signToken(user);
     res.json({ token, user: publicUser(user) });
@@ -1101,9 +1141,8 @@ app.post("/api/auth/login", (req, res) => {
       return res.status(400).json({ error: "Email and password are required." });
     }
 
-    const db = readDb();
     const normalizedEmail = String(email).trim().toLowerCase();
-    const user = db.users.find((u) => u.email === normalizedEmail);
+    const user = getUserByEmail(normalizedEmail);
 
     if (!user || !user.passwordHash || !bcrypt.compareSync(password, user.passwordHash)) {
       return res.status(401).json({ error: "Incorrect email or password." });
@@ -1122,11 +1161,10 @@ app.get("/api/me", authMiddleware, (req, res) => {
 });
 
 app.post("/api/me/email-preferences", authMiddleware, (req, res) => {
-  const db = req.db;
   const { checkinReminders, weeklyDigest } = req.body || {};
   if (checkinReminders !== undefined) req.user.emailCheckinReminders = !!checkinReminders;
   if (weeklyDigest !== undefined) req.user.emailWeeklyDigest = !!weeklyDigest;
-  writeDb(db);
+  saveUser(req.user);
   res.json({
     emailCheckinReminders: req.user.emailCheckinReminders !== false,
     emailWeeklyDigest: req.user.emailWeeklyDigest !== false,
@@ -1142,7 +1180,7 @@ app.get("/api/referrals", authMiddleware, (req, res) => {
   // Backfills a code for accounts created before this feature existed.
   if (!req.user.referralCode) {
     req.user.referralCode = generateUniqueReferralCode(db);
-    writeDb(db);
+    saveUser(req.user);
   }
 
   const referred = db.users.filter((u) => u.referredBy === req.user.id);
@@ -1167,34 +1205,26 @@ app.get("/api/push/vapid-public-key", (req, res) => {
 });
 
 app.post("/api/push/subscribe", authMiddleware, (req, res) => {
-  const db = req.db;
   const subscription = req.body;
   if (!subscription || !subscription.endpoint) {
     return res.status(400).json({ error: "Invalid push subscription." });
   }
 
-  const existingIdx = db.pushSubscriptions.findIndex(
-    (s) => s.userId === req.user.id && s.subscription.endpoint === subscription.endpoint
-  );
-  const record = {
-    id: existingIdx >= 0 ? db.pushSubscriptions[existingIdx].id : generateId("push"),
+  // savePushSubscription upserts by (userId, endpoint), so re-subscribing
+  // the same browser just replaces its row — no need to look up an existing
+  // id first.
+  savePushSubscription({
+    id: generateId("push"),
     userId: req.user.id,
     subscription,
     createdAt: new Date().toISOString(),
-  };
-  if (existingIdx >= 0) db.pushSubscriptions[existingIdx] = record;
-  else db.pushSubscriptions.push(record);
-  writeDb(db);
+  });
   res.json({ ok: true });
 });
 
 app.post("/api/push/unsubscribe", authMiddleware, (req, res) => {
-  const db = req.db;
   const { endpoint } = req.body || {};
-  db.pushSubscriptions = db.pushSubscriptions.filter(
-    (s) => !(s.userId === req.user.id && (!endpoint || s.subscription.endpoint === endpoint))
-  );
-  writeDb(db);
+  deletePushSubscriptionsForUser(req.user.id, endpoint || null);
   res.json({ ok: true });
 });
 
@@ -1290,7 +1320,6 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
       return res.status(400).json({ error: "That's not a valid paid plan." });
     }
 
-    const db = req.db;
     const user = req.user;
 
     if (user.stripeSubscriptionId && user.subscriptionStatus === "active") {
@@ -1309,7 +1338,7 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
       });
       customerId = customer.id;
       user.stripeCustomerId = customerId;
-      writeDb(db);
+      saveUser(user);
     }
 
     const session = await stripe.checkout.sessions.create({
@@ -1397,8 +1426,7 @@ app.post("/api/partners", authMiddleware, (req, res) => {
       attachmentStyle: validStyle,
       createdAt: new Date().toISOString(),
     };
-    db.partnerProfiles.push(partner);
-    writeDb(db);
+    savePartnerProfile(partner);
     res.json(publicPartner(partner));
   } catch (err) {
     console.error("Create partner error:", err);
@@ -1407,11 +1435,9 @@ app.post("/api/partners", authMiddleware, (req, res) => {
 });
 
 app.delete("/api/partners/:id", authMiddleware, (req, res) => {
-  const db = req.db;
-  const idx = db.partnerProfiles.findIndex((p) => p.id === req.params.id && p.userId === req.user.id);
-  if (idx === -1) return res.status(404).json({ error: "Partner profile not found." });
-  db.partnerProfiles.splice(idx, 1);
-  writeDb(db);
+  const partner = req.db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
+  if (!partner) return res.status(404).json({ error: "Partner profile not found." });
+  deletePartnerProfile(partner.id);
   res.json({ ok: true });
 });
 
@@ -1492,11 +1518,10 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
-  db.conversations.push(conv);
+  saveConversation(conv);
   if (isPractice && req.user.plan === "free") {
-    req.user.lifetimePracticeConversations = (req.user.lifetimePracticeConversations || 0) + 1;
+    incrementUserColumn(req.user.id, "lifetimePracticeConversations", 1);
   }
-  writeDb(db);
   res.json(conv);
 });
 
@@ -1521,7 +1546,7 @@ app.patch("/api/conversations/:id", authMiddleware, (req, res) => {
     if (!partner) return res.status(400).json({ error: "Partner profile not found." });
     conv.aboutPartnerId = partner.id;
   }
-  writeDb(db);
+  saveConversation(conv);
   res.json({ id: conv.id, aboutPartnerId: conv.aboutPartnerId });
 });
 
@@ -1532,11 +1557,9 @@ app.get("/api/conversations/:id", authMiddleware, (req, res) => {
 });
 
 app.delete("/api/conversations/:id", authMiddleware, (req, res) => {
-  const db = req.db;
-  const idx = db.conversations.findIndex((c) => c.id === req.params.id && c.userId === req.user.id);
-  if (idx === -1) return res.status(404).json({ error: "Conversation not found." });
-  db.conversations.splice(idx, 1);
-  writeDb(db);
+  const conv = req.db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (!conv) return res.status(404).json({ error: "Conversation not found." });
+  deleteConversation(conv.id);
   res.json({ ok: true });
 });
 
@@ -1579,15 +1602,30 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   }
 
   if (hasAttachments && user.plan === "free") {
-    user.lifetimeAttachmentCount = (user.lifetimeAttachmentCount || 0) + savedAttachments.length;
+    incrementUserColumn(user.id, "lifetimeAttachmentCount", savedAttachments.length);
   }
 
-  conv.messages.push({
+  // Prior turns for the prompt come from the conversation's state as of the
+  // START of this request (before the new user message below) — same
+  // effective window (last 20 turns) the old code got from slicing the
+  // in-memory array right after pushing onto it.
+  const priorHistory = conv.messages.slice(-20).map((m) => ({ role: m.role, content: m.content }));
+
+  const userMessage = {
     role: "user",
     content: text,
     attachments: savedAttachments.map(stripInternalFields),
     at: new Date().toISOString(),
-  });
+  };
+
+  // Persist the user's message immediately, before the AI call — this is
+  // the fix for the old race: appendConversationMessages re-reads the
+  // conversation's CURRENT persisted messages at write time rather than
+  // trusting this request's possibly-stale in-memory snapshot, so a
+  // concurrent request touching the same conversation can never clobber
+  // this message (or vice versa). It also means the user's message is
+  // safely saved even if the OpenAI call below fails.
+  appendConversationMessages(conv.id, [userMessage], { updatedAt: userMessage.at });
 
   const isPractice = conv.mode === "practice";
   const systemPrompt = isPractice
@@ -1607,7 +1645,6 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     // in the stored content, not re-uploaded); only the newest message gets
     // full multimodal treatment, so images aren't re-sent to the model on
     // every follow-up turn.
-    const priorHistory = conv.messages.slice(-21, -1).map((m) => ({ role: m.role, content: m.content }));
     const latestContent = buildModelContent(text, savedAttachments);
 
     const [completion, safety] = await Promise.all([
@@ -1621,24 +1658,23 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
     const reply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
 
-    conv.messages.push({ role: "assistant", content: reply, at: new Date().toISOString() });
-    conv.updatedAt = new Date().toISOString();
-    if (conv.title === "New conversation") {
+    let title = conv.title;
+    if (title === "New conversation") {
       if (hasText) {
-        conv.title = text.slice(0, 48) + (text.length > 48 ? "…" : "");
+        title = text.slice(0, 48) + (text.length > 48 ? "…" : "");
       } else if (savedAttachments.length > 0) {
-        conv.title = `📎 ${savedAttachments[0].name}`.slice(0, 48);
+        title = `📎 ${savedAttachments[0].name}`.slice(0, 48);
       }
     }
 
-    if (user.plan === "free") {
-      user.usage.count += 1;
-    }
+    const assistantMessage = { role: "assistant", content: reply, at: new Date().toISOString() };
+    appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
-    writeDb(db);
+    if (user.plan === "free") bumpFreeUsage(user);
+
     res.json({
       reply,
-      title: conv.title,
+      title,
       mode: conv.mode,
       partnerName: conv.partnerName,
       attachments: savedAttachments.map(stripInternalFields),
@@ -1647,8 +1683,8 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     });
   } catch (err) {
     console.error("OpenAI error:", err.message);
-    conv.updatedAt = new Date().toISOString();
-    writeDb(db); // keep the user's message even if the AI call failed
+    // The user's message is already durably saved above — nothing left to
+    // persist here.
     res.status(500).json({ error: "Couldn't get a response from the AI. Please try again." });
   }
 });
@@ -1706,8 +1742,8 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
 
     conv.therapistSummary = summary;
     conv.therapistSummaryAt = generatedAt;
-    if (user.plan === "free") user.usage.count += 1;
-    writeDb(db);
+    saveConversation(conv);
+    if (user.plan === "free") bumpFreeUsage(user);
 
     res.json({ summary, generatedAt, conversationTitle: conv.title, cached: false, usage: user.usage });
   } catch (err) {
@@ -1762,8 +1798,13 @@ app.post("/api/insights", authMiddleware, async (req, res) => {
 
     user.insights = { patterns, note };
     user.insightsAt = generatedAt;
-    if (user.plan === "free") user.usage.count += 1;
-    writeDb(db);
+    // Persist the insights fields first, then bump usage last: bumpFreeUsage
+    // is an atomic SQL increment against whatever's currently stored, so
+    // doing it last (nothing after it touches the user row in this request)
+    // means it's always correct even if saveUser's full-row write above
+    // raced with another request's own usage bump in between.
+    saveUser(user);
+    if (user.plan === "free") bumpFreeUsage(user);
 
     res.json({
       patterns,
@@ -1811,7 +1852,7 @@ async function generateInsightsRaw(coachConversations) {
 // generated within the last 6 days, otherwise generates fresh ones. Doesn't
 // touch user.usage — a background digest shouldn't eat into someone's daily
 // AI-message limit the way an action they took themselves would.
-async function generateInsightsForDigest(db, user, coachConversations) {
+async function generateInsightsForDigest(user, coachConversations) {
   if (user.insights && user.insightsAt) {
     const ageMs = Date.now() - new Date(user.insightsAt).getTime();
     if (ageMs < 6 * 24 * 60 * 60 * 1000) {
@@ -1822,7 +1863,7 @@ async function generateInsightsForDigest(db, user, coachConversations) {
   const { patterns, note } = await generateInsightsRaw(coachConversations);
   user.insights = { patterns, note };
   user.insightsAt = new Date().toISOString();
-  writeDb(db);
+  saveUser(user);
   return { patterns, note };
 }
 
@@ -1883,10 +1924,9 @@ app.post("/api/message-coach", authMiddleware, async (req, res) => {
     }
 
     if (user.plan === "free") {
-      user.usage.count += 1;
-      user.lifetimeMessageCoachUses = (user.lifetimeMessageCoachUses || 0) + 1;
+      bumpFreeUsage(user);
+      incrementUserColumn(user.id, "lifetimeMessageCoachUses", 1);
     }
-    writeDb(db);
 
     res.json({ rewrite, why, usage: user.usage, safety: safetyBlockFor(safety) });
   } catch (err) {
@@ -1938,8 +1978,7 @@ app.post("/api/message-coach/suggestions", authMiddleware, async (req, res) => {
       return res.status(500).json({ error: "Couldn't come up with suggestions right now. Please try again." });
     }
 
-    if (user.plan === "free") user.usage.count += 1;
-    writeDb(db);
+    if (user.plan === "free") bumpFreeUsage(user);
 
     res.json({ suggestions, usage: user.usage });
   } catch (err) {
@@ -2038,11 +2077,9 @@ app.post("/api/quiz/attachment", authMiddleware, (req, res) => {
       return res.status(400).json({ error: "Unknown attachment style." });
     }
 
-    const db = req.db;
-    const user = db.users.find((u) => u.id === req.user.id);
-    user.attachmentStyle = style;
-    user.attachmentQuizAt = new Date().toISOString();
-    writeDb(db);
+    req.user.attachmentStyle = style;
+    req.user.attachmentQuizAt = new Date().toISOString();
+    saveUser(req.user);
 
     res.json({ attachmentStyle: style, ...ATTACHMENT_STYLES[style] });
   } catch (err) {
@@ -2095,7 +2132,6 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
         skipped: false,
         createdAt: new Date().toISOString(),
       };
-      db.checkins.push(entry);
     }
 
     if (skip) {
@@ -2111,7 +2147,7 @@ app.post("/api/checkin", authMiddleware, (req, res) => {
       return res.status(400).json({ error: "Write a short answer, or skip for today." });
     }
 
-    writeDb(db);
+    saveCheckin(entry);
     res.json({
       date: entry.date,
       question: entry.question,
@@ -2198,8 +2234,7 @@ app.post("/api/shares", authMiddleware, (req, res) => {
       createdAt: now,
       updatedAt: now,
     };
-    db.shares.push(share);
-    writeDb(db);
+    saveShare(share);
     res.json(publicShare(share));
   } catch (err) {
     console.error("Create share error:", err);
@@ -2226,7 +2261,7 @@ app.patch("/api/shares/:id", authMiddleware, (req, res) => {
     }
     if (revoked !== undefined) share.revoked = !!revoked;
     share.updatedAt = new Date().toISOString();
-    writeDb(db);
+    saveShare(share);
     res.json(publicShare(share));
   } catch (err) {
     console.error("Update share error:", err);
@@ -2235,11 +2270,9 @@ app.patch("/api/shares/:id", authMiddleware, (req, res) => {
 });
 
 app.delete("/api/shares/:id", authMiddleware, (req, res) => {
-  const db = req.db;
-  const idx = db.shares.findIndex((s) => s.id === req.params.id && s.userId === req.user.id);
-  if (idx === -1) return res.status(404).json({ error: "Share not found." });
-  db.shares.splice(idx, 1);
-  writeDb(db);
+  const share = req.db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+  if (!share) return res.status(404).json({ error: "Share not found." });
+  deleteShare(share.id);
   res.json({ ok: true });
 });
 
@@ -2265,7 +2298,7 @@ app.post("/api/shares/:id/items", authMiddleware, (req, res) => {
     };
     share.items.push(item);
     share.updatedAt = new Date().toISOString();
-    writeDb(db);
+    saveShare(share);
     res.json(publicShare(share));
   } catch (err) {
     console.error("Add share item error:", err);
@@ -2310,7 +2343,7 @@ app.post("/api/shares/:id/items/from-conversation", authMiddleware, (req, res) =
     };
     share.items.push(item);
     share.updatedAt = new Date().toISOString();
-    writeDb(db);
+    saveShare(share);
     res.json(publicShare(share));
   } catch (err) {
     console.error("Add conversation share item error:", err);
@@ -2319,14 +2352,13 @@ app.post("/api/shares/:id/items/from-conversation", authMiddleware, (req, res) =
 });
 
 app.delete("/api/shares/:id/items/:itemId", authMiddleware, (req, res) => {
-  const db = req.db;
-  const share = db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
+  const share = req.db.shares.find((s) => s.id === req.params.id && s.userId === req.user.id);
   if (!share) return res.status(404).json({ error: "Share not found." });
   const idx = share.items.findIndex((i) => i.id === req.params.itemId);
   if (idx === -1) return res.status(404).json({ error: "Item not found." });
   share.items.splice(idx, 1);
   share.updatedAt = new Date().toISOString();
-  writeDb(db);
+  saveShare(share);
   res.json(publicShare(share));
 });
 
@@ -2334,8 +2366,7 @@ app.delete("/api/shares/:id/items/:itemId", authMiddleware, (req, res) => {
 // share's token (a long random string, not sequential/guessable) rather
 // than its id, and only ever returns items the user explicitly added.
 app.get("/api/public/shares/:token", (req, res) => {
-  const db = readDb();
-  const share = db.shares.find((s) => s.token === req.params.token);
+  const share = getShareByToken(req.params.token);
   if (!share || share.revoked) {
     return res.status(404).json({ error: "This share link isn't available. It may have been removed or revoked." });
   }
@@ -2400,8 +2431,7 @@ app.post("/api/compare", authMiddleware, (req, res) => {
       revoked: false,
       createdAt: new Date().toISOString(),
     };
-    db.compares.push(compare);
-    writeDb(db);
+    saveCompare(compare);
     res.json(publicCompare(compare));
   } catch (err) {
     console.error("Create compare error:", err);
@@ -2424,7 +2454,7 @@ app.patch("/api/compare/:id", authMiddleware, (req, res) => {
     if (!compare) return res.status(404).json({ error: "Comparison link not found." });
     const { revoked } = req.body || {};
     if (revoked !== undefined) compare.revoked = !!revoked;
-    writeDb(db);
+    saveCompare(compare);
     res.json(publicCompare(compare));
   } catch (err) {
     console.error("Update compare error:", err);
@@ -2433,19 +2463,16 @@ app.patch("/api/compare/:id", authMiddleware, (req, res) => {
 });
 
 app.delete("/api/compare/:id", authMiddleware, (req, res) => {
-  const db = req.db;
-  const idx = db.compares.findIndex((c) => c.id === req.params.id && c.userId === req.user.id);
-  if (idx === -1) return res.status(404).json({ error: "Comparison link not found." });
-  db.compares.splice(idx, 1);
-  writeDb(db);
+  const compare = req.db.compares.find((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (!compare) return res.status(404).json({ error: "Comparison link not found." });
+  deleteCompare(compare.id);
   res.json({ ok: true });
 });
 
 // Public, unauthenticated — what the partner opens. Never reveals the
 // owner's style until the partner has answered their own short quiz.
 app.get("/api/public/compare/:token", (req, res) => {
-  const db = readDb();
-  const compare = db.compares.find((c) => c.token === req.params.token);
+  const compare = getCompareByToken(req.params.token);
   if (!compare || compare.revoked) {
     return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
   }
@@ -2465,8 +2492,7 @@ app.get("/api/public/compare/:token", (req, res) => {
 // overwrites the previous answer; there's no account to protect on this side.
 app.post("/api/public/compare/:token/respond", (req, res) => {
   try {
-    const db = readDb();
-    const compare = db.compares.find((c) => c.token === req.params.token);
+    const compare = getCompareByToken(req.params.token);
     if (!compare || compare.revoked) {
       return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
     }
@@ -2476,7 +2502,7 @@ app.post("/api/public/compare/:token/respond", (req, res) => {
     }
     compare.partnerStyle = style;
     compare.partnerRespondedAt = new Date().toISOString();
-    writeDb(db);
+    saveCompare(compare);
 
     res.json({
       answered: true,
@@ -2502,12 +2528,11 @@ app.get("/api/email/unsubscribe", (req, res) => {
     const payload = jwt.verify(String(rawToken || ""), JWT_SECRET);
     if (payload.scope !== "email-unsub") throw new Error("wrong token scope");
 
-    const db = readDb();
-    const user = db.users.find((u) => u.id === payload.sub);
+    const user = getUserById(payload.sub);
     if (user) {
       if (payload.kind === "digest") user.emailWeeklyDigest = false;
       else user.emailCheckinReminders = false;
-      writeDb(db);
+      saveUser(user);
     }
 
     res.send(`<!DOCTYPE html>
@@ -2538,32 +2563,28 @@ const WEEKLY_DIGEST_HOUR_UTC = 9;
 // subscription (uninstalled, cleared site data, etc.) — those get pruned;
 // anything else is just logged, since one bad subscription shouldn't stop
 // the rest of the batch.
-async function sendPushToUser(db, userId, { title, body, url }) {
+async function sendPushToUser(userId, { title, body, url }) {
   if (!pushConfigured) return;
-  const subs = db.pushSubscriptions.filter((s) => s.userId === userId);
+  const subs = getPushSubscriptionsForUser(userId);
   if (!subs.length) return;
 
   const payload = JSON.stringify({ title, body, url: url || "/dashboard.html" });
-  let changed = false;
 
   for (const sub of subs) {
     try {
       await webpush.sendNotification(sub.subscription, payload);
     } catch (err) {
       if (err.statusCode === 404 || err.statusCode === 410) {
-        db.pushSubscriptions = db.pushSubscriptions.filter((s) => s.id !== sub.id);
-        changed = true;
+        deletePushSubscription(sub.id);
       } else {
         console.error("Push send error:", err.message);
       }
     }
   }
-
-  if (changed) writeDb(db);
 }
 
 async function runDailyCheckinReminders() {
-  const db = readDb();
+  const db = loadDb();
   const today = todayKey();
   const question = checkinQuestionForDate(today);
 
@@ -2586,7 +2607,7 @@ async function runDailyCheckinReminders() {
       await sendEmail({ to: user.email, subject: "Today's RelateIQ check-in", html });
     }
 
-    await sendPushToUser(db, user.id, {
+    await sendPushToUser(user.id, {
       title: "Today's RelateIQ check-in",
       body: question,
       url: "/dashboard.html",
@@ -2595,7 +2616,7 @@ async function runDailyCheckinReminders() {
 }
 
 async function runWeeklyInsightsDigest() {
-  const db = readDb();
+  const db = loadDb();
   // The automated weekly digest (email and/or push) is a Pro+ perk — Free
   // users can still generate Insights manually in-app once they have
   // enough conversations, but RelateIQ coming to them proactively every
@@ -2619,7 +2640,7 @@ async function runWeeklyInsightsDigest() {
     if (coachConversations.length < INSIGHTS_MIN_CONVERSATIONS) continue;
 
     try {
-      const { patterns } = await generateInsightsForDigest(db, user, coachConversations);
+      const { patterns } = await generateInsightsForDigest(user, coachConversations);
       if (!patterns.length) continue;
 
       if (user.email && user.emailWeeklyDigest !== false) {
@@ -2642,7 +2663,7 @@ async function runWeeklyInsightsDigest() {
         await sendEmail({ to: user.email, subject: "Your weekly RelateIQ insights", html });
       }
 
-      await sendPushToUser(db, user.id, {
+      await sendPushToUser(user.id, {
         title: "Your weekly RelateIQ insights",
         body: patterns[0]?.title || "New patterns spotted across your conversations this week.",
         url: "/insights.html",
@@ -2654,23 +2675,21 @@ async function runWeeklyInsightsDigest() {
 }
 
 function emailJobsDueCheck() {
-  const db = readDb();
+  const emailJobs = getEmailJobs();
   const now = new Date();
   const today = todayKey();
 
-  if (now.getUTCHours() >= DAILY_REMINDER_HOUR_UTC && db.emailJobs.lastDailyReminder !== today) {
-    db.emailJobs.lastDailyReminder = today;
-    writeDb(db);
+  if (now.getUTCHours() >= DAILY_REMINDER_HOUR_UTC && emailJobs.lastDailyReminder !== today) {
+    setEmailJobField("lastDailyReminder", today);
     runDailyCheckinReminders().catch((err) => console.error("Daily reminder job failed:", err));
   }
 
   if (
     now.getUTCDay() === WEEKLY_DIGEST_DAY_UTC &&
     now.getUTCHours() >= WEEKLY_DIGEST_HOUR_UTC &&
-    db.emailJobs.lastWeeklyDigest !== today
+    emailJobs.lastWeeklyDigest !== today
   ) {
-    db.emailJobs.lastWeeklyDigest = today;
-    writeDb(db);
+    setEmailJobField("lastWeeklyDigest", today);
     runWeeklyInsightsDigest().catch((err) => console.error("Weekly digest job failed:", err));
   }
 }
