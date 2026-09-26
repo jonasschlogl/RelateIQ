@@ -73,7 +73,7 @@ RelateIQ isn't stateless — it writes to a SQLite database file (`data/relateiq
    git remote add origin https://github.com/<your-username>/<your-repo>.git
    git push -u origin main
    ```
-   `.gitignore` already excludes `node_modules/`, `.env`, `data/relateiq.sqlite` (and the old `data/db.json`), and `public/uploads/` — none of your secrets or local data get pushed.
+   `.gitignore` already excludes `node_modules/`, `.env`, the whole `data/` folder (the SQLite file, any old `db.json`, and any backup copies you make of it), and `public/uploads/` — none of your secrets or local data get pushed.
 2. **Create a Railway project** → "Deploy from GitHub repo" → pick the repo. Railway auto-detects it's a Node app (via `package.json`) and runs `npm start`. Check the service's **Settings → Build** (or a `NIXPACKS_NODE_VERSION` variable) to confirm it's building with **Node 22 or newer** — `package.json`'s `engines.node` requires it, since the SQLite storage layer uses Node's built-in `node:sqlite` module, only available since Node 22.5.
 3. **Add a Volume** (Railway project → your service → "Volumes" tab → "New Volume"). Mount it at `/data`. This is the persistent disk that survives every redeploy.
 4. **Set environment variables** (service → "Variables" tab) — everything from your local `.env`, plus two new ones pointing at the volume:
@@ -100,13 +100,22 @@ RelateIQ used to store everything in a single `data/db.json` file, read and rewr
 
 If you already have a live deployment with real user data in `data/db.json` (or `/data/db.json` on your Railway volume), **do this once, carefully, before switching `DB_PATH` over**:
 
-1. **Get a copy of your current `data/db.json` onto the machine you'll run the migration from.** On Railway, the simplest way is the Railway CLI: `railway run cat /data/db.json > data/db.json` from your project locally (or open a shell into the running service and `cp` it somewhere you can download it). Keep this file — it's your rollback copy no matter what happens next.
+1. **Get a copy of your current `data/db.json` onto the machine you'll run the migration from, as a rollback copy.** With the [Railway CLI](https://docs.railway.com/guides/cli) installed and linked to your project (`railway link`), `railway run` only runs a *local* command with Railway's env vars injected — it can't see the remote volume. To actually read a file off the deployed container, use `railway ssh` instead:
+   ```
+   railway ssh -- cat /data/db.json > data/db-railway-live-backup.json
+   ```
+   The first time you run `railway ssh` you may be asked to generate an SSH key (`ssh-keygen -t ed25519`, defaults are fine) and to accept the host key (type `yes`) — do that once *without* the `>` redirect (e.g. `railway ssh -- echo test`) so the interactive prompt isn't swallowed by the redirect, then re-run the command above.
+   **On Windows PowerShell**, plain `>` writes UTF-16 and will corrupt the JSON — use this instead:
+   ```
+   railway ssh -- cat /data/db.json | Set-Content -Path data\db-railway-live-backup.json -Encoding UTF8
+   ```
+   Use a distinct filename like `db-railway-live-backup.json` (not `data/db.json`) so you don't overwrite anything local, and don't worry about committing it by accident — the whole `data/` folder is already in `.gitignore`.
 2. **Deploy this updated code first, but don't repoint `DB_PATH` at the new file yet.** With the code deployed and the volume still mounted, the app can see both the old `db.json` and can create the new `.sqlite` file alongside it.
-3. **Run the migration script once**, pointed at both files:
+3. **Run the migration script once, on the deployed container itself**, pointed at both files:
    ```
-   OLD_DB_PATH=/data/db.json DB_PATH=/data/relateiq.sqlite node scripts/migrate-to-sqlite.js
+   railway ssh -- bash -c "OLD_DB_PATH=/data/db.json DB_PATH=/data/relateiq.sqlite node scripts/migrate-to-sqlite.js"
    ```
-   On Railway, the easiest way to run a one-off command against the deployed volume is `railway run` (from your local machine, with the Railway CLI linked to the project) or a one-off shell in the Railway dashboard. The script prints how many of each record type it migrated and then reads everything back out of the new database to double-check the counts match — if anything looks wrong, it exits with an error and **does not touch or delete `data/db.json`**, so nothing is lost either way. It's also safe to re-run if you're not sure it fully finished — it upserts, so running it twice just re-applies the same data.
+   (Again, this needs `railway ssh`, not `railway run` — the script has to run where the volume is actually mounted.) The script prints how many of each record type it migrated and then reads everything back out of the new database to double-check the counts match — if anything looks wrong, it exits with an error and **does not touch or delete `data/db.json`**, so nothing is lost either way. It's also safe to re-run if you're not sure it fully finished — it upserts, so running it twice just re-applies the same data.
 4. **Only after that script reports success**, set `DB_PATH=/data/relateiq.sqlite` in your environment variables and redeploy.
 5. **Test the live app thoroughly** — log in as an existing user, confirm old conversations, partner profiles, and check-ins are all there.
 6. Keep `data/db.json` around on the volume for a while as a backup before ever deleting it.
