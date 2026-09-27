@@ -354,41 +354,59 @@ function buildCoachSystemPrompt(user) {
 
 // ---------------------------------------------------------------------------
 // Conversation titles — generated the same way ChatGPT and similar assistants
-// title a new chat: a short, specific label based on what the very first
-// message is actually about, instead of a generic placeholder. Replaces the
-// old behavior where every new Coach conversation just showed a truncated
-// copy of the first message, and every Practice conversation with the same
+// title a new chat: a short, specific label based on what the conversation
+// is actually about, instead of a generic placeholder. Replaces the old
+// behavior where every new Coach conversation just showed a truncated copy
+// of the first message, and every Practice conversation with the same
 // partner showed the exact same title ("Practice with Alex") forever, making
 // the sidebar history impossible to tell apart at a glance.
 //
-// Runs alongside the main completion call (see the Promise.all in POST
-// /api/conversations/:id/messages), not after it — it only needs the user's
-// own first message, not the AI's reply, so it doesn't add extra latency to
-// the first message in a conversation. Fails open: on any error, the caller
-// falls back to the previous truncation-based title instead of blocking.
+// Coach Chat: title = an AI-generated topic label from the first message,
+// generated alongside the main completion call (not after it — it only
+// needs the user's own first message, not the AI's reply, so it doesn't add
+// extra latency to the first message in a conversation).
+//
+// Partner Practice: title is always "<partner name> — <topic>" — the
+// partner's name first, then the topic. The topic is the user's own
+// scenario text ("what do you want to practice today?") when they filled it
+// in at setup, known immediately at conversation creation. When they left
+// it blank, the topic is filled in the same way as Coach — an AI-generated
+// label from the first message — once that first message exists.
+//
+// Both paths fail open: on any error, the caller falls back to a truncated
+// snippet of the raw message instead of blocking.
 // ---------------------------------------------------------------------------
 
-const TITLE_SYSTEM_PROMPT = `You generate a short, specific title for a brand-new conversation in an AI relationship-coaching app — the same way ChatGPT (or any similar assistant) titles a new chat from someone's first message.
+// Formats a Partner Practice title consistently — partner name always
+// first, then the topic — whether the topic came from the user's own
+// scenario field or was generated from the first message. See
+// generatePracticeTopic below for the latter case.
+function practiceTitle(partnerName, topic) {
+  const name = partnerName || "your partner";
+  const cleanTopic = String(topic || "").trim();
+  return cleanTopic ? `${name} — ${cleanTopic}` : `${name} — new practice`;
+}
+
+function truncateForTitle(text, max = 40) {
+  const t = String(text || "").trim();
+  return t.length > max ? t.slice(0, max).trim() + "…" : t;
+}
+
+const TITLE_SYSTEM_PROMPT = `You generate a short, specific title for a brand-new Coach Chat conversation in an AI relationship-coaching app — the same way ChatGPT (or any similar assistant) titles a new chat from someone's first message.
 
 Respond with ONLY a JSON object, no other text before or after it: {"title": "<3-6 words, in the same language the message is written in>"}
 
 Rules:
 - Base it on the actual, specific content of the message below — it should read differently from the title of a conversation about a different topic. "the kids and chores" and "feeling unheard lately" are good; "Relationship help" and "New conversation" are not.
 - No quotation marks around the title itself, no trailing period, no emoji.
-- If a Partner Practice rehearsal is described below, you may reference the partner's name or the scenario if that makes the title more specific and useful, but the title is still about the topic, not just "Practice with X".
 - If the message is too short, vague, or generic to say anything specific (e.g. just "hi"), return an empty string rather than inventing a fake specific topic.
 - Write in the same language as the message — detect it automatically, the same way ChatGPT does.`;
 
-async function generateConversationTitle({ mode, partnerName, scenario, userText }) {
+async function generateConversationTitle(userText) {
   const trimmed = String(userText || "").trim();
   if (!trimmed) return "";
 
-  const isPractice = mode === "practice";
-  const contextLine = isPractice
-    ? `This is the start of a Partner Practice rehearsal — the user is about to practice a real conversation with an AI roleplaying as their partner, "${partnerName || "their partner"}"${scenario ? `, specifically about: "${scenario}"` : ""}.`
-    : `This is the start of a Coach Chat conversation — the user is talking to an AI relationship coach.`;
-
-  const userContent = `${contextLine}
+  const userContent = `This is the start of a Coach Chat conversation — the user is talking to an AI relationship coach.
 
 The user's first message:
 """
@@ -411,6 +429,48 @@ ${trimmed.slice(0, 600)}
     .replace(/^["'“”]+|["'“”]+$/g, "")
     .replace(/[.。]+$/g, "")
     .slice(0, 60);
+}
+
+// Only called when the user left the "what do you want to practice today?"
+// field blank at setup — see practiceTitle above. Returns just the topic
+// phrase, never the partner's name (that's prepended separately, always),
+// so the model isn't asked to make that call itself.
+const PRACTICE_TOPIC_SYSTEM_PROMPT = `You generate a short topic label for a Partner Practice rehearsal in an AI relationship-coaching app — a private space where someone practices a real conversation with an AI roleplaying as their partner. You're given the user's first message in the rehearsal; name what it's actually about, the same way ChatGPT titles a new chat.
+
+Respond with ONLY a JSON object, no other text before or after it: {"topic": "<2-5 words, in the same language the message is written in>"}
+
+Rules:
+- Never include the partner's name in the topic — it's always shown separately, right before the topic.
+- Base it on the actual, specific content of the message below. "asking for more help with chores" and "bringing up feeling unheard" are good; "relationship practice" and "conversation" are not.
+- No quotation marks, no trailing period, no emoji.
+- If the message is too short or vague to say anything specific (e.g. just "hey"), return an empty string rather than inventing a fake specific topic.
+- Write in the same language as the message — detect it automatically, the same way ChatGPT does.`;
+
+async function generatePracticeTopic(userText) {
+  const trimmed = String(userText || "").trim();
+  if (!trimmed) return "";
+
+  const userContent = `The user's first message in this Partner Practice rehearsal:
+"""
+${trimmed.slice(0, 600)}
+"""`;
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: PRACTICE_TOPIC_SYSTEM_PROMPT },
+      { role: "user", content: userContent },
+    ],
+    temperature: 0.4,
+    response_format: { type: "json_object" },
+  });
+
+  const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+  return String(parsed.topic || "")
+    .trim()
+    .replace(/^["'“”]+|["'“”]+$/g, "")
+    .replace(/[.。]+$/g, "")
+    .slice(0, 50);
 }
 
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
@@ -2046,6 +2106,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   // user wants to practice today is often different each time. intensity/
   // roleSwap are likewise per-rehearsal choices, not saved to the partner
   // profile itself — see the comment on buildPartnerSystemPrompt.
+  const practiceScenario = isPractice ? String(scenario || "").trim().slice(0, 300) || null : null;
   const conv = {
     id: generateId("conv"),
     userId: req.user.id,
@@ -2057,7 +2118,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     partnerAttachmentStyle: partner ? partner.attachmentStyle || null : null,
     partnerLearnedProfile: partner ? partner.learnedProfile || null : null,
     partnerLearnedVoice: partner ? partner.learnedVoice || null : null,
-    scenario: isPractice ? String(scenario || "").trim().slice(0, 300) || null : null,
+    scenario: practiceScenario,
     intensity: isPractice && intensity === "supportive" ? "supportive" : isPractice ? "realistic" : null,
     practiceRoleSwap: isPractice ? !!roleSwap : false,
     // Which relationship a Coach Chat conversation is about — nullable,
@@ -2068,7 +2129,12 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     // to, so automatic learning can't safely be attributed. Settable here
     // at creation or any time after via PATCH /api/conversations/:id.
     aboutPartnerId: null,
-    title: isPractice ? `Practice with ${partner.name}` : "New conversation",
+    // Partner name always comes first, then the topic — see practiceTitle's
+    // comment above. When the user filled in "what do you want to practice
+    // today?" at setup, that's the topic immediately; otherwise this stays
+    // a placeholder ("<partner> — new practice") until the first message
+    // lets POST /api/conversations/:id/messages fill in a generated one.
+    title: isPractice ? practiceTitle(partner.name, truncateForTitle(practiceScenario, 40)) : "New conversation",
     messages: [],
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -2207,6 +2273,13 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   // earlier in this handler, so an empty array means this really is message
   // #1. Every later message in the same conversation keeps its title as-is.
   const isFirstExchange = conv.messages.length === 0;
+  // Practice conversations that already got a real topic at creation time
+  // (the user filled in "what do you want to practice today?" — see
+  // practiceTitle in POST /api/conversations) don't need anything generated
+  // here; only a scenario-less Practice rehearsal still needs a topic once
+  // the first message reveals one.
+  const needsGeneratedTitle = isFirstExchange && (!isPractice || !conv.scenario);
+  const firstMessageText = hasText ? text : savedAttachments[0]?.name ? `[attached file: ${savedAttachments[0].name}]` : "";
 
   try {
     // Prior turns are sent as plain text (their attachments are just noted
@@ -2223,16 +2296,12 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       }),
       hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
       // Runs alongside the main reply, not after it, so titling the first
-      // message doesn't add extra latency — see generateConversationTitle's
-      // comment above. Only fired on the first message; every other message
-      // resolves this to null instantly without an extra API call.
-      isFirstExchange
-        ? generateConversationTitle({
-            mode: conv.mode,
-            partnerName: conv.partnerName,
-            scenario: conv.scenario,
-            userText: hasText ? text : savedAttachments[0]?.name ? `[attached file: ${savedAttachments[0].name}]` : "",
-          }).catch((err) => {
+      // message doesn't add extra latency — see the comment above
+      // generateConversationTitle. Only fired on the first message (and,
+      // for Practice, only when there's no scenario title already); every
+      // other message resolves this to null instantly, no extra API call.
+      needsGeneratedTitle
+        ? (isPractice ? generatePracticeTopic(firstMessageText) : generateConversationTitle(firstMessageText)).catch((err) => {
             console.error("Conversation title generation error:", err.message);
             return ""; // fail open — falls back to the truncation-based title below
           })
@@ -2242,16 +2311,20 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     const reply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
 
     let title = conv.title;
-    if (isFirstExchange) {
-      if (generatedTitle) {
+    if (needsGeneratedTitle) {
+      if (isPractice) {
+        // Partner name always first, then the topic — generatedTitle here
+        // is a bare topic phrase (see generatePracticeTopic), never the
+        // partner's name, so this never duplicates it.
+        const topic = generatedTitle || truncateForTitle(firstMessageText, 30);
+        title = practiceTitle(conv.partnerName, topic);
+      } else if (generatedTitle) {
         title = generatedTitle;
       } else if (hasText) {
         title = text.slice(0, 48) + (text.length > 48 ? "…" : "");
       } else if (savedAttachments.length > 0) {
         title = `📎 ${savedAttachments[0].name}`.slice(0, 48);
       }
-      // else (Practice, no text, no generated title): keep the conversation's
-      // existing default title, "Practice with <partner>", set at creation.
     }
 
     const assistantMessage = { role: "assistant", content: reply, at: new Date().toISOString() };
