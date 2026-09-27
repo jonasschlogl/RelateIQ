@@ -1632,28 +1632,18 @@ section {
   }
 }
 
-.textarea-wrap {
-  position: relative;
+/* Mic button sits beside the textarea as its own control (same pattern as
+   the chat composer's .composer-row) rather than floating on top of it —
+   nothing to overlap the text you're typing. */
+.textarea-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-/* The floating mic sits on top of the textarea's top-right corner (see
-   .mic-btn-floating below) — without this, text that wraps up to the right
-   edge renders underneath the button instead of leaving room for it. */
-.textarea-wrap textarea {
-  padding-right: 52px;
-}
-
-.mic-btn-floating {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 34px;
-  height: 34px;
-}
-
-.mic-btn-floating svg {
-  width: 16px;
-  height: 16px;
+.textarea-row textarea {
+  flex: 1;
+  min-width: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
