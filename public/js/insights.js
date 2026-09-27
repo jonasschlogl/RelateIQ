@@ -7,6 +7,7 @@ let isGeneratingInsights = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   requireAuth();
+  document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("regenerate-btn")?.addEventListener("click", () => loadInsights(true));
   loadInsights(false);
   loadTrend();

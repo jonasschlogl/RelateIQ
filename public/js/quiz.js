@@ -76,11 +76,70 @@ const QUESTIONS = [
 let currentIndex = 0;
 const tally = { secure: 0, anxious: 0, avoidant: 0, disorganized: 0 };
 
-document.addEventListener("DOMContentLoaded", () => {
+function attachmentLabel(style) {
+  return { secure: "Secure", anxious: "Anxious", avoidant: "Avoidant", disorganized: "Disorganized" }[style] || style;
+}
+
+function resetTally() {
+  currentIndex = 0;
+  tally.secure = 0;
+  tally.anxious = 0;
+  tally.avoidant = 0;
+  tally.disorganized = 0;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
   document.getElementById("logout-btn")?.addEventListener("click", logout);
+  // Someone who already took this quiz shouldn't have to retake all 8
+  // questions just to get a fresh "compare with my partner" link — jump
+  // straight to their saved result instead, with retake still one click
+  // away. Checked against /api/me (not the cached localStorage user), since
+  // finishing the quiz doesn't refresh that local cache.
+  try {
+    const meRes = await authFetch("/api/me");
+    const me = await safeJson(meRes);
+    if (me.attachmentStyle) {
+      renderAlreadyTaken(me.attachmentStyle);
+      return;
+    }
+  } catch (err) {
+    // If /api/me fails for some reason, fall through to a fresh quiz rather
+    // than leaving the page stuck on a loading state.
+  }
   renderQuestion();
 });
+
+function renderAlreadyTaken(style) {
+  const body = document.getElementById("quiz-body");
+  document.getElementById("progress-bar").style.width = "100%";
+  body.innerHTML = `
+    <div class="quiz-question">
+      <div class="quiz-result">
+        <span class="section-tag">Your result</span>
+        <div class="style-name">${escapeHtml(attachmentLabel(style))}</div>
+        <p class="quiz-result-desc">You've already taken this quiz. Retake it anytime if things feel different now, or send your partner a link to compare styles.</p>
+
+        <div class="quiz-compare-box">
+          <h3 style="font-size:16px; margin-bottom:6px;">See how your styles interact</h3>
+          <p class="text-muted" style="font-size:13.5px; margin-bottom:14px;">Send your partner a link — they take a short version of this quiz (no account needed), and once they answer, you'll both see how your two styles tend to interact.</p>
+          <button class="btn btn-gradient btn-sm" id="make-compare-btn" type="button">Get a link for my partner</button>
+          <div id="compare-link-area"></div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="dashboard.html" class="btn btn-gradient">Go to my account</a>
+          <button class="btn btn-ghost" id="retake-btn" type="button">Retake quiz</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById("retake-btn").addEventListener("click", () => {
+    resetTally();
+    renderQuestion();
+  });
+  document.getElementById("make-compare-btn").addEventListener("click", createCompareLink);
+}
 
 function renderQuestion() {
   const progressBar = document.getElementById("progress-bar");
@@ -174,11 +233,7 @@ function renderResult(name, desc) {
     </div>
   `;
   document.getElementById("retake-btn").addEventListener("click", () => {
-    currentIndex = 0;
-    tally.secure = 0;
-    tally.anxious = 0;
-    tally.avoidant = 0;
-    tally.disorganized = 0;
+    resetTally();
     renderQuestion();
   });
   document.getElementById("make-compare-btn").addEventListener("click", createCompareLink);

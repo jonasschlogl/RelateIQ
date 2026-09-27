@@ -15,12 +15,19 @@
 </head>
 <body>
 
-  <header class="site-nav">
+  <header class="site-nav site-nav-app">
     <a href="index.html" class="brand">Relate<span>IQ</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="admin.html" id="nav-admin" style="display:none;">Admin</a>
-      <a href="chat.html">Chat</a>
+      <a href="chat.html" class="nav-primary">Coach</a>
+      <a href="chat.html?mode=practice" class="nav-primary">Practice</a>
+      <span class="nav-sep"></span>
+      <a href="message-coach.html">Message Coach</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="insights.html">Insights</a>
+      <a href="share.html">Share</a>
+      <a href="dashboard.html" class="nav-current">My account</a>
       <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
@@ -94,16 +101,16 @@
         <h2>Explore RelateIQ</h2>
       </div>
       <div class="modes-grid">
-        <a href="chat.html" class="mode-card">
+        <a href="chat.html" class="mode-card mode-card-flagship">
           <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-          <span class="mode-card-tag">Chat</span>
+          <span class="mode-card-tag">Flagship</span>
           <h3>Coach Chat</h3>
           <p>Talk through what's going on and get concrete, grounded advice.</p>
         </a>
 
-        <a href="chat.html?mode=practice" class="mode-card">
+        <a href="chat.html?mode=practice" class="mode-card mode-card-flagship">
           <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <span class="mode-card-tag">Roleplay</span>
+          <span class="mode-card-tag">Flagship</span>
           <h3>Partner Practice</h3>
           <p>Rehearse a real conversation with an AI roleplaying as your partner.</p>
         </a>

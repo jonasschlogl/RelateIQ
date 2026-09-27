@@ -183,8 +183,8 @@ img, svg {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
-  font-size: 15px;
+  gap: 20px;
+  font-size: 14.5px;
 }
 
 .nav-links a:not(.btn) {
@@ -194,6 +194,29 @@ img, svg {
 
 .nav-links a:not(.btn):hover {
   color: var(--text);
+}
+
+/* The two flagship features (Coach Chat, Partner Practice) get more visual
+   weight than the rest of the nav, so wherever you are in the app it's
+   always clear which two things are the point and which are extras — see
+   the matching treatment in .mode-tabs / .sidebar-modes below. */
+.nav-links a.nav-primary {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.nav-links .nav-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border-strong);
+}
+
+/* Marks which nav item is the page you're currently on, so the nav also
+   works as a "you are here" — not just a list of places to go. */
+.nav-links a.nav-current {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .nav-toggle {
@@ -1444,6 +1467,28 @@ section {
   color: #1a140d;
 }
 
+/* Coach Chat + Partner Practice are the two flagship features — the plain
+   .mode-tab styling above already carries them. Everything else in this
+   pill (Message Coach, Quiz, Insights) is a secondary tool: same one-click
+   reach, lighter visual weight, and set off by a thin divider so the two
+   flagships read as "the product" and the rest reads as "also available." */
+.mode-tab-sep {
+  align-self: center;
+  width: 1px;
+  height: 18px;
+  background: var(--border-strong);
+  margin: 0 2px;
+}
+
+.mode-tab.mode-tab-secondary {
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.mode-tab.mode-tab-secondary:hover {
+  opacity: 1;
+}
+
 .chat-messages {
   width: 100%;
   max-width: 768px;
@@ -2543,6 +2588,18 @@ section {
   margin-bottom: 6px;
 }
 
+/* Coach Chat and Partner Practice are the two flagship features — this
+   modifier gives their cards a bit more visual weight (accent border, tag
+   color) than Message Coach/Quiz/Insights/Share get, everywhere .mode-card
+   is used (landing page and the dashboard's "Explore" grid alike). */
+.mode-card.mode-card-flagship {
+  border-color: var(--accent-1);
+}
+
+.mode-card.mode-card-flagship .mode-card-tag {
+  color: var(--accent-1);
+}
+
 /* Feature split (therapist export, and any future single-feature deep-dive) */
 
 .feature-split {
@@ -2891,6 +2948,22 @@ section {
   }
 }
 
+/* The in-app pages (chat, message coach, quiz, insights, share, dashboard)
+   carry a longer nav — Coach/Practice + 4 more links + account + logout —
+   than the marketing/auth pages' short one, so it needs to switch to the
+   hamburger sooner (at a wider viewport) to avoid crowding/overflow in the
+   900-1060px range that the shorter nav is fine down to. Higher specificity
+   than the plain .nav-links rule above, so it wins in the overlap range. */
+@media (max-width: 1060px) {
+  .site-nav-app .nav-links {
+    display: none;
+  }
+
+  .site-nav-app .nav-toggle {
+    display: inline-flex;
+  }
+}
+
 @media (max-width: 640px) {
   /* Every text input/textarea on the site is sized under 16px for a tight
      visual fit (14-15px) — but iOS Safari auto-zooms the whole page in
@@ -3022,6 +3095,14 @@ section {
   .sidebar-modes .mode-tab.active {
     background: var(--accent-grad);
     color: #1a140d;
+  }
+
+  /* In the vertical drawer layout the divider needs to run sideways
+     instead of standing as a 1px-wide sliver between stacked buttons. */
+  .sidebar-modes .mode-tab-sep {
+    width: 100%;
+    height: 1px;
+    margin: 4px 0;
   }
 
   .chat-messages,
