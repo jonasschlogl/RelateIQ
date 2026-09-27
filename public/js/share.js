@@ -4,6 +4,11 @@
 
 let currentShare = null;
 let pendingItem = null;
+// Resize function for #item-text-input (see autoGrowTextarea in shared.js)
+// — kept around so the two spots that set its .value in code (a pending
+// item carried over from another page, and clearing it after a successful
+// add) can re-trigger the resize, since setting .value never fires "input".
+let resizeItemText = () => {};
 
 document.addEventListener("DOMContentLoaded", () => {
   requireAuth();
@@ -16,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("add-item-btn")?.addEventListener("click", addItem);
   document.getElementById("share-title-input")?.addEventListener("change", saveTitle);
   document.getElementById("pick-conversation-btn")?.addEventListener("click", openConversationModal);
+  resizeItemText = autoGrowTextarea(document.getElementById("item-text-input"), 320);
 
   try {
     const raw = sessionStorage.getItem("relateiq_pending_share_item");
@@ -126,6 +132,7 @@ function openDetail(share) {
     document.getElementById("item-text-input").value = pendingItem.text || "";
     document.getElementById("item-type-input").value = pendingItem.type || "note";
     pendingItem = null;
+    resizeItemText();
   }
 }
 
@@ -305,6 +312,7 @@ async function addItem() {
     }
     currentShare = data;
     textEl.value = "";
+    resizeItemText();
     renderDetail();
   } catch (e) {
     errorEl.textContent = "Couldn't connect to the server.";

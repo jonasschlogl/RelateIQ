@@ -119,6 +119,8 @@ function initHeroDemo() {
   const note = document.getElementById("hero-demo-note");
   if (!btn || !input || !resultBox) return;
 
+  autoGrowTextarea(input, 240);
+
   btn.addEventListener("click", async () => {
     if (heroDemoInFlight) return;
 

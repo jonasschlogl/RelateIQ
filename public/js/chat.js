@@ -28,6 +28,11 @@ const SPEAKER_ICON_SVG =
 // submit handler between POST (create) and PATCH (update) and what happens
 // after a successful save (start practicing vs. just return to the list).
 let editingPartnerId = null;
+// Set once per renderPracticeSetup() call (see there) — the resize function
+// autoGrowTextarea returns for #partner-traits, so openPartnerForm can
+// re-trigger it after pre-filling an existing partner's traits by setting
+// .value directly (which, unlike typing, never fires an "input" event).
+let resizePartnerTraits = () => {};
 
 // Starter ideas shown when someone clicks "Need an idea?" on the practice
 // setup screen — a lot of people stall on a blank scenario field even
@@ -141,10 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       sendMessage();
     }
   });
-  input.addEventListener("input", () => {
-    input.style.height = "auto";
-    input.style.height = Math.min(input.scrollHeight, 140) + "px";
-  });
+  autoGrowTextarea(input, 140);
 
   // Loaded here (not just inside the Practice setup screen) because Coach
   // Chat also needs to know how many partner profiles exist, to decide
@@ -596,6 +598,7 @@ function openPartnerForm(partner) {
   editingPartnerId = partner ? partner.id : null;
   document.getElementById("partner-name").value = partner?.name || "";
   document.getElementById("partner-traits").value = partner?.traits || "";
+  resizePartnerTraits();
   document.getElementById("partner-context").value = partner?.context || "";
   document.getElementById("partner-attachment").value = partner?.attachmentStyle || "";
   document.getElementById("partner-form-error").style.display = "none";
@@ -698,6 +701,7 @@ async function renderPracticeSetup() {
 
   showFormBtn.addEventListener("click", () => openPartnerForm(null));
   document.getElementById("partner-form-cancel-btn").addEventListener("click", closePartnerForm);
+  resizePartnerTraits = autoGrowTextarea(document.getElementById("partner-traits"));
 
   // Scenario library — a "need an idea?" toggle that reveals a row of chips;
   // clicking one fills the scenario input but leaves it freely editable.
@@ -980,6 +984,10 @@ function buildImportMessagesRow(p) {
   const textarea = form.querySelector(".partner-import-textarea");
   const errorBox = form.querySelector(".partner-import-error");
   const submitBtn = form.querySelector(".partner-import-submit");
+  // Generous cap — this field is explicitly for pasting in a whole chat
+  // export (up to 12,000 characters), unlike the shorter free-text fields
+  // elsewhere that use the 240px default.
+  autoGrowTextarea(textarea, 320);
 
   toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation();

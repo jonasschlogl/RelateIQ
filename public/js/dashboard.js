@@ -295,6 +295,7 @@ function renderCheckinForm(question) {
   });
   document.getElementById("checkin-save-btn").addEventListener("click", () => submitCheckin(false));
   document.getElementById("checkin-skip-btn").addEventListener("click", () => submitCheckin(true));
+  autoGrowTextarea(document.getElementById("checkin-input"), 200);
 }
 
 async function submitCheckin(skip) {

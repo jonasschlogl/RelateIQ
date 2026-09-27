@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("rewrite-btn")?.addEventListener("click", rewrite);
   wireVoiceInput(document.getElementById("draft-mic-btn"), document.getElementById("draft-input"));
+  autoGrowTextarea(document.getElementById("draft-input"), 320);
   loadPartnersForPicker();
 });
 

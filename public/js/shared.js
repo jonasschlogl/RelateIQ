@@ -315,3 +315,32 @@ async function safeJson(res) {
     return { error: `Unexpected response from the server (status ${res.status}). Check the server terminal for errors.` };
   }
 }
+
+// Makes a <textarea> grow taller as its content grows, instead of scrolling
+// inside a fixed box — used on every free-text field across the app (the
+// chat composer, Message Coach's draft box, a share note, a partner's
+// traits, pasted messages, the daily check-in). Caps out at maxHeight and
+// switches to a normal internal scrollbar past that point, so one very long
+// paste can't push the rest of the page out of reach. Pairs with
+// `resize: none` in CSS on these fields — a manual drag-resize handle would
+// otherwise fight with the height this sets on every keystroke. Call once
+// right after the element exists (on static markup, at setup time; on a
+// textarea inserted via innerHTML, right after that insertion) — it does an
+// immediate resize too, so pre-filled content (an example, a saved draft, an
+// existing partner's traits when editing) starts at the right height rather
+// than snapping on the first keystroke.
+// Returns the resize function so a caller that sets `.value` in code (which
+// never fires a real "input" event on its own — e.g. pre-filling a partner's
+// traits when opening the edit form) can call it again to match.
+function autoGrowTextarea(el, maxHeight = 240) {
+  if (!el) return () => {};
+  function resize() {
+    el.style.height = "auto";
+    const next = Math.min(el.scrollHeight, maxHeight);
+    el.style.height = next + "px";
+    el.style.overflowY = el.scrollHeight > maxHeight ? "auto" : "hidden";
+  }
+  el.addEventListener("input", resize);
+  resize();
+  return resize;
+}

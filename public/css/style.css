@@ -2039,7 +2039,7 @@ section {
   font-family: var(--font-body);
   font-size: 13px;
   outline: none;
-  resize: vertical;
+  resize: none;
   margin-bottom: 8px;
 }
 
@@ -2091,7 +2091,7 @@ section {
   font-size: 14px;
   font-family: var(--font-body);
   outline: none;
-  resize: vertical;
+  resize: none;
 }
 
 .partner-form input:focus,
@@ -2496,7 +2496,7 @@ section {
   font-family: var(--font-body);
   font-size: 14.5px;
   outline: none;
-  resize: vertical;
+  resize: none;
 }
 
 .tool-card textarea:focus {
@@ -2988,7 +2988,7 @@ section {
   font-family: var(--font-body);
   font-size: 14px;
   outline: none;
-  resize: vertical;
+  resize: none;
   margin-bottom: 10px;
 }
 
@@ -3744,7 +3744,7 @@ body.js-reveal .reveal-item.revealed {
   font-family: var(--font-body);
   font-size: 14.5px;
   outline: none;
-  resize: vertical;
+  resize: none;
 }
 
 .share-composer textarea:focus {
