@@ -18,6 +18,14 @@ function maxFilesPerMessage() {
 const MAX_TOTAL_UPLOAD_BYTES = 15 * 1024 * 1024;
 const TRASH_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m5 0V4a2 2 0 012-2h0a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
+const PENCIL_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>';
+
+// null when the partner form (see renderPracticeSetup) is creating a new
+// profile, or a partner id when it's editing an existing one — swaps the
+// submit handler between POST (create) and PATCH (update) and what happens
+// after a successful save (start practicing vs. just return to the list).
+let editingPartnerId = null;
 
 // The full desktop placeholder text ("Tell me what's going on in your
 // relationship…") is too long to fit on one line in the composer at phone
@@ -535,6 +543,34 @@ async function loadPartners() {
   }
 }
 
+// Shared by "+ Create a new partner profile" and each card's edit button
+// (see buildPartnerCard) — both act on the #partner-form rendered inside
+// renderPracticeSetup. Passing a partner pre-fills the form and swaps the
+// submit handler over to PATCH (see editingPartnerId); passing nothing
+// resets it to a blank create form. Top-level (not nested inside
+// renderPracticeSetup) so buildPartnerCard's edit button, which is built
+// separately when the list re-renders, can call it directly.
+function openPartnerForm(partner) {
+  editingPartnerId = partner ? partner.id : null;
+  document.getElementById("partner-name").value = partner?.name || "";
+  document.getElementById("partner-traits").value = partner?.traits || "";
+  document.getElementById("partner-context").value = partner?.context || "";
+  document.getElementById("partner-attachment").value = partner?.attachmentStyle || "";
+  document.getElementById("partner-form-error").style.display = "none";
+  document.getElementById("partner-form-submit").textContent = partner ? "Save changes" : "Save & start practicing";
+  document.getElementById("partner-form-cancel-btn").style.display = partner ? "block" : "none";
+  document.getElementById("partner-form").style.display = "block";
+  document.getElementById("show-partner-form-btn").style.display = "none";
+}
+
+function closePartnerForm() {
+  editingPartnerId = null;
+  const form = document.getElementById("partner-form");
+  form.reset();
+  form.style.display = "none";
+  document.getElementById("show-partner-form-btn").style.display = "block";
+}
+
 async function renderPracticeSetup() {
   const chatDiv = document.getElementById("chat");
   chatDiv.innerHTML = `
@@ -564,17 +600,21 @@ async function renderPracticeSetup() {
           <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
         </select>
         <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelateIQ plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
-        <button type="submit" class="btn btn-gradient btn-block">Save &amp; start practicing</button>
+        <div class="partner-form-actions">
+          <button type="submit" class="btn btn-gradient btn-block" id="partner-form-submit">Save &amp; start practicing</button>
+          <button type="button" class="btn btn-ghost btn-block" id="partner-form-cancel-btn" style="display:none;">Cancel</button>
+        </div>
       </form>
     </div>
   `;
 
-  document.getElementById("show-partner-form-btn").addEventListener("click", () => {
-    document.getElementById("partner-form").style.display = "block";
-    document.getElementById("show-partner-form-btn").style.display = "none";
-  });
+  const form = document.getElementById("partner-form");
+  const showFormBtn = document.getElementById("show-partner-form-btn");
 
-  document.getElementById("partner-form").addEventListener("submit", async (e) => {
+  showFormBtn.addEventListener("click", () => openPartnerForm(null));
+  document.getElementById("partner-form-cancel-btn").addEventListener("click", closePartnerForm);
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.getElementById("partner-name").value.trim();
     const traits = document.getElementById("partner-traits").value.trim();
@@ -586,18 +626,35 @@ async function renderPracticeSetup() {
     if (!name) return;
 
     try {
-      const res = await authFetch("/api/partners", {
-        method: "POST",
-        body: JSON.stringify({ name, traits, context, attachmentStyle }),
-      });
-      const partner = await safeJson(res);
-      if (!res.ok) {
-        errorBox.textContent = partner.error || "Couldn't save that partner profile.";
-        errorBox.style.display = "block";
-        return;
+      if (editingPartnerId) {
+        const res = await authFetch(`/api/partners/${encodeURIComponent(editingPartnerId)}`, {
+          method: "PATCH",
+          body: JSON.stringify({ name, traits, context, attachmentStyle }),
+        });
+        const updated = await safeJson(res);
+        if (!res.ok) {
+          errorBox.textContent = updated.error || "Couldn't save those changes.";
+          errorBox.style.display = "block";
+          return;
+        }
+        const idx = partners.findIndex((x) => x.id === updated.id);
+        if (idx !== -1) partners[idx] = updated;
+        closePartnerForm();
+        renderPartnerList();
+      } else {
+        const res = await authFetch("/api/partners", {
+          method: "POST",
+          body: JSON.stringify({ name, traits, context, attachmentStyle }),
+        });
+        const partner = await safeJson(res);
+        if (!res.ok) {
+          errorBox.textContent = partner.error || "Couldn't save that partner profile.";
+          errorBox.style.display = "block";
+          return;
+        }
+        partners.unshift(partner);
+        await selectPartnerAndStart(partner.id);
       }
-      partners.unshift(partner);
-      await selectPartnerAndStart(partner.id);
     } catch (err) {
       errorBox.textContent = "Couldn't connect to the server.";
       errorBox.style.display = "block";
@@ -606,6 +663,22 @@ async function renderPracticeSetup() {
 
   await loadPartners();
   renderPartnerList();
+}
+
+async function deletePartnerAction(p) {
+  if (!confirm(`Delete ${p.name}'s profile? This can't be undone, and any practice conversations you had with them will lose their partner context.`)) return;
+  try {
+    const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}`, { method: "DELETE" });
+    if (!res.ok) {
+      const data = await safeJson(res);
+      alert(data.error || "Couldn't delete that partner profile.");
+      return;
+    }
+    partners = partners.filter((x) => x.id !== p.id);
+    renderPartnerList();
+  } catch (err) {
+    alert("Couldn't connect to the server.");
+  }
 }
 
 function formatShortDate(iso) {
@@ -651,13 +724,29 @@ function buildPartnerCard(p) {
   const card = document.createElement("div");
   card.className = "partner-card";
   card.innerHTML = `
-    <div>
+    <div class="partner-card-info">
       <div class="partner-name">${escapeHtml(p.name)}${styleLabel ? ` <span class="partner-style-tag">${escapeHtml(styleLabel)}</span>` : ""}</div>
       <div class="partner-context">${escapeHtml(p.context || p.traits || "")}</div>
     </div>
-    <span class="text-faint">Practice →</span>
+    <div class="partner-card-actions">
+      <button type="button" class="partner-card-icon-btn partner-card-edit" aria-label="Edit ${escapeHtml(p.name)}'s profile" title="Edit profile">${PENCIL_ICON_SVG}</button>
+      <button type="button" class="partner-card-icon-btn partner-card-delete" aria-label="Delete ${escapeHtml(p.name)}'s profile" title="Delete profile">${TRASH_ICON_SVG}</button>
+      <span class="text-faint">Practice →</span>
+    </div>
   `;
-  card.onclick = () => selectPartnerAndStart(p.id);
+  card.querySelector(".partner-card-edit").addEventListener("click", (e) => {
+    e.stopPropagation();
+    openPartnerForm(p);
+  });
+  card.querySelector(".partner-card-delete").addEventListener("click", (e) => {
+    e.stopPropagation();
+    deletePartnerAction(p);
+  });
+  // Attached to the whole card (not just .partner-card-info) so clicking
+  // anywhere else — the "Practice →" label, empty space — still starts
+  // practicing; the two icon buttons above stop the click from bubbling
+  // here in the first place.
+  card.addEventListener("click", () => selectPartnerAndStart(p.id));
   return card;
 }
 
@@ -683,7 +772,7 @@ function buildPartnerLearnRow(p) {
     const sourceLabel = p.learnedProfileSource === "real_messages" ? "from the real messages you added" : "from your chats";
     const info = document.createElement("span");
     info.className = "partner-learn-meta";
-    info.innerHTML = `RelateIQ has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button>`;
+    info.innerHTML = `RelateIQ has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button> · <button class="partner-learn-toggle partner-learn-reset" type="button">forget this</button>`;
     const box = document.createElement("div");
     box.className = "partner-learned-box";
     box.style.display = "none";
@@ -699,6 +788,32 @@ function buildPartnerLearnRow(p) {
         box.textContent = [p.learnedProfile, p.learnedVoice ? `Voice: ${p.learnedVoice}` : ""].filter(Boolean).join("\n\n");
       }
       toggleBtn.textContent = showing ? "view" : "hide";
+    });
+
+    // Clears what RelateIQ has learned so far (see resetLearned in PATCH
+    // /api/partners/:id, server.js) — useful if it's picked up on something
+    // stale or wrong. A fresh Coach Chat conversation, or pasting in real
+    // messages again (see buildImportMessagesRow below), will rebuild it.
+    const resetBtn = info.querySelector(".partner-learn-reset");
+    resetBtn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      if (!confirm(`Forget what RelateIQ has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`)) return;
+      try {
+        const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}`, {
+          method: "PATCH",
+          body: JSON.stringify({ resetLearned: true }),
+        });
+        const updated = await safeJson(res);
+        if (!res.ok) {
+          alert(updated.error || "Couldn't reset that right now.");
+          return;
+        }
+        const idx = partners.findIndex((x) => x.id === updated.id);
+        if (idx !== -1) partners[idx] = updated;
+        renderPartnerList();
+      } catch (err) {
+        alert("Couldn't connect to the server.");
+      }
     });
   }
 

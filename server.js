@@ -1562,6 +1562,50 @@ app.post("/api/partners", authMiddleware, (req, res) => {
   }
 });
 
+// Edits an existing partner profile's own fields (name, traits, context,
+// attachment style) — e.g. adding more detail to their personality, or
+// removing something that no longer fits. Partial: only fields actually
+// present in the body are changed, same validation/caps as creation above.
+// Also doubles as the way to reset a learned profile (resetLearned: true) —
+// useful because a profile learned from real pasted-in messages (see
+// learnPartnerProfileFromRealMessages) deliberately can't be silently
+// overwritten by the automatic Coach-Chat-based learning any more, so this
+// is the explicit way back to a blank slate if the learned info is stale or
+// wrong.
+app.patch("/api/partners/:id", authMiddleware, (req, res) => {
+  try {
+    const partner = req.db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
+    if (!partner) return res.status(404).json({ error: "Partner profile not found." });
+
+    const { name, traits, context, attachmentStyle, resetLearned } = req.body || {};
+
+    if (name !== undefined) {
+      if (!String(name).trim()) {
+        return res.status(400).json({ error: "Give your partner profile a name." });
+      }
+      partner.name = String(name).trim().slice(0, 60);
+    }
+    if (traits !== undefined) partner.traits = String(traits || "").trim().slice(0, 500);
+    if (context !== undefined) partner.context = String(context || "").trim().slice(0, 200);
+    if (attachmentStyle !== undefined) {
+      partner.attachmentStyle = Object.prototype.hasOwnProperty.call(ATTACHMENT_STYLES, attachmentStyle) ? attachmentStyle : null;
+    }
+    if (resetLearned) {
+      partner.learnedProfile = null;
+      partner.learnedVoice = null;
+      partner.learnedProfileConfidence = null;
+      partner.learnedProfileUpdatedAt = null;
+      partner.learnedProfileSource = null;
+    }
+
+    savePartnerProfile(partner);
+    res.json(publicPartner(partner));
+  } catch (err) {
+    console.error("Update partner error:", err);
+    res.status(500).json({ error: "Couldn't save those changes. Please try again." });
+  }
+});
+
 app.delete("/api/partners/:id", authMiddleware, (req, res) => {
   const partner = req.db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
   if (!partner) return res.status(404).json({ error: "Partner profile not found." });

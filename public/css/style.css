@@ -1823,6 +1823,58 @@ section {
   font-size: 14.5px;
 }
 
+.partner-card-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.partner-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.partner-card-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.partner-card-icon-btn:hover {
+  opacity: 1;
+}
+
+.partner-card-icon-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.partner-card-delete:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.partner-card-edit:hover {
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+
+.partner-form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .partner-card-wrap {
   display: flex;
   flex-direction: column;
