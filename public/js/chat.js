@@ -20,12 +20,32 @@ const TRASH_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m5 0V4a2 2 0 012-2h0a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
 const PENCIL_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>';
+const SPEAKER_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>';
 
 // null when the partner form (see renderPracticeSetup) is creating a new
 // profile, or a partner id when it's editing an existing one — swaps the
 // submit handler between POST (create) and PATCH (update) and what happens
 // after a successful save (start practicing vs. just return to the list).
 let editingPartnerId = null;
+
+// Starter ideas shown when someone clicks "Need an idea?" on the practice
+// setup screen — a lot of people stall on a blank scenario field even
+// though they know roughly what's bothering them. Purely a convenience:
+// clicking one just fills the (still freely editable) scenario input, it
+// doesn't lock anything in.
+const PRACTICE_SCENARIO_LIBRARY = [
+  "Asking for more help with chores/kids without it turning into a fight",
+  "Telling them I feel unheard when we disagree",
+  "Asking for more alone time without it sounding like rejection",
+  "Bringing up a recurring argument we keep having",
+  "Talking about money stress without it becoming blame",
+  "Saying no to something without feeling guilty",
+  "Reconnecting after a fight neither of us really resolved",
+  "Bringing up wanting more affection/closeness",
+  "Addressing something a friend or family member said that upset me",
+  "Talking about a big next step (moving in, a trip, the future)",
+];
 
 // The full desktop placeholder text ("Tell me what's going on in your
 // relationship…") is too long to fit on one line in the composer at phone
@@ -193,7 +213,7 @@ function updateExportButtonVisibility() {
   btn.style.display = currentMode === "coach" && currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
 }
 
-function showPartnerBanner(visible, name, scenario) {
+function showPartnerBanner(visible, name, scenario, meta) {
   const banner = document.getElementById("partner-banner");
   if (!banner) return;
   banner.style.display = visible ? "flex" : "none";
@@ -207,6 +227,18 @@ function showPartnerBanner(visible, name, scenario) {
         scenarioEl.style.display = "block";
       } else {
         scenarioEl.style.display = "none";
+      }
+    }
+    const tagsEl = document.getElementById("partner-banner-tags");
+    if (tagsEl) {
+      const tags = [];
+      if (meta?.roleSwap) tags.push("🔄 Roles swapped");
+      if (meta?.intensity === "supportive") tags.push("🌱 Supportive mode");
+      if (tags.length) {
+        tagsEl.textContent = tags.join(" · ");
+        tagsEl.style.display = "block";
+      } else {
+        tagsEl.style.display = "none";
       }
     }
   }
@@ -580,6 +612,21 @@ async function renderPracticeSetup() {
       <div class="practice-scenario-box">
         <label for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
         <input type="text" id="practice-scenario" maxlength="300" placeholder="e.g. asking for more help with the kids without it turning into a fight" autocomplete="off" />
+        <button type="button" class="scenario-library-toggle btn btn-ghost btn-sm" id="scenario-library-toggle">💡 Need an idea? Browse scenarios</button>
+        <div class="scenario-chip-row" id="scenario-chip-row" style="display:none;"></div>
+      </div>
+      <div class="practice-options-row">
+        <div class="practice-option-field">
+          <label for="practice-intensity">Intensity</label>
+          <select id="practice-intensity">
+            <option value="realistic">Realistic — real friction &amp; pushback</option>
+            <option value="supportive">Supportive — gentler, for building confidence</option>
+          </select>
+        </div>
+        <label class="practice-option-checkbox" for="practice-role-swap">
+          <input type="checkbox" id="practice-role-swap" />
+          Swap roles — I'll voice my partner, AI plays me
+        </label>
       </div>
       <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
       <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
@@ -600,6 +647,7 @@ async function renderPracticeSetup() {
           <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
         </select>
         <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelateIQ plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
+        <p class="text-muted" style="font-size:11.5px; margin-top:6px;">You're entering information about another real person here, not just yourself — please use this to prepare for a kinder conversation, not to build a case against them. Only you can see this profile.</p>
         <div class="partner-form-actions">
           <button type="submit" class="btn btn-gradient btn-block" id="partner-form-submit">Save &amp; start practicing</button>
           <button type="button" class="btn btn-ghost btn-block" id="partner-form-cancel-btn" style="display:none;">Cancel</button>
@@ -613,6 +661,31 @@ async function renderPracticeSetup() {
 
   showFormBtn.addEventListener("click", () => openPartnerForm(null));
   document.getElementById("partner-form-cancel-btn").addEventListener("click", closePartnerForm);
+
+  // Scenario library — a "need an idea?" toggle that reveals a row of chips;
+  // clicking one fills the scenario input but leaves it freely editable.
+  const scenarioInput = document.getElementById("practice-scenario");
+  const chipToggle = document.getElementById("scenario-library-toggle");
+  const chipRow = document.getElementById("scenario-chip-row");
+  chipToggle.addEventListener("click", () => {
+    const showing = chipRow.style.display !== "none";
+    if (!showing && chipRow.children.length === 0) {
+      PRACTICE_SCENARIO_LIBRARY.forEach((s) => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "scenario-chip";
+        chip.textContent = s;
+        chip.addEventListener("click", () => {
+          scenarioInput.value = s;
+          chipRow.style.display = "none";
+          chipToggle.textContent = "💡 Need an idea? Browse scenarios";
+        });
+        chipRow.appendChild(chip);
+      });
+    }
+    chipRow.style.display = showing ? "none" : "flex";
+    chipToggle.textContent = showing ? "💡 Need an idea? Browse scenarios" : "Hide suggestions";
+  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -899,9 +972,11 @@ function buildImportMessagesRow(p) {
 async function selectPartnerAndStart(partnerId) {
   try {
     const scenario = document.getElementById("practice-scenario")?.value.trim() || "";
+    const intensity = document.getElementById("practice-intensity")?.value === "supportive" ? "supportive" : "realistic";
+    const roleSwap = !!document.getElementById("practice-role-swap")?.checked;
     const res = await authFetch("/api/conversations", {
       method: "POST",
-      body: JSON.stringify({ mode: "practice", partnerProfileId: partnerId, scenario }),
+      body: JSON.stringify({ mode: "practice", partnerProfileId: partnerId, scenario, intensity, roleSwap }),
     });
     const conv = await safeJson(res);
     if (!res.ok) {
@@ -978,11 +1053,16 @@ async function openConversation(id, preloadedConv) {
       partnerName: conv.partnerName || null,
       scenario: conv.scenario || null,
       aboutPartnerId: conv.aboutPartnerId || null,
+      intensity: conv.intensity || null,
+      roleSwap: !!conv.practiceRoleSwap,
     };
     currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
-    showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario);
+    showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario, {
+      intensity: currentConvCtx.intensity,
+      roleSwap: currentConvCtx.roleSwap,
+    });
     renderCoachTagBar();
     renderHistory();
 
@@ -1005,19 +1085,62 @@ async function openConversation(id, preloadedConv) {
 // messages
 // ---------------------------------------------------------------------------
 
+// Builds a small speaker toggle for a practice reply bubble: click to have
+// the browser read it aloud via the Web Speech API's speechSynthesis
+// (client-side only, no server cost), click again (or click another
+// message) to stop. Progressive enhancement — appendMessage only calls this
+// when "speechSynthesis" in window is true.
+function buildSpeakButton(text) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "speak-btn";
+  btn.setAttribute("aria-label", "Play this message aloud");
+  btn.title = "Play aloud";
+  btn.innerHTML = SPEAKER_ICON_SVG;
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const wasSpeaking = btn.classList.contains("speaking");
+    // Only one message plays at a time — stop whatever else is going first.
+    window.speechSynthesis.cancel();
+    document.querySelectorAll(".speak-btn.speaking").forEach((b) => b.classList.remove("speaking"));
+    if (wasSpeaking) return; // this click was just "stop"
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = document.documentElement.lang || navigator.language || "en-US";
+    utterance.rate = 1;
+    utterance.addEventListener("start", () => btn.classList.add("speaking"));
+    const reset = () => btn.classList.remove("speaking");
+    utterance.addEventListener("end", reset);
+    utterance.addEventListener("error", reset);
+    window.speechSynthesis.speak(utterance);
+  });
+
+  return btn;
+}
+
 function appendMessage(role, text, animate, ctx, attachments) {
   const chatDiv = document.getElementById("chat");
   document.getElementById("empty-state")?.remove();
 
   const isUser = role === "user";
   const isPractice = ctx && ctx.mode === "practice";
+  const isRoleSwap = isPractice && ctx.roleSwap;
 
   const row = document.createElement("div");
   row.className = "message-row " + (isUser ? "user" : isPractice ? "partner" : "ai");
 
   const label = document.createElement("div");
   label.className = "message-role-label";
-  label.textContent = isUser ? "You" : isPractice ? ctx.partnerName || "Partner" : "RelateIQ";
+  // In role-swap practice, the user is voicing their partner and the AI is
+  // voicing the user's own likely side — flip the labels to match, so it
+  // doesn't look backwards on screen (see buildPartnerSystemPrompt's
+  // roleSwap branch in server.js for the prompt-side half of this).
+  if (isRoleSwap) {
+    label.textContent = isUser ? `${ctx.partnerName || "Partner"} (you)` : "You (AI reply)";
+  } else {
+    label.textContent = isUser ? "You" : isPractice ? ctx.partnerName || "Partner" : "RelateIQ";
+  }
   row.appendChild(label);
 
   const bubble = document.createElement("div");
@@ -1026,6 +1149,15 @@ function appendMessage(role, text, animate, ctx, attachments) {
   const textEl = document.createElement("div");
   textEl.className = "msg-text";
   bubble.appendChild(textEl);
+
+  // Voice playback for practice replies (the roleplay side, not the user's
+  // own messages) — a lightweight, free progressive enhancement built on
+  // the browser's own Web Speech API, same approach as wireVoiceInput in
+  // shared.js. Hidden automatically wherever speechSynthesis isn't
+  // available (older Firefox, some mobile browsers).
+  if (isPractice && !isUser && text && "speechSynthesis" in window) {
+    bubble.appendChild(buildSpeakButton(text));
+  }
 
   row.appendChild(bubble);
   chatDiv.appendChild(row);

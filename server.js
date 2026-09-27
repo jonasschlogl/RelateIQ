@@ -65,7 +65,25 @@ for (const [plan, priceId] of Object.entries(PLAN_TO_STRIPE_PRICE)) {
   if (priceId) STRIPE_PRICE_TO_PLAN[priceId] = plan;
 }
 
-app.use(cors());
+// Locked down to the app's own origin(s) instead of wide-open cors() — the
+// web app's own pages call this API same-origin anyway (same Express app
+// serves both), so this only blocks OTHER sites' pages from calling it with
+// a visitor's cookies/token. It does NOT affect the browser extension: that
+// calls the API from its background service worker, which bypasses CORS
+// entirely via the "host_permissions" entry in manifest.json, not via an
+// Origin header check. Requests with no Origin header at all (curl, server-
+// to-server, Stripe, the extension) are always allowed through.
+const KNOWN_APP_ORIGINS = new Set(
+  [APP_URL, "https://terrific-spirit-production.up.railway.app", "http://localhost:3000", "http://127.0.0.1:3000"].filter(Boolean)
+);
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || KNOWN_APP_ORIGINS.has(origin)) return callback(null, true);
+      callback(new Error("Not allowed by CORS"));
+    },
+  })
+);
 
 // Stripe webhook needs the raw, unparsed request body to verify its
 // signature, so this route is registered BEFORE the global express.json()
@@ -153,6 +171,23 @@ app.use(
 );
 
 const PORT = process.env.PORT || 3000;
+
+// Railway (and any real host) injects RAILWAY_ENVIRONMENT/RAILWAY_PROJECT_ID
+// into every deployment automatically — their presence is what tells us
+// "this is a real, hosted instance," since NODE_ENV is never set explicitly
+// anywhere in this project. If we're hosted and JWT_SECRET was left unset,
+// refuse to start rather than silently signing every login with a secret
+// that's sitting in plain text in this public-ish repo — anyone who read it
+// could forge a valid token for any user id. Local dev (`node server.js`
+// with no env vars) still starts fine, with the warning below.
+const IS_HOSTED = !!(process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJECT_ID);
+if (IS_HOSTED && !process.env.JWT_SECRET) {
+  console.error(
+    "FATAL: JWT_SECRET is not set on this hosted deployment. Refusing to start with the insecure default " +
+      "secret — set JWT_SECRET to a long random string in your Railway service variables and redeploy."
+  );
+  process.exit(1);
+}
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me-in-production";
 const FREE_DAILY_LIMIT = 8;
 
@@ -186,6 +221,13 @@ const PARTNER_PROFILE_LIMITS = { free: 1, pro: 5 };
 const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
 const MAX_TOTAL_UPLOAD_MB = 15;
 const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
+
+// A generous safety ceiling on a single chat message, not a real-world
+// limit — no genuine message anyone types is anywhere near this long. It
+// exists purely so a scripted/compromised account (on ANY plan — Pro and
+// Premium have no daily cap by design) can't send a multi-megabyte payload
+// straight into the model on every request and run up the OpenAI bill.
+const MAX_CHAT_MESSAGE_CHARS = 8000;
 
 // Premium's headline differentiator: Coach Chat and Message Coach call a
 // noticeably stronger model for Premium subscribers — real, felt quality
@@ -282,6 +324,33 @@ Your style:
 - If the user describes signs of violence, abuse, or self-harm, respond with calm and empathy, take it seriously, and gently suggest seeking a professional or a helpline in their country.
 - Always reply in the same language as the user's most recent message — detect it automatically from what they write, the same way ChatGPT does. Never ask which language to use, and never mention that you're doing this. If they switch languages mid-conversation, switch with them.
 - Keep answers focused and readable — favor shorter, clear responses over long essays.`;
+
+// The user's own attachment style (from the Attachment Quiz — see
+// ATTACHMENT_STYLES below) was being collected and shown on the dashboard,
+// but never actually reached the coaching prompts, even though the
+// descriptions to do this with already existed for the quiz result screen.
+// This wires it in: when known, the coach is told how THIS specific person
+// tends to experience closeness/conflict, so "give them space" vs. "name
+// things out loud rather than assuming" isn't generic advice — it's
+// calibrated to them, the same way a human coach who knew this about a
+// client would adjust their approach without making a diagnosis out of it.
+function buildCoachSystemPrompt(user) {
+  const styleKey = user?.attachmentStyle;
+  const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
+  const memory = (user?.relationshipMemory || "").trim();
+
+  let prompt = COACH_SYSTEM_PROMPT;
+
+  if (style) {
+    prompt += `\n\nWhat we know about this user's own attachment style, from a quiz they took (${style.name}): ${style.desc}\nLet this quietly inform how you coach them — for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted — only use it to calibrate your tone and advice.`;
+  }
+
+  if (memory) {
+    prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.`;
+  }
+
+  return prompt;
+}
 
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
 
@@ -734,22 +803,155 @@ ${digest}
   }
 }
 
+// ---------------------------------------------------------------------------
+// Relationship memory — a standing, cross-conversation summary of recurring
+// themes/patterns from a user's own Coach Chat history (not tied to any one
+// partner — this is about the user and their situation generally), injected
+// into buildCoachSystemPrompt so Coach Chat has continuity across separate
+// conversations instead of starting from zero every time. Mirrors
+// learnPartnerProfileIfStale's shape and reuses buildPartnerLearningDigest
+// (which is generic over any list of conversations, not partner-specific).
+// Fully automatic, fails open, and throttled on two axes: enough new
+// material since the last refresh (same MIN_COACH_MESSAGES threshold), and
+// at most once per RELATIONSHIP_MEMORY_MIN_REFRESH_HOURS regardless, so
+// starting lots of new Coach Chat conversations in a short span doesn't
+// spam the model.
+// ---------------------------------------------------------------------------
+
+const RELATIONSHIP_MEMORY_MIN_REFRESH_HOURS = 24;
+
+const RELATIONSHIP_MEMORY_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short standing "memory" of recurring themes and patterns — so a future coaching conversation can pick up with continuity instead of starting from zero. You are NOT giving advice here and NOT summarizing any single conversation — you're noticing what keeps coming up ACROSS separate conversations.
+
+Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
+{"memory": "<3-6 plain sentences, in the user's language, naming recurring topics, people, or patterns that show up more than once — e.g. a recurring point of friction, a person who's mentioned repeatedly, a pattern in how the user reacts under stress. Empty string if there's genuinely no recurring pattern yet, just isolated one-off topics.>"}
+
+Rules:
+- Only include what's genuinely recurring (shows up across more than one conversation) — a single conversation's topic is not a pattern, even if that conversation was intense.
+- Write it as calm, factual continuity notes for a coach to privately keep in mind — not a diagnosis, not a verdict on the user or anyone they've mentioned.
+- Never invent specific events that weren't described. Paraphrase and generalize rather than quoting verbatim.
+- Do not address the user directly ("you...") — write it as a third-person note, e.g. "Recurring tension around..." or "Has mentioned [pattern] more than once...".
+- Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+
+async function updateRelationshipMemoryIfStale(db, user) {
+  const lastUpdatedAt = user.relationshipMemoryAt ? new Date(user.relationshipMemoryAt).getTime() : 0;
+  const hoursSinceLastUpdate = (Date.now() - lastUpdatedAt) / (1000 * 60 * 60);
+  if (lastUpdatedAt && hoursSinceLastUpdate < RELATIONSHIP_MEMORY_MIN_REFRESH_HOURS) return; // refreshed recently enough
+
+  const coachConversations = db.conversations
+    .filter((c) => c.userId === user.id && c.mode !== "practice")
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  if (coachConversations.length === 0) return;
+
+  const newestActivity = coachConversations.reduce((max, c) => {
+    const t = new Date(c.updatedAt || c.createdAt || 0).getTime();
+    return t > max ? t : max;
+  }, 0);
+  if (user.relationshipMemory && lastUpdatedAt >= newestActivity) return; // nothing new since last time
+
+  const totalUserMessages = coachConversations.reduce(
+    (sum, c) => sum + (c.messages || []).filter((m) => m.role === "user").length,
+    0
+  );
+  if (totalUserMessages < MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING) return; // not enough material yet
+
+  try {
+    const digest = buildPartnerLearningDigest(coachConversations);
+    const userContent = `Past Coach Chat messages, most recent conversations first (the user's own words):
+"""
+${digest}
+"""`;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: RELATIONSHIP_MEMORY_SYSTEM_PROMPT },
+        { role: "user", content: userContent },
+      ],
+      temperature: 0.4,
+      response_format: { type: "json_object" },
+    });
+
+    const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    const memory = String(parsed.memory || "").trim().slice(0, 900);
+
+    if (memory) {
+      user.relationshipMemory = memory;
+      user.relationshipMemoryAt = new Date().toISOString();
+      saveUser(user);
+    } else {
+      // Nothing recurring yet — still bump the timestamp so we don't
+      // re-query the model again until either the cooldown or new material
+      // makes that worthwhile.
+      user.relationshipMemoryAt = new Date().toISOString();
+      saveUser(user);
+    }
+  } catch (err) {
+    console.error("Relationship memory update error:", err.message);
+    // Fail open — leave whatever memory (or lack of one) already existed.
+  }
+}
+
+// intensity: "realistic" (default) plays real friction/defensiveness when the
+// personality calls for it; "supportive" is a gentler mode for someone who
+// just wants to practice saying a hard thing out loud once, without also
+// having to handle pushback — still in character, just not stress-tested.
+// roleSwap: when true, the USER voices their partner's side of the
+// conversation and the AI instead plays the user's own likely reaction, so
+// the user can hear how their own responses tend to land from the outside.
+// See PARTNER_PROFILE ("intensity"/"roleSwap" on the conversation, not the
+// saved partner profile — both are per-rehearsal, not permanent settings).
 function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
   const context = (partner.context || "").trim();
+  const scenario = (partner.scenario || "").trim();
+  const intensity = partner.intensity === "supportive" ? "supportive" : "realistic";
+
+  if (partner.roleSwap) {
+    // Role-swap: the user types AS their partner. The AI is no longer
+    // playing the partner at all — it plays a plausible version of the
+    // USER'S OWN side of the conversation, so the user can rehearse from
+    // the listener's seat and notice how their own typical responses land.
+    const userStyleKey = partner.userAttachmentStyle;
+    const userStyleNote = userStyleKey
+      ? `The person you're voicing (the app's user) has a self-reported attachment style of ${ATTACHMENT_STYLES[userStyleKey]?.name || userStyleKey}: ${ATTACHMENT_STYLES[userStyleKey]?.desc || ""} Let this quietly shape how "you" tend to react — don't mention it.`
+      : "";
+    return `You are helping someone practice a real conversation by playing an unusual role: instead of playing their partner, YOU are playing THEM (the user) — their own likely side of the conversation — while they type as their partner, "${partner.name}"${context ? ` (${context})` : ""}, to hear what it might be like on the receiving end of their own usual reactions.
+
+What's known about the user whose side you're voicing:
+Personality/context they've described about themselves and this relationship: ${traits}.
+${userStyleNote ? `${userStyleNote}\n` : ""}${scenario ? `This rehearsal is specifically about: "${scenario}". Let your responses naturally move toward it as the conversation develops.\n` : ""}
+Rules:
+- Speak in first person as the user would — casually, the way a real partner texts back. Not like an assistant, and don't be a passive yes-man: react the way this person plausibly would, including a bit of defensiveness, distraction, or slowness to warm up where that realistically fits, in the ${intensity === "supportive" ? "gentler, good-faith" : "realistic"} range the user asked for.
+- Never break character to give advice or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop, or the conversation touches on real self-harm, abuse, or a genuine crisis.
+- Keep replies texting-length — a sentence or two, occasionally more.
+- Always reply in the same language the user writes in — detect it automatically. Never ask which language to use.`;
+  }
+
   const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
   const learnedNote = (partner.learnedProfile || "").trim();
   const voiceNote = (partner.voice || "").trim();
-  const scenario = (partner.scenario || "").trim();
+  // When the user's own attachment style is also known (from the Attachment
+  // Quiz), reuse the same pairing write-ups the Compare feature uses — the
+  // dynamic between two specific styles is more useful for a realistic
+  // roleplay than either style described in isolation.
+  const compatNote =
+    partner.userAttachmentStyle && partner.attachmentStyle
+      ? `How this specific pairing tends to play out (user is ${ATTACHMENT_STYLES[partner.userAttachmentStyle]?.name || partner.userAttachmentStyle}, you are ${ATTACHMENT_STYLES[partner.attachmentStyle]?.name || partner.attachmentStyle}): ${compatText(partner.userAttachmentStyle, partner.attachmentStyle)}`
+      : "";
+
+  const intensityRule =
+    intensity === "supportive"
+      ? "React the way someone with these traits would, but lean toward good faith and de-escalation — this gentler mode is for building the confidence to say something out loud once, not for stress-testing worst-case reactions. Stay authentic to the personality; just don't manufacture conflict, shut down, or pile on defensiveness for its own sake."
+      : "React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality — this is what makes the practice useful.";
 
   return `You are role-playing as "${partner.name}", the user's romantic partner${context ? ` (${context})` : ""}, inside a private practice/rehearsal space the user opened on purpose to practice a real conversation.
 
 Personality and traits to embody: ${traits}.
-${learnedNote ? `\nWhat RelateIQ has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
+${learnedNote ? `\nWhat RelateIQ has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${compatNote ? `\n${compatNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
 Rules:
 - Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts — short, natural, imperfect. Not like an assistant.
 - Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
-- React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality — this is what makes the practice useful. But never model abuse, cruelty for its own sake, or anything humiliating.
+- ${intensityRule} But never model abuse, cruelty for its own sake, or anything humiliating.
 - Keep replies texting-length — a sentence or two, occasionally more if the moment calls for it. Not essays.
 - Always reply in the same language the user writes in — detect it automatically, the same way ChatGPT does. Never ask which language to use. If they switch languages mid-conversation, switch with them.`;
 }
@@ -1209,7 +1411,36 @@ function unsubscribeLink(user, kind) {
 // auth
 // ---------------------------------------------------------------------------
 
-app.post("/api/auth/register", (req, res) => {
+// Lightweight in-memory brute-force guard shared by login and register.
+// Not a substitute for a real WAF, but stops trivial scripted password-
+// guessing against one account (or account-enumeration/spam-signup across
+// many emails) from the same IP. Resets on redeploy — fine, since the goal
+// is just to slow down automated abuse, not keep a durable audit log.
+const authAttemptsByIp = new Map(); // ip -> array of attempt timestamps (ms)
+const AUTH_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const AUTH_RATE_LIMIT_MAX = 20; // attempts per IP per window
+setInterval(() => {
+  const cutoff = Date.now() - AUTH_RATE_LIMIT_WINDOW_MS;
+  for (const [ip, attempts] of authAttemptsByIp) {
+    const kept = attempts.filter((t) => t > cutoff);
+    if (kept.length === 0) authAttemptsByIp.delete(ip);
+    else authAttemptsByIp.set(ip, kept);
+  }
+}, 30 * 60 * 1000).unref();
+
+function authRateLimit(req, res, next) {
+  const ip = req.ip || "unknown";
+  const now = Date.now();
+  const attempts = (authAttemptsByIp.get(ip) || []).filter((t) => now - t < AUTH_RATE_LIMIT_WINDOW_MS);
+  if (attempts.length >= AUTH_RATE_LIMIT_MAX) {
+    return res.status(429).json({ error: "Too many attempts from this connection. Please wait a few minutes and try again." });
+  }
+  attempts.push(now);
+  authAttemptsByIp.set(ip, attempts);
+  next();
+}
+
+app.post("/api/auth/register", authRateLimit, (req, res) => {
   try {
     const { email, password, name, referralCode } = req.body || {};
     if (!email || !password) {
@@ -1262,7 +1493,7 @@ app.post("/api/auth/register", (req, res) => {
   }
 });
 
-app.post("/api/auth/login", (req, res) => {
+app.post("/api/auth/login", authRateLimit, (req, res) => {
   try {
     const { email, password } = req.body || {};
     if (!email || !password) {
@@ -1286,6 +1517,61 @@ app.post("/api/auth/login", (req, res) => {
 
 app.get("/api/me", authMiddleware, (req, res) => {
   res.json(publicUser(req.user));
+});
+
+// GDPR-style "export my data" — everything RelateIQ has stored about this
+// account, as a single downloadable JSON file: profile fields, the standing
+// relationship-memory summary, every partner profile (including anything
+// learned about them), and every conversation's full message history. This
+// is a full export, not a redacted summary, since it's the user's own data
+// about their own account (partner profiles necessarily include personal
+// information ABOUT the partner too, since that's the nature of the
+// feature — see the disclaimer shown when a partner profile is created).
+app.get("/api/me/export", authMiddleware, (req, res) => {
+  const db = req.db;
+  const user = req.user;
+
+  const conversations = db.conversations
+    .filter((c) => c.userId === user.id)
+    .map((c) => ({
+      id: c.id,
+      mode: c.mode,
+      title: c.title,
+      partnerName: c.partnerName || null,
+      scenario: c.scenario || null,
+      intensity: c.intensity || null,
+      roleSwap: !!c.practiceRoleSwap,
+      createdAt: c.createdAt,
+      updatedAt: c.updatedAt,
+      messages: (c.messages || []).map((m) => ({
+        role: m.role,
+        content: m.content,
+        at: m.at,
+        attachments: (m.attachments || []).map((a) => ({ name: a.name, mimeType: a.mimeType, size: a.size })),
+      })),
+    }));
+
+  const partnerProfiles = db.partnerProfiles.filter((p) => p.userId === user.id).map(publicPartner);
+
+  const exportPayload = {
+    exportedAt: new Date().toISOString(),
+    account: {
+      id: user.id,
+      email: user.email,
+      name: user.name || null,
+      plan: user.plan,
+      createdAt: user.createdAt,
+      attachmentStyle: user.attachmentStyle || null,
+    },
+    relationshipMemory: user.relationshipMemory || null,
+    relationshipMemoryUpdatedAt: user.relationshipMemoryAt || null,
+    partnerProfiles,
+    conversations,
+  };
+
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Content-Disposition", `attachment; filename="relateiq-data-export.json"`);
+  res.send(JSON.stringify(exportPayload, null, 2));
 });
 
 app.post("/api/me/email-preferences", authMiddleware, (req, res) => {
@@ -1618,16 +1904,19 @@ app.delete("/api/partners/:id", authMiddleware, (req, res) => {
 // sent (a chat export, transcribed screenshots, whatever they have), and
 // RelateIQ extracts a behavioral + voice profile straight from that —
 // higher fidelity than anything inferred secondhand, since it's the
-// partner's own real wording. Not gated by the daily AI-message limit or
-// any plan-based cap (same precedent as the automatic version), just by the
-// input length caps in learnPartnerProfileFromRealMessages itself.
+// partner's own real wording. Each call is capped by input length (see
+// learnPartnerProfileFromRealMessages), and now also shares the same daily
+// AI-message gate as every other OpenAI-calling route — it was the one
+// unmetered surface a Free account could otherwise loop on for free.
 app.post("/api/partners/:id/learn-from-messages", authMiddleware, async (req, res) => {
   try {
     const partner = req.db.partnerProfiles.find((p) => p.id === req.params.id && p.userId === req.user.id);
     if (!partner) return res.status(404).json({ error: "Partner profile not found." });
+    if (isOverDailyLimit(req.user, res)) return;
 
     const { messages } = req.body || {};
     await learnPartnerProfileFromRealMessages(partner, messages);
+    if (req.user.plan === "free") bumpFreeUsage(req.user);
     res.json(publicPartner(partner));
   } catch (err) {
     if (err && err.status === 400) {
@@ -1660,7 +1949,7 @@ app.get("/api/conversations", authMiddleware, (req, res) => {
 
 app.post("/api/conversations", authMiddleware, async (req, res) => {
   const db = req.db;
-  const { mode, partnerProfileId, scenario } = req.body || {};
+  const { mode, partnerProfileId, scenario, intensity, roleSwap } = req.body || {};
   const isPractice = mode === "practice";
 
   let partner = null;
@@ -1683,13 +1972,19 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     // learnPartnerProfileIfStale above for the staleness check and why it
     // fails open instead of blocking the conversation on an AI hiccup.
     await learnPartnerProfileIfStale(db, req.user.id, partner);
+  } else {
+    // Fully automatic, same fail-open shape as the partner learning above —
+    // see updateRelationshipMemoryIfStale for the staleness/cooldown logic.
+    await updateRelationshipMemoryIfStale(db, req.user);
   }
 
   // Snapshotted at conversation-start time, same as partnerName/partnerTraits/
   // partnerContext below — later edits to the partner profile (or retaking
   // the compat quiz) shouldn't silently rewrite a rehearsal already in
   // progress. The scenario is per-conversation, not per-profile: what the
-  // user wants to practice today is often different each time.
+  // user wants to practice today is often different each time. intensity/
+  // roleSwap are likewise per-rehearsal choices, not saved to the partner
+  // profile itself — see the comment on buildPartnerSystemPrompt.
   const conv = {
     id: generateId("conv"),
     userId: req.user.id,
@@ -1702,6 +1997,8 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     partnerLearnedProfile: partner ? partner.learnedProfile || null : null,
     partnerLearnedVoice: partner ? partner.learnedVoice || null : null,
     scenario: isPractice ? String(scenario || "").trim().slice(0, 300) || null : null,
+    intensity: isPractice && intensity === "supportive" ? "supportive" : isPractice ? "realistic" : null,
+    practiceRoleSwap: isPractice ? !!roleSwap : false,
     // Which relationship a Coach Chat conversation is about — nullable,
     // meaningless for Practice mode (that already has partnerProfileId).
     // Only matters once a user has more than one partner profile; see
@@ -1769,6 +2066,9 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   if (!hasText && !hasAttachments) {
     return res.status(400).json({ error: "Write a message or attach a file." });
   }
+  if (text.length > MAX_CHAT_MESSAGE_CHARS) {
+    return res.status(400).json({ error: `That message is too long (max ${MAX_CHAT_MESSAGE_CHARS.toLocaleString()} characters). Try splitting it up.` });
+  }
 
   const db = req.db;
   const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
@@ -1834,8 +2134,11 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         learnedProfile: conv.partnerLearnedProfile,
         voice: conv.partnerLearnedVoice,
         scenario: conv.scenario,
+        userAttachmentStyle: user.attachmentStyle,
+        intensity: conv.intensity,
+        roleSwap: conv.practiceRoleSwap,
       })
-    : COACH_SYSTEM_PROMPT;
+    : buildCoachSystemPrompt(user);
 
   try {
     // Prior turns are sent as plain text (their attachments are just noted

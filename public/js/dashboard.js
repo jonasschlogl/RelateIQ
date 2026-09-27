@@ -1,7 +1,47 @@
+// GDPR-style data export — fetches the full JSON export from the server and
+// triggers a normal browser download, without ever routing the (potentially
+// large, and personal) payload through anything other than the user's own
+// browser. authFetch is used directly rather than a plain <a href> so the
+// auth token can be sent as a header instead of exposed in a URL.
+async function downloadMyData() {
+  const btn = document.getElementById("export-data-btn");
+  const originalLabel = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Preparing…";
+  }
+  try {
+    const res = await authFetch("/api/me/export");
+    if (!res.ok) {
+      const data = await safeJson(res);
+      alert(data.error || "Couldn't prepare your data export right now.");
+      return;
+    }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "relateiq-data-export.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error(err);
+    alert("Couldn't connect to the server.");
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
+  document.getElementById("export-data-btn")?.addEventListener("click", downloadMyData);
 
   if (new URLSearchParams(window.location.search).get("upgraded") === "1") {
     showUpgradeBanner();
