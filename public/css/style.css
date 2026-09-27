@@ -167,6 +167,17 @@ img, svg {
   background: var(--surface-hover);
 }
 
+.btn-danger {
+  background: transparent;
+  border-color: rgba(193, 101, 90, 0.4);
+  color: var(--danger-text);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+}
+
 .btn-block {
   width: 100%;
 }
@@ -1159,6 +1170,20 @@ section {
 .auth-switch a {
   color: var(--accent-2-text);
   font-weight: 600;
+}
+
+.auth-forgot {
+  text-align: right;
+  margin: 6px 0 0;
+}
+
+.auth-forgot a {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.auth-forgot a:hover {
+  color: var(--text-muted);
 }
 
 .form-error {
@@ -3046,6 +3071,57 @@ section {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+}
+
+/* Account deletion — deliberately understated (border color only, not a
+   filled danger background) until the person actually opens it; the real
+   warning weight lands on the confirm step below, not on the card itself. */
+.danger-zone {
+  border-color: rgba(193, 101, 90, 0.3);
+}
+
+.danger-zone h2 {
+  color: var(--danger-text);
+}
+
+.danger-zone-confirm {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(193, 101, 90, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.danger-zone-confirm label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.danger-zone-confirm input {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  padding: 11px 13px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.danger-zone-confirm input:focus {
+  border-color: var(--danger);
+}
+
+.danger-zone-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.danger-zone-actions .btn {
+  flex: 1;
 }
 
 .profile-meta {

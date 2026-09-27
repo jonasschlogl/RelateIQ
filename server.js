@@ -17,6 +17,7 @@ import {
   getUserByStripeCustomerId,
   getUserByReferralCode,
   saveUser,
+  deleteUserCascade,
   incrementUserUsage,
   incrementUserColumn,
   saveConversation,
@@ -263,14 +264,94 @@ function modelForPractice(plan) {
 // inside that volume — the /uploads route below serves straight from here
 // regardless, so the URLs the app hands out never change.
 const UPLOADS_DIR = process.env.UPLOADS_DIR || path.join(__dirname, "public", "uploads");
-app.use(
-  "/uploads",
-  express.static(UPLOADS_DIR, {
-    etag: false,
-    lastModified: false,
-    setHeaders: (res) => res.setHeader("Cache-Control", "no-store"),
-  })
-);
+
+// Chat attachments used to be served by a plain express.static mount here —
+// anyone with the URL (/uploads/<userId>/<filename>, only mildly obscured
+// by a random id prefix on the filename) could load someone else's photo or
+// file with no authentication at all. Fixed by requiring a short-lived,
+// file-scoped signed token on every request instead: signAttachmentUrl
+// mints one fresh every time an attachment's url is sent to a client (see
+// its call sites below), so a link only works for ~15 minutes and only for
+// the exact file it was issued for — a leaked chat screenshot or an old
+// browser tab can't be used to fetch the file later.
+function signAttachmentUrl(rawUrl) {
+  const match = /^\/uploads\/([^/]+)\/([^/]+)$/.exec(String(rawUrl || ""));
+  if (!match) return rawUrl;
+  const [, userId, filename] = match;
+  const token = jwt.sign({ scope: "upload-access", userId, filename }, JWT_SECRET, { expiresIn: "15m" });
+  return `${rawUrl}?token=${encodeURIComponent(token)}`;
+}
+
+// Re-signs every attachment url on every message in a conversation, right
+// before that conversation is handed to a client — used by both the
+// message-send response and GET /api/conversations/:id, the two places a
+// conversation's attachments reach the frontend. Never mutates its input.
+function signAttachmentsInMessages(messages) {
+  return (messages || []).map((m) =>
+    m && m.attachments && m.attachments.length
+      ? { ...m, attachments: m.attachments.map((a) => (a && a.url ? { ...a, url: signAttachmentUrl(a.url) } : a)) }
+      : m
+  );
+}
+
+// Extension -> Content-Type for serving an attachment back out. Doesn't need
+// to be exhaustive — just the kinds saveIncomingAttachments actually deals
+// with (images, screen recordings, the small text-like files read as
+// context) — anything else falls back to a generic binary type, which is
+// fine since the browser only ever fetches these urls straight from an
+// <img>/<a> tag the server itself generated (see renderAttachments in
+// chat.js), not from a context where the exact type matters.
+const UPLOAD_CONTENT_TYPES = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".webp": "image/webp",
+  ".svg": "image/svg+xml",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
+  ".mov": "video/quicktime",
+  ".mp3": "audio/mpeg",
+  ".wav": "audio/wav",
+  ".m4a": "audio/mp4",
+  ".pdf": "application/pdf",
+  ".txt": "text/plain",
+  ".md": "text/markdown",
+  ".markdown": "text/markdown",
+  ".csv": "text/csv",
+  ".json": "application/json",
+  ".log": "text/plain",
+};
+
+app.get("/uploads/:userId/:filename", (req, res) => {
+  let payload;
+  try {
+    payload = jwt.verify(String(req.query.token || ""), JWT_SECRET);
+  } catch (err) {
+    return res.status(403).json({ error: "This file link is invalid or has expired." });
+  }
+  if (payload.scope !== "upload-access" || payload.userId !== req.params.userId || payload.filename !== req.params.filename) {
+    return res.status(403).json({ error: "This file link is invalid or has expired." });
+  }
+
+  const resolved = path.resolve(path.join(UPLOADS_DIR, req.params.userId, req.params.filename));
+  const uploadsRoot = path.resolve(UPLOADS_DIR);
+  if (!resolved.startsWith(uploadsRoot + path.sep)) {
+    return res.status(400).json({ error: "Invalid file path." });
+  }
+
+  let buffer;
+  try {
+    buffer = fs.readFileSync(resolved);
+  } catch (err) {
+    return res.status(404).json({ error: "File not found." });
+  }
+
+  const contentType = UPLOAD_CONTENT_TYPES[path.extname(resolved).toLowerCase()] || "application/octet-stream";
+  res.setHeader("Content-Type", contentType);
+  res.setHeader("Cache-Control", "no-store");
+  res.end(buffer);
+});
 const TEXT_LIKE_EXTENSIONS = [".txt", ".md", ".markdown", ".csv", ".log", ".json"];
 
 if (!process.env.OPENAI_API_KEY) {
@@ -1636,6 +1717,90 @@ app.post("/api/auth/login", authRateLimit, (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// Password reset — a signed, scope-limited token (same pattern as the email
+// unsubscribe link above), not a row in a table, so there's nothing extra to
+// store or clean up: it's just a JWT that only ever does one thing, for one
+// user, and stops working after an hour on its own.
+// ---------------------------------------------------------------------------
+
+// Deliberately responds the same way whether or not the email exists, so a
+// stranger can't use this to check which emails have a RelateIQ account.
+// Shares the login/register rate limiter — it's the same kind of endpoint
+// (unauthenticated, email-driven) and abuse here (mass password-reset spam
+// to someone else's inbox) is exactly what that limiter already guards
+// against.
+app.post("/api/auth/forgot-password", authRateLimit, async (req, res) => {
+  try {
+    const { email } = req.body || {};
+    if (!email) return res.status(400).json({ error: "Email is required." });
+
+    const normalizedEmail = String(email).trim().toLowerCase();
+    const user = getUserByEmail(normalizedEmail);
+
+    if (user) {
+      const token = jwt.sign({ sub: user.id, scope: "password-reset" }, JWT_SECRET, { expiresIn: "1h" });
+      const resetUrl = `${APP_URL}/reset-password.html?token=${encodeURIComponent(token)}`;
+      const html = emailShell({
+        bodyHtml: `
+          <p>Someone (hopefully you) asked to reset the password on your RelateIQ account.</p>
+          <p style="margin:24px 0;">
+            <a href="${resetUrl}" style="display:inline-block; background:#d1a05a; color:#1a140d; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:999px;">Reset your password</a>
+          </p>
+          <p style="color:#b6a795; font-size:13px;">This link works for 1 hour. If you didn't ask for this, you can safely ignore this email — your password won't change.</p>
+        `,
+      });
+      await sendEmail({ to: user.email, subject: "Reset your RelateIQ password", html });
+    }
+
+    res.json({ ok: true, message: "If that email has a RelateIQ account, we've sent a link to reset your password." });
+  } catch (err) {
+    console.error("Forgot-password error:", err);
+    // Same generic message even on an unexpected error — no reason to leak
+    // internals here either, and the request should never actually reach
+    // this branch since the block above tolerates a failed send silently.
+    res.json({ ok: true, message: "If that email has a RelateIQ account, we've sent a link to reset your password." });
+  }
+});
+
+app.post("/api/auth/reset-password", authRateLimit, (req, res) => {
+  try {
+    const { token, password } = req.body || {};
+    if (!token || !password) {
+      return res.status(400).json({ error: "Missing reset token or new password." });
+    }
+    if (String(password).length < 8) {
+      return res.status(400).json({ error: "Password must be at least 8 characters." });
+    }
+
+    let payload;
+    try {
+      payload = jwt.verify(String(token), JWT_SECRET);
+    } catch (err) {
+      return res.status(400).json({ error: "This reset link is invalid or has expired. Request a new one." });
+    }
+    if (payload.scope !== "password-reset") {
+      return res.status(400).json({ error: "This reset link is invalid or has expired. Request a new one." });
+    }
+
+    const user = getUserById(payload.sub);
+    if (!user) {
+      return res.status(400).json({ error: "This reset link is invalid or has expired. Request a new one." });
+    }
+
+    user.passwordHash = bcrypt.hashSync(password, 10);
+    saveUser(user);
+
+    // Logs them straight in — one less step right after resetting a
+    // password they may only just have finished typing twice.
+    const loginToken = signToken(user);
+    res.json({ token: loginToken, user: publicUser(user) });
+  } catch (err) {
+    console.error("Reset-password error:", err);
+    res.status(500).json({ error: "Something went wrong while resetting your password. Please try again." });
+  }
+});
+
 app.get("/api/me", authMiddleware, (req, res) => {
   res.json(publicUser(req.user));
 });
@@ -1693,6 +1858,41 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Content-Disposition", `attachment; filename="relateiq-data-export.json"`);
   res.send(JSON.stringify(exportPayload, null, 2));
+});
+
+// Self-service account deletion (GDPR erasure) — the gap privacy.html used
+// to openly admit to ("account deletion isn't yet self-service inside the
+// app"). Requires the current password as confirmation, same as any
+// irreversible action, rather than just a "type DELETE" text box — it's a
+// stronger check and the user already has their password in hand. Deletes
+// the database rows first (deleteUserCascade, one transaction — see
+// store.js), then best-effort removes the user's uploaded files directory;
+// a failure to clean up disk files never leaves the account itself
+// half-deleted, since by that point it's already gone from the database.
+app.delete("/api/account", authMiddleware, (req, res) => {
+  try {
+    const { password } = req.body || {};
+    if (!password) {
+      return res.status(400).json({ error: "Enter your password to confirm account deletion." });
+    }
+    if (!req.user.passwordHash || !bcrypt.compareSync(password, req.user.passwordHash)) {
+      return res.status(401).json({ error: "Incorrect password." });
+    }
+
+    const userId = req.user.id;
+    deleteUserCascade(userId);
+
+    try {
+      fs.rmSync(path.join(UPLOADS_DIR, userId), { recursive: true, force: true });
+    } catch (fileErr) {
+      console.error(`Account ${userId} deleted, but couldn't remove its uploads directory:`, fileErr.message);
+    }
+
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Account deletion error:", err);
+    res.status(500).json({ error: "Something went wrong while deleting your account. Please try again, or contact us if it keeps failing." });
+  }
 });
 
 app.post("/api/me/email-preferences", authMiddleware, (req, res) => {
@@ -2174,7 +2374,7 @@ app.patch("/api/conversations/:id", authMiddleware, (req, res) => {
 app.get("/api/conversations/:id", authMiddleware, (req, res) => {
   const conv = req.db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
   if (!conv) return res.status(404).json({ error: "Conversation not found." });
-  res.json(conv);
+  res.json({ ...conv, messages: signAttachmentsInMessages(conv.messages) });
 });
 
 app.delete("/api/conversations/:id", authMiddleware, (req, res) => {
@@ -2337,7 +2537,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       title,
       mode: conv.mode,
       partnerName: conv.partnerName,
-      attachments: savedAttachments.map(stripInternalFields),
+      attachments: savedAttachments.map(stripInternalFields).map((a) => (a.url ? { ...a, url: signAttachmentUrl(a.url) } : a)),
       usage: user.usage,
       safety: safetyBlockFor(safety),
     });

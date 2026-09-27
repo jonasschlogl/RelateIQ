@@ -37,11 +37,82 @@ async function downloadMyData() {
   }
 }
 
+// Wires up the "Delete account" danger-zone card: a plain button reveals a
+// password-confirm row (rather than a native confirm() dialog, since this
+// needs an actual password input, not just a yes/no), Cancel hides it again
+// with the field cleared, and the real confirm button calls DELETE
+// /api/account. On success there's no account left to be authenticated
+// as, so this clears the session and sends the person to the homepage
+// rather than back to a dashboard that would just 401.
+function setupDeleteAccount() {
+  const openBtn = document.getElementById("delete-account-open-btn");
+  const cancelBtn = document.getElementById("delete-account-cancel-btn");
+  const confirmBtn = document.getElementById("delete-account-confirm-btn");
+  const confirmBox = document.getElementById("delete-account-confirm");
+  const passwordInput = document.getElementById("delete-account-password");
+  const errorBox = document.getElementById("delete-account-error");
+  if (!openBtn || !confirmBox) return;
+
+  function showError(msg) {
+    if (!errorBox) return;
+    errorBox.textContent = msg;
+    errorBox.style.display = msg ? "block" : "none";
+  }
+
+  function closeConfirm() {
+    confirmBox.style.display = "none";
+    if (passwordInput) passwordInput.value = "";
+    showError("");
+  }
+
+  openBtn.addEventListener("click", () => {
+    confirmBox.style.display = "flex";
+    passwordInput?.focus();
+  });
+
+  cancelBtn?.addEventListener("click", closeConfirm);
+
+  confirmBtn?.addEventListener("click", async () => {
+    const password = passwordInput ? passwordInput.value : "";
+    showError("");
+    if (!password) {
+      showError("Enter your password to confirm.");
+      return;
+    }
+
+    const originalLabel = confirmBtn.textContent;
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = "Deleting…";
+
+    try {
+      const res = await authFetch("/api/account", {
+        method: "DELETE",
+        body: JSON.stringify({ password }),
+      });
+      const data = await safeJson(res);
+      if (!res.ok) {
+        showError(data.error || "Couldn't delete your account. Please try again.");
+        confirmBtn.disabled = false;
+        confirmBtn.textContent = originalLabel;
+        return;
+      }
+      clearSession();
+      window.location.href = "index.html";
+    } catch (err) {
+      console.error(err);
+      showError("Couldn't connect to the server.");
+      confirmBtn.disabled = false;
+      confirmBtn.textContent = originalLabel;
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("export-data-btn")?.addEventListener("click", downloadMyData);
+  setupDeleteAccount();
 
   if (new URLSearchParams(window.location.search).get("upgraded") === "1") {
     showUpgradeBanner();

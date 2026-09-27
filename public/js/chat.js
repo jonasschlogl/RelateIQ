@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!currentConversationId) return;
     window.open("summary.html?id=" + encodeURIComponent(currentConversationId), "_blank");
   });
+  document.getElementById("share-conversation-btn")?.addEventListener("click", openShareModal);
   document.getElementById("attach-btn")?.addEventListener("click", () => document.getElementById("file-input")?.click());
   document.getElementById("file-input")?.addEventListener("change", handleFilesSelected);
   wireVoiceInput(document.getElementById("mic-btn"), document.getElementById("input"));
@@ -209,8 +210,17 @@ function showComposer(visible) {
 
 function updateExportButtonVisibility() {
   const btn = document.getElementById("export-summary-btn");
-  if (!btn) return;
-  btn.style.display = currentMode === "coach" && currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
+  if (btn) {
+    btn.style.display = currentMode === "coach" && currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
+  }
+  // Share button: same "there's actually something to share" condition as
+  // the therapist export above, but not restricted to Coach — a Partner
+  // Practice rehearsal is just as shareable (e.g. showing a therapist or a
+  // friend how a rehearsal went), so this one shows in both modes.
+  const shareBtn = document.getElementById("share-conversation-btn");
+  if (shareBtn) {
+    shareBtn.style.display = currentConversationId && currentConvHasUserMessage ? "inline-flex" : "none";
+  }
 }
 
 function showPartnerBanner(visible, name, scenario, meta) {
@@ -1073,6 +1083,7 @@ async function startNewChat(mode) {
     currentConversationId = conv.id;
     currentConvCtx = { mode: "coach", partnerName: null, aboutPartnerId: null };
     currentConvHasUserMessage = false;
+    updateExportButtonVisibility();
     setActiveTab("coach");
     showPartnerBanner(false);
     showComposer(true);
@@ -1103,6 +1114,7 @@ async function openConversation(id, preloadedConv) {
       roleSwap: !!conv.practiceRoleSwap,
     };
     currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
+    updateExportButtonVisibility();
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
     showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario, {
@@ -1285,6 +1297,120 @@ async function requestPracticeDebrief() {
       btn.textContent = originalLabel;
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// Quick share — a one-click alternative to the full share.html workflow
+// (create a share, open it, "choose a conversation", preview, confirm).
+// Reuses exactly the same backend (POST /api/shares, then
+// POST /api/shares/:id/items/from-conversation) and the same
+// preview-before-sharing principle (renderTranscriptHtml, from shared.js),
+// but does the whole thing inline in one small modal without ever leaving
+// the chat. Always creates a fresh, single-conversation share rather than
+// picking an existing one — simpler to reason about than guessing which of
+// the user's other shares (if any) this conversation "belongs" in.
+// ---------------------------------------------------------------------------
+
+function closeShareModal() {
+  const modal = document.getElementById("share-conversation-modal");
+  if (modal) modal.style.display = "none";
+}
+
+async function openShareModal() {
+  if (!currentConversationId) return;
+  const modal = document.getElementById("share-conversation-modal");
+  const body = document.getElementById("share-conversation-modal-body");
+  if (!modal || !body) return;
+  modal.style.display = "flex";
+  body.innerHTML = '<p class="text-muted">Loading conversation…</p>';
+
+  try {
+    const res = await authFetch(`/api/conversations/${encodeURIComponent(currentConversationId)}`);
+    const data = await safeJson(res);
+    if (!res.ok) {
+      body.innerHTML = `<p class="text-muted">${escapeHtml(data.error || "Couldn't load this conversation.")}</p><div class="modal-close-row"><button class="btn btn-ghost btn-sm" id="share-modal-close-btn" type="button">Close</button></div>`;
+      document.getElementById("share-modal-close-btn")?.addEventListener("click", closeShareModal);
+      return;
+    }
+    renderShareModalPreview(data);
+  } catch (err) {
+    body.innerHTML = '<p class="text-muted">Couldn\'t connect to the server.</p>';
+  }
+}
+
+function renderShareModalPreview(conv) {
+  const body = document.getElementById("share-conversation-modal-body");
+  body.innerHTML = `
+    <h2>Share "${escapeHtml(conv.title || "this conversation")}"</h2>
+    <div class="share-conversation-warning">Everything below will be visible to anyone with the link — check it over before sharing. Nothing goes out until you confirm.</div>
+    ${renderTranscriptHtml(conv.messages)}
+    <div class="modal-close-row">
+      <button class="btn btn-ghost btn-sm" id="share-modal-cancel-btn" type="button">Cancel</button>
+      <button class="btn btn-gradient btn-sm" id="share-modal-confirm-btn" type="button">Get shareable link</button>
+    </div>
+  `;
+  document.getElementById("share-modal-cancel-btn")?.addEventListener("click", closeShareModal);
+  document.getElementById("share-modal-confirm-btn")?.addEventListener("click", () => confirmQuickShare(conv));
+}
+
+async function confirmQuickShare(conv) {
+  const btn = document.getElementById("share-modal-confirm-btn");
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Sharing…";
+  }
+  try {
+    const createRes = await authFetch("/api/shares", {
+      method: "POST",
+      body: JSON.stringify({ title: conv.title || "Shared conversation" }),
+    });
+    const share = await safeJson(createRes);
+    if (!createRes.ok) throw new Error(share.error || "Couldn't create a share link.");
+
+    const addRes = await authFetch(`/api/shares/${encodeURIComponent(share.id)}/items/from-conversation`, {
+      method: "POST",
+      body: JSON.stringify({ conversationId: conv.id }),
+    });
+    const updatedShare = await safeJson(addRes);
+    if (!addRes.ok) throw new Error(updatedShare.error || "Couldn't add this conversation to the share.");
+
+    renderShareModalLink(updatedShare);
+  } catch (err) {
+    alert(err.message || "Couldn't connect to the server.");
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "Get shareable link";
+    }
+  }
+}
+
+function renderShareModalLink(share) {
+  const body = document.getElementById("share-conversation-modal-body");
+  if (!body) return;
+  const url = `${window.location.origin}/partner-view.html?token=${share.token}`;
+  body.innerHTML = `
+    <h2>Link ready</h2>
+    <p class="text-muted">Anyone with this link can view this conversation — no account needed. Manage or revoke it anytime from <a href="share.html">Share with partner</a>.</p>
+    <div class="share-link-box">
+      <span id="share-modal-link-text">${escapeHtml(url)}</span>
+      <button class="btn btn-gradient btn-sm" id="share-modal-copy-btn" type="button">Copy link</button>
+    </div>
+    <div class="modal-close-row">
+      <button class="btn btn-ghost btn-sm" id="share-modal-done-btn" type="button">Done</button>
+    </div>
+  `;
+  document.getElementById("share-modal-done-btn")?.addEventListener("click", closeShareModal);
+  document.getElementById("share-modal-copy-btn")?.addEventListener("click", () => {
+    navigator.clipboard.writeText(url).then(() => {
+      const copyBtn = document.getElementById("share-modal-copy-btn");
+      if (copyBtn) {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => {
+          if (copyBtn) copyBtn.textContent = "Copy link";
+        }, 1500);
+      }
+    });
+  });
 }
 
 function appendPracticeDebrief(debrief) {
