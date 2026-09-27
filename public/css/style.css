@@ -1837,14 +1837,25 @@ section {
 /* ---------------------------------------------------------------------- */
 
 .practice-setup {
-  margin: auto;
+  margin: 28px auto 40px;
   width: 100%;
-  max-width: 480px;
-  text-align: center;
+  max-width: 520px;
+  text-align: left;
 }
 
-.practice-setup h2 {
+.practice-setup-intro {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.practice-setup-intro h2 {
   font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.practice-setup-intro p {
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .partner-list {
@@ -1875,6 +1886,20 @@ section {
 .partner-card .partner-name {
   font-weight: 600;
   font-size: 14.5px;
+}
+
+.partner-card-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
 }
 
 .partner-card-info {
@@ -2062,20 +2087,26 @@ section {
   vertical-align: middle;
 }
 
-.practice-scenario-box {
-  text-align: left;
-  margin: 4px 0 18px;
+/* Practice setup: a single grouped card (scenario, intensity, role-swap)
+   instead of loose fields floating directly on the page background — see
+   .practice-setup-partners below for the separate "who with" step. */
+.practice-setup-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 22px;
 }
 
-.practice-scenario-box label {
+.practice-setup-field-label {
   display: block;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.practice-scenario-box input {
+.practice-setup-field input[type="text"] {
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
@@ -2087,19 +2118,32 @@ section {
   outline: none;
 }
 
-.practice-scenario-box input:focus {
+.practice-setup-field input[type="text"]:focus {
   border-color: var(--accent-1);
 }
 
 .scenario-library-toggle {
-  margin-top: 8px;
+  display: inline-block;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-1);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.scenario-library-toggle:hover {
+  text-decoration: underline;
 }
 
 .scenario-chip-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 10px 0 4px;
+  margin-top: 10px;
 }
 
 .scenario-chip {
@@ -2119,59 +2163,146 @@ section {
   color: var(--text);
 }
 
-.practice-options-row {
+.practice-setup-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 22px 0;
+}
+
+/* Intensity: two selectable cards instead of a plain <select> — the actual
+   value lives on a hidden #practice-intensity <select> (see chat.js), kept
+   in sync by the buttons, so the rest of the code just reads .value as
+   before. */
+.intensity-toggle {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 16px;
-  margin: 4px 0 18px;
-  text-align: left;
+  gap: 8px;
 }
 
-.practice-option-field {
-  flex: 1 1 200px;
-}
-
-.practice-option-field label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-
-.practice-option-field select {
-  width: 100%;
+.intensity-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
-  color: var(--text);
-  padding: 9px 11px;
   border-radius: var(--radius-sm);
-  font-size: 13.5px;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
   font-family: var(--font-body);
-  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.practice-option-field select:focus {
+.intensity-option:hover {
   border-color: var(--accent-1);
 }
 
-.practice-option-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-muted);
-  padding-bottom: 10px;
-  cursor: pointer;
-  flex: 1 1 220px;
+.intensity-option.is-active {
+  border-color: var(--accent-1);
+  background: rgba(209, 160, 90, 0.12);
 }
 
-.practice-option-checkbox input {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--accent-1);
+.intensity-option-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.intensity-option-desc {
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+/* Role swap: a proper on/off switch (built on a real checkbox — see
+   chat.js) instead of a small native checkbox crammed next to two lines of
+   wrapped label text. */
+.role-swap-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.role-swap-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.role-swap-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.role-swap-desc {
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 23px;
   flex-shrink: 0;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.switch-track {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.switch input:checked ~ .switch-track {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.switch input:checked ~ .switch-track .switch-thumb {
+  transform: translateX(17px);
+  background: var(--ink);
+}
+
+.switch input:focus-visible ~ .switch-track {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 2px;
+}
+
+.practice-setup-partners .practice-setup-field-label {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 420px) {
+  .intensity-toggle {
+    flex-direction: column;
+  }
 }
 
 .speak-btn {

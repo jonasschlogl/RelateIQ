@@ -607,29 +607,56 @@ async function renderPracticeSetup() {
   const chatDiv = document.getElementById("chat");
   chatDiv.innerHTML = `
     <div class="practice-setup" id="practice-setup">
-      <h2>Practice a real conversation</h2>
-      <p class="text-muted">Pick who you want to practice talking to. The AI will roleplay as them, in character, so you can rehearse before the real thing.</p>
-      <div class="practice-scenario-box">
-        <label for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
-        <input type="text" id="practice-scenario" maxlength="300" placeholder="e.g. asking for more help with the kids without it turning into a fight" autocomplete="off" />
-        <button type="button" class="scenario-library-toggle btn btn-ghost btn-sm" id="scenario-library-toggle">💡 Need an idea? Browse scenarios</button>
-        <div class="scenario-chip-row" id="scenario-chip-row" style="display:none;"></div>
+      <div class="practice-setup-intro">
+        <h2>Practice a real conversation</h2>
+        <p class="text-muted">Pick who you want to practice talking to. The AI will roleplay as them, in character, so you can rehearse before the real thing.</p>
       </div>
-      <div class="practice-options-row">
-        <div class="practice-option-field">
-          <label for="practice-intensity">Intensity</label>
-          <select id="practice-intensity">
+
+      <div class="practice-setup-card">
+        <div class="practice-setup-field">
+          <label class="practice-setup-field-label" for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
+          <input type="text" id="practice-scenario" maxlength="300" placeholder="e.g. asking for more help with the kids without it turning into a fight" autocomplete="off" />
+          <button type="button" class="scenario-library-toggle" id="scenario-library-toggle">💡 Need an idea? Browse scenarios</button>
+          <div class="scenario-chip-row" id="scenario-chip-row" style="display:none;"></div>
+        </div>
+
+        <div class="practice-setup-divider"></div>
+
+        <div class="practice-setup-field">
+          <label class="practice-setup-field-label">Intensity</label>
+          <div class="intensity-toggle" id="intensity-toggle" role="group" aria-label="Practice intensity">
+            <button type="button" class="intensity-option is-active" data-value="realistic" aria-pressed="true">
+              <span class="intensity-option-title">Realistic</span>
+              <span class="intensity-option-desc">Real friction &amp; pushback</span>
+            </button>
+            <button type="button" class="intensity-option" data-value="supportive" aria-pressed="false">
+              <span class="intensity-option-title">Supportive</span>
+              <span class="intensity-option-desc">Gentler, for building confidence</span>
+            </button>
+          </div>
+          <select id="practice-intensity" style="display:none;" aria-hidden="true" tabindex="-1">
             <option value="realistic">Realistic — real friction &amp; pushback</option>
             <option value="supportive">Supportive — gentler, for building confidence</option>
           </select>
         </div>
-        <label class="practice-option-checkbox" for="practice-role-swap">
-          <input type="checkbox" id="practice-role-swap" />
-          Swap roles — I'll voice my partner, AI plays me
+
+        <label class="role-swap-row" for="practice-role-swap">
+          <span class="role-swap-text">
+            <span class="role-swap-title">Swap roles</span>
+            <span class="role-swap-desc">I'll voice my partner, AI plays me</span>
+          </span>
+          <span class="switch">
+            <input type="checkbox" id="practice-role-swap" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
         </label>
       </div>
-      <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
-      <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
+
+      <div class="practice-setup-partners">
+        <label class="practice-setup-field-label">Who do you want to practice with?</label>
+        <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
+        <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
+      </div>
       <form class="partner-form" id="partner-form" style="display:none;">
         <div class="form-error" id="partner-form-error" style="display:none;"></div>
         <label for="partner-name">Name</label>
@@ -685,6 +712,24 @@ async function renderPracticeSetup() {
     }
     chipRow.style.display = showing ? "none" : "flex";
     chipToggle.textContent = showing ? "💡 Need an idea? Browse scenarios" : "Hide suggestions";
+  });
+
+  // Intensity segmented control — two visible buttons that drive a hidden
+  // <select id="practice-intensity">, which stays the source of truth read
+  // by selectPartnerAndStart(). Keeping the real <select> in the DOM (just
+  // visually hidden, not removed) means none of that existing read logic
+  // needs to change.
+  const intensitySelect = document.getElementById("practice-intensity");
+  document.querySelectorAll(".intensity-option").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".intensity-option").forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+      intensitySelect.value = btn.dataset.value;
+    });
   });
 
   form.addEventListener("submit", async (e) => {
@@ -797,6 +842,7 @@ function buildPartnerCard(p) {
   const card = document.createElement("div");
   card.className = "partner-card";
   card.innerHTML = `
+    <div class="partner-card-avatar">${escapeHtml((p.name || "?").trim().charAt(0).toUpperCase())}</div>
     <div class="partner-card-info">
       <div class="partner-name">${escapeHtml(p.name)}${styleLabel ? ` <span class="partner-style-tag">${escapeHtml(styleLabel)}</span>` : ""}</div>
       <div class="partner-context">${escapeHtml(p.context || p.traits || "")}</div>
