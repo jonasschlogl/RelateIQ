@@ -352,6 +352,67 @@ function buildCoachSystemPrompt(user) {
   return prompt;
 }
 
+// ---------------------------------------------------------------------------
+// Conversation titles — generated the same way ChatGPT and similar assistants
+// title a new chat: a short, specific label based on what the very first
+// message is actually about, instead of a generic placeholder. Replaces the
+// old behavior where every new Coach conversation just showed a truncated
+// copy of the first message, and every Practice conversation with the same
+// partner showed the exact same title ("Practice with Alex") forever, making
+// the sidebar history impossible to tell apart at a glance.
+//
+// Runs alongside the main completion call (see the Promise.all in POST
+// /api/conversations/:id/messages), not after it — it only needs the user's
+// own first message, not the AI's reply, so it doesn't add extra latency to
+// the first message in a conversation. Fails open: on any error, the caller
+// falls back to the previous truncation-based title instead of blocking.
+// ---------------------------------------------------------------------------
+
+const TITLE_SYSTEM_PROMPT = `You generate a short, specific title for a brand-new conversation in an AI relationship-coaching app — the same way ChatGPT (or any similar assistant) titles a new chat from someone's first message.
+
+Respond with ONLY a JSON object, no other text before or after it: {"title": "<3-6 words, in the same language the message is written in>"}
+
+Rules:
+- Base it on the actual, specific content of the message below — it should read differently from the title of a conversation about a different topic. "the kids and chores" and "feeling unheard lately" are good; "Relationship help" and "New conversation" are not.
+- No quotation marks around the title itself, no trailing period, no emoji.
+- If a Partner Practice rehearsal is described below, you may reference the partner's name or the scenario if that makes the title more specific and useful, but the title is still about the topic, not just "Practice with X".
+- If the message is too short, vague, or generic to say anything specific (e.g. just "hi"), return an empty string rather than inventing a fake specific topic.
+- Write in the same language as the message — detect it automatically, the same way ChatGPT does.`;
+
+async function generateConversationTitle({ mode, partnerName, scenario, userText }) {
+  const trimmed = String(userText || "").trim();
+  if (!trimmed) return "";
+
+  const isPractice = mode === "practice";
+  const contextLine = isPractice
+    ? `This is the start of a Partner Practice rehearsal — the user is about to practice a real conversation with an AI roleplaying as their partner, "${partnerName || "their partner"}"${scenario ? `, specifically about: "${scenario}"` : ""}.`
+    : `This is the start of a Coach Chat conversation — the user is talking to an AI relationship coach.`;
+
+  const userContent = `${contextLine}
+
+The user's first message:
+"""
+${trimmed.slice(0, 600)}
+"""`;
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: TITLE_SYSTEM_PROMPT },
+      { role: "user", content: userContent },
+    ],
+    temperature: 0.4,
+    response_format: { type: "json_object" },
+  });
+
+  const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+  return String(parsed.title || "")
+    .trim()
+    .replace(/^["'“”]+|["'“”]+$/g, "")
+    .replace(/[.。]+$/g, "")
+    .slice(0, 60);
+}
+
 const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
 
 You may be given a draft message to rewrite, or recent messages from the conversation (a transcript, oldest first, each line labeled "Them:" or "Me:"), or both. You may also be given a profile of the specific partner this message is for (their traits, attachment style, and/or things RelateIQ has learned about how they communicate) — when given, use it to actually shape the rewrite and advice, not just as background color: word it in a way that's more likely to land well with THIS specific person given how they tend to react, and let "insight" draw directly on what's known about them.
@@ -2140,6 +2201,13 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       })
     : buildCoachSystemPrompt(user);
 
+  // Only the very first message of a conversation gets a generated title —
+  // conv.messages here still reflects the state as of the START of this
+  // request (see priorHistory above), i.e. before the userMessage appended
+  // earlier in this handler, so an empty array means this really is message
+  // #1. Every later message in the same conversation keeps its title as-is.
+  const isFirstExchange = conv.messages.length === 0;
+
   try {
     // Prior turns are sent as plain text (their attachments are just noted
     // in the stored content, not re-uploaded); only the newest message gets
@@ -2147,24 +2215,43 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     // every follow-up turn.
     const latestContent = buildModelContent(text, savedAttachments);
 
-    const [completion, safety] = await Promise.all([
+    const [completion, safety, generatedTitle] = await Promise.all([
       openai.chat.completions.create({
         model: isPractice ? modelForPractice(user.plan) : modelForPlan(user.plan),
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
         temperature: isPractice ? 0.95 : 0.8,
       }),
       hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
+      // Runs alongside the main reply, not after it, so titling the first
+      // message doesn't add extra latency — see generateConversationTitle's
+      // comment above. Only fired on the first message; every other message
+      // resolves this to null instantly without an extra API call.
+      isFirstExchange
+        ? generateConversationTitle({
+            mode: conv.mode,
+            partnerName: conv.partnerName,
+            scenario: conv.scenario,
+            userText: hasText ? text : savedAttachments[0]?.name ? `[attached file: ${savedAttachments[0].name}]` : "",
+          }).catch((err) => {
+            console.error("Conversation title generation error:", err.message);
+            return ""; // fail open — falls back to the truncation-based title below
+          })
+        : Promise.resolve(null),
     ]);
 
     const reply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
 
     let title = conv.title;
-    if (title === "New conversation") {
-      if (hasText) {
+    if (isFirstExchange) {
+      if (generatedTitle) {
+        title = generatedTitle;
+      } else if (hasText) {
         title = text.slice(0, 48) + (text.length > 48 ? "…" : "");
       } else if (savedAttachments.length > 0) {
         title = `📎 ${savedAttachments[0].name}`.slice(0, 48);
       }
+      // else (Practice, no text, no generated title): keep the conversation's
+      // existing default title, "Practice with <partner>", set at creation.
     }
 
     const assistantMessage = { role: "assistant", content: reply, at: new Date().toISOString() };
