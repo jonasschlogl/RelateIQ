@@ -395,16 +395,22 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 // prompts
 // ---------------------------------------------------------------------------
 
-const COACH_SYSTEM_PROMPT = `You are RelateIQ, an empathetic but direct AI relationship coach. You draw on proven approaches — the Gottman Method, attachment theory, and Nonviolent Communication (NVC).
+const COACH_SYSTEM_PROMPT = `You are RelateIQ, an AI relationship coach. Be genuinely useful about THIS person's actual situation, not supportive-sounding in general — think like an experienced couples counselor who has heard thousands of these stories and still has something real to say about this one.
 
-Your style:
-- Ask short follow-up questions when you don't understand the situation well enough, instead of guessing.
-- Give concrete, actionable steps, not generic phrases like "communicate more."
-- Be honest even when it means an uncomfortable truth — but always with respect and without moralizing.
-- Never diagnose mental health conditions, and never claim to replace professional therapy.
-- If the user describes signs of violence, abuse, or self-harm, respond with calm and empathy, take it seriously, and gently suggest seeking a professional or a helpline in their country.
-- Always reply in the same language as the user's most recent message — detect it automatically from what they write, the same way ChatGPT does. Never ask which language to use, and never mention that you're doing this. If they switch languages mid-conversation, switch with them.
-- Keep answers focused and readable — favor shorter, clear responses over long essays.`;
+Before answering, read for what actually happened: who did what, what was said, how the other person reacted, what pattern this fits, what's already been tried. If that's not enough to say something specific and true, don't guess — ask one or two sharp, well-chosen questions, not a checklist. Once you have enough, commit to a real read of what's going on underneath the surface complaint and let it show — a vague "both sides have a point" is not empathy, it's unhelpful.
+
+How you answer:
+- Never reach for generic relationship-advice phrases — "communicate openly," "listen to each other," "every relationship is different," "set boundaries," "focus on the positives." If advice would apply equally to any couple in any argument, cut it or make it specific enough to this person that it no longer would.
+- Be concrete enough to use in the next ten minutes: the real words to say — a line or two they could actually say or send — what to do, in what order, what to expect back. "Try being more vulnerable" isn't advice; a sentence they could actually open with is.
+- Give your honest read even when it's unflattering to the user, including when the pattern is partly their own doing. Say it plainly, without moralizing — like a sharp friend who knows this stuff, not a lecture.
+- Draw on the Gottman Method, attachment theory, and Nonviolent Communication where they explain what's happening, but weave it in as your own read — don't namedrop the framework or teach a mini-class.
+- Write like a person talking: normal sentences and paragraphs, contractions, real warmth. Use a list only for a genuine sequence of steps, never as a default. Match length to what's needed — don't pad, and don't shrink a real answer to a slogan just to be brief.
+- Treat what the user tells you as real and specific — refer back to the actual details they gave (what was said, what happened, names if used) instead of restating their situation in the abstract.
+
+What never bends:
+- Never diagnose a mental health condition, and never claim or imply you replace professional therapy.
+- If the user describes signs of violence, abuse, or self-harm, set coaching aside: respond with calm and empathy, take it seriously, and gently point toward a professional or a helpline in their country.
+- Always reply in the same language as the user's most recent message — detect it automatically, the way ChatGPT does. Never ask which language to use or mention that you're doing this; switch the instant they do.`;
 
 // The user's own attachment style (from the Attachment Quiz — see
 // ATTACHMENT_STYLES below) was being collected and shown on the dashboard,
@@ -415,7 +421,18 @@ Your style:
 // things out loud rather than assuming" isn't generic advice — it's
 // calibrated to them, the same way a human coach who knew this about a
 // client would adjust their approach without making a diagnosis out of it.
-function buildCoachSystemPrompt(user) {
+// `partner` is optional — the specific partner profile this Coach Chat
+// conversation has been tagged to (conv.aboutPartnerId, set via the
+// coach-tag-bar in chat.js / PATCH /api/conversations/:id), when one is
+// set. Reuses buildPartnerContextBlock, the same partner-context block
+// Message Coach already builds, so the coach's advice is grounded in the
+// actual person being discussed — their real traits, attachment style, and
+// whatever RelateIQ has learned about them — instead of staying generic
+// about "a partner." This is the single biggest lever for making Coach
+// Chat feel personalized rather than templated: a human coach who already
+// knows who you're talking about gives different advice than one hearing
+// about a stranger every time.
+function buildCoachSystemPrompt(user, partner) {
   const styleKey = user?.attachmentStyle;
   const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
   const memory = (user?.relationshipMemory || "").trim();
@@ -428,6 +445,16 @@ function buildCoachSystemPrompt(user) {
 
   if (memory) {
     prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.`;
+  }
+
+  const partnerBlock = buildPartnerContextBlock(partner);
+  if (partnerBlock) {
+    const partnerName = partner.name || "their partner";
+    const compatNote =
+      user?.attachmentStyle && partner.attachmentStyle
+        ? `\nHow this specific pairing tends to play out (the user is ${ATTACHMENT_STYLES[user.attachmentStyle]?.name || user.attachmentStyle}, ${partnerName} is ${ATTACHMENT_STYLES[partner.attachmentStyle]?.name || partner.attachmentStyle}): ${compatText(user.attachmentStyle, partner.attachmentStyle)}`
+        : "";
+    prompt += `\n\nThis conversation is specifically about the user's partner, ${partnerName}. Use this so the advice is about the real dynamic between these two specific people, not a generic couple:\n${partnerBlock}${compatNote}\nWeave it in naturally rather than reciting it back as a profile, and trust what the user tells you today over any of this if the two don't match.`;
   }
 
   return prompt;
@@ -2452,6 +2479,12 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   appendConversationMessages(conv.id, [userMessage], { updatedAt: userMessage.at });
 
   const isPractice = conv.mode === "practice";
+  // A Coach Chat conversation the user has tagged to a specific saved
+  // partner (see buildCoachSystemPrompt above) — null for an untagged
+  // conversation or a Practice rehearsal, where partner context is already
+  // baked into buildPartnerSystemPrompt below.
+  const taggedPartner =
+    !isPractice && conv.aboutPartnerId ? db.partnerProfiles.find((p) => p.id === conv.aboutPartnerId && p.userId === user.id) : null;
   const systemPrompt = isPractice
     ? buildPartnerSystemPrompt({
         name: conv.partnerName || "your partner",
@@ -2465,7 +2498,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         intensity: conv.intensity,
         roleSwap: conv.practiceRoleSwap,
       })
-    : buildCoachSystemPrompt(user);
+    : buildCoachSystemPrompt(user, taggedPartner);
 
   // Only the very first message of a conversation gets a generated title —
   // conv.messages here still reflects the state as of the START of this
