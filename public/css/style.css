@@ -1513,9 +1513,9 @@ section {
 
 /* Coach Chat + Partner Practice are the two flagship features — the plain
    .mode-tab styling above already carries them. Everything else in this
-   pill (Message Coach, Quiz, Insights) is a secondary tool: same one-click
-   reach, lighter visual weight, and set off by a thin divider so the two
-   flagships read as "the product" and the rest reads as "also available." */
+   pill (Quiz, Insights) is a secondary tool: same one-click reach, lighter
+   visual weight, and set off by a thin divider so the two flagships read
+   as "the product" and the rest reads as "also available." */
 .mode-tab-sep {
   align-self: center;
   width: 1px;
@@ -2479,7 +2479,7 @@ section {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Tool pages (Message Coach, Quiz)                                        */
+/* Tool pages (Quiz)                                                       */
 /* ---------------------------------------------------------------------- */
 
 .tool-page {
@@ -2496,128 +2496,6 @@ section {
 
 .tool-header h1 {
   font-size: 30px;
-}
-
-.tool-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.tool-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-}
-
-.tool-card h3 {
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-faint);
-  font-family: var(--font-body);
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-
-.tool-card textarea {
-  width: 100%;
-  min-height: 160px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
-  color: var(--text);
-  padding: 13px 15px;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  outline: none;
-  resize: none;
-}
-
-.tool-card textarea:focus {
-  border-color: var(--accent-1);
-}
-
-.tool-card input,
-.tool-card select {
-  width: 100%;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
-  color: var(--text);
-  padding: 11px 13px;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
-  font-size: 14px;
-  outline: none;
-  margin-bottom: 12px;
-}
-
-.tool-card input:focus,
-.tool-card select:focus {
-  border-color: var(--accent-1);
-}
-
-.tool-result {
-  min-height: 160px;
-  font-size: 14.5px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-}
-
-.tool-result .placeholder {
-  color: var(--text-faint);
-}
-
-.coach-rewrite {
-  white-space: pre-wrap;
-  color: var(--text);
-}
-
-.coach-copy-btn {
-  margin-top: 12px;
-  padding: 6px 14px;
-}
-
-.coach-why-label {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  font-size: 11.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-faint);
-  margin-bottom: 4px;
-}
-
-.coach-why {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  margin: 0;
-  white-space: pre-wrap;
-}
-
-.hero-demo-error {
-  margin: 12px 0 0;
-  font-size: 13.5px;
-  color: var(--danger);
-}
-
-.hero-demo-note {
-  margin: 14px 0 0;
-  font-size: 12.5px;
-  color: var(--text-faint);
-  text-align: center;
-}
-
-.tool-tips {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 13.5px;
-  color: var(--text-muted);
 }
 
 /* Quiz */
@@ -2728,7 +2606,7 @@ section {
 }
 
 /* Safety notice card — fixed crisis resources, shown alongside (never
-   instead of) an AI reply. Used on chat.html and message-coach.html. */
+   instead of) an AI reply. Used on chat.html. */
 
 .safety-notice {
   max-width: 640px;
@@ -2917,8 +2795,8 @@ section {
 
 /* Coach Chat and Partner Practice are the two flagship features — this
    modifier gives their cards a bit more visual weight (accent border, tag
-   color) than Message Coach/Quiz/Insights/Share get, everywhere .mode-card
-   is used (landing page and the dashboard's "Explore" grid alike). */
+   color) than Quiz/Insights/Share get, everywhere .mode-card is used
+   (landing page and the dashboard's "Explore" grid alike). */
 .mode-card.mode-card-flagship {
   border-color: var(--accent-1);
 }
@@ -3279,7 +3157,6 @@ section {
   .feature-grid,
   .steps,
   .pricing-grid,
-  .tool-split,
   .modes-grid {
     grid-template-columns: 1fr;
   }
@@ -3326,10 +3203,10 @@ section {
   }
 }
 
-/* The in-app pages (chat, message coach, quiz, insights, share, dashboard)
-   carry a longer nav — Coach/Practice + 4 more links + account + logout —
-   than the marketing/auth pages' short one, so it needs to switch to the
-   hamburger sooner (at a wider viewport) to avoid crowding/overflow in the
+/* The in-app pages (chat, quiz, insights, share, dashboard) carry a longer
+   nav — Coach/Practice + 3 more links + account + logout — than the
+   marketing/auth pages' short one, so it needs to switch to the hamburger
+   sooner (at a wider viewport) to avoid crowding/overflow in the
    900-1060px range that the shorter nav is fine down to. Higher specificity
    than the plain .nav-links rule above, so it wins in the overlap range. */
 @media (max-width: 1060px) {
@@ -3825,10 +3702,6 @@ body.js-reveal .reveal-item.revealed {
 
   .summary-paper {
     padding: 22px;
-  }
-
-  .tool-card {
-    padding: 18px;
   }
 
   .quiz-question {

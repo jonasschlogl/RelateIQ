@@ -207,11 +207,6 @@ const FREE_DAILY_LIMIT = 8;
 // convert.
 const FREE_LIFETIME_ATTACHMENT_LIMIT = 3; // files/photos a Free account can ever attach, combined across all conversations
 const FREE_LIFETIME_PRACTICE_CONVERSATIONS = 1; // Partner Practice rehearsals a Free account can start
-const FREE_LIFETIME_MESSAGE_COACH_USES = 3; // Message Coach rewrites/proposals a Free account can request from the website tool
-// (the browser extension's automatic smart-reply chips are deliberately left
-// off this cap and stay on the general daily AI pool below — they fire
-// passively while chatting, so a lifetime cap this small would burn out in
-// minutes rather than reflecting a deliberate "try the feature" choice)
 
 // Partner profiles (Practice mode) allowed per plan — omit a plan here (e.g.
 // "premium") to leave it unlimited.
@@ -231,15 +226,15 @@ const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 // straight into the model on every request and run up the OpenAI bill.
 const MAX_CHAT_MESSAGE_CHARS = 8000;
 
-// Premium's headline differentiator: Coach Chat and Message Coach call a
-// noticeably stronger model for Premium subscribers — real, felt quality
-// (more specific, more nuanced replies), not just a bigger usage cap. Free
-// and Pro share the fast/inexpensive model on those two surfaces. Insights,
-// the therapist summary, and the public demo stay on the fast model
-// regardless of plan — they're extraction/summarization tasks, not the
-// "hear me out and respond" moments where model quality is actually
-// noticeable, and keeping them off the pricier model keeps the cost of
-// those unlimited-on-Pro+ features predictable.
+// Premium's headline differentiator: Coach Chat calls a noticeably stronger
+// model for Premium subscribers — real, felt quality (more specific, more
+// nuanced replies), not just a bigger usage cap. Free and Pro share the
+// fast/inexpensive model on that surface. Insights and the therapist
+// summary stay on the fast model regardless of plan — they're
+// extraction/summarization tasks, not the "hear me out and respond" moment
+// where model quality is actually noticeable, and keeping them off the
+// pricier model keeps the cost of those unlimited-on-Pro+ features
+// predictable.
 // TEMPORARY ROLLBACK (RelateIQ42): briefly bumped to the GPT-6 line
 // (gpt-6-luna / gpt-6-astra), but Jonas's OpenAI account doesn't have
 // access to those models yet — every AI call was failing in production
@@ -262,7 +257,7 @@ function modelForPlan(plan) {
 // FREE_LIFETIME_PRACTICE_CONVERSATIONS below) to try the feature, so the
 // cost of upgrading that single try is negligible either way, and it's
 // still a meaningful reason to upgrade off Free. Premium's edge over Pro
-// stays in Coach Chat, Message Coach, and unlimited partner profiles (see
+// stays in Coach Chat and unlimited partner profiles (see
 // PARTNER_PROFILE_LIMITS) — Practice itself is just "good" starting at Pro.
 function modelForPractice(plan) {
   return plan === "free" ? STANDARD_MODEL : PREMIUM_MODEL;
@@ -434,9 +429,8 @@ What never bends:
 // `partner` is optional — the specific partner profile this Coach Chat
 // conversation has been tagged to (conv.aboutPartnerId, set via the
 // coach-tag-bar in chat.js / PATCH /api/conversations/:id), when one is
-// set. Reuses buildPartnerContextBlock, the same partner-context block
-// Message Coach already builds, so the coach's advice is grounded in the
-// actual person being discussed — their real traits, attachment style, and
+// set. Reuses buildPartnerContextBlock so the coach's advice is grounded in
+// the actual person being discussed — their real traits, attachment style, and
 // whatever RelateIQ has learned about them — instead of staying generic
 // about "a partner." This is the single biggest lever for making Coach
 // Chat feel personalized rather than templated: a human coach who already
@@ -641,68 +635,12 @@ ${trimmed.slice(0, 600)}
     .slice(0, 50);
 }
 
-const MESSAGE_COACH_SYSTEM_PROMPT = `You help people rewrite a draft message before they send it to their partner, so it lands better — clearer and calmer, less likely to trigger defensiveness — while keeping their real meaning and intent intact. Ground the rewrite in Nonviolent Communication and the Gottman Method: replace criticism/contempt with "I" statements and specific requests, and soften blame without erasing the user's actual feelings.
-
-You may be given a draft message to rewrite, or recent messages from the conversation (a transcript, oldest first, each line labeled "Them:" or "Me:"), or both. You may also be given a profile of the specific partner this message is for (their traits, attachment style, and/or things RelateIQ has learned about how they communicate) — when given, use it to actually shape the rewrite and advice, not just as background color: word it in a way that's more likely to land well with THIS specific person given how they tend to react, and let "insight" draw directly on what's known about them.
-
-- If a draft is given: rewrite THAT draft. Use the transcript (if given) only to understand tone and context, not to change what the user is trying to say.
-- If NO draft is given but a transcript is: the user hasn't written anything yet and wants a suggestion for what to send next. Read the transcript and propose one natural, appropriate reply to the other person's most recent message, written as if it were the user's own words in their voice. Put that proposed reply in "rewrite" exactly as you would a rewritten draft.
-
-Never diagnose, moralize, or lecture. If the draft or transcript describes abuse directed at the user, gently note that in "why" and suggest professional support instead of just rewriting it.
-
-Always write every field in the same language as the draft message (or, if none was given, the same language as the transcript) — detect it automatically, the same way ChatGPT does, without asking or mentioning it.
-
-Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"rewrite": "<the rewritten or proposed message only, ready to send — no labels, no quotes around it, no explanation mixed in>", "why": "<2-4 short plain-text sentences explaining what changed and why, or why you proposed this reply, no bullet points>", "insight": "<1-3 short plain-text sentences of real strategic advice about the underlying situation — what's likely actually going on beneath this message, a dynamic or pattern worth naming, or what to realistically expect/watch for when this lands — genuine relationship coaching, not just a note about wording. Empty string only if there's truly nothing more useful to add beyond the rewrite itself.>"}`;
-
-// Suggests 2-3 short, distinct reply options based on a recent chat
-// transcript alone (no draft) — powers the browser extension's automatic
-// "smart reply" chips, which appear near the compose box on WhatsApp
-// Web / Messenger / Instagram DMs after the other person sends a message.
-// Kept as a separate prompt/endpoint from message-coach (which always
-// returns exactly one rewrite) since chips need several short options at
-// once, in a lighter, more scannable style than a full coached message.
-const CHAT_SUGGEST_SYSTEM_PROMPT = `You suggest short, natural reply options for someone in the middle of a real conversation with their partner, based on the recent messages of that conversation (a transcript, oldest first, each line labeled "Them:" or "Me:").
-
-Propose 2 to 3 DIFFERENT short replies to the other person's most recent message — different in substance or tone (e.g. one warmer/more affirming, one that asks a clarifying question, one that sets a boundary or names a need), not just reworded versions of each other. Each should be something the user could tap and send as-is, in their own natural voice — casual chat length, not an essay. Ground them in Nonviolent Communication and the Gottman Method where relevant, but don't make every option sound therapy-speak — at least one should just be a normal, warm, everyday reply.
-
-Never diagnose, moralize, or lecture. If the transcript describes abuse directed at the user, respond with just ONE suggestion that gently acknowledges it and suggests reaching out to a trusted person or professional, instead of proposing casual replies.
-
-Write every suggestion in the same language as the transcript — detect it automatically, without asking or mentioning it.
-
-Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"suggestions": ["<first reply option, ready to send>", "<second reply option, ready to send>"]}`;
-
-// Turns the extension's [{from:"me"|"them", text}] transcript array into the
-// compact "Them: ...\nMe: ..." text block both prompts above expect. Shared
-// by /api/message-coach (when called with `messages` instead of/alongside a
-// draft) and /api/message-coach/suggestions. Trims to the last N messages
-// and caps each message's length so a very long conversation or a hostile
-// payload can't blow up the prompt (or the OpenAI bill).
-const CHAT_TRANSCRIPT_MAX_MESSAGES = 16;
-const CHAT_TRANSCRIPT_MAX_CHARS_PER_MESSAGE = 600;
-
-function buildChatTranscript(messages) {
-  if (!Array.isArray(messages)) return "";
-  const trimmed = messages.slice(-CHAT_TRANSCRIPT_MAX_MESSAGES);
-  return trimmed
-    .map((m) => {
-      const from = m && m.from === "me" ? "Me" : "Them";
-      const text = String((m && m.text) || "")
-        .trim()
-        .slice(0, CHAT_TRANSCRIPT_MAX_CHARS_PER_MESSAGE);
-      return text ? `${from}: ${text}` : null;
-    })
-    .filter(Boolean)
-    .join("\n");
-}
-
 // ---------------------------------------------------------------------------
 // Safety net — a small, separate, cheap classifier call (not the main
 // coaching model) that checks whether a message describes the user's own
 // real self-harm risk or an abusive/unsafe relationship, and if so attaches
 // a fixed, hand-verified set of real crisis resources to the response. Kept
-// deliberately separate from COACH_SYSTEM_PROMPT/MESSAGE_COACH_SYSTEM_PROMPT
+// deliberately separate from COACH_SYSTEM_PROMPT
 // (which already ask the main model to respond gently to this kind of
 // disclosure) because relying on the coaching model alone means the actual
 // phone numbers/links depend on the model remembering them correctly every
@@ -1487,8 +1425,6 @@ function publicUser(user) {
     attachments: user.plan === "free" ? { used: user.lifetimeAttachmentCount || 0, limit: FREE_LIFETIME_ATTACHMENT_LIMIT } : null,
     practiceConversations:
       user.plan === "free" ? { used: user.lifetimePracticeConversations || 0, limit: FREE_LIFETIME_PRACTICE_CONVERSATIONS } : null,
-    messageCoachUses:
-      user.plan === "free" ? { used: user.lifetimeMessageCoachUses || 0, limit: FREE_LIFETIME_MESSAGE_COACH_USES } : null,
     isAdmin: (process.env.ADMIN_EMAILS || "")
       .split(",")
       .map((e) => e.trim().toLowerCase())
@@ -1584,24 +1520,6 @@ function bumpFreeUsage(user) {
   const today = todayKey();
   incrementUserUsage(user.id, today);
   user.usage = { date: today, count: (user.usage?.date === today ? user.usage.count : 0) + 1 };
-}
-
-// Message Coach (paste a draft, or open a conversation and ask for a
-// proposed reply) is a Free-plan lifetime allowance, separate from and much
-// smaller than the daily AI-message pool above. This is the "send a
-// screenshot of your argument, see what RelateIQ suggests" moment — the
-// feature most likely to make someone want to keep using this, so Free
-// gets a real taste of it before the upgrade prompt.
-function isOverMessageCoachLifetimeLimit(user, res) {
-  if (user.plan !== "free") return false;
-  if ((user.lifetimeMessageCoachUses || 0) >= FREE_LIFETIME_MESSAGE_COACH_USES) {
-    res.status(403).json({
-      error: `You've used all ${FREE_LIFETIME_MESSAGE_COACH_USES} free Message Coach uses included in the Free plan. Upgrade to Pro for unlimited use.`,
-      upgradeRequired: true,
-    });
-    return true;
-  }
-  return false;
 }
 
 // ---------------------------------------------------------------------------
@@ -1776,7 +1694,6 @@ app.post("/api/auth/register", authRateLimit, (req, res) => {
       emailWeeklyDigest: true,
       lifetimeAttachmentCount: 0,
       lifetimePracticeConversations: 0,
-      lifetimeMessageCoachUses: 0,
     };
 
     saveUser(user);
@@ -2975,15 +2892,11 @@ async function generateInsightsForDigest(user, coachConversations) {
   return { patterns, note };
 }
 
-// ---------------------------------------------------------------------------
-// Message Coach — one-off rewrite tool, not tied to a saved conversation
-// ---------------------------------------------------------------------------
-
-// Turns a partner profile into a plain descriptive block for the Message
-// Coach prompt (as opposed to buildPartnerSystemPrompt, which turns one
-// into ROLEPLAY instructions for Partner Practice) — traits, attachment
-// behavior, and anything RelateIQ has learned, so the rewrite and "insight"
-// can actually be shaped around this specific person instead of staying
+// Turns a partner profile into a plain descriptive block for the Coach Chat
+// prompt (as opposed to buildPartnerSystemPrompt, which turns one into
+// ROLEPLAY instructions for Partner Practice) — traits, attachment
+// behavior, and anything RelateIQ has learned, so the coaching advice can
+// actually be shaped around this specific person instead of staying
 // generic. Returns "" when the partner has nothing usable yet, so the
 // caller can omit the section entirely rather than send an empty one.
 function buildPartnerContextBlock(partner) {
@@ -2997,218 +2910,6 @@ function buildPartnerContextBlock(partner) {
   if (partner.learnedVoice) parts.push(`How they specifically tend to phrase things: ${partner.learnedVoice}`);
   return parts.length ? parts.join("\n") : "";
 }
-
-app.post("/api/message-coach", authMiddleware, async (req, res) => {
-  try {
-    const { draft, context, messages, partnerProfileId } = req.body || {};
-    const trimmedDraft = String(draft || "").trim();
-    const transcript = buildChatTranscript(messages);
-
-    // Either a draft to rewrite, or a chat transcript to propose a reply
-    // from, is required — both empty means there's nothing to work with.
-    if (!trimmedDraft && !transcript) {
-      return res.status(400).json({ error: "Paste a message, or open a conversation with a few messages in it, to get feedback." });
-    }
-
-    const db = req.db;
-    const user = db.users.find((u) => u.id === req.user.id);
-    if (isOverDailyLimit(user, res)) return;
-    if (isOverMessageCoachLifetimeLimit(user, res)) return;
-
-    // Optional — the user picks which partner profile this message is
-    // about (see buildPartnerContextBlock above) so the rewrite and
-    // "insight" are shaped around this specific person instead of staying
-    // generic. Silently ignored (not an error) if the id doesn't match one
-    // of the user's own partner profiles.
-    const partner = partnerProfileId
-      ? db.partnerProfiles.find((p) => p.id === partnerProfileId && p.userId === req.user.id)
-      : null;
-    const partnerBlock = buildPartnerContextBlock(partner);
-
-    const contextBlock = [String(context || "").trim(), transcript].filter(Boolean).join("\n\n") || "(none given)";
-    const userContent = [
-      partnerBlock ? `About the partner this message is for (use this to shape the advice):\n${partnerBlock}` : "",
-      trimmedDraft
-        ? `Context (optional, may be empty):\n${contextBlock}\n\nDraft message:\n"""${trimmedDraft}"""`
-        : `No draft was written yet. Propose a reply based on this conversation so far:\n${contextBlock}`,
-    ]
-      .filter(Boolean)
-      .join("\n\n");
-
-    const [completion, safety] = await Promise.all([
-      openai.chat.completions.create({
-        model: modelForPlan(user.plan),
-        messages: [
-          { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
-          { role: "user", content: userContent },
-        ],
-        temperature: 0.7,
-        response_format: { type: "json_object" },
-      }),
-      assessSafety([trimmedDraft, transcript].filter(Boolean).join("\n")),
-    ]);
-
-    // Structured JSON (rather than a labeled-text block) so callers — the
-    // website, and the browser extension's WhatsApp/Messenger integration —
-    // can reliably pull out just the rewrite to use, in any language,
-    // without parsing labels that themselves get translated.
-    let parsed = {};
-    try {
-      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    } catch (err) {
-      parsed = {};
-    }
-    const rewrite = String(parsed.rewrite || "").trim();
-    const why = String(parsed.why || "").trim();
-    const insight = String(parsed.insight || "").trim();
-
-    if (!rewrite) {
-      return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
-    }
-
-    if (user.plan === "free") {
-      bumpFreeUsage(user);
-      incrementUserColumn(user.id, "lifetimeMessageCoachUses", 1);
-    }
-
-    res.json({ rewrite, why, insight, usage: user.usage, safety: safetyBlockFor(safety) });
-  } catch (err) {
-    console.error("Message coach error:", err.message);
-    res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
-  }
-});
-
-// Powers the browser extension's automatic "smart reply" chips: given the
-// last few messages of a WhatsApp/Messenger/Instagram conversation, returns
-// 2-3 short, distinct reply options the user can tap to insert (never
-// auto-sent). Deliberately its own endpoint rather than a mode of
-// /api/message-coach above, since it always returns several short options
-// instead of one full rewrite. Shares the same free-plan daily cap —
-// counted as ordinary AI usage, same as any other coaching call.
-app.post("/api/message-coach/suggestions", authMiddleware, async (req, res) => {
-  try {
-    const { messages } = req.body || {};
-    const transcript = buildChatTranscript(messages);
-    if (!transcript) {
-      return res.status(400).json({ error: "No conversation messages were given to suggest a reply from." });
-    }
-
-    const db = req.db;
-    const user = db.users.find((u) => u.id === req.user.id);
-    if (isOverDailyLimit(user, res)) return;
-
-    const completion = await openai.chat.completions.create({
-      model: modelForPlan(user.plan),
-      messages: [
-        { role: "system", content: CHAT_SUGGEST_SYSTEM_PROMPT },
-        { role: "user", content: `Conversation so far:\n${transcript}` },
-      ],
-      temperature: 0.85,
-      response_format: { type: "json_object" },
-    });
-
-    let parsed = {};
-    try {
-      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    } catch (err) {
-      parsed = {};
-    }
-    const suggestions = Array.isArray(parsed.suggestions)
-      ? parsed.suggestions.map((s) => String(s || "").trim()).filter(Boolean).slice(0, 3)
-      : [];
-
-    if (!suggestions.length) {
-      return res.status(500).json({ error: "Couldn't come up with suggestions right now. Please try again." });
-    }
-
-    if (user.plan === "free") bumpFreeUsage(user);
-
-    res.json({ suggestions, usage: user.usage });
-  } catch (err) {
-    console.error("Chat suggestions error:", err.message);
-    res.status(500).json({ error: "Couldn't get suggestions right now. Please try again." });
-  }
-});
-
-// ---------------------------------------------------------------------------
-// Public Message Coach demo — no login required, lets a visitor try the
-// rewrite on the landing page itself before signing up. Rate-limited per IP
-// (in memory — resets on redeploy/restart, which is fine for a demo) rather
-// than per account, since there's no account yet. Kept deliberately separate
-// from /api/message-coach above rather than sharing a helper, so tightening
-// or removing this public route later can never accidentally affect the
-// authenticated one.
-// ---------------------------------------------------------------------------
-
-const DEMO_DAILY_LIMIT = 3;
-const DEMO_MAX_CHARS = 400;
-const demoUsageByIp = new Map(); // ip -> { date: "YYYY-MM-DD", count }
-
-function demoUsageToday(ip) {
-  const today = new Date().toISOString().slice(0, 10);
-  const entry = demoUsageByIp.get(ip);
-  if (!entry || entry.date !== today) return 0;
-  return entry.count;
-}
-
-function recordDemoUsage(ip) {
-  const today = new Date().toISOString().slice(0, 10);
-  const entry = demoUsageByIp.get(ip);
-  const count = entry && entry.date === today ? entry.count + 1 : 1;
-  demoUsageByIp.set(ip, { date: today, count });
-  return count;
-}
-
-app.post("/api/public/message-coach-demo", async (req, res) => {
-  try {
-    const ip = req.ip || "unknown";
-    const usedSoFar = demoUsageToday(ip);
-    if (usedSoFar >= DEMO_DAILY_LIMIT) {
-      return res.status(429).json({
-        error: "You've used all 3 free demo rewrites for today. Create a free account for 8 a day, every day.",
-        limitReached: true,
-      });
-    }
-
-    const draft = String((req.body || {}).draft || "").trim();
-    if (!draft) {
-      return res.status(400).json({ error: "Paste a message to get feedback on." });
-    }
-    if (draft.length > DEMO_MAX_CHARS) {
-      return res.status(400).json({ error: `Keep the demo message under ${DEMO_MAX_CHARS} characters — the full app has no limit.` });
-    }
-
-    const completion = await openai.chat.completions.create({
-      model: STANDARD_MODEL,
-      messages: [
-        { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
-        { role: "user", content: `Context (optional, may be empty): (none given)\n\nDraft message:\n"""${draft}"""` },
-      ],
-      temperature: 0.7,
-      response_format: { type: "json_object" },
-    });
-
-    let parsed = {};
-    try {
-      parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    } catch (err) {
-      parsed = {};
-    }
-    const rewrite = String(parsed.rewrite || "").trim();
-    const why = String(parsed.why || "").trim();
-    const insight = String(parsed.insight || "").trim();
-
-    if (!rewrite) {
-      return res.status(500).json({ error: "Couldn't generate a rewrite right now. Please try again." });
-    }
-
-    const usedNow = recordDemoUsage(ip);
-    res.json({ rewrite, why, insight, remaining: Math.max(0, DEMO_DAILY_LIMIT - usedNow) });
-  } catch (err) {
-    console.error("Message coach demo error:", err.message);
-    res.status(500).json({ error: "Couldn't get feedback right now. Please try again." });
-  }
-});
 
 // ---------------------------------------------------------------------------
 // Attachment style quiz — scored client-side, optional, just saves the result

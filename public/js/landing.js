@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initScrollReveal();
   initFloatingCta();
-  initHeroDemo();
-  wireVoiceInput(document.getElementById("hero-demo-mic-btn"), document.getElementById("hero-demo-input"));
 });
 
 // Fades individual cards/rows in as they scroll into view. Progressive
@@ -103,93 +101,3 @@ function initFloatingCta() {
   update();
 }
 
-// Lets a visitor try Message Coach right on the landing page, no account
-// needed. Talks to the public, per-IP-rate-limited demo endpoint (see
-// /api/public/message-coach-demo in server.js) — deliberately plain fetch()
-// rather than authFetch, since this must work identically whether or not
-// the visitor is logged in, and must never trigger the logged-out redirect
-// authFetch does on a 401 (this endpoint never returns one).
-let heroDemoInFlight = false;
-
-function initHeroDemo() {
-  const btn = document.getElementById("hero-demo-btn");
-  const input = document.getElementById("hero-demo-input");
-  const resultBox = document.getElementById("hero-demo-result");
-  const errorBox = document.getElementById("hero-demo-error");
-  const note = document.getElementById("hero-demo-note");
-  if (!btn || !input || !resultBox) return;
-
-  autoGrowTextarea(input, 240);
-
-  btn.addEventListener("click", async () => {
-    if (heroDemoInFlight) return;
-
-    const draft = input.value.trim();
-    errorBox.style.display = "none";
-
-    if (!draft) {
-      errorBox.textContent = "Paste a message first.";
-      errorBox.style.display = "block";
-      return;
-    }
-
-    heroDemoInFlight = true;
-    const originalLabel = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = "Rewriting…";
-    resultBox.innerHTML = '<span class="placeholder">Thinking about the best way to say this…</span>';
-
-    try {
-      const res = await fetch("/api/public/message-coach-demo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ draft }),
-      });
-      const data = await safeJson(res);
-
-      if (!res.ok || !data.rewrite) {
-        resultBox.innerHTML = '<span class="placeholder">Click "Rewrite it" to see the difference.</span>';
-        errorBox.textContent = data.error || "Something went wrong. Please try again.";
-        errorBox.style.display = "block";
-        if (data.limitReached && note) {
-          note.textContent = "Out of free demo rewrites for today — create a free account for 8 a day, every day.";
-        }
-        return;
-      }
-
-      resultBox.innerHTML = "";
-
-      const rewriteEl = document.createElement("div");
-      rewriteEl.className = "coach-rewrite";
-      rewriteEl.textContent = data.rewrite;
-      resultBox.appendChild(rewriteEl);
-
-      if (data.why) {
-        const whyLabel = document.createElement("div");
-        whyLabel.className = "coach-why-label";
-        whyLabel.textContent = "Why this works better";
-        resultBox.appendChild(whyLabel);
-
-        const whyEl = document.createElement("p");
-        whyEl.className = "coach-why";
-        whyEl.textContent = data.why;
-        resultBox.appendChild(whyEl);
-      }
-
-      if (note && typeof data.remaining === "number") {
-        note.textContent =
-          data.remaining > 0
-            ? `${data.remaining} free demo rewrite${data.remaining === 1 ? "" : "s"} left today. The full app gives you 8 a day, free.`
-            : "That was your last free demo rewrite for today — create a free account for 8 a day, every day.";
-      }
-    } catch (err) {
-      resultBox.innerHTML = '<span class="placeholder">Click "Rewrite it" to see the difference.</span>';
-      errorBox.textContent = "Couldn't connect to the server.";
-      errorBox.style.display = "block";
-    } finally {
-      heroDemoInFlight = false;
-      btn.disabled = false;
-      btn.textContent = originalLabel;
-    }
-  });
-}

@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   wireVoiceInput(document.getElementById("mic-btn"), document.getElementById("input"));
 
   // Only the real mode tabs (Coach/Practice) switch mode in-page — the
-  // Message Coach / Attachment Quiz tabs are plain links to their own pages
+  // Attachment Quiz / Insights tabs are plain links to their own pages
   // (no data-mode), so they're excluded here and just navigate normally.
   document.querySelectorAll(".mode-tab[data-mode]").forEach((tab) => {
     tab.addEventListener("click", () => {

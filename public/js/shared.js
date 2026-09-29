@@ -318,8 +318,8 @@ async function safeJson(res) {
 
 // Makes a <textarea> grow taller as its content grows, instead of scrolling
 // inside a fixed box — used on every free-text field across the app (the
-// chat composer, Message Coach's draft box, a share note, a partner's
-// traits, pasted messages, the daily check-in). Caps out at maxHeight and
+// chat composer, a share note, a partner's traits, pasted messages, the
+// daily check-in). Caps out at maxHeight and
 // switches to a normal internal scrollbar past that point, so one very long
 // paste can't push the rest of the page out of reach. Pairs with
 // `resize: none` in CSS on these fields — a manual drag-resize handle would
