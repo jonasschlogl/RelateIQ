@@ -14,6 +14,7 @@ let currentConvHasUserMessage = false; // drives whether the "Export for therapi
 // Attachments (images, screen recordings, other files) picked but not yet sent
 let pendingAttachments = [];
 let composerErrorTimeout = null;
+let practiceSetupErrorTimeout = null;
 // Mirrors MAX_FILES_PER_MESSAGE_BY_PLAN in server.js — keep the two in sync.
 const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
 function maxFilesPerMessage() {
@@ -671,6 +672,8 @@ async function renderPracticeSetup() {
         <p class="text-muted">Pick who you want to practice talking to. The AI will roleplay as them, in character, so you can rehearse before the real thing.</p>
       </div>
 
+      <div class="practice-limit-banner" id="practice-limit-banner" style="display:none;"></div>
+
       <div class="practice-setup-card">
         <div class="practice-setup-field">
           <label class="practice-setup-field-label" for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
@@ -713,6 +716,7 @@ async function renderPracticeSetup() {
 
       <div class="practice-setup-partners">
         <label class="practice-setup-field-label">Who do you want to practice with?</label>
+        <div class="form-error" id="practice-setup-error" style="display:none;"></div>
         <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
         <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
       </div>
@@ -839,8 +843,117 @@ async function renderPracticeSetup() {
     }
   });
 
+  // Rendered immediately from the cached session (no flash of nothing), then
+  // refreshed from the server — the cached count can be stale right after
+  // finishing a rehearsal elsewhere in the same session (POST
+  // /api/conversations doesn't return the updated user object, only the new
+  // conversation), and this screen in particular is exactly where a stale
+  // "1 left" would be misleading right before someone clicks a partner card.
+  renderPracticeLimitBanner(getUser());
+  authFetch("/api/me")
+    .then(safeJson)
+    .then((data) => {
+      if (!data || !data.plan) return;
+      renderPracticeLimitBanner(data);
+      const token = getToken();
+      if (token) setSession(token, data);
+    })
+    .catch(() => {
+      // Non-critical — the banner just stays at whatever the cached plan said.
+    });
+
   await loadPartners();
   renderPartnerList();
+}
+
+// Free-plan-only "N of LIMIT free rehearsals left" banner on the Practice
+// setup screen (task #92) — shown BEFORE anyone picks a partner, so hitting
+// FREE_LIFETIME_PRACTICE_CONVERSATIONS is never a surprise 403 after
+// already filling out a scenario and picking someone to practice with.
+// Pro/Premium have no lifetime cap (practiceConversations is null for
+// them — see publicUser in server.js), so this stays hidden. Once the free
+// rehearsal(s) are used up, this doubles as the primary "upgrade" nudge for
+// Practice mode, right where someone would otherwise hit a dead end.
+function renderPracticeLimitBanner(user) {
+  const banner = document.getElementById("practice-limit-banner");
+  if (!banner) return; // setup screen isn't showing (e.g. this resolved after navigating away)
+
+  const pc = user && user.practiceConversations;
+  if (!user || user.plan !== "free" || !pc) {
+    banner.style.display = "none";
+    return;
+  }
+
+  const remaining = Math.max(0, pc.limit - pc.used);
+  banner.innerHTML = "";
+  banner.classList.toggle("practice-limit-banner-exhausted", remaining <= 0);
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent =
+    remaining > 0
+      ? `🎭 Free plan: ${remaining} of ${pc.limit} practice rehearsal${pc.limit === 1 ? "" : "s"} left.`
+      : `🎭 You've used your free Partner Practice rehearsal${pc.limit === 1 ? "" : "s"}. Upgrade to Pro for unlimited practice.`;
+  banner.appendChild(textSpan);
+
+  if (remaining <= 0) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-gradient btn-sm";
+    btn.textContent = "Upgrade to Pro";
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      btn.textContent = "Redirecting…";
+      startCheckout("pro").finally(() => {
+        btn.disabled = false;
+        btn.textContent = "Upgrade to Pro";
+      });
+    });
+    banner.appendChild(btn);
+  }
+
+  banner.style.display = "flex";
+}
+
+// Inline error for the Practice setup screen (task #92) — same visual shape
+// as showComposerError (text + an optional "Upgrade to Pro" button for a
+// plan-limit rejection), but composer-error's element lives inside
+// #input-area, which is hidden (showComposer(false)) while this screen is
+// showing, so composer-error itself is invisible here. This targets its own
+// #practice-setup-error instead, so the free-limit rejection from clicking
+// a partner card actually reaches the person instead of the old bare
+// alert().
+function showPracticeSetupError(msg, opts) {
+  const el = document.getElementById("practice-setup-error");
+  if (!el) return;
+  el.innerHTML = "";
+  el.classList.toggle("form-error-with-action", !!(opts && opts.upgradeRequired));
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent = msg;
+  el.appendChild(textSpan);
+
+  clearTimeout(practiceSetupErrorTimeout);
+  el.style.display = opts && opts.upgradeRequired ? "flex" : "block";
+
+  if (opts && opts.upgradeRequired) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-gradient btn-sm";
+    btn.textContent = "Upgrade to Pro";
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      btn.textContent = "Redirecting…";
+      startCheckout("pro").finally(() => {
+        btn.disabled = false;
+        btn.textContent = "Upgrade to Pro";
+      });
+    });
+    el.appendChild(btn);
+  } else {
+    practiceSetupErrorTimeout = setTimeout(() => {
+      el.style.display = "none";
+    }, 4500);
+  }
 }
 
 async function deletePartnerAction(p) {
@@ -1109,10 +1222,16 @@ async function selectPartnerAndStart(partnerId) {
     const roleSwap = !!document.getElementById("practice-role-swap")?.checked;
     const result = await startPracticeConversation({ partnerProfileId: partnerId, scenario, intensity, roleSwap });
     if (!result.ok) {
-      alert(result.error || "Couldn't start that practice conversation.");
+      // Most commonly the free-plan lifetime-practice limit (see
+      // FREE_LIFETIME_PRACTICE_CONVERSATIONS in server.js) — the banner
+      // above the partner list already warns about this ahead of time (see
+      // renderPracticeLimitBanner), this is the graceful catch for anyone
+      // who clicks anyway (or hit the limit via a rehearsal in another tab).
+      showPracticeSetupError(result.error || "Couldn't start that practice conversation.", { upgradeRequired: result.upgradeRequired });
     }
   } catch (err) {
     console.error(err);
+    showPracticeSetupError("Couldn't connect to the server.");
   }
 }
 

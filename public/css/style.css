@@ -1961,6 +1961,38 @@ section {
   margin: 0 auto;
 }
 
+/* Free-plan lifetime-rehearsal counter on the Practice setup screen (task
+   #92) — see renderPracticeLimitBanner in chat.js. Neutral/informational
+   while rehearsals remain; the .practice-limit-banner-exhausted modifier
+   (once used up) borrows the same danger-toned look as .form-error so the
+   "you're out, upgrade to Pro" state reads as clearly as any other blocked
+   action, with its Upgrade button laid out the same way as
+   .form-error-with-action. */
+.practice-limit-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.practice-limit-banner.practice-limit-banner-exhausted {
+  background: var(--danger-bg);
+  border-color: rgba(193, 101, 90, 0.35);
+  color: var(--danger-text);
+}
+
+.practice-limit-banner .btn {
+  flex-shrink: 0;
+}
+
 .partner-list {
   display: flex;
   flex-direction: column;
