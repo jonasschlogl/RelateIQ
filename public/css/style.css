@@ -3968,6 +3968,20 @@ body.js-reveal .reveal-item.revealed {
   margin-top: 22px;
 }
 
+/* showAppAlert/showAppConfirm (task #94, shared.js) — built on the same
+   .modal-overlay/.modal-card as everything else, just narrower (these are
+   one short sentence, not a whole preview) and without a heading. */
+.dialog-card {
+  max-width: 420px;
+}
+
+.dialog-message {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+}
+
 .conversation-pick-list {
   display: flex;
   flex-direction: column;

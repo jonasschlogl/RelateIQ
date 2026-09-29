@@ -105,12 +105,12 @@ async function createShare() {
     });
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || "Couldn't create a share.");
+      await showAppAlert(data.error || "Couldn't create a share.");
       return;
     }
     openDetail(data);
   } catch (e) {
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   }
 }
 
@@ -246,29 +246,30 @@ async function toggleRevoke() {
     });
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || "Couldn't update that share.");
+      await showAppAlert(data.error || "Couldn't update that share.");
       return;
     }
     currentShare = data;
     renderDetail();
   } catch (e) {
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   }
 }
 
 async function deleteShare() {
   if (!currentShare) return;
-  if (!confirm("Delete this share? The link will stop working immediately.")) return;
+  const ok = await showAppConfirm("Delete this share? The link will stop working immediately.", { confirmLabel: "Delete", danger: true });
+  if (!ok) return;
   try {
     const res = await authFetch(`/api/shares/${currentShare.id}`, { method: "DELETE" });
     if (res.ok) {
       showListView();
     } else {
       const data = await safeJson(res);
-      alert(data.error || "Couldn't delete that share.");
+      await showAppAlert(data.error || "Couldn't delete that share.");
     }
   } catch (e) {
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   }
 }
 
@@ -281,7 +282,7 @@ async function copyLink() {
     btn.textContent = "Copied!";
     setTimeout(() => (btn.textContent = "Copy link"), 1500);
   } catch (e) {
-    alert("Couldn't copy automatically — select the link text above and copy it manually.");
+    await showAppAlert("Couldn't copy automatically — select the link text above and copy it manually.");
   }
 }
 
@@ -450,7 +451,7 @@ async function confirmShareConversation(conversationId) {
     });
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || "Couldn't add that conversation.");
+      await showAppAlert(data.error || "Couldn't add that conversation.");
       if (confirmBtn) {
         confirmBtn.disabled = false;
         confirmBtn.textContent = "Share this conversation";
@@ -461,7 +462,7 @@ async function confirmShareConversation(conversationId) {
     closeConversationModal();
     renderDetail();
   } catch (e) {
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
     if (confirmBtn) {
       confirmBtn.disabled = false;
       confirmBtn.textContent = "Share this conversation";

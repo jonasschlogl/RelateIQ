@@ -1,5 +1,109 @@
 // Shared helpers used across every page: session storage, auth-aware fetch.
 
+// ---------------------------------------------------------------------------
+// Custom alert()/confirm() dialogs (task #94) — used in place of the native
+// window.alert()/window.confirm() everywhere in the app. The native
+// dialogs block the whole tab, can't be styled to match the rest of the
+// UI, and are silently suppressed by some mobile/embedded browsers (so a
+// real error can vanish with no sign anything went wrong). These build the
+// same "one message, one or two buttons" interaction with the existing
+// .modal-overlay/.modal-card markup (already used by chat.js's share
+// modal) — created fresh on demand, so any page can call them without
+// needing the modal HTML already present in its own markup.
+// ---------------------------------------------------------------------------
+
+function openDialogModal(bodyHtml, onMount) {
+  const overlay = document.createElement("div");
+  overlay.className = "modal-overlay dialog-overlay";
+  const card = document.createElement("div");
+  card.className = "modal-card dialog-card";
+  card.innerHTML = bodyHtml;
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+  if (onMount) onMount(card);
+  return overlay;
+}
+
+// Promise-based replacement for window.alert(message) — resolves once
+// dismissed (the OK button, Escape/Enter, or clicking outside the card).
+// Always `await` this (or otherwise wait on the returned promise) so
+// whatever runs next stays in the right order — unlike window.alert(), this
+// does NOT block the rest of the script.
+function showAppAlert(message) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const overlay = openDialogModal(
+      '<p class="dialog-message"></p><div class="modal-close-row"><button type="button" class="btn btn-gradient btn-sm" id="dialog-ok-btn">OK</button></div>',
+      (card) => {
+        card.querySelector(".dialog-message").textContent = message;
+      }
+    );
+
+    function close() {
+      if (settled) return;
+      settled = true;
+      document.removeEventListener("keydown", onKeydown);
+      overlay.remove();
+      resolve();
+    }
+    function onKeydown(e) {
+      if (e.key === "Escape" || e.key === "Enter") close();
+    }
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close();
+    });
+    overlay.querySelector("#dialog-ok-btn").addEventListener("click", close);
+    document.addEventListener("keydown", onKeydown);
+    overlay.querySelector("#dialog-ok-btn").focus();
+  });
+}
+
+// Promise<boolean> replacement for window.confirm(message) — resolves true
+// on confirm, false on cancel/Escape/outside-click. opts: { confirmLabel,
+// cancelLabel, danger } — danger swaps the confirm button to the same
+// destructive/red .btn-danger styling the app already uses for "Delete my
+// account", for a "Delete…" prompt. `await` the result the same way you
+// would the return value of window.confirm().
+function showAppConfirm(message, opts) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const confirmLabel = (opts && opts.confirmLabel) || "OK";
+    const cancelLabel = (opts && opts.cancelLabel) || "Cancel";
+    const confirmClass = opts && opts.danger ? "btn btn-danger btn-sm" : "btn btn-gradient btn-sm";
+    const overlay = openDialogModal(
+      `<p class="dialog-message"></p>
+       <div class="modal-close-row">
+         <button type="button" class="btn btn-ghost btn-sm" id="dialog-cancel-btn"></button>
+         <button type="button" class="${confirmClass}" id="dialog-confirm-btn"></button>
+       </div>`,
+      (card) => {
+        card.querySelector(".dialog-message").textContent = message;
+        card.querySelector("#dialog-cancel-btn").textContent = cancelLabel;
+        card.querySelector("#dialog-confirm-btn").textContent = confirmLabel;
+      }
+    );
+
+    function close(result) {
+      if (settled) return;
+      settled = true;
+      document.removeEventListener("keydown", onKeydown);
+      overlay.remove();
+      resolve(result);
+    }
+    function onKeydown(e) {
+      if (e.key === "Escape") close(false);
+      if (e.key === "Enter") close(true);
+    }
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close(false);
+    });
+    overlay.querySelector("#dialog-cancel-btn").addEventListener("click", () => close(false));
+    overlay.querySelector("#dialog-confirm-btn").addEventListener("click", () => close(true));
+    document.addEventListener("keydown", onKeydown);
+    overlay.querySelector("#dialog-confirm-btn").focus();
+  });
+}
+
 function getToken() {
   try {
     return localStorage.getItem("relateiq_token");
@@ -95,7 +199,7 @@ async function startCheckout(plan) {
     });
     const data = await safeJson(res);
     if (!res.ok || !data.url) {
-      alert(data.error || "Couldn't start checkout. Please try again.");
+      await showAppAlert(data.error || "Couldn't start checkout. Please try again.");
       return;
     }
     window.location.href = data.url;
@@ -111,7 +215,7 @@ async function openBillingPortal() {
     const res = await authFetch("/api/billing/portal", { method: "POST" });
     const data = await safeJson(res);
     if (!res.ok || !data.url) {
-      alert(data.error || "Couldn't open billing. Please try again.");
+      await showAppAlert(data.error || "Couldn't open billing. Please try again.");
       return;
     }
     window.location.href = data.url;

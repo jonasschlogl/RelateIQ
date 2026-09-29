@@ -581,13 +581,14 @@ function renderHistory() {
 async function deleteConversation(id) {
   const target = conversations.find((c) => c.id === id);
   const label = target?.title ? `"${target.title}"` : "this conversation";
-  if (!confirm(`Delete ${label}? This can't be undone.`)) return;
+  const ok = await showAppConfirm(`Delete ${label}? This can't be undone.`, { confirmLabel: "Delete", danger: true });
+  if (!ok) return;
 
   try {
     const res = await authFetch("/api/conversations/" + encodeURIComponent(id), { method: "DELETE" });
     if (!res.ok) {
       const data = await safeJson(res);
-      alert(data.error || "Couldn't delete that conversation.");
+      await showAppAlert(data.error || "Couldn't delete that conversation.");
       return;
     }
 
@@ -609,7 +610,7 @@ async function deleteConversation(id) {
     }
   } catch (err) {
     console.error(err);
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   }
 }
 
@@ -957,18 +958,22 @@ function showPracticeSetupError(msg, opts) {
 }
 
 async function deletePartnerAction(p) {
-  if (!confirm(`Delete ${p.name}'s profile? This can't be undone, and any practice conversations you had with them will lose their partner context.`)) return;
+  const ok = await showAppConfirm(
+    `Delete ${p.name}'s profile? This can't be undone, and any practice conversations you had with them will lose their partner context.`,
+    { confirmLabel: "Delete", danger: true }
+  );
+  if (!ok) return;
   try {
     const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}`, { method: "DELETE" });
     if (!res.ok) {
       const data = await safeJson(res);
-      alert(data.error || "Couldn't delete that partner profile.");
+      await showAppAlert(data.error || "Couldn't delete that partner profile.");
       return;
     }
     partners = partners.filter((x) => x.id !== p.id);
     renderPartnerList();
   } catch (err) {
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   }
 }
 
@@ -1089,7 +1094,11 @@ function buildPartnerLearnRow(p) {
     const resetBtn = info.querySelector(".partner-learn-reset");
     resetBtn.addEventListener("click", async (e) => {
       e.stopPropagation();
-      if (!confirm(`Forget what RelateIQ has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`)) return;
+      const ok = await showAppConfirm(
+        `Forget what RelateIQ has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`,
+        { confirmLabel: "Forget it", danger: true }
+      );
+      if (!ok) return;
       try {
         const res = await authFetch(`/api/partners/${encodeURIComponent(p.id)}`, {
           method: "PATCH",
@@ -1097,14 +1106,14 @@ function buildPartnerLearnRow(p) {
         });
         const updated = await safeJson(res);
         if (!res.ok) {
-          alert(updated.error || "Couldn't reset that right now.");
+          await showAppAlert(updated.error || "Couldn't reset that right now.");
           return;
         }
         const idx = partners.findIndex((x) => x.id === updated.id);
         if (idx !== -1) partners[idx] = updated;
         renderPartnerList();
       } catch (err) {
-        alert("Couldn't connect to the server.");
+        await showAppAlert("Couldn't connect to the server.");
       }
     });
   }
@@ -1691,7 +1700,7 @@ async function requestPracticeDebrief() {
     });
     const data = await safeJson(res);
     if (!res.ok) {
-      alert(data.error || "Couldn't generate a debrief right now.");
+      await showAppAlert(data.error || "Couldn't generate a debrief right now.");
       return;
     }
     // Captured now, not read live from currentConvCtx inside the card's
@@ -1703,7 +1712,7 @@ async function requestPracticeDebrief() {
     appendPracticeDebrief(data, currentConvCtx);
   } catch (err) {
     console.error(err);
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   } finally {
     isFetchingDebrief = false;
     if (btn) {
@@ -1790,7 +1799,7 @@ async function confirmQuickShare(conv) {
 
     renderShareModalLink(updatedShare);
   } catch (err) {
-    alert(err.message || "Couldn't connect to the server.");
+    await showAppAlert(err.message || "Couldn't connect to the server.");
     if (btn) {
       btn.disabled = false;
       btn.textContent = "Get shareable link";

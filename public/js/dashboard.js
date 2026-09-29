@@ -14,7 +14,7 @@ async function downloadMyData() {
     const res = await authFetch("/api/me/export");
     if (!res.ok) {
       const data = await safeJson(res);
-      alert(data.error || "Couldn't prepare your data export right now.");
+      await showAppAlert(data.error || "Couldn't prepare your data export right now.");
       return;
     }
     const blob = await res.blob();
@@ -28,7 +28,7 @@ async function downloadMyData() {
     URL.revokeObjectURL(url);
   } catch (err) {
     console.error(err);
-    alert("Couldn't connect to the server.");
+    await showAppAlert("Couldn't connect to the server.");
   } finally {
     if (btn) {
       btn.disabled = false;
@@ -182,13 +182,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         delBtn.addEventListener("click", async (e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (!confirm(`Delete "${c.title || "this conversation"}"? This can't be undone.`)) return;
+          const ok = await showAppConfirm(`Delete "${c.title || "this conversation"}"? This can't be undone.`, {
+            confirmLabel: "Delete",
+            danger: true,
+          });
+          if (!ok) return;
 
           try {
             const res = await authFetch("/api/conversations/" + encodeURIComponent(c.id), { method: "DELETE" });
             if (!res.ok) {
               const data = await safeJson(res);
-              alert(data.error || "Couldn't delete that conversation.");
+              await showAppAlert(data.error || "Couldn't delete that conversation.");
               return;
             }
             row.remove();
@@ -197,7 +201,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
           } catch (err) {
             console.error(err);
-            alert("Couldn't connect to the server.");
+            await showAppAlert("Couldn't connect to the server.");
           }
         });
         row.appendChild(delBtn);
