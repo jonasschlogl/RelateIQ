@@ -4,6 +4,11 @@ let partners = [];
 let currentMode = "coach"; // 'coach' | 'practice' — mirrors the mode of whatever is on screen
 let currentConvCtx = { mode: "coach", partnerName: null };
 let isSending = false;
+// Set while the person is editing & resending their last Coach Chat message
+// (see startEditLastMessage/cancelEditLastMessage below) — the id of the
+// user message being replaced, or null the rest of the time. Threaded
+// through to the server as editMessageId on the next send.
+let editingMessageId = null;
 let currentConvHasUserMessage = false; // drives whether the "Export for therapist" button shows
 
 // Attachments (images, screen recordings, other files) picked but not yet sent
@@ -37,6 +42,11 @@ let editingPartnerId = null;
 // re-trigger it after pre-filling an existing partner's traits by setting
 // .value directly (which, unlike typing, never fires an "input" event).
 let resizePartnerTraits = () => {};
+// Set once at startup (see DOMContentLoaded) — the resize function
+// autoGrowTextarea returns for the main composer #input, so sendMessage can
+// re-trigger it after restoring a failed send's text by setting .value
+// directly (which never fires a real "input" event on its own).
+let resizeComposerInput = () => {};
 
 // Starter ideas shown when someone clicks "Need an idea?" on the practice
 // setup screen — a lot of people stall on a blank scenario field even
@@ -77,6 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const userLabel = document.getElementById("user-label");
   if (userLabel && user) userLabel.textContent = user.name || user.email;
   renderPlanBadge(user?.plan);
+  renderUsageBadge(user);
   refreshPlanBadge();
 
   const disclaimer = document.getElementById("chat-disclaimer");
@@ -102,6 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     closeSidebarDrawer();
   });
   document.getElementById("send-btn")?.addEventListener("click", sendMessage);
+  document.getElementById("cancel-edit-btn")?.addEventListener("click", cancelEditLastMessage);
 
   // Mobile off-canvas drawer (harmless no-op on desktop, where the sidebar
   // is always visible and .open has no matching CSS rule).
@@ -150,7 +162,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       sendMessage();
     }
   });
-  autoGrowTextarea(input, 140);
+  resizeComposerInput = autoGrowTextarea(input, 140);
 
   // Loaded here (not just inside the Practice setup screen) because Coach
   // Chat also needs to know how many partner profiles exist, to decide
@@ -338,7 +350,13 @@ function formatFileSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
-function showComposerError(msg) {
+// `opts.upgradeRequired` renders a real "Upgrade to Pro" button alongside
+// the message (wired straight to Stripe Checkout via startCheckout, same as
+// the pricing page buttons) and skips the auto-hide timeout — a plan-limit
+// notice needs to stay up long enough to actually be read and acted on, not
+// vanish after 4.5s like a routine validation error (e.g. "paste a message
+// first").
+function showComposerError(msg, opts) {
   let el = document.getElementById("composer-error");
   if (!el) {
     el = document.createElement("div");
@@ -347,12 +365,35 @@ function showComposerError(msg) {
     el.style.margin = "0 0 10px";
     document.getElementById("composer")?.before(el);
   }
-  el.textContent = msg;
-  el.style.display = "block";
+  el.innerHTML = "";
+  el.classList.toggle("form-error-with-action", !!(opts && opts.upgradeRequired));
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent = msg;
+  el.appendChild(textSpan);
+
   clearTimeout(composerErrorTimeout);
-  composerErrorTimeout = setTimeout(() => {
-    el.style.display = "none";
-  }, 4500);
+  el.style.display = opts && opts.upgradeRequired ? "flex" : "block";
+
+  if (opts && opts.upgradeRequired) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-gradient btn-sm";
+    btn.textContent = "Upgrade to Pro";
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      btn.textContent = "Redirecting…";
+      startCheckout("pro").finally(() => {
+        btn.disabled = false;
+        btn.textContent = "Upgrade to Pro";
+      });
+    });
+    el.appendChild(btn);
+  } else {
+    composerErrorTimeout = setTimeout(() => {
+      el.style.display = "none";
+    }, 4500);
+  }
 }
 
 async function handleFilesSelected(event) {
@@ -557,6 +598,7 @@ async function deleteConversation(id) {
       if (conversations.length > 0) {
         await openConversation(conversations[0].id);
       } else {
+        resetEditState();
         currentConvCtx = { mode: "coach", partnerName: null };
         setActiveTab("coach");
         showPartnerBanner(false);
@@ -1070,6 +1112,7 @@ async function selectPartnerAndStart(partnerId) {
 // ---------------------------------------------------------------------------
 
 async function startNewChat(mode) {
+  resetEditState();
   if (mode === "practice") {
     setActiveTab("practice");
     currentConversationId = null;
@@ -1108,6 +1151,7 @@ async function startNewChat(mode) {
 }
 
 async function openConversation(id, preloadedConv) {
+  resetEditState();
   try {
     let conv = preloadedConv;
     if (!conv) {
@@ -1146,6 +1190,7 @@ async function openConversation(id, preloadedConv) {
 
     conv.messages.forEach((msg) => appendMessage(msg.role, msg.content, false, currentConvCtx, msg.attachments, msg.id, msg.feedback));
     chatDiv.scrollTop = chatDiv.scrollHeight;
+    refreshEditAffordance();
   } catch (err) {
     console.error(err);
   }
@@ -1234,6 +1279,63 @@ function buildFeedbackButtons(conversationId, messageId, initialFeedback) {
   return wrap;
 }
 
+// Detects a Coach Chat reply's drafted, ready-to-send message(s) — see the
+// COACH_SYSTEM_PROMPT instruction (server.js) to write the actual message
+// "on its own line, in quotes" when the person asks what to say, with at
+// most one clearly-labeled alternative. Matches a whole line wrapped in
+// quote characters — straight or curly/language-specific, since the coach
+// replies in whatever language the person writes in and the quote style
+// follows along. Deliberately doesn't require the opening/closing marks to
+// be a matched pair: Slovak/German typography closes a low-opening „quote
+// with “ (U+201C) — the same character English uses to OPEN a curly quote
+// — so a strict pairing would miss it, and getting this slightly loose
+// costs nothing since it only drives an optional "Copy" button. Requires
+// some length and a space so a short quoted single word used for emphasis
+// elsewhere in a reply doesn't false-positive into a button of its own.
+const QUOTE_LINE_RE = /^[ \t]*["“”„«»‚']([^\n]{7,}?)["“”„«»‚'][ \t]*$/gm;
+
+function extractDraftedMessages(text) {
+  const found = [];
+  QUOTE_LINE_RE.lastIndex = 0;
+  let m;
+  while ((m = QUOTE_LINE_RE.exec(text))) {
+    const content = m[1].trim();
+    if (content.length >= 8 && content.includes(" ")) found.push(content);
+  }
+  return found;
+}
+
+function buildCopyDraftRow(drafts) {
+  const row = document.createElement("div");
+  row.className = "copy-draft-row";
+  drafts.forEach((draft, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost btn-sm copy-draft-btn";
+    const label = drafts.length > 1 ? `📋 Copy option ${i + 1}` : "📋 Copy message";
+    btn.textContent = label;
+    btn.addEventListener("click", () => {
+      if (!navigator.clipboard) {
+        showComposerError("Couldn't copy automatically — please select the text manually.");
+        return;
+      }
+      navigator.clipboard
+        .writeText(draft)
+        .then(() => {
+          btn.textContent = "Copied!";
+          setTimeout(() => {
+            btn.textContent = label;
+          }, 1800);
+        })
+        .catch(() => {
+          showComposerError("Couldn't copy automatically — please select the text manually.");
+        });
+    });
+    row.appendChild(btn);
+  });
+  return row;
+}
+
 function appendMessage(role, text, animate, ctx, attachments, messageId, feedback) {
   const chatDiv = document.getElementById("chat");
   document.getElementById("empty-state")?.remove();
@@ -1274,6 +1376,16 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
     bubble.appendChild(buildSpeakButton(text));
   }
 
+  // Coach Chat only — a drafted message to copy is specifically a Coach
+  // Chat behavior (see extractDraftedMessages above), not something Partner
+  // Practice's in-character roleplay replies do.
+  if (!isUser && !isPractice && text) {
+    const drafts = extractDraftedMessages(text);
+    if (drafts.length > 0) {
+      bubble.appendChild(buildCopyDraftRow(drafts));
+    }
+  }
+
   // Coach Chat only (not Practice — see buildFeedbackButtons) and only once
   // the server has actually assigned this message an id (older messages
   // saved before this feature existed, and the transient "thinking…"
@@ -1299,8 +1411,106 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
     renderAttachments(bubble, attachments);
   }
 
+  // Recorded on every row (not just user ones) so a future feature has them
+  // for free, but only user rows are actually read today — see
+  // refreshEditAffordance/startEditLastMessage below. rawText is the plain
+  // text this row was rendered from (before typeText's animation, if any),
+  // so re-opening it in the composer round-trips exactly.
+  row.dataset.messageId = messageId || "";
+  row.dataset.rawText = text || "";
+  row.dataset.hasAttachments = attachments && attachments.length > 0 ? "1" : "0";
+
   chatDiv.scrollTop = chatDiv.scrollHeight;
   return bubble;
+}
+
+// ---------------------------------------------------------------------------
+// edit & resend the last message (Coach Chat only)
+// ---------------------------------------------------------------------------
+//
+// Deliberately scoped to only ever the LAST exchange: the server's
+// editMessageId handling (see POST /api/conversations/:id/messages in
+// server.js) only truncates when the given id matches the conversation's
+// actual last user message, with an assistant reply right after it. So the
+// "✏️ Edit" affordance below only ever appears on the last user row, never
+// on an earlier one — there's nothing to wire up for editing further back.
+
+// Clears any in-progress edit and hides the banner — called whenever the
+// person navigates away from the conversation they were editing (opening a
+// different one, starting a new chat, deleting the current one), so a stale
+// editingMessageId from a previous conversation can never leak into a send
+// on this one. Deliberately leaves any typed composer text alone, matching
+// how switching conversations already doesn't clear an unsent draft.
+function resetEditState() {
+  editingMessageId = null;
+  const banner = document.getElementById("edit-mode-banner");
+  if (banner) banner.style.display = "none";
+}
+
+// Adds the "✏️ Edit" button to the last user message in the transcript, if
+// conditions allow it: Coach Chat only (Practice is a roleplay transcript,
+// not something you redraft), nothing in flight, no edit already in
+// progress, the row has a known message id (older messages predating this
+// feature, and the transient optimistic bubble before a send resolves,
+// won't), and no attachments (keeps the resend simple — re-attaching files
+// on an edit isn't supported). Called after anything that can change what
+// the last message is: opening a conversation, and after a send settles.
+function refreshEditAffordance() {
+  document.querySelectorAll(".edit-msg-row").forEach((el) => el.remove());
+  if (currentConvCtx.mode !== "coach" || isSending || editingMessageId) return;
+
+  const userRows = document.querySelectorAll("#chat .message-row.user");
+  const lastRow = userRows[userRows.length - 1];
+  if (!lastRow || !lastRow.dataset.messageId || lastRow.dataset.hasAttachments === "1") return;
+
+  const actionRow = document.createElement("div");
+  actionRow.className = "edit-msg-row";
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "edit-msg-btn";
+  btn.textContent = "✏️ Edit";
+  btn.addEventListener("click", () => {
+    startEditLastMessage(lastRow.dataset.messageId, lastRow.dataset.rawText, lastRow);
+  });
+  actionRow.appendChild(btn);
+  lastRow.appendChild(actionRow);
+}
+
+function startEditLastMessage(messageId, text, row) {
+  if (isSending) return;
+  // Pull this row and anything rendered after it (in the ordinary case just
+  // this one row, since it was confirmed to be the last message — but walk
+  // forward instead of assuming, in case something else got appended in
+  // between) out of the transcript; openConversation() re-renders the real
+  // thing if the edit is cancelled.
+  let node = row;
+  while (node) {
+    const next = node.nextSibling;
+    node.remove();
+    node = next;
+  }
+
+  editingMessageId = messageId;
+  const input = document.getElementById("input");
+  input.value = text || "";
+  resizeComposerInput();
+  input.focus();
+  const banner = document.getElementById("edit-mode-banner");
+  if (banner) banner.style.display = "flex";
+  refreshEditAffordance();
+}
+
+function cancelEditLastMessage() {
+  if (!editingMessageId) return;
+  resetEditState();
+  const input = document.getElementById("input");
+  input.value = "";
+  resizeComposerInput();
+  if (currentConversationId) {
+    openConversation(currentConversationId);
+  } else {
+    refreshEditAffordance();
+  }
 }
 
 // Renders a fixed, distinct card with real crisis resources — separate from
@@ -1575,25 +1785,73 @@ async function sendMessage() {
   const attachmentsForUpload = pendingAttachments.map((a) => ({ name: a.name, mimeType: a.mimeType, dataUrl: a.dataUrl }));
   clearPendingAttachments();
 
-  appendMessage("user", message, false, currentConvCtx, attachmentsForDisplay);
+  const userBubble = appendMessage("user", message, false, currentConvCtx, attachmentsForDisplay);
   const thinkingText = currentConvCtx.mode === "practice" ? `${currentConvCtx.partnerName || "Your partner"} is typing…` : "RelateIQ is thinking…";
   const thinkingBubble = appendMessage("assistant", thinkingText, false, currentConvCtx);
+
+  // If the send fails for any reason (plan limit, server error, dropped
+  // connection), put the person back exactly where they started instead of
+  // making them retype everything: remove the optimistic user bubble and
+  // the "thinking" placeholder (neither was ever actually saved
+  // server-side, so leaving them in the transcript would just look like a
+  // ghost message that vanishes on the next reload), and restore the typed
+  // text and any attachments to the composer.
+  function rollBackFailedSend() {
+    userBubble.closest(".message-row")?.remove();
+    thinkingBubble.closest(".message-row")?.remove();
+    input.value = message;
+    resizeComposerInput();
+    // Re-add localId (dropped by the attachmentsForDisplay mapping above,
+    // since it's only meaningful to the composer, not the server or the
+    // message log) so the restored chips' remove (✕) buttons in
+    // renderAttachmentPreview can tell them apart again.
+    pendingAttachments = attachmentsForDisplay.map((a) => ({ ...a, localId: "local_" + Math.random().toString(36).slice(2) }));
+    renderAttachmentPreview();
+  }
+
+  // Captured up front, before the request resolves — a failed send (see
+  // rollBackFailedSend) deliberately leaves editingMessageId untouched so a
+  // retry still attempts the same edit, but we still need to know here
+  // whether THIS attempt was an edit, since editingMessageId may already
+  // have been cleared by the time the response comes back in the success path.
+  const editMessageId = editingMessageId;
 
   try {
     const res = await authFetch(`/api/conversations/${encodeURIComponent(currentConversationId)}/messages`, {
       method: "POST",
-      body: JSON.stringify({ message, attachments: attachmentsForUpload }),
+      body: JSON.stringify({ message, attachments: attachmentsForUpload, editMessageId }),
     });
     const data = await safeJson(res);
 
     if (!res.ok || !data.reply) {
-      thinkingBubble.innerText = data.error || "Something went wrong.";
+      rollBackFailedSend();
+      showComposerError(data.error || "Something went wrong.", { upgradeRequired: !!data.upgradeRequired });
       return;
+    }
+
+    if (editMessageId) {
+      editingMessageId = null;
+      const banner = document.getElementById("edit-mode-banner");
+      if (banner) banner.style.display = "none";
+    }
+    if (data.userMessageId) {
+      const userRow = userBubble.closest(".message-row");
+      if (userRow) userRow.dataset.messageId = data.userMessageId;
     }
 
     thinkingBubble.closest(".message-row")?.remove();
     appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId);
     appendSafetyNotice(data.safety);
+    refreshEditAffordance();
+
+    if (data.usage) {
+      const cachedUser = getUser();
+      if (cachedUser) {
+        cachedUser.usage = data.usage;
+        setSession(getToken(), cachedUser);
+        renderUsageBadge(cachedUser);
+      }
+    }
 
     if (currentConvCtx.mode === "coach" && !currentConvHasUserMessage) {
       currentConvHasUserMessage = true;
@@ -1609,7 +1867,8 @@ async function sendMessage() {
     }
     renderHistory();
   } catch (err) {
-    thinkingBubble.innerText = "Couldn't connect to the server.";
+    rollBackFailedSend();
+    showComposerError("Couldn't connect to the server.");
   } finally {
     isSending = false;
   }
@@ -1630,12 +1889,40 @@ function renderPlanBadge(plan) {
   badge.classList.toggle("plan-badge-paid", plan !== "free");
 }
 
+// Free-plan-only daily AI message counter ("5/8 today"), shown right next
+// to the plan badge — see the .usage-badge comment in style.css for why:
+// this used to be invisible until the person actually hit the wall (see
+// isOverDailyLimit in server.js) and got a hard error with no warning.
+// Pro/Premium have no daily cap, so the badge just stays hidden for them.
+// Accepts the same shape /api/me and every message-send response return:
+// { plan, usage: { date, count } | undefined, usageLimit }.
+function renderUsageBadge(user) {
+  const badge = document.getElementById("usage-badge");
+  if (!badge) return;
+  if (!user || user.plan !== "free") {
+    badge.style.display = "none";
+    return;
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  const count = user.usage && user.usage.date === today ? user.usage.count : 0;
+  const limit = user.usageLimit || 8;
+  const remaining = Math.max(0, limit - count);
+  badge.textContent = `${count}/${limit} today`;
+  badge.title =
+    remaining > 0
+      ? `${remaining} AI message${remaining === 1 ? "" : "s"} left today (Free plan) — resets tomorrow`
+      : "Today's free messages are used up — resets tomorrow, or upgrade to Pro for no daily cap";
+  badge.classList.toggle("usage-badge-low", remaining <= 1);
+  badge.style.display = "inline-flex";
+}
+
 async function refreshPlanBadge() {
   try {
     const res = await authFetch("/api/me");
     const data = await safeJson(res);
     if (!res.ok || !data.plan) return;
     renderPlanBadge(data.plan);
+    renderUsageBadge(data);
 
     // Keep the cached session in sync so other pages (and a future reload
     // of this one) don't show a stale plan until the next login.

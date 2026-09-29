@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=32" />
+  <link rel="stylesheet" href="css/style.css?v=35" />
 </head>
 <body>
 
@@ -58,6 +58,7 @@
           <button class="btn btn-ghost btn-sm" id="share-conversation-btn" type="button" title="Share this conversation" style="display:none;">🔗 Share</button>
           <button class="btn btn-ghost btn-sm" id="export-summary-btn" type="button" title="Generate a summary to share with a therapist" style="display:none;">📄 Export for therapist</button>
           <a href="dashboard.html" class="plan-badge" id="plan-badge" title="Manage your plan"></a>
+          <a href="dashboard.html" class="usage-badge" id="usage-badge" style="display:none;" title="Daily AI messages used today (Free plan) — resets tomorrow"></a>
           <span id="user-label" class="user-label"></span>
         </div>
       </header>
@@ -79,6 +80,10 @@
       <div id="chat" class="chat-messages"></div>
 
       <div class="input-area" id="input-area">
+        <div class="edit-mode-banner" id="edit-mode-banner" style="display:none;">
+          <span>✏️ Editing your message</span>
+          <button type="button" id="cancel-edit-btn">Cancel</button>
+        </div>
         <div class="attachment-preview" id="attachment-preview" style="display:none;"></div>
         <div class="composer-row" id="composer">
           <input type="file" id="file-input" multiple style="display:none;" />
@@ -101,6 +106,6 @@
   </div>
 
   <script src="js/shared.js?v=10"></script>
-  <script src="js/chat.js?v=23"></script>
+  <script src="js/chat.js?v=26"></script>
 </body>
 </html>

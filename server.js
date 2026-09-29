@@ -24,6 +24,8 @@ import {
   deleteConversation,
   appendConversationMessages,
   setMessageFeedback,
+  truncateLastMessagePairIfMatch,
+  removeLastMessageIfMatch,
   savePartnerProfile,
   deletePartnerProfile,
   saveCheckin,
@@ -1504,6 +1506,10 @@ function isOverDailyLimit(user, res) {
   if (user.usage.count >= FREE_DAILY_LIMIT) {
     res.status(429).json({
       error: `You've reached the Free plan's daily limit of ${FREE_DAILY_LIMIT} AI messages. Try again tomorrow, or upgrade to Pro.`,
+      // Lets the client show a real "Upgrade to Pro" button instead of just
+      // dead error text — same flag the other plan-limit responses use
+      // (see the Partner Practice and attachment limits above/below).
+      upgradeRequired: true,
     });
     return true;
   }
@@ -2447,6 +2453,24 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   const user = db.users.find((u) => u.id === req.user.id);
   if (isOverDailyLimit(user, res)) return;
 
+  // Editing & resending the LAST message (chat.js's "✏️ Edit" on the most
+  // recent user bubble, Coach Chat only) sends the same shape as a normal
+  // new message plus editMessageId — the id of the user message being
+  // replaced. Checked (and only actually truncated) after the daily-limit
+  // gate above, deliberately: if the person's out of messages for today,
+  // fail before touching anything, so the original exchange they were
+  // trying to edit is never removed without a replacement actually landing.
+  const editMessageId = req.body && req.body.editMessageId ? String(req.body.editMessageId) : null;
+  if (editMessageId) {
+    const truncated = truncateLastMessagePairIfMatch(conv.id, editMessageId);
+    // Keep this request's in-memory snapshot of the conversation in sync
+    // with what was just persisted — priorHistory below reads conv.messages
+    // directly, and without this it would still include the stale pair
+    // that was just removed from the database, feeding the old exchange
+    // back into the prompt as if it never happened.
+    if (truncated) conv.messages = conv.messages.slice(0, -2);
+  }
+
   if (hasAttachments && user.plan === "free") {
     const usedSoFar = user.lifetimeAttachmentCount || 0;
     if (usedSoFar + rawAttachments.length > FREE_LIFETIME_ATTACHMENT_LIMIT) {
@@ -2594,6 +2618,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     res.json({
       reply,
       messageId: assistantMessage.id,
+      userMessageId: userMessage.id,
       title,
       mode: conv.mode,
       partnerName: conv.partnerName,
@@ -2603,8 +2628,13 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     });
   } catch (err) {
     console.error("OpenAI error:", err.message);
-    // The user's message is already durably saved above — nothing left to
-    // persist here.
+    // The user's message was durably saved above, before the AI call — roll
+    // it back out now that the call has failed, so a failed send truly
+    // leaves nothing behind (matches what chat.js's UI does on its side:
+    // restores the typed text to the composer and tells the person nothing
+    // was sent, instead of leaving a half-saved message with no reply that
+    // would reappear, orphaned, on the next reload).
+    removeLastMessageIfMatch(conv.id, userMessage.id);
     res.status(500).json({ error: "Couldn't get a response from the AI. Please try again." });
   }
 });
