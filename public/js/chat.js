@@ -275,17 +275,21 @@ function showPartnerBanner(visible, name, scenario, meta) {
 }
 
 // Lets the user say which partner profile a Coach Chat conversation is
-// about — self-reported, not guessed. Only shown when it actually matters:
-// a Coach Chat conversation, with more than one partner profile to choose
-// between. With 0 or 1 partner profiles there's nothing to disambiguate, so
-// this stays hidden and the automatic partner-learning in server.js just
-// uses all Coach Chat history for that one relationship — see
-// learnPartnerProfileIfStale in server.js for why this distinction exists.
+// about — self-reported, not guessed. Shown for any Coach Chat conversation
+// as long as there's at least one partner profile to reference (task #96 —
+// previously this required MORE than one, so with exactly one partner
+// profile — the single most common case — there was no visible "who is
+// this about" at all, even though that's exactly the orientation cue
+// someone with one relationship in the app benefits from most). With only
+// one partner the automatic learning in server.js already treats all Coach
+// Chat history as belonging to that relationship regardless of this tag —
+// see learnPartnerProfileIfStale in server.js — so the tag itself stays
+// optional either way; this only changes whether the label is visible.
 function renderCoachTagBar() {
   const bar = document.getElementById("coach-tag-bar");
   if (!bar) return;
 
-  if (currentConvCtx.mode !== "coach" || !currentConversationId || partners.length <= 1) {
+  if (currentConvCtx.mode !== "coach" || !currentConversationId || partners.length === 0) {
     bar.style.display = "none";
     return;
   }
