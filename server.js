@@ -2759,7 +2759,12 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
 
     const regenerate = !!(req.body && req.body.regenerate);
     if (conv.practiceDebrief && !regenerate) {
-      return res.json({ ...JSON.parse(conv.practiceDebrief), generatedAt: conv.practiceDebriefAt, cached: true });
+      return res.json({
+        ...JSON.parse(conv.practiceDebrief),
+        generatedAt: conv.practiceDebriefAt,
+        feedback: conv.practiceDebriefFeedback || null,
+        cached: true,
+      });
     }
 
     const user = db.users.find((u) => u.id === req.user.id);
@@ -2797,14 +2802,47 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     const generatedAt = new Date().toISOString();
     conv.practiceDebrief = JSON.stringify(debrief);
     conv.practiceDebriefAt = generatedAt;
+    // A freshly (re)generated debrief starts unrated — any thumbs up/down on
+    // a PRIOR debrief for this conversation shouldn't silently carry over
+    // and look like it applies to this new readout.
+    conv.practiceDebriefFeedback = null;
     saveConversation(conv);
     if (user.plan === "free") bumpFreeUsage(user);
 
-    res.json({ ...debrief, generatedAt, cached: false, usage: user.usage });
+    res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage });
   } catch (err) {
     console.error("Practice debrief error:", err.message);
     res.status(500).json({ error: "Couldn't generate a debrief right now. Please try again." });
   }
+});
+
+// Thumbs up/down on a Partner Practice debrief (task #93) — the debrief
+// counterpart to PATCH /api/conversations/:id/messages/:messageId/feedback
+// above, but scoped to the conversation itself rather than a message id:
+// there's at most one ACTIVE debrief per conversation at a time (cached on
+// conv.practiceDebrief, regenerated wholesale rather than versioned — see
+// POST .../debrief above), so there's nothing else to key a rating off of.
+// Clicking an already-active button clears the vote (feedback: null), same
+// as the per-message version.
+app.patch("/api/conversations/:id/debrief/feedback", authMiddleware, (req, res) => {
+  const { feedback } = req.body || {};
+  if (feedback !== "up" && feedback !== "down" && feedback !== null) {
+    return res.status(400).json({ error: 'feedback must be "up", "down", or null.' });
+  }
+
+  const db = req.db;
+  const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (!conv) return res.status(404).json({ error: "Conversation not found." });
+  if (conv.mode !== "practice") {
+    return res.status(400).json({ error: "Debrief feedback is only available for Partner Practice rehearsals." });
+  }
+  if (!conv.practiceDebrief) {
+    return res.status(400).json({ error: "Generate a debrief before rating it." });
+  }
+
+  conv.practiceDebriefFeedback = feedback;
+  saveConversation(conv);
+  res.json({ ok: true, feedback: conv.practiceDebriefFeedback });
 });
 
 // ---------------------------------------------------------------------------

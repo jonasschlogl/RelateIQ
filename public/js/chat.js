@@ -1827,6 +1827,54 @@ function renderShareModalLink(share) {
   });
 }
 
+// Thumbs up/down on the debrief itself (task #93) — same up/down/clear-on-
+// reclick shape as buildFeedbackButtons (Coach Chat replies), but PATCHes
+// the conversation-scoped debrief feedback route instead of a per-message
+// one (see the comment on that route in server.js for why there's no
+// message id to key off of here — a conversation only ever has ONE active
+// debrief at a time).
+function buildDebriefFeedbackButtons(conversationId, initialFeedback) {
+  const wrap = document.createElement("div");
+  wrap.className = "feedback-buttons practice-debrief-feedback";
+
+  const label = document.createElement("span");
+  label.className = "practice-debrief-feedback-label";
+  label.textContent = "Was this useful?";
+  wrap.appendChild(label);
+
+  function makeBtn(kind, ariaLabel, svg) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `feedback-btn feedback-btn-${kind}`;
+    btn.setAttribute("aria-label", ariaLabel);
+    btn.title = ariaLabel;
+    btn.innerHTML = svg;
+    if (initialFeedback === kind) btn.classList.add("active");
+
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const next = btn.classList.contains("active") ? null : kind;
+      wrap.querySelectorAll(".feedback-btn").forEach((b) => b.classList.remove("active"));
+      if (next) btn.classList.add("active");
+      try {
+        await authFetch(`/api/conversations/${encodeURIComponent(conversationId)}/debrief/feedback`, {
+          method: "PATCH",
+          body: JSON.stringify({ feedback: next }),
+        });
+      } catch (err) {
+        // Non-critical — same as message feedback (buildFeedbackButtons): a
+        // vote that didn't save just doesn't stick, no need to interrupt.
+      }
+    });
+
+    return btn;
+  }
+
+  wrap.appendChild(makeBtn("up", "This debrief was helpful", THUMBS_UP_ICON_SVG));
+  wrap.appendChild(makeBtn("down", "This debrief wasn't helpful", THUMBS_DOWN_ICON_SVG));
+  return wrap;
+}
+
 function appendPracticeDebrief(debrief, ctx) {
   const chatDiv = document.getElementById("chat");
   if (!chatDiv) return;
@@ -1858,6 +1906,10 @@ function appendPracticeDebrief(debrief, ctx) {
     section.appendChild(textEl);
     card.appendChild(section);
   });
+
+  if (currentConversationId) {
+    card.appendChild(buildDebriefFeedbackButtons(currentConversationId, debrief.feedback || null));
+  }
 
   const footer = document.createElement("div");
   footer.className = "practice-debrief-footer";

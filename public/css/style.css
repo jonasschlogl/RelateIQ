@@ -2830,6 +2830,22 @@ section {
   margin: 0;
 }
 
+/* Thumbs up/down row on the debrief card (task #93) — reuses .feedback-buttons'
+   button styling (same look as Coach Chat's per-message feedback) but adds
+   a leading label and its own spacing, since here it sits inside a card's
+   content flow rather than tucked under a chat bubble. */
+.practice-debrief-feedback {
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 0;
+}
+
+.practice-debrief-feedback-label {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin-right: 2px;
+}
+
 .practice-debrief-footer {
   margin-top: 14px;
   padding-top: 12px;
