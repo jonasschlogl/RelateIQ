@@ -57,9 +57,46 @@ function renderAdmin(data) {
       ${statTile("Referred signups", data.referredTotal, `${data.referredRewarded} rewarded`)}
       ${statTile("Push subscribers", data.pushSubCount)}
     </div>
+    <div class="dashboard-card" style="margin-top:20px;">
+      <div class="dashboard-card-header"><h2 style="font-size:16px;">Coach Chat reply feedback</h2></div>
+      <div id="feedback-summary"></div>
+      <div id="feedback-downvotes"></div>
+    </div>
   `;
   renderSignupsChart(document.getElementById("signups-chart"), data.signupsByDay);
   renderPlanBreakdown(document.getElementById("plan-breakdown"), data.planCounts);
+  renderFeedback(document.getElementById("feedback-summary"), document.getElementById("feedback-downvotes"), data.feedback);
+}
+
+// Renders the 👍/👎 counts users leave on individual Coach Chat replies
+// (see the feedback-btn UI in chat.js and PATCH
+// /api/conversations/:id/messages/:messageId/feedback), plus the actual
+// text of recent 👎 replies — the ratio alone doesn't say what to go fix,
+// the previews do.
+function renderFeedback(summaryEl, listEl, feedbackIn) {
+  const feedback = feedbackIn || { up: 0, down: 0, total: 0, recentDownvotes: [] };
+  if (feedback.total === 0) {
+    summaryEl.innerHTML = '<p class="text-muted">No feedback submitted yet.</p>';
+    listEl.innerHTML = "";
+    return;
+  }
+  const upPct = Math.round((feedback.up / feedback.total) * 100);
+  summaryEl.innerHTML = `<p class="text-muted">👍 ${feedback.up} &middot; 👎 ${feedback.down} &middot; ${upPct}% positive (${feedback.total} total votes)</p>`;
+
+  const downvotes = feedback.recentDownvotes || [];
+  if (downvotes.length === 0) {
+    listEl.innerHTML = '<p class="text-muted">No 👎 replies yet — nothing to review.</p>';
+    return;
+  }
+  listEl.innerHTML = `<div class="downvote-list">${downvotes
+    .map((d) => {
+      const truncated = d.preview.length >= 280;
+      return `<div class="downvote-item">
+        <div class="downvote-item-meta">${new Date(d.at).toLocaleString()}</div>
+        <div class="downvote-item-text">${escapeHtml(d.preview)}${truncated ? "…" : ""}</div>
+      </div>`;
+    })
+    .join("")}</div>`;
 }
 
 function statTile(label, value, sub) {

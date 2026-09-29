@@ -23,6 +23,7 @@ import {
   saveConversation,
   deleteConversation,
   appendConversationMessages,
+  setMessageFeedback,
   savePartnerProfile,
   deletePartnerProfile,
   saveCheckin,
@@ -239,8 +240,17 @@ const MAX_CHAT_MESSAGE_CHARS = 8000;
 // "hear me out and respond" moments where model quality is actually
 // noticeable, and keeping them off the pricier model keeps the cost of
 // those unlimited-on-Pro+ features predictable.
-const STANDARD_MODEL = "gpt-4o-mini";
-const PREMIUM_MODEL = "gpt-4o";
+// Bumped off the gpt-4o family (superseded on OpenAI's own roadmap) to the
+// current GPT-6 line: gpt-6-luna is OpenAI's new economy-tier model — at
+// $0.10/$0.50 per million input/output tokens it's actually cheaper than
+// gpt-4o-mini was, while being a newer, stronger generation, so this is a
+// same-or-lower-cost upgrade with no tradeoff for every Free/Pro surface.
+// gpt-6-astra (the current top-tier flagship, $10/$50 per million tokens)
+// replaces gpt-4o for Premium — real money per message, but Premium is
+// exactly the plan where "the best the app can possibly sound" is the
+// product, and per-message cost is still fractions of a cent.
+const STANDARD_MODEL = "gpt-6-luna";
+const PREMIUM_MODEL = "gpt-6-astra";
 function modelForPlan(plan) {
   return plan === "premium" ? PREMIUM_MODEL : STANDARD_MODEL;
 }
@@ -432,7 +442,48 @@ What never bends:
 // Chat feel personalized rather than templated: a human coach who already
 // knows who you're talking about gives different advice than one hearing
 // about a stranger every time.
-function buildCoachSystemPrompt(user, partner) {
+// Recent daily check-in answers (see the check-in routes further below) —
+// short, self-reported, and genuinely CURRENT: they're written between
+// Coach Chat visits, about how things have actually been, so they're real
+// signal a human coach who "remembered what you said last time" would use,
+// not something inferrable from the conversation history alone. Capped to a
+// handful of recent answered days so a long-time user's whole check-in
+// history doesn't dominate the prompt; skipped days carry nothing to add.
+const RECENT_CHECKIN_COUNT = 5;
+const RECENT_CHECKIN_MAX_AGE_DAYS = 30;
+
+function buildRecentCheckinContext(checkins, userId) {
+  const cutoffMs = Date.now() - RECENT_CHECKIN_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+  const recent = (checkins || [])
+    .filter((c) => c.userId === userId && c.answer && !c.skipped && new Date(c.date).getTime() >= cutoffMs)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, RECENT_CHECKIN_COUNT);
+  if (recent.length === 0) return "";
+  return recent
+    .map((c) => {
+      const scoreNote = typeof c.score === "number" ? ` (self-rated connection that day: ${c.score}/10)` : "";
+      return `${c.date} — "${c.question}"\nTheir answer: ${c.answer}${scoreNote}`;
+    })
+    .join("\n\n");
+}
+
+// The Insights feature (separate page, user-triggered or a weekly digest —
+// see generateInsightsRaw) mines the same past Coach Chat history as
+// relationshipMemory below, but produces a different shape: named, titled
+// patterns with their own short description, rather than one summary
+// paragraph. The two are refreshed independently and won't always say
+// exactly the same thing, so both are worth surfacing rather than picking
+// one — this one is the more specific of the two when it's present.
+function buildInsightsContext(user) {
+  const patterns = user?.insights?.patterns;
+  if (!Array.isArray(patterns) || patterns.length === 0) return "";
+  return patterns
+    .filter((p) => p && p.title)
+    .map((p) => `- ${p.title}${p.description ? `: ${p.description}` : ""}`)
+    .join("\n");
+}
+
+function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
   const styleKey = user?.attachmentStyle;
   const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
   const memory = (user?.relationshipMemory || "").trim();
@@ -445,6 +496,15 @@ function buildCoachSystemPrompt(user, partner) {
 
   if (memory) {
     prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.`;
+  }
+
+  const insightsContext = buildInsightsContext(user);
+  if (insightsContext) {
+    prompt += `\n\nRecurring patterns RelateIQ's Insights feature has already named for this user, from looking across several of their Coach Chat conversations (titled and more specific than the standing summary above — treat it as another angle on the same continuity, not a separate fact to bring up on its own):\n${insightsContext}`;
+  }
+
+  if (recentCheckinContext) {
+    prompt += `\n\nThis user's own recent daily check-in answers — a short, optional prompt they answer on their own, outside any conversation with you, so this is real current signal about how things have actually been between visits:\n${recentCheckinContext}\nUse this the way a coach would remember what a client mentioned last session — to pick up a thread or notice things have changed — but only if it's actually relevant to what they're talking about now, and never quote an answer back verbatim or make them feel monitored.`;
   }
 
   const partnerBlock = buildPartnerContextBlock(partner);
@@ -522,7 +582,7 @@ ${trimmed.slice(0, 600)}
 """`;
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: STANDARD_MODEL,
     messages: [
       { role: "system", content: TITLE_SYSTEM_PROMPT },
       { role: "user", content: userContent },
@@ -564,7 +624,7 @@ ${trimmed.slice(0, 600)}
 """`;
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: STANDARD_MODEL,
     messages: [
       { role: "system", content: PRACTICE_TOPIC_SYSTEM_PROMPT },
       { role: "user", content: userContent },
@@ -669,7 +729,7 @@ async function assessSafety(text) {
   if (!trimmed) return { level: "none", category: null };
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: SAFETY_CLASSIFIER_PROMPT },
         { role: "user", content: trimmed.slice(0, 4000) },
@@ -906,7 +966,7 @@ ${capped}
 """`;
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: STANDARD_MODEL,
     messages: [
       { role: "system", content: PARTNER_LEARN_FROM_REAL_TEXT_SYSTEM_PROMPT },
       { role: "user", content: userContent },
@@ -1004,7 +1064,7 @@ ${digest}
 """`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: PARTNER_LEARN_SYSTEM_PROMPT },
         { role: "user", content: userContent },
@@ -1091,7 +1151,7 @@ ${digest}
 """`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: RELATIONSHIP_MEMORY_SYSTEM_PROMPT },
         { role: "user", content: userContent },
@@ -1277,7 +1337,7 @@ function stripInternalFields(attachment) {
 // Builds the "content" the model actually receives for the newest user
 // message: plain text for text-only messages, or a multimodal array when
 // there are images to look at. Non-image attachments are described in
-// plain text instead, since gpt-4o-mini can't open video/files directly.
+// plain text instead, since the coaching models can't open video/files directly.
 function buildModelContent(message, savedAttachments) {
   const imageParts = [];
   let extraText = "";
@@ -2037,6 +2097,32 @@ app.get("/api/admin/stats", authMiddleware, adminMiddleware, (req, res) => {
   const sharesTotal = db.shares.length;
   const shareItemsTotal = db.shares.reduce((sum, s) => sum + (s.items ? s.items.length : 0), 0);
 
+  // Coach Chat reply quality — thumbs up/down captured per message (see
+  // PATCH /api/conversations/:id/messages/:messageId/feedback). Walked
+  // fresh from db.conversations every time, same as everything else on this
+  // page — nothing pre-aggregated or stored just for this dashboard. The
+  // downvoted replies themselves (not just the count) are the actually
+  // useful part: a ratio alone doesn't tell Jonas what to go fix.
+  let feedbackUp = 0;
+  let feedbackDown = 0;
+  const recentDownvotes = [];
+  db.conversations.forEach((c) => {
+    (c.messages || []).forEach((m) => {
+      if (m.role !== "assistant" || !m.feedback) return;
+      if (m.feedback === "up") {
+        feedbackUp += 1;
+      } else if (m.feedback === "down") {
+        feedbackDown += 1;
+        recentDownvotes.push({
+          conversationId: c.id,
+          at: m.at,
+          preview: String(m.content || "").slice(0, 280),
+        });
+      }
+    });
+  });
+  recentDownvotes.sort((a, b) => new Date(b.at) - new Date(a.at));
+
   // Daily signups for the last 30 days, oldest first — feeds the chart.
   const signupsByDay = [];
   for (let i = 29; i >= 0; i--) {
@@ -2062,6 +2148,12 @@ app.get("/api/admin/stats", authMiddleware, adminMiddleware, (req, res) => {
     shareItemsTotal,
     pushSubCount: db.pushSubscriptions.length,
     signupsByDay,
+    feedback: {
+      up: feedbackUp,
+      down: feedbackDown,
+      total: feedbackUp + feedbackDown,
+      recentDownvotes: recentDownvotes.slice(0, 20),
+    },
   });
 });
 
@@ -2463,6 +2555,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   const priorHistory = conv.messages.slice(-20).map((m) => ({ role: m.role, content: m.content }));
 
   const userMessage = {
+    id: generateId("msg"),
     role: "user",
     content: text,
     attachments: savedAttachments.map(stripInternalFields),
@@ -2485,6 +2578,10 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   // baked into buildPartnerSystemPrompt below.
   const taggedPartner =
     !isPractice && conv.aboutPartnerId ? db.partnerProfiles.find((p) => p.id === conv.aboutPartnerId && p.userId === user.id) : null;
+  // Only computed for Coach Chat — Practice is a roleplay, not coaching, so
+  // the user's own check-in answers aren't relevant to what "the partner"
+  // would say next.
+  const recentCheckinContext = isPractice ? "" : buildRecentCheckinContext(db.checkins, user.id);
   const systemPrompt = isPractice
     ? buildPartnerSystemPrompt({
         name: conv.partnerName || "your partner",
@@ -2498,7 +2595,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         intensity: conv.intensity,
         roleSwap: conv.practiceRoleSwap,
       })
-    : buildCoachSystemPrompt(user, taggedPartner);
+    : buildCoachSystemPrompt(user, taggedPartner, recentCheckinContext);
 
   // Only the very first message of a conversation gets a generated title —
   // conv.messages here still reflects the state as of the START of this
@@ -2526,6 +2623,14 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         model: isPractice ? modelForPractice(user.plan) : modelForPlan(user.plan),
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
         temperature: isPractice ? 0.95 : 0.8,
+        // Coach Chat (not Practice) gets an explicit reasoning budget: the
+        // system prompt asks the model to actually work out what's going on
+        // underneath the surface complaint before answering, and a
+        // reasoning-capable model does that far more reliably with an
+        // explicit budget than by just being asked nicely in the prompt.
+        // Left off for Practice — a roleplay reply should feel spontaneous,
+        // like a real text back, not visibly deliberated over.
+        ...(isPractice ? {} : { reasoning_effort: "high" }),
       }),
       hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
       // Runs alongside the main reply, not after it, so titling the first
@@ -2560,13 +2665,14 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       }
     }
 
-    const assistantMessage = { role: "assistant", content: reply, at: new Date().toISOString() };
+    const assistantMessage = { id: generateId("msg"), role: "assistant", content: reply, at: new Date().toISOString() };
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
     if (user.plan === "free") bumpFreeUsage(user);
 
     res.json({
       reply,
+      messageId: assistantMessage.id,
       title,
       mode: conv.mode,
       partnerName: conv.partnerName,
@@ -2580,6 +2686,34 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     // persist here.
     res.status(500).json({ error: "Couldn't get a response from the AI. Please try again." });
   }
+});
+
+// Thumbs up/down on a single Coach Chat or Practice reply — a real,
+// per-message quality signal Jonas can actually look at, instead of going
+// by feel. Deliberately minimal: no comment field, no analytics pipeline,
+// just feedback: "up" | "down" | null (null clears a previously-set vote,
+// e.g. tapping the same button again) stored right on the message. Only
+// ever set on an assistant message — voting on your own message wouldn't
+// mean anything.
+app.patch("/api/conversations/:id/messages/:messageId/feedback", authMiddleware, (req, res) => {
+  const { feedback } = req.body || {};
+  if (feedback !== "up" && feedback !== "down" && feedback !== null) {
+    return res.status(400).json({ error: 'feedback must be "up", "down", or null.' });
+  }
+
+  const db = req.db;
+  const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
+  if (!conv) return res.status(404).json({ error: "Conversation not found." });
+
+  const message = conv.messages.find((m) => m.id === req.params.messageId);
+  if (!message || message.role !== "assistant") {
+    return res.status(404).json({ error: "Message not found." });
+  }
+
+  const updated = setMessageFeedback(conv.id, req.params.messageId, feedback);
+  if (!updated) return res.status(404).json({ error: "Message not found." });
+
+  res.json({ id: req.params.messageId, feedback });
 });
 
 // ---------------------------------------------------------------------------
@@ -2622,7 +2756,7 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
 
     const transcript = buildConversationTranscript(conv);
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: THERAPIST_SUMMARY_SYSTEM_PROMPT },
         { role: "user", content: `Conversation transcript:\n"""\n${transcript}\n"""` },
@@ -2682,7 +2816,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
 
     const transcript = buildPracticeTranscript(conv);
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: PRACTICE_DEBRIEF_SYSTEM_PROMPT },
         {
@@ -2797,7 +2931,7 @@ app.post("/api/insights", authMiddleware, async (req, res) => {
 async function generateInsightsRaw(coachConversations) {
   const digest = buildInsightsDigest(coachConversations);
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: STANDARD_MODEL,
     messages: [
       { role: "system", content: INSIGHTS_SYSTEM_PROMPT },
       { role: "user", content: `Conversations (newest first):\n"""\n${digest}\n"""` },
@@ -3041,7 +3175,7 @@ app.post("/api/public/message-coach-demo", async (req, res) => {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: STANDARD_MODEL,
       messages: [
         { role: "system", content: MESSAGE_COACH_SYSTEM_PROMPT },
         { role: "user", content: `Context (optional, may be empty): (none given)\n\nDraft message:\n"""${draft}"""` },

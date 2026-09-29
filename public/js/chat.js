@@ -22,6 +22,10 @@ const PENCIL_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>';
 const SPEAKER_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>';
+const THUMBS_UP_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>';
+const THUMBS_DOWN_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3zM17 2h3a2 2 0 012 2v7a2 2 0 01-2 2h-3"/></svg>';
 
 // null when the partner form (see renderPracticeSetup) is creating a new
 // profile, or a partner id when it's editing an existing one — swaps the
@@ -1140,7 +1144,7 @@ async function openConversation(id, preloadedConv) {
       return;
     }
 
-    conv.messages.forEach((msg) => appendMessage(msg.role, msg.content, false, currentConvCtx, msg.attachments));
+    conv.messages.forEach((msg) => appendMessage(msg.role, msg.content, false, currentConvCtx, msg.attachments, msg.id, msg.feedback));
     chatDiv.scrollTop = chatDiv.scrollHeight;
   } catch (err) {
     console.error(err);
@@ -1185,7 +1189,52 @@ function buildSpeakButton(text) {
   return btn;
 }
 
-function appendMessage(role, text, animate, ctx, attachments) {
+// Thumbs up/down on a Coach Chat reply — a real, per-message signal for
+// whether the advice actually landed, visible to Jonas on the admin stats
+// page (see PATCH /api/conversations/:id/messages/:messageId/feedback and
+// the "feedback" block in /api/admin/stats). Practice mode deliberately has
+// no feedback button — appendMessage only calls this for Coach replies — a
+// roleplay line isn't "advice" to rate the same way. Clicking an already-
+// active button clears the vote (feedback: null) rather than requiring a
+// separate "undo" affordance.
+function buildFeedbackButtons(conversationId, messageId, initialFeedback) {
+  const wrap = document.createElement("div");
+  wrap.className = "feedback-buttons";
+
+  function makeBtn(kind, label, svg) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `feedback-btn feedback-btn-${kind}`;
+    btn.setAttribute("aria-label", label);
+    btn.title = label;
+    btn.innerHTML = svg;
+    if (initialFeedback === kind) btn.classList.add("active");
+
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const next = btn.classList.contains("active") ? null : kind;
+      wrap.querySelectorAll(".feedback-btn").forEach((b) => b.classList.remove("active"));
+      if (next) btn.classList.add("active");
+      try {
+        await authFetch(
+          `/api/conversations/${encodeURIComponent(conversationId)}/messages/${encodeURIComponent(messageId)}/feedback`,
+          { method: "PATCH", body: JSON.stringify({ feedback: next }) }
+        );
+      } catch (err) {
+        // Non-critical — a vote that didn't save just doesn't stick; no
+        // need to interrupt the conversation with an error over this.
+      }
+    });
+
+    return btn;
+  }
+
+  wrap.appendChild(makeBtn("up", "This was helpful", THUMBS_UP_ICON_SVG));
+  wrap.appendChild(makeBtn("down", "This wasn't helpful", THUMBS_DOWN_ICON_SVG));
+  return wrap;
+}
+
+function appendMessage(role, text, animate, ctx, attachments, messageId, feedback) {
   const chatDiv = document.getElementById("chat");
   document.getElementById("empty-state")?.remove();
 
@@ -1223,6 +1272,14 @@ function appendMessage(role, text, animate, ctx, attachments) {
   // available (older Firefox, some mobile browsers).
   if (isPractice && !isUser && text && "speechSynthesis" in window) {
     bubble.appendChild(buildSpeakButton(text));
+  }
+
+  // Coach Chat only (not Practice — see buildFeedbackButtons) and only once
+  // the server has actually assigned this message an id (older messages
+  // saved before this feature existed, and the transient "thinking…"
+  // placeholder, have none).
+  if (!isUser && !isPractice && messageId) {
+    bubble.appendChild(buildFeedbackButtons(currentConversationId, messageId, feedback || null));
   }
 
   row.appendChild(bubble);
@@ -1535,7 +1592,7 @@ async function sendMessage() {
     }
 
     thinkingBubble.closest(".message-row")?.remove();
-    appendMessage("assistant", data.reply, true, currentConvCtx);
+    appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId);
     appendSafetyNotice(data.safety);
 
     if (currentConvCtx.mode === "coach" && !currentConvHasUserMessage) {

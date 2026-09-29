@@ -2356,6 +2356,43 @@ section {
   color: var(--accent-1);
 }
 
+.feedback-buttons {
+  display: flex;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  border-radius: 6px;
+}
+
+.feedback-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.feedback-btn:hover {
+  color: var(--text-muted);
+  background: var(--surface-hover);
+}
+
+.feedback-btn-up.active {
+  color: var(--success);
+}
+
+.feedback-btn-down.active {
+  color: var(--danger);
+}
+
 .partner-banner {
   width: 100%;
   max-width: 768px;
@@ -4149,4 +4186,30 @@ body.js-reveal .reveal-item.revealed {
   font-size: 12.5px;
   color: var(--text-faint);
   text-align: right;
+}
+
+.downvote-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.downvote-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.downvote-item-meta {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.downvote-item-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: pre-wrap;
 }
