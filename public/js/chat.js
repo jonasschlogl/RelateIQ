@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   document.getElementById("send-btn")?.addEventListener("click", sendMessage);
   document.getElementById("cancel-edit-btn")?.addEventListener("click", cancelEditLastMessage);
+  document.getElementById("history-search")?.addEventListener("input", renderHistory);
 
   // Mobile off-canvas drawer (harmless no-op on desktop, where the sidebar
   // is always visible and .open has no matching CSS rule).
@@ -534,6 +535,62 @@ async function loadConversations() {
   }
 }
 
+// Recency buckets for the sidebar history (task #95) — same idea as
+// ChatGPT's own history sidebar, so someone with dozens of conversations
+// has actual landmarks to scan for instead of one long undifferentiated
+// list. Order matters here (render order below follows this exactly);
+// "Today" covers anything from the start of the current calendar day,
+// including a moment in the future (clock skew) — never negative.
+const HISTORY_BUCKETS = ["Today", "Yesterday", "Previous 7 days", "Previous 30 days", "Older"];
+
+function historyBucketLabel(updatedAt) {
+  const now = new Date();
+  const date = new Date(updatedAt);
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const diffDays = Math.round((startOfToday - startOfDate) / 86400000);
+  if (diffDays <= 0) return "Today";
+  if (diffDays === 1) return "Yesterday";
+  if (diffDays <= 7) return "Previous 7 days";
+  if (diffDays <= 30) return "Previous 30 days";
+  return "Older";
+}
+
+function buildHistoryItem(c) {
+  const div = document.createElement("div");
+  div.className = "chat-item" + (c.id === currentConversationId ? " active" : "");
+
+  // Same 💬/🎭 pairing as the mode tabs right below this list (and as
+  // dashboard.js's own conversation list) — instantly recognizable at a
+  // glance, unlike the old plain color dot this replaces.
+  const icon = document.createElement("span");
+  icon.className = "chat-item-icon";
+  icon.textContent = c.mode === "practice" ? "🎭" : "💬";
+  div.appendChild(icon);
+
+  const label = document.createElement("span");
+  label.className = "chat-item-label";
+  label.textContent = c.title || "New conversation";
+  div.appendChild(label);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.type = "button";
+  deleteBtn.className = "chat-item-delete";
+  deleteBtn.setAttribute("aria-label", "Delete conversation");
+  deleteBtn.innerHTML = TRASH_ICON_SVG;
+  deleteBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    deleteConversation(c.id);
+  });
+  div.appendChild(deleteBtn);
+
+  div.addEventListener("click", () => {
+    openConversation(c.id);
+    closeSidebarDrawer();
+  });
+  return div;
+}
+
 function renderHistory() {
   const historyDiv = document.getElementById("history");
   historyDiv.innerHTML = "";
@@ -546,35 +603,41 @@ function renderHistory() {
     return;
   }
 
-  conversations.forEach((c) => {
-    const div = document.createElement("div");
-    div.className = "chat-item" + (c.id === currentConversationId ? " active" : "");
+  // Client-side title search (task #95) — cheap and instant since the full
+  // list is already loaded; no reason to round-trip to the server for
+  // something this small. #history-search's input listener just calls
+  // renderHistory() again, so this always reflects the current box value.
+  const query = (document.getElementById("history-search")?.value || "").trim().toLowerCase();
+  const filtered = query ? conversations.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : conversations;
 
-    const dot = document.createElement("span");
-    dot.className = "mode-dot" + (c.mode === "practice" ? " practice" : "");
-    div.appendChild(dot);
+  if (filtered.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "history-empty";
+    empty.textContent = `No conversations match "${query}"`;
+    historyDiv.appendChild(empty);
+    return;
+  }
 
-    const label = document.createElement("span");
-    label.className = "chat-item-label";
-    label.textContent = c.title || "New conversation";
-    div.appendChild(label);
+  // conversations is already sorted most-recent-first (see GET
+  // /api/conversations in server.js), so grouping by bucket below preserves
+  // that order within each group without needing to re-sort anything.
+  const groups = new Map();
+  filtered.forEach((c) => {
+    const bucket = historyBucketLabel(c.updatedAt);
+    if (!groups.has(bucket)) groups.set(bucket, []);
+    groups.get(bucket).push(c);
+  });
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.type = "button";
-    deleteBtn.className = "chat-item-delete";
-    deleteBtn.setAttribute("aria-label", "Delete conversation");
-    deleteBtn.innerHTML = TRASH_ICON_SVG;
-    deleteBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      deleteConversation(c.id);
-    });
-    div.appendChild(deleteBtn);
+  HISTORY_BUCKETS.forEach((bucket) => {
+    const items = groups.get(bucket);
+    if (!items || items.length === 0) return;
 
-    div.addEventListener("click", () => {
-      openConversation(c.id);
-      closeSidebarDrawer();
-    });
-    historyDiv.appendChild(div);
+    const header = document.createElement("div");
+    header.className = "history-group-label";
+    header.textContent = bucket;
+    historyDiv.appendChild(header);
+
+    items.forEach((c) => historyDiv.appendChild(buildHistoryItem(c)));
   });
 }
 
