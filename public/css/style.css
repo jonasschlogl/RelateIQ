@@ -2802,6 +2802,9 @@ section {
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 /* Connection-score trend chart (Insights page) */

@@ -1079,29 +1079,38 @@ function buildImportMessagesRow(p) {
   return wrap;
 }
 
+// Shared by selectPartnerAndStart (the setup screen's "Start practicing")
+// and retryPracticeConversation (the debrief card's "Try again" — task
+// #91) — both just POST the same conversation shape and land on the result
+// the same way, so the actual creation + navigation only lives once.
+async function startPracticeConversation({ partnerProfileId, scenario, intensity, roleSwap }) {
+  const res = await authFetch("/api/conversations", {
+    method: "POST",
+    body: JSON.stringify({ mode: "practice", partnerProfileId, scenario, intensity, roleSwap }),
+  });
+  const conv = await safeJson(res);
+  if (!res.ok) return { ok: false, error: conv.error, upgradeRequired: !!conv.upgradeRequired };
+  conversations.unshift({
+    id: conv.id,
+    title: conv.title,
+    updatedAt: conv.updatedAt,
+    createdAt: conv.createdAt,
+    mode: conv.mode,
+    partnerName: conv.partnerName,
+  });
+  await openConversation(conv.id, conv);
+  return { ok: true };
+}
+
 async function selectPartnerAndStart(partnerId) {
   try {
     const scenario = document.getElementById("practice-scenario")?.value.trim() || "";
     const intensity = document.getElementById("practice-intensity")?.value === "supportive" ? "supportive" : "realistic";
     const roleSwap = !!document.getElementById("practice-role-swap")?.checked;
-    const res = await authFetch("/api/conversations", {
-      method: "POST",
-      body: JSON.stringify({ mode: "practice", partnerProfileId: partnerId, scenario, intensity, roleSwap }),
-    });
-    const conv = await safeJson(res);
-    if (!res.ok) {
-      alert(conv.error || "Couldn't start that practice conversation.");
-      return;
+    const result = await startPracticeConversation({ partnerProfileId: partnerId, scenario, intensity, roleSwap });
+    if (!result.ok) {
+      alert(result.error || "Couldn't start that practice conversation.");
     }
-    conversations.unshift({
-      id: conv.id,
-      title: conv.title,
-      updatedAt: conv.updatedAt,
-      createdAt: conv.createdAt,
-      mode: conv.mode,
-      partnerName: conv.partnerName,
-    });
-    await openConversation(conv.id, conv);
   } catch (err) {
     console.error(err);
   }
@@ -1164,6 +1173,11 @@ async function openConversation(id, preloadedConv) {
     currentConvCtx = {
       mode: conv.mode || "coach",
       partnerName: conv.partnerName || null,
+      // Needed to re-create the SAME rehearsal on "Try again" after a
+      // debrief (see retryPracticeConversation) — aboutPartnerId below is a
+      // different, Coach-Chat-only concept (which relationship a coaching
+      // conversation is about) and doesn't apply here.
+      partnerProfileId: conv.partnerProfileId || null,
       scenario: conv.scenario || null,
       aboutPartnerId: conv.aboutPartnerId || null,
       intensity: conv.intensity || null,
@@ -1561,7 +1575,13 @@ async function requestPracticeDebrief() {
       alert(data.error || "Couldn't generate a debrief right now.");
       return;
     }
-    appendPracticeDebrief(data);
+    // Captured now, not read live from currentConvCtx inside the card's
+    // click handler — the debrief card isn't persisted (it's rebuilt fresh
+    // each time "Get feedback" is clicked), so by the time someone clicks
+    // "Try again" this IS still the right conversation's context, but
+    // there's no reason to depend on that staying true if this card ever
+    // outlives a navigation in some future change.
+    appendPracticeDebrief(data, currentConvCtx);
   } catch (err) {
     console.error(err);
     alert("Couldn't connect to the server.");
@@ -1688,7 +1708,7 @@ function renderShareModalLink(share) {
   });
 }
 
-function appendPracticeDebrief(debrief) {
+function appendPracticeDebrief(debrief, ctx) {
   const chatDiv = document.getElementById("chat");
   if (!chatDiv) return;
 
@@ -1722,6 +1742,24 @@ function appendPracticeDebrief(debrief) {
 
   const footer = document.createElement("div");
   footer.className = "practice-debrief-footer";
+
+  // "Try again" (task #91) — re-runs the exact same rehearsal (same
+  // partner, scenario, intensity, role-swap) as a fresh conversation, so
+  // the feedback just given can actually be put into practice right away
+  // instead of the person having to reopen the setup screen and refill it.
+  // Only offered when we actually have a partner to restart with — should
+  // always be true for a real practice debrief, but the debrief endpoint
+  // itself is defensive elsewhere, so this is too.
+  if (ctx && ctx.mode === "practice" && ctx.partnerProfileId) {
+    const retryBtn = document.createElement("button");
+    retryBtn.type = "button";
+    retryBtn.className = "btn btn-gradient btn-sm";
+    retryBtn.id = "practice-debrief-retry-btn";
+    retryBtn.textContent = "🔄 Try again";
+    retryBtn.addEventListener("click", () => retryPracticeConversation(ctx, retryBtn));
+    footer.appendChild(retryBtn);
+  }
+
   const coachLink = document.createElement("button");
   coachLink.type = "button";
   coachLink.className = "btn btn-ghost btn-sm";
@@ -1732,6 +1770,45 @@ function appendPracticeDebrief(debrief) {
 
   chatDiv.appendChild(card);
   chatDiv.scrollTop = chatDiv.scrollHeight;
+}
+
+// "🔄 Try again" on the practice debrief card (task #91). Free-plan users
+// only get FREE_LIFETIME_PRACTICE_CONVERSATIONS rehearsal(s) total, so this
+// can legitimately fail with the same upgrade-required shape sendMessage
+// already handles — reuses showComposerError (with its "Upgrade to Pro"
+// button) rather than a bare alert() for that specific case, since the
+// composer is always visible during Practice mode, debrief card or not.
+async function retryPracticeConversation(ctx, btn) {
+  const originalLabel = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Starting…";
+  }
+  try {
+    const result = await startPracticeConversation({
+      partnerProfileId: ctx.partnerProfileId,
+      scenario: ctx.scenario,
+      intensity: ctx.intensity,
+      roleSwap: ctx.roleSwap,
+    });
+    if (!result.ok) {
+      showComposerError(result.error || "Couldn't start a new rehearsal.", { upgradeRequired: result.upgradeRequired });
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    }
+    // On success, openConversation (inside startPracticeConversation) has
+    // already replaced the whole chat pane — including this very card and
+    // button — so there's nothing left here to re-enable.
+  } catch (err) {
+    console.error(err);
+    showComposerError("Couldn't connect to the server.");
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  }
 }
 
 function typeText(element, text, speed = 12) {
