@@ -240,17 +240,15 @@ const MAX_CHAT_MESSAGE_CHARS = 8000;
 // "hear me out and respond" moments where model quality is actually
 // noticeable, and keeping them off the pricier model keeps the cost of
 // those unlimited-on-Pro+ features predictable.
-// Bumped off the gpt-4o family (superseded on OpenAI's own roadmap) to the
-// current GPT-6 line: gpt-6-luna is OpenAI's new economy-tier model — at
-// $0.10/$0.50 per million input/output tokens it's actually cheaper than
-// gpt-4o-mini was, while being a newer, stronger generation, so this is a
-// same-or-lower-cost upgrade with no tradeoff for every Free/Pro surface.
-// gpt-6-astra (the current top-tier flagship, $10/$50 per million tokens)
-// replaces gpt-4o for Premium — real money per message, but Premium is
-// exactly the plan where "the best the app can possibly sound" is the
-// product, and per-message cost is still fractions of a cent.
-const STANDARD_MODEL = "gpt-6-luna";
-const PREMIUM_MODEL = "gpt-6-astra";
+// TEMPORARY ROLLBACK (RelateIQ42): briefly bumped to the GPT-6 line
+// (gpt-6-luna / gpt-6-astra), but Jonas's OpenAI account doesn't have
+// access to those models yet — every AI call was failing in production
+// ("Couldn't get a response from the AI"). Reverted to the known-working
+// gpt-4o family until access is confirmed; see the reasoning_effort comment
+// below for the other half of this rollback (that parameter isn't
+// supported on gpt-4o either).
+const STANDARD_MODEL = "gpt-4o-mini";
+const PREMIUM_MODEL = "gpt-4o";
 function modelForPlan(plan) {
   return plan === "premium" ? PREMIUM_MODEL : STANDARD_MODEL;
 }
@@ -2623,14 +2621,11 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         model: isPractice ? modelForPractice(user.plan) : modelForPlan(user.plan),
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
         temperature: isPractice ? 0.95 : 0.8,
-        // Coach Chat (not Practice) gets an explicit reasoning budget: the
-        // system prompt asks the model to actually work out what's going on
-        // underneath the surface complaint before answering, and a
-        // reasoning-capable model does that far more reliably with an
-        // explicit budget than by just being asked nicely in the prompt.
-        // Left off for Practice — a roleplay reply should feel spontaneous,
-        // like a real text back, not visibly deliberated over.
-        ...(isPractice ? {} : { reasoning_effort: "high" }),
+        // reasoning_effort removed in the RelateIQ42 rollback (see the
+        // STANDARD_MODEL/PREMIUM_MODEL comment above) — gpt-4o doesn't
+        // support this parameter at all, and sending it errors the whole
+        // call, not just downgrades gracefully. Re-add once the models that
+        // actually support it are confirmed working on Jonas's account.
       }),
       hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
       // Runs alongside the main reply, not after it, so titling the first
