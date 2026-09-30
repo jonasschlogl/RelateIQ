@@ -412,8 +412,10 @@ How you answer:
 - Never reach for generic relationship-advice phrases — "communicate openly," "listen to each other," "every relationship is different," "set boundaries," "focus on the positives." If advice would apply equally to any couple in any argument, cut it or make it specific enough to this person that it no longer would.
 - Be concrete enough to use in the next ten minutes: what to actually do, in what order, and what to realistically expect back. "Try being more vulnerable" isn't advice; a specific next step is.
 - Give your honest read even when it's unflattering to the user, including when the pattern is partly their own doing. Say it plainly, without moralizing — like a sharp friend who knows this stuff, not a lecture.
+- When they're actually facing a decision, take a side. "That's up to you" or "only you can decide that" is a cop-out, not respect for their autonomy — a real coach who's heard this story a thousand times has an actual opinion and says it ("I'd end it" / "I don't think this is the dealbreaker it feels like right now"), while making clear it's their call to make, not yours to make for them. Neutral balancing of both options is the single most generic-AI-chatbot thing you can do — avoid it.
 - Draw on the full range of real couples-therapy modalities, not just one — the Gottman Method (the Four Horsemen and their antidotes, bids for connection, repair attempts, love maps), Emotionally Focused Therapy (the attachment need or protest behavior underneath the surface fight), attachment theory, Nonviolent Communication, Cognitive Behavioral Therapy (name the actual distortion when it's happening — catastrophizing, mind-reading, all-or-nothing thinking), Motivational Interviewing (when someone's stuck between wanting to change something and resisting it), Imago dialogue's mirror-validate-empathize structure, Internal Family Systems ("part of you wants X, part of you wants Y") when someone's visibly torn — whichever one actually explains what's happening for THIS person. When naming a concept by name actually sharpens the insight — telling someone that what they just described is textbook stonewalling — say it plainly, but as one sharp sentence folded into your real read, never as its own explanatory paragraph or a mini-lecture on the framework.
-- Sound like an actual person, not a written advice column. Never use formal transitional phrases you'd find in a self-help article or therapist brochure — "Let's look at what's beneath the surface," "It's important to consider," "It might be helpful to," "Skúsme sa pozrieť na to, čo sa stalo," "Je dôležité, aby si," "Dôležité je, aby" (and their equivalents in any language). Talk the way you'd actually talk to someone: normal sentences, contractions, the occasional imperfect phrasing a real person uses, real warmth — not a structured document with topic sentences. No bullet points or numbered lists unless they actually asked for a sequence of steps. Never pad a short answer into a longer one to seem thorough — a true one-sentence read beats a hedged four-paragraph one.
+- When a pattern shows up more than once in this same conversation (or the standing memory/insights context below flags it as recurring), give it your own short, plain-spoken name instead of only the clinical term — the way a good coach ends up with their own shorthand for a client's specific thing ("the Sunday-night spiral," "the apology that isn't one"). Once you've named something that way earlier in this conversation, reuse the same name rather than re-describing it from scratch — that's what makes it feel like one coach who knows this person, not a fresh bot each message.
+- Sound like an actual person, not a written advice column. Never use formal transitional phrases you'd find in a self-help article or therapist brochure — "Let's look at what's beneath the surface," "It's important to consider," "It might be helpful to," "I hear you," "It sounds like," "At the end of the day," "Ultimately," "Skúsme sa pozrieť na to, čo sa stalo," "Je dôležité, aby si," "Dôležité je, aby," "Chápem, prečo sa tak cítiš" (and their equivalents in any language). Don't hedge one idea against its opposite just to look balanced ("on one hand... on the other hand...") — pick the read that's actually true and say it. Talk the way you'd actually talk to someone: normal sentences, contractions, the occasional imperfect phrasing a real person uses, real warmth — not a structured document with topic sentences. No bullet points or numbered lists unless they actually asked for a sequence of steps. Never pad a short answer into a longer one to seem thorough — a true one-sentence read beats a hedged four-paragraph one.
 - Treat what the user tells you as real and specific — refer back to the actual details they gave (what was said, what happened, names if used) instead of restating their situation in the abstract.
 
 When they ask what to actually say — or ask you to help them respond to a specific message, text, or screenshot — don't just talk about it: write the actual message, word for word, ready to copy and send as-is. Set it apart from the rest of your answer (its own line, in quotes) so it's obvious exactly what to copy — don't bury it inside a paragraph of advice. Write it the way this person would actually text: casual and short by default, not a polished essay — only go longer if the moment genuinely calls for it. If there's a real reason to offer a second option (a softer version vs. a more direct one), give at most one alternative, clearly labeled — don't pile on choices nobody asked for. When a screenshot or photo of a real conversation is attached, actually read what's in it — the specific words, who said what, the tone — and use that as the real material for your answer, the same way you would if they'd typed it out themselves.
@@ -495,7 +497,7 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
   }
 
   if (memory) {
-    prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.`;
+    prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new — briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it — don't force it in.`;
   }
 
   const insightsContext = buildInsightsContext(user);
@@ -956,6 +958,34 @@ function buildPartnerLearningDigest(conversations) {
     .join("\n\n---\n\n");
 }
 
+// Same idea as buildPartnerLearningDigest above, but for relationship-memory
+// generation specifically (task #97: proactive follow-up on past advice) —
+// this one deliberately keeps the coach's OWN replies in, labeled "Coach:",
+// so RELATIONSHIP_MEMORY_SYSTEM_PROMPT can actually see what was suggested
+// last time and note it for follow-up. buildPartnerLearningDigest stays
+// user-only on purpose (it's building a profile of the PARTNER from what
+// the user said about them — the coach's own words aren't relevant there),
+// so this is a separate function rather than a shared one with a flag.
+function buildRelationshipMemoryDigest(conversations) {
+  const recent = conversations.slice(0, 20); // caller sorts newest-first
+  return recent
+    .map((conv) => {
+      const date = conv.createdAt ? String(conv.createdAt).slice(0, 10) : "undated";
+      const lines = (conv.messages || [])
+        .slice(-20) // most recent turns of the conversation — where a wrap-up suggestion would be
+        .map((m) => {
+          const text = String(m.content || "").slice(0, 400).trim();
+          if (!text) return null;
+          return `${m.role === "user" ? "User" : "Coach"}: ${text}`;
+        })
+        .filter(Boolean);
+      if (lines.length === 0) return null;
+      return `(${date}):\n${lines.join("\n")}`;
+    })
+    .filter(Boolean)
+    .join("\n\n---\n\n");
+}
+
 // Called automatically from POST /api/conversations right before a practice
 // session starts — never from a user-facing button. Mutates `partner` in
 // place and persists it itself (via savePartnerProfile) when it actually
@@ -1053,17 +1083,24 @@ ${digest}
 
 const RELATIONSHIP_MEMORY_MIN_REFRESH_HOURS = 24;
 
-const RELATIONSHIP_MEMORY_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short standing "memory" of recurring themes and patterns — so a future coaching conversation can pick up with continuity instead of starting from zero. You are NOT giving advice here and NOT summarizing any single conversation — you're noticing what keeps coming up ACROSS separate conversations.
+const RELATIONSHIP_MEMORY_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) — including the coach's own past replies, labeled "Coach:" — to build a short standing "memory" so a future coaching conversation can pick up with continuity instead of starting from zero. You are NOT giving advice here and NOT summarizing any single conversation.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"memory": "<3-6 plain sentences, in the user's language, naming recurring topics, people, or patterns that show up more than once — e.g. a recurring point of friction, a person who's mentioned repeatedly, a pattern in how the user reacts under stress. Empty string if there's genuinely no recurring pattern yet, just isolated one-off topics.>"}
+{"memory": "<3-6 plain sentences, in the user's language, naming recurring topics, people, or patterns that show up more than once — e.g. a recurring point of friction, a person who's mentioned repeatedly, a pattern in how the user reacts under stress. Empty string if there's genuinely no recurring pattern yet, just isolated one-off topics.>", "lastSuggestion": "<one plain sentence, in the user's language, naming the single most recent concrete action or next step the Coach suggested — 'suggested asking her directly whether she wants space or reassurance when she goes quiet,' not 'talked about communication.' Empty string if the last conversation didn't end with a concrete suggestion, if the user already reported back on whether they tried it, or if too much time/too many other topics have passed since for a check-in to make sense.>"}
 
-Rules:
+Rules for "memory":
 - Only include what's genuinely recurring (shows up across more than one conversation) — a single conversation's topic is not a pattern, even if that conversation was intense.
 - Write it as calm, factual continuity notes for a coach to privately keep in mind — not a diagnosis, not a verdict on the user or anyone they've mentioned.
 - Never invent specific events that weren't described. Paraphrase and generalize rather than quoting verbatim.
 - Do not address the user directly ("you...") — write it as a third-person note, e.g. "Recurring tension around..." or "Has mentioned [pattern] more than once...".
-- Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+
+Rules for "lastSuggestion":
+- This one does NOT need to be recurring — a single most-recent conversation is exactly the right source for it.
+- Only the single most recent one, from the most recent conversation that actually ended with a concrete suggestion — not a running list of every suggestion ever given.
+- Must be something concrete enough to ask "did you try this" about — a specific action, message, or conversation to have. A general insight or reframe ("realized she pulls away when stressed") is not a suggestion; skip it.
+- If the user's next conversation already mentions how it went, that suggestion is resolved — leave this empty rather than re-surfacing it.
+
+Write both fields in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
 
 async function updateRelationshipMemoryIfStale(db, user) {
   const lastUpdatedAt = user.relationshipMemoryAt ? new Date(user.relationshipMemoryAt).getTime() : 0;
@@ -1088,8 +1125,12 @@ async function updateRelationshipMemoryIfStale(db, user) {
   if (totalUserMessages < MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING) return; // not enough material yet
 
   try {
-    const digest = buildPartnerLearningDigest(coachConversations);
-    const userContent = `Past Coach Chat messages, most recent conversations first (the user's own words):
+    // buildRelationshipMemoryDigest (not buildPartnerLearningDigest) — this
+    // one keeps the coach's own past replies in, so the model can actually
+    // see what was suggested last time and note it in "lastSuggestion" for
+    // proactive follow-up (task #97). See that function's own comment.
+    const digest = buildRelationshipMemoryDigest(coachConversations);
+    const userContent = `Past Coach Chat messages, most recent conversations first (both the user's own words and the Coach's past replies, labeled):
 """
 ${digest}
 """`;
@@ -1106,15 +1147,21 @@ ${digest}
 
     const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
     const memory = String(parsed.memory || "").trim().slice(0, 900);
+    const lastSuggestion = String(parsed.lastSuggestion || "").trim().slice(0, 300);
+    // Both fields fold into the single relationshipMemory text column
+    // (no schema change needed — see buildCoachSystemPrompt, which already
+    // treats relationshipMemory as one continuity note and now recognizes
+    // this "Most recent suggestion:" line specifically to drive follow-up).
+    const combined = [memory, lastSuggestion ? `Most recent suggestion: ${lastSuggestion}` : ""].filter(Boolean).join("\n\n");
 
-    if (memory) {
-      user.relationshipMemory = memory;
+    if (combined) {
+      user.relationshipMemory = combined;
       user.relationshipMemoryAt = new Date().toISOString();
       saveUser(user);
     } else {
-      // Nothing recurring yet — still bump the timestamp so we don't
-      // re-query the model again until either the cooldown or new material
-      // makes that worthwhile.
+      // Nothing recurring or actionable yet — still bump the timestamp so we
+      // don't re-query the model again until either the cooldown or new
+      // material makes that worthwhile.
       user.relationshipMemoryAt = new Date().toISOString();
       saveUser(user);
     }
