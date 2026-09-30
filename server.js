@@ -32,14 +32,13 @@ import {
   saveShare,
   deleteShare,
   getShareByToken,
-  saveCompare,
-  deleteCompare,
-  getCompareByToken,
   saveCoupleLink,
   deleteCoupleLink,
   getCoupleLinkByToken,
   saveCoupleAnswer,
   saveCoupleAnswerIfAbsent,
+  saveSoloAnswer,
+  saveSoloAnswerIfAbsent,
   savePushSubscription,
   deletePushSubscription,
   deletePushSubscriptionsForUser,
@@ -431,15 +430,18 @@ What never bends:
 - If the user describes signs of violence, abuse, or self-harm, set coaching aside: respond with calm and empathy, take it seriously, and gently point toward a professional or a helpline in their country.
 - Always reply in the same language as the user's most recent message — detect it automatically, the way ChatGPT does. Never ask which language to use or mention that you're doing this; switch the instant they do.`;
 
-// The user's own attachment style (from the Attachment Quiz — see
-// ATTACHMENT_STYLES below) was being collected and shown on the dashboard,
-// but never actually reached the coaching prompts, even though the
-// descriptions to do this with already existed for the quiz result screen.
-// This wires it in: when known, the coach is told how THIS specific person
-// tends to experience closeness/conflict, so "give them space" vs. "name
-// things out loud rather than assuming" isn't generic advice — it's
+// The user's own attachment style (user.attachmentStyle — see
+// ATTACHMENT_STYLES below): when known, the coach is told how THIS specific
+// person tends to experience closeness/conflict, so "give them space" vs.
+// "name things out loud rather than assuming" isn't generic advice — it's
 // calibrated to them, the same way a human coach who knew this about a
 // client would adjust their approach without making a diagnosis out of it.
+// Note: this used to be set by an in-app Attachment Style Quiz; that quiz
+// was removed at Jonas's request (existing data wiped, no way left to set
+// it), so user.attachmentStyle is now permanently null and this block is
+// effectively inert — left in place (fully null-checked below) rather than
+// deleted, since it costs nothing to keep and a future "set your own
+// attachment style" entry point would only need to populate the field.
 // `partner` is optional — the specific partner profile this Coach Chat
 // conversation has been tagged to (conv.aboutPartnerId, set via the
 // coach-tag-bar in chat.js / PATCH /api/conversations/:id), when one is
@@ -499,7 +501,7 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
   let prompt = COACH_SYSTEM_PROMPT;
 
   if (style) {
-    prompt += `\n\nWhat we know about this user's own attachment style, from a quiz they took (${style.name}): ${style.desc}\nLet this quietly inform how you coach them — for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted — only use it to calibrate your tone and advice.`;
+    prompt += `\n\nWhat we know about this user's own attachment style (${style.name}): ${style.desc}\nLet this quietly inform how you coach them — for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted — only use it to calibrate your tone and advice.`;
   }
 
   if (memory) {
@@ -1216,10 +1218,12 @@ Rules:
   const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
   const learnedNote = (partner.learnedProfile || "").trim();
   const voiceNote = (partner.voice || "").trim();
-  // When the user's own attachment style is also known (from the Attachment
-  // Quiz), reuse the same pairing write-ups the Compare feature uses — the
-  // dynamic between two specific styles is more useful for a realistic
-  // roleplay than either style described in isolation.
+  // When the user's own attachment style is also known (user.attachmentStyle
+  // — in practice this is permanently unset now, see the comment on it in
+  // buildCoachSystemPrompt above), reuse the same pairing write-ups
+  // compatText produces — the dynamic between two specific styles is more
+  // useful for a realistic roleplay than either style described in
+  // isolation.
   const compatNote =
     partner.userAttachmentStyle && partner.attachmentStyle
       ? `How this specific pairing tends to play out (user is ${ATTACHMENT_STYLES[partner.userAttachmentStyle]?.name || partner.userAttachmentStyle}, you are ${ATTACHMENT_STYLES[partner.attachmentStyle]?.name || partner.attachmentStyle}): ${compatText(partner.userAttachmentStyle, partner.attachmentStyle)}`
@@ -1387,8 +1391,8 @@ const ATTACHMENT_STYLES = {
 // Hand-written, not AI-generated — same reasoning as ATTACHMENT_COMPAT below:
 // only 4 fixed styles exist, so each is written once here rather than asked
 // of the model per request. This is a *separate* set of descriptions from
-// ATTACHMENT_STYLES.desc above: that one describes how the quiz-taker
-// experiences their own style, this one describes how a partner *behaves in
+// ATTACHMENT_STYLES.desc above: that one describes how someone experiences
+// their own style firsthand, this one describes how a partner *behaves in
 // a live back-and-forth conversation* — what actually shows up in dialogue —
 // since Practice Mode needs behavioral cues to roleplay convincingly, not a
 // first-person self-description.
@@ -2251,8 +2255,8 @@ app.post("/api/partners", authMiddleware, (req, res) => {
       }
     }
 
-    // attachmentStyle is optional — the user may not know it or may not have
-    // had their partner take the quiz. Only accept one of the 4 real keys;
+    // attachmentStyle is optional — the user may not know their partner's
+    // attachment style, or may just not want to guess. Only accept one of the 4 real keys;
     // anything else (including "", undefined, or a tampered value) is stored
     // as null, meaning "not sure / skip" — Practice Mode simply omits the
     // behavioral guidance in that case rather than guessing.
@@ -2407,8 +2411,8 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   }
 
   // Snapshotted at conversation-start time, same as partnerName/partnerTraits/
-  // partnerContext below — later edits to the partner profile (or retaking
-  // the compat quiz) shouldn't silently rewrite a rehearsal already in
+  // partnerContext below — a later edit to the partner profile's
+  // attachment style shouldn't silently rewrite a rehearsal already in
   // progress. The scenario is per-conversation, not per-profile: what the
   // user wants to practice today is often different each time. intensity/
   // roleSwap are likewise per-rehearsal choices, not saved to the partner
@@ -3066,28 +3070,6 @@ function buildPartnerContextBlock(partner) {
 }
 
 // ---------------------------------------------------------------------------
-// Attachment style quiz — scored client-side, optional, just saves the result
-// ---------------------------------------------------------------------------
-
-app.post("/api/quiz/attachment", authMiddleware, (req, res) => {
-  try {
-    const { style } = req.body || {};
-    if (!ATTACHMENT_STYLES[style]) {
-      return res.status(400).json({ error: "Unknown attachment style." });
-    }
-
-    req.user.attachmentStyle = style;
-    req.user.attachmentQuizAt = new Date().toISOString();
-    saveUser(req.user);
-
-    res.json({ attachmentStyle: style, ...ATTACHMENT_STYLES[style] });
-  } catch (err) {
-    console.error("Quiz save error:", err);
-    res.status(500).json({ error: "Couldn't save your result. Please try again." });
-  }
-});
-
-// ---------------------------------------------------------------------------
 // Daily check-in — always optional/skippable, never gates anything
 // ---------------------------------------------------------------------------
 
@@ -3382,155 +3364,36 @@ app.get("/api/public/shares/:token", (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// Attachment style comparison — lets someone who's taken the quiz generate a
-// link their partner can open with no account, take a short version of the
-// same quiz themselves, and see how their two styles tend to interact. Each
-// side's style is a snapshot taken the moment they answer (same pattern as
-// conversation shares above), so a later retake of the quiz never silently
-// changes a link someone already has. The owner's style is only revealed
-// once the partner has answered too — a two-way reveal, not a one-sided peek.
-// ---------------------------------------------------------------------------
-
-const MAX_COMPARES_PER_USER = 5;
-
-function publicCompare(compare) {
-  return {
-    id: compare.id,
-    token: compare.token,
-    ownerStyle: compare.ownerStyle,
-    partnerStyle: compare.partnerStyle || null,
-    partnerRespondedAt: compare.partnerRespondedAt || null,
-    revoked: !!compare.revoked,
-    createdAt: compare.createdAt,
-  };
-}
-
-app.post("/api/compare", authMiddleware, (req, res) => {
-  try {
-    const db = req.db;
-    const user = db.users.find((u) => u.id === req.user.id);
-    if (!user.attachmentStyle) {
-      return res.status(400).json({ error: "Take the Attachment Style Quiz first — then you can compare results with your partner." });
-    }
-
-    const existingCount = db.compares.filter((c) => c.userId === req.user.id).length;
-    if (existingCount >= MAX_COMPARES_PER_USER) {
-      return res.status(403).json({
-        error: `You can have up to ${MAX_COMPARES_PER_USER} comparison links at once. Delete an old one to make room.`,
-      });
-    }
-
-    const compare = {
-      id: generateId("cmp"),
-      userId: req.user.id,
-      token: crypto.randomBytes(24).toString("hex"),
-      ownerStyle: user.attachmentStyle,
-      partnerStyle: null,
-      partnerRespondedAt: null,
-      revoked: false,
-      createdAt: new Date().toISOString(),
-    };
-    saveCompare(compare);
-    res.json(publicCompare(compare));
-  } catch (err) {
-    console.error("Create compare error:", err);
-    res.status(500).json({ error: "Couldn't create that link. Please try again." });
-  }
-});
-
-app.get("/api/compare", authMiddleware, (req, res) => {
-  const list = req.db.compares
-    .filter((c) => c.userId === req.user.id)
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-    .map(publicCompare);
-  res.json(list);
-});
-
-app.patch("/api/compare/:id", authMiddleware, (req, res) => {
-  try {
-    const db = req.db;
-    const compare = db.compares.find((c) => c.id === req.params.id && c.userId === req.user.id);
-    if (!compare) return res.status(404).json({ error: "Comparison link not found." });
-    const { revoked } = req.body || {};
-    if (revoked !== undefined) compare.revoked = !!revoked;
-    saveCompare(compare);
-    res.json(publicCompare(compare));
-  } catch (err) {
-    console.error("Update compare error:", err);
-    res.status(500).json({ error: "Couldn't update that link. Please try again." });
-  }
-});
-
-app.delete("/api/compare/:id", authMiddleware, (req, res) => {
-  const compare = req.db.compares.find((c) => c.id === req.params.id && c.userId === req.user.id);
-  if (!compare) return res.status(404).json({ error: "Comparison link not found." });
-  deleteCompare(compare.id);
-  res.json({ ok: true });
-});
-
-// Public, unauthenticated — what the partner opens. Never reveals the
-// owner's style until the partner has answered their own short quiz.
-app.get("/api/public/compare/:token", (req, res) => {
-  const compare = getCompareByToken(req.params.token);
-  if (!compare || compare.revoked) {
-    return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
-  }
-  if (!compare.partnerStyle) {
-    return res.json({ answered: false, ownerStyle: null, partnerStyle: null, compatText: null });
-  }
-  res.json({
-    answered: true,
-    ownerStyle: { key: compare.ownerStyle, ...ATTACHMENT_STYLES[compare.ownerStyle] },
-    partnerStyle: { key: compare.partnerStyle, ...ATTACHMENT_STYLES[compare.partnerStyle] },
-    compatText: compatText(compare.ownerStyle, compare.partnerStyle),
-  });
-});
-
-// Public, unauthenticated — the partner submits their own short quiz result
-// here. Can be answered more than once (a genuine retake), which simply
-// overwrites the previous answer; there's no account to protect on this side.
-app.post("/api/public/compare/:token/respond", (req, res) => {
-  try {
-    const compare = getCompareByToken(req.params.token);
-    if (!compare || compare.revoked) {
-      return res.status(404).json({ error: "This link isn't available. It may have been removed or revoked." });
-    }
-    const { style } = req.body || {};
-    if (!ATTACHMENT_STYLES[style]) {
-      return res.status(400).json({ error: "Unknown attachment style." });
-    }
-    compare.partnerStyle = style;
-    compare.partnerRespondedAt = new Date().toISOString();
-    saveCompare(compare);
-
-    res.json({
-      answered: true,
-      ownerStyle: { key: compare.ownerStyle, ...ATTACHMENT_STYLES[compare.ownerStyle] },
-      partnerStyle: { key: style, ...ATTACHMENT_STYLES[style] },
-      compatText: compatText(compare.ownerStyle, style),
-    });
-  } catch (err) {
-    console.error("Compare respond error:", err);
-    res.status(500).json({ error: "Couldn't save your answer. Please try again." });
-  }
-});
-
-// ---------------------------------------------------------------------------
-// Couple linking + daily shared question (task #98) — two real accounts
-// linked to each other, unlike the one-off, no-account, token-only `compares`
-// exchange above. Once linked, both partners get the SAME question every
-// day and only see each other's answer after submitting their own — a
-// blind-until-you-answer mechanic, so neither side can peek and quietly
-// tailor their own answer to match.
+// Daily relationship question (task #98, reworked per Jonas: "nechal by som
+// tam len daily questions ... aj keby to nezdielam s partnerom"). Works in
+// two modes, decided per request by whether the caller currently has an
+// ACTIVE couple link:
+//   - Solo mode (no active link): the user answers the daily question just
+//     for themselves — their own private stream (soloAnswers in store.js),
+//     no partner, no reveal mechanic. Available from day one, with no
+//     partner required.
+//   - Couple mode (active link): two real accounts linked to each other.
+//     Both partners get the SAME question every day and only see each
+//     other's answer after submitting their own — a blind-until-you-answer
+//     mechanic, so neither side can peek and quietly tailor their own
+//     answer to match.
+// The two streams are deliberately never merged: a user's solo answers
+// (from before linking, or from periods without a partner) stay in
+// soloAnswers forever; the moment a link becomes active, the couple stream
+// starts completely fresh in coupleAnswers, with no no-repeat history
+// carried over from solo. See ensureTodaysSoloQuestion / pickDailyQuestion
+// below for how both streams share the same "never repeat until the static
+// bank runs out, then generate indefinitely" question-selection logic.
 //
-// Deliberately narrow: a couple link exposes ONLY the daily question/answer
-// pair. It never touches Coach Chat conversations, partner profiles,
-// insights, or anything else private — that boundary must never gain a
-// "see their conversations too" shortcut without real reconsideration.
-// Either partner can unlink unilaterally at any time, which deletes the
-// link AND every stored answer under it (see deleteCoupleLink in
-// lib/store.js) — a clean break, not a relationship that lingers in the db
-// once someone walks away.
+// Deliberately narrow either way: this feature exposes ONLY the daily
+// question/answer(s). It never touches Coach Chat conversations, partner
+// profiles, insights, or anything else private — that boundary must never
+// gain a "see their conversations too" shortcut without real
+// reconsideration. Either partner can unlink unilaterally at any time,
+// which deletes the link AND every stored couple answer under it (see
+// deleteCoupleLink in lib/store.js) — a clean break, not a relationship
+// that lingers in the db once someone walks away. Their solo history (if
+// any, from before they linked) is untouched by an unlink.
 // ---------------------------------------------------------------------------
 
 // Open-ended, comparison-worthy relationship questions — deliberately never
@@ -3675,54 +3538,102 @@ const COUPLE_QUESTIONS = [
   "What's something about how you handle stress that you wish didn't affect your partner as much as it does?",
 ];
 
-// Same date, same couple, same candidate list → same question,
+// Same date, same salt key, same candidate list → same question,
 // deterministically, with no need to look anything up first (mirrors
-// checkinQuestionForDate above). Salted with the couple link's own id (not
-// just the date) so different couples aren't all handed the literal same
-// question on the same calendar day. `candidates` defaults to the full
-// static bank, but ensureTodaysCoupleQuestion below passes in only the
-// ones THIS couple hasn't used yet, which is what actually guarantees no
-// repeat until all of them have appeared.
-function coupleQuestionForDate(coupleLinkId, dateKey, candidates = COUPLE_QUESTIONS) {
+// checkinQuestionForDate above). `saltKey` is the couple link's id in
+// couple mode or the user's id in solo mode — either way, salting with it
+// (not just the date) means different couples/users aren't all handed the
+// literal same question on the same calendar day. `candidates` defaults to
+// the full static bank, but pickQuestionForStream below passes in only the
+// ones THIS couple/user hasn't used yet, which is what actually guarantees
+// no repeat until all of them have appeared.
+function pickDailyQuestion(saltKey, dateKey, candidates = COUPLE_QUESTIONS) {
   let hash = 0;
-  const seed = `${coupleLinkId}|${dateKey}`;
+  const seed = `${saltKey}|${dateKey}`;
   for (const ch of seed) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
   return candidates[hash % candidates.length];
 }
 
-// Builds the system prompt for generateFreshCoupleQuestion below — a
+// Builds the system prompt for generateFreshDailyQuestion below — a
 // function, not a constant, because the "don't repeat these" list is
-// specific to each couple and changes over time.
-function buildCoupleQuestionSystemPrompt(usedQuestions) {
+// specific to each couple/person and changes over time. `mode` is "couple"
+// (unchanged wording from the original couple-only version) or "solo" (one
+// person reflecting on their own, no partner to compare answers with).
+function buildDailyQuestionSystemPrompt(usedQuestions, mode) {
   const recentlyUsed = usedQuestions.slice(-40);
-  return `You write a single daily question for two partners in a relationship-coaching app called RelateIQ. Each partner answers it independently, then compares answers with each other.
+  const scopeNoun = mode === "solo" ? "this person" : "this couple";
+  const intro =
+    mode === "solo"
+      ? "You write a single daily reflection question for one person to privately answer about their own romantic relationship, in a relationship-coaching app called RelateIQ. They may not have a partner linked on the app (yet), so this is just for their own reflection."
+      : "You write a single daily question for two partners in a relationship-coaching app called RelateIQ. Each partner answers it independently, then compares answers with each other.";
+  const comparisonRule =
+    mode === "solo"
+      ? "Open-ended and genuinely worth sitting with — something one person could reflect on honestly, not a checklist item."
+      : "Open-ended and genuinely comparison-worthy — two people could honestly answer it in completely different ways.";
+
+  return `${intro}
 
 Respond with ONLY a JSON object, no other text before or after it: {"question": "<the question>"}
 
 Rules:
-- Open-ended and genuinely comparison-worthy — two people could honestly answer it in completely different ways. NEVER write something a person could truthfully answer with just "yes" or "no" — not even a compound question with a yes/no clause tacked onto an otherwise open one (bad: "...and is that fair?", "...and are you glad you did?", "...does your partner know?").
+- ${comparisonRule} NEVER write something a person could truthfully answer with just "yes" or "no" — not even a compound question with a yes/no clause tacked onto an otherwise open one (bad: "...and is that fair?", "...and are you glad you did?", "...does your partner know?").
 - Draw from the real range of relationship life: memories, values, hypothetical "what would you do if…" scenarios, opinions, everyday life, fears, growth, communication, or lighter/fun topics — vary which angle you use, don't default to the same one every time.
 - One or two sentences, natural conversational English. No surrounding quotation marks.
-- Must be genuinely new — not a reworded restatement of any question already used with this couple, listed below. Different topic or a clearly different angle, not just different phrasing of the same idea.
+- Must be genuinely new — not a reworded restatement of any question already used with ${scopeNoun}, listed below. Different topic or a clearly different angle, not just different phrasing of the same idea.
 
-Questions already used with this couple (write something that doesn't overlap with these):
+Questions already used with ${scopeNoun} (write something that doesn't overlap with these):
 ${recentlyUsed.map((q) => `- ${q}`).join("\n")}`;
 }
 
-// Called only once a couple has worked through every question in the
-// static COUPLE_QUESTIONS bank (see ensureTodaysCoupleQuestion) — from
-// that point on, every day's question is freshly generated rather than
-// ever repeating. Fails open: any error here is caught by the caller and
-// falls back to reusing an old question rather than breaking the feature.
-async function generateFreshCoupleQuestion(usedQuestions) {
+// Called only once a couple/person has worked through every question in the
+// static COUPLE_QUESTIONS bank (see pickQuestionForStream) — from that point
+// on, every day's question is freshly generated rather than ever repeating.
+// Fails open: any error here is caught by the caller and falls back to
+// reusing an old question rather than breaking the feature.
+async function generateFreshDailyQuestion(usedQuestions, mode) {
   const completion = await openai.chat.completions.create({
     model: STANDARD_MODEL,
-    messages: [{ role: "system", content: buildCoupleQuestionSystemPrompt(usedQuestions) }],
+    messages: [{ role: "system", content: buildDailyQuestionSystemPrompt(usedQuestions, mode) }],
     temperature: 0.9,
     response_format: { type: "json_object" },
   });
   const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
   return String(parsed.question || "").trim();
+}
+
+// Shared question-selection logic for both streams (task #98 follow-up —
+// Jonas wanted no repeats until the whole bank is used, AND for it to never
+// actually run out):
+//   1. While this couple/person still has unused questions in the static
+//      COUPLE_QUESTIONS bank, deterministically pick one of THOSE (never
+//      one already used) — scoped to the unused subset instead of the full
+//      bank.
+//   2. Once they've used all of them, every day from then on gets a fresh,
+//      newly-generated question instead — see generateFreshDailyQuestion.
+//      That also naturally can't repeat: it's explicitly told what's
+//      already been asked.
+async function pickQuestionForStream(usedQuestions, saltKey, dateKey, mode) {
+  const usedSet = new Set(usedQuestions.map((q) => q.toLowerCase()));
+  const unusedStatic = COUPLE_QUESTIONS.filter((q) => !usedSet.has(q.toLowerCase()));
+
+  let question;
+  if (unusedStatic.length > 0) {
+    question = pickDailyQuestion(saltKey, dateKey, unusedStatic);
+  } else {
+    question = await generateFreshDailyQuestion(usedQuestions, mode).catch((err) => {
+      console.error("Daily question generation error:", err.message);
+      return "";
+    });
+    question = String(question || "").trim();
+    // Guards against an empty/failed generation, or the rare case the
+    // model echoes something too close to an existing one — falls back to
+    // the very first question ever asked (a real repeat) rather than ever
+    // leaving "today" without one.
+    if (!question || usedSet.has(question.toLowerCase())) {
+      question = usedQuestions[0] || COUPLE_QUESTIONS[0];
+    }
+  }
+  return question;
 }
 
 function findActiveCoupleLink(db, userId) {
@@ -3741,24 +3652,12 @@ function myCoupleSlot(link, userId) {
 // — with its question already picked — the first time either partner opens
 // it that day. Created once, never regenerated, so a later edit to
 // COUPLE_QUESTIONS can't retroactively change a question someone already
-// answered (same "point-in-time snapshot" principle as the ownerStyle
-// snapshot on compares above).
-//
-// Question selection (task #98 follow-up — Jonas wanted no repeats until
-// the whole bank is used, AND for it to never actually run out):
-//   1. While this couple still has unused questions in the static
-//      COUPLE_QUESTIONS bank, deterministically pick one of THOSE (never
-//      one they've already had) — same mechanism as before, just scoped to
-//      the unused subset instead of the full bank.
-//   2. Once they've used all of them, every day from then on gets a fresh,
-//      newly-generated question instead — see generateFreshCoupleQuestion.
-//      That also naturally can't repeat: it's explicitly told what this
-//      couple has already been asked.
-// Either way, the actual persistence goes through
-// saveCoupleAnswerIfAbsent (store.js), which is race-safe: if both
-// partners open "today" at nearly the same moment before the row exists,
-// only one of their (possibly independently AI-generated) questions
-// actually gets saved, and both requests end up returning that same one.
+// answered. Question selection itself is pickQuestionForStream above;
+// persistence goes through saveCoupleAnswerIfAbsent (store.js), which is
+// race-safe: if both partners open "today" at nearly the same moment
+// before the row exists, only one of their (possibly independently
+// AI-generated) questions actually gets saved, and both requests end up
+// returning that same one.
 async function ensureTodaysCoupleQuestion(db, link, dateKey) {
   let row = db.coupleAnswers.find((a) => a.coupleLinkId === link.id && a.date === dateKey);
   if (row) return row;
@@ -3766,29 +3665,29 @@ async function ensureTodaysCoupleQuestion(db, link, dateKey) {
   const usedQuestions = db.coupleAnswers
     .filter((a) => a.coupleLinkId === link.id && a.question)
     .map((a) => a.question);
-  const usedSet = new Set(usedQuestions.map((q) => q.toLowerCase()));
-  const unusedStatic = COUPLE_QUESTIONS.filter((q) => !usedSet.has(q.toLowerCase()));
-
-  let question;
-  if (unusedStatic.length > 0) {
-    question = coupleQuestionForDate(link.id, dateKey, unusedStatic);
-  } else {
-    question = await generateFreshCoupleQuestion(usedQuestions).catch((err) => {
-      console.error("Couple question generation error:", err.message);
-      return "";
-    });
-    question = String(question || "").trim();
-    // Guards against an empty/failed generation, or the rare case the
-    // model echoes something too close to an existing one — falls back to
-    // the couple's very first question (a real repeat) rather than ever
-    // leaving "today" without one.
-    if (!question || usedSet.has(question.toLowerCase())) {
-      question = usedQuestions[0] || COUPLE_QUESTIONS[0];
-    }
-  }
+  const question = await pickQuestionForStream(usedQuestions, link.id, dateKey, "couple");
 
   row = saveCoupleAnswerIfAbsent(link.id, dateKey, question);
   if (!db.coupleAnswers.some((a) => a.id === row.id)) db.coupleAnswers.push(row);
+  return row;
+}
+
+// Same as ensureTodaysCoupleQuestion above, but for one user's own private
+// solo stream (no partner, no reveal mechanic) — used whenever the caller
+// doesn't currently have an active couple link. A user's solo history
+// never feeds into, or gets read by, the couple stream even after they do
+// link up (see the soloAnswers table comment in lib/store.js) — linking
+// simply starts ensureTodaysCoupleQuestion's own "used questions" count
+// from zero, scoped to the new coupleLinkId.
+async function ensureTodaysSoloQuestion(db, userId, dateKey) {
+  let row = db.soloAnswers.find((a) => a.userId === userId && a.date === dateKey);
+  if (row) return row;
+
+  const usedQuestions = db.soloAnswers.filter((a) => a.userId === userId && a.question).map((a) => a.question);
+  const question = await pickQuestionForStream(usedQuestions, userId, dateKey, "solo");
+
+  row = saveSoloAnswerIfAbsent(userId, dateKey, question);
+  if (!db.soloAnswers.some((a) => a.id === row.id)) db.soloAnswers.push(row);
   return row;
 }
 
@@ -3813,6 +3712,17 @@ function publicCoupleAnswer(row, userId, link) {
     partnerAnswer: revealed ? partnerAnswerRaw || null : null,
     partnerAnsweredAt: revealed ? partnerAnsweredAtRaw || null : null,
     revealed,
+  };
+}
+
+// Shapes a soloAnswers row for the response — no partner, no reveal, just
+// the question and whatever the user has (or hasn't) written for it.
+function publicSoloAnswer(row) {
+  return {
+    date: row.date,
+    question: row.question,
+    myAnswer: row.answer || null,
+    myAnsweredAt: row.answeredAt || null,
   };
 }
 
@@ -3924,53 +3834,68 @@ app.post("/api/couple/invite/:token/accept", authMiddleware, (req, res) => {
   }
 });
 
+// Whether today's question is couple or solo depends entirely on whether
+// the caller currently has an ACTIVE link — no separate "mode" flag is
+// stored anywhere, it's derived fresh on every request.
 app.get("/api/couple/question/today", authMiddleware, async (req, res) => {
   try {
     const db = req.db;
     const link = findActiveCoupleLink(db, req.user.id);
-    if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
-    const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
-    res.json(publicCoupleAnswer(row, req.user.id, link));
+    if (link) {
+      const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
+      return res.json({ mode: "couple", ...publicCoupleAnswer(row, req.user.id, link) });
+    }
+    const row = await ensureTodaysSoloQuestion(db, req.user.id, todayKey());
+    res.json({ mode: "solo", ...publicSoloAnswer(row) });
   } catch (err) {
-    console.error("Get today's couple question error:", err);
+    console.error("Get today's daily question error:", err);
     res.status(500).json({ error: "Couldn't load today's question. Please try again." });
   }
 });
 
-const MAX_COUPLE_ANSWER_LENGTH = 2000;
+const MAX_DAILY_ANSWER_LENGTH = 2000;
 
 app.post("/api/couple/question/today/answer", authMiddleware, async (req, res) => {
   try {
     const db = req.db;
-    const link = findActiveCoupleLink(db, req.user.id);
-    if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
-
     const trimmed = String((req.body || {}).answer || "").trim();
     if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
+    const dateKey = todayKey();
+    const link = findActiveCoupleLink(db, req.user.id);
 
-    const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
-    const slot = myCoupleSlot(link, req.user.id);
-    const alreadyAnswered = slot === "A" ? row.answerA : row.answerB;
-    // Locked in once submitted, on purpose — the entire point of "you only
-    // see their answer after yours" is that neither partner can peek and
-    // then quietly adjust their own answer to match. Allowing an edit after
-    // the reveal would defeat that.
-    if (alreadyAnswered) {
+    if (link) {
+      const row = await ensureTodaysCoupleQuestion(db, link, dateKey);
+      const slot = myCoupleSlot(link, req.user.id);
+      const alreadyAnswered = slot === "A" ? row.answerA : row.answerB;
+      // Locked in once submitted, on purpose — the entire point of "you
+      // only see their answer after yours" is that neither partner can
+      // peek and then quietly adjust their own answer to match. Allowing
+      // an edit after the reveal would defeat that.
+      if (alreadyAnswered) {
+        return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
+      }
+      const now = new Date().toISOString();
+      if (slot === "A") {
+        row.answerA = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
+        row.answerAAt = now;
+      } else {
+        row.answerB = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
+        row.answerBAt = now;
+      }
+      saveCoupleAnswer(row);
+      return res.json({ mode: "couple", ...publicCoupleAnswer(row, req.user.id, link) });
+    }
+
+    const row = await ensureTodaysSoloQuestion(db, req.user.id, dateKey);
+    if (row.answer) {
       return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
     }
-
-    const now = new Date().toISOString();
-    if (slot === "A") {
-      row.answerA = trimmed.slice(0, MAX_COUPLE_ANSWER_LENGTH);
-      row.answerAAt = now;
-    } else {
-      row.answerB = trimmed.slice(0, MAX_COUPLE_ANSWER_LENGTH);
-      row.answerBAt = now;
-    }
-    saveCoupleAnswer(row);
-    res.json(publicCoupleAnswer(row, req.user.id, link));
+    row.answer = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
+    row.answeredAt = new Date().toISOString();
+    saveSoloAnswer(row);
+    res.json({ mode: "solo", ...publicSoloAnswer(row) });
   } catch (err) {
-    console.error("Answer couple question error:", err);
+    console.error("Answer daily question error:", err);
     res.status(500).json({ error: "Couldn't save your answer. Please try again." });
   }
 });
@@ -3979,15 +3904,26 @@ app.post("/api/couple/question/today/answer", authMiddleware, async (req, res) =
 // only days the caller actually answered — there's nothing useful to show
 // for a day you never engaged with, and it keeps the reveal rule identical
 // to "today": you never see a day's answer pair without having answered
-// that day yourself.
+// that day yourself. Couple history and solo history are never mixed —
+// whichever mode the caller is currently in is the only one shown.
 app.get("/api/couple/question/history", authMiddleware, (req, res) => {
   const db = req.db;
-  const link = findActiveCoupleLink(db, req.user.id);
-  if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
   const today = todayKey();
-  const list = db.coupleAnswers
-    .filter((a) => a.coupleLinkId === link.id && a.date !== today)
-    .map((a) => publicCoupleAnswer(a, req.user.id, link))
+  const link = findActiveCoupleLink(db, req.user.id);
+
+  if (link) {
+    const list = db.coupleAnswers
+      .filter((a) => a.coupleLinkId === link.id && a.date !== today)
+      .map((a) => ({ mode: "couple", ...publicCoupleAnswer(a, req.user.id, link) }))
+      .filter((a) => a.myAnswer)
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .slice(0, 30);
+    return res.json(list);
+  }
+
+  const list = db.soloAnswers
+    .filter((a) => a.userId === req.user.id && a.date !== today)
+    .map((a) => ({ mode: "solo", ...publicSoloAnswer(a) }))
     .filter((a) => a.myAnswer)
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .slice(0, 30);

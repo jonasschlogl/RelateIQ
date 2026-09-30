@@ -134,11 +134,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("usage-count").textContent = `${me.usage?.count || 0} / ${me.usageLimit}`;
     }
 
-    if (me.attachmentStyle) {
-      document.getElementById("attachment-meta").style.display = "block";
-      document.getElementById("attachment-badge").textContent = attachmentLabel(me.attachmentStyle);
-    }
-
     renderBillingActions(me);
     wireEmailPreferences(me);
 
@@ -565,10 +560,6 @@ async function loadReferrals() {
 
 function planLabel(plan) {
   return { free: "Free", pro: "Pro", premium: "Premium" }[plan] || "Free";
-}
-
-function attachmentLabel(style) {
-  return { secure: "Secure", anxious: "Anxious", avoidant: "Avoidant", disorganized: "Disorganized" }[style] || style;
 }
 
 function formatDate(iso) {

@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   wireVoiceInput(document.getElementById("mic-btn"), document.getElementById("input"));
 
   // Only the real mode tabs (Coach/Practice) switch mode in-page — the
-  // Attachment Quiz / Insights tabs are plain links to their own pages
-  // (no data-mode), so they're excluded here and just navigate normally.
+  // Insights tab is a plain link to its own page (no data-mode), so it's
+  // excluded here and just navigates normally.
   document.querySelectorAll(".mode-tab[data-mode]").forEach((tab) => {
     tab.addEventListener("click", () => {
       const mode = tab.dataset.mode;
@@ -1092,7 +1092,7 @@ async function renderPracticeSetup() {
         <textarea id="partner-traits" rows="3" maxlength="500" placeholder="e.g. warm but avoids conflict, gets quiet when stressed, jokes to deflect difficult topics"></textarea>
         <label for="partner-context">Context (optional)</label>
         <input type="text" id="partner-context" maxlength="200" placeholder="e.g. together 2 years, we just moved in together" autocomplete="off" />
-        <label for="partner-attachment">Their attachment style <span class="text-muted">(optional — if you know it, e.g. from the Attachment Quiz)</span></label>
+        <label for="partner-attachment">Their attachment style <span class="text-muted">(optional — only if you already know it)</span></label>
         <select id="partner-attachment">
           <option value="">Not sure / skip</option>
           <option value="secure">Secure</option>
@@ -1349,9 +1349,8 @@ function formatShortDate(iso) {
   }
 }
 
-// Mirrors ATTACHMENT_STYLES in server.js — kept in sync manually, same
-// duplication pattern as COMPARE_QUESTIONS in compare-view.js (no shared
-// module system between server and client here).
+// Mirrors ATTACHMENT_STYLES in server.js — kept in sync manually, no shared
+// module system between server and client here.
 const ATTACHMENT_STYLE_LABELS = {
   secure: "Secure",
   anxious: "Anxious",

@@ -1,13 +1,26 @@
-// "Together" — real account-to-account partner linking + the daily shared
-// relationship question (task #98). Three things happen on this page,
-// picked apart by the state* functions below:
+// "Together" — the daily relationship question. Works two ways, decided by
+// whether the user currently has an active partner link (task #98, reworked
+// per Jonas: works solo from day one, and only becomes a shared couple
+// stream once a partner is actually linked):
+//   - Solo (no active link, whether status is "none" or "pending" — an
+//     invite just sent but not yet accepted still counts as solo): the
+//     user answers today's question just for themselves. No partner, no
+//     reveal mechanic.
+//   - Couple (active link): real account-to-account partner linking. Both
+//     partners get the SAME question every day and only see each other's
+//     answer after submitting their own.
+// A user's solo history and a couple's shared history are never mixed —
+// linking a partner starts the shared stream completely fresh; see the
+// server-side comment on ensureTodaysSoloQuestion for why.
+//
+// Three things happen on this page, picked apart by the functions below:
 //   1. No account yet / not logged in and opening an invite link → send
 //      them to log in or register first, remembering the invite token so
 //      auth-forms.js can bring them straight back here afterward.
 //   2. Logged in and opening an invite link (?invite=TOKEN) → confirm +
 //      accept it.
-//   3. The normal "Together" dashboard — invite a partner, or (once
-//      linked) answer today's question and look back at past ones.
+//   3. The normal "Together" dashboard — today's question (solo or couple),
+//      history, and (if not yet linked) an invite-your-partner option.
 
 let coupleStatus = null; // last GET /api/couple result, cached for re-renders
 
@@ -120,29 +133,101 @@ async function loadDashboard() {
       return;
     }
     coupleStatus = data;
-    if (data.status === "active") {
-      renderActive();
-    } else if (data.status === "pending") {
-      renderPending();
-    } else {
-      renderNone();
-    }
+    renderShell();
   } catch (e) {
     stateEl.innerHTML = '<p class="text-muted" style="text-align:center;">Couldn\'t connect to the server.</p>';
   }
 }
 
-function renderNone() {
+// Renders the header (varies by link status: none / pending / active) plus
+// the daily-question card and history toggle, which are always present —
+// solo users (status "none" or "pending", since a pending invite hasn't
+// been accepted yet) get the same today-card/history UI as linked couples,
+// just without the partner/reveal layer (see renderToday/toggleHistory,
+// which branch on the response's `mode` field).
+function renderShell() {
   const stateEl = document.getElementById("couple-state");
   stateEl.innerHTML = `
+    <div id="couple-header">${headerHtml(coupleStatus.status)}</div>
+    <section class="dashboard-card checkin-card couple-question-card" id="couple-today-card">
+      <p class="text-muted" style="text-align:center; margin:0;">Loading today's question…</p>
+    </section>
+    <div class="couple-history-toggle">
+      <button class="btn btn-ghost btn-sm" id="couple-history-btn" type="button">View past answers</button>
+    </div>
+    <div id="couple-history" style="display:none;"></div>
+  `;
+  wireHeader(coupleStatus.status);
+  document.getElementById("couple-history-btn").addEventListener("click", toggleHistory);
+  historyLoaded = false; // status may have just changed (e.g. unlink) — re-fetch fresh on next open
+  loadToday();
+}
+
+function headerHtml(status) {
+  if (status === "active") {
+    return `
+      <div class="couple-linked-head">
+        <p class="text-muted">Linked with <strong>${escapeHtml(coupleStatus.partnerName)}</strong></p>
+        <button class="btn btn-ghost btn-sm couple-danger-btn" id="unlink-btn" type="button">Unlink</button>
+      </div>
+    `;
+  }
+  if (status === "pending") {
+    const url = `${window.location.origin}/couple.html?invite=${coupleStatus.inviteToken}`;
+    return `
+      <div class="couple-intro-card">
+        <p>Answer today's question below while you wait — and send this link to your partner. Once they open it and accept, you'll both start getting the same daily question together instead.</p>
+        <div class="share-link-box">
+          <span id="couple-link-text">${escapeHtml(url)}</span>
+          <button class="btn btn-gradient btn-sm" id="couple-copy-link-btn" type="button">Copy link</button>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="cancel-invite-btn" type="button">Cancel invite</button>
+      </div>
+    `;
+  }
+  return `
     <div class="couple-intro-card">
-      <p>You're not linked with a partner yet. Send them an invite link — once they accept, you'll both get the same relationship question every day.</p>
+      <p>Answer today's question below, just for yourself — or invite your partner and you'll both start getting the same daily question together instead.</p>
       <button class="btn btn-gradient" id="create-invite-btn" type="button">Invite your partner</button>
     </div>
   `;
+}
+
+function wireHeader(status) {
+  if (status === "active") {
+    document.getElementById("unlink-btn").addEventListener("click", unlinkCouple);
+    return;
+  }
+  if (status === "pending") {
+    const url = `${window.location.origin}/couple.html?invite=${coupleStatus.inviteToken}`;
+    document.getElementById("couple-copy-link-btn").addEventListener("click", async () => {
+      const copyBtn = document.getElementById("couple-copy-link-btn");
+      try {
+        await navigator.clipboard.writeText(url);
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy link"), 1500);
+      } catch (e) {
+        await showAppAlert("Couldn't copy automatically — select the link text above and copy it manually.");
+      }
+    });
+    document.getElementById("cancel-invite-btn").addEventListener("click", async () => {
+      const ok = await showAppConfirm("Cancel this invite? The link will stop working.", { confirmLabel: "Cancel invite", danger: true });
+      if (!ok) return;
+      try {
+        const res = await authFetch("/api/couple", { method: "DELETE" });
+        if (res.ok) loadDashboard();
+      } catch (e) {
+        await showAppAlert("Couldn't connect to the server.");
+      }
+    });
+    return;
+  }
   document.getElementById("create-invite-btn").addEventListener("click", createInvite);
 }
 
+// Status "none" → "pending" doesn't change solo-vs-couple mode (still solo
+// either way until a partner actually accepts), so this only swaps the
+// header — no need to re-fetch/re-render today's question or history.
 async function createInvite() {
   const btn = document.getElementById("create-invite-btn");
   if (btn) {
@@ -161,71 +246,16 @@ async function createInvite() {
       return;
     }
     coupleStatus = data;
-    renderPending();
+    document.getElementById("couple-header").innerHTML = headerHtml("pending");
+    wireHeader("pending");
   } catch (e) {
     await showAppAlert("Couldn't connect to the server.");
   }
 }
 
-function renderPending() {
-  const stateEl = document.getElementById("couple-state");
-  const url = `${window.location.origin}/couple.html?invite=${coupleStatus.inviteToken}`;
-  stateEl.innerHTML = `
-    <div class="couple-intro-card">
-      <p>Send this link to your partner. Once they open it and accept, you'll both start getting the same daily question.</p>
-      <div class="share-link-box">
-        <span id="couple-link-text"></span>
-        <button class="btn btn-gradient btn-sm" id="couple-copy-link-btn" type="button">Copy link</button>
-      </div>
-      <button class="btn btn-ghost btn-sm" id="cancel-invite-btn" type="button">Cancel invite</button>
-    </div>
-  `;
-  document.getElementById("couple-link-text").textContent = url;
-  document.getElementById("couple-copy-link-btn").addEventListener("click", async () => {
-    const copyBtn = document.getElementById("couple-copy-link-btn");
-    try {
-      await navigator.clipboard.writeText(url);
-      copyBtn.textContent = "Copied!";
-      setTimeout(() => (copyBtn.textContent = "Copy link"), 1500);
-    } catch (e) {
-      await showAppAlert("Couldn't copy automatically — select the link text above and copy it manually.");
-    }
-  });
-  document.getElementById("cancel-invite-btn").addEventListener("click", async () => {
-    const ok = await showAppConfirm("Cancel this invite? The link will stop working.", { confirmLabel: "Cancel invite", danger: true });
-    if (!ok) return;
-    try {
-      const res = await authFetch("/api/couple", { method: "DELETE" });
-      if (res.ok) loadDashboard();
-    } catch (e) {
-      await showAppAlert("Couldn't connect to the server.");
-    }
-  });
-}
-
-function renderActive() {
-  const stateEl = document.getElementById("couple-state");
-  stateEl.innerHTML = `
-    <div class="couple-linked-head">
-      <p class="text-muted">Linked with <strong>${escapeHtml(coupleStatus.partnerName)}</strong></p>
-      <button class="btn btn-ghost btn-sm couple-danger-btn" id="unlink-btn" type="button">Unlink</button>
-    </div>
-    <section class="dashboard-card checkin-card couple-question-card" id="couple-today-card">
-      <p class="text-muted" style="text-align:center; margin:0;">Loading today's question…</p>
-    </section>
-    <div class="couple-history-toggle">
-      <button class="btn btn-ghost btn-sm" id="couple-history-btn" type="button">View past answers</button>
-    </div>
-    <div id="couple-history" style="display:none;"></div>
-  `;
-  document.getElementById("unlink-btn").addEventListener("click", unlinkCouple);
-  document.getElementById("couple-history-btn").addEventListener("click", toggleHistory);
-  loadToday();
-}
-
 async function unlinkCouple() {
   const ok = await showAppConfirm(
-    "Unlink from your partner? This permanently deletes every daily question you've answered together — it can't be undone.",
+    "Unlink from your partner? This permanently deletes every daily question you've answered together — it can't be undone. (Your own answers from before you linked, if any, are kept separately and untouched.)",
     { confirmLabel: "Unlink", danger: true }
   );
   if (!ok) return;
@@ -260,6 +290,33 @@ async function loadToday() {
 function renderToday(data) {
   const card = document.getElementById("couple-today-card");
 
+  if (data.mode === "solo") {
+    if (!data.myAnswer) {
+      card.innerHTML = `
+        <p class="checkin-question">${escapeHtml(data.question)}</p>
+        <div class="checkin-answer">
+          <textarea id="couple-answer-input" maxlength="2000" placeholder="Take your time — this is just for you."></textarea>
+        </div>
+        <div class="checkin-actions">
+          <button class="btn btn-primary btn-sm" id="couple-answer-btn" type="button">Submit answer</button>
+        </div>
+        <div class="form-error" id="couple-answer-error" style="display:none;"></div>
+      `;
+      autoGrowTextarea(document.getElementById("couple-answer-input"), 220);
+      document.getElementById("couple-answer-btn").addEventListener("click", submitTodayAnswer);
+      return;
+    }
+    card.innerHTML = `
+      <p class="checkin-question">${escapeHtml(data.question)}</p>
+      <div class="couple-answer-block">
+        <span class="couple-answer-label">Your answer</span>
+        <p class="couple-answer-text">${escapeHtml(data.myAnswer)}</p>
+      </div>
+    `;
+    return;
+  }
+
+  // Couple mode — blind until you've answered your own.
   if (!data.revealed) {
     card.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
@@ -359,9 +416,25 @@ async function toggleHistory() {
       wrap.innerHTML = '<p class="text-muted">No past days yet — check back after today\'s question.</p>';
       return;
     }
-    wrap.innerHTML = data
-      .map(
-        (entry) => `
+    wrap.innerHTML = data.map(renderHistoryEntry).join("");
+  } catch (e) {
+    wrap.innerHTML = '<p class="text-muted">Couldn\'t connect to the server.</p>';
+  }
+}
+
+function renderHistoryEntry(entry) {
+  if (entry.mode === "solo") {
+    return `
+      <div class="couple-history-entry">
+        <div class="couple-history-date">${formatCoupleDate(entry.date)}</div>
+        <p class="checkin-question" style="font-size:15px;">${escapeHtml(entry.question)}</p>
+        <div class="couple-answer-block">
+          <span class="couple-answer-label">Your answer</span>
+          <p class="couple-answer-text">${escapeHtml(entry.myAnswer)}</p>
+        </div>
+      </div>`;
+  }
+  return `
       <div class="couple-history-entry">
         <div class="couple-history-date">${formatCoupleDate(entry.date)}</div>
         <p class="checkin-question" style="font-size:15px;">${escapeHtml(entry.question)}</p>
@@ -379,12 +452,7 @@ async function toggleHistory() {
             }
           </div>
         </div>
-      </div>`
-      )
-      .join("");
-  } catch (e) {
-    wrap.innerHTML = '<p class="text-muted">Couldn\'t connect to the server.</p>';
-  }
+      </div>`;
 }
 
 function formatCoupleDate(dateKey) {
