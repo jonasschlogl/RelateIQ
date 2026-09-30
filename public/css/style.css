@@ -1256,12 +1256,15 @@ section {
   margin-bottom: 16px;
 }
 
-/* Sidebar conversation search (task #95) — plain client-side title filter,
-   sits right under "+ New chat". Native type="search" gives a built-in
-   clear (✕) affordance in most browsers for free. */
+/* Sidebar conversation search (task #95) — plain client-side title filter.
+   Sits directly above the conversation list itself (below Tools, not
+   above it) since it only ever filters .sidebar-history, not the Tools
+   links. Native type="search" gives a built-in clear (✕) affordance in
+   most browsers for free. */
 .history-search {
   width: 100%;
-  margin-top: 10px;
+  flex-shrink: 0;
+  margin-bottom: 8px;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-strong);
@@ -1701,6 +1704,14 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* Was relying on .chat-topbar's justify-content: space-between to push
+     this to the right against the mode-tabs pill that used to sit beside
+     it — now that Coach/Practice moved into the sidebar (see
+     .sidebar-tools) this is often the only visible child of .chat-topbar
+     (sidebar-toggle is display:none above 640px), and a lone flex child
+     under space-between sits at the start, not the end. margin-left: auto
+     pins it to the right regardless of what else is in the bar. */
+  margin-left: auto;
 }
 
 .plan-badge {
