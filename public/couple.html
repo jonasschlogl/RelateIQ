@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attachment Style Quiz · RelateIQ</title>
+  <title>Together · RelateIQ</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -22,29 +22,28 @@
       <a href="chat.html" class="nav-primary">Coach</a>
       <a href="chat.html?mode=practice" class="nav-primary">Practice</a>
       <span class="nav-sep"></span>
-      <a href="quiz.html" class="nav-current">Quiz</a>
+      <a href="quiz.html">Quiz</a>
       <a href="insights.html">Insights</a>
       <a href="share.html">Share</a>
-      <a href="couple.html">Together</a>
+      <a href="couple.html" class="nav-current">Together</a>
       <a href="dashboard.html">My account</a>
       <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
 
-  <main class="tool-page">
+  <main class="tool-page" id="couple-page">
     <div class="tool-header">
-      <span class="section-tag">Optional · takes ~2 minutes</span>
-      <h1>What's your attachment style?</h1>
-      <p class="text-muted">A short, informal quiz — not a diagnosis — to help you understand patterns in how you connect, worry, and pull away in relationships. Entirely optional, and you can stop anytime.</p>
-      <a href="dashboard.html" class="text-muted" style="font-size:13px; text-decoration:underline;">Skip for now →</a>
+      <span class="section-tag">Together</span>
+      <h1>A question for both of you, every day</h1>
+      <p class="text-muted">Link accounts with your partner and you'll both get the same question each day. You'll only see their answer once you've written your own — so nobody's just filling in the blanks to match.</p>
     </div>
 
-    <div class="quiz-progress"><div class="quiz-progress-bar" id="progress-bar" style="width:0%;"></div></div>
-
-    <div id="quiz-body"></div>
+    <div id="couple-state">
+      <p class="text-muted" style="text-align:center;">Loading…</p>
+    </div>
   </main>
 
   <script src="js/shared.js?v=13"></script>
-  <script src="js/quiz.js?v=2"></script>
+  <script src="js/couple.js?v=1"></script>
 </body>
 </html>

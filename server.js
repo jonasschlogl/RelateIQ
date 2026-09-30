@@ -35,6 +35,10 @@ import {
   saveCompare,
   deleteCompare,
   getCompareByToken,
+  saveCoupleLink,
+  deleteCoupleLink,
+  getCoupleLinkByToken,
+  saveCoupleAnswer,
   savePushSubscription,
   deletePushSubscription,
   deletePushSubscriptionsForUser,
@@ -3508,6 +3512,300 @@ app.post("/api/public/compare/:token/respond", (req, res) => {
     console.error("Compare respond error:", err);
     res.status(500).json({ error: "Couldn't save your answer. Please try again." });
   }
+});
+
+// ---------------------------------------------------------------------------
+// Couple linking + daily shared question (task #98) — two real accounts
+// linked to each other, unlike the one-off, no-account, token-only `compares`
+// exchange above. Once linked, both partners get the SAME question every
+// day and only see each other's answer after submitting their own — a
+// blind-until-you-answer mechanic, so neither side can peek and quietly
+// tailor their own answer to match.
+//
+// Deliberately narrow: a couple link exposes ONLY the daily question/answer
+// pair. It never touches Coach Chat conversations, partner profiles,
+// insights, or anything else private — that boundary must never gain a
+// "see their conversations too" shortcut without real reconsideration.
+// Either partner can unlink unilaterally at any time, which deletes the
+// link AND every stored answer under it (see deleteCoupleLink in
+// lib/store.js) — a clean break, not a relationship that lingers in the db
+// once someone walks away.
+// ---------------------------------------------------------------------------
+
+// Open-ended, comparison-worthy relationship questions — deliberately never
+// yes/no (per Jonas's spec: "Otazka bude komplexnejsia, aby odpoved nebola
+// stylu: ano alebo nie"). Each is something two people could answer
+// completely differently, which is the whole point of comparing answers.
+const COUPLE_QUESTIONS = [
+  "What's a moment this year when you felt most loved by your partner? What exactly made it land?",
+  "If you could change one recurring pattern in how the two of you handle stress, what would it be?",
+  "What's something you need from your partner that you haven't actually told them, and what's stopped you?",
+  "Describe a time your partner surprised you — in a good way or a hard way.",
+  "What does feeling truly safe with your partner actually look like, moment to moment?",
+  "What's one thing about your relationship you think about more than your partner probably realizes?",
+  "If you had to describe the current season of your relationship in a short phrase, what would it be and why?",
+  "What's a small habit of your partner's that quietly means more to you than you've said out loud?",
+  "Where do you want the two of you to be, as a couple, in five years — and do you think your partner would say the same?",
+  "What's something your partner does that helps you feel understood, even without words?",
+  "When was the last time you felt genuinely proud of how the two of you handled something hard together?",
+  "What's a fear you have about this relationship that you rarely say out loud?",
+  "What's one way your partner has changed you for the better?",
+  "If your partner could read your mind for one day, what's something you'd want them to finally understand?",
+  "What's a memory from early in your relationship that you still think about?",
+  "What does 'quality time' actually mean to you right now, in this season of life?",
+  "What's something you appreciate about how your partner handles conflict, even when the conflict itself is hard?",
+  "What's a way you show love that you're not sure your partner fully recognizes as love?",
+  "What's one thing you'd want to do together in the next month that you haven't gotten around to?",
+  "What's something your partner said recently that stuck with you — for better or worse?",
+  "How has your definition of a good relationship changed since you've been with your partner?",
+  "What's a compliment you've been meaning to give your partner but haven't said out loud?",
+  "What part of yourself do you feel most free to show around your partner — and what part still feels guarded?",
+  "If you had to guess, what would your partner say is the hardest thing about being with you right now? Are you okay with that guess?",
+];
+
+// Same date, same couple → same question, deterministically, with no need
+// to look anything up first (mirrors checkinQuestionForDate above). Salted
+// with the couple link's own id (not just the date) so different couples
+// aren't all handed the literal same question on the same calendar day.
+function coupleQuestionForDate(coupleLinkId, dateKey) {
+  let hash = 0;
+  const seed = `${coupleLinkId}|${dateKey}`;
+  for (const ch of seed) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  return COUPLE_QUESTIONS[hash % COUPLE_QUESTIONS.length];
+}
+
+function findActiveCoupleLink(db, userId) {
+  return db.coupleLinks.find((l) => l.status === "active" && (l.userA === userId || l.userB === userId));
+}
+
+function couplePartnerId(link, userId) {
+  return link.userA === userId ? link.userB : link.userA;
+}
+
+function myCoupleSlot(link, userId) {
+  return link.userA === userId ? "A" : "B";
+}
+
+// Gets today's (or any date's) shared-question row for a link, creating it
+// — with its question already picked — the first time either partner opens
+// it that day. Created once, never regenerated, so a later edit to
+// COUPLE_QUESTIONS can't retroactively change a question someone already
+// answered (same "point-in-time snapshot" principle as the ownerStyle
+// snapshot on compares above).
+function getOrCreateCoupleAnswerRow(db, link, dateKey) {
+  let row = db.coupleAnswers.find((a) => a.coupleLinkId === link.id && a.date === dateKey);
+  if (!row) {
+    row = {
+      id: generateId("cqa"),
+      coupleLinkId: link.id,
+      date: dateKey,
+      question: coupleQuestionForDate(link.id, dateKey),
+      answerA: null,
+      answerAAt: null,
+      answerB: null,
+      answerBAt: null,
+    };
+    saveCoupleAnswer(row);
+    db.coupleAnswers.push(row);
+  }
+  return row;
+}
+
+// Shapes a coupleAnswers row for the CALLING user specifically — the
+// partner's answer and its timestamp are only ever included once the
+// caller has answered their own (mySlotAnswer truthy). That's the blind
+// mechanic; it lives here, in one place, so every route that returns a
+// day's question goes through the same reveal rule.
+function publicCoupleAnswer(row, userId, link) {
+  const slot = myCoupleSlot(link, userId);
+  const myAnswer = slot === "A" ? row.answerA : row.answerB;
+  const myAnsweredAt = slot === "A" ? row.answerAAt : row.answerBAt;
+  const partnerAnswerRaw = slot === "A" ? row.answerB : row.answerA;
+  const partnerAnsweredAtRaw = slot === "A" ? row.answerBAt : row.answerAAt;
+  const revealed = !!myAnswer;
+  return {
+    date: row.date,
+    question: row.question,
+    myAnswer: myAnswer || null,
+    myAnsweredAt: myAnsweredAt || null,
+    partnerHasAnswered: !!partnerAnswerRaw,
+    partnerAnswer: revealed ? partnerAnswerRaw || null : null,
+    partnerAnsweredAt: revealed ? partnerAnsweredAtRaw || null : null,
+    revealed,
+  };
+}
+
+app.get("/api/couple", authMiddleware, (req, res) => {
+  const db = req.db;
+  const link = findActiveCoupleLink(db, req.user.id);
+  if (link) {
+    const partner = db.users.find((u) => u.id === couplePartnerId(link, req.user.id));
+    return res.json({ status: "active", partnerName: partner?.name || "your partner", linkedAt: link.acceptedAt });
+  }
+  const pending = db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
+  if (pending) {
+    return res.json({ status: "pending", inviteToken: pending.inviteToken, createdAt: pending.createdAt });
+  }
+  res.json({ status: "none" });
+});
+
+app.post("/api/couple/invite", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    if (findActiveCoupleLink(db, req.user.id)) {
+      return res
+        .status(400)
+        .json({ error: "You're already linked with a partner. Unlink first if you want to connect with someone else." });
+    }
+    // Idempotent: re-clicking "invite" while one is already pending just
+    // hands back the same link instead of littering the table with dupes.
+    let pending = db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
+    if (!pending) {
+      pending = {
+        id: generateId("cpl"),
+        userA: req.user.id,
+        userB: null,
+        status: "pending",
+        inviteToken: crypto.randomBytes(24).toString("hex"),
+        createdAt: new Date().toISOString(),
+        acceptedAt: null,
+      };
+      saveCoupleLink(pending);
+    }
+    res.json({ status: "pending", inviteToken: pending.inviteToken, createdAt: pending.createdAt });
+  } catch (err) {
+    console.error("Create couple invite error:", err);
+    res.status(500).json({ error: "Couldn't create an invite link. Please try again." });
+  }
+});
+
+// Either partner can call this — cancels a pending invite they sent, or
+// ends an active link. Either way it's a hard delete (see deleteCoupleLink):
+// no "unlinked" record lingers behind for the other side to find.
+app.delete("/api/couple", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const link =
+      findActiveCoupleLink(db, req.user.id) || db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
+    if (!link) return res.status(404).json({ error: "You're not linked with anyone." });
+    deleteCoupleLink(link.id);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Unlink couple error:", err);
+    res.status(500).json({ error: "Couldn't unlink. Please try again." });
+  }
+});
+
+// Public, unauthenticated — lets someone see who's inviting them BEFORE
+// they log in or register. Deliberately returns almost nothing (just the
+// inviter's display name): no email, no token-guessing surface beyond what
+// they already have in the URL.
+app.get("/api/public/couple-invite/:token", (req, res) => {
+  const link = getCoupleLinkByToken(req.params.token);
+  if (!link || link.status !== "pending") {
+    return res.status(404).json({ error: "This invite link isn't available. It may have already been used or cancelled." });
+  }
+  const inviter = getUserById(link.userA);
+  res.json({ inviterName: inviter?.name || "Someone" });
+});
+
+app.post("/api/couple/invite/:token/accept", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const link = db.coupleLinks.find((l) => l.inviteToken === req.params.token);
+    if (!link || link.status !== "pending") {
+      return res.status(404).json({ error: "This invite link isn't available. It may have already been used or cancelled." });
+    }
+    if (link.userA === req.user.id) {
+      return res.status(400).json({ error: "You can't accept your own invite link." });
+    }
+    if (findActiveCoupleLink(db, req.user.id)) {
+      return res.status(400).json({ error: "You're already linked with a partner. Unlink first to connect with someone else." });
+    }
+    // The inviter may have linked with someone else in the time since they
+    // sent this link out — re-check rather than trusting the still-pending
+    // row alone.
+    const inviterNowLinked = db.coupleLinks.some(
+      (l) => l.status === "active" && (l.userA === link.userA || l.userB === link.userA)
+    );
+    if (inviterNowLinked) {
+      return res.status(400).json({ error: "This invite is no longer available — the person who sent it has already linked with someone." });
+    }
+    link.userB = req.user.id;
+    link.status = "active";
+    link.acceptedAt = new Date().toISOString();
+    saveCoupleLink(link);
+    const inviter = db.users.find((u) => u.id === link.userA);
+    res.json({ status: "active", partnerName: inviter?.name || "your partner", linkedAt: link.acceptedAt });
+  } catch (err) {
+    console.error("Accept couple invite error:", err);
+    res.status(500).json({ error: "Couldn't accept that invite. Please try again." });
+  }
+});
+
+app.get("/api/couple/question/today", authMiddleware, (req, res) => {
+  const db = req.db;
+  const link = findActiveCoupleLink(db, req.user.id);
+  if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
+  const row = getOrCreateCoupleAnswerRow(db, link, todayKey());
+  res.json(publicCoupleAnswer(row, req.user.id, link));
+});
+
+const MAX_COUPLE_ANSWER_LENGTH = 2000;
+
+app.post("/api/couple/question/today/answer", authMiddleware, (req, res) => {
+  try {
+    const db = req.db;
+    const link = findActiveCoupleLink(db, req.user.id);
+    if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
+
+    const trimmed = String((req.body || {}).answer || "").trim();
+    if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
+
+    const row = getOrCreateCoupleAnswerRow(db, link, todayKey());
+    const slot = myCoupleSlot(link, req.user.id);
+    const alreadyAnswered = slot === "A" ? row.answerA : row.answerB;
+    // Locked in once submitted, on purpose — the entire point of "you only
+    // see their answer after yours" is that neither partner can peek and
+    // then quietly adjust their own answer to match. Allowing an edit after
+    // the reveal would defeat that.
+    if (alreadyAnswered) {
+      return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
+    }
+
+    const now = new Date().toISOString();
+    if (slot === "A") {
+      row.answerA = trimmed.slice(0, MAX_COUPLE_ANSWER_LENGTH);
+      row.answerAAt = now;
+    } else {
+      row.answerB = trimmed.slice(0, MAX_COUPLE_ANSWER_LENGTH);
+      row.answerBAt = now;
+    }
+    saveCoupleAnswer(row);
+    res.json(publicCoupleAnswer(row, req.user.id, link));
+  } catch (err) {
+    console.error("Answer couple question error:", err);
+    res.status(500).json({ error: "Couldn't save your answer. Please try again." });
+  }
+});
+
+// Past days only (today is always fetched fresh via the route above), and
+// only days the caller actually answered — there's nothing useful to show
+// for a day you never engaged with, and it keeps the reveal rule identical
+// to "today": you never see a day's answer pair without having answered
+// that day yourself.
+app.get("/api/couple/question/history", authMiddleware, (req, res) => {
+  const db = req.db;
+  const link = findActiveCoupleLink(db, req.user.id);
+  if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
+  const today = todayKey();
+  const list = db.coupleAnswers
+    .filter((a) => a.coupleLinkId === link.id && a.date !== today)
+    .map((a) => publicCoupleAnswer(a, req.user.id, link))
+    .filter((a) => a.myAnswer)
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .slice(0, 30);
+  res.json(list);
 });
 
 // ---------------------------------------------------------------------------

@@ -4133,6 +4133,134 @@ body.js-reveal .reveal-item.revealed {
 }
 
 /* ---------------------------------------------------------------------- */
+/* Together — couple linking + daily shared question (task #98)           */
+/* ---------------------------------------------------------------------- */
+
+.couple-intro-card,
+.couple-invite-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.couple-intro-card p,
+.couple-invite-card p {
+  margin: 0 0 18px;
+}
+
+.couple-invite-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.couple-intro-card .share-link-box {
+  text-align: left;
+  margin: 18px 0;
+}
+
+.couple-linked-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.couple-danger-btn {
+  color: var(--danger);
+}
+
+.couple-question-card {
+  max-width: 640px;
+  margin: 0 auto 20px;
+}
+
+.couple-partner-note {
+  font-size: 13px;
+  color: var(--accent-1);
+  margin: -8px 0 14px;
+}
+
+.couple-answer-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.couple-answer-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  min-width: 0;
+}
+
+.couple-answer-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.couple-answer-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.couple-answer-waiting {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.couple-history-toggle {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.couple-history-entry {
+  max-width: 640px;
+  margin: 0 auto 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+
+.couple-history-date {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  .couple-answer-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .couple-linked-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
 /* Share a whole conversation — transcript + picker modal                  */
 /* ---------------------------------------------------------------------- */
 

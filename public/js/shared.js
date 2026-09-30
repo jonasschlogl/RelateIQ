@@ -240,6 +240,30 @@ function consumePendingReferral() {
   }
 }
 
+// Same "remember what they were trying to do before they had to log in"
+// pattern as setPendingPlan above, for the couple-invite accept flow: an
+// invite link needs a real account to accept (task #98), so someone who
+// clicks one while logged out gets sent to register/login first. This is
+// what lets auth-forms.js send them back to actually accept it afterward
+// instead of dropping them on the default post-login page.
+function setPendingCoupleInvite(token) {
+  try {
+    localStorage.setItem("relateiq_pending_couple_invite", token);
+  } catch (e) {
+    /* ignore storage errors */
+  }
+}
+
+function consumePendingCoupleInvite() {
+  try {
+    const token = localStorage.getItem("relateiq_pending_couple_invite");
+    if (token) localStorage.removeItem("relateiq_pending_couple_invite");
+    return token;
+  } catch (e) {
+    return null;
+  }
+}
+
 // Starts a Stripe Checkout flow for the given plan ("pro" | "premium") and
 // redirects the browser to it. Returns once the redirect has been kicked
 // off (or the request has failed and an alert shown) so callers can restore

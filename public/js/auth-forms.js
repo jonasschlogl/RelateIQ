@@ -46,9 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setSession(data.token, data.user);
         const pendingPlan = consumePendingPlan();
+        const pendingCoupleInvite = consumePendingCoupleInvite();
         if (pendingPlan) {
           btn.textContent = "Redirecting to checkout…";
           startCheckout(pendingPlan);
+        } else if (pendingCoupleInvite) {
+          window.location.href = `couple.html?invite=${encodeURIComponent(pendingCoupleInvite)}`;
         } else {
           window.location.href = "chat.html";
         }
@@ -83,9 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setSession(data.token, data.user);
         const pendingPlan = consumePendingPlan();
+        const pendingCoupleInvite = consumePendingCoupleInvite();
         if (pendingPlan) {
           btn.textContent = "Redirecting to checkout…";
           startCheckout(pendingPlan);
+        } else if (pendingCoupleInvite) {
+          window.location.href = `couple.html?invite=${encodeURIComponent(pendingCoupleInvite)}`;
         } else {
           window.location.href = "chat.html";
         }
