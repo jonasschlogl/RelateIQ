@@ -1283,6 +1283,34 @@ section {
   gap: 4px;
 }
 
+/* "Tools" group — Insights, Daily question, Share with partner, i.e. every
+   secondary page one click away from the chat, gathered under one labeled
+   section near the top of the sidebar (above the conversation history) so
+   they read as a set instead of being scattered between the old mode-tab
+   pill (Insights used to ride along with Coach/Practice there) and the
+   bottom of the sidebar (Share/Daily question used to live in
+   .sidebar-bottom next to My account/Log out, which are account-level, not
+   tools). Same drawer markup serves the ≤640px off-canvas sidebar too, so
+   this shows up consistently on mobile as well. */
+.sidebar-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sidebar-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  padding: 4px 10px 6px;
+}
+
 /* Recency section headers ("Today", "Yesterday", …) above each group of
    .chat-item rows — see historyBucketLabel/renderHistory in chat.js. */
 .history-group-label {
@@ -1752,28 +1780,6 @@ section {
 .mode-tab.active {
   background: var(--accent-grad);
   color: var(--ink);
-}
-
-/* Coach Chat + Partner Practice are the two flagship features — the plain
-   .mode-tab styling above already carries them. Everything else in this
-   pill (Insights) is a secondary tool: same one-click reach, lighter
-   visual weight, and set off by a thin divider so the two flagships read
-   as "the product" and the rest reads as "also available." */
-.mode-tab-sep {
-  align-self: center;
-  width: 1px;
-  height: 18px;
-  background: var(--border-strong);
-  margin: 0 2px;
-}
-
-.mode-tab.mode-tab-secondary {
-  font-weight: 500;
-  opacity: 0.7;
-}
-
-.mode-tab.mode-tab-secondary:hover {
-  opacity: 1;
 }
 
 .chat-messages {
@@ -3654,14 +3660,6 @@ section {
   .sidebar-modes .mode-tab.active {
     background: var(--accent-grad);
     color: var(--ink);
-  }
-
-  /* In the vertical drawer layout the divider needs to run sideways
-     instead of standing as a 1px-wide sliver between stacked buttons. */
-  .sidebar-modes .mode-tab-sep {
-    width: 100%;
-    height: 1px;
-    margin: 4px 0;
   }
 
   .chat-messages,
