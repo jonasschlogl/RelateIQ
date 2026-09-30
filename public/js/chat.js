@@ -10,6 +10,12 @@ let isSending = false;
 // through to the server as editMessageId on the next send.
 let editingMessageId = null;
 let currentConvHasUserMessage = false; // drives whether the "Export for therapist" button shows
+// The currently-open sidebar-history "⋮" popover (task #97), and the
+// chat-item-menu-btn that opened it — see openHistoryMenu/closeHistoryMenu.
+// Only one can be open at a time, in the sidebar or inside the "View all"
+// modal alike.
+let openHistoryMenuEl = null;
+let openHistoryMenuTriggerBtn = null;
 
 // Attachments (images, screen recordings, other files) picked but not yet sent
 let pendingAttachments = [];
@@ -32,6 +38,12 @@ const THUMBS_UP_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>';
 const THUMBS_DOWN_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3zM17 2h3a2 2 0 012 2v7a2 2 0 01-2 2h-3"/></svg>';
+// Sidebar history kebab menu (task #97) — trigger icon and the pin glyph
+// used both as the pinned-row indicator and the "Pin"/"Unpin" menu item.
+const KEBAB_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
+const PIN_ICON_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 00-1.11-1.79L15 12V6a1 1 0 011-1 1 1 0 000-2H8a1 1 0 000 2 1 1 0 011 1v6l-2.89 1.45A2 2 0 005 15.24V17z"/></svg>';
 
 // null when the partner form (see renderPracticeSetup) is creating a new
 // profile, or a partner id when it's editing an existing one — swaps the
@@ -560,7 +572,9 @@ function historyBucketLabel(updatedAt) {
   return "Older";
 }
 
-function buildHistoryItem(c) {
+// opts.onSelect (used by openHistoryModal below) runs after a row is
+// clicked and the conversation opened, so the modal can close itself.
+function buildHistoryItem(c, opts) {
   const div = document.createElement("div");
   div.className = "chat-item" + (c.id === currentConversationId ? " active" : "");
 
@@ -572,28 +586,223 @@ function buildHistoryItem(c) {
   icon.textContent = c.mode === "practice" ? "🎭" : "💬";
   div.appendChild(icon);
 
+  if (c.pinned) {
+    const pinIcon = document.createElement("span");
+    pinIcon.className = "chat-item-pin-icon";
+    pinIcon.innerHTML = PIN_ICON_SVG;
+    pinIcon.title = "Pinned";
+    div.appendChild(pinIcon);
+  }
+
   const label = document.createElement("span");
   label.className = "chat-item-label";
   label.textContent = c.title || "New conversation";
   div.appendChild(label);
 
-  const deleteBtn = document.createElement("button");
-  deleteBtn.type = "button";
-  deleteBtn.className = "chat-item-delete";
-  deleteBtn.setAttribute("aria-label", "Delete conversation");
-  deleteBtn.innerHTML = TRASH_ICON_SVG;
-  deleteBtn.addEventListener("click", (e) => {
+  // "⋮" options menu (task #97) — Pin/Unpin, Rename, Delete. Replaces the
+  // old always-visible trash-can button; Delete now lives inside the menu.
+  const menuBtn = document.createElement("button");
+  menuBtn.type = "button";
+  menuBtn.className = "chat-item-menu-btn";
+  menuBtn.setAttribute("aria-label", "Conversation options");
+  menuBtn.setAttribute("aria-haspopup", "true");
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.innerHTML = KEBAB_ICON_SVG;
+  menuBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    deleteConversation(c.id);
+    if (openHistoryMenuTriggerBtn === menuBtn) {
+      closeHistoryMenu();
+    } else {
+      openHistoryMenu(c, menuBtn);
+    }
   });
-  div.appendChild(deleteBtn);
+  div.appendChild(menuBtn);
 
   div.addEventListener("click", () => {
     openConversation(c.id);
     closeSidebarDrawer();
+    if (opts && opts.onSelect) opts.onSelect();
   });
   return div;
 }
+
+// Opens the anchored "⋮" popover for conversation c, positioned off
+// triggerBtn's own bounding rect. Appended to <body> (not .sidebar-history
+// or .history-modal-list) specifically so it's never clipped by either
+// container's overflow-y: auto — see the .chat-item-menu CSS comment.
+function openHistoryMenu(c, triggerBtn) {
+  closeHistoryMenu();
+
+  const menu = document.createElement("div");
+  menu.className = "chat-item-menu";
+  menu.innerHTML = `
+    <button type="button" class="chat-item-menu-item" data-action="pin">${PIN_ICON_SVG}<span>${c.pinned ? "Unpin" : "Pin"}</span></button>
+    <button type="button" class="chat-item-menu-item" data-action="rename">${PENCIL_ICON_SVG}<span>Rename</span></button>
+    <button type="button" class="chat-item-menu-item chat-item-menu-item-danger" data-action="delete">${TRASH_ICON_SVG}<span>Delete</span></button>
+  `;
+  document.body.appendChild(menu);
+
+  const triggerRect = triggerBtn.getBoundingClientRect();
+  const menuRect = menu.getBoundingClientRect();
+  let top = triggerRect.bottom + 4;
+  if (top + menuRect.height > window.innerHeight - 8) {
+    top = triggerRect.top - menuRect.height - 4;
+  }
+  let left = triggerRect.right - menuRect.width;
+  left = Math.max(8, Math.min(left, window.innerWidth - menuRect.width - 8));
+  menu.style.top = `${Math.max(8, top)}px`;
+  menu.style.left = `${left}px`;
+
+  triggerBtn.setAttribute("aria-expanded", "true");
+  openHistoryMenuEl = menu;
+  openHistoryMenuTriggerBtn = triggerBtn;
+
+  menu.querySelector('[data-action="pin"]').addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeHistoryMenu();
+    toggleConversationPin(c);
+  });
+  menu.querySelector('[data-action="rename"]').addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeHistoryMenu();
+    renameConversation(c);
+  });
+  menu.querySelector('[data-action="delete"]').addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeHistoryMenu();
+    deleteConversation(c.id);
+  });
+
+  // Deferred by a tick so the click that opened the menu (still bubbling
+  // when this runs synchronously) doesn't immediately close it again.
+  setTimeout(() => {
+    document.addEventListener("click", onHistoryMenuOutsideClick, true);
+    document.addEventListener("keydown", onHistoryMenuKeydown, true);
+    window.addEventListener("scroll", closeHistoryMenu, true);
+    window.addEventListener("resize", closeHistoryMenu);
+  }, 0);
+}
+
+function closeHistoryMenu() {
+  if (!openHistoryMenuEl) return;
+  openHistoryMenuEl.remove();
+  if (openHistoryMenuTriggerBtn) openHistoryMenuTriggerBtn.setAttribute("aria-expanded", "false");
+  document.removeEventListener("click", onHistoryMenuOutsideClick, true);
+  document.removeEventListener("keydown", onHistoryMenuKeydown, true);
+  window.removeEventListener("scroll", closeHistoryMenu, true);
+  window.removeEventListener("resize", closeHistoryMenu);
+  openHistoryMenuEl = null;
+  openHistoryMenuTriggerBtn = null;
+}
+
+function onHistoryMenuOutsideClick(e) {
+  if (!openHistoryMenuEl || openHistoryMenuEl.contains(e.target)) return;
+  // Leave a click on the trigger button that opened this very menu alone —
+  // this listener runs in the capture phase, before that button's own click
+  // handler (buildHistoryItem) gets to toggle it closed, so closing here too
+  // would just cause openHistoryMenu() to immediately reopen it right after.
+  if (openHistoryMenuTriggerBtn && openHistoryMenuTriggerBtn.contains(e.target)) return;
+  closeHistoryMenu();
+}
+
+function onHistoryMenuKeydown(e) {
+  if (e.key !== "Escape") return;
+  // Stop here (this listener runs in the capture phase, before the "View
+  // all" modal's own Escape handler) so Escape closes just the popover when
+  // one is open over the modal, not both layers in one keypress.
+  e.stopPropagation();
+  closeHistoryMenu();
+}
+
+async function toggleConversationPin(c) {
+  const nextPinned = !c.pinned;
+  try {
+    const res = await authFetch("/api/conversations/" + encodeURIComponent(c.id), {
+      method: "PATCH",
+      body: JSON.stringify({ pinned: nextPinned }),
+    });
+    if (!res.ok) {
+      const data = await safeJson(res);
+      await showAppAlert(data.error || "Couldn't update that conversation.");
+      return;
+    }
+    c.pinned = nextPinned;
+    renderHistory();
+  } catch (err) {
+    console.error(err);
+    await showAppAlert("Couldn't update that conversation. Check your connection and try again.");
+  }
+}
+
+async function renameConversation(c) {
+  const newTitle = await showAppPrompt("Rename conversation", c.title || "", { confirmLabel: "Rename", maxLength: 120 });
+  if (newTitle === null || newTitle === (c.title || "")) return;
+
+  try {
+    const res = await authFetch("/api/conversations/" + encodeURIComponent(c.id), {
+      method: "PATCH",
+      body: JSON.stringify({ title: newTitle }),
+    });
+    if (!res.ok) {
+      const data = await safeJson(res);
+      await showAppAlert(data.error || "Couldn't rename that conversation.");
+      return;
+    }
+    c.title = newTitle;
+    renderHistory();
+  } catch (err) {
+    console.error(err);
+    await showAppAlert("Couldn't rename that conversation. Check your connection and try again.");
+  }
+}
+
+// Groups `list` into a "📌 Pinned" section (if any) followed by the
+// HISTORY_BUCKETS date groups, appending header + row elements straight
+// into `container`. Shared by the sidebar (#history) and the "View all"
+// modal's list so both render identically — see renderHistory and
+// openHistoryModal.
+function appendHistoryGroups(container, list, opts) {
+  const pinned = list.filter((c) => c.pinned).sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+  const rest = list.filter((c) => !c.pinned);
+
+  if (pinned.length > 0) {
+    const header = document.createElement("div");
+    header.className = "history-group-label";
+    header.textContent = "📌 Pinned";
+    container.appendChild(header);
+    pinned.forEach((c) => container.appendChild(buildHistoryItem(c, opts)));
+  }
+
+  // rest is already sorted most-recent-first (see GET /api/conversations in
+  // server.js), so grouping by bucket below preserves that order within
+  // each group without needing to re-sort anything.
+  const groups = new Map();
+  rest.forEach((c) => {
+    const bucket = historyBucketLabel(c.updatedAt);
+    if (!groups.has(bucket)) groups.set(bucket, []);
+    groups.get(bucket).push(c);
+  });
+
+  HISTORY_BUCKETS.forEach((bucket) => {
+    const items = groups.get(bucket);
+    if (!items || items.length === 0) return;
+
+    const header = document.createElement("div");
+    header.className = "history-group-label";
+    header.textContent = bucket;
+    container.appendChild(header);
+
+    items.forEach((c) => container.appendChild(buildHistoryItem(c, opts)));
+  });
+}
+
+// How many non-pinned conversations the sidebar itself shows before
+// deferring the rest to "View all conversations" (task #97) — keeps the
+// sidebar short and scannable the way task #95 originally intended, now
+// that a long history no longer means a long sidebar. Pinned conversations
+// are exempt: a user only pins a handful on purpose, so there's no reason
+// to hide any of them here.
+const HISTORY_SIDEBAR_RECENT_LIMIT = 8;
 
 function renderHistory() {
   const historyDiv = document.getElementById("history");
@@ -611,6 +820,8 @@ function renderHistory() {
   // list is already loaded; no reason to round-trip to the server for
   // something this small. #history-search's input listener just calls
   // renderHistory() again, so this always reflects the current box value.
+  // Search always runs over the FULL conversations list (never just the
+  // capped view below), so it can always find what it's looking for.
   const query = (document.getElementById("history-search")?.value || "").trim().toLowerCase();
   const filtered = query ? conversations.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : conversations;
 
@@ -622,27 +833,76 @@ function renderHistory() {
     return;
   }
 
-  // conversations is already sorted most-recent-first (see GET
-  // /api/conversations in server.js), so grouping by bucket below preserves
-  // that order within each group without needing to re-sort anything.
-  const groups = new Map();
-  filtered.forEach((c) => {
-    const bucket = historyBucketLabel(c.updatedAt);
-    if (!groups.has(bucket)) groups.set(bucket, []);
-    groups.get(bucket).push(c);
+  if (query) {
+    appendHistoryGroups(historyDiv, filtered);
+    return;
+  }
+
+  const pinned = filtered.filter((c) => c.pinned);
+  const unpinned = filtered.filter((c) => !c.pinned).slice(0, HISTORY_SIDEBAR_RECENT_LIMIT);
+  appendHistoryGroups(historyDiv, pinned.concat(unpinned));
+
+  const viewAllBtn = document.createElement("button");
+  viewAllBtn.type = "button";
+  viewAllBtn.className = "history-view-all-btn";
+  viewAllBtn.textContent = `View all conversations (${conversations.length}) →`;
+  viewAllBtn.addEventListener("click", openHistoryModal);
+  historyDiv.appendChild(viewAllBtn);
+}
+
+// "View all conversations" (task #97) — a bigger, dedicated view of the
+// complete, searchable history, for when the sidebar's own capped list
+// (HISTORY_SIDEBAR_RECENT_LIMIT) doesn't have what the user is looking for.
+// Reuses the exact same row markup and "⋮" menu as the sidebar.
+function openHistoryModal() {
+  const overlay = document.createElement("div");
+  overlay.className = "modal-overlay";
+  const card = document.createElement("div");
+  card.className = "modal-card history-modal-card";
+  card.innerHTML = `
+    <div class="history-modal-header">
+      <h3>All conversations</h3>
+      <button type="button" class="history-modal-close" aria-label="Close">✕</button>
+    </div>
+    <input type="search" class="history-search history-modal-search" id="history-modal-search" placeholder="Search conversations…" aria-label="Search conversations" autocomplete="off" />
+    <div class="history-modal-list" id="history-modal-list"></div>
+  `;
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+
+  function renderModalList() {
+    const listEl = card.querySelector("#history-modal-list");
+    listEl.innerHTML = "";
+    const query = (card.querySelector("#history-modal-search")?.value || "").trim().toLowerCase();
+    const filtered = query ? conversations.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : conversations;
+
+    if (filtered.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "history-empty";
+      empty.textContent = query ? `No conversations match "${query}"` : "No conversations yet";
+      listEl.appendChild(empty);
+      return;
+    }
+    appendHistoryGroups(listEl, filtered, { onSelect: closeModal });
+  }
+
+  function closeModal() {
+    closeHistoryMenu();
+    document.removeEventListener("keydown", onKeydown);
+    overlay.remove();
+  }
+  function onKeydown(e) {
+    if (e.key === "Escape") closeModal();
+  }
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
   });
+  card.querySelector(".history-modal-close").addEventListener("click", closeModal);
+  card.querySelector("#history-modal-search").addEventListener("input", renderModalList);
 
-  HISTORY_BUCKETS.forEach((bucket) => {
-    const items = groups.get(bucket);
-    if (!items || items.length === 0) return;
-
-    const header = document.createElement("div");
-    header.className = "history-group-label";
-    header.textContent = bucket;
-    historyDiv.appendChild(header);
-
-    items.forEach((c) => historyDiv.appendChild(buildHistoryItem(c)));
-  });
+  document.addEventListener("keydown", onKeydown);
+  renderModalList();
+  card.querySelector("#history-modal-search").focus();
 }
 
 async function deleteConversation(id) {

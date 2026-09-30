@@ -2313,6 +2313,7 @@ app.get("/api/conversations", authMiddleware, (req, res) => {
       mode: c.mode || "coach",
       partnerName: c.partnerName || null,
       aboutPartnerId: c.aboutPartnerId || null,
+      pinned: !!c.pinned,
     }));
   res.json(list);
 });
@@ -2395,29 +2396,57 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   res.json(conv);
 });
 
-// Tags (or untags) which partner profile a Coach Chat conversation is about.
-// Self-reported by the user, not AI-guessed — see the comment on
-// learnPartnerProfileIfStale for why a guess isn't good enough once someone
-// has more than one partner profile. Works on any past conversation too, so
-// a user can go back and tag older Coach Chat history, not just new chats.
+// General-purpose conversation-metadata patch, used by:
+//  - the Coach-tag chip bar: tags (or untags) which partner profile a Coach
+//    Chat conversation is about. Self-reported by the user, not AI-guessed —
+//    see the comment on learnPartnerProfileIfStale for why a guess isn't good
+//    enough once someone has more than one partner profile. Works on any past
+//    conversation too, so a user can go back and tag older Coach Chat
+//    history, not just new chats.
+//  - the sidebar history kebab menu (task #97): rename (title) and pin
+//    (pinned). Each field is independent and only applied when present in
+//    the body, so a rename request doesn't also have to resend pinned state,
+//    etc. aboutPartnerId keeps its practice-mode restriction; title/pinned
+//    apply to both Coach and Practice conversations.
 app.patch("/api/conversations/:id", authMiddleware, (req, res) => {
   const db = req.db;
   const conv = db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
   if (!conv) return res.status(404).json({ error: "Conversation not found." });
-  if (conv.mode === "practice") {
-    return res.status(400).json({ error: "Practice conversations already belong to a partner profile." });
+
+  const body = req.body || {};
+  let changed = false;
+
+  if (Object.prototype.hasOwnProperty.call(body, "aboutPartnerId")) {
+    if (conv.mode === "practice") {
+      return res.status(400).json({ error: "Practice conversations already belong to a partner profile." });
+    }
+    const { aboutPartnerId } = body;
+    if (aboutPartnerId === null || aboutPartnerId === undefined || aboutPartnerId === "") {
+      conv.aboutPartnerId = null;
+    } else {
+      const partner = db.partnerProfiles.find((p) => p.id === aboutPartnerId && p.userId === req.user.id);
+      if (!partner) return res.status(400).json({ error: "Partner profile not found." });
+      conv.aboutPartnerId = partner.id;
+    }
+    changed = true;
   }
 
-  const { aboutPartnerId } = req.body || {};
-  if (aboutPartnerId === null || aboutPartnerId === undefined || aboutPartnerId === "") {
-    conv.aboutPartnerId = null;
-  } else {
-    const partner = db.partnerProfiles.find((p) => p.id === aboutPartnerId && p.userId === req.user.id);
-    if (!partner) return res.status(400).json({ error: "Partner profile not found." });
-    conv.aboutPartnerId = partner.id;
+  if (Object.prototype.hasOwnProperty.call(body, "title")) {
+    const title = String(body.title || "").trim().slice(0, 120);
+    if (!title) return res.status(400).json({ error: "Title can't be empty." });
+    conv.title = title;
+    changed = true;
   }
+
+  if (Object.prototype.hasOwnProperty.call(body, "pinned")) {
+    conv.pinned = !!body.pinned;
+    changed = true;
+  }
+
+  if (!changed) return res.status(400).json({ error: "Nothing to update. Send aboutPartnerId, title, and/or pinned." });
+
   saveConversation(conv);
-  res.json({ id: conv.id, aboutPartnerId: conv.aboutPartnerId });
+  res.json({ id: conv.id, title: conv.title, aboutPartnerId: conv.aboutPartnerId, pinned: conv.pinned });
 });
 
 app.get("/api/conversations/:id", authMiddleware, (req, res) => {

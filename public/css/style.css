@@ -1337,7 +1337,28 @@ section {
   white-space: nowrap;
 }
 
-.chat-item-delete {
+/* Pin indicator (task #97) — small muted pushpin shown next to the icon of
+   any conversation the user has pinned from the "⋮" menu below. Pinned
+   conversations are also grouped into their own "📌 Pinned" section above
+   the date buckets — see appendHistoryGroups in chat.js. */
+.chat-item-pin-icon {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--accent-2);
+  opacity: 0.85;
+}
+
+.chat-item-pin-icon svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* "⋮" per-conversation options trigger (task #97), replacing the old
+   always-a-trash-can button — reveals Pin/Rename/Delete in an anchored
+   popover (.chat-item-menu below) styled to match the rest of the app
+   rather than copying Claude.ai's own chrome. Same hover-reveal shape as
+   the button it replaces; kept subtle since every row has one. */
+.chat-item-menu-btn {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
@@ -1353,25 +1374,169 @@ section {
   transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
-.chat-item:hover .chat-item-delete,
-.chat-item:focus-within .chat-item-delete {
+.chat-item:hover .chat-item-menu-btn,
+.chat-item:focus-within .chat-item-menu-btn,
+.chat-item-menu-btn[aria-expanded="true"] {
   opacity: 1;
 }
 
-.chat-item-delete:hover {
-  background: var(--danger-bg);
+.chat-item-menu-btn:hover,
+.chat-item-menu-btn[aria-expanded="true"] {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.chat-item-menu-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Anchored popover opened by .chat-item-menu-btn — appended to <body> and
+   positioned by chat.js's openHistoryMenu() (fixed, computed from the
+   trigger's bounding rect) rather than living inside .sidebar-history, so it
+   is never clipped by that container's overflow-y: auto. */
+.chat-item-menu {
+  position: fixed;
+  z-index: 110;
+  min-width: 168px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-item-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chat-item-menu-item:hover,
+.chat-item-menu-item:focus-visible {
+  background: var(--surface-hover);
+  outline: none;
+}
+
+.chat-item-menu-item svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--text-muted);
+}
+
+.chat-item-menu-item-danger {
+  color: var(--danger-text);
+}
+
+.chat-item-menu-item-danger svg {
   color: var(--danger);
 }
 
-.chat-item-delete svg {
-  width: 14px;
-  height: 14px;
+.chat-item-menu-item-danger:hover,
+.chat-item-menu-item-danger:focus-visible {
+  background: var(--danger-bg);
+}
+
+/* "View all conversations" link (task #97) — the sidebar itself only shows
+   pinned + the most recent HISTORY_SIDEBAR_RECENT_LIMIT conversations (see
+   renderHistory in chat.js) to keep it short and scannable; this opens
+   history-modal-overlay below for the full, searchable list. */
+.history-view-all-btn {
+  width: 100%;
+  margin-top: 2px;
+  padding: 9px 12px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.history-view-all-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .history-empty {
   font-size: 13px;
   color: var(--text-faint);
   padding: 10px 12px;
+}
+
+/* "View all conversations" modal (task #97) — same .modal-overlay backdrop
+   as every other dialog in the app, a wider/taller card so a long history
+   has real room, laid out as header + search (fixed) above a scrolling
+   list, reusing the exact same row markup (buildHistoryItem) and "⋮" menu
+   as the sidebar. */
+.history-modal-card {
+  max-width: 540px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.history-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.history-modal-header h3 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.history-modal-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.history-modal-close:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.history-modal-search {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.history-modal-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
 }
 
 .sidebar-bottom {
@@ -4012,6 +4177,26 @@ body.js-reveal .reveal-item.revealed {
   line-height: 1.55;
   color: var(--text);
   margin: 0;
+}
+
+/* showAppPrompt's text input (task #97) — same visual language as
+   .history-search rather than an unstyled native input, which on a dark
+   page defaults to a jarring white box with a plain blue focus ring. */
+.dialog-input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+}
+
+.dialog-input:focus {
+  border-color: var(--accent-1);
 }
 
 .conversation-pick-list {

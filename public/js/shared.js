@@ -104,6 +104,59 @@ function showAppConfirm(message, opts) {
   });
 }
 
+// Promise<string|null> replacement for window.prompt(message, defaultValue) —
+// resolves the trimmed input text on confirm/Enter, or null on
+// cancel/Escape/outside-click. Used by the sidebar history kebab menu's
+// "Rename" item (task #97). opts: { confirmLabel, placeholder, maxLength }.
+function showAppPrompt(message, defaultValue, opts) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const confirmLabel = (opts && opts.confirmLabel) || "Save";
+    const maxLength = (opts && opts.maxLength) || 120;
+    const overlay = openDialogModal(
+      `<p class="dialog-message"></p>
+       <input type="text" class="dialog-input" id="dialog-prompt-input" autocomplete="off" />
+       <div class="modal-close-row">
+         <button type="button" class="btn btn-ghost btn-sm" id="dialog-cancel-btn">Cancel</button>
+         <button type="button" class="btn btn-gradient btn-sm" id="dialog-confirm-btn"></button>
+       </div>`,
+      (card) => {
+        card.querySelector(".dialog-message").textContent = message;
+        const input = card.querySelector("#dialog-prompt-input");
+        input.value = defaultValue || "";
+        input.maxLength = maxLength;
+        if (opts && opts.placeholder) input.placeholder = opts.placeholder;
+        card.querySelector("#dialog-confirm-btn").textContent = confirmLabel;
+      }
+    );
+    const input = overlay.querySelector("#dialog-prompt-input");
+
+    function close(result) {
+      if (settled) return;
+      settled = true;
+      document.removeEventListener("keydown", onKeydown);
+      overlay.remove();
+      resolve(result);
+    }
+    function submit() {
+      const value = input.value.trim();
+      close(value ? value : null);
+    }
+    function onKeydown(e) {
+      if (e.key === "Escape") close(null);
+      if (e.key === "Enter") submit();
+    }
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close(null);
+    });
+    overlay.querySelector("#dialog-cancel-btn").addEventListener("click", () => close(null));
+    overlay.querySelector("#dialog-confirm-btn").addEventListener("click", submit);
+    document.addEventListener("keydown", onKeydown);
+    input.focus();
+    input.select();
+  });
+}
+
 function getToken() {
   try {
     return localStorage.getItem("relateiq_token");
