@@ -235,7 +235,8 @@ img, svg {
 /* The two flagship features (Coach Chat, Partner Practice) get more visual
    weight than the rest of the nav, so wherever you are in the app it's
    always clear which two things are the point and which are extras — see
-   the matching treatment in .mode-tabs / .sidebar-modes below. */
+   the matching treatment on .mode-tab / .sidebar-tools below (chat.html's
+   own sidebar, not this shared nav). */
 .nav-links a.nav-primary {
   color: var(--text);
   font-weight: 600;
@@ -1283,15 +1284,17 @@ section {
   gap: 4px;
 }
 
-/* "Tools" group — Insights, Daily question, Share with partner, i.e. every
-   secondary page one click away from the chat, gathered under one labeled
-   section near the top of the sidebar (above the conversation history) so
-   they read as a set instead of being scattered between the old mode-tab
-   pill (Insights used to ride along with Coach/Practice there) and the
+/* "Tools" group — every mode and secondary page one click away from the
+   chat (Coach, Practice, Insights, Daily question, Share with partner),
+   gathered under one labeled section near the top of the sidebar (above
+   the conversation history) so they read as a set instead of being
+   scattered across the old topbar pill (Coach/Practice/Insights) and the
    bottom of the sidebar (Share/Daily question used to live in
-   .sidebar-bottom next to My account/Log out, which are account-level, not
-   tools). Same drawer markup serves the ≤640px off-canvas sidebar too, so
-   this shows up consistently on mobile as well. */
+   .sidebar-bottom next to My account/Log out, which are account-level,
+   not modes/tools). Same drawer markup serves the ≤640px off-canvas
+   sidebar too, so this shows up consistently on mobile as well — and
+   since it's always present here, the old topbar-only pill and the
+   mobile-only sidebar-modes nav were retired in favor of this one list. */
 .sidebar-tools {
   display: flex;
   flex-direction: column;
@@ -1309,6 +1312,25 @@ section {
   letter-spacing: 0.05em;
   color: var(--text-faint);
   padding: 4px 10px 6px;
+}
+
+/* Coach/Practice live in this same vertical list now, styled to match the
+   plain .sidebar-link rows around them (full-width, left-aligned) rather
+   than their old horizontal pill shape — .mode-tab still supplies the
+   color/weight/active logic (and chat.js's data-mode wiring), this just
+   overrides layout for the vertical context. */
+.sidebar-tools .mode-tab {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  font-size: 13.5px;
+}
+
+.sidebar-tools .mode-tab.active {
+  background: var(--accent-grad);
+  color: var(--ink);
 }
 
 /* Recency section headers ("Today", "Yesterday", …) above each group of
@@ -1652,10 +1674,6 @@ section {
   display: none;
 }
 
-.sidebar-modes {
-  display: none;
-}
-
 .chat-wrapper {
   flex: 1;
   display: flex;
@@ -1745,16 +1763,10 @@ section {
   color: var(--danger);
 }
 
-/* Mode switcher tabs */
-
-.mode-tabs {
-  display: flex;
-  gap: 4px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 4px;
-}
+/* Mode switcher — Coach/Practice, now living as rows inside .sidebar-tools
+   (see the .sidebar-tools .mode-tab override above for the vertical
+   layout); these three rules still supply the shared color/weight/active
+   look and the hover state that chat.js's setActiveTab() toggles. */
 
 .mode-tab {
   background: none;
@@ -3629,37 +3641,6 @@ section {
   .sidebar-backdrop.open {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  /* The mode switcher relocates into the drawer, below the chat history —
-     the topbar's copy of it is hidden so it isn't shown twice. */
-
-  .chat-topbar .mode-tabs {
-    display: none;
-  }
-
-  .sidebar-modes {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding: 10px 0;
-    margin: 4px 0 8px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
-
-  .sidebar-modes .mode-tab {
-    width: 100%;
-    justify-content: flex-start;
-    border-radius: var(--radius-sm);
-    padding: 10px 12px;
-    background: none;
-  }
-
-  .sidebar-modes .mode-tab.active {
-    background: var(--accent-grad);
-    color: var(--ink);
   }
 
   .chat-messages,
