@@ -1796,6 +1796,48 @@ section {
   font-size: 23px;
 }
 
+/* Dismissible "more detail = more specific advice" tip (task #97) shown in
+   Coach Chat's empty state — see renderEmptyState/DETAIL_TIP_DISMISSED_KEY
+   in chat.js. */
+.empty-chat-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-align: left;
+}
+
+.empty-chat-tip span {
+  flex: 1;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+#empty-chat-tip-close {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--text-faint);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#empty-chat-tip-close:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
 .message-row {
   width: 100%;
   display: flex;

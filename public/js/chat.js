@@ -941,10 +941,46 @@ async function deleteConversation(id) {
   }
 }
 
+// Dismissible one-time tip (task #97, competitive-differentiation pass):
+// the single biggest lever a USER has over how good Coach Chat's answer is
+// — more specific detail in, more specific (less generic) advice out — so
+// it's worth teaching explicitly rather than hoping people discover it.
+// Shown only for Coach Chat's empty state (not Practice, where it doesn't
+// apply the same way), and only until dismissed once.
+const DETAIL_TIP_DISMISSED_KEY = "relateiq_detail_tip_dismissed";
+
+function isDetailTipDismissed() {
+  try {
+    return localStorage.getItem(DETAIL_TIP_DISMISSED_KEY) === "1";
+  } catch (e) {
+    return false;
+  }
+}
+
+function dismissDetailTip() {
+  try {
+    localStorage.setItem(DETAIL_TIP_DISMISSED_KEY, "1");
+  } catch (e) {
+    /* ignore storage errors */
+  }
+}
+
 function renderEmptyState() {
   const chatDiv = document.getElementById("chat");
+  const showTip = currentConvCtx.mode !== "practice" && !isDetailTipDismissed();
+  const tipHtml = showTip
+    ? `<div class="empty-chat-tip" id="empty-chat-tip">
+         <span>💡 The more specific detail you give — exactly what happened, what was actually said — the more specific (and less generic) the advice back will be.</span>
+         <button type="button" id="empty-chat-tip-close" aria-label="Dismiss tip">✕</button>
+       </div>`
+    : "";
   chatDiv.innerHTML =
-    '<div id="empty-state" class="empty-chat"><h2>Hi there! 👋</h2><p>Tell me what\'s going on in your relationship, and let\'s work through it together.</p></div>';
+    `<div id="empty-state" class="empty-chat"><h2>Hi there! 👋</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}</div>`;
+  document.getElementById("empty-chat-tip-close")?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dismissDetailTip();
+    document.getElementById("empty-chat-tip")?.remove();
+  });
 }
 
 // ---------------------------------------------------------------------------
