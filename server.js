@@ -39,6 +39,7 @@ import {
   deleteCoupleLink,
   getCoupleLinkByToken,
   saveCoupleAnswer,
+  saveCoupleAnswerIfAbsent,
   savePushSubscription,
   deletePushSubscription,
   deletePushSubscriptionsForUser,
@@ -3674,15 +3675,54 @@ const COUPLE_QUESTIONS = [
   "What's something about how you handle stress that you wish didn't affect your partner as much as it does?",
 ];
 
-// Same date, same couple → same question, deterministically, with no need
-// to look anything up first (mirrors checkinQuestionForDate above). Salted
-// with the couple link's own id (not just the date) so different couples
-// aren't all handed the literal same question on the same calendar day.
-function coupleQuestionForDate(coupleLinkId, dateKey) {
+// Same date, same couple, same candidate list → same question,
+// deterministically, with no need to look anything up first (mirrors
+// checkinQuestionForDate above). Salted with the couple link's own id (not
+// just the date) so different couples aren't all handed the literal same
+// question on the same calendar day. `candidates` defaults to the full
+// static bank, but ensureTodaysCoupleQuestion below passes in only the
+// ones THIS couple hasn't used yet, which is what actually guarantees no
+// repeat until all of them have appeared.
+function coupleQuestionForDate(coupleLinkId, dateKey, candidates = COUPLE_QUESTIONS) {
   let hash = 0;
   const seed = `${coupleLinkId}|${dateKey}`;
   for (const ch of seed) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
-  return COUPLE_QUESTIONS[hash % COUPLE_QUESTIONS.length];
+  return candidates[hash % candidates.length];
+}
+
+// Builds the system prompt for generateFreshCoupleQuestion below — a
+// function, not a constant, because the "don't repeat these" list is
+// specific to each couple and changes over time.
+function buildCoupleQuestionSystemPrompt(usedQuestions) {
+  const recentlyUsed = usedQuestions.slice(-40);
+  return `You write a single daily question for two partners in a relationship-coaching app called RelateIQ. Each partner answers it independently, then compares answers with each other.
+
+Respond with ONLY a JSON object, no other text before or after it: {"question": "<the question>"}
+
+Rules:
+- Open-ended and genuinely comparison-worthy — two people could honestly answer it in completely different ways. NEVER write something a person could truthfully answer with just "yes" or "no" — not even a compound question with a yes/no clause tacked onto an otherwise open one (bad: "...and is that fair?", "...and are you glad you did?", "...does your partner know?").
+- Draw from the real range of relationship life: memories, values, hypothetical "what would you do if…" scenarios, opinions, everyday life, fears, growth, communication, or lighter/fun topics — vary which angle you use, don't default to the same one every time.
+- One or two sentences, natural conversational English. No surrounding quotation marks.
+- Must be genuinely new — not a reworded restatement of any question already used with this couple, listed below. Different topic or a clearly different angle, not just different phrasing of the same idea.
+
+Questions already used with this couple (write something that doesn't overlap with these):
+${recentlyUsed.map((q) => `- ${q}`).join("\n")}`;
+}
+
+// Called only once a couple has worked through every question in the
+// static COUPLE_QUESTIONS bank (see ensureTodaysCoupleQuestion) — from
+// that point on, every day's question is freshly generated rather than
+// ever repeating. Fails open: any error here is caught by the caller and
+// falls back to reusing an old question rather than breaking the feature.
+async function generateFreshCoupleQuestion(usedQuestions) {
+  const completion = await openai.chat.completions.create({
+    model: STANDARD_MODEL,
+    messages: [{ role: "system", content: buildCoupleQuestionSystemPrompt(usedQuestions) }],
+    temperature: 0.9,
+    response_format: { type: "json_object" },
+  });
+  const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
+  return String(parsed.question || "").trim();
 }
 
 function findActiveCoupleLink(db, userId) {
@@ -3703,22 +3743,52 @@ function myCoupleSlot(link, userId) {
 // COUPLE_QUESTIONS can't retroactively change a question someone already
 // answered (same "point-in-time snapshot" principle as the ownerStyle
 // snapshot on compares above).
-function getOrCreateCoupleAnswerRow(db, link, dateKey) {
+//
+// Question selection (task #98 follow-up — Jonas wanted no repeats until
+// the whole bank is used, AND for it to never actually run out):
+//   1. While this couple still has unused questions in the static
+//      COUPLE_QUESTIONS bank, deterministically pick one of THOSE (never
+//      one they've already had) — same mechanism as before, just scoped to
+//      the unused subset instead of the full bank.
+//   2. Once they've used all of them, every day from then on gets a fresh,
+//      newly-generated question instead — see generateFreshCoupleQuestion.
+//      That also naturally can't repeat: it's explicitly told what this
+//      couple has already been asked.
+// Either way, the actual persistence goes through
+// saveCoupleAnswerIfAbsent (store.js), which is race-safe: if both
+// partners open "today" at nearly the same moment before the row exists,
+// only one of their (possibly independently AI-generated) questions
+// actually gets saved, and both requests end up returning that same one.
+async function ensureTodaysCoupleQuestion(db, link, dateKey) {
   let row = db.coupleAnswers.find((a) => a.coupleLinkId === link.id && a.date === dateKey);
-  if (!row) {
-    row = {
-      id: generateId("cqa"),
-      coupleLinkId: link.id,
-      date: dateKey,
-      question: coupleQuestionForDate(link.id, dateKey),
-      answerA: null,
-      answerAAt: null,
-      answerB: null,
-      answerBAt: null,
-    };
-    saveCoupleAnswer(row);
-    db.coupleAnswers.push(row);
+  if (row) return row;
+
+  const usedQuestions = db.coupleAnswers
+    .filter((a) => a.coupleLinkId === link.id && a.question)
+    .map((a) => a.question);
+  const usedSet = new Set(usedQuestions.map((q) => q.toLowerCase()));
+  const unusedStatic = COUPLE_QUESTIONS.filter((q) => !usedSet.has(q.toLowerCase()));
+
+  let question;
+  if (unusedStatic.length > 0) {
+    question = coupleQuestionForDate(link.id, dateKey, unusedStatic);
+  } else {
+    question = await generateFreshCoupleQuestion(usedQuestions).catch((err) => {
+      console.error("Couple question generation error:", err.message);
+      return "";
+    });
+    question = String(question || "").trim();
+    // Guards against an empty/failed generation, or the rare case the
+    // model echoes something too close to an existing one — falls back to
+    // the couple's very first question (a real repeat) rather than ever
+    // leaving "today" without one.
+    if (!question || usedSet.has(question.toLowerCase())) {
+      question = usedQuestions[0] || COUPLE_QUESTIONS[0];
+    }
   }
+
+  row = saveCoupleAnswerIfAbsent(link.id, dateKey, question);
+  if (!db.coupleAnswers.some((a) => a.id === row.id)) db.coupleAnswers.push(row);
   return row;
 }
 
@@ -3854,17 +3924,22 @@ app.post("/api/couple/invite/:token/accept", authMiddleware, (req, res) => {
   }
 });
 
-app.get("/api/couple/question/today", authMiddleware, (req, res) => {
-  const db = req.db;
-  const link = findActiveCoupleLink(db, req.user.id);
-  if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
-  const row = getOrCreateCoupleAnswerRow(db, link, todayKey());
-  res.json(publicCoupleAnswer(row, req.user.id, link));
+app.get("/api/couple/question/today", authMiddleware, async (req, res) => {
+  try {
+    const db = req.db;
+    const link = findActiveCoupleLink(db, req.user.id);
+    if (!link) return res.status(404).json({ error: "You're not linked with a partner yet." });
+    const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
+    res.json(publicCoupleAnswer(row, req.user.id, link));
+  } catch (err) {
+    console.error("Get today's couple question error:", err);
+    res.status(500).json({ error: "Couldn't load today's question. Please try again." });
+  }
 });
 
 const MAX_COUPLE_ANSWER_LENGTH = 2000;
 
-app.post("/api/couple/question/today/answer", authMiddleware, (req, res) => {
+app.post("/api/couple/question/today/answer", authMiddleware, async (req, res) => {
   try {
     const db = req.db;
     const link = findActiveCoupleLink(db, req.user.id);
@@ -3873,7 +3948,7 @@ app.post("/api/couple/question/today/answer", authMiddleware, (req, res) => {
     const trimmed = String((req.body || {}).answer || "").trim();
     if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
 
-    const row = getOrCreateCoupleAnswerRow(db, link, todayKey());
+    const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
     const slot = myCoupleSlot(link, req.user.id);
     const alreadyAnswered = slot === "A" ? row.answerA : row.answerB;
     // Locked in once submitted, on purpose — the entire point of "you only
