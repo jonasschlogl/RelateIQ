@@ -3545,7 +3545,7 @@ const COUPLE_QUESTIONS = [
   "What's one thing about your relationship you think about more than your partner probably realizes?",
   "If you had to describe the current season of your relationship in a short phrase, what would it be and why?",
   "What's a small habit of your partner's that quietly means more to you than you've said out loud?",
-  "Where do you want the two of you to be, as a couple, in five years — and do you think your partner would say the same?",
+  "Where do you want the two of you to be, as a couple, in five years — and how close do you think that is to what your partner actually wants?",
   "What's something your partner does that helps you feel understood, even without words?",
   "When was the last time you felt genuinely proud of how the two of you handled something hard together?",
   "What's a fear you have about this relationship that you rarely say out loud?",
@@ -3560,7 +3560,118 @@ const COUPLE_QUESTIONS = [
   "How has your definition of a good relationship changed since you've been with your partner?",
   "What's a compliment you've been meaning to give your partner but haven't said out loud?",
   "What part of yourself do you feel most free to show around your partner — and what part still feels guarded?",
-  "If you had to guess, what would your partner say is the hardest thing about being with you right now? Are you okay with that guess?",
+  "If you had to guess, what would your partner say is the hardest thing about being with you right now — and how do you feel about that guess?",
+
+  // Hypotheticals — "what would you do if…" (Jonas asked for more of this
+  // angle specifically, task #98 follow-up: "kludne aj typu: co by si
+  // urobil/a keby...").
+  "If you suddenly had a free, unplanned week together with no responsibilities, what would you actually want to do with it?",
+  "If you won a modest amount of money — enough to change one thing about your life together but not retire — what would you spend it on?",
+  "If you had to move to a completely new city together tomorrow, what's the one thing about your current life you'd miss most?",
+  "If your partner had to describe your relationship to a stranger in one sentence, what do you think they'd say — and how does that compare to what you'd want them to say?",
+  "If you could redo one conversation you've had with your partner, which one would it be and what would you say differently?",
+  "If your partner pulled away emotionally for a week with no explanation, what would be your first instinct — and what do you think the better move would actually be?",
+  "If you had to give up one habit that bothers your partner, which one would you choose, and what's stopping you from dropping it already?",
+  "If you could ask your partner one question you've always wanted a real answer to, what would it be?",
+  "If your future self could send a message back to the two of you right now, what do you think it would say?",
+  "If your partner made a big decision about your shared life without asking you first, how would you actually want them to handle it?",
+  "If you had to choose between more time together or more time apart doing your own things right now, which would you pick — and why?",
+  "If you found out your partner had been struggling with something and hiding it from you, how would you want them to have told you instead?",
+  "If your partner had to leave for six months for something important, what would worry you most about the distance?",
+  "If you could give your partner one piece of advice about how to love you better, what would it be?",
+  "If you had one evening to do anything with your partner and money were no object, what would you choose?",
+  "If your partner asked you right now what they could do to make you feel more loved this week, what would you actually say?",
+
+  // Opinions and values — where the two of you might genuinely differ.
+  "What's your honest opinion on how the two of you split responsibilities at home, and what makes you feel that way?",
+  "How do you feel about the role money plays in how the two of you make decisions?",
+  "What's something about how your family handled relationships growing up that you're consciously trying to do differently?",
+  "Where do you land on how much of your individual life should stay separate versus shared?",
+  "What's your honest take on how well the two of you actually resolve conflict, versus just letting it fade?",
+  "How important is it to you that your partner's friends and family genuinely like you — and what makes you think they feel the way they do about you?",
+  "What's your view on how the two of you handle each other's bad days, and what pattern would you most want to change, if any?",
+  "Where do you stand on how much you two talk about the future versus just living day to day?",
+  "What's something about the way you argue that you think is actually healthy, even if it doesn't feel that way in the moment?",
+  "How do you feel about the balance of who initiates — plans, affection, hard conversations — between the two of you?",
+  "What's your honest opinion on how well the two of you actually know each other's love language, versus just guessing?",
+  "What's a way the two of you handle jealousy or insecurity that you think is actually healthy?",
+
+  // Daily life and small appreciation — the stuff that's easy to overlook.
+  "What's something mundane your partner does regularly that you'd genuinely miss if it stopped?",
+  "What does an ordinary Tuesday with your partner look like when things are going well?",
+  "What's one small thing you wish your partner asked you about more often?",
+  "What's a routine or ritual the two of you have that means more to you than you've let on?",
+  "What's something your partner does when you're sick or having a hard day that actually helps?",
+  "What's the most 'us' inside joke or routine you have, and how did it start?",
+
+  // Fears and vulnerability.
+  "What's something about getting older together that quietly worries you?",
+  "What's a way you've changed since being with your partner that surprises even you?",
+  "What's something you're afraid to ask your partner for, even though you probably should?",
+  "What's an insecurity you have that your partner probably doesn't know the full depth of?",
+  "What's something from your past relationships you're still, even a little, protecting yourself against in this one?",
+  "What's a version of yourself you're afraid your partner hasn't fully seen yet — good or bad?",
+  "What's a fear about the future — health, money, family — that you carry more quietly than your partner knows?",
+
+  // Family, friends, and the life you're building around the relationship.
+  "How do you really feel about how involved your families are in your relationship?",
+  "What's something about raising kids (or choosing not to) that the two of you see even slightly differently?",
+  "What's a tradition — from your family, your partner's, or one you've made up — that you want to keep for good?",
+  "How do you feel about the amount of time the two of you spend with friends versus just each other?",
+  "What's something about how your partner treats people who can't do anything for them that says a lot about who they are?",
+
+  // Growth and change.
+  "What's a way you've had to compromise in this relationship that you're actually proud of, not just resigned to?",
+  "What's something you used to think you needed in a relationship that you've realized you don't, because of your partner?",
+  "What's a hard truth about yourself that being with your partner has forced you to face?",
+  "What's something your partner has taught you without ever meaning to?",
+  "Where do you think the two of you have grown the most as a couple, not just as individuals?",
+
+  // Communication.
+  "What's something you wish you were better at telling your partner in the moment, instead of realizing it later?",
+  "What's a topic the two of you tend to avoid, and what do you think would happen if you actually brought it up?",
+  "What's something your partner says or does during an argument that actually helps de-escalate it?",
+  "What's a time your partner really surprised you with how they listened, even if they couldn't fix anything?",
+  "What's something you say you're 'fine' about that you're actually not fully fine about?",
+  "What's something about apologizing that you find harder than your partner might think?",
+
+  // Lighter, but still genuinely open-ended.
+  "If you had to plan the perfect low-key day for the two of you on a small budget, what would it look like?",
+  "What's a version of your future together, ten years from now, that genuinely excites you?",
+  "What's something your partner is better at than they give themselves credit for?",
+  "What's a habit or quirk of your partner's that annoyed you at first but you've come to actually love?",
+  "What's something you two used to do together that you miss and should probably bring back?",
+  "If your relationship had a theme song, what would it be and why does it fit?",
+  "What's the most 'us' way the two of you have ever handled a crisis, big or small?",
+
+  // Meaning, commitment, and depth.
+  "What does commitment actually mean to you, beyond just staying together?",
+  "What's something about loyalty that matters more to you than most people realize?",
+  "What's a moment your partner stood up for you — or you wish they had — that still sits with you?",
+  "What's something you need to hear more often than your partner probably thinks?",
+  "What's a way you show trust in your partner that isn't obvious from the outside?",
+  "What's something about forgiveness in this relationship that you're still working through?",
+  "What's a boundary in this relationship that took real effort to set, and how do you feel about it now, looking back?",
+  "What does it mean to you to feel 'chosen' by your partner, day to day, not just in the big moments?",
+
+  // Identity within the relationship.
+  "What part of your identity do you feel your partner understands best?",
+  "What's something about your career or ambitions that you wish your partner understood more deeply?",
+  "What's a dream you've quietly set aside, and how much do you think your partner actually knows about it?",
+  "What's something about independence that you need from this relationship to still feel like yourself?",
+  "What's a value you hold that you'd never compromise on, even for your partner?",
+  "What's something about your partner's ambition or work ethic that you genuinely admire, even when it's inconvenient?",
+
+  // Specific moments, looking back.
+  "What's a fight you had that, looking back, actually made the relationship stronger?",
+  "What's a moment you felt like you and your partner were truly on the same team against the world?",
+  "What's something your partner did in the hardest year of your relationship that you'll never forget?",
+  "What's a small gesture from your partner that meant more than they probably realized at the time?",
+
+  // Health, aging, and the long view.
+  "What's something about how you want to grow old together that you haven't actually said out loud?",
+  "How do you feel about the way the two of you take care of each other's physical and mental health?",
+  "What's something about how you handle stress that you wish didn't affect your partner as much as it does?",
 ];
 
 // Same date, same couple → same question, deterministically, with no need
