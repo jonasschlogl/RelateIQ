@@ -2854,6 +2854,22 @@ section {
   color: var(--accent-1);
 }
 
+/* Brief fetch-while-waiting state (POST /api/voice/speak) before natural
+   TTS audio is ready to play — didn't exist for the old instant-start
+   browser speechSynthesis version. Reuses the same fade pulse as the voice
+   mode orb's "thinking"/"speaking" states for a consistent feel. */
+.speak-btn.loading {
+  color: var(--accent-1);
+  animation: voice-orb-fade 1.1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speak-btn.loading {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
 .feedback-buttons {
   display: flex;
   gap: 2px;
