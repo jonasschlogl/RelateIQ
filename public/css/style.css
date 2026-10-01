@@ -2055,99 +2055,9 @@ section {
   }
 }
 
-/* Voice mode toggle — same icon-button family as .attach-btn/.mic-btn
-   beside it, but turning it on swaps the whole composer for
-   .voice-mode-panel below rather than just filling the text field, so it
-   gets its own persistent "on" look instead of .mic-btn's momentary
-   .listening state. */
-.voice-mode-btn {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-strong);
-  background: var(--bg-elevated);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-}
-
-.voice-mode-btn:hover {
-  border-color: var(--accent-1);
-  color: var(--text);
-}
-
-.voice-mode-btn svg {
-  width: 18px;
-  height: 18px;
-}
-
-.voice-mode-btn.active {
-  border-color: var(--accent-1);
-  color: var(--ink);
-  background: var(--accent-grad);
-}
-
-/* Hands-free voice conversation (Coach or Practice) — replaces the whole
-   composer (see enterVoiceMode/stopVoiceMode in chat.js) with a single big
-   status orb instead of a text field, since there's nothing to type while
-   it's active. Same card chrome as .input-area so it occupies the same
-   visual slot. */
-.voice-mode-panel {
-  width: 100%;
-  max-width: 768px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: 28px 12px;
-  margin-bottom: 8px;
-  background: var(--surface);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-}
-
-.voice-mode-orb {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
-  color: var(--text-muted);
-}
-
-.voice-mode-orb svg {
-  width: 26px;
-  height: 26px;
-}
-
-.voice-mode-orb-listening {
-  border-color: var(--danger);
-  color: var(--danger);
-  background: var(--danger-bg);
-  animation: mic-pulse 1.4s ease-in-out infinite;
-}
-
-.voice-mode-orb-thinking {
-  border-color: var(--border-strong);
-  color: var(--text-muted);
-  animation: voice-orb-fade 1.2s ease-in-out infinite;
-}
-
-.voice-mode-orb-speaking {
-  border-color: var(--accent-1);
-  color: var(--ink);
-  background: var(--accent-grad);
-  animation: voice-orb-fade 0.9s ease-in-out infinite;
-}
-
+/* Named for the voice-mode orb this was originally built for (since
+   removed) — kept because .speak-btn.loading below still uses it for its
+   fetch-while-waiting pulse. */
 @keyframes voice-orb-fade {
   0%, 100% {
     opacity: 1;
@@ -2155,24 +2065,6 @@ section {
   50% {
     opacity: 0.55;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .voice-mode-orb-listening,
-  .voice-mode-orb-thinking,
-  .voice-mode-orb-speaking {
-    animation: none;
-  }
-}
-
-.voice-mode-status {
-  font-size: 14px;
-  color: var(--text-muted);
-  text-align: center;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .attachment-preview {

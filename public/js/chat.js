@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("new-chat-btn")?.addEventListener("click", () => {
-    stopVoiceMode();
     startNewChat(currentMode);
     closeSidebarDrawer();
   });
@@ -148,30 +147,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("file-input")?.addEventListener("change", handleFilesSelected);
   wireVoiceInput(document.getElementById("mic-btn"), document.getElementById("input"));
 
-  // Voice mode — hidden entirely wherever the browser APIs it needs aren't
-  // all available (see voiceModeSupported), same progressive-enhancement
-  // approach as wireVoiceInput hiding #mic-btn above.
-  const voiceModeBtn = document.getElementById("voice-mode-btn");
-  if (voiceModeBtn) {
-    if (voiceModeSupported()) {
-      voiceModeBtn.addEventListener("click", toggleVoiceMode);
-    } else {
-      voiceModeBtn.style.display = "none";
-    }
-  }
-  document.getElementById("voice-mode-end-btn")?.addEventListener("click", stopVoiceMode);
-  // Tapping the orb after a denied/failed microphone permission retries
-  // requesting it, instead of being a dead end until "End voice mode".
-  document.getElementById("voice-mode-orb")?.addEventListener("click", () => {
-    if (voiceModeActive && !voiceModeStream) voiceModeRequestMicAndListen();
-  });
-
   // Only the real mode tabs (Coach/Practice) switch mode in-page — the
   // Insights tab is a plain link to its own page (no data-mode), so it's
   // excluded here and just navigates normally.
   document.querySelectorAll(".mode-tab[data-mode]").forEach((tab) => {
     tab.addEventListener("click", () => {
-      stopVoiceMode();
       const mode = tab.dataset.mode;
       if (mode === "practice") {
         setActiveTab("practice");
@@ -1631,12 +1611,6 @@ async function selectPartnerAndStart(partnerId) {
 // ---------------------------------------------------------------------------
 
 async function startNewChat(mode) {
-  // Deliberately NOT stopVoiceMode() here — sendMessage() calls this itself
-  // to silently create the very first Coach conversation on someone's first
-  // voice turn (no "+ New chat" click involved), and tearing voice mode down
-  // mid-turn there would cancel it before the reply even comes back. The
-  // user-initiated entry points (the "+ New chat" button, the mode-tab
-  // switcher) call stopVoiceMode() themselves before reaching this.
   resetEditState();
   if (mode === "practice") {
     setActiveTab("practice");
@@ -1676,7 +1650,6 @@ async function startNewChat(mode) {
 }
 
 async function openConversation(id, preloadedConv) {
-  stopVoiceMode();
   resetEditState();
   try {
     let conv = preloadedConv;
@@ -1731,10 +1704,9 @@ async function openConversation(id, preloadedConv) {
 // messages
 // ---------------------------------------------------------------------------
 
-// Only one "play aloud" source plays at a time across the whole page — the
-// speak-btn (this section) and voiceModeSpeak (hands-free voice mode,
-// below) each stop whichever of these is currently active before starting
-// their own, the same single-audio-channel guarantee the old
+// Only one "play aloud" source plays at a time across the whole page — a
+// speak-btn click stops whichever other one is currently active before
+// starting its own, the same single-audio-channel guarantee the old
 // window.speechSynthesis.cancel() gave for free when everything went
 // through one shared browser queue. Now that playback is per-Audio-element
 // instead, this module-level pointer to the active one's own stop()
@@ -1774,10 +1746,8 @@ function buildSpeakButton(text) {
   btn.addEventListener("click", async (e) => {
     e.stopPropagation();
     const wasActive = btn.classList.contains("speaking") || btn.classList.contains("loading");
-    // Only one message plays at a time — stop whatever else is going first
-    // (another speak-btn, or voice mode's own playback).
+    // Only one message plays at a time — stop whatever else is going first.
     if (activeSpeakButtonStop) activeSpeakButtonStop();
-    if (voiceModeAudioEl) stopVoiceModeAudio();
     if (wasActive) return; // this click was just "stop"
 
     activeSpeakButtonStop = stop;
@@ -2432,318 +2402,6 @@ function typeText(element, text, speed = 12) {
   typing();
 }
 
-// ---------------------------------------------------------------------------
-// Voice mode — hands-free, continuous back-and-forth (Coach or Practice):
-// speak your turn, hear the reply out loud, and it automatically starts
-// listening again for your next turn, like a phone call — rather than
-// tapping the mic to dictate, waiting, tapping Send, then tapping a speaker
-// icon to hear the reply, for every single exchange. Exited by
-// stopVoiceMode() — called here, and also from startNewChat/openConversation/
-// the mode-tab click handler so switching conversation or mode can never
-// leave a recognizer, a recorder, or playback running against the wrong
-// conversation.
-//
-// Any-language, natural-voice architecture: the browser's SpeechRecognition
-// (free, instant, but language-locked and robotic-sounding when read back)
-// is now used ONLY for endpointing — detecting when the person has started/
-// stopped talking, which works regardless of what language they're
-// speaking, since that's a lower-level audio-energy signal, not tied to its
-// transcription language model. Its own transcript is discarded entirely.
-// The actual words come from a parallel MediaRecorder capturing raw audio,
-// sent to the server (POST /api/voice/transcribe) for OpenAI Whisper-family
-// transcription once SpeechRecognition signals the person has stopped
-// talking — that auto-detects whatever language was actually spoken, which
-// browser SpeechRecognition cannot do (it must be told a language up
-// front). Replies are read back via POST /api/voice/speak (OpenAI TTS,
-// genuinely natural, and — since it just reads whatever text it's given —
-// automatically in the same language the reply was written in, no language
-// handling needed on that side).
-// ---------------------------------------------------------------------------
-
-let voiceModeActive = false;
-let voiceModeRecognition = null;
-// The getUserMedia microphone stream — requested once per voice-mode
-// session (not re-requested every turn) and released in stopVoiceMode().
-let voiceModeStream = null;
-// The MediaRecorder capturing the turn currently in progress, if any.
-let voiceModeRecorder = null;
-// The Audio element currently playing a spoken reply, if any — tracked so
-// stopVoiceModeAudio()/stopVoiceMode() can stop it, and so a manual
-// per-message speak-btn (buildSpeakButton, above) can pre-empt it.
-let voiceModeAudioEl = null;
-
-function voiceModeSupported() {
-  return (
-    !!(window.SpeechRecognition || window.webkitSpeechRecognition) &&
-    !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) &&
-    !!window.MediaRecorder
-  );
-}
-
-function setVoiceModeStatus(text, state) {
-  const statusEl = document.getElementById("voice-mode-status");
-  if (statusEl) statusEl.textContent = text;
-  const orb = document.getElementById("voice-mode-orb");
-  if (orb) orb.className = "voice-mode-orb" + (state ? ` voice-mode-orb-${state}` : "");
-}
-
-// Stops whatever reply is currently playing through voiceModeSpeak()
-// without exiting voice mode itself — used by stopVoiceMode() and by a
-// manual speak-btn click (buildSpeakButton) pre-empting it.
-function stopVoiceModeAudio() {
-  if (!voiceModeAudioEl) return;
-  voiceModeAudioEl.pause();
-  if (voiceModeAudioEl._objectUrl) URL.revokeObjectURL(voiceModeAudioEl._objectUrl);
-  voiceModeAudioEl = null;
-}
-
-async function toggleVoiceMode() {
-  if (voiceModeActive) {
-    stopVoiceMode();
-    return;
-  }
-  if (!voiceModeSupported()) return;
-
-  voiceModeActive = true;
-  document.getElementById("voice-mode-btn")?.classList.add("active");
-  showComposer(false);
-  const panel = document.getElementById("voice-mode-panel");
-  if (panel) panel.style.display = "flex";
-  await voiceModeRequestMicAndListen();
-}
-
-// Requests the one microphone stream a whole voice-mode session reuses,
-// then starts the listen loop. Split out from toggleVoiceMode so the
-// orb's click-to-retry handler (wired in DOMContentLoaded) can call this
-// same path again after a denied/failed mic permission, without having to
-// re-run the rest of toggleVoiceMode's entry setup.
-async function voiceModeRequestMicAndListen() {
-  setVoiceModeStatus("Requesting microphone access…", "idle");
-  try {
-    voiceModeStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  } catch (e) {
-    setVoiceModeStatus("Couldn't access the microphone — tap the orb to try again.", "idle");
-    return;
-  }
-  if (!voiceModeActive) return; // ended while the permission prompt was up
-  voiceModeListen();
-}
-
-// Safe to call any time, including when voice mode isn't active — every
-// place that might need to tear it down (ending it on purpose, switching
-// conversations, switching mode tabs) just calls this unconditionally
-// rather than checking voiceModeActive itself first.
-function stopVoiceMode() {
-  if (!voiceModeActive) return;
-  voiceModeActive = false;
-  try {
-    voiceModeRecognition?.stop();
-  } catch (e) {
-    /* ignore */
-  }
-  voiceModeRecognition = null;
-  try {
-    if (voiceModeRecorder && voiceModeRecorder.state !== "inactive") voiceModeRecorder.stop();
-  } catch (e) {
-    /* ignore */
-  }
-  voiceModeRecorder = null;
-  voiceModeStream?.getTracks().forEach((t) => t.stop());
-  voiceModeStream = null;
-  stopVoiceModeAudio();
-  const panel = document.getElementById("voice-mode-panel");
-  if (panel) panel.style.display = "none";
-  document.getElementById("voice-mode-btn")?.classList.remove("active");
-  showComposer(true);
-}
-
-// Starts one listening turn. Not continuous=true/looping on its own — each
-// turn is its own SpeechRecognition+MediaRecorder pair that ends itself on
-// a pause in speech (continuous: false), and voiceModeSpeak() below kicks
-// off the next one once the reply has finished playing, so the two never
-// talk over each other.
-function voiceModeListen() {
-  if (!voiceModeActive || !voiceModeStream) return;
-  const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognitionCtor();
-  voiceModeRecognition = recognition;
-  // Whatever BCP-47 tag — irrelevant here, since this recognizer's own
-  // transcript is never read (see the architecture note above). Only used
-  // for endpointing: knowing when the person started and stopped talking.
-  recognition.lang = document.documentElement.lang || navigator.language || "en-US";
-  recognition.continuous = false;
-  recognition.interimResults = false;
-
-  // Picks a mimeType the browser's MediaRecorder actually supports
-  // (Chrome/Firefox default to webm/opus, Safari to mp4); falls back to
-  // the browser's own default encoder if none of these are recognized.
-  let mimeType = "";
-  for (const candidate of ["audio/webm;codecs=opus", "audio/webm", "audio/mp4"]) {
-    if (window.MediaRecorder.isTypeSupported?.(candidate)) {
-      mimeType = candidate;
-      break;
-    }
-  }
-  const recorder = new MediaRecorder(voiceModeStream, mimeType ? { mimeType } : undefined);
-  voiceModeRecorder = recorder;
-  const chunks = [];
-  recorder.addEventListener("dataavailable", (e) => {
-    if (e.data && e.data.size > 0) chunks.push(e.data);
-  });
-
-  let noSpeechDetected = false;
-  let hadFatalError = false;
-
-  recognition.addEventListener("start", () => {
-    setVoiceModeStatus("Listening…", "listening");
-    try {
-      recorder.start();
-    } catch (e) {
-      // Recorder couldn't start — the "end" handler below still runs once
-      // recognition itself ends; with no chunks captured it'll just open
-      // the mic again rather than stalling.
-    }
-  });
-
-  recognition.addEventListener("error", (event) => {
-    if (voiceModeRecognition !== recognition) return;
-    if (event.error === "no-speech") {
-      // The browser's own silence detector — the real signal that nothing
-      // was said, used below to skip a wasted transcription call.
-      noSpeechDetected = true;
-      return;
-    }
-    if (event.error === "aborted") return;
-    // Most commonly "not-allowed" (mic permission denied/revoked after the
-    // fact) — nothing more voice mode can do about that itself, so surface
-    // it and wait for them to grant it again and tap the orb, or give up
-    // and end the call.
-    hadFatalError = true;
-    setVoiceModeStatus("Couldn't access the microphone — tap the orb to try again.", "idle");
-  });
-
-  recognition.addEventListener("end", async () => {
-    if (voiceModeRecognition !== recognition) return;
-
-    // Always let the recorder finish writing out its last chunk before
-    // reading `chunks` — stop() is itself async (it fires one final
-    // "dataavailable" before "stop").
-    await new Promise((resolve) => {
-      if (recorder.state === "inactive") return resolve();
-      recorder.addEventListener("stop", () => resolve(), { once: true });
-      try {
-        recorder.stop();
-      } catch (e) {
-        resolve();
-      }
-    });
-
-    if (!voiceModeActive || voiceModeRecognition !== recognition) return;
-    if (hadFatalError) return; // stays on the mic-permission message until they tap the orb
-
-    if (noSpeechDetected || chunks.length === 0) {
-      // Silence, or nothing captured — just open the mic again rather than
-      // stalling with no way forward, and without spending an OpenAI call
-      // transcribing nothing.
-      voiceModeListen();
-      return;
-    }
-
-    setVoiceModeStatus("Thinking…", "thinking");
-    try {
-      // .split(";")[0]: recorder.mimeType commonly comes back as e.g.
-      // "audio/webm;codecs=opus" — fine for the Blob itself, but it turns
-      // the data: URL below into "data:audio/webm;codecs=opus;base64,…"
-      // (two semicolons), which breaks the server's data-URL regex (the
-      // same /^data:([^;]+);base64,(.+)$/ pattern saveIncomingAttachments
-      // uses, which only expects one). The base type alone is all the
-      // server/OpenAI need — the filename extension does the real work of
-      // telling the transcription API the container format.
-      const blobType = (recorder.mimeType || mimeType || "audio/webm").split(";")[0];
-      const blob = new Blob(chunks, { type: blobType });
-      const dataUrl = await readFileAsDataUrl(blob);
-      const res = await authFetch("/api/voice/transcribe", {
-        method: "POST",
-        body: JSON.stringify({ audio: dataUrl }),
-      });
-      const data = await safeJson(res);
-      if (!voiceModeActive) return; // ended while the transcription request was in flight
-      if (!res.ok) {
-        setVoiceModeStatus(data.error || "Couldn't understand that — try again.", "idle");
-        voiceModeListen();
-        return;
-      }
-      const text = (data.text || "").trim();
-      if (!text) {
-        voiceModeListen();
-        return;
-      }
-      const input = document.getElementById("input");
-      if (input) input.value = text;
-      sendMessage();
-    } catch (e) {
-      if (!voiceModeActive) return;
-      setVoiceModeStatus("Couldn't connect — try again.", "idle");
-      voiceModeListen();
-    }
-  });
-
-  try {
-    recognition.start();
-  } catch (e) {
-    setVoiceModeStatus("Couldn't start listening — tap the orb to try again.", "idle");
-  }
-}
-
-// Reads a reply aloud via OpenAI TTS, then opens the mic again once it's
-// done — the other half of the loop voiceModeListen() starts. Called from
-// sendMessage()'s success path with the fresh reply, and (with empty text)
-// from its failure paths just to resume listening after an error.
-function voiceModeSpeak(text) {
-  if (!voiceModeActive) return;
-  if (!text) {
-    voiceModeListen();
-    return;
-  }
-  // Only one audio source plays at a time — pre-empt a manual per-message
-  // speak-btn if one happens to be going (see buildSpeakButton, above).
-  if (activeSpeakButtonStop) activeSpeakButtonStop();
-  stopVoiceModeAudio();
-
-  const label = currentConvCtx.mode === "practice" ? currentConvCtx.partnerName || "Your partner" : "RelateIQ";
-  setVoiceModeStatus(`${label} is speaking…`, "speaking");
-
-  const resumeListening = () => {
-    stopVoiceModeAudio();
-    if (voiceModeActive) voiceModeListen();
-  };
-
-  authFetch("/api/voice/speak", { method: "POST", body: JSON.stringify({ text }) })
-    .then(async (res) => {
-      if (!voiceModeActive) return; // ended while the request was in flight
-      if (!res.ok) {
-        const data = await safeJson(res);
-        setVoiceModeStatus(data.error || "Couldn't generate speech — try again.", "idle");
-        resumeListening();
-        return;
-      }
-      const blob = await res.blob();
-      if (!voiceModeActive) return;
-      const url = URL.createObjectURL(blob);
-      const audioEl = new Audio(url);
-      audioEl._objectUrl = url;
-      voiceModeAudioEl = audioEl;
-      audioEl.addEventListener("ended", resumeListening);
-      audioEl.addEventListener("error", resumeListening);
-      audioEl.play().catch(resumeListening);
-    })
-    .catch(() => {
-      if (!voiceModeActive) return;
-      setVoiceModeStatus("Couldn't connect — try again.", "idle");
-      resumeListening();
-    });
-}
-
 async function sendMessage() {
   if (isSending) return;
 
@@ -2765,18 +2423,6 @@ async function sendMessage() {
     if (!currentConversationId) {
       showComposerError("Couldn't start a new conversation. Please try again.");
       return;
-    }
-    // startNewChat("coach") above unconditionally calls showComposer(true)
-    // — correct for its normal callers ("+ New chat", switching mode tabs,
-    // both of which call stopVoiceMode() themselves first) but wrong here:
-    // this is voice mode's very own first turn silently creating the
-    // conversation underneath it, and that showComposer(true) would swap
-    // the voice panel back out for the text composer mid-turn. Put it back
-    // if voice mode is still the one driving this send.
-    if (voiceModeActive) {
-      showComposer(false);
-      const panel = document.getElementById("voice-mode-panel");
-      if (panel) panel.style.display = "flex";
     }
   }
 
@@ -2835,14 +2481,6 @@ async function sendMessage() {
     if (!res.ok || !data.reply) {
       rollBackFailedSend();
       showComposerError(data.error || "Something went wrong.", { upgradeRequired: !!data.upgradeRequired });
-      // showComposerError's banner lives inside #input-area, which is
-      // hidden while voice mode is active — give the same signal out loud
-      // via the voice-mode status line and open the mic again so they can
-      // just repeat themselves instead of being stuck with no feedback.
-      if (voiceModeActive) {
-        setVoiceModeStatus(data.error || "Something went wrong — try again.", "idle");
-        voiceModeListen();
-      }
       return;
     }
 
@@ -2860,9 +2498,6 @@ async function sendMessage() {
     appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId);
     appendSafetyNotice(data.safety);
     refreshEditAffordance();
-    // Hands-free loop: read this reply aloud, then voiceModeSpeak() itself
-    // opens the mic again once it's done playing — see its definition above.
-    if (voiceModeActive) voiceModeSpeak(data.reply);
 
     if (data.usage) {
       const cachedUser = getUser();
@@ -2889,10 +2524,6 @@ async function sendMessage() {
   } catch (err) {
     rollBackFailedSend();
     showComposerError("Couldn't connect to the server.");
-    if (voiceModeActive) {
-      setVoiceModeStatus("Couldn't connect — try again.", "idle");
-      voiceModeListen();
-    }
   } finally {
     isSending = false;
   }

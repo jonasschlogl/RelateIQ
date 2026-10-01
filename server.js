@@ -5,7 +5,7 @@ import path from "path";
 import fs from "fs";
 import crypto from "crypto";
 import { fileURLToPath } from "url";
-import OpenAI, { toFile } from "openai";
+import OpenAI from "openai";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Stripe from "stripe";
@@ -232,18 +232,15 @@ const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 // straight into the model on every request and run up the OpenAI bill.
 const MAX_CHAT_MESSAGE_CHARS = 8000;
 
-// Voice mode (hands-free conversation + the manual "play aloud" button).
-// Transcription auto-detects whatever language the person speaks (no
-// `language` param passed — see /api/voice/transcribe below); TTS just
-// reads back whatever language the reply text is already in, so no
-// language handling is needed on that side. gpt-4o-mini-tts is the only
-// TTS model with per-request `instructions` steering and is OpenAI's
-// current recommendation for natural-sounding speech; "marin" is one of
-// its two newest, most natural voices (the other being "cedar") — picked
-// as a reasonable default, easy to change later to "cedar" or anything
-// else in the 13-voice lineup if Jonas wants a different feel for Coach
-// vs. Practice.
-const VOICE_TRANSCRIBE_MODEL = "gpt-4o-mini-transcribe";
+// Voice — the manual "🔈 play aloud" button on a Practice reply (see
+// POST /api/voice/speak below). Reads back whatever language the reply
+// text is already in, so no language handling is needed here.
+// gpt-4o-mini-tts is the only TTS model with per-request `instructions`
+// steering and is OpenAI's current recommendation for natural-sounding
+// speech; "marin" is one of its two newest, most natural voices (the
+// other being "cedar") — picked as a reasonable default, easy to change
+// later to "cedar" or anything else in the 13-voice lineup if Jonas wants
+// a different feel for Coach vs. Practice.
 const VOICE_TTS_MODEL = "gpt-4o-mini-tts";
 const VOICE_TTS_VOICE = "marin";
 // gpt-4o-mini-tts's documented ceiling is ~2000 input tokens; characters
@@ -2777,63 +2774,21 @@ app.patch("/api/conversations/:id/messages/:messageId/feedback", authMiddleware,
 });
 
 // ---------------------------------------------------------------------------
-// Voice mode — speech-to-text and text-to-speech for hands-free Coach/
-// Practice conversations (and the manual "🔈 play aloud" button on a
-// Practice reply). Any-language: transcription auto-detects whatever
-// language the person spoke (no `language` param), and TTS simply reads
-// back the reply text, which the chat model already wrote in that same
-// language — so neither endpoint needs to know or negotiate a language.
+// Voice — text-to-speech for the manual "🔈 play aloud" button on a
+// Practice reply (buildSpeakButton in chat.js). TTS simply reads back the
+// reply text, which the chat model already wrote in the user's own
+// language — no language parameter needed on this side either.
 //
-// Gating: transcription is gated behind the free-plan daily limit (same
-// check as a normal message send) but deliberately does NOT call
-// bumpFreeUsage itself — the message that transcript turns into still goes
-// through POST /api/conversations/:id/messages, which bumps usage once
-// there. Counting here too would charge one hands-free "turn" as two (or,
-// with the reply's own speak-back, three) messages against the free daily
-// cap. Speak-back has no separate gate beyond auth + the length clamp: it
-// only ever runs on text that already passed that gate (the message that
-// was just sent) or is replaying an already-generated reply.
+// No daily-limit gate beyond auth + the length clamp below: this only ever
+// runs on text that's already a generated reply (i.e. already passed the
+// gate on POST /api/conversations/:id/messages), so its marginal cost is
+// low and bounded.
+//
+// (The hands-free "voice mode" this was originally built alongside — and
+// its paired /api/voice/transcribe endpoint — was removed per Jonas's
+// request; this route stayed since the manual play-aloud button still
+// uses it.)
 // ---------------------------------------------------------------------------
-
-app.post("/api/voice/transcribe", authMiddleware, async (req, res) => {
-  try {
-    const user = req.db.users.find((u) => u.id === req.user.id);
-    if (isOverDailyLimit(user, res)) return;
-
-    const { audio } = req.body || {};
-    if (!audio || typeof audio !== "string") {
-      return res.status(400).json({ error: "No audio was received." });
-    }
-    // Slightly more permissive than saveIncomingAttachments' version of
-    // this pattern (which expects exactly one ";" before "base64,"):
-    // MediaRecorder's mimeType commonly carries a codec parameter (e.g.
-    // "audio/webm;codecs=opus"), which the client already strips before
-    // building this data URL, but matching any number of ";param=value"
-    // segments here too means a future client change can't silently start
-    // 400ing every voice turn over this again.
-    const match = /^data:([^;,]+)(?:;[^;,]+)*;base64,(.+)$/s.exec(audio);
-    if (!match) {
-      return res.status(400).json({ error: "Couldn't read the recorded audio." });
-    }
-    const buffer = Buffer.from(match[2], "base64");
-    if (buffer.length === 0) {
-      return res.status(400).json({ error: "The recording was empty." });
-    }
-
-    const transcription = await openai.audio.transcriptions.create({
-      // No `language` — omitting it is what triggers Whisper-family
-      // auto-detection, which is the whole point here (see the comment
-      // on VOICE_TRANSCRIBE_MODEL above).
-      file: await toFile(buffer, "audio.webm", { type: match[1] || "audio/webm" }),
-      model: VOICE_TRANSCRIBE_MODEL,
-    });
-
-    res.json({ text: (transcription.text || "").trim() });
-  } catch (err) {
-    console.error("Voice transcription error:", err.message);
-    res.status(500).json({ error: "Couldn't understand that recording. Please try again." });
-  }
-});
 
 app.post("/api/voice/speak", authMiddleware, async (req, res) => {
   try {
