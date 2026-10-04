@@ -19,6 +19,9 @@ import {
   saveUser,
   deleteUserCascade,
   incrementUserUsage,
+  incrementUserMonthlyUsage,
+  backupDatabaseTo,
+  getDatabaseFilePath,
   incrementUserColumn,
   saveConversation,
   deleteConversation,
@@ -198,6 +201,30 @@ if (IS_HOSTED && !process.env.JWT_SECRET) {
 }
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me-in-production";
 const FREE_DAILY_LIMIT = 8;
+
+// Fair-use monthly caps for the paid plans. Pro/Premium have no DAILY cap,
+// but "unlimited" with a per-message OpenAI cost is an open-ended liability
+// (one script hammering the API from a €9.99 account could cost far more
+// than the subscription). These are generous — a normal heavy user is
+// nowhere near them — and tunable from Railway env vars without a deploy.
+const PRO_MONTHLY_LIMIT = Number(process.env.PRO_MONTHLY_AI_LIMIT) || 1000;
+const PREMIUM_MONTHLY_LIMIT = Number(process.env.PREMIUM_MONTHLY_AI_LIMIT) || 1500;
+function monthlyLimitFor(plan) {
+  if (plan === "pro") return PRO_MONTHLY_LIMIT;
+  if (plan === "premium") return PREMIUM_MONTHLY_LIMIT;
+  return null;
+}
+function monthKey() {
+  return new Date().toISOString().slice(0, 7); // "YYYY-MM" (UTC)
+}
+
+// Email verification is only ENFORCED when email can actually be delivered
+// (RESEND_API_KEY set) — otherwise nobody could ever receive the link and
+// every new signup would be locked out of the AI. Set
+// REQUIRE_EMAIL_VERIFICATION=false to switch enforcement off explicitly.
+function isEmailVerificationEnforced() {
+  return !!process.env.RESEND_API_KEY && process.env.REQUIRE_EMAIL_VERIFICATION !== "false";
+}
 
 // Free-plan limits BEYOND the shared daily AI-message pool above. Coach
 // Chat (the everyday "come back and talk it through" habit loop) stays
@@ -1504,6 +1531,19 @@ function publicUser(user) {
     attachments: user.plan === "free" ? { used: user.lifetimeAttachmentCount || 0, limit: FREE_LIFETIME_ATTACHMENT_LIMIT } : null,
     practiceConversations:
       user.plan === "free" ? { used: user.lifetimePracticeConversations || 0, limit: FREE_LIFETIME_PRACTICE_CONVERSATIONS } : null,
+    emailVerified: !!user.emailVerifiedAt,
+    // True only when the server will actually block unverified accounts, so
+    // the client only nags about verification when it matters.
+    emailVerificationRequired: isEmailVerificationEnforced() && !user.emailVerifiedAt,
+    // Fair-use meter for the paid plans (null on Free, which has its own
+    // daily meter above).
+    monthlyUsage:
+      user.plan === "free"
+        ? null
+        : {
+            used: user.usageMonthly && user.usageMonthly.month === monthKey() ? user.usageMonthly.count : 0,
+            limit: monthlyLimitFor(user.plan),
+          },
     isAdmin: (process.env.ADMIN_EMAILS || "")
       .split(",")
       .map((e) => e.trim().toLowerCase())
@@ -1575,7 +1615,30 @@ function adminMiddleware(req, res, next) {
 // Shared free-tier gate for every endpoint that makes an OpenAI call.
 // Returns true (and has already sent a 429) if the user is blocked.
 function isOverDailyLimit(user, res) {
-  if (user.plan !== "free") return false;
+  // Unverified email -> no AI calls (stops throw-away-address signups from
+  // burning OpenAI credit). Only enforced when verification emails can
+  // actually be sent; accounts that pre-date verification are grandfathered
+  // as verified by the DB migration.
+  if (isEmailVerificationEnforced() && !user.emailVerifiedAt) {
+    res.status(403).json({
+      error: "Please verify your email address first — we sent you a link when you signed up. You can request a new one with the “Resend email” button.",
+      verificationRequired: true,
+    });
+    return true;
+  }
+  if (user.plan !== "free") {
+    const limit = monthlyLimitFor(user.plan);
+    const month = monthKey();
+    const used = user.usageMonthly && user.usageMonthly.month === month ? user.usageMonthly.count : 0;
+    if (limit && used >= limit) {
+      res.status(429).json({
+        error: `You've reached this month's fair-use limit of ${limit} AI messages on your plan. It resets on the 1st — if you regularly need more, get in touch and we'll sort something out.`,
+        monthlyLimitReached: true,
+      });
+      return true;
+    }
+    return false;
+  }
   const today = todayKey();
   if (!user.usage || user.usage.date !== today) {
     user.usage = { date: today, count: 0 };
@@ -1603,6 +1666,16 @@ function bumpFreeUsage(user) {
   const today = todayKey();
   incrementUserUsage(user.id, today);
   user.usage = { date: today, count: (user.usage?.date === today ? user.usage.count : 0) + 1 };
+}
+
+// One call after every successful AI call, whatever the plan: Free counts
+// against the daily pool, Pro/Premium against their monthly fair-use cap.
+function bumpUsage(user) {
+  if (user.plan === "free") return bumpFreeUsage(user);
+  const month = monthKey();
+  incrementUserMonthlyUsage(user.id, month);
+  const prev = user.usageMonthly && user.usageMonthly.month === month ? user.usageMonthly.count : 0;
+  user.usageMonthly = { month, count: prev + 1 };
 }
 
 // ---------------------------------------------------------------------------
@@ -1739,9 +1812,12 @@ function authRateLimit(req, res, next) {
 
 app.post("/api/auth/register", authRateLimit, (req, res) => {
   try {
-    const { email, password, name, referralCode } = req.body || {};
+    const { email, password, name, referralCode, acceptedTerms } = req.body || {};
     if (!email || !password) {
       return res.status(400).json({ error: "Email and password are required." });
+    }
+    if (acceptedTerms !== true) {
+      return res.status(400).json({ error: "Please accept the Terms of Service and Privacy Policy to create an account." });
     }
     if (String(password).length < 8) {
       return res.status(400).json({ error: "Password must be at least 8 characters." });
@@ -1777,15 +1853,91 @@ app.post("/api/auth/register", authRateLimit, (req, res) => {
       emailWeeklyDigest: true,
       lifetimeAttachmentCount: 0,
       lifetimePracticeConversations: 0,
+      termsAcceptedAt: new Date().toISOString(),
+      // If verification emails can't be sent (no Resend key), there's no way
+      // for the user to verify — mark them verified rather than lock them out.
+      emailVerifiedAt: isEmailVerificationEnforced() ? undefined : new Date().toISOString(),
     };
 
     saveUser(user);
+
+    if (!user.emailVerifiedAt) {
+      sendVerificationEmail(user).catch((err) => console.error("Verification email failed:", err));
+    }
 
     const token = signToken(user);
     res.json({ token, user: publicUser(user) });
   } catch (err) {
     console.error("Register error:", err);
     res.status(500).json({ error: "Something went wrong while creating your account. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Email verification — signed, scoped link (not a login token), same pattern
+// as password reset. Clicking it proves the person controls the inbox.
+// ---------------------------------------------------------------------------
+
+async function sendVerificationEmail(user) {
+  const token = jwt.sign({ sub: user.id, scope: "verify-email", email: user.email }, JWT_SECRET, { expiresIn: "7d" });
+  const url = `${APP_URL}/verify-email.html?token=${encodeURIComponent(token)}`;
+  const html = emailShell({
+    bodyHtml: `
+      <p>Welcome to RelateIQ${user.name ? `, ${escapeForEmail(user.name)}` : ""}! Please confirm your email address so we know it's really you.</p>
+      <p style="margin:24px 0;">
+        <a href="${url}" style="display:inline-block; background:#d1a05a; color:#1a140d; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:999px;">Verify my email</a>
+      </p>
+      <p style="color:#b6a795; font-size:13px;">This link works for 7 days. If you didn't create a RelateIQ account, you can safely ignore this email.</p>
+    `,
+  });
+  return sendEmail({ to: user.email, subject: "Confirm your email for RelateIQ", html });
+}
+
+app.post("/api/auth/verify-email", authRateLimit, (req, res) => {
+  try {
+    const { token } = req.body || {};
+    const invalid = () => res.status(400).json({ error: "This verification link is invalid or has expired. Log in and request a new one from your account page." });
+    if (!token) return invalid();
+    let payload;
+    try {
+      payload = jwt.verify(String(token), JWT_SECRET);
+    } catch (err) {
+      return invalid();
+    }
+    if (payload.scope !== "verify-email") return invalid();
+    const user = getUserById(payload.sub);
+    // The email in the token must still be the account's email — a link
+    // issued for an old address can't verify a changed one.
+    if (!user || user.email !== payload.email) return invalid();
+    if (!user.emailVerifiedAt) {
+      user.emailVerifiedAt = new Date().toISOString();
+      saveUser(user);
+    }
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Verify-email error:", err);
+    res.status(500).json({ error: "Something went wrong. Please try again." });
+  }
+});
+
+const lastVerificationResendByUser = new Map(); // userId -> ms
+app.post("/api/auth/resend-verification", authMiddleware, async (req, res) => {
+  try {
+    if (req.user.emailVerifiedAt) return res.json({ ok: true, alreadyVerified: true });
+    const now = Date.now();
+    const last = lastVerificationResendByUser.get(req.user.id) || 0;
+    if (now - last < 60 * 1000) {
+      return res.status(429).json({ error: "We just sent one — please give it a minute and check your spam folder." });
+    }
+    lastVerificationResendByUser.set(req.user.id, now);
+    const result = await sendVerificationEmail(req.user);
+    if (result && result.skipped) {
+      return res.status(503).json({ error: "We couldn't send the email right now. Please try again later." });
+    }
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Resend-verification error:", err);
+    res.status(500).json({ error: "Something went wrong. Please try again." });
   }
 });
 
@@ -2363,7 +2515,7 @@ app.post("/api/partners/:id/learn-from-messages", authMiddleware, async (req, re
 
     const { messages } = req.body || {};
     await learnPartnerProfileFromRealMessages(partner, messages);
-    if (req.user.plan === "free") bumpFreeUsage(req.user);
+    bumpUsage(req.user);
     res.json(publicPartner(partner));
   } catch (err) {
     if (err && err.status === 400) {
@@ -2719,7 +2871,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     const assistantMessage = { id: generateId("msg"), role: "assistant", content: reply, at: new Date().toISOString() };
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
-    if (user.plan === "free") bumpFreeUsage(user);
+    bumpUsage(user);
 
     res.json({
       reply,
@@ -2790,12 +2942,59 @@ app.patch("/api/conversations/:id/messages/:messageId/feedback", authMiddleware,
 // uses it.)
 // ---------------------------------------------------------------------------
 
+// Per-user abuse guard for the TTS endpoint — it has no daily-message gate
+// (see the comment above), so without this any logged-in account, even a
+// Free one, could loop it and run up the OpenAI bill. In-memory like
+// authRateLimit above: resets on redeploy, which is fine since the goal is
+// just to cap runaway use, not keep an audit log.
+const SPEAK_WINDOW_MS = 10 * 60 * 1000;
+const SPEAK_MAX_PER_WINDOW = 20; // per user, any plan
+const SPEAK_FREE_MAX_PER_DAY = 30; // Free plan only, on top of the above
+const speakCallsByUser = new Map(); // userId -> array of timestamps (ms)
+setInterval(() => {
+  const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+  for (const [id, calls] of speakCallsByUser) {
+    const kept = calls.filter((t) => t > cutoff);
+    if (kept.length === 0) speakCallsByUser.delete(id);
+    else speakCallsByUser.set(id, kept);
+  }
+}, 60 * 60 * 1000).unref();
+
+// Returns true (and has already sent a 429) if this user is over the TTS
+// limits. Records the call otherwise.
+function isOverSpeakLimit(user, res) {
+  if (isEmailVerificationEnforced() && !user.emailVerifiedAt) {
+    res.status(403).json({ error: "Please verify your email address first.", verificationRequired: true });
+    return true;
+  }
+  const now = Date.now();
+  const calls = (speakCallsByUser.get(user.id) || []).filter((t) => now - t < 24 * 60 * 60 * 1000);
+  const inWindow = calls.filter((t) => now - t < SPEAK_WINDOW_MS).length;
+  if (inWindow >= SPEAK_MAX_PER_WINDOW) {
+    speakCallsByUser.set(user.id, calls);
+    res.status(429).json({ error: "You're playing messages aloud very quickly — please wait a few minutes and try again." });
+    return true;
+  }
+  if (user.plan === "free" && calls.length >= SPEAK_FREE_MAX_PER_DAY) {
+    speakCallsByUser.set(user.id, calls);
+    res.status(429).json({
+      error: `The Free plan includes up to ${SPEAK_FREE_MAX_PER_DAY} read-aloud plays per day. Try again tomorrow, or upgrade to Pro.`,
+      upgradeRequired: true,
+    });
+    return true;
+  }
+  calls.push(now);
+  speakCallsByUser.set(user.id, calls);
+  return false;
+}
+
 app.post("/api/voice/speak", authMiddleware, async (req, res) => {
   try {
     const { text } = req.body || {};
     if (!text || typeof text !== "string" || !text.trim()) {
       return res.status(400).json({ error: "No text to speak." });
     }
+    if (isOverSpeakLimit(req.user, res)) return;
 
     const speech = await openai.audio.speech.create({
       model: VOICE_TTS_MODEL,
@@ -2866,7 +3065,7 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
     conv.therapistSummary = summary;
     conv.therapistSummaryAt = generatedAt;
     saveConversation(conv);
-    if (user.plan === "free") bumpFreeUsage(user);
+    bumpUsage(user);
 
     res.json({ summary, generatedAt, conversationTitle: conv.title, cached: false, usage: user.usage });
   } catch (err) {
@@ -2952,7 +3151,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     // and look like it applies to this new readout.
     conv.practiceDebriefFeedback = null;
     saveConversation(conv);
-    if (user.plan === "free") bumpFreeUsage(user);
+    bumpUsage(user);
 
     res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage });
   } catch (err) {
@@ -3042,7 +3241,7 @@ app.post("/api/insights", authMiddleware, async (req, res) => {
     // means it's always correct even if saveUser's full-row write above
     // raced with another request's own usage bump in between.
     saveUser(user);
-    if (user.plan === "free") bumpFreeUsage(user);
+    bumpUsage(user);
 
     res.json({
       patterns,
@@ -4164,6 +4363,100 @@ function emailJobsDueCheck() {
 }
 
 setInterval(emailJobsDueCheck, 15 * 60 * 1000);
+
+// ---------------------------------------------------------------------------
+// Automatic database backups. VACUUM INTO writes a consistent snapshot while
+// the server keeps running. Files go to a "backups" folder NEXT TO the live
+// database file — so on Railway they live on the same persistent volume.
+// That protects against corruption / a bad deploy / an accidental delete, but
+// NOT against losing the volume itself: for that, download a copy now and
+// then from the admin endpoint below (or enable Railway's volume backups).
+// ---------------------------------------------------------------------------
+
+const BACKUP_ENABLED = process.env.BACKUP_ENABLED !== "false";
+const BACKUP_KEEP = Math.max(1, Number(process.env.BACKUP_KEEP) || 7);
+const BACKUP_INTERVAL_HOURS = Math.max(1, Number(process.env.BACKUP_INTERVAL_HOURS) || 24);
+const BACKUP_FILE_RE = /^relateiq-\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z\.sqlite$/;
+
+function backupsDir() {
+  return path.join(path.dirname(getDatabaseFilePath()), "backups");
+}
+
+function listBackups() {
+  const dir = backupsDir();
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => BACKUP_FILE_RE.test(f))
+    .map((name) => {
+      const st = fs.statSync(path.join(dir, name));
+      return { name, size: st.size, createdAt: st.mtime.toISOString() };
+    })
+    .sort((a, b) => (a.name < b.name ? 1 : -1)); // newest first (names sort chronologically)
+}
+
+function createBackup() {
+  const dir = backupsDir();
+  fs.mkdirSync(dir, { recursive: true });
+  const stamp = new Date().toISOString().replace(/\.\d+Z$/, "Z").replace(/:/g, "-");
+  const name = `relateiq-${stamp}.sqlite`;
+  const dest = path.join(dir, name);
+  if (fs.existsSync(dest)) return { name, size: fs.statSync(dest).size };
+  backupDatabaseTo(dest);
+  // Prune: keep only the newest BACKUP_KEEP files.
+  for (const old of listBackups().slice(BACKUP_KEEP)) {
+    try {
+      fs.rmSync(path.join(dir, old.name));
+    } catch (err) {
+      console.error("Couldn't prune old backup", old.name, err.message);
+    }
+  }
+  return { name, size: fs.statSync(dest).size };
+}
+
+function backupIfDue() {
+  if (!BACKUP_ENABLED) return;
+  try {
+    const newest = listBackups()[0];
+    const ageMs = newest ? Date.now() - new Date(newest.createdAt).getTime() : Infinity;
+    if (ageMs >= BACKUP_INTERVAL_HOURS * 60 * 60 * 1000) {
+      const made = createBackup();
+      console.log(`💾 Database backup created: ${made.name} (${Math.round(made.size / 1024)} KB)`);
+    }
+  } catch (err) {
+    console.error("Database backup failed:", err);
+  }
+}
+
+if (BACKUP_ENABLED) {
+  setTimeout(backupIfDue, 30 * 1000).unref(); // shortly after boot (a redeploy shouldn't wait a day)
+  setInterval(backupIfDue, 60 * 60 * 1000).unref(); // then check hourly
+}
+
+app.get("/api/admin/backups", authMiddleware, adminMiddleware, (req, res) => {
+  res.json({ enabled: BACKUP_ENABLED, keep: BACKUP_KEEP, intervalHours: BACKUP_INTERVAL_HOURS, backups: listBackups() });
+});
+
+app.post("/api/admin/backups", authMiddleware, adminMiddleware, (req, res) => {
+  try {
+    res.json({ ok: true, backup: createBackup() });
+  } catch (err) {
+    console.error("Manual backup failed:", err);
+    res.status(500).json({ error: "Backup failed — see server logs." });
+  }
+});
+
+// Strict filename allowlist (no path separators possible) — never builds a
+// path from anything that hasn't matched BACKUP_FILE_RE.
+app.get("/api/admin/backups/:name/download", authMiddleware, adminMiddleware, (req, res) => {
+  const name = String(req.params.name || "");
+  if (!BACKUP_FILE_RE.test(name)) return res.status(400).json({ error: "Invalid backup name." });
+  const full = path.join(backupsDir(), name);
+  if (!fs.existsSync(full)) return res.status(404).json({ error: "Backup not found." });
+  res.setHeader("Content-Type", "application/octet-stream");
+  res.setHeader("Content-Disposition", `attachment; filename="${name}"`);
+  res.send(fs.readFileSync(full));
+});
 
 // Safety net: catches anything not already handled by a route's own
 // try/catch (e.g. a thrown error in a synchronous helper) so the client

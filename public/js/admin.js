@@ -6,6 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
   requireAuth();
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   loadAdminStats();
+  loadBackups();
+  document.getElementById("backup-now-btn")?.addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    btn.disabled = true;
+    btn.textContent = "Backing up…";
+    try {
+      const res = await authFetch("/api/admin/backups", { method: "POST" });
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error(data.error || "Backup failed.");
+    } catch (err) {
+      showAppAlert(err.message);
+    }
+    btn.disabled = false;
+    btn.textContent = "Back up now";
+    loadBackups();
+  });
   window.addEventListener("resize", debounceResize);
 });
 
@@ -184,4 +200,63 @@ function renderPlanBreakdown(container, planCountsIn) {
       </div>`;
     })
     .join("");
+}
+
+
+// ---------------------------------------------------------------------------
+// Database backups — the server makes one automatically (see "Automatic
+// database backups" in server.js); this just lists them and lets an admin
+// download a copy. Downloading goes through fetch (not a plain link) because
+// the endpoint needs the Authorization header.
+// ---------------------------------------------------------------------------
+
+async function loadBackups() {
+  const card = document.getElementById("backups-card");
+  if (!card) return;
+  try {
+    const res = await authFetch("/api/admin/backups");
+    const data = await safeJson(res);
+    if (!res.ok) return; // not an admin — keep the card hidden
+    card.style.display = "block";
+    document.getElementById("backups-intro").textContent = data.enabled
+      ? `Automatic backup every ${data.intervalHours}h, newest ${data.keep} kept on the same server volume. Download a copy now and then — a backup stored next to the database doesn't protect you if the whole volume is lost.`
+      : "Automatic backups are switched off (BACKUP_ENABLED=false).";
+    const list = document.getElementById("backups-list");
+    if (!data.backups.length) {
+      list.innerHTML = '<p class="text-muted" style="font-size:13.5px;">No backups yet — the first one is made shortly after the server starts, or click “Back up now”.</p>';
+      return;
+    }
+    list.innerHTML = data.backups
+      .map(
+        (b) => `<div class="usage-box" style="margin-bottom:8px;">
+          <span class="label">${escapeHtml(new Date(b.createdAt).toLocaleString())} &middot; ${Math.max(1, Math.round(b.size / 1024))} KB</span>
+          <button class="btn btn-ghost btn-sm" type="button" data-backup="${escapeHtml(b.name)}">Download</button>
+        </div>`
+      )
+      .join("");
+    list.querySelectorAll("button[data-backup]").forEach((btn) =>
+      btn.addEventListener("click", async () => {
+        const name = btn.getAttribute("data-backup");
+        btn.disabled = true;
+        try {
+          const r = await authFetch(`/api/admin/backups/${encodeURIComponent(name)}/download`);
+          if (!r.ok) throw new Error("Download failed.");
+          const blob = await r.blob();
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = name;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        } catch (err) {
+          showAppAlert(err.message);
+        }
+        btn.disabled = false;
+      })
+    );
+  } catch (err) {
+    /* non-critical */
+  }
 }

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=50" />
+  <link rel="stylesheet" href="css/style.css?v=51" />
 </head>
 <body>
 
@@ -34,6 +34,11 @@
         <label for="password">Password</label>
         <input type="password" id="password" required minlength="8" autocomplete="new-password" />
 
+        <label class="consent-row" for="accept-terms">
+          <input type="checkbox" id="accept-terms" required />
+          <span>I'm at least 18 and I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+        </label>
+
         <button type="submit" class="btn btn-gradient btn-block">Create account</button>
       </form>
 
@@ -41,7 +46,7 @@
     </div>
   </div>
 
-  <script src="js/shared.js?v=13"></script>
-  <script src="js/auth-forms.js?v=6"></script>
+  <script src="js/shared.js?v=14"></script>
+  <script src="js/auth-forms.js?v=7"></script>
 </body>
 </html>

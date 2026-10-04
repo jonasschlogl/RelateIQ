@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set a new password · RelateIQ</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=51" />
+</head>
+<body>
+
+  <div class="auth-page">
+    <a href="index.html" class="brand auth-brand">Relate<span>IQ</span></a>
+
+    <div class="auth-card">
+      <h1 id="verify-title">Verifying your email…</h1>
+      <p class="text-muted" id="verify-message">One moment.</p>
+      <div class="form-error" id="form-error" style="display:none;"></div>
+      <a href="chat.html" class="btn btn-gradient btn-block" id="verify-continue" style="display:none;">Continue to RelateIQ</a>
+      <p class="auth-switch"><a href="login.html">Back to log in</a></p>
+    </div>
+  </div>
+
+  <script src="js/shared.js?v=14"></script>
+  <script>
+    (async function () {
+      const title = document.getElementById("verify-title");
+      const msg = document.getElementById("verify-message");
+      const err = document.getElementById("form-error");
+      const cont = document.getElementById("verify-continue");
+      const token = new URLSearchParams(window.location.search).get("token");
+      if (!token) {
+        title.textContent = "Link problem";
+        msg.textContent = "";
+        err.textContent = "This verification link is missing its token. Log in and request a new one from your account page.";
+        err.style.display = "block";
+        return;
+      }
+      try {
+        const res = await fetch("/api/auth/verify-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token }),
+        });
+        const data = await safeJson(res);
+        if (!res.ok) throw new Error(data.error || "Couldn't verify your email.");
+        title.textContent = "Email verified";
+        msg.textContent = "Thanks — you're all set.";
+        cont.style.display = "block";
+        // Keep the cached session in step so the "verify your email"
+        // banner disappears without waiting for the next /api/me refresh.
+        try {
+          const u = getUser();
+          if (u) { u.emailVerified = true; u.emailVerificationRequired = false; setSession(getToken(), u); }
+        } catch (e) {}
+      } catch (e) {
+        title.textContent = "Couldn't verify";
+        msg.textContent = "";
+        err.textContent = e.message;
+        err.style.display = "block";
+      }
+    })();
+  </script>
+</body>
+</html>

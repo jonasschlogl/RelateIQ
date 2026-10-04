@@ -2578,6 +2578,7 @@ async function refreshPlanBadge() {
     if (!res.ok || !data.plan) return;
     renderPlanBadge(data.plan);
     renderUsageBadge(data);
+    renderVerifyBanner(data);
 
     // Keep the cached session in sync so other pages (and a future reload
     // of this one) don't show a stale plan until the next login.

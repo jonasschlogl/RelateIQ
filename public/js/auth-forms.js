@@ -29,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
+      const acceptedTerms = !!(document.getElementById("accept-terms") || {}).checked;
+      if (!acceptedTerms) {
+        showError("Please accept the Terms of Service and Privacy Policy to create an account.");
+        return;
+      }
       const btn = registerForm.querySelector("button[type=submit]");
       const originalLabel = btn.textContent;
       btn.disabled = true;
@@ -39,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const res = await fetch("/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password, referralCode }),
+          body: JSON.stringify({ name, email, password, referralCode, acceptedTerms }),
         });
         const data = await safeJson(res);
         if (!res.ok) throw new Error(data.error || "Registration failed.");

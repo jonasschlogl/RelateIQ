@@ -525,3 +525,48 @@ function autoGrowTextarea(el, maxHeight = 240) {
   resize();
   return resize;
 }
+
+
+// "Please verify your email" notice — shown only when the server says
+// verification is actually enforced for this account (publicUser's
+// emailVerificationRequired), so it never nags when email isn't configured
+// or the account is already verified. In the chat page it sits just above
+// the composer (the app shell there is a fixed-height layout, so a bar at
+// the very top would push things off-screen); elsewhere it's a normal block
+// at the top of the page.
+function renderVerifyBanner(user) {
+  const existing = document.getElementById("verify-banner");
+  if (!user || !user.emailVerificationRequired) {
+    if (existing) existing.remove();
+    return;
+  }
+  if (existing) return;
+  const banner = document.createElement("div");
+  banner.id = "verify-banner";
+  banner.className = "verify-banner";
+  banner.innerHTML =
+    '<span>Please verify your email to unlock AI replies — we sent a link to <strong></strong>.</span>' +
+    '<button type="button" class="btn btn-ghost btn-sm" id="verify-resend-btn">Resend email</button>';
+  banner.querySelector("strong").textContent = user.email || "your inbox";
+  const inputArea = document.getElementById("input-area");
+  if (inputArea && inputArea.parentNode) inputArea.parentNode.insertBefore(banner, inputArea);
+  else document.body.insertBefore(banner, document.body.firstChild);
+
+  const btn = banner.querySelector("#verify-resend-btn");
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Sending…";
+    try {
+      const res = await authFetch("/api/auth/resend-verification", { method: "POST" });
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error(data.error || "Couldn't send the email.");
+      btn.textContent = "Sent — check your inbox";
+      setTimeout(() => { btn.disabled = false; btn.textContent = original; }, 60000);
+    } catch (e) {
+      btn.textContent = original;
+      btn.disabled = false;
+      if (typeof showAppAlert === "function") showAppAlert(e.message);
+    }
+  });
+}

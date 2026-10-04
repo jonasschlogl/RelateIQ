@@ -4566,3 +4566,51 @@ body.js-reveal .reveal-item.revealed {
   color: var(--text-muted);
   white-space: pre-wrap;
 }
+
+
+/* Registration consent checkbox (register.html) */
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.auth-card .consent-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin: 1px 0 0;
+  padding: 0;
+  accent-color: var(--accent-1);
+  flex-shrink: 0;
+}
+
+.consent-row a {
+  color: var(--accent-2-text);
+  font-weight: 600;
+}
+
+/* "Verify your email" notice (shared.js renderVerifyBanner) */
+.verify-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 8px 16px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.verify-banner strong {
+  color: var(--text);
+}

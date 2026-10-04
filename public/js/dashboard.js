@@ -134,6 +134,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("usage-count").textContent = `${me.usage?.count || 0} / ${me.usageLimit}`;
     }
 
+    if (me.plan !== "free" && me.monthlyUsage && me.monthlyUsage.limit) {
+      const usageBox = document.getElementById("usage-box");
+      usageBox.style.display = "flex";
+      document.getElementById("usage-label").textContent = "AI messages this month (fair-use limit)";
+      document.getElementById("usage-count").textContent = `${me.monthlyUsage.used} / ${me.monthlyUsage.limit}`;
+    }
+    renderVerifyBanner(me);
+
     renderBillingActions(me);
     wireEmailPreferences(me);
 
