@@ -27,8 +27,8 @@ function initSoonModal() {
   overlay.setAttribute("aria-labelledby", "soon-title");
   overlay.innerHTML =
     '<div class="modal-card dialog-card">' +
-    '<h2 id="soon-title">RelateIQ isn\'t open just yet</h2>' +
-    '<p class="dialog-message" style="margin-top:10px;">Thanks for clicking! We\'re putting the finishing touches on RelateIQ and aren\'t letting people in yet. ' +
+    '<h2 id="soon-title">RelationshipAI isn\'t open just yet</h2>' +
+    '<p class="dialog-message" style="margin-top:10px;">Thanks for clicking! We\'re putting the finishing touches on RelationshipAI and aren\'t letting people in yet. ' +
     'We\'re checking how many people are interested before we launch — your click was counted, anonymously, and it genuinely helps.</p>' +
     '<p class="dialog-message" style="margin-top:10px;">Please check back soon.</p>' +
     '<div class="modal-close-row"><button type="button" class="btn btn-gradient" id="soon-close">Got it</button></div>' +
