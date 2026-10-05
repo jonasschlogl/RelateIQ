@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Relationship Advice from an AI Coach — RelationshipAI</title>
-  <meta name="description" content="Get relationship advice and tips from an AI relationship coach, 24/7. Communicate better, work through relationship problems and fix what is not working — grounded in the Gottman Method, attachment theory and Nonviolent Communication." />
+  <meta name="description" content="Get relationship advice and tips from an AI relationship coach, 24/7. Talk it through in Coach Chat, rehearse the hard conversation in Partner Practice — grounded in the Gottman Method, attachment theory and Nonviolent Communication." />
   <meta property="og:title" content="Relationship Advice from an AI Coach — RelationshipAI" />
-  <meta property="og:description" content="Relationship advice and tips from an AI coach that remembers your story — communicate better and work through relationship problems, 24/7." />
+  <meta property="og:description" content="Relationship advice and tips from an AI coach that remembers your story — talk it through in Coach Chat, rehearse it in Partner Practice." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://relationshipaiadvice.com/" />
   <meta property="og:image" content="https://relationshipaiadvice.com/og-image.png" />
@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://relationshipaiadvice.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Relationship Advice from an AI Coach — RelationshipAI" />
-  <meta name="twitter:description" content="Relationship advice and tips from an AI coach that remembers your story — communicate better and work through relationship problems, 24/7." />
+  <meta name="twitter:description" content="Relationship advice and tips from an AI coach that remembers your story — talk it through in Coach Chat, rehearse it in Partner Practice." />
   <meta name="twitter:image" content="https://relationshipaiadvice.com/og-image.png" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
@@ -25,215 +25,251 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=51" />
+  <link rel="stylesheet" href="css/landing.css?v=1" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 </head>
-<body>
+<body class="lp">
 
   <header class="site-nav">
     <a href="index.html" class="brand">Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
-      <a href="#" data-cta data-umami-event="cta-nav-tryit">Try it free</a>
-      <a href="#features">Features</a>
-      <a href="#modes">Modes</a>
-      <a href="#compare">Compare</a>
+      <a href="#coach">Coach Chat</a>
+      <a href="#practice">Partner Practice</a>
+      <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#" class="btn btn-gradient btn-sm" data-cta data-umami-event="cta-nav-button">Get started free</a>
+      <a href="#" class="btn btn-gradient btn-sm" data-cta data-umami-event="cta-nav-button">Get early access</a>
     </nav>
   </header>
 
   <main>
+    <!-- ================================================================ -->
+    <!-- HERO                                                              -->
+    <!-- ================================================================ -->
     <section class="hero">
-      <span class="eyebrow"><span class="dot"></span> Coach Chat &amp; Partner Practice — plus a daily relationship question</span>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <span class="eyebrow"><span class="dot"></span> Opening soon — Coach Chat &amp; Partner Practice</span>
       <h1>Relationship advice from an AI coach that <span class="grad">actually remembers</span> your story</h1>
       <p class="hero-sub">
-        RelationshipAI pairs proven therapeutic frameworks with real memory of your specific relationship — so you're not
-        re-explaining the backstory every time, and you're not stuck with a generic chatbot's "have you tried
-        communicating more?" It's support for the moment you actually need it, not the next available slot.
+        Talk it through in <strong>Coach Chat</strong>. Rehearse the hard conversation in <strong>Partner Practice</strong>.
+        Two tools, built on the frameworks real therapists use — available the moment you need them.
       </p>
       <div class="hero-cta">
-        <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-hero">Get started free</a>
-        <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+        <a href="#" class="btn btn-gradient btn-lg" data-cta data-umami-event="cta-hero">Get early access</a>
+        <a href="#tools" class="btn btn-ghost btn-lg">See the two core tools</a>
       </div>
-      <p class="hero-note">No credit card required · Free plan, forever · 2 minutes to set up</p>
+      <p class="hero-note">Free to start · No credit card · Opening soon</p>
 
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>3</strong><span>coaching modes, one account</span></div>
-        <div class="hero-stat"><strong>3</strong><span>frameworks it's grounded in</span></div>
-        <div class="hero-stat"><strong>24/7</strong><span>no waitlist, no scheduling</span></div>
-        <div class="hero-stat"><strong>€0</strong><span>to start, genuinely free</span></div>
+      <!-- tabbed product demo -->
+      <div class="demo" id="demo">
+        <div class="demo-tabs" role="tablist" aria-label="Product preview">
+          <button type="button" class="demo-tab active" role="tab" id="tab-coach" aria-selected="true" aria-controls="panel-coach" data-demo="coach">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            Coach Chat
+          </button>
+          <button type="button" class="demo-tab" role="tab" id="tab-practice" aria-selected="false" aria-controls="panel-practice" data-demo="practice" tabindex="-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            Partner Practice
+          </button>
+        </div>
+
+        <div class="demo-panel" id="panel-coach" role="tabpanel" aria-labelledby="tab-coach">
+          <div class="demo-bar"><span class="demo-bar-title">Coach Chat</span><span class="chip chip-memory">● Remembers your story</span></div>
+          <div class="mock-row user"><div class="bubble">Sam has been short and distant with me for weeks. I don't know if I should bring it up.</div></div>
+          <div class="mock-row ai"><div class="bubble">That sounds draining to sit with. You mentioned Sam's been stretched at work — and that you tend to go quiet when you feel shut out. Want to try opening with how it's landing on <em>you</em>, rather than what Sam is doing wrong? I can help you word it.</div></div>
+          <div class="memory-note"><span>Remembered from earlier</span> Sam · work stress · you withdraw when overwhelmed</div>
+        </div>
+
+        <div class="demo-panel" id="panel-practice" role="tabpanel" aria-labelledby="tab-practice" hidden>
+          <div class="demo-bar"><span class="demo-bar-title">Practicing with Sam</span><span class="chip">Tends to go quiet under pressure</span></div>
+          <div class="mock-row user"><div class="bubble">I've noticed we haven't really talked lately. Can we find time this weekend?</div></div>
+          <div class="mock-row ai"><div class="bubble">Yeah… it's just been a lot lately. I don't really know what there is to say.</div></div>
+          <div class="mock-row user"><div class="bubble">I'm not blaming you. I just miss us.</div></div>
+          <div class="debrief">
+            <div class="debrief-row"><strong>Went well</strong><span>You opened without blame and named what you miss.</span></div>
+            <div class="debrief-row"><strong>Watch for</strong><span>They may go quiet — give them room instead of filling the silence.</span></div>
+            <div class="debrief-row"><strong>Try next</strong><span>Offer one small, specific thing: "Walk Sunday morning?"</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-mock" aria-hidden="true">
-        <div class="mock-row user"><div class="bubble">My partner has been short and distant with me the last few weeks. I don't know if I should bring it up.</div></div>
-        <div class="mock-row ai"><div class="bubble">That sounds frustrating to sit with. Before we figure out next steps — has anything been going on for them lately (work, stress, health) that could explain it? And how do they usually act when they're overwhelmed?</div></div>
+      <div class="frameworks" aria-label="Grounded in">
+        <span class="frameworks-label">Grounded in</span>
+        <span>The Gottman Method</span><i></i><span>Attachment theory</span><i></i><span>Nonviolent Communication</span>
       </div>
     </section>
 
+    <!-- ================================================================ -->
+    <!-- THE TWO CORE TOOLS                                                -->
+    <!-- ================================================================ -->
+    <section id="tools" class="tools-intro">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">The two core tools</span>
+          <h2>Everything is built around one goal: a better conversation</h2>
+          <p>Coach Chat helps you understand what's going on and what to say. Partner Practice lets you say it out loud first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="coach" class="core core-first">
+      <div class="container">
+        <div class="core-split">
+          <div class="core-text">
+            <span class="core-num">01</span>
+            <span class="section-tag">Coach Chat</span>
+            <h2>A coach that already knows your story</h2>
+            <p>Describe what's happening the way you'd tell a friend. Coach Chat remembers your partner, your history and last week's fight — so you never start from scratch — and gives you specific next steps instead of vague reassurance.</p>
+            <ul class="core-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Remembers your relationship</strong> across conversations, and picks up exactly where you left off</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Spots recurring patterns</strong> you might not notice on your own</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Helps you find the words</strong> — and lets you attach screenshots or documents for context</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Available 24/7</strong>, even at 2am, with no waitlist to join</span></li>
+            </ul>
+            <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-mode-coach">Try Coach Chat</a>
+          </div>
+          <div class="core-visual" aria-hidden="true">
+            <div class="vis-card">
+              <div class="demo-bar"><span class="demo-bar-title">Coach Chat</span><span class="chip chip-memory">● Remembers your story</span></div>
+              <div class="mock-row user"><div class="bubble">We had the chores argument again. I said I'd drop it, but I'm still annoyed.</div></div>
+              <div class="mock-row ai"><div class="bubble">That's the third time this month it's come up — and each time it ends with both of you pulling back. Before the next round: what would "fair" actually look like to you, in concrete terms?</div></div>
+              <div class="mock-row user"><div class="bubble">Honestly? Just knowing it's not all on me.</div></div>
+              <div class="mock-row ai"><div class="bubble">That's a real need, and it's worth saying plainly. Here's one way to open it without it sounding like blame…</div></div>
+            </div>
+            <div class="vis-float vis-float-a"><strong>Pattern noticed</strong>You both withdraw instead of raising it directly.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice" class="core core-reverse">
+      <div class="container">
+        <div class="core-split">
+          <div class="core-text">
+            <span class="core-num">02</span>
+            <span class="section-tag">Partner Practice</span>
+            <h2>Rehearse the hard conversation before it's real</h2>
+            <p>Describe your partner, then practice what you want to say with an AI that stays in character — including the realistic friction. When you're done, you get a short, honest debrief aimed at the real conversation still ahead.</p>
+            <ul class="core-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>An AI that plays your partner</strong> based on the personality you describe — and what it's learned from your chats</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>A clear debrief</strong> after each rehearsal: what went well, what to watch for, one thing to try differently</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Switch roles</strong> to hear how your own words might land on the receiving end</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Completely private.</strong> It's never in contact with your real partner and nothing is shared with them</span></li>
+            </ul>
+            <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-mode-practice">Try Partner Practice</a>
+          </div>
+          <div class="core-visual" aria-hidden="true">
+            <div class="vis-card">
+              <div class="demo-bar"><span class="demo-bar-title">Practicing with Alex</span><span class="chip">Avoidant · needs time to think</span></div>
+              <div class="mock-row user"><div class="bubble">I want to talk about how we split the housework. I'm feeling a bit overwhelmed.</div></div>
+              <div class="mock-row ai"><div class="bubble">Okay… I thought things were fine? I do what I can, you know.</div></div>
+              <div class="mock-row user"><div class="bubble">I know you do. I'm not saying you don't — I just need us to look at it together.</div></div>
+              <div class="debrief">
+                <div class="debrief-row"><strong>Went well</strong><span>You acknowledged their effort before asking for change.</span></div>
+                <div class="debrief-row"><strong>Watch for</strong><span>Defensiveness at "split" — slow down, keep it about you.</span></div>
+                <div class="debrief-row"><strong>Try next</strong><span>Propose one concrete swap instead of a general talk.</span></div>
+              </div>
+            </div>
+            <div class="vis-float vis-float-b"><strong>Debrief ready</strong>Honest, specific, and kind.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- ALSO INCLUDED                                                     -->
+    <!-- ================================================================ -->
+    <section id="extras" class="extras">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Also included</span>
+          <h2>Small extras that make the core tools better</h2>
+        </div>
+        <div class="extras-grid">
+          <div class="extra-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <h3>Therapist-ready summary</h3>
+            <p>Turn any Coach Chat conversation into a structured page you can hand to a therapist — yours to download or print, never sent anywhere automatically.</p>
+          </div>
+          <div class="extra-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+            <h3>Weekly insights</h3>
+            <p>A short digest of the patterns showing up across your conversations, delivered to you automatically.</p>
+          </div>
+          <div class="extra-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+            <h3>Daily question</h3>
+            <p>An optional daily prompt to reflect on — alone, or together once you link a partner's account.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- THE GAP                                                           -->
+    <!-- ================================================================ -->
     <section id="problem">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">The gap</span>
+          <span class="section-tag">Why it exists</span>
           <h2>Relationship support has always come with a catch</h2>
-          <p>None of the usual options are actually built for the moment you need them.</p>
+          <p>None of the usual options are built for the moment you need them.</p>
         </div>
 
         <div class="feature-grid">
           <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
             <h3>Therapy has a waitlist</h3>
             <p>Good couples therapists are booked out for weeks and cost €50–€150 a session. The argument you're having tonight can't wait for the 14th.</p>
           </div>
-
           <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-            </div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
             <h3>Generic chatbots forget you exist</h3>
-            <p>Ask a general AI assistant for relationship advice and you're re-explaining your partner, your history, and last week's fight — from scratch, every time.</p>
+            <p>Ask a general AI assistant for relationship advice and you're re-explaining your partner, your history and last week's fight — from scratch, every time.</p>
           </div>
-
           <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-            </div>
-            <h3>Journaling alone doesn't rehearse anything</h3>
-            <p>Writing down how you feel helps you process it. It doesn't tell you whether what you're about to say will actually land the way you mean it to.</p>
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg></div>
+            <h3>Journaling doesn't rehearse anything</h3>
+            <p>Writing down how you feel helps you process it. It doesn't tell you whether what you're about to say will land the way you mean it to.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features">
+    <!-- ================================================================ -->
+    <!-- HOW IT WORKS                                                      -->
+    <!-- ================================================================ -->
+    <section id="how-it-works">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">Why RelationshipAI</span>
-          <h2>Built differently from typical chatbots</h2>
-          <p>We took what makes AI companion apps genuinely useful — and fixed the parts that make them feel hollow.</p>
+          <span class="section-tag">How it works</span>
+          <h2>A clearer head in 3 steps</h2>
         </div>
 
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.5C.5 7.5 3 4 6.5 4c2 0 3.5 1.5 4.5 3 1-1.5 2.5-3 4.5-3C19 4 21.5 7.5 19.5 11.5 17 15.65 12 20 12 20z"/></svg>
-            </div>
-            <h3>Remembers your relationship</h3>
-            <p>No re-explaining the whole backstory every time — it picks up exactly where you left off, and after a few conversations it can point out recurring patterns you might not notice on your own.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Tell it what's going on</h3>
+            <p>Write naturally, like you would to a friend. The coach asks follow-up questions when it needs more context.</p>
           </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 8v8a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
-            </div>
-            <h3>Grounded in proven methods</h3>
-            <p>Built on the same frameworks real therapists use — the Gottman Method, attachment theory, Nonviolent Communication — not recycled platitudes.</p>
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Work it through in Coach Chat</h3>
+            <p>Get specific, grounded next steps — and help finding words that sound like you, not a script.</p>
           </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-            <h3>Available 24/7</h3>
-            <p>No waitlists, no scheduling calls, no waiting weeks for the next slot. Support exactly when you need it, even at 2am.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-            </div>
-            <h3>Transparent pricing</h3>
-            <p>See exactly what you'd pay right on this page — no "contact sales," no upsells buried inside the app after you've signed up.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg>
-            </div>
-            <h3>Your data, your privacy</h3>
-            <p>Passwords are hashed, conversations are private to your account, and we never sell or share what you tell it — full stop.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-            </div>
-            <h3>Direct and to the point</h3>
-            <p>Real, specific next steps — not another "have you tried communicating more?"</p>
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Rehearse it in Partner Practice</h3>
+            <p>Say it out loud first, get a short debrief, and walk into the real conversation prepared. Nothing is lost between sessions.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="modes">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">More than a chatbot</span>
-          <h2>Two things RelationshipAI does best</h2>
-          <p>Coach Chat and Partner Practice are the core of RelationshipAI. The daily relationship question is a handy extra alongside them — entirely optional.</p>
-        </div>
-
-        <div class="modes-grid">
-          <a href="#" class="mode-card mode-card-flagship" data-cta data-umami-event="cta-mode-coach">
-            <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-            <span class="mode-card-tag">Flagship</span>
-            <h3>Coach Chat</h3>
-            <p>Talk through what's going on and get concrete, grounded next steps — not vague reassurance.</p>
-          </a>
-
-          <a href="#" class="mode-card mode-card-flagship" data-cta data-umami-event="cta-mode-practice">
-            <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <span class="mode-card-tag">Flagship</span>
-            <h3>Partner Practice</h3>
-            <p>Create a profile for your partner and rehearse a real conversation with an AI that stays in character, before you have it for real.</p>
-          </a>
-
-          <a href="#" class="mode-card" data-cta data-umami-event="cta-mode-together">
-            <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-            <span class="mode-card-tag">Optional</span>
-            <h3>Daily question</h3>
-            <p>A daily relationship question to reflect on — on your own, or together once you link a partner's account.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="therapist-export">
-      <div class="container">
-        <div class="feature-split">
-          <div class="feature-split-text">
-            <span class="section-tag">Built for real therapy, too</span>
-            <h2>Walk into your next session already caught up</h2>
-            <p>Most AI relationship apps stop at the chat window. RelationshipAI can turn any Coach Chat conversation into a structured, therapist-ready summary — so instead of spending the first ten minutes re-explaining what happened, you hand your therapist a page that already says it.</p>
-            <ul class="feature-split-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Generated from your actual conversation, not a generic template</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Structured into sections a therapist can scan in under a minute</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Yours to download, print, or open on your phone — nothing is sent anywhere automatically</li>
-            </ul>
-            <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-coach-section">Try Coach Chat free</a>
-          </div>
-
-          <div class="feature-split-visual" aria-hidden="true">
-            <div class="summary-paper mini-summary">
-              <div class="summary-header">
-                <div class="summary-brand">Relationship<span style="color: var(--accent-1)">AI</span></div>
-                <h1>Session Summary</h1>
-                <p class="summary-subtitle">For sharing with a licensed therapist</p>
-              </div>
-              <h3 class="summary-section">What's going on</h3>
-              <p>Recurring tension around dividing household responsibilities, escalating over the past three weeks. Both partners report feeling unheard during the two most recent conversations.</p>
-              <h3 class="summary-section">Patterns noticed</h3>
-              <p>Both partners tend to withdraw rather than raise the issue directly, which delays resolution and lets frustration build between conversations.</p>
-              <h3 class="summary-section">What's been tried</h3>
-              <p>One direct conversation two weeks ago that ended without a concrete agreement.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- ================================================================ -->
+    <!-- COMPARE                                                           -->
+    <!-- ================================================================ -->
     <section id="compare">
       <div class="container">
         <div class="section-head">
@@ -253,48 +289,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Available 24/7</td>
-                <td class="compare-highlight yes">Yes</td>
-                <td class="yes">Yes</td>
-                <td class="no">No</td>
-              </tr>
-              <tr>
-                <td>Remembers your specific relationship</td>
-                <td class="compare-highlight yes">Yes</td>
-                <td class="no">No</td>
-                <td class="yes">Yes</td>
-              </tr>
-              <tr>
-                <td>Grounded in a real coaching framework</td>
-                <td class="compare-highlight yes">Yes</td>
-                <td class="partial">Sometimes</td>
-                <td class="yes">Yes</td>
-              </tr>
-              <tr>
-                <td>Lets you rehearse the actual conversation</td>
-                <td class="compare-highlight yes">Yes</td>
-                <td class="no">No</td>
-                <td class="no">No</td>
-              </tr>
-              <tr>
-                <td>Generates a therapist-ready summary</td>
-                <td class="compare-highlight yes">Yes</td>
-                <td class="no">No</td>
-                <td class="na">N/A</td>
-              </tr>
-              <tr>
-                <td>Wait time to get support</td>
-                <td class="compare-highlight yes">None</td>
-                <td class="yes">None</td>
-                <td class="no">Days to weeks</td>
-              </tr>
-              <tr>
-                <td>Cost</td>
-                <td class="compare-highlight yes">€0–€24.99/mo</td>
-                <td class="partial">Free–€20/mo</td>
-                <td class="no">€50–€150/session</td>
-              </tr>
+              <tr><td>Available 24/7</td><td class="compare-highlight yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
+              <tr><td>Remembers your specific relationship</td><td class="compare-highlight yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+              <tr><td>Grounded in a real coaching framework</td><td class="compare-highlight yes">Yes</td><td class="partial">Sometimes</td><td class="yes">Yes</td></tr>
+              <tr><td>Lets you rehearse the actual conversation</td><td class="compare-highlight yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
+              <tr><td>Generates a therapist-ready summary</td><td class="compare-highlight yes">Yes</td><td class="no">No</td><td class="na">N/A</td></tr>
+              <tr><td>Wait time to get support</td><td class="compare-highlight yes">None</td><td class="yes">None</td><td class="no">Days to weeks</td></tr>
+              <tr><td>Cost</td><td class="compare-highlight yes">€0–€19.99/mo</td><td class="partial">Free–€20/mo</td><td class="no">€50–€150/session</td></tr>
             </tbody>
           </table>
         </div>
@@ -302,33 +303,84 @@
       </div>
     </section>
 
-    <section id="how-it-works">
+    <!-- ================================================================ -->
+    <!-- PRICING                                                           -->
+    <!-- ================================================================ -->
+    <section id="pricing">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">How it works</span>
-          <h2>A clearer head in 3 steps</h2>
+          <span class="section-tag">Pricing</span>
+          <h2>Start free. Upgrade when it's earning its place.</h2>
+          <p>Every plan includes Coach Chat and Partner Practice. Upgrading removes the limits — and Premium adds our most advanced AI model.</p>
         </div>
 
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Sign up for free</h3>
-            <p>No credit card. Creating an account takes less than a minute.</p>
+        <div class="billing-toggle" role="group" aria-label="Billing period">
+          <button type="button" class="billing-btn active" data-billing="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" class="billing-btn" data-billing="yearly" aria-pressed="false">Yearly <span class="billing-save">2 months free</span></button>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <span class="price-persona">Try it out</span>
+            <h3>Free</h3>
+            <div class="price-value">€0 <span>/ month</span></div>
+            <p class="price-billed">Free forever</p>
+            <p class="price-desc">Enough to feel the difference — no card required.</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Coach Chat:</strong> 8 messages a day</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Partner Practice:</strong> 1 full rehearsal, with debrief</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>3 file or photo attachments</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Unlimited conversation history</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Daily check-in &amp; daily question</span></li>
+            </ul>
+            <a href="#" class="btn btn-ghost btn-block" data-cta data-umami-event="plan-free">Get early access</a>
           </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Describe the situation in your own words</h3>
-            <p>Write naturally, like you would to a friend. The AI will ask follow-up questions when it needs more context.</p>
+
+          <div class="price-card featured">
+            <span class="price-badge">Most popular</span>
+            <span class="price-persona">For ongoing support</span>
+            <h3>Pro</h3>
+            <div class="price-value"><span class="amt" data-monthly="€9.99" data-yearly="€8.25">€9.99</span> <span class="per">/ month</span></div>
+            <p class="price-billed" data-monthly="Billed monthly" data-yearly="Billed €99 yearly · save 17%">Billed monthly</p>
+            <p class="price-desc">The full Coach Chat and Partner Practice experience — about the price of a coffee a week.</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Coach Chat:</strong> no daily cap (fair-use applies)</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Partner Practice:</strong> unlimited rehearsals, up to 5 partner profiles</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Up to 3 files per message</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Weekly relationship insights, delivered automatically</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Unlimited therapist-summary exports</span></li>
+            </ul>
+            <button type="button" class="btn btn-gradient btn-block" data-plan="pro" data-umami-event="plan-pro" data-umami-event-billing="monthly">Choose Pro</button>
           </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Get concrete next steps — or practice them first</h3>
-            <p>Walk away with specific advice, rehearse the actual conversation in Partner Practice, or both. Nothing gets lost between sessions.</p>
+
+          <div class="price-card">
+            <span class="price-persona">For the deepest coaching</span>
+            <h3>Premium</h3>
+            <div class="price-value"><span class="amt" data-monthly="€19.99" data-yearly="€16.58">€19.99</span> <span class="per">/ month</span></div>
+            <p class="price-billed" data-monthly="Billed monthly" data-yearly="Billed €199 yearly · save 17%">Billed monthly</p>
+            <p class="price-desc">Everything in Pro, on our most advanced AI model — for noticeably deeper, more nuanced coaching.</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Everything in Pro</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Most advanced AI model</strong> in Coach Chat and Partner Practice</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Unlimited partner profiles</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Up to 5 files per message</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <span>Priority email support</span></li>
+            </ul>
+            <button type="button" class="btn btn-ghost btn-block" data-plan="premium" data-umami-event="plan-premium" data-umami-event-billing="monthly">Choose Premium</button>
           </div>
         </div>
+
+        <div class="pricing-guarantee">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>7-day money-back guarantee — if it's not useful, tell us and we'll refund you. No questions asked.</span>
+        </div>
+        <p class="pricing-note">Prices in EUR. Launch pricing preview — plans open when RelationshipAI does. Cancel or switch anytime.</p>
       </div>
     </section>
 
+    <!-- ================================================================ -->
+    <!-- TRUST                                                             -->
+    <!-- ================================================================ -->
     <section id="trust">
       <div class="container">
         <div class="section-head">
@@ -339,97 +391,21 @@
         <div class="trust-row">
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg></div>
-            <div>
-              <h3>Passwords, properly hashed</h3>
-              <p>Hashed with bcrypt — never stored in plain text, ever.</p>
-            </div>
+            <div><h3>Passwords, properly hashed</h3><p>Hashed with bcrypt — never stored in plain text, ever.</p></div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.5C.5 7.5 3 4 6.5 4c2 0 3.5 1.5 4.5 3 1-1.5 2.5-3 4.5-3C19 4 21.5 7.5 19.5 11.5 17 15.65 12 20 12 20z"/></svg></div>
-            <div>
-              <h3>Private by default</h3>
-              <p>Only you can see your conversations once you're logged into your account.</p>
-            </div>
+            <div><h3>Private by default</h3><p>Only you can see your conversations once you're logged into your account.</p></div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div>
-            <div>
-              <h3>Never sold, never shared</h3>
-              <p>Your conversations aren't handed to advertisers or third parties — full stop.</p>
-            </div>
+            <div><h3>Never sold, never shared</h3><p>Your conversations aren't handed to advertisers or third parties — full stop.</p></div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-            <div>
-              <h3>Cancel in one click</h3>
-              <p>No contracts, no retention calls — manage or cancel anytime from your account page.</p>
-            </div>
+            <div><h3>Cancel in one click</h3><p>No contracts, no retention calls — manage or cancel anytime from your account page.</p></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Pricing</span>
-          <h2>Choose the level of support that fits your life</h2>
-          <p>Every plan gets access to every mode — Coach Chat, Partner Practice, the daily relationship question, all of it. Upgrading raises your limits, and Premium also unlocks our most advanced AI model.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <div class="price-card">
-            <span class="price-persona">Try it out</span>
-            <h3>Free</h3>
-            <div class="price-value">€0 <span>/ month</span></div>
-            <p class="price-desc">Enough room to get real value — no card required, ever.</p>
-            <ul class="price-features">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Coach Chat: 8 AI messages a day, every day</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 1 free Partner Practice rehearsal, to try it</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 3 free file/photo attachments (screenshots, docs)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Unlimited conversation history</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Daily check-in &amp; daily relationship question, always free</li>
-            </ul>
-            <a href="#" class="btn btn-ghost btn-block" data-cta data-umami-event="plan-free">Get started free</a>
-          </div>
-
-          <div class="price-card featured">
-            <span class="price-badge">Most popular</span>
-            <span class="price-persona">For ongoing support</span>
-            <h3>Pro</h3>
-            <div class="price-value">€9.99 <span>/ month</span></div>
-            <p class="price-desc">Less than a coffee a week — for when the free tries of Practice and attachments aren't enough anymore.</p>
-            <ul class="price-features">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No daily cap on AI messages — chat &amp; practice (fair-use limit applies)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Unlimited Partner Practice rehearsals, up to 5 partner profiles</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Up to 3 files attached per message</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Weekly relationship insights, delivered to you automatically</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Unlimited therapist-summary exports</li>
-            </ul>
-            <button type="button" class="btn btn-gradient btn-block" data-plan="pro" data-umami-event="plan-pro">Choose Pro</button>
-          </div>
-
-          <div class="price-card">
-            <span class="price-persona">For getting the most out of it</span>
-            <h3>Premium</h3>
-            <div class="price-value">€24.99 <span>/ month</span></div>
-            <p class="price-desc">About what you'd pay for a general-purpose AI subscription — except this one is trained on your relationship, not everything else.</p>
-            <ul class="price-features">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Everything in Pro</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <strong>Our most advanced AI model</strong> — deeper, more nuanced coaching and message rewrites</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Unlimited partner profiles</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Up to 5 files attached per message</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Priority email support</li>
-            </ul>
-            <button type="button" class="btn btn-ghost btn-block" data-plan="premium" data-umami-event="plan-premium">Choose Premium</button>
-          </div>
-        </div>
-
-        <div class="pricing-guarantee">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span>7-day money-back guarantee — if it's not useful, tell us and we'll refund you. No questions asked.</span>
-        </div>
-        <p class="pricing-note">Secure checkout powered by Stripe. Cancel or switch plans anytime from your account page.</p>
       </div>
     </section>
 
@@ -449,6 +425,9 @@
       </div>
     </section>
 
+    <!-- ================================================================ -->
+    <!-- FAQ                                                               -->
+    <!-- ================================================================ -->
     <section id="faq">
       <div class="container">
         <div class="section-head">
@@ -458,8 +437,20 @@
 
         <div class="faq">
           <details class="faq-item">
+            <summary>When does RelationshipAI open?</summary>
+            <p>Soon. We're putting the finishing touches on it and checking how many people are interested before we open the doors. Clicking any "Get early access" button is counted — anonymously — and helps us decide how quickly to open.</p>
+          </details>
+          <details class="faq-item">
             <summary>Is RelationshipAI a replacement for therapy?</summary>
             <p>No. RelationshipAI is a self-improvement tool for immediate support between therapy sessions, or when therapy isn't accessible. For serious issues, abuse, or a crisis situation, we always recommend seeking a professional.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is Coach Chat?</summary>
+            <p>Coach Chat is the main conversation with your AI relationship coach. You describe what's going on, and it asks follow-up questions, remembers your story across conversations, notices recurring patterns, and helps you work out concrete next steps and the words to use.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is Partner Practice — and is it actually talking to my partner?</summary>
+            <p>No, it never talks to your real partner. You describe your partner's personality and the AI plays them as a private rehearsal space, including realistic friction. After each rehearsal you get a short debrief — what went well, what to watch for, and one thing to try differently. Nothing you practice is shared with anyone.</p>
           </details>
           <details class="faq-item">
             <summary>Does RelationshipAI work for any kind of relationship?</summary>
@@ -467,35 +458,27 @@
           </details>
           <details class="faq-item">
             <summary>What if my partner doesn't want to use it?</summary>
-            <p>That's completely fine — RelationshipAI works even if you're the only one using it. Most change in a relationship starts with how one person shows up differently, and Partner Practice exists specifically so you can prepare for real conversations solo.</p>
+            <p>That's completely fine — RelationshipAI works even if you're the only one using it. Most change in a relationship starts with how one person shows up differently, and Partner Practice exists so you can prepare for real conversations solo.</p>
           </details>
           <details class="faq-item">
             <summary>Are my conversations private?</summary>
             <p>Yes. Only you can see your conversations once you're logged into your account, and we never share them with third parties.</p>
           </details>
           <details class="faq-item">
-            <summary>Can I cancel anytime?</summary>
-            <p>Yes — no commitment, no hidden conditions. Cancel or switch plans anytime from your account page, and you'll keep access until the end of your current billing period.</p>
-          </details>
-          <details class="faq-item">
             <summary>What happens when I hit a Free plan limit?</summary>
-            <p>Coach Chat's daily limit resets every day — you'll get a friendly heads-up and can pick back up tomorrow, nothing is lost. Partner Practice and file attachments are each a handful of free tries to see if they're useful (1 practice rehearsal, 3 attachments) rather than a daily reset — once you've used them, you'll see an upgrade prompt instead of an error. Your full conversation history is never affected either way.</p>
+            <p>Coach Chat's daily limit resets every day — you'll get a friendly heads-up and can pick back up tomorrow, nothing is lost. Partner Practice and file attachments are a handful of free tries (1 practice rehearsal, 3 attachments) rather than a daily reset. Your full conversation history is never affected either way.</p>
           </details>
           <details class="faq-item">
-            <summary>What's actually different between Pro and Premium?</summary>
-            <p>Pro removes the Free-plan limits: no daily cap on Coach Chat (a generous monthly fair-use limit applies, so no single account can run up unreasonable costs), unlimited Partner Practice rehearsals (up to 5 partner profiles), unlimited file attachments (up to 3 per message), and it adds a weekly relationship-insights digest sent to you automatically. Premium includes everything in Pro, then switches Coach Chat and Partner Practice over to our most advanced AI model for noticeably deeper, more nuanced responses — plus unlimited partner profiles, 5 files per message, and priority email support.</p>
+            <summary>What's the difference between Pro and Premium?</summary>
+            <p>Pro removes the Free-plan limits: no daily cap on Coach Chat (a generous monthly fair-use limit applies), unlimited Partner Practice rehearsals with up to 5 partner profiles, up to 3 files per message, weekly relationship insights and unlimited therapist-summary exports. Premium includes everything in Pro and switches Coach Chat and Partner Practice to our most advanced AI model, plus unlimited partner profiles, 5 files per message and priority email support.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I cancel anytime?</summary>
+            <p>Yes — no commitment, no hidden conditions. Cancel or switch plans anytime from your account page, and you'll keep access until the end of your current billing period. Yearly plans include a 7-day money-back guarantee, just like monthly ones.</p>
           </details>
           <details class="faq-item">
             <summary>What AI model does it use?</summary>
-            <p>Free and Pro run on OpenAI's GPT-4o mini, with a prompt tuned specifically for relationship coaching — fast and plenty capable for day-to-day use. Premium subscribers get full GPT-4o on the live coaching surfaces (Coach Chat, Partner Practice) for more nuanced, specific responses.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Is Partner Practice actually talking to my partner?</summary>
-            <p>No. You describe your partner's personality and the AI roleplays as them, purely as a rehearsal space for you — it's never in contact with your real partner and nothing you practice is shared with them.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I have to answer the daily question or do the daily check-in?</summary>
-            <p>No — both are entirely optional. You can use RelationshipAI for Coach Chat only and never touch them, or skip either one at any time with no impact on the rest of the app.</p>
+            <p>Free and Pro run on OpenAI's GPT-4o mini, with a prompt tuned specifically for relationship coaching — fast and plenty capable for day-to-day use. Premium subscribers get full GPT-4o on Coach Chat and Partner Practice for more nuanced, specific responses.</p>
           </details>
           <details class="faq-item">
             <summary>Is there a mobile app?</summary>
@@ -508,8 +491,8 @@
     <section>
       <div class="cta-banner">
         <h2>Ready for a clearer head?</h2>
-        <p>Create your account in under a minute. The Free plan is free forever.</p>
-        <a href="#" class="btn" data-cta data-umami-event="cta-final-banner">Get started free</a>
+        <p>Be among the first to try Coach Chat and Partner Practice. Free to start, no card needed.</p>
+        <a href="#" class="btn" data-cta data-umami-event="cta-final-banner">Get early access</a>
       </div>
     </section>
   </main>
@@ -522,8 +505,8 @@
     <p class="footer-copy">© 2026 RelationshipAI · <a href="privacy.html">Privacy</a></p>
   </footer>
 
-  <a href="#" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-floating">Get started free</a>
+  <a href="#" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-floating">Get early access</a>
 
-  <script src="js/landing.js?v=5"></script>
+  <script src="js/landing.js?v=6"></script>
 </body>
 </html>

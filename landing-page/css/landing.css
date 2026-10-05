@@ -1,0 +1,219 @@
+/* ==========================================================================
+   RelationshipAI — landing page layer (loaded after style.css)
+   Everything here is scoped to body.lp so the shared design system is untouched.
+   ========================================================================== */
+
+.lp section:not(.hero) { padding: 96px 0; }
+.lp .section-head { margin-bottom: 56px; max-width: 680px; }
+.lp .section-head h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.15; }
+.lp .section-head p { font-size: 17px; }
+
+/* ---------------- Hero ---------------- */
+.lp .hero { position: relative; padding: 84px 24px 56px; overflow: hidden; }
+.lp .hero > * { position: relative; z-index: 1; }
+.lp .hero .hero-glow {
+  position: absolute; z-index: 0; inset: -120px 0 auto 0; height: 620px; pointer-events: none;
+  background:
+    radial-gradient(ellipse 520px 340px at 78% 0%, rgba(209, 160, 90, 0.20), transparent 70%),
+    radial-gradient(ellipse 480px 320px at 14% 8%, rgba(168, 69, 92, 0.18), transparent 70%);
+}
+.lp .hero h1 { font-size: clamp(36px, 6vw, 66px); line-height: 1.06; max-width: 940px; letter-spacing: -0.02em; }
+.lp .hero-sub { font-size: clamp(17px, 2vw, 20px); max-width: 680px; }
+.lp .hero-sub strong { color: var(--text); font-weight: 600; }
+.lp .btn-lg { padding: 16px 30px; font-size: 16px; border-radius: 12px; }
+.lp .btn-gradient { box-shadow: 0 8px 28px rgba(209, 160, 90, 0.22); }
+.lp .btn-gradient:hover:not(:disabled) { box-shadow: 0 10px 34px rgba(209, 160, 90, 0.34); }
+.lp .hero-note { margin-bottom: 0; }
+
+/* Tabbed demo */
+.demo {
+  max-width: 760px; margin: 52px auto 0; text-align: left;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 22px; box-shadow: var(--shadow-lg), 0 0 0 6px rgba(250, 235, 215, 0.03);
+  overflow: hidden;
+}
+.demo-tabs { display: flex; gap: 6px; padding: 10px; background: var(--bg-elevated); border-bottom: 1px solid var(--border); }
+.demo-tab {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 14px; border-radius: 12px; border: 1px solid transparent;
+  background: transparent; color: var(--text-muted);
+  font-family: var(--font-body); font-size: 14.5px; font-weight: 600; cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.demo-tab svg { width: 17px; height: 17px; stroke: currentColor; }
+.demo-tab:hover { color: var(--text); }
+.demo-tab.active { background: var(--surface-hover); color: var(--text); border-color: var(--border-strong); }
+.demo-tab.active svg { stroke: var(--accent-1); }
+.demo-panel { padding: 22px 24px 26px; }
+.demo-panel[hidden] { display: none; }
+
+.demo-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.demo-bar-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+.chip {
+  display: inline-flex; align-items: center; padding: 4px 11px; border-radius: var(--radius-pill);
+  background: rgba(250, 235, 215, 0.06); border: 1px solid var(--border);
+  font-size: 12px; color: var(--text-muted);
+}
+.chip-memory { color: var(--accent-1); background: rgba(209, 160, 90, 0.10); border-color: rgba(209, 160, 90, 0.28); }
+
+.demo .mock-row, .vis-card .mock-row { display: flex; margin: 10px 0; }
+.demo .mock-row.user, .vis-card .mock-row.user { justify-content: flex-end; }
+.demo .bubble, .vis-card .bubble { max-width: 82%; padding: 11px 15px; border-radius: 16px; font-size: 14.5px; line-height: 1.5; }
+.demo .mock-row.user .bubble, .vis-card .mock-row.user .bubble { background: var(--accent-1); color: var(--ink); border-bottom-right-radius: 4px; }
+.demo .mock-row.ai .bubble, .vis-card .mock-row.ai .bubble { background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text); border-bottom-left-radius: 4px; }
+
+.memory-note {
+  margin-top: 16px; padding: 10px 14px; border-radius: 12px; font-size: 12.5px; color: var(--text-muted);
+  background: rgba(209, 160, 90, 0.07); border: 1px dashed rgba(209, 160, 90, 0.35);
+}
+.memory-note span { color: var(--accent-1); font-weight: 700; margin-right: 8px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; }
+
+.debrief {
+  margin-top: 16px; border-radius: 14px; overflow: hidden;
+  background: var(--bg-elevated); border: 1px solid var(--border-strong);
+}
+.debrief-row { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 11px 16px; font-size: 13.5px; }
+.debrief-row + .debrief-row { border-top: 1px solid var(--border); }
+.debrief-row strong { color: var(--accent-1); font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; padding-top: 2px; }
+.debrief-row span { color: var(--text-muted); }
+
+.frameworks {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 18px;
+  margin-top: 40px; font-size: 14px; color: var(--text-muted);
+}
+.frameworks-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+.frameworks i { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-1); opacity: 0.7; }
+
+/* ---------------- Core tools ---------------- */
+.lp .tools-intro { padding: 72px 0 0; }
+.lp .tools-intro .section-head { margin-bottom: 0; }
+.lp .core { padding: 64px 0; }
+.core-split { display: grid; grid-template-columns: 1fr 1.08fr; gap: 64px; align-items: center; }
+.core-reverse .core-split { grid-template-columns: 1.08fr 1fr; }
+.core-reverse .core-text { order: 2; }
+.core-reverse .core-visual { order: 1; }
+
+.core-num {
+  display: block; font-family: var(--font-display); font-size: 64px; font-weight: 500; line-height: 1;
+  background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0.85; margin-bottom: 6px;
+}
+.core-text .section-tag { display: block; margin-bottom: 8px; }
+.core-text h2 { font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.015em; }
+.core-text > p { font-size: 17px; }
+.core-list { list-style: none; padding: 0; margin: 22px 0 30px; }
+.core-list li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; font-size: 15.5px; color: var(--text-muted); }
+.core-list li strong { color: var(--text); font-weight: 600; }
+.core-list li svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px; stroke: var(--success); }
+
+.core-visual { position: relative; }
+.core-visual::before {
+  content: ""; position: absolute; inset: -28px; z-index: 0; pointer-events: none; border-radius: 40px;
+  background: radial-gradient(ellipse at 50% 40%, rgba(209, 160, 90, 0.14), transparent 68%);
+}
+.vis-card {
+  position: relative; z-index: 1; padding: 22px;
+  background: var(--surface); border: 1px solid var(--border-strong); border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+}
+.vis-float {
+  position: absolute; z-index: 2; padding: 11px 15px; border-radius: 14px; font-size: 12.5px; line-height: 1.4;
+  background: var(--bg-elevated); border: 1px solid rgba(209, 160, 90, 0.4); color: var(--text-muted);
+  box-shadow: var(--shadow); max-width: 220px;
+}
+.vis-float strong { display: block; color: var(--accent-1); font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 2px; }
+.vis-float-a { right: -18px; bottom: -22px; }
+.vis-float-b { left: -18px; bottom: -22px; }
+
+/* ---------------- Extras ---------------- */
+.lp .extras { background: linear-gradient(180deg, transparent, rgba(250, 235, 215, 0.025), transparent); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.extra-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.extra-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.extra-card .feature-icon svg { width: 20px; height: 20px; stroke: var(--ink); }
+.extra-card h3 { font-size: 17px; margin-bottom: 6px; }
+.extra-card p { font-size: 14.5px; margin: 0; }
+
+/* ---------------- Pricing ---------------- */
+.billing-toggle {
+  display: flex; width: fit-content; margin: 0 auto 40px; padding: 5px; gap: 4px;
+  background: var(--bg-elevated); border: 1px solid var(--border-strong); border-radius: var(--radius-pill);
+}
+.billing-btn {
+  padding: 10px 22px; border-radius: var(--radius-pill); border: 0; background: transparent; color: var(--text-muted);
+  font-family: var(--font-body); font-size: 14.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.billing-btn.active { background: var(--accent-grad); color: var(--ink); }
+.billing-save { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); background: rgba(139, 171, 111, 0.18); color: var(--success); }
+.billing-btn.active .billing-save { background: rgba(26, 20, 13, 0.16); color: var(--ink); }
+
+.lp .pricing-grid { gap: 22px; }
+.lp .price-card { padding: 34px 28px; border-radius: 22px; }
+.lp .price-card.featured {
+  box-shadow: 0 0 0 1px rgba(209, 160, 90, 0.45), 0 24px 70px rgba(209, 160, 90, 0.12);
+  transform: translateY(-8px);
+}
+.lp .price-value { font-size: 46px; line-height: 1.05; margin-bottom: 2px; }
+.lp .price-value span.per, .lp .price-value > span:not(.amt) { font-size: 15px; font-family: var(--font-body); color: var(--text-faint); font-weight: 400; }
+.price-billed { font-size: 12.5px; color: var(--text-faint); margin: 0 0 14px; min-height: 18px; }
+.lp .price-features li span { color: var(--text-muted); }
+.lp .price-features li span strong { color: var(--text); font-weight: 600; }
+.lp .price-features li svg { margin-top: 3px; }
+
+/* ---------------- Misc polish ---------------- */
+.lp .step { border-radius: 18px; }
+.lp .compare-table-wrap { border-radius: 20px; }
+.lp .cta-banner { box-shadow: 0 30px 80px rgba(209, 160, 90, 0.18); }
+.lp .cta-banner h2 { font-size: clamp(28px, 3.6vw, 40px); }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 960px) {
+  .core-split, .core-reverse .core-split { grid-template-columns: 1fr; gap: 44px; }
+  .core-reverse .core-text, .core-reverse .core-visual { order: unset; }
+  .vis-float-a { right: 8px; } .vis-float-b { left: 8px; }
+  .lp .price-card.featured { transform: none; }
+  .extras-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .lp section:not(.hero) { padding: 64px 0; }
+  .lp .core { padding: 40px 0; }
+  .lp .tools-intro { padding-top: 56px; }
+  .lp .hero { padding: 56px 18px 40px; }
+  .lp .btn-lg { width: 100%; }
+  .lp .hero-cta { flex-direction: column; align-items: stretch; max-width: 360px; margin-left: auto; margin-right: auto; }
+  .demo { margin-top: 40px; border-radius: 18px; }
+  .demo-panel { padding: 18px 16px 20px; }
+  .demo-tab { font-size: 13.5px; padding: 10px 8px; gap: 6px; }
+  .demo .bubble, .vis-card .bubble { max-width: 92%; font-size: 14px; }
+  .debrief-row { grid-template-columns: 1fr; gap: 2px; }
+  .core-num { font-size: 52px; }
+  .vis-card { padding: 16px; }
+  .vis-float { display: none; }
+  .billing-btn { padding: 9px 14px; font-size: 13.5px; }
+  .lp .price-card { padding: 28px 22px; }
+}
+
+/* glow halos intentionally extend past the cards; never let them add a horizontal scrollbar */
+.lp main { overflow-x: clip; }
+@media (max-width: 640px) { .core-visual::before { inset: -12px; } }
+
+/* ---- fixes after first visual pass ---- */
+.lp h1, .lp h2 { text-wrap: balance; }
+.lp .price-value .amt { font-family: var(--font-display); font-size: 46px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+.vis-float-a { right: -18px; bottom: -44px; }
+.vis-float-b { left: -18px; bottom: -44px; }
+.lp .core-visual { margin-bottom: 28px; }
+@media (max-width: 960px) { .vis-float-a { right: 8px; bottom: -40px; } .vis-float-b { left: 8px; bottom: -40px; } }
+
+/* specificity: beat `.lp section:not(.hero)` for the tighter core-tool rhythm */
+.lp section.tools-intro { padding: 72px 0 8px; }
+.lp section.core { padding: 56px 0 72px; }
+@media (max-width: 640px) { .lp section.tools-intro { padding: 56px 0 0; } .lp section.core { padding: 36px 0 48px; } }
+
+/* hero glow spans the full viewport width (no visible box edges); main clips any overflow */
+.lp .hero { overflow: visible; }
+.lp .hero .hero-glow { inset: auto; top: -120px; left: 50%; width: 100vw; transform: translateX(-50%); height: 640px; }

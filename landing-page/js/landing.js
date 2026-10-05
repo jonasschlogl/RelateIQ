@@ -9,7 +9,57 @@ document.addEventListener("DOMContentLoaded", () => {
   initSoonModal();
   initScrollReveal();
   initFloatingCta();
+  initDemoTabs();
+  initBillingToggle();
 });
+
+// Hero preview: switches between the Coach Chat and Partner Practice demos.
+// These are plain buttons (no data-cta), so they never open the dialog.
+function initDemoTabs() {
+  const tabs = Array.from(document.querySelectorAll(".demo-tab"));
+  if (tabs.length === 0) return;
+  const show = (name, focus) => {
+    tabs.forEach((t) => {
+      const on = t.dataset.demo === name;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById("panel-" + t.dataset.demo);
+      if (panel) panel.hidden = !on;
+      if (on && focus) t.focus();
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => show(t.dataset.demo, false));
+    t.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      show(next.dataset.demo, true);
+    });
+  });
+}
+
+// Pricing: Monthly / Yearly switch. Also records the chosen billing period on
+// the plan buttons, so Umami's click event carries it as a property.
+function initBillingToggle() {
+  const buttons = Array.from(document.querySelectorAll(".billing-btn"));
+  if (buttons.length === 0) return;
+  const apply = (mode) => {
+    buttons.forEach((b) => {
+      const on = b.dataset.billing === mode;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.querySelectorAll(".amt, .price-billed[data-monthly]").forEach((el) => {
+      el.textContent = el.dataset[mode];
+    });
+    document.querySelectorAll("[data-plan]").forEach((el) => {
+      el.setAttribute("data-umami-event-billing", mode);
+    });
+  };
+  buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.billing)));
+}
 
 function initNavToggle() {
   const toggle = document.getElementById("nav-toggle");
@@ -72,7 +122,7 @@ function initScrollReveal() {
   if (!("IntersectionObserver" in window)) return;
 
   const targets = document.querySelectorAll(
-    ".feature-card, .mode-card, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block, .feature-split"
+    ".feature-card, .extra-card, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block, .core-split"
   );
   if (targets.length === 0) return;
 
