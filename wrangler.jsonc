@@ -1,0 +1,9 @@
+{
+  // Cloudflare config for the landing page ONLY (the app itself runs on Railway).
+  // Serves the static files in ./landing-page and nothing else from this repo.
+  "name": "relateiq-landing",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./landing-page"
+  }
+}
