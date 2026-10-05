@@ -1,0 +1,10 @@
+{
+  // Cloudflare config for the landing page ONLY (the app itself runs on Railway).
+  // Cloudflare builds from this folder (Root directory = landing-deploy), so it never
+  // tries to install the app's dependencies, and serves only ../landing-page.
+  "name": "relateiq-landing",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "../landing-page"
+  }
+}
