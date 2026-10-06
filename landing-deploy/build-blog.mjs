@@ -151,7 +151,7 @@ function loadPosts() {
 
 // ------------------------------------------------------------------ templates
 const NAV = `  <header class="site-nav">
-    <a href="/" class="brand">Relationship<span>AI</span></a>
+    <a href="/" class="brand"><img class="brand-mark" src="/favicon.svg" alt="" width="30" height="30" style="display:inline-block;vertical-align:middle;margin:-4px 10px 0 0;border-radius:8px" />Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="/#coach">Coach Chat</a>
@@ -196,7 +196,7 @@ function page({ title, description, canonical, type = "website", body, jsonld })
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css?v=51" />
-  <link rel="stylesheet" href="/css/landing.css?v=2" />
+  <link rel="stylesheet" href="/css/landing.css?v=3" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
 <body class="lp blog">
