@@ -238,7 +238,7 @@
 .post-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent-1); margin-top: 6px; }
 .post-more svg { width: 16px; height: 16px; stroke: currentColor; transition: transform 0.15s ease; }
 .post-card:hover .post-more svg { transform: translateX(3px); }
-.blog-all { text-align: center; margin: 36px 0 0; }
+.blog-all { text-align: center; margin: 36px 0 0; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
 .blog-hero { padding: 72px 0 24px !important; text-align: center; }
 .blog-hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; max-width: 780px; margin: 0 auto 16px; letter-spacing: -0.02em; font-weight: 500; }
@@ -292,3 +292,6 @@
   .article-cta { padding: 28px 20px; }
   .lp section.blog-latest { padding: 56px 0; }
 }
+
+.article-cta .ig-line { margin: 20px auto 0; font-size: 14.5px; color: var(--text-faint); }
+.article-cta .ig-line a { color: var(--accent-1); text-decoration: underline; text-underline-offset: 3px; }

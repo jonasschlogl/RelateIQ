@@ -27,6 +27,8 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const LANDING = process.env.LANDING_DIR || path.resolve(HERE, "../landing-page");
 const POSTS_DIR = process.env.POSTS_DIR || path.join(HERE, "blog-posts");
 
+const INSTAGRAM = "https://www.instagram.com/relationshipai_official/";
+
 const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
@@ -165,7 +167,7 @@ const FOOTER = `  <footer class="site-footer">
       RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic
       care. If you're in a crisis, please contact a professional or a helpline in your country.
     </p>
-    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="/blog/">Blog</a> · <a href="/privacy.html">Privacy</a></p>
+    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="/blog/">Blog</a> · <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" data-umami-event="click-instagram-footer">Instagram</a> · <a href="/privacy.html">Privacy</a></p>
   </footer>
   <a href="#" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-blog-floating">Get early access</a>`;
 
@@ -222,6 +224,7 @@ const ctaBox = (event) => `<div class="article-cta">
   <h2>Want help applying this to your own relationship?</h2>
   <p>Talk it through in Coach Chat, then rehearse the conversation in Partner Practice. Free to start, opening soon.</p>
   <a href="#" class="btn btn-gradient" data-cta data-umami-event="${event}">Get early access</a>
+  <p class="ig-line">Or get daily tips on <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" data-umami-event="click-instagram-article">Instagram @relationshipai_official</a></p>
 </div>`;
 
 // -------------------------------------------------------------------- output
@@ -303,7 +306,7 @@ ${p.html}
         datePublished: p.date, dateModified: p.date, mainEntityOfPage: `${SITE}/blog/${p.slug}/`,
         image: `${SITE}/og-image.png`,
         author: { "@type": "Organization", name: CONFIG.siteName },
-        publisher: { "@type": "Organization", name: CONFIG.siteName, logo: { "@type": "ImageObject", url: `${SITE}/apple-touch-icon.png` } },
+        publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/apple-touch-icon.png` } },
       },
     }));
   }
@@ -320,7 +323,7 @@ ${p.html}
           <p>Fresh, practical articles on communication, conflict and connection.</p>
         </div>
         <div class="post-grid">${posts.slice(0, 3).map(card).join("\n")}</div>
-        <p class="blog-all"><a href="/blog/" class="btn btn-ghost">See all articles</a></p>
+        <p class="blog-all"><a href="/blog/" class="btn btn-ghost">See all articles</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-umami-event="click-instagram-blog-home">Follow on Instagram</a></p>
       </div>
     </section>` : "";
     const re = /<!--BLOG-LATEST-->[\s\S]*?<!--\/BLOG-LATEST-->/;
