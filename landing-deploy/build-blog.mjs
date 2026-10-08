@@ -245,15 +245,15 @@ function build() {
 
   // blog index
   write("blog/index.html", page({
-    title: `Relationship Advice & Tips from an AI Coach — ${CONFIG.siteName} Blog`,
-    description: "Practical relationship advice: how to communicate better, fix relationship problems and have the hard conversations — grounded in the Gottman Method, attachment theory and Nonviolent Communication.",
+    title: `Relationship Advice & Tips from an AI Coach | ${CONFIG.siteName} Blog`,
+    description: "Practical relationship advice: how to communicate better, fix relationship problems and have the hard conversations. Inspired by the Gottman Method, attachment theory and Nonviolent Communication.",
     canonical: `${SITE}/blog/`,
     body: `  <main>
     <section class="blog-hero">
       <div class="container">
         <span class="section-tag">The blog</span>
         <h1>Relationship advice you can use tonight</h1>
-        <p>Practical guides on communication, conflict and connection — grounded in methods real therapists use.</p>
+        <p>Practical guides on communication, conflict and connection, drawing on methods real therapists use.</p>
       </div>
     </section>
     <section class="blog-list">
@@ -276,7 +276,7 @@ function build() {
   for (const p of posts) {
     const others = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
     write(`blog/${p.slug}/index.html`, page({
-      title: `${p.title} — ${CONFIG.siteName}`,
+      title: `${p.title} | ${CONFIG.siteName}`,
       description: p.description,
       canonical: `${SITE}/blog/${p.slug}/`,
       type: "article",
