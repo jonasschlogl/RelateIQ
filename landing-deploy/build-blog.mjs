@@ -27,7 +27,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const LANDING = process.env.LANDING_DIR || path.resolve(HERE, "../landing-page");
 const POSTS_DIR = process.env.POSTS_DIR || path.join(HERE, "blog-posts");
 
-const INSTAGRAM = "https://www.instagram.com/relationshipai_official/";
+const INSTAGRAM = "https://www.instagram.com/relationshipai_/";
 
 const CONFIG = {
   domain: "relationshipaiadvice.com",
@@ -224,7 +224,7 @@ const ctaBox = (event) => `<div class="article-cta">
   <h2>Want help applying this to your own relationship?</h2>
   <p>Talk it through in Coach Chat, then rehearse the conversation in Partner Practice. Free to start, opening soon.</p>
   <a href="#" class="btn btn-gradient" data-cta data-umami-event="${event}">Get early access</a>
-  <p class="ig-line">Or get daily tips on <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" data-umami-event="click-instagram-article">Instagram @relationshipai_official</a></p>
+  <p class="ig-line">Or get daily tips on <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" data-umami-event="click-instagram-article">Instagram @relationshipai_</a></p>
 </div>`;
 
 // -------------------------------------------------------------------- output
