@@ -327,32 +327,32 @@
 
 /* ---- Wisp mascot: floating, glowing, used sparingly ---- */
 .wisp { display: none; position: absolute; pointer-events: none; user-select: none; height: auto; z-index: 2;
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35)); animation: wispFloat 7s ease-in-out infinite; }
+  filter: drop-shadow(0 0 26px rgba(255, 176, 96, 0.22)) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35)); animation: wispFloat 7s ease-in-out infinite; }
 @keyframes wispFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 .demo-wrap { margin-top: 84px; }
 .wisp-hero-r { display: block; right: 6px; top: -72px; width: 76px; animation-delay: -2.4s; }
 @media (min-width: 1180px) {
   .demo-wrap { margin-top: 52px; }
-  .wisp-hero-l { display: block; left: -190px; bottom: 6px; width: 150px; }
-  .wisp-hero-r { right: -190px; top: auto; bottom: 26px; width: 150px; animation-delay: -4.6s; }
+  .wisp-hero-l { display: block; left: -176px; bottom: 6px; width: 124px; }
+  .wisp-hero-r { right: -176px; top: auto; bottom: 26px; width: 130px; animation-delay: -4.6s; }
 }
 .lp .cta-banner { position: relative; }
 @media (min-width: 900px) {
-  .wisp-cta { display: block; right: 48px; bottom: -6px; width: 170px; filter: drop-shadow(0 12px 22px rgba(60, 20, 30, 0.35)); animation-delay: -1.5s; }
+  .wisp-cta { display: block; right: 56px; bottom: -6px; width: 92px; filter: drop-shadow(0 12px 22px rgba(60, 20, 30, 0.35)); animation-delay: -1.5s; }
 }
 @media (prefers-reduced-motion: reduce) { .wisp { animation: none; } }
 
 /* ---- peeking mascots: they hold on to the top edge of a card ---- */
 .peek { position: absolute; z-index: 3; height: auto; pointer-events: none; user-select: none; }
-.peek-host { position: relative; margin-top: 92px; }
-.peek-compare { width: 112px; left: 61%; transform: translateX(-50%); bottom: calc(100% - 8px); }
+.peek-host { position: relative; margin-top: 148px; }
+.peek-compare { width: 76px; left: 61%; transform: translateX(-50%); bottom: calc(100% - 8px); }
 .has-peek { position: relative; }
-.peek-pro { width: 124px; right: 30px; bottom: calc(100% - 10px); }
+.peek-pro { width: 104px; right: 30px; bottom: calc(100% - 10px); }
 .peek-premium { width: 190px; right: 22px; bottom: calc(100% - 9px); }
-.pricing-grid { margin-top: 96px; }
+.pricing-grid { margin-top: 132px; }
 @media (max-width: 960px) {
-  .pricing-grid { margin-top: 84px; }
-  .pricing-grid .price-card.has-peek { margin-top: 62px; }
-  .peek-compare { left: auto; right: 14px; transform: none; width: 96px; }
+  .pricing-grid { margin-top: 120px; }
+  .pricing-grid .price-card.has-peek { margin-top: 118px; }
+  .peek-compare { left: auto; right: 14px; transform: none; width: 68px; }
 }
-@media (max-width: 640px) { .peek-host { margin-top: 64px; } .peek-premium { width: 160px; } .peek-pro { width: 108px; } }
+@media (max-width: 640px) { .peek-host { margin-top: 138px; } .peek-premium { width: 160px; } .peek-pro { width: 92px; } }
