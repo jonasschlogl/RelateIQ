@@ -1,9 +1,15 @@
 {
   // Cloudflare config for the landing page ONLY (the app itself runs on Railway).
-  // Serves the static files in ./landing-page and nothing else from this repo.
+  // Serves the static files in ./landing-page; the small Worker only handles /api/* (early-access emails).
   "name": "relateiq-landing",
+  "main": "./landing-deploy/worker.js",
   "compatibility_date": "2026-10-01",
   "assets": {
-    "directory": "./landing-page"
-  }
+    "directory": "./landing-page",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "EMAILS", "id": "4920a25bd01a48abb9bbeb301c603090" }
+  ]
 }

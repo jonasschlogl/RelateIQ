@@ -1,0 +1,108 @@
+UMAMI: AKO CITAT STATISTIKY RELATIONSHIPAI
+==========================================
+Web: relationshipaiadvice.com   (Umami website ID: 62eda2bd-4092-439e-9668-755fa2ca5aea)
+Prihlasenie: cloud.umami.is -> vyber web relationshipaiadvice.com
+
+Nazvy tlacidiel v menu sa mozu mierne lisit podla verzie Umami, ale princip je rovnaky.
+
+
+1. CO UVIDIS V UMAMI
+--------------------
+OVERVIEW (hlavna stranka)
+  - Visitors: kolko roznych ludi prislo
+  - Views: kolko stranok sa zobrazilo
+  - Bounce rate: kolko ludi odislo hned (po jednej stranke)
+  - Visit duration: ako dlho ostali
+  - Pod tym tabulky: Pages (ktore stranky), Referrers (odkial prisli),
+    Countries, Devices (mobil / pocitac), Browsers
+  - Hore vpravo nastavis obdobie (Today, 7 days, 30 days)
+
+EVENTS (kliky na tlacidla) - NAJDOLEZITEJSIA CAST
+  Zoznam udalosti a kolkokrat sa stali. Po kliknuti na udalost vidis
+  jej Properties (napr. billing = yearly / monthly).
+
+REALTIME
+  Kto je na webe prave teraz. Hodi sa na test: otvor web na mobile,
+  klikni par tlacidiel a hned uvidis, ci sa to zaznamenalo.
+
+
+2. UDALOSTI (EVENTS), KTORE SME NASTAVILI
+------------------------------------------
+  cta-hero               klik na hlavne tlacidlo "Get early access" v hero sekcii
+  cta-nav-button         klik na tlacidlo v hornej listy
+  cta-floating           klik na plavajuce tlacidlo (objavi sa po scrollnuti)
+  cta-final-banner       klik na tlacidlo v zaverecnom banneri
+  cta-mode-coach         klik na "Try Coach Chat"
+  cta-mode-practice      klik na "Try Partner Practice"
+  plan-free              klik na tlacidlo v cenniku, plan Free ("Start free")
+  plan-pro               klik na tlacidlo v cenniku, plan Pro
+  plan-premium           klik na tlacidlo v cenniku, plan Premium
+  click-instagram-footer klik na Instagram v pate stranky
+  cta-blog-article       klik na CTA v clanku blogu
+
+  Pri plan-pro a plan-premium ma udalost aj vlastnost "billing":
+    yearly  = clovek mal zvolenu rocnu cenu
+    monthly = clovek mal zvolenu mesacnu cenu
+  (Stranka sa otvara na Yearly, takze na zaciatku bude yearly prevazovat.
+   Dolezitejsie je, kolko ludi si aktivne prepne na monthly.)
+
+
+3. ODKIAL PRISLI LUDIA (UTM ODKAZY)
+-----------------------------------
+Aby si v Umami videl, ze navstevnik prisiel z Instagramu, daj do bia
+odkaz s UTM znackou:
+
+  https://relationshipaiadvice.com/?utm_source=instagram&utm_medium=bio&utm_campaign=profile
+
+Dalsie priklady:
+  Odkaz v storke:  ?utm_source=instagram&utm_medium=story&utm_campaign=day-1
+  Odkaz z blogu:   ?utm_source=blog&utm_medium=article&utm_campaign=ba-1
+
+V Overview v sekcii Referrers / UTM potom uvidis pocty podla zdroja.
+Bez UTM Umami ukaze len "instagram.com" alebo "(direct)", co moze byt
+zmes viacerych miest.
+
+
+4. CO SLEDOVAT PRVY TYZDEN
+--------------------------
+1) Visitors a ODKIAL: kolko ludi chodi a z ktoreho zdroja (Referrers).
+2) Pomer kliknuti: (pocet roznych kliknuti na "Get early access") / (visitors).
+   Orientacne: 5 az 15 % je zdrave pre studeny traffic z Instagramu.
+   Pod 3 % = problem v texte alebo vzhlade stranky.
+3) Ktore tlacidlo vyhrava: hero vs. cennik vs. banner. Ukaze ti, co ludi
+   pritahuje (ci hned vyzva, alebo az cena).
+4) Cennik: plan-pro vs. plan-premium vs. plan-free. Ak vacsina klika na Free,
+   ludia chcu skusit, nie platit. Ak je Premium vyssie nez ocakavas, mozes
+   znizit cenu Pro a viac zdoraznit "Together".
+5) Mobil vs. desktop v Devices: z Instagramu pride temer vsetko z mobilu,
+   takze skontroluj stranku hlavne na mobile.
+
+
+5. KEDY ZMENIT STRANKU
+----------------------
+  Menej ako 100 navstevnikov: nemen nic. Je to maly vzorok.
+  Vela navstevnikov, malo kliknuti (pod 3 %): zmen hero (nadpis, obrazok,
+    tlacidlo) a otestuj znova na dalsich 100 az 200 navstevnikoch.
+  Vela kliknuti na plan-free, malo na plan-pro: zvaz skusobnu verziu Pro
+    alebo tyzdenny pas (€4.99).
+  Vela kliknuti, ale ziadny email: pridaj zber emailov (je to dalsi krok).
+  Bounce rate nad 70 %: stranka sa nacitava pomaly alebo hero nespravne
+    sedi na to, odkial clovek prisiel (napriklad post o inom tema).
+
+
+6. RYCHLY TEST, ZE UMAMI FUNGUJE
+--------------------------------
+  1. Otvor Umami -> Realtime.
+  2. Na mobile otvor relationshipaiadvice.com.
+  3. Klikni na "Get early access" v hero a potom na tlacidlo Pro.
+  4. V Realtime / Events by sa mali objavit cta-hero a plan-pro.
+  Ak sa neobjavia: skontroluj, ci prehliadac nema adblock
+  (blokuje Umami), vyskusaj v inkognito okne alebo na inom zariadeni.
+
+
+7. DOBRE ZVYKY
+--------------
+  - Pozeraj Umami raz denne, nie hodinu po hodine (male cisla klamu).
+  - Zapisuj si, co si zmenil a kedy, aby si vedel porovnat "pred a po".
+  - Rozhodnutia rob az pri aspon 100 navstevnikoch.
+  - Poznamka: Umami nepocita ludi s adblockom, realny traffic je trosku vyssi.

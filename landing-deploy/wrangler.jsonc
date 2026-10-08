@@ -1,6 +1,14 @@
 {
   "name": "relateiq-landing",
+  "main": "worker.js",
   "compatibility_date": "2026-10-01",
   "build": { "command": "node build-blog.mjs" },
-  "assets": { "directory": "../landing-page" }
+  "assets": {
+    "directory": "../landing-page",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "EMAILS", "id": "4920a25bd01a48abb9bbeb301c603090" }
+  ]
 }

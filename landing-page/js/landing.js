@@ -78,26 +78,98 @@ function initSoonModal() {
   overlay.setAttribute("aria-labelledby", "soon-title");
   overlay.innerHTML =
     '<div class="modal-card dialog-card">' +
-    '<h2 id="soon-title">RelationshipAI isn\'t open just yet</h2>' +
-    '<p class="dialog-message" style="margin-top:10px;">Thanks for clicking! We\'re putting the finishing touches on RelationshipAI and aren\'t letting people in yet. ' +
-    'We\'re checking how many people are interested before we launch. Your click was counted, anonymously, and it really helps.</p>' +
-    '<p class="dialog-message" style="margin-top:10px;">Please check back soon.</p>' +
-    '<div class="modal-close-row"><button type="button" class="btn btn-gradient" id="soon-close">Got it</button></div>' +
+    '<h2 id="soon-title">We open soon. Want a heads-up?</h2>' +
+    '<div id="soon-ask">' +
+    '<p class="dialog-message" style="margin-top:10px;">RelationshipAI isn\'t open just yet. Leave your email and we\'ll write to you once, the day it opens. Your click already helps us decide how fast to open.</p>' +
+    '<form id="soon-form" class="soon-form" novalidate>' +
+    '<label class="soon-sr" for="soon-email">Email address</label>' +
+    '<input type="email" id="soon-email" name="email" class="soon-input" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254" required />' +
+    '<input type="text" id="soon-website" name="website" class="soon-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />' +
+    '<button type="submit" class="btn btn-gradient" id="soon-submit">Notify me</button>' +
+    '<p class="soon-error" id="soon-error" role="alert" hidden></p>' +
+    '<p class="soon-fine">One email when we open. No spam. See our <a href="privacy.html">privacy notice</a>.</p>' +
+    "</form></div>" +
+    '<div id="soon-done" hidden><p class="dialog-message" style="margin-top:10px;"><strong>You\'re on the list.</strong> We\'ll email you once, when RelationshipAI opens. Thank you for being early.</p></div>' +
+    '<div class="modal-close-row"><button type="button" class="btn btn-ghost" id="soon-close">Not now</button></div>' +
     "</div>";
   document.body.appendChild(overlay);
 
-  let lastFocus = null;
-  const open = () => {
+  const $ = (id) => document.getElementById(id);
+  const form = $("soon-form"), emailEl = $("soon-email"), errEl = $("soon-error"), submitEl = $("soon-submit");
+  let lastFocus = null, openedAt = 0, ctx = { source: "unknown", plan: "", billing: "" };
+
+  const store = {
+    get() { try { return localStorage.getItem("rai_waitlist") === "1"; } catch (_) { return false; } },
+    set() { try { localStorage.setItem("rai_waitlist", "1"); } catch (_) {} },
+  };
+  const showDone = () => {
+    $("soon-ask").hidden = true;
+    $("soon-done").hidden = false;
+    $("soon-title").textContent = "Thank you";
+    $("soon-close").textContent = "Close";
+  };
+  const showAsk = () => {
+    $("soon-ask").hidden = false;
+    $("soon-done").hidden = true;
+    $("soon-title").textContent = "We open soon. Want a heads-up?";
+    $("soon-close").textContent = "Not now";
+  };
+  const showError = (msg) => { errEl.textContent = msg; errEl.hidden = false; };
+
+  const open = (target) => {
     lastFocus = document.activeElement;
+    openedAt = Date.now();
+    if (target) {
+      ctx = {
+        source: target.getAttribute("data-umami-event") || "unknown",
+        plan: target.getAttribute("data-plan") || "",
+        billing: target.getAttribute("data-umami-event-billing") || "",
+      };
+    }
+    errEl.hidden = true;
     overlay.style.display = "flex";
-    document.getElementById("soon-close").focus();
+    if (store.get()) { showDone(); $("soon-close").focus(); } else { showAsk(); emailEl.focus(); }
   };
   const close = () => {
     overlay.style.display = "none";
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   };
 
-  document.getElementById("soon-close").addEventListener("click", close);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errEl.hidden = true;
+    const email = emailEl.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) {
+      showError("Please enter a valid email address.");
+      emailEl.focus();
+      return;
+    }
+    submitEl.disabled = true;
+    submitEl.textContent = "Saving...";
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email, source: ctx.source, plan: ctx.plan, billing: ctx.billing,
+          website: $("soon-website").value, t: Date.now() - openedAt,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error("save failed");
+      store.set();
+      try { if (window.umami && window.umami.track) window.umami.track("waitlist-signup", { source: ctx.source, plan: ctx.plan }); } catch (_) {}
+      showDone();
+      $("soon-close").focus();
+    } catch (_) {
+      showError("Sorry, that didn't go through. Please try again in a moment.");
+    } finally {
+      submitEl.disabled = false;
+      submitEl.textContent = "Notify me";
+    }
+  });
+
+  $("soon-close").addEventListener("click", close);
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) close();
   });
@@ -112,7 +184,7 @@ function initSoonModal() {
     const target = e.target.closest("[data-cta], [data-plan]");
     if (!target) return;
     e.preventDefault();
-    open();
+    open(target);
   });
 }
 
