@@ -59,6 +59,7 @@ function initBillingToggle() {
     });
   };
   buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.billing)));
+  apply("yearly");
 }
 
 function initNavToggle() {
