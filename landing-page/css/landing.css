@@ -301,17 +301,6 @@
 /* ---- v4: restrained mascot accents (premium first), merged sections, readability ---- */
 .demo-wrap { position: relative; max-width: 760px; margin: 52px auto 0; }
 .demo-wrap .demo { margin: 0 auto; }
-.bean-deco { display: none; position: absolute; pointer-events: none; user-select: none; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45)); }
-@media (min-width: 1180px) {
-  .bean-hero-l, .bean-hero-r { display: block; bottom: 28px; width: 110px; height: auto; opacity: 0.96; }
-  .bean-hero-l { left: -150px; }
-  .bean-hero-r { right: -150px; }
-}
-.lp .cta-banner { position: relative; }
-@media (min-width: 900px) {
-  .bean-cta { display: block; right: 56px; bottom: 0; width: 130px; height: auto; }
-  .lp .cta-banner { overflow: visible; }
-}
 .extras-label { margin: 56px 0 18px; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-2-text); }
 .lp section.approach { padding: 56px 0 72px; }
 .lp .hero-note { font-size: 14px; color: var(--text-muted); }
@@ -335,3 +324,35 @@
 .soon-fine { margin: 2px 0 0; font-size: 13px; color: var(--text-muted); }
 .soon-fine a { color: var(--text); text-decoration: underline; }
 #soon-modal .modal-close-row { margin-top: 14px; }
+
+/* ---- Wisp mascot: floating, glowing, used sparingly ---- */
+.wisp { display: none; position: absolute; pointer-events: none; user-select: none; height: auto; z-index: 2;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35)); animation: wispFloat 7s ease-in-out infinite; }
+@keyframes wispFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.demo-wrap { margin-top: 84px; }
+.wisp-hero-r { display: block; right: 6px; top: -72px; width: 76px; animation-delay: -2.4s; }
+@media (min-width: 1180px) {
+  .demo-wrap { margin-top: 52px; }
+  .wisp-hero-l { display: block; left: -190px; bottom: 6px; width: 150px; }
+  .wisp-hero-r { right: -190px; top: auto; bottom: 26px; width: 150px; animation-delay: -4.6s; }
+}
+.lp .cta-banner { position: relative; }
+@media (min-width: 900px) {
+  .wisp-cta { display: block; right: 48px; bottom: -6px; width: 170px; filter: drop-shadow(0 12px 22px rgba(60, 20, 30, 0.35)); animation-delay: -1.5s; }
+}
+@media (prefers-reduced-motion: reduce) { .wisp { animation: none; } }
+
+/* ---- peeking mascots: they hold on to the top edge of a card ---- */
+.peek { position: absolute; z-index: 3; height: auto; pointer-events: none; user-select: none; }
+.peek-host { position: relative; margin-top: 92px; }
+.peek-compare { width: 112px; left: 61%; transform: translateX(-50%); bottom: calc(100% - 8px); }
+.has-peek { position: relative; }
+.peek-pro { width: 124px; right: 30px; bottom: calc(100% - 10px); }
+.peek-premium { width: 190px; right: 22px; bottom: calc(100% - 9px); }
+.pricing-grid { margin-top: 96px; }
+@media (max-width: 960px) {
+  .pricing-grid { margin-top: 84px; }
+  .pricing-grid .price-card.has-peek { margin-top: 62px; }
+  .peek-compare { left: auto; right: 14px; transform: none; width: 96px; }
+}
+@media (max-width: 640px) { .peek-host { margin-top: 64px; } .peek-premium { width: 160px; } .peek-pro { width: 108px; } }
