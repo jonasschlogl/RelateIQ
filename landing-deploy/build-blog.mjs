@@ -167,7 +167,7 @@ const FOOTER = `  <footer class="site-footer">
       RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic
       care. If you're in a crisis, please contact a professional or a helpline in your country.
     </p>
-    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="/blog/">Blog</a> · <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:-3px;margin-right:6px;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@relationshipai_</a> · <a href="/privacy.html">Privacy</a></p>
+    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="/blog/">Blog</a> · <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a> · <a href="/privacy.html">Privacy</a></p>
   </footer>
   <a href="#" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-blog-floating">Get early access</a>`;
 
@@ -224,7 +224,7 @@ const ctaBox = (event) => `<div class="article-cta">
   <h2>Want help applying this to your own relationship?</h2>
   <p>Talk it through in Coach Chat, then rehearse the conversation in Partner Practice. Free to start, opening soon.</p>
   <a href="#" class="btn btn-gradient" data-cta data-umami-event="${event}">Get early access</a>
-  <p class="ig-line">Or get daily tips on <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-article"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:-3px;margin-right:6px;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@relationshipai_</a></p>
+  <p class="ig-line">Or get daily tips on <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-article"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
 </div>`;
 
 // -------------------------------------------------------------------- output
@@ -323,7 +323,7 @@ ${p.html}
           <p>Fresh, practical articles on communication, conflict and connection.</p>
         </div>
         <div class="post-grid">${posts.slice(0, 3).map(card).join("\n")}</div>
-        <p class="blog-all"><a href="/blog/" class="btn btn-ghost">See all articles</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:-3px;margin-right:6px;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@relationshipai_</a></p>
+        <p class="blog-all"><a href="/blog/" class="btn btn-ghost">See all articles</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
       </div>
     </section>` : "";
     const re = /<!--BLOG-LATEST-->[\s\S]*?<!--\/BLOG-LATEST-->/;
