@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy · RelationshipAI</title>
-  <meta name="description" content="What RelationshipAI stores, why, who can see it, and how to export or delete your data — including the third-party data collected about your partner in Partner Practice." />
+  <meta name="description" content="How RelationshipAI collects, uses and protects your information, including your conversations, partner profiles and early-access email. Plain language, no selling of data, no AI training on your chats." />
+  <link rel="canonical" href="https://relationshipaiadvice.com/privacy.html" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -13,6 +14,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=51" />
+  <style>
+    .legal { max-width: 760px; margin: 0 auto; }
+    .legal-meta { text-align: center; color: var(--text-faint); font-size: 14px; margin: -28px auto 36px; }
+    .legal h3 { font-size: 22px; margin: 44px 0 12px; scroll-margin-top: 90px; }
+    .legal h4 { font-size: 16px; margin: 24px 0 8px; color: var(--text); }
+    .legal p, .legal li { color: var(--text-muted); line-height: 1.7; font-size: 16px; }
+    .legal p { margin: 0 0 14px; }
+    .legal ul { margin: 0 0 16px; padding-left: 22px; }
+    .legal li { margin-bottom: 8px; }
+    .legal li strong, .legal p strong { color: var(--text); font-weight: 600; }
+    .legal a { color: var(--accent-1); }
+    .legal-summary { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 26px 28px 14px; margin-bottom: 32px; }
+    .legal-summary h3 { margin: 0 0 14px; font-size: 20px; }
+    .legal-summary li { margin-bottom: 10px; }
+    .legal-toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 26px; margin-bottom: 8px; }
+    .legal-toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 36px; }
+    .legal-toc li { font-size: 15px; margin-bottom: 6px; break-inside: avoid; }
+    .legal-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin: 0 0 18px; }
+    .legal-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 14.5px; }
+    .legal-table th, .legal-table td { text-align: left; vertical-align: top; padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); line-height: 1.55; }
+    .legal-table thead th { color: var(--text); font-weight: 600; background: var(--bg-elevated); }
+    .legal-table tbody tr:last-child td { border-bottom: none; }
+    .legal-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+    .legal-note { border-left: 3px solid var(--accent-1); background: var(--surface); padding: 14px 18px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 0 0 16px; }
+    .legal-note p { margin: 0; }
+    @media (max-width: 640px) {
+      .legal-toc ol { columns: 1; }
+      .legal-summary { padding: 22px 20px 10px; }
+    }
+  </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 </head>
 <body>
@@ -33,57 +64,167 @@
         <div class="section-head">
           <span class="section-tag">Privacy</span>
           <h2>Privacy Policy</h2>
-          <p>What RelationshipAI actually stores, why, who can see it, and what you can do about it — written in plain language, not legal boilerplate for its own sake.</p>
+          <p>What RelationshipAI collects, why, who it is shared with, and the choices you have. Written to be read, not skimmed past.</p>
+        </div>
+        <p class="legal-meta">Last updated: October 8, 2026</p>
+
+        <div class="legal">
+
+          <div class="legal-summary">
+            <h3>The short version</h3>
+            <ul>
+              <li><strong>We don't sell your data</strong> and we don't run ads or build advertising profiles.</li>
+              <li><strong>Your conversations are not used to train AI models.</strong> Not by us, and not by our AI provider under the terms of its API.</li>
+              <li><strong>You are in control.</strong> You can download everything we hold about you and delete your account and its data yourself.</li>
+              <li><strong>This website is a preview.</strong> The only thing it stores about you is your email address, and only if you give it to us.</li>
+              <li><strong>RelationshipAI is for adults (18+)</strong> and is not therapy or an emergency service.</li>
+            </ul>
+          </div>
+
+          <nav class="legal-toc" aria-label="Contents">
+            <ol>
+              <li><a href="#who">Who we are and what this covers</a></li>
+              <li><a href="#collect">Information we collect</a></li>
+              <li><a href="#use">How we use information</a></li>
+              <li><a href="#ai">AI and your conversations</a></li>
+              <li><a href="#partner">Information about your partner</a></li>
+              <li><a href="#sharing">Who we share information with</a></li>
+              <li><a href="#cookies">Cookies and local storage</a></li>
+              <li><a href="#retention">How long we keep information</a></li>
+              <li><a href="#rights">Your rights and choices</a></li>
+              <li><a href="#transfers">International transfers</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#children">Children</a></li>
+              <li><a href="#changes">Changes to this policy</a></li>
+              <li><a href="#contact">Contact us</a></li>
+            </ol>
+          </nav>
+
+          <h3 id="who">1. Who we are and what this covers</h3>
+          <p>RelationshipAI ("we", "us") is an AI relationship coach. This policy covers the website at relationshipaiadvice.com, the RelationshipAI app (Coach Chat, Partner Practice, daily check-ins and related features), and the RelationshipAI browser extension.</p>
+          <p>RelationshipAI is an early-stage product. The app is not yet open to everyone, and this website currently works as a preview with an early-access list. Where a section only applies once you have an app account, it says so.</p>
+
+          <h3 id="collect">2. Information we collect</h3>
+
+          <h4>Information you give us</h4>
+          <ul>
+            <li><strong>Early-access email.</strong> If you join the waiting list, we store your email address, the date, which button or plan you chose, and your country as detected by our hosting provider.</li>
+            <li><strong>Account details.</strong> Your name, email address and password. Passwords are stored as a one-way hash, never in plain text.</li>
+            <li><strong>Conversations and attachments.</strong> What you write in Coach Chat and Partner Practice, and any photos or files you attach, including screenshots of messages.</li>
+            <li><strong>Partner profiles.</strong> If you create one, details such as a partner's name, personality, attachment style, context, and how they communicate. You may also paste in real messages from them so we can build a more accurate profile. See <a href="#partner">section 5</a>.</li>
+            <li><strong>Daily check-ins and shared content.</strong> Your answers to daily questions, and anything you choose to share with a linked partner or through a share link.</li>
+            <li><strong>Messages to us.</strong> If you contact us, for example by direct message on Instagram, we keep that message so we can reply.</li>
+          </ul>
+
+          <h4>Information collected automatically</h4>
+          <ul>
+            <li><strong>Product usage.</strong> Your plan, daily usage counts, timestamps, and settings such as email and notification preferences.</li>
+            <li><strong>Technical data.</strong> IP address, browser and device type, and request logs. We and our hosting providers use these to run the service, limit abuse and fix errors.</li>
+            <li><strong>Website analytics.</strong> We use Umami, a privacy-focused analytics service, to count page visits and button clicks. It does not use cookies and does not build a profile of you.</li>
+            <li><strong>Payments.</strong> If you subscribe, Stripe handles your card details. We receive only your subscription status and plan, never your full card number.</li>
+          </ul>
+
+          <h4>Information generated for you</h4>
+          <p>To make the product useful over time, the AI creates things from what you have told it: short summaries of recurring themes, insights, conversation summaries and debriefs, and inferred details added to a partner profile. These are stored with your account and are deleted when you delete it.</p>
+
+          <h4>Browser extension</h4>
+          <p>When you use the extension in WhatsApp Web, Messenger or Instagram messages, it sends the draft you ask it to improve to our servers. If you turn on the option that lets it read the chat for context, or ask for reply suggestions, it also sends the recent messages visible in that conversation. It does nothing until you ask it to, and it only runs on those sites. Your sign-in token is kept in the extension's own storage in your browser.</p>
+
+          <h3 id="use">3. How we use information</h3>
+          <ul>
+            <li>To provide the service: generate coaching replies, run Partner Practice, rewrite your drafts, and remember context so you do not have to repeat yourself.</li>
+            <li>To run your account: sign-in, email verification, password resets, billing, and plan limits.</li>
+            <li>To send messages you asked for: a check-in reminder, a weekly digest, push notifications, and a single email when RelationshipAI opens, if you joined the waiting list. Each email type can be switched off, and every email has an unsubscribe link.</li>
+            <li>To keep the service safe: prevent abuse, rate-limit sign-in attempts, and investigate problems.</li>
+            <li>To understand and improve the website: aggregate counts of visits and clicks.</li>
+            <li>To comply with the law and protect our rights where required.</li>
+          </ul>
+          <p>If you are in the EU, EEA or UK, our legal bases are: performing our contract with you (providing the service), your consent (for example notifications, and optional chat context in the extension), our legitimate interests (security and basic analytics), and legal obligation.</p>
+
+          <h3 id="ai">4. AI and your conversations</h3>
+          <p>RelationshipAI uses AI models from OpenAI to generate replies, summaries and spoken audio. When you send a message, the relevant content (your message, any attachment, and the context needed for a good answer) is sent to OpenAI's API for processing.</p>
+          <ul>
+            <li><strong>No training on your data.</strong> We do not use your content to train AI models. Under OpenAI's API terms, data sent through its API is not used to train its models by default. OpenAI may keep API data for a limited time for abuse monitoring, under its own policy.</li>
+            <li><strong>Not a human reader.</strong> We do not routinely read your conversations. Access is limited to what is needed to operate the service, fix a problem you report, or meet a legal obligation.</li>
+            <li><strong>AI can be wrong.</strong> Replies are generated by a model and are not professional, medical or legal advice. Treat them as one input to your own judgment.</li>
+          </ul>
+
+          <h3 id="partner">5. Information about your partner</h3>
+          <p>Partner Practice only works if it knows something about the person you want to practise talking to. That means we store information about someone who does not have an account and has not agreed to it. We treat that as personal data too.</p>
+          <ul>
+            <li>It is used only to power your own private rehearsal and coaching. It is never shown to your partner and never used to contact them.</li>
+            <li>It is not shared with anyone unless you choose to use an opt-in feature such as a share link or linked couple account.</li>
+            <li>It is deleted when you delete the partner profile or your account.</li>
+            <li>If you are the partner of a RelationshipAI user and want to ask what may be stored about you, contact us (<a href="#contact">section 14</a>). We will help where we reasonably can, although most of it sits inside someone else's private account.</li>
+          </ul>
+          <p>Please enter only what you would be comfortable with your partner knowing you noticed, and only paste in messages you are entitled to share.</p>
+
+          <h3 id="sharing">6. Who we share information with</h3>
+          <p>We do not sell personal information, and we do not share it for advertising. We share information only with service providers who help us run RelationshipAI, and only what each of them needs:</p>
+          <div class="legal-table-wrap">
+            <table class="legal-table">
+              <thead>
+                <tr><th>Provider</th><th>What they do</th><th>What they receive</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OpenAI</td><td>Generates AI replies, summaries and spoken audio</td><td>Your messages, attachments and the context needed to answer</td></tr>
+                <tr><td>Railway</td><td>Hosts the app and its database</td><td>All app data, stored on our behalf</td></tr>
+                <tr><td>Cloudflare</td><td>Hosts this website, stores the early-access list, and delivers pages securely</td><td>Visit data such as IP address; early-access email, date and country</td></tr>
+                <tr><td>Stripe</td><td>Processes payments and subscriptions</td><td>Billing details you enter at checkout, and your email</td></tr>
+                <tr><td>Resend</td><td>Sends verification, reset, reminder and digest emails</td><td>Your email address and the email content</td></tr>
+                <tr><td>Umami</td><td>Cookie-free website analytics</td><td>Page views, clicks, referrer, approximate location, browser type</td></tr>
+                <tr><td>Google Fonts</td><td>Serves the website's typefaces</td><td>Your IP address and browser details when the page loads</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>We may also disclose information if the law requires it, to protect people's safety or our rights, or as part of a business transfer such as a merger or sale, in which case we will tell you and this policy will continue to apply to your data unless you are notified of a change.</p>
+
+          <h3 id="cookies">7. Cookies and local storage</h3>
+          <p>This website does not use advertising or tracking cookies, and Umami works without cookies. The app stores a sign-in token and a few preferences in your browser's local storage so you stay signed in. You can clear this at any time by signing out or clearing your browser data. Because we do not set non-essential cookies, we do not show a cookie banner.</p>
+
+          <h3 id="retention">8. How long we keep information</h3>
+          <ul>
+            <li><strong>Account and conversation data:</strong> for as long as your account is open. When you delete your account, your data is removed from our live database straight away.</li>
+            <li><strong>Backups:</strong> we keep rolling database backups to protect against data loss. A deleted account can remain in them for about a week before they are overwritten.</li>
+            <li><strong>Early-access email:</strong> until we send you the launch message, or until you ask us to remove it.</li>
+            <li><strong>Payment records:</strong> Stripe and we keep what tax and accounting law requires.</li>
+            <li><strong>Technical logs:</strong> for a short period, then they roll off.</li>
+          </ul>
+
+          <h3 id="rights">9. Your rights and choices</h3>
+          <p>You decide what happens to your information. From your account page you can:</p>
+          <ul>
+            <li><strong>Download</strong> a complete copy of your data, including profile, partner profiles and conversation history, in a machine-readable file.</li>
+            <li><strong>Delete</strong> individual conversations and partner profiles, or your whole account (this asks for your password and cannot be undone).</li>
+            <li><strong>Control emails and notifications</strong>, including reminders and the weekly digest.</li>
+            <li><strong>Cancel your subscription</strong> at any time.</li>
+          </ul>
+          <p>If you are in the EU, EEA or UK, you also have the right to access, correct, erase, restrict or object to the processing of your personal data, to data portability, to withdraw consent at any time, and to complain to your local data protection authority. If you live in California or another US state with a privacy law, you have similar rights to know, correct, delete and opt out of the sale or sharing of personal information. We do not sell or share personal information for advertising, so there is nothing to opt out of.</p>
+          <p>To use a right that is not available in your account page, for example to remove an early-access email, contact us (<a href="#contact">section 14</a>). We will verify it is you and respond within 30 days. We will not treat you differently for using your rights.</p>
+
+          <h3 id="transfers">10. International transfers</h3>
+          <p>Our providers operate in several countries, including the United States, so your information may be processed outside the country where you live. Where required, we rely on safeguards such as the providers' standard contractual clauses and data protection commitments.</p>
+
+          <h3 id="security">11. Security</h3>
+          <p>Passwords are hashed. Traffic to RelationshipAI is encrypted in transit with HTTPS. Sign-in attempts are rate-limited, and access to the database is limited to what is needed to run the service. No system is perfectly secure, and we cannot guarantee absolute security. If we learn of a breach that affects you, we will tell you as the law requires.</p>
+
+          <h3 id="children">12. Children</h3>
+          <p>RelationshipAI is for people aged 18 and over. We do not knowingly collect information from anyone under 18. If you believe a child has given us information, contact us and we will delete it.</p>
+
+          <h3 id="changes">13. Changes to this policy</h3>
+          <p>We may update this policy as the product grows. We will change the "last updated" date above, and if a change is significant we will tell you in the product or by email before it takes effect.</p>
+
+          <h3 id="contact">14. Contact us</h3>
+          <p>Questions about this policy, or a request about your information? Send us a direct message on Instagram at <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer">@relationshipai_</a>, or reach out through the account you registered with. We read everything and reply personally.</p>
+
+          <div class="legal-note">
+            <p><strong>If you are in crisis:</strong> RelationshipAI is not an emergency service and does not replace professional care. If you or someone else is in danger, contact your local emergency number or a crisis helpline in your country right away.</p>
+          </div>
         </div>
 
-        <div class="method-block method-honesty">
-          <h3>This is a draft, not a substitute for legal advice</h3>
-          <p>This page was written to be honest and specific about what RelationshipAI does today. It is <strong>not</strong> a substitute for review by a qualified privacy lawyer, especially before any wider launch, app-store submission, or processing of EU users' data at scale. If you're reading this as RelationshipAI's operator: get this reviewed before you rely on it as your actual privacy policy.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>This website</h3>
-          <p>This page is currently a preview of RelationshipAI. The app itself is not open yet, and there are no accounts here. To see how many people are interested we use Umami, a privacy-focused analytics service that counts page visits and clicks on buttons without cookies and without storing personal information about you. If you choose to leave your email address in the early-access form, we store it (together with the date, the button you clicked and your country) only to send you one message when RelationshipAI opens. We do not sell it or share it with anyone. To have your email removed, message us on Instagram (@relationshipai_) and we will delete it.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>What we collect</h3>
-          <p>Account basics: your name, email address, and password (stored as a hash, never in plain text). Your Coach Chat conversations, including any files or photos you attach. Your Partner Practice conversations, the partner profiles you create (a partner's name, personality traits, context, attachment style, and anything RelationshipAI has inferred or you've pasted in about how they communicate), and any scenario, intensity, or role-swap settings you choose for a rehearsal. Your daily relationship question answers, and (once you link a partner's account) your shared daily-question history together. Usage data needed to run the product — plan, daily usage counts, timestamps. If you subscribe to a paid plan, billing is handled by Stripe; we store your subscription status, not your card details.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>About the data on your partner</h3>
-          <p>Partner Practice is built around a real, honest limitation: to roleplay a specific person convincingly, RelationshipAI has to store information <em>about</em> that person — their name, personality, and communication patterns — even though they are not the one with a RelationshipAI account and have not themselves agreed to it. This is personal data about a third party, and we think you should know that plainly rather than have it buried. In practice: keep what you enter about a partner to what you'd be comfortable them knowing you noticed, use it to prepare for a kinder conversation rather than to build a case against them, and understand that if your partner ever asks what's stored about them, the honest answer is "what I told the app, and what it inferred from how I described you."</p>
-        </div>
-
-        <div class="method-block">
-          <h3>How your data is used</h3>
-          <p>To provide the product: generating coaching replies, roleplaying a partner, rewriting a draft message, and (with an attachment style set or after enough Coach Chat history) quietly calibrating tone to you specifically — see our <a href="method.html">method page</a> for the frameworks this draws on. Message content is sent to OpenAI's API to generate responses; OpenAI processes it to return a reply but per their API terms does not use API data to train their models. We do not sell your data, and we do not share your conversations or partner profiles with anyone else, including your partner, without your explicit action (e.g. using the Share feature, which is opt-in and item-by-item).</p>
-        </div>
-
-        <div class="method-block">
-          <h3>How long we keep it, and your rights</h3>
-          <p>We keep your data for as long as your account is active. You can download a complete copy of everything stored about your account — profile, partner profiles, and full conversation history — at any time from your <a href="dashboard.html">account page</a>, and you can delete your account and all data tied to it yourself from the same page (it asks for your password first, and can't be undone). To protect against data loss we keep rolling database backups; a deleted account can therefore remain in those backups for up to about a week before they're overwritten. If you're in the EU/EEA or UK, these are the same underlying rights GDPR describes as access, portability, and erasure — we're describing them here in plain terms rather than citing the regulation article by article, which is exactly the kind of thing a real legal review should tighten up.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>Who processes your data for us</h3>
-          <p>RelationshipAI relies on a few service providers to run: a hosting provider (Railway) where the app and database live, OpenAI to generate AI replies and spoken audio, Stripe for payments, and an email provider (Resend) to send verification, reset and reminder emails. They only receive what's needed for their part of the job.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>Security</h3>
-          <p>Passwords are hashed, not stored in plain text. Traffic to RelationshipAI is encrypted in transit (HTTPS). Access to the underlying database is limited to what's needed to run the service. No system is perfectly secure, and we'd rather say that plainly than imply a guarantee we can't back up.</p>
-        </div>
-
-        <div class="method-block">
-          <h3>Questions</h3>
-          <p>If you have questions about this policy or want to exercise any of the rights above, reach out through the account you registered with and we'll respond directly.</p>
-        </div>
-
-        <div class="cta-banner">
+        <div class="cta-banner" style="margin-top:56px">
           <h2>Ready to try it yourself?</h2>
-          <p>Coach Chat and Partner Practice are both free to start — no card required.</p>
+          <p>Coach Chat and Partner Practice are both free to start. No card required.</p>
           <a href="#" class="btn" data-cta data-umami-event="cta-privacy-banner">Get early access</a>
         </div>
       </div>
