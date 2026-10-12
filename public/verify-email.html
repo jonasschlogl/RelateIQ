@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <script src="js/shared.js?v=20"></script>
+  <script src="js/shared.js?v=21"></script>
   <script>
     (async function () {
       const title = document.getElementById("verify-title");
@@ -52,7 +52,7 @@
         const data = await safeJson(res);
         if (!res.ok) throw new Error(data.error || "Couldn't verify your email.");
         title.textContent = "Email verified";
-        msg.textContent = "Thanks — you're all set.";
+        msg.textContent = "Thanks, you're all set.";
         cont.style.display = "block";
         // Keep the cached session in step so the "verify your email"
         // banner disappears without waiting for the next /api/me refresh.

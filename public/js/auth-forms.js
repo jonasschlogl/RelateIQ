@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!res.ok) throw new Error(data.error || "Couldn't reset your password. Please try again.");
 
         setSession(data.token, data.user);
-        if (introText) introText.textContent = "Password updated — taking you to your dashboard…";
+        if (introText) introText.textContent = "Password updated. Taking you to your dashboard…";
         resetPasswordForm.style.display = "none";
         window.location.href = "dashboard.html";
       } catch (err) {

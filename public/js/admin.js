@@ -101,7 +101,7 @@ function renderFeedback(summaryEl, listEl, feedbackIn) {
 
   const downvotes = feedback.recentDownvotes || [];
   if (downvotes.length === 0) {
-    listEl.innerHTML = '<p class="text-muted">No 👎 replies yet — nothing to review.</p>';
+    listEl.innerHTML = '<p class="text-muted">No 👎 replies yet. Nothing to review.</p>';
     return;
   }
   listEl.innerHTML = `<div class="downvote-list">${downvotes
@@ -219,11 +219,11 @@ async function loadBackups() {
     if (!res.ok) return; // not an admin — keep the card hidden
     card.style.display = "block";
     document.getElementById("backups-intro").textContent = data.enabled
-      ? `Automatic backup every ${data.intervalHours}h, newest ${data.keep} kept on the same server volume. Download a copy now and then — a backup stored next to the database doesn't protect you if the whole volume is lost.`
+      ? `Automatic backup every ${data.intervalHours}h, newest ${data.keep} kept on the same server volume. Download a copy now and then. A backup stored next to the database doesn't protect you if the whole volume is lost.`
       : "Automatic backups are switched off (BACKUP_ENABLED=false).";
     const list = document.getElementById("backups-list");
     if (!data.backups.length) {
-      list.innerHTML = '<p class="text-muted" style="font-size:13.5px;">No backups yet — the first one is made shortly after the server starts, or click “Back up now”.</p>';
+      list.innerHTML = '<p class="text-muted" style="font-size:13.5px;">No backups yet. The first one is made shortly after the server starts, or click “Back up now”.</p>';
       return;
     }
     list.innerHTML = data.backups

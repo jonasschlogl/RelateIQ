@@ -1106,7 +1106,7 @@ function renderEmptyState() {
   const showTip = currentConvCtx.mode !== "practice" && !isDetailTipDismissed();
   const tipHtml = showTip
     ? `<div class="empty-chat-tip" id="empty-chat-tip">
-         <span>The more specific detail you give — exactly what happened, what was actually said — the more specific (and less generic) the advice back will be.</span>
+         <span>The more specific detail you give (exactly what happened, what was actually said), the more specific (and less generic) the advice back will be.</span>
          <button type="button" id="empty-chat-tip-close" aria-label="Dismiss tip">✕</button>
        </div>`
     : "";
@@ -1203,9 +1203,9 @@ async function renderPracticeSetup() {
             </button>
           </div>
           <select id="practice-intensity" style="display:none;" aria-hidden="true" tabindex="-1">
-            <option value="realistic">Realistic — real friction &amp; pushback</option>
-            <option value="supportive">Supportive — gentler, for building confidence</option>
-            <option value="tough">Hard — guarded and defensive, a real stress test</option>
+            <option value="realistic">Realistic: real friction &amp; pushback</option>
+            <option value="supportive">Supportive: gentler, for building confidence</option>
+            <option value="tough">Hard: guarded and defensive, a real stress test</option>
           </select>
         </div>
 
@@ -1241,11 +1241,11 @@ async function renderPracticeSetup() {
         <div class="form-error" id="partner-form-error" style="display:none;"></div>
         <label for="partner-name">Name</label>
         <input type="text" id="partner-name" required maxlength="60" placeholder="e.g. Alex" autocomplete="off" />
-        <label for="partner-traits">Personality — how they usually are</label>
+        <label for="partner-traits">Personality: how they usually are</label>
         <textarea id="partner-traits" rows="3" maxlength="500" placeholder="e.g. warm but avoids conflict, gets quiet when stressed, jokes to deflect difficult topics"></textarea>
         <label for="partner-context">Context (optional)</label>
         <input type="text" id="partner-context" maxlength="200" placeholder="e.g. together 2 years, we just moved in together" autocomplete="off" />
-        <label for="partner-attachment">Their attachment style <span class="text-muted">(optional — only if you already know it)</span></label>
+        <label for="partner-attachment">Their attachment style <span class="text-muted">(optional, only if you already know it)</span></label>
         <select id="partner-attachment">
           <option value="">Not sure / skip</option>
           <option value="secure">Secure</option>
@@ -1253,8 +1253,8 @@ async function renderPracticeSetup() {
           <option value="avoidant">Avoidant</option>
           <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
         </select>
-        <p class="text-muted" style="font-size:12px; margin-top:8px;">When set, RelationshipAI plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
-        <p class="text-muted" style="font-size:11.5px; margin-top:6px;">You're entering information about another real person here, not just yourself — please use this to prepare for a kinder conversation, not to build a case against them. Only you can see this profile.</p>
+        <p class="text-muted" style="font-size:12px; margin-top:8px;">When set, RelationshipAI plays them with realistic patterns for that style (like pulling back under pressure, or needing more reassurance) so the practice feels closer to the real thing.</p>
+        <p class="text-muted" style="font-size:11.5px; margin-top:6px;">You're entering information about another real person here, not just yourself. Please use this to prepare for a kinder conversation, not to build a case against them. Only you can see this profile.</p>
         <div class="partner-form-actions">
           <button type="submit" class="btn btn-gradient btn-block" id="partner-form-submit">Save &amp; start practicing</button>
           <button type="button" class="btn btn-ghost btn-block" id="partner-form-cancel-btn" style="display:none;">Cancel</button>
@@ -1532,7 +1532,7 @@ function renderPartnerList() {
   listDiv.innerHTML = "";
 
   if (partners.length === 0) {
-    listDiv.innerHTML = '<p class="text-muted" style="text-align:center;">No partner profiles yet — create one below to get started.</p>';
+    listDiv.innerHTML = '<p class="text-muted" style="text-align:center;">No partner profiles yet. Create one below to get started.</p>';
     return;
   }
 
@@ -1599,7 +1599,7 @@ function buildPartnerLearnRow(p) {
     const sourceLabel = p.learnedProfileSource === "real_messages" ? "from the real messages you added" : "from your chats";
     const info = document.createElement("span");
     info.className = "partner-learn-meta";
-    info.innerHTML = `RelationshipAI has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button> · <button class="partner-learn-toggle partner-learn-reset" type="button">forget this</button>`;
+    info.innerHTML = `RelationshipAI has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}), <button class="partner-learn-toggle" type="button">view</button> · <button class="partner-learn-toggle partner-learn-reset" type="button">forget this</button>`;
     const box = document.createElement("div");
     box.className = "partner-learned-box";
     box.style.display = "none";
@@ -1625,7 +1625,7 @@ function buildPartnerLearnRow(p) {
     resetBtn.addEventListener("click", async (e) => {
       e.stopPropagation();
       const ok = await showAppConfirm(
-        `Forget what RelationshipAI has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`,
+        `Forget what RelationshipAI has learned about ${p.name}? Their name, traits, and context stay. Only the learned behavior/voice profile is cleared.`,
         { confirmLabel: "Forget it", danger: true }
       );
       if (!ok) return;
@@ -1672,7 +1672,7 @@ function buildImportMessagesRow(p) {
   form.className = "partner-import-form";
   form.style.display = "none";
   form.innerHTML = `
-    <p class="text-muted" style="font-size:12px; margin:6px 0;">Paste in real messages ${escapeHtml(p.name)} actually sent you — a chat export, or just copy-pasted texts. RelationshipAI will pick up on how they actually write, not just how you've described them.</p>
+    <p class="text-muted" style="font-size:12px; margin:6px 0;">Paste in real messages ${escapeHtml(p.name)} actually sent you (a chat export, or just copy-pasted texts). RelationshipAI will pick up on how they actually write, not just how you've described them.</p>
     <textarea class="partner-import-textarea" rows="5" maxlength="12000" placeholder="Paste messages here…"></textarea>
     <div class="form-error partner-import-error" style="display:none;"></div>
     <button type="button" class="btn btn-gradient btn-sm partner-import-submit">Learn from these messages</button>
@@ -2138,7 +2138,7 @@ function buildCopyDraftRow(drafts) {
     btn.textContent = label;
     btn.addEventListener("click", () => {
       if (!navigator.clipboard) {
-        showComposerError("Couldn't copy automatically — please select the text manually.");
+        showComposerError("Couldn't copy automatically. Please select the text manually.");
         return;
       }
       navigator.clipboard
@@ -2150,7 +2150,7 @@ function buildCopyDraftRow(drafts) {
           }, 1800);
         })
         .catch(() => {
-          showComposerError("Couldn't copy automatically — please select the text manually.");
+          showComposerError("Couldn't copy automatically. Please select the text manually.");
         });
     });
     row.appendChild(btn);
@@ -2220,8 +2220,22 @@ function buildTryCard(text, messageId) {
   return card;
 }
 
+// Older replies (written before the server started cleaning them) can still
+// contain long dashes; show them with natural punctuation like new ones.
+function softenDashes(text) {
+  if (typeof text !== "string" || !/[\u2014\u2013]/.test(text)) return text;
+  return text
+    .replace(/(\d)\s*\u2013\s*(\d)/g, "$1-$2")
+    .replace(/^[ \t]*[\u2014\u2013][ \t]*/gm, "")
+    .replace(/[ \t]*[\u2014\u2013][ \t]*/g, ", ")
+    .replace(/,\s*,/g, ",")
+    .replace(/,\s*([.!?])/g, "$1");
+}
+
 function appendMessage(role, text, animate, ctx, attachments, messageId, feedback, suggestion) {
   const chatDiv = document.getElementById("chat");
+  const isUserRole = role === "user";
+  if (!isUserRole) text = softenDashes(text);
   document.getElementById("empty-state")?.remove();
 
   const isUser = role === "user";
@@ -2513,7 +2527,7 @@ function renderShareModalPreview(conv) {
   const body = document.getElementById("share-conversation-modal-body");
   body.innerHTML = `
     <h2>Share "${escapeHtml(conv.title || "this conversation")}"</h2>
-    <div class="share-conversation-warning">Everything below will be visible to anyone with the link — check it over before sharing. Nothing goes out until you confirm.</div>
+    <div class="share-conversation-warning">Everything below will be visible to anyone with the link. Check it over before sharing. Nothing goes out until you confirm.</div>
     ${renderTranscriptHtml(conv.messages)}
     <div class="modal-close-row">
       <button class="btn btn-ghost btn-sm" id="share-modal-cancel-btn" type="button">Cancel</button>
@@ -2561,7 +2575,7 @@ function renderShareModalLink(share) {
   const url = `${window.location.origin}/partner-view.html?token=${share.token}`;
   body.innerHTML = `
     <h2>Link ready</h2>
-    <p class="text-muted">Anyone with this link can view this conversation — no account needed. Manage or revoke it anytime from <a href="share.html">Share with partner</a>.</p>
+    <p class="text-muted">Anyone with this link can view this conversation. No account needed. Manage or revoke it anytime from <a href="share.html">Share with partner</a>.</p>
     <div class="share-link-box">
       <span id="share-modal-link-text">${escapeHtml(url)}</span>
       <button class="btn btn-gradient btn-sm" id="share-modal-copy-btn" type="button">Copy link</button>
@@ -2971,8 +2985,8 @@ function renderUsageBadge(user) {
   badge.textContent = `${count}/${limit} today`;
   badge.title =
     remaining > 0
-      ? `${remaining} AI message${remaining === 1 ? "" : "s"} left today (Free plan) — resets tomorrow`
-      : "Today's free messages are used up — resets tomorrow, or upgrade to Pro for no daily cap";
+      ? `${remaining} AI message${remaining === 1 ? "" : "s"} left today (Free plan), resets tomorrow`
+      : "Today's free messages are used up. They reset tomorrow, or upgrade to Pro for no daily cap";
   badge.classList.toggle("usage-badge-low", remaining <= 1);
   badge.style.display = "inline-flex";
 }

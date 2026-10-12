@@ -52,7 +52,7 @@ function renderShared(data) {
     <div class="tool-header">
       <span class="section-tag">Shared with you</span>
       <h1>${escapeHtml(data.title)}</h1>
-      <p class="text-muted">Someone using RelationshipAI chose to share this with you directly — it's only what they picked, nothing pulled automatically from their conversations.</p>
+      <p class="text-muted">Someone using RelationshipAI chose to share this with you directly. It's only what they picked, nothing pulled automatically from their conversations.</p>
     </div>
     <div class="share-items">${itemsHtml}</div>
   `;

@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (me.plan !== "free" && me.strongModelUsage && me.strongModelUsage.limit) {
       const box = document.getElementById("strong-usage-box");
       box.style.display = "flex";
-      box.title = "Once these are used up, replies switch to our fast model until the 1st — nothing is blocked.";
+      box.title = "Once these are used up, replies switch to our fast model until the 1st. Nothing is blocked.";
       const s = me.strongModelUsage;
       if (me.plan === "pro" && me.coachStrongUsage) {
         document.getElementById("strong-usage-label").textContent = "Advanced messages this month (Practice · Coach)";
@@ -276,7 +276,7 @@ function renderCheckin(data) {
   if (data.skipped) {
     body.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
-      <p class="checkin-done">Skipped for today — no pressure. <a href="#" id="checkin-undo-skip" style="text-decoration:underline;">Answer it instead</a></p>
+      <p class="checkin-done">Skipped for today. No pressure. <a href="#" id="checkin-undo-skip" style="text-decoration:underline;">Answer it instead</a></p>
     `;
     document.getElementById("checkin-undo-skip")?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -301,7 +301,7 @@ function renderCheckinForm(question) {
       </div>
     </div>
     <div class="checkin-answer">
-      <textarea id="checkin-input" maxlength="2000" placeholder="Totally optional — write a sentence or two, or just skip."></textarea>
+      <textarea id="checkin-input" maxlength="2000" placeholder="Totally optional. Write a sentence or two, or just skip."></textarea>
     </div>
     <div class="checkin-actions">
       <button class="btn btn-primary btn-sm" id="checkin-save-btn" type="button">Save</button>
@@ -414,7 +414,7 @@ function wireEmailPreferences(me) {
       const hint = document.createElement("a");
       hint.href = "index.html#pricing";
       hint.className = "pref-upgrade-hint";
-      hint.textContent = "Pro feature — upgrade";
+      hint.textContent = "Pro feature: upgrade";
       digestLabel.appendChild(hint);
     }
   }
@@ -503,7 +503,7 @@ async function enablePush(reg) {
 
     const permission = await Notification.requestPermission();
     if (permission !== "granted") {
-      status.textContent = "Notifications were blocked — allow them from your browser's site settings to enable.";
+      status.textContent = "Notifications were blocked. Allow them from your browser's site settings to enable.";
       return;
     }
 
@@ -584,7 +584,7 @@ function planLabel(plan) {
 }
 
 function formatDate(iso) {
-  if (!iso) return "—";
+  if (!iso) return "Not available";
   try {
     return new Date(iso).toLocaleDateString();
   } catch (e) {

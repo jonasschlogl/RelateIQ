@@ -34,7 +34,7 @@ async function loadSummary(regenerate) {
     regenBtn.style.display = "none";
     regenBtn.disabled = true;
   }
-  stateEl.innerHTML = '<p class="summary-loading">' + (regenerate ? "Regenerating your summary…" : "Generating your summary — this can take a few seconds…") + "</p>";
+  stateEl.innerHTML = '<p class="summary-loading">' + (regenerate ? "Regenerating your summary…" : "Generating your summary. This can take a few seconds…") + "</p>";
 
   try {
     const res = await authFetch(`/api/conversations/${encodeURIComponent(summaryConvId)}/summary`, {
@@ -74,7 +74,7 @@ function renderSummary(data) {
   const regenBtn = document.getElementById("regenerate-btn");
 
   if (subtitle && data.conversationTitle) {
-    subtitle.textContent = `"${data.conversationTitle}" — for sharing with a therapist or counselor`;
+    subtitle.textContent = `"${data.conversationTitle}", for sharing with a therapist or counselor`;
   }
 
   const when = data.generatedAt ? formatSummaryDate(data.generatedAt) : "";

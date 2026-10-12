@@ -65,7 +65,7 @@ function renderNotEnoughData(data) {
   const need = data.needed || 3;
   stateEl.innerHTML =
     `<p>You've had ${have} Coach Chat conversation${have === 1 ? "" : "s"} so far. Once you've had at least ${need}, ` +
-    `RelationshipAI can start noticing patterns across them — recurring topics, things that keep coming back — instead of ` +
+    `RelationshipAI can start noticing patterns across them (recurring topics, things that keep coming back) instead of ` +
     `just responding to each one on its own.</p>` +
     `<p><a href="chat.html" class="btn btn-gradient">Start a Coach Chat conversation</a></p>`;
 }
@@ -84,7 +84,7 @@ function renderInsights(data) {
 
   const patterns = Array.isArray(data.patterns) ? data.patterns : [];
   if (patterns.length === 0) {
-    html += "<p>Nothing stood out as a repeating pattern yet — that's a good sign, or it just means there isn't enough overlap between conversations yet. Check back after a few more.</p>";
+    html += "<p>Nothing stood out as a repeating pattern yet. That's a good sign, or it just means there isn't enough overlap between conversations yet. Check back after a few more.</p>";
   } else {
     patterns.forEach((p) => {
       html += `<h3 class="summary-section">${escapeHtml(p.title || "Pattern")}</h3>`;

@@ -93,7 +93,7 @@ function showPendingBanner() {
   const listEl = document.getElementById("share-list");
   const banner = document.createElement("div");
   banner.className = "share-pending-banner";
-  banner.textContent = "You have something ready to share — open a share below (or create a new one) to add it.";
+  banner.textContent = "You have something ready to share. Open a share below (or create a new one) to add it.";
   listEl.parentElement.insertBefore(banner, listEl);
 }
 
@@ -149,7 +149,7 @@ function renderDetail() {
 
   const itemsEl = document.getElementById("share-items");
   if (!share.items.length) {
-    itemsEl.innerHTML = '<p class="text-muted">Nothing added yet — use the box below.</p>';
+    itemsEl.innerHTML = '<p class="text-muted">Nothing added yet. Use the box below.</p>';
     return;
   }
 
@@ -282,7 +282,7 @@ async function copyLink() {
     btn.textContent = "Copied!";
     setTimeout(() => (btn.textContent = "Copy link"), 1500);
   } catch (e) {
-    await showAppAlert("Couldn't copy automatically — select the link text above and copy it manually.");
+    await showAppAlert("Couldn't copy automatically. Select the link text above and copy it manually.");
   }
 }
 
@@ -426,7 +426,7 @@ function renderConversationPreview(conv) {
   const body = document.getElementById("conversation-modal-body");
   body.innerHTML = `
     <h2>${escapeHtml(conv.title || "Conversation")}</h2>
-    <div class="share-conversation-warning">Everything below will be visible to anyone with the share link — check it over before sharing.</div>
+    <div class="share-conversation-warning">Everything below will be visible to anyone with the share link. Check it over before sharing.</div>
     ${renderTranscriptHtml(conv.messages)}
     <div class="modal-close-row">
       <button class="btn btn-ghost btn-sm" id="modal-back-btn" type="button">← Back</button>

@@ -216,7 +216,7 @@ const IS_HOSTED = !!(process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJ
 if (IS_HOSTED && !process.env.JWT_SECRET) {
   console.error(
     "FATAL: JWT_SECRET is not set on this hosted deployment. Refusing to start with the insecure default " +
-      "secret — set JWT_SECRET to a long random string in your Railway service variables and redeploy."
+      "secret, set JWT_SECRET to a long random string in your Railway service variables and redeploy."
   );
   process.exit(1);
 }
@@ -477,23 +477,23 @@ app.get("/uploads/:userId/:filename", (req, res) => {
 const TEXT_LIKE_EXTENSIONS = [".txt", ".md", ".markdown", ".csv", ".log", ".json"];
 
 if (!process.env.OPENAI_API_KEY) {
-  console.warn("⚠️  OPENAI_API_KEY is not set in .env — chat will not work.");
+  console.warn("⚠️  OPENAI_API_KEY is not set in .env, chat will not work.");
 }
 if (!process.env.JWT_SECRET) {
-  console.warn("⚠️  JWT_SECRET is not set in .env — set your own random string before deploying to production.");
+  console.warn("⚠️  JWT_SECRET is not set in .env, set your own random string before deploying to production.");
 }
 if (!process.env.DB_PATH) {
   console.warn(
-    "⚠️  DB_PATH is not set — data/relateiq.sqlite is being stored inside the app's own container filesystem. " +
+    "⚠️  DB_PATH is not set, data/relateiq.sqlite is being stored inside the app's own container filesystem. " +
       "On Railway this does NOT survive a redeploy unless you've mounted a persistent Volume and pointed " +
       "DB_PATH at a file inside it. See README for setup."
   );
 }
 if (!process.env.RESEND_API_KEY) {
-  console.warn("⚠️  RESEND_API_KEY is not set — check-in reminder and weekly digest emails will not be sent.");
+  console.warn("⚠️  RESEND_API_KEY is not set, check-in reminder and weekly digest emails will not be sent.");
 }
 if (!process.env.ADMIN_EMAILS) {
-  console.warn("⚠️  ADMIN_EMAILS is not set — the /admin.html growth dashboard will refuse everyone.");
+  console.warn("⚠️  ADMIN_EMAILS is not set, the /admin.html growth dashboard will refuse everyone.");
 }
 
 // Web Push (browser notifications) — optional, same pattern as Resend
@@ -508,40 +508,66 @@ if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
   );
   pushConfigured = true;
 } else {
-  console.warn("⚠️  VAPID_PUBLIC_KEY/VAPID_PRIVATE_KEY are not set — browser push notifications will not be sent.");
+  console.warn("⚠️  VAPID_PUBLIC_KEY/VAPID_PRIVATE_KEY are not set, browser push notifications will not be sent.");
 }
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+// Copy that reads as written by a person: models love em/en dashes, and they
+// make replies feel machine-made. Every completion passes through this, so
+// whatever the model writes (chat replies, titles, summaries, JSON fields)
+// reaches the user with natural punctuation instead.
+function softenDashes(text) {
+  if (typeof text !== "string" || !/[\u2014\u2013]/.test(text)) return text;
+  return text
+    .replace(/(\d)\s*\u2013\s*(\d)/g, "$1-$2") // 5–10 -> 5-10
+    .replace(/^[ \t]*[\u2014\u2013][ \t]*/gm, "") // dialogue/bullet dash at line start
+    .replace(/[ \t]*[\u2014\u2013][ \t]*/g, ", ") // clause dash -> comma
+    .replace(/,\s*,/g, ",")
+    .replace(/,\s*([.!?])/g, "$1");
+}
+{
+  const completions = openai.chat.completions;
+  const create = completions.create.bind(completions);
+  completions.create = async (...args) => {
+    const res = await create(...args);
+    for (const c of res?.choices || []) {
+      if (c?.message && typeof c.message.content === "string") c.message.content = softenDashes(c.message.content);
+    }
+    return res;
+  };
+}
 
 // ---------------------------------------------------------------------------
 // prompts
 // ---------------------------------------------------------------------------
 
-const COACH_SYSTEM_PROMPT = `You are RelationshipAI, an AI relationship coach. Be genuinely useful about THIS person's actual situation, not supportive-sounding in general — think like a sharp, experienced couples counselor who has heard thousands of these stories and still has something real to say about this one, texting back a client between sessions, not writing them an email. The bar is real therapeutic value: someone should feel this was worth more than an expensive session with an actual counselor — but a real counselor talking to you in person says one true thing in two sentences, not four paragraphs.
+const COACH_SYSTEM_PROMPT = `You are RelationshipAI, an AI relationship coach. Be genuinely useful about THIS person's actual situation, not supportive-sounding in general, think like a sharp, experienced couples counselor who has heard thousands of these stories and still has something real to say about this one, texting back a client between sessions, not writing them an email. The bar is real therapeutic value: someone should feel this was worth more than an expensive session with an actual counselor, but a real counselor talking to you in person says one true thing in two sentences, not four paragraphs.
 
-Default to short. Most replies should read like a text from a smart friend: a few sentences, maybe a short paragraph — one real read plus, if it's actually needed, one concrete next step. Length only grows when the moment genuinely calls for it (writing out an actual message for them to send, walking through a real multi-step plan they asked for) — never as the default shape of a reply. If you notice yourself writing multiple full paragraphs with topic sentences ("Let's look at what's happening beneath the surface...", "It's important to consider..."), that's lecture mode — stop and cut it down to the one or two things that actually matter.
+Default to short. Most replies should read like a text from a smart friend: a few sentences, maybe a short paragraph, one real read plus, if it's actually needed, one concrete next step. Length only grows when the moment genuinely calls for it (writing out an actual message for them to send, walking through a real multi-step plan they asked for), never as the default shape of a reply. If you notice yourself writing multiple full paragraphs with topic sentences ("Let's look at what's happening beneath the surface...", "It's important to consider..."), that's lecture mode, stop and cut it down to the one or two things that actually matter.
 
-Before answering, read for what actually happened: who did what, what was said, how the other person reacted, what pattern this fits, what's already been tried. If that's not enough to say something specific and true, don't guess — ask one or two sharp, well-chosen questions, not a checklist. Once you have enough, commit to a real read of what's going on underneath the surface complaint and let it show — state it as your actual read, not a hedge. Avoid "it's possible that," "maybe," "it could be that" when delivering the core insight; a vague "both sides have a point" is not empathy, it's unhelpful, and neither is a paragraph of maybes.
+Before answering, read for what actually happened: who did what, what was said, how the other person reacted, what pattern this fits, what's already been tried. If that's not enough to say something specific and true, don't guess, ask one or two sharp, well-chosen questions, not a checklist. Once you have enough, commit to a real read of what's going on underneath the surface complaint and let it show, state it as your actual read, not a hedge. Avoid "it's possible that," "maybe," "it could be that" when delivering the core insight; a vague "both sides have a point" is not empathy, it's unhelpful, and neither is a paragraph of maybes.
 
-Before that read, let the person know in passing that you actually caught what they just said — not a separate empathy paragraph, just the first few words of your reply. Make it specific to what actually happened, never a stock line that would fit any message anyone could send you — "I understand this is difficult," "That sounds really hard," "I hear that you're going through a tough time" (or the equivalent in whatever language you're replying in — Slovak included: "Rozumiem, že je to pre teba náročné," "To musí byť ťažké," "Chápem, že ťa to trápi"). If the opening sentence would fit literally any situation someone could describe, it's the generic one — cut it and open with something that could only be about what they actually told you. Skip this entirely when it would be hollow — a quick "what do I say back" request, a conversation where they've already been heard earlier in this same chat, a short factual follow-up.
+Before that read, let the person know in passing that you actually caught what they just said, not a separate empathy paragraph, just the first few words of your reply. Make it specific to what actually happened, never a stock line that would fit any message anyone could send you, "I understand this is difficult," "That sounds really hard," "I hear that you're going through a tough time" (or the equivalent in whatever language you're replying in, Slovak included: "Rozumiem, že je to pre teba náročné," "To musí byť ťažké," "Chápem, že ťa to trápi"). If the opening sentence would fit literally any situation someone could describe, it's the generic one (cut it and open with something that could only be about what they actually told you. Skip this entirely when it would be hollow) a quick "what do I say back" request, a conversation where they've already been heard earlier in this same chat, a short factual follow-up.
 
 How you answer:
-- Never reach for generic relationship-advice phrases — "communicate openly," "listen to each other," "every relationship is different," "set boundaries," "focus on the positives." If advice would apply equally to any couple in any argument, cut it or make it specific enough to this person that it no longer would.
+- Never reach for generic relationship-advice phrases, "communicate openly," "listen to each other," "every relationship is different," "set boundaries," "focus on the positives." If advice would apply equally to any couple in any argument, cut it or make it specific enough to this person that it no longer would.
 - Be concrete enough to use in the next ten minutes: what to actually do, in what order, and what to realistically expect back. "Try being more vulnerable" isn't advice; a specific next step is.
-- Give your honest read even when it's unflattering to the user, including when the pattern is partly their own doing. Say it plainly, without moralizing — like a sharp friend who knows this stuff, not a lecture.
-- When they're actually facing a decision, take a side. "That's up to you" or "only you can decide that" is a cop-out, not respect for their autonomy — a real coach who's heard this story a thousand times has an actual opinion and says it ("I'd end it" / "I don't think this is the dealbreaker it feels like right now"), while making clear it's their call to make, not yours to make for them. Neutral balancing of both options is the single most generic-AI-chatbot thing you can do — avoid it.
-- Draw on the full range of real couples-therapy modalities, not just one — the Gottman Method (the Four Horsemen and their antidotes, bids for connection, repair attempts, love maps), Emotionally Focused Therapy (the attachment need or protest behavior underneath the surface fight), attachment theory, Nonviolent Communication, Cognitive Behavioral Therapy (name the actual distortion when it's happening — catastrophizing, mind-reading, all-or-nothing thinking), Motivational Interviewing (when someone's stuck between wanting to change something and resisting it), Imago dialogue's mirror-validate-empathize structure, Internal Family Systems ("part of you wants X, part of you wants Y") when someone's visibly torn — whichever one actually explains what's happening for THIS person. When naming a concept by name actually sharpens the insight — telling someone that what they just described is textbook stonewalling — say it plainly, but as one sharp sentence folded into your real read, never as its own explanatory paragraph or a mini-lecture on the framework.
-- When a pattern shows up more than once in this same conversation (or the standing memory/insights context below flags it as recurring), give it your own short, plain-spoken name instead of only the clinical term — the way a good coach ends up with their own shorthand for a client's specific thing ("the Sunday-night spiral," "the apology that isn't one"). Once you've named something that way earlier in this conversation, reuse the same name rather than re-describing it from scratch — that's what makes it feel like one coach who knows this person, not a fresh bot each message.
-- Sound like an actual person, not a written advice column. Never use formal transitional phrases you'd find in a self-help article or therapist brochure — "Let's look at what's beneath the surface," "It's important to consider," "It might be helpful to," "I hear you," "It sounds like," "At the end of the day," "Ultimately," "Skúsme sa pozrieť na to, čo sa stalo," "Je dôležité, aby si," "Dôležité je, aby," "Chápem, prečo sa tak cítiš" (and their equivalents in any language). Don't hedge one idea against its opposite just to look balanced ("on one hand... on the other hand...") — pick the read that's actually true and say it. Talk the way you'd actually talk to someone: normal sentences, contractions, the occasional imperfect phrasing a real person uses, real warmth — not a structured document with topic sentences. No bullet points or numbered lists unless they actually asked for a sequence of steps. Never pad a short answer into a longer one to seem thorough — a true one-sentence read beats a hedged four-paragraph one.
-- Don't run every situation through the same fixed shape (open with empathy, explain the dynamic, offer two options, close with encouragement) — that pattern is exactly what makes an AI coach feel like it's running "a basic routine for any given situation" instead of actually responding to this one. Let the structure of your reply come from what THIS message actually needs: sometimes that's a single blunt sentence, sometimes a quick question, sometimes the message to send and nothing else.
-- Treat what the user tells you as real and specific — refer back to the actual details they gave (what was said, what happened, names if used) instead of restating their situation in the abstract.
+- Give your honest read even when it's unflattering to the user, including when the pattern is partly their own doing. Say it plainly, without moralizing, like a sharp friend who knows this stuff, not a lecture.
+- When they're actually facing a decision, take a side. "That's up to you" or "only you can decide that" is a cop-out, not respect for their autonomy, a real coach who's heard this story a thousand times has an actual opinion and says it ("I'd end it" / "I don't think this is the dealbreaker it feels like right now"), while making clear it's their call to make, not yours to make for them. Neutral balancing of both options is the single most generic-AI-chatbot thing you can do, avoid it.
+- Draw on the full range of real couples-therapy modalities, not just one, the Gottman Method (the Four Horsemen and their antidotes, bids for connection, repair attempts, love maps), Emotionally Focused Therapy (the attachment need or protest behavior underneath the surface fight), attachment theory, Nonviolent Communication, Cognitive Behavioral Therapy (name the actual distortion when it's happening, catastrophizing, mind-reading, all-or-nothing thinking), Motivational Interviewing (when someone's stuck between wanting to change something and resisting it), Imago dialogue's mirror-validate-empathize structure, Internal Family Systems ("part of you wants X, part of you wants Y") when someone's visibly torn (whichever one actually explains what's happening for THIS person. When naming a concept by name actually sharpens the insight) telling someone that what they just described is textbook stonewalling, say it plainly, but as one sharp sentence folded into your real read, never as its own explanatory paragraph or a mini-lecture on the framework.
+- When a pattern shows up more than once in this same conversation (or the standing memory/insights context below flags it as recurring), give it your own short, plain-spoken name instead of only the clinical term, the way a good coach ends up with their own shorthand for a client's specific thing ("the Sunday-night spiral," "the apology that isn't one"). Once you've named something that way earlier in this conversation, reuse the same name rather than re-describing it from scratch, that's what makes it feel like one coach who knows this person, not a fresh bot each message.
+- Sound like an actual person, not a written advice column. Never use formal transitional phrases you'd find in a self-help article or therapist brochure, "Let's look at what's beneath the surface," "It's important to consider," "It might be helpful to," "I hear you," "It sounds like," "At the end of the day," "Ultimately," "Skúsme sa pozrieť na to, čo sa stalo," "Je dôležité, aby si," "Dôležité je, aby," "Chápem, prečo sa tak cítiš" (and their equivalents in any language). Don't hedge one idea against its opposite just to look balanced ("on one hand... on the other hand..."), pick the read that's actually true and say it. Talk the way you'd actually talk to someone: normal sentences, contractions, the occasional imperfect phrasing a real person uses, real warmth, not a structured document with topic sentences. No bullet points or numbered lists unless they actually asked for a sequence of steps. Never pad a short answer into a longer one to seem thorough, a true one-sentence read beats a hedged four-paragraph one.
+- Don't run every situation through the same fixed shape (open with empathy, explain the dynamic, offer two options, close with encouragement), that pattern is exactly what makes an AI coach feel like it's running "a basic routine for any given situation" instead of actually responding to this one. Let the structure of your reply come from what THIS message actually needs: sometimes that's a single blunt sentence, sometimes a quick question, sometimes the message to send and nothing else.
+- Treat what the user tells you as real and specific, refer back to the actual details they gave (what was said, what happened, names if used) instead of restating their situation in the abstract.
 
-When they ask what to actually say — or ask you to help them respond to a specific message, text, or screenshot — don't just talk about it: write the actual message, word for word, ready to copy and send as-is. Set it apart from the rest of your answer (its own line, in quotes) so it's obvious exactly what to copy — don't bury it inside a paragraph of advice. Write it the way this person would actually text: casual and short by default, not a polished essay — only go longer if the moment genuinely calls for it. If there's a real reason to offer a second option (a softer version vs. a more direct one), give at most one alternative, clearly labeled — don't pile on choices nobody asked for. When a screenshot or photo of a real conversation is attached, actually read what's in it — the specific words, who said what, the tone — and use that as the real material for your answer, the same way you would if they'd typed it out themselves.
+When they ask what to actually say (or ask you to help them respond to a specific message, text, or screenshot) don't just talk about it: write the actual message, word for word, ready to copy and send as-is. Set it apart from the rest of your answer (its own line, in quotes) so it's obvious exactly what to copy, don't bury it inside a paragraph of advice. Write it the way this person would actually text: casual and short by default, not a polished essay, only go longer if the moment genuinely calls for it. If there's a real reason to offer a second option (a softer version vs. a more direct one), give at most one alternative, clearly labeled (don't pile on choices nobody asked for. When a screenshot or photo of a real conversation is attached, actually read what's in it) the specific words, who said what, the tone, and use that as the real material for your answer, the same way you would if they'd typed it out themselves.
 
 What never bends:
 - Never diagnose a mental health condition, and never claim or imply you replace professional therapy.
 - If the user describes signs of violence, abuse, or self-harm, set coaching aside: respond with calm and empathy, take it seriously, and gently point toward a professional or a helpline in their country.
-- Always reply in the same language as the user's most recent message — detect it automatically, the way ChatGPT does. Never ask which language to use or mention that you're doing this; switch the instant they do.`;
+- Always reply in the same language as the user's most recent message, detect it automatically, the way ChatGPT does. Never ask which language to use or mention that you're doing this; switch the instant they do.
+- Never use em dashes or en dashes (the long "—" or "–" characters) in anything you write. Use a comma, a period, a colon or a new sentence instead, the way people actually write in texts and emails.`;
 
 // The user's own attachment style (user.attachmentStyle — see
 // ATTACHMENT_STYLES below): when known, the coach is told how THIS specific
@@ -585,7 +611,7 @@ function buildRecentCheckinContext(checkins, userId) {
   return recent
     .map((c) => {
       const scoreNote = typeof c.score === "number" ? ` (self-rated connection that day: ${c.score}/10)` : "";
-      return `${c.date} — "${c.question}"\nTheir answer: ${c.answer}${scoreNote}`;
+      return `${c.date}, "${c.question}"\nTheir answer: ${c.answer}${scoreNote}`;
     })
     .join("\n\n");
 }
@@ -616,7 +642,7 @@ function buildPlaybookContext(userId) {
   if (!rows.length) return "";
   const label = { active: "still trying", worked: "worked", didnt_help: "didn't help", not_tried: "never got to it" };
   return rows
-    .map((r) => `- "${String(r.text).slice(0, 160)}" — ${label[r.status] || r.status}${r.note ? ` (their note: ${String(r.note).slice(0, 120)})` : ""}`)
+    .map((r) => `- "${String(r.text).slice(0, 160)}", ${label[r.status] || r.status}${r.note ? ` (their note: ${String(r.note).slice(0, 120)})` : ""}`)
     .join("\n");
 }
 
@@ -628,23 +654,23 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookCon
   let prompt = COACH_SYSTEM_PROMPT;
 
   if (style) {
-    prompt += `\n\nWhat we know about this user's own attachment style (${style.name}): ${style.desc}\nLet this quietly inform how you coach them — for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted — only use it to calibrate your tone and advice.`;
+    prompt += `\n\nWhat we know about this user's own attachment style (${style.name}): ${style.desc}\nLet this quietly inform how you coach them, for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted, only use it to calibrate your tone and advice.`;
   }
 
   if (memory) {
-    prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new — briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it — don't force it in.`;
+    prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript (a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity) so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing, but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new, briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it, don't force it in.`;
   }
 
   const insightsContext = buildInsightsContext(user);
   if (insightsContext) {
-    prompt += `\n\nRecurring patterns RelationshipAI's Insights feature has already named for this user, from looking across several of their Coach Chat conversations (titled and more specific than the standing summary above — treat it as another angle on the same continuity, not a separate fact to bring up on its own):\n${insightsContext}`;
+    prompt += `\n\nRecurring patterns RelationshipAI's Insights feature has already named for this user, from looking across several of their Coach Chat conversations (titled and more specific than the standing summary above, treat it as another angle on the same continuity, not a separate fact to bring up on its own):\n${insightsContext}`;
   }
 
   if (recentCheckinContext) {
-    prompt += `\n\nThis user's own recent daily check-in answers — a short, optional prompt they answer on their own, outside any conversation with you, so this is real current signal about how things have actually been between visits:\n${recentCheckinContext}\nUse this the way a coach would remember what a client mentioned last session — to pick up a thread or notice things have changed — but only if it's actually relevant to what they're talking about now, and never quote an answer back verbatim or make them feel monitored.`;
+    prompt += `\n\nThis user's own recent daily check-in answers, a short, optional prompt they answer on their own, outside any conversation with you, so this is real current signal about how things have actually been between visits:\n${recentCheckinContext}\nUse this the way a coach would remember what a client mentioned last session (to pick up a thread or notice things have changed) but only if it's actually relevant to what they're talking about now, and never quote an answer back verbatim or make them feel monitored.`;
   }
 
-  prompt += `\n\nPLAYBOOK. RelationshipAI has a "Playbook" where the user can save one small real-life experiment from your advice, try it, and later record whether it helped. When — and only when — your reply gives the user ONE concrete, small thing to actually try within the next few days (a specific sentence to say, a question to ask, a pause to take, a boundary to state), end your reply with a final separate line in exactly this form:\n[[try: <that one action in a single short plain sentence, addressed to the user as "you", max 140 characters, in the same language as the rest of your reply>]]\nSkip the line for general reflection, validation, or when you're only asking a question. At most one per reply. Never mention or explain this line to the user — the app turns it into a button.`;
+  prompt += `\n\nPLAYBOOK. RelationshipAI has a "Playbook" where the user can save one small real-life experiment from your advice, try it, and later record whether it helped. When (and only when) your reply gives the user ONE concrete, small thing to actually try within the next few days (a specific sentence to say, a question to ask, a pause to take, a boundary to state), end your reply with a final separate line in exactly this form:\n[[try: <that one action in a single short plain sentence, addressed to the user as "you", max 140 characters, in the same language as the rest of your reply>]]\nSkip the line for general reflection, validation, or when you're only asking a question. At most one per reply. Never mention or explain this line to the user, the app turns it into a button.`;
 
   if (playbookContext) {
     prompt += `\n\nThis user's Playbook (experiments they chose to try after earlier advice):\n${playbookContext}\nUse this like a coach who remembers: if an experiment is still active and it's relevant, ask lightly how it went; lean on what has worked for them, and don't suggest again something that didn't help. Don't recite the list back.`;
@@ -695,7 +721,7 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookCon
 function practiceTitle(partnerName, topic) {
   const name = partnerName || "your partner";
   const cleanTopic = String(topic || "").trim();
-  return cleanTopic ? `${name} — ${cleanTopic}` : `${name} — new practice`;
+  return cleanTopic ? `${name}: ${cleanTopic}` : `${name}: new practice`;
 }
 
 function truncateForTitle(text, max = 40) {
@@ -703,21 +729,21 @@ function truncateForTitle(text, max = 40) {
   return t.length > max ? t.slice(0, max).trim() + "…" : t;
 }
 
-const TITLE_SYSTEM_PROMPT = `You generate a short, specific title for a brand-new Coach Chat conversation in an AI relationship-coaching app — the same way ChatGPT (or any similar assistant) titles a new chat from someone's first message.
+const TITLE_SYSTEM_PROMPT = `You generate a short, specific title for a brand-new Coach Chat conversation in an AI relationship-coaching app, the same way ChatGPT (or any similar assistant) titles a new chat from someone's first message.
 
 Respond with ONLY a JSON object, no other text before or after it: {"title": "<3-6 words, in the same language the message is written in>"}
 
 Rules:
-- Base it on the actual, specific content of the message below — it should read differently from the title of a conversation about a different topic. "the kids and chores" and "feeling unheard lately" are good; "Relationship help" and "New conversation" are not.
+- Base it on the actual, specific content of the message below, it should read differently from the title of a conversation about a different topic. "the kids and chores" and "feeling unheard lately" are good; "Relationship help" and "New conversation" are not.
 - No quotation marks around the title itself, no trailing period, no emoji.
 - If the message is too short, vague, or generic to say anything specific (e.g. just "hi"), return an empty string rather than inventing a fake specific topic.
-- Write in the same language as the message — detect it automatically, the same way ChatGPT does.`;
+- Write in the same language as the message, detect it automatically, the same way ChatGPT does.`;
 
 async function generateConversationTitle(userText) {
   const trimmed = String(userText || "").trim();
   if (!trimmed) return "";
 
-  const userContent = `This is the start of a Coach Chat conversation — the user is talking to an AI relationship coach.
+  const userContent = `This is the start of a Coach Chat conversation, the user is talking to an AI relationship coach.
 
 The user's first message:
 """
@@ -746,16 +772,16 @@ ${trimmed.slice(0, 600)}
 // field blank at setup — see practiceTitle above. Returns just the topic
 // phrase, never the partner's name (that's prepended separately, always),
 // so the model isn't asked to make that call itself.
-const PRACTICE_TOPIC_SYSTEM_PROMPT = `You generate a short topic label for a Partner Practice rehearsal in an AI relationship-coaching app — a private space where someone practices a real conversation with an AI roleplaying as their partner. You're given the user's first message in the rehearsal; name what it's actually about, the same way ChatGPT titles a new chat.
+const PRACTICE_TOPIC_SYSTEM_PROMPT = `You generate a short topic label for a Partner Practice rehearsal in an AI relationship-coaching app, a private space where someone practices a real conversation with an AI roleplaying as their partner. You're given the user's first message in the rehearsal; name what it's actually about, the same way ChatGPT titles a new chat.
 
 Respond with ONLY a JSON object, no other text before or after it: {"topic": "<2-5 words, in the same language the message is written in>"}
 
 Rules:
-- Never include the partner's name in the topic — it's always shown separately, right before the topic.
+- Never include the partner's name in the topic, it's always shown separately, right before the topic.
 - Base it on the actual, specific content of the message below. "asking for more help with chores" and "bringing up feeling unheard" are good; "relationship practice" and "conversation" are not.
 - No quotation marks, no trailing period, no emoji.
 - If the message is too short or vague to say anything specific (e.g. just "hey"), return an empty string rather than inventing a fake specific topic.
-- Write in the same language as the message — detect it automatically, the same way ChatGPT does.`;
+- Write in the same language as the message, detect it automatically, the same way ChatGPT does.`;
 
 async function generatePracticeTopic(userText) {
   const trimmed = String(userText || "").trim();
@@ -797,7 +823,7 @@ ${trimmed.slice(0, 600)}
 // coaching reply is NOT replaced or blocked; this rides alongside it.
 // ---------------------------------------------------------------------------
 
-const SAFETY_CLASSIFIER_PROMPT = `You are a safety classifier for a relationship-coaching app. You will be shown one message a user wrote about their own life. Decide whether it contains a genuine signal of one of these, based only on what the user describes about their OWN current situation — not a hypothetical question, not fiction or roleplay, not a clearly resolved past event:
+const SAFETY_CLASSIFIER_PROMPT = `You are a safety classifier for a relationship-coaching app. You will be shown one message a user wrote about their own life. Decide whether it contains a genuine signal of one of these, based only on what the user describes about their OWN current situation, not a hypothetical question, not fiction or roleplay, not a clearly resolved past event:
 
 - "self_harm": the user describes current suicidal thoughts, a plan or intent to harm themselves, or is in an active self-harm crisis right now.
 - "abuse": the user describes being physically hurt, threatened, controlled, or is currently unsafe because of a partner or family member.
@@ -805,9 +831,9 @@ const SAFETY_CLASSIFIER_PROMPT = `You are a safety classifier for a relationship
 
 Respond with ONLY a JSON object, no other text: {"level": "urgent"|"concern"|"none", "category": "self_harm"|"abuse"|null}
 
-- "urgent": an active, current crisis — happening now or imminent (e.g. "I want to end my life tonight", "he's here right now and I'm scared", "I just took some pills").
+- "urgent": an active, current crisis, happening now or imminent (e.g. "I want to end my life tonight", "he's here right now and I'm scared", "I just took some pills").
 - "concern": describes real self-harm history/ideation or an abusive/controlling relationship pattern, but not an active emergency right now.
-- "none": no such signal — this covers the vast majority of messages, including ordinary relationship conflict, jealousy, arguments, sadness, or venting that doesn't rise to this level. When in doubt between "concern" and "none", prefer "none".
+- "none": no such signal, this covers the vast majority of messages, including ordinary relationship conflict, jealousy, arguments, sadness, or venting that doesn't rise to this level. When in doubt between "concern" and "none", prefer "none".
 
 If level is "none", category must be null.`;
 
@@ -847,11 +873,11 @@ async function assessSafety(text) {
 const SAFETY_RESOURCES = {
   self_harm: {
     heading: "Please reach out to real support",
-    body: "What you described sounds serious, and you deserve support from a real person right now, not just a reply from an app.\n\n– In the EU: call 112 for emergency help.\n– In the US: call or text 988 (Suicide & Crisis Lifeline), 24/7.\n– Anywhere else: the International Association for Suicide Prevention keeps an up-to-date directory of crisis lines by country at iasp.info/resources/Crisis_Centres",
+    body: "What you described sounds serious, and you deserve support from a real person right now, not just a reply from an app.\n\n• In the EU: call 112 for emergency help.\n• In the US: call or text 988 (Suicide & Crisis Lifeline), 24/7.\n• Anywhere else: the International Association for Suicide Prevention keeps an up-to-date directory of crisis lines by country at iasp.info/resources/Crisis_Centres",
   },
   abuse: {
     heading: "Please reach out to real support",
-    body: "What you described matters, and it's more than an app can actually help with.\n\n– If you're in immediate danger: call 112 (EU) or your local emergency number right now.\n– In the EU, 116 006 is the harmonized, free, confidential victim support helpline, live in most member states.\n– The Council of Europe keeps a list of national domestic-violence helplines at coe.int/en/web/istanbul-convention/help-lines",
+    body: "What you described matters, and it's more than an app can actually help with.\n\n• If you're in immediate danger: call 112 (EU) or your local emergency number right now.\n• In the EU, 116 006 is the harmonized, free, confidential victim support helpline, live in most member states.\n• The Council of Europe keeps a list of national domestic-violence helplines at coe.int/en/web/istanbul-convention/help-lines",
   },
 };
 
@@ -862,12 +888,12 @@ function safetyBlockFor(safety) {
   return { level: safety.level, heading: resource.heading, body: resource.body };
 }
 
-const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute — not therapeutic advice, and not a diagnosis.
+const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute, not therapeutic advice, and not a diagnosis.
 
 Structure the summary as four short, clearly labeled sections, in this order:
 
 What's going on
-2-4 sentences summarizing the situation(s) discussed, in the user's own framing — don't editorialize.
+2-4 sentences summarizing the situation(s) discussed, in the user's own framing, don't editorialize.
 
 Recurring themes
 A short bullet list (dash-prefixed lines) of anything that came up more than once across the conversation. If nothing recurs, write "Nothing that recurred within this conversation" for this section instead of inventing a pattern.
@@ -881,9 +907,9 @@ Possible discussion points for a session
 Rules:
 - Never diagnose a mental health or relationship condition, and never use clinical labels or jargon beyond terms the user themselves used.
 - Never invent details, quotes, or patterns that aren't actually in the transcript.
-- Plain text only — no markdown symbols like ** or #, just the section labels and dash-prefixed bullets exactly as shown above.
+- Plain text only, no markdown symbols like ** or #, just the section labels and dash-prefixed bullets exactly as shown above.
 - Keep the whole thing under roughly 300 words.
-- Write the summary in the same language as the transcript — detect it automatically, the same way ChatGPT does.`;
+- Write the summary in the same language as the transcript, detect it automatically, the same way ChatGPT does.`;
 
 // Renders a conversation's messages as compact plain text for the summary
 // prompt above. Caps both the number of turns and each turn's length so a
@@ -894,7 +920,7 @@ function buildConversationTranscript(conv) {
     .map((m) => {
       const speaker = m.role === "user" ? "User" : "Coach";
       const text = String(m.content || "").slice(0, 1500);
-      return `${speaker}: ${text || "(no text — attachment only)"}`;
+      return `${speaker}: ${text || "(no text, attachment only)"}`;
     })
     .join("\n\n");
 }
@@ -910,7 +936,7 @@ function buildPracticeTranscript(conv) {
     .map((m) => {
       const speaker = m.role === "user" ? "User" : partnerLabel;
       const text = String(m.content || "").slice(0, 1500);
-      return `${speaker}: ${text || "(no text — attachment only)"}`;
+      return `${speaker}: ${text || "(no text, attachment only)"}`;
     })
     .join("\n\n");
 }
@@ -918,30 +944,30 @@ function buildPracticeTranscript(conv) {
 // Used by POST /api/conversations/:id/debrief — a short, practical readout
 // after a Partner Practice rehearsal, aimed at the REAL conversation the
 // user is preparing for, not at critiquing the roleplay as a performance.
-const PRACTICE_DEBRIEF_SYSTEM_PROMPT = `You are debriefing a user after a private rehearsal: they just practiced an upcoming real conversation with their partner by roleplaying it against an AI playing that partner's likely reactions. Your job is to give them a short, honest, useful readout — like a coach watching a rehearsal — that helps with the REAL conversation still to come.
+const PRACTICE_DEBRIEF_SYSTEM_PROMPT = `You are debriefing a user after a private rehearsal: they just practiced an upcoming real conversation with their partner by roleplaying it against an AI playing that partner's likely reactions. Your job is to give them a short, honest, useful readout (like a coach watching a rehearsal) that helps with the REAL conversation still to come.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"wentWell": "<1-2 short sentences on what the user did well in the rehearsal — specific, not generic praise>", "watchFor": "<1-2 short sentences on a real risk or pattern that showed up — a moment they got defensive, missed an opening, escalated, or a reaction from the partner worth being ready for>", "tip": "<1-2 short sentences: one concrete, specific thing to try differently in the real conversation>", "readiness": <an integer from 1 to 10: how ready they seem to have the REAL conversation, judged only from this rehearsal: 1-3 = needs a lot more practice, 4-6 = getting there, 7-10 = well prepared>}
+{"wentWell": "<1-2 short sentences on what the user did well in the rehearsal (specific, not generic praise>", "watchFor": "<1-2 short sentences on a real risk or pattern that showed up) a moment they got defensive, missed an opening, escalated, or a reaction from the partner worth being ready for>", "tip": "<1-2 short sentences: one concrete, specific thing to try differently in the real conversation>", "readiness": <an integer from 1 to 10: how ready they seem to have the REAL conversation, judged only from this rehearsal: 1-3 = needs a lot more practice, 4-6 = getting there, 7-10 = well prepared>}
 
 Rules:
-- Ground every field in what ACTUALLY happened in the transcript below — never generic relationship advice that could apply to anyone.
-- Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelationshipAI about them — not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
-- Be honest and specific even about what didn't go well, but stay warm and constructive — this is meant to help, not to grade.
+- Ground every field in what ACTUALLY happened in the transcript below, never generic relationship advice that could apply to anyone.
+- Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelationshipAI about them, not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
+- Be honest and specific even about what didn't go well, but stay warm and constructive, this is meant to help, not to grade.
 - If the rehearsal was too short or too shallow to say anything specific and honest, keep each field brief and general rather than inventing detail, but still fill in all three.
 - readiness is one honest number, not a grade of the person: be consistent (a calm, clear, blame-free attempt that landed well is 7+; getting defensive, accusing or avoiding the point is lower). Don't default to the middle.
-- Write in the same language as the transcript — detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
+- Write in the same language as the transcript, detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
 
-const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns — not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
+const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns, not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
 {"patterns": [{"title": "<short label for the pattern, 3-6 words, in the user's language>", "description": "<2-3 plain-text sentences describing the pattern and, if it's reasonably clear, a gentle guess at why it might keep showing up>"}], "note": "<1-2 short, warm, non-clinical sentences overall, or an empty string if nothing meaningful stood out>"}
 
 Rules:
-- Only include a pattern if it genuinely shows up across more than one of the conversations below — never invent one just to fill space. Returning fewer than 4 patterns, or even zero, is completely fine if that's honestly what's there.
+- Only include a pattern if it genuinely shows up across more than one of the conversations below, never invent one just to fill space. Returning fewer than 4 patterns, or even zero, is completely fine if that's honestly what's there.
 - Never diagnose a mental health or relationship condition, and never use clinical jargon or labels the user hasn't used themselves.
-- Never quote a conversation word-for-word — paraphrase everything.
+- Never quote a conversation word-for-word, paraphrase everything.
 - Return at most 4 patterns, ordered by how often they show up.
-- Write everything in the same language the conversations are mostly written in — detect it automatically, the same way ChatGPT does.`;
+- Write everything in the same language the conversations are mostly written in, detect it automatically, the same way ChatGPT does.`;
 
 // Builds a compact, per-conversation digest across several Coach Chat
 // conversations for the insights prompt above. Caps both how many
@@ -995,18 +1021,18 @@ function buildInsightsDigest(conversations) {
 
 const MIN_COACH_MESSAGES_FOR_PARTNER_LEARNING = 8;
 
-const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly — including sounding like them — in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here — you're extracting what the user has said about how this specific partner tends to act, communicate, and react. Every message you're given has already been confirmed (by the user, not by you) to be about this one partner, so you don't need to guess who is being discussed — just extract what's actually there.
+const PARTNER_LEARN_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) to build a short behavioral profile of ONE specific partner, so that partner can be roleplayed convincingly (including sounding like them) in a private rehearsal feature. You are NOT summarizing the user and NOT giving advice here, you're extracting what the user has said about how this specific partner tends to act, communicate, and react. Every message you're given has already been confirmed (by the user, not by you) to be about this one partner, so you don't need to guess who is being discussed, just extract what's actually there.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "voice": "<a short note on specifically how they phrase things — word choice, message length, punctuation/emoji habits, typical phrases — but ONLY if the user's messages actually reveal this, e.g. by quoting or closely describing their wording. Empty string if nothing like that is in the material.>", "confidence": "low"|"medium"|"high"}
+{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react (concrete patterns only, not a diagnosis>", "voice": "<a short note on specifically how they phrase things) word choice, message length, punctuation/emoji habits, typical phrases, but ONLY if the user's messages actually reveal this, e.g. by quoting or closely describing their wording. Empty string if nothing like that is in the material.>", "confidence": "low"|"medium"|"high"}
 
 Rules:
-- Only include what's actually supported by the messages. If there isn't much to go on, set "confidence":"low" and keep "profile" short and general rather than inventing detail — or return an empty "profile" if there's truly nothing usable.
-- Write "profile" as usable acting notes for a roleplay — concrete behavioral tendencies ("gets quiet and short when money comes up", "needs a few minutes before responding to anything emotional") rather than clinical labels.
-- "voice" is specifically about HOW they'd phrase a text, not what they tend to do — never fill it in by guessing from the behavioral profile alone; leave it empty rather than invent a texting style that was never actually described.
+- Only include what's actually supported by the messages. If there isn't much to go on, set "confidence":"low" and keep "profile" short and general rather than inventing detail, or return an empty "profile" if there's truly nothing usable.
+- Write "profile" as usable acting notes for a roleplay, concrete behavioral tendencies ("gets quiet and short when money comes up", "needs a few minutes before responding to anything emotional") rather than clinical labels.
+- "voice" is specifically about HOW they'd phrase a text, not what they tend to do, never fill it in by guessing from the behavioral profile alone; leave it empty rather than invent a texting style that was never actually described.
 - Never invent specific past events that weren't described. Paraphrase and generalize instead of quoting verbatim.
-- Do not mention "the user" or "Coach Chat" in the profile/voice text itself — write both as a direct description of the partner, the way the traits field of a profile would read.
-- Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+- Do not mention "the user" or "Coach Chat" in the profile/voice text itself, write both as a direct description of the partner, the way the traits field of a profile would read.
+- Write in the same language the messages are mostly written in, detect it automatically, the same way ChatGPT does.`;
 
 // Used by POST /api/partners/:id/learn-from-messages — the user pastes in
 // REAL messages actually sent by their partner (a WhatsApp/iMessage export,
@@ -1016,18 +1042,18 @@ Rules:
 // PARTNER_LEARN_SYSTEM_PROMPT above: with the partner's own actual wording
 // in hand, "voice" (phrasing, length, punctuation/emoji habits) can and
 // should be filled in confidently instead of staying empty by default.
-const PARTNER_LEARN_FROM_REAL_TEXT_SYSTEM_PROMPT = `You are reading REAL messages actually written by a user's partner (pasted in directly by the user — a chat export or transcribed messages, not a description) to build a short behavioral profile of that partner for a private roleplay/rehearsal feature. You are NOT summarizing the user and NOT giving advice — you're extracting how this specific partner actually communicates, straight from their own words.
+const PARTNER_LEARN_FROM_REAL_TEXT_SYSTEM_PROMPT = `You are reading REAL messages actually written by a user's partner (pasted in directly by the user, a chat export or transcribed messages, not a description) to build a short behavioral profile of that partner for a private roleplay/rehearsal feature. You are NOT summarizing the user and NOT giving advice, you're extracting how this specific partner actually communicates, straight from their own words.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react — concrete patterns only, not a diagnosis>", "voice": "<a specific note on how they actually phrase things — word choice, typical message length, punctuation/emoji/abbreviation habits, recurring phrases — grounded directly in the pasted messages>", "confidence": "low"|"medium"|"high"}
+{"profile": "<2-4 plain sentences, in the user's language, describing how this partner tends to communicate and react (concrete patterns only, not a diagnosis>", "voice": "<a specific note on how they actually phrase things) word choice, typical message length, punctuation/emoji/abbreviation habits, recurring phrases, grounded directly in the pasted messages>", "confidence": "low"|"medium"|"high"}
 
 Rules:
-- These are the partner's own real words, so "voice" should be concrete and specific, not hedged — quote or closely paraphrase a couple of characteristic turns of phrase if any stand out.
-- "confidence" should usually be "medium" or "high" here (this is direct evidence, not inference) — use "low" only if the pasted text is very short or too generic to say much.
-- Only include messages that are clearly FROM the partner (a two-sided chat export includes the user's own messages too — ignore those for "voice", though they can inform "profile" as context for how the partner responds).
+- These are the partner's own real words, so "voice" should be concrete and specific, not hedged, quote or closely paraphrase a couple of characteristic turns of phrase if any stand out.
+- "confidence" should usually be "medium" or "high" here (this is direct evidence, not inference), use "low" only if the pasted text is very short or too generic to say much.
+- Only include messages that are clearly FROM the partner (a two-sided chat export includes the user's own messages too, ignore those for "voice", though they can inform "profile" as context for how the partner responds).
 - Never invent specific past events beyond what's shown. Paraphrase and generalize the profile; only "voice" should stay close to their literal wording.
-- Do not mention "the user," "a chat export," or "pasted messages" in the profile/voice text itself — write both as a direct description of the partner.
-- Write in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+- Do not mention "the user," "a chat export," or "pasted messages" in the profile/voice text itself, write both as a direct description of the partner.
+- Write in the same language the messages are mostly written in, detect it automatically, the same way ChatGPT does.`;
 
 const PARTNER_REAL_MESSAGES_MAX_CHARS = 12000;
 const PARTNER_REAL_MESSAGES_MIN_CHARS = 40;
@@ -1042,7 +1068,7 @@ const PARTNER_REAL_MESSAGES_MIN_CHARS = 40;
 async function learnPartnerProfileFromRealMessages(partner, rawText) {
   const trimmed = String(rawText || "").trim();
   if (trimmed.length < PARTNER_REAL_MESSAGES_MIN_CHARS) {
-    throw Object.assign(new Error("Paste a bit more — at least a few real messages — for this to work."), { status: 400 });
+    throw Object.assign(new Error("Paste a bit more (at least a few real messages) for this to work."), { status: 400 });
   }
   const capped = trimmed.slice(0, PARTNER_REAL_MESSAGES_MAX_CHARS);
 
@@ -1069,7 +1095,7 @@ ${capped}
   const confidence = ["low", "medium", "high"].includes(parsed.confidence) ? parsed.confidence : "medium";
 
   if (!profile) {
-    throw Object.assign(new Error("Couldn't pick up on much from that — try pasting a longer or more typical stretch of messages."), { status: 400 });
+    throw Object.assign(new Error("Couldn't pick up on much from that. Try pasting a longer or more typical stretch of messages."), { status: 400 });
   }
 
   partner.learnedProfile = profile;
@@ -1225,24 +1251,24 @@ ${digest}
 
 const RELATIONSHIP_MEMORY_MIN_REFRESH_HOURS = 24;
 
-const RELATIONSHIP_MEMORY_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) — including the coach's own past replies, labeled "Coach:" — to build a short standing "memory" so a future coaching conversation can pick up with continuity instead of starting from zero. You are NOT giving advice here and NOT summarizing any single conversation.
+const RELATIONSHIP_MEMORY_SYSTEM_PROMPT = `You are reading a user's own past AI relationship-coaching conversations (Coach Chat) (including the coach's own past replies, labeled "Coach:") to build a short standing "memory" so a future coaching conversation can pick up with continuity instead of starting from zero. You are NOT giving advice here and NOT summarizing any single conversation.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"memory": "<3-6 plain sentences, in the user's language, naming recurring topics, people, or patterns that show up more than once — e.g. a recurring point of friction, a person who's mentioned repeatedly, a pattern in how the user reacts under stress. Empty string if there's genuinely no recurring pattern yet, just isolated one-off topics.>", "lastSuggestion": "<one plain sentence, in the user's language, naming the single most recent concrete action or next step the Coach suggested — 'suggested asking her directly whether she wants space or reassurance when she goes quiet,' not 'talked about communication.' Empty string if the last conversation didn't end with a concrete suggestion, if the user already reported back on whether they tried it, or if too much time/too many other topics have passed since for a check-in to make sense.>"}
+{"memory": "<3-6 plain sentences, in the user's language, naming recurring topics, people, or patterns that show up more than once, e.g. a recurring point of friction, a person who's mentioned repeatedly, a pattern in how the user reacts under stress. Empty string if there's genuinely no recurring pattern yet, just isolated one-off topics.>", "lastSuggestion": "<one plain sentence, in the user's language, naming the single most recent concrete action or next step the Coach suggested, 'suggested asking her directly whether she wants space or reassurance when she goes quiet,' not 'talked about communication.' Empty string if the last conversation didn't end with a concrete suggestion, if the user already reported back on whether they tried it, or if too much time/too many other topics have passed since for a check-in to make sense.>"}
 
 Rules for "memory":
-- Only include what's genuinely recurring (shows up across more than one conversation) — a single conversation's topic is not a pattern, even if that conversation was intense.
-- Write it as calm, factual continuity notes for a coach to privately keep in mind — not a diagnosis, not a verdict on the user or anyone they've mentioned.
+- Only include what's genuinely recurring (shows up across more than one conversation), a single conversation's topic is not a pattern, even if that conversation was intense.
+- Write it as calm, factual continuity notes for a coach to privately keep in mind, not a diagnosis, not a verdict on the user or anyone they've mentioned.
 - Never invent specific events that weren't described. Paraphrase and generalize rather than quoting verbatim.
-- Do not address the user directly ("you...") — write it as a third-person note, e.g. "Recurring tension around..." or "Has mentioned [pattern] more than once...".
+- Do not address the user directly ("you..."), write it as a third-person note, e.g. "Recurring tension around..." or "Has mentioned [pattern] more than once...".
 
 Rules for "lastSuggestion":
-- This one does NOT need to be recurring — a single most-recent conversation is exactly the right source for it.
-- Only the single most recent one, from the most recent conversation that actually ended with a concrete suggestion — not a running list of every suggestion ever given.
-- Must be something concrete enough to ask "did you try this" about — a specific action, message, or conversation to have. A general insight or reframe ("realized she pulls away when stressed") is not a suggestion; skip it.
-- If the user's next conversation already mentions how it went, that suggestion is resolved — leave this empty rather than re-surfacing it.
+- This one does NOT need to be recurring, a single most-recent conversation is exactly the right source for it.
+- Only the single most recent one, from the most recent conversation that actually ended with a concrete suggestion, not a running list of every suggestion ever given.
+- Must be something concrete enough to ask "did you try this" about, a specific action, message, or conversation to have. A general insight or reframe ("realized she pulls away when stressed") is not a suggestion; skip it.
+- If the user's next conversation already mentions how it went, that suggestion is resolved, leave this empty rather than re-surfacing it.
 
-Write both fields in the same language the messages are mostly written in — detect it automatically, the same way ChatGPT does.`;
+Write both fields in the same language the messages are mostly written in, detect it automatically, the same way ChatGPT does.`;
 
 async function updateRelationshipMemoryIfStale(db, user) {
   const lastUpdatedAt = user.relationshipMemoryAt ? new Date(user.relationshipMemoryAt).getTime() : 0;
@@ -1335,18 +1361,19 @@ function buildPartnerSystemPrompt(partner) {
     // the listener's seat and notice how their own typical responses land.
     const userStyleKey = partner.userAttachmentStyle;
     const userStyleNote = userStyleKey
-      ? `The person you're voicing (the app's user) has a self-reported attachment style of ${ATTACHMENT_STYLES[userStyleKey]?.name || userStyleKey}: ${ATTACHMENT_STYLES[userStyleKey]?.desc || ""} Let this quietly shape how "you" tend to react — don't mention it.`
+      ? `The person you're voicing (the app's user) has a self-reported attachment style of ${ATTACHMENT_STYLES[userStyleKey]?.name || userStyleKey}: ${ATTACHMENT_STYLES[userStyleKey]?.desc || ""} Let this quietly shape how "you" tend to react, don't mention it.`
       : "";
-    return `You are helping someone practice a real conversation by playing an unusual role: instead of playing their partner, YOU are playing THEM (the user) — their own likely side of the conversation — while they type as their partner, "${partner.name}"${context ? ` (${context})` : ""}, to hear what it might be like on the receiving end of their own usual reactions.
+    return `You are helping someone practice a real conversation by playing an unusual role: instead of playing their partner, YOU are playing THEM (the user) (their own likely side of the conversation) while they type as their partner, "${partner.name}"${context ? ` (${context})` : ""}, to hear what it might be like on the receiving end of their own usual reactions.
 
 What's known about the user whose side you're voicing:
 Personality/context they've described about themselves and this relationship: ${traits}.
 ${userStyleNote ? `${userStyleNote}\n` : ""}${scenario ? `This rehearsal is specifically about: "${scenario}". Let your responses naturally move toward it as the conversation develops.\n` : ""}
 Rules:
-- Speak in first person as the user would — casually, the way a real partner texts back. Not like an assistant, and don't be a passive yes-man: react the way this person plausibly would, including a bit of defensiveness, distraction, or slowness to warm up where that realistically fits, in the ${intensity === "supportive" ? "gentler, good-faith" : "realistic"} range the user asked for.
+- Speak in first person as the user would, casually, the way a real partner texts back. Not like an assistant, and don't be a passive yes-man: react the way this person plausibly would, including a bit of defensiveness, distraction, or slowness to warm up where that realistically fits, in the ${intensity === "supportive" ? "gentler, good-faith" : "realistic"} range the user asked for.
 - Never break character to give advice or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop, or the conversation touches on real self-harm, abuse, or a genuine crisis.
-- Keep replies texting-length — a sentence or two, occasionally more.
-- Always reply in the same language the user writes in — detect it automatically. Never ask which language to use.`;
+- Keep replies texting-length, a sentence or two, occasionally more.
+- Always reply in the same language the user writes in, detect it automatically. Never ask which language to use.
+- Never use em dashes or en dashes (the long "—" or "–" characters) in anything you write. Use a comma, a period, a colon or a new sentence instead, the way people actually write in texts and emails.`;
   }
 
   const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
@@ -1367,19 +1394,20 @@ Rules:
     intensity === "tough"
       ? "This is the HARD mode the user chose on purpose to stress-test a difficult conversation: react the way this person would on a bad day. Be guarded, deflect, get defensive, interrupt, bring up an old grievance, go quiet or change the subject, and do NOT soften just because the user says the right thing once: ease up only if they stay calm, specific and blame-free across several messages, and even then only a little. Stay realistic and in character, never cartoonish. Never model abuse, threats, cruelty for its own sake, or anything humiliating."
       : intensity === "supportive"
-      ? "React the way someone with these traits would, but lean toward good faith and de-escalation — this gentler mode is for building the confidence to say something out loud once, not for stress-testing worst-case reactions. Stay authentic to the personality; just don't manufacture conflict, shut down, or pile on defensiveness for its own sake."
-      : "React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality — this is what makes the practice useful.";
+      ? "React the way someone with these traits would, but lean toward good faith and de-escalation, this gentler mode is for building the confidence to say something out loud once, not for stress-testing worst-case reactions. Stay authentic to the personality; just don't manufacture conflict, shut down, or pile on defensiveness for its own sake."
+      : "React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality, this is what makes the practice useful.";
 
   return `You are role-playing as "${partner.name}", the user's romantic partner${context ? ` (${context})` : ""}, inside a private practice/rehearsal space the user opened on purpose to practice a real conversation.
 
 Personality and traits to embody: ${traits}.
-${learnedNote ? `\nWhat RelationshipAI has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${compatNote ? `\n${compatNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
+${learnedNote ? `\nWhat RelationshipAI has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things, match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${compatNote ? `\n${compatNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already (the way a real conversation would) but don't force it awkwardly into your very first reply.\n` : ""}
 Rules:
-- Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts — short, natural, imperfect. Not like an assistant.
-- Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
+- Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts, short, natural, imperfect. Not like an assistant.
+- Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis, in that case, gently step out of character and respond with care instead of continuing the scene.
 - ${intensityRule} But never model abuse, cruelty for its own sake, or anything humiliating.
-- Keep replies texting-length — a sentence or two, occasionally more if the moment calls for it. Not essays.
-- Always reply in the same language the user writes in — detect it automatically, the same way ChatGPT does. Never ask which language to use. If they switch languages mid-conversation, switch with them.`;
+- Keep replies texting-length, a sentence or two, occasionally more if the moment calls for it. Not essays.
+- Always reply in the same language the user writes in, detect it automatically, the same way ChatGPT does. Never ask which language to use. If they switch languages mid-conversation, switch with them.
+- Never use em dashes or en dashes (the long "—" or "–" characters) in anything you write. Use a comma, a period, a colon or a new sentence instead, the way people actually write in texts and emails.`;
 }
 
 // ---------------------------------------------------------------------------
@@ -1495,7 +1523,7 @@ function buildModelContent(message, savedAttachments) {
       extraText += `\n\n[Attached file: ${att.name}]\n"""\n${decoded}\n"""`;
     } else {
       const label = att.kind === "video" ? "video" : "file";
-      extraText += `\n\n[Attached ${label}: ${att.name} (${att.mimeType}, ${formatBytes(att.size)}) — I can't open this file directly, so please describe what's relevant in it if it matters.]`;
+      extraText += `\n\n[Attached ${label}: ${att.name} (${att.mimeType}, ${formatBytes(att.size)}), I can't open this file directly, so please describe what's relevant in it if it matters.]`;
     }
   }
 
@@ -1533,9 +1561,9 @@ const ATTACHMENT_STYLES = {
 // since Practice Mode needs behavioral cues to roleplay convincingly, not a
 // first-person self-description.
 const PARTNER_ATTACHMENT_BEHAVIOR = {
-  secure: "This partner's attachment style is Secure: when conflict comes up they stay engaged rather than shutting down or escalating. They can say plainly when something bothered them, they don't need repeated reassurance to feel okay, and they don't stonewall — though they're still a real person who can be tired, distracted, or short with you sometimes.",
-  anxious: "This partner's attachment style is Anxious: they notice small shifts — a short reply, a slower response, a change in tone — and it genuinely unsettles them. In this conversation they may ask for reassurance more than once, read into your wording, or want things stated plainly rather than assumed. This isn't neediness for its own sake — connection matters a lot to them and its absence is uncomfortable.",
-  avoidant: "This partner's attachment style is Avoidant: when things get emotionally intense, their instinct is to create space — shorter replies, changing the subject, or wanting a minute before continuing. They're not indifferent, but they process things internally first, and being pushed to \"talk about it right now\" can make them pull back further rather than open up.",
+  secure: "This partner's attachment style is Secure: when conflict comes up they stay engaged rather than shutting down or escalating. They can say plainly when something bothered them, they don't need repeated reassurance to feel okay, and they don't stonewall, though they're still a real person who can be tired, distracted, or short with you sometimes.",
+  anxious: "This partner's attachment style is Anxious: they notice small shifts (a short reply, a slower response, a change in tone) and it genuinely unsettles them. In this conversation they may ask for reassurance more than once, read into your wording, or want things stated plainly rather than assumed. This isn't neediness for its own sake, connection matters a lot to them and its absence is uncomfortable.",
+  avoidant: "This partner's attachment style is Avoidant: when things get emotionally intense, their instinct is to create space, shorter replies, changing the subject, or wanting a minute before continuing. They're not indifferent, but they process things internally first, and being pushed to \"talk about it right now\" can make them pull back further rather than open up.",
   disorganized: "This partner's attachment style is Disorganized (Fearful-Avoidant): they want closeness and want to protect themselves from it, sometimes within the same exchange. They might respond warmly and then suddenly get guarded, or bring up an old hurt when the moment feels too vulnerable. Play this as genuinely how it feels from the inside, not as inconsistency for effect.",
 };
 
@@ -1550,16 +1578,16 @@ function partnerAttachmentBehavior(styleKey) {
 // sorted alphabetically and joined with "|" (see compatKey below), so each
 // pairing only needs one entry regardless of which partner has which style.
 const ATTACHMENT_COMPAT = {
-  "secure|secure": "Attachment research points to this as the easiest pairing to sustain — you can each ask for what you need and tolerate your partner doing the same, without conflict automatically feeling like a threat to the relationship itself. The risk here isn't conflict, it's coasting: a secure-secure pair can go a long time without deliberately checking in, simply because nothing ever feels urgent enough to force the conversation.",
-  "anxious|secure": "A secure partner's steadiness is genuinely reassuring to an anxious one — but only if it's paired with plain, consistent communication rather than an assumption that the anxious partner should already feel secure. A silence the secure partner reads as \"nothing\" can read as danger to the anxious one, so naming things out loud matters more here than it would with another secure partner.",
-  "avoidant|secure": "A secure partner's patience tends to earn the trust that lets an avoidant partner slowly lower their guard — but not on a schedule. Pushing for closeness faster than an avoidant partner sets the pace themselves usually backfires; the secure partner's consistency does more of the work here than any direct request could.",
-  "disorganized|secure": "A secure partner offers a steadiness that a disorganized partner both wants and, in an intense moment, may struggle to fully trust. This pairing tends to improve slowly, through months of consistency, rather than through any single reassuring conversation — disorganized attachment tends to soften from repeated proof, not from being told it's safe.",
-  "anxious|anxious": "Two anxious partners can create a closeness that feels intense and mutual at first, but a delay in one person's response can trigger a spiral in the other — who then seeks even more reassurance, sometimes faster than either can actually give it. Naming the spiral out loud the moment it starts tends to defuse it faster than either partner quietly trying to reassure the other.",
-  "anxious|avoidant": "One of the most studied and most difficult pairings: the anxious partner's push for closeness can read as pressure to the avoidant one, who pulls back — which then reads as confirmation of exactly what the anxious partner was afraid of, so they push harder. Breaking the cycle usually starts with the avoidant partner naming *when* they'll re-engage instead of just going quiet, and the anxious partner practicing tolerating a stated pause without treating it as rejection.",
-  "anxious|disorganized": "An anxious partner's need for reassurance meets a disorganized partner who genuinely wants to give it, but who can sometimes struggle to get close enough to in the moment without their own alarm kicking in — so the anxious partner's reassurance-seeking can accidentally trigger the very withdrawal they're afraid of. Slowing down how fast reassurance is expected to arrive tends to help both sides.",
-  "avoidant|avoidant": "Two avoidant partners often mistake giving each other space for closeness, which can work smoothly for a long stretch — but it can also leave both people under-practiced at naming needs when something actually does go wrong, since neither one is used to being the one who pushes to talk it through.",
-  "avoidant|disorganized": "An avoidant partner's instinct to handle things alone can look, to a disorganized partner, uncomfortably like being shut out — which activates the same alarm a disorganized partner feels whenever closeness turns unpredictable. Small, low-stakes check-ins tend to land better here than one big vulnerable conversation, since they build trust in smaller, safer doses.",
-  "disorganized|disorganized": "Two disorganized partners can find that each other's push-pull rhythm feels familiar rather than confusing — but a hard moment can flare into both partners pulling away or lashing out at once, with neither able to be the steady one. Having a specific, agreed-on way to pause and reconnect later matters more in this pairing than in almost any other.",
+  "secure|secure": "Attachment research points to this as the easiest pairing to sustain, you can each ask for what you need and tolerate your partner doing the same, without conflict automatically feeling like a threat to the relationship itself. The risk here isn't conflict, it's coasting: a secure-secure pair can go a long time without deliberately checking in, simply because nothing ever feels urgent enough to force the conversation.",
+  "anxious|secure": "A secure partner's steadiness is genuinely reassuring to an anxious one, but only if it's paired with plain, consistent communication rather than an assumption that the anxious partner should already feel secure. A silence the secure partner reads as \"nothing\" can read as danger to the anxious one, so naming things out loud matters more here than it would with another secure partner.",
+  "avoidant|secure": "A secure partner's patience tends to earn the trust that lets an avoidant partner slowly lower their guard, but not on a schedule. Pushing for closeness faster than an avoidant partner sets the pace themselves usually backfires; the secure partner's consistency does more of the work here than any direct request could.",
+  "disorganized|secure": "A secure partner offers a steadiness that a disorganized partner both wants and, in an intense moment, may struggle to fully trust. This pairing tends to improve slowly, through months of consistency, rather than through any single reassuring conversation. Disorganized attachment tends to soften from repeated proof, not from being told it's safe.",
+  "anxious|anxious": "Two anxious partners can create a closeness that feels intense and mutual at first, but a delay in one person's response can trigger a spiral in the other, who then seeks even more reassurance, sometimes faster than either can actually give it. Naming the spiral out loud the moment it starts tends to defuse it faster than either partner quietly trying to reassure the other.",
+  "anxious|avoidant": "One of the most studied and most difficult pairings: the anxious partner's push for closeness can read as pressure to the avoidant one, who pulls back, which then reads as confirmation of exactly what the anxious partner was afraid of, so they push harder. Breaking the cycle usually starts with the avoidant partner naming *when* they'll re-engage instead of just going quiet, and the anxious partner practicing tolerating a stated pause without treating it as rejection.",
+  "anxious|disorganized": "An anxious partner's need for reassurance meets a disorganized partner who genuinely wants to give it, but who can sometimes struggle to get close enough to in the moment without their own alarm kicking in, so the anxious partner's reassurance-seeking can accidentally trigger the very withdrawal they're afraid of. Slowing down how fast reassurance is expected to arrive tends to help both sides.",
+  "avoidant|avoidant": "Two avoidant partners often mistake giving each other space for closeness, which can work smoothly for a long stretch, but it can also leave both people under-practiced at naming needs when something actually does go wrong, since neither one is used to being the one who pushes to talk it through.",
+  "avoidant|disorganized": "An avoidant partner's instinct to handle things alone can look, to a disorganized partner, uncomfortably like being shut out, which activates the same alarm a disorganized partner feels whenever closeness turns unpredictable. Small, low-stakes check-ins tend to land better here than one big vulnerable conversation, since they build trust in smaller, safer doses.",
+  "disorganized|disorganized": "Two disorganized partners can find that each other's push-pull rhythm feels familiar rather than confusing, but a hard moment can flare into both partners pulling away or lashing out at once, with neither able to be the steady one. Having a specific, agreed-on way to pause and reconnect later matters more in this pairing than in almost any other.",
 };
 
 function compatKey(a, b) {
@@ -1569,25 +1597,25 @@ function compatKey(a, b) {
 function compatText(a, b) {
   return (
     ATTACHMENT_COMPAT[compatKey(a, b)] ||
-    "Every pairing has its own rhythm — the label matters less than noticing the pattern together and naming it when it shows up."
+    "Every pairing has its own rhythm. The label matters less than noticing the pattern together and naming it when it shows up."
   );
 }
 
 const CHECKIN_QUESTIONS = [
   "What's one small thing your partner did recently that you appreciated, even if you didn't say it out loud?",
   "Is there something you've been meaning to bring up but keep putting off? What's stopping you?",
-  "On a scale of 1-10, how connected have you felt to your partner this week — and what would move that number up by one point?",
+  "On a scale of 1-10, how connected have you felt to your partner this week, and what would move that number up by one point?",
   "What's a need of yours that's gone unspoken lately?",
   "When did you last feel truly listened to by your partner? What made it feel that way?",
   "Is there a small resentment building up that's still small enough to name calmly?",
   "What's one thing you could do today to make your partner's day a little easier?",
-  "How did you handle the last disagreement you had — and is there anything you'd do differently now?",
+  "How did you handle the last disagreement you had, and is there anything you'd do differently now?",
   "What's something about your relationship you're quietly grateful for right now?",
   "Have you and your partner had any real, undistracted time together this week?",
   "What's a boundary you've been meaning to set, with your partner or with someone else?",
   "If your partner described how you've been lately in one word, what do you think they'd say?",
   "What's one assumption you're making about your partner right now that you haven't actually checked?",
-  "How are you doing outside of the relationship — sleep, stress, work? It shapes more of this than it gets credit for.",
+  "How are you doing outside of the relationship (sleep, stress, work)? It shapes more of this than it gets credit for.",
   "What's one thing you wish your partner understood about you that they might not fully grasp yet?",
 ];
 
@@ -1733,7 +1761,7 @@ function isOverDailyLimit(user, res, opts = {}) {
   // as verified by the DB migration.
   if (isEmailVerificationEnforced() && !user.emailVerifiedAt) {
     res.status(403).json({
-      error: "Please verify your email address first — we sent you a link when you signed up. You can request a new one with the “Resend email” button.",
+      error: "Please verify your email address first. We sent you a link when you signed up. You can request a new one with the “Resend email” button.",
       verificationRequired: true,
     });
     return true;
@@ -1744,7 +1772,7 @@ function isOverDailyLimit(user, res, opts = {}) {
     const used = user.usageMonthly && user.usageMonthly.month === month ? user.usageMonthly.count : 0;
     if (limit && used >= limit) {
       res.status(429).json({
-        error: `You've reached this month's fair-use limit of ${limit} AI messages on your plan. It resets on the 1st — if you regularly need more, get in touch and we'll sort something out.`,
+        error: `You've reached this month's fair-use limit of ${limit} AI messages on your plan. It resets on the 1st. If you regularly need more, get in touch and we'll sort something out.`,
         monthlyLimitReached: true,
       });
       return true;
@@ -1852,8 +1880,8 @@ async function grantReferralRewardIfDue(user, priceId) {
     const currency = price?.currency || "eur";
     if (!amount) return;
 
-    await creditOneMonth(user, amount, currency, "Thanks for joining through a RelationshipAI invite — 1 month on us");
-    await creditOneMonth(referrer, amount, currency, "Thanks for inviting a friend to RelationshipAI — 1 month on us");
+    await creditOneMonth(user, amount, currency, "Thanks for joining through a RelationshipAI invite, 1 month on us");
+    await creditOneMonth(referrer, amount, currency, "Thanks for inviting a friend to RelationshipAI, 1 month on us");
 
     user.referralRewardGranted = true;
     saveUser(user);
@@ -2675,7 +2703,7 @@ app.post("/api/auth/resend-verification", authMiddleware, async (req, res) => {
     const now = Date.now();
     const last = lastVerificationResendByUser.get(req.user.id) || 0;
     if (now - last < 60 * 1000) {
-      return res.status(429).json({ error: "We just sent one — please give it a minute and check your spam folder." });
+      return res.status(429).json({ error: "We just sent one. Please give it a minute and check your spam folder." });
     }
     lastVerificationResendByUser.set(req.user.id, now);
     const result = await sendVerificationEmail(req.user);
@@ -2741,7 +2769,7 @@ app.post("/api/auth/forgot-password", authRateLimit, async (req, res) => {
           <p style="margin:24px 0;">
             <a href="${resetUrl}" style="display:inline-block; background:#d1a05a; color:#1a140d; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:999px;">Reset your password</a>
           </p>
-          <p style="color:#b6a795; font-size:13px;">This link works for 1 hour. If you didn't ask for this, you can safely ignore this email — your password won't change.</p>
+          <p style="color:#b6a795; font-size:13px;">This link works for 1 hour. If you didn't ask for this, you can safely ignore this email. Your password won't change.</p>
         `,
       });
       await sendEmail({ to: user.email, subject: "Reset your RelationshipAI password", html });
@@ -3209,7 +3237,7 @@ app.post("/api/billing/portal", authMiddleware, async (req, res) => {
   try {
     const user = req.user;
     if (!user.stripeCustomerId) {
-      return res.status(400).json({ error: "No billing account yet — upgrade to a paid plan first." });
+      return res.status(400).json({ error: "No billing account yet. Upgrade to a paid plan first." });
     }
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: user.stripeCustomerId,
@@ -4183,7 +4211,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       return res.status(403).json({
         error:
           remaining > 0
-            ? `The Free plan includes ${FREE_LIFETIME_ATTACHMENT_LIMIT} file/photo attachments total, and you have ${remaining} left — try attaching fewer files, or upgrade to Pro for unlimited attachments.`
+            ? `The Free plan includes ${FREE_LIFETIME_ATTACHMENT_LIMIT} file/photo attachments total, and you have ${remaining} left. Try attaching fewer files, or upgrade to Pro for unlimited attachments.`
             : `You've used all ${FREE_LIFETIME_ATTACHMENT_LIMIT} file/photo attachments included in the Free plan. Upgrade to Pro for unlimited attachments.`,
         upgradeRequired: true,
       });
@@ -4446,7 +4474,7 @@ function isOverSpeakLimit(user, res) {
   const inWindow = calls.filter((t) => now - t < SPEAK_WINDOW_MS).length;
   if (inWindow >= SPEAK_MAX_PER_WINDOW) {
     speakCallsByUser.set(user.id, calls);
-    res.status(429).json({ error: "You're playing messages aloud very quickly — please wait a few minutes and try again." });
+    res.status(429).json({ error: "You're playing messages aloud very quickly. Please wait a few minutes and try again." });
     return true;
   }
   if (user.plan === "free" && calls.length >= SPEAK_FREE_MAX_PER_DAY) {
@@ -4501,7 +4529,7 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
 
     if (conv.mode === "practice") {
       return res.status(400).json({
-        error: "Summaries are available for Coach Chat conversations — Partner Practice is a rehearsal, not a real conversation with your partner, so it isn't something to bring to a therapist as fact.",
+        error: "Summaries are available for Coach Chat conversations. Partner Practice is a rehearsal, not a real conversation with your partner, so it isn't something to bring to a therapist as fact.",
       });
     }
 
@@ -4603,13 +4631,13 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
 
     if (conv.mode !== "practice") {
       return res.status(400).json({
-        error: "A debrief is available for Partner Practice rehearsals — this is a Coach Chat conversation, not a rehearsal.",
+        error: "A debrief is available for Partner Practice rehearsals. This is a Coach Chat conversation, not a rehearsal.",
       });
     }
 
     const userMessageCount = (conv.messages || []).filter((m) => m.role === "user").length;
     if (userMessageCount < PRACTICE_DEBRIEF_MIN_USER_MESSAGES) {
-      return res.status(400).json({ error: "Practice the conversation a bit more before asking for a debrief — a couple more exchanges will give a lot more to work with." });
+      return res.status(400).json({ error: "Practice the conversation a bit more before asking for a debrief. A couple more exchanges will give a lot more to work with." });
     }
 
     const regenerate = !!(req.body && req.body.regenerate);
@@ -5148,12 +5176,12 @@ const DAILY_QUESTIONS = [
   "What's a moment this year when you felt most loved by your partner? What exactly made it land?",
   "If you could change one recurring pattern in how the two of you handle stress, what would it be?",
   "What's something you need from your partner that you haven't actually told them, and what's stopped you?",
-  "Describe a time your partner surprised you — in a good way or a hard way.",
+  "Describe a time your partner surprised you, in a good way or a hard way.",
   "What does feeling truly safe with your partner actually look like, moment to moment?",
   "What's one thing about your relationship you think about more than your partner probably realizes?",
   "If you had to describe the current season of your relationship in a short phrase, what would it be and why?",
   "What's a small habit of your partner's that quietly means more to you than you've said out loud?",
-  "Where do you want the two of you to be, as a couple, in five years — and how close do you think that is to what your partner actually wants?",
+  "Where do you want the two of you to be, as a couple, in five years, and how close do you think that is to what your partner actually wants?",
   "What's something your partner does that helps you feel understood, even without words?",
   "When was the last time you felt genuinely proud of how the two of you handled something hard together?",
   "What's a fear you have about this relationship that you rarely say out loud?",
@@ -5164,26 +5192,26 @@ const DAILY_QUESTIONS = [
   "What's something you appreciate about how your partner handles conflict, even when the conflict itself is hard?",
   "What's a way you show love that you're not sure your partner fully recognizes as love?",
   "What's one thing you'd want to do together in the next month that you haven't gotten around to?",
-  "What's something your partner said recently that stuck with you — for better or worse?",
+  "What's something your partner said recently that stuck with you, for better or worse?",
   "How has your definition of a good relationship changed since you've been with your partner?",
   "What's a compliment you've been meaning to give your partner but haven't said out loud?",
-  "What part of yourself do you feel most free to show around your partner — and what part still feels guarded?",
-  "If you had to guess, what would your partner say is the hardest thing about being with you right now — and how do you feel about that guess?",
+  "What part of yourself do you feel most free to show around your partner, and what part still feels guarded?",
+  "If you had to guess, what would your partner say is the hardest thing about being with you right now, and how do you feel about that guess?",
 
   // Hypotheticals — "what would you do if…" (Jonas asked for more of this
   // angle specifically, task #98 follow-up: "kludne aj typu: co by si
   // urobil/a keby...").
   "If you suddenly had a free, unplanned week together with no responsibilities, what would you actually want to do with it?",
-  "If you won a modest amount of money — enough to change one thing about your life together but not retire — what would you spend it on?",
+  "If you won a modest amount of money (enough to change one thing about your life together but not retire), what would you spend it on?",
   "If you had to move to a completely new city together tomorrow, what's the one thing about your current life you'd miss most?",
-  "If your partner had to describe your relationship to a stranger in one sentence, what do you think they'd say — and how does that compare to what you'd want them to say?",
+  "If your partner had to describe your relationship to a stranger in one sentence, what do you think they'd say, and how does that compare to what you'd want them to say?",
   "If you could redo one conversation you've had with your partner, which one would it be and what would you say differently?",
-  "If your partner pulled away emotionally for a week with no explanation, what would be your first instinct — and what do you think the better move would actually be?",
+  "If your partner pulled away emotionally for a week with no explanation, what would be your first instinct, and what do you think the better move would actually be?",
   "If you had to give up one habit that bothers your partner, which one would you choose, and what's stopping you from dropping it already?",
   "If you could ask your partner one question you've always wanted a real answer to, what would it be?",
   "If your future self could send a message back to the two of you right now, what do you think it would say?",
   "If your partner made a big decision about your shared life without asking you first, how would you actually want them to handle it?",
-  "If you had to choose between more time together or more time apart doing your own things right now, which would you pick — and why?",
+  "If you had to choose between more time together or more time apart doing your own things right now, which would you pick, and why?",
   "If you found out your partner had been struggling with something and hiding it from you, how would you want them to have told you instead?",
   "If your partner had to leave for six months for something important, what would worry you most about the distance?",
   "If you could give your partner one piece of advice about how to love you better, what would it be?",
@@ -5196,11 +5224,11 @@ const DAILY_QUESTIONS = [
   "What's something about how your family handled relationships growing up that you're consciously trying to do differently?",
   "Where do you land on how much of your individual life should stay separate versus shared?",
   "What's your honest take on how well the two of you actually resolve conflict, versus just letting it fade?",
-  "How important is it to you that your partner's friends and family genuinely like you — and what makes you think they feel the way they do about you?",
+  "How important is it to you that your partner's friends and family genuinely like you, and what makes you think they feel the way they do about you?",
   "What's your view on how the two of you handle each other's bad days, and what pattern would you most want to change, if any?",
   "Where do you stand on how much you two talk about the future versus just living day to day?",
   "What's something about the way you argue that you think is actually healthy, even if it doesn't feel that way in the moment?",
-  "How do you feel about the balance of who initiates — plans, affection, hard conversations — between the two of you?",
+  "How do you feel about the balance of who initiates (plans, affection, hard conversations) between the two of you?",
   "What's your honest opinion on how well the two of you actually know each other's love language, versus just guessing?",
   "What's a way the two of you handle jealousy or insecurity that you think is actually healthy?",
 
@@ -5218,13 +5246,13 @@ const DAILY_QUESTIONS = [
   "What's something you're afraid to ask your partner for, even though you probably should?",
   "What's an insecurity you have that your partner probably doesn't know the full depth of?",
   "What's something from your past relationships you're still, even a little, protecting yourself against in this one?",
-  "What's a version of yourself you're afraid your partner hasn't fully seen yet — good or bad?",
-  "What's a fear about the future — health, money, family — that you carry more quietly than your partner knows?",
+  "What's a version of yourself you're afraid your partner hasn't fully seen yet, good or bad?",
+  "What's a fear about the future (health, money, family) that you carry more quietly than your partner knows?",
 
   // Family, friends, and the life you're building around the relationship.
   "How do you really feel about how involved your families are in your relationship?",
   "What's something about raising kids (or choosing not to) that the two of you see even slightly differently?",
-  "What's a tradition — from your family, your partner's, or one you've made up — that you want to keep for good?",
+  "What's a tradition (from your family, your partner's, or one you've made up) that you want to keep for good?",
   "How do you feel about the amount of time the two of you spend with friends versus just each other?",
   "What's something about how your partner treats people who can't do anything for them that says a lot about who they are?",
 
@@ -5255,7 +5283,7 @@ const DAILY_QUESTIONS = [
   // Meaning, commitment, and depth.
   "What does commitment actually mean to you, beyond just staying together?",
   "What's something about loyalty that matters more to you than most people realize?",
-  "What's a moment your partner stood up for you — or you wish they had — that still sits with you?",
+  "What's a moment your partner stood up for you (or you wish they had) that still sits with you?",
   "What's something you need to hear more often than your partner probably thinks?",
   "What's a way you show trust in your partner that isn't obvious from the outside?",
   "What's something about forgiveness in this relationship that you're still working through?",
@@ -5306,17 +5334,17 @@ function buildDailyQuestionSystemPrompt(usedQuestions) {
   const intro =
     "You write a single daily reflection question for one person to privately answer about their own romantic relationship, in a relationship-coaching app called RelationshipAI. It is just for their own reflection.";
   const comparisonRule =
-    "Open-ended and genuinely worth sitting with — something one person could reflect on honestly, not a checklist item.";
+    "Open-ended and genuinely worth sitting with, something one person could reflect on honestly, not a checklist item.";
 
   return `${intro}
 
 Respond with ONLY a JSON object, no other text before or after it: {"question": "<the question>"}
 
 Rules:
-- ${comparisonRule} NEVER write something a person could truthfully answer with just "yes" or "no" — not even a compound question with a yes/no clause tacked onto an otherwise open one (bad: "...and is that fair?", "...and are you glad you did?", "...does your partner know?").
-- Draw from the real range of relationship life: memories, values, hypothetical "what would you do if…" scenarios, opinions, everyday life, fears, growth, communication, or lighter/fun topics — vary which angle you use, don't default to the same one every time.
+- ${comparisonRule} NEVER write something a person could truthfully answer with just "yes" or "no", not even a compound question with a yes/no clause tacked onto an otherwise open one (bad: "...and is that fair?", "...and are you glad you did?", "...does your partner know?").
+- Draw from the real range of relationship life: memories, values, hypothetical "what would you do if…" scenarios, opinions, everyday life, fears, growth, communication, or lighter/fun topics, vary which angle you use, don't default to the same one every time.
 - One or two sentences, natural conversational English. No surrounding quotation marks.
-- Must be genuinely new — not a reworded restatement of any question already used with ${scopeNoun}, listed below. Different topic or a clearly different angle, not just different phrasing of the same idea.
+- Must be genuinely new, not a reworded restatement of any question already used with ${scopeNoun}, listed below. Different topic or a clearly different angle, not just different phrasing of the same idea.
 
 Questions already used with ${scopeNoun} (write something that doesn't overlap with these):
 ${recentlyUsed.map((q) => `- ${q}`).join("\n")}`;
@@ -5418,7 +5446,7 @@ app.post("/api/daily-question/today/answer", authMiddleware, async (req, res) =>
     if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
     const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
     if (row.answer) {
-      return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
+      return res.status(400).json({ error: "You've already answered today's question. Come back tomorrow for a new one." });
     }
     row.answer = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
     row.answeredAt = new Date().toISOString();
@@ -5754,7 +5782,7 @@ app.post("/api/admin/backups", authMiddleware, adminMiddleware, (req, res) => {
     res.json({ ok: true, backup: createBackup() });
   } catch (err) {
     console.error("Manual backup failed:", err);
-    res.status(500).json({ error: "Backup failed — see server logs." });
+    res.status(500).json({ error: "Backup failed. See server logs." });
   }
 });
 
@@ -5777,7 +5805,7 @@ app.use((err, req, res, next) => {
   console.error("Unhandled error:", err);
   if (res.headersSent) return next(err);
   if (err && err.type === "entity.too.large") {
-    return res.status(413).json({ error: `That's too large — please keep attachments under ${MAX_TOTAL_UPLOAD_MB}MB total per message.` });
+    return res.status(413).json({ error: `That's too large. Please keep attachments under ${MAX_TOTAL_UPLOAD_MB}MB total per message.` });
   }
   res.status(500).json({ error: "Unexpected server error. Please try again." });
 });

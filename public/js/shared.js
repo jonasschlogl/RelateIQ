@@ -553,7 +553,7 @@ function renderVerifyBanner(user) {
   banner.id = "verify-banner";
   banner.className = "verify-banner";
   banner.innerHTML =
-    '<span>Please verify your email to unlock AI replies — we sent a link to <strong></strong>.</span>' +
+    '<span>Please verify your email to unlock AI replies. We sent a link to <strong></strong>.</span>' +
     '<button type="button" class="btn btn-ghost btn-sm" id="verify-resend-btn">Resend email</button>';
   banner.querySelector("strong").textContent = user.email || "your inbox";
   const inputArea = document.getElementById("input-area");
@@ -569,7 +569,7 @@ function renderVerifyBanner(user) {
       const res = await authFetch("/api/auth/resend-verification", { method: "POST" });
       const data = await safeJson(res);
       if (!res.ok) throw new Error(data.error || "Couldn't send the email.");
-      btn.textContent = "Sent — check your inbox";
+      btn.textContent = "Sent. Check your inbox";
       setTimeout(() => { btn.disabled = false; btn.textContent = original; }, 60000);
     } catch (e) {
       btn.textContent = original;

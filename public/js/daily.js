@@ -43,7 +43,7 @@ function renderToday(data) {
     card.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
       <div class="checkin-answer">
-        <textarea id="daily-answer-input" maxlength="2000" placeholder="Take your time — this is just for you."></textarea>
+        <textarea id="daily-answer-input" maxlength="2000" placeholder="Take your time. This is just for you."></textarea>
       </div>
       <div class="checkin-actions">
         <button class="btn btn-primary btn-sm" id="daily-answer-btn" type="button">Submit answer</button>
@@ -124,7 +124,7 @@ async function toggleHistory() {
     }
     historyLoaded = true;
     if (!data.length) {
-      wrap.innerHTML = '<p class="text-muted">No past days yet — check back after today\'s question.</p>';
+      wrap.innerHTML = '<p class="text-muted">No past days yet. Check back after today\'s question.</p>';
       return;
     }
     wrap.innerHTML = data.map(renderHistoryEntry).join("");
