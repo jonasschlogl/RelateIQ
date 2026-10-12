@@ -499,3 +499,38 @@
   .carousel-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--border-strong); cursor: pointer; }
   .carousel-dots button[aria-current="true"] { width: 22px; border-radius: 999px; background: var(--accent-1); }
 }
+
+/* ---- Mobile pass 2: compare tabs, tools row, compact steps, shorter FAQ ---- */
+.compare-tabs, .faq-more { display: none; }
+@media (max-width: 700px) {
+  /* Compare: RelationshipAI plus ONE other column at a time, so nothing is cut off */
+  .compare-tabs { display: flex; gap: 6px; margin: 0 0 12px; padding: 5px; border-radius: 14px; background: var(--bg-elevated); border: 1px solid var(--border-strong); }
+  .compare-tabs button { flex: 1; padding: 10px 6px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .compare-tabs button[aria-selected="true"] { background: var(--accent-grad); color: var(--ink); }
+  .compare-table { min-width: 0; table-layout: fixed; font-size: 13px; }
+  .compare-table th, .compare-table td { white-space: normal; padding: 11px 10px; vertical-align: top; }
+  .compare-table th:first-child, .compare-table td:first-child { width: 36%; }
+  .compare-table thead th { font-size: 13px; }
+  .compare-wrap-bot th:nth-child(4), .compare-wrap-bot td:nth-child(4) { display: none; }
+  .compare-wrap-therapy th:nth-child(3), .compare-wrap-therapy td:nth-child(3) { display: none; }
+
+  /* Small tools: a swipe row with a counter (replaces the show-all button) */
+  .more-toggle { display: none !important; }
+  .more-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin-left: -16px; margin-right: -16px; padding: 0 16px 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .more-grid::-webkit-scrollbar { display: none; }
+  .more-grid > * { flex: 0 0 78%; scroll-snap-align: center; min-width: 0; }
+  .more-grid .reveal-item { opacity: 1 !important; transform: none !important; }
+  .carousel-count { text-align: center; margin-top: 12px; font-size: 13px; color: var(--text-faint); letter-spacing: 0.04em; }
+
+  /* How it works: compact numbered rows */
+  #how-it-works .steps { gap: 18px; }
+  #how-it-works .step { display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; padding-top: 0; }
+  #how-it-works .step .step-number { grid-row: 1 / span 2; width: 38px; height: 38px; margin: 0; border-radius: 50%; border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  #how-it-works .step h3 { margin: 0 0 4px; font-size: 17px; }
+  #how-it-works .step p { margin: 0; }
+
+  /* FAQ: first questions only, the rest on request */
+  .faq .faq-item.faq-extra { display: none; }
+  .faq.faq-open .faq-item.faq-extra { display: block; }
+  .faq-more { display: block; margin: 16px auto 0; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+}

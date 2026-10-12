@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initFloatingCta();
   initDemoTabs();
   initBillingToggle();
-  initMoreToggle();
   initHeroSignup();
   initMobileLayout();
+  initMobileLayout2();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -383,6 +383,74 @@ function initMobileLayout() {
       removeCarousels();
     }
   };
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+}
+
+// Phones, second pass: the comparison shows one rival at a time, the small
+// tools become a swipe row with a counter, and the FAQ starts short.
+function initMobileLayout2() {
+  const mq = window.matchMedia("(max-width: 700px)");
+  const wrap = document.querySelector(".compare-table-wrap");
+  const moreGrid = document.getElementById("more-grid");
+  const faq = document.querySelector("#faq .faq");
+  let compareTabs = null, counter = null, faqBtn = null, onScroll = null;
+
+  const setVs = (vs) => {
+    if (!wrap) return;
+    wrap.classList.remove("compare-wrap-bot", "compare-wrap-therapy");
+    wrap.classList.add("compare-wrap-" + vs);
+    if (compareTabs) compareTabs.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.vs === vs ? "true" : "false"));
+  };
+
+  const on = () => {
+    if (wrap && !compareTabs) {
+      compareTabs = document.createElement("div");
+      compareTabs.className = "compare-tabs";
+      compareTabs.setAttribute("role", "tablist");
+      compareTabs.innerHTML = '<button type="button" role="tab" data-vs="bot">vs. AI chatbot</button><button type="button" role="tab" data-vs="therapy">vs. couples therapy</button>';
+      wrap.parentNode.insertBefore(compareTabs, wrap);
+      compareTabs.addEventListener("click", (e) => { const b = e.target.closest("button[data-vs]"); if (b) setVs(b.dataset.vs); });
+      setVs("bot");
+    }
+    if (moreGrid && !counter) {
+      const items = Array.from(moreGrid.children);
+      counter = document.createElement("div");
+      counter.className = "carousel-count";
+      moreGrid.insertAdjacentElement("afterend", counter);
+      const mark = () => {
+        const mid = moreGrid.scrollLeft + moreGrid.clientWidth / 2;
+        let best = 0, bestDist = Infinity;
+        items.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bestDist) { bestDist = d; best = i; } });
+        counter.textContent = (best + 1) + " / " + items.length + "  ·  swipe";
+      };
+      onScroll = () => requestAnimationFrame(mark);
+      moreGrid.addEventListener("scroll", onScroll, { passive: true });
+      mark();
+    }
+    if (faq && !faqBtn) {
+      const items = Array.from(faq.querySelectorAll(".faq-item"));
+      if (items.length > 6) {
+        items.slice(6).forEach((i) => i.classList.add("faq-extra"));
+        faqBtn = document.createElement("button");
+        faqBtn.type = "button";
+        faqBtn.className = "faq-more";
+        faqBtn.textContent = "Show all " + items.length + " questions";
+        faq.insertAdjacentElement("afterend", faqBtn);
+        faqBtn.addEventListener("click", () => {
+          const open = faq.classList.toggle("faq-open");
+          faqBtn.textContent = open ? "Show fewer questions" : "Show all " + items.length + " questions";
+        });
+      }
+    }
+  };
+  const off = () => {
+    if (compareTabs) { compareTabs.remove(); compareTabs = null; }
+    if (wrap) wrap.classList.remove("compare-wrap-bot", "compare-wrap-therapy");
+    if (counter) { counter.remove(); counter = null; if (onScroll) moreGrid.removeEventListener("scroll", onScroll); }
+    if (faqBtn) { faqBtn.remove(); faqBtn = null; faq.classList.remove("faq-open"); faq.querySelectorAll(".faq-extra").forEach((i) => i.classList.remove("faq-extra")); }
+  };
+  const apply = () => (mq.matches ? on() : off());
   apply();
   if (mq.addEventListener) mq.addEventListener("change", apply);
 }
