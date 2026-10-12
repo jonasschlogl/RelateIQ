@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBillingToggle();
   initMoreToggle();
   initHeroSignup();
+  initMobileLayout();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -299,4 +300,89 @@ function initHeroSignup() {
       btn.textContent = label;
     }
   });
+}
+
+// Phones: the three main tools become tabs (one visible at a time), and the
+// pricing cards and blog posts become swipeable rows with dots.
+function initMobileLayout() {
+  const mq = window.matchMedia("(max-width: 700px)");
+  const ids = ["coach", "message-check", "practice"];
+  const names = { coach: "Coach Chat", "message-check": "Message check", practice: "Partner Practice" };
+  const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
+  let tabs = null;
+  let dots = [];
+
+  const showTool = (id) => {
+    sections.forEach((s) => s.classList.toggle("tool-tab-hidden", s.id !== id));
+    if (tabs) tabs.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tool === id ? "true" : "false"));
+  };
+  const buildTabs = () => {
+    if (tabs || sections.length < 3) return;
+    tabs = document.createElement("div");
+    tabs.className = "tool-tabs";
+    tabs.setAttribute("role", "tablist");
+    tabs.innerHTML = ids.map((id) => '<button type="button" role="tab" data-tool="' + id + '" aria-selected="false">' + names[id] + "</button>").join("");
+    sections[0].parentNode.insertBefore(tabs, sections[0]);
+    tabs.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-tool]");
+      if (!b) return;
+      showTool(b.dataset.tool);
+      const top = tabs.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+    showTool("coach");
+  };
+  const removeTabs = () => {
+    if (tabs) { tabs.remove(); tabs = null; }
+    sections.forEach((s) => s.classList.remove("tool-tab-hidden"));
+  };
+
+  const carousel = (el, startIndex) => {
+    if (!el || el.dataset.carousel) return;
+    el.dataset.carousel = "1";
+    const items = Array.from(el.children);
+    const bar = document.createElement("div");
+    bar.className = "carousel-dots";
+    items.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.type = "button";
+      d.setAttribute("aria-label", "Show card " + (i + 1));
+      d.addEventListener("click", () => items[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" }));
+      bar.appendChild(d);
+    });
+    el.insertAdjacentElement("afterend", bar);
+    const mark = () => {
+      const mid = el.scrollLeft + el.clientWidth / 2;
+      let best = 0, bestDist = Infinity;
+      items.forEach((c, i) => {
+        const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      });
+      Array.from(bar.children).forEach((d, i) => d.setAttribute("aria-current", i === best ? "true" : "false"));
+    };
+    el.addEventListener("scroll", () => requestAnimationFrame(mark), { passive: true });
+    if (typeof startIndex === "number" && items[startIndex]) {
+      const c = items[startIndex];
+      el.scrollLeft = c.offsetLeft - (el.clientWidth - c.offsetWidth) / 2;
+    }
+    mark();
+    dots.push({ el, bar });
+  };
+  const removeCarousels = () => {
+    dots.forEach(({ el, bar }) => { bar.remove(); delete el.dataset.carousel; });
+    dots = [];
+  };
+
+  const apply = () => {
+    if (mq.matches) {
+      buildTabs();
+      carousel(document.querySelector(".pricing-grid"), 1);
+      carousel(document.querySelector(".post-grid"), 0);
+    } else {
+      removeTabs();
+      removeCarousels();
+    }
+  };
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
 }
