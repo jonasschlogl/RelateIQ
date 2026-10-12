@@ -4958,3 +4958,11 @@ body.js-reveal .reveal-item.revealed {
 .quality-note { color: var(--text-faint); }
 .quality-note-low { color: var(--accent-2-text); }
 @media (max-width: 640px) { .quality-note { flex-basis: 100%; } }
+
+/* Dashboard "More tools": same cards and plan tags as the landing page */
+.mode-card .mode-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.mode-card .mode-card-top .mode-card-icon { margin-bottom: 0; }
+.mode-card .plan-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); }
+.mode-card .tag-free { color: #a9c98c; border-color: rgba(139, 171, 111, 0.45); background: rgba(139, 171, 111, 0.10); }
+.mode-card .tag-pro { color: var(--accent-1); border-color: rgba(209, 160, 90, 0.5); background: rgba(209, 160, 90, 0.10); }
+.mode-card .tag-premium { color: #e58aa0; border-color: rgba(207, 106, 130, 0.5); background: rgba(207, 106, 130, 0.10); }
