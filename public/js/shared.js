@@ -199,9 +199,11 @@ function logout() {
 // Remembers which paid plan someone clicked before they were signed in, so
 // that after they register/log in we can send them straight into checkout
 // instead of dropping them on the dashboard with no idea what they wanted.
-function setPendingPlan(plan) {
+function setPendingPlan(plan, billing) {
   try {
-    localStorage.setItem("relateiq_pending_plan", plan);
+    // "pro:yearly" — startCheckout understands this form, so the choice
+    // survives the trip through the register/login page.
+    localStorage.setItem("relateiq_pending_plan", billing ? `${plan}:${billing}` : plan);
   } catch (e) {
     /* ignore storage errors */
   }
@@ -244,11 +246,12 @@ function consumePendingReferral() {
 // redirects the browser to it. Returns once the redirect has been kicked
 // off (or the request has failed and an alert shown) so callers can restore
 // a button's label in a .finally().
-async function startCheckout(plan) {
+async function startCheckout(plan, billing) {
   try {
+    if (typeof plan === "string" && plan.includes(":")) [plan, billing] = plan.split(":");
     const res = await authFetch("/api/billing/checkout", {
       method: "POST",
-      body: JSON.stringify({ plan }),
+      body: JSON.stringify({ plan, billing: billing === "yearly" ? "yearly" : "monthly" }),
     });
     const data = await safeJson(res);
     if (!res.ok || !data.url) {

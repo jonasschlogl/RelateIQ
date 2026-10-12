@@ -75,9 +75,14 @@ app.set("trust proxy", true);
 const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
 const APP_URL = (process.env.APP_URL || `http://localhost:${process.env.PORT || 3000}`).replace(/\/$/, "");
 const PLAN_TO_STRIPE_PRICE = { pro: process.env.STRIPE_PRICE_PRO, premium: process.env.STRIPE_PRICE_PREMIUM };
+// Optional yearly prices (a second Stripe price per plan). Without them,
+// "yearly" checkouts are refused rather than silently billing monthly.
+const PLAN_TO_STRIPE_PRICE_YEARLY = { pro: process.env.STRIPE_PRICE_PRO_YEARLY, premium: process.env.STRIPE_PRICE_PREMIUM_YEARLY };
 const STRIPE_PRICE_TO_PLAN = {};
-for (const [plan, priceId] of Object.entries(PLAN_TO_STRIPE_PRICE)) {
-  if (priceId) STRIPE_PRICE_TO_PLAN[priceId] = plan;
+for (const map of [PLAN_TO_STRIPE_PRICE, PLAN_TO_STRIPE_PRICE_YEARLY]) {
+  for (const [plan, priceId] of Object.entries(map)) {
+    if (priceId) STRIPE_PRICE_TO_PLAN[priceId] = plan;
+  }
 }
 
 // Locked down to the app's own origin(s) instead of wide-open cors() — the
@@ -2493,10 +2498,15 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
     return res.status(503).json({ error: "Payments aren't set up on this server yet." });
   }
   try {
-    const { plan } = req.body || {};
-    const priceId = PLAN_TO_STRIPE_PRICE[plan];
+    const { plan, billing } = req.body || {};
+    const yearly = billing === "yearly";
+    const priceId = (yearly ? PLAN_TO_STRIPE_PRICE_YEARLY : PLAN_TO_STRIPE_PRICE)[plan];
     if (!priceId) {
-      return res.status(400).json({ error: "That's not a valid paid plan." });
+      return res.status(400).json({
+        error: yearly && PLAN_TO_STRIPE_PRICE[plan]
+          ? "Yearly billing isn't available yet. Switch to Monthly and try again."
+          : "That's not a valid paid plan.",
+      });
     }
 
     const user = req.user;
