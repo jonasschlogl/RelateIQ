@@ -1695,6 +1695,7 @@ function isOverDailyLimit(user, res, opts = {}) {
       // dead error text — same flag the other plan-limit responses use
       // (see the Partner Practice and attachment limits above/below).
       upgradeRequired: true,
+      dailyLimitReached: true,
     });
     return true;
   }

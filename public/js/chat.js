@@ -1671,7 +1671,42 @@ async function startNewChat(mode) {
 // not use the 8/day Coach pool). Shows "N of 10 messages", and once the cap is
 // reached the composer is locked and the person is pointed at the debrief
 // ("Get feedback") and Pro. `cap` is { used, limit, closed } or null.
+let practiceCapClosed = false;
+
+// Shown when someone tries to write in a finished free rehearsal: the chat
+// stays open to read, but writing needs Pro.
+async function showPracticeUpgradeModal() {
+  // Wait a tick: this is usually opened by pressing Enter in the composer, and
+  // that same Enter must not also confirm the dialog.
+  await new Promise((r) => setTimeout(r, 150));
+  const go = await showAppConfirm(
+    "Your free rehearsal is finished. You can still read it and get your debrief. To keep practicing, Pro gives you unlimited rehearsals on a stronger AI, with a debrief after each one.",
+    { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+  );
+  if (go) startCheckout("pro");
+}
+
+// Coach Chat, Free plan: the 8 daily messages are used up. The chat stays open
+// to read and write in; trying to send opens this upgrade dialog.
+function freeDailyLimitReached() {
+  const u = getUser();
+  if (!u || u.plan !== "free") return false;
+  const today = new Date().toISOString().slice(0, 10);
+  const count = u.usage && u.usage.date === today ? u.usage.count : 0;
+  return count >= (u.usageLimit || 8);
+}
+
+async function showDailyLimitUpgradeModal() {
+  await new Promise((r) => setTimeout(r, 150));
+  const go = await showAppConfirm(
+    "You've used your 8 free messages for today. They reset tomorrow, or Pro removes the daily limit (fair use applies) and gives you unlimited Practice, more partner profiles and unlimited attachments.",
+    { confirmLabel: "Upgrade to Pro", cancelLabel: "Maybe tomorrow" }
+  );
+  if (go) startCheckout("pro");
+}
+
 function updatePracticeCap(cap) {
+  practiceCapClosed = !!(cap && cap.closed);
   let el = document.getElementById("practice-cap-note");
   const input = document.getElementById("input");
   const sendBtn = document.getElementById("send-btn");
@@ -1694,7 +1729,7 @@ function updatePracticeCap(cap) {
   el.classList.toggle("practice-limit-banner-exhausted", !!cap.closed);
   const span = document.createElement("span");
   span.textContent = cap.closed
-    ? `Your free rehearsal is finished (${cap.limit} messages). Tap "Get feedback" for your debrief, or upgrade to Pro for unlimited rehearsals.`
+    ? `Your free rehearsal is finished (${cap.limit} messages). You can still read it and tap "Get feedback" for your debrief. Writing needs Pro.`
     : `Free rehearsal: ${cap.used} of ${cap.limit} messages used. After that it closes and you get your debrief.`;
   el.appendChild(span);
   if (cap.closed) {
@@ -1713,10 +1748,10 @@ function updatePracticeCap(cap) {
     el.appendChild(btn);
   }
   if (input) {
-    input.disabled = !!cap.closed;
-    input.placeholder = cap.closed ? "This rehearsal is finished." : originalPlaceholder;
+    input.disabled = false;
+    input.placeholder = cap.closed ? "This rehearsal is finished. Upgrade to Pro to keep practicing." : originalPlaceholder;
   }
-  if (sendBtn) sendBtn.disabled = !!cap.closed;
+  if (sendBtn) sendBtn.disabled = false;
 }
 
 async function openConversation(id, preloadedConv) {
@@ -2573,6 +2608,18 @@ async function sendMessage() {
   const message = input.value.trim();
   if (!message && pendingAttachments.length === 0) return;
 
+  if (practiceCapClosed && currentConvCtx.mode === "practice" && currentConversationId) {
+    await showPracticeUpgradeModal();
+    return;
+  }
+  // Coach Chat (and anything else on the shared daily pool): out of messages
+  // for today -> upgrade dialog instead of sending. Free Practice has its own
+  // cap and isn't on this pool.
+  if (currentConvCtx.mode !== "practice" && freeDailyLimitReached()) {
+    await showDailyLimitUpgradeModal();
+    return;
+  }
+
   if (!currentConversationId) {
     // ChatGPT-style: typing a first message and hitting Enter/Send starts a
     // new conversation on its own, instead of requiring an explicit "+ New
@@ -2646,6 +2693,11 @@ async function sendMessage() {
       rollBackFailedSend();
       if (data.practiceClosed) {
         updatePracticeCap({ used: 8, limit: 8, closed: true });
+        await showPracticeUpgradeModal();
+        return;
+      }
+      if (data.dailyLimitReached) {
+        await showDailyLimitUpgradeModal();
         return;
       }
       showComposerError(data.error || "Something went wrong.", { upgradeRequired: !!data.upgradeRequired });
