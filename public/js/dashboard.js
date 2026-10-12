@@ -140,6 +140,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("usage-label").textContent = "AI messages this month (fair-use limit)";
       document.getElementById("usage-count").textContent = `${me.monthlyUsage.used} / ${me.monthlyUsage.limit}`;
     }
+    if (me.plan !== "free" && me.strongModelUsage && me.strongModelUsage.limit) {
+      const box = document.getElementById("strong-usage-box");
+      box.style.display = "flex";
+      box.title = "Once these are used up, replies switch to our fast model until the 1st — nothing is blocked.";
+      document.getElementById("strong-usage-label").textContent =
+        me.plan === "pro" ? "Advanced-model Practice messages this month" : "Advanced-model messages this month";
+      document.getElementById("strong-usage-count").textContent = `${me.strongModelUsage.used} / ${me.strongModelUsage.limit}`;
+    }
     renderVerifyBanner(me);
 
     renderBillingActions(me);

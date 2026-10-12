@@ -20,6 +20,7 @@ import {
   deleteUserCascade,
   incrementUserUsage,
   incrementUserMonthlyUsage,
+  incrementUserPremiumUsage,
   backupDatabaseTo,
   getDatabaseFilePath,
   incrementUserColumn,
@@ -330,6 +331,34 @@ function modelForPlan(plan) {
 // PARTNER_PROFILE_LIMITS) — Practice itself is just "good" starting at Pro.
 function modelForPractice(plan) {
   return plan === "free" ? STANDARD_MODEL : PREMIUM_MODEL;
+}
+
+// Cost guard for the strong model (gpt-4o costs ~15x the fast one per
+// message). Every paid plan gets a monthly BUDGET of messages on the strong
+// model; once it's used up, the same features keep working on the fast model
+// until the month resets — nobody is ever cut off, but a heavy user can no
+// longer cost more than their subscription brings in. Sized from measured
+// prompt sizes (see README "Pricing & costs"); tunable from Railway env vars.
+const PREMIUM_MODEL_BUDGET = {
+  pro: Number(process.env.PRO_STRONG_MODEL_BUDGET) || 150, // Partner Practice only
+  premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 300,
+};
+function strongModelUsed(user) {
+  return user.usagePremium && user.usagePremium.month === monthKey() ? user.usagePremium.count : 0;
+}
+function strongModelBudgetFor(plan) {
+  return PREMIUM_MODEL_BUDGET[plan] || 0;
+}
+// The strong model while the user still has budget this month, else the fast one.
+function strongModelFor(user) {
+  return strongModelUsed(user) < strongModelBudgetFor(user.plan) ? PREMIUM_MODEL : STANDARD_MODEL;
+}
+// Coach / Message check / After a fight / ideas: strong model is a Premium perk.
+function budgetedModelForPlan(user) {
+  return user.plan === "premium" ? strongModelFor(user) : STANDARD_MODEL;
+}
+function budgetedModelForPractice(user) {
+  return user.plan === "free" ? STANDARD_MODEL : strongModelFor(user);
 }
 // Defaults to public/uploads for local dev. On a host with a persistent
 // volume (so uploaded files survive a redeploy), set UPLOADS_DIR to a path
@@ -1589,6 +1618,9 @@ function publicUser(user) {
             used: user.usageMonthly && user.usageMonthly.month === monthKey() ? user.usageMonthly.count : 0,
             limit: monthlyLimitFor(user.plan),
           },
+    // Monthly budget of messages on the strong model (null on Free).
+    strongModelUsage:
+      user.plan === "free" ? null : { used: strongModelUsed(user), limit: strongModelBudgetFor(user.plan) },
     isAdmin: (process.env.ADMIN_EMAILS || "")
       .split(",")
       .map((e) => e.trim().toLowerCase())
@@ -1730,12 +1762,17 @@ function bumpFreeUsage(user) {
 
 // One call after every successful AI call, whatever the plan: Free counts
 // against the daily pool, Pro/Premium against their monthly fair-use cap.
-function bumpUsage(user) {
+function bumpUsage(user, model) {
   if (user.plan === "free") return bumpFreeUsage(user);
   const month = monthKey();
   incrementUserMonthlyUsage(user.id, month);
   const prev = user.usageMonthly && user.usageMonthly.month === month ? user.usageMonthly.count : 0;
   user.usageMonthly = { month, count: prev + 1 };
+  // Calls that ran on the strong model also draw down its monthly budget.
+  if (model === PREMIUM_MODEL) {
+    incrementUserPremiumUsage(user.id, month);
+    user.usagePremium = { month, count: strongModelUsed(user) + 1 };
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -3208,6 +3245,7 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
     const theirs = asStr(b.theirMessage, 1500);
     const user = req.user;
     const premium = user.plan === "premium";
+    const mcModel = premium ? strongModelFor(user) : STANDARD_MODEL;
 
     const usage = messageCheckUsage(user);
     if (usage.used >= usage.limit) {
@@ -3242,7 +3280,7 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
         .filter(Boolean)
         .join("\n\n"),
       0.6,
-      premium ? PREMIUM_MODEL : STANDARD_MODEL
+      mcModel
     );
 
     const versions = asPairs(raw.versions, labels.length, "label", "text").map((v, i) => ({ label: v.label || labels[i], text: v.text }));
@@ -3252,7 +3290,7 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
     const risk = ["low", "medium", "high"].includes(String(raw.risk).toLowerCase()) ? String(raw.risk).toLowerCase() : "medium";
 
     saveDoc({ id: generateId("mchk"), userId: user.id, kind: "mcheck", key: generateId("mk"), title: "", data: {} });
-    if (user.plan !== "free") bumpUsage(user);
+    if (user.plan !== "free") bumpUsage(user, mcModel);
 
     res.json({
       read: asStr(raw.read, 400),
@@ -3329,6 +3367,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
     if (isOverDailyLimit(user, res)) return;
 
     const premium = user.plan === "premium";
+    const sosModel = premium ? strongModelFor(user) : STANDARD_MODEL;
     const partner = premium && b.partnerProfileId ? req.db.partnerProfiles.find((p) => p.id === b.partnerProfileId && p.userId === user.id) : null;
     const partnerBlock = partner ? buildPartnerContextBlock(partner) : "";
     const playbook = premium ? buildPlaybookContext(user.id) : "";
@@ -3346,7 +3385,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
         .filter(Boolean)
         .join("\n\n"),
       0.6,
-      premium ? PREMIUM_MODEL : STANDARD_MODEL
+      sosModel
     );
     const result = {
       first: asStr(raw.first, 400),
@@ -3367,7 +3406,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
       title: "",
       data: { followUpAt, withName: partner ? partner.name : null },
     });
-    bumpUsage(user);
+    bumpUsage(user, sosModel);
     res.json({ ...result, followUp: !!followUpAt, tailored: !!(premium && (partner || playbook || user.relationshipMemory)), usage: sosUsage(user) });
   } catch (err) {
     console.error("SOS error:", err.message);
@@ -4189,6 +4228,8 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   const needsGeneratedTitle = isFirstExchange && (!isPractice || !conv.scenario);
   const firstMessageText = hasText ? text : savedAttachments[0]?.name ? `[attached file: ${savedAttachments[0].name}]` : "";
 
+  const chatModel = isPractice ? budgetedModelForPractice(user) : budgetedModelForPlan(user);
+
   try {
     // Prior turns are sent as plain text (their attachments are just noted
     // in the stored content, not re-uploaded); only the newest message gets
@@ -4198,7 +4239,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
     const [completion, safety, generatedTitle] = await Promise.all([
       openai.chat.completions.create({
-        model: isPractice ? modelForPractice(user.plan) : modelForPlan(user.plan),
+        model: chatModel,
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
         temperature: isPractice ? 0.95 : 0.8,
         // reasoning_effort removed in the RelateIQ42 rollback (see the
@@ -4258,7 +4299,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     if (suggestion) assistantMessage.suggestion = suggestion;
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
-    if (!freePractice) bumpUsage(user);
+    if (!freePractice) bumpUsage(user, chatModel);
 
     const practiceUserCount = freePractice ? (conv.messages || []).filter((m) => m.role === "user").length + 1 : null;
     res.json({

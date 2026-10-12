@@ -140,3 +140,27 @@ All counters are markers in the `docs` table (kinds `mcheck`, `sos`, `focus`, `i
 - **After a fight** (`sos.html`, `/api/sos`): the calm-down guide is free for everyone (static). The personal message is Pro 3/month, Premium unlimited, tailored, plus a next-day check-in (`runSosFollowUps`, push + email).
 - **This week's focus** and **Ideas for this week** (cards on `playbook.html`, `/api/focus`, `/api/ideas`): Pro gets the focus sentence (also in the weekly digest email) and 3 ideas; Premium adds why/when, last-week recap, 5 tailored ideas, refresh any time and a Monday push (`runWeeklyFocusPush`). Free sees a teaser.
 - **Your year so far** (bottom of `review.html`, `/api/year`): Premium only.
+
+## Pricing & costs (why the limits are what they are)
+
+Prices: Pro €9.99/mo (€69.99/yr), Premium €19.99/mo (€149.99/yr), Free €0. Estimated from measured prompt sizes and OpenAI list prices (gpt-4o $2.50 in / $10 out per 1M tokens, gpt-4o-mini $0.15 / $0.60); re-check these when OpenAI changes pricing.
+
+Cost of one AI message (typical conversation, ~3.5k-token system prompt + history):
+
+| Surface | Fast model (mini) | Strong model (4o) |
+|---|---|---|
+| Coach Chat | ~$0.0012 | ~$0.0185 |
+| Partner Practice | ~$0.0006 | ~$0.0076 |
+
+The strong model is ~15x the cost of the fast one, so each paid plan has a monthly **strong-model budget** (`PRO_STRONG_MODEL_BUDGET`, default 150, Practice only; `PREMIUM_STRONG_MODEL_BUDGET`, default 300, Coach + Practice + Message check + After a fight). When it is used up, the same features keep working on the fast model until the 1st (nothing is blocked). Overall fair-use caps stay at 1,000 (Pro) / 1,500 (Premium) messages a month (`PRO_MONTHLY_AI_LIMIT`, `PREMIUM_MONTHLY_AI_LIMIT`).
+
+Worst case if a user maxes everything out (no prompt caching, which would lower it ~20-30%):
+
+| Plan | Net revenue / month* | Worst-case AI cost | Cost as % of net |
+|---|---|---|---|
+| Pro monthly | ~€7.8 | ~€2.1 | ~27% |
+| Pro yearly | ~€4.7 | ~€2.1 | ~45% |
+| Premium monthly | ~€15.8 | ~€6.4 | ~40% |
+| Premium yearly | ~€10.0 | ~€6.4 | ~64% |
+
+*After ~21% average EU consumer VAT and Stripe (~2.2% + €0.25) — assumes prices are tax-inclusive. A typical user uses a small fraction of the caps, so real margin is much higher. Free: at most 8 fast-model messages a day (~$0.01/day).
