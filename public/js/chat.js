@@ -1069,7 +1069,6 @@ function openPartnerForm(partner) {
   editingPartnerId = partner ? partner.id : null;
   document.getElementById("partner-name").value = partner?.name || "";
   document.getElementById("partner-traits").value = partner?.traits || "";
-  resizePartnerTraits();
   document.getElementById("partner-context").value = partner?.context || "";
   document.getElementById("partner-attachment").value = partner?.attachmentStyle || "";
   document.getElementById("partner-form-error").style.display = "none";
@@ -1077,6 +1076,9 @@ function openPartnerForm(partner) {
   document.getElementById("partner-form-cancel-btn").style.display = partner ? "block" : "none";
   document.getElementById("partner-form").style.display = "block";
   document.getElementById("show-partner-form-btn").style.display = "none";
+  // Measure only once the form is visible: while it is display:none the
+  // textarea reports a scrollHeight of 0 and would be sized to a clipped line.
+  resizePartnerTraits();
 }
 
 function closePartnerForm() {
@@ -1175,7 +1177,7 @@ async function renderPracticeSetup() {
           <option value="avoidant">Avoidant</option>
           <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
         </select>
-        <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelationshipAI plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
+        <p class="text-muted" style="font-size:12px; margin-top:8px;">When set, RelationshipAI plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
         <p class="text-muted" style="font-size:11.5px; margin-top:6px;">You're entering information about another real person here, not just yourself — please use this to prepare for a kinder conversation, not to build a case against them. Only you can see this profile.</p>
         <div class="partner-form-actions">
           <button type="submit" class="btn btn-gradient btn-block" id="partner-form-submit">Save &amp; start practicing</button>

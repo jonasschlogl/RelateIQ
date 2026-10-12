@@ -2484,6 +2484,10 @@ section {
   resize: none;
 }
 
+.partner-form textarea {
+  min-height: 84px;
+}
+
 .partner-form input:focus,
 .partner-form textarea:focus,
 .partner-form select:focus {
