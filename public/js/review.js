@@ -7,7 +7,88 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   requireAuth();
   load();
+  loadYear();
 });
+
+// Your year so far (Premium): the monthly reviews rolled into one story.
+let yearData = null;
+
+async function loadYear() {
+  const el = document.getElementById("year-state");
+  if (!el) return;
+  try {
+    const res = await authFetch("/api/year");
+    const d = await safeJson(res);
+    if (!res.ok || d.locked) return; // non-Premium already sees the Premium lock above
+    yearData = d;
+    renderYear();
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+function renderYear() {
+  const el = document.getElementById("year-state");
+  const d = yearData;
+  if (!d.recap) {
+    el.innerHTML = `<section class="dashboard-card rv-card yr-card">
+      <p class="rv-month">${d.year} so far</p>
+      <h2 class="rv-headline">Your year, in one page</h2>
+      <p class="text-muted">${d.ready ? "I'll bring your months together: what changed, what worked, and what to carry forward." : "Once you've had a few more weeks of chats and check-ins, I can write your year so far."}</p>
+      <div class="yr-actions"><button type="button" class="btn btn-gradient" id="yr-make" ${d.ready ? "" : "disabled"}>Write my year so far</button><span class="text-muted" id="yr-msg"></span></div>
+    </section>`;
+    document.getElementById("yr-make").addEventListener("click", makeYear);
+    return;
+  }
+  const r = d.recap.recap || {};
+  const st = d.recap.stats || {};
+  const chips = [`${st.conversations || 0} chat${st.conversations === 1 ? "" : "s"}`, `${st.checkinDays || 0} check-in days`];
+  if (st.rehearsals) chips.push(`${st.rehearsals} rehearsals`);
+  if (st.experimentsTried) chips.push(`${st.experimentsWorked || 0} of ${st.experimentsTried} experiments worked`);
+  const months = (st.months || []).filter((m) => m.avg != null);
+  const bars = months.length >= 2
+    ? `<div class="yr-bars" role="img" aria-label="Average connection score by month">${months
+        .map((m) => `<div class="yr-bar"><span class="yr-bar-val">${m.avg}</span><span class="yr-bar-fill" style="height:${Math.max(6, m.avg * 10)}%"></span><span class="yr-bar-label">${escapeHtml(m.label)}</span></div>`)
+        .join("")}</div>`
+    : "";
+  const score = st.averageScore != null ? `<div class="rv-score"><span class="rv-score-num">${st.averageScore}</span><span class="rv-score-of">/10 average connection</span>${st.firstAvg != null ? `<span class="rv-score-sub">${st.firstAvg} early in the year, ${st.lastAvg} lately</span>` : ""}</div>` : "";
+  let html = `<p class="rv-month">${d.year} so far</p>`;
+  if (r.headline) html += `<h2 class="rv-headline">${escapeHtml(r.headline)}</h2>`;
+  html += `<div class="rv-chips">${chips.map((c) => `<span class="rv-chip">${escapeHtml(c)}</span>`).join("")}</div>${score}${bars}`;
+  if (r.chapters && r.chapters.length) html += `<h3 class="rv-h">The chapters</h3>` + r.chapters.map((c) => `<div class="rv-theme"><strong>${escapeHtml(c.title)}</strong><p>${escapeHtml(c.description)}</p></div>`).join("");
+  if (r.biggestShift) html += `<h3 class="rv-h">What changed most</h3><p>${escapeHtml(r.biggestShift)}</p>`;
+  if (r.whatWorked && r.whatWorked.length) html += `<h3 class="rv-h">What worked</h3><ul class="rv-list rv-good">${r.whatWorked.map((x) => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`;
+  if (r.lookingAhead) html += `<h3 class="rv-h">Carrying forward</h3><p>${escapeHtml(r.lookingAhead)}</p>`;
+  if (r.note) html += `<p class="rv-note">${escapeHtml(r.note)}</p>`;
+  html += `<div class="yr-actions no-print"><button type="button" class="btn btn-ghost btn-sm" id="yr-print">Print / Save as PDF</button><button type="button" class="btn btn-ghost btn-sm" id="yr-make">Write it again</button><span class="text-muted" id="yr-msg"></span></div>`;
+  el.innerHTML = `<section class="dashboard-card rv-card yr-card">${html}</section>`;
+  document.getElementById("yr-print").addEventListener("click", () => window.print());
+  document.getElementById("yr-make").addEventListener("click", makeYear);
+}
+
+async function makeYear() {
+  const btn = document.getElementById("yr-make");
+  const msg = document.getElementById("yr-msg");
+  btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = "Writing…";
+  try {
+    const res = await authFetch("/api/year", { method: "POST", body: "{}" });
+    const d = await safeJson(res);
+    if (!res.ok) {
+      msg.textContent = d.error || "Couldn't write it right now.";
+      btn.disabled = false;
+      btn.textContent = label;
+      return;
+    }
+    yearData = d;
+    renderYear();
+  } catch (e) {
+    msg.textContent = "Couldn't connect to the server.";
+    btn.disabled = false;
+    btn.textContent = label;
+  }
+}
 
 async function load() {
   const el = document.getElementById("review-state");

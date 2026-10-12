@@ -4794,3 +4794,62 @@ body.js-reveal .reveal-item.revealed {
 .practice-plan-opening { margin: 0; font-style: italic; }
 .practice-plan-block p { margin: 0; }
 .practice-plan-block ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+
+/* ---- Message check ---- */
+.mc-card { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.mc-card textarea, .mc-card select { width: 100%; background: var(--surface); border: 1px solid var(--border-strong); color: var(--text); border-radius: var(--radius-sm); padding: 10px 12px; font: inherit; font-size: 14px; resize: vertical; outline: none; }
+.mc-card textarea:focus, .mc-card select:focus { border-color: var(--accent-1); }
+.mc-theirs summary { cursor: pointer; font-size: 14px; margin-bottom: 8px; }
+.mc-note { font-size: 13px; margin: 0; }
+.mc-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.mc-usage { font-size: 13px; }
+.mc-read p { margin: 8px 0 0; }
+.mc-tailored { font-size: 12px; }
+.mc-risk { display: inline-block; font-size: 12px; font-weight: 600; border-radius: var(--radius-pill); padding: 3px 11px; border: 1px solid var(--border-strong); }
+.mc-risk-low { color: #7fc99a; border-color: rgba(127, 201, 154, 0.4); }
+.mc-risk-medium { color: #e3b867; border-color: rgba(227, 184, 103, 0.4); }
+.mc-risk-high { color: var(--danger-text); border-color: rgba(193, 101, 90, 0.5); }
+.mc-flags { margin: 0; padding-left: 18px; font-size: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; }
+.mc-versions { display: flex; flex-direction: column; gap: 10px; }
+.mc-version { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 12px 14px; }
+.mc-version p { margin: 6px 0 0; }
+.mc-version-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.mc-version-locked { opacity: 0.8; border-style: dashed; }
+
+/* ---- After a fight (SOS) ---- */
+.sos-card { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.sos-card textarea, .sos-card select { width: 100%; background: var(--surface); border: 1px solid var(--border-strong); color: var(--text); border-radius: var(--radius-sm); padding: 10px 12px; font: inherit; font-size: 14px; resize: vertical; outline: none; }
+.sos-card textarea:focus, .sos-card select:focus { border-color: var(--accent-1); }
+.sos-circle-wrap { display: flex; justify-content: center; padding: 8px 0 4px; }
+.sos-circle { width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 15px; background: radial-gradient(circle at 35% 30%, rgba(209, 160, 90, 0.35), rgba(168, 69, 92, 0.25)); border: 1px solid var(--border-strong); transform: scale(0.8); transition: transform 0s; }
+.sos-circle.is-in { transform: scale(1.12); transition: transform 4s ease-in-out; }
+.sos-circle.is-out { transform: scale(0.8); transition: transform 6s ease-in-out; }
+@media (prefers-reduced-motion: reduce) { .sos-circle.is-in, .sos-circle.is-out { transition: none; } }
+.sos-actions { display: flex; justify-content: center; }
+.sos-list { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.sos-safety { font-size: 12px; margin: 0; }
+.sos-first { margin: 0; font-size: 15px; }
+.sos-followup { font-size: 13px; margin: 0; }
+
+/* ---- This week's focus (Playbook page) ---- */
+.focus-card { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.focus-headline { font-family: var(--font-display); font-size: 22px; margin: 0; line-height: 1.25; }
+.focus-card p { margin: 0; }
+.focus-when { font-size: 14px; }
+.focus-recap { font-size: 13px; }
+.focus-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.focus-msg { font-size: 13px; }
+.focus-teaser { font-size: 12.5px; }
+.ideas-list { display: flex; flex-direction: column; gap: 10px; }
+.ideas-list .mc-version .btn { margin-top: 8px; }
+.ideas-effort { font-size: 12px; }
+
+/* ---- Your year so far (Monthly review page) ---- */
+.yr-card { margin-top: 20px; }
+.yr-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.yr-bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin: 14px 0 6px; }
+.yr-bar { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 4px; min-width: 0; }
+.yr-bar-fill { width: 100%; max-width: 34px; border-radius: 6px 6px 2px 2px; background: var(--accent-grad); display: block; }
+.yr-bar-val { font-size: 11px; color: var(--text-muted); }
+.yr-bar-label { font-size: 11px; color: var(--text-muted); }
+@media print { #review-state { display: none; } }

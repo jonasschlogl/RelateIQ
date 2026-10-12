@@ -56,6 +56,7 @@ import {
   getDoc,
   getDocByKey,
   listDocs,
+  getDueDocsByFollowUp,
   deleteDoc,
 } from "./lib/store.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
@@ -1980,9 +1981,9 @@ function requirePremium(req, res) {
   return false;
 }
 
-async function aiJson(system, userContent, temperature = 0.5) {
+async function aiJson(system, userContent, temperature = 0.5, model = PREMIUM_MODEL) {
   const completion = await openai.chat.completions.create({
-    model: PREMIUM_MODEL,
+    model,
     temperature,
     response_format: { type: "json_object" },
     messages: [
@@ -3160,6 +3161,581 @@ app.post("/api/billing/portal", authMiddleware, async (req, res) => {
 // ---------------------------------------------------------------------------
 // partner profiles (used by Practice mode)
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Message check: paste a text before you send it and see how it may land,
+// with rewrites. Plans: Free 3 checks in total (a taste), Pro 10 a day with
+// 2 rewrites, Premium effectively unlimited with 3 rewrites on the advanced
+// model, tailored to the person (their profile) and what has worked before.
+// Only a counter marker is stored (doc kind "mcheck"), never the text itself.
+// ---------------------------------------------------------------------------
+
+const MESSAGE_CHECK_LIMITS = { free: { lifetime: 3 }, pro: { perDay: 10 }, premium: { perDay: 100 } };
+
+function messageCheckUsage(user) {
+  const docs = listDocs(user.id, "mcheck");
+  const lim = MESSAGE_CHECK_LIMITS[user.plan] || MESSAGE_CHECK_LIMITS.free;
+  if (lim.lifetime) return { used: docs.length, limit: lim.lifetime, period: "total" };
+  const today = new Date().toISOString().slice(0, 10);
+  return { used: docs.filter((d) => String(d.createdAt || "").slice(0, 10) === today).length, limit: lim.perDay, period: "day" };
+}
+
+const MESSAGE_CHECK_PROMPT = `You help someone decide how to send ONE message to their partner (or someone close to them) inside a private AI relationship-coaching app. You get the message they are about to send, sometimes what the other person wrote first, and sometimes background. Be honest and kind, never preachy.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"read": "<how this message is likely to land with the other person, 1-2 plain sentences, honest>", "risk": "<low | medium | high: the chance it escalates or hurts>", "flags": ["<0-3 specific things in THEIR draft that could backfire, quoting the exact words, each with a very short why>"], "versions": [{"label": "<label>", "text": "<the rewritten message>"}]}
+
+Rules:
+- Keep what the person actually wants to say, their voice, and their language (reply in the language of the draft). Do not make it longer than needed; short texts stay short.
+- Rewrites must be sendable as-is. Start from how they feel or what they want, not from what the other person did wrong. No manipulation, no guilt-tripping, no tactics to "win".
+- Produce exactly the versions requested in the labels list, in that order, each clearly different in tone.
+- If the draft is already good, say so in "read" and keep the rewrites light.
+- If the draft contains threats, abuse, or hints of self-harm, say in "read" that it's worth pausing and getting real support, and keep rewrites gentle and de-escalating.`;
+
+app.get("/api/message-check", authMiddleware, (req, res) => {
+  const partners =
+    req.user.plan === "premium"
+      ? req.db.partnerProfiles.filter((p) => p.userId === req.user.id).map((p) => ({ id: p.id, name: p.name }))
+      : [];
+  res.json({ plan: req.user.plan, usage: messageCheckUsage(req.user), partners });
+});
+
+app.post("/api/message-check", authMiddleware, async (req, res) => {
+  try {
+    const b = req.body || {};
+    const draft = asStr(b.draft, 1500);
+    if (draft.length < 3) return res.status(400).json({ error: "Paste the message you're thinking of sending." });
+    const theirs = asStr(b.theirMessage, 1500);
+    const user = req.user;
+    const premium = user.plan === "premium";
+
+    const usage = messageCheckUsage(user);
+    if (usage.used >= usage.limit) {
+      return res.status(403).json({
+        error:
+          user.plan === "free"
+            ? `The Free plan includes ${usage.limit} message checks. Upgrade to Pro for ${MESSAGE_CHECK_LIMITS.pro.perDay} a day.`
+            : `You've used today's ${usage.limit} message checks. They reset tomorrow${user.plan === "pro" ? ", or go Premium for no limit" : ""}.`,
+        messageCheckLimit: true,
+        upgradeRequired: true,
+        usage,
+      });
+    }
+    if (isOverDailyLimit(user, res, { skipFreeDaily: user.plan === "free" })) return;
+
+    const labels = premium ? ["Calmer", "More direct", "Warmer"] : ["Calmer", "More direct"];
+    const partner = premium && b.partnerProfileId ? req.db.partnerProfiles.find((p) => p.id === b.partnerProfileId && p.userId === user.id) : null;
+    const partnerBlock = partner ? buildPartnerContextBlock(partner) : "";
+    const playbook = premium ? buildPlaybookContext(user.id) : "";
+
+    const raw = await aiJson(
+      MESSAGE_CHECK_PROMPT,
+      [
+        `Version labels to produce, in order: ${labels.join(", ")}`,
+        partner ? `The message is for: ${partner.name}` : "",
+        theirs ? `What the other person wrote first:\n"""\n${theirs}\n"""` : "",
+        `The message they are thinking of sending:\n"""\n${draft}\n"""`,
+        partnerBlock ? `What's known about ${partner.name}:\n${partnerBlock}` : "",
+        premium && user.relationshipMemory ? `Background on the user's story: ${asStr(user.relationshipMemory, 600)}` : "",
+        playbook ? `What they've tried before (Playbook):\n${playbook}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n\n"),
+      0.6,
+      premium ? PREMIUM_MODEL : STANDARD_MODEL
+    );
+
+    const versions = asPairs(raw.versions, labels.length, "label", "text").map((v, i) => ({ label: v.label || labels[i], text: v.text }));
+    if (!versions.length || !asStr(raw.read, 400)) {
+      return res.status(500).json({ error: "Couldn't check that right now. Please try again." });
+    }
+    const risk = ["low", "medium", "high"].includes(String(raw.risk).toLowerCase()) ? String(raw.risk).toLowerCase() : "medium";
+
+    saveDoc({ id: generateId("mchk"), userId: user.id, kind: "mcheck", key: generateId("mk"), title: "", data: {} });
+    if (user.plan !== "free") bumpUsage(user);
+
+    res.json({
+      read: asStr(raw.read, 400),
+      risk,
+      flags: asList(raw.flags, 3, 200),
+      versions,
+      tailored: !!(premium && (partner || playbook || user.relationshipMemory)),
+      usage: messageCheckUsage(user),
+    });
+  } catch (err) {
+    console.error("Message check error:", err.message);
+    res.status(500).json({ error: "Couldn't check that right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// After a fight (SOS): a calm-down guide for everyone (static, no AI), plus a
+// personal message to reach out with. Pro: 3 messages a month. Premium: no
+// practical limit, advanced model, tailored to the person and what has worked
+// before, and a "how are things?" nudge the next day. Only a counter marker
+// is stored (doc kind "sos"), never what happened.
+// ---------------------------------------------------------------------------
+
+const SOS_LIMITS = { pro: { perMonth: 3 }, premium: { perDay: 30 } };
+
+function sosUsage(user) {
+  const lim = SOS_LIMITS[user.plan];
+  if (!lim) return null;
+  const docs = listDocs(user.id, "sos");
+  if (lim.perMonth) {
+    const month = new Date().toISOString().slice(0, 7);
+    return { used: docs.filter((d) => String(d.createdAt || "").slice(0, 7) === month).length, limit: lim.perMonth, period: "month" };
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  return { used: docs.filter((d) => String(d.createdAt || "").slice(0, 10) === today).length, limit: lim.perDay, period: "day" };
+}
+
+const SOS_PROMPT = `Someone has just had a fight or a hard moment with their partner (or someone close) and is using a private AI relationship-coaching app to calm down and reach out well. You get a little about what happened (may be empty) and what they want right now. Be warm, steady and brief.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"first": "<what to do in the next hour to settle, 1-2 short sentences, concrete>", "say": "<a short message or sentence they can send or say, in their own voice, that opens the door without blaming or re-arguing>", "alsoOk": "<a second, even shorter option>", "dontDo": ["<2-3 specific things not to do right now>"], "later": "<one sentence on when and how to come back to the actual issue once both are calm>"}
+
+Rules:
+- Match what they want: "reconnect" = a warm opening; "apologize" = a clear, specific, non-defensive apology for THEIR part only, no "but"; "space" = a kind message that asks for time and says when they will come back, without punishing silence.
+- No manipulation, no scoring points, no demands. Plain words, short sentences. Reply in the language the user writes in (English if unclear).
+- If anything suggests fear for safety, violence, abuse, or self-harm, do not coach the reconciliation: say gently in "first" that getting real support matters and to contact local emergency services or a trusted person, and keep the rest minimal.`;
+
+app.get("/api/sos", authMiddleware, (req, res) => {
+  const partners =
+    req.user.plan === "premium"
+      ? req.db.partnerProfiles.filter((p) => p.userId === req.user.id).map((p) => ({ id: p.id, name: p.name }))
+      : [];
+  res.json({ plan: req.user.plan, usage: sosUsage(req.user), partners });
+});
+
+app.post("/api/sos", authMiddleware, async (req, res) => {
+  try {
+    const user = req.user;
+    if (user.plan === "free") {
+      return res.status(403).json({ error: "A personal message to reach out with is part of Pro.", sosLocked: true, upgradeRequired: true });
+    }
+    const b = req.body || {};
+    const what = asStr(b.what, 800);
+    const want = ["reconnect", "apologize", "space"].includes(b.want) ? b.want : "reconnect";
+    const usage = sosUsage(user);
+    if (usage.used >= usage.limit) {
+      return res.status(403).json({
+        error: `You've used your ${usage.limit} messages for this month. They reset on the 1st, or go Premium for no limit.`,
+        sosLimit: true,
+        upgradeRequired: true,
+        usage,
+      });
+    }
+    if (isOverDailyLimit(user, res)) return;
+
+    const premium = user.plan === "premium";
+    const partner = premium && b.partnerProfileId ? req.db.partnerProfiles.find((p) => p.id === b.partnerProfileId && p.userId === user.id) : null;
+    const partnerBlock = partner ? buildPartnerContextBlock(partner) : "";
+    const playbook = premium ? buildPlaybookContext(user.id) : "";
+
+    const raw = await aiJson(
+      SOS_PROMPT,
+      [
+        `What they want right now: ${want}`,
+        partner ? `The other person: ${partner.name}` : "",
+        what ? `What happened:\n"""\n${what}\n"""` : "What happened: (they didn't say)",
+        partnerBlock ? `What's known about ${partner.name}:\n${partnerBlock}` : "",
+        premium && user.relationshipMemory ? `Background on the user's story: ${asStr(user.relationshipMemory, 600)}` : "",
+        playbook ? `What they've tried before (Playbook):\n${playbook}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n\n"),
+      0.6,
+      premium ? PREMIUM_MODEL : STANDARD_MODEL
+    );
+    const result = {
+      first: asStr(raw.first, 400),
+      say: asStr(raw.say, 500),
+      alsoOk: asStr(raw.alsoOk, 300),
+      dontDo: asList(raw.dontDo, 3, 200),
+      later: asStr(raw.later, 300),
+    };
+    if (!result.say && !result.first) return res.status(500).json({ error: "Couldn't put that together right now. Please try again." });
+
+    // Premium: nudge the next day to ask how things are.
+    const followUpAt = premium ? new Date(Date.now() + 20 * 60 * 60 * 1000).toISOString() : null;
+    saveDoc({
+      id: generateId("sos"),
+      userId: user.id,
+      kind: "sos",
+      key: generateId("sk"),
+      title: "",
+      data: { followUpAt, withName: partner ? partner.name : null },
+    });
+    bumpUsage(user);
+    res.json({ ...result, followUp: !!followUpAt, tailored: !!(premium && (partner || playbook || user.relationshipMemory)), usage: sosUsage(user) });
+  } catch (err) {
+    console.error("SOS error:", err.message);
+    res.status(500).json({ error: "Couldn't put that together right now. Please try again." });
+  }
+});
+
+async function runSosFollowUps() {
+  const hour = new Date().getUTCHours();
+  if (hour < 8 || hour >= 20) return;
+  const due = getDueDocsByFollowUp("sos", new Date().toISOString());
+  for (const d of due) {
+    saveDoc({ ...d, notifiedAt: new Date().toISOString() });
+    const user = getUserById(d.userId);
+    if (!user || user.plan !== "premium") continue;
+    const who = d.data.withName ? ` with ${d.data.withName}` : "";
+    try {
+      if (user.email && user.emailCheckinReminders !== false) {
+        const html = emailShell({
+          unsubscribeUrl: unsubscribeLink(user, "checkin"),
+          bodyHtml: `
+            <p>Hey ${escapeForEmail(user.name)},</p>
+            <p>Yesterday was a hard moment${escapeForEmail(who)}. How are things today?</p>
+            <p>If it helps, we can talk it through, or plan how to bring the real issue up now that things are calmer.</p>
+            <p><a href="${APP_URL}/chat.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Check in →</a></p>
+          `,
+        });
+        await sendEmail({ to: user.email, subject: "How are things today?", html });
+      }
+      await sendPushToUser(user.id, { title: "How are things today?", body: `Yesterday was hard${who}. Want to talk it through?`, url: "/chat.html" });
+    } catch (err) {
+      console.error("SOS follow-up failed:", err.message);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// This week's focus: one small, concrete thing to focus on this week, made
+// from recent check-ins, Playbook results and (Premium) conversations and
+// background. Pro: the one-sentence focus, on the Playbook page and in the
+// weekly email. Premium: also why it fits them, when to try it, a recap of
+// last week, advanced model, and a Monday push. Stored as docs of kind
+// "focus", one per week (key = the Monday's date).
+// ---------------------------------------------------------------------------
+
+function focusWeekKey(d = new Date()) {
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  t.setUTCDate(t.getUTCDate() - ((t.getUTCDay() + 6) % 7));
+  return t.toISOString().slice(0, 10);
+}
+
+const FOCUS_PROMPT = `You pick ONE small focus for the coming week for someone working on their relationship, inside a private AI coaching app. You get a little about how their recent days have gone, what they have already tried (and what worked or did not), and sometimes background.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"headline": "<ONE concrete, small thing to focus on this week, one sentence, starting with a verb, doable in a few minutes at a time>", "why": "<why this fits THEM, 1-2 plain sentences based on what they shared>", "when": "<one specific moment this week to try it, one sentence>"}
+
+Rules:
+- Small and specific beats big and vague. Never repeat something that did not help them; build on what worked.
+- No blame, no diagnosis, no tactics to "win". Plain, warm, short sentences. Reply in the language the user writes in (English if unclear).
+- If there is hardly any information, choose a gentle, universally useful starter (e.g. one genuine question and listening without fixing) and say so in "why".`;
+
+async function generateWeeklyFocus(db, user) {
+  const premium = user.plan === "premium";
+  const to = new Date().toISOString().slice(0, 10);
+  const from = new Date(Date.now() - 14 * 86400000).toISOString().slice(0, 10);
+  const stats = checkinStats(db.checkins, user.id, from, to);
+  const exps = listExperimentsForUser(user.id).slice(0, 8);
+  const convs = premium
+    ? db.conversations
+        .filter((c) => c.userId === user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user"))
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    : [];
+  const input = [
+    stats.answeredDays
+      ? `Check-ins, last 2 weeks: ${stats.answeredDays} answered${stats.average != null ? `, average connection ${stats.average}/10` : ""}${stats.trend ? `, trend ${stats.trend}` : ""}.\n${stats.answers
+          .slice(-6)
+          .map((c) => `${c.date}: ${asStr(c.answer, 200)}`)
+          .join("\n")}`
+      : "",
+    exps.length ? `What they tried before:\n${experimentLines(exps)}` : "",
+    convs.length ? `What they wrote in Coach Chat lately:\n${userLinesDigest(convs, 3, 4, 220)}` : "",
+    premium && user.relationshipMemory ? `Background on their story: ${asStr(user.relationshipMemory, 600)}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+  const raw = await aiJson(FOCUS_PROMPT, input || "(no information yet)", 0.6, premium ? PREMIUM_MODEL : STANDARD_MODEL);
+  const headline = asStr(raw.headline, 220);
+  if (!headline) throw new Error("empty focus");
+  return { headline, why: asStr(raw.why, 400), when: asStr(raw.when, 250) };
+}
+
+async function ensureWeeklyFocus(db, user) {
+  const key = focusWeekKey();
+  let doc = getDocByKey(user.id, "focus", key);
+  if (doc) return doc;
+  const f = await generateWeeklyFocus(db, user);
+  doc = saveDoc({ id: generateId("focus"), userId: user.id, kind: "focus", key, title: f.headline.slice(0, 80), data: f });
+  return doc;
+}
+
+function focusRecap(userId) {
+  const prevKey = focusWeekKey(new Date(Date.now() - 7 * 86400000));
+  const prev = getDocByKey(userId, "focus", prevKey);
+  const since = new Date(Date.now() - 7 * 86400000).toISOString();
+  const rows = listExperimentsForUser(userId).filter((e) => e.resolvedAt && e.resolvedAt >= since);
+  if (!prev && !rows.length) return null;
+  return {
+    headline: prev ? prev.data.headline : null,
+    worked: rows.filter((e) => e.status === "worked").length,
+    didntHelp: rows.filter((e) => e.status === "didnt_help").length,
+  };
+}
+
+app.get("/api/focus", authMiddleware, async (req, res) => {
+  const user = req.user;
+  if (user.plan === "free") return res.json({ plan: "free", locked: true });
+  try {
+    const doc = await ensureWeeklyFocus(req.db, user);
+    const d = doc.data;
+    const premium = user.plan === "premium";
+    res.json({
+      plan: user.plan,
+      week: doc.key,
+      headline: d.headline,
+      why: premium ? d.why : null,
+      when: premium ? d.when : null,
+      recap: premium ? focusRecap(user.id) : null,
+    });
+  } catch (err) {
+    console.error("Focus error:", err.message);
+    res.status(500).json({ error: "Couldn't put together this week's focus right now." });
+  }
+});
+
+// Premium: a Monday push with the week's focus.
+async function runWeeklyFocusPush() {
+  const now = new Date();
+  if (now.getUTCDay() !== 1 || now.getUTCHours() < 8 || now.getUTCHours() >= 20) return;
+  const key = focusWeekKey(now);
+  const db = loadDb();
+  const todo = db.users
+    .filter((u) => u.plan === "premium" && !(getDocByKey(u.id, "focus", key) || {}).notifiedAt && !weeklyFocusFailed.has(`${u.id}:${key}`))
+    .slice(0, 10);
+  for (const user of todo) {
+    try {
+      const doc = await ensureWeeklyFocus(db, user);
+      await sendPushToUser(user.id, { title: "Your focus for this week", body: doc.data.headline, url: "/playbook.html" });
+      saveDoc({ ...doc, notifiedAt: new Date().toISOString() });
+    } catch (err) {
+      weeklyFocusFailed.add(`${user.id}:${key}`);
+      console.error(`Weekly focus failed for ${user.id}:`, err.message);
+    }
+  }
+}
+const weeklyFocusFailed = new Set();
+
+// ---------------------------------------------------------------------------
+// Ideas for this week: small gestures and simple dates. Pro: 3 ideas a week.
+// Premium: 5, tailored to the person (their profile), the user's story and
+// what has worked before, with unlimited refreshes. Free: a teaser. Stored as
+// docs of kind "ideas" (key = the week's Monday).
+// ---------------------------------------------------------------------------
+
+const IDEAS_PROMPT = `You suggest small gestures and simple dates for someone who wants to feel closer to their partner, inside a private AI relationship-coaching app. You get how many ideas to give, sometimes what is known about the partner and about what has worked for this person before, and ideas already shown this week (do not repeat those).
+
+Respond with ONLY a JSON object in exactly this shape:
+{"ideas": [{"title": "<3-6 words>", "how": "<one concrete sentence on what to do, specific enough to just do it>", "effort": "<5 min | 30 min | an evening | a weekend>"}]}
+
+Rules:
+- Mix mostly small gestures (a few minutes, free or cheap) with one or two simple dates. Low cost by default.
+- Specific beats generic: use the partner's known traits and the user's story when given; otherwise pick things that work for most people.
+- Never manipulative, never grand-gesture-to-win-someone-back. Plain, warm words. Reply in the language the user writes in (English if unclear).`;
+
+async function generateIdeas(db, user, avoidTitles = []) {
+  const premium = user.plan === "premium";
+  const partner = premium
+    ? db.partnerProfiles.filter((p) => p.userId === user.id).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0] || null
+    : null;
+  const exps = premium ? listExperimentsForUser(user.id).filter((e) => e.status === "worked").slice(0, 6) : [];
+  const raw = await aiJson(
+    IDEAS_PROMPT,
+    [
+      `Number of ideas: ${premium ? 5 : 3}`,
+      partner ? `The partner: ${partner.name}\n${buildPartnerContextBlock(partner)}` : "",
+      premium && user.relationshipMemory ? `Background on the user's story: ${asStr(user.relationshipMemory, 600)}` : "",
+      exps.length ? `Things that worked for them before:\n${exps.map((e) => `- ${asStr(e.text, 140)}`).join("\n")}` : "",
+      avoidTitles.length ? `Already shown, do not repeat: ${avoidTitles.join("; ")}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n"),
+    0.8,
+    premium ? PREMIUM_MODEL : STANDARD_MODEL
+  );
+  const items = (Array.isArray(raw.ideas) ? raw.ideas : [])
+    .map((x) => ({ title: asStr(x?.title, 60), how: asStr(x?.how, 260), effort: asStr(x?.effort, 30) }))
+    .filter((x) => x.title && x.how)
+    .slice(0, premium ? 5 : 3);
+  if (!items.length) throw new Error("no ideas");
+  return { items, forName: partner ? partner.name : null };
+}
+
+function publicIdeas(user, doc) {
+  return {
+    plan: user.plan,
+    week: doc.key,
+    ideas: doc.data.items,
+    forName: user.plan === "premium" ? doc.data.forName || null : null,
+    canRefresh: user.plan === "premium",
+  };
+}
+
+app.get("/api/ideas", authMiddleware, async (req, res) => {
+  const user = req.user;
+  if (user.plan === "free") return res.json({ plan: "free", locked: true });
+  try {
+    const key = focusWeekKey();
+    let doc = getDocByKey(user.id, "ideas", key);
+    if (!doc) {
+      const g = await generateIdeas(req.db, user);
+      doc = saveDoc({ id: generateId("ideas"), userId: user.id, kind: "ideas", key, title: "", data: { ...g, shown: g.items.map((i) => i.title), refreshes: 0 } });
+    }
+    res.json(publicIdeas(user, doc));
+  } catch (err) {
+    console.error("Ideas error:", err.message);
+    res.status(500).json({ error: "Couldn't find ideas right now." });
+  }
+});
+
+app.post("/api/ideas/refresh", authMiddleware, async (req, res) => {
+  if (!requirePremium(req, res)) return;
+  try {
+    const user = req.user;
+    if (isOverDailyLimit(user, res)) return;
+    const key = focusWeekKey();
+    const doc = getDocByKey(user.id, "ideas", key);
+    const shown = doc ? doc.data.shown || [] : [];
+    if ((doc ? doc.data.refreshes || 0 : 0) >= 30) {
+      return res.status(429).json({ error: "That's plenty of ideas for this week. Try some of them first." });
+    }
+    const g = await generateIdeas(req.db, user, shown.slice(-15));
+    const saved = saveDoc({
+      id: doc ? doc.id : generateId("ideas"),
+      userId: user.id,
+      kind: "ideas",
+      key,
+      title: "",
+      data: { ...g, shown: [...shown, ...g.items.map((i) => i.title)].slice(-30), refreshes: (doc ? doc.data.refreshes || 0 : 0) + 1 },
+    });
+    bumpUsage(user);
+    res.json(publicIdeas(user, saved));
+  } catch (err) {
+    console.error("Ideas refresh error:", err.message);
+    res.status(500).json({ error: "Couldn't find new ideas right now." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Your year so far (Premium): the monthly reviews rolled into one story.
+// Numbers are computed here; the AI writes the words. Stored as a doc of kind
+// "yearly" (key = the year). Shown at the bottom of the Monthly review page.
+// ---------------------------------------------------------------------------
+
+const YEAR_PROMPT = `You write a person's private "year so far" relationship recap inside an AI coaching app. You get facts about their year (counts, connection scores per month, the headline of each monthly review they have, and what their small experiments showed). Write like a thoughtful coach looking back over a year with a client: warm, specific, honest, never clinical.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"headline": "<one sentence capturing the year so far, max 25 words>", "chapters": [{"title": "<3-6 words>", "description": "<2-3 sentences grounded in the material>"}], "biggestShift": "<2-3 sentences on what changed most, using only the numbers given>", "whatWorked": ["<short>"], "lookingAhead": "<2 sentences: the one thing to carry into the next months>", "note": "<one warm closing sentence>"}
+
+Rules:
+- Ground everything in the material. Never invent events, people or numbers. Leave a section empty if there is nothing real to say.
+- At most 4 chapters and 4 items in whatWorked. Never diagnose; avoid clinical labels. Write in the language the material is written in (English if unclear).`;
+
+function buildYearInput(db, user, year) {
+  const from = `${year}-01-01`;
+  const to = new Date().toISOString().slice(0, 10);
+  const startMs = Date.UTC(year, 0, 1);
+  const convs = db.conversations.filter((c) => c.userId === user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user") && new Date(c.createdAt).getTime() >= startMs);
+  const rehearsals = db.conversations.filter((c) => c.userId === user.id && c.mode === "practice" && (c.messages || []).some((m) => m.role === "user") && new Date(c.createdAt).getTime() >= startMs);
+  const stats = checkinStats(db.checkins, user.id, from, to);
+  const exps = listExperimentsForUser(user.id).filter((e) => new Date(e.createdAt).getTime() >= startMs);
+  const months = [];
+  for (let m = 1; m <= 12; m++) {
+    const key = `${year}-${String(m).padStart(2, "0")}`;
+    const r = monthRange(key);
+    if (r.startMs > Date.now()) break;
+    const st = checkinStats(db.checkins, user.id, r.fromDate, r.toDate);
+    months.push({ key, label: monthTitle(key).split(" ")[0].slice(0, 3), avg: st.average, days: st.answeredDays });
+  }
+  const reviews = listDocs(user.id, "monthly").filter((d) => String(d.key).startsWith(String(year)));
+  const activity = convs.length + rehearsals.length + stats.answeredDays + exps.length;
+  return { convs, rehearsals, stats, exps, months, reviews, activity };
+}
+
+async function generateYearRecap(db, user, year) {
+  const input = buildYearInput(db, user, year);
+  if (input.activity < 10) return { notEnoughData: true };
+  const { stats } = input;
+  const parts = [
+    `Year: ${year} (so far)`,
+    `Coach Chat conversations: ${input.convs.length}. Practice rehearsals: ${input.rehearsals.length}. Check-in days answered: ${stats.answeredDays}.`,
+    stats.scoredDays
+      ? `Self-rated connection (1-10) on ${stats.scoredDays} days: average ${stats.average}${stats.trend ? `; first half of the year ${stats.firstAvg}, second half ${stats.lastAvg} (trend: ${stats.trend})` : ""}.`
+      : "No connection scores this year.",
+    input.months.some((m) => m.avg != null) ? `Average connection by month: ${input.months.filter((m) => m.avg != null).map((m) => `${m.label} ${m.avg}`).join(", ")}.` : "",
+    input.reviews.length ? `Monthly review headlines:\n${input.reviews.sort((a, b) => (a.key < b.key ? -1 : 1)).map((d) => `${monthTitle(d.key)}: ${asStr(d.data.review?.headline, 200)}`).join("\n")}` : "",
+    input.exps.length ? `Playbook experiments this year:\n${experimentLines(input.exps.slice(0, 20))}` : "",
+    user.relationshipMemory ? `Standing memory note: ${asStr(user.relationshipMemory, 600)}` : "",
+  ].filter(Boolean);
+  const raw = await aiJson(YEAR_PROMPT, parts.join("\n\n"), 0.5);
+  const recap = {
+    headline: asStr(raw.headline, 220),
+    chapters: asPairs(raw.chapters, 4, "title", "description"),
+    biggestShift: asStr(raw.biggestShift, 600),
+    whatWorked: asList(raw.whatWorked, 4),
+    lookingAhead: asStr(raw.lookingAhead, 400),
+    note: asStr(raw.note, 300),
+  };
+  if (!recap.headline && !recap.chapters.length) throw new Error("Empty recap");
+  return {
+    recap,
+    stats: {
+      conversations: input.convs.length,
+      rehearsals: input.rehearsals.length,
+      checkinDays: stats.answeredDays,
+      averageScore: stats.average,
+      trend: stats.trend,
+      firstAvg: stats.firstAvg,
+      lastAvg: stats.lastAvg,
+      experimentsWorked: input.exps.filter((e) => e.status === "worked").length,
+      experimentsTried: input.exps.filter((e) => e.status !== "active").length,
+      months: input.months,
+    },
+  };
+}
+
+app.get("/api/year", authMiddleware, (req, res) => {
+  if (req.user.plan !== "premium") return res.json({ plan: req.user.plan, locked: true });
+  const year = new Date().getUTCFullYear();
+  const doc = getDocByKey(req.user.id, "yearly", String(year));
+  const input = buildYearInput(req.db, req.user, year);
+  res.json({ plan: "premium", year, ready: input.activity >= 10, recap: doc ? { ...doc.data, generatedAt: doc.updatedAt } : null });
+});
+
+app.post("/api/year", authMiddleware, async (req, res) => {
+  if (!requirePremium(req, res)) return;
+  try {
+    if (isOverDailyLimit(req.user, res)) return;
+    const year = new Date().getUTCFullYear();
+    const result = await generateYearRecap(req.db, req.user, year);
+    if (result.notEnoughData) {
+      return res.status(400).json({ error: "There isn't enough yet for a year recap. A few more weeks of chats and check-ins and I'll have a lot more to work with." });
+    }
+    const existing = getDocByKey(req.user.id, "yearly", String(year));
+    const saved = saveDoc({
+      id: existing ? existing.id : generateId("year"),
+      userId: req.user.id,
+      kind: "yearly",
+      key: String(year),
+      title: `${year} so far`,
+      data: result,
+      createdAt: existing?.createdAt,
+    });
+    bumpUsage(req.user);
+    res.json({ plan: "premium", year, ready: true, recap: { ...saved.data, generatedAt: saved.updatedAt } });
+  } catch (err) {
+    console.error("Year recap error:", err.message);
+    res.status(500).json({ error: "Couldn't write your year recap right now. Please try again." });
+  }
+});
 
 app.get("/api/partners", authMiddleware, (req, res) => {
   const list = req.db.partnerProfiles
@@ -4920,10 +5496,18 @@ async function runWeeklyInsightsDigest() {
           )
           .join("");
 
+        let focusHtml = "";
+        try {
+          const fdoc = await ensureWeeklyFocus(db, user);
+          focusHtml = `<p style="margin:0 0 16px; padding:12px 14px; border-left:3px solid #d1a05a; color:#f6efe4;"><span style="color:#b6a795;">Your focus this week</span><br/><strong>${escapeForEmail(fdoc.data.headline)}</strong></p>`;
+        } catch (e) {
+          /* the digest goes out without it */
+        }
         const html = emailShell({
           unsubscribeUrl: unsubscribeLink(user, "digest"),
           bodyHtml: `
             <p>Hey ${escapeForEmail(user.name)},</p>
+            ${focusHtml}
             <p>Here's what RelationshipAI noticed across your conversations this week:</p>
             ${itemsHtml}
             <p><a href="${APP_URL}/insights.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">See full insights →</a></p>
@@ -4987,6 +5571,8 @@ async function runExperimentReminders() {
 
 function emailJobsDueCheck() {
   runExperimentReminders().catch((err) => console.error("Experiment reminder job failed:", err));
+  runSosFollowUps().catch((err) => console.error("SOS follow-up job failed:", err));
+  runWeeklyFocusPush().catch((err) => console.error("Weekly focus job failed:", err));
   const emailJobs = getEmailJobs();
   const now = new Date();
   const today = todayKey();

@@ -5,7 +5,131 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   requireAuth();
   load();
+  loadFocus();
+  loadIdeas();
 });
+
+// Ideas for this week (Pro: 3; Premium: 5, tailored, refreshable; Free: teaser).
+async function loadIdeas(refresh) {
+  const el = document.getElementById("ideas-card");
+  if (!el) return;
+  try {
+    const res = refresh ? await authFetch("/api/ideas/refresh", { method: "POST", body: "{}" }) : await authFetch("/api/ideas");
+    const d = await safeJson(res);
+    if (!res.ok) {
+      if (refresh) await showAppAlert(d.error || "Couldn't find new ideas right now.");
+      return;
+    }
+    if (d.locked) {
+      el.innerHTML = `<section class="dashboard-card focus-card focus-locked">
+        <span class="section-tag">Ideas for this week <span class="pb-lock">Pro</span></span>
+        <p class="text-muted">Small gestures and simple dates to try this week, a fresh set every Monday.</p>
+        <button type="button" class="btn btn-gradient btn-sm" id="ideas-upgrade">See Pro</button></section>`;
+      document.getElementById("ideas-upgrade").addEventListener("click", () => startCheckout("pro"));
+      return;
+    }
+    el.innerHTML = `<section class="dashboard-card focus-card">
+      <span class="section-tag">Ideas for this week${d.forName ? ` · for ${escapeHtml(d.forName)}` : ""}</span>
+      <div class="ideas-list">${d.ideas
+        .map(
+          (i, n) => `<div class="mc-version"><div class="mc-version-head"><strong>${escapeHtml(i.title)}</strong><span class="text-muted ideas-effort">${escapeHtml(i.effort)}</span></div>
+          <p>${escapeHtml(i.how)}</p><button type="button" class="btn btn-ghost btn-sm" data-n="${n}">Add to my Playbook</button></div>`
+        )
+        .join("")}</div>
+      ${
+        d.canRefresh
+          ? '<div class="focus-actions"><button type="button" class="btn btn-ghost btn-sm" id="ideas-refresh">Show me different ideas</button></div>'
+          : '<p class="text-muted focus-teaser"><span class="pb-lock">Premium</span> gives you 5 ideas tailored to them, and new ones whenever you want. <a href="#" id="ideas-see-premium">See Premium</a></p>'
+      }
+    </section>`;
+    el.querySelectorAll("button[data-n]").forEach((b) =>
+      b.addEventListener("click", async () => {
+        const i = d.ideas[Number(b.dataset.n)];
+        b.disabled = true;
+        try {
+          const r = await authFetch("/api/playbook", { method: "POST", body: JSON.stringify({ text: `${i.title}: ${i.how}` }) });
+          const out = await safeJson(r);
+          b.textContent = r.ok ? "Added" : out.error || "Couldn't add";
+          if (r.ok) load();
+          else b.disabled = false;
+        } catch (e) {
+          b.disabled = false;
+        }
+      })
+    );
+    document.getElementById("ideas-refresh")?.addEventListener("click", (e) => {
+      e.currentTarget.disabled = true;
+      e.currentTarget.textContent = "Looking…";
+      loadIdeas(true);
+    });
+    document.getElementById("ideas-see-premium")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      startCheckout("premium");
+    });
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+// This week's focus (Pro: the sentence; Premium: also why, when and a recap
+// of last week; Free: a teaser).
+async function loadFocus() {
+  const el = document.getElementById("focus-card");
+  if (!el) return;
+  try {
+    const res = await authFetch("/api/focus");
+    const d = await safeJson(res);
+    if (!res.ok) return; // stay quiet: the Playbook itself still works
+    if (d.locked) {
+      el.innerHTML = `<section class="dashboard-card focus-card focus-locked">
+        <span class="section-tag">This week's focus <span class="pb-lock">Pro</span></span>
+        <p class="text-muted">Every week, one small thing to focus on, picked from how your days have gone and what has worked for you.</p>
+        <button type="button" class="btn btn-gradient btn-sm" id="focus-upgrade">See Pro</button></section>`;
+      document.getElementById("focus-upgrade").addEventListener("click", () => startCheckout("pro"));
+      return;
+    }
+    const recap = d.recap
+      ? `<p class="text-muted focus-recap">Last week${d.recap.headline ? `: "${escapeHtml(d.recap.headline)}"` : ""}${
+          d.recap.worked || d.recap.didntHelp ? ` · ${d.recap.worked} worked, ${d.recap.didntHelp} didn't help` : ""
+        }</p>`
+      : "";
+    el.innerHTML = `<section class="dashboard-card focus-card">
+      <span class="section-tag">This week's focus</span>
+      <h2 class="focus-headline">${escapeHtml(d.headline)}</h2>
+      ${d.why ? `<p class="text-muted">${escapeHtml(d.why)}</p>` : ""}
+      ${d.when ? `<p class="focus-when"><strong>When:</strong> ${escapeHtml(d.when)}</p>` : ""}
+      ${recap}
+      <div class="focus-actions"><button type="button" class="btn btn-primary btn-sm" id="focus-try">Add to my Playbook</button>
+        <span class="text-muted focus-msg" id="focus-msg"></span></div>
+      ${d.plan === "pro" ? `<p class="text-muted focus-teaser"><span class="pb-lock">Premium</span> adds why it fits you, the best moment to try it, and a recap of last week. <a href="#" id="focus-see-premium">See Premium</a></p>` : ""}
+    </section>`;
+    document.getElementById("focus-see-premium")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      startCheckout("premium");
+    });
+    document.getElementById("focus-try").addEventListener("click", async (e) => {
+      const btn = e.currentTarget;
+      btn.disabled = true;
+      const msg = document.getElementById("focus-msg");
+      try {
+        const r = await authFetch("/api/playbook", { method: "POST", body: JSON.stringify({ text: d.headline }) });
+        const out = await safeJson(r);
+        if (!r.ok) {
+          msg.textContent = out.error || "Couldn't add that.";
+          btn.disabled = false;
+          return;
+        }
+        msg.textContent = out.already ? "Already in your Playbook." : "Added. I'll check in with you in two days.";
+        load();
+      } catch (err) {
+        msg.textContent = "Couldn't connect to the server.";
+        btn.disabled = false;
+      }
+    });
+  } catch (e) {
+    /* ignore */
+  }
+}
 
 const RESULT_LABELS = {
   worked: "It worked",

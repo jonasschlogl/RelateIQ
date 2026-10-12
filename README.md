@@ -131,3 +131,12 @@ The original `index.html`, `chat.html`, `dashboard.html`, `script.js`, and `styl
 
 - Add password reset via email.
 - Move from the JSON file to a real database once you have more users.
+
+### Plan split for the newer tools
+
+All counters are markers in the `docs` table (kinds `mcheck`, `sos`, `focus`, `ideas`, `yearly`); the text users paste is never stored.
+
+- **Message check** (`message.html`, `/api/message-check`): Free 3 checks in total, Pro 10/day with 2 rewrites on the standard model, Premium effectively unlimited with 3 rewrites on the advanced model, tailored to the partner profile, memory and Playbook.
+- **After a fight** (`sos.html`, `/api/sos`): the calm-down guide is free for everyone (static). The personal message is Pro 3/month, Premium unlimited, tailored, plus a next-day check-in (`runSosFollowUps`, push + email).
+- **This week's focus** and **Ideas for this week** (cards on `playbook.html`, `/api/focus`, `/api/ideas`): Pro gets the focus sentence (also in the weekly digest email) and 3 ideas; Premium adds why/when, last-week recap, 5 tailored ideas, refresh any time and a Monday push (`runWeeklyFocusPush`). Free sees a teaser.
+- **Your year so far** (bottom of `review.html`, `/api/year`): Premium only.

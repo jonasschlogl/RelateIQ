@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message check · RelationshipAI</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png?v=2" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png?v=2" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=62" />
+</head>
+<body>
+
+  <header class="site-nav site-nav-app no-print">
+    <a href="index.html" class="brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="34" height="34" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="chat.html" class="nav-primary">Coach</a>
+      <a href="chat.html?mode=practice" class="nav-primary">Practice</a>
+      <a href="message.html" class="nav-primary nav-current">Message check</a>
+      <a href="sos.html" class="nav-primary">After a fight</a>
+      <span class="nav-sep"></span>
+      <a href="playbook.html">Playbook</a>
+      <a href="insights.html">Insights</a>
+      <a href="share.html">Share</a>
+      <a href="daily.html">Daily question</a>
+      <a href="dashboard.html">My account</a>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="tool-page" id="message-page">
+    <div class="tool-header">
+      <img class="tool-mascot" src="img/wisp-heart.svg" alt="" width="64" height="85" />
+      <span class="section-tag">Message check</span>
+      <h1>Read it before they do</h1>
+      <p class="text-muted">Paste the message you're about to send. See how it may land, and get versions you can send as they are.</p>
+    </div>
+
+    <div id="message-state"><p class="text-muted" style="text-align:center;">Loading…</p></div>
+  </main>
+
+  <script src="js/shared.js?v=18"></script>
+  <script src="js/message.js?v=1"></script>
+</body>
+</html>
