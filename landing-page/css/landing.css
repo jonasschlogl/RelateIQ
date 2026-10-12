@@ -447,3 +447,12 @@
   .more-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .plan-table .pt-no svg { width: 15px; height: 15px; stroke: var(--text-faint); opacity: 0.7; }
+
+/* Not-included rows: a red cross, so the gap between plans is easy to see */
+.price-features li.no svg { stroke: #e0645a; }
+.price-features li.no span { color: var(--text-faint); }
+.plan-table .pt-no svg { stroke: #e0645a; opacity: 1; }
+
+.pricing-guarantee + .pricing-guarantee { margin-top: 12px; }
+.pricing-assurances { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+.pricing-assurances .pricing-guarantee, .pricing-assurances .pricing-guarantee + .pricing-guarantee { margin-top: 0; flex: 1 1 340px; max-width: 520px; }
