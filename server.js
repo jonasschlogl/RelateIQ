@@ -3458,7 +3458,13 @@ app.get("/api/conversations/:id", authMiddleware, (req, res) => {
     const used = (conv.messages || []).filter((m) => m.role === "user").length;
     practiceCap = { used, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: used >= FREE_PRACTICE_MAX_USER_MESSAGES };
   }
-  res.json({ ...conv, practiceCap, messages: signAttachmentsInMessages(conv.messages) });
+  // Premium: the short plan someone asked for when starting this rehearsal.
+  let plan = null;
+  if (conv.mode === "practice" && req.user.plan === "premium") {
+    const t = listDocs(req.user.id, "talk").find((d) => d.data && d.data.conversationId === conv.id);
+    if (t) plan = t.data.plan || null;
+  }
+  res.json({ ...conv, practiceCap, plan, messages: signAttachmentsInMessages(conv.messages) });
 });
 
 app.delete("/api/conversations/:id", authMiddleware, (req, res) => {

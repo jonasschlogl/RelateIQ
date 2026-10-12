@@ -283,9 +283,37 @@ function updateExportButtonVisibility() {
   }
 }
 
+// Premium: the short plan for this talk, shown as a collapsible card right
+// under the partner banner. `plan` is the object stored by POST /api/talks.
+function renderPracticePlan(plan, open) {
+  document.getElementById("practice-plan")?.remove();
+  const banner = document.getElementById("partner-banner");
+  if (!banner || !plan) return;
+  const list = (items) => (items && items.length ? `<ul>${items.map((x) => `<li>${escapeHtml(x)}</li>`).join("")}</ul>` : "");
+  const reactions = (plan.reactions || [])
+    .map((r) => `<li><strong>They might ${escapeHtml(String(r.reaction || "").replace(/^they might\s*/i, ""))}</strong><br>${escapeHtml(r.respond || "")}</li>`)
+    .join("");
+  const el = document.createElement("details");
+  el.id = "practice-plan";
+  el.className = "practice-plan";
+  if (open) el.open = true;
+  el.innerHTML = `
+    <summary>Your plan for this talk</summary>
+    <div class="practice-plan-body">
+      ${plan.goal ? `<p class="practice-plan-goal"><strong>Aim for:</strong> ${escapeHtml(plan.goal)}</p>` : ""}
+      ${plan.opening ? `<div class="practice-plan-block"><span class="practice-plan-label">Start with</span><p class="practice-plan-opening">"${escapeHtml(plan.opening)}"</p></div>` : ""}
+      ${plan.keyPoints && plan.keyPoints.length ? `<div class="practice-plan-block"><span class="practice-plan-label">Get across</span>${list(plan.keyPoints)}</div>` : ""}
+      ${plan.avoid && plan.avoid.length ? `<div class="practice-plan-block"><span class="practice-plan-label">Avoid</span>${list(plan.avoid)}</div>` : ""}
+      ${reactions ? `<div class="practice-plan-block"><span class="practice-plan-label">If they react</span><ul>${reactions}</ul></div>` : ""}
+      ${plan.ifHeated ? `<div class="practice-plan-block"><span class="practice-plan-label">If it gets heated</span><p>${escapeHtml(plan.ifHeated)}</p></div>` : ""}
+    </div>`;
+  banner.after(el);
+}
+
 function showPartnerBanner(visible, name, scenario, meta) {
   const banner = document.getElementById("partner-banner");
   if (!banner) return;
+  if (!visible) document.getElementById("practice-plan")?.remove();
   banner.style.display = visible ? "flex" : "none";
   if (visible) {
     const nameEl = document.getElementById("partner-banner-name");
@@ -1113,6 +1141,16 @@ async function renderPracticeSetup() {
             <span class="switch-track"><span class="switch-thumb"></span></span>
           </span>
         </label>
+        <label class="role-swap-row" for="practice-plan-first">
+          <span class="role-swap-text">
+            <span class="role-swap-title">Get a short plan first <span class="intensity-lock">Premium</span></span>
+            <span class="role-swap-desc">Opening line, what to avoid, how they might react</span>
+          </span>
+          <span class="switch">
+            <input type="checkbox" id="practice-plan-first" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
       </div>
 
       <div class="practice-setup-partners">
@@ -1186,6 +1224,15 @@ async function renderPracticeSetup() {
   // needs to change.
   const intensitySelect = document.getElementById("practice-intensity");
   if (getUser()?.plan === "premium") document.querySelectorAll(".intensity-lock").forEach((el) => el.remove());
+  document.getElementById("practice-plan-first")?.addEventListener("click", async (e) => {
+    if (getUser()?.plan === "premium") return;
+    e.preventDefault();
+    const go = await showAppConfirm(
+      "A short plan for the talk is part of Premium: the opening line, what to avoid and how they might react, shown above your rehearsal.",
+      { confirmLabel: "See Premium", cancelLabel: "Not now" }
+    );
+    if (go) startCheckout("premium");
+  });
   document.querySelectorAll(".intensity-option").forEach((btn) => {
     btn.addEventListener("click", async () => {
       if (btn.dataset.value === "tough" && getUser()?.plan !== "premium") {
@@ -1610,13 +1657,28 @@ function buildImportMessagesRow(p) {
 // and retryPracticeConversation (the debrief card's "Try again" — task
 // #91) — both just POST the same conversation shape and land on the result
 // the same way, so the actual creation + navigation only lives once.
-async function startPracticeConversation({ partnerProfileId, scenario, intensity, roleSwap }) {
+async function startPracticeConversation({ partnerProfileId, scenario, intensity, roleSwap, planFirst }) {
   const res = await authFetch("/api/conversations", {
     method: "POST",
     body: JSON.stringify({ mode: "practice", partnerProfileId, scenario, intensity, roleSwap }),
   });
   const conv = await safeJson(res);
   if (!res.ok) return { ok: false, error: conv.error, upgradeRequired: !!conv.upgradeRequired };
+  if (planFirst) {
+    // Premium: build the short plan for this talk and attach it to the rehearsal.
+    // If it fails the rehearsal still opens, just without the plan.
+    try {
+      const tr = await authFetch("/api/talks", { method: "POST", body: JSON.stringify({ topic: scenario, partnerProfileId }) });
+      const talk = await safeJson(tr);
+      if (tr.ok && talk && talk.id) {
+        await authFetch(`/api/talks/${talk.id}/link`, { method: "POST", body: JSON.stringify({ conversationId: conv.id }) });
+        conv.plan = talk.plan;
+        conv._openPlan = true;
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
   conversations.unshift({
     id: conv.id,
     title: conv.title,
@@ -1635,7 +1697,12 @@ async function selectPartnerAndStart(partnerId) {
     const intensityValue = document.getElementById("practice-intensity")?.value;
     const intensity = intensityValue === "supportive" ? "supportive" : intensityValue === "tough" ? "tough" : "realistic";
     const roleSwap = !!document.getElementById("practice-role-swap")?.checked;
-    const result = await startPracticeConversation({ partnerProfileId: partnerId, scenario, intensity, roleSwap });
+    const planFirst = !!document.getElementById("practice-plan-first")?.checked && getUser()?.plan === "premium";
+    if (planFirst && scenario.length < 8) {
+      showPracticeSetupError("Write what you want to practice above first, so the plan fits it.");
+      return;
+    }
+    const result = await startPracticeConversation({ partnerProfileId: partnerId, scenario, intensity, roleSwap, planFirst });
     if (!result.ok) {
       // Most commonly the free-plan lifetime-practice limit (see
       // FREE_LIFETIME_PRACTICE_CONVERSATIONS in server.js) — the banner
@@ -1815,6 +1882,7 @@ async function openConversation(id, preloadedConv) {
       intensity: currentConvCtx.intensity,
       roleSwap: currentConvCtx.roleSwap,
     });
+    renderPracticePlan(currentConvCtx.mode === "practice" ? conv.plan || null : null, !!conv._openPlan);
     renderCoachTagBar();
     renderHistory();
 

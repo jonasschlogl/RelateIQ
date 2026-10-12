@@ -4766,3 +4766,31 @@ body.js-reveal .reveal-item.revealed {
 .talk-modes { display: flex; gap: 8px; margin: 0 0 14px; }
 
 .pack-facts { font-size: 13.5px; color: var(--text-muted); background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; }
+
+
+/* ---- Practice: short plan card (Premium) ---- */
+.practice-plan {
+  width: 100%;
+  max-width: 768px;
+  box-sizing: border-box;
+  margin: 8px 20px 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+.practice-plan > summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  list-style: none;
+}
+.practice-plan > summary::-webkit-details-marker { display: none; }
+.practice-plan > summary::after { content: "Show"; float: right; font-weight: 400; font-size: 12px; color: var(--text-muted); }
+.practice-plan[open] > summary::after { content: "Hide"; }
+.practice-plan-body { padding: 0 14px 12px; display: flex; flex-direction: column; gap: 10px; max-height: 40vh; overflow-y: auto; }
+.practice-plan-goal { margin: 0; }
+.practice-plan-label { display: block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
+.practice-plan-opening { margin: 0; font-style: italic; }
+.practice-plan-block p { margin: 0; }
+.practice-plan-block ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
