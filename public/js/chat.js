@@ -2575,7 +2575,7 @@ function renderShareModalLink(share) {
   const url = `${window.location.origin}/partner-view.html?token=${share.token}`;
   body.innerHTML = `
     <h2>Link ready</h2>
-    <p class="text-muted">Anyone with this link can view this conversation. No account needed. Manage or revoke it anytime from <a href="share.html">Share with partner</a>.</p>
+    <p class="text-muted">Anyone with this link can view this conversation. No account needed. Manage or revoke it anytime from <a href="share.html">Share with your partner</a>.</p>
     <div class="share-link-box">
       <span id="share-modal-link-text">${escapeHtml(url)}</span>
       <button class="btn btn-gradient btn-sm" id="share-modal-copy-btn" type="button">Copy link</button>
