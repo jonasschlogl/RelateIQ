@@ -3061,9 +3061,24 @@ app.post("/api/billing/change-plan", authMiddleware, async (req, res) => {
       return res.status(400).json({ error: `You're already on ${planLabel(plan)}.` });
     }
 
-    const sub = await stripe.subscriptions.retrieve(user.stripeSubscriptionId);
-    const item = sub.items?.data?.[0];
-    if (!item || !["active", "trialing"].includes(sub.status)) {
+    // The stored subscription id can point at a stale/duplicate subscription
+    // (e.g. several test subscriptions on one customer), so fall back to the
+    // customer's live subscriptions if it isn't usable.
+    let sub = null;
+    try {
+      sub = await stripe.subscriptions.retrieve(user.stripeSubscriptionId);
+    } catch (e) {
+      console.error("Change plan: stored subscription not retrievable:", e.message);
+    }
+    if (!sub || !["active", "trialing"].includes(sub.status)) {
+      sub = null;
+      if (user.stripeCustomerId) {
+        const list = await stripe.subscriptions.list({ customer: user.stripeCustomerId, status: "all", limit: 20 });
+        sub = (list.data || []).find((s) => ["active", "trialing"].includes(s.status)) || null;
+      }
+    }
+    const item = sub?.items?.data?.[0];
+    if (!item) {
       return res.status(400).json({ error: "Your subscription isn't active right now." });
     }
     const isYearly = Object.values(PLAN_TO_STRIPE_PRICE_YEARLY).includes(item.price?.id);
@@ -3071,20 +3086,32 @@ app.post("/api/billing/change-plan", authMiddleware, async (req, res) => {
     if (!targetPrice) {
       return res.status(400).json({ error: "That plan isn't available for your billing period yet." });
     }
+    if (item.price?.id === targetPrice) {
+      // Stripe already has you on this price; just bring our record in line.
+      user.plan = plan;
+      user.stripeSubscriptionId = sub.id;
+      saveUser(user);
+      return res.json({ ok: true, plan });
+    }
 
     await stripe.subscriptions.update(sub.id, {
       items: [{ id: item.id, price: targetPrice }],
       proration_behavior: "create_prorations",
-      payment_behavior: "error_if_incomplete",
       metadata: { userId: user.id, plan },
     });
 
     user.plan = plan;
+    user.stripeSubscriptionId = sub.id;
     saveUser(user);
     res.json({ ok: true, plan });
   } catch (err) {
-    console.error("Change plan error:", err.message);
-    res.status(500).json({ error: "Couldn't change your plan. Your card may have been declined; nothing was changed. You can also manage your subscription from your account page." });
+    console.error("Change plan error:", err.type || "", err.code || "", err.message);
+    // Stripe's own messages (card declined, price mismatch, ...) are written
+    // for humans and don't leak anything sensitive, so show them.
+    const stripeMsg = String(err.type || "").startsWith("Stripe") && err.message ? ` (${err.message})` : "";
+    res.status(500).json({
+      error: `Couldn't change your plan${stripeMsg}. Nothing was changed. You can also manage your subscription from your account page.`,
+    });
   }
 });
 
