@@ -195,7 +195,7 @@ function initScrollReveal() {
   if (!("IntersectionObserver" in window)) return;
 
   const targets = document.querySelectorAll(
-    ".feature-card, .extra-card, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block, .core-split"
+    ".feature-card, .extra-card, .tool-card, .more-card, .plan-compare, .price-card, .trust-item, .step, .faq-item, .compare-table-wrap, .mission-block, .core-split"
   );
   if (targets.length === 0) return;
 
