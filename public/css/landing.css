@@ -127,7 +127,7 @@
 
 /* ---------------- Extras ---------------- */
 .lp .extras { background: linear-gradient(180deg, transparent, rgba(250, 235, 215, 0.025), transparent); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.extras-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .extra-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px;
   transition: border-color 0.15s ease, transform 0.15s ease;
