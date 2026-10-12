@@ -77,12 +77,15 @@ app.set("trust proxy", true);
 // still starts and every billing route replies with a clear 503 instead of
 // crashing. Set STRIPE_SECRET_KEY (and the price/webhook vars below) in
 // .env once you've created your Stripe account and products — see README.
-const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
+// Env values pasted into a dashboard often pick up stray whitespace, quotes or a
+// literal "\n"; Stripe ids never contain those, so strip them.
+const cleanEnvId = (v) => (v ? String(v).replace(/\\n|\\r/g, "").replace(/^[\s"']+|[\s"']+$/g, "") : v);
+const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(cleanEnvId(process.env.STRIPE_SECRET_KEY)) : null;
 const APP_URL = (process.env.APP_URL || `http://localhost:${process.env.PORT || 3000}`).replace(/\/$/, "");
-const PLAN_TO_STRIPE_PRICE = { pro: process.env.STRIPE_PRICE_PRO, premium: process.env.STRIPE_PRICE_PREMIUM };
+const PLAN_TO_STRIPE_PRICE = { pro: cleanEnvId(process.env.STRIPE_PRICE_PRO), premium: cleanEnvId(process.env.STRIPE_PRICE_PREMIUM) };
 // Optional yearly prices (a second Stripe price per plan). Without them,
 // "yearly" checkouts are refused rather than silently billing monthly.
-const PLAN_TO_STRIPE_PRICE_YEARLY = { pro: process.env.STRIPE_PRICE_PRO_YEARLY, premium: process.env.STRIPE_PRICE_PREMIUM_YEARLY };
+const PLAN_TO_STRIPE_PRICE_YEARLY = { pro: cleanEnvId(process.env.STRIPE_PRICE_PRO_YEARLY), premium: cleanEnvId(process.env.STRIPE_PRICE_PREMIUM_YEARLY) };
 const STRIPE_PRICE_TO_PLAN = {};
 for (const map of [PLAN_TO_STRIPE_PRICE, PLAN_TO_STRIPE_PRICE_YEARLY]) {
   for (const [plan, priceId] of Object.entries(map)) {
