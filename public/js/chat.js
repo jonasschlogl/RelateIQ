@@ -1631,6 +1631,7 @@ async function startNewChat(mode) {
   if (mode === "practice") {
     setActiveTab("practice");
     currentConversationId = null;
+    updatePracticeCap(null);
     showPartnerBanner(false);
     showComposer(false);
     renderHistory();
@@ -1638,6 +1639,7 @@ async function startNewChat(mode) {
     return;
   }
 
+  updatePracticeCap(null);
   try {
     const res = await authFetch("/api/conversations", { method: "POST", body: JSON.stringify({ mode: "coach" }) });
     const conv = await safeJson(res);
@@ -1663,6 +1665,58 @@ async function startNewChat(mode) {
   } catch (err) {
     console.error(err);
   }
+}
+
+// Free plan: the one free Practice rehearsal has its own message cap (it does
+// not use the 8/day Coach pool). Shows "N of 10 messages", and once the cap is
+// reached the composer is locked and the person is pointed at the debrief
+// ("Get feedback") and Pro. `cap` is { used, limit, closed } or null.
+function updatePracticeCap(cap) {
+  let el = document.getElementById("practice-cap-note");
+  const input = document.getElementById("input");
+  const sendBtn = document.getElementById("send-btn");
+  const originalPlaceholder = "Tell me what's going on in your relationship…";
+  if (!cap) {
+    if (el) el.style.display = "none";
+    if (input) { input.disabled = false; input.placeholder = originalPlaceholder; }
+    if (sendBtn) sendBtn.disabled = false;
+    return;
+  }
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "practice-cap-note";
+    el.className = "practice-limit-banner";
+    el.style.marginBottom = "10px";
+    document.getElementById("composer")?.before(el);
+  }
+  el.innerHTML = "";
+  el.style.display = "flex";
+  el.classList.toggle("practice-limit-banner-exhausted", !!cap.closed);
+  const span = document.createElement("span");
+  span.textContent = cap.closed
+    ? `Your free rehearsal is finished (${cap.limit} messages). Tap "Get feedback" for your debrief, or upgrade to Pro for unlimited rehearsals.`
+    : `Free rehearsal: ${cap.used} of ${cap.limit} messages used. After that it closes and you get your debrief.`;
+  el.appendChild(span);
+  if (cap.closed) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-gradient btn-sm";
+    btn.textContent = "Upgrade to Pro";
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      btn.textContent = "Redirecting…";
+      startCheckout("pro").finally(() => {
+        btn.disabled = false;
+        btn.textContent = "Upgrade to Pro";
+      });
+    });
+    el.appendChild(btn);
+  }
+  if (input) {
+    input.disabled = !!cap.closed;
+    input.placeholder = cap.closed ? "This rehearsal is finished." : originalPlaceholder;
+  }
+  if (sendBtn) sendBtn.disabled = !!cap.closed;
 }
 
 async function openConversation(id, preloadedConv) {
@@ -1693,6 +1747,7 @@ async function openConversation(id, preloadedConv) {
     updateExportButtonVisibility();
     setActiveTab(currentConvCtx.mode);
     showComposer(true);
+    updatePracticeCap(conv.practiceCap || null);
     showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario, {
       intensity: currentConvCtx.intensity,
       roleSwap: currentConvCtx.roleSwap,
@@ -2589,9 +2644,14 @@ async function sendMessage() {
 
     if (!res.ok || !data.reply) {
       rollBackFailedSend();
+      if (data.practiceClosed) {
+        updatePracticeCap({ used: 8, limit: 8, closed: true });
+        return;
+      }
       showComposerError(data.error || "Something went wrong.", { upgradeRequired: !!data.upgradeRequired });
       return;
     }
+    if (data.practice) updatePracticeCap(data.practice);
 
     if (editMessageId) {
       editingMessageId = null;

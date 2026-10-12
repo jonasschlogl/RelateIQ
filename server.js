@@ -256,6 +256,7 @@ function isEmailVerificationEnforced() {
 // tighten these once there's real signal on where people drop off vs.
 // convert.
 const FREE_LIFETIME_ATTACHMENT_LIMIT = 3; // files/photos a Free account can ever attach, combined across all conversations
+const FREE_PRACTICE_MAX_USER_MESSAGES = 8; // user messages in a Free account's one rehearsal; then it closes
 const FREE_LIFETIME_PRACTICE_CONVERSATIONS = 1; // Partner Practice rehearsals a Free account can start
 
 // Partner profiles (Practice mode) allowed per plan — omit a plan here (e.g.
@@ -1654,7 +1655,10 @@ function adminMiddleware(req, res, next) {
 
 // Shared free-tier gate for every endpoint that makes an OpenAI call.
 // Returns true (and has already sent a 429) if the user is blocked.
-function isOverDailyLimit(user, res) {
+// `opts.skipFreeDaily`: Free-plan Practice has its own cap (see
+// FREE_PRACTICE_MAX_USER_MESSAGES) and does not draw on the 8/day Coach pool;
+// the verification gate above still applies.
+function isOverDailyLimit(user, res, opts = {}) {
   // Unverified email -> no AI calls (stops throw-away-address signups from
   // burning OpenAI credit). Only enforced when verification emails can
   // actually be sent; accounts that pre-date verification are grandfathered
@@ -1679,6 +1683,7 @@ function isOverDailyLimit(user, res) {
     }
     return false;
   }
+  if (opts.skipFreeDaily) return false;
   const today = todayKey();
   if (!user.usage || user.usage.date !== today) {
     user.usage = { date: today, count: 0 };
@@ -3371,7 +3376,11 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   if (isPractice && req.user.plan === "free") {
     incrementUserColumn(req.user.id, "lifetimePracticeConversations", 1);
   }
-  res.json(conv);
+  res.json(
+    isPractice && req.user.plan === "free"
+      ? { ...conv, practiceCap: { used: 0, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: false } }
+      : conv
+  );
 });
 
 // General-purpose conversation-metadata patch, used by:
@@ -3430,7 +3439,12 @@ app.patch("/api/conversations/:id", authMiddleware, (req, res) => {
 app.get("/api/conversations/:id", authMiddleware, (req, res) => {
   const conv = req.db.conversations.find((c) => c.id === req.params.id && c.userId === req.user.id);
   if (!conv) return res.status(404).json({ error: "Conversation not found." });
-  res.json({ ...conv, messages: signAttachmentsInMessages(conv.messages) });
+  let practiceCap = null;
+  if (conv.mode === "practice" && req.user.plan === "free") {
+    const used = (conv.messages || []).filter((m) => m.role === "user").length;
+    practiceCap = { used, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: used >= FREE_PRACTICE_MAX_USER_MESSAGES };
+  }
+  res.json({ ...conv, practiceCap, messages: signAttachmentsInMessages(conv.messages) });
 });
 
 app.delete("/api/conversations/:id", authMiddleware, (req, res) => {
@@ -3458,7 +3472,20 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   if (!conv) return res.status(404).json({ error: "Conversation not found." });
 
   const user = db.users.find((u) => u.id === req.user.id);
-  if (isOverDailyLimit(user, res)) return;
+  // Free + Practice: the single free rehearsal has its own cap instead of the
+  // shared 8/day Coach pool. After it, the rehearsal is closed.
+  const freePractice = user.plan === "free" && conv.mode === "practice";
+  if (isOverDailyLimit(user, res, { skipFreeDaily: freePractice })) return;
+  if (freePractice) {
+    const sent = (conv.messages || []).filter((m) => m.role === "user").length;
+    if (sent >= FREE_PRACTICE_MAX_USER_MESSAGES) {
+      return res.status(403).json({
+        error: `Your free rehearsal is finished (${FREE_PRACTICE_MAX_USER_MESSAGES} messages). Get your debrief below, or upgrade to Pro for unlimited rehearsals.`,
+        practiceClosed: true,
+        upgradeRequired: true,
+      });
+    }
+  }
 
   // Editing & resending the LAST message (chat.js's "✏️ Edit" on the most
   // recent user bubble, Coach Chat only) sends the same shape as a normal
@@ -3635,9 +3662,13 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     if (suggestion) assistantMessage.suggestion = suggestion;
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
-    bumpUsage(user);
+    if (!freePractice) bumpUsage(user);
 
+    const practiceUserCount = freePractice ? (conv.messages || []).filter((m) => m.role === "user").length + 1 : null;
     res.json({
+      practice: freePractice
+        ? { used: practiceUserCount, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: practiceUserCount >= FREE_PRACTICE_MAX_USER_MESSAGES }
+        : null,
       reply,
       messageId: assistantMessage.id,
       suggestion,
@@ -3801,7 +3832,7 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
       return res.status(400).json({ error: "Add a bit more to the conversation before exporting a summary." });
     }
 
-    const regenerate = !!(req.body && req.body.regenerate);
+    const regenerate = !!(req.body && req.body.regenerate) && req.user.plan !== "free";
     if (conv.therapistSummary && !regenerate) {
       return res.json({
         summary: conv.therapistSummary,
@@ -3905,7 +3936,8 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     }
 
     const user = db.users.find((u) => u.id === req.user.id);
-    if (isOverDailyLimit(user, res)) return;
+    // The debrief belongs to the Free rehearsal itself, not the Coach pool.
+    if (isOverDailyLimit(user, res, { skipFreeDaily: user.plan === "free" })) return;
 
     const transcript = buildPracticeTranscript(conv);
     const completion = await openai.chat.completions.create({
@@ -3946,7 +3978,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     // and look like it applies to this new readout.
     conv.practiceDebriefFeedback = null;
     saveConversation(conv);
-    bumpUsage(user);
+    if (user.plan !== "free") bumpUsage(user);
 
     res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage, ...practiceProgressFor(db, user, conv) });
   } catch (err) {
