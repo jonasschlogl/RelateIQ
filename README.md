@@ -164,3 +164,7 @@ Worst case if a user maxes everything out (no prompt caching, which would lower 
 | Premium yearly | ~€10.0 | ~€6.4 | ~64% |
 
 *After ~21% average EU consumer VAT and Stripe (~2.2% + €0.25) — assumes prices are tax-inclusive. A typical user uses a small fraction of the caps, so real margin is much higher. Free: at most 8 fast-model messages a day (~$0.01/day).
+
+### Answer quality picker
+
+Each chat has a Fast / Advanced toggle above the composer (`quality` column on `conversations`, sent with every message). Advanced = strong model while the plan's monthly strong-model budget lasts, then Fast automatically; Fast saves the budget. Premium can pick in every chat, Pro only in Partner Practice, Free is always Fast (the Advanced button shows a lock and an upgrade prompt). The server enforces this (`canChooseAdvanced`, `chatModelFor` in server.js).

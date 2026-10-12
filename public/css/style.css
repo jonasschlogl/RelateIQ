@@ -4935,3 +4935,26 @@ body.js-reveal .reveal-item.revealed {
 @media (max-width: 900px) {
   .modes-grid-core, .modes-more .modes-grid-more { grid-template-columns: 1fr; }
 }
+
+/* Answer quality toggle above the composer */
+.quality-row {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
+  width: 100%; margin: 0 0 8px; font-size: 12.5px; color: var(--text-muted);
+}
+.quality-label { font-weight: 600; letter-spacing: 0.01em; }
+.quality-toggle {
+  display: inline-flex; padding: 2px; gap: 2px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-pill);
+}
+.quality-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: none; cursor: pointer; font: inherit; font-weight: 600;
+  color: var(--text-muted); padding: 4px 12px; border-radius: var(--radius-pill);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.quality-btn:hover { color: var(--text); }
+.quality-btn.active { background: var(--accent-grad); color: var(--ink); }
+.quality-btn .quality-lock { opacity: 0.8; }
+.quality-note { color: var(--text-faint); }
+.quality-note-low { color: var(--accent-2-text); }
+@media (max-width: 640px) { .quality-note { flex-basis: 100%; } }

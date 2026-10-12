@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=65" />
+  <link rel="stylesheet" href="css/style.css?v=66" />
 </head>
 <body>
 
@@ -86,6 +86,14 @@
           <button type="button" id="cancel-edit-btn">Cancel</button>
         </div>
         <div class="attachment-preview" id="attachment-preview" style="display:none;"></div>
+        <div class="quality-row" id="quality-row">
+          <span class="quality-label">Answer quality</span>
+          <div class="quality-toggle" role="group" aria-label="Answer quality for this chat">
+            <button type="button" class="quality-btn" data-quality="fast" aria-pressed="false" title="Quick, efficient replies">Fast</button>
+            <button type="button" class="quality-btn" data-quality="advanced" aria-pressed="false" title="Deeper, more nuanced replies">Advanced <svg class="quality-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></button>
+          </div>
+          <span class="quality-note" id="quality-note"></span>
+        </div>
         <div class="composer-row" id="composer">
           <input type="file" id="file-input" multiple style="display:none;" />
           <button class="attach-btn" id="attach-btn" type="button" title="Attach a photo, screen recording, or file" aria-label="Attach a photo, screen recording, or file">
@@ -108,6 +116,6 @@
   </div>
 
   <script src="js/shared.js?v=20"></script>
-  <script src="js/chat.js?v=48"></script>
+  <script src="js/chat.js?v=49"></script>
 </body>
 </html>

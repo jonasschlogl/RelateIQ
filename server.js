@@ -21,6 +21,7 @@ import {
   incrementUserUsage,
   incrementUserMonthlyUsage,
   incrementUserPremiumUsage,
+  setConversationQuality,
   backupDatabaseTo,
   getDatabaseFilePath,
   incrementUserColumn,
@@ -359,6 +360,17 @@ function budgetedModelForPlan(user) {
 }
 function budgetedModelForPractice(user) {
   return user.plan === "free" ? STANDARD_MODEL : strongModelFor(user);
+}
+// Who may pick "Advanced" for a chat: Premium everywhere, Pro in Partner
+// Practice only (that's where Pro's strong-model budget applies).
+function canChooseAdvanced(user, mode) {
+  return user.plan === "premium" || (user.plan === "pro" && mode === "practice");
+}
+// The model for one chat reply: the user's per-chat choice ("fast" always
+// wins; "advanced"/unset = the strong model while there's budget left).
+function chatModelFor(user, conv, isPractice) {
+  if (conv.quality === "fast") return STANDARD_MODEL;
+  return isPractice ? budgetedModelForPractice(user) : budgetedModelForPlan(user);
 }
 // Defaults to public/uploads for local dev. On a host with a persistent
 // volume (so uploaded files survive a redeploy), set UPLOADS_DIR to a path
@@ -4090,7 +4102,7 @@ app.delete("/api/conversations/:id", authMiddleware, (req, res) => {
 });
 
 app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => {
-  const { message, attachments: rawAttachments } = req.body || {};
+  const { message, attachments: rawAttachments, quality: wantedQuality } = req.body || {};
   const text = message ? String(message).trim() : "";
   const hasText = text.length > 0;
   const hasAttachments = Array.isArray(rawAttachments) && rawAttachments.length > 0;
@@ -4107,6 +4119,15 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   if (!conv) return res.status(404).json({ error: "Conversation not found." });
 
   const user = db.users.find((u) => u.id === req.user.id);
+  // Per-chat answer quality picked in the composer ("fast" | "advanced").
+  // "advanced" is only honoured where the plan allows it, else it's Fast.
+  if (wantedQuality === "fast" || wantedQuality === "advanced") {
+    const q = wantedQuality === "advanced" && !canChooseAdvanced(user, conv.mode || "coach") ? "fast" : wantedQuality;
+    if ((conv.quality || null) !== q) {
+      conv.quality = q;
+      setConversationQuality(conv.id, q);
+    }
+  }
   // Free + Practice: the single free rehearsal has its own cap instead of the
   // shared 8/day Coach pool. After it, the rehearsal is closed.
   const freePractice = user.plan === "free" && conv.mode === "practice";
@@ -4228,7 +4249,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   const needsGeneratedTitle = isFirstExchange && (!isPractice || !conv.scenario);
   const firstMessageText = hasText ? text : savedAttachments[0]?.name ? `[attached file: ${savedAttachments[0].name}]` : "";
 
-  const chatModel = isPractice ? budgetedModelForPractice(user) : budgetedModelForPlan(user);
+  const chatModel = chatModelFor(user, conv, isPractice);
 
   try {
     // Prior turns are sent as plain text (their attachments are just noted
@@ -4303,6 +4324,10 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
 
     const practiceUserCount = freePractice ? (conv.messages || []).filter((m) => m.role === "user").length + 1 : null;
     res.json({
+      // Which model actually answered ("advanced" can fall back to "fast"
+      // once the monthly strong-model budget is used up) + the fresh meter.
+      quality: chatModel === PREMIUM_MODEL ? "advanced" : "fast",
+      strongModelUsage: user.plan === "free" ? null : { used: strongModelUsed(user), limit: strongModelBudgetFor(user.plan) },
       practice: freePractice
         ? { used: practiceUserCount, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: practiceUserCount >= FREE_PRACTICE_MAX_USER_MESSAGES }
         : null,

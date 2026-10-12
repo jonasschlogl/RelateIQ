@@ -266,7 +266,79 @@ function showComposer(visible) {
   const disclaimer = document.getElementById("chat-disclaimer");
   if (area) area.style.display = visible ? "flex" : "none";
   if (disclaimer) disclaimer.style.display = visible ? "block" : "none";
+  if (visible) applyQualityUI();
 }
+
+// ---------------------------------------------------------------------------
+// Answer quality (per chat): Fast = efficient model, Advanced = strongest
+// model while the plan's monthly advanced budget lasts. The server enforces
+// the same rules (see canChooseAdvanced / chatModelFor in server.js).
+// ---------------------------------------------------------------------------
+let currentQuality = "advanced"; // the user's pick for the chat on screen
+
+function canChooseAdvancedHere() {
+  const u = getUser();
+  if (!u) return false;
+  return u.plan === "premium" || (u.plan === "pro" && currentConvCtx.mode === "practice");
+}
+
+// What will actually be sent for this chat.
+function effectiveQuality() {
+  return canChooseAdvancedHere() && currentQuality === "advanced" ? "advanced" : "fast";
+}
+
+function applyQualityUI() {
+  const row = document.getElementById("quality-row");
+  if (!row) return;
+  const u = getUser();
+  const canAdv = canChooseAdvancedHere();
+  const eff = effectiveQuality();
+  row.querySelectorAll(".quality-btn").forEach((b) => {
+    const on = b.dataset.quality === eff;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  const lock = row.querySelector('.quality-btn[data-quality="advanced"] .quality-lock');
+  if (lock) lock.style.display = canAdv ? "none" : "inline-block";
+
+  const note = document.getElementById("quality-note");
+  if (!note) return;
+  const s = u && u.strongModelUsage;
+  const left = s ? Math.max(0, s.limit - s.used) : null;
+  let text = "";
+  if (!canAdv) {
+    text = u && u.plan === "pro" ? "Advanced Coach Chat is part of Premium" : u && u.plan === "free" ? "Advanced is part of the paid plans" : "";
+  } else if (eff === "advanced") {
+    text = left === null ? "" : left > 0 ? `${left} advanced message${left === 1 ? "" : "s"} left this month` : "Advanced messages used up: replies use Fast until the 1st";
+  } else {
+    text = left === null ? "" : "Saves your advanced messages";
+  }
+  note.textContent = text;
+  note.classList.toggle("quality-note-low", canAdv && eff === "advanced" && left !== null && left <= 0);
+}
+
+async function onQualityClick(q) {
+  if (q === "advanced" && !canChooseAdvancedHere()) {
+    const u = getUser();
+    const needPremium = currentConvCtx.mode !== "practice";
+    await new Promise((r) => setTimeout(r, 150));
+    const go = await showAppConfirm(
+      needPremium
+        ? "Advanced answers in Coach Chat use our most capable AI model. They are part of Premium, which also adds the monthly review, Talk plan, tailored Message check and more."
+        : "Advanced answers in Partner Practice use our stronger AI model, so rehearsals feel more like the real person. They are part of Pro.",
+      { confirmLabel: needPremium ? "Upgrade to Premium" : "Upgrade to Pro", cancelLabel: "Not now" }
+    );
+    if (go) startCheckout(needPremium ? "premium" : "pro");
+    return;
+  }
+  currentQuality = q;
+  applyQualityUI();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("#quality-row .quality-btn").forEach((b) => b.addEventListener("click", () => onQualityClick(b.dataset.quality)));
+  applyQualityUI();
+});
 
 function updateExportButtonVisibility() {
   const btn = document.getElementById("export-summary-btn");
@@ -1754,6 +1826,7 @@ async function startNewChat(mode) {
     currentConvHasUserMessage = false;
     updateExportButtonVisibility();
     setActiveTab("coach");
+    currentQuality = "advanced";
     showPartnerBanner(false);
     showComposer(true);
     renderCoachTagBar();
@@ -1878,6 +1951,7 @@ async function openConversation(id, preloadedConv) {
     currentConvHasUserMessage = (conv.messages || []).some((m) => m.role === "user");
     updateExportButtonVisibility();
     setActiveTab(currentConvCtx.mode);
+    currentQuality = conv.quality === "fast" ? "fast" : "advanced";
     showComposer(true);
     updatePracticeCap(conv.practiceCap || null);
     showPartnerBanner(currentConvCtx.mode === "practice", currentConvCtx.partnerName, currentConvCtx.scenario, {
@@ -2783,7 +2857,7 @@ async function sendMessage() {
   try {
     const res = await authFetch(`/api/conversations/${encodeURIComponent(currentConversationId)}/messages`, {
       method: "POST",
-      body: JSON.stringify({ message, attachments: attachmentsForUpload, editMessageId }),
+      body: JSON.stringify({ message, attachments: attachmentsForUpload, editMessageId, quality: effectiveQuality() }),
     });
     const data = await safeJson(res);
 
@@ -2802,6 +2876,14 @@ async function sendMessage() {
       return;
     }
     if (data.practice) updatePracticeCap(data.practice);
+    if (data.strongModelUsage) {
+      const cu = getUser();
+      if (cu) {
+        cu.strongModelUsage = data.strongModelUsage;
+        setSession(getToken(), cu);
+      }
+    }
+    applyQualityUI();
 
     if (editMessageId) {
       editingMessageId = null;
@@ -2903,6 +2985,7 @@ async function refreshPlanBadge() {
     // of this one) don't show a stale plan until the next login.
     const token = getToken();
     if (token) setSession(token, data);
+    applyQualityUI();
   } catch (err) {
     // Non-critical — the badge just stays at whatever the cached plan said.
   }
