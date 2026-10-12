@@ -22,7 +22,7 @@ let pendingAttachments = [];
 let composerErrorTimeout = null;
 let practiceSetupErrorTimeout = null;
 // Mirrors MAX_FILES_PER_MESSAGE_BY_PLAN in server.js — keep the two in sync.
-const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 3, pro: 10, premium: 10 };
 function maxFilesPerMessage() {
   const plan = getUser()?.plan;
   return MAX_FILES_PER_MESSAGE_BY_PLAN[plan] ?? MAX_FILES_PER_MESSAGE_BY_PLAN.free;

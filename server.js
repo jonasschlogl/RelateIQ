@@ -257,7 +257,7 @@ const PARTNER_PROFILE_LIMITS = { free: 1, pro: 5 };
 // Attachments (images, screen recordings, other files) on chat messages —
 // how many a single message can carry, by plan. Omit a plan here to fall
 // back to the free limit, same convention as PARTNER_PROFILE_LIMITS above.
-const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 1, pro: 3, premium: 5 };
+const MAX_FILES_PER_MESSAGE_BY_PLAN = { free: 3, pro: 10, premium: 10 };
 const MAX_TOTAL_UPLOAD_MB = 15;
 const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 
@@ -1354,7 +1354,7 @@ function saveIncomingAttachments(user, rawAttachments) {
 
   const limit = MAX_FILES_PER_MESSAGE_BY_PLAN[user.plan] ?? MAX_FILES_PER_MESSAGE_BY_PLAN.free;
   if (incoming.length > limit) {
-    const upgradeHint = user.plan === "free" ? " Upgrade to Pro for up to 3 files per message." : "";
+    const upgradeHint = user.plan === "free" ? " Upgrade to Pro for unlimited attachments." : "";
     throw { status: 400, message: `You can attach up to ${limit} file${limit === 1 ? "" : "s"} per message.${upgradeHint}` };
   }
 
