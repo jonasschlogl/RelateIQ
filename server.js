@@ -52,6 +52,11 @@ import {
   deleteExperiment,
   getDueExperimentReminders,
   markExperimentReminded,
+  saveDoc,
+  getDoc,
+  getDocByKey,
+  listDocs,
+  deleteDoc,
 } from "./lib/store.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
 import webpush from "web-push";
@@ -860,13 +865,14 @@ function buildPracticeTranscript(conv) {
 const PRACTICE_DEBRIEF_SYSTEM_PROMPT = `You are debriefing a user after a private rehearsal: they just practiced an upcoming real conversation with their partner by roleplaying it against an AI playing that partner's likely reactions. Your job is to give them a short, honest, useful readout — like a coach watching a rehearsal — that helps with the REAL conversation still to come.
 
 Respond with ONLY a JSON object, no other text before or after it, in exactly this shape:
-{"wentWell": "<1-2 short sentences on what the user did well in the rehearsal — specific, not generic praise>", "watchFor": "<1-2 short sentences on a real risk or pattern that showed up — a moment they got defensive, missed an opening, escalated, or a reaction from the partner worth being ready for>", "tip": "<1-2 short sentences: one concrete, specific thing to try differently in the real conversation>"}
+{"wentWell": "<1-2 short sentences on what the user did well in the rehearsal — specific, not generic praise>", "watchFor": "<1-2 short sentences on a real risk or pattern that showed up — a moment they got defensive, missed an opening, escalated, or a reaction from the partner worth being ready for>", "tip": "<1-2 short sentences: one concrete, specific thing to try differently in the real conversation>", "readiness": <an integer from 1 to 10: how ready they seem to have the REAL conversation, judged only from this rehearsal: 1-3 = needs a lot more practice, 4-6 = getting there, 7-10 = well prepared>}
 
 Rules:
 - Ground every field in what ACTUALLY happened in the transcript below — never generic relationship advice that could apply to anyone.
 - Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelationshipAI about them — not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
 - Be honest and specific even about what didn't go well, but stay warm and constructive — this is meant to help, not to grade.
 - If the rehearsal was too short or too shallow to say anything specific and honest, keep each field brief and general rather than inventing detail, but still fill in all three.
+- readiness is one honest number, not a grade of the person: be consistent (a calm, clear, blame-free attempt that landed well is 7+; getting defensive, accusing or avoiding the point is lower). Don't default to the middle.
 - Write in the same language as the transcript — detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
 
 const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns — not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
@@ -1264,7 +1270,7 @@ function buildPartnerSystemPrompt(partner) {
   const traits = (partner.traits || "").trim() || "a warm but sometimes distracted long-term partner";
   const context = (partner.context || "").trim();
   const scenario = (partner.scenario || "").trim();
-  const intensity = partner.intensity === "supportive" ? "supportive" : "realistic";
+  const intensity = partner.intensity === "supportive" ? "supportive" : partner.intensity === "tough" ? "tough" : "realistic";
 
   if (partner.roleSwap) {
     // Role-swap: the user types AS their partner. The AI is no longer
@@ -1302,7 +1308,9 @@ Rules:
       : "";
 
   const intensityRule =
-    intensity === "supportive"
+    intensity === "tough"
+      ? "This is the HARD mode the user chose on purpose to stress-test a difficult conversation: react the way this person would on a bad day. Be guarded, deflect, get defensive, interrupt, bring up an old grievance, go quiet or change the subject, and do NOT soften just because the user says the right thing once: ease up only if they stay calm, specific and blame-free across several messages, and even then only a little. Stay realistic and in character, never cartoonish. Never model abuse, threats, cruelty for its own sake, or anything humiliating."
+      : intensity === "supportive"
       ? "React the way someone with these traits would, but lean toward good faith and de-escalation — this gentler mode is for building the confidence to say something out loud once, not for stress-testing worst-case reactions. Stay authentic to the personality; just don't manufacture conflict, shut down, or pile on defensiveness for its own sake."
       : "React the way someone with these traits realistically would, including realistic friction, defensiveness, or distance when that fits the personality — this is what makes the practice useful.";
 
@@ -1938,6 +1946,489 @@ app.post("/api/playbook/summary", authMiddleware, async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
+// Premium tools: monthly review, hard-talk planner, therapist pack. All three
+// are Premium-only, run on the strong model, and store their results in the
+// docs table (see lib/store.js). Numbers (averages, counts, trends) are always
+// computed here from real data; the AI only writes the words around them.
+// ---------------------------------------------------------------------------
+
+function requirePremium(req, res) {
+  if (req.user.plan === "premium") return true;
+  res.status(403).json({ error: "This is part of Premium.", upgrade: true, plan: req.user.plan });
+  return false;
+}
+
+async function aiJson(system, userContent, temperature = 0.5) {
+  const completion = await openai.chat.completions.create({
+    model: PREMIUM_MODEL,
+    temperature,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content: userContent },
+    ],
+  });
+  try {
+    return JSON.parse(completion.choices[0]?.message?.content || "{}");
+  } catch {
+    return {};
+  }
+}
+
+const asStr = (v, max = 600) => String(v || "").trim().slice(0, max);
+const asList = (v, n, max = 300) => (Array.isArray(v) ? v.map((x) => asStr(x, max)).filter(Boolean).slice(0, n) : []);
+const asPairs = (v, n, a, b) =>
+  Array.isArray(v) ? v.map((x) => ({ [a]: asStr(x?.[a], 300), [b]: asStr(x?.[b], 600) })).filter((x) => x[a]).slice(0, n) : [];
+
+function monthTitle(key) {
+  return new Date(key + "-01T00:00:00Z").toLocaleString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+function monthRange(key) {
+  const start = new Date(key + "-01T00:00:00Z");
+  const end = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + 1, 1));
+  return { startMs: start.getTime(), endMs: end.getTime(), fromDate: start.toISOString().slice(0, 10), toDate: new Date(end.getTime() - 1).toISOString().slice(0, 10) };
+}
+function previousMonthKey() {
+  const d = new Date();
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 1, 1)).toISOString().slice(0, 7);
+}
+
+// Self-reported connection scores from the daily check-in, summarized.
+function checkinStats(checkins, userId, fromDate, toDate) {
+  const answered = (checkins || []).filter(
+    (c) => c.userId === userId && c.answer && !c.skipped && (!fromDate || c.date >= fromDate) && (!toDate || c.date <= toDate)
+  );
+  const scored = answered.filter((c) => typeof c.score === "number").sort((a, b) => (a.date < b.date ? -1 : 1));
+  const avg = (arr) => (arr.length ? Math.round((arr.reduce((t, c) => t + c.score, 0) / arr.length) * 10) / 10 : null);
+  let trend = null;
+  let firstAvg = null;
+  let lastAvg = null;
+  if (scored.length >= 4) {
+    const half = Math.floor(scored.length / 2);
+    firstAvg = avg(scored.slice(0, half));
+    lastAvg = avg(scored.slice(-half));
+    const diff = lastAvg - firstAvg;
+    trend = diff >= 0.7 ? "up" : diff <= -0.7 ? "down" : "steady";
+  }
+  return { answeredDays: answered.length, scoredDays: scored.length, average: avg(scored), firstAvg, lastAvg, trend, answers: answered.slice(-12) };
+}
+
+function userLinesDigest(convs, maxConvs, maxLines, maxChars) {
+  return convs
+    .slice(0, maxConvs)
+    .map((c) => {
+      const lines = (c.messages || [])
+        .filter((m) => m.role === "user")
+        .slice(0, maxLines)
+        .map((m) => asStr(m.content, maxChars))
+        .filter(Boolean);
+      return `Conversation "${asStr(c.title, 80)}" (${String(c.createdAt || "").slice(0, 10)}):\n${lines.join("\n") || "(no text)"}`;
+    })
+    .join("\n\n---\n\n");
+}
+
+function experimentLines(rows) {
+  const label = { active: "still trying", worked: "WORKED", didnt_help: "DIDN'T HELP", not_tried: "never got to it" };
+  return rows.map((r) => `- "${asStr(r.text, 160)}" -> ${label[r.status] || r.status}${r.note ? ` (their note: ${asStr(r.note, 140)})` : ""}`).join("\n");
+}
+
+// ------------------------------ monthly review ------------------------------
+
+const MONTHLY_REVIEW_PROMPT = `You write a person's private monthly relationship review inside an AI coaching app. You are given what they actually did this month: Coach Chat messages they wrote, daily check-in answers and self-rated connection scores, small experiments they tried (their "Playbook") and how those went, and a standing memory note. Write like a thoughtful coach summing up a month with a client: warm, specific, plain, never clinical.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"headline": "<one sentence capturing the month, max 25 words>", "themes": [{"title": "<3-6 words>", "description": "<2-3 sentences, specific to what they wrote>"}], "progress": "<2-3 sentences on how things moved this month. Use the numbers given if there are any, never invent numbers>", "whatWorked": ["<short, from experiments marked WORKED or clearly working things>"], "whatDidnt": ["<short, from experiments that DIDN'T HELP or kept coming up unresolved>"], "nextStep": "<ONE concrete small thing to try next month>", "note": "<one warm closing sentence>"}
+
+Rules:
+- Ground everything in the material below. Never invent events, people or numbers. If a section has nothing real to say, return an empty list or an empty string for it.
+- At most 3 themes, 3 items each in whatWorked/whatDidnt.
+- Never diagnose, never use clinical labels the user hasn't used, never quote messages word for word.
+- Write in the language the user mostly writes in (detect it automatically).`;
+
+function buildMonthlyInput(db, user, key) {
+  const { startMs, endMs, fromDate, toDate } = monthRange(key);
+  const convs = db.conversations
+    .filter((c) => c.userId === user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user"))
+    .filter((c) => {
+      const t = new Date(c.updatedAt || c.createdAt).getTime();
+      return t >= startMs && t < endMs;
+    })
+    .sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+  const rehearsals = db.conversations.filter((c) => {
+    if (c.userId !== user.id || c.mode !== "practice") return false;
+    const t = new Date(c.createdAt).getTime();
+    return t >= startMs && t < endMs && (c.messages || []).some((m) => m.role === "user");
+  });
+  const stats = checkinStats(db.checkins, user.id, fromDate, toDate);
+  const exps = listExperimentsForUser(user.id).filter((r) => {
+    const t = new Date(r.resolvedAt || r.createdAt).getTime();
+    return t >= startMs && t < endMs;
+  });
+  const activity = convs.length + rehearsals.length + stats.answeredDays + exps.length;
+  return { convs, rehearsals, stats, exps, activity };
+}
+
+async function generateMonthlyReview(db, user, key) {
+  const input = buildMonthlyInput(db, user, key);
+  if (input.activity < 3) return { notEnoughData: true, activity: input.activity };
+  const { stats } = input;
+  const scoreLine = stats.scoredDays
+    ? `Self-rated connection (1-10) on ${stats.scoredDays} days: average ${stats.average}${stats.trend ? `; first half ${stats.firstAvg}, second half ${stats.lastAvg} (trend: ${stats.trend})` : ""}.`
+    : "No connection scores this month.";
+  const parts = [
+    `Month: ${monthTitle(key)}`,
+    `Coach Chat conversations: ${input.convs.length}. Practice rehearsals: ${input.rehearsals.length}. Check-in days answered: ${stats.answeredDays}.`,
+    scoreLine,
+    input.convs.length ? `What they wrote in Coach Chat:\n${userLinesDigest(input.convs, 8, 6, 250)}` : "",
+    stats.answers.length ? `Check-in answers:\n${stats.answers.map((c) => `${c.date}: ${asStr(c.answer, 250)}${typeof c.score === "number" ? ` (${c.score}/10)` : ""}`).join("\n")}` : "",
+    input.exps.length ? `Playbook experiments this month:\n${experimentLines(input.exps)}` : "",
+    user.relationshipMemory ? `Standing memory note: ${asStr(user.relationshipMemory, 600)}` : "",
+  ].filter(Boolean);
+  const raw = await aiJson(MONTHLY_REVIEW_PROMPT, parts.join("\n\n"), 0.5);
+  const review = {
+    headline: asStr(raw.headline, 220),
+    themes: asPairs(raw.themes, 3, "title", "description"),
+    progress: asStr(raw.progress, 700),
+    whatWorked: asList(raw.whatWorked, 3),
+    whatDidnt: asList(raw.whatDidnt, 3),
+    nextStep: asStr(raw.nextStep, 400),
+    note: asStr(raw.note, 300),
+  };
+  if (!review.headline && !review.themes.length && !review.progress) throw new Error("Empty review");
+  return {
+    review,
+    stats: {
+      conversations: input.convs.length,
+      rehearsals: input.rehearsals.length,
+      checkinDays: stats.answeredDays,
+      averageScore: stats.average,
+      trend: stats.trend,
+      firstAvg: stats.firstAvg,
+      lastAvg: stats.lastAvg,
+      experimentsWorked: input.exps.filter((e) => e.status === "worked").length,
+      experimentsTried: input.exps.filter((e) => e.status !== "active").length,
+    },
+  };
+}
+
+function saveMonthlyReview(userId, key, result) {
+  const existing = getDocByKey(userId, "monthly", key);
+  return saveDoc({
+    id: existing?.id || generateId("doc"),
+    userId,
+    kind: "monthly",
+    key,
+    title: monthTitle(key),
+    data: { review: result.review, stats: result.stats, generatedAt: new Date().toISOString() },
+    createdAt: existing?.createdAt,
+    notifiedAt: existing?.notifiedAt || null,
+  });
+}
+function publicMonthly(d) {
+  return { key: d.key, title: d.title, ...d.data };
+}
+
+app.get("/api/review", authMiddleware, (req, res) => {
+  const current = new Date().toISOString().slice(0, 7);
+  if (req.user.plan !== "premium") return res.json({ plan: req.user.plan, locked: true, current });
+  const docs = listDocs(req.user.id, "monthly");
+  res.json({ plan: "premium", current, previous: previousMonthKey(), reviews: docs.map(publicMonthly) });
+});
+
+app.post("/api/review", authMiddleware, async (req, res) => {
+  if (!requirePremium(req, res)) return;
+  try {
+    const key = String((req.body || {}).month || new Date().toISOString().slice(0, 7));
+    if (!/^\d{4}-\d{2}$/.test(key) || key > new Date().toISOString().slice(0, 7)) {
+      return res.status(400).json({ error: "Pick a month that has already started." });
+    }
+    const regenerate = !!(req.body || {}).regenerate;
+    const existing = getDocByKey(req.user.id, "monthly", key);
+    if (existing && !regenerate) return res.json({ ...publicMonthly(existing), cached: true });
+    if (isOverDailyLimit(req.user, res)) return;
+    const result = await generateMonthlyReview(req.db, req.user, key);
+    if (result.notEnoughData) {
+      return res.json({ notEnoughData: true, activity: result.activity, key, title: monthTitle(key) });
+    }
+    const saved = saveMonthlyReview(req.user.id, key, result);
+    bumpUsage(req.user);
+    res.json({ ...publicMonthly(saved), cached: false });
+  } catch (err) {
+    console.error("Monthly review error:", err.message);
+    res.status(500).json({ error: "Couldn't write your review right now. Please try again." });
+  }
+});
+
+// Background: on the 1st-onward (09:00 UTC+), every Premium user without a
+// review of LAST month gets one written and a notification. A failed attempt
+// is remembered in memory so a broken month doesn't retry every 15 minutes.
+const monthlyReviewFailed = new Set();
+async function runMonthlyReviews() {
+  const now = new Date();
+  if (now.getUTCHours() < 9) return;
+  const key = previousMonthKey();
+  const db = loadDb();
+  const todo = db.users
+    .filter((u) => u.plan === "premium" && !getDocByKey(u.id, "monthly", key) && !monthlyReviewFailed.has(`${u.id}:${key}`))
+    .slice(0, 10);
+  for (const user of todo) {
+    try {
+      const result = await generateMonthlyReview(db, user, key);
+      if (result.notEnoughData) {
+        monthlyReviewFailed.add(`${user.id}:${key}`);
+        continue;
+      }
+      const saved = saveMonthlyReview(user.id, key, result);
+      const title = monthTitle(key);
+      if (user.email && user.emailWeeklyDigest !== false) {
+        const html = emailShell({
+          unsubscribeUrl: unsubscribeLink(user, "digest"),
+          bodyHtml: `
+            <p>Hey ${escapeForEmail(user.name)},</p>
+            <p>Your ${escapeForEmail(title)} review is ready:</p>
+            <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(result.review.headline)}"</p>
+            <p><a href="${APP_URL}/review.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Read your review →</a></p>
+          `,
+        });
+        await sendEmail({ to: user.email, subject: `Your ${title} review`, html });
+      }
+      await sendPushToUser(user.id, { title: `Your ${title} review is ready`, body: result.review.headline || "See how the month went.", url: "/review.html" });
+      saveDoc({ ...saved, notifiedAt: new Date().toISOString() });
+    } catch (err) {
+      monthlyReviewFailed.add(`${user.id}:${key}`);
+      console.error(`Monthly review failed for ${user.id}:`, err.message);
+    }
+  }
+}
+setInterval(() => runMonthlyReviews().catch((err) => console.error("Monthly review job failed:", err.message)), 15 * 60 * 1000).unref();
+
+// ------------------------------ hard-talk planner ------------------------------
+
+const HARD_TALK_PROMPT = `You help someone prepare ONE specific difficult conversation with a partner (or someone close to them), inside a private AI coaching app. You get what the talk is about, what they hope will happen, what they fear, and background on the person and on what has and hasn't worked for them before. Produce a practical, calm plan they can actually use.
+
+Respond with ONLY a JSON object in exactly this shape:
+{"summary": "<what this conversation is really about underneath, 1-2 sentences, no blame>", "goal": "<the ONE realistic outcome to aim for, one sentence>", "bestTime": "<when and how to bring it up, 1-2 sentences>", "opening": "<a ready-to-say first 1-2 sentences in the user's own voice, specific, non-accusing, starts with how THEY feel or what they want>", "keyPoints": ["<3-4 short things to get across, in order>"], "avoid": ["<2-3 specific things to steer clear of: phrases, topics, or habits that would escalate THIS situation>"], "reactions": [{"reaction": "<a likely reaction from them>", "respond": "<what to say or do if that happens>"}], "ifHeated": "<what to do if it escalates, 1-2 sentences>", "afterwards": "<one sentence on how to close or follow up>"}
+
+Rules:
+- Be specific to THIS situation; no generic relationship advice that would fit anyone.
+- Give 3 reactions that are realistic for the person described. They are guesses, not predictions: phrase them as "they might...".
+- Use what's known about what worked or failed before (the Playbook) when it applies; never repeat something that didn't help them.
+- If the situation involves abuse, fear for safety or self-harm, put a short, calm note about getting real support into "ifHeated" and keep the plan gentle.
+- Warm, plain, short sentences. Never diagnose. Write in the language the user writes in.`;
+
+function publicTalk(d) {
+  return { id: d.id, title: d.title, createdAt: d.createdAt, ...d.data };
+}
+
+app.get("/api/talks", authMiddleware, (req, res) => {
+  if (req.user.plan !== "premium") return res.json({ plan: req.user.plan, locked: true, talks: [] });
+  res.json({ plan: "premium", talks: listDocs(req.user.id, "talk").map(publicTalk) });
+});
+
+app.post("/api/talks", authMiddleware, async (req, res) => {
+  if (!requirePremium(req, res)) return;
+  try {
+    const b = req.body || {};
+    const topic = asStr(b.topic, 600);
+    if (topic.length < 8) return res.status(400).json({ error: "Tell me a bit more about what you need to talk about." });
+    const hope = asStr(b.hope, 400);
+    const fear = asStr(b.fear, 400);
+    const partner = b.partnerProfileId ? req.db.partnerProfiles.find((p) => p.id === b.partnerProfileId && p.userId === req.user.id) : null;
+    const withName = partner ? partner.name : asStr(b.withName, 60) || "them";
+    if (isOverDailyLimit(req.user, res)) return;
+
+    const playbook = buildPlaybookContext(req.user.id);
+    const partnerBlock = partner ? buildPartnerContextBlock(partner) : "";
+    const raw = await aiJson(
+      HARD_TALK_PROMPT,
+      [
+        `The conversation is with: ${withName}`,
+        `What it's about: ${topic}`,
+        hope ? `What they hope happens: ${hope}` : "",
+        fear ? `What they're afraid will happen: ${fear}` : "",
+        partnerBlock ? `What's known about ${withName}:\n${partnerBlock}` : "",
+        req.user.relationshipMemory ? `Background on the user's story: ${asStr(req.user.relationshipMemory, 600)}` : "",
+        playbook ? `What they've tried before (Playbook):\n${playbook}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n\n"),
+      0.6
+    );
+    const plan = {
+      summary: asStr(raw.summary, 400),
+      goal: asStr(raw.goal, 300),
+      bestTime: asStr(raw.bestTime, 400),
+      opening: asStr(raw.opening, 500),
+      keyPoints: asList(raw.keyPoints, 4),
+      avoid: asList(raw.avoid, 3),
+      reactions: asPairs(raw.reactions, 3, "reaction", "respond"),
+      ifHeated: asStr(raw.ifHeated, 500),
+      afterwards: asStr(raw.afterwards, 300),
+    };
+    if (!plan.opening && !plan.keyPoints.length) {
+      return res.status(500).json({ error: "Couldn't build a plan right now. Please try again." });
+    }
+    const doc = saveDoc({
+      id: generateId("talk"),
+      userId: req.user.id,
+      kind: "talk",
+      key: null,
+      title: topic.length > 70 ? topic.slice(0, 67) + "..." : topic,
+      data: {
+        inputs: { withName, partnerProfileId: partner ? partner.id : null, topic, hope, fear },
+        plan,
+        status: "planned",
+        outcome: null,
+        outcomeNote: "",
+        conversationId: null,
+      },
+    });
+    bumpUsage(req.user);
+    res.json(publicTalk(doc));
+  } catch (err) {
+    console.error("Hard talk error:", err.message);
+    res.status(500).json({ error: "Couldn't build a plan right now. Please try again." });
+  }
+});
+
+function ownTalk(req, res) {
+  const d = getDoc(req.params.id);
+  if (!d || d.kind !== "talk" || d.userId !== req.user.id) {
+    res.status(404).json({ error: "Not found." });
+    return null;
+  }
+  return d;
+}
+
+app.post("/api/talks/:id/link", authMiddleware, (req, res) => {
+  const d = ownTalk(req, res);
+  if (!d) return;
+  const convId = String((req.body || {}).conversationId || "");
+  if (!req.db.conversations.some((c) => c.id === convId && c.userId === req.user.id)) {
+    return res.status(400).json({ error: "Conversation not found." });
+  }
+  d.data.conversationId = convId;
+  res.json(publicTalk(saveDoc(d)));
+});
+
+app.post("/api/talks/:id/outcome", authMiddleware, (req, res) => {
+  const d = ownTalk(req, res);
+  if (!d) return;
+  const { outcome, note } = req.body || {};
+  if (!["went_well", "mixed", "didnt_go_well", "not_yet"].includes(outcome)) {
+    return res.status(400).json({ error: "Pick how it went." });
+  }
+  d.data.outcome = outcome;
+  d.data.outcomeNote = asStr(note, 500);
+  d.data.status = outcome === "not_yet" ? "planned" : "done";
+  res.json(publicTalk(saveDoc(d)));
+});
+
+app.delete("/api/talks/:id", authMiddleware, (req, res) => {
+  const d = ownTalk(req, res);
+  if (!d) return;
+  deleteDoc(d.id);
+  res.json({ ok: true });
+});
+
+// ------------------------------ therapist pack ------------------------------
+
+const THERAPIST_PACK_PROMPT = `You prepare a short "story so far" briefing that a person can hand to their own therapist or counselor, written from the person's own notes in an AI relationship-coaching app: what they wrote in Coach Chat across months, daily check-in answers and self-rated connection scores, small experiments they tried and how they went, and a standing memory note. Write for a professional reader who has 5 minutes: factual, neutral, skimmable, in the person's perspective ("They describe...", "They say...").
+
+Respond with ONLY a JSON object in exactly this shape:
+{"overview": "<3-4 sentences: who they are in this relationship context, what brings them to work on it, what has been the main focus>", "background": "<3-5 sentences of relevant history and context they have mentioned>", "patterns": [{"title": "<3-6 words>", "description": "<2-3 sentences on a recurring pattern in how they describe things>"}], "whatHelped": ["<things they tried that worked>"], "whatDidntHelp": ["<things that did not help>"], "currentConcerns": ["<what they are struggling with now, short>"], "questionsForTherapist": ["<3-4 good questions they could bring to a session, in their voice>"]}
+
+Rules:
+- Only what is in the material. Never invent facts, diagnoses, dates or people. If a section has nothing, return an empty string or empty list.
+- This is the person's own account, not an assessment. Never diagnose and never use clinical labels the person hasn't used.
+- At most 4 patterns, 5 items per list. Never quote messages word for word.
+- Write in the language the user mostly writes in (detect it automatically).`;
+
+app.get("/api/pack", authMiddleware, (req, res) => {
+  if (req.user.plan !== "premium") return res.json({ plan: req.user.plan, locked: true });
+  const d = getDocByKey(req.user.id, "pack", "main");
+  res.json({ plan: "premium", pack: d ? { ...d.data, id: d.id, updatedAt: d.updatedAt } : null });
+});
+
+app.post("/api/pack", authMiddleware, async (req, res) => {
+  if (!requirePremium(req, res)) return;
+  try {
+    const regenerate = !!(req.body || {}).regenerate;
+    const existing = getDocByKey(req.user.id, "pack", "main");
+    if (existing && !regenerate) return res.json({ ...existing.data, id: existing.id, updatedAt: existing.updatedAt, cached: true });
+
+    const db = req.db;
+    const convs = db.conversations
+      .filter((c) => c.userId === req.user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user"))
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    const exps = listExperimentsForUser(req.user.id).filter((r) => r.status !== "active");
+    const stats = checkinStats(db.checkins, req.user.id, null, null);
+    if (convs.length + exps.length + stats.answeredDays < 3) {
+      return res.json({ notEnoughData: true, activity: convs.length + exps.length + stats.answeredDays });
+    }
+    if (isOverDailyLimit(req.user, res)) return;
+
+    const oldest = convs.length ? String(convs[convs.length - 1].createdAt).slice(0, 10) : null;
+    const scoreLine = stats.scoredDays
+      ? `Self-rated connection (1-10) on ${stats.scoredDays} days, overall average ${stats.average}${stats.trend ? `; earlier ${stats.firstAvg}, recently ${stats.lastAvg} (trend: ${stats.trend})` : ""}.`
+      : "";
+    const raw = await aiJson(
+      THERAPIST_PACK_PROMPT,
+      [
+        `Coach Chat conversations: ${convs.length}${oldest ? ` (since ${oldest})` : ""}. Check-in days answered: ${stats.answeredDays}.`,
+        scoreLine,
+        convs.length ? `What they wrote (newest first):\n${userLinesDigest(convs, 25, 6, 250)}` : "",
+        stats.answers.length ? `Recent check-in answers:\n${stats.answers.map((c) => `${c.date}: ${asStr(c.answer, 250)}`).join("\n")}` : "",
+        exps.length ? `Experiments they tried:\n${experimentLines(exps.slice(0, 30))}` : "",
+        req.user.relationshipMemory ? `Standing memory note: ${asStr(req.user.relationshipMemory, 800)}` : "",
+        Array.isArray(req.user.insights?.patterns) && req.user.insights.patterns.length ? `Patterns noticed earlier:\n${buildInsightsContext(req.user)}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n\n"),
+      0.4
+    );
+    const pack = {
+      overview: asStr(raw.overview, 900),
+      background: asStr(raw.background, 1200),
+      patterns: asPairs(raw.patterns, 4, "title", "description"),
+      whatHelped: asList(raw.whatHelped, 5),
+      whatDidntHelp: asList(raw.whatDidntHelp, 5),
+      currentConcerns: asList(raw.currentConcerns, 5),
+      questionsForTherapist: asList(raw.questionsForTherapist, 4),
+      numbers: {
+        conversations: convs.length,
+        since: oldest,
+        checkinDays: stats.answeredDays,
+        averageScore: stats.average,
+        trend: stats.trend,
+        firstAvg: stats.firstAvg,
+        lastAvg: stats.lastAvg,
+        experimentsTried: exps.length,
+        experimentsWorked: exps.filter((e) => e.status === "worked").length,
+      },
+      generatedAt: new Date().toISOString(),
+    };
+    if (!pack.overview && !pack.patterns.length) {
+      return res.status(500).json({ error: "Couldn't prepare the pack right now. Please try again." });
+    }
+    const saved = saveDoc({
+      id: existing?.id || generateId("doc"),
+      userId: req.user.id,
+      kind: "pack",
+      key: "main",
+      title: "Therapist pack",
+      data: pack,
+      createdAt: existing?.createdAt,
+    });
+    bumpUsage(req.user);
+    res.json({ ...saved.data, id: saved.id, updatedAt: saved.updatedAt, cached: false });
+  } catch (err) {
+    console.error("Therapist pack error:", err.message);
+    res.status(500).json({ error: "Couldn't prepare the pack right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // Email unsubscribe links — a signed, scoped token (not a login token) so
 // clicking it from an inbox can flip one preference off without a session.
 // ---------------------------------------------------------------------------
@@ -2269,6 +2760,9 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
     relationshipMemoryUpdatedAt: user.relationshipMemoryAt || null,
     partnerProfiles,
     playbook: listExperimentsForUser(user.id).map(publicExperiment),
+    monthlyReviews: listDocs(user.id, "monthly").map((d) => ({ month: d.key, ...d.data })),
+    hardTalkPlans: listDocs(user.id, "talk").map((d) => ({ id: d.id, createdAt: d.createdAt, ...d.data })),
+    therapistPack: getDocByKey(user.id, "pack", "main")?.data || null,
     conversations,
   };
 
@@ -2727,6 +3221,9 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   const db = req.db;
   const { mode, partnerProfileId, scenario, intensity, roleSwap } = req.body || {};
   const isPractice = mode === "practice";
+  if (isPractice && intensity === "tough" && req.user.plan !== "premium") {
+    return res.status(403).json({ error: "Hard mode is part of Premium.", upgradeRequired: true });
+  }
 
   let partner = null;
   if (isPractice) {
@@ -2774,7 +3271,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     partnerLearnedProfile: partner ? partner.learnedProfile || null : null,
     partnerLearnedVoice: partner ? partner.learnedVoice || null : null,
     scenario: practiceScenario,
-    intensity: isPractice && intensity === "supportive" ? "supportive" : isPractice ? "realistic" : null,
+    intensity: isPractice && intensity === "supportive" ? "supportive" : isPractice && intensity === "tough" ? "tough" : isPractice ? "realistic" : null,
     practiceRoleSwap: isPractice ? !!roleSwap : false,
     // Which relationship a Coach Chat conversation is about — nullable,
     // meaningless for Practice mode (that already has partnerProfileId).
@@ -3276,6 +3773,33 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
 
 const PRACTICE_DEBRIEF_MIN_USER_MESSAGES = 2;
 
+// Premium: how readiness changed across rehearsals with the same person.
+// Everyone gets the single readiness number in their debrief; the trend over
+// time is the Premium part. Free/Pro get progressLocked so the UI can hint.
+function practiceProgressFor(db, user, conv) {
+  const scored = db.conversations
+    .filter((c) => c.userId === user.id && c.mode === "practice" && c.partnerProfileId && c.partnerProfileId === conv.partnerProfileId && c.practiceDebrief)
+    .map((c) => {
+      let r = null;
+      try {
+        r = JSON.parse(c.practiceDebrief).readiness;
+      } catch {}
+      return { id: c.id, at: c.createdAt, readiness: Number.isFinite(r) ? r : null };
+    })
+    .filter((x) => x.readiness !== null)
+    .sort((a, b) => new Date(a.at) - new Date(b.at));
+  // The conversation being debriefed may not be saved yet (first debrief), so make sure it is in the list.
+  if (conv.practiceDebrief) {
+    try {
+      const own = JSON.parse(conv.practiceDebrief).readiness;
+      if (Number.isFinite(own) && !scored.some((x) => x.id === conv.id)) scored.push({ id: conv.id, at: conv.createdAt, readiness: own });
+    } catch {}
+  }
+  scored.sort((a, b) => new Date(a.at) - new Date(b.at));
+  if (user.plan !== "premium") return { progressLocked: scored.length >= 2 };
+  return { progress: scored.slice(-6).map((x) => x.readiness), progressWith: conv.partnerName || null };
+}
+
 app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
   try {
     const db = req.db;
@@ -3300,6 +3824,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
         generatedAt: conv.practiceDebriefAt,
         feedback: conv.practiceDebriefFeedback || null,
         cached: true,
+        ...practiceProgressFor(db, req.user, conv),
       });
     }
 
@@ -3326,10 +3851,12 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     } catch (err) {
       parsed = {};
     }
+    const readinessNum = Math.round(Number(parsed.readiness));
     const debrief = {
       wentWell: String(parsed.wentWell || "").trim(),
       watchFor: String(parsed.watchFor || "").trim(),
       tip: String(parsed.tip || "").trim(),
+      readiness: Number.isFinite(readinessNum) && readinessNum >= 1 && readinessNum <= 10 ? readinessNum : null,
     };
     if (!debrief.wentWell && !debrief.watchFor && !debrief.tip) {
       return res.status(500).json({ error: "Couldn't generate a debrief right now. Please try again." });
@@ -3345,7 +3872,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     saveConversation(conv);
     bumpUsage(user);
 
-    res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage });
+    res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage, ...practiceProgressFor(db, user, conv) });
   } catch (err) {
     console.error("Practice debrief error:", err.message);
     res.status(500).json({ error: "Couldn't generate a debrief right now. Please try again." });

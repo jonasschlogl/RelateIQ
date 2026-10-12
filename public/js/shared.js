@@ -549,3 +549,18 @@ function renderVerifyBanner(user) {
     }
   });
 }
+
+// Premium teaser card shared by the Premium-only pages (monthly review, hard
+// talk, therapist pack): says what the page does and offers the upgrade.
+function renderPremiumLock(el, opts) {
+  const items = (opts.bullets || []).map((b) => `<li>${escapeHtml(b)}</li>`).join("");
+  el.innerHTML = `
+    <section class="dashboard-card pb-premium-lock">
+      <span class="pb-lock">Premium</span>
+      <h2>${escapeHtml(opts.title)}</h2>
+      <p class="text-muted">${escapeHtml(opts.text)}</p>
+      ${items ? `<ul class="pb-lock-list">${items}</ul>` : ""}
+      <button type="button" class="btn btn-gradient" id="lock-upgrade-btn">See Premium</button>
+    </section>`;
+  el.querySelector("#lock-upgrade-btn").addEventListener("click", () => startCheckout("premium"));
+}

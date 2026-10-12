@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapist pack · RelationshipAI</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png?v=2" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png?v=2" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=54" />
+</head>
+<body>
+
+  <header class="site-nav site-nav-app no-print">
+    <a href="index.html" class="brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="34" height="34" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="chat.html" class="nav-primary">Coach</a>
+      <a href="chat.html?mode=practice" class="nav-primary">Practice</a>
+      <a href="talk.html" class="nav-primary">Hard talk</a>
+      <span class="nav-sep"></span>
+      <a href="playbook.html">Playbook</a>
+      <a href="insights.html" class="nav-current">Insights</a>
+      <a href="share.html">Share</a>
+      <a href="daily.html">Daily question</a>
+      <a href="dashboard.html">My account</a>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </nav>
+  </header>
+
+  <div class="summary-shell">
+
+    <nav class="pb-tabs no-print" aria-label="Insights sections">
+      <a href="insights.html">Patterns</a>
+      <a href="review.html">Monthly review <span class="pb-lock">Premium</span></a>
+      <a href="pack.html" class="is-current">Therapist pack <span class="pb-lock">Premium</span></a>
+    </nav>
+
+    <div class="summary-actions no-print">
+      <span></span>
+      <div class="summary-actions-right">
+        <button class="btn btn-ghost btn-sm" id="regenerate-btn" type="button" style="display:none;">Update pack</button>
+        <button class="btn btn-gradient btn-sm" id="print-btn" type="button" style="display:none;">Print / Save as PDF</button>
+      </div>
+    </div>
+
+    <div class="summary-paper">
+      <div class="summary-header">
+        <span class="brand summary-brand">Relationship<span>AI</span></span>
+        <h1>Your story so far</h1>
+        <p class="summary-subtitle" id="pack-subtitle">A briefing you can hand to a therapist or counselor</p>
+      </div>
+
+      <div id="pack-state"><p class="summary-loading">Loading…</p></div>
+
+      <div class="summary-footer no-print-hide">
+        <p class="summary-disclaimer">
+          Written by RelationshipAI's AI from your own notes in the app. It is your account of things, not a clinical
+          assessment or diagnosis. Please read it yourself before sharing it with anyone.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shared.js?v=17"></script>
+  <script src="js/pack.js?v=1"></script>
+</body>
+</html>

@@ -276,6 +276,7 @@ function showPartnerBanner(visible, name, scenario, meta) {
       const tags = [];
       if (meta?.roleSwap) tags.push("Roles swapped");
       if (meta?.intensity === "supportive") tags.push("Supportive mode");
+      if (meta?.intensity === "tough") tags.push("Hard mode");
       if (tags.length) {
         tagsEl.textContent = tags.join(" · ");
         tagsEl.style.display = "block";
@@ -1062,10 +1063,15 @@ async function renderPracticeSetup() {
               <span class="intensity-option-title">Supportive</span>
               <span class="intensity-option-desc">Gentler, for building confidence</span>
             </button>
+            <button type="button" class="intensity-option" data-value="tough" aria-pressed="false">
+              <span class="intensity-option-title">Hard <span class="intensity-lock">Premium</span></span>
+              <span class="intensity-option-desc">Guarded and defensive, a real stress test</span>
+            </button>
           </div>
           <select id="practice-intensity" style="display:none;" aria-hidden="true" tabindex="-1">
             <option value="realistic">Realistic — real friction &amp; pushback</option>
             <option value="supportive">Supportive — gentler, for building confidence</option>
+            <option value="tough">Hard — guarded and defensive, a real stress test</option>
           </select>
         </div>
 
@@ -1151,8 +1157,14 @@ async function renderPracticeSetup() {
   // visually hidden, not removed) means none of that existing read logic
   // needs to change.
   const intensitySelect = document.getElementById("practice-intensity");
+  if (getUser()?.plan === "premium") document.querySelectorAll(".intensity-lock").forEach((el) => el.remove());
   document.querySelectorAll(".intensity-option").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
+      if (btn.dataset.value === "tough" && getUser()?.plan !== "premium") {
+        const go = await showAppConfirm("Hard mode is part of Premium: your partner stays guarded and defensive, a real stress test for the talk you're dreading.", { confirmLabel: "See Premium", cancelLabel: "Not now" });
+        if (go) startCheckout("premium");
+        return;
+      }
       document.querySelectorAll(".intensity-option").forEach((b) => {
         b.classList.remove("is-active");
         b.setAttribute("aria-pressed", "false");
@@ -1592,7 +1604,8 @@ async function startPracticeConversation({ partnerProfileId, scenario, intensity
 async function selectPartnerAndStart(partnerId) {
   try {
     const scenario = document.getElementById("practice-scenario")?.value.trim() || "";
-    const intensity = document.getElementById("practice-intensity")?.value === "supportive" ? "supportive" : "realistic";
+    const intensityValue = document.getElementById("practice-intensity")?.value;
+    const intensity = intensityValue === "supportive" ? "supportive" : intensityValue === "tough" ? "tough" : "realistic";
     const roleSwap = !!document.getElementById("practice-role-swap")?.checked;
     const result = await startPracticeConversation({ partnerProfileId: partnerId, scenario, intensity, roleSwap });
     if (!result.ok) {
@@ -2364,6 +2377,31 @@ function appendPracticeDebrief(debrief, ctx) {
   heading.className = "practice-debrief-heading";
   heading.textContent = "Feedback on this rehearsal";
   card.appendChild(heading);
+
+  // Readiness (everyone) and progress across rehearsals with this person
+  // (Premium; others get a one-line hint once they have 2+ rehearsals).
+  if (typeof debrief.readiness === "number") {
+    const r = document.createElement("div");
+    r.className = "readiness";
+    const segs = Array.from({ length: 10 }, (_, i) => `<span class="readiness-seg${i < debrief.readiness ? " on" : ""}"></span>`).join("");
+    r.innerHTML = `<div class="readiness-top"><span class="readiness-label">Ready for the real talk</span><span class="readiness-score">${debrief.readiness}/10</span></div><div class="readiness-bar">${segs}</div>`;
+    if (Array.isArray(debrief.progress) && debrief.progress.length >= 2) {
+      const line = document.createElement("div");
+      line.className = "readiness-progress";
+      line.textContent = `Your rehearsals${debrief.progressWith ? " with " + debrief.progressWith : ""}: ${debrief.progress.join(" → ")}`;
+      r.appendChild(line);
+    } else if (debrief.progressLocked) {
+      const line = document.createElement("div");
+      line.className = "readiness-progress";
+      line.innerHTML = 'Premium shows how your score changes across rehearsals. <a href="#">See Premium</a>';
+      line.querySelector("a").addEventListener("click", (e) => {
+        e.preventDefault();
+        startCheckout("premium");
+      });
+      r.appendChild(line);
+    }
+    card.appendChild(r);
+  }
 
   const sections = [
     ["What went well", debrief.wentWell],
