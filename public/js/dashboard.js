@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const a = document.createElement("a");
         a.href = "chat.html?c=" + encodeURIComponent(c.id);
         a.className = "conversation-row-link";
-        const prefix = c.mode === "practice" ? "🎭 " : "";
+        const prefix = c.mode === "practice" ? "Practice: " : "";
         a.innerHTML = `<span>${prefix}${escapeHtml(c.title || "New conversation")}</span><span class="text-muted">${formatDate(c.updatedAt)}</span>`;
         row.appendChild(a);
 
@@ -244,7 +244,7 @@ function renderCheckin(data) {
   if (streakBadge) {
     if (data.streak > 0) {
       streakBadge.style.display = "inline-flex";
-      streakBadge.textContent = `🔥 ${data.streak} day${data.streak === 1 ? "" : "s"}`;
+      streakBadge.textContent = `${data.streak}-day streak`;
     } else {
       streakBadge.style.display = "none";
     }
@@ -337,7 +337,7 @@ function showUpgradeBanner() {
   if (!card) return;
   const banner = document.createElement("p");
   banner.className = "success-banner";
-  banner.textContent = "🎉 You're upgraded! It may take a few seconds to show up below.";
+  banner.textContent = "You're upgraded! It may take a few seconds to show up below.";
   card.prepend(banner);
 }
 

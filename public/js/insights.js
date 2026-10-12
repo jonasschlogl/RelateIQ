@@ -65,7 +65,7 @@ function renderNotEnoughData(data) {
   const need = data.needed || 3;
   stateEl.innerHTML =
     `<p>You've had ${have} Coach Chat conversation${have === 1 ? "" : "s"} so far. Once you've had at least ${need}, ` +
-    `RelateIQ can start noticing patterns across them — recurring topics, things that keep coming back — instead of ` +
+    `RelationshipAI can start noticing patterns across them — recurring topics, things that keep coming back — instead of ` +
     `just responding to each one on its own.</p>` +
     `<p><a href="chat.html" class="btn btn-gradient">Start a Coach Chat conversation</a></p>`;
 }

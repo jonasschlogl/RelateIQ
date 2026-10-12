@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My account · RelateIQ</title>
+  <title>My account · RelationshipAI</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -11,12 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=51" />
+  <link rel="stylesheet" href="css/style.css?v=52" />
 </head>
 <body>
 
   <header class="site-nav site-nav-app">
-    <a href="index.html" class="brand">Relate<span>IQ</span></a>
+    <a href="index.html" class="brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="34" height="34" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="admin.html" id="nav-admin" style="display:none;">Admin</a>
@@ -25,14 +25,15 @@
       <span class="nav-sep"></span>
       <a href="insights.html">Insights</a>
       <a href="share.html">Share</a>
-      <a href="couple.html">Together</a>
+      <a href="daily.html">Daily question</a>
       <a href="dashboard.html" class="nav-current">My account</a>
       <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
 
   <main class="dashboard">
-    <section class="dashboard-card profile-card">
+    <section class="dashboard-card profile-card has-peek">
+      <img class="peek peek-dash" src="img/peek-flame.svg" alt="" width="84" height="109" />
       <h1 id="profile-name">…</h1>
       <p class="text-muted" id="profile-email"></p>
 
@@ -83,7 +84,7 @@
       <div class="dashboard-card-header">
         <h2>Privacy &amp; your data</h2>
       </div>
-      <p class="text-muted">Download everything RelateIQ has stored about your account — your profile, partner profiles, and full conversation history — as a JSON file. See our <a href="privacy.html">privacy policy</a> for details on what's stored and why.</p>
+      <p class="text-muted">Download everything RelationshipAI has stored about your account — your profile, partner profiles, and full conversation history — as a JSON file. See our <a href="privacy.html">privacy policy</a> for details on what's stored and why.</p>
       <div class="referral-box">
         <span>A complete copy of your account data</span>
         <button class="btn btn-gradient btn-sm" id="export-data-btn" type="button">Download my data</button>
@@ -122,7 +123,7 @@
 
     <section class="dashboard-card">
       <div class="dashboard-card-header">
-        <h2>Explore RelateIQ</h2>
+        <h2>Explore RelationshipAI</h2>
       </div>
       <div class="modes-grid">
         <a href="chat.html" class="mode-card mode-card-flagship">
@@ -139,18 +140,18 @@
           <p>Rehearse a real conversation with an AI roleplaying as your partner.</p>
         </a>
 
-        <a href="couple.html" class="mode-card">
+        <a href="daily.html" class="mode-card">
           <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
           <span class="mode-card-tag">New</span>
           <h3>Daily question</h3>
-          <p>A daily relationship question to answer on your own — or together, once you link a partner.</p>
+          <p>A short daily relationship question to reflect on, just for you.</p>
         </a>
 
         <a href="insights.html" class="mode-card">
           <div class="mode-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
           <span class="mode-card-tag">New</span>
           <h3>Insights</h3>
-          <p>See recurring patterns RelateIQ has noticed across your Coach Chat conversations.</p>
+          <p>See recurring patterns RelationshipAI has noticed across your Coach Chat conversations.</p>
         </a>
 
         <a href="share.html" class="mode-card">
@@ -171,7 +172,7 @@
     </section>
   </main>
 
-  <script src="js/shared.js?v=14"></script>
-  <script src="js/dashboard.js?v=15"></script>
+  <script src="js/shared.js?v=15"></script>
+  <script src="js/dashboard.js?v=16"></script>
 </body>
 </html>

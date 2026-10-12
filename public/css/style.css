@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RelateIQ — design system
+   RelationshipAI — design system
    ========================================================================== */
 
 :root {
@@ -4614,3 +4614,24 @@ body.js-reveal .reveal-item.revealed {
 .verify-banner strong {
   color: var(--text);
 }
+
+/* ---- Mascots (flame / heart / candle), shared with the landing site ---- */
+.ico { width: 16px; height: 16px; flex: none; vertical-align: -3px; margin-right: 8px; }
+.btn .ico { width: 15px; height: 15px; margin-right: 6px; vertical-align: -2px; }
+.sidebar-link, .mode-tab { display: flex; align-items: center; }
+.sidebar-link .ico, .mode-tab .ico { margin-right: 10px; opacity: 0.9; }
+.brand-mark { display: inline-block; }
+.peek { position: absolute; z-index: 3; height: auto; pointer-events: none; user-select: none; }
+.has-peek { position: relative; }
+.auth-card { position: relative; }
+.auth-peek { width: 84px; right: 12px; bottom: calc(100% - 9px); }
+.auth-brand { text-align: center; }
+.peek-dash { width: 84px; right: 34px; bottom: calc(100% - 9px); }
+.profile-card.has-peek { margin-top: 90px; }
+.empty-mascot { display: block; margin: 0 auto 14px; height: auto; filter: drop-shadow(0 0 22px rgba(255, 176, 96, 0.22)) drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35)); animation: mascotFloat 7s ease-in-out infinite; }
+.tool-header { position: relative; }
+.tool-mascot { position: absolute; right: -60px; top: 6px; height: auto; pointer-events: none; filter: drop-shadow(0 0 20px rgba(255, 176, 96, 0.2)) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35)); animation: mascotFloat 7s ease-in-out infinite; }
+@keyframes mascotFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@media (max-width: 760px) { .tool-mascot { display: none; } .auth-peek { width: 74px; right: 24px; } }
+@media (prefers-reduced-motion: reduce) { .empty-mascot, .tool-mascot { animation: none; } }
+.chat-item-icon .ico { margin: 0; width: 15px; height: 15px; vertical-align: middle; }

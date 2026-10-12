@@ -1,6 +1,6 @@
-# RelateIQ
+# RelationshipAI
 
-An AI relationship coach — landing page, login/registration, two coaching modes connected to OpenAI (Coach Chat, Partner Practice), a daily check-in, a daily relationship question (solo or with a linked partner), and a dashboard with conversation history.
+An AI relationship coach — landing page, login/registration, two coaching modes connected to OpenAI (Coach Chat, Partner Practice), a daily check-in, a daily relationship question, and a dashboard with conversation history.
 
 ## Running it
 
@@ -25,8 +25,8 @@ In `.env` (copy from `.env.example` if you don't have one yet) you need:
 
 ## Project structure
 
-- `server.js` — Express server: API routes (`/api/auth/*`, `/api/conversations/*`, `/api/partners/*`, `/api/couple/*`, `/api/checkin*`, `/api/billing/*`) and static serving of `public/`.
-- `lib/store.js` — the data access layer: a real SQLite database (`data/relateiq.sqlite`, via Node's built-in `node:sqlite` — no extra dependency to install) with nine tables (`users`, `conversations`, `partnerProfiles`, `checkins`, `shares`, `coupleLinks`, `coupleAnswers`, `soloAnswers`, `pushSubscriptions`) plus a small `emailJobs` config table. `server.js` never touches SQL directly — it only calls functions exported from here (`loadDb`, `saveUser`, `appendConversationMessages`, etc.), so the storage engine could be swapped again later without touching any route. Requires Node ≥ 22.5 (see `engines` in `package.json`) since `node:sqlite` is fairly new.
+- `server.js` — Express server: API routes (`/api/auth/*`, `/api/conversations/*`, `/api/partners/*`, `/api/daily-question/*`, `/api/checkin*`, `/api/billing/*`) and static serving of `public/`.
+- `lib/store.js` — the data access layer: a real SQLite database (`data/relateiq.sqlite`, via Node's built-in `node:sqlite` — no extra dependency to install) with nine tables (`users`, `conversations`, `partnerProfiles`, `checkins`, `shares`, `soloAnswers`, `pushSubscriptions`) plus a small `emailJobs` config table. `server.js` never touches SQL directly — it only calls functions exported from here (`loadDb`, `saveUser`, `appendConversationMessages`, etc.), so the storage engine could be swapped again later without touching any route. Requires Node ≥ 22.5 (see `engines` in `package.json`) since `node:sqlite` is fairly new.
 - `public/` — the entire frontend (landing page, login, registration, chat, the daily question page, dashboard).
 - `data/relateiq.sqlite` — where everything is stored. Not committed to git (see `.gitignore`). If you have an older `data/db.json` from before this app used SQLite, see "Migrating from the old JSON file" below.
 
@@ -36,8 +36,8 @@ In `.env` (copy from `.env.example` if you don't have one yet) you need:
 - **Sign up / log in** (`register.html`, `login.html`) — email + password, passwords hashed with bcrypt, session handled via a JWT stored in `localStorage`.
 - **Coach Chat** (`chat.html`) — conversation with the AI coach (GPT-4o mini), history saved per user, a free-tier limit of 8 AI messages/day (shared across every mode that calls the AI). Messages can include attachments (photos, screen recordings, or other files — up to 3 files / 15MB total per message): images are sent to the model as vision input, small text files (.txt/.md/.csv/.json/.log) are read and included as context, and other files (video, PDFs, etc.) are referenced by name since the model can't open them directly. Uploaded files are saved under `public/uploads/<userId>/` by default (served at `/uploads/...` regardless of where they physically live — see `UPLOADS_DIR` in Configuration) — not committed to git, and not private (anyone with the exact URL could load one), which is fine for local/personal use but worth hardening before any real deployment. Every AI mode (Coach Chat, Partner Practice) automatically replies in whichever language the user writes in — no language switcher, the same way ChatGPT does it.
 - **Export for therapist** (`summary.html`, via the "📄 Export for therapist" button that appears once a Coach Chat conversation has a reply) — turns the conversation into a short, professional-reader summary (what's going on, recurring themes, possible discussion points) that the user can print or save as a PDF from the browser's own print dialog, to bring to their own real therapist. Generated once per conversation and cached (`POST /api/conversations/:id/summary`, with a "Regenerate" option in the UI); counts against the free-tier daily AI limit like the other modes. Coach Chat only — Partner Practice is a rehearsal, not a real conversation, so it isn't offered here.
-- **Partner Practice** (also `chat.html`, via the mode tabs) — create one or more "partner profiles" (name, personality, context) and the AI roleplays as that partner in character, so you can rehearse a real conversation. RelateIQ builds a behavioral profile of each partner automatically from your past Coach Chat conversations (traits, communication patterns, how they tend to phrase things), or you can paste in real messages they've actually sent for a more accurate, higher-confidence profile straight from their own words (`POST /api/partners/:id/learn-from-messages`). Pro and Premium roleplay on the stronger model — this is the app's most differentiated feature, so the quality bar is higher starting at Pro, not just Premium (see `modelForPractice` in `server.js`). After a rehearsal, "📋 Get feedback" generates a short, specific debrief (what went well, what to watch for, one concrete tip for the real conversation) rather than just handing you back to Coach Chat.
-- **Daily relationship question** (`couple.html`) — one open-ended relationship question per day, from a 100+ question bank that never repeats until exhausted, then generated indefinitely by AI. Works solo from day one (a private stream, just for you); link a partner's account (real account-to-account invite, not a token-only share) and you both get the identical question each day, with each partner's answer only revealed once they've submitted their own. A user's solo history and a couple's shared history are always kept separate — linking a partner starts the shared stream fresh.
+- **Partner Practice** (also `chat.html`, via the mode tabs) — create one or more "partner profiles" (name, personality, context) and the AI roleplays as that partner in character, so you can rehearse a real conversation. RelationshipAI builds a behavioral profile of each partner automatically from your past Coach Chat conversations (traits, communication patterns, how they tend to phrase things), or you can paste in real messages they've actually sent for a more accurate, higher-confidence profile straight from their own words (`POST /api/partners/:id/learn-from-messages`). Pro and Premium roleplay on the stronger model — this is the app's most differentiated feature, so the quality bar is higher starting at Pro, not just Premium (see `modelForPractice` in `server.js`). After a rehearsal, "📋 Get feedback" generates a short, specific debrief (what went well, what to watch for, one concrete tip for the real conversation) rather than just handing you back to Coach Chat.
+- **Daily relationship question** (`daily.html`) — one open-ended relationship question per day, from a 100+ question bank that never repeats until exhausted, then generated indefinitely by AI. Private to each user: nothing is shared with anyone else.
 - **Daily check-in** (on `dashboard.html`) — one optional, rotating reflection question per day. Always skippable, never gates anything else in the app.
 - **Dashboard** (`dashboard.html`) — profile, plan, today's usage, the check-in, a "modes hub" linking to everything above, and the list of conversations.
 
@@ -48,7 +48,7 @@ Pro (\$9.99/mo) and Premium (\$19.99/mo) are wired up to real Stripe subscriptio
 **One-time setup, in your [Stripe Dashboard](https://dashboard.stripe.com):**
 
 1. Create your Stripe account if you don't have one yet. Start in **test mode** (toggle in the top right) — you can test the whole flow with fake card numbers before ever taking a real payment.
-2. Go to **Product catalog** → create a product called "RelateIQ Pro" with a recurring price of \$9.99/month, and another called "RelateIQ Premium" at \$19.99/month. Copy each price's ID (starts with `price_...`) into `STRIPE_PRICE_PRO` / `STRIPE_PRICE_PREMIUM` in your `.env`.
+2. Go to **Product catalog** → create a product called "RelationshipAI Pro" with a recurring price of \$9.99/month, and another called "RelationshipAI Premium" at \$19.99/month. Copy each price's ID (starts with `price_...`) into `STRIPE_PRICE_PRO` / `STRIPE_PRICE_PREMIUM` in your `.env`.
 3. Go to **Developers → API keys**, copy the **Secret key** (starts with `sk_test_...` in test mode) into `STRIPE_SECRET_KEY`.
 4. Set `APP_URL` to wherever the app is reachable — `http://localhost:3000` for local dev, or your real domain once deployed.
 5. Webhook (this is what actually upgrades the account after a successful payment):
@@ -61,9 +61,9 @@ Pro (\$9.99/mo) and Premium (\$19.99/mo) are wired up to real Stripe subscriptio
 
 ## Deploying to production (Railway)
 
-RelateIQ isn't stateless — it writes to a SQLite database file (`data/relateiq.sqlite`) and saves uploaded files to disk — so it needs a host with a **persistent volume**, not a plain serverless platform. [Railway](https://railway.app) is a straightforward choice for a project this size: connect a GitHub repo, click deploy, done.
+RelationshipAI isn't stateless — it writes to a SQLite database file (`data/relateiq.sqlite`) and saves uploaded files to disk — so it needs a host with a **persistent volume**, not a plain serverless platform. [Railway](https://railway.app) is a straightforward choice for a project this size: connect a GitHub repo, click deploy, done.
 
-1. **Push the code to GitHub.** Create a new repo (GitHub.com → New repository), then from `C:\RelateIQ`:
+1. **Push the code to GitHub.** Create a new repo (GitHub.com → New repository), then from `C:\RelationshipAI`:
    ```
    git init
    git add .
@@ -95,7 +95,7 @@ RelateIQ isn't stateless — it writes to a SQLite database file (`data/relateiq
 
 ## Migrating from the old JSON file
 
-RelateIQ used to store everything in a single `data/db.json` file, read and rewritten whole on every change. That had a real problem: under real traffic, two requests overlapping (which happens constantly once there's more than one user — any request that calls OpenAI has an `await` gap where another request's write could sneak in and get silently overwritten) could lose data — a chat message, a check-in, even a plan upgrade. `lib/store.js` now stores everything in SQLite instead, with each change written immediately as its own small, targeted update rather than one big whole-file rewrite, which closes that gap.
+RelationshipAI used to store everything in a single `data/db.json` file, read and rewritten whole on every change. That had a real problem: under real traffic, two requests overlapping (which happens constantly once there's more than one user — any request that calls OpenAI has an `await` gap where another request's write could sneak in and get silently overwritten) could lose data — a chat message, a check-in, even a plan upgrade. `lib/store.js` now stores everything in SQLite instead, with each change written immediately as its own small, targeted update rather than one big whole-file rewrite, which closes that gap.
 
 If you already have a live deployment with real user data in `data/db.json` (or `/data/db.json` on your Railway volume), **do this once, carefully, before switching `DB_PATH` over**:
 

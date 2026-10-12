@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Together · RelateIQ</title>
+  <title>Daily question · RelationshipAI</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
@@ -11,12 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=51" />
+  <link rel="stylesheet" href="css/style.css?v=52" />
 </head>
 <body>
 
   <header class="site-nav site-nav-app">
-    <a href="index.html" class="brand">Relate<span>IQ</span></a>
+    <a href="index.html" class="brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="34" height="34" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="chat.html" class="nav-primary">Coach</a>
@@ -24,25 +24,26 @@
       <span class="nav-sep"></span>
       <a href="insights.html">Insights</a>
       <a href="share.html">Share</a>
-      <a href="couple.html" class="nav-current">Together</a>
+      <a href="daily.html" class="nav-current">Daily question</a>
       <a href="dashboard.html">My account</a>
       <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
 
-  <main class="tool-page" id="couple-page">
+  <main class="tool-page" id="daily-page">
     <div class="tool-header">
-      <span class="section-tag">Together</span>
+      <img class="tool-mascot" src="img/wisp-heart.svg" alt="" width="64" height="85" />
+      <span class="section-tag">Daily question</span>
       <h1>A relationship question, every day</h1>
-      <p class="text-muted">Answer a short relationship question each day, just for yourself — or link accounts with your partner and you'll both get the same question every day instead. You'll only see their answer once you've written your own — so nobody's just filling in the blanks to match.</p>
+      <p class="text-muted">Answer a short relationship question each day, just for yourself. It stays private to you, and the questions never repeat.</p>
     </div>
 
-    <div id="couple-state">
+    <div id="daily-state">
       <p class="text-muted" style="text-align:center;">Loading…</p>
     </div>
   </main>
 
-  <script src="js/shared.js?v=14"></script>
-  <script src="js/couple.js?v=2"></script>
+  <script src="js/shared.js?v=15"></script>
+  <script src="js/daily.js?v=1"></script>
 </body>
 </html>

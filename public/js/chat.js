@@ -274,8 +274,8 @@ function showPartnerBanner(visible, name, scenario, meta) {
     const tagsEl = document.getElementById("partner-banner-tags");
     if (tagsEl) {
       const tags = [];
-      if (meta?.roleSwap) tags.push("🔄 Roles swapped");
-      if (meta?.intensity === "supportive") tags.push("🌱 Supportive mode");
+      if (meta?.roleSwap) tags.push("Roles swapped");
+      if (meta?.intensity === "supportive") tags.push("Supportive mode");
       if (tags.length) {
         tagsEl.textContent = tags.join(" · ");
         tagsEl.style.display = "block";
@@ -467,7 +467,7 @@ function renderAttachmentPreview() {
     const thumb =
       a.kind === "image"
         ? `<img class="attachment-chip-thumb" src="${a.dataUrl}" alt="" />`
-        : `<span class="attachment-chip-thumb" style="display:flex;align-items:center;justify-content:center;">${a.kind === "video" ? "🎬" : "📄"}</span>`;
+        : `<span class="attachment-chip-thumb" style="display:flex;align-items:center;justify-content:center;">${a.kind === "video" ? "▶" : "▤"}</span>`;
 
     chip.innerHTML = `${thumb}<span class="attachment-chip-name">${escapeHtml(a.name)}</span>`;
 
@@ -526,7 +526,7 @@ function renderAttachments(bubble, attachments) {
       a.target = "_blank";
       a.rel = "noopener";
       a.className = "attachment-file-chip";
-      a.innerHTML = `<span class="attachment-file-icon">📄</span><span class="attachment-file-meta"><span class="attachment-file-name">${escapeHtml(
+      a.innerHTML = `<span class="attachment-file-icon">▤</span><span class="attachment-file-meta"><span class="attachment-file-name">${escapeHtml(
         att.name || "file"
       )}</span><span class="attachment-file-size">${formatFileSize(att.size)}</span></span>`;
       wrap.appendChild(a);
@@ -583,7 +583,10 @@ function buildHistoryItem(c, opts) {
   // glance, unlike the old plain color dot this replaces.
   const icon = document.createElement("span");
   icon.className = "chat-item-icon";
-  icon.textContent = c.mode === "practice" ? "🎭" : "💬";
+  icon.innerHTML =
+    c.mode === "practice"
+      ? '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>'
+      : '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>';
   div.appendChild(icon);
 
   if (c.pinned) {
@@ -756,7 +759,7 @@ async function renameConversation(c) {
   }
 }
 
-// Groups `list` into a "📌 Pinned" section (if any) followed by the
+// Groups `list` into a "Pinned" section (if any) followed by the
 // HISTORY_BUCKETS date groups, appending header + row elements straight
 // into `container`. Shared by the sidebar (#history) and the "View all"
 // modal's list so both render identically — see renderHistory and
@@ -768,7 +771,7 @@ function appendHistoryGroups(container, list, opts) {
   if (pinned.length > 0) {
     const header = document.createElement("div");
     header.className = "history-group-label";
-    header.textContent = "📌 Pinned";
+    header.textContent = "Pinned";
     container.appendChild(header);
     pinned.forEach((c) => container.appendChild(buildHistoryItem(c, opts)));
   }
@@ -970,12 +973,12 @@ function renderEmptyState() {
   const showTip = currentConvCtx.mode !== "practice" && !isDetailTipDismissed();
   const tipHtml = showTip
     ? `<div class="empty-chat-tip" id="empty-chat-tip">
-         <span>💡 The more specific detail you give — exactly what happened, what was actually said — the more specific (and less generic) the advice back will be.</span>
+         <span>The more specific detail you give — exactly what happened, what was actually said — the more specific (and less generic) the advice back will be.</span>
          <button type="button" id="empty-chat-tip-close" aria-label="Dismiss tip">✕</button>
        </div>`
     : "";
   chatDiv.innerHTML =
-    `<div id="empty-state" class="empty-chat"><h2>Hi there! 👋</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}</div>`;
+    `<div id="empty-state" class="empty-chat"><img class="empty-mascot" src="img/${currentConvCtx.mode === "practice" ? "wisp-heart" : "wisp-candle"}.svg" alt="" width="${currentConvCtx.mode === "practice" ? 84 : 62}" height="${currentConvCtx.mode === "practice" ? 110 : 130}" /><h2>Hi there</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}</div>`;
   document.getElementById("empty-chat-tip-close")?.addEventListener("click", (e) => {
     e.stopPropagation();
     dismissDetailTip();
@@ -1042,7 +1045,7 @@ async function renderPracticeSetup() {
         <div class="practice-setup-field">
           <label class="practice-setup-field-label" for="practice-scenario">What do you want to practice today? <span class="text-muted">(optional)</span></label>
           <input type="text" id="practice-scenario" maxlength="300" placeholder="e.g. asking for more help with the kids without it turning into a fight" autocomplete="off" />
-          <button type="button" class="scenario-library-toggle" id="scenario-library-toggle">💡 Need an idea? Browse scenarios</button>
+          <button type="button" class="scenario-library-toggle" id="scenario-library-toggle">Need an idea? Browse scenarios</button>
           <div class="scenario-chip-row" id="scenario-chip-row" style="display:none;"></div>
         </div>
 
@@ -1100,7 +1103,7 @@ async function renderPracticeSetup() {
           <option value="avoidant">Avoidant</option>
           <option value="disorganized">Disorganized (Fearful-Avoidant)</option>
         </select>
-        <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelateIQ plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
+        <p class="text-muted" style="font-size:12px; margin-top:-6px;">When set, RelationshipAI plays them with realistic patterns for that style — like pulling back under pressure, or needing more reassurance — so the practice feels closer to the real thing.</p>
         <p class="text-muted" style="font-size:11.5px; margin-top:6px;">You're entering information about another real person here, not just yourself — please use this to prepare for a kinder conversation, not to build a case against them. Only you can see this profile.</p>
         <div class="partner-form-actions">
           <button type="submit" class="btn btn-gradient btn-block" id="partner-form-submit">Save &amp; start practicing</button>
@@ -1133,13 +1136,13 @@ async function renderPracticeSetup() {
         chip.addEventListener("click", () => {
           scenarioInput.value = s;
           chipRow.style.display = "none";
-          chipToggle.textContent = "💡 Need an idea? Browse scenarios";
+          chipToggle.textContent = "Need an idea? Browse scenarios";
         });
         chipRow.appendChild(chip);
       });
     }
     chipRow.style.display = showing ? "none" : "flex";
-    chipToggle.textContent = showing ? "💡 Need an idea? Browse scenarios" : "Hide suggestions";
+    chipToggle.textContent = showing ? "Need an idea? Browse scenarios" : "Hide suggestions";
   });
 
   // Intensity segmented control — two visible buttons that drive a hidden
@@ -1255,8 +1258,8 @@ function renderPracticeLimitBanner(user) {
   const textSpan = document.createElement("span");
   textSpan.textContent =
     remaining > 0
-      ? `🎭 Free plan: ${remaining} of ${pc.limit} practice rehearsal${pc.limit === 1 ? "" : "s"} left.`
-      : `🎭 You've used your free Partner Practice rehearsal${pc.limit === 1 ? "" : "s"}. Upgrade to Pro for unlimited practice.`;
+      ? `Free plan: ${remaining} of ${pc.limit} practice rehearsal${pc.limit === 1 ? "" : "s"} left.`
+      : `You've used your free Partner Practice rehearsal${pc.limit === 1 ? "" : "s"}. Upgrade to Pro for unlimited practice.`;
   banner.appendChild(textSpan);
 
   if (remaining <= 0) {
@@ -1409,7 +1412,7 @@ function buildPartnerCard(p) {
   return card;
 }
 
-// Purely informational — RelateIQ learns this partner's behavioral profile
+// Purely informational — RelationshipAI learns this partner's behavioral profile
 // from the user's own past Coach Chat messages fully automatically, in the
 // background, right before a practice session starts (see
 // learnPartnerProfileIfStale in server.js). There's nothing to click to make
@@ -1422,7 +1425,7 @@ function buildPartnerLearnRow(p) {
   const row = document.createElement("div");
   row.className = "partner-learn-row";
 
-  // Purely informational half — what RelateIQ already knows, if anything.
+  // Purely informational half — what RelationshipAI already knows, if anything.
   // Renders nothing here for a partner it hasn't learned about yet (e.g.
   // brand new, or not enough material), so the list stays clean instead of
   // nagging. The wording distinguishes a profile built from real, pasted-in
@@ -1431,7 +1434,7 @@ function buildPartnerLearnRow(p) {
     const sourceLabel = p.learnedProfileSource === "real_messages" ? "from the real messages you added" : "from your chats";
     const info = document.createElement("span");
     info.className = "partner-learn-meta";
-    info.innerHTML = `RelateIQ has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button> · <button class="partner-learn-toggle partner-learn-reset" type="button">forget this</button>`;
+    info.innerHTML = `RelationshipAI has picked up on a few things about ${escapeHtml(p.name)} ${escapeHtml(sourceLabel)} (updated ${escapeHtml(formatShortDate(p.learnedProfileUpdatedAt))}) — <button class="partner-learn-toggle" type="button">view</button> · <button class="partner-learn-toggle partner-learn-reset" type="button">forget this</button>`;
     const box = document.createElement("div");
     box.className = "partner-learned-box";
     box.style.display = "none";
@@ -1449,7 +1452,7 @@ function buildPartnerLearnRow(p) {
       toggleBtn.textContent = showing ? "view" : "hide";
     });
 
-    // Clears what RelateIQ has learned so far (see resetLearned in PATCH
+    // Clears what RelationshipAI has learned so far (see resetLearned in PATCH
     // /api/partners/:id, server.js) — useful if it's picked up on something
     // stale or wrong. A fresh Coach Chat conversation, or pasting in real
     // messages again (see buildImportMessagesRow below), will rebuild it.
@@ -1457,7 +1460,7 @@ function buildPartnerLearnRow(p) {
     resetBtn.addEventListener("click", async (e) => {
       e.stopPropagation();
       const ok = await showAppConfirm(
-        `Forget what RelateIQ has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`,
+        `Forget what RelationshipAI has learned about ${p.name}? Their name, traits, and context stay — just the learned behavior/voice profile is cleared.`,
         { confirmLabel: "Forget it", danger: true }
       );
       if (!ok) return;
@@ -1504,7 +1507,7 @@ function buildImportMessagesRow(p) {
   form.className = "partner-import-form";
   form.style.display = "none";
   form.innerHTML = `
-    <p class="text-muted" style="font-size:12px; margin:6px 0;">Paste in real messages ${escapeHtml(p.name)} actually sent you — a chat export, or just copy-pasted texts. RelateIQ will pick up on how they actually write, not just how you've described them.</p>
+    <p class="text-muted" style="font-size:12px; margin:6px 0;">Paste in real messages ${escapeHtml(p.name)} actually sent you — a chat export, or just copy-pasted texts. RelationshipAI will pick up on how they actually write, not just how you've described them.</p>
     <textarea class="partner-import-textarea" rows="5" maxlength="12000" placeholder="Paste messages here…"></textarea>
     <div class="form-error partner-import-error" style="display:none;"></div>
     <button type="button" class="btn btn-gradient btn-sm partner-import-submit">Learn from these messages</button>
@@ -1852,7 +1855,7 @@ function buildCopyDraftRow(drafts) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-ghost btn-sm copy-draft-btn";
-    const label = drafts.length > 1 ? `📋 Copy option ${i + 1}` : "📋 Copy message";
+    const label = drafts.length > 1 ? `Copy option ${i + 1}` : "Copy message";
     btn.textContent = label;
     btn.addEventListener("click", () => {
       if (!navigator.clipboard) {
@@ -1896,7 +1899,7 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
   if (isRoleSwap) {
     label.textContent = isUser ? `${ctx.partnerName || "Partner"} (you)` : "You (AI reply)";
   } else {
-    label.textContent = isUser ? "You" : isPractice ? ctx.partnerName || "Partner" : "RelateIQ";
+    label.textContent = isUser ? "You" : isPractice ? ctx.partnerName || "Partner" : "RelationshipAI";
   }
   row.appendChild(label);
 
@@ -1972,7 +1975,7 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
 // editMessageId handling (see POST /api/conversations/:id/messages in
 // server.js) only truncates when the given id matches the conversation's
 // actual last user message, with an assistant reply right after it. So the
-// "✏️ Edit" affordance below only ever appears on the last user row, never
+// "Edit" affordance below only ever appears on the last user row, never
 // on an earlier one — there's nothing to wire up for editing further back.
 
 // Clears any in-progress edit and hides the banner — called whenever the
@@ -1987,7 +1990,7 @@ function resetEditState() {
   if (banner) banner.style.display = "none";
 }
 
-// Adds the "✏️ Edit" button to the last user message in the transcript, if
+// Adds the "Edit" button to the last user message in the transcript, if
 // conditions allow it: Coach Chat only (Practice is a roleplay transcript,
 // not something you redraft), nothing in flight, no edit already in
 // progress, the row has a known message id (older messages predating this
@@ -2008,7 +2011,7 @@ function refreshEditAffordance() {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "edit-msg-btn";
-  btn.textContent = "✏️ Edit";
+  btn.textContent = "Edit";
   btn.addEventListener("click", () => {
     startEditLastMessage(lastRow.dataset.messageId, lastRow.dataset.rawText, lastRow);
   });
@@ -2291,7 +2294,7 @@ function appendPracticeDebrief(debrief, ctx) {
 
   const heading = document.createElement("div");
   heading.className = "practice-debrief-heading";
-  heading.textContent = "📋 Feedback on this rehearsal";
+  heading.textContent = "Feedback on this rehearsal";
   card.appendChild(heading);
 
   const sections = [
@@ -2333,7 +2336,7 @@ function appendPracticeDebrief(debrief, ctx) {
     retryBtn.type = "button";
     retryBtn.className = "btn btn-gradient btn-sm";
     retryBtn.id = "practice-debrief-retry-btn";
-    retryBtn.textContent = "🔄 Try again";
+    retryBtn.textContent = "Try again";
     retryBtn.addEventListener("click", () => retryPracticeConversation(ctx, retryBtn));
     footer.appendChild(retryBtn);
   }
@@ -2350,7 +2353,7 @@ function appendPracticeDebrief(debrief, ctx) {
   chatDiv.scrollTop = chatDiv.scrollHeight;
 }
 
-// "🔄 Try again" on the practice debrief card (task #91). Free-plan users
+// "Try again" on the practice debrief card (task #91). Free-plan users
 // only get FREE_LIFETIME_PRACTICE_CONVERSATIONS rehearsal(s) total, so this
 // can legitimately fail with the same upgrade-required shape sendMessage
 // already handles — reuses showComposerError (with its "Upgrade to Pro"
@@ -2441,7 +2444,7 @@ async function sendMessage() {
   clearPendingAttachments();
 
   const userBubble = appendMessage("user", message, false, currentConvCtx, attachmentsForDisplay);
-  const thinkingText = currentConvCtx.mode === "practice" ? `${currentConvCtx.partnerName || "Your partner"} is typing…` : "RelateIQ is thinking…";
+  const thinkingText = currentConvCtx.mode === "practice" ? `${currentConvCtx.partnerName || "Your partner"} is typing…` : "RelationshipAI is thinking…";
   const thinkingBubble = appendMessage("assistant", thinkingText, false, currentConvCtx);
 
   // If the send fails for any reason (plan limit, server error, dropped

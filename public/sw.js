@@ -1,4 +1,4 @@
-// RelateIQ service worker — exists solely to receive Web Push events and
+// RelationshipAI service worker — exists solely to receive Web Push events and
 // show a notification for them. Deliberately does NOT do any asset caching
 // or offline-first behavior: express.static already serves everything with
 // Cache-Control: no-store (see server.js), and adding a cache layer here
@@ -19,10 +19,10 @@ self.addEventListener("push", (event) => {
   try {
     data = event.data ? event.data.json() : {};
   } catch (e) {
-    data = { title: "RelateIQ", body: event.data ? event.data.text() : "" };
+    data = { title: "RelationshipAI", body: event.data ? event.data.text() : "" };
   }
 
-  const title = data.title || "RelateIQ";
+  const title = data.title || "RelationshipAI";
   const options = {
     body: data.body || "",
     icon: "/favicon-32.png",
@@ -40,7 +40,7 @@ self.addEventListener("notificationclick", (event) => {
   event.waitUntil(
     self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((clientList) => {
       for (const client of clientList) {
-        // Focus an already-open RelateIQ tab rather than piling up new ones.
+        // Focus an already-open RelationshipAI tab rather than piling up new ones.
         if ("focus" in client) {
           client.navigate(url);
           return client.focus();

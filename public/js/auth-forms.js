@@ -51,12 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setSession(data.token, data.user);
         const pendingPlan = consumePendingPlan();
-        const pendingCoupleInvite = consumePendingCoupleInvite();
         if (pendingPlan) {
           btn.textContent = "Redirecting to checkout…";
           startCheckout(pendingPlan);
-        } else if (pendingCoupleInvite) {
-          window.location.href = `couple.html?invite=${encodeURIComponent(pendingCoupleInvite)}`;
         } else {
           window.location.href = "chat.html";
         }
@@ -91,12 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setSession(data.token, data.user);
         const pendingPlan = consumePendingPlan();
-        const pendingCoupleInvite = consumePendingCoupleInvite();
         if (pendingPlan) {
           btn.textContent = "Redirecting to checkout…";
           startCheckout(pendingPlan);
-        } else if (pendingCoupleInvite) {
-          window.location.href = `couple.html?invite=${encodeURIComponent(pendingCoupleInvite)}`;
         } else {
           window.location.href = "chat.html";
         }
@@ -132,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Same success message whether or not the email actually has an
         // account — the server deliberately doesn't reveal that either, so
         // this can't be used to check which emails are registered.
-        showSuccess(data.message || "If that email has a RelateIQ account, we've sent a link to reset your password.");
+        showSuccess(data.message || "If that email has a RelationshipAI account, we've sent a link to reset your password.");
         forgotPasswordForm.reset();
         btn.textContent = "Sent!";
       } catch (err) {

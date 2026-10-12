@@ -35,11 +35,6 @@ import {
   saveShare,
   deleteShare,
   getShareByToken,
-  saveCoupleLink,
-  deleteCoupleLink,
-  getCoupleLinkByToken,
-  saveCoupleAnswer,
-  saveCoupleAnswerIfAbsent,
   saveSoloAnswer,
   saveSoloAnswerIfAbsent,
   savePushSubscription,
@@ -231,7 +226,7 @@ function isEmailVerificationEnforced() {
 // generous — that's what gets people using this enough to tell a friend.
 // The scarce resources on Free are the higher-"wow", more shareable
 // moments: attaching an actual screenshot of a conversation with your
-// partner for RelateIQ to read, and a full Partner Practice rehearsal —
+// partner for RelationshipAI to read, and a full Partner Practice rehearsal —
 // these are lifetime counts (not daily), so a Free account gets a real
 // taste of each before hitting the upgrade prompt. Deliberately not set to
 // "1 and never again" this early — a brand-new product still needs people
@@ -447,7 +442,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 // prompts
 // ---------------------------------------------------------------------------
 
-const COACH_SYSTEM_PROMPT = `You are RelateIQ, an AI relationship coach. Be genuinely useful about THIS person's actual situation, not supportive-sounding in general — think like a sharp, experienced couples counselor who has heard thousands of these stories and still has something real to say about this one, texting back a client between sessions, not writing them an email. The bar is real therapeutic value: someone should feel this was worth more than an expensive session with an actual counselor — but a real counselor talking to you in person says one true thing in two sentences, not four paragraphs.
+const COACH_SYSTEM_PROMPT = `You are RelationshipAI, an AI relationship coach. Be genuinely useful about THIS person's actual situation, not supportive-sounding in general — think like a sharp, experienced couples counselor who has heard thousands of these stories and still has something real to say about this one, texting back a client between sessions, not writing them an email. The bar is real therapeutic value: someone should feel this was worth more than an expensive session with an actual counselor — but a real counselor talking to you in person says one true thing in two sentences, not four paragraphs.
 
 Default to short. Most replies should read like a text from a smart friend: a few sentences, maybe a short paragraph — one real read plus, if it's actually needed, one concrete next step. Length only grows when the moment genuinely calls for it (writing out an actual message for them to send, walking through a real multi-step plan they asked for) — never as the default shape of a reply. If you notice yourself writing multiple full paragraphs with topic sentences ("Let's look at what's happening beneath the surface...", "It's important to consider..."), that's lecture mode — stop and cut it down to the one or two things that actually matter.
 
@@ -490,7 +485,7 @@ What never bends:
 // coach-tag-bar in chat.js / PATCH /api/conversations/:id), when one is
 // set. Reuses buildPartnerContextBlock so the coach's advice is grounded in
 // the actual person being discussed — their real traits, attachment style, and
-// whatever RelateIQ has learned about them — instead of staying generic
+// whatever RelationshipAI has learned about them — instead of staying generic
 // about "a partner." This is the single biggest lever for making Coach
 // Chat feel personalized rather than templated: a human coach who already
 // knows who you're talking about gives different advice than one hearing
@@ -548,12 +543,12 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
   }
 
   if (memory) {
-    prompt += `\n\nWhat RelateIQ has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new — briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it — don't force it in.`;
+    prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript — a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity — so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing — but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new — briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it — don't force it in.`;
   }
 
   const insightsContext = buildInsightsContext(user);
   if (insightsContext) {
-    prompt += `\n\nRecurring patterns RelateIQ's Insights feature has already named for this user, from looking across several of their Coach Chat conversations (titled and more specific than the standing summary above — treat it as another angle on the same continuity, not a separate fact to bring up on its own):\n${insightsContext}`;
+    prompt += `\n\nRecurring patterns RelationshipAI's Insights feature has already named for this user, from looking across several of their Coach Chat conversations (titled and more specific than the standing summary above — treat it as another angle on the same continuity, not a separate fact to bring up on its own):\n${insightsContext}`;
   }
 
   if (recentCheckinContext) {
@@ -835,7 +830,7 @@ Respond with ONLY a JSON object, no other text before or after it, in exactly th
 
 Rules:
 - Ground every field in what ACTUALLY happened in the transcript below — never generic relationship advice that could apply to anyone.
-- Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelateIQ about them — not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
+- Remember the "partner" side of the transcript is an AI's best guess at how this specific person tends to react, based on what the user has told RelationshipAI about them — not a guarantee of what will really happen. Don't state it as fact ("they will..."); frame it as a reasonable thing to be ready for.
 - Be honest and specific even about what didn't go well, but stay warm and constructive — this is meant to help, not to grade.
 - If the rehearsal was too short or too shallow to say anything specific and honest, keep each field brief and general rather than inventing detail, but still fill in all three.
 - Write in the same language as the transcript — detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
@@ -1280,7 +1275,7 @@ Rules:
   return `You are role-playing as "${partner.name}", the user's romantic partner${context ? ` (${context})` : ""}, inside a private practice/rehearsal space the user opened on purpose to practice a real conversation.
 
 Personality and traits to embody: ${traits}.
-${learnedNote ? `\nWhat RelateIQ has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${compatNote ? `\n${compatNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
+${learnedNote ? `\nWhat RelationshipAI has learned about them from the user's own past conversations: ${learnedNote}\n` : ""}${voiceNote ? `\nHow they specifically tend to phrase things — match this voice, not just a generic texting style: ${voiceNote}\n` : ""}${attachmentNote ? `\n${attachmentNote}\n` : ""}${compatNote ? `\n${compatNote}\n` : ""}${scenario ? `\nThis rehearsal is specifically about: "${scenario}". Let the conversation naturally move toward this if it hasn't already — the way a real conversation would — but don't force it awkwardly into your very first reply.\n` : ""}
 Rules:
 - Stay fully in character as ${partner.name}. Speak in first person, casually, the way a real partner texts — short, natural, imperfect. Not like an assistant.
 - Never break character to give advice, disclaimers, or meta-commentary about the roleplay, unless the user explicitly asks to pause/stop it, or the conversation touches on real self-harm, abuse, or a genuine crisis — in that case, gently step out of character and respond with care instead of continuing the scene.
@@ -1728,8 +1723,8 @@ async function grantReferralRewardIfDue(user, priceId) {
     const currency = price?.currency || "eur";
     if (!amount) return;
 
-    await creditOneMonth(user, amount, currency, "Thanks for joining through a RelateIQ invite — 1 month on us");
-    await creditOneMonth(referrer, amount, currency, "Thanks for inviting a friend to RelateIQ — 1 month on us");
+    await creditOneMonth(user, amount, currency, "Thanks for joining through a RelationshipAI invite — 1 month on us");
+    await creditOneMonth(referrer, amount, currency, "Thanks for inviting a friend to RelationshipAI — 1 month on us");
 
     user.referralRewardGranted = true;
     saveUser(user);
@@ -1883,14 +1878,14 @@ async function sendVerificationEmail(user) {
   const url = `${APP_URL}/verify-email.html?token=${encodeURIComponent(token)}`;
   const html = emailShell({
     bodyHtml: `
-      <p>Welcome to RelateIQ${user.name ? `, ${escapeForEmail(user.name)}` : ""}! Please confirm your email address so we know it's really you.</p>
+      <p>Welcome to RelationshipAI${user.name ? `, ${escapeForEmail(user.name)}` : ""}! Please confirm your email address so we know it's really you.</p>
       <p style="margin:24px 0;">
         <a href="${url}" style="display:inline-block; background:#d1a05a; color:#1a140d; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:999px;">Verify my email</a>
       </p>
-      <p style="color:#b6a795; font-size:13px;">This link works for 7 days. If you didn't create a RelateIQ account, you can safely ignore this email.</p>
+      <p style="color:#b6a795; font-size:13px;">This link works for 7 days. If you didn't create a RelationshipAI account, you can safely ignore this email.</p>
     `,
   });
-  return sendEmail({ to: user.email, subject: "Confirm your email for RelateIQ", html });
+  return sendEmail({ to: user.email, subject: "Confirm your email for RelationshipAI", html });
 }
 
 app.post("/api/auth/verify-email", authRateLimit, (req, res) => {
@@ -1971,7 +1966,7 @@ app.post("/api/auth/login", authRateLimit, (req, res) => {
 // ---------------------------------------------------------------------------
 
 // Deliberately responds the same way whether or not the email exists, so a
-// stranger can't use this to check which emails have a RelateIQ account.
+// stranger can't use this to check which emails have a RelationshipAI account.
 // Shares the login/register rate limiter — it's the same kind of endpoint
 // (unauthenticated, email-driven) and abuse here (mass password-reset spam
 // to someone else's inbox) is exactly what that limiter already guards
@@ -1989,23 +1984,23 @@ app.post("/api/auth/forgot-password", authRateLimit, async (req, res) => {
       const resetUrl = `${APP_URL}/reset-password.html?token=${encodeURIComponent(token)}`;
       const html = emailShell({
         bodyHtml: `
-          <p>Someone (hopefully you) asked to reset the password on your RelateIQ account.</p>
+          <p>Someone (hopefully you) asked to reset the password on your RelationshipAI account.</p>
           <p style="margin:24px 0;">
             <a href="${resetUrl}" style="display:inline-block; background:#d1a05a; color:#1a140d; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:999px;">Reset your password</a>
           </p>
           <p style="color:#b6a795; font-size:13px;">This link works for 1 hour. If you didn't ask for this, you can safely ignore this email — your password won't change.</p>
         `,
       });
-      await sendEmail({ to: user.email, subject: "Reset your RelateIQ password", html });
+      await sendEmail({ to: user.email, subject: "Reset your RelationshipAI password", html });
     }
 
-    res.json({ ok: true, message: "If that email has a RelateIQ account, we've sent a link to reset your password." });
+    res.json({ ok: true, message: "If that email has a RelationshipAI account, we've sent a link to reset your password." });
   } catch (err) {
     console.error("Forgot-password error:", err);
     // Same generic message even on an unexpected error — no reason to leak
     // internals here either, and the request should never actually reach
     // this branch since the block above tolerates a failed send silently.
-    res.json({ ok: true, message: "If that email has a RelateIQ account, we've sent a link to reset your password." });
+    res.json({ ok: true, message: "If that email has a RelationshipAI account, we've sent a link to reset your password." });
   }
 });
 
@@ -2051,7 +2046,7 @@ app.get("/api/me", authMiddleware, (req, res) => {
   res.json(publicUser(req.user));
 });
 
-// GDPR-style "export my data" — everything RelateIQ has stored about this
+// GDPR-style "export my data" — everything RelationshipAI has stored about this
 // account, as a single downloadable JSON file: profile fields, the standing
 // relationship-memory summary, every partner profile (including anything
 // learned about them), and every conversation's full message history. This
@@ -2501,7 +2496,7 @@ app.delete("/api/partners/:id", authMiddleware, (req, res) => {
 // Explicit, user-triggered version of the automatic Coach-Chat-based
 // learning above: the user pastes in real messages their partner actually
 // sent (a chat export, transcribed screenshots, whatever they have), and
-// RelateIQ extracts a behavioral + voice profile straight from that —
+// RelationshipAI extracts a behavioral + voice profile straight from that —
 // higher fidelity than anything inferred secondhand, since it's the
 // partner's own real wording. Each call is capped by input length (see
 // learnPartnerProfileFromRealMessages), and now also shares the same daily
@@ -3307,7 +3302,7 @@ async function generateInsightsForDigest(user, coachConversations) {
 // Turns a partner profile into a plain descriptive block for the Coach Chat
 // prompt (as opposed to buildPartnerSystemPrompt, which turns one into
 // ROLEPLAY instructions for Partner Practice) — traits, attachment
-// behavior, and anything RelateIQ has learned, so the coaching advice can
+// behavior, and anything RelationshipAI has learned, so the coaching advice can
 // actually be shaped around this specific person instead of staying
 // generic. Returns "" when the partner has nothing usable yet, so the
 // caller can omit the section entirely rather than send an empty one.
@@ -3318,7 +3313,7 @@ function buildPartnerContextBlock(partner) {
   if (partner.context) parts.push(`Relationship context: ${partner.context}`);
   const attachmentNote = partnerAttachmentBehavior(partner.attachmentStyle);
   if (attachmentNote) parts.push(attachmentNote);
-  if (partner.learnedProfile) parts.push(`What RelateIQ has learned about how they communicate: ${partner.learnedProfile}`);
+  if (partner.learnedProfile) parts.push(`What RelationshipAI has learned about how they communicate: ${partner.learnedProfile}`);
   if (partner.learnedVoice) parts.push(`How they specifically tend to phrase things: ${partner.learnedVoice}`);
   return parts.length ? parts.join("\n") : "";
 }
@@ -3618,43 +3613,18 @@ app.get("/api/public/shares/:token", (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// Daily relationship question (task #98, reworked per Jonas: "nechal by som
-// tam len daily questions ... aj keby to nezdielam s partnerom"). Works in
-// two modes, decided per request by whether the caller currently has an
-// ACTIVE couple link:
-//   - Solo mode (no active link): the user answers the daily question just
-//     for themselves — their own private stream (soloAnswers in store.js),
-//     no partner, no reveal mechanic. Available from day one, with no
-//     partner required.
-//   - Couple mode (active link): two real accounts linked to each other.
-//     Both partners get the SAME question every day and only see each
-//     other's answer after submitting their own — a blind-until-you-answer
-//     mechanic, so neither side can peek and quietly tailor their own
-//     answer to match.
-// The two streams are deliberately never merged: a user's solo answers
-// (from before linking, or from periods without a partner) stay in
-// soloAnswers forever; the moment a link becomes active, the couple stream
-// starts completely fresh in coupleAnswers, with no no-repeat history
-// carried over from solo. See ensureTodaysSoloQuestion / pickDailyQuestion
-// below for how both streams share the same "never repeat until the static
-// bank runs out, then generate indefinitely" question-selection logic.
-//
-// Deliberately narrow either way: this feature exposes ONLY the daily
-// question/answer(s). It never touches Coach Chat conversations, partner
-// profiles, insights, or anything else private — that boundary must never
-// gain a "see their conversations too" shortcut without real
-// reconsideration. Either partner can unlink unilaterally at any time,
-// which deletes the link AND every stored couple answer under it (see
-// deleteCoupleLink in lib/store.js) — a clean break, not a relationship
-// that lingers in the db once someone walks away. Their solo history (if
-// any, from before they linked) is untouched by an unlink.
+// Daily relationship question — one question per day that the user answers
+// privately, just for themselves. Each user has their own stream (soloAnswers
+// in store.js): a question is picked once per day, never repeated until the
+// static bank runs out, and after that a fresh one is generated every day
+// (see pickQuestionForStream). Nothing here is shared with anyone else.
 // ---------------------------------------------------------------------------
 
 // Open-ended, comparison-worthy relationship questions — deliberately never
 // yes/no (per Jonas's spec: "Otazka bude komplexnejsia, aby odpoved nebola
 // stylu: ano alebo nie"). Each is something two people could answer
 // completely differently, which is the whole point of comparing answers.
-const COUPLE_QUESTIONS = [
+const DAILY_QUESTIONS = [
   "What's a moment this year when you felt most loved by your partner? What exactly made it land?",
   "If you could change one recurring pattern in how the two of you handle stress, what would it be?",
   "What's something you need from your partner that you haven't actually told them, and what's stopped you?",
@@ -3794,14 +3764,13 @@ const COUPLE_QUESTIONS = [
 
 // Same date, same salt key, same candidate list → same question,
 // deterministically, with no need to look anything up first (mirrors
-// checkinQuestionForDate above). `saltKey` is the couple link's id in
-// couple mode or the user's id in solo mode — either way, salting with it
-// (not just the date) means different couples/users aren't all handed the
-// literal same question on the same calendar day. `candidates` defaults to
+// checkinQuestionForDate above). `saltKey` is the user's id —
+// salting with it (not just the date) means different users aren't all
+// handed the literal same question on the same calendar day. `candidates` defaults to
 // the full static bank, but pickQuestionForStream below passes in only the
-// ones THIS couple/user hasn't used yet, which is what actually guarantees
+// ones THIS user hasn't used yet, which is what actually guarantees
 // no repeat until all of them have appeared.
-function pickDailyQuestion(saltKey, dateKey, candidates = COUPLE_QUESTIONS) {
+function pickDailyQuestion(saltKey, dateKey, candidates = DAILY_QUESTIONS) {
   let hash = 0;
   const seed = `${saltKey}|${dateKey}`;
   for (const ch of seed) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
@@ -3810,20 +3779,14 @@ function pickDailyQuestion(saltKey, dateKey, candidates = COUPLE_QUESTIONS) {
 
 // Builds the system prompt for generateFreshDailyQuestion below — a
 // function, not a constant, because the "don't repeat these" list is
-// specific to each couple/person and changes over time. `mode` is "couple"
-// (unchanged wording from the original couple-only version) or "solo" (one
-// person reflecting on their own, no partner to compare answers with).
-function buildDailyQuestionSystemPrompt(usedQuestions, mode) {
+// specific to each person and changes over time.
+function buildDailyQuestionSystemPrompt(usedQuestions) {
   const recentlyUsed = usedQuestions.slice(-40);
-  const scopeNoun = mode === "solo" ? "this person" : "this couple";
+  const scopeNoun = "this person";
   const intro =
-    mode === "solo"
-      ? "You write a single daily reflection question for one person to privately answer about their own romantic relationship, in a relationship-coaching app called RelateIQ. They may not have a partner linked on the app (yet), so this is just for their own reflection."
-      : "You write a single daily question for two partners in a relationship-coaching app called RelateIQ. Each partner answers it independently, then compares answers with each other.";
+    "You write a single daily reflection question for one person to privately answer about their own romantic relationship, in a relationship-coaching app called RelationshipAI. It is just for their own reflection.";
   const comparisonRule =
-    mode === "solo"
-      ? "Open-ended and genuinely worth sitting with — something one person could reflect on honestly, not a checklist item."
-      : "Open-ended and genuinely comparison-worthy — two people could honestly answer it in completely different ways.";
+    "Open-ended and genuinely worth sitting with — something one person could reflect on honestly, not a checklist item.";
 
   return `${intro}
 
@@ -3839,15 +3802,15 @@ Questions already used with ${scopeNoun} (write something that doesn't overlap w
 ${recentlyUsed.map((q) => `- ${q}`).join("\n")}`;
 }
 
-// Called only once a couple/person has worked through every question in the
-// static COUPLE_QUESTIONS bank (see pickQuestionForStream) — from that point
+// Called only once a person has worked through every question in the
+// static DAILY_QUESTIONS bank (see pickQuestionForStream) — from that point
 // on, every day's question is freshly generated rather than ever repeating.
 // Fails open: any error here is caught by the caller and falls back to
 // reusing an old question rather than breaking the feature.
-async function generateFreshDailyQuestion(usedQuestions, mode) {
+async function generateFreshDailyQuestion(usedQuestions) {
   const completion = await openai.chat.completions.create({
     model: STANDARD_MODEL,
-    messages: [{ role: "system", content: buildDailyQuestionSystemPrompt(usedQuestions, mode) }],
+    messages: [{ role: "system", content: buildDailyQuestionSystemPrompt(usedQuestions) }],
     temperature: 0.9,
     response_format: { type: "json_object" },
   });
@@ -3855,26 +3818,25 @@ async function generateFreshDailyQuestion(usedQuestions, mode) {
   return String(parsed.question || "").trim();
 }
 
-// Shared question-selection logic for both streams (task #98 follow-up —
-// Jonas wanted no repeats until the whole bank is used, AND for it to never
+// Question-selection logic (Jonas wanted no repeats until the whole bank is used, AND for it to never
 // actually run out):
-//   1. While this couple/person still has unused questions in the static
-//      COUPLE_QUESTIONS bank, deterministically pick one of THOSE (never
+//   1. While this person still has unused questions in the static
+//      DAILY_QUESTIONS bank, deterministically pick one of THOSE (never
 //      one already used) — scoped to the unused subset instead of the full
 //      bank.
 //   2. Once they've used all of them, every day from then on gets a fresh,
 //      newly-generated question instead — see generateFreshDailyQuestion.
 //      That also naturally can't repeat: it's explicitly told what's
 //      already been asked.
-async function pickQuestionForStream(usedQuestions, saltKey, dateKey, mode) {
+async function pickQuestionForStream(usedQuestions, saltKey, dateKey) {
   const usedSet = new Set(usedQuestions.map((q) => q.toLowerCase()));
-  const unusedStatic = COUPLE_QUESTIONS.filter((q) => !usedSet.has(q.toLowerCase()));
+  const unusedStatic = DAILY_QUESTIONS.filter((q) => !usedSet.has(q.toLowerCase()));
 
   let question;
   if (unusedStatic.length > 0) {
     question = pickDailyQuestion(saltKey, dateKey, unusedStatic);
   } else {
-    question = await generateFreshDailyQuestion(usedQuestions, mode).catch((err) => {
+    question = await generateFreshDailyQuestion(usedQuestions).catch((err) => {
       console.error("Daily question generation error:", err.message);
       return "";
     });
@@ -3884,93 +3846,31 @@ async function pickQuestionForStream(usedQuestions, saltKey, dateKey, mode) {
     // the very first question ever asked (a real repeat) rather than ever
     // leaving "today" without one.
     if (!question || usedSet.has(question.toLowerCase())) {
-      question = usedQuestions[0] || COUPLE_QUESTIONS[0];
+      question = usedQuestions[0] || DAILY_QUESTIONS[0];
     }
   }
   return question;
 }
 
-function findActiveCoupleLink(db, userId) {
-  return db.coupleLinks.find((l) => l.status === "active" && (l.userA === userId || l.userB === userId));
-}
-
-function couplePartnerId(link, userId) {
-  return link.userA === userId ? link.userB : link.userA;
-}
-
-function myCoupleSlot(link, userId) {
-  return link.userA === userId ? "A" : "B";
-}
-
-// Gets today's (or any date's) shared-question row for a link, creating it
-// — with its question already picked — the first time either partner opens
-// it that day. Created once, never regenerated, so a later edit to
-// COUPLE_QUESTIONS can't retroactively change a question someone already
-// answered. Question selection itself is pickQuestionForStream above;
-// persistence goes through saveCoupleAnswerIfAbsent (store.js), which is
-// race-safe: if both partners open "today" at nearly the same moment
-// before the row exists, only one of their (possibly independently
-// AI-generated) questions actually gets saved, and both requests end up
-// returning that same one.
-async function ensureTodaysCoupleQuestion(db, link, dateKey) {
-  let row = db.coupleAnswers.find((a) => a.coupleLinkId === link.id && a.date === dateKey);
-  if (row) return row;
-
-  const usedQuestions = db.coupleAnswers
-    .filter((a) => a.coupleLinkId === link.id && a.question)
-    .map((a) => a.question);
-  const question = await pickQuestionForStream(usedQuestions, link.id, dateKey, "couple");
-
-  row = saveCoupleAnswerIfAbsent(link.id, dateKey, question);
-  if (!db.coupleAnswers.some((a) => a.id === row.id)) db.coupleAnswers.push(row);
-  return row;
-}
-
-// Same as ensureTodaysCoupleQuestion above, but for one user's own private
-// solo stream (no partner, no reveal mechanic) — used whenever the caller
-// doesn't currently have an active couple link. A user's solo history
-// never feeds into, or gets read by, the couple stream even after they do
-// link up (see the soloAnswers table comment in lib/store.js) — linking
-// simply starts ensureTodaysCoupleQuestion's own "used questions" count
-// from zero, scoped to the new coupleLinkId.
+// Gets today's question row for one user, creating it — with its question
+// already picked — the first time they open it that day. Created once, never
+// regenerated, so a later edit to DAILY_QUESTIONS can't retroactively change a
+// question someone already answered. Persistence goes through
+// saveSoloAnswerIfAbsent (store.js), which is race-safe.
 async function ensureTodaysSoloQuestion(db, userId, dateKey) {
   let row = db.soloAnswers.find((a) => a.userId === userId && a.date === dateKey);
   if (row) return row;
 
   const usedQuestions = db.soloAnswers.filter((a) => a.userId === userId && a.question).map((a) => a.question);
-  const question = await pickQuestionForStream(usedQuestions, userId, dateKey, "solo");
+  const question = await pickQuestionForStream(usedQuestions, userId, dateKey);
 
   row = saveSoloAnswerIfAbsent(userId, dateKey, question);
   if (!db.soloAnswers.some((a) => a.id === row.id)) db.soloAnswers.push(row);
   return row;
 }
 
-// Shapes a coupleAnswers row for the CALLING user specifically — the
-// partner's answer and its timestamp are only ever included once the
-// caller has answered their own (mySlotAnswer truthy). That's the blind
-// mechanic; it lives here, in one place, so every route that returns a
-// day's question goes through the same reveal rule.
-function publicCoupleAnswer(row, userId, link) {
-  const slot = myCoupleSlot(link, userId);
-  const myAnswer = slot === "A" ? row.answerA : row.answerB;
-  const myAnsweredAt = slot === "A" ? row.answerAAt : row.answerBAt;
-  const partnerAnswerRaw = slot === "A" ? row.answerB : row.answerA;
-  const partnerAnsweredAtRaw = slot === "A" ? row.answerBAt : row.answerAAt;
-  const revealed = !!myAnswer;
-  return {
-    date: row.date,
-    question: row.question,
-    myAnswer: myAnswer || null,
-    myAnsweredAt: myAnsweredAt || null,
-    partnerHasAnswered: !!partnerAnswerRaw,
-    partnerAnswer: revealed ? partnerAnswerRaw || null : null,
-    partnerAnsweredAt: revealed ? partnerAnsweredAtRaw || null : null,
-    revealed,
-  };
-}
-
-// Shapes a soloAnswers row for the response — no partner, no reveal, just
-// the question and whatever the user has (or hasn't) written for it.
+// Shapes a soloAnswers row for the response: the question and whatever the
+// user has (or hasn't) written for it.
 function publicSoloAnswer(row) {
   return {
     date: row.date,
@@ -3980,127 +3880,10 @@ function publicSoloAnswer(row) {
   };
 }
 
-app.get("/api/couple", authMiddleware, (req, res) => {
-  const db = req.db;
-  const link = findActiveCoupleLink(db, req.user.id);
-  if (link) {
-    const partner = db.users.find((u) => u.id === couplePartnerId(link, req.user.id));
-    return res.json({ status: "active", partnerName: partner?.name || "your partner", linkedAt: link.acceptedAt });
-  }
-  const pending = db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
-  if (pending) {
-    return res.json({ status: "pending", inviteToken: pending.inviteToken, createdAt: pending.createdAt });
-  }
-  res.json({ status: "none" });
-});
-
-app.post("/api/couple/invite", authMiddleware, (req, res) => {
+app.get("/api/daily-question/today", authMiddleware, async (req, res) => {
   try {
-    const db = req.db;
-    if (findActiveCoupleLink(db, req.user.id)) {
-      return res
-        .status(400)
-        .json({ error: "You're already linked with a partner. Unlink first if you want to connect with someone else." });
-    }
-    // Idempotent: re-clicking "invite" while one is already pending just
-    // hands back the same link instead of littering the table with dupes.
-    let pending = db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
-    if (!pending) {
-      pending = {
-        id: generateId("cpl"),
-        userA: req.user.id,
-        userB: null,
-        status: "pending",
-        inviteToken: crypto.randomBytes(24).toString("hex"),
-        createdAt: new Date().toISOString(),
-        acceptedAt: null,
-      };
-      saveCoupleLink(pending);
-    }
-    res.json({ status: "pending", inviteToken: pending.inviteToken, createdAt: pending.createdAt });
-  } catch (err) {
-    console.error("Create couple invite error:", err);
-    res.status(500).json({ error: "Couldn't create an invite link. Please try again." });
-  }
-});
-
-// Either partner can call this — cancels a pending invite they sent, or
-// ends an active link. Either way it's a hard delete (see deleteCoupleLink):
-// no "unlinked" record lingers behind for the other side to find.
-app.delete("/api/couple", authMiddleware, (req, res) => {
-  try {
-    const db = req.db;
-    const link =
-      findActiveCoupleLink(db, req.user.id) || db.coupleLinks.find((l) => l.status === "pending" && l.userA === req.user.id);
-    if (!link) return res.status(404).json({ error: "You're not linked with anyone." });
-    deleteCoupleLink(link.id);
-    res.json({ ok: true });
-  } catch (err) {
-    console.error("Unlink couple error:", err);
-    res.status(500).json({ error: "Couldn't unlink. Please try again." });
-  }
-});
-
-// Public, unauthenticated — lets someone see who's inviting them BEFORE
-// they log in or register. Deliberately returns almost nothing (just the
-// inviter's display name): no email, no token-guessing surface beyond what
-// they already have in the URL.
-app.get("/api/public/couple-invite/:token", (req, res) => {
-  const link = getCoupleLinkByToken(req.params.token);
-  if (!link || link.status !== "pending") {
-    return res.status(404).json({ error: "This invite link isn't available. It may have already been used or cancelled." });
-  }
-  const inviter = getUserById(link.userA);
-  res.json({ inviterName: inviter?.name || "Someone" });
-});
-
-app.post("/api/couple/invite/:token/accept", authMiddleware, (req, res) => {
-  try {
-    const db = req.db;
-    const link = db.coupleLinks.find((l) => l.inviteToken === req.params.token);
-    if (!link || link.status !== "pending") {
-      return res.status(404).json({ error: "This invite link isn't available. It may have already been used or cancelled." });
-    }
-    if (link.userA === req.user.id) {
-      return res.status(400).json({ error: "You can't accept your own invite link." });
-    }
-    if (findActiveCoupleLink(db, req.user.id)) {
-      return res.status(400).json({ error: "You're already linked with a partner. Unlink first to connect with someone else." });
-    }
-    // The inviter may have linked with someone else in the time since they
-    // sent this link out — re-check rather than trusting the still-pending
-    // row alone.
-    const inviterNowLinked = db.coupleLinks.some(
-      (l) => l.status === "active" && (l.userA === link.userA || l.userB === link.userA)
-    );
-    if (inviterNowLinked) {
-      return res.status(400).json({ error: "This invite is no longer available — the person who sent it has already linked with someone." });
-    }
-    link.userB = req.user.id;
-    link.status = "active";
-    link.acceptedAt = new Date().toISOString();
-    saveCoupleLink(link);
-    const inviter = db.users.find((u) => u.id === link.userA);
-    res.json({ status: "active", partnerName: inviter?.name || "your partner", linkedAt: link.acceptedAt });
-  } catch (err) {
-    console.error("Accept couple invite error:", err);
-    res.status(500).json({ error: "Couldn't accept that invite. Please try again." });
-  }
-});
-
-// Whether today's question is couple or solo depends entirely on whether
-// the caller currently has an ACTIVE link — no separate "mode" flag is
-// stored anywhere, it's derived fresh on every request.
-app.get("/api/couple/question/today", authMiddleware, async (req, res) => {
-  try {
-    const db = req.db;
-    const link = findActiveCoupleLink(db, req.user.id);
-    if (link) {
-      const row = await ensureTodaysCoupleQuestion(db, link, todayKey());
-      return res.json({ mode: "couple", ...publicCoupleAnswer(row, req.user.id, link) });
-    }
-    const row = await ensureTodaysSoloQuestion(db, req.user.id, todayKey());
-    res.json({ mode: "solo", ...publicSoloAnswer(row) });
+    const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
+    res.json(publicSoloAnswer(row));
   } catch (err) {
     console.error("Get today's daily question error:", err);
     res.status(500).json({ error: "Couldn't load today's question. Please try again." });
@@ -4109,45 +3892,18 @@ app.get("/api/couple/question/today", authMiddleware, async (req, res) => {
 
 const MAX_DAILY_ANSWER_LENGTH = 2000;
 
-app.post("/api/couple/question/today/answer", authMiddleware, async (req, res) => {
+app.post("/api/daily-question/today/answer", authMiddleware, async (req, res) => {
   try {
-    const db = req.db;
     const trimmed = String((req.body || {}).answer || "").trim();
     if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
-    const dateKey = todayKey();
-    const link = findActiveCoupleLink(db, req.user.id);
-
-    if (link) {
-      const row = await ensureTodaysCoupleQuestion(db, link, dateKey);
-      const slot = myCoupleSlot(link, req.user.id);
-      const alreadyAnswered = slot === "A" ? row.answerA : row.answerB;
-      // Locked in once submitted, on purpose — the entire point of "you
-      // only see their answer after yours" is that neither partner can
-      // peek and then quietly adjust their own answer to match. Allowing
-      // an edit after the reveal would defeat that.
-      if (alreadyAnswered) {
-        return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
-      }
-      const now = new Date().toISOString();
-      if (slot === "A") {
-        row.answerA = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
-        row.answerAAt = now;
-      } else {
-        row.answerB = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
-        row.answerBAt = now;
-      }
-      saveCoupleAnswer(row);
-      return res.json({ mode: "couple", ...publicCoupleAnswer(row, req.user.id, link) });
-    }
-
-    const row = await ensureTodaysSoloQuestion(db, req.user.id, dateKey);
+    const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
     if (row.answer) {
       return res.status(400).json({ error: "You've already answered today's question — come back tomorrow for a new one." });
     }
     row.answer = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
     row.answeredAt = new Date().toISOString();
     saveSoloAnswer(row);
-    res.json({ mode: "solo", ...publicSoloAnswer(row) });
+    res.json(publicSoloAnswer(row));
   } catch (err) {
     console.error("Answer daily question error:", err);
     res.status(500).json({ error: "Couldn't save your answer. Please try again." });
@@ -4155,29 +3911,12 @@ app.post("/api/couple/question/today/answer", authMiddleware, async (req, res) =
 });
 
 // Past days only (today is always fetched fresh via the route above), and
-// only days the caller actually answered — there's nothing useful to show
-// for a day you never engaged with, and it keeps the reveal rule identical
-// to "today": you never see a day's answer pair without having answered
-// that day yourself. Couple history and solo history are never mixed —
-// whichever mode the caller is currently in is the only one shown.
-app.get("/api/couple/question/history", authMiddleware, (req, res) => {
-  const db = req.db;
+// only days the user actually answered.
+app.get("/api/daily-question/history", authMiddleware, (req, res) => {
   const today = todayKey();
-  const link = findActiveCoupleLink(db, req.user.id);
-
-  if (link) {
-    const list = db.coupleAnswers
-      .filter((a) => a.coupleLinkId === link.id && a.date !== today)
-      .map((a) => ({ mode: "couple", ...publicCoupleAnswer(a, req.user.id, link) }))
-      .filter((a) => a.myAnswer)
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .slice(0, 30);
-    return res.json(list);
-  }
-
-  const list = db.soloAnswers
+  const list = req.db.soloAnswers
     .filter((a) => a.userId === req.user.id && a.date !== today)
-    .map((a) => ({ mode: "solo", ...publicSoloAnswer(a) }))
+    .map((a) => publicSoloAnswer(a))
     .filter((a) => a.myAnswer)
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .slice(0, 30);
@@ -4206,7 +3945,7 @@ app.get("/api/email/unsubscribe", (req, res) => {
     res.send(`<!DOCTYPE html>
 <html><body style="font-family:-apple-system,BlinkMacSystemFont,sans-serif; background:#17130f; color:#f6efe4; padding:60px 20px; text-align:center;">
   <h2 style="font-family:Georgia,serif;">You're unsubscribed</h2>
-  <p style="color:#b6a795;">You won't get this email again. You can turn it back on anytime from your RelateIQ account page.</p>
+  <p style="color:#b6a795;">You won't get this email again. You can turn it back on anytime from your RelationshipAI account page.</p>
 </body></html>`);
   } catch (err) {
     res.status(400).send("This unsubscribe link is invalid or has expired.");
@@ -4272,11 +4011,11 @@ async function runDailyCheckinReminders() {
           <p><a href="${APP_URL}/dashboard.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Answer it →</a></p>
         `,
       });
-      await sendEmail({ to: user.email, subject: "Today's RelateIQ check-in", html });
+      await sendEmail({ to: user.email, subject: "Today's RelationshipAI check-in", html });
     }
 
     await sendPushToUser(user.id, {
-      title: "Today's RelateIQ check-in",
+      title: "Today's RelationshipAI check-in",
       body: question,
       url: "/dashboard.html",
     });
@@ -4287,7 +4026,7 @@ async function runWeeklyInsightsDigest() {
   const db = loadDb();
   // The automated weekly digest (email and/or push) is a Pro+ perk — Free
   // users can still generate Insights manually in-app once they have
-  // enough conversations, but RelateIQ coming to them proactively every
+  // enough conversations, but RelationshipAI coming to them proactively every
   // week is part of what upgrading buys. A user is a candidate if they're
   // on a paid plan AND either delivery channel is live for them — email
   // opt-in or an active push subscription — since the two are independent
@@ -4323,16 +4062,16 @@ async function runWeeklyInsightsDigest() {
           unsubscribeUrl: unsubscribeLink(user, "digest"),
           bodyHtml: `
             <p>Hey ${escapeForEmail(user.name)},</p>
-            <p>Here's what RelateIQ noticed across your conversations this week:</p>
+            <p>Here's what RelationshipAI noticed across your conversations this week:</p>
             ${itemsHtml}
             <p><a href="${APP_URL}/insights.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">See full insights →</a></p>
           `,
         });
-        await sendEmail({ to: user.email, subject: "Your weekly RelateIQ insights", html });
+        await sendEmail({ to: user.email, subject: "Your weekly RelationshipAI insights", html });
       }
 
       await sendPushToUser(user.id, {
-        title: "Your weekly RelateIQ insights",
+        title: "Your weekly RelationshipAI insights",
         body: patterns[0]?.title || "New patterns spotted across your conversations this week.",
         url: "/insights.html",
       });
@@ -4471,5 +4210,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🔥 RelateIQ server running on http://localhost:${PORT}`);
+  console.log(`🔥 RelationshipAI server running on http://localhost:${PORT}`);
 });
