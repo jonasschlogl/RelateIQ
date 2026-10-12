@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=63" />
+  <link rel="stylesheet" href="css/style.css?v=65" />
 </head>
 <body>
 
@@ -23,12 +23,16 @@
       <a href="chat.html" class="nav-primary">Coach</a>
       <a href="chat.html?mode=practice" class="nav-primary">Practice</a>
       <a href="message.html" class="nav-primary">Message check</a>
-      <a href="sos.html" class="nav-primary">After a fight</a>
-      <span class="nav-sep"></span>
-      <a href="playbook.html">Playbook</a>
-      <a href="insights.html" class="nav-current">Insights</a>
-      <a href="share.html">Share</a>
-      <a href="daily.html">Daily question</a>
+      <div class="nav-more has-current" id="nav-more">
+        <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">More <svg class="ico nav-more-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-more-menu" role="menu">
+        <a href="sos.html">After a fight</a>
+        <a href="playbook.html">Playbook</a>
+        <a href="insights.html" class="nav-current">Insights</a>
+        <a href="share.html">Share with partner</a>
+        <a href="daily.html">Daily question</a>
+        </div>
+      </div>
       <a href="dashboard.html">My account</a>
       <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
@@ -68,7 +72,7 @@
     </div>
   </div>
 
-  <script src="js/shared.js?v=18"></script>
+  <script src="js/shared.js?v=20"></script>
   <script src="js/pack.js?v=1"></script>
 </body>
 </html>

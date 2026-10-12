@@ -3582,6 +3582,25 @@ section {
   .site-nav-app .nav-toggle {
     display: inline-flex;
   }
+
+  /* The rule above out-specifies the generic .nav-links.open one, so the
+     open state has to be restated for the app nav or the hamburger does
+     nothing on app pages. */
+  .site-nav-app .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 16px;
+    right: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: var(--shadow-lg);
+  }
 }
 
 @media (max-width: 640px) {
@@ -4857,3 +4876,62 @@ body.js-reveal .reveal-item.revealed {
 .yr-bar-val { font-size: 11px; color: var(--text-muted); }
 .yr-bar-label { font-size: 11px; color: var(--text-muted); }
 @media print { #review-state { display: none; } }
+
+/* ---------------------------------------------------------------------- */
+/* Simplified menu: 3 core things visible, everything else under "More"    */
+/* ---------------------------------------------------------------------- */
+.nav-more { position: relative; }
+.nav-more-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: none; padding: 4px 2px; cursor: pointer;
+  font: inherit; font-size: 14.5px; color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+.nav-more-btn:hover, .nav-more.open .nav-more-btn { color: var(--text); }
+.nav-more.has-current .nav-more-btn { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+.nav-more-chev { transition: transform 0.15s ease; }
+.nav-more.open .nav-more-chev { transform: rotate(180deg); }
+.nav-more-menu {
+  display: none; position: absolute; top: calc(100% + 10px); right: -12px; z-index: 40;
+  min-width: 200px; padding: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+}
+.nav-more.open .nav-more-menu { display: flex; flex-direction: column; gap: 2px; }
+.nav-more-menu a {
+  display: block; padding: 9px 12px; border-radius: var(--radius-sm); white-space: nowrap;
+}
+.nav-more-menu a:hover { background: var(--surface-hover); }
+.nav-more-menu a.nav-current { text-decoration: none; background: var(--surface-hover); }
+@media (max-width: 1060px) {
+  .nav-more { width: 100%; }
+  .nav-more-menu {
+    position: static; box-shadow: none; border: none; padding: 4px 0 0 12px;
+    min-width: 0; background: transparent;
+  }
+}
+
+/* Chat sidebar "More" disclosure */
+.sidebar-more { margin-top: 2px; }
+.sidebar-more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
+.sidebar-more > summary::-webkit-details-marker { display: none; }
+.sidebar-more[open] > summary .nav-more-chev { transform: rotate(180deg); }
+.sidebar-more > a { padding-left: 18px; }
+
+/* Dashboard "More tools" disclosure */
+.modes-grid-core { grid-template-columns: repeat(3, 1fr); }
+.modes-more { margin-top: 14px; }
+.modes-more > summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: var(--text-muted);
+  padding: 8px 14px; border: 1px solid var(--border); border-radius: var(--radius-pill);
+}
+.modes-more > summary::-webkit-details-marker { display: none; }
+.modes-more > summary:hover { color: var(--text); border-color: var(--border-strong); }
+.modes-more > summary::after { content: "+"; font-weight: 700; }
+.modes-more[open] > summary::after { content: "\2212"; }
+.modes-more-count { font-size: 11px; background: var(--surface-hover); border-radius: 999px; padding: 1px 8px; }
+.modes-more .modes-grid-more { margin-top: 14px; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  .modes-grid-core, .modes-more .modes-grid-more { grid-template-columns: 1fr; }
+}

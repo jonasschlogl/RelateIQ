@@ -303,6 +303,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggle && menu) {
     toggle.addEventListener("click", () => menu.classList.toggle("open"));
   }
+
+  // "More" dropdown in the app nav: the three core tools stay visible, the
+  // rest live in here. Closes on outside click / Escape.
+  const more = document.getElementById("nav-more");
+  if (more) {
+    const btn = more.querySelector(".nav-more-btn");
+    const setOpen = (open) => {
+      more.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!more.classList.contains("open"));
+    });
+    document.addEventListener("click", (e) => {
+      if (!more.contains(e.target) && !(toggle && toggle.contains(e.target))) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+    // On mobile the whole menu is already collapsed behind the hamburger, so
+    // start with the "More" group open if the current page lives inside it.
+    if (more.classList.contains("has-current") && window.innerWidth <= 1060) setOpen(true);
+  }
 });
 
 async function authFetch(url, options = {}) {
