@@ -534,3 +534,14 @@
   .faq.faq-open .faq-item.faq-extra { display: block; }
   .faq-more { display: block; margin: 16px auto 0; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
 }
+
+/* ---- One section for the three main tools (no repeated demos) ---- */
+.tool-card-full { text-decoration: none; gap: 8px; }
+.tool-card-full:hover { transform: none; box-shadow: none; border-color: var(--border-strong); }
+.tool-card-full.tool-card-start:hover { border-color: rgba(209, 160, 90, 0.55); }
+.tool-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.tool-card-num { font-family: var(--font-display); font-size: 40px; line-height: 1; color: var(--accent-2-text); opacity: 0.55; }
+.tool-card-full p { flex: 0 0 auto; margin: 0; }
+.tool-card-full .core-list { flex: 1; margin: 14px 0 22px; }
+.tool-card-full .core-list li { font-size: 15px; padding: 6px 0; }
+.tool-card-full .btn { align-self: flex-start; }

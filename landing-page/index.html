@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=51" />
-  <link rel="stylesheet" href="css/landing.css?v=17" />
+  <link rel="stylesheet" href="css/landing.css?v=18" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
 </head>
@@ -38,7 +38,6 @@
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="#features">Features</a>
-      <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
       <a href="#faq">FAQ</a>
@@ -128,100 +127,49 @@
     <!-- ================================================================ -->
     <!-- THE THREE MAIN THINGS                                             -->
     <!-- ================================================================ -->
-    <span id="features" class="anchor"></span>
-
-    <section id="coach" class="core core-first">
+    <section id="features" class="tools-intro">
       <div class="container">
-        <div class="core-split">
-          <div class="core-text">
-            <span class="core-num">01</span>
-            <span class="section-tag">Coach Chat</span>
-            <h2>A coach that already knows your story</h2>
-            <p>Describe what happened in your own words. The coach remembers your partner and your earlier chats, so you never start from zero. You get specific next steps, not vague comfort.</p>
+        <div class="section-head center">
+          <span class="section-tag">The three main tools</span>
+          <h2>Understand it, word it, practice it</h2>
+          <p>Start with any one of them. Each takes only a few minutes, and all three are free to try.</p>
+        </div>
+        <div class="tool-trio">
+          <div class="tool-card tool-card-full">
+            <div class="tool-card-top"><span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span><span class="tool-card-num">01</span></div>
+            <span class="tool-card-tag">Coach Chat · Free to try</span>
+            <h3>A coach that already knows your story</h3>
+            <p>Describe what happened in your own words. It remembers your partner and your earlier chats, so you never start from zero.</p>
             <ul class="core-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Remembers your story</strong> from one chat to the next</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Specific next steps</strong>, not vague comfort</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Spots patterns</strong> you might miss, like &quot;you both go quiet after an argument&quot;</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Helps you find the words.</strong> You can add screenshots or documents for context</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Always there</strong>, even at 2am. No waiting list, no appointment</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Always there</strong>, even at 2am. You can add screenshots or documents for context</span></li>
             </ul>
             <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-mode-coach">Try Coach Chat</a>
           </div>
-          <div class="core-visual" aria-hidden="true">
-            <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Coach Chat <em class="demo-example">Example</em></span><span class="chip chip-memory">● Remembers your story</span></div>
-              <div class="mock-row user"><div class="bubble">We had the chores argument again. I said I'd drop it, but I'm still annoyed.</div></div>
-              <div class="mock-row ai"><div class="bubble">That's the third time this month it's come up, and each time you both pull back. Before the next round: what would "fair" actually look like to you?</div></div>
-              <div class="mock-row user"><div class="bubble">Honestly? Just knowing it's not all on me.</div></div>
-              <div class="mock-row ai"><div class="bubble">That's a real need, and it's worth saying plainly. Here's one way to open it without it sounding like blame…</div></div>
-            </div>
-            <div class="vis-float vis-float-a"><strong>Pattern noticed</strong>You both withdraw instead of raising it directly.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="message-check" class="core core-reverse">
-      <div class="container">
-        <div class="core-split">
-          <div class="core-text">
-            <span class="core-num">02</span>
-            <span class="section-tag">Message check</span>
-            <h2>Read your message the way they will</h2>
-            <p>Typed something angry, or something you're not sure about? Paste it here before you hit send. In a few seconds you see how it may land and get versions you can send as they are.</p>
+          <div class="tool-card tool-card-full tool-card-start">
+            <div class="tool-card-top"><span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span class="tool-card-num">02</span></div>
+            <span class="tool-card-tag">Message check · Start here</span>
+            <h3>Read your message the way they will</h3>
+            <p>Paste a message before you hit send. In a few seconds you see how it may land and get versions you can send as they are.</p>
             <ul class="core-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>See how it may sound</strong>: blame, pressure or sarcasm gets pointed out</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Get 2 or 3 better versions</strong>: calmer, more direct, or warmer</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Add their message too</strong>, so the check understands what you're replying to</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Not stored.</strong> We don't keep the text you paste. Only a counter, so we can apply your plan's limit</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Blame, pressure or sarcasm</strong> gets pointed out</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>2 or 3 better versions</strong>: calmer, more direct, or warmer</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Not stored.</strong> We keep only a counter, so we can apply your plan's limit</span></li>
             </ul>
             <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-mode-message">Try Message check</a>
           </div>
-          <div class="core-visual" aria-hidden="true">
-            <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Message check <em class="demo-example">Example</em></span><span class="chip chip-risk">Risk: medium</span></div>
-              <div class="mock-row user"><div class="bubble">You always do this. I'm tired of having to ask for everything.</div></div>
-              <div class="mc-read"><strong>How it may land</strong>As blame. "Always" tends to make people defensive instead of listening.</div>
-              <div class="mc-versions">
-                <div class="mc-version"><span>Calmer</span>"I felt hurt earlier. Can we talk tonight?"</div>
-                <div class="mc-version"><span>More direct</span>"I need us to talk about this tonight."</div>
-                <div class="mc-version"><span>Warmer</span>"I love you, and I want us to sort this out together."</div>
-              </div>
-            </div>
-            <div class="vis-float vis-float-b"><strong>Before you send</strong>One minute that can save a fight.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="practice" class="core core-first">
-      <div class="container">
-        <div class="core-split">
-          <div class="core-text">
-            <span class="core-num">03</span>
-            <span class="section-tag">Partner Practice</span>
-            <h2>Say it out loud before it's real</h2>
-            <p>Describe your partner. Then practice what you want to say with an AI that plays them, including the pushback you'd expect. Afterwards you get a short, honest debrief.</p>
+          <div class="tool-card tool-card-full">
+            <div class="tool-card-top"><span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span><span class="tool-card-num">03</span></div>
+            <span class="tool-card-tag">Partner Practice · Free to try</span>
+            <h3>Say it out loud before it's real</h3>
+            <p>Describe your partner and rehearse with an AI that plays them, pushback included. Then get a short, honest debrief.</p>
             <ul class="core-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>An AI that plays your partner</strong>, based on the personality you describe and what it learned from your chats</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>A clear debrief</strong> every time: what went well, what to watch for, what to try next</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Switch roles</strong> to feel how your own words might sound to them</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>A debrief every time</strong>: what went well, what to watch for, what to try next</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Switch roles</strong> to hear how your own words might sound to them</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Completely private.</strong> It never contacts your real partner</span></li>
             </ul>
             <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-mode-practice">Try Partner Practice</a>
-          </div>
-          <div class="core-visual" aria-hidden="true">
-            <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Practicing with Alex <em class="demo-example">Example</em></span><span class="chip">Avoidant · needs time to think</span></div>
-              <div class="mock-row user"><div class="bubble">I want to talk about how we split the housework. I'm feeling a bit overwhelmed.</div></div>
-              <div class="mock-row ai"><div class="bubble">Okay… I thought things were fine? I do what I can, you know.</div></div>
-              <div class="mock-row user"><div class="bubble">I know you do. I'm not saying you don't. I just need us to look at it together.</div></div>
-              <div class="debrief">
-                <div class="debrief-row"><strong>Went well</strong><span>You acknowledged their effort before asking for change.</span></div>
-                <div class="debrief-row"><strong>Watch for</strong><span>Defensiveness at "split". Slow down, keep it about you.</span></div>
-                <div class="debrief-row"><strong>Try next</strong><span>Propose one concrete swap instead of a general talk.</span></div>
-              </div>
-            </div>
-            <div class="vis-float vis-float-a"><strong>Debrief ready</strong>Honest, specific, and kind.</div>
           </div>
         </div>
       </div>
@@ -296,32 +244,7 @@
     <!-- ================================================================ -->
     <!-- HOW IT WORKS                                                      -->
     <!-- ================================================================ -->
-    <section id="how-it-works">
-      <div class="container">
-        <div class="section-head center">
-          <span class="section-tag">How it works</span>
-          <h2>A clearer head in 3 steps</h2>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Tell it what's going on</h3>
-            <p>Write the way you'd text a friend. The coach asks follow-up questions if it needs more.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Get the words</h3>
-            <p>Work it through in Coach Chat, or paste a message into Message check and pick a better version.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Practice it, then see what works</h3>
-            <p>Rehearse in Partner Practice, get your debrief, and use your Playbook to keep what helps.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section id="approach" class="approach">
       <div class="container">
@@ -584,14 +507,6 @@
           <details class="faq-item">
             <summary>When does RelationshipAI open?</summary>
             <p>Soon. We're putting the finishing touches on it and checking how many people are interested before we open the doors. Clicking any "Get early access" button is counted, anonymously, and helps us decide how quickly to open. If you leave your email, we'll write to you once, the day it opens.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What is Message check?</summary>
-            <p>You paste a message you're thinking of sending, and optionally the message you're replying to. In a few seconds it tells you how the message may land (for example as blame or pressure) and gives you two or three better versions to choose from. The text you paste isn't stored. We only keep a counter, so we can apply your plan's limit.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What is Coach Chat?</summary>
-            <p>Coach Chat is the main conversation with your AI coach. You describe what's going on, and it asks follow-up questions, remembers your story across chats, notices patterns, and helps you work out next steps and the words to use.</p>
           </details>
           <details class="faq-item">
             <summary>What is Partner Practice? Is it talking to my real partner?</summary>
