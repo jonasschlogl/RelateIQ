@@ -304,17 +304,6 @@ function initHeroSignup() {
 
 // Phones: the three main tools become tabs (one visible at a time), and the
 // pricing cards and blog posts become swipeable rows with dots.
-// Mobile: the plan comparison is open by default (the summary is hidden by CSS).
-// Back on desktop it returns to the state the visitor had before.
-let planCompareWasOpen = false;
-function openPlanCompare(on) {
-  const d = document.querySelector(".plan-compare");
-  if (!d) return;
-  if (on) { planCompareWasOpen = d.open; d.open = true; }
-  else if (d.dataset.autoOpened) { d.open = planCompareWasOpen; }
-  if (on) d.dataset.autoOpened = "1"; else delete d.dataset.autoOpened;
-}
-
 function initMobileLayout() {
   const mq = window.matchMedia("(max-width: 700px)");
   const ids = ["coach", "message-check", "practice"];
@@ -387,10 +376,9 @@ function initMobileLayout() {
   const apply = () => {
     if (mq.matches) {
       buildTabs();
-      openPlanCompare(true);
+      carousel(document.querySelector(".pricing-grid"), 1);
       carousel(document.querySelector(".post-grid"), 0);
     } else {
-      openPlanCompare(false);
       removeTabs();
       removeCarousels();
     }
