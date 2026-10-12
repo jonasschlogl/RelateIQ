@@ -456,3 +456,23 @@
 .pricing-guarantee + .pricing-guarantee { margin-top: 12px; }
 .pricing-assurances { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
 .pricing-assurances .pricing-guarantee, .pricing-assurances .pricing-guarantee + .pricing-guarantee { margin-top: 0; flex: 1 1 340px; max-width: 520px; }
+
+/* ---- Credibility pass: example labels, hero email field, collapsible tools ---- */
+.anchor { display: block; height: 0; scroll-margin-top: 84px; }
+.demo-example { font-style: normal; margin-left: 8px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-strong); font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); vertical-align: middle; }
+.hero-signup { display: flex; gap: 10px; max-width: 540px; margin: 28px auto 0; }
+.hero-signup-input { flex: 1; min-width: 0; padding: 16px 18px; border-radius: 14px; font: inherit; font-size: 16px; background: var(--bg-elevated); color: var(--text); border: 1px solid var(--border-strong); }
+.hero-signup-input::placeholder { color: var(--text-faint); }
+.hero-signup-input:focus { outline: 2px solid var(--accent-1); outline-offset: 1px; border-color: transparent; }
+.hero-signup .btn { white-space: nowrap; }
+.hero-error { margin: 10px 0 0; text-align: center; }
+.hero-signup-done { margin: 28px auto 0; max-width: 540px; padding: 16px 20px; border-radius: 14px; border: 1px solid rgba(139, 171, 111, 0.45); background: rgba(139, 171, 111, 0.10); color: var(--text); text-align: center; }
+.lp .hero-note { margin-top: 14px; }
+.hero-more { color: var(--text); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.more-toggle { display: none; margin: 18px auto 0; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+@media (max-width: 700px) {
+  .hero-signup { flex-direction: column; margin-top: 24px; }
+  .hero-signup .btn { width: 100%; justify-content: center; }
+  .more-grid.is-collapsed .more-card:nth-child(n+4) { display: none; }
+  .more-toggle { display: block; }
+}

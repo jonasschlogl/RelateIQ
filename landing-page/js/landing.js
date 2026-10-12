@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initFloatingCta();
   initDemoTabs();
   initBillingToggle();
+  initMoreToggle();
+  initHeroSignup();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -234,4 +236,67 @@ function initFloatingCta() {
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
   update();
+}
+
+// Small tools: on phones only the first three cards show until the visitor
+// asks for the rest, which keeps the page from feeling endless.
+function initMoreToggle() {
+  const grid = document.getElementById("more-grid");
+  const btn = document.getElementById("more-toggle");
+  if (!grid || !btn) return;
+  grid.classList.add("is-collapsed");
+  btn.addEventListener("click", () => {
+    const collapsed = grid.classList.toggle("is-collapsed");
+    btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    btn.textContent = collapsed ? "Show all 9 tools" : "Show fewer";
+  });
+}
+
+// Hero: email field right in the first screen, so joining the list is one step.
+function initHeroSignup() {
+  const form = document.getElementById("hero-signup");
+  if (!form) return;
+  const emailEl = document.getElementById("hero-email");
+  const btn = document.getElementById("hero-signup-btn");
+  const errEl = document.getElementById("hero-error");
+  const doneEl = document.getElementById("hero-done");
+  const loadedAt = Date.now();
+  const showDone = () => { form.hidden = true; errEl.hidden = true; doneEl.hidden = false; };
+  try { if (localStorage.getItem("rai_waitlist") === "1") showDone(); } catch (_) {}
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errEl.hidden = true;
+    const email = emailEl.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) {
+      errEl.textContent = "Please enter a valid email address.";
+      errEl.hidden = false;
+      emailEl.focus();
+      return;
+    }
+    btn.disabled = true;
+    const label = btn.textContent;
+    btn.textContent = "Saving...";
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email, source: "hero-inline", plan: "", billing: "",
+          website: document.getElementById("hero-website").value, t: Date.now() - loadedAt,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error("save failed");
+      try { localStorage.setItem("rai_waitlist", "1"); } catch (_) {}
+      try { if (window.umami && window.umami.track) window.umami.track("waitlist-signup", { source: "hero-inline", plan: "" }); } catch (_) {}
+      showDone();
+    } catch (_) {
+      errEl.textContent = "Sorry, that didn't go through. Please try again in a moment.";
+      errEl.hidden = false;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+  });
 }

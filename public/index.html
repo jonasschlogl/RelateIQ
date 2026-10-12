@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=65" />
-  <link rel="stylesheet" href="css/landing.css?v=13" />
+  <link rel="stylesheet" href="css/landing.css?v=14" />
 </head>
 <body class="lp">
 
@@ -62,7 +62,7 @@
       </div>
       <p class="hero-note">Free to start · No credit card</p>
 
-      <!-- tabbed product demo -->
+      <!-- tabbed product demo (example conversations) -->
       <div class="demo-wrap">
       <img class="wisp wisp-hero-l" src="img/wisp-flame.svg" alt="" width="124" height="190" />
       <div class="demo" id="demo">
@@ -82,14 +82,14 @@
         </div>
 
         <div class="demo-panel" id="panel-coach" role="tabpanel" aria-labelledby="tab-coach">
-          <div class="demo-bar"><span class="demo-bar-title">Coach Chat</span><span class="chip chip-memory">● Remembers your story</span></div>
+          <div class="demo-bar"><span class="demo-bar-title">Coach Chat <em class="demo-example">Example</em></span><span class="chip chip-memory">● Remembers your story</span></div>
           <div class="mock-row user"><div class="bubble">Sam has been short and distant with me for weeks. I don't know if I should bring it up.</div></div>
           <div class="mock-row ai"><div class="bubble">That sounds draining to sit with. You mentioned Sam's been stretched at work, and that you tend to go quiet when you feel shut out. Want to try opening with how it's landing on <em>you</em>, rather than what Sam is doing?</div></div>
           <div class="memory-note"><span>Remembered from earlier</span> Sam · work stress · you withdraw when overwhelmed</div>
         </div>
 
         <div class="demo-panel" id="panel-message" role="tabpanel" aria-labelledby="tab-message" hidden>
-          <div class="demo-bar"><span class="demo-bar-title">Message check</span><span class="chip chip-risk">May land as blame</span></div>
+          <div class="demo-bar"><span class="demo-bar-title">Message check <em class="demo-example">Example</em></span><span class="chip chip-risk">May land as blame</span></div>
           <div class="mock-row user"><div class="bubble">You never listen to me. I'm tired of always having to ask for everything.</div></div>
           <div class="debrief">
             <div class="debrief-row"><strong>How it may land</strong><span>"Never" and "always" can sound like an attack, so they may get defensive.</span></div>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="demo-panel" id="panel-practice" role="tabpanel" aria-labelledby="tab-practice" hidden>
-          <div class="demo-bar"><span class="demo-bar-title">Practicing with Sam</span><span class="chip">Tends to go quiet under pressure</span></div>
+          <div class="demo-bar"><span class="demo-bar-title">Practicing with Sam <em class="demo-example">Example</em></span><span class="chip">Tends to go quiet under pressure</span></div>
           <div class="mock-row user"><div class="bubble">I've noticed we haven't really talked lately. Can we find time this weekend?</div></div>
           <div class="mock-row ai"><div class="bubble">Yeah… it's just been a lot lately. I don't really know what there is to say.</div></div>
           <div class="mock-row user"><div class="bubble">I'm not blaming you. I just miss us.</div></div>
@@ -122,38 +122,7 @@
     <!-- ================================================================ -->
     <!-- THE THREE MAIN THINGS                                             -->
     <!-- ================================================================ -->
-    <section id="features" class="tools-intro">
-      <div class="container">
-        <div class="section-head center">
-          <span class="section-tag">What you can do</span>
-          <h2>Three things that make hard conversations easier</h2>
-          <p>Start with any one of them. Each takes only a few minutes, and all three are free to try.</p>
-        </div>
-        <div class="tool-trio">
-          <a href="#coach" class="tool-card">
-            <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span>
-            <span class="tool-card-tag">Free to try</span>
-            <h3>Talk it through</h3>
-            <p>Tell the coach what's going on, like you'd tell a friend. Get clear next steps and the words to use.</p>
-            <span class="tool-card-more">Coach Chat <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-          </a>
-          <a href="#message-check" class="tool-card tool-card-start">
-            <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
-            <span class="tool-card-tag">Start here</span>
-            <h3>Check before you send</h3>
-            <p>Paste the message you're about to send. See how it may sound, then pick a calmer, kinder version.</p>
-            <span class="tool-card-more">Message check <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-          </a>
-          <a href="#practice" class="tool-card">
-            <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
-            <span class="tool-card-tag">Free to try</span>
-            <h3>Practice the hard talk</h3>
-            <p>Say it out loud first with an AI that plays your partner. Then get a short, honest debrief.</p>
-            <span class="tool-card-more">Partner Practice <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </section>
+    <span id="features" class="anchor"></span>
 
     <section id="coach" class="core core-first">
       <div class="container">
@@ -173,7 +142,7 @@
           </div>
           <div class="core-visual" aria-hidden="true">
             <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Coach Chat</span><span class="chip chip-memory">● Remembers your story</span></div>
+              <div class="demo-bar"><span class="demo-bar-title">Coach Chat <em class="demo-example">Example</em></span><span class="chip chip-memory">● Remembers your story</span></div>
               <div class="mock-row user"><div class="bubble">We had the chores argument again. I said I'd drop it, but I'm still annoyed.</div></div>
               <div class="mock-row ai"><div class="bubble">That's the third time this month it's come up, and each time you both pull back. Before the next round: what would "fair" actually look like to you?</div></div>
               <div class="mock-row user"><div class="bubble">Honestly? Just knowing it's not all on me.</div></div>
@@ -203,7 +172,7 @@
           </div>
           <div class="core-visual" aria-hidden="true">
             <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Message check</span><span class="chip chip-risk">Risk: medium</span></div>
+              <div class="demo-bar"><span class="demo-bar-title">Message check <em class="demo-example">Example</em></span><span class="chip chip-risk">Risk: medium</span></div>
               <div class="mock-row user"><div class="bubble">You always do this. I'm tired of having to ask for everything.</div></div>
               <div class="mc-read"><strong>How it may land</strong>As blame. "Always" tends to make people defensive instead of listening.</div>
               <div class="mc-versions">
@@ -236,7 +205,7 @@
           </div>
           <div class="core-visual" aria-hidden="true">
             <div class="vis-card">
-              <div class="demo-bar"><span class="demo-bar-title">Practicing with Alex</span><span class="chip">Avoidant · needs time to think</span></div>
+              <div class="demo-bar"><span class="demo-bar-title">Practicing with Alex <em class="demo-example">Example</em></span><span class="chip">Avoidant · needs time to think</span></div>
               <div class="mock-row user"><div class="bubble">I want to talk about how we split the housework. I'm feeling a bit overwhelmed.</div></div>
               <div class="mock-row ai"><div class="bubble">Okay… I thought things were fine? I do what I can, you know.</div></div>
               <div class="mock-row user"><div class="bubble">I know you do. I'm not saying you don't. I just need us to look at it together.</div></div>
@@ -263,11 +232,11 @@
           <p>Each one has a plan label, so you always know what is free and what comes with Pro or Premium.</p>
         </div>
 
-        <div class="more-grid">
+        <div class="more-grid" id="more-grid">
           <div class="more-card">
-            <div class="more-card-top"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span><span class="plan-tag tag-pro">Pro</span></div>
+            <div class="more-card-top"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span><span class="plan-tag tag-free">Free</span></div>
             <h3>After a fight</h3>
-            <p>Take a breath with a short calming guide, then get a message you can send to reach out. Premium adds a gentle check-in the next day. The calming guide is free.</p>
+            <p>Take a breath with a short calming guide, free for everyone. Pro adds a personal message you can send to reach out, and Premium adds a gentle check-in the next day.</p>
           </div>
           <div class="more-card">
             <div class="more-card-top"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9 8h7M9 12h5"/></svg></span><span class="plan-tag tag-free">Free</span></div>
@@ -310,6 +279,7 @@
             <p>A calm look back at your month, and a page that shows your year so far.</p>
           </div>
         </div>
+          <button type="button" class="more-toggle" id="more-toggle" aria-expanded="false">Show all 9 tools</button>
 
         <p class="more-also">
           <strong>Also included:</strong>
@@ -356,7 +326,7 @@
           <p>RelationshipAI isn't an AI best friend or a novelty companion app. It has one job: help you think more
             clearly about your relationship, and give you words that land better than the ones you'd have found
             on your own. No tricks to keep you chatting longer than you need to. Just a coach that's ready when you
-            are, built on methods real therapists use, and honest about where its job ends and a professional's begins.</p>
+            are, guided by methods used in real couples therapy, and honest about where its job ends and a professional's begins.</p>
           <p class="mission-signature">Built by Jonas, after one too many 11pm conversations that would've gone better with a clearer head.</p>
           <a href="method.html" class="btn btn-ghost btn-sm" style="margin-top:22px;">Read our method &amp; sources</a>
         </div>
@@ -388,10 +358,10 @@
             </thead>
             <tbody>
               <tr><td>Available 24/7</td><td class="compare-highlight yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
-              <tr><td>Remembers your relationship over time</td><td class="compare-highlight yes">Yes</td><td class="partial">Only if you set it up</td><td class="yes">Yes</td></tr>
+              <tr><td>Remembers your relationship over time</td><td class="compare-highlight yes">Yes</td><td class="partial">Depends on the app and settings</td><td class="yes">Yes</td></tr>
               <tr><td>Checks a message before you send it</td><td class="compare-highlight yes">Yes</td><td class="partial">Only if you ask</td><td class="no">No</td></tr>
               <tr><td>Lets you rehearse the actual conversation</td><td class="compare-highlight yes">Yes</td><td class="partial">Only if you prompt it</td><td class="no">No</td></tr>
-              <tr><td>Built on established coaching frameworks</td><td class="compare-highlight yes">Yes</td><td class="partial">Sometimes</td><td class="yes">Yes</td></tr>
+              <tr><td>Guided by well-known couples methods</td><td class="compare-highlight yes">Yes</td><td class="partial">Not by default</td><td class="yes">Yes</td></tr>
               <tr><td>Makes a summary you can give a therapist</td><td class="compare-highlight yes">Yes</td><td class="no">Not built in</td><td class="na">N/A</td></tr>
               <tr><td>Wait time to get support</td><td class="compare-highlight yes">None</td><td class="yes">None</td><td class="no">Days to weeks</td></tr>
               <tr><td>Cost</td><td class="compare-highlight yes">€0 to €19.99/mo</td><td class="partial">Free to €20/mo</td><td class="no">€50 to €150/session</td></tr>
@@ -436,14 +406,14 @@
               <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Advanced AI (our strongest model)</span></li>
               <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Unlimited Partner Practice</span></li>
               <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Weekly focus, ideas and insights</span></li>
-              <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Talk plan, monthly review and year so far</span></li>
+              <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Talk plan, monthly review and your year</span></li>
             </ul>
             <a href="register.html" class="btn btn-ghost btn-block" data-cta data-umami-event="plan-free">Start free</a>
           </div>
 
           <div class="price-card featured has-peek">
             <img class="peek peek-pro" src="img/peek-heart.svg" alt="" width="104" height="125" loading="lazy" />
-            <span class="price-badge">Most popular</span>
+            <span class="price-badge">Best value</span>
             <span class="price-persona">For ongoing support</span>
             <h3>Pro</h3>
             <div class="price-value"><span class="amt" data-monthly="€9.99" data-yearly="€5.83">€5.83</span> <span class="per">/ month</span></div>
@@ -546,11 +516,11 @@
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.5C.5 7.5 3 4 6.5 4c2 0 3.5 1.5 4.5 3 1-1.5 2.5-3 4.5-3C19 4 21.5 7.5 19.5 11.5 17 15.65 12 20 12 20z"/></svg></div>
-            <div><h3>Private by default</h3><p>Only you can see your conversations once you're logged into your account.</p></div>
+            <div><h3>Private by default</h3><p>Only you can see your conversations in your account. We don't read them as a routine.</p></div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div>
-            <div><h3>Never sold, never shared</h3><p>Your conversations aren't handed to advertisers or third parties. Full stop.</p></div>
+            <div><h3>Never sold, never used for ads</h3><p>We don't sell your conversations or use them for advertising. Our AI provider processes them only to write your replies.</p></div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
@@ -604,7 +574,7 @@
         <div class="faq">
           <details class="faq-item">
             <summary>What is RelationshipAI?</summary>
-            <p>It's a private AI relationship coach. You can talk things through in Coach Chat, check a message before you send it with Message check, and practice a hard conversation in Partner Practice. It's built on methods real therapists use, like the Gottman Method, attachment theory and Nonviolent Communication.</p>
+            <p>It's a private AI relationship coach. You can talk things through in Coach Chat, check a message before you send it with Message check, and practice a hard conversation in Partner Practice. It draws on methods used in real couples therapy, such as the Gottman Method, attachment theory and Nonviolent Communication. RelationshipAI is not affiliated with the Gottman Institute or any of these organizations.</p>
           </details>
           <details class="faq-item">
             <summary>Is RelationshipAI free?</summary>
@@ -648,7 +618,7 @@
           </details>
           <details class="faq-item">
             <summary>Are my conversations private?</summary>
-            <p>Yes. Only you can see your conversations when you're logged in, and we never share them with third parties. Texts you paste into Message check and After a fight are not stored.</p>
+            <p>Yes. Only you can see your conversations when you're logged in. We never sell them or use them for ads. To write your replies they are processed by our AI provider (OpenAI), which doesn't train its models on them under its API terms. Texts you paste into Message check and After a fight are not stored.</p>
           </details>
           <details class="faq-item">
             <summary>What happens when I reach a Free plan limit?</summary>
@@ -695,6 +665,6 @@
   <a href="register.html" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-floating">Get started free</a>
 
   <script src="js/shared.js?v=21"></script>
-  <script src="js/landing.js?v=11"></script>
+  <script src="js/landing.js?v=12"></script>
 </body>
 </html>
