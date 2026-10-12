@@ -189,9 +189,12 @@ function page({ title, description, canonical, type = "website", body, jsonld })
   <meta name="twitter:title" content="${esc(title)}" />
   <meta name="twitter:description" content="${esc(description)}" />
   <meta name="twitter:image" content="${SITE}/og-image.png" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-48.png?v=3" sizes="48x48" type="image/png" />
+  <link rel="icon" href="/favicon-32.png?v=3" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon-16.png?v=3" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
@@ -306,7 +309,7 @@ ${p.html}
         datePublished: p.date, dateModified: p.date, mainEntityOfPage: `${SITE}/blog/${p.slug}/`,
         image: `${SITE}/og-image.png`,
         author: { "@type": "Organization", name: CONFIG.siteName },
-        publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/apple-touch-icon.png` } },
+        publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
       },
     }));
   }
