@@ -254,6 +254,11 @@ async function startCheckout(plan, billing) {
       body: JSON.stringify({ plan, billing: billing === "yearly" ? "yearly" : "monthly" }),
     });
     const data = await safeJson(res);
+    if (!res.ok && data.usePortal) {
+      // Already subscribed: switch plans in place instead of starting a second subscription.
+      await changePlanInPlace(plan);
+      return;
+    }
     if (!res.ok || !data.url) {
       await showAppAlert(data.error || "Couldn't start checkout. Please try again.");
       return;
@@ -563,4 +568,28 @@ function renderPremiumLock(el, opts) {
       <button type="button" class="btn btn-gradient" id="lock-upgrade-btn">See Premium</button>
     </section>`;
   el.querySelector("#lock-upgrade-btn").addEventListener("click", () => startCheckout("premium"));
+}
+
+
+// Switch an active subscription to the other plan (Pro <-> Premium). Stripe
+// prorates: the difference for the rest of the period is charged or credited.
+async function changePlanInPlace(plan) {
+  const name = plan === "premium" ? "Premium" : "Pro";
+  const ok = await showAppConfirm(
+    `Switch your plan to ${name}? Stripe will charge or credit only the difference for the rest of your current billing period, using the card you already have on file.`,
+    { confirmLabel: `Switch to ${name}`, cancelLabel: "Not now" }
+  );
+  if (!ok) return;
+  try {
+    const res = await authFetch("/api/billing/change-plan", { method: "POST", body: JSON.stringify({ plan }) });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      await showAppAlert(data.error || "Couldn't change your plan.");
+      return;
+    }
+    window.location.href = "dashboard.html?upgraded=1";
+  } catch (err) {
+    console.error(err);
+    await showAppAlert("Couldn't connect to the server.");
+  }
 }

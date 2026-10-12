@@ -3042,6 +3042,52 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
   }
 });
 
+// Switch an existing paid subscription to the other paid plan (Pro <-> Premium)
+// in one step, prorated by Stripe: the difference for the rest of the current
+// billing period is charged (upgrade) or credited (downgrade). Keeps the
+// billing interval the person already has (monthly/yearly). The plan itself
+// still only changes from Stripe's confirmation (webhook), but we also set it
+// here so the app reflects it immediately.
+app.post("/api/billing/change-plan", authMiddleware, async (req, res) => {
+  if (!stripe) return res.status(503).json({ error: "Payments aren't set up on this server yet." });
+  try {
+    const { plan } = req.body || {};
+    const user = req.user;
+    if (!["pro", "premium"].includes(plan)) return res.status(400).json({ error: "That's not a valid paid plan." });
+    if (!user.stripeSubscriptionId || !["active", "trialing"].includes(user.subscriptionStatus)) {
+      return res.status(400).json({ error: "You don't have an active subscription to change." });
+    }
+    if (user.plan === plan) {
+      return res.status(400).json({ error: `You're already on ${planLabel(plan)}.` });
+    }
+
+    const sub = await stripe.subscriptions.retrieve(user.stripeSubscriptionId);
+    const item = sub.items?.data?.[0];
+    if (!item || !["active", "trialing"].includes(sub.status)) {
+      return res.status(400).json({ error: "Your subscription isn't active right now." });
+    }
+    const isYearly = Object.values(PLAN_TO_STRIPE_PRICE_YEARLY).includes(item.price?.id);
+    const targetPrice = (isYearly ? PLAN_TO_STRIPE_PRICE_YEARLY : PLAN_TO_STRIPE_PRICE)[plan];
+    if (!targetPrice) {
+      return res.status(400).json({ error: "That plan isn't available for your billing period yet." });
+    }
+
+    await stripe.subscriptions.update(sub.id, {
+      items: [{ id: item.id, price: targetPrice }],
+      proration_behavior: "create_prorations",
+      payment_behavior: "error_if_incomplete",
+      metadata: { userId: user.id, plan },
+    });
+
+    user.plan = plan;
+    saveUser(user);
+    res.json({ ok: true, plan });
+  } catch (err) {
+    console.error("Change plan error:", err.message);
+    res.status(500).json({ error: "Couldn't change your plan. Your card may have been declined; nothing was changed. You can also manage your subscription from your account page." });
+  }
+});
+
 app.post("/api/billing/portal", authMiddleware, async (req, res) => {
   if (!stripe) {
     return res.status(503).json({ error: "Payments aren't set up on this server yet." });
