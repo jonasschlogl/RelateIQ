@@ -43,6 +43,15 @@ import {
   getPushSubscriptionsForUser,
   getEmailJobs,
   setEmailJobField,
+  createExperiment,
+  getExperiment,
+  listExperimentsForUser,
+  getExperimentByMessage,
+  countActiveExperiments,
+  resolveExperiment,
+  deleteExperiment,
+  getDueExperimentReminders,
+  markExperimentReminded,
 } from "./lib/store.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
 import webpush from "web-push";
@@ -531,7 +540,21 @@ function buildInsightsContext(user) {
     .join("\n");
 }
 
-function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
+function buildPlaybookContext(userId) {
+  let rows = [];
+  try {
+    rows = listExperimentsForUser(userId).slice(0, 12);
+  } catch {
+    return "";
+  }
+  if (!rows.length) return "";
+  const label = { active: "still trying", worked: "worked", didnt_help: "didn't help", not_tried: "never got to it" };
+  return rows
+    .map((r) => `- "${String(r.text).slice(0, 160)}" — ${label[r.status] || r.status}${r.note ? ` (their note: ${String(r.note).slice(0, 120)})` : ""}`)
+    .join("\n");
+}
+
+function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookContext) {
   const styleKey = user?.attachmentStyle;
   const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
   const memory = (user?.relationshipMemory || "").trim();
@@ -553,6 +576,12 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext) {
 
   if (recentCheckinContext) {
     prompt += `\n\nThis user's own recent daily check-in answers — a short, optional prompt they answer on their own, outside any conversation with you, so this is real current signal about how things have actually been between visits:\n${recentCheckinContext}\nUse this the way a coach would remember what a client mentioned last session — to pick up a thread or notice things have changed — but only if it's actually relevant to what they're talking about now, and never quote an answer back verbatim or make them feel monitored.`;
+  }
+
+  prompt += `\n\nPLAYBOOK. RelationshipAI has a "Playbook" where the user can save one small real-life experiment from your advice, try it, and later record whether it helped. When — and only when — your reply gives the user ONE concrete, small thing to actually try within the next few days (a specific sentence to say, a question to ask, a pause to take, a boundary to state), end your reply with a final separate line in exactly this form:\n[[try: <that one action in a single short plain sentence, addressed to the user as "you", max 140 characters, in the same language as the rest of your reply>]]\nSkip the line for general reflection, validation, or when you're only asking a question. At most one per reply. Never mention or explain this line to the user — the app turns it into a button.`;
+
+  if (playbookContext) {
+    prompt += `\n\nThis user's Playbook (experiments they chose to try after earlier advice):\n${playbookContext}\nUse this like a coach who remembers: if an experiment is still active and it's relevant, ask lightly how it went; lean on what has worked for them, and don't suggest again something that didn't help. Don't recite the list back.`;
   }
 
   const partnerBlock = buildPartnerContextBlock(partner);
@@ -1763,6 +1792,147 @@ function computeCheckinStreak(checkins, userId) {
 }
 
 // ---------------------------------------------------------------------------
+// Playbook — small real-life experiments from Coach advice. The Coach ends a
+// reply with a [[try: ...]] line (stripped server-side, see the messages
+// route); the user taps "I'll try it", and a reminder two days later asks
+// how it went. Free: one experiment at a time and the last 7 days of
+// results; Pro+: any number at once and the full history; Premium also gets
+// an AI read of their whole playbook.
+// ---------------------------------------------------------------------------
+
+const PLAYBOOK_REMIND_AFTER_MS = 2 * 24 * 60 * 60 * 1000;
+const PLAYBOOK_LIMITS = {
+  free: { maxActive: 1, historyDays: 7 },
+  pro: { maxActive: 50, historyDays: null },
+  premium: { maxActive: 50, historyDays: null },
+};
+function playbookLimitsFor(user) {
+  return PLAYBOOK_LIMITS[user.plan] || PLAYBOOK_LIMITS.free;
+}
+function publicExperiment(r) {
+  return {
+    id: r.id,
+    text: r.text,
+    status: r.status,
+    note: r.note || null,
+    conversationId: r.conversationId || null,
+    createdAt: r.createdAt,
+    resolvedAt: r.resolvedAt || null,
+  };
+}
+
+app.get("/api/playbook", authMiddleware, (req, res) => {
+  const limits = playbookLimitsFor(req.user);
+  const all = listExperimentsForUser(req.user.id);
+  const cutoff = limits.historyDays ? Date.now() - limits.historyDays * 86400000 : null;
+  const active = all.filter((r) => r.status === "active").map(publicExperiment);
+  const resolved = all.filter((r) => r.status !== "active");
+  const visible = resolved.filter((r) => !cutoff || new Date(r.resolvedAt || r.createdAt).getTime() >= cutoff);
+  res.json({
+    plan: req.user.plan,
+    maxActive: limits.maxActive,
+    historyDays: limits.historyDays,
+    active,
+    worked: visible.filter((r) => r.status === "worked").map(publicExperiment),
+    didntHelp: visible.filter((r) => r.status === "didnt_help").map(publicExperiment),
+    notTried: visible.filter((r) => r.status === "not_tried").map(publicExperiment),
+    hiddenCount: resolved.length - visible.length,
+    totalResolved: resolved.length,
+  });
+});
+
+app.post("/api/playbook", authMiddleware, (req, res) => {
+  try {
+    const { text, conversationId, messageId } = req.body || {};
+    const clean = String(text || "").replace(/\s+/g, " ").trim().slice(0, 200);
+    if (clean.length < 3) return res.status(400).json({ error: "Write what you want to try first." });
+
+    const existing = getExperimentByMessage(req.user.id, messageId ? String(messageId) : null);
+    if (existing) return res.json({ experiment: publicExperiment(existing), already: true });
+
+    const limits = playbookLimitsFor(req.user);
+    if (countActiveExperiments(req.user.id) >= limits.maxActive) {
+      return res.status(403).json({
+        error:
+          req.user.plan === "free"
+            ? "You're already trying one thing. Finish it first, or upgrade to Pro to try several at once."
+            : "You have a lot of experiments running. Finish a few first.",
+        upgrade: req.user.plan === "free",
+      });
+    }
+
+    const now = new Date();
+    const row = createExperiment({
+      id: generateId("exp"),
+      userId: req.user.id,
+      text: clean,
+      conversationId: conversationId ? String(conversationId) : null,
+      messageId: messageId ? String(messageId) : null,
+      createdAt: now.toISOString(),
+      remindAt: new Date(now.getTime() + PLAYBOOK_REMIND_AFTER_MS).toISOString(),
+    });
+    res.json({ experiment: publicExperiment(row) });
+  } catch (err) {
+    console.error("Create experiment error:", err);
+    res.status(500).json({ error: "Couldn't save that. Please try again." });
+  }
+});
+
+app.post("/api/playbook/:id/result", authMiddleware, (req, res) => {
+  const row = getExperiment(req.params.id);
+  if (!row || row.userId !== req.user.id) return res.status(404).json({ error: "Not found." });
+  const { result, note } = req.body || {};
+  if (!["worked", "didnt_help", "not_tried"].includes(result)) {
+    return res.status(400).json({ error: "Pick how it went." });
+  }
+  const saved = resolveExperiment(row.id, result, String(note || "").trim().slice(0, 500), new Date().toISOString());
+  res.json({ experiment: publicExperiment(saved) });
+});
+
+app.delete("/api/playbook/:id", authMiddleware, (req, res) => {
+  const row = getExperiment(req.params.id);
+  if (!row || row.userId !== req.user.id) return res.status(404).json({ error: "Not found." });
+  deleteExperiment(row.id);
+  res.json({ ok: true });
+});
+
+// Premium: an AI read of the whole playbook — what keeps working, what
+// doesn't, and what to try next. Needs a few finished experiments first.
+app.post("/api/playbook/summary", authMiddleware, async (req, res) => {
+  if (req.user.plan !== "premium") {
+    return res.status(403).json({ error: "The playbook analysis is part of Premium.", upgrade: true });
+  }
+  if (isOverDailyLimit(req.user, res)) return;
+  const done = listExperimentsForUser(req.user.id).filter((r) => r.status !== "active");
+  if (done.length < 3) {
+    return res.status(400).json({ error: "Finish at least 3 experiments first, then I can spot what works for you." });
+  }
+  try {
+    const lines = done
+      .slice(0, 40)
+      .map((r) => `- "${r.text}" → ${r.status}${r.note ? ` (note: ${r.note})` : ""} [${(r.createdAt || "").slice(0, 10)}]`)
+      .join("\n");
+    const completion = await openai.chat.completions.create({
+      model: modelForPlan(req.user.plan),
+      temperature: 0.5,
+      messages: [
+        {
+          role: "system",
+          content:
+            "You read a person's relationship 'playbook': small real-life experiments they tried, each marked worked / didnt_help / not_tried. Write in plain, warm, simple English (or the language of their notes if clearly different), max 120 words, no headings, no bullet points beyond 3 short lines. Say: what tends to work for them, what doesn't, anything they keep not getting to, and ONE next thing to try. Be specific to the list, never generic, never diagnose.",
+        },
+        { role: "user", content: lines },
+      ],
+    });
+    bumpUsage(req.user);
+    res.json({ summary: completion.choices[0]?.message?.content?.trim() || "" });
+  } catch (err) {
+    console.error("Playbook summary error:", err.message);
+    res.status(500).json({ error: "Couldn't read your playbook right now. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // Email unsubscribe links — a signed, scoped token (not a login token) so
 // clicking it from an inbox can flip one preference off without a session.
 // ---------------------------------------------------------------------------
@@ -2093,6 +2263,7 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
     relationshipMemory: user.relationshipMemory || null,
     relationshipMemoryUpdatedAt: user.relationshipMemoryAt || null,
     partnerProfiles,
+    playbook: listExperimentsForUser(user.id).map(publicExperiment),
     conversations,
   };
 
@@ -2796,7 +2967,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         intensity: conv.intensity,
         roleSwap: conv.practiceRoleSwap,
       })
-    : buildCoachSystemPrompt(user, taggedPartner, recentCheckinContext);
+    : buildCoachSystemPrompt(user, taggedPartner, recentCheckinContext, buildPlaybookContext(user.id));
 
   // Only the very first message of a conversation gets a generated title —
   // conv.messages here still reflects the state as of the START of this
@@ -2844,7 +3015,21 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         : Promise.resolve(null),
     ]);
 
-    const reply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
+    const rawReply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
+    // Coach only: the model may end its reply with a [[try: ...]] line (see
+    // the PLAYBOOK paragraph in buildCoachSystemPrompt). It never reaches
+    // the user as text — it becomes a "Try this" card instead.
+    let reply = rawReply;
+    let suggestion = null;
+    {
+      const TRY_RE = /\[\[\s*try:\s*([\s\S]*?)\s*\]\]/gi;
+      const found = [...rawReply.matchAll(TRY_RE)];
+      reply = rawReply.replace(TRY_RE, "").replace(/\n{3,}/g, "\n\n").trim() || rawReply;
+      if (!isPractice && found.length) {
+        const t = found[0][1].replace(/\s+/g, " ").trim().slice(0, 200);
+        if (t.length >= 6) suggestion = t;
+      }
+    }
 
     let title = conv.title;
     if (needsGeneratedTitle) {
@@ -2864,6 +3049,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     }
 
     const assistantMessage = { id: generateId("msg"), role: "assistant", content: reply, at: new Date().toISOString() };
+    if (suggestion) assistantMessage.suggestion = suggestion;
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
     bumpUsage(user);
@@ -2871,6 +3057,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     res.json({
       reply,
       messageId: assistantMessage.id,
+      suggestion,
       userMessageId: userMessage.id,
       title,
       mode: conv.mode,
@@ -4081,7 +4268,50 @@ async function runWeeklyInsightsDigest() {
   }
 }
 
+// Playbook follow-up: two days after someone starts an experiment, ask how
+// it went (email unless they opted out of reminders, plus push). Idempotent
+// per experiment via remindedAt, so the 15-minute tick can't double-send.
+// Only between 08:00 and 20:00 UTC so nobody gets pinged at 3am.
+async function runExperimentReminders() {
+  const hour = new Date().getUTCHours();
+  if (hour < 8 || hour >= 20) return;
+  const due = getDueExperimentReminders(new Date().toISOString());
+  if (!due.length) return;
+  const byUser = new Map();
+  for (const r of due) {
+    if (!byUser.has(r.userId)) byUser.set(r.userId, []);
+    byUser.get(r.userId).push(r);
+  }
+  for (const [userId, rows] of byUser) {
+    const now = new Date().toISOString();
+    rows.forEach((r) => markExperimentReminded(r.id, now));
+    const user = getUserById(userId);
+    if (!user) continue;
+    const first = rows[0].text;
+    const more = rows.length > 1 ? ` (+${rows.length - 1} more)` : "";
+    try {
+      if (user.email && user.emailCheckinReminders !== false) {
+        const html = emailShell({
+          unsubscribeUrl: unsubscribeLink(user, "checkin"),
+          bodyHtml: `
+            <p>Hey ${escapeForEmail(user.name)},</p>
+            <p>A couple of days ago you decided to try this:</p>
+            <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(first)}"${escapeForEmail(more)}</p>
+            <p>How did it go? It takes ten seconds to tell me.</p>
+            <p><a href="${APP_URL}/playbook.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Tell me how it went →</a></p>
+          `,
+        });
+        await sendEmail({ to: user.email, subject: "How did it go?", html });
+      }
+      await sendPushToUser(user.id, { title: "How did it go?", body: first, url: "/playbook.html" });
+    } catch (err) {
+      console.error("Experiment reminder failed:", err.message);
+    }
+  }
+}
+
 function emailJobsDueCheck() {
+  runExperimentReminders().catch((err) => console.error("Experiment reminder job failed:", err));
   const emailJobs = getEmailJobs();
   const now = new Date();
   const today = todayKey();

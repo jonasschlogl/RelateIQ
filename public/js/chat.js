@@ -1695,7 +1695,7 @@ async function openConversation(id, preloadedConv) {
       return;
     }
 
-    conv.messages.forEach((msg) => appendMessage(msg.role, msg.content, false, currentConvCtx, msg.attachments, msg.id, msg.feedback));
+    conv.messages.forEach((msg) => appendMessage(msg.role, msg.content, false, currentConvCtx, msg.attachments, msg.id, msg.feedback, msg.suggestion));
     chatDiv.scrollTop = chatDiv.scrollHeight;
     refreshEditAffordance();
   } catch (err) {
@@ -1879,7 +1879,69 @@ function buildCopyDraftRow(drafts) {
   return row;
 }
 
-function appendMessage(role, text, animate, ctx, attachments, messageId, feedback) {
+// "Try this" card under a Coach reply (Playbook). One tap saves it as an
+// experiment; the Playbook page asks how it went later. "Not now" just hides
+// the card for this view — nothing is stored.
+function buildTryCard(text, messageId) {
+  const card = document.createElement("div");
+  card.className = "try-card";
+  const bookIcon = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>';
+  card.innerHTML = `<div class="try-card-label">${bookIcon} Try this</div><p class="try-card-text"></p><div class="try-card-actions"></div>`;
+  card.querySelector(".try-card-text").textContent = text;
+  const actions = card.querySelector(".try-card-actions");
+
+  const yes = document.createElement("button");
+  yes.type = "button";
+  yes.className = "btn btn-primary btn-sm";
+  yes.textContent = "I'll try it";
+  const no = document.createElement("button");
+  no.type = "button";
+  no.className = "btn btn-ghost btn-sm";
+  no.textContent = "Not now";
+  actions.append(yes, no);
+
+  no.addEventListener("click", () => card.remove());
+  yes.addEventListener("click", async () => {
+    yes.disabled = true;
+    card.querySelector(".try-card-err")?.remove();
+    try {
+      const res = await authFetch("/api/playbook", {
+        method: "POST",
+        body: JSON.stringify({ text, messageId, conversationId: currentConversationId }),
+      });
+      const data = await safeJson(res);
+      if (!res.ok) {
+        yes.disabled = false;
+        const err = document.createElement("div");
+        err.className = "try-card-err";
+        err.textContent = data.error || "Couldn't save that.";
+        if (data.upgrade) {
+          const a = document.createElement("a");
+          a.href = "#";
+          a.textContent = " Upgrade to Pro";
+          a.style.color = "var(--accent-1)";
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            startCheckout("pro");
+          });
+          err.appendChild(a);
+        }
+        card.appendChild(err);
+        return;
+      }
+      actions.innerHTML = '<span class="try-card-saved">Saved to your Playbook. We\'ll ask how it went in a couple of days. <a href="playbook.html">Open Playbook</a></span>';
+    } catch (e) {
+      yes.disabled = false;
+      const err = document.createElement("div");
+      err.className = "try-card-err";
+      err.textContent = "Couldn't connect to the server.";
+      card.appendChild(err);
+    }
+  });
+  return card;
+}
+
+function appendMessage(role, text, animate, ctx, attachments, messageId, feedback, suggestion) {
   const chatDiv = document.getElementById("chat");
   document.getElementById("empty-state")?.remove();
 
@@ -1933,6 +1995,12 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
   // the server has actually assigned this message an id (older messages
   // saved before this feature existed, and the transient "thinking…"
   // placeholder, have none).
+  // Playbook: if the Coach ended its reply with one small thing to try, show
+  // it as a card the user can save with one tap (see buildTryCard).
+  if (!isUser && !isPractice && messageId && suggestion) {
+    bubble.appendChild(buildTryCard(suggestion, messageId));
+  }
+
   if (!isUser && !isPractice && messageId) {
     bubble.appendChild(buildFeedbackButtons(currentConversationId, messageId, feedback || null));
   }
@@ -2498,7 +2566,7 @@ async function sendMessage() {
     }
 
     thinkingBubble.closest(".message-row")?.remove();
-    appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId);
+    appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId, null, data.suggestion);
     appendSafetyNotice(data.safety);
     refreshEditAffordance();
 
