@@ -44,6 +44,11 @@ async function loadSummary(regenerate) {
     const data = await safeJson(res);
 
     if (!res.ok || !data.summary) {
+      if (data.exportLimitReached) {
+        showError(data.error);
+        await showExportUpgradeModal();
+        return;
+      }
       showError(data.error || "Couldn't generate a summary right now.");
       return;
     }
@@ -125,4 +130,15 @@ function renderSummaryBody(text) {
       return html;
     })
     .join("");
+}
+
+// Free plan: one therapist export in total. Used here (the summary page) and
+// by the chat's "Export for therapist" button.
+async function showExportUpgradeModal() {
+  await new Promise((r) => setTimeout(r, 150));
+  const go = await showAppConfirm(
+    "You've used your 1 free therapist summary export. You can still open the one you made. Pro gives you unlimited exports, unlimited Practice and no daily message limit.",
+    { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+  );
+  if (go) startCheckout("pro");
 }

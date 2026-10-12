@@ -1,4 +1,5 @@
 let currentConversationId = null;
+const exportedConversationIds = new Set(); // conversations opened for export this session
 let conversations = [];
 let partners = [];
 let currentMode = "coach"; // 'coach' | 'practice' — mirrors the mode of whatever is on screen
@@ -138,9 +139,36 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (event.key === "Escape") closeSidebarDrawer();
   });
   document.getElementById("debrief-btn")?.addEventListener("click", requestPracticeDebrief);
-  document.getElementById("export-summary-btn")?.addEventListener("click", () => {
+  document.getElementById("export-summary-btn")?.addEventListener("click", async () => {
     if (!currentConversationId) return;
-    window.open("summary.html?id=" + encodeURIComponent(currentConversationId), "_blank");
+    // Free plan: 1 export in total. Check with the server first so the
+    // upgrade dialog opens right here instead of in an empty new tab. A
+    // conversation that already has its summary can always be reopened.
+    const convId = currentConversationId;
+    try {
+      const meRes = await authFetch("/api/me");
+      if (meRes.ok) {
+        const me = await safeJson(meRes);
+        const ex = me && me.exportSummaries;
+        if (ex && ex.used >= ex.limit && !exportedConversationIds.has(convId)) {
+          const convRes = await authFetch("/api/conversations/" + encodeURIComponent(convId));
+          const conv = convRes.ok ? await safeJson(convRes) : null;
+          if (!(conv && conv.therapistSummary)) {
+            await new Promise((r) => setTimeout(r, 150));
+            const go = await showAppConfirm(
+              "You've used your 1 free therapist summary export. Pro gives you unlimited exports, unlimited Practice and no daily message limit.",
+              { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+            );
+            if (go) startCheckout("pro");
+            return;
+          }
+        }
+      }
+    } catch (err) {
+      // fall through: the summary page and server enforce the limit anyway
+    }
+    exportedConversationIds.add(convId);
+    window.open("summary.html?id=" + encodeURIComponent(convId), "_blank");
   });
   document.getElementById("share-conversation-btn")?.addEventListener("click", openShareModal);
   document.getElementById("attach-btn")?.addEventListener("click", () => document.getElementById("file-input")?.click());

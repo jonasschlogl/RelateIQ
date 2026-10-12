@@ -257,6 +257,7 @@ function isEmailVerificationEnforced() {
 // convert.
 const FREE_LIFETIME_ATTACHMENT_LIMIT = 3; // files/photos a Free account can ever attach, combined across all conversations
 const FREE_PRACTICE_MAX_USER_MESSAGES = 8; // user messages in a Free account's one rehearsal; then it closes
+const FREE_LIFETIME_EXPORT_LIMIT = 1; // therapist-summary exports a Free account can generate in total
 const FREE_LIFETIME_PRACTICE_CONVERSATIONS = 1; // Partner Practice rehearsals a Free account can start
 
 // Partner profiles (Practice mode) allowed per plan — omit a plan here (e.g.
@@ -1572,6 +1573,8 @@ function publicUser(user) {
     attachments: user.plan === "free" ? { used: user.lifetimeAttachmentCount || 0, limit: FREE_LIFETIME_ATTACHMENT_LIMIT } : null,
     practiceConversations:
       user.plan === "free" ? { used: user.lifetimePracticeConversations || 0, limit: FREE_LIFETIME_PRACTICE_CONVERSATIONS } : null,
+    exportSummaries:
+      user.plan === "free" ? { used: listDocs(user.id, "export").length, limit: FREE_LIFETIME_EXPORT_LIMIT } : null,
     emailVerified: !!user.emailVerifiedAt,
     // True only when the server will actually block unverified accounts, so
     // the client only nags about verification when it matters.
@@ -1651,6 +1654,16 @@ function adminMiddleware(req, res, next) {
     return res.status(403).json({ error: "Not authorized." });
   }
   next();
+}
+
+// Free plan: how many therapist-summary exports this account has used in
+// total. A marker doc is written per export (so deleting the conversation
+// doesn't give the export back); summaries generated before markers existed
+// still count via the conversations themselves.
+function freeExportsUsed(db, userId) {
+  const markers = listDocs(userId, "export").length;
+  const legacy = (db.conversations || []).filter((c) => c.userId === userId && c.therapistSummary).length;
+  return Math.max(markers, legacy);
 }
 
 // Shared free-tier gate for every endpoint that makes an OpenAI call.
@@ -3844,6 +3857,13 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
     }
 
     const user = db.users.find((u) => u.id === req.user.id);
+    if (user.plan === "free" && freeExportsUsed(db, user.id) >= FREE_LIFETIME_EXPORT_LIMIT) {
+      return res.status(403).json({
+        error: `The Free plan includes ${FREE_LIFETIME_EXPORT_LIMIT} therapist summary export. Upgrade to Pro for unlimited exports.`,
+        exportLimitReached: true,
+        upgradeRequired: true,
+      });
+    }
     if (isOverDailyLimit(user, res)) return;
 
     const transcript = buildConversationTranscript(conv);
@@ -3862,6 +3882,9 @@ app.post("/api/conversations/:id/summary", authMiddleware, async (req, res) => {
     conv.therapistSummary = summary;
     conv.therapistSummaryAt = generatedAt;
     saveConversation(conv);
+    if (user.plan === "free") {
+      saveDoc({ id: generateId("doc"), userId: user.id, kind: "export", key: conv.id, title: conv.title || "", data: {} });
+    }
     bumpUsage(user);
 
     res.json({ summary, generatedAt, conversationTitle: conv.title, cached: false, usage: user.usage });
