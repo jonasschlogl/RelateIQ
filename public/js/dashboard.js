@@ -144,9 +144,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       const box = document.getElementById("strong-usage-box");
       box.style.display = "flex";
       box.title = "Once these are used up, replies switch to our fast model until the 1st — nothing is blocked.";
-      document.getElementById("strong-usage-label").textContent =
-        me.plan === "pro" ? "Advanced-model Practice messages this month" : "Advanced-model messages this month";
-      document.getElementById("strong-usage-count").textContent = `${me.strongModelUsage.used} / ${me.strongModelUsage.limit}`;
+      const s = me.strongModelUsage;
+      if (me.plan === "pro" && me.coachStrongUsage) {
+        document.getElementById("strong-usage-label").textContent = "Advanced messages this month (Practice · Coach)";
+        document.getElementById("strong-usage-count").textContent = `${s.used}/${s.limit} · ${me.coachStrongUsage.used}/${me.coachStrongUsage.limit}`;
+      } else {
+        document.getElementById("strong-usage-label").textContent = "Advanced-model messages this month";
+        document.getElementById("strong-usage-count").textContent = `${s.used} / ${s.limit}`;
+      }
     }
     renderVerifyBanner(me);
 

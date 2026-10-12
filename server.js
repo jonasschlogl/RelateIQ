@@ -21,6 +21,7 @@ import {
   incrementUserUsage,
   incrementUserMonthlyUsage,
   incrementUserPremiumUsage,
+  incrementUserCoachStrongUsage,
   setConversationQuality,
   backupDatabaseTo,
   getDatabaseFilePath,
@@ -344,6 +345,12 @@ const PREMIUM_MODEL_BUDGET = {
   pro: Number(process.env.PRO_STRONG_MODEL_BUDGET) || 150, // Partner Practice only
   premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 300,
 };
+// Pro only: a small separate allowance of strong-model Coach Chat messages
+// (a taste of Premium; Practice has its own, bigger budget above).
+const PRO_COACH_STRONG_BUDGET = Number(process.env.PRO_COACH_STRONG_BUDGET) || 30;
+function coachStrongUsed(user) {
+  return user.usageCoachStrong && user.usageCoachStrong.month === monthKey() ? user.usageCoachStrong.count : 0;
+}
 function strongModelUsed(user) {
   return user.usagePremium && user.usagePremium.month === monthKey() ? user.usagePremium.count : 0;
 }
@@ -356,15 +363,17 @@ function strongModelFor(user) {
 }
 // Coach / Message check / After a fight / ideas: strong model is a Premium perk.
 function budgetedModelForPlan(user) {
-  return user.plan === "premium" ? strongModelFor(user) : STANDARD_MODEL;
+  if (user.plan === "premium") return strongModelFor(user);
+  if (user.plan === "pro") return coachStrongUsed(user) < PRO_COACH_STRONG_BUDGET ? PREMIUM_MODEL : STANDARD_MODEL;
+  return STANDARD_MODEL;
 }
 function budgetedModelForPractice(user) {
   return user.plan === "free" ? STANDARD_MODEL : strongModelFor(user);
 }
-// Who may pick "Advanced" for a chat: Premium everywhere, Pro in Partner
-// Practice only (that's where Pro's strong-model budget applies).
-function canChooseAdvanced(user, mode) {
-  return user.plan === "premium" || (user.plan === "pro" && mode === "practice");
+// Who may pick "Advanced" for a chat: every paid plan (each with its own
+// monthly budget; Free is always Fast).
+function canChooseAdvanced(user) {
+  return user.plan === "premium" || user.plan === "pro";
 }
 // The model for one chat reply: the user's per-chat choice ("fast" always
 // wins; "advanced"/unset = the strong model while there's budget left).
@@ -1633,6 +1642,7 @@ function publicUser(user) {
     // Monthly budget of messages on the strong model (null on Free).
     strongModelUsage:
       user.plan === "free" ? null : { used: strongModelUsed(user), limit: strongModelBudgetFor(user.plan) },
+    coachStrongUsage: user.plan === "pro" ? { used: coachStrongUsed(user), limit: PRO_COACH_STRONG_BUDGET } : null,
     isAdmin: (process.env.ADMIN_EMAILS || "")
       .split(",")
       .map((e) => e.trim().toLowerCase())
@@ -1774,7 +1784,7 @@ function bumpFreeUsage(user) {
 
 // One call after every successful AI call, whatever the plan: Free counts
 // against the daily pool, Pro/Premium against their monthly fair-use cap.
-function bumpUsage(user, model) {
+function bumpUsage(user, model, opts = {}) {
   if (user.plan === "free") return bumpFreeUsage(user);
   const month = monthKey();
   incrementUserMonthlyUsage(user.id, month);
@@ -1782,8 +1792,13 @@ function bumpUsage(user, model) {
   user.usageMonthly = { month, count: prev + 1 };
   // Calls that ran on the strong model also draw down its monthly budget.
   if (model === PREMIUM_MODEL) {
-    incrementUserPremiumUsage(user.id, month);
-    user.usagePremium = { month, count: strongModelUsed(user) + 1 };
+    if (opts.coachPool) {
+      incrementUserCoachStrongUsage(user.id, month);
+      user.usageCoachStrong = { month, count: coachStrongUsed(user) + 1 };
+    } else {
+      incrementUserPremiumUsage(user.id, month);
+      user.usagePremium = { month, count: strongModelUsed(user) + 1 };
+    }
   }
 }
 
@@ -4122,7 +4137,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   // Per-chat answer quality picked in the composer ("fast" | "advanced").
   // "advanced" is only honoured where the plan allows it, else it's Fast.
   if (wantedQuality === "fast" || wantedQuality === "advanced") {
-    const q = wantedQuality === "advanced" && !canChooseAdvanced(user, conv.mode || "coach") ? "fast" : wantedQuality;
+    const q = wantedQuality === "advanced" && !canChooseAdvanced(user) ? "fast" : wantedQuality;
     if ((conv.quality || null) !== q) {
       conv.quality = q;
       setConversationQuality(conv.id, q);
@@ -4320,7 +4335,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     if (suggestion) assistantMessage.suggestion = suggestion;
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
-    if (!freePractice) bumpUsage(user, chatModel);
+    if (!freePractice) bumpUsage(user, chatModel, { coachPool: user.plan === "pro" && !isPractice });
 
     const practiceUserCount = freePractice ? (conv.messages || []).filter((m) => m.role === "user").length + 1 : null;
     res.json({
@@ -4328,6 +4343,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       // once the monthly strong-model budget is used up) + the fresh meter.
       quality: chatModel === PREMIUM_MODEL ? "advanced" : "fast",
       strongModelUsage: user.plan === "free" ? null : { used: strongModelUsed(user), limit: strongModelBudgetFor(user.plan) },
+      coachStrongUsage: user.plan === "pro" ? { used: coachStrongUsed(user), limit: PRO_COACH_STRONG_BUDGET } : null,
       practice: freePractice
         ? { used: practiceUserCount, limit: FREE_PRACTICE_MAX_USER_MESSAGES, closed: practiceUserCount >= FREE_PRACTICE_MAX_USER_MESSAGES }
         : null,

@@ -279,7 +279,15 @@ let currentQuality = "advanced"; // the user's pick for the chat on screen
 function canChooseAdvancedHere() {
   const u = getUser();
   if (!u) return false;
-  return u.plan === "premium" || (u.plan === "pro" && currentConvCtx.mode === "practice");
+  return u.plan === "premium" || u.plan === "pro";
+}
+
+// The meter that applies to the chat on screen: Pro has a separate small
+// allowance for Coach Chat; everything else uses the main strong-model budget.
+function activeStrongUsage(u) {
+  if (!u) return null;
+  if (u.plan === "pro" && currentConvCtx.mode !== "practice") return u.coachStrongUsage || null;
+  return u.strongModelUsage || null;
 }
 
 // What will actually be sent for this chat.
@@ -303,11 +311,11 @@ function applyQualityUI() {
 
   const note = document.getElementById("quality-note");
   if (!note) return;
-  const s = u && u.strongModelUsage;
+  const s = activeStrongUsage(u);
   const left = s ? Math.max(0, s.limit - s.used) : null;
   let text = "";
   if (!canAdv) {
-    text = u && u.plan === "pro" ? "Advanced Coach Chat is part of Premium" : u && u.plan === "free" ? "Advanced is part of the paid plans" : "";
+    text = u && u.plan === "free" ? "Advanced is part of the paid plans" : "";
   } else if (eff === "advanced") {
     text = left === null ? "" : left > 0 ? `${left} advanced message${left === 1 ? "" : "s"} left this month` : "Advanced messages used up: replies use Fast until the 1st";
   } else {
@@ -319,16 +327,12 @@ function applyQualityUI() {
 
 async function onQualityClick(q) {
   if (q === "advanced" && !canChooseAdvancedHere()) {
-    const u = getUser();
-    const needPremium = currentConvCtx.mode !== "practice";
     await new Promise((r) => setTimeout(r, 150));
     const go = await showAppConfirm(
-      needPremium
-        ? "Advanced answers in Coach Chat use our most capable AI model. They are part of Premium, which also adds the monthly review, Talk plan, tailored Message check and more."
-        : "Advanced answers in Partner Practice use our stronger AI model, so rehearsals feel more like the real person. They are part of Pro.",
-      { confirmLabel: needPremium ? "Upgrade to Premium" : "Upgrade to Pro", cancelLabel: "Not now" }
+      "Advanced answers use our most capable AI model, for deeper and more nuanced replies. Pro includes some every month, and Premium includes more, plus the deeper tools.",
+      { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
     );
-    if (go) startCheckout(needPremium ? "premium" : "pro");
+    if (go) startCheckout("pro");
     return;
   }
   currentQuality = q;
@@ -2880,6 +2884,7 @@ async function sendMessage() {
       const cu = getUser();
       if (cu) {
         cu.strongModelUsage = data.strongModelUsage;
+        if (data.coachStrongUsage) cu.coachStrongUsage = data.coachStrongUsage;
         setSession(getToken(), cu);
       }
     }
