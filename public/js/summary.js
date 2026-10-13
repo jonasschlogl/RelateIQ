@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("regenerate-btn")?.addEventListener("click", () => loadSummary(true));
 
   if (!summaryConvId) {
-    showError("No conversation was specified. Go back to chat and use “Export for therapist” from an open conversation.");
+    showError("No conversation was specified. Go back to chat and use “Therapist summary” from an open conversation.");
     return;
   }
 
@@ -133,7 +133,7 @@ function renderSummaryBody(text) {
 }
 
 // Free plan: one therapist export in total. Used here (the summary page) and
-// by the chat's "Export for therapist" button.
+// by the chat's "Therapist summary" button.
 async function showExportUpgradeModal() {
   await new Promise((r) => setTimeout(r, 150));
   const go = await showAppConfirm(

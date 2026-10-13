@@ -48,7 +48,7 @@ const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
-  staticPages: ["", "method.html", "privacy.html"],
+  staticPages: ["", "method.html", "privacy.html", "terms.html"],
   cssVersion: "23",
   jsVersion: "19",
 };
@@ -67,6 +67,7 @@ const EN = {
   disclaimer:
     "RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic care. If you're in a crisis, please contact a professional or a helpline in your country.",
   privacy: "Privacy",
+  terms: "Terms",
   blogTitle: "Relationship Advice & Tips from an AI Coach | RelationshipAI Blog",
   blogDesc:
     "Practical relationship advice: how to communicate better, fix relationship problems and have the hard conversations. Inspired by the Gottman Method, attachment theory and Nonviolent Communication.",
@@ -331,7 +332,7 @@ function footerHtml(ctx) {
     <p class="footer-disclaimer">
       ${T(EN.disclaimer)}
     </p>
-    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="${prefix}/blog/">${T(EN.blog)}</a> · <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a> · <a href="/privacy.html">${T(EN.privacy)}</a></p>
+    <p class="footer-copy">© ${new Date().getUTCFullYear()} ${CONFIG.siteName} · <a href="${prefix}/blog/">${T(EN.blog)}</a> · <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a> · <a href="/privacy.html">${T(EN.privacy)}</a> · <a href="/terms.html">${T(EN.terms)}</a></p>
   </footer>
   <a href="#" class="floating-cta" id="floating-cta" data-cta data-umami-event="cta-blog-floating">${T(EN.cta)}</a>`;
 }
@@ -374,7 +375,7 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=51" />
+  <link rel="stylesheet" href="/css/style.css?v=67" />
   <link rel="stylesheet" href="/css/landing.css?v=${CONFIG.cssVersion}" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
