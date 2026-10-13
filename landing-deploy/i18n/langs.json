@@ -1,0 +1,17 @@
+[
+  { "code": "sv", "htmlLang": "sv", "hreflang": "sv", "name": "Svenska",    "short": "SV", "locale": "sv-SE" },
+  { "code": "no", "htmlLang": "nb", "hreflang": "no", "name": "Norsk",      "short": "NO", "locale": "nb-NO" },
+  { "code": "da", "htmlLang": "da", "hreflang": "da", "name": "Dansk",      "short": "DA", "locale": "da-DK" },
+  { "code": "fi", "htmlLang": "fi", "hreflang": "fi", "name": "Suomi",      "short": "FI", "locale": "fi-FI" },
+  { "code": "de", "htmlLang": "de", "hreflang": "de", "name": "Deutsch",    "short": "DE", "locale": "de-DE" },
+  { "code": "fr", "htmlLang": "fr", "hreflang": "fr", "name": "Français",   "short": "FR", "locale": "fr-FR" },
+  { "code": "es", "htmlLang": "es", "hreflang": "es", "name": "Español",    "short": "ES", "locale": "es-ES" },
+  { "code": "it", "htmlLang": "it", "hreflang": "it", "name": "Italiano",   "short": "IT", "locale": "it-IT" },
+  { "code": "pt", "htmlLang": "pt", "hreflang": "pt", "name": "Português",  "short": "PT", "locale": "pt-PT" },
+  { "code": "nl", "htmlLang": "nl", "hreflang": "nl", "name": "Nederlands", "short": "NL", "locale": "nl-NL" },
+  { "code": "pl", "htmlLang": "pl", "hreflang": "pl", "name": "Polski",     "short": "PL", "locale": "pl-PL" },
+  { "code": "cs", "htmlLang": "cs", "hreflang": "cs", "name": "Čeština",    "short": "CS", "locale": "cs-CZ" },
+  { "code": "sk", "htmlLang": "sk", "hreflang": "sk", "name": "Slovenčina", "short": "SK", "locale": "sk-SK" },
+  { "code": "ro", "htmlLang": "ro", "hreflang": "ro", "name": "Română",     "short": "RO", "locale": "ro-RO" },
+  { "code": "hu", "htmlLang": "hu", "hreflang": "hu", "name": "Magyar",     "short": "HU", "locale": "hu-HU" }
+]

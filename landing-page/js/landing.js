@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSignup();
   initMobileLayout();
   initMobileLayout2();
+  initLangSwitch();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -71,6 +72,10 @@ function initNavToggle() {
   if (toggle && menu) toggle.addEventListener("click", () => menu.classList.toggle("open"));
 }
 
+// Translations: localized pages define window.RAI_T = { "English text": "Translated text" }.
+// Any text that has no translation simply stays English.
+const T = (k) => (window.RAI_T && window.RAI_T[k]) || k;
+
 function initSoonModal() {
   const overlay = document.createElement("div");
   overlay.className = "modal-overlay";
@@ -81,19 +86,19 @@ function initSoonModal() {
   overlay.setAttribute("aria-labelledby", "soon-title");
   overlay.innerHTML =
     '<div class="modal-card dialog-card">' +
-    '<h2 id="soon-title">We open soon. Want a heads-up?</h2>' +
+    '<h2 id="soon-title">' + T("We open soon. Want a heads-up?") + '</h2>' +
     '<div id="soon-ask">' +
-    '<p class="dialog-message" style="margin-top:10px;">RelationshipAI isn\'t open just yet. Leave your email and we\'ll write to you once, the day it opens. Your click already helps us decide how fast to open.</p>' +
+    '<p class="dialog-message" style="margin-top:10px;">' + T("RelationshipAI isn't open just yet. Leave your email and we'll write to you once, the day it opens. Your click already helps us decide how fast to open.") + '</p>' +
     '<form id="soon-form" class="soon-form" novalidate>' +
-    '<label class="soon-sr" for="soon-email">Email address</label>' +
+    '<label class="soon-sr" for="soon-email">' + T("Email address") + '</label>' +
     '<input type="email" id="soon-email" name="email" class="soon-input" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254" required />' +
     '<input type="text" id="soon-website" name="website" class="soon-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />' +
-    '<button type="submit" class="btn btn-gradient" id="soon-submit">Notify me</button>' +
+    '<button type="submit" class="btn btn-gradient" id="soon-submit">' + T("Notify me") + '</button>' +
     '<p class="soon-error" id="soon-error" role="alert" hidden></p>' +
-    '<p class="soon-fine">One email when we open. No spam. See our <a href="privacy.html">privacy notice</a>.</p>' +
+    '<p class="soon-fine">' + T('One email when we open. No spam. See our <a href="/privacy.html">privacy notice</a>.') + '</p>' +
     "</form></div>" +
-    '<div id="soon-done" hidden><p class="dialog-message" style="margin-top:10px;"><strong>You\'re on the list.</strong> We\'ll email you once, when RelationshipAI opens. Thank you for being early.</p></div>' +
-    '<div class="modal-close-row"><button type="button" class="btn btn-ghost" id="soon-close">Not now</button></div>' +
+    '<div id="soon-done" hidden><p class="dialog-message" style="margin-top:10px;">' + T("<strong>You're on the list.</strong> We'll email you once, when RelationshipAI opens. Thank you for being early.") + '</p></div>' +
+    '<div class="modal-close-row"><button type="button" class="btn btn-ghost" id="soon-close">' + T("Not now") + '</button></div>' +
     "</div>";
   document.body.appendChild(overlay);
 
@@ -108,14 +113,14 @@ function initSoonModal() {
   const showDone = () => {
     $("soon-ask").hidden = true;
     $("soon-done").hidden = false;
-    $("soon-title").textContent = "Thank you";
-    $("soon-close").textContent = "Close";
+    $("soon-title").textContent = T("Thank you");
+    $("soon-close").textContent = T("Close");
   };
   const showAsk = () => {
     $("soon-ask").hidden = false;
     $("soon-done").hidden = true;
-    $("soon-title").textContent = "We open soon. Want a heads-up?";
-    $("soon-close").textContent = "Not now";
+    $("soon-title").textContent = T("We open soon. Want a heads-up?");
+    $("soon-close").textContent = T("Not now");
   };
   const showError = (msg) => { errEl.textContent = msg; errEl.hidden = false; };
 
@@ -143,7 +148,7 @@ function initSoonModal() {
     errEl.hidden = true;
     const email = emailEl.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) {
-      showError("Please enter a valid email address.");
+      showError(T("Please enter a valid email address."));
       emailEl.focus();
       return;
     }
@@ -165,7 +170,7 @@ function initSoonModal() {
       showDone();
       $("soon-close").focus();
     } catch (_) {
-      showError("Sorry, that didn't go through. Please try again in a moment.");
+      showError(T("Sorry, that didn't go through. Please try again in a moment."));
     } finally {
       submitEl.disabled = false;
       submitEl.textContent = "Notify me";
@@ -270,7 +275,7 @@ function initHeroSignup() {
     errEl.hidden = true;
     const email = emailEl.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) {
-      errEl.textContent = "Please enter a valid email address.";
+      errEl.textContent = T("Please enter a valid email address.");
       errEl.hidden = false;
       emailEl.focus();
       return;
@@ -293,7 +298,7 @@ function initHeroSignup() {
       try { if (window.umami && window.umami.track) window.umami.track("waitlist-signup", { source: "hero-inline", plan: "" }); } catch (_) {}
       showDone();
     } catch (_) {
-      errEl.textContent = "Sorry, that didn't go through. Please try again in a moment.";
+      errEl.textContent = T("Sorry, that didn't go through. Please try again in a moment.");
       errEl.hidden = false;
     } finally {
       btn.disabled = false;
@@ -408,7 +413,7 @@ function initMobileLayout2() {
       compareTabs = document.createElement("div");
       compareTabs.className = "compare-tabs";
       compareTabs.setAttribute("role", "tablist");
-      compareTabs.innerHTML = '<button type="button" role="tab" data-vs="bot">vs. AI chatbot</button><button type="button" role="tab" data-vs="therapy">vs. couples therapy</button>';
+      compareTabs.innerHTML = '<button type="button" role="tab" data-vs="bot">' + T("vs. AI chatbot") + '</button><button type="button" role="tab" data-vs="therapy">' + T("vs. couples therapy") + '</button>';
       wrap.parentNode.insertBefore(compareTabs, wrap);
       compareTabs.addEventListener("click", (e) => { const b = e.target.closest("button[data-vs]"); if (b) setVs(b.dataset.vs); });
       setVs("bot");
@@ -422,7 +427,7 @@ function initMobileLayout2() {
         const mid = moreGrid.scrollLeft + moreGrid.clientWidth / 2;
         let best = 0, bestDist = Infinity;
         items.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bestDist) { bestDist = d; best = i; } });
-        counter.textContent = (best + 1) + " / " + items.length + "  ·  swipe";
+        counter.textContent = (best + 1) + " / " + items.length + "  ·  " + T("swipe");
       };
       onScroll = () => requestAnimationFrame(mark);
       moreGrid.addEventListener("scroll", onScroll, { passive: true });
@@ -435,11 +440,11 @@ function initMobileLayout2() {
         faqBtn = document.createElement("button");
         faqBtn.type = "button";
         faqBtn.className = "faq-more";
-        faqBtn.textContent = "Show all " + items.length + " questions";
+        faqBtn.textContent = T("Show all {n} questions").replace("{n}", items.length);
         faq.insertAdjacentElement("afterend", faqBtn);
         faqBtn.addEventListener("click", () => {
           const open = faq.classList.toggle("faq-open");
-          faqBtn.textContent = open ? "Show fewer questions" : "Show all " + items.length + " questions";
+          faqBtn.textContent = open ? T("Show fewer questions") : T("Show all {n} questions").replace("{n}", items.length);
         });
       }
     }
@@ -453,4 +458,16 @@ function initMobileLayout2() {
   const apply = () => (mq.matches ? on() : off());
   apply();
   if (mq.addEventListener) mq.addEventListener("change", apply);
+}
+
+// Language menu (a plain <details>): close it when the visitor clicks elsewhere or presses Escape.
+function initLangSwitch() {
+  const menus = Array.from(document.querySelectorAll("details.lang-switch"));
+  if (!menus.length) return;
+  document.addEventListener("click", (e) => {
+    menus.forEach((m) => { if (m.open && !m.contains(e.target)) m.open = false; });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") menus.forEach((m) => { if (m.open) { m.open = false; const s = m.querySelector("summary"); if (s) s.focus(); } });
+  });
 }
