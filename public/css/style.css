@@ -2055,18 +2055,6 @@ section {
   }
 }
 
-/* Named for the voice-mode orb this was originally built for (since
-   removed) — kept because .speak-btn.loading below still uses it for its
-   fetch-while-waiting pulse. */
-@keyframes voice-orb-fade {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.55;
-  }
-}
-
 .attachment-preview {
   display: flex;
   flex-wrap: wrap;
@@ -2724,48 +2712,6 @@ section {
   }
 }
 
-.speak-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  color: var(--text-faint);
-  cursor: pointer;
-  padding: 4px;
-  margin-top: 6px;
-  line-height: 1;
-}
-
-.speak-btn svg {
-  width: 15px;
-  height: 15px;
-}
-
-.speak-btn:hover {
-  color: var(--accent-1);
-}
-
-.speak-btn.speaking {
-  color: var(--accent-1);
-}
-
-/* Brief fetch-while-waiting state (POST /api/voice/speak) before natural
-   TTS audio is ready to play — didn't exist for the old instant-start
-   browser speechSynthesis version. Reuses the same fade pulse as the voice
-   mode orb's "thinking"/"speaking" states for a consistent feel. */
-.speak-btn.loading {
-  color: var(--accent-1);
-  animation: voice-orb-fade 1.1s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .speak-btn.loading {
-    animation: none;
-    opacity: 0.7;
-  }
-}
-
 .feedback-buttons {
   display: flex;
   gap: 2px;
@@ -2822,7 +2768,7 @@ section {
 /* "✏️ Edit" affordance on the last user message in Coach Chat (see
    refreshEditAffordance in chat.js) — right-aligned under the bubble to
    match .message-row.user's align-items: flex-end, ghost-styled like
-   .speak-btn/.feedback-btn so it doesn't compete with the message itself. */
+   .feedback-btn so it doesn't compete with the message itself. */
 .edit-msg-row {
   display: flex;
   justify-content: flex-end;

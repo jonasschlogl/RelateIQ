@@ -33,8 +33,6 @@ const TRASH_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m5 0V4a2 2 0 012-2h0a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
 const PENCIL_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>';
-const SPEAKER_ICON_SVG =
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>';
 const THUMBS_UP_ICON_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>';
 const THUMBS_DOWN_ICON_SVG =
@@ -1986,76 +1984,6 @@ async function openConversation(id, preloadedConv) {
 // messages
 // ---------------------------------------------------------------------------
 
-// Only one "play aloud" source plays at a time across the whole page — a
-// speak-btn click stops whichever other one is currently active before
-// starting its own, the same single-audio-channel guarantee the old
-// window.speechSynthesis.cancel() gave for free when everything went
-// through one shared browser queue. Now that playback is per-Audio-element
-// instead, this module-level pointer to the active one's own stop()
-// closure is what replaces that.
-let activeSpeakButtonStop = null;
-
-// Builds a small speaker toggle for a practice reply bubble: click to fetch
-// a natural-sounding OpenAI TTS reading of it (see POST /api/voice/speak in
-// server.js) and play it back, click again (or click another message) to
-// stop. Replaces the old browser speechSynthesis version — same UI, real
-// voice instead of a robotic one, at the cost of a brief fetch before
-// playback starts (shown via a "loading" class on the button).
-function buildSpeakButton(text) {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "speak-btn";
-  btn.setAttribute("aria-label", "Play this message aloud");
-  btn.title = "Play aloud";
-  btn.innerHTML = SPEAKER_ICON_SVG;
-
-  let audioEl = null;
-  let audioUrl = null;
-
-  function stop() {
-    if (audioEl) {
-      audioEl.pause();
-      audioEl = null;
-    }
-    if (audioUrl) {
-      URL.revokeObjectURL(audioUrl);
-      audioUrl = null;
-    }
-    btn.classList.remove("speaking", "loading");
-    if (activeSpeakButtonStop === stop) activeSpeakButtonStop = null;
-  }
-
-  btn.addEventListener("click", async (e) => {
-    e.stopPropagation();
-    const wasActive = btn.classList.contains("speaking") || btn.classList.contains("loading");
-    // Only one message plays at a time — stop whatever else is going first.
-    if (activeSpeakButtonStop) activeSpeakButtonStop();
-    if (wasActive) return; // this click was just "stop"
-
-    activeSpeakButtonStop = stop;
-    btn.classList.add("loading");
-    try {
-      const res = await authFetch("/api/voice/speak", { method: "POST", body: JSON.stringify({ text }) });
-      if (activeSpeakButtonStop !== stop) return; // superseded while the request was in flight
-      if (!res.ok) throw new Error("speak request failed");
-      const blob = await res.blob();
-      if (activeSpeakButtonStop !== stop) return; // ditto, while reading the response body
-
-      btn.classList.remove("loading");
-      audioUrl = URL.createObjectURL(blob);
-      audioEl = new Audio(audioUrl);
-      btn.classList.add("speaking");
-      audioEl.addEventListener("ended", stop);
-      audioEl.addEventListener("error", stop);
-      audioEl.play().catch(stop);
-    } catch (err) {
-      stop();
-    }
-  });
-
-  return btn;
-}
-
 // Thumbs up/down on a Coach Chat reply — a real, per-message signal for
 // whether the advice actually landed, visible to Jonas on the admin stats
 // page (see PATCH /api/conversations/:id/messages/:messageId/feedback and
@@ -2264,15 +2192,6 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
   const textEl = document.createElement("div");
   textEl.className = "msg-text";
   bubble.appendChild(textEl);
-
-  // Voice playback for practice replies (the roleplay side, not the user's
-  // own messages) — natural OpenAI TTS (see buildSpeakButton), not the
-  // free-but-robotic browser speechSynthesis this used before. Audio
-  // playback itself is essentially universal, so this is just a basic
-  // sanity check rather than real feature detection.
-  if (isPractice && !isUser && text && typeof Audio !== "undefined") {
-    bubble.appendChild(buildSpeakButton(text));
-  }
 
   // Coach Chat only — a drafted message to copy is specifically a Coach
   // Chat behavior (see extractDraftedMessages above), not something Partner

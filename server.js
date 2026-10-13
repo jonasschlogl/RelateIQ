@@ -282,21 +282,6 @@ const MAX_TOTAL_UPLOAD_BYTES = MAX_TOTAL_UPLOAD_MB * 1024 * 1024;
 // straight into the model on every request and run up the OpenAI bill.
 const MAX_CHAT_MESSAGE_CHARS = 8000;
 
-// Voice — the manual "🔈 play aloud" button on a Practice reply (see
-// POST /api/voice/speak below). Reads back whatever language the reply
-// text is already in, so no language handling is needed here.
-// gpt-4o-mini-tts is the only TTS model with per-request `instructions`
-// steering and is OpenAI's current recommendation for natural-sounding
-// speech; "marin" is one of its two newest, most natural voices (the
-// other being "cedar") — picked as a reasonable default, easy to change
-// later to "cedar" or anything else in the 13-voice lineup if Jonas wants
-// a different feel for Coach vs. Practice.
-const VOICE_TTS_MODEL = "gpt-4o-mini-tts";
-const VOICE_TTS_VOICE = "marin";
-// gpt-4o-mini-tts's documented ceiling is ~2000 input tokens; characters
-// are a cheap, conservative proxy for that so we never need a tokenizer
-// just to clamp this.
-const MAX_VOICE_TTS_CHARS = 2000;
 
 // Premium's headline differentiator: Coach Chat calls a noticeably stronger
 // model for Premium subscribers — real, felt quality (more specific, more
@@ -4425,92 +4410,6 @@ app.patch("/api/conversations/:id/messages/:messageId/feedback", authMiddleware,
   if (!updated) return res.status(404).json({ error: "Message not found." });
 
   res.json({ id: req.params.messageId, feedback });
-});
-
-// ---------------------------------------------------------------------------
-// Voice — text-to-speech for the manual "🔈 play aloud" button on a
-// Practice reply (buildSpeakButton in chat.js). TTS simply reads back the
-// reply text, which the chat model already wrote in the user's own
-// language — no language parameter needed on this side either.
-//
-// No daily-limit gate beyond auth + the length clamp below: this only ever
-// runs on text that's already a generated reply (i.e. already passed the
-// gate on POST /api/conversations/:id/messages), so its marginal cost is
-// low and bounded.
-//
-// (The hands-free "voice mode" this was originally built alongside — and
-// its paired /api/voice/transcribe endpoint — was removed per Jonas's
-// request; this route stayed since the manual play-aloud button still
-// uses it.)
-// ---------------------------------------------------------------------------
-
-// Per-user abuse guard for the TTS endpoint — it has no daily-message gate
-// (see the comment above), so without this any logged-in account, even a
-// Free one, could loop it and run up the OpenAI bill. In-memory like
-// authRateLimit above: resets on redeploy, which is fine since the goal is
-// just to cap runaway use, not keep an audit log.
-const SPEAK_WINDOW_MS = 10 * 60 * 1000;
-const SPEAK_MAX_PER_WINDOW = 20; // per user, any plan
-const SPEAK_FREE_MAX_PER_DAY = 30; // Free plan only, on top of the above
-const speakCallsByUser = new Map(); // userId -> array of timestamps (ms)
-setInterval(() => {
-  const cutoff = Date.now() - 24 * 60 * 60 * 1000;
-  for (const [id, calls] of speakCallsByUser) {
-    const kept = calls.filter((t) => t > cutoff);
-    if (kept.length === 0) speakCallsByUser.delete(id);
-    else speakCallsByUser.set(id, kept);
-  }
-}, 60 * 60 * 1000).unref();
-
-// Returns true (and has already sent a 429) if this user is over the TTS
-// limits. Records the call otherwise.
-function isOverSpeakLimit(user, res) {
-  if (isEmailVerificationEnforced() && !user.emailVerifiedAt) {
-    res.status(403).json({ error: "Please verify your email address first.", verificationRequired: true });
-    return true;
-  }
-  const now = Date.now();
-  const calls = (speakCallsByUser.get(user.id) || []).filter((t) => now - t < 24 * 60 * 60 * 1000);
-  const inWindow = calls.filter((t) => now - t < SPEAK_WINDOW_MS).length;
-  if (inWindow >= SPEAK_MAX_PER_WINDOW) {
-    speakCallsByUser.set(user.id, calls);
-    res.status(429).json({ error: "You're playing messages aloud very quickly. Please wait a few minutes and try again." });
-    return true;
-  }
-  if (user.plan === "free" && calls.length >= SPEAK_FREE_MAX_PER_DAY) {
-    speakCallsByUser.set(user.id, calls);
-    res.status(429).json({
-      error: `The Free plan includes up to ${SPEAK_FREE_MAX_PER_DAY} read-aloud plays per day. Try again tomorrow, or upgrade to Pro.`,
-      upgradeRequired: true,
-    });
-    return true;
-  }
-  calls.push(now);
-  speakCallsByUser.set(user.id, calls);
-  return false;
-}
-
-app.post("/api/voice/speak", authMiddleware, async (req, res) => {
-  try {
-    const { text } = req.body || {};
-    if (!text || typeof text !== "string" || !text.trim()) {
-      return res.status(400).json({ error: "No text to speak." });
-    }
-    if (isOverSpeakLimit(req.user, res)) return;
-
-    const speech = await openai.audio.speech.create({
-      model: VOICE_TTS_MODEL,
-      voice: VOICE_TTS_VOICE,
-      input: text.trim().slice(0, MAX_VOICE_TTS_CHARS),
-    });
-    const buffer = Buffer.from(await speech.arrayBuffer());
-
-    res.setHeader("Content-Type", "audio/mpeg");
-    res.send(buffer);
-  } catch (err) {
-    console.error("Voice speech error:", err.message);
-    res.status(500).json({ error: "Couldn't generate speech. Please try again." });
-  }
 });
 
 // ---------------------------------------------------------------------------
