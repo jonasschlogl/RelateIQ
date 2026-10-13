@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSignup();
   initMobileLayout();
   initMobileLayout2();
+  initMobileTools();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -357,6 +358,61 @@ function initMobileLayout2() {
     if (wrap) wrap.classList.remove("compare-wrap-bot", "compare-wrap-therapy");
     if (counter) { counter.remove(); counter = null; if (onScroll) moreGrid.removeEventListener("scroll", onScroll); }
     if (faqBtn) { faqBtn.remove(); faqBtn = null; faq.classList.remove("faq-open"); faq.querySelectorAll(".faq-extra").forEach((i) => i.classList.remove("faq-extra")); }
+  };
+  const apply = () => (mq.matches ? on() : off());
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+}
+
+// Mobile: each of the three main tools shows its description AND its example in one place.
+// The text of the three tool cards moves into the matching tab of the hero demo, and the
+// separate tools section is hidden. On wider screens everything goes back where it was.
+function initMobileTools() {
+  const mq = window.matchMedia("(max-width: 700px)");
+  const panels = ["coach", "message", "practice"].map((n) => document.getElementById("panel-" + n));
+  const cards = Array.from(document.querySelectorAll("#features .tool-card-full"));
+  const section = document.getElementById("features");
+  const wrap = document.querySelector(".demo-wrap");
+  if (!section || !wrap || panels.some((p) => !p) || cards.length < 3) return;
+  let moved = null;
+
+  const on = () => {
+    if (moved) return;
+    moved = [];
+    panels.forEach((panel, i) => {
+      const card = cards[i];
+      const parts = {
+        tag: card.querySelector(".tool-card-tag"),
+        h3: card.querySelector("h3"),
+        p: card.querySelector(":scope > p"),
+        list: card.querySelector(".core-list"),
+        cta: card.querySelector(":scope > .btn"),
+      };
+      const head = document.createElement("div");
+      head.className = "demo-detail-head";
+      const foot = document.createElement("div");
+      foot.className = "demo-detail-foot";
+      [parts.tag, parts.h3, parts.p].forEach((el) => el && head.appendChild(el));
+      [parts.list, parts.cta].forEach((el) => el && foot.appendChild(el));
+      panel.insertBefore(head, panel.firstChild);
+      panel.appendChild(foot);
+      moved.push({ card, head, foot, parts });
+    });
+    section.removeAttribute("id");
+    wrap.id = "features";
+    document.body.classList.add("tools-merged");
+  };
+  const off = () => {
+    if (!moved) return;
+    moved.forEach(({ card, head, foot, parts }) => {
+      [parts.tag, parts.h3, parts.p, parts.list, parts.cta].forEach((el) => el && card.appendChild(el));
+      head.remove();
+      foot.remove();
+    });
+    moved = null;
+    wrap.removeAttribute("id");
+    section.id = "features";
+    document.body.classList.remove("tools-merged");
   };
   const apply = () => (mq.matches ? on() : off());
   apply();

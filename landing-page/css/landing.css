@@ -576,3 +576,18 @@
   .lang-switch { width: 100%; }
   .lang-list { position: static; width: auto; margin-top: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 46vh; box-shadow: none; background: var(--bg-elevated); }
 }
+
+/* ======================================================================== */
+/* Mobile: description + example of each main tool live in one tab           */
+/* ======================================================================== */
+@media (max-width: 700px) {
+  body.tools-merged .tools-intro { display: none; }
+  .demo-detail-head { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border); text-align: left; }
+  .demo-detail-head .tool-card-tag { display: inline-block; margin-bottom: 10px; }
+  .demo-detail-head h3 { font-size: 21px; line-height: 1.22; margin: 0 0 8px; }
+  .demo-detail-head p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+  .demo-detail-foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); text-align: left; }
+  .demo-detail-foot .core-list { margin: 0 0 18px; }
+  .demo-detail-foot .core-list li { font-size: 14.5px; padding: 5px 0; }
+  .demo-detail-foot .btn { display: flex; width: 100%; justify-content: center; align-items: center; }
+}

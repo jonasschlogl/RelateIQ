@@ -49,8 +49,8 @@ const CONFIG = {
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
   staticPages: ["", "method.html", "privacy.html"],
-  cssVersion: "21",
-  jsVersion: "17",
+  cssVersion: "22",
+  jsVersion: "18",
 };
 const SITE = `https://${CONFIG.domain}`;
 
