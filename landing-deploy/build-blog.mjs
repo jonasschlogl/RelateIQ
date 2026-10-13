@@ -49,8 +49,8 @@ const CONFIG = {
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
   staticPages: ["", "method.html", "privacy.html"],
-  cssVersion: "22",
-  jsVersion: "18",
+  cssVersion: "23",
+  jsVersion: "19",
 };
 const SITE = `https://${CONFIG.domain}`;
 
@@ -93,6 +93,8 @@ const EN = {
 
 // Texts used by landing.js (the waitlist dialog and the mobile helpers).
 const JS_TEXTS = [
+  "What's included",
+  "Hide details",
   "We open soon. Want a heads-up?",
   "RelationshipAI isn't open just yet. Leave your email and we'll write to you once, the day it opens. Your click already helps us decide how fast to open.",
   "Email address",

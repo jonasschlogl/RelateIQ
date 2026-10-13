@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileLayout();
   initMobileLayout2();
   initMobileTools();
+  initMobilePricing();
 });
 
 // Hero preview: switches between the Coach Chat and Partner Practice demos.
@@ -285,7 +286,6 @@ function initMobileLayout() {
   const apply = () => {
     if (mq.matches) {
       buildTabs();
-      carousel(document.querySelector(".pricing-grid"), 1);
       carousel(document.querySelector(".post-grid"), 0);
     } else {
       removeTabs();
@@ -413,6 +413,54 @@ function initMobileTools() {
     wrap.removeAttribute("id");
     section.id = "features";
     document.body.classList.remove("tools-merged");
+  };
+  const apply = () => (mq.matches ? on() : off());
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+}
+
+// Mobile pricing: plans are stacked and compact, so all three are visible at once.
+// The long feature list of each plan is folded away behind a "What's included" button.
+function initMobilePricing() {
+  const mq = window.matchMedia("(max-width: 700px)");
+  const grid = document.querySelector(".pricing-grid");
+  if (!grid) return;
+  const tr = (k) => (typeof T === "function" ? T(k) : k);
+  const cards = Array.from(grid.querySelectorAll(".price-card"));
+  let built = false;
+
+  const label = (btn, open) => {
+    btn.querySelector("span").textContent = open ? tr("Hide details") : tr("What's included");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  const on = () => {
+    if (built) return;
+    built = true;
+    cards.forEach((card, i) => {
+      const list = card.querySelector(".price-features");
+      if (!list) return;
+      list.id = list.id || "plan-features-" + i;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "price-toggle";
+      btn.setAttribute("aria-controls", list.id);
+      btn.innerHTML = '<span></span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+      label(btn, false);
+      btn.addEventListener("click", () => {
+        const open = card.classList.toggle("is-open");
+        label(btn, open);
+      });
+      list.insertAdjacentElement("beforebegin", btn);
+    });
+  };
+  const off = () => {
+    if (!built) return;
+    built = false;
+    cards.forEach((card) => {
+      card.classList.remove("is-open");
+      const b = card.querySelector(".price-toggle");
+      if (b) b.remove();
+    });
   };
   const apply = () => (mq.matches ? on() : off());
   apply();

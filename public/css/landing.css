@@ -560,3 +560,33 @@
   .demo-detail-foot .core-list li { font-size: 14.5px; padding: 5px 0; }
   .demo-detail-foot .btn { display: flex; width: 100%; justify-content: center; align-items: center; }
 }
+
+/* ======================================================================== */
+/* Mobile pricing v2: stacked compact plans, details fold open               */
+/* ======================================================================== */
+.price-toggle { display: none; }
+@media (max-width: 700px) {
+  .lp .pricing-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; overflow: visible; scroll-snap-type: none; margin: 0; padding: 14px 0 0; align-items: start; }
+  .lp .pricing-grid > * { flex: none; min-width: 0; }
+  .lp .pricing-grid .peek { display: none; }
+  .lp .pricing-grid .reveal-item { opacity: 1 !important; transform: none !important; }
+  .carousel-dots { display: none !important; }
+
+  .lp .price-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 14px; align-items: start; padding: 20px 18px 16px; border-radius: 20px; transform: none; margin-top: 0; }
+  .lp .price-card.featured { box-shadow: 0 0 0 1px rgba(209, 160, 90, 0.5), 0 14px 40px rgba(209, 160, 90, 0.14); }
+  .lp .price-card .price-badge { left: 18px; top: -12px; }
+  .lp .price-card .price-persona { grid-column: 1; grid-row: 1; margin: 0 0 4px; font-size: 11px; }
+  .lp .price-card h3 { grid-column: 1; grid-row: 2; margin: 0; font-size: 24px; line-height: 1.1; }
+  .lp .price-card .price-value { grid-column: 2; grid-row: 1 / span 2; margin: 0; text-align: right; line-height: 1; align-self: center; }
+  .lp .price-card .price-value .amt { font-size: 32px; }
+  .lp .price-card .price-value .per, .lp .price-card .price-value > span:not(.amt) { display: block; margin-top: 4px; font-size: 12.5px; }
+  .lp .price-card .price-desc { grid-column: 1 / -1; grid-row: 3; margin: 14px 0 6px; font-size: 14.5px; line-height: 1.5; }
+  .lp .price-card .price-billed { grid-column: 1 / -1; grid-row: 4; margin: 0 0 14px; min-height: 0; font-size: 12.5px; }
+  .lp .price-card > .btn { grid-column: 1 / -1; grid-row: 5; width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center; }
+  .lp .price-card .price-toggle { grid-column: 1 / -1; grid-row: 6; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; margin-top: 8px; padding: 12px 0 2px; border: 0; background: transparent; color: var(--text-muted); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .lp .price-card .price-toggle svg { width: 18px; height: 18px; stroke: currentColor; transition: transform 0.2s ease; }
+  .lp .price-card.is-open .price-toggle svg { transform: rotate(180deg); }
+  .lp .price-card .price-toggle:hover { color: var(--text); }
+  .lp .price-card .price-features { grid-column: 1 / -1; grid-row: 7; display: none; margin: 10px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
+  .lp .price-card.is-open .price-features { display: block; }
+}
