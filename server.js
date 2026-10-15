@@ -188,6 +188,18 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
 
 // Raised from the default 100kb so chat messages can carry image/file
 // attachments (sent as base64 data URLs) — see the attachment limits below.
+app.disable("x-powered-by");
+// Basic hardening headers for every response (no CSP: the pages use inline scripts and styles).
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("Permissions-Policy", "camera=(), geolocation=()");
+  if (req.secure || req.headers["x-forwarded-proto"] === "https") {
+    res.setHeader("Strict-Transport-Security", "max-age=15552000; includeSubDomains");
+  }
+  next();
+});
 app.use(express.json({ limit: "25mb" }));
 app.use(
   express.static(path.join(__dirname, "public"), {
@@ -1915,7 +1927,7 @@ function computeCheckinStreak(checkins, userId) {
 
 const PLAYBOOK_REMIND_AFTER_MS = 2 * 24 * 60 * 60 * 1000;
 const PLAYBOOK_LIMITS = {
-  free: { maxActive: 1, historyDays: 7 },
+  free: { maxActive: 1, historyDays: null },
   pro: { maxActive: 50, historyDays: null },
   premium: { maxActive: 50, historyDays: null },
 };
@@ -4642,6 +4654,9 @@ const INSIGHTS_MIN_CONVERSATIONS = 3;
 
 app.post("/api/insights", authMiddleware, async (req, res) => {
   try {
+    // Insights is a Pro feature (see the pricing table), so Free accounts
+    // get a locked state instead of a generated analysis.
+    if (req.user.plan === "free") return res.json({ plan: "free", locked: true });
     const db = req.db;
     const user = db.users.find((u) => u.id === req.user.id);
 
