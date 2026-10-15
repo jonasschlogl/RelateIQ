@@ -513,7 +513,7 @@
     st.id = "i18n-hide";
     st.textContent = "html{visibility:hidden}";
     document.head.appendChild(st);
-    dictP = fetch("i18n/" + lang + ".json?v=" + VERSION)
+    dictP = fetch("/i18n/" + lang + ".json?v=" + VERSION)
       .then(function (r) {
         return r.ok ? r.json() : {};
       })
