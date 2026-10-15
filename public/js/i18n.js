@@ -32,7 +32,27 @@
     for (var i = 0; i < LANGS.length; i++) if (LANGS[i].code === code) return LANGS[i];
     return null;
   }
+  // Links from outside (e.g. the landing page) can carry ?lang=sk: it is saved like a
+  // menu choice and removed from the address bar.
+  function langFromUrl() {
+    try {
+      var u = new URL(location.href);
+      var q = (u.searchParams.get("lang") || "").toLowerCase().split("-")[0];
+      if (q === "nb" || q === "nn") q = "no";
+      if (!find(q)) return null;
+      try {
+        localStorage.setItem(KEY, q);
+      } catch (e) {}
+      u.searchParams.delete("lang");
+      history.replaceState(null, "", u.pathname + (u.search || "") + u.hash);
+      return q;
+    } catch (e) {
+      return null;
+    }
+  }
   function storedLang() {
+    var fromUrl = langFromUrl();
+    if (fromUrl) return fromUrl;
     try {
       var c = localStorage.getItem(KEY);
       if (c && find(c)) return c;
