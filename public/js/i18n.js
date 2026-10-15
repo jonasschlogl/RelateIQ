@@ -164,7 +164,7 @@
   }
 
   // keys whose {n} right after a word is free text (e.g. " with Sam"), not a plural "s"
-  var FREE_SLOT = /^(Couldn't change your plan|Ideas for this week|Last week|Yesterday was hard|Your rehearsals)/;
+  var FREE_SLOT = /^(Couldn't change your plan|Ideas for this week|Last week|Yesterday was hard|Your rehearsals|You've used today)/;
   function load(dict) {
     var pats = [];
     Object.keys(dict).forEach(function (k) {

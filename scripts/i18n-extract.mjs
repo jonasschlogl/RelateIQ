@@ -146,6 +146,8 @@ for (const f of fs.readdirSync(path.join(PUB, "js")).filter((f) => f.endsWith(".
   const ast = acorn.parse(src, { ecmaVersion: "latest", sourceType: "module", allowAwaitOutsideFunction: true });
   const KEYS = new Set(["error", "message", "title", "heading", "body", "note", "hint", "label", "reason", "headline", "text", "later", "first", "tip"]);
   const addNode = (v) => {
+    if (v.type === "ConditionalExpression") { addNode(v.consequent); addNode(v.alternate); return; }
+    if (v.type === "LogicalExpression") { addNode(v.left); addNode(v.right); return; }
     if (v.type === "BinaryExpression" && v.operator === "+") {
       const j = joinConcat(v);
       if (j.str.length <= 400 && looksLikeUi(j.str)) add(j.str, "server.js");
@@ -158,12 +160,19 @@ for (const f of fs.readdirSync(path.join(PUB, "js")).filter((f) => f.endsWith(".
   };
   walk(ast, null, (n) => {
     if (n.type === "Property" && !n.computed && ((n.key.type === "Identifier" && KEYS.has(n.key.name)) || (n.key.type === "Literal" && KEYS.has(n.key.value)))) addNode(n.value);
+    // messages of errors that reach the person (new Error("...") / Object.assign(new Error("..."), {status}))
+    if (n.type === "NewExpression" && n.callee.type === "Identifier" && n.callee.name === "Error" && n.arguments[0]) {
+      const a = n.arguments[0];
+      if (a.type === "Literal" && typeof a.value === "string" && /\s/.test(a.value) && a.value.length >= 20) addNode(a);
+    }
     if (n.type === "VariableDeclarator" && n.id.type === "Identifier" && /^(DAILY_QUESTIONS|PRACTICE_SCENARIOS|SCENARIOS)$/.test(n.id.name) && n.init?.type === "ArrayExpression") {
       for (const el of n.init.elements) if (el) addNode(el);
     }
   });
 }
 
+// strings the extractor cannot see (labels chosen in code, fallbacks)
+for (const t of ["More direct", "Sorry, I can't respond right now. Please try again.", "Upgrade to Pro for unlimited attachments."]) add(t, "server.js");
 add("Language", "i18n.js"); // aria-label of the language menu
 const keys = [...found.keys()].sort((a, b) => a.localeCompare(b));
 const out = {};
