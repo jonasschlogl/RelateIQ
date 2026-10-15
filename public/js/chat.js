@@ -1108,8 +1108,37 @@ function renderEmptyState() {
          <button type="button" id="empty-chat-tip-close" aria-label="Dismiss tip">✕</button>
        </div>`
     : "";
+  const isCoach = currentConvCtx.mode !== "practice";
+  const STARTERS = [
+    "My partner has gone quiet and I don't know why.",
+    "We keep having the same argument.",
+    "I want to bring up something difficult.",
+    "I'm overthinking something they said.",
+  ];
+  const startHtml = isCoach
+    ? `<div class="empty-start">
+         <div class="empty-start-label">Not sure where to begin? Tap one, then add the details</div>
+         <div class="empty-starters">${STARTERS.map((t) => `<button type="button" class="pb-choice empty-starter" data-text="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div>
+         <div class="empty-start-label">Or start with a tool</div>
+         <div class="empty-tools">
+           <a class="empty-tool" href="message.html"><strong>Message check</strong><span>See how a text may land before you send it</span></a>
+           <a class="empty-tool" href="sos.html"><strong>After a fight</strong><span>A minute to settle, then words to reach out with</span></a>
+           <a class="empty-tool" href="chat.html?mode=practice"><strong>Partner Practice</strong><span>Rehearse a hard conversation first</span></a>
+         </div>
+       </div>`
+    : "";
   chatDiv.innerHTML =
-    `<div id="empty-state" class="empty-chat"><img class="empty-mascot" src="img/${currentConvCtx.mode === "practice" ? "wisp-heart" : "wisp-candle"}.svg" alt="" width="${currentConvCtx.mode === "practice" ? 84 : 62}" height="${currentConvCtx.mode === "practice" ? 110 : 130}" /><h2>Hi there</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}</div>`;
+    `<div id="empty-state" class="empty-chat"><img class="empty-mascot" src="img/${currentConvCtx.mode === "practice" ? "wisp-heart" : "wisp-candle"}.svg" alt="" width="${currentConvCtx.mode === "practice" ? 84 : 62}" height="${currentConvCtx.mode === "practice" ? 110 : 130}" /><h2>Hi there</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}${startHtml}</div>`;
+  chatDiv.querySelectorAll(".empty-starter").forEach((b) =>
+    b.addEventListener("click", () => {
+      const inp = document.getElementById("input");
+      if (!inp) return;
+      inp.value = b.dataset.text + " ";
+      inp.dispatchEvent(new Event("input", { bubbles: true }));
+      inp.focus();
+      inp.setSelectionRange(inp.value.length, inp.value.length);
+    })
+  );
   document.getElementById("empty-chat-tip-close")?.addEventListener("click", (e) => {
     e.stopPropagation();
     dismissDetailTip();
