@@ -4946,3 +4946,15 @@ body.js-reveal .reveal-item.revealed {
   .partner-banner-text { flex: 1; }
   .partner-banner #debrief-btn { flex: none; white-space: nowrap; padding: 7px 12px; }
 }
+
+/* Sidebar on short screens: when "More" is expanded the conversation list
+   used to shrink to a sliver. Keep it usable and let the whole sidebar scroll. */
+.sidebar { overflow-y: auto; }
+.sidebar-history { flex: 1 0 170px; }
+
+/* Phones: the starter chips are the point of the empty state, so don't let
+   the tip card push them under the composer. */
+@media (max-width: 640px) {
+  .empty-chat-tip { display: none; }
+  .empty-chat .empty-mascot { width: 52px; height: auto; }
+}

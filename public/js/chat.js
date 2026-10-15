@@ -224,10 +224,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     await startNewChat("coach");
   } else if (requested) {
     await openConversation(requested);
-  } else if (conversations.length > 0) {
-    await openConversation(conversations[0].id);
   } else {
-    renderEmptyState();
+    // Coach Chat opens the latest Coach conversation, never a Practice one.
+    const lastCoach = conversations.find((c) => (c.mode || "coach") !== "practice");
+    if (lastCoach) await openConversation(lastCoach.id);
+    else renderEmptyState();
   }
 });
 
@@ -1845,6 +1846,13 @@ async function startNewChat(mode) {
   }
 
   updatePracticeCap(null);
+  // Reuse a Coach chat that is still empty (no first message yet) instead of
+  // piling up blank "New conversation" rows every time someone taps New.
+  const blank = conversations.find((c) => (c.mode || "coach") === "coach" && (!c.title || c.title === "New conversation"));
+  if (blank) {
+    await openConversation(blank.id);
+    return;
+  }
   try {
     const res = await authFetch("/api/conversations", { method: "POST", body: JSON.stringify({ mode: "coach" }) });
     const conv = await safeJson(res);
@@ -2415,6 +2423,12 @@ async function requestPracticeDebrief() {
     });
     const data = await safeJson(res);
     if (!res.ok) {
+      // Put the button back before the dialog opens, so it doesn't sit on
+      // "Getting feedback…" behind the message.
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
       await showAppAlert(data.error || "Couldn't generate a debrief right now.");
       return;
     }

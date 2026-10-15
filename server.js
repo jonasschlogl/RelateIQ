@@ -906,7 +906,7 @@ Rules:
 - Never invent details, quotes, or patterns that aren't actually in the transcript.
 - Plain text only, no markdown symbols like ** or #, just the section labels and dash-prefixed bullets exactly as shown above.
 - Keep the whole thing under roughly 300 words.
-- Write the summary in the same language as the transcript, detect it automatically, the same way ChatGPT does.`;
+- Write EVERY field of the summary in the language the user's own messages are written in (detect it automatically, even if the text has no accents). The labels "User:" and "Coach:" in the transcript are English labels only; ignore them for language. Do not mix languages and do not default to English.`;
 
 // Renders a conversation's messages as compact plain text for the summary
 // prompt above. Caps both the number of turns and each turn's length so a
@@ -964,7 +964,8 @@ Rules:
 - Never diagnose a mental health or relationship condition, and never use clinical jargon or labels the user hasn't used themselves.
 - Never quote a conversation word-for-word, paraphrase everything.
 - Return at most 4 patterns, ordered by how often they show up.
-- Write everything in the same language the conversations are mostly written in, detect it automatically, the same way ChatGPT does.`;
+- Write everything in the same language the conversations are mostly written in, detect it automatically, the same way ChatGPT does.
+- Speak to the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you". Never guess the partner's gender: say "your partner" or use their name, unless the conversations clearly use a pronoun for them, and be consistent within your answer.`;
 
 // Builds a compact, per-conversation digest across several Coach Chat
 // conversations for the insights prompt above. Caps both how many
@@ -2155,7 +2156,8 @@ Rules:
 - Ground everything in the material below. Never invent events, people or numbers. If a section has nothing real to say, return an empty list or an empty string for it.
 - At most 3 themes, 3 items each in whatWorked/whatDidnt.
 - Never diagnose, never use clinical labels the user hasn't used, never quote messages word for word.
-- Write in the language the user mostly writes in (detect it automatically).`;
+- An experiment marked "still trying" has not had its chance yet: never list it under whatDidnt.
+- Write in the language the user mostly writes in (detect it automatically). Speak to them informally, in the singular (for example "ty" in Slovak or Czech, "du" in German, "tu" in French), never the formal or plural "you".`;
 
 function buildMonthlyInput(db, user, key) {
   const { startMs, endMs, fromDate, toDate } = monthRange(key);
@@ -2326,7 +2328,7 @@ Rules:
 - Give 3 reactions that are realistic for the person described. They are guesses, not predictions: phrase them as "they might..." (in the language of the plan).
 - Use what's known about what worked or failed before (the Playbook) when it applies; never repeat something that didn't help them.
 - If the situation involves abuse, fear for safety or self-harm, put a short, calm note about getting real support into "ifHeated" and keep the plan gentle.
-- Warm, plain, short sentences. Never diagnose. Write the whole plan in the language of the topic text the user typed, even if the background about the person is in another language.`;
+- Warm, plain, short sentences. Never diagnose. Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you". Write the whole plan in the language of the topic text the user typed, even if the background about the person is in another language.`;
 
 function publicTalk(d) {
   return { id: d.id, title: d.title, createdAt: d.createdAt, ...d.data };
@@ -2361,6 +2363,7 @@ app.post("/api/talks", authMiddleware, async (req, res) => {
         partnerBlock ? `What's known about ${withName}:\n${partnerBlock}` : "",
         req.user.relationshipMemory ? `Background on the user's story: ${asStr(req.user.relationshipMemory, 600)}` : "",
         playbook ? `What they've tried before (Playbook):\n${playbook}` : "",
+        `LANGUAGE: write EVERY field of the JSON (summary, goal, bestTime, opening, keyPoints, avoid, reactions, ifHeated, afterwards) in the same language as the "What it's about" text above, even if that text has no accents or special characters. Do not mix languages and do not use English unless that text is English.`,
       ]
         .filter(Boolean)
         .join("\n\n"),
@@ -2454,7 +2457,7 @@ Rules:
 - Only what is in the material. Never invent facts, diagnoses, dates or people. If a section has nothing, return an empty string or empty list.
 - This is the person's own account, not an assessment. Never diagnose and never use clinical labels the person hasn't used.
 - At most 4 patterns, 5 items per list. Never quote messages word for word.
-- Write in the language the user mostly writes in (detect it automatically).`;
+- Write EVERY field in the language the user mostly writes in (detect it automatically, even if their text has no accents). Do not mix languages and do not default to English. Never guess the partner's gender; use their name or "their partner" unless the notes clearly use a pronoun.`;
 
 app.get("/api/pack", authMiddleware, (req, res) => {
   if (req.user.plan !== "premium") return res.json({ plan: req.user.plan, locked: true });
@@ -2875,6 +2878,20 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
     monthlyReviews: listDocs(user.id, "monthly").map((d) => ({ month: d.key, ...d.data })),
     hardTalkPlans: listDocs(user.id, "talk").map((d) => ({ id: d.id, createdAt: d.createdAt, ...d.data })),
     therapistPack: getDocByKey(user.id, "pack", "main")?.data || null,
+    yearReviews: listDocs(user.id, "yearly").map((d) => ({ key: d.key, ...d.data })),
+    weeklyFocus: listDocs(user.id, "focus").map((d) => ({ week: d.key, ...d.data })),
+    gestureIdeas: listDocs(user.id, "ideas").map((d) => ({ week: d.key, ...d.data })),
+    messageChecks: listDocs(user.id, "mcheck").map((d) => ({ id: d.id, createdAt: d.createdAt, ...d.data })),
+    afterAFight: listDocs(user.id, "sos").map((d) => ({ id: d.id, createdAt: d.createdAt, ...d.data })),
+    checkIns: db.checkins
+      .filter((c) => c.userId === user.id)
+      .map((c) => ({ date: c.date, question: c.question, answer: c.answer || null, score: c.score ?? null, skipped: !!c.skipped })),
+    dailyQuestionAnswers: db.soloAnswers
+      .filter((a) => a.userId === user.id)
+      .map((a) => ({ date: a.date, question: a.question, answer: a.answer || null, answeredAt: a.answeredAt || null })),
+    shares: db.shares
+      .filter((sh) => sh.userId === user.id)
+      .map((sh) => ({ id: sh.id, title: sh.title || null, createdAt: sh.createdAt, items: sh.items || [] })),
     conversations,
   };
 
@@ -3275,7 +3292,7 @@ Respond with ONLY a JSON object in exactly this shape:
 {"read": "<how this message is likely to land with the other person, 1-2 plain sentences, honest>", "risk": "<low | medium | high: the chance it escalates or hurts>", "flags": ["<0-3 specific things in THEIR draft that could backfire, quoting the exact words, each with a very short why>"], "versions": [{"label": "<label>", "text": "<the rewritten message>"}]}
 
 Rules:
-- Keep what the person actually wants to say, their voice, and their language (reply in the language of the draft). Do not make it longer than needed; short texts stay short.
+- Keep what the person actually wants to say, their voice, and their language (reply in the language of the draft). Do not make it longer than needed; short texts stay short. Never guess the partner's gender: avoid gendered forms for them (in Slovak, Czech, Polish and similar languages choose wording that works for any gender) unless the text clearly shows it. Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you".
 - Rewrites must be sendable as-is. Start from how they feel or what they want, not from what the other person did wrong. No manipulation, no guilt-tripping, no tactics to "win".
 - Produce exactly the versions requested in the labels list, in that order, each clearly different in tone.
 - If the draft is already good, say so in "read" and keep the rewrites light.
@@ -3387,7 +3404,7 @@ Respond with ONLY a JSON object in exactly this shape:
 
 Rules:
 - Match what they want: "reconnect" = a warm opening; "apologize" = a clear, specific, non-defensive apology for THEIR part only, no "but"; "space" = a kind message that asks for time and says when they will come back, without punishing silence.
-- No manipulation, no scoring points, no demands. Plain words, short sentences. Reply in the language the user writes in (English if unclear).
+- No manipulation, no scoring points, no demands. Plain words, short sentences. Reply in the language the user writes in (English if unclear). Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you".
 - If anything suggests fear for safety, violence, abuse, or self-harm, do not coach the reconciliation: say gently in "first" that getting real support matters and to contact local emergency services or a trusted person, and keep the rest minimal.`;
 
 app.get("/api/sos", authMiddleware, (req, res) => {
@@ -3517,7 +3534,8 @@ Respond with ONLY a JSON object in exactly this shape:
 
 Rules:
 - Small and specific beats big and vague. Never repeat something that did not help them; build on what worked.
-- No blame, no diagnosis, no tactics to "win". Plain, warm, short sentences. Reply in the language the user writes in (English if unclear).
+- No blame, no diagnosis, no tactics to "win". Plain, warm, short sentences. Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you".
+- LANGUAGE: write "headline", "why" and "when" in the language that MOST of the user's own words below are written in (their check-in answers, what they tried, and what they wrote in Coach Chat). Count only the user's own words; ignore the English labels and headings that frame them. If there are no user words or it is a tie, use English.
 - Never guess the partner's gender. Say "your partner" (or their name if given) and avoid he, him, she and her unless the text you were given clearly uses that pronoun.
 - If there is hardly any information, choose a gentle, universally useful starter (e.g. one genuine question and listening without fixing) and say so in "why".`;
 
@@ -3532,7 +3550,10 @@ async function generateWeeklyFocus(db, user) {
         .filter((c) => c.userId === user.id && c.mode !== "practice" && (c.messages || []).some((m) => m.role === "user"))
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     : [];
+  // If they have exactly one partner profile, use the name (never guess gender).
+  const myPartners = (db.partnerProfiles || []).filter((p) => p.userId === user.id);
   const input = [
+    myPartners.length === 1 && myPartners[0].name ? `Their partner is called ${asStr(myPartners[0].name, 60)}.` : "",
     stats.answeredDays
       ? `Check-ins, last 2 weeks: ${stats.answeredDays} answered${stats.average != null ? `, average connection ${stats.average}/10` : ""}${stats.trend ? `, trend ${stats.trend}` : ""}.\n${stats.answers
           .slice(-6)
@@ -3631,7 +3652,7 @@ Respond with ONLY a JSON object in exactly this shape:
 Rules:
 - Mix mostly small gestures (a few minutes, free or cheap) with one or two simple dates. Low cost by default.
 - Specific beats generic: use the partner's known traits and the user's story when given; otherwise pick things that work for most people.
-- Never manipulative, never grand-gesture-to-win-someone-back. Plain, warm words. Reply in the language the user writes in (English if unclear).
+- Never manipulative, never grand-gesture-to-win-someone-back. Plain, warm words. Reply in the language the user writes in (English if unclear). Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you".
 - Never guess the partner's gender. Use the partner's name or "your partner" and avoid he, him, she and her unless the text you were given clearly uses that pronoun.`;
 
 async function generateIdeas(db, user, avoidTitles = []) {
@@ -5712,6 +5733,15 @@ app.get("/api/admin/backups/:name/download", authMiddleware, adminMiddleware, (r
   res.setHeader("Content-Type", "application/octet-stream");
   res.setHeader("Content-Disposition", `attachment; filename="${name}"`);
   res.send(fs.readFileSync(full));
+});
+
+// Friendly 404 instead of Express's bare "Cannot GET ..." page.
+app.use((req, res) => {
+  if (req.path.startsWith("/api/")) return res.status(404).json({ error: "Not found." });
+  res
+    .status(404)
+    .type("html")
+    .send(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Page not found · RelationshipAI</title><meta name="robots" content="noindex" /><link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" /></head><body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#17130f;color:#f6efe4;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;padding:24px;"><main><p style="color:#d9899b;letter-spacing:.12em;font-size:13px;margin:0 0 12px;">404</p><h1 style="font-size:32px;margin:0 0 12px;">That page doesn't exist</h1><p style="color:#b6a795;margin:0 0 24px;">The link may be old or mistyped.</p><a href="/index.html" style="display:inline-block;background:#d1a05a;color:#1b1510;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;">Back to RelationshipAI</a></main></body></html>`);
 });
 
 // Safety net: catches anything not already handled by a route's own

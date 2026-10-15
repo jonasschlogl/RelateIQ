@@ -301,7 +301,7 @@ function renderCheckinForm(question) {
       </div>
     </div>
     <div class="checkin-answer">
-      <textarea id="checkin-input" maxlength="2000" placeholder="Totally optional. Write a sentence or two, or just skip."></textarea>
+      <textarea id="checkin-input" maxlength="2000" placeholder="A sentence or two about today. Or just skip."></textarea>
     </div>
     <div class="checkin-actions">
       <button class="btn btn-primary btn-sm" id="checkin-save-btn" type="button">Save</button>
@@ -324,7 +324,20 @@ async function submitCheckin(skip) {
     payload.skip = true;
   } else {
     const val = document.getElementById("checkin-input").value.trim();
-    if (!val) return;
+    if (!val) {
+      // Save needs a few words; tell people instead of doing nothing.
+      let hint = document.getElementById("checkin-hint");
+      if (!hint) {
+        hint = document.createElement("p");
+        hint.id = "checkin-hint";
+        hint.className = "text-muted";
+        hint.style.cssText = "margin:8px 0 0;font-size:13px;";
+        document.querySelector(".checkin-actions")?.after(hint);
+      }
+      hint.textContent = "Write a few words to save today, or press Skip today.";
+      document.getElementById("checkin-input")?.focus();
+      return;
+    }
     payload.answer = val;
     const scoreInput = document.getElementById("checkin-score-input");
     if (scoreInput) payload.score = Number(scoreInput.value);
