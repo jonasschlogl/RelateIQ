@@ -192,6 +192,10 @@
         pats.push({ re: new RegExp("^" + src + "$"), order: order, tpl: val, lit: literal });
       } else {
         exact[key] = val;
+        // "Hard <span>Premium</span>": the plan badge is left out for people who have the plan
+        var lk = /^(.*\S)\s*<span>(?:Pro|Premium)<\/span>$/.exec(key);
+        var lv = /^(.*\S)\s*<span>(?:Pro|Premium)<\/span>$/.exec(val);
+        if (lk && lv && exact[lk[1]] === undefined) exact[lk[1]] = lv[1];
       }
     });
     pats.sort(function (a, b) {

@@ -172,7 +172,7 @@ for (const f of fs.readdirSync(path.join(PUB, "js")).filter((f) => f.endsWith(".
 }
 
 // strings the extractor cannot see (labels chosen in code, fallbacks)
-for (const t of ["More direct", "Sorry, I can't respond right now. Please try again.", "Upgrade to Pro for unlimited attachments."]) add(t, "server.js");
+for (const t of ["5 min", "30 min", "an evening", "a weekend", "More direct", "Sorry, I can't respond right now. Please try again.", "Upgrade to Pro for unlimited attachments."]) add(t, "server.js");
 add("Language", "i18n.js"); // aria-label of the language menu
 const keys = [...found.keys()].sort((a, b) => a.localeCompare(b));
 const out = {};
