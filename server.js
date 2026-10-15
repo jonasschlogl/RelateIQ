@@ -311,8 +311,18 @@ const MAX_CHAT_MESSAGE_CHARS = 8000;
 // gpt-4o family until access is confirmed; see the reasoning_effort comment
 // below for the other half of this rollback (that parameter isn't
 // supported on gpt-4o either).
-const STANDARD_MODEL = "gpt-4o-mini";
-const PREMIUM_MODEL = "gpt-4o";
+// Model update: the account now has the newer models. The two main ones are
+// reasoning models (no temperature, max_completion_tokens instead of
+// max_tokens), which the openai wrapper below handles centrally, and any
+// failure on a new model is retried once on its gpt-4o equivalent, so a model
+// problem degrades quality instead of breaking the app (the reason of the earlier rollback).
+const STANDARD_MODEL = "gpt-6-luna";
+const PREMIUM_MODEL = "gpt-6.1-sol";
+// Tiny utility calls (safety classifier, chat titles) stay on the small
+// non-reasoning model: fast, cheap and they rely on tight token limits.
+const UTILITY_MODEL = "gpt-4o-mini";
+const LEGACY_FALLBACK = { "gpt-6-luna": "gpt-4o-mini", "gpt-6.1-sol": "gpt-4o", "gpt-6-astra": "gpt-4o", "gpt-6-sol": "gpt-4o", "gpt-5.5": "gpt-4o" };
+const REASONING_MODEL_RE = /^(gpt-5|gpt-6|o\d)/;
 function modelForPlan(plan) {
   return plan === "premium" ? PREMIUM_MODEL : STANDARD_MODEL;
 }
@@ -527,7 +537,26 @@ function softenDashes(text) {
   const completions = openai.chat.completions;
   const create = completions.create.bind(completions);
   completions.create = async (...args) => {
-    const res = await create(...args);
+    let res;
+    const first = args[0] || {};
+    if (REASONING_MODEL_RE.test(String(first.model || ""))) {
+      // Reasoning models reject temperature / max_tokens.
+      const p = { ...first };
+      delete p.temperature;
+      if (p.max_tokens != null) {
+        p.max_completion_tokens = p.max_tokens;
+        delete p.max_tokens;
+      }
+      try {
+        res = await create(p, ...args.slice(1));
+      } catch (err) {
+        const legacy = LEGACY_FALLBACK[first.model];
+        console.error(`OpenAI call on ${first.model} failed (${String(err.message || err).slice(0, 160)}), retrying on ${legacy || "gpt-4o"}`);
+        res = await create({ ...first, model: legacy || "gpt-4o" }, ...args.slice(1));
+      }
+    } else {
+      res = await create(...args);
+    }
     for (const c of res?.choices || []) {
       if (c?.message && typeof c.message.content === "string") c.message.content = softenDashes(c.message.content);
     }
@@ -799,7 +828,7 @@ ${trimmed.slice(0, 600)}
 """`;
 
   const completion = await openai.chat.completions.create({
-    model: STANDARD_MODEL,
+    model: UTILITY_MODEL,
     messages: [
       { role: "system", content: TITLE_SYSTEM_PROMPT },
       { role: "user", content: userContent },
@@ -841,7 +870,7 @@ ${trimmed.slice(0, 600)}
 """`;
 
   const completion = await openai.chat.completions.create({
-    model: STANDARD_MODEL,
+    model: UTILITY_MODEL,
     messages: [
       { role: "system", content: PRACTICE_TOPIC_SYSTEM_PROMPT },
       { role: "user", content: userContent },
@@ -890,7 +919,7 @@ async function assessSafety(text) {
   if (!trimmed) return { level: "none", category: null };
   try {
     const completion = await openai.chat.completions.create({
-      model: STANDARD_MODEL,
+      model: UTILITY_MODEL,
       messages: [
         { role: "system", content: SAFETY_CLASSIFIER_PROMPT },
         { role: "user", content: trimmed.slice(0, 4000) },
