@@ -37,6 +37,17 @@
       var c = localStorage.getItem(KEY);
       if (c && find(c)) return c;
     } catch (e) {}
+    return browserLang();
+  }
+  // First visit, nothing chosen yet: use the browser's language when we have it.
+  // Nothing is stored, so picking a language in the menu always wins from then on.
+  function browserLang() {
+    var list = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]) || [];
+    for (var i = 0; i < list.length; i++) {
+      var c = String(list[i] || "").toLowerCase().split("-")[0];
+      if (c === "nb" || c === "nn") c = "no";
+      if (find(c)) return c;
+    }
     return "en";
   }
 
