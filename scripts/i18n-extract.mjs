@@ -49,6 +49,7 @@ function looksLikeUi(s) {
   if (/^[a-z]+(-[a-z]+)+$/.test(t)) return false; // css-class
   if (!/\s/.test(t) && !/^[A-Z\p{Lu}]/u.test(t)) return false; // single lowercase word
   if (/^\{\d+\}$/.test(t)) return false;
+  if (/^Bearer \{/.test(t) || /^(?=.*\b[a-z]+-[a-z]+\b)[a-z0-9- ]+ \{\d+\}$/.test(t)) return false; // header / css class concatenations
   if (/^(PATCH|POST|PUT|GET|DELETE|Bearer|UTC|IntersectionObserver|PushManager|OK)$/.test(t) && t !== "OK") return false;
   if (/^[a-z0-9-]+( [a-z0-9-]+)+$/.test(t) && /-/.test(t)) return false; // css class lists
   if (/^\(|^[0-9.]+(px|%)?( [0-9.-]+(px|%)?)+$|=\"/.test(t)) return false; // media queries, css values, attribute fragments
@@ -117,7 +118,7 @@ for (const f of fs.readdirSync(path.join(PUB, "js")).filter((f) => f.endsWith(".
     let s = null;
     if (n.type === "BinaryExpression" && n.operator === "+" && !(p && p.type === "BinaryExpression" && p.operator === "+")) {
       const j = joinConcat(n);
-      if (j.texty >= 2 && j.leaves.some((l) => l.type === "Literal" || l.type === "TemplateLiteral")) {
+      if (j.texty >= 1 && j.leaves.some((l) => l.type === "Literal" || l.type === "TemplateLiteral")) {
         j.leaves.forEach((l) => joined.add(l));
         handleString(j.str, "js/" + f);
       }

@@ -163,6 +163,8 @@
     return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
+  // keys whose {n} right after a word is free text (e.g. " with Sam"), not a plural "s"
+  var FREE_SLOT = /^(Couldn't change your plan|Ideas for this week|Last week|Yesterday was hard|Your rehearsals)/;
   function load(dict) {
     var pats = [];
     Object.keys(dict).forEach(function (k) {
@@ -175,7 +177,12 @@
         var src = "";
         var lastIdx = 0;
         key.replace(/\{(\d+)\}/g, function (m, n, off) {
-          src += esc(key.slice(lastIdx, off)) + "((?:(?!\\.\\s)[\\s\\S]){0,300}?)";
+          // A placeholder at the very start is a name or a number, never a whole
+          // sentence: stops short patterns from grabbing longer text (e.g. AI-written).
+          var pre = key.slice(lastIdx, off);
+          // right after a letter ("message{1}") the placeholder is the plural "s"
+          var cap = /[A-Za-z]$/.test(pre) && !FREE_SLOT.test(key) ? "(s?)" : "((?:(?!\\.\\s)[\\s\\S]){0," + (off === 0 ? 40 : 300) + "}?)";
+          src += esc(pre) + cap;
           order.push(+n);
           lastIdx = off + m.length;
           return m;
@@ -209,7 +216,8 @@
         for (var j = 0; j < p.order.length; j++) {
           var cap = m[j + 1];
           var tcap = depth > 2 ? null : lookup(collapse(cap), (depth || 0) + 1);
-          caps[p.order[j]] = tcap !== null && tcap !== undefined ? tcap : cap;
+          // keep the spaces around the piece (" with Sam" stays " mit Sam")
+          caps[p.order[j]] = tcap !== null && tcap !== undefined ? cap.match(/^\s*/)[0] + tcap + cap.match(/\s*$/)[0] : cap;
         }
         out = p.tpl.replace(/\{(\d+)\}/g, function (all, n) {
           return Object.prototype.hasOwnProperty.call(caps, n) ? caps[n] : "";
