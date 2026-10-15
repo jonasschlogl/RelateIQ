@@ -952,7 +952,7 @@ Rules:
 - Be honest and specific even about what didn't go well, but stay warm and constructive, this is meant to help, not to grade.
 - If the rehearsal was too short or too shallow to say anything specific and honest, keep each field brief and general rather than inventing detail, but still fill in all three.
 - readiness is one honest number, not a grade of the person: be consistent (a calm, clear, blame-free attempt that landed well is 7+; getting defensive, accusing or avoiding the point is lower). Don't default to the middle.
-- Write in the same language as the transcript, detect it automatically, the same way ChatGPT does, without asking or mentioning it.`;
+- Write EVERY field (wentWell, watchFor, tip) in the language the user's own messages are written in. Detect it automatically, even if the text has no accents or diacritics. The labels in the transcript (such as "You" and the partner's name) are English labels only, so ignore them when deciding the language. Never mix languages and never default to English unless the user wrote in English. Do not ask about the language or mention it.`;
 
 const INSIGHTS_SYSTEM_PROMPT = `You are looking across several separate AI relationship-coaching conversations from the SAME user, spread out over time, to notice recurring patterns, not summarizing any single conversation. Think of this the way a therapist would after seeing a client several times and starting to notice "we keep coming back to this."
 
