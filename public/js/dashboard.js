@@ -265,10 +265,13 @@ function renderCheckin(data) {
 
   if (data.answered) {
     const scoreLine = typeof data.score === "number" ? `<p class="checkin-score-done">Connection today: ${data.score}/10</p>` : "";
+    const doneLine = data.answer
+      ? `<p class="checkin-done">✓ You checked in today: "${escapeHtml(data.answer)}"</p>`
+      : `<p class="checkin-done">✓ You checked in today.</p>`;
     body.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
       ${scoreLine}
-      <p class="checkin-done">✓ You checked in today: "${escapeHtml(data.answer)}"</p>
+      ${doneLine}
     `;
     return;
   }
@@ -301,7 +304,7 @@ function renderCheckinForm(question) {
       </div>
     </div>
     <div class="checkin-answer">
-      <textarea id="checkin-input" maxlength="2000" placeholder="A sentence or two about today. Or just skip."></textarea>
+      <textarea id="checkin-input" maxlength="2000" placeholder="Optional: a sentence or two about today."></textarea>
     </div>
     <div class="checkin-actions">
       <button class="btn btn-primary btn-sm" id="checkin-save-btn" type="button">Save</button>
@@ -312,6 +315,7 @@ function renderCheckinForm(question) {
   const scoreValue = document.getElementById("checkin-score-value");
   scoreInput.addEventListener("input", () => {
     scoreValue.textContent = scoreInput.value;
+    scoreInput.dataset.touched = "1";
   });
   document.getElementById("checkin-save-btn").addEventListener("click", () => submitCheckin(false));
   document.getElementById("checkin-skip-btn").addEventListener("click", () => submitCheckin(true));
@@ -324,8 +328,10 @@ async function submitCheckin(skip) {
     payload.skip = true;
   } else {
     const val = document.getElementById("checkin-input").value.trim();
-    if (!val) {
-      // Save needs a few words; tell people instead of doing nothing.
+    const scoreInput = document.getElementById("checkin-score-input");
+    const touched = !!(scoreInput && scoreInput.dataset.touched);
+    if (!val && !touched) {
+      // Needs a score or a few words; tell people instead of doing nothing.
       let hint = document.getElementById("checkin-hint");
       if (!hint) {
         hint = document.createElement("p");
@@ -334,13 +340,11 @@ async function submitCheckin(skip) {
         hint.style.cssText = "margin:8px 0 0;font-size:13px;";
         document.querySelector(".checkin-actions")?.after(hint);
       }
-      hint.textContent = "Write a few words to save today, or press Skip today.";
-      document.getElementById("checkin-input")?.focus();
+      hint.textContent = "Move the slider or write a few words to save today, or press Skip today.";
       return;
     }
-    payload.answer = val;
-    const scoreInput = document.getElementById("checkin-score-input");
-    if (scoreInput) payload.score = Number(scoreInput.value);
+    if (val) payload.answer = val;
+    if (scoreInput && touched) payload.score = Number(scoreInput.value);
   }
 
   try {

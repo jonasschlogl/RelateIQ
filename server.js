@@ -1901,7 +1901,9 @@ function dateKeyFor(date) {
 // yet, counting starts from yesterday instead — so an in-progress streak
 // doesn't visibly drop to 0 before the day is even over.
 function computeCheckinStreak(checkins, userId) {
-  const answeredDates = new Set(checkins.filter((c) => c.userId === userId && c.answer).map((c) => c.date));
+  const answeredDates = new Set(
+    checkins.filter((c) => c.userId === userId && !c.skipped && (c.answer || typeof c.score === "number")).map((c) => c.date)
+  );
   if (!answeredDates.size) return 0;
 
   const cursor = new Date();
@@ -2109,7 +2111,8 @@ function previousMonthKey() {
 // Self-reported connection scores from the daily check-in, summarized.
 function checkinStats(checkins, userId, fromDate, toDate) {
   const answered = (checkins || []).filter(
-    (c) => c.userId === userId && c.answer && !c.skipped && (!fromDate || c.date >= fromDate) && (!toDate || c.date <= toDate)
+    (c) =>
+      c.userId === userId && (c.answer || typeof c.score === "number") && !c.skipped && (!fromDate || c.date >= fromDate) && (!toDate || c.date <= toDate)
   );
   const scored = answered.filter((c) => typeof c.score === "number").sort((a, b) => (a.date < b.date ? -1 : 1));
   const avg = (arr) => (arr.length ? Math.round((arr.reduce((t, c) => t + c.score, 0) / arr.length) * 10) / 10 : null);
@@ -2123,7 +2126,7 @@ function checkinStats(checkins, userId, fromDate, toDate) {
     const diff = lastAvg - firstAvg;
     trend = diff >= 0.7 ? "up" : diff <= -0.7 ? "down" : "steady";
   }
-  return { answeredDays: answered.length, scoredDays: scored.length, average: avg(scored), firstAvg, lastAvg, trend, answers: answered.slice(-12) };
+  return { answeredDays: answered.length, scoredDays: scored.length, average: avg(scored), firstAvg, lastAvg, trend, answers: answered.filter((c) => c.answer).slice(-12) };
 }
 
 function userLinesDigest(convs, maxConvs, maxLines, maxChars) {
@@ -4807,71 +4810,89 @@ function buildPartnerContextBlock(partner) {
 // Daily check-in — always optional/skippable, never gates anything
 // ---------------------------------------------------------------------------
 
-app.get("/api/checkin/today", authMiddleware, (req, res) => {
+// One daily check-in: today's question (the same one on the dashboard and on
+// the Daily question page), an optional 1-10 connection score and optional
+// text. Needs at least a score or a few words. Stored in both the checkins
+// table (scores, stats, streaks) and the soloAnswers stream (question history),
+// so the two pages always agree.
+function dailyCheckinPayload(db, userId, row) {
+  const entry = db.checkins.find((c) => c.userId === userId && c.date === row.date);
+  const answer = (entry && entry.answer) || row.answer || null;
+  const score = entry && typeof entry.score === "number" ? entry.score : null;
+  return {
+    date: row.date,
+    question: row.question,
+    answered: !!answer || score !== null,
+    skipped: !!(entry && entry.skipped) && !answer && score === null,
+    answer,
+    score,
+    streak: computeCheckinStreak(db.checkins, userId),
+  };
+}
+
+async function saveDailyCheckin(db, user, { answer, score, skip }) {
   const today = todayKey();
-  const question = checkinQuestionForDate(today);
-  const existing = req.db.checkins.find((c) => c.userId === req.user.id && c.date === today);
-  const streak = computeCheckinStreak(req.db.checkins, req.user.id);
-
-  if (existing) {
-    return res.json({
+  const row = await ensureTodaysSoloQuestion(db, user.id, today);
+  let entry = db.checkins.find((c) => c.userId === user.id && c.date === today);
+  if (!entry) {
+    entry = {
+      id: generateId("checkin"),
+      userId: user.id,
       date: today,
-      question: existing.question || question,
-      answered: !!existing.answer,
-      skipped: !!existing.skipped,
-      answer: existing.answer || null,
-      score: existing.score ?? null,
-      streak,
-    });
+      question: row.question,
+      answer: null,
+      score: null,
+      skipped: false,
+      createdAt: new Date().toISOString(),
+    };
   }
+  if (skip) {
+    // Skipping never undoes a check-in that already has a score or text.
+    if (!entry.answer && typeof entry.score !== "number") entry.skipped = true;
+  } else {
+    const text = String(answer || "").trim();
+    const n = Number(score);
+    const validScore = score !== null && score !== undefined && score !== "" && Number.isInteger(n) && n >= 1 && n <= 10;
+    if (!text && !validScore) {
+      const err = new Error("Add a score or a few words, or skip for today.");
+      err.status = 400;
+      throw err;
+    }
+    if (text) {
+      entry.answer = text.slice(0, MAX_DAILY_ANSWER_LENGTH);
+      entry.answeredAt = new Date().toISOString();
+      row.answer = entry.answer;
+      row.answeredAt = entry.answeredAt;
+      saveSoloAnswer(row);
+    }
+    if (validScore) {
+      entry.score = n;
+      if (!entry.answeredAt) entry.answeredAt = new Date().toISOString();
+    }
+    entry.skipped = false;
+  }
+  saveCheckin(entry);
+  if (!db.checkins.some((c) => c.id === entry.id)) db.checkins.push(entry);
+  return row;
+}
 
-  res.json({ date: today, question, answered: false, skipped: false, answer: null, score: null, streak });
+app.get("/api/checkin/today", authMiddleware, async (req, res) => {
+  try {
+    const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
+    res.json(dailyCheckinPayload(req.db, req.user.id, row));
+  } catch (err) {
+    console.error("Checkin today error:", err);
+    res.status(500).json({ error: "Couldn't load today's check-in." });
+  }
 });
 
-app.post("/api/checkin", authMiddleware, (req, res) => {
+app.post("/api/checkin", authMiddleware, async (req, res) => {
   try {
     const { answer, skip, score } = req.body || {};
-    const db = req.db;
-    const today = todayKey();
-    const question = checkinQuestionForDate(today);
-
-    let entry = db.checkins.find((c) => c.userId === req.user.id && c.date === today);
-    if (!entry) {
-      entry = {
-        id: generateId("checkin"),
-        userId: req.user.id,
-        date: today,
-        question,
-        answer: null,
-        score: null,
-        skipped: false,
-        createdAt: new Date().toISOString(),
-      };
-    }
-
-    if (skip) {
-      entry.skipped = true;
-    } else if (answer && String(answer).trim()) {
-      entry.answer = String(answer).trim().slice(0, 2000);
-      entry.answeredAt = new Date().toISOString();
-      const numericScore = Number(score);
-      if (Number.isInteger(numericScore) && numericScore >= 1 && numericScore <= 10) {
-        entry.score = numericScore;
-      }
-    } else {
-      return res.status(400).json({ error: "Write a short answer, or skip for today." });
-    }
-
-    saveCheckin(entry);
-    res.json({
-      date: entry.date,
-      question: entry.question,
-      answered: !!entry.answer,
-      skipped: entry.skipped,
-      answer: entry.answer,
-      score: entry.score ?? null,
-    });
+    const row = await saveDailyCheckin(req.db, req.user, { answer, score, skip: !!skip });
+    res.json(dailyCheckinPayload(req.db, req.user.id, row));
   } catch (err) {
+    if (err.status === 400) return res.status(400).json({ error: err.message });
     console.error("Checkin error:", err);
     res.status(500).json({ error: "Couldn't save your check-in. Please try again." });
   }
@@ -5365,31 +5386,31 @@ function publicSoloAnswer(row) {
   };
 }
 
+const MAX_DAILY_ANSWER_LENGTH = 2000;
+
+// Same data as the dashboard check-in: the question plus the score and text.
+function dailyQuestionPayload(db, userId, row) {
+  const c = dailyCheckinPayload(db, userId, row);
+  return { ...publicSoloAnswer(row), myAnswer: c.answer, myScore: c.score, answered: c.answered, streak: c.streak };
+}
+
 app.get("/api/daily-question/today", authMiddleware, async (req, res) => {
   try {
     const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
-    res.json(publicSoloAnswer(row));
+    res.json(dailyQuestionPayload(req.db, req.user.id, row));
   } catch (err) {
     console.error("Get today's daily question error:", err);
     res.status(500).json({ error: "Couldn't load today's question. Please try again." });
   }
 });
 
-const MAX_DAILY_ANSWER_LENGTH = 2000;
-
 app.post("/api/daily-question/today/answer", authMiddleware, async (req, res) => {
   try {
-    const trimmed = String((req.body || {}).answer || "").trim();
-    if (!trimmed) return res.status(400).json({ error: "Write an answer first." });
-    const row = await ensureTodaysSoloQuestion(req.db, req.user.id, todayKey());
-    if (row.answer) {
-      return res.status(400).json({ error: "You've already answered today's question. Come back tomorrow for a new one." });
-    }
-    row.answer = trimmed.slice(0, MAX_DAILY_ANSWER_LENGTH);
-    row.answeredAt = new Date().toISOString();
-    saveSoloAnswer(row);
-    res.json(publicSoloAnswer(row));
+    const { answer, score } = req.body || {};
+    const row = await saveDailyCheckin(req.db, req.user, { answer, score, skip: false });
+    res.json(dailyQuestionPayload(req.db, req.user.id, row));
   } catch (err) {
+    if (err.status === 400) return res.status(400).json({ error: err.message });
     console.error("Answer daily question error:", err);
     res.status(500).json({ error: "Couldn't save your answer. Please try again." });
   }
@@ -5483,7 +5504,11 @@ async function runDailyCheckinReminders() {
   // Anyone who hasn't checked in today is a candidate — email and push are
   // independent channels, each only sent if that user is actually opted
   // into (or, for push, subscribed to) it.
-  const notYetCheckedIn = db.users.filter((u) => !db.checkins.some((c) => c.userId === u.id && c.date === today));
+  const notYetCheckedIn = db.users.filter(
+    (u) =>
+      !db.checkins.some((c) => c.userId === u.id && c.date === today) &&
+      !db.soloAnswers.some((a) => a.userId === u.id && a.date === today && a.answer)
+  );
 
   for (const user of notYetCheckedIn) {
     if (user.email && user.emailCheckinReminders !== false) {

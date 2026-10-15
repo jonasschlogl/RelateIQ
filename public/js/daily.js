@@ -39,27 +39,46 @@ async function loadToday() {
 
 function renderToday(data) {
   const card = document.getElementById("daily-today-card");
-  if (!data.myAnswer) {
+  if (!data.answered) {
     card.innerHTML = `
       <p class="checkin-question">${escapeHtml(data.question)}</p>
+      <div class="checkin-score-row">
+        <label for="daily-score-input">How connected do you feel today?</label>
+        <div class="checkin-score-slider-row">
+          <input type="range" id="daily-score-input" min="1" max="10" step="1" value="5" />
+          <span class="checkin-score-value" id="daily-score-value">5</span>
+          <span class="text-muted" style="font-size:11.5px;">/10</span>
+        </div>
+      </div>
       <div class="checkin-answer">
-        <textarea id="daily-answer-input" maxlength="2000" placeholder="Take your time. This is just for you."></textarea>
+        <textarea id="daily-answer-input" maxlength="2000" placeholder="Optional: take your time. This is just for you."></textarea>
       </div>
       <div class="checkin-actions">
-        <button class="btn btn-primary btn-sm" id="daily-answer-btn" type="button">Submit answer</button>
+        <button class="btn btn-primary btn-sm" id="daily-answer-btn" type="button">Save</button>
       </div>
       <div class="form-error" id="daily-answer-error" style="display:none;"></div>
     `;
+    const scoreInput = document.getElementById("daily-score-input");
+    scoreInput.addEventListener("input", () => {
+      document.getElementById("daily-score-value").textContent = scoreInput.value;
+      scoreInput.dataset.touched = "1";
+    });
     autoGrowTextarea(document.getElementById("daily-answer-input"), 220);
     document.getElementById("daily-answer-btn").addEventListener("click", submitTodayAnswer);
     return;
   }
+  const scoreLine = typeof data.myScore === "number" ? `<p class="checkin-score-done">Connection today: ${data.myScore}/10</p>` : "";
+  const answerBlock = data.myAnswer
+    ? `<div class="couple-answer-block">
+         <span class="couple-answer-label">Your answer</span>
+         <p class="couple-answer-text">${escapeHtml(data.myAnswer)}</p>
+       </div>`
+    : "";
   card.innerHTML = `
     <p class="checkin-question">${escapeHtml(data.question)}</p>
-    <div class="couple-answer-block">
-      <span class="couple-answer-label">Your answer</span>
-      <p class="couple-answer-text">${escapeHtml(data.myAnswer)}</p>
-    </div>
+    ${scoreLine}
+    ${answerBlock}
+    ${answerBlock ? "" : '<p class="checkin-done">✓ You checked in today.</p>'}
   `;
 }
 
@@ -68,25 +87,30 @@ async function submitTodayAnswer() {
   const errorEl = document.getElementById("daily-answer-error");
   const btn = document.getElementById("daily-answer-btn");
   const answer = textEl.value.trim();
+  const scoreEl = document.getElementById("daily-score-input");
+  const touched = !!(scoreEl && scoreEl.dataset.touched);
   errorEl.style.display = "none";
-  if (!answer) {
-    errorEl.textContent = "Write an answer first.";
+  if (!answer && !touched) {
+    errorEl.textContent = "Move the slider or write a few words to save today.";
     errorEl.style.display = "block";
     return;
   }
+  const payload = {};
+  if (answer) payload.answer = answer;
+  if (touched) payload.score = Number(scoreEl.value);
   btn.disabled = true;
   btn.textContent = "Saving…";
   try {
     const res = await authFetch("/api/daily-question/today/answer", {
       method: "POST",
-      body: JSON.stringify({ answer }),
+      body: JSON.stringify(payload),
     });
     const data = await safeJson(res);
     if (!res.ok) {
       errorEl.textContent = data.error || "Couldn't save your answer.";
       errorEl.style.display = "block";
       btn.disabled = false;
-      btn.textContent = "Submit answer";
+      btn.textContent = "Save";
       return;
     }
     historyLoaded = false; // today becomes "past" tomorrow; refetch next time it's opened
@@ -95,7 +119,7 @@ async function submitTodayAnswer() {
     errorEl.textContent = "Couldn't connect to the server.";
     errorEl.style.display = "block";
     btn.disabled = false;
-    btn.textContent = "Submit answer";
+    btn.textContent = "Save";
   }
 }
 
