@@ -5814,6 +5814,33 @@ if (BACKUP_ENABLED) {
 }
 
 // Read-only: which models this OpenAI key can actually use (ids only).
+// Admin only: run the Coach prompt on a chosen model for one message, to compare models.
+// Nothing is stored. Body: { model, message, effort? }.
+app.post("/api/admin/coach-test", authMiddleware, adminMiddleware, async (req, res) => {
+  const { model, message, effort } = req.body || {};
+  if (!model || !message) return res.status(400).json({ error: "model and message are required." });
+  const t0 = Date.now();
+  try {
+    const params = {
+      model: String(model).slice(0, 60),
+      messages: [
+        { role: "system", content: COACH_SYSTEM_PROMPT },
+        { role: "user", content: String(message).slice(0, 2000) },
+      ],
+    };
+    if (effort) params.reasoning_effort = String(effort).slice(0, 12);
+    const out = await openai.chat.completions.create(params);
+    res.json({
+      model: params.model,
+      ms: Date.now() - t0,
+      reply: out.choices[0]?.message?.content || "",
+      usage: out.usage || null,
+    });
+  } catch (err) {
+    res.status(200).json({ model, ms: Date.now() - t0, error: String(err.message || err).slice(0, 400) });
+  }
+});
+
 app.get("/api/admin/openai-models", authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const list = await openai.models.list();
