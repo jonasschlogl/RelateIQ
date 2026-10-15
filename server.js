@@ -5813,6 +5813,19 @@ if (BACKUP_ENABLED) {
   setInterval(backupIfDue, 60 * 60 * 1000).unref(); // then check hourly
 }
 
+// Read-only: which models this OpenAI key can actually use (ids only).
+app.get("/api/admin/openai-models", authMiddleware, adminMiddleware, async (req, res) => {
+  try {
+    const list = await openai.models.list();
+    const ids = [];
+    for await (const m of list) ids.push(m.id);
+    ids.sort();
+    res.json({ count: ids.length, models: ids });
+  } catch (err) {
+    res.status(500).json({ error: String(err.message || err).slice(0, 300) });
+  }
+});
+
 app.get("/api/admin/backups", authMiddleware, adminMiddleware, (req, res) => {
   res.json({ enabled: BACKUP_ENABLED, keep: BACKUP_KEEP, intervalHours: BACKUP_INTERVAL_HOURS, backups: listBackups() });
 });
