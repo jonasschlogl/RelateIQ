@@ -88,7 +88,7 @@ function renderSummary(data) {
 function formatSummaryDate(iso) {
   try {
     const d = new Date(iso);
-    return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    return d.toLocaleString(window.appLocale, { dateStyle: "medium", timeStyle: "short" });
   } catch (e) {
     return iso;
   }

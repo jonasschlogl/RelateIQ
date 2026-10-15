@@ -88,11 +88,11 @@ function listHtml(items) {
 function renderPack(p) {
   const el = document.getElementById("pack-state");
   const n = p.numbers || {};
-  const date = new Date(p.generatedAt || Date.now()).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const date = new Date(p.generatedAt || Date.now()).toLocaleDateString(window.appLocale || "en-US", { year: "numeric", month: "long", day: "numeric" });
   document.getElementById("pack-subtitle").textContent = `Prepared ${date}`;
 
   const facts = [];
-  if (n.conversations) facts.push(`${n.conversations} Coach Chat conversation${n.conversations === 1 ? "" : "s"}${n.since ? " since " + (new Date(n.since).toString() !== "Invalid Date" ? new Date(n.since).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) : n.since) : ""}`);
+  if (n.conversations) facts.push(`${n.conversations} Coach Chat conversation${n.conversations === 1 ? "" : "s"}${n.since ? " since " + (new Date(n.since).toString() !== "Invalid Date" ? new Date(n.since).toLocaleDateString(window.appLocale, { year: "numeric", month: "long", day: "numeric" }) : n.since) : ""}`);
   if (n.checkinDays) facts.push(`${n.checkinDays} daily check-in${n.checkinDays === 1 ? "" : "s"}`);
   if (n.averageScore != null) {
     const t = n.trend === "up" ? ", rising recently" : n.trend === "down" ? ", lower recently" : n.trend === "steady" ? ", steady" : "";

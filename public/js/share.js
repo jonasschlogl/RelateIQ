@@ -472,7 +472,7 @@ async function confirmShareConversation(conversationId) {
 
 function formatShareDate(iso) {
   try {
-    return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    return new Date(iso).toLocaleDateString(window.appLocale, { month: "short", day: "numeric" });
   } catch (e) {
     return "";
   }

@@ -105,7 +105,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const disclaimer = document.getElementById("chat-disclaimer");
   if (disclaimer) {
     const limit = maxFilesPerMessage();
-    disclaimer.textContent += ` Attachments: up to ${limit} file${limit === 1 ? "" : "s"}, 15MB total per message.`;
+    // its own element, so the two sentences are translated separately
+    const attachNote = document.createElement("span");
+    attachNote.textContent = ` Attachments: up to ${limit} file${limit === 1 ? "" : "s"}, 15MB total per message.`;
+    disclaimer.appendChild(attachNote);
   }
 
   // Covers the empty-state landing (no conversations yet), which never
@@ -1544,7 +1547,7 @@ async function deletePartnerAction(p) {
 function formatShortDate(iso) {
   try {
     const d = new Date(iso);
-    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    return d.toLocaleDateString(window.appLocale, { month: "short", day: "numeric" });
   } catch (e) {
     return "";
   }

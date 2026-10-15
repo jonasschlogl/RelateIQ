@@ -117,7 +117,7 @@ function renderInsights(data) {
 function formatInsightsDate(iso) {
   try {
     const d = new Date(iso);
-    return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    return d.toLocaleString(window.appLocale, { dateStyle: "medium", timeStyle: "short" });
   } catch (e) {
     return iso;
   }
@@ -268,7 +268,7 @@ function wireTrendHover(points) {
 function formatShortDate(dateKey) {
   try {
     const d = new Date(dateKey + "T00:00:00");
-    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    return d.toLocaleDateString(window.appLocale, { month: "short", day: "numeric" });
   } catch (e) {
     return dateKey;
   }

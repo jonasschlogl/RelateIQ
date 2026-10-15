@@ -603,7 +603,7 @@ function planLabel(plan) {
 function formatDate(iso) {
   if (!iso) return "Not available";
   try {
-    return new Date(iso).toLocaleDateString();
+    return new Date(iso).toLocaleDateString(window.appLocale);
   } catch (e) {
     return iso;
   }

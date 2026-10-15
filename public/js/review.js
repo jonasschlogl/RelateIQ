@@ -120,7 +120,7 @@ async function load() {
 }
 
 function monthLabel(key) {
-  return new Date(key + "-01T00:00:00Z").toLocaleString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+  return new Date(key + "-01T00:00:00Z").toLocaleString(window.appLocale || "en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 function render() {
