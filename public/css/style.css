@@ -4935,3 +4935,14 @@ body.js-reveal .reveal-item.revealed {
   .empty-start-label { margin: 14px 0 8px; }
   .empty-tool { padding: 9px 13px; }
 }
+
+/* Mobile polish: Insights/Review/Pack tabs in one scrollable row, and a
+   compact Practice banner (text left, feedback button right). */
+@media (max-width: 600px) {
+  .pb-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; gap: 6px; margin: 0 -4px 18px; padding: 0 4px 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .pb-tabs::-webkit-scrollbar { display: none; }
+  .pb-tabs a { flex: none; white-space: nowrap; font-size: 13px; padding: 7px 12px; }
+  .partner-banner { flex-direction: row; align-items: center; text-align: left; gap: 10px; padding: 9px 12px; margin: 8px 12px 0; }
+  .partner-banner-text { flex: 1; }
+  .partner-banner #debrief-btn { flex: none; white-space: nowrap; padding: 7px 12px; }
+}

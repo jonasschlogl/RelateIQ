@@ -617,3 +617,13 @@ async function changePlanInPlace(plan) {
     await showAppAlert("Couldn't connect to the server.");
   }
 }
+
+// Insights / Review / Pack tabs: on narrow screens they sit in one scrollable
+// row (see .pb-tabs in style.css); bring the current tab into view.
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".pb-tabs");
+  const cur = nav && nav.querySelector("a.is-current");
+  if (nav && cur && nav.scrollWidth > nav.clientWidth) {
+    nav.scrollLeft = Math.max(0, cur.offsetLeft - (nav.clientWidth - cur.offsetWidth) / 2);
+  }
+});

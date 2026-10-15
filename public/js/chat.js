@@ -365,7 +365,12 @@ function renderPracticePlan(plan, open) {
   if (!banner || !plan) return;
   const list = (items) => (items && items.length ? `<ul>${items.map((x) => `<li>${escapeHtml(x)}</li>`).join("")}</ul>` : "");
   const reactions = (plan.reactions || [])
-    .map((r) => `<li><strong>They might ${escapeHtml(String(r.reaction || "").replace(/^they might\s*/i, ""))}</strong><br>${escapeHtml(r.respond || "")}</li>`)
+    .map((r) => {
+      // The model is told to phrase reactions as "they might ..." in the plan's own language,
+      // so show it as written (capitalised) instead of adding an English prefix.
+      const rx = String(r.reaction || "").trim().replace(/^might\s/i, "they might ");
+      return `<li><strong>${escapeHtml(rx.charAt(0).toUpperCase() + rx.slice(1))}</strong><br>${escapeHtml(r.respond || "")}</li>`;
+    })
     .join("");
   const el = document.createElement("details");
   el.id = "practice-plan";
@@ -1911,7 +1916,7 @@ function updatePracticeCap(cap) {
   let el = document.getElementById("practice-cap-note");
   const input = document.getElementById("input");
   const sendBtn = document.getElementById("send-btn");
-  const originalPlaceholder = "Tell me what's going on in your relationship…";
+  const originalPlaceholder = composerPlaceholder(currentConvCtx.mode === "practice" ? "practice" : "coach");
   if (!cap) {
     if (el) el.style.display = "none";
     if (input) { input.disabled = false; input.placeholder = originalPlaceholder; }
@@ -2741,6 +2746,9 @@ function typeText(element, text, speed = 12) {
 
 async function sendMessage() {
   if (isSending) return;
+  // Once the rehearsal starts, fold the plan away so the conversation is not hidden behind it
+  // (especially on phones). It stays one tap away under the partner banner.
+  document.getElementById("practice-plan")?.removeAttribute("open");
 
   const input = document.getElementById("input");
   const message = input.value.trim();

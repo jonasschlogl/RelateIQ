@@ -2323,10 +2323,10 @@ Respond with ONLY a JSON object in exactly this shape:
 
 Rules:
 - Be specific to THIS situation; no generic relationship advice that would fit anyone.
-- Give 3 reactions that are realistic for the person described. They are guesses, not predictions: phrase them as "they might...".
+- Give 3 reactions that are realistic for the person described. They are guesses, not predictions: phrase them as "they might..." (in the language of the plan).
 - Use what's known about what worked or failed before (the Playbook) when it applies; never repeat something that didn't help them.
 - If the situation involves abuse, fear for safety or self-harm, put a short, calm note about getting real support into "ifHeated" and keep the plan gentle.
-- Warm, plain, short sentences. Never diagnose. Write in the language the user writes in.`;
+- Warm, plain, short sentences. Never diagnose. Write the whole plan in the language of the topic text the user typed, even if the background about the person is in another language.`;
 
 function publicTalk(d) {
   return { id: d.id, title: d.title, createdAt: d.createdAt, ...d.data };
@@ -3518,6 +3518,7 @@ Respond with ONLY a JSON object in exactly this shape:
 Rules:
 - Small and specific beats big and vague. Never repeat something that did not help them; build on what worked.
 - No blame, no diagnosis, no tactics to "win". Plain, warm, short sentences. Reply in the language the user writes in (English if unclear).
+- Never guess the partner's gender. Say "your partner" (or their name if given) and avoid he, him, she and her unless the text you were given clearly uses that pronoun.
 - If there is hardly any information, choose a gentle, universally useful starter (e.g. one genuine question and listening without fixing) and say so in "why".`;
 
 async function generateWeeklyFocus(db, user) {
@@ -3630,7 +3631,8 @@ Respond with ONLY a JSON object in exactly this shape:
 Rules:
 - Mix mostly small gestures (a few minutes, free or cheap) with one or two simple dates. Low cost by default.
 - Specific beats generic: use the partner's known traits and the user's story when given; otherwise pick things that work for most people.
-- Never manipulative, never grand-gesture-to-win-someone-back. Plain, warm words. Reply in the language the user writes in (English if unclear).`;
+- Never manipulative, never grand-gesture-to-win-someone-back. Plain, warm words. Reply in the language the user writes in (English if unclear).
+- Never guess the partner's gender. Use the partner's name or "your partner" and avoid he, him, she and her unless the text you were given clearly uses that pronoun.`;
 
 async function generateIdeas(db, user, avoidTitles = []) {
   const premium = user.plan === "premium";
