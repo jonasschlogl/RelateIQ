@@ -134,7 +134,7 @@ function render() {
     const b = document.createElement("button");
     b.type = "button";
     b.className = "rv-pill" + (r.key === reviewState.selected ? " is-active" : "");
-    b.textContent = r.title;
+    b.textContent = monthLabel(r.key);
     b.addEventListener("click", () => {
       reviewState.selected = r.key;
       render();
@@ -181,7 +181,7 @@ async function create(key, btn, regenerate) {
       return;
     }
     if (data.notEnoughData) {
-      await showAppAlert(`Not enough in ${data.title} yet. A review needs a few conversations, check-ins or experiments from that month.`);
+      await showAppAlert(`Not enough in ${monthLabel(key)} yet. A review needs a few conversations, check-ins or experiments from that month.`);
       render();
       return;
     }
@@ -217,7 +217,7 @@ function renderReview(r) {
     score = `<div class="rv-score"><span class="rv-score-num">${st.averageScore}</span><span class="rv-score-of">/10 average connection</span>${arrow ? `<span class="rv-trend rv-${st.trend}">${arrow}</span>` : ""}${st.firstAvg != null ? `<span class="rv-score-sub">${st.firstAvg} early in the month, ${st.lastAvg} later</span>` : ""}</div>`;
   }
 
-  let html = `<p class="rv-month">${escapeHtml(r.title)}</p>`;
+  let html = `<p class="rv-month">${escapeHtml(monthLabel(r.key))}</p>`;
   if (rv.headline) html += `<h2 class="rv-headline">${escapeHtml(rv.headline)}</h2>`;
   html += `<div class="rv-chips">${chips.map((c) => `<span class="rv-chip">${escapeHtml(c)}</span>`).join("")}</div>`;
   html += score;

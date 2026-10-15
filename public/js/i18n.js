@@ -181,7 +181,7 @@
           // sentence: stops short patterns from grabbing longer text (e.g. AI-written).
           var pre = key.slice(lastIdx, off);
           // right after a letter ("message{1}") the placeholder is the plural "s"
-          var cap = /[A-Za-z]$/.test(pre) && !FREE_SLOT.test(key) ? "(s?)" : "((?:(?!\\.\\s)[\\s\\S]){0," + (off === 0 ? 40 : 300) + "}?)";
+          var cap = /[A-Za-z]$/.test(pre) && !FREE_SLOT.test(key) ? "(s?)" : "((?:\\d\\.\\s|(?!\\.\\s)[\\s\\S]){0," + (off === 0 ? 40 : 300) + "}?)";
           src += esc(pre) + cap;
           order.push(+n);
           lastIdx = off + m.length;

@@ -2047,7 +2047,7 @@ app.post("/api/playbook/summary", authMiddleware, async (req, res) => {
         {
           role: "system",
           content:
-            "You read a person's relationship 'playbook': small real-life experiments they tried, each marked worked / didnt_help / not_tried. Write in plain, warm, simple English (or the language of their notes if clearly different), max 120 words, no headings, no bullet points beyond 3 short lines. Say: what tends to work for them, what doesn't, anything they keep not getting to, and ONE next thing to try. Be specific to the list, never generic, never diagnose.",
+            "You read a person's relationship 'playbook': small real-life experiments they tried, each marked worked / didnt_help / not_tried. Write in plain, warm, simple words in the language their notes and experiments are written in (detect it automatically, even if the text has no accents; use English only if they wrote in English; never mix languages), max 120 words, no headings, no bullet points beyond 3 short lines. Say: what tends to work for them, what doesn't, anything they keep not getting to, and ONE next thing to try. Be specific to the list, never generic, never diagnose.",
         },
         { role: "user", content: lines },
       ],
