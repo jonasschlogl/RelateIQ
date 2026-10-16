@@ -4994,3 +4994,15 @@ body.js-reveal .reveal-item.revealed {
   .nav-links .lang-switch { width: 100%; }
   .nav-links .lang-list { position: static; width: auto; margin-top: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 46vh; box-shadow: none; background: var(--bg-elevated); }
 }
+
+/* What RelationshipAI remembers (dashboard) */
+.memory-body { margin-top: 14px; }
+.memory-section + .memory-section { margin-top: 18px; }
+.memory-heading { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted, #b6a795); margin: 0 0 8px; font-weight: 600; }
+.memory-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+.memory-item:first-of-type { border-top: 0; }
+.memory-text { flex: 1; min-width: 0; line-height: 1.45; overflow-wrap: anywhere; }
+.memory-forget { flex: none; }
+.memory-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+.memory-note { margin: 0; font-size: 13px; flex: 1; min-width: 200px; }
+@media (max-width: 560px) { .memory-item { flex-direction: column; align-items: stretch; } .memory-forget { align-self: flex-start; } }

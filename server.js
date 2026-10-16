@@ -61,7 +61,10 @@ import {
   listDocs,
   getDueDocsByFollowUp,
   deleteDoc,
+  listConversationsForUser,
+  setUserMemoryColumns,
 } from "./lib/store.js";
+import * as Mem from "./lib/memory.js";
 import { sendEmail, emailShell, escapeForEmail } from "./lib/email.js";
 import webpush from "web-push";
 
@@ -739,7 +742,7 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookCon
   }
 
   if (memory) {
-    prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript (a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity) so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing, but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Most recent suggestion:", that's a concrete thing you told this user to try last time, and they haven't confirmed back whether they did. This is the single biggest thing a real coach does that a one-off chatbot can't: remembering what they told you to do and actually checking in on it. If this is a new conversation (no messages yet) or very early in one, and what the user's bringing up now doesn't already answer it, ask about it yourself before diving into whatever's new, briefly, like picking up a thread ("did you end up bringing that up with her?"), not a formal check-in ritual. If they've already addressed it or moved on to something unrelated, drop it, don't force it in.`;
+    prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript (a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity) so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing, but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Open thread:" or "Most recent suggestion:", that's something in motion (often a concrete thing you told this user to try) and they haven't confirmed how it went. A real coach remembers that and checks in, but only once and only when it fits: if this is a new conversation or very early in one, and what the user brings up now touches the same thing, ask about it briefly, like picking up a thread ("did you end up bringing that up with her?"), after you have answered what they just wrote. If their message is about something else, or they have already addressed it, leave it alone. Never make the check-in the whole reply, and never ask about it twice in the same conversation.`;
   }
 
   const insightsContext = buildInsightsContext(user);
@@ -1418,6 +1421,134 @@ ${digest}
   } catch (err) {
     console.error("Relationship memory update error:", err.message);
     // Fail open — leave whatever memory (or lack of one) already existed.
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Memory v2 (see lib/memory.js). Runs in the background after a Coach Chat
+// conversation goes quiet, and once more (bounded) when a new conversation
+// starts. It never blocks or breaks a reply: every failure just keeps the
+// previous memory. The old updateRelationshipMemoryIfStale above is no longer called.
+// ---------------------------------------------------------------------------
+const memoryRunning = new Set();
+const memoryTimers = new Map();
+const memoryFailAt = new Map();
+const MEMORY_DAILY_RUNS = 30;
+const MEMORY_DEBOUNCE_MS = Number(process.env.MEMORY_DEBOUNCE_MS) || 45 * 1000;
+const MEMORY_FAIL_COOLDOWN_MS = 5 * 60 * 1000;
+const MEMORY_MODEL_TIMEOUT_MS = 60 * 1000;
+
+function loadMemoryDoc(userId) {
+  const doc = getDocByKey(userId, Mem.MEMORY_KIND, Mem.MEMORY_KEY);
+  return { doc, mem: Mem.normalizeMemory(doc && doc.data) };
+}
+
+function saveMemory(userId, doc, mem) {
+  mem.updatedAt = new Date().toISOString();
+  saveDoc({
+    id: (doc && doc.id) || generateId("doc"),
+    userId,
+    kind: Mem.MEMORY_KIND,
+    key: Mem.MEMORY_KEY,
+    title: "Memory",
+    data: mem,
+    createdAt: doc && doc.createdAt,
+    notifiedAt: null,
+  });
+  // The plain-text form that Coach Chat and the older features read.
+  setUserMemoryColumns(userId, Mem.renderMemoryText(mem) || null, mem.updatedAt);
+}
+
+async function runMemoryUpdate(userId) {
+  if (memoryRunning.has(userId)) {
+    scheduleMemoryUpdate(userId, 15 * 1000);
+    return;
+  }
+  memoryRunning.add(userId);
+  try {
+    const user = getUserById(userId);
+    if (!user) return;
+    const now = new Date();
+    const failAt = memoryFailAt.get(userId);
+    if (failAt && now.getTime() - failAt < MEMORY_FAIL_COOLDOWN_MS) return;
+    const { doc, mem } = loadMemoryDoc(userId);
+    if (Mem.runsToday(mem, now) >= MEMORY_DAILY_RUNS) return;
+    const conversations = listConversationsForUser(userId);
+    const first = !doc;
+    const { picked, covered } = Mem.collectNewMaterial(conversations, mem.processed);
+    if (!picked.length) return;
+
+    let out = null;
+    try {
+      const completion = await Promise.race([
+        openai.chat.completions.create({
+          model: STANDARD_MODEL,
+          messages: [
+            { role: "system", content: Mem.MEMORY_UPDATE_PROMPT },
+            {
+              role: "user",
+              content: Mem.buildUpdateUserContent({
+                current: mem,
+                legacyText: first ? user.relationshipMemory : "",
+                material: picked,
+                today: now.toISOString().slice(0, 10),
+              }),
+            },
+          ],
+          response_format: { type: "json_object" },
+        }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error("memory update timed out")), MEMORY_MODEL_TIMEOUT_MS)),
+      ]);
+      out = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    } catch (err) {
+      console.error("Memory update error:", err.message);
+      memoryFailAt.set(userId, Date.now());
+      return;
+    }
+
+    const next = Mem.applyModelUpdate(mem, out);
+    const result = next || mem; // unusable answer: keep what we had, but do not reprocess the same material forever
+    Mem.bumpRuns(result, now);
+    if (first) Object.assign(result.processed, Mem.baselineProcessed(conversations)); // older history is covered by the legacy note
+    Mem.markProcessed(result, covered);
+
+    // If the user forgot something (or another run finished) while the model was thinking, drop this result.
+    const fresh = getDocByKey(userId, Mem.MEMORY_KIND, Mem.MEMORY_KEY);
+    if ((fresh ? fresh.updatedAt : null) !== (doc ? doc.updatedAt : null)) {
+      scheduleMemoryUpdate(userId, 5 * 1000);
+      return;
+    }
+    saveMemory(userId, doc, result);
+  } catch (err) {
+    console.error("Memory update crashed:", err.message);
+  } finally {
+    memoryRunning.delete(userId);
+  }
+}
+
+function scheduleMemoryUpdate(userId, delayMs = MEMORY_DEBOUNCE_MS) {
+  const old = memoryTimers.get(userId);
+  if (old) clearTimeout(old);
+  const t = setTimeout(() => {
+    memoryTimers.delete(userId);
+    runMemoryUpdate(userId).catch((err) => console.error("Memory update error:", err.message));
+  }, delayMs);
+  if (t.unref) t.unref();
+  memoryTimers.set(userId, t);
+}
+
+// Called when a new Coach Chat conversation starts: catch up on anything not yet
+// processed, but never hold the user up for long.
+async function ensureMemoryFresh(userId, maxWaitMs = 4000) {
+  try {
+    const old = memoryTimers.get(userId);
+    if (old) {
+      clearTimeout(old);
+      memoryTimers.delete(userId);
+    }
+    await Promise.race([runMemoryUpdate(userId), new Promise((resolve) => setTimeout(resolve, maxWaitMs))]);
+  } catch (err) {
+    console.error("ensureMemoryFresh error:", err.message);
   }
 }
 
@@ -2960,6 +3091,7 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
     },
     relationshipMemory: user.relationshipMemory || null,
     relationshipMemoryUpdatedAt: user.relationshipMemoryAt || null,
+    memoryNotes: Mem.publicMemory(loadMemoryDoc(user.id).mem).sections,
     partnerProfiles,
     playbook: listExperimentsForUser(user.id).map(publicExperiment),
     monthlyReviews: listDocs(user.id, "monthly").map((d) => ({ month: d.key, ...d.data })),
@@ -3036,6 +3168,37 @@ app.post("/api/me/email-preferences", authMiddleware, (req, res) => {
 // ---------------------------------------------------------------------------
 // Referrals
 // ---------------------------------------------------------------------------
+
+// What the coach remembers: viewable and removable by the user.
+app.get("/api/memory", authMiddleware, (req, res) => {
+  const { doc, mem } = loadMemoryDoc(req.user.id);
+  const out = Mem.publicMemory(mem);
+  // Older users have a free-text memory but no structured one yet: build it now, in the background.
+  if (!doc && req.user.relationshipMemory) {
+    scheduleMemoryUpdate(req.user.id, 500);
+    out.updating = true;
+  }
+  res.json(out);
+});
+
+app.post("/api/memory/forget", authMiddleware, (req, res) => {
+  const { section, id } = req.body || {};
+  const { doc, mem } = loadMemoryDoc(req.user.id);
+  if (!doc) return res.status(404).json({ error: "Nothing to forget." });
+  const gone = Mem.removeItem(mem, String(section || ""), String(id || ""));
+  if (!gone) return res.status(404).json({ error: "That note is already gone." });
+  saveMemory(req.user.id, doc, mem);
+  res.json(Mem.publicMemory(mem));
+});
+
+app.post("/api/memory/clear", authMiddleware, (req, res) => {
+  const { doc } = loadMemoryDoc(req.user.id);
+  const mem = Mem.emptyMemory();
+  // Everything said so far counts as already handled, so clearing really starts fresh.
+  mem.processed = Mem.baselineProcessed(listConversationsForUser(req.user.id));
+  saveMemory(req.user.id, doc, mem);
+  res.json(Mem.publicMemory(mem));
+});
 
 app.get("/api/referrals", authMiddleware, (req, res) => {
   const db = req.db;
@@ -4120,7 +4283,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   } else {
     // Fully automatic, same fail-open shape as the partner learning above —
     // see updateRelationshipMemoryIfStale for the staleness/cooldown logic.
-    await updateRelationshipMemoryIfStale(db, req.user);
+    await ensureMemoryFresh(req.user.id);
   }
 
   // Snapshotted at conversation-start time, same as partnerName/partnerTraits/
@@ -4498,6 +4661,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
 
     if (!freePractice) bumpUsage(user, chatModel, { coachPool: user.plan === "pro" && !isPractice });
+    if (!isPractice) scheduleMemoryUpdate(req.user.id);
 
     const practiceUserCount = freePractice ? (conv.messages || []).filter((m) => m.role === "user").length + 1 : null;
     res.json({
@@ -4743,6 +4907,7 @@ app.post("/api/conversations/:id/debrief", authMiddleware, async (req, res) => {
     conv.practiceDebriefFeedback = null;
     saveConversation(conv);
     if (user.plan !== "free") bumpUsage(user);
+    scheduleMemoryUpdate(req.user.id);
 
     res.json({ ...debrief, generatedAt, feedback: null, cached: false, usage: user.usage, ...practiceProgressFor(db, user, conv) });
   } catch (err) {

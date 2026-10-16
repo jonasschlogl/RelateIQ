@@ -107,12 +107,135 @@ function setupDeleteAccount() {
   });
 }
 
+// ---- What the coach remembers (view and remove) ----------------------------
+const MEMORY_SECTIONS = [
+  ["facts", "About your situation"],
+  ["themes", "What keeps coming up"],
+  ["patterns", "How you tend to react"],
+  ["preferences", "How you like to be coached"],
+  ["openThreads", "In progress"],
+];
+let memoryPolls = 0;
+
+function renderMemory(data) {
+  const card = document.getElementById("memory-card");
+  const body = document.getElementById("memory-body");
+  if (!card || !body) return;
+  card.style.display = "";
+  body.textContent = "";
+
+  if (data.empty) {
+    const p = document.createElement("p");
+    p.className = "text-muted memory-empty";
+    p.textContent = data.updating ? "Building your notes, check back in a minute." : "Nothing remembered yet. After a few conversations, notes will appear here.";
+    body.appendChild(p);
+    if (data.updating && memoryPolls < 3) {
+      memoryPolls += 1;
+      setTimeout(loadMemory, 8000);
+    }
+    return;
+  }
+
+  MEMORY_SECTIONS.forEach(([key, label]) => {
+    const items = (data.sections && data.sections[key]) || [];
+    if (!items.length) return;
+    const wrap = document.createElement("div");
+    wrap.className = "memory-section";
+    const h = document.createElement("h3");
+    h.className = "memory-heading";
+    h.textContent = label;
+    wrap.appendChild(h);
+    items.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "memory-item";
+      const text = document.createElement("span");
+      text.className = "memory-text";
+      text.setAttribute("data-no-i18n", "");
+      text.textContent = item.text;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn btn-ghost btn-sm memory-forget";
+      btn.textContent = "Forget";
+      btn.addEventListener("click", () => forgetMemoryItem(key, item.id, btn));
+      row.appendChild(text);
+      row.appendChild(btn);
+      wrap.appendChild(row);
+    });
+    body.appendChild(wrap);
+  });
+
+  const foot = document.createElement("div");
+  foot.className = "memory-foot";
+  const note = document.createElement("p");
+  note.className = "text-muted memory-note";
+  note.textContent = "Deleting a conversation doesn't delete its notes. Remove them here.";
+  const all = document.createElement("button");
+  all.type = "button";
+  all.className = "btn btn-ghost btn-sm";
+  all.textContent = "Forget everything";
+  all.addEventListener("click", forgetAllMemory);
+  foot.appendChild(note);
+  foot.appendChild(all);
+  body.appendChild(foot);
+}
+
+async function loadMemory() {
+  const card = document.getElementById("memory-card");
+  try {
+    const res = await authFetch("/api/memory");
+    if (!res.ok) return;
+    renderMemory(await safeJson(res));
+  } catch (err) {
+    console.error(err);
+    if (card) card.style.display = "none";
+  }
+}
+
+async function forgetMemoryItem(section, id, btn) {
+  btn.disabled = true;
+  try {
+    const res = await authFetch("/api/memory/forget", { method: "POST", body: JSON.stringify({ section, id }) });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      await showAppAlert(data.error || "Couldn't update your notes. Please try again.");
+      btn.disabled = false;
+      return;
+    }
+    renderMemory(data);
+  } catch (err) {
+    console.error(err);
+    await showAppAlert("Couldn't update your notes. Please try again.");
+    btn.disabled = false;
+  }
+}
+
+async function forgetAllMemory() {
+  const go = await showAppConfirm(
+    "Forget everything RelationshipAI remembers about you? Your conversations stay, but the coach starts fresh. This can't be undone.",
+    { confirmLabel: "Forget everything", danger: true }
+  );
+  if (!go) return;
+  try {
+    const res = await authFetch("/api/memory/clear", { method: "POST" });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      await showAppAlert(data.error || "Couldn't update your notes. Please try again.");
+      return;
+    }
+    renderMemory(data);
+  } catch (err) {
+    console.error(err);
+    await showAppAlert("Couldn't update your notes. Please try again.");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   document.getElementById("logout-btn")?.addEventListener("click", logout);
   document.getElementById("export-data-btn")?.addEventListener("click", downloadMyData);
   setupDeleteAccount();
+  loadMemory();
 
   if (new URLSearchParams(window.location.search).get("upgraded") === "1") {
     showUpgradeBanner();
