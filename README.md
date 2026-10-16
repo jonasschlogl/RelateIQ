@@ -142,28 +142,30 @@ All counters are markers in the `docs` table (kinds `mcheck`, `sos`, `focus`, `i
 
 ## Pricing & costs (why the limits are what they are)
 
-Prices: Pro €9.99/mo (€69.99/yr), Premium €19.99/mo (€149.99/yr), Free €0. Estimated from measured prompt sizes and OpenAI list prices (gpt-4o $2.50 in / $10 out per 1M tokens, gpt-4o-mini $0.15 / $0.60); re-check these when OpenAI changes pricing.
+Prices: Pro €9.99/mo (€69.99/yr), Premium €19.99/mo (€149.99/yr), Free €0. Estimated from measured token usage and OpenAI list prices (October 2026, per 1M tokens: gpt-6-luna $0.10 in / $0.50 out, gpt-6.1-sol $2.00 in / $10.00 out, cached input 10x cheaper); re-check these when OpenAI changes pricing.
 
-Cost of one AI message (typical conversation, ~3.5k-token system prompt + history):
+Measured on the live app: a Coach Chat request is ~2.3k prompt tokens plus history, ~150-200 output tokens, and the reasoning models spend 0-50 reasoning tokens at `reasoning_effort: "low"` (use `/api/admin/coach-test` to re-measure).
 
-| Surface | Fast model (mini) | Strong model (4o) |
+Cost of one AI message (typical conversation, ~3.5k input tokens, ~200 output):
+
+| Surface | Fast model (luna) | Strong model (sol) |
 |---|---|---|
-| Coach Chat | ~$0.0012 | ~$0.0185 |
-| Partner Practice | ~$0.0006 | ~$0.0076 |
+| Coach Chat | ~$0.0005 | ~$0.005-0.009 |
+| Partner Practice | ~$0.0003 | ~$0.004 |
 
-The strong model is ~15x the cost of the fast one, so each paid plan has a monthly **strong-model budget** (`PRO_STRONG_MODEL_BUDGET`, default 150, Practice; plus a separate `PRO_COACH_STRONG_BUDGET`, default 30, for Pro's Coach Chat; `PREMIUM_STRONG_MODEL_BUDGET`, default 300, Coach + Practice + Message check + After a fight). When it is used up, the same features keep working on the fast model until the 1st (nothing is blocked). Overall fair-use caps stay at 1,000 (Pro) / 1,500 (Premium) messages a month (`PRO_MONTHLY_AI_LIMIT`, `PREMIUM_MONTHLY_AI_LIMIT`).
+The strong model is ~10-20x the cost of the fast one, so each paid plan has a monthly **strong-model budget** (`PRO_STRONG_MODEL_BUDGET`, default 200, Practice; plus a separate `PRO_COACH_STRONG_BUDGET`, default 80, for Pro's Coach Chat; `PREMIUM_STRONG_MODEL_BUDGET`, default 500, Coach + Practice + Message check + After a fight). Railway variables with these names override the defaults. When the budget is used up, the same features keep working on the fast model until the 1st (nothing is blocked). Overall fair-use caps stay at 1,000 (Pro) / 1,500 (Premium) messages a month (`PRO_MONTHLY_AI_LIMIT`, `PREMIUM_MONTHLY_AI_LIMIT`).
 
-Worst case if a user maxes everything out (no prompt caching, which would lower it ~20-30%):
+Worst case if a user maxes everything out (strong-model budgets fully used, plus memory updates and the occasional Premium report; no prompt caching assumed):
 
 | Plan | Net revenue / month* | Worst-case AI cost | Cost as % of net |
 |---|---|---|---|
-| Pro monthly | ~€7.8 | ~€2.6 | ~33% |
-| Pro yearly | ~€4.7 | ~€2.6 | ~55% |
-| Premium monthly | ~€15.8 | ~€6.4 | ~40% |
-| Premium yearly | ~€10.0 | ~€6.4 | ~64% |
+| Pro monthly | ~€7.8 | ~€2.1 | ~27% |
+| Pro yearly | ~€4.7 | ~€2.1 | ~45% |
+| Premium monthly | ~€15.8 | ~€5.2 | ~33% |
+| Premium yearly | ~€10.0 | ~€5.2 | ~52% |
 
-*After ~21% average EU consumer VAT and Stripe (~2.2% + €0.25) — assumes prices are tax-inclusive. A typical user uses a small fraction of the caps, so real margin is much higher. Free: at most 8 fast-model messages a day (~$0.01/day).
+*After ~21% average EU consumer VAT and Stripe (~2.2% + €0.25) — assumes prices are tax-inclusive. A typical user uses a small fraction of the caps, so real margin is much higher. Free: at most 8 fast-model messages a day (~$0.004/day).
 
 ### Answer quality picker
 
-Each chat has a Fast / Advanced toggle above the composer (`quality` column on `conversations`, sent with every message). Advanced = strong model while the plan's monthly strong-model budget lasts, then Fast automatically; Fast saves the budget. Premium and Pro can pick in every chat (Pro: 150 in Practice + 30 in Coach per month, Premium: 300 shared), Free is always Fast (the Advanced button shows a lock and an upgrade prompt). The server enforces this (`canChooseAdvanced`, `chatModelFor` in server.js).
+Each chat has a Fast / Advanced toggle above the composer (`quality` column on `conversations`, sent with every message). Advanced = strong model while the plan's monthly strong-model budget lasts, then Fast automatically; Fast saves the budget. Premium and Pro can pick in every chat (Pro: 200 in Practice + 80 in Coach per month, Premium: 500 shared), Free is always Fast (the Advanced button shows a lock and an upgrade prompt). The server enforces this (`canChooseAdvanced`, `chatModelFor` in server.js).

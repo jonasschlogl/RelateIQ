@@ -345,19 +345,19 @@ function modelForPractice(plan) {
   return plan === "free" ? STANDARD_MODEL : PREMIUM_MODEL;
 }
 
-// Cost guard for the strong model (gpt-4o costs ~15x the fast one per
-// message). Every paid plan gets a monthly BUDGET of messages on the strong
+// Cost guard for the strong model (gpt-6.1-sol costs roughly 10-20x the fast one
+// per message). Every paid plan gets a monthly BUDGET of messages on the strong
 // model; once it's used up, the same features keep working on the fast model
 // until the month resets — nobody is ever cut off, but a heavy user can no
 // longer cost more than their subscription brings in. Sized from measured
 // prompt sizes (see README "Pricing & costs"); tunable from Railway env vars.
 const PREMIUM_MODEL_BUDGET = {
-  pro: Number(process.env.PRO_STRONG_MODEL_BUDGET) || 150, // Partner Practice only
-  premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 300,
+  pro: Number(process.env.PRO_STRONG_MODEL_BUDGET) || 200, // Partner Practice only
+  premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 500,
 };
 // Pro only: a small separate allowance of strong-model Coach Chat messages
 // (a taste of Premium; Practice has its own, bigger budget above).
-const PRO_COACH_STRONG_BUDGET = Number(process.env.PRO_COACH_STRONG_BUDGET) || 30;
+const PRO_COACH_STRONG_BUDGET = Number(process.env.PRO_COACH_STRONG_BUDGET) || 80;
 function coachStrongUsed(user) {
   return user.usageCoachStrong && user.usageCoachStrong.month === monthKey() ? user.usageCoachStrong.count : 0;
 }
