@@ -354,129 +354,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // ---------------------------------------------------------------------------
-// Daily check-in — optional, never blocks anything else on this page
+// Daily check-in: optional, never blocks anything else on this page. The form
+// itself is shared with the Daily page (js/checkin.js) so both look the same.
 // ---------------------------------------------------------------------------
 
 async function loadCheckin() {
   const card = document.getElementById("checkin-card");
+  if (!card) return;
   try {
-    const res = await authFetch("/api/checkin/today");
-    const data = await safeJson(res);
-    if (!res.ok) {
-      card.style.display = "none";
-      return;
-    }
-    card.style.display = "block";
-    renderCheckin(data);
+    const ok = await mountCheckin({
+      body: document.getElementById("checkin-body"),
+      streak: document.getElementById("streak-badge"),
+    });
+    card.style.display = ok ? "block" : "none";
   } catch (err) {
     console.error(err);
     card.style.display = "none";
-  }
-}
-
-function renderCheckin(data) {
-  const body = document.getElementById("checkin-body");
-  const streakBadge = document.getElementById("streak-badge");
-  if (streakBadge) {
-    if (data.streak > 0) {
-      streakBadge.style.display = "inline-flex";
-      streakBadge.textContent = `${data.streak}-day streak`;
-    } else {
-      streakBadge.style.display = "none";
-    }
-  }
-
-  if (data.answered) {
-    const scoreLine = typeof data.score === "number" ? `<p class="checkin-score-done">Connection today: ${data.score}/10</p>` : "";
-    const doneLine = data.answer
-      ? `<p class="checkin-done">✓ You checked in today: "${escapeHtml(data.answer)}"</p>`
-      : `<p class="checkin-done">✓ You checked in today.</p>`;
-    body.innerHTML = `
-      <p class="checkin-question">${escapeHtml(data.question)}</p>
-      ${scoreLine}
-      ${doneLine}
-    `;
-    return;
-  }
-
-  if (data.skipped) {
-    body.innerHTML = `
-      <p class="checkin-question">${escapeHtml(data.question)}</p>
-      <p class="checkin-done">Skipped for today. No pressure. <a href="#" id="checkin-undo-skip" style="text-decoration:underline;">Answer it instead</a></p>
-    `;
-    document.getElementById("checkin-undo-skip")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      renderCheckinForm(data.question);
-    });
-    return;
-  }
-
-  renderCheckinForm(data.question);
-}
-
-function renderCheckinForm(question) {
-  const body = document.getElementById("checkin-body");
-  body.innerHTML = `
-    <p class="checkin-question">${escapeHtml(question)}</p>
-    <div class="checkin-score-row">
-      <label for="checkin-score-input">How connected do you feel today?</label>
-      <div class="checkin-score-slider-row">
-        <input type="range" id="checkin-score-input" min="1" max="10" step="1" value="5" />
-        <span class="checkin-score-value" id="checkin-score-value">5</span>
-        <span class="text-muted" style="font-size:11.5px;">/10</span>
-      </div>
-    </div>
-    <div class="checkin-answer">
-      <textarea id="checkin-input" maxlength="2000" placeholder="Optional: a sentence or two about today."></textarea>
-    </div>
-    <div class="checkin-actions">
-      <button class="btn btn-primary btn-sm" id="checkin-save-btn" type="button">Save</button>
-      <button class="btn btn-ghost btn-sm" id="checkin-skip-btn" type="button">Skip today</button>
-    </div>
-  `;
-  const scoreInput = document.getElementById("checkin-score-input");
-  const scoreValue = document.getElementById("checkin-score-value");
-  scoreInput.addEventListener("input", () => {
-    scoreValue.textContent = scoreInput.value;
-    scoreInput.dataset.touched = "1";
-  });
-  document.getElementById("checkin-save-btn").addEventListener("click", () => submitCheckin(false));
-  document.getElementById("checkin-skip-btn").addEventListener("click", () => submitCheckin(true));
-  autoGrowTextarea(document.getElementById("checkin-input"), 200);
-}
-
-async function submitCheckin(skip) {
-  const payload = {};
-  if (skip) {
-    payload.skip = true;
-  } else {
-    const val = document.getElementById("checkin-input").value.trim();
-    const scoreInput = document.getElementById("checkin-score-input");
-    const touched = !!(scoreInput && scoreInput.dataset.touched);
-    if (!val && !touched) {
-      // Needs a score or a few words; tell people instead of doing nothing.
-      let hint = document.getElementById("checkin-hint");
-      if (!hint) {
-        hint = document.createElement("p");
-        hint.id = "checkin-hint";
-        hint.className = "text-muted";
-        hint.style.cssText = "margin:8px 0 0;font-size:13px;";
-        document.querySelector(".checkin-actions")?.after(hint);
-      }
-      hint.textContent = "Move the slider or write a few words to save today, or press Skip today.";
-      return;
-    }
-    if (val) payload.answer = val;
-    if (scoreInput && touched) payload.score = Number(scoreInput.value);
-  }
-
-  try {
-    const res = await authFetch("/api/checkin", { method: "POST", body: JSON.stringify(payload) });
-    const data = await safeJson(res);
-    if (!res.ok) return;
-    renderCheckin(data);
-  } catch (err) {
-    console.error(err);
   }
 }
 

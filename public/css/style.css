@@ -5006,3 +5006,17 @@ body.js-reveal .reveal-item.revealed {
 .memory-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.07); }
 .memory-note { margin: 0; font-size: 13px; flex: 1; min-width: 200px; }
 @media (max-width: 560px) { .memory-item { flex-direction: column; align-items: stretch; } .memory-forget { align-self: flex-start; } }
+
+/* Daily check-in: shared form on the dashboard card and the Daily page */
+.checkin-question-label {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.checkin-score-row input[type="range"].is-unset { opacity: 0.55; }
+.checkin-score-value.is-unset { color: var(--text-muted); }
+.checkin-streak-row { display: flex; justify-content: flex-end; }
+.checkin-streak-row:has(.streak-badge[style*="none"]) { display: none; }

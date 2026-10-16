@@ -5775,7 +5775,7 @@ async function sendPushToUser(userId, { title, body, url }) {
 async function runDailyCheckinReminders() {
   const db = loadDb();
   const today = todayKey();
-  const question = checkinQuestionForDate(today);
+  const fallbackQuestion = checkinQuestionForDate(today);
 
   // Anyone who hasn't checked in today is a candidate — email and push are
   // independent channels, each only sent if that user is actually opted
@@ -5787,6 +5787,17 @@ async function runDailyCheckinReminders() {
   );
 
   for (const user of notYetCheckedIn) {
+    // The reminder must show the same question the person will see in the app,
+    // which is their own personal one for today. If that lookup fails for any
+    // reason, fall back to the shared daily question rather than skipping them.
+    let question = fallbackQuestion;
+    try {
+      const row = await ensureTodaysSoloQuestion(db, user.id, today);
+      if (row && row.question) question = row.question;
+    } catch (err) {
+      console.error("Reminder question lookup failed:", err.message);
+    }
+
     if (user.email && user.emailCheckinReminders !== false) {
       const html = emailShell({
         unsubscribeUrl: unsubscribeLink(user, "checkin"),
