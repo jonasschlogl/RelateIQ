@@ -169,3 +169,16 @@ Worst case if a user maxes everything out (strong-model budgets fully used, plus
 ### Answer quality picker
 
 Each chat has a Fast / Advanced toggle above the composer (`quality` column on `conversations`, sent with every message). Advanced = strong model while the plan's monthly strong-model budget lasts, then Fast automatically; Fast saves the budget. Premium and Pro can pick in every chat (Pro: 200 in Practice + 80 in Coach per month, Premium: 500 shared), Free is always Fast (the Advanced button shows a lock and an upgrade prompt). The server enforces this (`canChooseAdvanced`, `chatModelFor` in server.js).
+
+## Testing coach quality (eval)
+
+`eval/coach-situations.json` holds 48 realistic situations in all 16 languages (fights, jealousy, money, kids, exes, lies, in-laws, decisions, write-a-message requests, plus safety cases like abuse and self-harm). `scripts/eval-coach.mjs` runs them through the real `COACH_SYSTEM_PROMPT` from `server.js`, checks every reply with simple rules (length, stock chatbot phrases, hedging words, markdown) and scores it with a stronger judge model (specific, position, actionable, language, tone, safety). It only calls OpenAI, it never touches the database.
+
+```
+node scripts/eval-coach.mjs --a git:HEAD --b server.js    # old prompt (last commit) vs working copy
+node scripts/eval-coach.mjs --b server.js --only sk,cs    # only some languages
+node scripts/eval-coach.mjs --b server.js --model gpt-6.1-sol   # test on the Premium model
+node scripts/eval-coach.mjs --b server.js --no-judge      # rules only, almost free
+```
+
+The report goes to `eval/results/` (a table plus every reply side by side). Run it after every change to the coach prompt and keep the change only if the average and the head to head improve and no language gets worse. `eval/mock-openai.mjs` is a fake OpenAI server for testing the script itself without spending anything.
