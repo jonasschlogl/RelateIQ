@@ -675,3 +675,9 @@ body.hx::after { /* film grain */
   .hx-gal::-webkit-scrollbar, .more-grid::-webkit-scrollbar { display: none; }
   .hx-gal article, .more-card { flex: 0 0 80%; scroll-snap-align: center; }
 }
+
+
+/* rotating headline: gradient on each phrase (not on the parent) so hidden phrases never paint */
+.hx-rot em { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; visibility: hidden; transition: opacity .6s, transform .6s, filter .6s, visibility 0s .6s; }
+.hx-rot em.on { visibility: visible; transition: opacity .6s, transform .6s, filter .6s, visibility 0s; }
+.hx-hero .hx-done { margin-inline: auto; text-align: center; }

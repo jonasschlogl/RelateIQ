@@ -6,7 +6,7 @@ old_lines = OLD.split('\n')
 head = '\n'.join(old_lines[:51])
 head = head.replace('<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />',
                     '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />')
-head = head.replace('  <link rel="stylesheet" href="css/style.css?v=67" />\n  <link rel="stylesheet" href="css/landing.css?v=23" />\n', '  <link rel="stylesheet" href="css/home.css?v=7" />\n')
+head = head.replace('  <link rel="stylesheet" href="css/style.css?v=67" />\n  <link rel="stylesheet" href="css/landing.css?v=23" />\n', '  <link rel="stylesheet" href="css/home.css?v=8" />\n')
 assert 'home.css' in head and 'Inter:wght' in head
 head += '\n  <meta name="theme-color" content="#120e0a" />\n</head>'
 lang = [l for l in old_lines if '<!--LANG-SWITCH-->' in l][0].strip()
@@ -108,7 +108,7 @@ body = f'''
       <div class="hx-wrap hx-center">
         <div class="hx-copy">
           <span class="hx-kicker big"><i></i>AI relationship coach</span>
-          <h1><span class="hx-l1">Know what to say</span><span class="hx-rot hx-grad" aria-live="off"><em class="on">before you send.</em><em>after a fight.</em><em>when it&rsquo;s hard.</em><em>at 2am.</em></span></h1>
+          <h1><span class="hx-l1">Know what to say</span><span class="hx-rot" aria-live="off"><em class="on">before you send.</em><em>after a fight.</em><em>when it&rsquo;s hard.</em><em>at 2am.</em></span></h1>
           <p class="hx-sub">Talk through a conflict, check a message before you send it, and rehearse the hard conversation. A private coach that remembers your story and is there at 2am.</p>
           {form('hero', 'hero-inline')}
           <p class="hx-note"><b>Free to start</b> · No card · One email when we open</p>
