@@ -849,3 +849,8 @@ body.hx::after { /* film grain */
   .chap-vis { padding: 54px 16px 16px; border-radius: 170px 170px 28px 28px; }
   .chap-wide .chap-copy { margin-bottom: 34px; }
 }
+
+/* blog thumbnails */
+.post-thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; margin: 0 0 14px; border: 1px solid var(--line); }
+.post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+#blog .post-card:hover .post-thumb img { transform: scale(1.05); }

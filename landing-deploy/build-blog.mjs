@@ -49,7 +49,7 @@ const CONFIG = {
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
   staticPages: ["", "method.html", "privacy.html", "terms.html"],
-  cssVersion: "23",
+  cssVersion: "24",
   jsVersion: "19",
 };
 const SITE = `https://${CONFIG.domain}`;
@@ -216,6 +216,25 @@ function markdown(src) {
   return { html: out.join("\n"), headings };
 }
 
+// ------------------------------------------------------------ blog images
+// Each post has three illustrations: /img/blog/<file-name>-1.svg (also the card thumbnail and the share image),
+// -2.svg and -3.svg (placed inside the article). Translated posts use the same images (same file name).
+const IMG_DIR = path.join(LANDING, "img", "blog");
+const imgFile = (key, n, ext = "svg") => `/img/blog/${key}-${n}.${ext}`;
+const hasImgs = (key) => fs.existsSync(path.join(IMG_DIR, `${key}-1.svg`));
+const figure = (key, n) => `<figure class="article-fig"><img src="${imgFile(key, n)}" alt="" width="800" height="450" loading="lazy" decoding="async" /></figure>`;
+// put illustration 2 and 3 before the headings at one third and two thirds of the article
+function withImages(p) {
+  if (!hasImgs(p.key)) return p.html;
+  const at = [...p.html.matchAll(/<h2[\s>]/g)].map((m) => m.index);
+  if (at.length < 3) return p.html;
+  const i1 = Math.max(1, Math.round(at.length / 3)), i2 = Math.min(at.length - 1, Math.max(i1 + 1, Math.round((at.length * 2) / 3)));
+  const pos = [[at[i1], 2], [at[i2], 3]].sort((a, b) => b[0] - a[0]);
+  let h = p.html;
+  for (const [idx, n] of pos) h = h.slice(0, idx) + figure(p.key, n) + "\n" + h.slice(idx);
+  return h;
+}
+
 // ------------------------------------------------------------ load the posts
 // dir: folder with the .md files. englishByKey: used to inherit the date of a translated post.
 function loadPosts(dir, englishByKey) {
@@ -345,7 +364,7 @@ function jsDict(ctx) {
   return Object.keys(o).length ? `<script>window.RAI_T=${JSON.stringify(o).replace(/</g, "\\u003c")};</script>\n  ` : "";
 }
 
-function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, targets, altTargets }) {
+function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, targets, altTargets, image = `${SITE}/og-image.png` }) {
   const canonical = `${SITE}${pagePath}`;
   return `<!DOCTYPE html>
 <html lang="${ctx.lang.htmlLang}">
@@ -361,11 +380,11 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   <meta property="og:type" content="${type}" />
   <meta property="og:url" content="${canonical}" />
   <meta property="og:locale" content="${ctx.lang.locale.replace("-", "_")}" />
-  <meta property="og:image" content="${SITE}/og-image.png" />
+  <meta property="og:image" content="${image}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${attr(title)}" />
   <meta name="twitter:description" content="${attr(description)}" />
-  <meta name="twitter:image" content="${SITE}/og-image.png" />
+  <meta name="twitter:image" content="${image}" />
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
   <link rel="icon" href="/favicon-48.png?v=3" sizes="48x48" type="image/png" />
@@ -394,7 +413,7 @@ ${footerHtml(ctx)}
 }
 
 const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug}/">
-  <div class="post-card-top">${p.tags[0] ? `<span class="post-tag">${esc(p.tags[0])}</span>` : "<span></span>"}<span class="post-meta">${fmtDate(p.date, ctx.locale)} · ${ctx.T(EN.minRead).replace("{n}", p.minutes)}</span></div>
+  ${hasImgs(p.key) ? `<span class="post-thumb"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" loading="lazy" decoding="async" /></span>\n  ` : ""}  <div class="post-card-top">${p.tags[0] ? `<span class="post-tag">${esc(p.tags[0])}</span>` : "<span></span>"}<span class="post-meta">${fmtDate(p.date, ctx.locale)} · ${ctx.T(EN.minRead).replace("{n}", p.minutes)}</span></div>
   <h3>${esc(p.title)}</h3>
   <p>${esc(p.description)}</p>
   <span class="post-more">${ctx.T(EN.readArticle)} <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -457,6 +476,7 @@ function postPage(ctx, p, all) {
     description: p.description,
     path: `${ctx.prefix}/blog/${p.slug}/`,
     type: "article",
+    image: hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : undefined,
     targets: fallback,
     altTargets: exact,
     body: `  <main>
@@ -466,8 +486,9 @@ function postPage(ctx, p, all) {
         <div class="article-tags">${p.tags.map((t) => `<span class="post-tag">${esc(t)}</span>`).join("")}</div>
         <h1>${esc(p.title)}</h1>
         <p class="article-meta">${fmtDate(p.date, ctx.locale)} · ${T(EN.minRead).replace("{n}", p.minutes)}</p>
+        ${hasImgs(p.key) ? `<figure class="article-fig article-hero">${`<img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" />`}</figure>` : ""}
         <div class="article-body">
-${p.html}
+${withImages(p)}
         </div>
         ${ctaBox(ctx, "cta-blog-article")}
         <p class="article-note">${T(EN.articleNote)}</p>
@@ -484,7 +505,7 @@ ${p.html}
       "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description,
       datePublished: p.date, dateModified: p.date, mainEntityOfPage: `${SITE}${ctx.prefix}/blog/${p.slug}/`,
       inLanguage: ctx.lang.htmlLang,
-      image: `${SITE}/og-image.png`,
+      image: hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : `${SITE}/og-image.png`,
       author: { "@type": "Organization", name: CONFIG.siteName },
       publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
     },
