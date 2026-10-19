@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css?v=2" />
+  <link rel="stylesheet" href="css/home.css?v=4" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#120e0a" />
@@ -57,6 +57,7 @@
       <a href="index.html" class="hx-brand"><img src="logo-mark.svg" alt="" width="34" height="34" /><span>Relationship<b>AI</b></span></a>
       <button class="hx-burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
       <nav class="hx-links" id="links">
+        <a href="#demo">Try it</a>
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="/blog/">Blog</a>
@@ -72,7 +73,7 @@
       <div class="hx-wrap">
         <div class="hx-copy">
           <span class="hx-kicker big"><i></i>AI relationship coach</span>
-          <h1>Know what to say. <span class="hx-grad"><em>Before</em> you say it.</span></h1>
+          <h1><span class="hx-l1">Know what to say</span><span class="hx-rot hx-grad" aria-live="off"><em class="on">before you send.</em><em>after a fight.</em><em>when it&rsquo;s hard.</em><em>at 2am.</em></span></h1>
           <p class="hx-sub">Talk through a conflict, check a message before you send it, and rehearse the hard conversation. A private coach that remembers your story and is there at 2am.</p>
           <form class="hx-form" id="hero-form" data-source="hero-inline" novalidate>
             <label class="hx-sr" for="hero-email">Email address</label>
@@ -83,11 +84,6 @@
           <p class="hx-err" id="hero-error" role="alert" hidden></p>
           <p class="hx-done" id="hero-done" hidden><strong>You're on the list.</strong> We'll email you once, the day RelationshipAI opens.</p>
           <p class="hx-note"><b>Free to start</b> · No card · One email when we open</p>
-          <div class="hx-chips" aria-label="The three main tools">
-            <a href="#tool-coach"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Coach Chat</a>
-            <a href="#tool-message"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg>Message check</a>
-            <a href="#tool-practice"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Partner Practice</a>
-          </div>
           <div class="hx-frame"><b>Inspired by</b><span>The Gottman Method</span><i></i><span>Attachment theory</span><i></i><span>Nonviolent Communication</span></div>
         </div>
 
@@ -143,12 +139,90 @@
       </div>
     </section>
 
-    <div class="hx-marquee" aria-hidden="true">
-      <div class="hx-track">
-        <span>Private by default</span><span>There at 2am</span><span>Remembers your story</span><span>Sees both sides</span><span>No judgement</span>
-        <span>Private by default</span><span>There at 2am</span><span>Remembers your story</span><span>Sees both sides</span><span>No judgement</span>
+    <div class="hx-stats" aria-label="At a glance">
+      <div class="hx-wrap">
+        <div><b>3</b><span>coaching tools</span></div>
+        <div><b>16</b><span>languages</span></div>
+        <div><b>24/7</b><span>there at 2am</span></div>
+        <div><b>Free</b><span>to start, no card</span></div>
       </div>
     </div>
+
+    <section class="hx-sec" id="demo" style="padding-bottom:40px">
+      <div class="hx-wrap">
+        <div class="hx-head hx-reveal" style="margin-bottom:44px">
+          <span class="hx-kicker">Try it yourself</span>
+          <h2>See how one message can <em>change the whole talk</em>.</h2>
+          <p>Pick a situation. Watch what Message check does with the first draft.</p>
+        </div>
+        <div class="hx-demo hx-reveal" id="demo-box">
+          <div class="dm-pick" role="tablist" aria-label="Choose a situation">
+            <button type="button" class="on" data-i="0">They forgot something</button>
+            <button type="button" data-i="1">They went quiet</button>
+            <button type="button" data-i="2">The same chores fight</button>
+            <button type="button" data-i="3">Who were you texting?</button>
+          </div>
+          <div class="dm-cols">
+            <div class="dm-card dm-before">
+              <small>Your first draft</small>
+              <p id="dm-draft"></p>
+              <span class="hx-risk" id="dm-risk"></span>
+              <div class="mtr"><i style="left:84%"></i></div>
+              <div class="mtr-l"><span>Calm</span><span>Heated</span></div>
+            </div>
+            <div class="dm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="dm-card dm-after">
+              <small>What the coach suggests</small>
+              <div class="dm-tone" role="tablist" aria-label="Choose a tone">
+                <button type="button" class="on" data-t="calm">Calmer</button>
+                <button type="button" data-t="warm">Warmer</button>
+                <button type="button" data-t="direct">More direct</button>
+              </div>
+              <p id="dm-fix"></p>
+              <span class="dm-why" id="dm-why"></span>
+            </div>
+          </div>
+          <div class="dm-foot">
+            <span>Example, not a live chat. Early access gives you the real thing, with your own words.</span>
+            <a href="#join" class="hx-btn" data-umami-event="cta-demo">Try it with my message</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hx-sec" id="examples" style="padding-top:40px;padding-bottom:30px">
+      <div class="hx-wrap">
+        <div class="hx-head hx-reveal" style="margin-bottom:44px">
+          <span class="hx-kicker">Real situations</span>
+          <h2>Same feeling. <em>Better words.</em></h2>
+          <p>The things people most often get stuck on, and a way to say them that gets heard.</p>
+        </div>
+        <div class="hx-gal hx-reveal">
+          <article><small>When they pull away</small><p class="no">&ldquo;Why are you ignoring me?&rdquo;</p><p class="yes">&ldquo;I miss you lately. Can we catch up tonight?&rdquo;</p></article>
+          <article><small>After an argument</small><p class="no">&ldquo;Fine. You win.&rdquo;</p><p class="yes">&ldquo;I want to fix this, not win it. Can we try again?&rdquo;</p></article>
+          <article><small>Asking for space</small><p class="no">&ldquo;You&rsquo;re suffocating me.&rdquo;</p><p class="yes">&ldquo;I need a quiet evening to recharge. It&rsquo;s not about you.&rdquo;</p></article>
+          <article><small>Saying sorry</small><p class="no">&ldquo;Sorry you feel that way.&rdquo;</p><p class="yes">&ldquo;I&rsquo;m sorry I hurt you. I see why it landed that way.&rdquo;</p></article>
+          <article><small>Setting a boundary</small><p class="no">&ldquo;Stop calling me at work.&rdquo;</p><p class="yes">&ldquo;I can&rsquo;t pick up at work. Can we talk after six?&rdquo;</p></article>
+          <article><small>Talking about money</small><p class="no">&ldquo;You spend way too much.&rdquo;</p><p class="yes">&ldquo;Can we look at our budget together this weekend?&rdquo;</p></article>
+        </div>
+        <div class="hx-gal-cta hx-reveal"><a href="#join" class="hx-btn" data-umami-event="cta-gallery">Get help with mine</a></div>
+      </div>
+    </section>
+
+    <section class="hx-sec" id="quiz" style="padding-top:50px;padding-bottom:30px">
+      <div class="hx-wrap">
+        <div class="hx-head hx-reveal" style="margin-bottom:40px">
+          <span class="hx-kicker">30 second quiz</span>
+          <h2>How do you handle <em>conflict</em>?</h2>
+          <p>Four quick questions. Find out your pattern and what to try next time.</p>
+        </div>
+        <div class="hx-quiz hx-reveal" id="quiz-box">
+          <div class="qz-bar"><i id="qz-prog"></i></div>
+          <div class="qz-body" id="qz-body"></div>
+          <p class="qz-note">For fun and reflection, not a diagnosis. Nothing you pick here is stored.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="hx-sec" style="padding-bottom:30px">
       <div class="hx-wrap">
@@ -652,6 +726,6 @@
   </footer>
 
   <a href="#join" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Get early access</a>
-  <script src="js/home.js?v=2"></script>
+  <script src="js/home.js?v=4"></script>
 </body>
 </html>
