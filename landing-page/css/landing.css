@@ -667,12 +667,11 @@
 
 .more-head { display: flex; align-items: center; justify-content: space-between; gap: 18px 24px; flex-wrap: wrap; margin-bottom: 22px; }
 .more-head h2 { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: inherit; }
-.share { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.share-btn { position: relative; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: none; border: 0; padding: 0; cursor: pointer; color: var(--text-muted); transition: transform 0.15s ease, filter 0.15s ease; }
-.share-btn svg { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; }
-.share-btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
-.share-btn.s-copy svg, .share-btn.s-mail svg { background: rgba(250, 235, 215, 0.07); border: 1px solid var(--border-strong); }
-.share-btn.s-copy.copied::after { content: attr(data-done); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 8px; background: var(--text); color: var(--bg); }
+.share { display: flex; align-items: center; }
+.share-btn { position: relative; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: rgba(250, 235, 215, 0.07); border: 1px solid var(--border-strong); padding: 0; cursor: pointer; color: var(--text); transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease; }
+.share-btn svg { width: 20px; height: 20px; }
+.share-btn:hover { transform: translateY(-2px); background: rgba(242, 199, 119, 0.14); color: var(--gold, #f2c777); }
+.share-btn.copied::after { content: attr(data-done); position: absolute; bottom: calc(100% + 8px); right: 0; white-space: nowrap; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 8px; background: var(--text); color: var(--bg); }
 
 .article-fig { scroll-margin-top: 90px; }
 .article-body h2 { scroll-margin-top: 96px; }
@@ -686,5 +685,4 @@
 @media (max-width: 560px) {
   .article-byline { align-items: flex-start; }
   .article-byline .dot { margin: 0 7px; }
-  .share { gap: 8px; }
 }

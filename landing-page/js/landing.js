@@ -596,9 +596,14 @@ function initMobilePricing() {
     heads.forEach((h) => io.observe(h));
     set(heads[0].id);
   }
-  document.querySelectorAll("[data-copy]").forEach((btn) => {
+  document.querySelectorAll("[data-share]").forEach((btn) => {
     btn.addEventListener("click", async () => {
-      const url = btn.getAttribute("data-copy");
+      const url = btn.getAttribute("data-share");
+      const title = btn.getAttribute("data-title") || document.title;
+      if (navigator.share) {
+        try { await navigator.share({ title, url }); return; }
+        catch (e) { if (e && e.name === "AbortError") return; }
+      }
       try { await navigator.clipboard.writeText(url); }
       catch (e) { const t = document.createElement("textarea"); t.value = url; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (_) {} t.remove(); }
       btn.classList.add("copied");

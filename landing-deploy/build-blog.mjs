@@ -49,8 +49,8 @@ const CONFIG = {
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
   staticPages: ["", "method.html", "privacy.html", "terms.html"],
-  cssVersion: "25",
-  jsVersion: "20",
+  cssVersion: "26",
+  jsVersion: "21",
 };
 const SITE = `https://${CONFIG.domain}`;
 
@@ -512,19 +512,9 @@ function adCard(ctx, p, extra = "") {
 }
 function shareRow(ctx, p, url) {
   const { T } = ctx;
-  const u = encodeURIComponent(url), t = encodeURIComponent(p.title);
-  const media = encodeURIComponent(`${SITE}${imgFile(p.key, 1, "png")}`);
-  const a = (cls, label, href, ev, svg) => `<a class="share-btn ${cls}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}" data-umami-event="${ev}">${svg}</a>`;
-  const S = (inner) => `<svg viewBox="0 0 40 40" aria-hidden="true">${inner}</svg>`;
-  return `<div class="share" role="group" aria-label="${attr(T(EN.shareLabel))}">
-          <button type="button" class="share-btn s-copy" data-copy="${attr(url)}" data-done="${attr(T(EN.linkCopied))}" aria-label="${attr(T(EN.copyLink))}" title="${attr(T(EN.copyLink))}" data-umami-event="share-copy">${S('<path d="M17 23l6-6M16 20.5l-2.2 2.2a4 4 0 105.7 5.7l2.2-2.2M24 19.5l2.2-2.2a4 4 0 10-5.7-5.7L18.3 13.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>')}</button>
-          ${a("s-fb", "Facebook", `https://www.facebook.com/sharer/sharer.php?u=${u}`, "share-facebook", S('<circle cx="20" cy="20" r="20" fill="#1877f2"/><path d="M21.6 31V21.4h3.2l.5-3.8h-3.7v-2.4c0-1.1.3-1.8 1.9-1.8h2V9.9c-.3 0-1.5-.1-2.9-.1-2.9 0-4.8 1.7-4.8 4.9v2.9h-3.2v3.8h3.2V31z" fill="#fff"/>'))}
-          ${a("s-x", "X", `https://twitter.com/intent/tweet?url=${u}&text=${t}`, "share-x", S('<circle cx="20" cy="20" r="20" fill="#000"/><path d="M12.5 12.5l15 15M27.5 12.5l-15 15" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'))}
-          ${a("s-in", "LinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${u}`, "share-linkedin", S('<rect width="40" height="40" rx="9" fill="#0a66c2"/><circle cx="13.5" cy="13.5" r="2.4" fill="#fff"/><rect x="11.4" y="17.4" width="4.2" height="11.4" fill="#fff"/><path d="M18.6 17.4h4v1.6c.6-1.1 1.9-1.9 3.7-1.9 3.4 0 4.1 2.2 4.1 5.1v6.6h-4.2v-5.9c0-1.4 0-2.9-1.8-2.9s-2 1.3-2 2.8v6h-4.1z" fill="#fff"/>'))}
-          ${a("s-pin", "Pinterest", `https://pinterest.com/pin/create/button/?url=${u}&media=${media}&description=${t}`, "share-pinterest", S('<circle cx="20" cy="20" r="20" fill="#e60023"/><path d="M20.6 9.5c-5.4 0-8.1 3.6-8.1 6.8 0 1.8.7 3.5 2.2 4.1.2.1.5 0 .5-.3l.2-.9c.1-.3 0-.4-.1-.7-.4-.5-.7-1.2-.7-2.2 0-2.8 2.1-5.3 5.5-5.3 3 0 4.7 1.8 4.7 4.3 0 3.2-1.4 5.9-3.5 5.9-1.2 0-2-.9-1.7-2.1.3-1.4 1-2.9 1-3.9 0-.9-.5-1.6-1.5-1.6-1.2 0-2.1 1.2-2.1 2.8 0 1 .4 1.7.4 1.7l-1.4 5.9c-.4 1.7-.1 3.9 0 4.1 0 .1.2.2.3.1.1-.2 1.8-2.2 2.4-4.2l.9-3.4c.5.9 1.8 1.6 3.3 1.6 4.3 0 7.2-3.9 7.2-9.2 0-4-3.4-7.6-8.5-7.6z" fill="#fff"/>'))}
-          ${a("s-ig", "Instagram", INSTAGRAM, "click-instagram-share", S('<defs><linearGradient id="igS" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#fdc468"/><stop offset=".45" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="url(#igS)"/><rect x="10.5" y="10.5" width="19" height="19" rx="5.5" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="4.6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="26" cy="14" r="1.4" fill="#fff"/>'))}
-          ${a("s-wa", "WhatsApp", `https://wa.me/?text=${t}%20${u}`, "share-whatsapp", S('<circle cx="20" cy="20" r="20" fill="#25d366"/><path d="M20 9.5a10.5 10.5 0 00-9 15.9L9.6 30.4l5.2-1.4A10.5 10.5 0 1020 9.5z" fill="none" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/><path d="M16.2 14.8c.4-.5 1-.6 1.4 0l1 1.7c.2.4.1.8-.2 1.1l-.6.6c.8 1.5 1.9 2.6 3.5 3.4l.6-.6c.3-.3.7-.4 1.1-.2l1.7 1c.6.4.5 1-.1 1.4-1.1.9-2.5 1.2-4.2.5-2.8-1.2-4.9-3.5-5.8-5.8-.6-1.7-.1-2.7.6-3.1z" fill="#fff"/>'))}
-          ${a("s-mail", "Email", `mailto:?subject=${t}&body=${u}`, "share-email", S('<rect x="9" y="12" width="22" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 14l10 7.5L30 14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'))}
+  const icon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="19" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  return `<div class="share">
+          <button type="button" class="share-btn" data-share="${attr(url)}" data-title="${attr(p.title)}" data-done="${attr(T(EN.linkCopied))}" aria-label="${attr(T(EN.shareLabel))}" title="${attr(T(EN.shareLabel))}" data-umami-event="share-article">${icon}</button>
         </div>`;
 }
 
