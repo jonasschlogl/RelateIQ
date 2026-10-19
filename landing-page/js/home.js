@@ -40,9 +40,25 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else { revealEls.forEach(function (el) { el.classList.add("in"); }); }
 
+  // hero phone: tabs that rotate by themselves until the visitor clicks one
+  var tbtns = $$(".hx-tabs button"), pans = $$(".hx-pan"), cur = 0, auto = null;
+  function showPan(i) {
+    cur = i;
+    tbtns.forEach(function (b, k) { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i ? "true" : "false"); });
+    pans.forEach(function (p, k) {
+      var on = k === i;
+      p.classList.remove("on");
+      if (on) { void p.offsetWidth; p.classList.add("on"); }
+    });
+  }
+  function startAuto() { stopAuto(); auto = setInterval(function () { showPan((cur + 1) % pans.length); }, 7500); }
+  function stopAuto() { if (auto) { clearInterval(auto); auto = null; } }
+  tbtns.forEach(function (b, i) { b.addEventListener("click", function () { showPan(i); stopAuto(); }); });
+  if (tbtns.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) startAuto();
+
   // pricing: monthly / yearly
   var billing = "yearly";
-  var bbtns = $$(".hx-bill button");
+  var bbtns = $$(".billing-btn");
   function applyBilling(mode) {
     billing = mode;
     bbtns.forEach(function (b) {
@@ -50,10 +66,11 @@
       b.classList.toggle("active", on);
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
-    $$(".amtv, .bill[data-monthly]").forEach(function (el) { el.textContent = el.dataset[mode]; });
+    $$(".amt[data-monthly], .price-billed[data-monthly]").forEach(function (el) { el.textContent = el.dataset[mode]; });
     $$("[data-plan]").forEach(function (el) { el.setAttribute("data-umami-event-billing", mode); });
   }
   bbtns.forEach(function (b) { b.addEventListener("click", function () { applyBilling(b.dataset.billing); }); });
+  if (bbtns.length) applyBilling("yearly");
 
   // plan buttons remember the plan, then the page scrolls to the final form
   var chosenPlan = "";
