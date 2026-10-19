@@ -575,3 +575,34 @@ function initMobilePricing() {
   apply();
   if (mq.addEventListener) mq.addEventListener("change", apply);
 }
+
+// Blog articles: highlight the current section in the table of contents, and copy-link button.
+(function () {
+  const toc = document.querySelector(".toc");
+  const heads = Array.from(document.querySelectorAll(".article-body h2[id]"));
+  if (toc && heads.length && "IntersectionObserver" in window) {
+    const links = new Map(Array.from(toc.querySelectorAll("a")).map((a) => [a.getAttribute("href").slice(1), a]));
+    let current = null;
+    const set = (id) => {
+      if (id === current || !links.has(id)) return;
+      current = id;
+      links.forEach((a, k) => a.classList.toggle("active", k === id));
+      const a = links.get(id), list = a.closest("ol");
+      if (list && a.offsetTop < list.scrollTop || a.offsetTop + a.offsetHeight > list.scrollTop + list.clientHeight) list.scrollTop = a.offsetTop - 40;
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) set(e.target.id); });
+    }, { rootMargin: "-90px 0px -65% 0px", threshold: 0 });
+    heads.forEach((h) => io.observe(h));
+    set(heads[0].id);
+  }
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const url = btn.getAttribute("data-copy");
+      try { await navigator.clipboard.writeText(url); }
+      catch (e) { const t = document.createElement("textarea"); t.value = url; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (_) {} t.remove(); }
+      btn.classList.add("copied");
+      setTimeout(() => btn.classList.remove("copied"), 1800);
+    });
+  });
+})();

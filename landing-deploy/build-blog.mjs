@@ -49,8 +49,8 @@ const CONFIG = {
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
   staticPages: ["", "method.html", "privacy.html", "terms.html"],
-  cssVersion: "24",
-  jsVersion: "19",
+  cssVersion: "25",
+  jsVersion: "20",
 };
 const SITE = `https://${CONFIG.domain}`;
 
@@ -90,6 +90,27 @@ const EN = {
   homeH2: "Relationship advice, tips & guides",
   homeP: "Fresh, practical articles on communication, conflict and connection.",
   seeAll: "See all articles",
+  by: "By",
+  tocTitle: "In this article",
+  moreArticles: "More articles",
+  shareLabel: "Share this article",
+  copyLink: "Copy link",
+  linkCopied: "Link copied",
+  adCheckTitle: "Check it before you send",
+  adCheckText: "See how your message will land, then get a calmer version.",
+  adCoachTitle: "A coach that knows your story",
+  adCoachText: "Talk it through any time, even at 2am.",
+  adPracticeTitle: "Rehearse the hard talk",
+  adPracticeText: "Practice with an AI that plays your partner. Completely private.",
+  adNote: "Free to start · No card needed",
+};
+const AUTHOR = "Jonáš Schlögl";
+// which tool the sidebar card promotes, per article (default: Coach Chat)
+const AD_BY_POST = {
+  "2026-10-08-how-to-apologize-to-your-partner": "check",
+  "2026-10-05-relationship-advice-communication-habits": "check",
+  "2026-10-03-relationship-problems-that-keep-coming-back": "practice",
+  "2026-10-04-how-to-fix-a-relationship": "practice",
 };
 
 // Texts used by landing.js (the waitlist dialog and the mobile helpers).
@@ -468,46 +489,106 @@ function blogIndexPage(ctx, all) {
   });
 }
 
+// ----- article extras: table of contents, sidebar card, share icons
+const stripTags = (h) => h.replace(/<[^>]+>/g, "").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
+function tocOf(p) {
+  return [...p.html.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map((m) => ({ id: m[1], text: stripTags(m[2]) }));
+}
+function adCard(ctx, p, extra = "") {
+  const { T } = ctx;
+  const kind = AD_BY_POST[p.key] || "coach";
+  const title = T(EN[`ad${kind[0].toUpperCase()}${kind.slice(1)}Title`]);
+  const text = T(EN[`ad${kind[0].toUpperCase()}${kind.slice(1)}Text`]);
+  const img = kind === "check" ? "check" : kind === "practice" ? "practice" : "coach";
+  return `<div class="ad-card ${extra}">
+          <img class="ad-img" src="/img/scene-${img}.svg?v=2" alt="" width="360" height="470" loading="lazy" />
+          <div class="ad-body">
+            <h3>${title}</h3>
+            <p>${text}</p>
+            <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
+            <small>${T(EN.adNote)}</small>
+          </div>
+        </div>`;
+}
+function shareRow(ctx, p, url) {
+  const { T } = ctx;
+  const u = encodeURIComponent(url), t = encodeURIComponent(p.title);
+  const media = encodeURIComponent(`${SITE}${imgFile(p.key, 1, "png")}`);
+  const a = (cls, label, href, ev, svg) => `<a class="share-btn ${cls}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}" data-umami-event="${ev}">${svg}</a>`;
+  const S = (inner) => `<svg viewBox="0 0 40 40" aria-hidden="true">${inner}</svg>`;
+  return `<div class="share" role="group" aria-label="${attr(T(EN.shareLabel))}">
+          <button type="button" class="share-btn s-copy" data-copy="${attr(url)}" data-done="${attr(T(EN.linkCopied))}" aria-label="${attr(T(EN.copyLink))}" title="${attr(T(EN.copyLink))}" data-umami-event="share-copy">${S('<path d="M17 23l6-6M16 20.5l-2.2 2.2a4 4 0 105.7 5.7l2.2-2.2M24 19.5l2.2-2.2a4 4 0 10-5.7-5.7L18.3 13.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>')}</button>
+          ${a("s-fb", "Facebook", `https://www.facebook.com/sharer/sharer.php?u=${u}`, "share-facebook", S('<circle cx="20" cy="20" r="20" fill="#1877f2"/><path d="M21.6 31V21.4h3.2l.5-3.8h-3.7v-2.4c0-1.1.3-1.8 1.9-1.8h2V9.9c-.3 0-1.5-.1-2.9-.1-2.9 0-4.8 1.7-4.8 4.9v2.9h-3.2v3.8h3.2V31z" fill="#fff"/>'))}
+          ${a("s-x", "X", `https://twitter.com/intent/tweet?url=${u}&text=${t}`, "share-x", S('<circle cx="20" cy="20" r="20" fill="#000"/><path d="M12.5 12.5l15 15M27.5 12.5l-15 15" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'))}
+          ${a("s-in", "LinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${u}`, "share-linkedin", S('<rect width="40" height="40" rx="9" fill="#0a66c2"/><circle cx="13.5" cy="13.5" r="2.4" fill="#fff"/><rect x="11.4" y="17.4" width="4.2" height="11.4" fill="#fff"/><path d="M18.6 17.4h4v1.6c.6-1.1 1.9-1.9 3.7-1.9 3.4 0 4.1 2.2 4.1 5.1v6.6h-4.2v-5.9c0-1.4 0-2.9-1.8-2.9s-2 1.3-2 2.8v6h-4.1z" fill="#fff"/>'))}
+          ${a("s-pin", "Pinterest", `https://pinterest.com/pin/create/button/?url=${u}&media=${media}&description=${t}`, "share-pinterest", S('<circle cx="20" cy="20" r="20" fill="#e60023"/><path d="M20.6 9.5c-5.4 0-8.1 3.6-8.1 6.8 0 1.8.7 3.5 2.2 4.1.2.1.5 0 .5-.3l.2-.9c.1-.3 0-.4-.1-.7-.4-.5-.7-1.2-.7-2.2 0-2.8 2.1-5.3 5.5-5.3 3 0 4.7 1.8 4.7 4.3 0 3.2-1.4 5.9-3.5 5.9-1.2 0-2-.9-1.7-2.1.3-1.4 1-2.9 1-3.9 0-.9-.5-1.6-1.5-1.6-1.2 0-2.1 1.2-2.1 2.8 0 1 .4 1.7.4 1.7l-1.4 5.9c-.4 1.7-.1 3.9 0 4.1 0 .1.2.2.3.1.1-.2 1.8-2.2 2.4-4.2l.9-3.4c.5.9 1.8 1.6 3.3 1.6 4.3 0 7.2-3.9 7.2-9.2 0-4-3.4-7.6-8.5-7.6z" fill="#fff"/>'))}
+          ${a("s-ig", "Instagram", INSTAGRAM, "click-instagram-share", S('<defs><linearGradient id="igS" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#fdc468"/><stop offset=".45" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="url(#igS)"/><rect x="10.5" y="10.5" width="19" height="19" rx="5.5" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="4.6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="26" cy="14" r="1.4" fill="#fff"/>'))}
+          ${a("s-wa", "WhatsApp", `https://wa.me/?text=${t}%20${u}`, "share-whatsapp", S('<circle cx="20" cy="20" r="20" fill="#25d366"/><path d="M20 9.5a10.5 10.5 0 00-9 15.9L9.6 30.4l5.2-1.4A10.5 10.5 0 1020 9.5z" fill="none" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/><path d="M16.2 14.8c.4-.5 1-.6 1.4 0l1 1.7c.2.4.1.8-.2 1.1l-.6.6c.8 1.5 1.9 2.6 3.5 3.4l.6-.6c.3-.3.7-.4 1.1-.2l1.7 1c.6.4.5 1-.1 1.4-1.1.9-2.5 1.2-4.2.5-2.8-1.2-4.9-3.5-5.8-5.8-.6-1.7-.1-2.7.6-3.1z" fill="#fff"/>'))}
+          ${a("s-mail", "Email", `mailto:?subject=${t}&body=${u}`, "share-email", S('<rect x="9" y="12" width="22" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 14l10 7.5L30 14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'))}
+        </div>`;
+}
+
 function postPage(ctx, p, all) {
   const { T, posts } = ctx;
   const others = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
   const { exact, fallback } = switcherTargets("post", p.key, all);
+  const url = `${SITE}${ctx.prefix}/blog/${p.slug}/`;
+  const toc = tocOf(p);
+  const tocList = toc.map((h) => `<li><a href="#${h.id}">${esc(h.text)}</a></li>`).join("");
+  const avatar = fs.existsSync(path.join(LANDING, "img", "jonas.jpg"))
+    ? `<img class="avatar" src="/img/jonas.jpg" alt="" width="64" height="64" />`
+    : `<span class="avatar" aria-hidden="true">${AUTHOR[0]}</span>`;
+  const ogPng = hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : null;
   return page(ctx, {
     title: `${p.title} | ${CONFIG.siteName}`,
     description: p.description,
     path: `${ctx.prefix}/blog/${p.slug}/`,
     type: "article",
-    image: hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : undefined,
+    image: ogPng || undefined,
     targets: fallback,
     altTargets: exact,
     body: `  <main>
     <article class="article">
-      <div class="container article-wrap">
-        <a href="${ctx.prefix}/blog/" class="article-back">${T(EN.back)}</a>
-        <div class="article-tags">${p.tags.map((t) => `<span class="post-tag">${esc(t)}</span>`).join("")}</div>
-        <h1>${esc(p.title)}</h1>
-        <p class="article-meta">${fmtDate(p.date, ctx.locale)} · ${T(EN.minRead).replace("{n}", p.minutes)}</p>
-        ${hasImgs(p.key) ? `<figure class="article-fig article-hero">${`<img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" />`}</figure>` : ""}
-        <div class="article-body">
+      <div class="container article-layout">
+        <div class="article-wrap article-main">
+          <a href="${ctx.prefix}/blog/" class="article-back">${T(EN.back)}</a>
+          <div class="article-tags">${p.tags.map((t) => `<span class="post-tag">${esc(t)}</span>`).join("")}</div>
+          <h1>${esc(p.title)}</h1>
+          <div class="article-byline">
+            ${avatar}
+            <p>${T(EN.by)} <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
+          </div>
+          ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
+          ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
+          <div class="article-body">
 ${withImages(p)}
+          </div>
+          ${ctaBox(ctx, "cta-blog-article")}
+          <p class="article-note">${T(EN.articleNote)}</p>
+          ${adCard(ctx, p, "ad-mobile")}
         </div>
-        ${ctaBox(ctx, "cta-blog-article")}
-        <p class="article-note">${T(EN.articleNote)}</p>
+        <aside class="article-aside">
+          ${toc.length > 2 ? `<nav class="toc" aria-label="${attr(T(EN.tocTitle))}"><p class="toc-title">${T(EN.tocTitle)}</p><ol>${tocList}</ol></nav>` : ""}
+          ${adCard(ctx, p)}
+        </aside>
       </div>
     </article>
     ${others.length ? `<section class="blog-list more-posts">
       <div class="container">
-        <h2>${T(EN.keepReading)}</h2>
+        <div class="more-head">
+          <h2>${T(EN.moreArticles)}</h2>
+          ${shareRow(ctx, p, url)}
+        </div>
         <div class="post-grid">${others.map((x) => card(ctx, x)).join("\n")}</div>
       </div>
     </section>` : ""}
   </main>`,
     jsonld: {
       "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description,
-      datePublished: p.date, dateModified: p.date, mainEntityOfPage: `${SITE}${ctx.prefix}/blog/${p.slug}/`,
+      datePublished: p.date, dateModified: p.date, mainEntityOfPage: url,
       inLanguage: ctx.lang.htmlLang,
-      image: hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : `${SITE}/og-image.png`,
-      author: { "@type": "Organization", name: CONFIG.siteName },
+      image: ogPng || `${SITE}/og-image.png`,
+      author: { "@type": "Person", name: AUTHOR, url: INSTAGRAM },
       publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
     },
   });
