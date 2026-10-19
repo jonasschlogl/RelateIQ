@@ -16,7 +16,7 @@ demo_box=demo_box[:demo_box.rindex('      </div>\n    </section>')].rstrip()
 
 def arch(n,cls,when,title,txt,img,href):
     return f'''<a class="arch {cls} hx-reveal" href="{href}" data-umami-event="arch-{img}">
-            <figure><img src="img/scene-{img}.svg" alt="" width="360" height="470"><i class="num">{n}</i></figure>
+            <figure><img src="img/scene-{img}.svg?v=2" alt="" width="360" height="470"><i class="num">{n}</i></figure>
             <span class="when">{when}</span>
             <h3>{title}</h3>
             <p>{txt}</p>
