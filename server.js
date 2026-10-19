@@ -826,7 +826,41 @@ function buildPlaybookContext(userId) {
     .join("\n");
 }
 
-function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookContext) {
+// What the coach can recall from this user's OTHER Coach Chat conversations,
+// as plain excerpts (no extra model call): the newest few in more detail,
+// older ones as their opening and the user's latest words. Practice
+// rehearsals are left out. Bounded so it stays cheap on every request.
+function buildPastChatsContext(db, userId, currentConvId) {
+  const clip = (t, n) => {
+    const x = String(t || "").replace(/\s+/g, " ").trim();
+    return x.length > n ? x.slice(0, n - 1) + "…" : x;
+  };
+  const convs = (db.conversations || [])
+    .filter((c) => c.userId === userId && c.mode !== "practice" && c.id !== currentConvId && Array.isArray(c.messages) && c.messages.length > 0)
+    .sort((a, b) => new Date(b.updatedAt || b.createdAt || 0) - new Date(a.updatedAt || a.createdAt || 0))
+    .slice(0, 15);
+  if (!convs.length) return "";
+  const TOTAL = 18000;
+  let out = "";
+  convs.forEach((c, i) => {
+    const date = String(c.updatedAt || c.createdAt || "").slice(0, 10) || "undated";
+    const head = `(${date}${c.title ? ", " + clip(c.title, 70) : ""}, ${c.messages.length} messages)`;
+    let lines;
+    if (i < 3) {
+      lines = c.messages.slice(-8).map((m) => `${m.role === "user" ? "User" : "Coach"}: ${clip(m.content, 300)}`);
+    } else {
+      const users = c.messages.filter((m) => m.role === "user");
+      const picks = [users[0], ...users.slice(-2)].filter((m, k, a) => m && a.indexOf(m) === k);
+      lines = picks.map((m) => `User: ${clip(m.content, 200)}`);
+    }
+    const block = `${head}\n${lines.join("\n")}`;
+    if ((out + "\n\n" + block).length > TOTAL) return;
+    out += (out ? "\n\n" : "") + block;
+  });
+  return out;
+}
+
+function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookContext, pastChatsContext) {
   const styleKey = user?.attachmentStyle;
   const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
   const memory = (user?.relationshipMemory || "").trim();
@@ -839,6 +873,10 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookCon
 
   if (memory) {
     prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript (a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity) so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing, but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. It counts toward knowing enough: whatever it already tells you about their relationship, their history, their patterns, what they tried and how they like to be helped, you do not ask again. Ask only about what is missing, and use it to judge whether you are in the understanding stage or ready to give real guidance. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Open thread:" or "Most recent suggestion:", that's something in motion (often a concrete thing you told this user to try) and they haven't confirmed how it went. A real coach remembers that and checks in, but only once and only when it fits: if this is a new conversation or very early in one, and what the user brings up now touches the same thing, ask about it briefly, like picking up a thread ("did you end up bringing that up with her?"), after you have answered what they just wrote. If their message is about something else, or they have already addressed it, leave it alone. Never make the check-in the whole reply, and never ask about it twice in the same conversation.`;
+  }
+
+  if (pastChatsContext) {
+    prompt += `\n\nEARLIER CONVERSATIONS WITH THIS USER (newest first, with dates; the newest few in more detail, older ones only as their opening and latest words; there may be more that are not shown):\n${pastChatsContext}\nUse these the way a therapist uses their notes from earlier sessions: connect today to what came before (a pattern repeating, something they tried and how it went, something that changed or improved, something that contradicts what they say now), and count what is already known toward deciding whether you understand enough to give real guidance, so you do not ask again about what they have already told you. Refer back naturally ("last time you mentioned...") only when it helps them, never mechanically, never quote at length, and trust what they say today over old notes.`;
   }
 
   const insightsContext = buildInsightsContext(user);
@@ -4521,7 +4559,22 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
   // START of this request (before the new user message below) — same
   // effective window (last 20 turns) the old code got from slicing the
   // in-memory array right after pushing onto it.
-  const priorHistory = conv.messages.slice(-60).map((m) => ({ role: m.role, content: m.content }));
+  // The whole conversation, not only its tail: walk back from the newest
+  // message until a generous character budget (about 30k tokens) is used up,
+  // so even a long chat keeps its early details in front of the coach.
+  const HISTORY_CHAR_BUDGET = 120000;
+  const priorHistory = [];
+  {
+    let used = 0;
+    for (let i = conv.messages.length - 1; i >= 0; i--) {
+      const m = conv.messages[i];
+      const len = String(m.content || "").length + 20;
+      if (used + len > HISTORY_CHAR_BUDGET && priorHistory.length > 0) break;
+      used += len;
+      priorHistory.push({ role: m.role, content: m.content });
+    }
+    priorHistory.reverse();
+  }
 
   const userMessage = {
     id: generateId("msg"),
@@ -4564,7 +4617,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         intensity: conv.intensity,
         roleSwap: conv.practiceRoleSwap,
       })
-    : buildCoachSystemPrompt(user, taggedPartner, recentCheckinContext, buildPlaybookContext(user.id));
+    : buildCoachSystemPrompt(user, taggedPartner, recentCheckinContext, buildPlaybookContext(user.id), buildPastChatsContext(db, user.id, conv.id));
 
   // Only the very first message of a conversation gets a generated title —
   // conv.messages here still reflects the state as of the START of this
