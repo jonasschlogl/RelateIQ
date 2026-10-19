@@ -2381,26 +2381,6 @@ function cancelEditLastMessage() {
   }
 }
 
-// Renders a fixed, distinct card with real crisis resources — separate from
-// the normal AI reply bubble, so it's guaranteed visible regardless of how
-// the coaching reply itself was phrased. See safetyBlockFor() in server.js.
-function appendSafetyNotice(safety) {
-  if (!safety) return;
-  const chatDiv = document.getElementById("chat");
-  const card = document.createElement("div");
-  card.className = "safety-notice";
-  const heading = document.createElement("div");
-  heading.className = "safety-notice-heading";
-  heading.textContent = safety.heading || "Please reach out to real support";
-  const body = document.createElement("div");
-  body.className = "safety-notice-body";
-  body.innerText = safety.body || "";
-  card.appendChild(heading);
-  card.appendChild(body);
-  chatDiv.appendChild(card);
-  chatDiv.scrollTop = chatDiv.scrollHeight;
-}
-
 let isFetchingDebrief = false;
 
 // Wired to the "Get feedback" button in the practice banner (see
@@ -2889,7 +2869,6 @@ async function sendMessage() {
 
     thinkingBubble.closest(".message-row")?.remove();
     appendMessage("assistant", data.reply, true, currentConvCtx, undefined, data.messageId, null, data.suggestion);
-    appendSafetyNotice(data.safety);
     refreshEditAffordance();
 
     if (data.usage) {

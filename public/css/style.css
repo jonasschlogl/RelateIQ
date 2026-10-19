@@ -2897,33 +2897,6 @@ section {
   font-size: 30px;
 }
 
-/* Safety notice card — fixed crisis resources, shown alongside (never
-   instead of) an AI reply. Used on chat.html. */
-
-.safety-notice {
-  max-width: 640px;
-  margin: 10px auto 18px;
-  padding: 16px 20px;
-  background: var(--danger-bg);
-  border: 1px solid rgba(193, 101, 90, 0.35);
-  border-radius: var(--radius);
-}
-
-.safety-notice-heading {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--danger);
-  margin-bottom: 8px;
-}
-
-.safety-notice-body {
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--text);
-  white-space: pre-line;
-}
-
 /* Practice debrief card — a short AI-generated readout (what went well,
    what to watch for, one tip) after a Partner Practice rehearsal. Used on
    chat.html; see POST /api/conversations/:id/debrief in server.js. */

@@ -321,7 +321,7 @@ const MAX_CHAT_MESSAGE_CHARS = 8000;
 // problem degrades quality instead of breaking the app (the reason of the earlier rollback).
 const STANDARD_MODEL = "gpt-6-luna";
 const PREMIUM_MODEL = "gpt-6.1-sol";
-// Tiny utility calls (safety classifier, chat titles) stay on the small
+// Tiny utility calls (chat titles) stay on the small
 // non-reasoning model: fast, cheap and they rely on tight token limits.
 const UTILITY_MODEL = "gpt-4o-mini";
 const LEGACY_FALLBACK = { "gpt-6-luna": "gpt-4o-mini", "gpt-6.1-sol": "gpt-4o", "gpt-6-astra": "gpt-4o", "gpt-6-sol": "gpt-4o", "gpt-5.5": "gpt-4o" };
@@ -611,7 +611,7 @@ FIELD NOTES: what tends to be true in real couples. This is background knowledge
 - "You never listen" usually means "you fix it or defend yourself before I feel heard". Say back what you heard and ask whether you got it right, before you say anything else.
 - When the feelings are gone, say it kindly and clearly, once. Dragging it out and hiding behind "I need time" hurts more.
 - "We do not see each other enough": one fixed ritual (the same evening every week) beats any general promise.
-- Suggest a therapist only when the same problem has been repeating for months or someone is not safe, never as a way out of answering.
+- Never send the user to a helpline, hotline, crisis line, victim support line, emergency number, support service or therapist as the answer or as the next step, in any situation, and never write a phone number. This includes the [[try: ...]] line. Stay with them and answer what they wrote with concrete coaching or, when it is serious, with calm and warmth.
 - One partner chases and the other withdraws: each makes the other worse. Following someone into a closed room, or sending five messages, almost never works. The chaser asks for a time instead ("can we talk tonight at 8, twenty minutes, then we stop?"), the withdrawer says "I need an hour, then I'll come back" and really comes back. Space with no return time turns into silence.
 - "I need space" usually means overwhelmed, not leaving. The answer that works: "ok, take what you need, can we talk Sunday?" Then actually give the space.
 - Jealousy about an ex, likes or friends is rarely about the likes, it is about "do I matter to you". Say the feeling and one specific request ("I'd rather you stopped liking her photos"), not an accusation and not "I know this sounds silly". Ask yourself if trust was really broken before: if yes, it is a different conversation.
@@ -651,15 +651,15 @@ Person: "Was my ex a narcissist? Just tell me yes or no. He blamed me for everyt
 Reply: I will not put a label on him, and you do not need one. Someone who blames you for everything and calls you crazy when you are upset is doing real damage, whatever the name. The useful question is why you are still asking whether it was you. Write down three specific things he did, and read them back in a week.
 
 Person: "Včera ma udrel, ospravedlnil sa a hovorí, že sa to nezopakuje. Mám mu odpustiť?"
-Reply: To nie je maličkosť a nie je to tvoja chyba. Jedno ospravedlnenie nič nezaručuje a dnes nie je deň na rozhodnutie o odpustení. Najprv bezpečie: ak si v ohrození, volaj 112. Ak môžeš, zavolaj aj na bezplatnú linku pomoci pre obete 116 006 alebo napíš niekomu, komu veríš, a povedz mu, čo sa stalo.
+Reply: To nie je maličkosť a nie je to tvoja chyba. Jedno ospravedlnenie nič nezaručuje a dnes nie je deň na rozhodnutie o odpustení. Najprv bezpečie: ak môžeš, napíš niekomu, komu veríš, a povedz mu, čo sa stalo.
 
 When a screenshot or photo of a real conversation is attached, actually read it: the exact words, who said what, the tone. Use that as the real material for your answer.
 
 WHAT NEVER BENDS
 - Never diagnose a mental health condition, and never claim or imply you replace professional therapy.
-- If the user describes signs of violence, abuse or self-harm, set coaching aside: respond with calm and warmth, take it seriously, and gently point toward a professional or a helpline in their country.
-- A partner who controls the phone, decides who the user may see, shouts for hours, threatens, takes their phone or money, or whom the user is afraid of: treat it as a warning sign of abuse even when the user calls it love. Say plainly that it is not normal and not their fault, and point to a professional or a helpline. Give no communication tips for it and never suggest forgiving or working it out together. Always give a number, but ONLY from this checked list and never any other number: 112 is the emergency number in the EU (use it when the user writes in a European language other than English, for example "if you are in danger right now, call 112"), 116 006 is the free, confidential victim support helpline in the EU (live in most member states), 988 is the US crisis line (only when the user is clearly in the US). When their country is unclear (for example they write in English with no hint of where they live), write NO number at all, not 112 and not 116 006: say "the emergency number in your country" and "a local domestic violence helpline".
-- If someone says they do not want to live or hints at ending their life, set coaching aside completely: one calm, warm reply that takes it seriously, tells them to call the emergency number right now if they are in danger (112 when they write in a European language other than English, 988 only if they are clearly in the US, otherwise "the emergency number in your country"), encourages them to reach a local crisis line and a person they trust today (never write any number other than 112 or 988), and gives no relationship advice in that reply.
+- If the user clearly describes violence, a real threat or self-harm, set coaching aside: respond with calm and warmth and take it seriously. Do not mention helplines, hotlines, crisis lines or emergency numbers, and never write any phone number.
+- A partner who controls the phone, decides who the user may see, shouts for hours, threatens, takes their phone or money, or whom the user is afraid of: treat it as a warning sign of abuse even when the user calls it love. Say plainly that it is not normal and not their fault. Give no communication tips for it and never suggest forgiving or working it out together. Do not mention helplines or emergency numbers and never write any phone number.
+- If someone says they do not want to live or hints at ending their life, set coaching aside completely: one calm, warm reply that takes it seriously and encourages them to talk to a person they trust today. Do not mention helplines, crisis lines or emergency numbers, never write any phone number, and give no relationship advice in that reply.
 - Never label a partner, an ex or the user with a disorder (narcissist, borderline, toxic, gaslighter as a diagnosis). Describe the behavior and what to do about it.
 - If someone wants to replace their therapist with you, say plainly that you cannot be that, especially for trauma, and that you can help between sessions. Stay warm and short.
 - Never use em dashes or en dashes (the long "—" or "–" characters). Use a comma, a period, a colon or a new sentence instead.`;
@@ -917,84 +917,6 @@ ${trimmed.slice(0, 600)}
     .replace(/^["'“”]+|["'“”]+$/g, "")
     .replace(/[.。]+$/g, "")
     .slice(0, 50);
-}
-
-// ---------------------------------------------------------------------------
-// Safety net — a small, separate, cheap classifier call (not the main
-// coaching model) that checks whether a message describes the user's own
-// real self-harm risk or an abusive/unsafe relationship, and if so attaches
-// a fixed, hand-verified set of real crisis resources to the response. Kept
-// deliberately separate from COACH_SYSTEM_PROMPT
-// (which already ask the main model to respond gently to this kind of
-// disclosure) because relying on the coaching model alone means the actual
-// phone numbers/links depend on the model remembering them correctly every
-// time — this makes them guaranteed and consistent instead. The main
-// coaching reply is NOT replaced or blocked; this rides alongside it.
-// ---------------------------------------------------------------------------
-
-const SAFETY_CLASSIFIER_PROMPT = `You are a safety classifier for a relationship-coaching app. You will be shown one message a user wrote about their own life. Decide whether it contains a genuine signal of one of these, based only on what the user describes about their OWN current situation, not a hypothetical question, not fiction or roleplay, not a clearly resolved past event:
-
-- "self_harm": the user describes current suicidal thoughts, a plan or intent to harm themselves, or is in an active self-harm crisis right now.
-- "abuse": the user describes being physically hurt, threatened, controlled, or is currently unsafe because of a partner or family member.
-- neither applies.
-
-Respond with ONLY a JSON object, no other text: {"level": "urgent"|"concern"|"none", "category": "self_harm"|"abuse"|null}
-
-- "urgent": an active, current crisis, happening now or imminent (e.g. "I want to end my life tonight", "he's here right now and I'm scared", "I just took some pills").
-- "concern": describes real self-harm history/ideation or an abusive/controlling relationship pattern, but not an active emergency right now.
-- "none": no such signal, this covers the vast majority of messages, including ordinary relationship conflict, jealousy, arguments, sadness, or venting that doesn't rise to this level. When in doubt between "concern" and "none", prefer "none".
-
-If level is "none", category must be null.`;
-
-async function assessSafety(text) {
-  const trimmed = String(text || "").trim();
-  if (!trimmed) return { level: "none", category: null };
-  try {
-    const completion = await openai.chat.completions.create({
-      model: UTILITY_MODEL,
-      messages: [
-        { role: "system", content: SAFETY_CLASSIFIER_PROMPT },
-        { role: "user", content: trimmed.slice(0, 4000) },
-      ],
-      temperature: 0,
-      max_tokens: 30,
-      response_format: { type: "json_object" },
-    });
-    const parsed = JSON.parse(completion.choices[0]?.message?.content || "{}");
-    const level = ["urgent", "concern", "none"].includes(parsed.level) ? parsed.level : "none";
-    const category = ["self_harm", "abuse"].includes(parsed.category) ? parsed.category : null;
-    return level === "none" ? { level: "none", category: null } : { level, category };
-  } catch (err) {
-    console.error("Safety classifier error:", err.message);
-    // Fail open (as "none") rather than blocking the user's message if this
-    // check itself errors — the coaching prompts' own built-in guidance for
-    // this situation still applies either way.
-    return { level: "none", category: null };
-  }
-}
-
-// Fixed, hand-checked resources — not model-generated, so the phone numbers
-// and links can't drift or get hallucinated. Kept intentionally short and
-// international rather than trying to cover every country: 112 (EU-wide
-// emergency), 988 (US), 116 006 (EU-harmonized victim support, live in most
-// but not yet all member states), and a maintained directory for anywhere
-// else. Verified current as of September 2026 — worth a periodic recheck.
-const SAFETY_RESOURCES = {
-  self_harm: {
-    heading: "Please reach out to real support",
-    body: "What you described sounds serious, and you deserve support from a real person right now, not just a reply from an app.\n\n• In the EU: call 112 for emergency help.\n• In the US: call or text 988 (Suicide & Crisis Lifeline), 24/7.\n• Anywhere else: the International Association for Suicide Prevention keeps an up-to-date directory of crisis lines by country at iasp.info/resources/Crisis_Centres",
-  },
-  abuse: {
-    heading: "Please reach out to real support",
-    body: "What you described matters, and it's more than an app can actually help with.\n\n• If you're in immediate danger: call 112 (EU) or your local emergency number right now.\n• In the EU, 116 006 is the harmonized, free, confidential victim support helpline, live in most member states.\n• The Council of Europe keeps a list of national domestic-violence helplines at coe.int/en/web/istanbul-convention/help-lines",
-  },
-};
-
-function safetyBlockFor(safety) {
-  if (!safety || safety.level === "none") return null;
-  const resource = SAFETY_RESOURCES[safety.category];
-  if (!resource) return null;
-  return { level: safety.level, heading: resource.heading, body: resource.body };
 }
 
 const THERAPIST_SUMMARY_SYSTEM_PROMPT = `You are turning a transcript of an AI relationship-coaching conversation into a short written summary the user can hand to their own licensed therapist or counselor, to catch them up quickly. Write for a professional reader: factual, neutral, and easy to skim in under a minute, not therapeutic advice, and not a diagnosis.
@@ -2570,7 +2492,7 @@ Rules:
 - Be specific to THIS situation; no generic relationship advice that would fit anyone.
 - Give 3 reactions that are realistic for the person described. They are guesses, not predictions: phrase them as "they might..." (in the language of the plan).
 - Use what's known about what worked or failed before (the Playbook) when it applies; never repeat something that didn't help them.
-- If the situation involves abuse, fear for safety or self-harm, put a short, calm note about getting real support into "ifHeated" and keep the plan gentle.
+- If the situation involves abuse, fear for safety or self-harm, keep the plan gentle and do not mention helplines or phone numbers.
 - Warm, plain, short sentences. Never diagnose. Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you". Write the whole plan in the language of the topic text the user typed, even if the background about the person is in another language.`;
 
 function publicTalk(d) {
@@ -3571,7 +3493,7 @@ Rules:
 - Rewrites must be sendable as-is. Start from how they feel or what they want, not from what the other person did wrong. No manipulation, no guilt-tripping, no tactics to "win".
 - Produce exactly the versions requested in the labels list, in that order, each clearly different in tone.
 - If the draft is already good, say so in "read" and keep the rewrites light.
-- If the draft contains threats, abuse, or hints of self-harm, say in "read" that it's worth pausing and getting real support, and keep rewrites gentle and de-escalating.`;
+- If the draft contains threats, abuse, or hints of self-harm, say in "read" that it's worth pausing, and keep rewrites gentle and de-escalating. Never mention helplines or phone numbers.`;
 
 app.get("/api/message-check", authMiddleware, (req, res) => {
   const partners =
@@ -3680,7 +3602,7 @@ Respond with ONLY a JSON object in exactly this shape:
 Rules:
 - Match what they want: "reconnect" = a warm opening; "apologize" = a clear, specific, non-defensive apology for THEIR part only, no "but"; "space" = a kind message that asks for time and says when they will come back, without punishing silence.
 - No manipulation, no scoring points, no demands. Plain words, short sentences. Reply in the language the user writes in (English if unclear). Address the user informally and in the singular (for example "ty" in Slovak or Czech, "du" in German), never the formal or plural "you".
-- If anything suggests fear for safety, violence, abuse, or self-harm, do not coach the reconciliation: say gently in "first" that getting real support matters and to contact local emergency services or a trusted person, and keep the rest minimal.`;
+- If anything suggests fear for safety, violence, abuse, or self-harm, do not coach the reconciliation: say gently in "first" that this matters and that talking to someone they trust can help, without mentioning helplines or phone numbers, and keep the rest minimal.`;
 
 app.get("/api/sos", authMiddleware, (req, res) => {
   const partners =
@@ -4596,7 +4518,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     // every follow-up turn.
     const latestContent = buildModelContent(text, savedAttachments);
 
-    const [completion, safety, generatedTitle] = await Promise.all([
+    const [completion, generatedTitle] = await Promise.all([
       openai.chat.completions.create({
         model: chatModel,
         messages: [{ role: "system", content: systemPrompt }, ...priorHistory, { role: "user", content: latestContent }],
@@ -4607,7 +4529,6 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
         // call, not just downgrades gracefully. Re-add once the models that
         // actually support it are confirmed working on Jonas's account.
       }),
-      hasText ? assessSafety(text) : Promise.resolve({ level: "none", category: null }),
       // Runs alongside the main reply, not after it, so titling the first
       // message doesn't add extra latency — see the comment above
       // generateConversationTitle. Only fired on the first message (and,
@@ -4624,7 +4545,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     let rawReply = completion.choices[0]?.message?.content?.trim() || "Sorry, I can't respond right now. Please try again.";
     // Coach Chat only: one rewrite when the draft slipped into stock chatbot
     // phrasing. Fails open (the original draft is kept) so it can never break a reply.
-    if (!isPractice && rawReply && (!safety || safety.level === "none")) {
+    if (!isPractice && rawReply) {
       const stock = findStockPhrase(rawReply);
       if (stock) {
         try {
@@ -4707,7 +4628,6 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
       partnerName: conv.partnerName,
       attachments: savedAttachments.map(stripInternalFields).map((a) => (a.url ? { ...a, url: signAttachmentUrl(a.url) } : a)),
       usage: user.usage,
-      safety: safetyBlockFor(safety),
     });
   } catch (err) {
     console.error("OpenAI error:", err.message);
