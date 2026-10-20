@@ -706,3 +706,5 @@ body.gated .hx-sticky { display: none !important; }
   .hero-bg .hcl-b { width: 38vw; left: -12%; top: 2%; opacity: .45; }
   .hero-bg .hcl-c { display: none; }
 }
+/* v37 hero copy shifted right */
+@media (min-width: 881px) { .hx-hero .hx-copy { position: relative; left: clamp(0px, 7.5vw, 120px); } }
