@@ -8,8 +8,8 @@ def clover(cls='',gid='c'):
     for rot,f in ((0,'A'),(90,'B'),(180,'A'),(270,'B')):
         g+=f'<g transform="translate(100 100) rotate({rot}) translate(0 -13) scale(.8) translate(-50 -88)"><path d="{HEART}" fill="url(#{gid}{f})"/></g>'
     return (f'<svg class="{cls}" viewBox="18 18 164 164" aria-hidden="true"><defs>'
-            f'<linearGradient id="{gid}A" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d28b"/><stop offset="1" stop-color="#e0956a"/></linearGradient>'
-            f'<linearGradient id="{gid}B" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5718a"/><stop offset="1" stop-color="#b03a60"/></linearGradient></defs>{g}</svg>')
+            f'<linearGradient id="{gid}A" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe6b0"/><stop offset="1" stop-color="#f3c97a"/></linearGradient>'
+            f'<linearGradient id="{gid}B" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fac0cf"/><stop offset="1" stop-color="#ee8ea8"/></linearGradient></defs>{g}</svg>')
 
 
 HP="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z"
@@ -34,8 +34,8 @@ def _orbit():
     return o+'</g>'
 HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
  '<radialGradient id="hcb" cx=".35" cy=".28" r=".9"><stop offset="0" stop-color="#fff0cc"/><stop offset=".5" stop-color="#f9d596"/><stop offset="1" stop-color="#f0a97a"/></radialGradient>'
- '<linearGradient id="hcA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe0a0"/><stop offset="1" stop-color="#e0956a"/></linearGradient>'
- '<linearGradient id="hcB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ef8aa0"/><stop offset="1" stop-color="#b03a60"/></linearGradient></defs>'
+ '<linearGradient id="hcA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe6b0"/><stop offset="1" stop-color="#f3c97a"/></linearGradient>'
+ '<linearGradient id="hcB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fac0cf"/><stop offset="1" stop-color="#ee8ea8"/></linearGradient></defs>'
  '<circle cx="300" cy="290" r="196" fill="#3b2218"/><circle cx="290" cy="280" r="196" fill="url(#hcb)" stroke="#3b2218" stroke-width="4"/>'
  '<circle cx="290" cy="280" r="168" fill="none" stroke="#fff6e9" stroke-opacity=".55" stroke-width="2"/><circle cx="290" cy="280" r="132" fill="none" stroke="#fff6e9" stroke-opacity=".4" stroke-width="2"/>'
  +_orbit()+
@@ -48,7 +48,8 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=43')
+s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img src="logo-tile.svg" alt="" width="38" height="38" />')
+s=s.replace('css/home.css?v=11','css/home.css?v=44')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon

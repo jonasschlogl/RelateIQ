@@ -763,3 +763,6 @@ body.hx { background: #b78d74; }
 .hx-btn, .btn { font-weight: 700; }
 .brand, .hx-brand { letter-spacing: -.01em; }
 .mission-block .mission-signature { font-style: normal; font-weight: 500; }
+
+/* v44: tile logo in nav */
+.hx-brand img { border-radius: 11px; box-shadow: 0 8px 16px -8px rgba(59,34,24,.55); }
