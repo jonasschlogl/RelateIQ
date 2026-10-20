@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css?v=51" />
+  <link rel="stylesheet" href="css/home.css?v=54" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#fff4e1" />
@@ -65,8 +65,42 @@
           <p class="hx-done" id="hero-done" hidden><strong>You're on the list.</strong> We'll email you once, the day RelationshipAI opens.</p>
           <p class="hx-note"><b>Free to start</b> · No card · One email when we open</p>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          
+        <div class="hero-art">
+          <div class="hph" id="hph" role="group" aria-label="Product preview">
+            <div class="hph-frame"><i class="hph-notch"></i>
+              <div class="hph-scr">
+                <div class="hs on">
+                  <div class="hs-top"><i></i>Practice with Alex</div>
+                  <div class="hs-lbl">Before the talk</div>
+                  <div class="bb me">There&rsquo;s something I want to tell you.</div>
+                  <div class="bb ai">Okay. I&rsquo;m listening.</div>
+                  <div class="bb me">When plans change, I feel unimportant.</div>
+                  <div class="hs-card bt"><small>Debrief</small>Calm start, clear feeling. <b>Next time:</b> say what you need.</div>
+                  <div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div>
+                </div>
+                <div class="hs">
+                  <div class="hs-top"><i></i>Message check</div>
+                  <div class="hs-lbl">You wrote</div>
+                  <div class="hs-card pk">You never listen to me.<span>High risk of a fight</span></div>
+                  <div class="hs-arrow">&darr;</div>
+                  <div class="hs-lbl">Try this instead</div>
+                  <div class="hs-card bt">I feel unheard when plans change. Can we talk tonight?<span>Calm, clear, no blame</span></div>
+                  <div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div>
+                </div>
+                <div class="hs">
+                  <div class="hs-top"><i></i>Coach Chat</div>
+                  <div class="hs-lbl">When it hurts</div>
+                  <div class="bb me">We had the same fight again.</div>
+                  <div class="hs-mem"><i></i>Remembers: the Tuesday dishes fight</div>
+                  <div class="bb ai">Let&rsquo;s look underneath it this time.</div>
+                  <div class="hs-card bt"><small>Try saying</small>&ldquo;I feel unseen when I carry the house alone.&rdquo;</div>
+                  <div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div>
+                </div>
+                <div class="hph-tabs"><button type="button" class="on" data-i="0" aria-label="Partner Practice">Practice</button><button type="button" data-i="1" aria-label="Message check">Check</button><button type="button" data-i="2" aria-label="Coach Chat">Coach</button></div>
+              </div>
+            </div>
+          </div>
+          <script>(function(){var r=document.getElementById('hph');if(!r)return;var S=[].slice.call(r.querySelectorAll('.hs')),T=[].slice.call(r.querySelectorAll('.hph-tabs button')),i=0,t,mq=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;function go(n){i=n;S.forEach(function(e,k){e.classList.toggle('on',k===n)});T.forEach(function(e,k){e.classList.toggle('on',k===n);e.classList.remove('run');});void r.offsetWidth;if(!mq)T[n].classList.add('run');clearTimeout(t);if(!mq)t=setTimeout(function(){go((i+1)%S.length)},5200)}T.forEach(function(b,k){b.addEventListener('click',function(){go(k)})});r.addEventListener('mouseenter',function(){clearTimeout(t);T[i].classList.remove('run')});r.addEventListener('mouseleave',function(){go(i)});go(0)})();</script>
         </div>
       </div>
     </section>

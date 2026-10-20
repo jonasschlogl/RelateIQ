@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=51')
+s=s.replace('css/home.css?v=11','css/home.css?v=54')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -99,7 +99,41 @@ def _hero5():
           +heart(26,330,2.0,'#f2a0b4',bars_p,rot=-9,delay=3,dy='9px'))
     return f'<svg class="hero4" viewBox="0 0 560 560" aria-hidden="true">{body}<g class="spk">{deco}</g></svg>'
 HERO4=_hero5()
-HERO4=''
+HERO4='''<div class="hph" id="hph" role="group" aria-label="Product preview">
+            <div class="hph-frame"><i class="hph-notch"></i>
+              <div class="hph-scr">
+                <div class="hs on">
+                  <div class="hs-top"><i></i>Practice with Alex</div>
+                  <div class="hs-lbl">Before the talk</div>
+                  <div class="bb me">There&rsquo;s something I want to tell you.</div>
+                  <div class="bb ai">Okay. I&rsquo;m listening.</div>
+                  <div class="bb me">When plans change, I feel unimportant.</div>
+                  <div class="hs-card bt"><small>Debrief</small>Calm start, clear feeling. <b>Next time:</b> say what you need.</div>
+                  <div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div>
+                </div>
+                <div class="hs">
+                  <div class="hs-top"><i></i>Message check</div>
+                  <div class="hs-lbl">You wrote</div>
+                  <div class="hs-card pk">You never listen to me.<span>High risk of a fight</span></div>
+                  <div class="hs-arrow">&darr;</div>
+                  <div class="hs-lbl">Try this instead</div>
+                  <div class="hs-card bt">I feel unheard when plans change. Can we talk tonight?<span>Calm, clear, no blame</span></div>
+                  <div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div>
+                </div>
+                <div class="hs">
+                  <div class="hs-top"><i></i>Coach Chat</div>
+                  <div class="hs-lbl">When it hurts</div>
+                  <div class="bb me">We had the same fight again.</div>
+                  <div class="hs-mem"><i></i>Remembers: the Tuesday dishes fight</div>
+                  <div class="bb ai">Let&rsquo;s look underneath it this time.</div>
+                  <div class="hs-card bt"><small>Try saying</small>&ldquo;I feel unseen when I carry the house alone.&rdquo;</div>
+                  <div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div>
+                </div>
+                <div class="hph-tabs"><button type="button" class="on" data-i="0" aria-label="Partner Practice">Practice</button><button type="button" data-i="1" aria-label="Message check">Check</button><button type="button" data-i="2" aria-label="Coach Chat">Coach</button></div>
+              </div>
+            </div>
+          </div>
+          <script>(function(){var r=document.getElementById('hph');if(!r)return;var S=[].slice.call(r.querySelectorAll('.hs')),T=[].slice.call(r.querySelectorAll('.hph-tabs button')),i=0,t,mq=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;function go(n){i=n;S.forEach(function(e,k){e.classList.toggle('on',k===n)});T.forEach(function(e,k){e.classList.toggle('on',k===n);e.classList.remove('run');});void r.offsetWidth;if(!mq)T[n].classList.add('run');clearTimeout(t);if(!mq)t=setTimeout(function(){go((i+1)%S.length)},5200)}T.forEach(function(b,k){b.addEventListener('click',function(){go(k)})});r.addEventListener('mouseenter',function(){clearTimeout(t);T[i].classList.remove('run')});r.addEventListener('mouseleave',function(){go(i)});go(0)})();</script>'''
 HEROBG='<div class="hero-bg" aria-hidden="true">'+clover('hcl hcl-a','ha')+clover('hcl hcl-b','hb2')+clover('hcl hcl-c','hc3')+'</div>'
 PGBG='<div class="page-bg" aria-hidden="true">'+''.join(f'<span class="pbg" style="top:{t}px;{sd}:{o}%;--s:{sc};--r:{r}deg;--o:{op}">'+clover('','pg')+'</span>' for t,sd,sc,r,o,op in [(762, 'left', 30, 20, -9, 0.5), (1637, 'right', 24, 10, -9, 0.58), (2329, 'right', 24, 20, -4, 0.5), (3201, 'right', 24, 32, -4, 0.5), (4104, 'left', 24, -12, -9, 0.58), (4792, 'left', 30, -24, -6, 0.5), (5707, 'left', 30, 32, -9, 0.5), (6563, 'right', 26, -12, -9, 0.58), (7335, 'right', 24, 32, -9, 0.5), (8218, 'right', 30, 20, -4, 0.5), (8999, 'left', 34, 20, -12, 0.5), (9763, 'left', 30, -34, -6, 0.5), (10667, 'left', 36, 32, -4, 0.5), (11454, 'right', 36, 32, -9, 0.5), (12291, 'right', 28, -12, -12, 0.58), (13105, 'right', 28, -24, -9, 0.5), (13887, 'left', 26, 10, -4, 0.58), (14637, 'left', 24, 10, -4, 0.5)])+'</div>'
 hero=f'''<section class="hx-hero">
@@ -110,7 +144,7 @@ hero=f'''<section class="hx-hero">
           <p class="hx-sub">Your private coach for the hard talks. There at 2am.</p>
           {form}
         </div>
-        <div class="hero-art" aria-hidden="true">
+        <div class="hero-art">
           {HERO4}
         </div>
       </div>
