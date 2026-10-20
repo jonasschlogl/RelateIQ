@@ -307,7 +307,8 @@ const GLOBE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const liveLangs = () => [EN_LANG, ...ctxList.map((c) => c.lang)];
 
 // targets: { [code]: url } for every language incl. "en"
-function switcher(current, targets, ctx) {
+function switcher(current, targets, ctx) { return ""; } // language switcher disabled (English only)
+function switcherOld(current, targets, ctx) {
   const items = liveLangs()
     .filter((l) => targets[l.code])
     .map(
@@ -318,7 +319,8 @@ function switcher(current, targets, ctx) {
   return `<details class="lang-switch"><summary aria-label="${attr(ctx.T(EN.language))}">${GLOBE}<span>${current.short}</span></summary><ul class="lang-list">${items}</ul></details>`;
 }
 
-function alternatesHtml(targets) {
+function alternatesHtml(targets) { return ""; } // hreflang disabled (English only)
+function alternatesHtmlOld(targets) {
   const links = [];
   for (const l of liveLangs()) if (targets[l.code]) links.push(`<link rel="alternate" hreflang="${l.hreflang}" href="${SITE}${targets[l.code]}" />`);
   if (targets.en) links.push(`<link rel="alternate" hreflang="x-default" href="${SITE}${targets.en}" />`);
