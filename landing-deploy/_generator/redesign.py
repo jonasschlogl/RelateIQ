@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=24')
+s=s.replace('css/home.css?v=11','css/home.css?v=25')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -153,7 +153,6 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next','Message check')}
         {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Next','Coach Chat')}
           </div>
-          <div class="deck-dots" role="tablist" aria-label="Choose a tool"><button type="button" data-go="0" class="on" role="tab"><i></i>Before the talk</button><button type="button" data-go="1" role="tab"><i></i>Before you send</button><button type="button" data-go="2" role="tab"><i></i>When it hurts</button></div>
         </div>
       </div>
     </section>
