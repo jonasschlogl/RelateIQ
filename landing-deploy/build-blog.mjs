@@ -420,7 +420,7 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=73" />
+  <link rel="stylesheet" href="/css/style.css?v=74" />
   <link rel="stylesheet" href="/css/landing.css?v=${CONFIG.cssVersion}" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
