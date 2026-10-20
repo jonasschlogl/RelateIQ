@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=18')
+s=s.replace('css/home.css?v=11','css/home.css?v=19')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -123,7 +123,7 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         </div>
       </div>
     </section>
-    <script>(function(){{var L=document.querySelectorAll('details.flag');function one(e){{if(e.target.open)L.forEach(function(x){{if(x!==e.target)x.open=false}})}}L.forEach(function(d){{d.addEventListener('toggle',one)}});function go(){{var d=location.hash&&document.querySelector('details.flag'+location.hash);if(d)d.open=true}}addEventListener('hashchange',go);go()}})();</script>"""
+    <script>(function(){{var L=document.querySelectorAll('details.flag');function one(e){{if(e.target.open)L.forEach(function(x){{if(x!==e.target)x.open=false}})}}L.forEach(function(d){{d.addEventListener('toggle',one);d.querySelector('summary').addEventListener('click',function(e){{if(d.open)e.preventDefault()}})}});function go(){{var d=location.hash&&document.querySelector('details.flag'+location.hash);if(d)d.open=true}}addEventListener('hashchange',go);go()}})();</script>"""
 s=s[:a]+acc+s[b:]
 
 # ---- final CTA: add clover decoration

@@ -498,3 +498,29 @@ body.hx::before { /* paper grain */
   .dm-arrow { transform: rotate(90deg); }
 }
 @media (prefers-reduced-motion: reduce) { .flag-body { animation: none; } }
+
+/* ===== stacked deck: open card in front, the others peek out from behind ===== */
+.flag-list { gap: 0; max-width: 940px; }
+.flag { position: relative; z-index: 1; margin-inline: 0; transition: margin .25s, box-shadow .2s; }
+.flag:hover, .flag:hover:not([open]) { transform: none; box-shadow: 6px 6px 0 var(--cocoa); }
+.flag + .flag { margin-top: -22px; }
+.flag[open] { z-index: 10; }
+.flag[open] + .flag, .flag:has(+ .flag[open]) { z-index: 9; margin-inline: 16px; }
+.flag[open] + .flag + .flag, .flag:has(+ .flag + .flag[open]) { z-index: 8; margin-inline: 32px; }
+.flag:not([open]) summary { padding: 18px 28px; }
+.flag:not([open]) .fnum { width: 40px; height: 40px; font-size: 15px; }
+.flag:not([open]) .ftxt h3 { font-size: clamp(19px, 2.2vw, 25px); }
+.flag:not([open]) .fplus { width: 36px; height: 36px; }
+.flag[open] ~ .flag:not([open]) summary { padding-top: 40px; }
+.flag:has(~ .flag[open]) summary { padding-bottom: 40px; }
+.flag:not([open]) { cursor: pointer; }
+.flag:not([open]):hover { box-shadow: 6px 8px 0 var(--cocoa); }
+@media (max-width: 760px) {
+  .flag[open] + .flag, .flag:has(+ .flag[open]) { margin-inline: 8px; }
+  .flag[open] + .flag + .flag, .flag:has(+ .flag + .flag[open]) { margin-inline: 16px; }
+  .flag:not([open]) summary { padding: 14px 16px; }
+  .flag[open] ~ .flag:not([open]) summary { padding-top: 36px; }
+  .flag:has(~ .flag[open]) summary { padding-bottom: 36px; }
+}
+details.flag#message, details.flag#coach { margin-top: -22px; }
+details.flag#practice { margin-top: 0; }
