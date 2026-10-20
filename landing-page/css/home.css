@@ -856,3 +856,24 @@ body.hx { background: #b78d74; }
   #tools .page .flag-body { padding: 0 26px; }
   #tools .pg-foot { padding: 26px 26px 18px; }
 }
+
+/* v59: a touch more colour — pastel inset panels + coloured cards, still soft */
+#more, #blog { margin: 28px 14px 0; border-radius: 60px; padding: 90px 0; border: 1px solid rgba(59,34,24,.55); box-shadow: 0 34px 60px -38px rgba(59,34,24,.55); }
+#more { background: #f6c4ce; }
+#blog { background: #f9cfae; }
+#more .hx-head h2 em, #blog .section-head h2 em { color: var(--deep) !important; }
+/* coloured cards on the brown sections */
+.compare-highlight, .compare-table th.compare-highlight { background: #f6c4ce; }
+.mission-block { background: #f6c4ce; }
+.faq-item:nth-child(4n+1) { background: #f7d99a; }
+.faq-item:nth-child(4n+2) { background: #f6c4ce; }
+.faq-item:nth-child(4n+3) { background: #f9cfae; }
+.faq-item:nth-child(4n+4) { background: #fff3e2; }
+/* coloured kickers */
+#compare .hx-kicker { background: #f9cfae; }
+#pricing .hx-kicker { background: #f7d99a; }
+#faq .hx-kicker { background: #f6c4ce; }
+#approach .hx-kicker { background: #fff3e2; }
+@media (max-width: 760px) {
+  #more, #blog { margin-inline: 8px; border-radius: 38px; padding: 64px 0; }
+}
