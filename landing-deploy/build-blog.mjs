@@ -136,7 +136,9 @@ const JS_TEXTS = [
 ];
 
 // ---------------------------------------------------------------- languages
-const LANGS = fs.existsSync(path.join(I18N_DIR, "langs.json")) ? JSON.parse(fs.readFileSync(path.join(I18N_DIR, "langs.json"), "utf8")) : [];
+// English only: translations stay in i18n/ but are not built. To bring languages back, restore the line below.
+// const LANGS = fs.existsSync(path.join(I18N_DIR, "langs.json")) ? JSON.parse(fs.readFileSync(path.join(I18N_DIR, "langs.json"), "utf8")) : [];
+const LANGS = [];
 const EN_LANG = { code: "en", htmlLang: "en", hreflang: "en", name: "English", short: "EN", locale: "en-GB" };
 
 function loadDict(code) {
