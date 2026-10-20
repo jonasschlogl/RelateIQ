@@ -825,3 +825,34 @@ body.hx { background: #b78d74; }
   .hs { padding-top: 54px; }
 }
 .hph { text-align: left; }
+
+/* v55: the three tools become big full-width panels (like the dark trust panel) */
+#tools > .hx-wrap { width: auto; margin-inline: 14px; }
+#tools .hx-head { max-width: 900px; }
+#tools .deck { max-width: none; margin-top: 40px; }
+#tools .page, #tools .page#message, #tools .page#coach, #tools .page#practice { border-radius: 60px; box-shadow: 0 34px 60px -34px rgba(59,34,24,.6), 0 4px 10px -4px rgba(59,34,24,.25); }
+#tools .page::after { content: ""; position: absolute; right: -90px; bottom: -110px; width: 520px; height: 520px; background: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='18 18 164 164'%3E%3Cg transform='translate%28100 100%29 rotate%280%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%25233b2218'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%2890%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%25233b2218'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%28180%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%25233b2218'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%28270%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%25233b2218'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; opacity: .075; transform: rotate(-14deg); pointer-events: none; }
+#tools .page[data-s="b1"]::after, #tools .page[data-s="b2"]::after { display: none; }
+#tools .pg-in { position: relative; z-index: 1; max-width: 1240px; margin-inline: auto; }
+#tools .pg-head { padding: 84px 70px 22px; gap: 30px; align-items: flex-start; }
+#tools .fnum { width: 76px; height: 76px; font-size: 26px; margin-top: 6px; }
+#tools .ftxt small b { font-size: 14px; padding: 7px 16px; }
+#tools .ftxt small span { font-size: 14px; letter-spacing: .12em; }
+#tools .ftxt h3 { font-size: clamp(36px, 4.8vw, 70px); line-height: 1.02; letter-spacing: -.03em; max-width: 14em; }
+#tools .pg-turn { display: inline-block; align-self: flex-start; margin-top: 8px; padding: 12px 20px; font-size: 14px; }
+#tools .page .flag-body { padding: 0 70px 0 176px; }
+#tools .flag-body > p { margin: 0; font-size: clamp(20px, 1.9vw, 28px); line-height: 1.4; max-width: 30em; font-weight: 500; }
+#tools .pg-foot { padding: 40px 70px 58px 176px; justify-content: flex-start; }
+#tools .pg-next { font-size: 17px; padding: 16px 28px; }
+@media (max-width: 880px) {
+  #tools > .hx-wrap { margin-inline: 8px; }
+  #tools .page, #tools .page#message, #tools .page#coach, #tools .page#practice { border-radius: 38px; }
+  #tools .page::after { width: 300px; height: 300px; right: -70px; bottom: -80px; }
+  #tools .pg-head { padding: 44px 26px 14px; gap: 16px; flex-wrap: wrap; }
+  #tools .pg-turn { display: none; }
+  #tools .fnum { width: 52px; height: 52px; font-size: 19px; margin-top: 0; }
+  #tools .ftxt { flex-basis: 100%; }
+  #tools .ftxt h3 { font-size: clamp(32px, 9vw, 44px); }
+  #tools .page .flag-body { padding: 0 26px; }
+  #tools .pg-foot { padding: 26px 26px 18px; }
+}
