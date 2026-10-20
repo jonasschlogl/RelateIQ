@@ -769,3 +769,6 @@ body.hx { background: #b78d74; }
 
 /* v45: AI in wordmark matches logo pink */
 .hx-brand b, .hx-foot .hx-brand b, footer .hx-brand b { color: #ee7f9e; }
+
+/* v46: AI same colour as Relationship */
+.hx-brand b, .hx-foot .hx-brand b, footer .hx-brand b { color: inherit; }
