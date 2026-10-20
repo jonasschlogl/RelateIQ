@@ -648,3 +648,8 @@ body.gated .hx-sticky { display: none !important; }
 .tick-set i::before { content: "\2665"; }
 @media (max-width: 760px) { .tick { margin-top: 38px; padding: 14px 0 16px; } }
 @media (prefers-reduced-motion: reduce) { .tick-track { animation: none !important; } }
+/* slimmer ticker */
+.tick { margin-top: 44px; padding: 11px 0 12px; }
+.tick-set span { font-size: clamp(20px, 2.3vw, 30px); letter-spacing: -.01em; }
+.tick-set i { width: clamp(38px, 4.5vw, 64px); font-size: clamp(13px, 1.4vw, 18px); }
+@media (max-width: 760px) { .tick { margin-top: 32px; padding: 9px 0 10px; } }
