@@ -718,3 +718,5 @@ body.hx { position: relative; }
 @media (prefers-reduced-motion: reduce) { .pbg { animation: none !important; } }
 body.hx > main, body.hx > header, body.hx > footer, body.hx > nav { position: relative; z-index: 1; }
 @media (max-width: 880px) { .pbg { width: calc(var(--s) * min(2.3vw, 14px)); } }
+/* v39 no underline highlight on heading words */
+.hx h2 em, .hx-head h2 em, .chap-copy h2 em, .hx-final h2 em, #blog .section-head h2 em, .hx-faq h2 em, #faq h2 em, #trust .hx-head h2 em { background: none !important; }
