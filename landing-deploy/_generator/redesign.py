@@ -49,6 +49,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />',s)
 s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img src="logo-tile.svg" alt="" width="38" height="38" />')
+s=s.replace('<span class="hx-kicker big"><i></i>AI relationship coach</span>','')
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
