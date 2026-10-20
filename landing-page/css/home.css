@@ -775,39 +775,3 @@ body.hx { background: #b78d74; }
 
 /* v47: ticker loops over 4 sets (even phrase count keeps white/brown alternating) */
 .tick-track { animation-duration: 120s; }
-
-/* v48: alternating section bands (rounded sheets stacked over each other) */
-:root { --band-r: 56px; --band-o: 48px; --rose-ink: #b8416a; }
-.tick { margin-bottom: 64px; }
-:is(#tools, .hx-tools-end, #more, #compare, #approach, #pricing, #blog, #faq, #join) { position: relative; }
-:is(#tools, .hx-tools-end, #more, #compare, #approach, #pricing, #blog, #faq, #join)::before {
-  content: ""; position: absolute; left: 0; right: 0; top: calc(var(--band-o) * -1); bottom: 0; z-index: -1; pointer-events: none;
-  background: var(--band); border-radius: var(--band-r) var(--band-r) 0 0;
-  box-shadow: 0 -18px 36px -26px rgba(59, 34, 24, .45);
-}
-#tools, .hx-tools-end { --band: #fff3e2; }
-#more { --band: #f6c4ce; }
-#compare { --band: #f7d99a; }
-#approach { --band: #f9cfae; }
-#pricing { --band: #b78d74; }
-#blog { --band: #f6c4ce; }
-#faq { --band: #f7d99a; }
-#join { --band: #b78d74; }
-/* trust: full-width cocoa sheet */
-#trust { margin: calc(var(--band-o) * -1) 0 0; border-radius: var(--band-r) var(--band-r) 0 0; padding: calc(100px + var(--band-o)) 0 100px; }
-/* approach card on peach, blog/faq on bands */
-#approach .hx-approach, #approach > .hx-wrap > div { background-color: #fff3e2; }
-/* accent words on light bands */
-:is(#tools, .hx-tools-end, #more, #compare, #approach, #blog, #faq) :is(h2, .section-head h2) em { color: var(--rose-ink) !important; }
-/* sections sit below the sheet that follows them, add breathing room at the bottom */
-:is(#tools, .hx-tools-end, #more, #compare, #approach, #pricing, #blog, #faq, #join) { padding-bottom: calc(84px + 0px); }
-.hx-tools-end { padding-bottom: 40px; }
-#pricing, #blog { padding-bottom: 96px; }
-@media (max-width: 760px) {
-  :root { --band-r: 36px; --band-o: 32px; }
-  .tick { margin-bottom: 44px; }
-  #trust { margin-inline: 0; border-radius: var(--band-r) var(--band-r) 0 0; padding: calc(70px + var(--band-o)) 0 70px; }
-}
-/* bands sit under the clovers: main must not create its own stacking context */
-main { z-index: auto !important; }
-#tools + .hx-tools-end::before { top: -2px; border-radius: 0; box-shadow: none; }
