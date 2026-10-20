@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=25')
+s=s.replace('css/home.css?v=11','css/home.css?v=26')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -153,15 +153,22 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next','Message check')}
         {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Next','Coach Chat')}
           </div>
+          <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Message check','Coach Chat'],a=0,dir=1,ro;
 function nat(p){{var c=p.querySelector('.pg-in').children,t=0;for(var k=0;k<c.length;k++)t+=c[k].offsetHeight;return t+26}}
 function lay(){{var h=0;P.forEach(function(p){{h=Math.max(h,nat(p))}});st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
-function go(n){{a=n;lay();if(window.ResizeObserver&&!ro){{ro=new ResizeObserver(lay);P.forEach(function(p){{[].slice.call(p.querySelector('.pg-in').children).forEach(function(c){{ro.observe(c)}})}})}}}}
+function go(n){{a=n;seen[n]=1;lay();upd();if(window.ResizeObserver&&!ro){{ro=new ResizeObserver(lay);P.forEach(function(p){{[].slice.call(p.querySelector('.pg-in').children).forEach(function(c){{ro.observe(c)}})}})}}}}
 function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
+var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
+function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.querySelector('.hx-tools-end');if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
+function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
+locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
+document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h)))free()}}catch(x){{}}}});
 P.forEach(function(p){{p.addEventListener('click',function(e){{if(!p.dataset.s||p.dataset.s!=='front')return;if(e.target.closest('.hx-demo, a, input, select, textarea')&&!e.target.closest('.pg-next'))return;step()}})}});
 D.forEach(function(d){{d.addEventListener('click',function(){{var n=+d.dataset.go;if(n>a)dir=1;else if(n<a)dir=-1;go(n)}})}});
 function hash(){{var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}}
