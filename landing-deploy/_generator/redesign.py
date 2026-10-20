@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=72')
+s=s.replace('css/home.css?v=11','css/home.css?v=74')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -354,6 +354,15 @@ if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);}
 import re as _re
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+PRICE_JS+CMP_JS+ACC_JS,1)
+
+# ---- blog thumbnails on the home cards (shown on mobile only)
+import glob as _g, os as _os
+def _thumb(m):
+    slug=m.group(1); f=_g.glob('/root/site/img/blog/*-%s-1.svg'%slug)
+    if not f: return m.group(0)
+    src='/img/blog/'+_os.path.basename(f[0])+'?v=2'
+    return m.group(0)+'\n  <span class="post-thumb"><img src="%s" alt="" width="800" height="450" loading="lazy" decoding="async" /></span>'%src
+s=_re.sub(r'<a class="post-card" href="/blog/([^/"]+)/">',_thumb,s)
 
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
