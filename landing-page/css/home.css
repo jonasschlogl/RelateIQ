@@ -1030,3 +1030,14 @@ body.hx > header.hx-nav { z-index: 60; }
   #faq .faq-item summary::after { width: 22px; height: 22px; font-size: 15px; }
   #faq .faq-item p { padding: 0 14px 14px; font-size: 14.5px; line-height: 1.55; }
 }
+
+/* v69: pricing sheet must never pan sideways — only the cards row scrolls horizontally */
+@media (max-width: 760px) {
+  html:has(body.pricing-open), body.pricing-open { overflow: hidden !important; overscroll-behavior: none; }
+  body.pricing-open #pricing { overflow-x: hidden; overscroll-behavior: contain; touch-action: pan-y; }
+  body.pricing-open #pricing .pricing-grid { touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+  body.pricing-open #pricing * { overscroll-behavior-x: contain; }
+  body.pricing-open #pricing [class*="table"] { touch-action: pan-x pan-y; }
+}
+@media (max-width:760px){ #pricing .pricing-grid { margin-inline: 0; } #pricing .pricing-wrap, #pricing .hx-wrap { padding-inline: 0; } #pricing .hx-head, #pricing .billing-toggle, #pricing .compare-note, #pricing .price-foot { margin-inline: auto; } }
+@media (max-width:760px){ #pricing .pricing-grid { margin-inline: -24px; padding-inline: 24px; scroll-padding-inline: 24px; } }
