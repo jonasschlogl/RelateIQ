@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=61')
+s=s.replace('css/home.css?v=11','css/home.css?v=62')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -263,12 +263,12 @@ ABOUT_HTML = """
             <span class="about-stamp">2:07 AM &middot; still awake</span>
           </div>
           <div class="about-body">
-            <span class="section-tag">About the founder</span>
-            <h2 id="about-title">Hi, I&rsquo;m Jonas. I built this for the 2am version of me.</h2>
-            <p>I started RelationshipAI because I saw how much it could do for my own relationship. Not by handing me magic answers, but by helping me slow down, understand what I was actually feeling, and find words that wouldn&rsquo;t make things worse.</p>
-            <p>The hard moments rarely happen at a good time. They happen late, with a message half typed and a head that won&rsquo;t go quiet. That&rsquo;s exactly when a calm second voice helps most, and it was never there. So I built one.</p>
-            <p>It helped me so much that I realised it could help everyday people too, not only the ones in therapy or in crisis. Anyone who has ever stared at a text and wondered how to say it right. That&rsquo;s who this is for.</p>
-            <p class="about-sign">Jonas</p>
+            <span class="section-tag">Our story</span>
+            <h2 id="about-title">Built for the 2am moment.</h2>
+            <p>RelationshipAI was founded by Jonas, who saw first-hand how much a calm, structured second perspective could improve his own relationship. Not by supplying ready-made answers, but by slowing the moment down, clarifying what he was actually feeling, and finding words that would not make things worse.</p>
+            <p>The hardest conversations rarely happen at convenient times. They happen late at night, with a message half typed and a mind that will not settle. That is when support is most valuable and least available, and it is the gap RelationshipAI was created to close.</p>
+            <p>The results were strong enough that Jonas recognised the same approach could serve everyday people, not only those in therapy or in crisis. Today, RelationshipAI is built for anyone who has ever stared at a message and wondered how to say it right.</p>
+            <p class="about-sign">Guided by established couples therapy methods, and clear about where professional support takes over.</p>
           </div>
         </div>
       </div>
