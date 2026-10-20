@@ -956,7 +956,7 @@ body.about-open { overflow: hidden; }
   .trust-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
   /* compare: short table */
   .compare-table th, .compare-table td { padding: 11px 12px; font-size: 14px; }
-  .compare-table tr:nth-child(n+7):not(:last-child) { display: none; }
+  #compare .compare-table tr:nth-child(n+7):not(:last-child) { display: none; }
   /* approach / faq / footer */
   .mission-block { padding: 32px 22px; }
   .mission-block p { margin-top: 12px; font-size: 16.5px; }
@@ -978,3 +978,21 @@ body.about-open { overflow: hidden; }
 }
 @media (min-width: 761px) { .pr-close { display: none; } }
 body.hx > header.hx-nav { z-index: 60; }
+
+/* v66: full comparison table, zoomable, on mobile */
+.cmp-open, .cmp-sheet { display: none; }
+@media (max-width: 760px) {
+  .cmp-open { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 14px auto 0; padding: 12px 22px; border-radius: 999px; border: 1px solid rgba(59,34,24,.7); background: #f7d99a; color: #3b2218; font: 800 15px var(--font-body); cursor: pointer; box-shadow: 0 10px 20px -12px rgba(59,34,24,.6); }
+  .cmp-open span { font-size: 17px; line-height: 1; }
+  .cmp-sheet:not([hidden]) { display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 300; background: #b78d74; }
+  .cmp-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; }
+  .cmp-bar b { font: 500 22px var(--font-display); color: #3b2218; }
+  .cmp-ctl { display: flex; gap: 8px; }
+  .cmp-ctl button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(59,34,24,.7); background: #fff3e2; color: #3b2218; font: 600 24px/1 var(--font-body); cursor: pointer; }
+  .cmp-ctl .cmp-x { background: #f7d99a; font-size: 28px; }
+  .cmp-scroll { flex: 1; overflow: auto; touch-action: pan-x pan-y pinch-zoom; -webkit-overflow-scrolling: touch; margin: 0 10px; border-radius: 24px; border: 1px solid rgba(59,34,24,.7); background: #fff3e2; }
+  .cmp-scroll .compare-table { min-width: 680px; }
+  .cmp-hint { margin: 0; padding: 10px 16px 16px; text-align: center; font-size: 13px; color: #432719; }
+  body.cmp-open-b { overflow: hidden; }
+  body.cmp-open-b .hx-sticky, body.cmp-open-b .hx-nav { display: none !important; }
+}
