@@ -708,3 +708,13 @@ body.gated .hx-sticky { display: none !important; }
 }
 /* v37 hero copy shifted right */
 @media (min-width: 881px) { .hx-hero .hx-copy { position: relative; left: clamp(0px, 7.5vw, 120px); } }
+/* v38 clovers across the whole page background */
+body.hx { position: relative; }
+.page-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.pbg { position: absolute; width: calc(var(--s) * min(1vw, 14px)); opacity: var(--o); transform: rotate(var(--r)); animation: pbgF 18s ease-in-out infinite; }
+.pbg:nth-child(even) { animation-duration: 22s; animation-direction: reverse; }
+.pbg svg { display: block; width: 100%; height: auto; }
+@keyframes pbgF { 0%, 100% { transform: rotate(var(--r)); } 50% { transform: rotate(calc(var(--r) + 8deg)) translateY(12px); } }
+@media (prefers-reduced-motion: reduce) { .pbg { animation: none !important; } }
+body.hx > main, body.hx > header, body.hx > footer, body.hx > nav { position: relative; z-index: 1; }
+@media (max-width: 880px) { .pbg { width: calc(var(--s) * min(2.3vw, 14px)); } }

@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=37')
+s=s.replace('css/home.css?v=11','css/home.css?v=38')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -97,6 +97,7 @@ def _hero5():
 HERO4=_hero5()
 HERO4=''
 HEROBG='<div class="hero-bg" aria-hidden="true">'+clover('hcl hcl-a','ha')+clover('hcl hcl-b','hb2')+clover('hcl hcl-c','hc3')+'</div>'
+PGBG='<div class="page-bg" aria-hidden="true">'+''.join(f'<span class="pbg" style="top:{t}px;{sd}:{o}%;--s:{sc};--r:{r}deg;--o:{op}">'+clover('','pg')+'</span>' for t,sd,sc,r,o,op in [(762, 'left', 30, 20, -9, 0.5), (1637, 'right', 24, 10, -9, 0.58), (2329, 'right', 24, 20, -4, 0.5), (3201, 'right', 24, 32, -4, 0.5), (4104, 'left', 24, -12, -9, 0.58), (4792, 'left', 30, -24, -6, 0.5), (5707, 'left', 30, 32, -9, 0.5), (6563, 'right', 26, -12, -9, 0.58), (7335, 'right', 24, 32, -9, 0.5), (8218, 'right', 30, 20, -4, 0.5), (8999, 'left', 34, 20, -12, 0.5), (9763, 'left', 30, -34, -6, 0.5), (10667, 'left', 36, 32, -4, 0.5), (11454, 'right', 36, 32, -9, 0.5), (12291, 'right', 28, -12, -12, 0.58), (13105, 'right', 28, -24, -9, 0.5), (13887, 'left', 26, 10, -4, 0.58), (14637, 'left', 24, 10, -4, 0.5)])+'</div>'
 hero=f'''<section class="hx-hero">
       {HEROBG}
       <div class="hx-wrap hero-grid">
@@ -213,5 +214,6 @@ s=s[:a]+acc+s[b:]
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
 # footer clover
+s=s.replace('<body class="hx">','<body class="hx">'+PGBG,1)
 open('/root/lp/index.html','w').write(s)
 print('ok',len(s))
