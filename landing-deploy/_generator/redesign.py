@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=26')
+s=s.replace('css/home.css?v=11','css/home.css?v=27')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -168,7 +168,7 @@ function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);retur
 function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.querySelector('.hx-tools-end');if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
-document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h)))free()}}catch(x){{}}}});
+document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
 P.forEach(function(p){{p.addEventListener('click',function(e){{if(!p.dataset.s||p.dataset.s!=='front')return;if(e.target.closest('.hx-demo, a, input, select, textarea')&&!e.target.closest('.pg-next'))return;step()}})}});
 D.forEach(function(d){{d.addEventListener('click',function(){{var n=+d.dataset.go;if(n>a)dir=1;else if(n<a)dir=-1;go(n)}})}});
 function hash(){{var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}}

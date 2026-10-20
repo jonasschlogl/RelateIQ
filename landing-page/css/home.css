@@ -619,3 +619,6 @@ body.gated main { padding-bottom: 90px; }
 .deck-gate { text-align: center; margin: 0; min-height: 28px; font-size: 15px; font-weight: 600; color: var(--cocoa); }
 .deck-gate b { display: inline-block; margin-left: 6px; padding: 3px 11px; border-radius: 999px; background: #fff3e2; border: 2px solid var(--cocoa); }
 .deck-gate:empty { min-height: 0; }
+body.gated .hx-sticky { display: none !important; }
+.deck-gate.nudge { animation: gateNudge .6s ease; }
+@keyframes gateNudge { 0%, 100% { transform: none; } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
