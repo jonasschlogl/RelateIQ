@@ -11,6 +11,40 @@ def clover(cls='',gid='c'):
             f'<linearGradient id="{gid}A" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d28b"/><stop offset="1" stop-color="#e0956a"/></linearGradient>'
             f'<linearGradient id="{gid}B" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5718a"/><stop offset="1" stop-color="#b03a60"/></linearGradient></defs>{g}</svg>')
 
+
+HP="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z"
+def _hearts(kind):
+    o=''
+    for rot,f in ((0,'hcA'),(90,'hcB'),(180,'hcA'),(270,'hcB')):
+        t=f'translate(100 100) rotate({rot}) translate(0 -13) scale(.8) translate(-50 -88)'
+        if kind=='shadow': o+=f'<path d="{HP}" transform="{t}" fill="#3b2218"/>'
+        else:
+            o+=(f'<g transform="{t}"><path d="{HP}" fill="url(#{f})" stroke="#3b2218" stroke-width="3.2" stroke-linejoin="round"/>'
+                f'<path d="M15 33 C13 24 20 17 29 16" fill="none" stroke="#fff6e9" stroke-opacity=".7" stroke-width="4.2" stroke-linecap="round"/>'
+                f'<circle cx="38" cy="19" r="2.2" fill="#fff6e9" fill-opacity=".8"/></g>')
+    return o
+def _orbit():
+    import math
+    o='<g class="orbit"><circle cx="290" cy="280" r="236" fill="none" stroke="#3b2218" stroke-opacity=".45" stroke-width="2.5" stroke-dasharray="2 11" stroke-linecap="round"/>'
+    items=[(-60,'h','#e5718a'),(15,'s','#3b2218'),(95,'h','#f2c777'),(170,'s','#e5718a'),(235,'h','#3b2218'),(300,'s','#f2c777')]
+    for ang,k,col in items:
+        x=290+236*math.cos(math.radians(ang)); y=280+236*math.sin(math.radians(ang))
+        if k=='h': o+=f'<g transform="translate({x:.1f} {y:.1f})"><circle r="20" fill="#fffdf8" stroke="#3b2218" stroke-width="3"/><path d="M0 8 C-12 0 -10 -11 -4 -11 C-1 -11 0 -9 0 -7 C0 -9 1 -11 4 -11 C10 -11 12 0 0 8 Z" fill="{col}"/></g>'
+        else: o+=f'<path d="M0-13C1.5-4 4-1.5 13 0 4 1.5 1.5 4 0 13-1.5 4-4 1.5-13 0-4-1.5-1.5-4 0-13Z" transform="translate({x:.1f} {y:.1f})" fill="{col}"/>'
+    return o+'</g>'
+HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
+ '<radialGradient id="hcb" cx=".35" cy=".28" r=".9"><stop offset="0" stop-color="#fff0cc"/><stop offset=".5" stop-color="#f9d596"/><stop offset="1" stop-color="#f0a97a"/></radialGradient>'
+ '<linearGradient id="hcA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe0a0"/><stop offset="1" stop-color="#e0956a"/></linearGradient>'
+ '<linearGradient id="hcB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ef8aa0"/><stop offset="1" stop-color="#b03a60"/></linearGradient></defs>'
+ '<circle cx="300" cy="290" r="196" fill="#3b2218"/><circle cx="290" cy="280" r="196" fill="url(#hcb)" stroke="#3b2218" stroke-width="4"/>'
+ '<circle cx="290" cy="280" r="168" fill="none" stroke="#fff6e9" stroke-opacity=".55" stroke-width="2"/><circle cx="290" cy="280" r="132" fill="none" stroke="#fff6e9" stroke-opacity=".4" stroke-width="2"/>'
+ +_orbit()+
+ '<g class="cl"><g transform="translate(299 289) scale(2.15) translate(-100 -100)">'+_hearts('shadow')+'</g>'
+ '<g transform="translate(290 280) scale(2.15) translate(-100 -100)">'+_hearts('main')+'</g></g>'
+ '<g class="spk1">'+'<path d="M0-12C1.4-4 4-1.4 12 0 4 1.4 1.4 4 0 12-1.4 4-4 1.4-12 0-4-1.4-1.4-4 0-12Z" transform="translate(432 138) scale(1.9)" fill="#fffdf8" stroke="#3b2218" stroke-width="2"/></g>'
+ '<path d="M0-12C1.4-4 4-1.4 12 0 4 1.4 1.4 4 0 12-1.4 4-4 1.4-12 0-4-1.4-1.4-4 0-12Z" transform="translate(150 410) scale(1.1)" fill="#3b2218"/>'
+ '</svg>\n')
+
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
@@ -31,15 +65,12 @@ hero=f'''<section class="hx-hero">
         <div class="hx-copy">
           <span class="hx-kicker big"><i></i>AI relationship coach</span>
           <h1><span class="hx-l1">Know what to say</span><span class="hx-rot" aria-live="off"><em class="on">before you send.</em><em>after a fight.</em><em>when it&rsquo;s hard.</em><em>at 2am.</em></span></h1>
-          <p class="hx-sub">Talk it through, check a message before you send it, rehearse the hard talk. A private coach, there at 2am.</p>
+          <p class="hx-sub">Your private coach for the hard talks. There at 2am.</p>
           {form}
         </div>
         <div class="hero-art" aria-hidden="true">
-          <i class="blob b1"></i><i class="blob b2"></i>
+          <i class="blob b1"></i>
           {clover('clover','h')}
-          <div class="chip c1"><small>You</small>We need to talk.</div>
-          <div class="chip c2"><small>Coach</small>Take a breath. Here is a calmer way to say it.</div>
-          <div class="chip c3"><b>&#10003;</b> Calmer version ready</div>
           {stamp}
         </div>
       </div>
