@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=75')
+s=s.replace('css/home.css?v=11','css/home.css?v=76')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -343,7 +343,6 @@ mk('#pricing .plan-compare-wrap','Compare every feature','before');
 ACC_JS = """<script>(function(){var D=[['more','More tools','Small tools after the chat ends'],['compare','How it compares','Versus a generic chatbot and therapy'],['trust','Privacy &amp; trust','What you tell it stays yours'],['approach','Our approach','Why it is built the way it is'],['pricing','Pricing','Free, Pro and Premium'],['blog','From the blog','Relationship advice, tips &amp; guides'],['faq','FAQ','Answers to common questions']];
 var all={};
 D.forEach(function(d){var sec=document.getElementById(d[0]);if(!sec)return;
- if(d[0]==='pricing'){var a=document.createElement('a');a.href='#pricing';a.className='acc-btn acc-link';a.innerHTML='<span class="acc-t"><b>'+d[1]+'</b><small>'+d[2]+'</small></span><i class="acc-i" aria-hidden="true"></i>';sec.parentNode.insertBefore(a,sec);return}
  var b=document.createElement('button');b.type='button';b.className='acc-btn';b.setAttribute('aria-expanded','false');b.innerHTML='<span class="acc-t"><b>'+d[1]+'</b><small>'+d[2]+'</small></span><i class="acc-i" aria-hidden="true"></i>';
  sec.insertBefore(b,sec.firstChild);sec.classList.add('acc','acc-closed');all[d[0]]=[sec,b];
  b.addEventListener('click',function(){tog(d[0])})});
@@ -353,7 +352,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script>"""
 import re as _re
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
-s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+PRICE_JS+CMP_JS+ACC_JS,1)
+s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+CMP_JS+ACC_JS,1)
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
