@@ -720,3 +720,16 @@ body.hx > main, body.hx > header, body.hx > footer, body.hx > nav { position: re
 @media (max-width: 880px) { .pbg { width: calc(var(--s) * min(2.3vw, 14px)); } }
 /* v39 no underline highlight on heading words */
 .hx h2 em, .hx-head h2 em, .chap-copy h2 em, .hx-final h2 em, #blog .section-head h2 em, .hx-faq h2 em, #faq h2 em, #trust .hx-head h2 em { background: none !important; }
+/* v40 solid colours, no gradients on bubbles */
+:root { --grad: #f7d99a; }
+.hx-btn, .btn, .lang-list a[aria-current="true"], .mock-input b { background: #f7d99a; }
+.hx-final { background: #f4b8c4; }
+.hx-hero .hero-card { background: #f4b8c4; }
+.tcard.t2 { background: #f4b8c4; }
+#message { background: #f8c7a3 !important; }
+#coach { background: #f4b8c4 !important; }
+.page#message { background: #f8c7a3 !important; }
+.page#coach { background: #f4b8c4 !important; }
+.mission-block { background: #f7d99a; }
+.price-card.featured { background: #f4b8c4; }
+.hx-rot em { background: none; color: #fff3e2; -webkit-text-fill-color: #fff3e2; }
