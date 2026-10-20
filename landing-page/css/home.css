@@ -1047,3 +1047,22 @@ body.hx > header.hx-nav { z-index: 60; }
   #pricing .plan-compare-wrap .cmp-open { margin: 4px auto 12px; }
 }
 @media (max-width:760px){ .cmp-sheet:not([hidden]) { z-index: 400; } body.cmp-open-b .pr-close { display: none; } }
+
+/* v71: drawn icons (centered) for close / back / zoom buttons */
+.pr-close, .about-close, .cmp-ctl button { font-size: 0 !important; line-height: 0; padding: 0; display: grid; place-items: center; }
+.cmp-ctl button { position: relative; }
+.pr-close::before, .pr-close::after, .about-close::before, .about-close::after, .cmp-ctl button::before, .cmp-ctl button::after { content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: 2.5px; border-radius: 2px; background: #3b2218; }
+.pr-close::before, .about-close::before, .cmp-x::before { transform: translate(-50%, -50%) rotate(45deg); }
+.pr-close::after, .about-close::after, .cmp-x::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.cmp-ctl button[data-z="-1"]::before { transform: translate(-50%, -50%); }
+.cmp-ctl button[data-z="-1"]::after { display: none; }
+.cmp-ctl button[data-z="1"]::before { transform: translate(-50%, -50%); }
+.cmp-ctl button[data-z="1"]::after { transform: translate(-50%, -50%) rotate(90deg); }
+.pr-back { display: none; }
+@media (max-width: 760px) {
+  .pr-close { width: 46px; height: 46px; top: 14px; right: 14px; }
+  .pr-back { position: fixed; top: 14px; left: 14px; z-index: 310; height: 46px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid rgba(59,34,24,.7); background: #fff3e2; color: #3b2218; font: 800 15px var(--font-body); display: none; align-items: center; gap: 8px; box-shadow: 0 10px 20px -10px rgba(59,34,24,.7); cursor: pointer; }
+  body.pricing-open .pr-back { display: inline-flex; }
+  body.cmp-open-b .pr-back { display: none; }
+  .pr-back i { width: 9px; height: 9px; border-left: 2.5px solid #3b2218; border-bottom: 2.5px solid #3b2218; transform: rotate(45deg); margin-left: 3px; border-radius: 1px; }
+}

@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=70')
+s=s.replace('css/home.css?v=11','css/home.css?v=71')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -253,7 +253,7 @@ ABOUT_HTML = """
     <div class="about-backdrop" data-close></div>
     <div class="about-scroll">
       <div class="about-wrap">
-        <button type="button" class="about-close" data-close aria-label="Close">&times;</button>
+        <button type="button" class="about-close" data-close aria-label="Close"></button>
         <div class="about-card">
           <div class="about-side">
             <div class="about-tile"><svg viewBox="18 18 164 164" aria-hidden="true"><g transform="translate(100 100) rotate(0) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(90) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g><g transform="translate(100 100) rotate(180) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(270) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g></svg></div>
@@ -318,7 +318,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
 if(location.hash==='#about')open();})();</script>"""
 PRICE_JS = """<script>(function(){var mq=window.matchMedia('(max-width:760px)'),s=document.getElementById('pricing');if(!s)return;
-var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');b.innerHTML='&times;';document.body.appendChild(b);
+var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');document.body.appendChild(b);var k=document.createElement('button');k.type='button';k.className='pr-back';k.setAttribute('aria-label','Back');k.innerHTML='<i></i>Back';document.body.appendChild(k);k.addEventListener('click',function(){close()});
 function open(){[].forEach.call(s.querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')});document.body.classList.add('pricing-open');s.scrollTop=0;if(location.hash!=='#pricing')history.replaceState(null,'','#pricing')}
 function close(){document.body.classList.remove('pricing-open');if(location.hash==='#pricing')history.replaceState(null,'',location.pathname+location.search)}
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a[href="#pricing"]');if(a&&mq.matches){e.preventDefault();open();return}if(document.body.classList.contains('pricing-open')&&t.closest('#pricing a[href="#join"]'))close()},true);
@@ -330,7 +330,7 @@ function mk(wrapSel,title,where){var w=document.querySelector(wrapSel);if(!w)ret
 var btn=document.createElement('button');btn.type='button';btn.className='cmp-open';btn.innerHTML='View full table <span>&#x2922;</span>';
 if(where==='before')w.insertBefore(btn,w.firstChild);else w.parentNode.appendChild(btn);
 var sh=document.createElement('div');sh.className='cmp-sheet';sh.hidden=true;sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',title);
-sh.innerHTML='<div class="cmp-bar"><b>'+title+'</b><span class="cmp-ctl"><button type="button" data-z="-1" aria-label="Zoom out">&minus;</button><button type="button" data-z="1" aria-label="Zoom in">+</button><button type="button" class="cmp-x" aria-label="Close">&times;</button></span></div><div class="cmp-scroll"></div><p class="cmp-hint">Pinch or use + / &minus; to zoom. Drag to move around.</p>';
+sh.innerHTML='<div class="cmp-bar"><b>'+title+'</b><span class="cmp-ctl"><button type="button" data-z="-1" aria-label="Zoom out"></button><button type="button" data-z="1" aria-label="Zoom in"></button><button type="button" class="cmp-x" aria-label="Close"></button></span></div><div class="cmp-scroll"></div><p class="cmp-hint">Pinch or use + / &minus; to zoom. Drag to move around.</p>';
 document.body.appendChild(sh);var sc=sh.querySelector('.cmp-scroll'),t=null,Z=[.55,.75,1,1.3,1.7],zi=0;
 function zoom(){if(t)t.style.zoom=Z[zi]}
 function open(){if(!t){t=tb.cloneNode(true);sc.appendChild(t)}zi=0;zoom();sh.hidden=false;document.body.classList.add('cmp-open-b');sc.scrollTop=0;sc.scrollLeft=0}
