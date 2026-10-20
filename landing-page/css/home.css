@@ -562,3 +562,14 @@ details.flag#practice { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .page, .deck-stage { transition: none !important; } }
 .page[data-s="b1"] .pg-in, .page[data-s="b2"] .pg-in { visibility: hidden; }
+
+/* v22: the front window flies off to the right, the next one is underneath */
+.deck-stage { perspective: none; }
+.hx-tools { overflow-x: clip; }
+.page { transform-origin: center bottom; backface-visibility: visible; -webkit-backface-visibility: visible; transition: transform .75s cubic-bezier(.5, 0, .2, 1), opacity .3s linear .45s, height .5s ease, box-shadow .3s; }
+.page[data-s="turned"] { transform: translateX(125%) rotate(11deg); opacity: 0; box-shadow: 6px 6px 0 var(--cocoa); }
+.page[data-s="front"] { cursor: pointer; }
+.page[data-s="front"] .hx-demo, .page[data-s="front"] .hx-demo button { cursor: auto; }
+.page[data-s="front"] .hx-demo button { cursor: pointer; }
+.pg-turn::after { content: ""; }
+.page[data-s="b1"] .pg-in, .page[data-s="b2"] .pg-in { transition: visibility 0s linear .8s; }
