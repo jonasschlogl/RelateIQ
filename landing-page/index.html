@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css?v=66" />
+  <link rel="stylesheet" href="css/home.css?v=68" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#fff4e1" />
@@ -592,7 +592,17 @@ function zoom(){if(t)t.style.zoom=Z[zi]}
 function open(){if(!t){t=w.querySelector('table').cloneNode(true);sc.appendChild(t)}zi=0;zoom();sh.hidden=false;document.body.classList.add('cmp-open-b');sc.scrollTop=0;sc.scrollLeft=0}
 function close(){sh.hidden=true;document.body.classList.remove('cmp-open-b')}
 btn.addEventListener('click',open);sh.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.classList.contains('cmp-x'))close();else if(b.dataset.z){zi=Math.max(0,Math.min(Z.length-1,zi+ +b.dataset.z));zoom()}});
-addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)close()});})();</script>
+addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)close()});})();</script><script>(function(){var D=[['more','More tools','Small tools after the chat ends'],['compare','How it compares','Versus a generic chatbot and therapy'],['trust','Privacy &amp; trust','What you tell it stays yours'],['approach','Our approach','Why it is built the way it is'],['pricing','Pricing','Free, Pro and Premium'],['blog','From the blog','Relationship advice, tips &amp; guides'],['faq','FAQ','Answers to common questions']];
+var all={};
+D.forEach(function(d){var sec=document.getElementById(d[0]);if(!sec)return;
+ if(d[0]==='pricing'){var a=document.createElement('a');a.href='#pricing';a.className='acc-btn acc-link';a.innerHTML='<span class="acc-t"><b>'+d[1]+'</b><small>'+d[2]+'</small></span><i class="acc-i" aria-hidden="true"></i>';sec.parentNode.insertBefore(a,sec);return}
+ var b=document.createElement('button');b.type='button';b.className='acc-btn';b.setAttribute('aria-expanded','false');b.innerHTML='<span class="acc-t"><b>'+d[1]+'</b><small>'+d[2]+'</small></span><i class="acc-i" aria-hidden="true"></i>';
+ sec.insertBefore(b,sec.firstChild);sec.classList.add('acc','acc-closed');all[d[0]]=[sec,b];
+ b.addEventListener('click',function(){tog(d[0])})});
+function set(id,open){var x=all[id];if(!x)return;x[0].classList.toggle('acc-closed',!open);x[1].setAttribute('aria-expanded',open?'true':'false');if(open)[].forEach.call(x[0].querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')})}
+function tog(id){var x=all[id];set(id,x[0].classList.contains('acc-closed'))}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);if(all[id]&&window.matchMedia('(max-width:760px)').matches){set(id,true);setTimeout(function(){all[id][0].scrollIntoView({behavior:'smooth',block:'start'})},60)}},true);
+if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script>
 
   <a href="#join" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Get early access</a>
   <script src="js/home.js?v=4"></script>
