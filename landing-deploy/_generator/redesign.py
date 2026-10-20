@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=69')
+s=s.replace('css/home.css?v=11','css/home.css?v=70')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -325,16 +325,21 @@ document.addEventListener('click',function(e){var t=e.target;if(!t.closest)retur
 b.addEventListener('click',close);addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 if(mq.addEventListener)mq.addEventListener('change',function(){if(!mq.matches)close()});
 if(location.hash==='#pricing'&&mq.matches)setTimeout(open,0);})();</script>"""
-CMP_JS = """<script>(function(){var w=document.querySelector('#compare .compare-table-wrap');if(!w)return;
-var btn=document.createElement('button');btn.type='button';btn.className='cmp-open';btn.innerHTML='View full table <span>&#x2922;</span>';w.parentNode.appendChild(btn);
-var sh=document.createElement('div');sh.className='cmp-sheet';sh.hidden=true;sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label','Full comparison');
-sh.innerHTML='<div class="cmp-bar"><b>How it stacks up</b><span class="cmp-ctl"><button type="button" data-z="-1" aria-label="Zoom out">&minus;</button><button type="button" data-z="1" aria-label="Zoom in">+</button><button type="button" class="cmp-x" aria-label="Close">&times;</button></span></div><div class="cmp-scroll"></div><p class="cmp-hint">Pinch or use + / &minus; to zoom. Drag to move around.</p>';
-document.body.appendChild(sh);var sc=sh.querySelector('.cmp-scroll'),t=null,Z=[.55,.75,1,1.3,1.7],zi=1;
+CMP_JS = """<script>(function(){
+function mk(wrapSel,title,where){var w=document.querySelector(wrapSel);if(!w)return;var tb=w.querySelector('table');if(!tb)return;
+var btn=document.createElement('button');btn.type='button';btn.className='cmp-open';btn.innerHTML='View full table <span>&#x2922;</span>';
+if(where==='before')w.insertBefore(btn,w.firstChild);else w.parentNode.appendChild(btn);
+var sh=document.createElement('div');sh.className='cmp-sheet';sh.hidden=true;sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-label',title);
+sh.innerHTML='<div class="cmp-bar"><b>'+title+'</b><span class="cmp-ctl"><button type="button" data-z="-1" aria-label="Zoom out">&minus;</button><button type="button" data-z="1" aria-label="Zoom in">+</button><button type="button" class="cmp-x" aria-label="Close">&times;</button></span></div><div class="cmp-scroll"></div><p class="cmp-hint">Pinch or use + / &minus; to zoom. Drag to move around.</p>';
+document.body.appendChild(sh);var sc=sh.querySelector('.cmp-scroll'),t=null,Z=[.55,.75,1,1.3,1.7],zi=0;
 function zoom(){if(t)t.style.zoom=Z[zi]}
-function open(){if(!t){t=w.querySelector('table').cloneNode(true);sc.appendChild(t)}zi=0;zoom();sh.hidden=false;document.body.classList.add('cmp-open-b');sc.scrollTop=0;sc.scrollLeft=0}
+function open(){if(!t){t=tb.cloneNode(true);sc.appendChild(t)}zi=0;zoom();sh.hidden=false;document.body.classList.add('cmp-open-b');sc.scrollTop=0;sc.scrollLeft=0}
 function close(){sh.hidden=true;document.body.classList.remove('cmp-open-b')}
 btn.addEventListener('click',open);sh.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.classList.contains('cmp-x'))close();else if(b.dataset.z){zi=Math.max(0,Math.min(Z.length-1,zi+ +b.dataset.z));zoom()}});
-addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)close()});})();</script>"""
+addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)close()})}
+mk('#compare .compare-table-wrap','How it stacks up','after');
+mk('#pricing .plan-compare-wrap','Compare every feature','before');
+})();</script>"""
 ACC_JS = """<script>(function(){var D=[['more','More tools','Small tools after the chat ends'],['compare','How it compares','Versus a generic chatbot and therapy'],['trust','Privacy &amp; trust','What you tell it stays yours'],['approach','Our approach','Why it is built the way it is'],['pricing','Pricing','Free, Pro and Premium'],['blog','From the blog','Relationship advice, tips &amp; guides'],['faq','FAQ','Answers to common questions']];
 var all={};
 D.forEach(function(d){var sec=document.getElementById(d[0]);if(!sec)return;

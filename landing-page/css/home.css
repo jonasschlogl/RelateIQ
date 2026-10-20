@@ -1041,3 +1041,9 @@ body.hx > header.hx-nav { z-index: 60; }
 }
 @media (max-width:760px){ #pricing .pricing-grid { margin-inline: 0; } #pricing .pricing-wrap, #pricing .hx-wrap { padding-inline: 0; } #pricing .hx-head, #pricing .billing-toggle, #pricing .compare-note, #pricing .price-foot { margin-inline: auto; } }
 @media (max-width:760px){ #pricing .pricing-grid { margin-inline: -24px; padding-inline: 24px; scroll-padding-inline: 24px; } }
+
+@media (max-width: 760px) {
+  .cmp-scroll table { min-width: 640px; }
+  #pricing .plan-compare-wrap .cmp-open { margin: 4px auto 12px; }
+}
+@media (max-width:760px){ .cmp-sheet:not([hidden]) { z-index: 400; } body.cmp-open-b .pr-close { display: none; } }
