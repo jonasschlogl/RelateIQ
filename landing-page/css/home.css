@@ -573,3 +573,35 @@ details.flag#practice { margin-top: 0; }
 .page[data-s="front"] .hx-demo button { cursor: pointer; }
 .pg-turn::after { content: ""; }
 .page[data-s="b1"] .pg-in, .page[data-s="b2"] .pg-in { transition: visibility 0s linear .8s; }
+
+/* v23: equal-size windows, same animation both ways, simple app-like examples */
+.pg-in { display: flex; flex-direction: column; height: 100%; padding-bottom: 26px; }
+.pg-in > .flag-body { flex: 1 1 auto; }
+.pg-in > .pg-foot { margin-top: auto; }
+.ftxt small { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin-bottom: 8px; }
+.ftxt small b { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--cocoa); color: #fff3e2; font-size: 12.5px; letter-spacing: .1em; }
+.ftxt small span { color: var(--cocoa-2); }
+.flag-vis { max-width: 620px; }
+.page .mock, .page .hx-demo { max-width: 620px; margin: 0 auto; }
+.page .hx-demo { padding: 20px; border-radius: 30px; background: var(--paper); border: 2px solid var(--cocoa); box-shadow: 5px 5px 0 var(--cocoa); display: flex; flex-direction: column; gap: 10px; }
+.page .hx-demo .mock-top { margin-bottom: 2px; }
+.page .hx-demo .dm-pick { margin: 0 0 2px; gap: 8px; }
+.page .hx-demo .dm-card { min-height: 0; padding: 14px 18px; border-radius: 20px; gap: 6px; }
+.page .hx-demo .dm-card p { font-size: 17px; line-height: 1.4; min-height: 48px; }
+.page .hx-demo .dm-arrow { height: 26px; }
+.page .hx-demo .dm-arrow svg { transform: rotate(90deg); width: 24px; height: 24px; }
+.page .hx-demo .dm-after { background: var(--butter); border-color: var(--cocoa); }
+.page .hx-demo .dm-why { margin-top: 0; font-size: 14px; }
+.mock-input { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; padding: 8px 8px 8px 18px; border-radius: 999px; border: 1.5px solid var(--line-2); background: #fff; color: var(--faint); font-size: 14.5px; }
+.mock-input b { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--grad); border: 1.5px solid var(--cocoa); color: var(--cocoa); font-size: 16px; }
+.mock-mem { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; background: var(--blush); border: 1.5px solid var(--cocoa); font-size: 12.5px; font-weight: 700; }
+.mock-mem i { width: 8px; height: 8px; border-radius: 50%; background: var(--deep); }
+/* flying away and flying back are the same movement, played in each direction */
+.page { transition: transform .8s cubic-bezier(.45, 0, .2, 1), opacity .3s linear .5s, height .5s ease, box-shadow .3s; }
+.page[data-s="front"] { transition: transform .8s cubic-bezier(.8, 0, .55, 1), opacity .3s linear 0s, height .5s ease, box-shadow .3s; }
+.page[data-s="b1"], .page[data-s="b2"] { transition: transform .8s cubic-bezier(.45, 0, .2, 1), opacity .3s linear .5s, height .5s ease, box-shadow .3s; }
+.page[data-s="turned"] { transform: translateX(125%) rotate(11deg); }
+.dm-tone[hidden] { display: none !important; }
+.page .hx-demo .hx-risk { margin-top: 2px; }
+.page .hx-demo .dm-card p { min-height: 0; }
+.page .hx-demo .dm-after { min-height: 0; }

@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=22')
+s=s.replace('css/home.css?v=11','css/home.css?v=23')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -108,10 +108,38 @@ i=s.index('id="practice"'); pm=s[s.index('<div class="mock">',i):]; pm=pm[:pm.in
 i=s.index('id="coach"'); cm=s[s.index('<div class="mock">',i):]; cm=cm[:cm.index('</div>\n          </div>\n        </div>\n      </div>\n    </section>')]+'</div>'
 i=s.index('id="message"'); dm=s[s.index('<div class="hx-demo hx-reveal" id="demo-box">',i):]; dm=dm[:dm.index('</section>')].rstrip(); assert dm.endswith('</div>'); dm=dm[:-6].rstrip().replace('hx-demo hx-reveal','hx-demo')
 b=s.index('</section>',s.index('id="coach"'))+len('</section>')
-def page(n,cls,idn,when,h,p,vis,nxt):
+pm="""<div class="mock">
+              <div class="mock-top"><i></i>Practice with Alex <em>Example</em></div>
+              <div class="bub u">There&rsquo;s something I want to tell you.</div>
+              <div class="bub a">Okay. I&rsquo;m listening.</div>
+              <div class="bub u">When plans change, I feel unimportant.</div>
+              <div class="mock-deb"><small>Debrief</small><p>Calm start, clear feeling. <b>Next time:</b> say what you need.</p></div>
+              <div class="mock-input"><span>Say it your way&hellip;</span><b>&uarr;</b></div>
+            </div>"""
+cm="""<div class="mock">
+              <div class="mock-top"><i></i>Coach Chat <em>Example</em></div>
+              <div class="bub u">We had the same fight again.</div>
+              <div class="mock-mem"><i></i>Remembers: the Tuesday dishes fight</div>
+              <div class="bub a">Let&rsquo;s look underneath it this time.</div>
+              <div class="mock-deb"><small>Try saying</small><p>&ldquo;I feel unseen when I carry the house alone. Can we split it differently?&rdquo;</p></div>
+              <div class="mock-input"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div>
+            </div>"""
+dm="""<div class="hx-demo" id="demo-box">
+              <div class="mock-top"><i></i>Message check <em>Example</em></div>
+              <div class="dm-pick" role="tablist" aria-label="Choose a situation">
+                <button type="button" class="on" data-i="0">They forgot something</button>
+                <button type="button" data-i="1">They went quiet</button>
+                <button type="button" data-i="2">Chores fight</button>
+              </div>
+              <div class="dm-card dm-before"><small>You wrote</small><p id="dm-draft"></p><span class="hx-risk" id="dm-risk"></span></div>
+              <div class="dm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+              <div class="dm-card dm-after"><small>Try this instead</small><p id="dm-fix"></p><span class="dm-why" id="dm-why"></span></div>
+              <div class="dm-tone" hidden><button type="button" class="on" data-t="calm">Calmer</button></div>
+            </div>"""
+def page(n,cls,idn,when,h,p,vis,nxt,name=''):
     return f"""<article class="page {cls}" id="{idn}" data-i="{int(n)-1}">
           <div class="pg-in">
-            <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small>{when}</small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Next</span></button>
+            <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small><b>{name}</b><span>{when}</span></small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Next</span></button>
             <div class="flag-body"><p>{p}</p><div class="flag-vis">{vis}</div></div>
             <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button></div>
           </div>
@@ -121,17 +149,18 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
         <div class="deck hx-reveal" id="deck">
           <div class="deck-stage">
-        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,'Next')}
-        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next')}
-        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Next')}
+        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,'Next','Partner Practice')}
+        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next','Message check')}
+        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Next','Coach Chat')}
           </div>
           <div class="deck-dots" role="tablist" aria-label="Choose a tool"><button type="button" data-go="0" class="on" role="tab"><i></i>Before the talk</button><button type="button" data-go="1" role="tab"><i></i>Before you send</button><button type="button" data-go="2" role="tab"><i></i>When it hurts</button></div>
         </div>
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Message check','Coach Chat'],a=0,dir=1,ro;
-function lay(){{var h=P[a].querySelector('.pg-in').offsetHeight;st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
-function go(n){{a=n;lay();if(window.ResizeObserver){{if(ro)ro.disconnect();ro=new ResizeObserver(lay);ro.observe(P[a].querySelector('.pg-in'))}}}}
+function nat(p){{var c=p.querySelector('.pg-in').children,t=0;for(var k=0;k<c.length;k++)t+=c[k].offsetHeight;return t+26}}
+function lay(){{var h=0;P.forEach(function(p){{h=Math.max(h,nat(p))}});st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
+function go(n){{a=n;lay();if(window.ResizeObserver&&!ro){{ro=new ResizeObserver(lay);P.forEach(function(p){{[].slice.call(p.querySelector('.pg-in').children).forEach(function(c){{ro.observe(c)}})}})}}}}
 function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 P.forEach(function(p){{p.addEventListener('click',function(e){{if(!p.dataset.s||p.dataset.s!=='front')return;if(e.target.closest('.hx-demo, a, input, select, textarea')&&!e.target.closest('.pg-next'))return;step()}})}});
