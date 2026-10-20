@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=12')
+s=s.replace('css/home.css?v=11','css/home.css?v=15')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -71,6 +71,7 @@ hero=f'''<section class="hx-hero">
         <div class="hero-art" aria-hidden="true">
           <i class="blob b1"></i>
           {clover('clover','h')}
+          <svg class="ring" viewBox="0 0 560 560" aria-hidden="true"><defs><path id="rp" d="M77 274 a214 214 0 1 1 428 0 a214 214 0 1 1 -428 0"/></defs><text font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700" fill="#3b2218"><textPath href="#rp" textLength="1330" lengthAdjust="spacing">SAY IT CALMLY <tspan fill="#b03a60">&#9829;</tspan> SAY IT CLEARLY <tspan fill="#b03a60">&#9829;</tspan> SAY IT WITH LOVE <tspan fill="#b03a60">&#9829;</tspan> </textPath></text></svg>
           {stamp}
         </div>
       </div>

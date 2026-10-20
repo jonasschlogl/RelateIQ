@@ -421,3 +421,12 @@ body.hx::before { /* paper grain */
   .hx-reveal { opacity: 1 !important; transform: none !important; }
   .hero-art .clover, .stamp, .rib-track, .hx-kicker i { animation: none !important; }
 }
+
+/* sentence ring around the logo */
+.hero-art .clover { inset: auto; left: 24%; top: 21%; width: 56%; height: 56%; }
+.hero-art .ring { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; transform-origin: 52% 49%; animation: ringSpin 40s linear infinite; }
+.stamp { z-index: 3; }
+@keyframes ringSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero-art .ring { animation: none !important; } }
+
+.hero-art .b1 { inset: auto; left: 18%; top: 15%; width: 68%; height: 68%; box-shadow: 8px 8px 0 var(--cocoa); }
