@@ -5055,3 +5055,12 @@ body.legal .method-honesty { background: #fff3e2; border: 1px solid rgba(59, 34,
 body.blog .article-byline .avatar { width: 52px; height: 52px; border-radius: 15px; background: none; border: 0; box-shadow: 0 10px 18px -10px rgba(59, 34, 24, .6); object-fit: contain; }
 body.blog .article-byline .avatar-link:hover .avatar { transform: translateY(-1px) rotate(-3deg); }
 body.blog .article-byline .avatar { transition: transform .15s ease; }
+
+/* no white text in blogs: markers, underlines, buttons and footer use warm browns / butter instead of cream-white */
+body.blog .article-body a, body.legal .legal a, body.legal .method-sources a { text-decoration-color: rgba(59, 34, 24, .5); }
+body.blog .article-body a:hover, body.legal .legal a:hover { text-decoration-color: #3b2218; }
+body.blog .article-body ul li::marker, body.blog .article-body ol li::marker, body.legal .legal ul li::marker, body.legal .legal ol li::marker { color: #3b2218; }
+body.blog .article-body blockquote { border-left-color: rgba(59, 34, 24, .55); background: rgba(59, 34, 24, .1); }
+body.blog .ad-body .btn, body.blog .cta-banner .btn { color: #f7d99a; }
+body.blog .site-footer, body.blog .footer-disclaimer, body.blog .footer-copy { color: #dcbd9f; }
+body.blog .footer-copy a, body.blog .site-footer a { color: #f7d99a; }
