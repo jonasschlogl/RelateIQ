@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=19')
+s=s.replace('css/home.css?v=11','css/home.css?v=21')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -108,22 +108,35 @@ i=s.index('id="practice"'); pm=s[s.index('<div class="mock">',i):]; pm=pm[:pm.in
 i=s.index('id="coach"'); cm=s[s.index('<div class="mock">',i):]; cm=cm[:cm.index('</div>\n          </div>\n        </div>\n      </div>\n    </section>')]+'</div>'
 i=s.index('id="message"'); dm=s[s.index('<div class="hx-demo hx-reveal" id="demo-box">',i):]; dm=dm[:dm.index('</section>')].rstrip(); assert dm.endswith('</div>'); dm=dm[:-6].rstrip().replace('hx-demo hx-reveal','hx-demo')
 b=s.index('</section>',s.index('id="coach"'))+len('</section>')
-def flag(n,cls,idn,when,h,p,vis,op=''):
-    return f"""<details class="flag {cls}" id="{idn}" name="flag"{op}>
-          <summary><span class="fnum">{n}</span><span class="ftxt"><small>{when}</small><h3>{h}</h3></span><span class="fplus" aria-hidden="true"></span></summary>
-          <div class="flag-body"><p>{p}</p><div class="flag-vis">{vis}</div></div>
-        </details>"""
+def page(n,cls,idn,when,h,p,vis,nxt):
+    return f"""<article class="page {cls}" id="{idn}" data-i="{int(n)-1}">
+          <div class="pg-in">
+            <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small>{when}</small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Turn the page</span></button>
+            <div class="flag-body"><p>{p}</p><div class="flag-vis">{vis}</div></div>
+            <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button></div>
+          </div>
+        </article>"""
 acc=f"""<section class="hx-sec hx-tools" id="tools">
       <div class="hx-wrap">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
-        <div class="flag-list hx-reveal">
-        {flag('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,' open')}
-        {flag('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm)}
-        {flag('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm)}
+        <div class="deck hx-reveal" id="deck">
+          <div class="deck-stage">
+        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,'Next: Message check &rarr;')}
+        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next: Coach Chat &rarr;')}
+        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Back to the start &#8634;')}
+          </div>
+          <div class="deck-dots" role="tablist" aria-label="Choose a tool"><button type="button" data-go="0" class="on" role="tab"><i></i>Before the talk</button><button type="button" data-go="1" role="tab"><i></i>Before you send</button><button type="button" data-go="2" role="tab"><i></i>When it hurts</button></div>
         </div>
       </div>
     </section>
-    <script>(function(){{var L=document.querySelectorAll('details.flag');function one(e){{if(e.target.open)L.forEach(function(x){{if(x!==e.target)x.open=false}})}}L.forEach(function(d){{d.addEventListener('toggle',one);d.querySelector('summary').addEventListener('click',function(e){{if(d.open)e.preventDefault()}})}});function go(){{var d=location.hash&&document.querySelector('details.flag'+location.hash);if(d)d.open=true}}addEventListener('hashchange',go);go()}})();</script>"""
+    <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),a=0,ro;
+function lay(){{var h=P[a].querySelector('.pg-in').offsetHeight;st.style.height=h+'px';P.forEach(function(p,i){{p.style.height=h+'px';p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden')}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
+function go(n){{a=n;lay();if(window.ResizeObserver){{if(ro)ro.disconnect();ro=new ResizeObserver(lay);ro.observe(P[a].querySelector('.pg-in'))}}}}
+deck.classList.add('js');
+P.forEach(function(p,i){{p.querySelector('.pg-head').addEventListener('click',function(){{go((i+1)%P.length)}});p.querySelector('.pg-next').addEventListener('click',function(){{go((i+1)%P.length)}})}});
+D.forEach(function(d){{d.addEventListener('click',function(){{go(+d.dataset.go)}})}});
+function hash(){{var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}}
+addEventListener('hashchange',hash);addEventListener('resize',lay);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);go(0);hash();}})();</script>"""
 s=s[:a]+acc+s[b:]
 
 # ---- final CTA: add clover decoration

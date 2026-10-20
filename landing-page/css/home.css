@@ -495,7 +495,6 @@ body.hx::before { /* paper grain */
   .flag-body { padding: 0 16px 22px; }
   .flag-body > p { margin-left: 0; font-size: 18px; }
   .dm-cols { grid-template-columns: 1fr; gap: 10px; }
-  .dm-arrow { transform: rotate(90deg); }
 }
 @media (prefers-reduced-motion: reduce) { .flag-body { animation: none; } }
 
@@ -524,3 +523,42 @@ body.hx::before { /* paper grain */
 }
 details.flag#message, details.flag#coach { margin-top: -22px; }
 details.flag#practice { margin-top: 0; }
+
+/* ===== book pages: click a page and it turns to show the next ===== */
+.deck { max-width: 940px; margin: 44px auto 0; }
+.deck-stage { position: relative; perspective: 2200px; margin-bottom: 44px; transition: height .5s ease; }
+.page, .page#message, .page#coach, .page#practice { position: absolute; top: 0; left: 0; right: 0; margin: 0; overflow: hidden; border: 2px solid var(--cocoa); border-radius: 36px; box-shadow: 6px 6px 0 var(--cocoa); transform-origin: left center; backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: transform .9s cubic-bezier(.55, .05, .25, 1), opacity .25s linear .65s, height .5s ease, box-shadow .3s; will-change: transform; }
+.page.f1 { background: #f7d99a; } .page.f2 { background: #f8c7a3; } .page.f3 { background: #f4b8c4; }
+.page[data-s="front"] { z-index: 20; transform: none; opacity: 1; }
+.page[data-s="b1"] { z-index: 19; transform: translateY(16px) scaleX(.965); transform-origin: center top; }
+.page[data-s="b2"] { z-index: 18; transform: translateY(32px) scaleX(.93); transform-origin: center top; }
+.page[data-s="turned"] { z-index: 30; transform: rotateY(-112deg); opacity: 0; pointer-events: none; box-shadow: 26px 10px 40px rgba(59, 34, 24, .35); }
+.page[data-s="front"] { transition-delay: 0s, 0s, 0s, 0s; }
+.pg-in { padding: 0 0 26px; }
+.pg-head { all: unset; box-sizing: border-box; width: 100%; display: flex; align-items: center; gap: 20px; padding: 26px 30px 22px; cursor: pointer; }
+.pg-head:focus-visible, .pg-next:focus-visible, .deck-dots button:focus-visible { outline: 3px solid var(--cocoa); outline-offset: 3px; }
+.pg-turn { flex: none; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; background: var(--paper); border: 2px solid var(--cocoa); box-shadow: 3px 3px 0 var(--cocoa); transition: transform .2s; }
+.pg-head:hover .pg-turn { transform: translate(-2px, -2px); }
+.pg-turn::after { content: "  \203A"; }
+.page .flag-body { padding: 0 30px; animation: none; }
+.pg-foot { display: flex; justify-content: flex-end; padding: 22px 30px 0; }
+.pg-next { font: inherit; font-weight: 700; font-size: 15px; padding: 11px 20px; border-radius: 999px; cursor: pointer; background: var(--cocoa); color: #fff3e2; border: 2px solid var(--cocoa); transition: transform .2s; }
+.pg-next:hover { transform: translateX(3px); }
+.deck-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.deck-dots button { font: inherit; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; cursor: pointer; background: rgba(255, 243, 226, .55); color: var(--cocoa); border: 2px solid rgba(59, 34, 24, .4); transition: background .2s, border-color .2s; }
+.deck-dots button i { width: 10px; height: 10px; border-radius: 50%; background: var(--cocoa); opacity: .35; }
+.deck-dots button.on { background: #fff3e2; border-color: var(--cocoa); }
+.deck-dots button.on i { opacity: 1; background: var(--deep); }
+/* without JS: pages simply stack */
+.deck:not(.js) .deck-stage { perspective: none; display: grid; gap: 22px; }
+.deck:not(.js) .page { position: relative; height: auto !important; }
+.deck:not(.js) .pg-head, .deck:not(.js) .pg-foot, .deck:not(.js) .deck-dots { cursor: default; }
+@media (max-width: 760px) {
+  .pg-head { padding: 20px 18px 16px; gap: 14px; }
+  .pg-turn { display: none; }
+  .page .flag-body { padding: 0 16px; }
+  .pg-foot { padding: 18px 16px 0; }
+  .page { border-radius: 30px; }
+}
+@media (prefers-reduced-motion: reduce) { .page, .deck-stage { transition: none !important; } }
+.page[data-s="b1"] .pg-in, .page[data-s="b2"] .pg-in { visibility: hidden; }
