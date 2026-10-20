@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=59')
+s=s.replace('css/home.css?v=11','css/home.css?v=61')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -246,6 +246,81 @@ D.forEach(function(d){{d.addEventListener('click',function(){{var n=+d.dataset.g
 function hash(){{var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}}
 addEventListener('hashchange',hash);addEventListener('resize',lay);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);go(0);hash();}})();</script>"""
 s=s[:a]+acc+s[b:]
+
+
+# ---- About the founder
+ABOUT_HTML = """
+  <div class="about-modal" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
+    <div class="about-backdrop" data-close></div>
+    <div class="about-scroll">
+      <div class="about-wrap">
+        <button type="button" class="about-close" data-close aria-label="Close">&times;</button>
+        <div class="about-card">
+          <div class="about-side">
+            <div class="about-tile"><svg viewBox="18 18 164 164" aria-hidden="true"><g transform="translate(100 100) rotate(0) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(90) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g><g transform="translate(100 100) rotate(180) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(270) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g></svg></div>
+            <p class="about-name">Jonas</p>
+            <p class="about-role">Founder, RelationshipAI</p>
+            <span class="about-stamp">2:07 AM &middot; still awake</span>
+          </div>
+          <div class="about-body">
+            <span class="section-tag">About the founder</span>
+            <h2 id="about-title">Hi, I&rsquo;m Jonas. I built this for the 2am version of me.</h2>
+            <p>I started RelationshipAI because I saw how much it could do for my own relationship. Not by handing me magic answers, but by helping me slow down, understand what I was actually feeling, and find words that wouldn&rsquo;t make things worse.</p>
+            <p>The hard moments rarely happen at a good time. They happen late, with a message half typed and a head that won&rsquo;t go quiet. That&rsquo;s exactly when a calm second voice helps most, and it was never there. So I built one.</p>
+            <p>It helped me so much that I realised it could help everyday people too, not only the ones in therapy or in crisis. Anyone who has ever stared at a text and wondered how to say it right. That&rsquo;s who this is for.</p>
+            <p class="about-sign">Jonas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>"""
+FOOT_HTML = """<footer class="hx-foot">
+    <div class="hx-wrap">
+      <div class="ft-grid">
+        <div class="ft-col">
+          <h4>Company</h4>
+          <a href="#about" class="ft-about" data-about data-umami-event="click-about-footer">About us</a>
+          <a href="/blog/">Blog</a>
+          <a href="method.html">Our method</a>
+        </div>
+        <div class="ft-col">
+          <h4>Product</h4>
+          <a href="#coach">Coach Chat</a>
+          <a href="#message">Message check</a>
+          <a href="#practice">Partner Practice</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div class="ft-col">
+          <h4>Support</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#join">Early access</a>
+        </div>
+        <div class="ft-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <div class="ft-col ft-right">
+          <h4>Follow</h4>
+          <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer">@Instagram</a>
+        </div>
+      </div>
+      <div class="ft-base">
+        <a href="index.html" class="hx-brand"><img src="logo-tile.svg" alt="" width="34" height="34" /><span>Relationship<b>AI</b></span></a>
+        <p>RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic care. If you&rsquo;re in a crisis, please contact a professional or a helpline in your country.</p>
+        <p class="ft-copy">&copy; 2026 RelationshipAI</p>
+      </div>
+    </div>
+  </footer>"""
+ABOUT_JS = """<script>(function(){var m=document.getElementById('about');if(!m)return;var last=null;
+function open(){last=document.activeElement;m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();if(location.hash!=='#about')history.replaceState(null,'','#about')}
+function close(){m.hidden=true;document.body.classList.remove('about-open');if(location.hash==='#about')history.replaceState(null,'',location.pathname+location.search);if(last&&last.focus)last.focus()}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#about"]');if(a){e.preventDefault();e.stopPropagation();open();return}if(e.target.closest&&e.target.closest('[data-close]'))close()},true);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
+if(location.hash==='#about')open();})();</script>"""
+import re as _re
+s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
+s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS,1)
 
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
