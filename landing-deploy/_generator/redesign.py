@@ -49,11 +49,10 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />',s)
 s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img src="logo-tile.svg" alt="" width="38" height="38" />')
-s=s.replace('<span class="hx-kicker big"><i></i>AI relationship coach</span>','')
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=46')
+s=s.replace('css/home.css?v=11','css/home.css?v=47')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -70,7 +69,7 @@ def _chips(words, off=0):
     return '<div class="chip-set">'+''.join(f'<span class="chip-pill {cols[(k+off)%4]}">{w}</span>' for k,w in enumerate(words))+'</div>'
 CH1=_chips(['Before the talk','Before you send','When it hurts','At 2am','After a fight','Say it calmly'])
 CH2=_chips(['Practice it first','Find the words','Not another spiral','Calm, clear, kind','You are not alone at 2am','Try it free'],2)
-TK='<div class="tick-set">'+''.join(f'<span>{w}</span><i></i>' for w in ['Before the talk','Before you send','When it hurts','At 2am','After a fight'])+'</div>'
+TK='<div class="tick-set">'+''.join(f'<span>{w}</span><i></i>' for w in ['Before the talk','Before you send','When it hurts','At 2am','After a fight','When words fail'])+'</div>'
 def _hero4():
     cfg=[(0,'#f7d99a','0','-9px'),(90,'#f2a0b4','9px','0'),(180,'#f8c7a3','0','9px'),(270,'#f2a0b4','-9px','0')]
     gap=7
@@ -107,7 +106,6 @@ hero=f'''<section class="hx-hero">
       {HEROBG}
       <div class="hx-wrap hero-grid">
         <div class="hx-copy">
-          <span class="hx-kicker big"><i></i>AI relationship coach</span>
           <h1><span class="hx-l1">Know what to say</span><span class="hx-rot" aria-live="off"><em class="on">before you send.</em><em>after a fight.</em><em>when it&rsquo;s hard.</em><em>at 2am.</em></span></h1>
           <p class="hx-sub">Your private coach for the hard talks. There at 2am.</p>
           {form}
@@ -117,7 +115,7 @@ hero=f'''<section class="hx-hero">
         </div>
       </div>
     </section>
-    <div class="tick" aria-hidden="true"><div class="tick-track">{TK}{TK}</div></div>'''
+    <div class="tick" aria-hidden="true"><div class="tick-track">{TK}{TK}{TK}{TK}</div></div>'''
 s=s[:a]+hero+s[b:]
 
 # ---- tools

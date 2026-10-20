@@ -772,3 +772,6 @@ body.hx { background: #b78d74; }
 
 /* v46: AI same colour as Relationship */
 .hx-brand b, .hx-foot .hx-brand b, footer .hx-brand b { color: inherit; }
+
+/* v47: ticker loops over 4 sets (even phrase count keeps white/brown alternating) */
+.tick-track { animation-duration: 120s; }
