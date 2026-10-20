@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css?v=76" />
+  <link rel="stylesheet" href="css/home.css?v=78" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#fff4e1" />
@@ -602,7 +602,7 @@ D.forEach(function(d){var sec=document.getElementById(d[0]);if(!sec)return;
 function set(id,open){var x=all[id];if(!x)return;x[0].classList.toggle('acc-closed',!open);x[1].setAttribute('aria-expanded',open?'true':'false');if(open)[].forEach.call(x[0].querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')})}
 function tog(id){var x=all[id];set(id,x[0].classList.contains('acc-closed'))}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);if(all[id]&&window.matchMedia('(max-width:760px)').matches){set(id,true);setTimeout(function(){all[id][0].scrollIntoView({behavior:'smooth',block:'start'})},60)}},true);
-if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script>
+if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script><script>(function(){function fit(){var d=document.documentElement,w=window.innerWidth;if(d.scrollWidth>w+1){var m=document.querySelector('meta[name=viewport]');if(m){m.setAttribute('content','width='+w+', initial-scale=1');setTimeout(function(){m.setAttribute('content','width=device-width, initial-scale=1.0')},60)}window.scrollTo(0,window.scrollY)}}window.addEventListener('load',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300)});setTimeout(fit,1200)})();</script>
 
   <a href="#join" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Get early access</a>
   <script src="js/home.js?v=4"></script>
