@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=63')
+s=s.replace('css/home.css?v=11','css/home.css?v=65')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -317,9 +317,17 @@ function close(){m.hidden=true;document.body.classList.remove('about-open');if(l
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#about"]');if(a){e.preventDefault();e.stopPropagation();open();return}if(e.target.closest&&e.target.closest('[data-close]'))close()},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
 if(location.hash==='#about')open();})();</script>"""
+PRICE_JS = """<script>(function(){var mq=window.matchMedia('(max-width:760px)'),s=document.getElementById('pricing');if(!s)return;
+var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');b.innerHTML='&times;';document.body.appendChild(b);
+function open(){[].forEach.call(s.querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')});document.body.classList.add('pricing-open');s.scrollTop=0;if(location.hash!=='#pricing')history.replaceState(null,'','#pricing')}
+function close(){document.body.classList.remove('pricing-open');if(location.hash==='#pricing')history.replaceState(null,'',location.pathname+location.search)}
+document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a[href="#pricing"]');if(a&&mq.matches){e.preventDefault();open();return}if(document.body.classList.contains('pricing-open')&&t.closest('#pricing a[href="#join"]'))close()},true);
+b.addEventListener('click',close);addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+if(mq.addEventListener)mq.addEventListener('change',function(){if(!mq.matches)close()});
+if(location.hash==='#pricing'&&mq.matches)setTimeout(open,0);})();</script>"""
 import re as _re
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
-s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS,1)
+s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+PRICE_JS,1)
 
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))

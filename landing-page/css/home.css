@@ -934,3 +934,47 @@ body.about-open { overflow: hidden; }
 .hx-foot .ft-base .hx-brand { text-decoration: none; color: #fff3e2; }
 
 .about-body .about-sign { font: 600 15px/1.5 var(--font-body); color: #8a5640; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(59,34,24,.2); }
+
+/* v64: compact mobile — swipe carousels instead of long stacks */
+@media (max-width: 760px) {
+  #compare, #trust, #approach, #pricing, #faq, #join { padding-top: 44px; padding-bottom: 8px; }
+  #more, #blog { padding: 46px 0 40px; }
+  .hx-head, .section-head { margin-bottom: 24px; }
+  /* swipe carousels */
+  .more-grid, .pricing-grid, .post-grid { display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-inline: -18px; padding: 22px 18px 22px; scroll-padding-inline: 18px; }
+  .more-grid::-webkit-scrollbar, .pricing-grid::-webkit-scrollbar, .post-grid::-webkit-scrollbar { display: none; }
+  .more-grid > .more-card { flex: 0 0 74%; scroll-snap-align: start; }
+  .pricing-grid > .price-card { flex: 0 0 86%; scroll-snap-align: center; }
+  .post-grid > .post-card { flex: 0 0 82%; scroll-snap-align: start; }
+  .pricing-grid { padding-top: 30px; }
+  .post-card p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  /* trust: 2-up grid */
+  .trust-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .trust-item { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 14px; }
+  .trust-item h3 { font-size: 15.5px; line-height: 1.2; }
+  .trust-item p { font-size: 13px; line-height: 1.4; }
+  .trust-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* compare: short table */
+  .compare-table th, .compare-table td { padding: 11px 12px; font-size: 14px; }
+  .compare-table tr:nth-child(n+7):not(:last-child) { display: none; }
+  /* approach / faq / footer */
+  .mission-block { padding: 32px 22px; }
+  .mission-block p { margin-top: 12px; font-size: 16.5px; }
+  .hx-foot { padding: 44px 0 100px; margin-top: 56px; }
+  .hx-foot .ft-grid { gap: 22px 20px; padding-bottom: 26px; }
+  .ft-col { gap: 10px; }
+  .ft-base { padding-top: 24px; gap: 10px; }
+}
+@media (max-width:760px){ .post-grid, .more-grid { padding-top: 6px; } #blog .section-head { margin-bottom: 8px; } .hx-tools-end { padding-top: 0; margin-top: -28px; } }
+
+/* v65: pricing opens as a sheet on mobile */
+@media (max-width: 760px) {
+  #pricing { display: none !important; }
+  body.pricing-open #pricing { display: block !important; position: fixed; inset: 0; z-index: 300; overflow-y: auto; overscroll-behavior: contain; background: #b78d74; padding: 70px 0 40px; margin: 0; }
+  body.pricing-open { overflow: hidden; }
+  body.pricing-open .hx-sticky, body.pricing-open .hx-nav { display: none !important; }
+  .pr-close { position: fixed; top: 14px; right: 14px; z-index: 310; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(59,34,24,.7); background: #f7d99a; color: #3b2218; font: 500 28px/1 var(--font-display); box-shadow: 0 10px 20px -10px rgba(59,34,24,.7); cursor: pointer; }
+  body:not(.pricing-open) .pr-close { display: none; }
+}
+@media (min-width: 761px) { .pr-close { display: none; } }
+body.hx > header.hx-nav { z-index: 60; }
