@@ -5080,3 +5080,6 @@ body.blog .footer-copy a, body.blog .site-footer a { color: #f7d99a; }
   body.blog:has(.blog-hero) .post-grid { overflow: visible; scroll-snap-type: none; margin-left: 0; margin-right: 0; padding: 0; }
   body.blog:has(.blog-hero) .post-grid > * { flex: none; }
 }
+
+/* hamburger drawn with three lines, same size as on the home page */
+body.blog .nav-toggle { font-size: 0 !important; line-height: 0; width: 42px; height: 42px; padding: 0; background: linear-gradient(#3b2218, #3b2218) 50% calc(50% - 6px) / 18px 2.5px no-repeat, linear-gradient(#3b2218, #3b2218) 50% 50% / 18px 2.5px no-repeat, linear-gradient(#3b2218, #3b2218) 50% calc(50% + 6px) / 18px 2.5px no-repeat, #fff3e2 !important; }
