@@ -177,7 +177,7 @@ def page(n,cls,idn,when,h,p,vis,nxt,name=''):
     return f"""<article class="page {cls}" id="{idn}" data-i="{int(n)-1}">
           <div class="pg-in">
             <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small><b>{name}</b><span>{when}</span></small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Next</span></button>
-            <div class="flag-body"><p>{p}</p><div class="flag-vis">{vis}</div></div>
+            <div class="flag-body"><p>{p}</p></div>
             <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button></div>
           </div>
         </article>"""
@@ -186,9 +186,9 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
         <div class="deck hx-reveal" id="deck">
           <div class="deck-stage">
-        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,'Next','Partner Practice')}
-        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm,'Next','Message check')}
-        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm,'Next','Coach Chat')}
+        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner, so you can rehearse a hard conversation with nothing at stake. Afterwards you get a short debrief on what worked and what to try next.',pm,'Next','Partner Practice')}
+        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check')}
+        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat')}
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
