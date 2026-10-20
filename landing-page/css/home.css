@@ -622,3 +622,29 @@ body.gated main { padding-bottom: 90px; }
 body.gated .hx-sticky { display: none !important; }
 .deck-gate.nudge { animation: gateNudge .6s ease; }
 @keyframes gateNudge { 0%, 100% { transform: none; } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
+
+/* ===== sticker chips marquee (replaces the gradient ribbon) ===== */
+.chips { position: relative; z-index: 3; margin: 46px 0 0; display: grid; gap: 16px; overflow: hidden; padding: 6px 0 12px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.chip-row { overflow: hidden; padding: 4px 0 8px; }
+.chip-track { display: flex; width: max-content; animation: chipL 46s linear infinite; }
+.chip-row.r2 .chip-track { animation-name: chipR; animation-duration: 58s; }
+.chip-set { display: flex; gap: 16px; padding-right: 16px; }
+.chip-pill { flex: none; padding: 13px 24px; border-radius: 999px; border: 2px solid var(--cocoa); box-shadow: 4px 4px 0 var(--cocoa); font: italic 600 clamp(19px, 2.1vw, 26px)/1 var(--font-display); color: var(--cocoa); white-space: nowrap; }
+.chip-pill.c0 { background: #f7d99a; } .chip-pill.c1 { background: #f8c7a3; } .chip-pill.c2 { background: #f4b8c4; } .chip-pill.c3 { background: #fff3e2; }
+.chip-row.r2 .chip-pill { font-style: normal; font-family: var(--font-body); font-weight: 700; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: .01em; padding: 11px 20px; }
+@keyframes chipL { to { transform: translateX(-50%); } }
+@keyframes chipR { from { transform: translateX(-50%); } to { transform: none; } }
+@media (max-width: 760px) { .chips { margin-top: 34px; gap: 12px; } .chip-set { gap: 12px; padding-right: 12px; } }
+@media (prefers-reduced-motion: reduce) { .chip-track { animation: none !important; } }
+
+/* ===== calm typographic ticker ===== */
+.chips { display: none; }
+.tick { position: relative; z-index: 3; margin: 52px 0 0; overflow: hidden; border-block: 2px solid var(--cocoa); padding: 20px 0 22px; }
+.tick-track { display: flex; width: max-content; animation: chipL 60s linear infinite; }
+.tick-set { display: flex; align-items: center; flex: none; }
+.tick-set span { font: italic 600 clamp(32px, 4.4vw, 60px)/1 var(--font-display); letter-spacing: -.02em; color: var(--cocoa); white-space: nowrap; }
+.tick-set span:nth-of-type(even) { color: #fff3e2; }
+.tick-set i { flex: none; width: clamp(56px, 7vw, 100px); text-align: center; font-style: normal; color: #f4b8c4; font-size: clamp(18px, 2vw, 26px); }
+.tick-set i::before { content: "\2665"; }
+@media (max-width: 760px) { .tick { margin-top: 38px; padding: 14px 0 16px; } }
+@media (prefers-reduced-motion: reduce) { .tick-track { animation: none !important; } }

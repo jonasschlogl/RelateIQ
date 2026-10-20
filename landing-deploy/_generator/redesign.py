@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=27')
+s=s.replace('css/home.css?v=11','css/home.css?v=29')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -60,6 +60,12 @@ stamp=('<svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><defs><path 
        '<g transform="translate(60 60) scale(.2) translate(-100 -100)">'
        +''.join(f'<g transform="translate(100 100) rotate({r}) translate(0 -13) scale(.8) translate(-50 -88)"><path d="{HEART}" fill="{c}"/></g>' for r,c in ((0,'#f6d28b'),(90,'#e5718a'),(180,'#f6d28b'),(270,'#e5718a')))
        +'</g></svg>')
+def _chips(words, off=0):
+    cols=['c0','c1','c2','c3']
+    return '<div class="chip-set">'+''.join(f'<span class="chip-pill {cols[(k+off)%4]}">{w}</span>' for k,w in enumerate(words))+'</div>'
+CH1=_chips(['Before the talk','Before you send','When it hurts','At 2am','After a fight','Say it calmly'])
+CH2=_chips(['Practice it first','Find the words','Not another spiral','Calm, clear, kind','You are not alone at 2am','Try it free'],2)
+TK='<div class="tick-set">'+''.join(f'<span>{w}</span><i></i>' for w in ['Before the talk','Before you send','When it hurts','At 2am','After a fight'])+'</div>'
 hero=f'''<section class="hx-hero">
       <div class="hx-wrap hero-grid">
         <div class="hx-copy">
@@ -76,7 +82,7 @@ hero=f'''<section class="hx-hero">
         </div>
       </div>
     </section>
-    <div class="ribbon" aria-hidden="true"><div class="rib-track">{''.join('<span>Before the talk</span><i></i><span>Before you send</span><i></i><span>When it hurts</span><i></i><span>At 2am</span><i></i>' for _ in range(4))}</div></div>'''
+    <div class="tick" aria-hidden="true"><div class="tick-track">{TK}{TK}</div></div>'''
 s=s[:a]+hero+s[b:]
 
 # ---- tools
