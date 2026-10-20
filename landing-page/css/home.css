@@ -653,3 +653,56 @@ body.gated .hx-sticky { display: none !important; }
 .tick-set span { font-size: clamp(20px, 2.3vw, 30px); letter-spacing: -.01em; }
 .tick-set i { width: clamp(38px, 4.5vw, 64px); font-size: clamp(13px, 1.4vw, 18px); }
 @media (max-width: 760px) { .tick { margin-top: 32px; padding: 9px 0 10px; } }
+
+/* ===== hero art v2: fanned windows, same look as the three tools ===== */
+.hero-art .ring, .hero-art .blob { display: none; }
+.hero-art .hc { position: absolute; left: 17%; top: 8%; width: 64%; height: 78%; border-radius: 44px; border: 2px solid var(--cocoa); box-shadow: 8px 8px 0 var(--cocoa); }
+.hero-art .hc3 { background: #f4b8c4; transform: rotate(11deg) translate(10%, 2%); animation: fanA 9s ease-in-out infinite; }
+.hero-art .hc2 { background: #f8c7a3; transform: rotate(-9deg) translate(-9%, 3%); animation: fanB 9s ease-in-out infinite; }
+.hero-art .hc1 { background: radial-gradient(circle at 35% 25%, #fdecc2, #f7d99a 62%, #f4c98a); z-index: 2; }
+.hero-art .hc1 .clover { position: absolute; inset: auto; left: 14%; top: 22%; width: 72%; height: auto; aspect-ratio: 1; filter: drop-shadow(0 14px 18px rgba(59, 34, 24, .22)); }
+.hero-art .stamp { z-index: 4; right: -1%; bottom: 3%; }
+@keyframes fanA { 0%, 100% { transform: rotate(11deg) translate(10%, 2%); } 50% { transform: rotate(13.5deg) translate(11%, 1%); } }
+@keyframes fanB { 0%, 100% { transform: rotate(-9deg) translate(-9%, 3%); } 50% { transform: rotate(-11.5deg) translate(-10%, 2%); } }
+@media (prefers-reduced-motion: reduce) { .hero-art .hc2, .hero-art .hc3 { animation: none !important; } }
+
+/* ===== hero art v3: the four hearts as stickers ===== */
+.hero-art .hero4 { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hero-art .hb { animation: heartB 5.5s ease-in-out infinite; }
+.hero-art .spk { transform-box: fill-box; transform-origin: center; animation: spkT 8s ease-in-out infinite; }
+@keyframes heartB { 0%, 100% { transform: none; } 50% { transform: translate(var(--dx), var(--dy)); } }
+@keyframes spkT { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+.hero-art .stamp { right: 0; bottom: 4%; }
+@media (prefers-reduced-motion: reduce) { .hero-art .hb, .hero-art .spk { animation: none !important; } }
+/* typing dots inside the big heart */
+.hero-art .td { animation: typ 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.hero-art .td1 { animation-delay: .18s; } .hero-art .td2 { animation-delay: .36s; }
+@keyframes typ { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-7px); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hero-art .td { animation: none !important; } }
+
+/* v35 hero card with cropped clovers (like final CTA) */
+.hero-art .hero-card { position: absolute; inset: 0; overflow: hidden; border-radius: 60px; background: var(--grad); border: 2px solid var(--cocoa); box-shadow: 10px 10px 0 var(--cocoa); }
+.hero-art .hcl { position: absolute; pointer-events: none; }
+.hero-art .hcl-a { width: 82%; right: -22%; bottom: -26%; opacity: .6; transform: rotate(-12deg); animation: hclA 14s ease-in-out infinite; }
+.hero-art .hcl-b { width: 46%; left: -10%; top: -9%; opacity: .5; transform: rotate(22deg); animation: hclB 16s ease-in-out infinite; }
+.hero-art .hcl-c { width: 24%; left: 14%; bottom: 8%; opacity: .45; transform: rotate(-24deg); animation: hclB 12s ease-in-out infinite reverse; }
+@keyframes hclA { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(-4deg) translateY(-8px); } }
+@keyframes hclB { 0%, 100% { transform: rotate(22deg); } 50% { transform: rotate(14deg) translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .hero-art .hcl { animation: none !important; } }
+@media (max-width: 880px) { .hero-art .hero-card { border-radius: 38px; box-shadow: 7px 7px 0 var(--cocoa); } }
+
+/* v36 clovers straight on the page background */
+.hx-hero { overflow: hidden; }
+.hx-hero .hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.hx-hero .hx-wrap { position: relative; z-index: 1; }
+.hero-art .hero-card { display: none; }
+.hero-bg .hcl { position: absolute; }
+.hero-bg .hcl-a { width: min(36vw, 500px); right: -5%; top: 50%; margin-top: calc(min(36vw, 500px) / -2 + 30px); opacity: .85; transform: rotate(-12deg); animation: hclA 14s ease-in-out infinite; }
+.hero-bg .hcl-b { width: min(14vw, 200px); left: -6%; top: 6%; opacity: .5; transform: rotate(22deg); animation: hclB 16s ease-in-out infinite; }
+.hero-bg .hcl-c { display: none; }
+@media (max-width: 880px) {
+  .hero-art { display: none; }
+  .hero-bg .hcl-a { width: 70vw; right: -26%; top: auto; bottom: -6%; margin-top: 0; opacity: .6; }
+  .hero-bg .hcl-b { width: 38vw; left: -12%; top: 2%; opacity: .45; }
+  .hero-bg .hcl-c { display: none; }
+}

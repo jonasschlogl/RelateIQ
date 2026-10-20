@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=30')
+s=s.replace('css/home.css?v=11','css/home.css?v=36')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -66,7 +66,39 @@ def _chips(words, off=0):
 CH1=_chips(['Before the talk','Before you send','When it hurts','At 2am','After a fight','Say it calmly'])
 CH2=_chips(['Practice it first','Find the words','Not another spiral','Calm, clear, kind','You are not alone at 2am','Try it free'],2)
 TK='<div class="tick-set">'+''.join(f'<span>{w}</span><i></i>' for w in ['Before the talk','Before you send','When it hurts','At 2am','After a fight'])+'</div>'
+def _hero4():
+    cfg=[(0,'#f7d99a','0','-9px'),(90,'#f2a0b4','9px','0'),(180,'#f8c7a3','0','9px'),(270,'#f2a0b4','-9px','0')]
+    gap=7
+    sh='';fg=''
+    for n,(rot,col,dx,dy) in enumerate(cfg):
+        t=f'rotate({rot}) translate(0 -{13+gap}) scale(.8) translate(-50 -88)'
+        sh+=f'<g class="hb" style="--dx:{dx};--dy:{dy};animation-delay:-{n*0.9}s"><g transform="translate(280 280) scale(2.9)"><g transform="translate(2.7 2.7)"><path d="{HEART}" transform="{t}" fill="#3b2218"/></g></g></g>'
+        fg+=f'<g class="hb" style="--dx:{dx};--dy:{dy};animation-delay:-{n*0.9}s"><g transform="translate(280 280) scale(2.9)"><path d="{HEART}" transform="{t}" fill="{col}" stroke="#3b2218" stroke-width="1.7" stroke-linejoin="round"/></g></g>'
+    star=lambda x,y,sc,c: f'<path d="M0-12C1.4-4 4-1.4 12 0 4 1.4 1.4 4 0 12-1.4 4-4 1.4-12 0-4-1.4-1.4-4 0-12Z" transform="translate({x} {y}) scale({sc})" fill="{c}" stroke="#3b2218" stroke-width="1.6"/>'
+    deco=star(86,92,1.5,'#fff3e2')+star(488,128,1.1,'#f7d99a')+star(112,470,.9,'#f4b8c4')
+    return f'<svg class="hero4" viewBox="0 0 560 560" aria-hidden="true">{sh}{fg}<g class="spk">{deco}</g></svg>'
+HERO4=_hero4()
+def _hero5():
+    def heart(x,y,sc,col,inner='',rot=0,delay=0,dy='-8px'):
+        sw=4/sc; off=7/sc
+        t=f'translate({x} {y}) rotate({rot} 50 44) scale({sc})'
+        return (f'<g class="hb" style="--dx:0;--dy:{dy};animation-delay:-{delay}s"><g transform="{t}">'
+                f'<path d="{HEART}" transform="translate({off:.2f} {off:.2f})" fill="#3b2218"/>'
+                f'<path d="{HEART}" fill="{col}" stroke="#3b2218" stroke-width="{sw:.2f}" stroke-linejoin="round"/>{inner}</g></g>')
+    dots=''.join(f'<circle class="td td{i}" cx="{cx}" cy="38" r="6.2" fill="#3b2218"/>' for i,cx in enumerate((35,50,65)))
+    bars_p='<rect x="28" y="30" width="44" height="7" rx="3.5" fill="#fff3e2" stroke="#3b2218" stroke-width="1.6"/><rect x="28" y="44" width="30" height="7" rx="3.5" fill="#fff3e2" stroke="#3b2218" stroke-width="1.6"/>'
+    bars_o='<rect x="30" y="28" width="40" height="8" rx="4" fill="#fff3e2" stroke="#3b2218" stroke-width="2"/><rect x="30" y="43" width="26" height="8" rx="4" fill="#fff3e2" stroke="#3b2218" stroke-width="2"/>'
+    star=lambda x,y,sc,c: f'<path d="M0-12C1.4-4 4-1.4 12 0 4 1.4 1.4 4 0 12-1.4 4-4 1.4-12 0-4-1.4-1.4-4 0-12Z" transform="translate({x} {y}) scale({sc})" fill="{c}" stroke="#3b2218" stroke-width="1.6"/>'
+    deco=star(70,110,1.3,'#fff3e2')+star(500,250,1.0,'#f7d99a')+star(300,520,.9,'#fff3e2')
+    body=(heart(392,26,1.55,'#f8c7a3',bars_o,rot=8,delay=1.5,dy='-10px')
+          +heart(112,84,3.5,'#f7d99a',dots,delay=0,dy='-8px')
+          +heart(26,330,2.0,'#f2a0b4',bars_p,rot=-9,delay=3,dy='9px'))
+    return f'<svg class="hero4" viewBox="0 0 560 560" aria-hidden="true">{body}<g class="spk">{deco}</g></svg>'
+HERO4=_hero5()
+HERO4=''
+HEROBG='<div class="hero-bg" aria-hidden="true">'+clover('hcl hcl-a','ha')+clover('hcl hcl-b','hb2')+clover('hcl hcl-c','hc3')+'</div>'
 hero=f'''<section class="hx-hero">
+      {HEROBG}
       <div class="hx-wrap hero-grid">
         <div class="hx-copy">
           <span class="hx-kicker big"><i></i>AI relationship coach</span>
@@ -75,10 +107,7 @@ hero=f'''<section class="hx-hero">
           {form}
         </div>
         <div class="hero-art" aria-hidden="true">
-          <i class="blob b1"></i>
-          {clover('clover','h')}
-          <svg class="ring" viewBox="0 0 560 560" aria-hidden="true"><defs><path id="rp" d="M77 274 a214 214 0 1 1 428 0 a214 214 0 1 1 -428 0"/></defs><text font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700" fill="#3b2218"><textPath href="#rp" textLength="1330" lengthAdjust="spacing">SAY IT CALMLY <tspan fill="#b03a60">&#9829;</tspan> SAY IT CLEARLY <tspan fill="#b03a60">&#9829;</tspan> SAY IT WITH LOVE <tspan fill="#b03a60">&#9829;</tspan> </textPath></text></svg>
-          {stamp}
+          {HERO4}
         </div>
       </div>
     </section>
