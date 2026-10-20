@@ -4,7 +4,7 @@
    ========================================================================== */
 :root {
   --cream: #b78d74; --cream-2: #e9cdb8; --butter: #f7d99a; --paper: #fff3e2;
-  --gold: #f7d99a; --gold-2: #f9e2ae; --amber: #f4b8a8; --rose: #ef9db3; --deep: #b03a60; --blush: #f7c4cf;
+  --gold: #f7d99a; --gold-2: #f9e2ae; --amber: #f4b8a8; --rose: #ef9db3; --deep: #8a5640; --blush: #f7c4cf;
   --cocoa: #3b2218; --cocoa-2: #4a2d20; --muted: #432719; --faint: #573a2b;
   --line: rgba(59, 34, 24, 0.2); --line-2: rgba(59, 34, 24, 0.32);
   --grad: linear-gradient(115deg, #f7d99a 0%, #f6c9ae 45%, #f4aabd 100%);
