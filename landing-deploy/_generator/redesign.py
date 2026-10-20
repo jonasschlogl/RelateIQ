@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=50')
+s=s.replace('css/home.css?v=11','css/home.css?v=51')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -114,8 +114,7 @@ hero=f'''<section class="hx-hero">
           {HERO4}
         </div>
       </div>
-    </section>
-    <div class="tick" aria-hidden="true"><div class="tick-track">{TK}{TK}{TK}{TK}</div></div>'''
+    </section>'''
 s=s[:a]+hero+s[b:]
 
 # ---- tools

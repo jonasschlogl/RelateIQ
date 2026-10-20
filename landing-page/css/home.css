@@ -775,3 +775,6 @@ body.hx { background: #b78d74; }
 
 /* v47: ticker loops over 4 sets (even phrase count keeps white/brown alternating) */
 .tick-track { animation-duration: 120s; }
+
+/* v50: ticker removed */
+.tick { display: none; }
