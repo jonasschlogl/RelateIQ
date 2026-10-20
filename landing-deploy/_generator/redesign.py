@@ -302,7 +302,7 @@ FOOT_HTML = """<footer class="hx-foot">
         </div>
         <div class="ft-col ft-right">
           <h4>Follow</h4>
-          <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer">@Instagram</a>
+          <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer">@relationshipai_</a>
         </div>
       </div>
       <div class="ft-base">
