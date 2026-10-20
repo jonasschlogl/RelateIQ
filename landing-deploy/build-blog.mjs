@@ -354,7 +354,7 @@ function switcherTargets(kind, key, all) {
 function navHtml(ctx, targets) {
   const { T, prefix } = ctx;
   return `  <header class="site-nav">
-    <a href="${prefix || ""}/" class="brand"><img class="brand-mark" src="/logo-mark.svg" alt="" width="34" height="34" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
+    <a href="${prefix || ""}/" class="brand"><img class="brand-mark" src="/logo-tile.svg" alt="" width="38" height="38" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="${attr(T(EN.menu))}">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="${prefix}/#features">${T(EN.features)}</a>
@@ -416,7 +416,7 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=67" />
+  <link rel="stylesheet" href="/css/style.css?v=68" />
   <link rel="stylesheet" href="/css/landing.css?v=${CONFIG.cssVersion}" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>

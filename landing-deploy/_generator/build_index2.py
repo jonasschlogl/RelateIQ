@@ -6,7 +6,7 @@ old_lines = OLD.split('\n')
 head = '\n'.join(old_lines[:51])
 head = head.replace('<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />',
                     '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />')
-head = head.replace('  <link rel="stylesheet" href="css/style.css?v=67" />\n  <link rel="stylesheet" href="css/landing.css?v=23" />\n', '  <link rel="stylesheet" href="css/home.css?v=10" />\n')
+head = head.replace('  <link rel="stylesheet" href="css/style.css?v=68" />\n  <link rel="stylesheet" href="css/landing.css?v=23" />\n', '  <link rel="stylesheet" href="css/home.css?v=10" />\n')
 assert 'home.css' in head and 'Inter:wght' in head
 head += '\n  <meta name="theme-color" content="#130b0f" />\n</head>'
 lang = [l for l in old_lines if '<!--LANG-SWITCH-->' in l][0].strip()

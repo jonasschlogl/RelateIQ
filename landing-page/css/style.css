@@ -4912,3 +4912,7 @@ body.js-reveal .reveal-item.revealed {
 .mode-card .tag-free { color: #a9c98c; border-color: rgba(139, 171, 111, 0.45); background: rgba(139, 171, 111, 0.10); }
 .mode-card .tag-pro { color: var(--accent-1); border-color: rgba(209, 160, 90, 0.5); background: rgba(209, 160, 90, 0.10); }
 .mode-card .tag-premium { color: #e58aa0; border-color: rgba(207, 106, 130, 0.5); background: rgba(207, 106, 130, 0.10); }
+
+/* brand: tile logo, wordmark in one colour */
+.brand-mark { border-radius: 11px; box-shadow: 0 8px 16px -8px rgba(0, 0, 0, .55), 0 0 0 1px rgba(249, 217, 138, .22); }
+.brand span { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: inherit; -webkit-text-fill-color: currentColor; }
