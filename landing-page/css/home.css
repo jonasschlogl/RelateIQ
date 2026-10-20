@@ -766,3 +766,6 @@ body.hx { background: #b78d74; }
 
 /* v44: tile logo in nav */
 .hx-brand img { border-radius: 11px; box-shadow: 0 8px 16px -8px rgba(59,34,24,.55); }
+
+/* v45: AI in wordmark matches logo pink */
+.hx-brand b, .hx-foot .hx-brand b, footer .hx-brand b { color: #ee7f9e; }
