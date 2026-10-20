@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=17')
+s=s.replace('css/home.css?v=11','css/home.css?v=18')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -101,6 +101,30 @@ s=s.replace('<p>Tell it what happened. It remembers your partner and your past c
 s=s.replace('<div class="bub u">When plans change last minute, I feel unimportant.</div>\n            <div class="bub a">I didn&rsquo;t know it hurt you. Tell me more.</div>','<div class="bub u">When plans change, I feel unimportant.</div>')
 i=s.index('id="coach"'); j=s.index('</section>',i)+len('</section>')
 s=s[:j]+'\n    '+tools_end+s[j:]
+
+# ---- flagship accordion
+a=s.index('<section class="hx-sec hx-tools" id="tools">')
+i=s.index('id="practice"'); pm=s[s.index('<div class="mock">',i):]; pm=pm[:pm.index('</div>\n          </div>\n        </div>\n      </div>\n    </section>')]+'</div>'
+i=s.index('id="coach"'); cm=s[s.index('<div class="mock">',i):]; cm=cm[:cm.index('</div>\n          </div>\n        </div>\n      </div>\n    </section>')]+'</div>'
+i=s.index('id="message"'); dm=s[s.index('<div class="hx-demo hx-reveal" id="demo-box">',i):]; dm=dm[:dm.index('</section>')].rstrip(); assert dm.endswith('</div>'); dm=dm[:-6].rstrip().replace('hx-demo hx-reveal','hx-demo')
+b=s.index('</section>',s.index('id="coach"'))+len('</section>')
+def flag(n,cls,idn,when,h,p,vis,op=''):
+    return f"""<details class="flag {cls}" id="{idn}" name="flag"{op}>
+          <summary><span class="fnum">{n}</span><span class="ftxt"><small>{when}</small><h3>{h}</h3></span><span class="fplus" aria-hidden="true"></span></summary>
+          <div class="flag-body"><p>{p}</p><div class="flag-vis">{vis}</div></div>
+        </details>"""
+acc=f"""<section class="hx-sec hx-tools" id="tools">
+      <div class="hx-wrap">
+        <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
+        <div class="flag-list hx-reveal">
+        {flag('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner. Rehearse with nothing at stake.',pm,' open')}
+        {flag('02','f2','message','Before you send','Read it the way <em>they will</em>.','See how it lands. Get a calmer version.',dm)}
+        {flag('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','It remembers your story, so you never start from zero.',cm)}
+        </div>
+      </div>
+    </section>
+    <script>(function(){{var L=document.querySelectorAll('details.flag');function one(e){{if(e.target.open)L.forEach(function(x){{if(x!==e.target)x.open=false}})}}L.forEach(function(d){{d.addEventListener('toggle',one)}});function go(){{var d=location.hash&&document.querySelector('details.flag'+location.hash);if(d)d.open=true}}addEventListener('hashchange',go);go()}})();</script>"""
+s=s[:a]+acc+s[b:]
 
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
