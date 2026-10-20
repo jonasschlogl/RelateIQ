@@ -4931,10 +4931,6 @@ body.blog {
   --shadow-lg: 0 28px 54px -26px rgba(59, 34, 24, .5); --shadow: 0 12px 24px -14px rgba(59, 34, 24, .5);
   background: #b78d74; color: var(--text); position: relative; overflow-x: hidden; font-size: 17px;
 }
-body.blog::before, body.blog::after { content: ""; position: fixed; pointer-events: none; z-index: 0; background: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='18 18 164 164'%3E%3Cg transform='translate%28100 100%29 rotate%280%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%23f9e1a8'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%2890%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%23f6b7c8'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%28180%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%23f9e1a8'/%3E%3C/g%3E%3Cg transform='translate%28100 100%29 rotate%28270%29 translate%280 -13%29 scale%28.8%29 translate%28-50 -88%29'%3E%3Cpath d='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z' fill='%23f6b7c8'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; }
-body.blog::before { width: 520px; height: 520px; left: -170px; top: 16vh; opacity: .5; transform: rotate(-12deg); }
-body.blog::after { width: 420px; height: 420px; right: -150px; bottom: -6vh; opacity: .45; transform: rotate(18deg); }
-@media (max-width: 760px) { body.blog::before { width: 300px; height: 300px; left: -120px; opacity: .4; } body.blog::after { width: 260px; height: 260px; right: -100px; opacity: .35; } }
 body.blog .site-nav, body.blog main, body.blog .site-footer { position: relative; z-index: 1; }
 body.blog h1, body.blog h2, body.blog h3, body.blog .brand { font-family: var(--font-display); letter-spacing: -.02em; }
 body.blog p, body.blog li { font-family: var(--font-body); }
@@ -5052,3 +5048,4 @@ body.legal .method-sources, body.legal .method-sources a { color: #573a2b; }
 body.legal .method-sources a { text-decoration: underline; text-decoration-color: #fff3e2; text-underline-offset: 3px; font-weight: 700; color: #3b2218; }
 body.legal .method-block { border-color: rgba(59, 34, 24, .3); }
 body.legal .method-honesty { background: #fff3e2; border: 1px solid rgba(59, 34, 24, .6); border-radius: 32px; }
+
