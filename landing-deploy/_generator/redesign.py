@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=62')
+s=s.replace('css/home.css?v=11','css/home.css?v=63')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -103,30 +103,29 @@ HERO4='''<div class="hph" id="hph" role="group" aria-label="Product preview">
             <div class="hph-frame"><i class="hph-notch"></i>
               <div class="hph-scr">
                 <div class="hs on">
-                  <div class="hs-top"><i></i>Practice with Alex</div>
-                  <div class="hs-lbl">Before the talk</div>
-                  <div class="bb me">There&rsquo;s something I want to tell you.</div>
-                  <div class="bb ai">Okay. I&rsquo;m listening.</div>
-                  <div class="bb me">When plans change, I feel unimportant.</div>
-                  <div class="hs-card bt"><small>Debrief</small>Calm start, clear feeling. <b>Next time:</b> say what you need.</div>
+                  <div class="hs-top"><i></i>Partner Practice</div>
+                  <div class="hs-lbl">Rehearse the hard talk first</div>
+                  <div class="bb me">You always cancel on me.</div>
+                  <div class="bb ai">Here we go again. I was just tired.</div>
+                  <div class="hs-card bt"><small>Coach note</small>Starting with blame made them defensive. <b>Try:</b> &ldquo;I felt hurt when plans fell through.&rdquo;</div>
                   <div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div>
                 </div>
                 <div class="hs">
                   <div class="hs-top"><i></i>Message check</div>
-                  <div class="hs-lbl">You wrote</div>
-                  <div class="hs-card pk">You never listen to me.<span>High risk of a fight</span></div>
+                  <div class="hs-lbl">Your draft</div>
+                  <div class="hs-card pk">Fine. Do whatever you want.<span>Reads as cold &middot; likely to start a fight</span></div>
                   <div class="hs-arrow">&darr;</div>
-                  <div class="hs-lbl">Try this instead</div>
-                  <div class="hs-card bt">I feel unheard when plans change. Can we talk tonight?<span>Calm, clear, no blame</span></div>
+                  <div class="hs-lbl">Says what you actually mean</div>
+                  <div class="hs-card bt">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?<span>Honest, calm, invites a reply</span></div>
                   <div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div>
                 </div>
                 <div class="hs">
                   <div class="hs-top"><i></i>Coach Chat</div>
-                  <div class="hs-lbl">When it hurts</div>
-                  <div class="bb me">We had the same fight again.</div>
-                  <div class="hs-mem"><i></i>Remembers: the Tuesday dishes fight</div>
-                  <div class="bb ai">Let&rsquo;s look underneath it this time.</div>
-                  <div class="hs-card bt"><small>Try saying</small>&ldquo;I feel unseen when I carry the house alone.&rdquo;</div>
+                  <div class="hs-lbl">2:07 AM &middot; can&rsquo;t sleep</div>
+                  <div class="bb me">He went quiet again.</div>
+                  <div class="hs-mem"><i></i>Remembers: he withdraws when stressed</div>
+                  <div class="bb ai">That&rsquo;s his stress pattern, not rejection.</div>
+                  <div class="hs-card bt"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>
                   <div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div>
                 </div>
                 <div class="hph-tabs"><button type="button" class="on" data-i="0" aria-label="Partner Practice">Practice</button><button type="button" data-i="1" aria-label="Message check">Check</button><button type="button" data-i="2" aria-label="Coach Chat">Coach</button></div>
