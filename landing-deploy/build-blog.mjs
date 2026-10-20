@@ -241,7 +241,7 @@ function markdown(src) {
 // Each post has three illustrations: /img/blog/<file-name>-1.svg (also the card thumbnail and the share image),
 // -2.svg and -3.svg (placed inside the article). Translated posts use the same images (same file name).
 const IMG_DIR = path.join(LANDING, "img", "blog");
-const IMG_V = "2"; // bump when the illustrations change (cache busting)
+const IMG_V = "3"; // bump when the illustrations change (cache busting)
 const imgFile = (key, n, ext = "svg") => `/img/blog/${key}-${n}.${ext}${ext === "svg" ? `?v=${IMG_V}` : ""}`;
 const hasImgs = (key) => fs.existsSync(path.join(IMG_DIR, `${key}-1.svg`));
 const figure = (key, n) => `<figure class="article-fig"><img src="${imgFile(key, n)}" alt="" width="800" height="450" loading="lazy" decoding="async" /></figure>`;
