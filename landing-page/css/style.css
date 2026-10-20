@@ -5049,3 +5049,9 @@ body.legal .method-sources a { text-decoration: underline; text-decoration-color
 body.legal .method-block { border-color: rgba(59, 34, 24, .3); }
 body.legal .method-honesty { background: #fff3e2; border: 1px solid rgba(59, 34, 24, .6); border-radius: 32px; }
 
+
+/* byline: logo avatar + link to About us */
+.article-byline .avatar-link { flex: 0 0 52px; display: block; line-height: 0; border-radius: 15px; }
+body.blog .article-byline .avatar { width: 52px; height: 52px; border-radius: 15px; background: none; border: 0; box-shadow: 0 10px 18px -10px rgba(59, 34, 24, .6); object-fit: contain; }
+body.blog .article-byline .avatar-link:hover .avatar { transform: translateY(-1px) rotate(-3deg); }
+body.blog .article-byline .avatar { transition: transform .15s ease; }

@@ -418,7 +418,7 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=71" />
+  <link rel="stylesheet" href="/css/style.css?v=72" />
   <link rel="stylesheet" href="/css/landing.css?v=${CONFIG.cssVersion}" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
@@ -529,7 +529,7 @@ function postPage(ctx, p, all) {
   const tocList = toc.map((h) => `<li><a href="#${h.id}">${esc(h.text)}</a></li>`).join("");
   const avatar = fs.existsSync(path.join(LANDING, "img", "jonas.jpg"))
     ? `<img class="avatar" src="/img/jonas.jpg" alt="" width="64" height="64" />`
-    : `<span class="avatar" aria-hidden="true">${AUTHOR[0]}</span>`;
+    : `<img class="avatar" src="/logo-tile.svg" alt="" width="64" height="64" />`;
   const ogPng = hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : null;
   return page(ctx, {
     title: `${p.title} | ${CONFIG.siteName}`,
@@ -547,8 +547,8 @@ function postPage(ctx, p, all) {
           <div class="article-tags">${p.tags.map((t) => `<span class="post-tag">${esc(t)}</span>`).join("")}</div>
           <h1>${esc(p.title)}</h1>
           <div class="article-byline">
-            ${avatar}
-            <p>${T(EN.by)} <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
+            <a href="/#about" class="avatar-link" aria-label="About us">${avatar}</a>
+            <p>${T(EN.by)} <a href="/#about" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
           </div>
           ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
           ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
