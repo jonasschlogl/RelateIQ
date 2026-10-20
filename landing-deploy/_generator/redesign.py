@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=71')
+s=s.replace('css/home.css?v=11','css/home.css?v=72')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -318,7 +318,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
 if(location.hash==='#about')open();})();</script>"""
 PRICE_JS = """<script>(function(){var mq=window.matchMedia('(max-width:760px)'),s=document.getElementById('pricing');if(!s)return;
-var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');document.body.appendChild(b);var k=document.createElement('button');k.type='button';k.className='pr-back';k.setAttribute('aria-label','Back');k.innerHTML='<i></i>Back';document.body.appendChild(k);k.addEventListener('click',function(){close()});
+var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');var k=document.createElement('button');k.type='button';k.className='pr-back';k.setAttribute('aria-label','Back');k.innerHTML='<i></i>Back';var bar=document.createElement('div');bar.className='pr-bar';var ti=document.createElement('b');ti.textContent='Pricing';bar.appendChild(k);bar.appendChild(ti);bar.appendChild(b);document.body.appendChild(bar);k.addEventListener('click',function(){close()});
 function open(){[].forEach.call(s.querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')});document.body.classList.add('pricing-open');s.scrollTop=0;if(location.hash!=='#pricing')history.replaceState(null,'','#pricing')}
 function close(){document.body.classList.remove('pricing-open');if(location.hash==='#pricing')history.replaceState(null,'',location.pathname+location.search)}
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a[href="#pricing"]');if(a&&mq.matches){e.preventDefault();open();return}if(document.body.classList.contains('pricing-open')&&t.closest('#pricing a[href="#join"]'))close()},true);

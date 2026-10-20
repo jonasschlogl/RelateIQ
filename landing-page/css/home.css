@@ -1066,3 +1066,15 @@ body.hx > header.hx-nav { z-index: 60; }
   body.cmp-open-b .pr-back { display: none; }
   .pr-back i { width: 9px; height: 9px; border-left: 2.5px solid #3b2218; border-bottom: 2.5px solid #3b2218; transform: rotate(45deg); margin-left: 3px; border-radius: 1px; }
 }
+
+/* v72: pricing sheet gets a proper top bar (Back, title, close) instead of floating buttons */
+.pr-bar { display: none; }
+@media (max-width: 760px) {
+  body.pricing-open .pr-bar { display: flex; position: fixed; top: 0; left: 0; right: 0; z-index: 310; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; background: #b78d74; border-bottom: 1px solid rgba(59,34,24,.28); }
+  body.cmp-open-b .pr-bar { display: none; }
+  .pr-bar b { font: 500 21px var(--font-display); color: #3b2218; letter-spacing: -.01em; }
+  .pr-bar .pr-close, .pr-bar .pr-back { position: relative !important; top: auto; left: auto; right: auto; height: 44px; box-shadow: none; }
+  .pr-bar .pr-close { width: 44px; }
+  .pr-bar .pr-back { display: inline-flex !important; padding: 0 16px 0 12px; }
+  body.pricing-open #pricing { padding-top: 76px; }
+}
