@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=16')
+s=s.replace('css/home.css?v=11','css/home.css?v=17')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -84,34 +84,23 @@ a=s.index('<section class="hx-sec hx-tools" id="tools">'); b=s.index('</section>
 tools='''<section class="hx-sec hx-tools" id="tools">
       <div class="hx-wrap">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
-        <div class="tool-cards">
-          <a class="tcard t1 hx-reveal" href="#practice" data-umami-event="card-practice">
-            <span class="tnum">01</span><span class="when">Before the talk</span>
-            <h3>Partner Practice</h3>
-            <p>Rehearse the hard conversation with an AI that plays your partner.</p>
-            <div class="tmini"><div class="tb a">I want to tell you something.</div><div class="tb u">Okay. I&rsquo;m listening.</div></div>
-            <span class="go">See how it works</span>
-          </a>
-          <a class="tcard t2 hx-reveal" href="#message" data-umami-event="card-check">
-            <span class="tnum">02</span><span class="when">Before you send</span>
-            <h3>Message check</h3>
-            <p>See how your message will land, then get a calmer version.</p>
-            <div class="tmini"><div class="tb x"><s>You never listen to me.</s></div><div class="tb u ok"><b>Calmer</b>I felt unheard earlier. Can we talk?</div></div>
-            <span class="go">See how it works</span>
-          </a>
-          <a class="tcard t3 hx-reveal" href="#coach" data-umami-event="card-coach">
-            <span class="tnum">03</span><span class="when">When it hurts</span>
-            <h3>Coach Chat</h3>
-            <p>A coach that remembers your story and gives real next steps.</p>
-            <div class="tmini"><div class="tmem"><i></i>Remembers: the Tuesday dishes fight</div><div class="tb u">Let&rsquo;s look underneath it this time.</div></div>
-            <span class="go">See how it works</span>
-          </a>
-        </div>
+      </div>
+    </section>'''
+tools_end='''<section class="hx-sec hx-tools-end">
+      <div class="hx-wrap">
         <div class="hx-center-cta hx-reveal"><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a> <span class="hx-free">Free to try</span></div>
         <div class="hx-frame hx-center-frame"><b>Inspired by</b><span>The Gottman Method</span><i></i><span>Attachment theory</span><i></i><span>Nonviolent Communication</span></div>
       </div>
     </section>'''
 s=s[:a]+tools+s[b:]
+import re as _re
+s=_re.sub(r'<ul class="chap-facts">.*?</ul>\s*','',s,flags=_re.S)
+s=s.replace('<p>An AI plays your partner, so you can find the words with nothing at stake. Then get a short debrief.</p>','<p>An AI plays your partner. Rehearse with nothing at stake.</p>')
+s=s.replace('<p>Check a message before you send it. See how it may land and get calmer, warmer or more direct versions.</p>','<p>See how it lands. Get a calmer version.</p>')
+s=s.replace('<p>Tell it what happened. It remembers your partner and your past chats, so you never start from zero. There at 2am.</p>','<p>It remembers your story, so you never start from zero.</p>')
+s=s.replace('<div class="bub u">When plans change last minute, I feel unimportant.</div>\n            <div class="bub a">I didn&rsquo;t know it hurt you. Tell me more.</div>','<div class="bub u">When plans change, I feel unimportant.</div>')
+i=s.index('id="coach"'); j=s.index('</section>',i)+len('</section>')
+s=s[:j]+'\n    '+tools_end+s[j:]
 
 # ---- final CTA: add clover decoration
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))

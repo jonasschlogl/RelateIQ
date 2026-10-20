@@ -454,3 +454,11 @@ body.hx::before { /* paper grain */
 /* emphasis words sitting directly on the brown page need a light colour */
 .hx-head h2 em, #blog .section-head h2 em, .hx-faq h2 em, #faq h2 em { color: #fff3e2; background: linear-gradient(transparent 62%, rgba(244, 184, 196, .8) 62%, rgba(244, 184, 196, .8) 92%, transparent 92%); }
 #trust .hx-head h2 em { color: var(--gold-2); background: linear-gradient(transparent 62%, rgba(239, 157, 179, .5) 62%, rgba(239, 157, 179, .5) 92%, transparent 92%); }
+
+/* three flagship chapters: gold, pastel orange, pink */
+#practice { background: #f7d99a; }
+#message { background: #f8c7a3; }
+#coach { background: #f4b8c4; }
+.hx-tools { padding-bottom: 36px; }
+.hx-tools-end { padding-top: 56px; padding-bottom: 20px; }
+.chap-copy p { font-size: 20px; font-weight: 500; color: var(--cocoa); }
