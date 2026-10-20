@@ -48,7 +48,7 @@ HERO_ART=('<svg class="art" viewBox="0 0 560 560"><defs>'
 # ---- head
 s=re.sub(r'<link href="https://fonts.googleapis.com/css2\?[^"]*" rel="stylesheet" />',
  '<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />',s)
-s=s.replace('css/home.css?v=11','css/home.css?v=23')
+s=s.replace('css/home.css?v=11','css/home.css?v=24')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon

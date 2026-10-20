@@ -605,3 +605,9 @@ details.flag#practice { margin-top: 0; }
 .page .hx-demo .hx-risk { margin-top: 2px; }
 .page .hx-demo .dm-card p { min-height: 0; }
 .page .hx-demo .dm-after { min-height: 0; }
+
+/* v24: nicer return: the card glides in from the right and settles softly */
+.page[data-s="turned"] { transform: translateX(150%) rotate(12deg); }
+.page[data-s="turned"] { transition: transform .7s cubic-bezier(.5, 0, .75, 0), opacity .2s linear .45s, height .5s ease, box-shadow .3s !important; }
+.page[data-s="front"] { transition: transform .8s cubic-bezier(.16, 1, .3, 1), opacity .15s linear 0s, height .5s ease, box-shadow .3s !important; }
+.page[data-s="b1"], .page[data-s="b2"] { transition: transform .6s cubic-bezier(.3, 0, .2, 1) .08s, opacity .3s linear .5s, height .5s ease, box-shadow .3s !important; }
