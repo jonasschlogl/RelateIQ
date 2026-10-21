@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=78')
+s=s.replace('css/home.css?v=11','css/home.css?v=80')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -157,13 +157,26 @@ tools='''<section class="hx-sec hx-tools" id="tools">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
       </div>
     </section>'''
-tools_end='''<section class="hx-sec hx-tools-end">
+tools_end='''<section class="hx-sec hx-tools-end px-method">
       <div class="hx-wrap">
+        <div class="hx-head hx-reveal"><span class="hx-kicker">Built on research</span><h2>Three methods behind <em>every answer.</em></h2></div>
+        <div class="px-m3">
+          <div class="px-mc"><span class="px-n">1</span><h3>The Gottman Method</h3><p>Soft start-ups and repair attempts, so a hard talk stays a talk.</p></div>
+          <div class="px-mc"><span class="px-n">2</span><h3>Attachment theory</h3><p>Why you pull away or hold on, and what helps instead.</p></div>
+          <div class="px-mc"><span class="px-n">3</span><h3>Nonviolent Communication</h3><p>Say what you feel and need, without blame.</p></div>
+        </div>
         <div class="hx-center-cta hx-reveal"><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a> <span class="hx-free">Free to try</span></div>
-        <div class="hx-frame hx-center-frame"><b>Inspired by</b><span>The Gottman Method</span><i></i><span>Attachment theory</span><i></i><span>Nonviolent Communication</span></div>
       </div>
     </section>'''
-s=s[:a]+tools+s[b:]
+s=s[:a]+'''<section class="px-strip" aria-label="Why RelationshipAI">
+      <div class="hx-wrap px-strip-in">
+        <div class="px-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg><b>Practice first</b><span>Rehearse the hard talk before it is real</span></div>
+        <div class="px-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg><b>There at 2am</b><span>No appointment, no waiting for Monday</span></div>
+        <div class="px-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>Private by default</b><span>Only you can see your chats</span></div>
+        <div class="px-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20"/></svg><b>Built on research</b><span>Gottman, attachment theory, NVC</span></div>
+      </div>
+    </section>
+    '''+tools+s[b:]
 import re as _re
 s=_re.sub(r'<ul class="chap-facts">.*?</ul>\s*','',s,flags=_re.S)
 s=s.replace('<p>An AI plays your partner, so you can find the words with nothing at stake. Then get a short debrief.</p>','<p>An AI plays your partner. Rehearse with nothing at stake.</p>')
@@ -365,6 +378,7 @@ def _thumb(m):
 s=_re.sub(r'<a class="post-card" href="/blog/([^/"]+)/">',_thumb,s)
 
 # ---- final CTA: add clover decoration
+s=s.replace('<div class="hx-copy">','<div class="hx-copy"><span class="px-chip"><i></i>AI relationship coach &middot; early access</span>',1)
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
 # footer clover
 s=s.replace('<body class="hx">','<body class="hx">'+PGBG,1)
