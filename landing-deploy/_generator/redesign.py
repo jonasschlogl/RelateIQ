@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=98')
+s=s.replace('css/home.css?v=11','css/home.css?v=100')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -705,6 +705,26 @@ s=s.replace('<section class="hx-hero">','<section class="hx-hero">'+FLOATS,1)
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+FLOATS,1)
 s=s.replace('js/home.js?v=4','js/home.js?v=5')
 
+# ---- our approach: richer layout
+_MB_OLD=s[s.index('<div class="mission-block">'):s.index('</div></div>',s.index('Read our method'))+len('</div></div>')]
+def _mbi(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">%s</svg>'%d
+_MB_CH=[('Gottman Method','g'),('Emotionally Focused Therapy','p'),('CBT for couples','c'),('Nonviolent Communication','k'),('Imago dialogue','p'),('Attachment theory','g'),('Solution-focused work','c'),('Narrative work','k'),('Acceptance and commitment','g')]
+_MB_NEW=('<div class="mission-block mb2">'+FLOATS+'<div class="mb-copy"><span class="section-tag">Our approach</span>'
+ '<h2>We&rsquo;d rather be useful than exciting</h2>'
+ '<p>One job: help you think clearly about your relationship and find words that land.</p>'
+ '<ul class="mb-pts">'
+ '<li><i>'+_mbi('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>')+'</i><div><b>Built for one thing</b><span>Clearer thinking and better words. Nothing else.</span></div></li>'
+ '<li><i>'+_mbi('<path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>')+'</i><div><b>No tricks to keep you chatting</b><span>No streaks, no guilt, no nagging.</span></div></li>'
+ '<li><i>'+_mbi('<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8v6M14 11h6"/>')+'</i><div><b>Honest about its limits</b><span>It tells you when a professional should take over.</span></div></li></ul>'
+ '<p class="mission-signature">Built by Jonas, after one too many 11pm conversations that would&rsquo;ve gone better with a clearer head.</p>'
+ '<a href="method.html" class="hx-btn sm">Read our method &amp; sources</a></div>'
+ '<div class="mb-art"><span class="dc d1"></span><span class="dc d2"></span><div class="mb-ill">'+ILL['a3']+'</div>'
+ '<div class="mb-card"><small>Guided by real couples methods</small><div class="mb-chips">'+''.join('<b class="%s">%s</b>'%(k,t) for t,k in _MB_CH)+'</div></div>'
+ '<div class="mb-note"><i>'+_mbi('<path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/>')+'</i><div><b>Not a replacement for therapy</b><span>If it is more than words can fix, we say so.</span></div></div>'
+ '</div></div>')
+assert _MB_OLD in s
+s=s.replace(_MB_OLD,_MB_NEW,1)
+
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
 def _thumb(m):
@@ -735,3 +755,57 @@ if m_pp and m_ac and m_pp.end()<m_ac.start() and m_ac.start()-m_pp.end()<1500:
     s=s[:m_pp.end()]+m_ac.group(0)+s[m_pp.end():m_ac.start()]+s[m_ac.end():]
 open('/root/lp/index.html','w').write(s)
 print('ok',len(s))
+
+
+# =====================================================================
+# method.html in the same theme (text and sources unchanged)
+def _hash_to_index(h): return _re.sub(r'href="#',r'href="index.html#',h)
+_nav=_hash_to_index(_re.search(r'<header class="hx-nav".*?</header>',s,flags=_re.S).group(0)).replace('<!--LANG-SWITCH--><!--/LANG-SWITCH-->','')
+_foot=_hash_to_index(FOOT_HTML)
+_pbg_all=_re.search(r'<div class="page-bg"[^>]*>(.*?)</div>\s*<',s,flags=_re.S)
+_pb=''
+if _pbg_all:
+    parts=_pbg_all.group(1).split('<span class="pbg"')[1:]
+    keep=[p for p in parts if int(_re.search(r'top:(-?\d+)px',p).group(1))<2600]
+    _pb='<div class="page-bg" aria-hidden="true">'+''.join('<span class="pbg"'+p for p in keep)+'</div>'
+def _src(href,label): return '<a class="mt-src" href="%s" target="_blank" rel="noopener"><i>'%href+_mbi('<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>')+'</i><span><small>Source</small>%s</span></a>'%label
+_MT=[
+ dict(n='01',h='The Gottman Method',used='Used in Coach Chat',ill='a1',
+  p='Dr. John Gottman&rsquo;s research identified four communication patterns (criticism, contempt, defensiveness, and stonewalling) that reliably predict relationship breakdown. The Gottman Institute describes contempt (mockery, eye-rolling, sarcasm, treating a partner as inferior) as &ldquo;the single greatest predictor of divorce.&rdquo; RelationshipAI&rsquo;s Coach Chat is built to help you spot these patterns in your own words before you send them, and replace them with their known antidotes: starting a hard conversation gently, taking responsibility instead of getting defensive, and self-soothing instead of shutting down.',
+  src=('https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/','The Gottman Institute, &ldquo;The Four Horsemen: Recognizing Criticism, Contempt, Defensiveness, and Stonewalling&rdquo;'),
+  ex=AP('The four patterns','Gottman Institute','<div class="ap-two"><div>'+ROW('1','Criticism')+'</div><div>'+ROW('2','Contempt','pk')+'</div><div>'+ROW('3','Defensiveness')+'</div><div>'+ROW('4','Stonewalling')+'</div></div>','G')+SAT('<small>Known antidotes</small><span>Start gently. Take responsibility. Self-soothe.</span>','s2')),
+ dict(n='02',h='Attachment theory',used='Used in Partner Practice',ill='a3',
+  p='Attachment theory started with John Bowlby&rsquo;s work on why infants who are separated from a caregiver become distressed, and was extended by Mary Ainsworth&rsquo;s &ldquo;Strange Situation&rdquo; studies, which identified consistent patterns (securely attached, anxious, and avoidant) in how children respond to separation and reunion. In the 1980s, researchers Cindy Hazan and Phillip Shaver proposed that the same underlying system shapes how adults bond in romantic relationships, which is the basis for the &ldquo;secure / anxious / avoidant / disorganized&rdquo; language RelationshipAI uses when you describe your partner for Partner Practice. Knowing your pattern doesn&rsquo;t fix anything by itself, but it makes it a lot easier to recognize why the same disagreement keeps playing out the same way.',
+  src=('https://labs.psychology.illinois.edu/~rcfraley/attachment.htm','R. Chris Fraley (University of Illinois), &ldquo;A Brief Overview of Adult Attachment Theory and Research&rdquo;'),
+  ex=AP('How the idea grew','From infants to adults','<div class="ap-r"><small>Bowlby</small><span>Infants separated from a caregiver</span></div><div class="ap-r y"><small>Ainsworth</small><span>&ldquo;Strange Situation&rdquo; studies</span></div><div class="ap-r pk"><small>Hazan and Shaver, 1980s</small><span>The same system in adult romance</span></div>'+PILLS('Secure','Anxious','Avoidant','Disorganized'),'A')+SAT('<small>In RelationshipAI</small><span>The language you use to describe your partner.</span>','s2')),
+ dict(n='03',h='Nonviolent Communication (NVC)',used='Used in Coach Chat rewrites',ill='m2',
+  p='Nonviolent Communication is a framework developed by psychologist Marshall Rosenberg, laid out in his book <em>Nonviolent Communication: A Language of Life</em>. It&rsquo;s built around separating observations from judgments, naming the actual feeling underneath a complaint, and making a specific, actionable request instead of a vague accusation. It&rsquo;s the main thing Coach Chat is doing when it helps you rewrite &ldquo;you never listen to me&rdquo; into something that names the feeling and asks for something concrete. That&rsquo;s NVC&rsquo;s structure, not a generic &ldquo;be nicer&rdquo; pass.',
+  src=('https://www.cnvc.org/store/nonviolent-communication-a-language-of-life','Center for Nonviolent Communication, Marshall B. Rosenberg, <em>Nonviolent Communication: A Language of Life</em>'),
+  ex=AP('Rewrite with NVC','Observation, feeling, request',M('You never listen to me.')+'<div class="u-arr" style="align-self:center">&darr;</div>'+ROW('Names the feeling','&ldquo;I feel unheard.&rdquo;')+ROW('Specific request','&ldquo;Can we take ten minutes tonight?&rdquo;','y'),'N')+SAT('<small>Not a generic pass</small><span>A structure, not &ldquo;be nicer&rdquo;.</span>','s1')),
+]
+_mt_rows=''.join(
+ '<div class="pg-f mt-f" id="m-%s"><div class="pg-ft"><span class="pg-n">%s</span><h2>%s</h2><span class="mt-used">%s</span><p>%s</p>%s</div><div class="pg-fa"><span class="dc d1"></span><span class="dc d2"></span><span class="dc d3"></span><div class="ex">%s</div></div></div>'
+ %(['gottman','attachment','nvc'][i],m['n'],m['h'],m['used'],m['p'],_src(*m['src']),m['ex']) for i,m in enumerate(_MT))
+_hero_art=''.join('<a class="mt-ha" href="#m-%s">%s<b>%s</b></a>'%(k,ILL[m['ill']],m['h'].replace(' (NVC)','')) for k,m in zip(['gottman','attachment','nvc'],_MT))
+_ICK=_mbi('<path d="M5 12l4 4 10-10"/>'); _ICX=_mbi('<path d="M12 8v5M12 17h.01"/><circle cx="12" cy="12" r="9"/>'); _ICH=_mbi('<path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/>')
+_hon=('<div class="mt-3">'
+ '<div class="mt-c a"><i>'+_ICK+'</i><h3>What we can say</h3><p>These three frameworks are well-established in couples therapy and have decades of research behind them individually. What we can honestly say is that RelationshipAI&rsquo;s prompts and coaching logic are deliberately built around them, instead of generic &ldquo;be more understanding&rdquo; advice.</p></div>'
+ '<div class="mt-c b"><i>'+_ICX+'</i><h3>What we can&rsquo;t say</h3><p>What we can&rsquo;t honestly say is that talking to an AI about your relationship has itself been clinically studied the way in-person therapy has. It hasn&rsquo;t been, by us or (as far as we know) by anyone else building AI coaching tools yet.</p></div>'
+ '<div class="mt-c c"><i>'+_ICH+'</i><h3>So what is it?</h3><p>RelationshipAI is a tool for thinking more clearly between the moments that matter, not a replacement for a licensed therapist, and we&rsquo;d rather tell you that plainly than let the framework names do more talking than they should.</p></div></div>')
+_head_m=s[:s.index('<body')]
+_head_m=_re.sub(r'<title>.*?</title>','<title>Our Method · RelationshipAI</title>',_head_m,flags=_re.S)
+_head_m=_re.sub(r'<meta name="description"[^>]*/>','<meta name="description" content="The research RelationshipAI&#39;s coaching is grounded in (the Gottman Method, attachment theory, and Nonviolent Communication) with sources, not just name-dropping." />',_head_m)
+_head_m=_re.sub(r'\s*<meta property="og:[^>]*/>','',_head_m); _head_m=_re.sub(r'\s*<meta name="twitter:[^>]*/>','',_head_m)
+_head_m=_re.sub(r'<link rel="canonical"[^>]*/>','<link rel="canonical" href="https://relationshipaiadvice.com/method" />',_head_m)
+_head_m=_re.sub(r'\s*<script type="application/ld\+json">.*?</script>','',_head_m,flags=_re.S).replace('<!--LANG-ALTS--><!--/LANG-ALTS-->','')
+_method=(_head_m+'<body class="hx mt">'+_pb+_nav+'<main>'
+ '<section class="mt-hero"><div class="hx-wrap">'+FLOATS+'<span class="section-tag">Our method</span>'
+ '<h1>Grounded in real research, <em>not just name-dropped</em></h1>'
+ '<p class="mt-lead">A lot of AI relationship apps mention &ldquo;evidence-based frameworks&rdquo; without saying which ones, or citing anything. Here&rsquo;s exactly what RelationshipAI&rsquo;s coaching is built on, and where those ideas actually come from.</p>'
+ '<div class="mt-has">'+_hero_art+'</div></div></section>'
+ '<section class="hx-sec mt-sec"><div class="hx-wrap"><div class="pg-fs">'+_mt_rows+'</div></div></section>'
+ '<section class="hx-sec mt-sec"><div class="hx-wrap"><div class="hx-head hx-reveal"><span class="hx-kicker">Honest by design</span><h2>What this does and doesn&rsquo;t mean</h2></div>'+_hon+'</div></section>'
+ '<section class="hx-sec"><div class="hx-wrap"><div class="hx-final">'+FLOATS+'<h2>See it applied to something you&rsquo;re actually dealing with</h2><p class="sub">Try Coach Chat free, no card required.</p><a href="index.html#join" class="hx-btn" data-umami-event="cta-method-banner">Get early access</a></div></div></section>'
+ '</main>'+_foot+'<script src="js/home.js?v=5"></script></body></html>')
+open('/root/lp/method.html','w').write(_method)
+print('method ok',len(_method))
