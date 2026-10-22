@@ -1879,3 +1879,50 @@ html, body.hx { overflow-x: clip; }
 .bl-body h3 { font-size: 20px; }
 @media (max-width: 1060px) { .bl-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
 @media (max-width: 700px) { .bl-list { grid-template-columns: 1fr; } .bl-sec { padding: 30px 16px 4px; } }
+/* v113 simple about page */
+.about-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; margin-top: 40px; }
+.about-modal .about-body .section-tag { display: inline-flex; padding: 7px 14px; border-radius: 999px; background: #fff3e2; border: 1px solid rgba(59,34,24,.6); font: 800 12.5px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: #3b2218; }
+.about-modal .about-body h2 em { font-style: normal; color: #8a4a30; }
+.about-modal .about-body .about-sign { padding-top: 26px; border-top: 1.5px solid rgba(59,34,24,.25); font-size: 28px; line-height: 1.25; }
+.about-modal .about-tile { box-shadow: 0 6px 0 rgba(59,34,24,.9); }
+.about-modal .about-stamp { box-shadow: 0 3px 0 rgba(59,34,24,.35); }
+@media (max-width: 860px) { .about-modal .about-body .about-sign { font-size: 24px; } .about-modal .about-card { display: grid; } }
+@media (min-width: 861px) {
+  .about-modal .about-card { grid-template-columns: 38% 1fr; background: linear-gradient(90deg, #f7d99a 0, #f7d99a calc(38% - 1.5px), #3b2218 calc(38% - 1.5px), #3b2218 38%, #fffaf2 38%); }
+  .about-modal .about-side { background: transparent; border-right: 0; }
+  .about-modal .about-body { padding-bottom: 72px; }
+}
+
+/* v115 windows follow the page design */
+.fm .about-backdrop, .about-modal .about-backdrop, .fm-scroll, .about-scroll { background: #b78d74; backdrop-filter: none; }
+.fm-wrap, .about-wrap { position: relative; overflow-x: clip; }
+.fm-wrap > .page-bg, .about-wrap > .page-bg { z-index: 0; }
+.fm-card { background: transparent; border: 0; box-shadow: none; position: relative; z-index: 1; animation: fsIn .32s cubic-bezier(.2,.7,.2,1) both; }
+.about-wrap > .about-card, .about-wrap > .fm-site { position: relative; z-index: 1; }
+/* floating pill bar, same as page nav */
+.fm-nav { position: fixed; z-index: 40; top: 12px; left: 0; right: 0; pointer-events: none; }
+.fm-nav .hx-wrap { pointer-events: auto; width: min(1120px, 100% - 24px); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 8px 10px 8px 20px; border-radius: 999px; background: rgba(255,250,240,.82); border: 1px solid rgba(59,34,24,.6); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 12px 24px -14px rgba(59,34,24,.5), 0 2px 6px -2px rgba(59,34,24,.2); }
+.fm-brand { background: none; border: 0; padding: 0; margin: 0; cursor: pointer; color: inherit; font: 600 22px/1 var(--font-display); }
+.fm .fm-nav .about-close, .about-modal .fm-nav .about-close { position: relative; top: auto; right: auto; flex: none; width: 42px; height: 42px; box-shadow: none; }
+/* feature + blog windows: coloured hero panel and cream body panel on the brown page */
+.fm-panel { padding: 0 14px; }
+.fm-panel .pg-hero { margin-top: 88px; padding: 90px 40px 76px; border-radius: 60px; background: var(--tint); border: 1px solid rgba(59,34,24,.55); box-shadow: 0 34px 60px -38px rgba(59,34,24,.55); }
+.fm-body { margin-top: 28px; border-radius: 60px; background: #fff3e2; border: 1px solid rgba(59,34,24,.55); box-shadow: 0 34px 60px -38px rgba(59,34,24,.55); overflow: hidden; padding-bottom: 56px; }
+.fm-body .pg-end { margin-bottom: 0; }
+.fm-panel > .fm-foot { margin-top: 28px; padding-bottom: 8px; color: #3b2218; }
+.fm-panel > .fm-foot p { color: #432719; }
+.fm-site { background: transparent; }
+.fm-site .hx-foot { padding: 28px 0 40px; }
+/* about window */
+.about-modal .about-card { margin: 88px 14px 0; border-radius: 60px; border: 1px solid rgba(59,34,24,.55); box-shadow: 0 34px 60px -38px rgba(59,34,24,.55); overflow: clip; min-height: calc(100vh - 100px); min-height: calc(100dvh - 100px); animation: fsIn .32s cubic-bezier(.2,.7,.2,1) both; }
+@media (min-width: 861px) {
+  .about-modal .about-side { top: 88px; height: calc(100vh - 100px); height: calc(100dvh - 100px); }
+}
+@media (max-width: 860px) {
+  .fm-nav .hx-wrap { padding: 6px 8px 6px 14px; width: calc(100% - 16px); } .fm-brand { font-size: 19px; }
+  .fm-panel { padding: 0 8px; }
+  .fm-panel .pg-hero { margin-top: 78px; padding: 64px 20px 48px; border-radius: 38px; }
+  .fm-body { border-radius: 38px; padding-bottom: 36px; }
+  .about-modal .about-card { margin: 78px 8px 0; border-radius: 38px; min-height: 0; background: #fffaf2; }
+  .about-modal .about-side { position: relative; top: auto; height: auto; padding: 28px 22px; background: #f7d99a; }
+}

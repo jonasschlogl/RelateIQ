@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=112')
+s=s.replace('css/home.css?v=11','css/home.css?v=115')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -247,12 +247,19 @@ s=s[:a]+acc+s[b:]
 
 
 # ---- About the founder
+
+WINBG='<div class="page-bg" aria-hidden="true">'+''.join(f'<span class="pbg" style="top:{t}px;{sd}:{o}%;--s:{sc};--r:{r}deg;--o:{op}">'+clover('','pg')+'</span>' for t,sd,sc,r,o,op in [(160,'left',26,20,-9,0.5),(760,'right',24,10,-9,0.58),(1500,'left',24,-12,-9,0.5),(2250,'right',26,20,-6,0.5),(3000,'left',28,32,-9,0.5),(3800,'right',24,-24,-8,0.5)])+'</div>'
+def _wnav(attr):
+    return ('<div class="fm-nav"><div class="hx-wrap"><button type="button" class="hx-brand fm-brand" aria-label="Close and return to the page" %s><img src="logo-tile.svg" alt="" width="38" height="38" /><span>Relationship<b>AI</b></span></button>'
+            '<button type="button" class="about-close" %s aria-label="Close"></button></div></div>')%(attr,attr)
+def _wrapbody(h):
+    i=h.index('<section'); j=h.index('<div class="fm-foot">')
+    return h[:i]+'<div class="fm-body">'+h[i:j]+'</div>'+h[j:]
 ABOUT_HTML = """
   <div class="about-modal" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
     <div class="about-backdrop" data-close></div>
     <div class="about-scroll">
-      <div class="about-wrap">
-        <button type="button" class="about-close" data-close aria-label="Close"></button>
+      <div class="about-wrap">"""+WINBG+_wnav('data-close')+"""
         <div class="about-card">
           <div class="about-side">
             <div class="about-tile"><svg viewBox="18 18 164 164" aria-hidden="true"><g transform="translate(100 100) rotate(0) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(90) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g><g transform="translate(100 100) rotate(180) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f9e1a8"/></g><g transform="translate(100 100) rotate(270) translate(0 -13) scale(.8) translate(-50 -88)"><path d="M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z" fill="#f6b7c8"/></g></svg></div>
@@ -267,59 +274,12 @@ ABOUT_HTML = """
             <p>The hardest conversations rarely happen at convenient times. They happen late at night, with a message half typed and a mind that will not settle. That is when support is most valuable and least available, and it is the gap RelationshipAI was created to close.</p>
             <p>The results were strong enough that Jonas recognised the same approach could serve everyday people, not only those in therapy or in crisis. Today, RelationshipAI is built for anyone who has ever stared at a message and wondered how to say it right.</p>
             <p class="about-sign">Guided by established couples therapy methods, and clear about where professional support takes over.</p>
+            <div class="about-cta"><a href="#join" class="hx-btn" data-close data-umami-event="cta-about-end">Get early access</a><a href="method.html" class="ab-link" data-umami-event="about-method">Our method <span aria-hidden="true">&rarr;</span></a></div>
           </div>
         </div>
       </div>
     </div>
   </div>"""
-
-HEART_ICON='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>'
-FLOATS='<div class="fl" aria-hidden="true">'+''.join('<span class="f%d">%s</span>'%(k,HEART_ICON) for k in range(1,8))+'</div>'
-_TILE=re.search(r'<div class="about-tile">.*?</div>',ABOUT_HTML,re.S).group(0)
-_STARS=''.join('<i class="s%d"></i>'%k for k in range(1,8))
-_MOON='<svg class="ab-moon" viewBox="0 0 120 120" aria-hidden="true"><path d="M82 14a50 50 0 1 0 24 70A42 42 0 0 1 82 14z" fill="#f7d99a" stroke="#3b2218" stroke-width="3" stroke-linejoin="round"/><circle cx="48" cy="58" r="5" fill="#f8c7a3"/><circle cx="62" cy="82" r="3.5" fill="#f8c7a3"/></svg>'
-_IC_CLOCK='<svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="42" r="26" fill="#f7d99a" stroke="#3b2218" stroke-width="3"/><path d="M40 27v16l11 7" fill="none" stroke="#3b2218" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 12l-8 8M54 12l8 8" stroke="#3b2218" stroke-width="3.5" stroke-linecap="round"/><circle cx="14" cy="60" r="3" fill="#f4b8c4"/><circle cx="68" cy="22" r="3" fill="#f8c7a3"/></svg>'
-_IC_HEART='<svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 66S14 50 14 31c0-9 7-15 15-15 5 0 9 3 11 7 2-4 6-7 11-7 8 0 15 6 15 15 0 19-26 35-26 35z" fill="#f4b8c4" stroke="#3b2218" stroke-width="3" stroke-linejoin="round"/><circle cx="58" cy="58" r="11" fill="#fff3e2" stroke="#3b2218" stroke-width="3"/><path d="M66 66l8 8" stroke="#3b2218" stroke-width="4" stroke-linecap="round"/></svg>'
-_IC_TALK='<svg viewBox="0 0 80 80" aria-hidden="true"><path d="M14 18h40a8 8 0 0 1 8 8v18a8 8 0 0 1-8 8H34l-12 10V52h-8a8 8 0 0 1-8-8V26a8 8 0 0 1 8-8z" transform="translate(2 -2)" fill="#f8c7a3" stroke="#3b2218" stroke-width="3" stroke-linejoin="round"/><path d="M26 34h28M26 42h16" stroke="#3b2218" stroke-width="3.5" stroke-linecap="round"/><circle cx="66" cy="62" r="3" fill="#f7d99a"/></svg>'
-ABOUT_HTML = ("""
-  <div class="about-modal" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
-    <div class="about-backdrop" data-close></div>
-    <div class="about-scroll">
-      <div class="about-wrap">
-        <button type="button" class="about-close" data-close aria-label="Close"></button>
-        <div class="about-card ab">
-          <div class="ab-hero">"""+FLOATS+"""
-            <span class="fm-kick"><b>Our story</b><span>From Jonas, founder</span></span>
-            <h2 id="about-title">Built for the <em>2am moment.</em></h2>
-            <p class="fm-sub">A calm, structured second perspective, there at the hour when the hardest conversations actually happen.</p>
-            <div class="ab-night" aria-hidden="true"><div class="ab-sky">"""+_STARS+_MOON+"""</div>
-              <div class="ab-phone"><span class="ab-stamp">2:07 AM &middot; still awake</span>
-                <div class="ab-typing"><i></i><i></i><i></i></div>
-                <div class="ab-input"><span>I just think that you never</span><u></u></div></div></div>
-          </div>
-          <section class="ab-sec ab-rows">
-            <div class="ab-row rv"><div class="ab-t"><span class="ab-n">01</span><h3>It started with his own relationship</h3>
-              <p>RelationshipAI was founded by Jonas, who saw first-hand how much a calm, structured second perspective could improve his own relationship. Not by supplying ready-made answers, but by slowing the moment down, clarifying what he was actually feeling, and finding words that would not make things worse.</p></div>
-              <div class="ab-a"><div class="ab-founder">"""+_TILE+"""<b>Jonas</b><span>Founder, RelationshipAI</span></div></div></div>
-            <div class="ab-row rv"><div class="ab-t"><span class="ab-n">02</span><h3>The hardest talks happen at night</h3>
-              <p>The hardest conversations rarely happen at convenient times. They happen late at night, with a message half typed and a mind that will not settle. That is when support is most valuable and least available, and it is the gap RelationshipAI was created to close.</p></div>
-              <div class="ab-a"><div class="ab-gap"><div class="ab-g1"><span>Daytime</span><em>Help is easy to find</em></div><div class="ab-g2"><span>2 AM</span><em>The message is half typed</em></div></div></div></div>
-            <div class="ab-row rv"><div class="ab-t"><span class="ab-n">03</span><h3>Now it is built for everyone</h3>
-              <p>The results were strong enough that Jonas recognised the same approach could serve everyday people, not only those in therapy or in crisis. Today, RelationshipAI is built for anyone who has ever stared at a message and wondered how to say it right.</p></div>
-              <div class="ab-a"><div class="ab-any"><span>In therapy</span><span>Not in therapy</span><span>Just curious</span><span>Stuck on one message</span></div></div></div>
-          </section>
-          <section class="ab-sec ab-help"><h3 class="rv">What the approach does</h3>
-            <div class="ab-3">
-              <div class="ab-i rv"><div class="ab-ic">"""+_IC_CLOCK+"""</div><h4>Slows the moment down</h4><p>A pause before you send, so the late-night version of you does not decide alone.</p></div>
-              <div class="ab-i rv"><div class="ab-ic">"""+_IC_HEART+"""</div><h4>Clarifies what you feel</h4><p>Gets from &ldquo;I am upset&rdquo; to what is actually going on underneath.</p></div>
-              <div class="ab-i rv"><div class="ab-ic">"""+_IC_TALK+"""</div><h4>Finds words that help</h4><p>Wording that says what you mean without making things worse.</p></div>
-            </div></section>
-          <section class="ab-sec ab-honest rv"><div><b>Our promise</b><h3>Guided by established couples therapy methods, and clear about where professional support takes over.</h3></div><a href="method.html" class="ab-link" data-umami-event="about-method">Read our method <span aria-hidden="true">&rarr;</span></a></section>
-          <div class="pg-end ab-end">"""+FLOATS+"""<h3>Try it the next time a message will not settle.</h3><div class="fm-cta"><a href="#join" class="hx-btn" data-close data-umami-event="cta-about-end">Get early access</a><span class="hx-free">Free to try</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>""")
 FOOT_HTML = """<footer class="hx-foot">
     <div class="hx-wrap">
       <div class="ft-band"><b>Inspired by</b><span>The Gottman Method</span><span>Attachment theory</span><span>Nonviolent Communication</span></div>
@@ -372,7 +332,7 @@ def _fsite():
     f=re.sub(r'<a href="(#(?!about|learn)[^"]*)"',lambda m:'<a href="%s" data-fclose'%m.group(1),f)
     return '<div class="fm-site">'+f+'</div>'
 FSITE=_fsite()
-_tail='\n        </div>\n      </div>\n    </div>\n  </div>'
+_tail='\n      </div>\n    </div>\n  </div>'
 assert ABOUT_HTML.endswith(_tail)
 ABOUT_HTML=ABOUT_HTML[:-len(_tail)]+FSITE+_tail
 ABOUT_JS = """<script>(function(){var m=document.getElementById('about');if(!m)return;var last=null,io=null,sc=m.querySelector('.about-scroll');
@@ -835,8 +795,8 @@ def _panel_blog(i,t):
      '<div class="bl-cta"><div><h3>Want help in the moment?</h3><p>Ask the coach what to say, check a message before you send it or practise a hard talk.</p></div><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-blog-%s">Get early access</a></div></section>'%key+
      '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p><a class="fm-next bl-all" href="/blog/">All articles <span aria-hidden="true">&rarr;</span></a></div></article>')
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
- '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
- '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+_panel_more()+''.join(_panel_blog(i,t) for i,t in enumerate(BTOPICS))+FSITE+'</div></div></div></div>')
+ '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap">'+WINBG+_wnav('data-fclose')+
+ '<div class="fm-card">'+''.join(_wrapbody(_panel(i,f)) for i,f in enumerate(FEATS))+_wrapbody(_panel_more())+''.join(_wrapbody(_panel_blog(i,t)) for i,t in enumerate(BTOPICS))+FSITE+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
 function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id;[].forEach.call(p.querySelectorAll('.bl-x'),function(x){x.hidden=true});var b=p.querySelector('.bl-sm');if(b)b.hidden=false});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
 function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
