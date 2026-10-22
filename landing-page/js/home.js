@@ -238,3 +238,37 @@
     });
   });
 })();
+
+// page motion: staggered groups, parallax, scroll progress (decorative only)
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+  var root = document.documentElement;
+  // scroll progress bar
+  var bar = document.createElement("div"); bar.className = "sp"; bar.setAttribute("aria-hidden", "true"); document.body.appendChild(bar);
+  var tick = false;
+  function frame() {
+    tick = false;
+    var y = window.scrollY || 0, h = Math.max(1, root.scrollHeight - window.innerHeight);
+    root.style.setProperty("--sy", y.toFixed(0));
+    bar.style.transform = "scaleX(" + Math.min(1, y / h).toFixed(4) + ")";
+  }
+  window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });
+  frame();
+  // staggered children when a group scrolls into view
+  var groups = [".more-grid", ".trust-row", ".pricing-grid", ".post-grid", ".faq", ".tool-cards", ".pricing-assurances", ".more-also"];
+  var els = [];
+  groups.forEach(function (g) {
+    [].forEach.call(document.querySelectorAll(g), function (c) {
+      [].forEach.call(c.children, function (k, i) { k.classList.add("stg"); k.style.setProperty("--i", i); });
+      els.push(c);
+    });
+  });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("stg-in"); io.unobserve(x.target); } });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+    els.forEach(function (e) { io.observe(e); });
+  } else { els.forEach(function (e) { e.classList.add("stg-in"); }); }
+})();

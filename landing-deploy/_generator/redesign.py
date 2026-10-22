@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=94')
+s=s.replace('css/home.css?v=11','css/home.css?v=96')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -601,32 +601,31 @@ ART={
    SAT('<small>Uses</small><span>Profile, memory, Playbook</span>','s2'),''),
  ],
 }
-HEART='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>'
-FLOATS='<div class="fl" aria-hidden="true">'+''.join('<span class="f%d">%s</span>'%(k,HEART) for k in range(1,8))+'</div>'
+HEART_ICON='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>'
+FLOATS='<div class="fl" aria-hidden="true">'+''.join('<span class="f%d">%s</span>'%(k,HEART_ICON) for k in range(1,8))+'</div>'
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
     art=ART[f['id']]
-    hero=''.join('<div class="pg-card c%d">%s</div>'%(k+1,art[k][0]) for k in range(3))
-    tri=''.join('<div class="pg-i"><span class="pg-ic">%s</span><h4>%s</h4><p>%s</p></div>'%(h[0],h[1],h[2]) for h in f['helps'])
-    feats=''
+    btns='';exs='';caps=''
     for n,c in enumerate(f['caps']):
-        cta=('<a href="#join" class="hx-btn pg-btn" data-fclose data-umami-event="cta-feature-%s-%d">Get early access</a>'%(f['id'],n)) if n%3==0 else ''
-        feats+=('<div class="pg-f"><div class="pg-ft"><span class="pg-n">%02d</span><h4>%s%s</h4><p>%s</p>%s</div><div class="pg-fa"><span class="dc d1"></span><span class="dc d2"></span><span class="dc d3"></span><div class="ex">%s</div></div></div>'
-                %(n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2],cta,art[n][0]+art[n][1]))
+        plan=('<em class="fm-plan">%s</em>'%c[3]) if c[3] else ''
+        on=' on' if n==0 else ''
+        btns+=('<button type="button" class="tb-b%s" role="tab" aria-selected="%s" data-i="%d"><span class="tb-i">%s</span><span class="tb-t"><b>%s%s</b><span class="tb-d"><span>%s</span></span></span></button>'
+               %(on,'true' if n==0 else 'false',n,c[0],c[1],plan,c[2]))
+        exs+='<div class="tb-ex%s" data-i="%d"><div class="ex">%s</div></div>'%(on,n,art[n][0]+art[n][1])
+        caps+='<div class="tb-cap%s" data-i="%d"><h4>%s%s</h4><p>%s</p></div>'%(on,n,c[1],plan,c[2])
     meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
     return ('<article class="fm-panel pg" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
      '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div>'
-     '<div class="pg-stage">%s</div></div>'
-     '<section class="pg-sec pg-help"><h3>%s</h3><p class="pg-lead">%s</p><div class="pg-3">%s</div></section>'
-     '<section class="pg-sec pg-all"><h3>%s</h3><div class="pg-fs">%s</div>%s</section>'
-     '<section class="pg-sec pg-good"><h3>Made for moments like these</h3><ul class="fm-good">%s</ul></section>'
-     '<div class="pg-end">'+FLOATS+'<h3>%s</h3><p>%s</p><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
+     '<p class="pg-goal"><b>%s</b></p></div>'
+     '<section class="pg-sec pg-tabs"><h3>%s</h3><div class="tbx"><div class="tb-list" role="tablist">%s</div><div class="tb-stage" data-i="0"><span class="dc d1"></span><span class="dc d2"></span><span class="dc d3"></span>%s</div><div class="tb-caps">%s</div></div>%s</section>'
+     '<section class="pg-sec pg-good"><h3>Good for</h3><ul class="fm-good">%s</ul></section>'
+     '<div class="pg-end">'+FLOATS+'<h3>%s</h3><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
-     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],hero,
-        f['goalh'],f['goal'],tri,f['capsh'],feats,meth,good,PGEND[f['id']][0],PGEND[f['id']][1],f['id'],f['avail'],nxt['id'],nxt['tag'])
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['goalh'],f['capsh'],btns,exs,caps,meth,good,PGEND[f['id']][0],f['id'],f['avail'],nxt['id'],nxt['tag'])
 PGEND={'practice':('Have the talk twice. Once here, once for real.','Rehearse with an AI that answers like your partner, get honest feedback, and walk in ready.'),
  'coach':('Someone to think it through with, any hour.','Honest, remembers your story, and always ends with one small next step.'),
  'message':('Know how it lands before you hit send.','Paste a draft, see the risk, and send the version you actually mean.')}
@@ -634,10 +633,12 @@ FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-labe
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
  '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
-function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
+function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
+function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
+[].forEach.call(p.querySelectorAll('.tb-ex,.tb-cap'),function(x){x.classList.toggle('on',+x.getAttribute('data-i')===i)});var st=p.querySelector('.tb-stage');if(st)st.setAttribute('data-i',i)}
 var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
 function arm(){if(io)io.disconnect();var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
-var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.pg-lead,.pg-i,.pg-ft,.pg-fa,.pg-good li,.pg-end h3,.pg-end>p,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
+var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
 T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*50)+'ms'});
 io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{root:sc0,threshold:.12,rootMargin:'0px 0px -6% 0px'});
 T.forEach(function(e){io.observe(e)});par()}
@@ -646,6 +647,7 @@ if(sc0)sc0.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimation
 function open(id){if(m.hidden)last=document.activeElement;show(id);m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();history.replaceState(null,'','#learn-'+id)}
 function close(){m.hidden=true;document.body.classList.remove('about-open');if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search);if(last&&last.focus)last.focus()}
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
+var tb=t.closest('.tb-b');if(tb){e.preventDefault();pick(tb.closest('.fm-panel'),+tb.getAttribute('data-i'));return}
 var n=t.closest('.fm-next');if(n){show(n.getAttribute('data-go'));history.replaceState(null,'','#learn-'+cur);return}
 if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');close();if(!link)return}},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
@@ -653,6 +655,11 @@ var h=location.hash.match(/^#learn-(practice|message|coach)$/);if(h)open(h[1]);}
 
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
+
+# ---- page-wide motion: floating hearts in hero and final card
+s=s.replace('<section class="hx-hero">','<section class="hx-hero">'+FLOATS,1)
+s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+FLOATS,1)
+s=s.replace('js/home.js?v=4','js/home.js?v=5')
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
