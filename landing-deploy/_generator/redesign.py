@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=128')
+s=s.replace('css/home.css?v=11','css/home.css?v=131')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -232,7 +232,13 @@ function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
 function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
-function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.getElementById('approach');if(t&&t.classList.contains('acc-closed')&&window.matchMedia('(max-width:760px)').matches){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-(window.matchMedia('(max-width:760px)').matches?96:150),behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){{gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}}locked=false;gate.innerHTML='<span class="gate-ok"><i aria-hidden="true"></i>All three seen</span>';setTimeout(unveil,520)}}
+function unveil(){{var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}
+var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY;if(!calm)B.classList.add('unveil');
+var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){{stop=true}}['wheel','touchstart','keydown','mousedown'].forEach(function(e){{addEventListener(e,halt,{{once:true,passive:true}})}});
+function tick(n){{if(stop)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/d),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;window.scrollTo({{top:from+(y-from)*e,behavior:'instant'}});if(p<1)requestAnimationFrame(tick)}}
+if(calm)window.scrollTo({{top:y,behavior:'instant'}});else requestAnimationFrame(function(){{requestAnimationFrame(tick)}});
+setTimeout(function(){{B.classList.remove('unveil');gate.innerHTML=''}},d+900)}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){{free();return}}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
@@ -850,7 +856,8 @@ XM='''<div class="xm-row"><p><b>Nine more small tools</b> for after the chat end
 _a=s.index('<section class="hx-sec" id="more">'); _b=s.index('</section>',_a)+len('</section>')
 s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
-s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
+PBFIT_JS = """<script>(function(){var pb=document.querySelector('body > .page-bg'),f=document.querySelector('body > footer.hx-foot');if(!pb||!f)return;function fit(){pb.style.bottom='auto';pb.style.height=Math.max(0,f.getBoundingClientRect().top+window.scrollY)+'px'}fit();addEventListener('load',fit);addEventListener('resize',fit);if(window.ResizeObserver)new ResizeObserver(fit).observe(document.body);setTimeout(fit,600);setTimeout(fit,2000)})();(function(){[].forEach.call(document.querySelectorAll('.fm-wrap,.about-wrap'),function(w){var pb=w.querySelector(':scope > .page-bg'),site=w.querySelector('.fm-site');if(!pb||!site)return;function fit(){var h=site.getBoundingClientRect().top-w.getBoundingClientRect().top;if(h>0){pb.style.bottom='auto';pb.style.height=h+'px'}}if(window.ResizeObserver)new ResizeObserver(fit).observe(w);fit()})})();</script>"""
+s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS+PBFIT_JS,1)
 
 # ---- nav: add "Our approach" link
 s=_re.sub(r'(<a href="#tools">Features</a>\s*)(<a href="#pricing">Pricing</a>)',lambda m:m.group(1)+'<a href="#approach" data-nogate>Our approach</a>\n        '+m.group(2),s,count=1)

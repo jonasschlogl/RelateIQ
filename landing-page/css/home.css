@@ -2043,3 +2043,18 @@ body.hx > header.hx-nav { position: fixed; z-index: 60; }
   #blog .post-thumb { display: block; aspect-ratio: 1200 / 630; margin: 0 0 8px; border-radius: 0; border-bottom: 1px solid rgba(59,34,24,.55); background: #f3d9c3; }
   #blog .post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
+/* v129 page clovers fade out before the footer (height is fitted by script) */
+body.hx > .page-bg { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent); }
+.fm-wrap > .page-bg, .about-wrap > .page-bg { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent); }
+/* v131 after the third card: pill pops in, then the next band rises while the page glides down */
+.gate-ok { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 10px; border-radius: 999px; background: #fff3e2; border: 1px solid rgba(59,34,24,.7); box-shadow: 0 10px 22px -12px rgba(59,34,24,.55); font-weight: 700; animation: gateOk .55s cubic-bezier(.2,1.4,.4,1) both; }
+.gate-ok i { position: relative; display: inline-block; width: 24px; height: 24px; border-radius: 50%; background: #f7d99a; border: 1px solid rgba(59,34,24,.7); }
+.gate-ok i::after { content: ""; position: absolute; left: 7px; top: 4px; width: 6px; height: 11px; border: solid #3b2218; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+@keyframes gateOk { from { opacity: 0; transform: translateY(8px) scale(.85); } to { opacity: 1; transform: none; } }
+body.unveil #approach { animation: apRise 1.05s cubic-bezier(.16,.84,.3,1) both; }
+body.unveil #approach .apr-head, body.unveil #approach .apr-pt, body.unveil #approach .apr-meth { animation: apIn .8s cubic-bezier(.2,.8,.2,1) both; }
+body.unveil #approach .apr-pt:nth-child(1) { animation-delay: .25s; } body.unveil #approach .apr-pt:nth-child(2) { animation-delay: .38s; } body.unveil #approach .apr-pt:nth-child(3) { animation-delay: .51s; }
+body.unveil #approach .apr-head { animation-delay: .12s; } body.unveil #approach .apr-meth { animation-delay: .65s; }
+@keyframes apRise { from { opacity: 0; transform: translateY(140px); } 40% { opacity: 1; } to { opacity: 1; transform: none; } }
+@keyframes apIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .gate-ok { animation: none; } }
