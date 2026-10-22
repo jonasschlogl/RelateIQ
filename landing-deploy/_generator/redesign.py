@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=86')
+s=s.replace('css/home.css?v=11','css/home.css?v=89')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -405,7 +405,7 @@ FEATS=[
          ('Pick a version','<div class="fm-note"><small>Calmer</small>I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?</div>')],
   avail='Free: 3 tries. Pro: 10 a day, with two rewrites each.'),
  dict(id='coach',tag='Coach Chat',when='When it hurts',tint='#f4b8c4',
-  h='A coach that <em>already knows</em> your story.',
+  h='A couples coach that <em>gets the whole picture.</em>',
   sub='Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',
   phone=PH_COACH,
   goalh='The goal: understand what is going on and decide what to say, instead of spiralling.',
@@ -419,10 +419,82 @@ FEATS=[
          ('Take one thing with you','<div class="fm-note"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>')],
   avail='Free: 8 messages a day, with memory of your chats.'),
 ]
+
+# ---- richer content: everything each feature can do (taken from how the app actually works)
+I_MEM=_ico('<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>')
+I_PEOPLE=_ico('<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6.3 4.5 2.4 4.5 5.3"/>')
+I_BOOK=_ico('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20"/>')
+I_LIST=_ico('<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/>')
+I_BELL=_ico('<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/>')
+I_IMG=_ico('<rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-4.5 4 3.5 3-2.5 4 3.5"/>')
+I_MIC=_ico('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/>')
+I_DOC=_ico('<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>')
+I_Q=_ico('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.6 2.4c-.8.4-1.1.9-1.1 1.8M12 17h.01"/>')
+I_SCALE=_ico('<path d="M12 4v16M6 20h12M5 8h14"/><path d="M5 8l-3 6a3 3 0 0 0 6 0zM19 8l-3 6a3 3 0 0 0 6 0z"/>')
+I_GAUGE=_ico('<path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/>')
+I_FLAME=_ico('<path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .3 1.4 1 2 2 2-.5-3 .5-5 1-8z"/>')
+I_LOCK=_ico('<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>')
+I_PAUSE=_ico('<circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/>')
+I_QUOTE=_ico('<path d="M5 6h6v6H8c0 2 1 3 3 3M13 6h6v6h-3c0 2 1 3 3 3"/>')
+I_TREND=_ico('<path d="M3 17l6-6 4 4 7-8"/><path d="M15 7h5v5"/>')
+I_PEN=_ico('<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>')
+I_CHECKLIST=_ico('<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/>')
+X={}
+X['practice']=dict(
+ sub='An AI plays your partner, in character, so you can rehearse the hard conversation, get a debrief and a readiness score, and walk in knowing how it can go.',
+ goalh='The goal: walk into the real talk having already had it once.',
+ goal='Hard conversations go wrong in the first sentence, and you rarely get a second try. Partner Practice gives you the second try first: an AI that answers like the real person, honest feedback on what you said, and a clear sense of when you are ready.',
+ capsh='Everything Partner Practice does',
+ caps=[(I_PEOPLE,'Plays your partner, in character','Create a profile with their name, personality and the context. The AI answers as they would, so the pushback feels real.',''),
+  (I_MEM,'Learns who they are from your chats','It builds a picture of your partner from your past Coach Chat conversations: traits, communication patterns, how they tend to react.',''),
+  (I_QUOTE,'Learns from their real words','Paste messages they have actually sent. It picks up how they phrase things and rehearses in that voice.',''),
+  (I_LIST,'A debrief after every rehearsal','What went well, what to watch for, and one concrete tip for the real conversation.',''),
+  (I_GAUGE,'A readiness score, 1 to 10','One honest number for how ready you seem, so you know when to keep practising and when you are set.',''),
+  (I_PEN,'A talk plan before you start','An opening line, what to avoid and how to respond if it heats up, linked to your rehearsal.','Premium'),
+  (I_FLAME,'Hard mode','Turn up the pushback: defensive, cold or angry reactions, so the real talk feels easier.','Premium'),
+  (I_TREND,'See your progress','How your readiness changes across rehearsals with the same person.','Premium'),
+  (I_PEOPLE,'Practise with anyone','Partner, ex, parent or boss. Save more than one profile. Any language.','Pro')],
+ steps=[('Set up the person','<div class="fm-note"><small>Who</small>Alex, my partner. Gets defensive when criticised.</div><div class="fm-note alt"><small>Optional</small>Paste messages Alex really sent</div>'),
+        ('Rehearse the talk','<div class="fm-b me">I miss you. Could we keep Thursday evenings for us?</div><div class="fm-b ai">I&rsquo;d like that. I didn&rsquo;t realise it felt that way.</div>'),
+        ('Get the debrief','<div class="fm-note"><small>Went well</small>You started with a feeling, not blame.</div><div class="fm-note alt"><small>Readiness</small>8 / 10. Add what you will offer too.</div>')])
+X['coach']=dict(
+ sub='Talk it through at any hour with a coach that asks the right questions, remembers your story, tells you the honest part, and ends with a plan you can follow.',
+ goalh='The goal: see your situation clearly, then know what to do next.',
+ goal='Coach Chat works like a thoughtful, honest couples coach. It first learns what is really going on, then names what keeps happening, then helps you decide and plan. Spotting patterns is only one part of it.',
+ capsh='Everything Coach Chat does',
+ caps=[(I_Q,'Asks before it advises','One to three specific questions first, so the advice fits your situation and not a generic couple.',''),
+  (I_LOOP,'Names the pattern','Spots cycles like pursue and withdraw, gives them a plain name and reuses it, so you can see it next time.',''),
+  (I_MEM,'Remembers you and your partner','Keeps context across chats and builds a picture of your partner, so you never start from zero.',''),
+  (I_SCALE,'Honest, not a yes-machine','It does not just agree. It considers what your partner would say, and kindly names your share.',''),
+  (I_BOOK,'Draws on real couples methods','Gottman, Emotionally Focused Therapy, CBT, nonviolent communication, Imago and more, blended to fit you.',''),
+  (I_CHECKLIST,'Plans, not just comfort','Concrete pieces of work: a weekly relationship talk, a time-out agreement, a listening exercise, with when and how.',''),
+  (I_BELL,'Try-this cards that follow up','Save a suggestion as an experiment. Two days later it asks how it went and adjusts the next step.',''),
+  (I_IMG,'Reads screenshots, hears your voice','Add photos or screenshots of the real conversation, or dictate. It replies in the language you write in.',''),
+  (I_DOC,'A summary for your therapist','Turn a chat into a one-page summary to print or bring to your own therapist.','')],
+ methods=['Gottman Method','Emotionally Focused Therapy','CBT for couples','Nonviolent Communication','Imago dialogue','Solution-focused work','Narrative work','Acceptance and commitment','Attachment theory'],
+ steps=[('It asks','<div class="fm-b me">He went quiet again after I asked about the trip.</div><div class="fm-b ai">What usually happens in the minutes after that?</div>'),
+        ('It names the pattern','<div class="fm-mem">Pattern &middot; you ask, he withdraws, you ask again</div><div class="fm-note"><small>Plain name</small>The chase and retreat cycle</div>'),
+        ('It builds a plan','<div class="fm-note"><small>Try this</small>Ask for a time, not an answer: &ldquo;Can we talk Sunday at 8?&rdquo;</div><div class="fm-note alt"><small>In 2 days</small>It checks how it went</div>')])
+X['message']=dict(
+ sub='Paste a message before you send it. See how it will land, which exact words could backfire, and get versions you can send as they are.',
+ goalh='The goal: stop a text from starting a fight you did not mean to start.',
+ goal='Short messages lose their tone. &ldquo;Fine. Do whatever you want.&rdquo; can read as cold or as hurt, and the other person will pick one. Message check shows how a draft may read, points at the risky words, and gives you versions that say what you actually mean.',
+ capsh='Everything Message check does',
+ caps=[(I_EYE,'Tells you how it will land','A plain-language read of how your message is likely to come across, with a risk level: low, medium or high.',''),
+  (I_QUOTE,'Points at the exact words','Quotes the phrases in your draft that could backfire, with a short reason for each.',''),
+  (I_SPARK,'Versions you can send as they are','Calmer, warmer or more direct, in your own voice and language. It keeps your point and drops the blame.',''),
+  (I_CHAT,'Add context if you want','Include what they wrote first, or some background, for a read that fits the situation.',''),
+  (I_LOCK,'What you paste is not stored','Only a usage counter is kept. The text of your draft is not saved.',''),
+  (I_PEOPLE,'Tailored to your partner','Uses your partner profile, memory and Playbook, with more rewrites on our most advanced model.','Premium')],
+ steps=[('Paste your draft','<div class="fm-b me">Fine. Do whatever you want.</div><div class="fm-note alt"><small>Optional context</small>They booked the trip without asking me.</div>'),
+        ('See the read','<div class="fm-note pk"><small>Risk: high</small>Reads as cold. &ldquo;Whatever you want&rdquo; invites a fight.</div>'),
+        ('Pick a version','<div class="fm-note"><small>Calmer</small>I&rsquo;m upset you decided without me. Can we talk tonight?</div>')])
+for f in FEATS: f.update(X[f['id']])
 FEATS=[FEATS[0],FEATS[2],FEATS[1]]
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
-    helps=''.join('<div class="fm-hi"><span class="fm-ic">%s</span><h4>%s</h4><p>%s</p></div>'%h for h in f['helps'])
+    helps=''.join('<div class="fm-cap"><span class="fm-ic">%s</span><div><h4>%s%s</h4><p>%s</p></div></div>'%(c[0],c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2]) for c in f['caps'])
+    meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
     steps=''.join('<div class="fm-step"><span class="fm-sn">%d</span><h4>%s</h4><div class="fm-snip">%s</div></div>'%(n+1,t,html) for n,(t,html) in enumerate(f['steps']))
     return ('<article class="fm-panel" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
@@ -430,13 +502,13 @@ def _panel(i,f):
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div></div>'
      '<div class="fm-art"><div class="hph fm-phone"><div class="hph-frame"><i class="hph-notch"></i><div class="hph-scr">%s</div></div></div></div></div>'
      '<div class="fm-sec fm-goal"><h3>%s</h3><p>%s</p></div>'
-     '<div class="fm-sec"><h3 class="fm-h">How it helps</h3><div class="fm-helps">%s</div></div>'
+     '<div class="fm-sec"><h3 class="fm-h">%s</h3><div class="fm-caps">%s</div>%s</div>'
      '<div class="fm-sec fm-goodwrap"><h3 class="fm-h">Good for</h3><ul class="fm-good">%s</ul></div>'
-     '<div class="fm-sec"><h3 class="fm-h">How it works</h3><div class="fm-steps">%s</div></div>'
+     '<div class="fm-sec"><h3 class="fm-h">How it goes</h3><div class="fm-steps">%s</div></div>'
      '<div class="fm-avail"><b>What you get</b><span>%s</span></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
-     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['phone'],f['goalh'],f['goal'],helps,good,steps,f['avail'],nxt['id'],nxt['tag'])
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['phone'],f['goalh'],f['goal'],f['capsh'],helps,meth,good,steps,f['avail'],nxt['id'],nxt['tag'])
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
  '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')

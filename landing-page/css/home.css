@@ -1195,3 +1195,17 @@ html, body.hx { overflow-x: clip; }
   .fm-sub { font-size: 16.5px; }
 }
 .fm-hero h2 em { color: #8a4a30; }
+
+/* v87: capabilities grid in feature windows */
+.fm-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.fm-cap { display: flex; gap: 14px; align-items: flex-start; padding: 20px 20px 22px; border-radius: 26px; background: #fffaf2; border: 1px solid rgba(59,34,24,.22); }
+.fm-cap .fm-ic { flex: none; width: 46px; height: 46px; margin: 0; }
+.fm-cap .fm-ic svg { width: 23px; height: 23px; }
+.fm-cap h4 { margin: 0 0 6px; font: 700 18px/1.2 var(--font-display); letter-spacing: -.01em; }
+.fm-cap p { font-size: 15px; line-height: 1.5; color: #432719; }
+.fm-plan { display: inline-block; margin-left: 8px; padding: 2px 9px; border-radius: 999px; background: #3b2218; color: #fff3e2; font: 800 10px var(--font-body); font-style: normal; letter-spacing: .06em; text-transform: uppercase; vertical-align: 2px; }
+.fm-meth { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-top: 22px; }
+.fm-meth b { margin-right: 6px; font: 800 11px var(--font-body); letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+.fm-meth span { padding: 8px 14px; border-radius: 999px; background: #3b2218; color: #fff3e2; font: 600 14px var(--font-body); }
+@media (max-width: 1000px) { .fm-caps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .fm-caps { grid-template-columns: 1fr; gap: 10px; } .fm-cap { padding: 16px 16px 18px; border-radius: 22px; } .fm-meth span { font-size: 13px; padding: 7px 12px; } }
