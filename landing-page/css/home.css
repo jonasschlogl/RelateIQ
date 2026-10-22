@@ -1928,3 +1928,4 @@ html, body.hx { overflow-x: clip; }
 }
 .ft-soc { display: flex; align-items: center; gap: 16px; }
 .ft-soc .ft-pin svg { width: 24px; height: 24px; }
+body.hx > header.hx-nav { position: fixed; z-index: 60; }
