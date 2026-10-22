@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=92')
+s=s.replace('css/home.css?v=11','css/home.css?v=93')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -548,22 +548,31 @@ ART={
 FEATS=[FEATS[0],FEATS[2],FEATS[1]]
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
-    helps=''.join('<div class="fm-row"><div class="fm-rart"><div class="u">%s</div></div><div class="fm-rtxt"><span class="fm-rn">%02d</span><h4>%s%s</h4><p>%s</p></div></div>'%(ART[f['id']][n],n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2]) for n,c in enumerate(f['caps']))
+    art=ART[f['id']]
+    hero=''.join('<div class="pg-card c%d"><div class="u">%s</div></div>'%(k+1,art[k]) for k in range(3))
+    tri=''.join('<div class="pg-i"><span class="pg-ic">%s</span><h4>%s</h4><p>%s</p></div>'%(h[0],h[1],h[2]) for h in f['helps'])
+    feats=''
+    for n,c in enumerate(f['caps']):
+        cta=('<a href="#join" class="hx-btn pg-btn" data-fclose data-umami-event="cta-feature-%s-%d">Get early access</a>'%(f['id'],n)) if n%3==0 else ''
+        feats+=('<div class="pg-f"><div class="pg-ft"><span class="pg-n">%02d</span><h4>%s%s</h4><p>%s</p>%s</div><div class="pg-fa"><div class="u">%s</div></div></div>'
+                %(n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2],cta,art[n]))
     meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
-    steps=''.join('<div class="fm-step"><span class="fm-sn">%d</span><h4>%s</h4><div class="fm-snip">%s</div></div>'%(n+1,t,html) for n,(t,html) in enumerate(f['steps']))
-    return ('<article class="fm-panel" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
-     '<div class="fm-hero"><div class="fm-copy"><span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
-     '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div></div>'
-     '<div class="fm-art"><div class="hph fm-phone"><div class="hph-frame"><i class="hph-notch"></i><div class="hph-scr">%s</div></div></div></div></div>'
-     '<div class="fm-sec fm-goal"><h3>%s</h3><p>%s</p></div>'
-     '<div class="fm-sec"><h3 class="fm-h">%s</h3><div class="fm-rows">%s</div>%s</div>'
-     '<div class="fm-sec fm-goodwrap"><h3 class="fm-h">Good for</h3><ul class="fm-good">%s</ul></div>'
-     '<div class="fm-sec"><h3 class="fm-h">How it goes</h3><div class="fm-steps">%s</div></div>'
-     '<div class="fm-avail"><b>What you get</b><span>%s</span></div>'
+    return ('<article class="fm-panel pg" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
+     '<div class="pg-hero"><span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
+     '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div>'
+     '<div class="pg-stage">%s</div></div>'
+     '<section class="pg-sec pg-help"><h3>%s</h3><p class="pg-lead">%s</p><div class="pg-3">%s</div></section>'
+     '<section class="pg-sec pg-all"><h3>%s</h3><div class="pg-fs">%s</div>%s</section>'
+     '<section class="pg-sec pg-good"><h3>Made for moments like these</h3><ul class="fm-good">%s</ul></section>'
+     '<div class="pg-end"><h3>%s</h3><p>%s</p><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
-     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['phone'],f['goalh'],f['goal'],f['capsh'],helps,meth,good,steps,f['avail'],nxt['id'],nxt['tag'])
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],hero,
+        f['goalh'],f['goal'],tri,f['capsh'],feats,meth,good,PGEND[f['id']][0],PGEND[f['id']][1],f['id'],f['avail'],nxt['id'],nxt['tag'])
+PGEND={'practice':('Have the talk twice. Once here, once for real.','Rehearse with an AI that answers like your partner, get honest feedback, and walk in ready.'),
+ 'coach':('Someone to think it through with, any hour.','Honest, remembers your story, and always ends with one small next step.'),
+ 'message':('Know how it lands before you hit send.','Paste a draft, see the risk, and send the version you actually mean.')}
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
  '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
