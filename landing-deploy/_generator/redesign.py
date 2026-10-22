@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=131')
+s=s.replace('css/home.css?v=11','css/home.css?v=132')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -792,12 +792,12 @@ def _panel_blog(i,t):
     chips=''.join('<a href="#learn-blog-%s" data-feature="blog-%s" class="bl-chip">%s</a>'%(o[0],o[0],o[1]) for o in BTOPICS if o[0]!=key)
     cnt='%d article%s'%(len(posts),'' if len(posts)==1 else 's')
     return ('<article class="fm-panel pg bl" id="learn-blog-%s" data-f="blog-%s" hidden style="--tint:%s">'
-     '<div class="pg-hero bl-hero">'%(key,key,tint)+FLOATS+'<nav class="bl-crumb" aria-label="Breadcrumb"><a href="/blog/">Articles</a><i>/</i><b>%s</b></nav>'%name+
+     '<div class="pg-hero bl-hero">'%(key,key,tint)+FLOATS+'<nav class="bl-crumb" aria-label="Breadcrumb"><a href="#learn-blog-all" data-feature="blog-all">Articles</a><i>/</i><b>%s</b></nav>'%name+
      '<h2 id="fm-title-blog-%s">%s</h2><p class="fm-sub">%s</p><span class="bl-count">%s</span></div>'%(key,name,dfn,cnt)+
      '<section class="pg-sec bl-sec"><div class="bl-list">'+cards+'</div>'+more+
      '<div class="bl-topics"><b>More topics</b><div>'+chips+'</div></div>'
      '<div class="bl-cta"><div><h3>Want help in the moment?</h3><p>Ask the coach what to say, check a message before you send it or practise a hard talk.</p></div><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-blog-%s">Get early access</a></div></section>'%key+
-     '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p><a class="fm-next bl-all" href="/blog/">All articles <span aria-hidden="true">&rarr;</span></a></div></article>')
+     '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p><a class="fm-next bl-all" href="#learn-blog-all" data-feature="blog-all">All articles <span aria-hidden="true">&rarr;</span></a></div></article>')
 
 SUMAIL='relationshipai.advice@gmail.com'
 def _su_ico(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'%d
@@ -821,11 +821,26 @@ def _panel_support():
      '<div class="fm-foot"><p>RelationshipAI cannot help in an emergency. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '</div></article>')
 
+
+def _post_topics(k): return ' '.join(t[0] for t in BTOPICS if k in t[3])
+def _panel_blog_all():
+    cards=''
+    for k,(sl,dt,tag,meta,ti,ds) in BPOSTS.items():
+        cards+=('<a class="post-card bl-card" href="/blog/%s/" data-t="%s" data-umami-event="blog-all-%s"><span class="post-thumb"><img src="/img/blog/card-%s.svg?v=1" alt="" width="1200" height="630" loading="lazy"></span>'
+          '<div class="post-card-top"><span class="post-tag">%s</span><span class="post-meta">%s</span></div><h3>%s</h3><p>%s</p><span class="post-more">Read article %s</span></a>')%(sl,_post_topics(k),sl,sl,tag,meta,ti,ds,BARROW)
+    chips='<button type="button" class="bl-fl on" data-t="all" aria-pressed="true">All</button>'+''.join('<button type="button" class="bl-fl" data-t="%s" aria-pressed="false">%s</button>'%(t[0],t[1]) for t in BTOPICS)
+    return ('<article class="fm-panel pg bl" id="learn-blog-all" data-f="blog-all" hidden style="--tint:#f7d99a">'
+     '<div class="pg-hero bl-hero">'+FLOATS+'<nav class="bl-crumb" aria-label="Breadcrumb"><b>Articles</b></nav>'
+     '<h2 id="fm-title-blog-all">All articles</h2><p class="fm-sub">Practical guides on communication, conflict and connection. Pick a topic to see only those articles.</p><span class="bl-count">%d articles</span></div>'%len(BPOSTS)+
+     '<section class="pg-sec bl-sec"><div class="bl-filters" role="group" aria-label="Filter by topic">'+chips+'</div>'
+     '<div class="bl-list">'+cards+'</div>'
+     '<div class="bl-cta"><div><h3>Want help in the moment?</h3><p>Ask the coach what to say, check a message before you send it or practise a hard talk.</p></div><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-blog-all">Get early access</a></div></section>'
+     '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p></div></article>')
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap">'+WINBG+_wnav('data-fclose')+
- '<div class="fm-card">'+''.join(_wrapbody(_panel(i,f)) for i,f in enumerate(FEATS))+_wrapbody(_panel_more())+_wrapbody(_panel_support())+''.join(_wrapbody(_panel_blog(i,t)) for i,t in enumerate(BTOPICS))+FSITE+'</div></div></div></div>')
+ '<div class="fm-card">'+''.join(_wrapbody(_panel(i,f)) for i,f in enumerate(FEATS))+_wrapbody(_panel_more())+_wrapbody(_panel_support())+''.join(_wrapbody(_panel_blog(i,t)) for i,t in enumerate(BTOPICS))+_wrapbody(_panel_blog_all())+FSITE+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
-function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id;[].forEach.call(p.querySelectorAll('.bl-x'),function(x){x.hidden=true});var b=p.querySelector('.bl-sm');if(b)b.hidden=false});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
+function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id;[].forEach.call(p.querySelectorAll('.bl-x'),function(x){x.hidden=true});var b=p.querySelector('.bl-sm');if(b)b.hidden=false});if(id==='blog-all'){var ap=m.querySelector('.fm-panel[data-f=blog-all]');if(ap){[].forEach.call(ap.querySelectorAll('.bl-fl'),function(b){var on=b.getAttribute('data-t')==='all';b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false')});[].forEach.call(ap.querySelectorAll('.bl-card'),function(c){c.hidden=false;c.classList.remove('bl-pop')});var ct=ap.querySelector('.bl-count');if(ct)ct.textContent=ap.querySelectorAll('.bl-card').length+' articles'}}cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
 function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
 [].forEach.call(p.querySelectorAll('.tb-ex,.tb-cap'),function(x){x.classList.toggle('on',+x.getAttribute('data-i')===i)});var st=p.querySelector('.tb-stage');if(st)st.setAttribute('data-i',i)}
 var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
@@ -844,6 +859,7 @@ function close(){if(history.state&&history.state.fm){history.back()}else{hide();
 window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
 if(!m.hidden&&(t.classList.contains('fm-scroll')||t.classList.contains('fm-wrap'))){close();return}
+var fl=t.closest('.bl-fl');if(fl){e.preventDefault();var pp2=fl.closest('.fm-panel'),kk=fl.getAttribute('data-t'),nn=0;[].forEach.call(pp2.querySelectorAll('.bl-fl'),function(b){b.classList.toggle('on',b===fl);b.setAttribute('aria-pressed',b===fl?'true':'false')});[].forEach.call(pp2.querySelectorAll('.bl-card'),function(c){var ok=kk==='all'||(' '+c.getAttribute('data-t')+' ').indexOf(' '+kk+' ')>-1;c.hidden=!ok;if(ok){nn++;c.classList.add('in');c.classList.remove('bl-pop');void c.offsetWidth;c.classList.add('bl-pop')}});var ct=pp2.querySelector('.bl-count');if(ct)ct.textContent=nn+' article'+(nn==1?'':'s');return}
 var sm=t.closest('.bl-sm');if(sm){e.preventDefault();var pp=sm.closest('.fm-panel');[].forEach.call(pp.querySelectorAll('.bl-x'),function(x,i){x.hidden=false;x.classList.add('rv');x.style.transitionDelay=(i*90)+'ms';requestAnimationFrame(function(){requestAnimationFrame(function(){x.classList.add('in')})})});sm.hidden=true;return}
 var tb=t.closest('.tb-b');if(tb){e.preventDefault();pick(tb.closest('.fm-panel'),+tb.getAttribute('data-i'));return}
 var n=t.closest('.fm-next[data-go]');if(n){show(n.getAttribute('data-go'));history.replaceState(history.state,'','#learn-'+cur);return}
@@ -852,6 +868,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)c
 var h=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
 
 XM='''<div class="xm-row"><p><b>Nine more small tools</b> for after the chat ends.</p><div class="xm-btns"><a href="#learn-more" data-feature="more" class="hx-btn ghost" data-umami-event="explore-more-tools-deck">Explore more tools <span aria-hidden="true">&rarr;</span></a><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a></div></div>'''
+# ---- landing: "See all articles" opens the all-articles window (with topic filter)
+_sa='<a href="/blog/" class="btn btn-ghost">See all articles</a>'
+assert _sa in s
+s=s.replace(_sa,'<a href="#learn-blog-all" data-feature="blog-all" class="btn btn-ghost" data-umami-event="blog-see-all">See all articles</a>',1)
 # ---- landing: the nine other tools live in their own window now
 _a=s.index('<section class="hx-sec" id="more">'); _b=s.index('</section>',_a)+len('</section>')
 s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()

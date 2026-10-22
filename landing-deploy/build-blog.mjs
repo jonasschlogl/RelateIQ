@@ -599,7 +599,7 @@ function homeBlock(ctx) {
           <p>${T(EN.homeP)}</p>
         </div>
         <div class="post-grid">${posts.slice(0, 3).map((p) => card(ctx, p)).join("\n")}</div>
-        <p class="blog-all"><a href="${ctx.prefix}/blog/" class="btn btn-ghost">${T(EN.seeAll)}</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
+        <p class="blog-all"><a href="${ctx.prefix ? `${ctx.prefix}/blog/` : "#learn-blog-all"}"${ctx.prefix ? "" : ' data-feature="blog-all"'} class="btn btn-ghost">${T(EN.seeAll)}</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
       </div>
     </section>`;
 }
