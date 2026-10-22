@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=90')
+s=s.replace('css/home.css?v=11','css/home.css?v=92')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -490,10 +490,65 @@ X['message']=dict(
         ('See the read','<div class="fm-note pk"><small>Risk: high</small>Reads as cold. &ldquo;Whatever you want&rdquo; invites a fight.</div>'),
         ('Pick a version','<div class="fm-note"><small>Calmer</small>I&rsquo;m upset you decided without me. Can we talk tonight?</div>')])
 for f in FEATS: f.update(X[f['id']])
+
+# ---- illustrations for each capability (small drawn UI pieces shown beside the text)
+def B(t,k='me'): return '<div class="u-b %s">%s</div>'%(k,t)
+def CD(label,text,cls=''): return '<div class="u-c %s"><small>%s</small>%s</div>'%(cls,label,text)
+def TG(*t,hot=()):
+    return '<div class="u-tags">'+''.join('<b class="%s">%s</b>'%('hot' if x in hot else '',x) for x in t)+'</div>'
+def AV(letter,name,sub=''): return '<div class="u-av"><i>%s</i><div><b>%s</b><span>%s</span></div></div>'%(letter,name,sub)
+def GAUGE(n,label='readiness'):
+    d=157*n/10
+    return ('<div class="u-gauge"><svg viewBox="0 0 120 70"><path d="M10 62 A50 50 0 0 1 110 62" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="12" stroke-linecap="round"/>'
+            '<path d="M10 62 A50 50 0 0 1 110 62" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="%.0f 200"/></svg><b>%d<em>/10</em></b><span>%s</span></div>')%(d,n,label)
+def LINE(pts):
+    xs=[10+i*(100/(len(pts)-1)) for i in range(len(pts))]
+    ys=[60-p*5 for p in pts]
+    poly=' '.join('%.0f,%.0f'%(x,y) for x,y in zip(xs,ys))
+    dots=''.join('<circle cx="%.0f" cy="%.0f" r="4.5" fill="#fffaf2" stroke="#3b2218" stroke-width="2.4"/>'%(x,y) for x,y in zip(xs,ys))
+    return '<div class="u-line"><svg viewBox="0 0 120 70"><polyline points="%s" fill="none" stroke="#3b2218" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>%s</svg><span>Readiness across 3 rehearsals</span></div>'%(poly,dots)
+CYCLE=('<div class="u-cycle"><svg viewBox="0 0 160 120"><path d="M30 60a50 36 0 0 1 100 0" fill="none" stroke="#3b2218" stroke-width="3" stroke-linecap="round"/><path d="M130 60a50 36 0 0 1-100 0" fill="none" stroke="#3b2218" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/>'
+ '<path d="M124 52l8 8 4-10z" fill="#3b2218"/><path d="M36 68l-8-8-4 10z" fill="#3b2218"/></svg><b class="t">You ask</b><b class="bt">They withdraw</b></div>')
+MIC='<div class="u-mic"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>'
+SHOT='<div class="u-shot"><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div>'
+DOC='<div class="u-doc"><b>Summary for your therapist</b><i></i><i class="s"></i><i></i><i class="s"></i><i></i></div>'
+CAL='<div class="u-cal"><div class="d"><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b class="on">S</b></div><div class="ev"><b>Sunday, 8 PM</b><span>20 minutes &middot; one topic &middot; one small step</span></div></div>'
+ART={
+ 'practice':[
+  AV('A','Alex','Partner &middot; gets defensive when criticised')+B('That&rsquo;s not fair, I&rsquo;ve been swamped.','ai')+TG('Needs time','Avoids conflict'),
+  '<div class="u-flow">'+CD('Chat 1','He went quiet again&hellip;')+CD('Chat 2','Cancelled plans&hellip;')+'<div class="u-arr">&darr;</div>'+CD('Alex, as learned','Withdraws under stress. Needs a calm start.','dk')+'</div>',
+  CD('Alex really wrote','&ldquo;ok. whatever works for u.&rdquo;')+'<div class="u-arr">&darr;</div>'+B('ok. i guess we can do thursday.','ai')+TG('Voice matched'),
+  CD('Went well','You started with a feeling.','g')+CD('Watch for','You slipped into &ldquo;always&rdquo;.','y')+CD('Try','Add what you will offer too.','b'),
+  GAUGE(8),
+  CD('Opening line','&ldquo;I miss us. Can we talk tonight?&rdquo;')+CD('Avoid','&ldquo;always&rdquo;, &ldquo;never&rdquo;')+CD('If it heats up','Pause, name the feeling.'),
+  '<div class="u-hard"><div class="sl"><span>Calm</span><i><b></b></i><span>Tough</span></div></div>'+B('You always do this!','ai')+TG('Defensive','Cold',hot=('Defensive',)),
+  LINE([4,6,8]),
+  '<div class="u-who"><b>Partner</b><b>Ex</b><b>Parent</b><b>Boss</b><b>Friend</b></div>'+AV('+','Add a profile','Save as many as you need'),
+ ],
+ 'coach':[
+  B('He went quiet again after I asked about the trip.')+B('What usually happens in the minutes after that?','ai')+B('What do you do next?','ai'),
+  CYCLE,
+  '<div class="u-mem"><b>Works late on Tuesdays</b><b>Withdraws when stressed</b><b>Likes clear plans</b><b>Last fight: the trip</b></div>',
+  CD('Your view','I just wanted an answer.')+'<div class="u-bal">&#9878;</div>'+CD('Their view','I felt pushed.')+CD('Your share','Asking three times in a row.','y'),
+  '<div class="u-meth"><b>Gottman</b><b>EFT</b><b>CBT</b><b>NVC</b><b>Imago</b><b>Narrative</b><b>ACT</b></div>',
+  CAL,
+  CD('Try this','Ask for a time, not an answer.','y')+'<div class="u-bell">&#128276; In 2 days: how did it go?</div>'+TG('Worked','Did not help','Did not get to it'),
+  SHOT+MIC,
+  DOC,
+ ],
+ 'message':[
+  B('Fine. Do whatever you want.')+'<div class="u-risk"><span>Risk</span><i><b></b></i><em>High</em></div>',
+  '<div class="u-hl">&ldquo;Fine. Do <mark>whatever you want</mark>. You <mark>always</mark> do this.&rdquo;</div>'+TG('Sounds cold','Blames',hot=('Blames',)),
+  CD('Calmer','I&rsquo;m upset you decided without me. Can we talk tonight?')+CD('Warmer','I felt left out. I&rsquo;d love to be part of the plan.','p')+CD('Direct','Next time, ask me before you book.','s'),
+  CD('They wrote first','Booked the trip for May 12. You&rsquo;re free, right?')+B('Fine. Do whatever you want.'),
+  '<div class="u-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>0</b><span>drafts saved</span></div>',
+  AV('S','Sam','Goes quiet when criticised')+CD('Tailored version','I felt left out. Can we pick the dates together?','p'),
+ ],
+}
 FEATS=[FEATS[0],FEATS[2],FEATS[1]]
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
-    helps=''.join('<div class="fm-cap"><span class="fm-ic">%s</span><div><h4>%s%s</h4><p>%s</p></div></div>'%(c[0],c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2]) for c in f['caps'])
+    helps=''.join('<div class="fm-row"><div class="fm-rart"><div class="u">%s</div></div><div class="fm-rtxt"><span class="fm-rn">%02d</span><h4>%s%s</h4><p>%s</p></div></div>'%(ART[f['id']][n],n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2]) for n,c in enumerate(f['caps']))
     meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
     steps=''.join('<div class="fm-step"><span class="fm-sn">%d</span><h4>%s</h4><div class="fm-snip">%s</div></div>'%(n+1,t,html) for n,(t,html) in enumerate(f['steps']))
@@ -502,7 +557,7 @@ def _panel(i,f):
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div></div>'
      '<div class="fm-art"><div class="hph fm-phone"><div class="hph-frame"><i class="hph-notch"></i><div class="hph-scr">%s</div></div></div></div></div>'
      '<div class="fm-sec fm-goal"><h3>%s</h3><p>%s</p></div>'
-     '<div class="fm-sec"><h3 class="fm-h">%s</h3><div class="fm-caps">%s</div>%s</div>'
+     '<div class="fm-sec"><h3 class="fm-h">%s</h3><div class="fm-rows">%s</div>%s</div>'
      '<div class="fm-sec fm-goodwrap"><h3 class="fm-h">Good for</h3><ul class="fm-good">%s</ul></div>'
      '<div class="fm-sec"><h3 class="fm-h">How it goes</h3><div class="fm-steps">%s</div></div>'
      '<div class="fm-avail"><b>What you get</b><span>%s</span></div>'
