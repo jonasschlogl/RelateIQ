@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=81')
+s=s.replace('css/home.css?v=11','css/home.css?v=84')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -363,79 +363,106 @@ I_HAND=_ico('<path d="M5 12l4 4L19 6"/>')
 I_BRAIN=_ico('<path d="M3 12h4l3-7 4 14 3-7h4"/>')
 I_MOON=_ico('<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/>')
 I_LOOP=_ico('<path d="M20 12a8 8 0 1 1-2.5-5.8"/><path d="M20 4v5h-5"/>')
-PH_PRACTICE=('<div class="hs on"><div class="hs-top"><i></i>Partner Practice</div><div class="hs-lbl">Rehearse the hard talk first</div>'
- '<div class="bb me">You always cancel on me.</div><div class="bb ai">Here we go again. I was just tired.</div>'
- '<div class="hs-card bt"><small>Coach note</small>Starting with blame made them defensive. <b>Try:</b> &ldquo;I felt hurt when plans fell through.&rdquo;</div>'
- '<div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div></div>')
-PH_MESSAGE=('<div class="hs on"><div class="hs-top"><i></i>Message check</div><div class="hs-lbl">Your draft</div>'
- '<div class="hs-card pk">Fine. Do whatever you want.<span>Reads as cold &middot; likely to start a fight</span></div><div class="hs-arrow">&darr;</div>'
- '<div class="hs-lbl">Says what you actually mean</div><div class="hs-card bt">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?<span>Honest, calm, invites a reply</span></div>'
- '<div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div></div>')
-PH_COACH=('<div class="hs on"><div class="hs-top"><i></i>Coach Chat</div><div class="hs-lbl">2:07 AM &middot; can&rsquo;t sleep</div>'
- '<div class="bb me">He went quiet again.</div><div class="hs-mem"><i></i>Remembers: he withdraws when stressed</div>'
- '<div class="bb ai">That&rsquo;s his stress pattern, not rejection.</div><div class="hs-card bt"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>'
- '<div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div></div>')
+def _m(i,who,txt,kind): return '<div class="fm-msg %s" style="--i:%d">%s%s</div>'%(kind,i,('<b class="who">%s</b>'%who) if who else '',txt)
+def _coach(i,tag,txt): return '<div class="fm-coach" style="--i:%d"><small>%s</small>%s</div>'%(i,tag,txt)
+CH_PRACTICE=('<div class="fm-top"><i></i><div><b>Partner Practice</b><span>Practising with Alex &middot; goal: more time together</span></div></div>'
+ '<div class="fm-chat">'
+ +_m(0,'','Honestly, I feel like you never make time for me anymore.','me')
+ +_m(1,'Alex (AI)','That&rsquo;s not fair. I&rsquo;ve been swamped at work.','ai')
+ +_coach(2,'Coach &middot; Gottman','&ldquo;You never&rdquo; makes people defend. Start soft: <b>say how you feel, then ask for one thing.</b>')
+ +_m(3,'','I miss you. Could we keep Thursday evening just for us?','me')
+ +_m(4,'Alex (AI)','I&rsquo;d like that. I didn&rsquo;t realise it felt that way.','ai')
+ +'<div class="fm-deb" style="--i:5"><small>Debrief</small><p><i>&#10003;</i>Started with a feeling</p><p><i>&#10003;</i>Asked for one clear thing</p><p class="nx"><i>&rarr;</i>Next: say what you&rsquo;ll offer too</p></div>'
+ +'</div>')
+CH_MESSAGE=('<div class="fm-top"><i></i><div><b>Message check</b><span>Draft to Sam</span></div></div>'
+ '<div class="fm-chat">'
+ +_m(0,'Your draft','Fine. Do whatever you want.','me')
+ +'<div class="fm-read" style="--i:1"><small>How it may land</small><div class="fm-tags"><b>Cold</b><b>Resigned</b><b class="hot">Likely to start a fight</b></div><p>What you probably mean: <em>&ldquo;I&rsquo;m hurt you decided without me.&rdquo;</em></p></div>'
+ +'<div class="fm-ver" style="--i:2"><small>Calmer</small>I&rsquo;m upset you decided without me. Can we talk tonight?</div>'
+ +'<div class="fm-ver w" style="--i:3"><small>Warmer</small>I felt left out. I&rsquo;d love to be part of the plan.</div>'
+ +'<div class="fm-ver d" style="--i:4"><small>Direct</small>Next time, ask me before you book. Tonight?</div>'
+ +'</div>')
+CH_COACH=('<div class="fm-top"><i></i><div><b>Coach Chat</b><span>Remembers Alex &middot; 4 past chats</span></div></div>'
+ '<div class="fm-chat">'
+ +'<div class="fm-time" style="--i:0">2:07 AM &middot; can&rsquo;t sleep</div>'
+ +_m(1,'','He went quiet again after I asked about the trip.','me')
+ +'<div class="fm-mem" style="--i:2"><i></i>Pattern &middot; 3rd time this month, always after stressful workdays</div>'
+ +_m(3,'Coach','This looks like his withdrawal, not rejection. When you push for an answer while he&rsquo;s stressed, he goes quieter. Last time, an evening of space worked.','ai')
+ +_coach(4,'Tomorrow, try','&ldquo;No rush on the trip. I miss you. Dinner at 7?&rdquo;<span>Space first, then connection</span>')
+ +'</div>')
 FEATS=[
  dict(id='practice',tag='Partner Practice',when='Before the talk',tint='#f7d99a',
   h='Say it out loud <em>before it&rsquo;s real.</em>',
-  sub='Rehearse a hard conversation with an AI that plays your partner. Nothing is at stake, so you can find the words that actually land.',
-  phone=PH_PRACTICE,
-  goalh='The goal: walk into the talk calm, not defensive.',
-  goal='Most hard conversations go wrong in the first sentence. It comes out as blame, the other person defends, and the real point gets lost. Partner Practice lets you try that first sentence, and the next ten, before it counts.',
-  helps=[(I_CHAT,'Try it as many ways as you like','Say it one way, then another. The AI answers the way a real person might, so you feel how each version lands.'),
-         (I_COMPASS,'A short debrief afterwards','You get a few lines on what worked, what made things tense, and one thing to try next.'),
-         (I_HEART,'Softer starts, same message','Lead with how you feel and what you need, not with what they did wrong.')],
-  good=['Raising something you have avoided','Asking for more time together','Saying sorry properly','Setting a boundary','Talking to a parent, ex or boss (Pro)'],
-  steps=[('Pick who and what','<div class="fm-note"><small>Who</small>My partner</div><div class="fm-note alt"><small>What I want to say</small>You cancelled plans again.</div>'),
-         ('Rehearse the talk','<div class="fm-b me">I felt hurt when plans fell through.</div><div class="fm-b ai">I didn&rsquo;t realise. I&rsquo;m sorry.</div>'),
-         ('Read the debrief','<div class="fm-note"><small>What worked</small>You started with how you felt, not with blame.</div><div class="fm-note alt"><small>Try next</small>Add what you need from them.</div>')],
+  sub='An AI plays your partner so you can rehearse the hard conversation, get coached on your actual words, and walk in knowing what to say.',
+  hl=['Plays your partner, in character','Live coach notes from proven couples methods','A debrief with the exact line to try next'],
+  chat=CH_PRACTICE, fl=('Plays your partner','Coach notes live'),
+  vsh='A chatbot tells you how to talk. Partner Practice lets you do it.',
+  prompt='I want to tell my partner I need more time together.',
+  gen='It&rsquo;s great that you want to address this. Communication is key in any relationship. Choose a calm moment, use &ldquo;I&rdquo; statements and be honest about your feelings. Remember to listen to their perspective too.',
+  gen_gaps=['Advice, but no practice','Never answers back as your partner','No feedback on your real words'],
+  ours='<p>Let&rsquo;s rehearse it. I&rsquo;ll play Alex. Say it the way you would tonight. I&rsquo;ll answer like Alex might, and step in when it starts to sound like blame.</p><div class="vs-ex"><span class="me">I feel like you never make time for me.</span><span class="ai">That&rsquo;s not fair, I&rsquo;ve been swamped.</span><span class="cn">Coach: lead with a feeling, then one request.</span></div>',
+  ours_wins=['Plays your partner','Coaches your real words','Debrief + what to try next'],
+  helps=[(I_CHAT,'It answers like them, not like a helper','Pushback feels real, so the first sentence of the real talk is not your first try.'),
+         (I_COMPASS,'Coached while you practise','Short notes grounded in the Gottman Method and nonviolent communication. It spots blame and tells you how to soften it.'),
+         (I_HEART,'A debrief you can act on','What worked, what made it tense, and the one thing to change next time. Rehearse again until it feels right.')],
+  good=['Raising something you have avoided','Asking for more time together','Saying sorry properly','Setting a boundary','A talk with a parent, ex or boss (Pro)'],
   avail='Free: 1 rehearsal (up to 8 messages) with a debrief. Pro: unlimited rehearsals, with a partner, ex, parent or boss.'),
  dict(id='message',tag='Message check',when='Before you send',tint='#f8c7a3',
   h='Read it the way <em>they will.</em>',
-  sub='Paste a message before you send it. See how it may land, then pick a calmer, warmer or more direct version.',
-  phone=PH_MESSAGE,
-  goalh='The goal: stop a text from starting a fight you did not mean to start.',
-  goal='Short messages lose their tone. &ldquo;Fine. Do whatever you want.&rdquo; can read as cold or as hurt, and the other person will pick one. Message check shows how a draft may read and gives you versions that say what you actually mean.',
-  helps=[(I_EYE,'See how it may land','Spot cold, sharp or confusing wording before the other person does.'),
-         (I_SPARK,'Three ways to say it','Calmer, warmer or more direct. Keep your point, change the delivery.'),
-         (I_HAND,'Your words, your call','Nothing is sent for you. You decide what, if anything, to send.')],
+  sub='Paste a message before you send it. See how it may land, what you probably mean, and three ways to say it that keep your point.',
+  hl=['Reads the tone before they do','Three versions: calmer, warmer, direct','Paste and go. No prompt to write'],
+  chat=CH_MESSAGE, fl=('Tone read first','3 ways to say it'),
+  vsh='A chatbot rewrites the words. Message check shows how they will land.',
+  prompt='Can you check this text? &ldquo;Fine. Do whatever you want.&rdquo;',
+  gen='This message might come across as passive-aggressive. You could express your feelings more directly, for example: &ldquo;I feel hurt that this was decided without me.&rdquo;',
+  gen_gaps=['One rewrite, in one tone','You write the prompt every time','Does not know your partner'],
+  ours='<div class="vs-tags"><b>Cold</b><b>Resigned</b><b class="hot">Likely to start a fight</b></div><p>You probably mean: <em>&ldquo;I&rsquo;m hurt you decided without me.&rdquo;</em> Pick the version that sounds like you:</p><div class="vs-ex"><span class="cn">Calmer: I&rsquo;m upset you decided without me. Can we talk tonight?</span><span class="cn">Warmer: I felt left out. I&rsquo;d love to be part of the plan.</span></div>',
+  ours_wins=['Tone read, not just a rewrite','Calmer, warmer or direct','Tailored to your partner (Premium)'],
+  helps=[(I_EYE,'It reads tone, not just words','A short &ldquo;fine&rdquo; can end an evening. It flags cold, sharp or unclear wording before it is sent.'),
+         (I_SPARK,'Same meaning, better delivery','Calmer, warmer or more direct. It keeps what you mean and changes how it lands.'),
+         (I_HAND,'Made for this one job','Paste, read, decide. Nothing is sent for you, and there is nothing to prompt.')],
   good=['Replying when you are angry','An apology you keep rewriting','A text after a long silence','Saying no kindly','Messages with a lot riding on them'],
-  steps=[('Paste your draft','<div class="fm-b me">Fine. Do whatever you want.</div>'),
-         ('See how it reads','<div class="fm-note pk"><small>Reads as</small>Cold. Likely to start a fight.</div>'),
-         ('Pick a version','<div class="fm-note"><small>Calmer</small>I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?</div>')],
-  avail='Free: 3 tries. Pro: 10 a day, with two rewrites each.'),
+  avail='Free: 3 tries. Pro: 10 a day, with two rewrites each. Premium: tailored to your partner, no limit.'),
  dict(id='coach',tag='Coach Chat',when='When it hurts',tint='#f4b8c4',
   h='A coach that <em>already knows</em> your story.',
-  sub='Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',
-  phone=PH_COACH,
-  goalh='The goal: understand what is going on and decide what to say, instead of spiralling.',
-  goal='After a fight or a long silence your head loops. Coach Chat helps you slow down, notices patterns across your chats, such as how someone reacts when stressed, and ends with one small thing to try.',
-  helps=[(I_MOON,'Remembers your story','Your partner and your past chats stay in context, so the advice fits your situation.'),
-         (I_LOOP,'Spots patterns','Notices what keeps repeating, using well-known couples methods like Gottman and attachment theory.'),
-         (I_COMPASS,'Ends with a next step','Not only comfort. One thing to say or do tomorrow.')],
+  sub='Tell it what happened at any hour. It remembers your partner and your past chats, notices what keeps repeating, and gives you one thing to try.',
+  hl=['Remembers your partner and past chats','Spots patterns you cannot see mid-fight','Ends with one thing to say or do'],
+  chat=CH_COACH, fl=('Remembers your story','Spots the pattern'),
+  vsh='A chatbot starts from zero. Coach Chat starts from your story.',
+  prompt='He went quiet again and I can&rsquo;t sleep.',
+  gen='I&rsquo;m sorry you&rsquo;re feeling this way. It&rsquo;s normal to feel anxious when a partner withdraws. Try giving them space and communicate openly when they&rsquo;re ready. Self-care can help too.',
+  gen_gaps=['Does not remember last week','Does not know how he reacts to stress','Comfort, but no next step'],
+  ours='<p>That&rsquo;s the third time this month he has gone quiet after a stressful workday. It looks like his stress pattern, not rejection. Last time an evening of space worked.</p><div class="vs-ex"><span class="cn">Tomorrow, try: &ldquo;No rush on the trip. I miss you. Dinner at 7?&rdquo;</span></div>',
+  ours_wins=['Remembers your story','Spots the pattern','One thing to try tomorrow'],
+  helps=[(I_MOON,'It already knows the background','Your partner and your past chats stay in context, so you never explain everything again at 2am.'),
+         (I_LOOP,'It notices what repeats','Patterns across chats, read through couples methods like Gottman and attachment theory.'),
+         (I_COMPASS,'Never just comfort','Every chat can end with a concrete next step: something to say, ask or do.')],
   good=['After a fight','When you cannot sleep','When they went quiet','Overthinking a message','Making sense of a pattern'],
-  steps=[('Tell it what happened','<div class="fm-b me">He went quiet again.</div>'),
-         ('It connects the dots','<div class="fm-mem">Remembers: he withdraws when stressed</div><div class="fm-b ai">That&rsquo;s his stress pattern, not rejection.</div>'),
-         ('Take one thing with you','<div class="fm-note"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>')],
-  avail='Free: 8 messages a day, with memory of your chats.'),
+  avail='Free: 8 messages a day, with memory of your chats. Pro and Premium: more messages and the most advanced AI.'),
 ]
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
     helps=''.join('<div class="fm-hi"><span class="fm-ic">%s</span><h4>%s</h4><p>%s</p></div>'%h for h in f['helps'])
     good=''.join('<li>%s</li>'%g for g in f['good'])
-    steps=''.join('<div class="fm-step"><span class="fm-sn">%d</span><h4>%s</h4><div class="fm-snip">%s</div></div>'%(n+1,t,html) for n,(t,html) in enumerate(f['steps']))
+    hl=''.join('<li>%s</li>'%g for g in f['hl'])
+    gaps=''.join('<li>%s</li>'%g for g in f['gen_gaps'])
+    wins=''.join('<li>%s</li>'%g for g in f['ours_wins'])
     return ('<article class="fm-panel" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
      '<div class="fm-hero"><div class="fm-copy"><span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
+     '<ul class="fm-hl">%s</ul>'
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div></div>'
-     '<div class="fm-art"><div class="hph fm-phone"><div class="hph-frame"><i class="hph-notch"></i><div class="hph-scr">%s</div></div></div></div></div>'
-     '<div class="fm-sec fm-goal"><h3>%s</h3><p>%s</p></div>'
-     '<div class="fm-sec"><h3 class="fm-h">How it helps</h3><div class="fm-helps">%s</div></div>'
+     '<div class="fm-art"><span class="fm-blob"></span><div class="fm-app"><div class="fm-scr">%s</div></div><span class="fm-fl a"><i></i>%s</span><span class="fm-fl b"><i></i>%s</span><p class="fm-cap">Example conversation</p></div></div>'
+     '<div class="fm-sec fm-vs"><h3 class="fm-h">%s</h3>'
+     '<div class="fm-prompt"><span>You write</span>&ldquo;%s&rdquo;</div>'
+     '<div class="fm-vsgrid"><div class="fm-vc gen"><div class="fm-vl">A general AI chatbot <em>illustrative</em></div><p>%s</p><ul class="fm-no">%s</ul></div>'
+     '<div class="fm-vc us"><div class="fm-vl"><img src="logo-tile.svg" alt="" width="22" height="22" />RelationshipAI</div>%s<ul class="fm-yes">%s</ul></div></div></div>'
+     '<div class="fm-sec"><h3 class="fm-h">What you get that a chatbot will not give you</h3><div class="fm-helps">%s</div></div>'
      '<div class="fm-sec fm-goodwrap"><h3 class="fm-h">Good for</h3><ul class="fm-good">%s</ul></div>'
-     '<div class="fm-sec"><h3 class="fm-h">How it works</h3><div class="fm-steps">%s</div></div>'
      '<div class="fm-avail"><b>What you get</b><span>%s</span></div>'
+     '<div class="fm-end"><h3>Try it the next time it matters.</h3><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
-     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['phone'],f['goalh'],f['goal'],helps,good,steps,f['avail'],nxt['id'],nxt['tag'])
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],hl,f['id'],f['chat'],f['fl'][0],f['fl'][1],f['vsh'],f['prompt'],f['gen'],gaps,f['ours'],wins,helps,good,f['avail'],f['id'],nxt['id'],nxt['tag'])
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
  '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
