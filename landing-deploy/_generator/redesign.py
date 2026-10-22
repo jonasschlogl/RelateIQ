@@ -884,11 +884,6 @@ _a=s.index('<section class="hx-sec" id="approach">'); _b=s.index('</section>',_a
 _sec=s[_a:_b]; s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
 _c=s.index('<section class="hx-sec" id="compare">')
 s=s[:_c]+_sec+'\n\n    '+s[_c:]
-# ...and "What you tell it stays yours" right under it
-_a=s.index('<section class="hx-sec" id="trust">'); _b=s.index('</section>',_a)+len('</section>')
-_tr=s[_a:_b]; s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
-_c=s.index('<section class="hx-sec" id="compare">')
-s=s[:_c]+_tr+'\n\n    '+s[_c:]
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os

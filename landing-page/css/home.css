@@ -2029,10 +2029,11 @@ body.hx > header.hx-nav { position: fixed; z-index: 60; }
 @media (max-width: 960px) { .apr-pts { grid-template-columns: 1fr; gap: 14px; margin-top: 30px; } .apr-pt { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 16px; padding: 20px 20px 22px; } .apr-ic { width: 56px; height: 56px; margin: 0; } .apr-pt h3 { flex: 1; font-size: 22px; } .apr-pt p { flex-basis: 100%; } }
 @media (max-width: 760px) { .apr { padding: 6px 4px 0; } .apr-head h2 { font-size: 32px; } .apr-head p { font-size: 16.5px; } .apr-meth { padding: 18px 16px; border-radius: 26px; } .apr-pt:hover { transform: none; } }
 @media (min-width: 761px) { #approach .apr { padding: 0 24px; } }
-/* v127 "What you tell it stays yours": full-width dark band right under Our approach, scalloped transition */
+/* v127 "What you tell it stays yours": full-width dark band with scalloped edges, under the comparison */
 @media (min-width: 761px) {
-  #approach { margin-bottom: 0; z-index: 2; }
-  #trust { position: relative; z-index: 1; margin: 0 0 96px; padding: 150px 0 128px; border: 0; border-radius: 0; box-shadow: none; background: #3b2218; }
+  #trust { position: relative; margin: 96px 0 96px; padding: 104px 0 112px; border: 0; border-radius: 0; box-shadow: none; background: #3b2218; }
+  #trust::before, #trust::after { content: ""; position: absolute; left: 0; right: 0; height: 40px; background: #3b2218; pointer-events: none; -webkit-mask-size: 80px 40px; mask-size: 80px 40px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; }
+  #trust::before { top: -39px; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 A40 40 0 0 1 80 40 Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 A40 40 0 0 1 80 40 Z'/%3E%3C/svg%3E"); }
+  #trust::after { bottom: -39px; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); }
   #trust .trust-row { max-width: 1072px; margin-inline: auto; }
-  #trust::after { content: ""; position: absolute; left: 0; right: 0; bottom: -39px; height: 40px; background: #3b2218; pointer-events: none; -webkit-mask-size: 80px 40px; mask-size: 80px 40px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); }
 }
