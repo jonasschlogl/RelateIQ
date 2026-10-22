@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=125')
+s=s.replace('css/home.css?v=11','css/home.css?v=126')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -865,19 +865,18 @@ s=s.replace('js/home.js?v=4','js/home.js?v=5')
 _MB_OLD=s[s.index('<div class="mission-block">'):s.index('</div></div>',s.index('Read our method'))+len('</div></div>')]
 def _mbi(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">%s</svg>'%d
 _MB_CH=[('Gottman Method','g'),('Emotionally Focused Therapy','p'),('CBT for couples','c'),('Nonviolent Communication','k'),('Imago dialogue','p'),('Attachment theory','g'),('Solution-focused work','c'),('Narrative work','k'),('Acceptance and commitment','g')]
-_MB_NEW=('<div class="mission-block mb2">'+FLOATS+'<div class="mb-copy"><span class="section-tag">Our approach</span>'
- '<h2>We&rsquo;d rather be useful than exciting</h2>'
- '<p>Three tools with one job: help you think clearly about your relationship and find words that land.</p>'
- '<ul class="mb-pts">'
- '<li><i>'+_mbi('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>')+'</i><div><b>Built for one thing</b><span>Clearer thinking and better words. Nothing else.</span></div></li>'
- '<li><i>'+_mbi('<path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>')+'</i><div><b>No tricks to keep you chatting</b><span>No streaks, no guilt, no nagging.</span></div></li>'
- '<li><i>'+_mbi('<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8v6M14 11h6"/>')+'</i><div><b>Honest about its limits</b><span>It tells you when a professional should take over.</span></div></li></ul>'
- '<p class="mission-signature">Built by Jonas, after one too many 11pm conversations that would&rsquo;ve gone better with a clearer head.</p>'
- '<a href="method.html" class="hx-btn sm">Read our method &amp; sources</a></div>'
- '<div class="mb-art"><span class="dc d1"></span><span class="dc d2"></span><div class="mb-ill">'+ILL['a3']+'</div>'
- '<div class="mb-card"><small>Guided by real couples methods</small><div class="mb-chips">'+''.join('<b class="%s">%s</b>'%(k,t) for t,k in _MB_CH)+'</div></div>'
- '<div class="mb-note"><i>'+_mbi('<path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/>')+'</i><div><b>Not a replacement for therapy</b><span>If it is more than words can fix, we say so.</span></div></div>'
- '</div></div>')
+_AP_PTS=[('One job','Clearer thinking and better words. Nothing else.','#f7d99a','<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>'),
+ ('No hooks','No streaks, no guilt, no nagging.','#f4b8c4','<path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>'),
+ ('Honest limits','It tells you when a professional should take over.','#f8c7a3','<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8v6M14 11h6"/>')]
+_AP_CH=[('Gottman Method','g'),('Attachment theory','p'),('Emotionally Focused Therapy','c'),('Nonviolent Communication','k')]
+_MB_NEW=('<div class="apr">'
+ '<div class="apr-head"><span class="section-tag">Our approach</span><h2>We&rsquo;d rather be useful than exciting</h2>'
+ '<p>Three tools with one job: help you think clearly and find words that land.</p></div>'
+ '<div class="apr-pts">'+''.join('<div class="apr-pt"><span class="apr-ic" style="background:%s">%s</span><h3>%s</h3><p>%s</p></div>'%(c,_mbi(d),t,x) for t,x,c,d in _AP_PTS)+'</div>'
+ '<div class="apr-meth"><div class="apr-by"><small>Guided by</small><div class="mb-chips">'+''.join('<b class="%s">%s</b>'%(k,t) for t,k in _AP_CH)+'<b class="apr-more">and more</b></div></div>'
+ '<div class="apr-note"><span class="apr-nic">'+_mbi('<path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/>')+'</span>'
+ '<div><b>Not a replacement for therapy</b><a href="method.html" data-umami-event="approach-method">Read our method &amp; sources <span aria-hidden="true">&rarr;</span></a></div></div></div>'
+ '</div>')
 assert _MB_OLD in s
 s=s.replace(_MB_OLD,_MB_NEW,1)
 # move "Our approach" right under the three tools
