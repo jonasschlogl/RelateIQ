@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=89')
+s=s.replace('css/home.css?v=11','css/home.css?v=90')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -300,7 +300,7 @@ FOOT_HTML = """<footer class="hx-foot">
           </div>
           <div class="ft-col">
             <h4>Social</h4>
-            <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" class="ft-ig" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@relationshipai_</span></a>
+            <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" class="ft-ig" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
           </div>
         </div>
       </div>
