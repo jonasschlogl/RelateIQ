@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=139')
+s=s.replace('css/home.css?v=11','css/home.css?v=142')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -202,14 +202,15 @@ dm="""<div class="hx-demo" id="demo-box">
               <div class="dm-card dm-after"><small>Try this instead</small><p id="dm-fix"></p><span class="dm-why" id="dm-why"></span></div>
               <div class="dm-tone" hidden><button type="button" class="on" data-t="calm">Calmer</button></div>
             </div>"""
-def page(n,cls,idn,when,h,p,vis,nxt,name=''):
+def page(n,cls,idn,when,h,p,vis,nxt,name='',ex=''):
     return f"""<article class="page {cls}" id="{idn}" data-i="{int(n)-1}">
           <div class="pg-in">
             <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small><b>{name}</b><span>{when}</span></small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Next</span></button>
             <div class="flag-body"><p>{p}</p></div>
-            <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button></div>
+            <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button>{ex}</div>
           </div>
         </article>"""
+XBUB='<a href="#learn-more" data-feature="more" class="xt-bub" data-umami-event="explore-more-tools"><span class="xt-bub-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><path d="M17 13.5v7M13.5 17h7"/></svg></span><span class="xt-bub-t"><b>Explore more tools</b><small>Nine more small tools</small></span><i class="xt-bub-go" aria-hidden="true"></i></a>'
 acc=f"""<section class="hx-sec hx-tools" id="tools">
       <div class="hx-wrap">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
@@ -217,11 +218,10 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
           <div class="deck-stage">
         {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner, so you can rehearse a hard conversation with nothing at stake. Afterwards you get a short debrief on what worked and what to try next.',pm,'Next','Partner Practice')}
         {page('02','f2','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat')}
-        {page('03','f3','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check')}
+        {page('03','f3','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check',XBUB)}
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
-        <!--XT-->
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
@@ -232,7 +232,7 @@ function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
 function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
-function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){{gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}}locked=false;gate.innerHTML='<span class="gate-ok"><i aria-hidden="true"></i>All three seen</span>';setTimeout(unveil,520)}}
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){{gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}}locked=false;gate.innerHTML='<span class="gate-ok"><i aria-hidden="true"></i>All three seen</span>';setTimeout(unveil,1700)}}
 function unveil(){{var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}
 var xb=document.getElementById('xt-btn'),y=xb?xb.getBoundingClientRect().top+window.scrollY-(mob?104:170):(t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY);if(!calm)B.classList.add('unveil');
 var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){{stop=true}}['wheel','touchstart','keydown','mousedown'].forEach(function(e){{addEventListener(e,halt,{{once:true,passive:true}})}});
@@ -887,7 +887,7 @@ def _xt():
       '<div class="xt-panel" id="xt-panel" role="region" aria-labelledby="xt-btn" inert><div class="xt-clip"><ul class="xt-grid">'+items+'</ul>'
       '<p class="xt-foot"><a href="#learn-more" data-feature="more" data-umami-event="xt-open-window">See them all with examples <span aria-hidden="true">&rarr;</span></a></p></div></div></div>'
       '<script>(function(){var x=document.getElementById("xt"),b=document.getElementById("xt-btn"),p=document.getElementById("xt-panel");if(!x||!b||!p)return;b.addEventListener("click",function(){var o=b.getAttribute("aria-expanded")!=="true";b.setAttribute("aria-expanded",o?"true":"false");x.classList.toggle("open",o);if(o){p.removeAttribute("inert");setTimeout(function(){var r=b.getBoundingClientRect(),h=window.innerHeight;if(r.top<90||r.top>h*.35)window.scrollTo({top:r.top+window.scrollY-110,behavior:"smooth"})},180)}else p.setAttribute("inert","")})})();</script>')
-s=s.replace('<!--XT-->',_xt(),1)
+
 # ---- landing: "See all articles" opens the all-articles window (with topic filter)
 _sa='<a href="/blog/" class="btn btn-ghost">See all articles</a>'
 assert _sa in s
