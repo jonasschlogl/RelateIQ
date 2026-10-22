@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css?v=133" />
+  <link rel="stylesheet" href="css/home.css?v=134" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#fff4e1" />
@@ -148,7 +148,7 @@ var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools
 function after(t){if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}
 function upd(){var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}locked=false;gate.innerHTML='<span class="gate-ok"><i aria-hidden="true"></i>All three seen</span>';setTimeout(unveil,520)}
 function unveil(){var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){var ab=t.querySelector('.acc-btn');if(ab)ab.click()}
-var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY;if(!calm)B.classList.add('unveil');
+var xb=document.getElementById('xt-btn'),y=xb?xb.getBoundingClientRect().top+window.scrollY-(mob?104:170):(t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY);if(!calm)B.classList.add('unveil');
 var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){stop=true}['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,halt,{once:true,passive:true})});
 function tick(n){if(stop)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/d),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;window.scrollTo({top:from+(y-from)*e,behavior:'instant'});if(p<1)requestAnimationFrame(tick)}
 if(calm)window.scrollTo({top:y,behavior:'instant'});else requestAnimationFrame(function(){requestAnimationFrame(tick)});
