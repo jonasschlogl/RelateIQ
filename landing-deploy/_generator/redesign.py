@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=122')
+s=s.replace('css/home.css?v=11','css/home.css?v=123')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -308,7 +308,8 @@ FOOT_HTML = """<footer class="hx-foot">
             <a href="#learn-blog-overthinking" data-feature="blog-overthinking" data-umami-event="footer-blog-overthinking">Overthinking</a>
           </div>
           <div class="ft-col">
-            <h4>Help</h4>
+            <h4>Support</h4>
+            <a href="#learn-support" data-feature="support" data-umami-event="footer-support">Contact us</a>
             <a href="#faq">FAQ</a>
             <a href="#join">Early access</a>
             <a href="privacy.html">Privacy Policy</a>
@@ -794,17 +795,45 @@ def _panel_blog(i,t):
      '<div class="bl-topics"><b>More topics</b><div>'+chips+'</div></div>'
      '<div class="bl-cta"><div><h3>Want help in the moment?</h3><p>Ask the coach what to say, check a message before you send it or practise a hard talk.</p></div><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-blog-%s">Get early access</a></div></section>'%key+
      '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p><a class="fm-next bl-all" href="/blog/">All articles <span aria-hidden="true">&rarr;</span></a></div></article>')
+
+SUMAIL='relationshipai.advice@gmail.com'
+def _su_ico(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'%d
+SU_ENV=_su_ico('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7.5l8.5 6 8.5-6"/>')
+SU_IG=_su_ico('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/>')
+def _panel_support():
+    big=('<div class="su-big">'
+     '<div class="su-c su-mail"><div class="su-t"><span class="su-ic">'+SU_ENV+'</span></div><div class="su-b"><h3>Email us</h3><p>The best way to reach us for anything: questions, bugs, billing or feedback. We usually reply within 24 hours.</p>'
+     '<a class="su-addr" href="mailto:'+SUMAIL+'" data-umami-event="support-email">'+SUMAIL+'</a>'
+     '<a class="hx-btn" href="mailto:'+SUMAIL+'?subject=Hello%20RelationshipAI" data-umami-event="support-email-btn">Write an email</a></div></div>'
+     '<div class="su-c su-ig"><div class="su-t"><span class="su-ic">'+SU_IG+'</span></div><div class="su-b"><h3>Message us on Instagram</h3><p>Prefer a quick chat? Send us a DM or leave a comment. A real person reads every message.</p>'
+     '<a class="su-addr" href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" data-umami-event="support-ig">@relationshipai_</a>'
+     '<a class="hx-btn ghost" href="https://ig.me/m/relationshipai_" target="_blank" rel="noopener noreferrer" data-umami-event="support-ig-btn">Send a DM <span aria-hidden="true">&rarr;</span></a></div></div></div>')
+    topics=[('Account and billing','Plans, upgrades, cancellations or a question about your account. Include the email you signed up with.','Account%20or%20billing%20question',_su_ico('<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10.5h18M7 15h3"/>')),
+            ('Feedback and ideas','Something confusing, something missing, or something you loved. We read all of it and it shapes what we build next.','Feedback%20for%20RelationshipAI',_su_ico('<path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/>')),
+            ('Partnerships and press','Therapists, creators, writers and teams who want to work with us or write about RelationshipAI.','Partnership%20or%20press',_su_ico('<path d="M8 12l3 3 5-6"/><circle cx="12" cy="12" r="9"/>'))]
+    cards=''.join('<a class="su-t2" href="mailto:%s?subject=%s" data-umami-event="support-topic-%d"><span class="su-ic">%s</span><h3>%s</h3><p>%s</p><span class="post-more">Email us %s</span></a>'%(SUMAIL,sub,i,ic,t,d,BARROW) for i,(t,d,sub,ic) in enumerate(topics))
+    return ('<article class="fm-panel pg su" id="learn-support" data-f="support" hidden style="--tint:#f4b8c4">'
+     '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>Support</b><span>Replies within 24 hours</span></span><h2 id="fm-title-support">We would love to <em>hear from you.</em></h2>'
+     '<p class="fm-sub">Questions, feedback, a bug or something that did not feel right. Write to us and a real person answers.</p>'
+     '<div class="fm-cta"><a href="mailto:'+SUMAIL+'" class="hx-btn" data-umami-event="cta-support-hero">Email us</a><span class="hx-free">or message us on Instagram</span></div></div>'
+     '<section class="pg-sec su-sec"><h3 class="su-h">Get in touch</h3>'+big+
+     '<h3 class="su-h">What can we help with?</h3><div class="su-grid">'+cards+'</div>'
+     '<div class="su-note"><div><h3>How fast do we reply?</h3><p>Usually within 24 hours, often sooner. For an urgent billing question, put &ldquo;Urgent&rdquo; and the email of your account in the subject line.</p></div>'
+     '<a href="#faq" class="hx-btn ghost" data-fclose data-umami-event="support-faq">Read the FAQ <span aria-hidden="true">&rarr;</span></a></div></section>'
+     '<div class="fm-foot"><p>RelationshipAI cannot help in an emergency. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
+     '<a class="fm-next bl-all" href="#faq" data-fclose>Read the FAQ <span aria-hidden="true">&rarr;</span></a></div></article>')
+
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap">'+WINBG+_wnav('data-fclose')+
- '<div class="fm-card">'+''.join(_wrapbody(_panel(i,f)) for i,f in enumerate(FEATS))+_wrapbody(_panel_more())+''.join(_wrapbody(_panel_blog(i,t)) for i,t in enumerate(BTOPICS))+FSITE+'</div></div></div></div>')
+ '<div class="fm-card">'+''.join(_wrapbody(_panel(i,f)) for i,f in enumerate(FEATS))+_wrapbody(_panel_more())+_wrapbody(_panel_support())+''.join(_wrapbody(_panel_blog(i,t)) for i,t in enumerate(BTOPICS))+FSITE+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
 function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id;[].forEach.call(p.querySelectorAll('.bl-x'),function(x){x.hidden=true});var b=p.querySelector('.bl-sm');if(b)b.hidden=false});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
 function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
 [].forEach.call(p.querySelectorAll('.tb-ex,.tb-cap'),function(x){x.classList.toggle('on',+x.getAttribute('data-i')===i)});var st=p.querySelector('.tb-stage');if(st)st.setAttribute('data-i',i)}
 var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
 function arm(){if(io)io.disconnect();var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
-var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.mo-c,.mo-also,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth,.bl-card:not(.bl-x),.bl-topics,.bl-cta'));
-T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li,.mo-c,.bl-card')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*(e.matches('.mo-c')?70:e.matches('.bl-card')?90:50))+'ms'});
+var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.mo-c,.mo-also,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth,.bl-card:not(.bl-x),.bl-topics,.bl-cta,.su-h,.su-c,.su-t2,.su-note'));
+T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li,.mo-c,.bl-card,.su-c,.su-t2')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*(e.matches('.mo-c')?70:e.matches('.bl-card')?90:50))+'ms'});
 io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{root:sc0,threshold:.12,rootMargin:'0px 0px -6% 0px'});
 T.forEach(function(e){io.observe(e)});par()}
 function par(){tk=false;var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!sc0)return;var r0=sc0.getBoundingClientRect(),c=r0.top+r0.height/2;[].forEach.call(p.querySelectorAll('.pg-f'),function(f){var r=f.getBoundingClientRect();if(r.bottom<r0.top-200||r.top>r0.bottom+200)return;var v=((r.top+r.height/2)-c)/r0.height;f.style.setProperty('--p',Math.max(-1,Math.min(1,v)).toFixed(3))})}
@@ -814,7 +843,7 @@ if(was&&!init)history.pushState({fm:1},'','#learn-'+id);else history.replaceStat
 function hide(){m.hidden=true;var ab=document.getElementById('about');if(!ab||ab.hidden)document.body.classList.remove('about-open');if(last&&last.focus)last.focus()}
 function clean(){if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search)}
 function close(){if(history.state&&history.state.fm){history.back()}else{hide();clean()}}
-window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more|blog-[a-z]+)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
+window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
 if(!m.hidden&&(t.classList.contains('fm-scroll')||t.classList.contains('fm-wrap'))){close();return}
 var sm=t.closest('.bl-sm');if(sm){e.preventDefault();var pp=sm.closest('.fm-panel');[].forEach.call(pp.querySelectorAll('.bl-x'),function(x,i){x.hidden=false;x.classList.add('rv');x.style.transitionDelay=(i*90)+'ms';requestAnimationFrame(function(){requestAnimationFrame(function(){x.classList.add('in')})})});sm.hidden=true;return}
@@ -822,7 +851,7 @@ var tb=t.closest('.tb-b');if(tb){e.preventDefault();pick(tb.closest('.fm-panel')
 var n=t.closest('.fm-next[data-go]');if(n){show(n.getAttribute('data-go'));history.replaceState(history.state,'','#learn-'+cur);return}
 if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');if(link){hide();clean()}else close();if(!link)return}},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
-var h=location.hash.match(/^#learn-(practice|message|coach|more|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
+var h=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
 
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
