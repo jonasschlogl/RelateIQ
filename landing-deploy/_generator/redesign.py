@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=85')
+s=s.replace('css/home.css?v=11','css/home.css?v=86')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -111,15 +111,6 @@ HERO4='''<div class="hph" id="hph" role="group" aria-label="Product preview">
                   <div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div>
                 </div>
                 <div class="hs">
-                  <div class="hs-top"><i></i>Message check</div>
-                  <div class="hs-lbl">Your draft</div>
-                  <div class="hs-card pk">Fine. Do whatever you want.<span>Reads as cold &middot; likely to start a fight</span></div>
-                  <div class="hs-arrow">&darr;</div>
-                  <div class="hs-lbl">Says what you actually mean</div>
-                  <div class="hs-card bt">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?<span>Honest, calm, invites a reply</span></div>
-                  <div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div>
-                </div>
-                <div class="hs">
                   <div class="hs-top"><i></i>Coach Chat</div>
                   <div class="hs-lbl">2:07 AM &middot; can&rsquo;t sleep</div>
                   <div class="bb me">He went quiet again.</div>
@@ -128,7 +119,16 @@ HERO4='''<div class="hph" id="hph" role="group" aria-label="Product preview">
                   <div class="hs-card bt"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>
                   <div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div>
                 </div>
-                <div class="hph-tabs"><button type="button" class="on" data-i="0" aria-label="Partner Practice">Practice</button><button type="button" data-i="1" aria-label="Message check">Check</button><button type="button" data-i="2" aria-label="Coach Chat">Coach</button></div>
+                <div class="hs">
+                  <div class="hs-top"><i></i>Message check</div>
+                  <div class="hs-lbl">Your draft</div>
+                  <div class="hs-card pk">Fine. Do whatever you want.<span>Reads as cold &middot; likely to start a fight</span></div>
+                  <div class="hs-arrow">&darr;</div>
+                  <div class="hs-lbl">Says what you actually mean</div>
+                  <div class="hs-card bt">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?<span>Honest, calm, invites a reply</span></div>
+                  <div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div>
+                </div>
+                <div class="hph-tabs"><button type="button" class="on" data-i="0" aria-label="Partner Practice">Practice</button><button type="button" data-i="1" aria-label="Coach Chat">Coach</button><button type="button" data-i="2" aria-label="Message check">Check</button></div>
               </div>
             </div>
           </div>
@@ -220,14 +220,14 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         <div class="deck hx-reveal" id="deck">
           <div class="deck-stage">
         {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner, so you can rehearse a hard conversation with nothing at stake. Afterwards you get a short debrief on what worked and what to try next.',pm,'Next','Partner Practice')}
-        {page('02','f2','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check')}
-        {page('03','f3','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat')}
+        {page('02','f2','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat')}
+        {page('03','f3','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check')}
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
       </div>
     </section>
-    <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Message check','Coach Chat'],a=0,dir=1,ro;
+    <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
 function nat(p){{var c=p.querySelector('.pg-in').children,t=0;for(var k=0;k<c.length;k++)t+=c[k].offsetHeight;return t+26}}
 function lay(){{var h=0;P.forEach(function(p){{h=Math.max(h,nat(p))}});st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
 function go(n){{a=n;seen[n]=1;lay();upd();if(window.ResizeObserver&&!ro){{ro=new ResizeObserver(lay);P.forEach(function(p){{[].slice.call(p.querySelector('.pg-in').children).forEach(function(c){{ro.observe(c)}})}})}}}}
@@ -280,9 +280,9 @@ FOOT_HTML = """<footer class="hx-foot">
         <div class="ft-grid">
           <div class="ft-col">
             <h4>Product</h4>
+            <a href="#learn-practice" data-feature="practice" data-umami-event="footer-feature-practice">Partner Practice</a>
             <a href="#learn-coach" data-feature="coach" data-umami-event="footer-feature-coach">Coach Chat</a>
             <a href="#learn-message" data-feature="message" data-umami-event="footer-feature-message">Message check</a>
-            <a href="#learn-practice" data-feature="practice" data-umami-event="footer-feature-practice">Partner Practice</a>
             <a href="#pricing">Pricing</a>
           </div>
           <div class="ft-col">
@@ -419,6 +419,7 @@ FEATS=[
          ('Take one thing with you','<div class="fm-note"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>')],
   avail='Free: 8 messages a day, with memory of your chats.'),
 ]
+FEATS=[FEATS[0],FEATS[2],FEATS[1]]
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
     helps=''.join('<div class="fm-hi"><span class="fm-ic">%s</span><h4>%s</h4><p>%s</p></div>'%h for h in f['helps'])
@@ -465,5 +466,20 @@ s=_re.sub(r'<a class="post-card" href="/blog/([^/"]+)/">',_thumb,s)
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+clover('fclover','f'))
 # footer clover
 s=s.replace('<body class="hx">','<body class="hx">'+PGBG,1)
+
+# ---- pricing bullets in the same order: Partner Practice, Coach Chat, Message check
+def _li(label):
+    m=_re.search(r'<li>(?:(?!</li>).)*?<strong>'+_re.escape(label)+r'(?:(?!</li>).)*?</li>\n?\s*',s,_re.S)
+    return m
+m1=_li('Coach Chat:'); m2=_li('Message check:'); m3=_li('Partner Practice:')
+if m1 and m2 and m3 and m1.end()<=m2.start() and m2.end()<=m3.start() and m3.start()-m1.start()<900:
+    seg=s[m1.start():m3.end()]
+    new=m3.group(0)+m1.group(0)+m2.group(0)
+    s=s[:m1.start()]+new+s[m3.end():]
+
+m_pp=_re.search(r'<li>(?:(?!</li>).)*?<strong>Partner Practice:</strong> unlimited(?:(?!</li>).)*?</li>\n?\s*',s,_re.S)
+m_ac=_re.search(r'<li>(?:(?!</li>).)*?<strong>Advanced Coach Chat:</strong>(?:(?!</li>).)*?</li>\n?\s*',s,_re.S)
+if m_pp and m_ac and m_pp.end()<m_ac.start() and m_ac.start()-m_pp.end()<1500:
+    s=s[:m_pp.end()]+m_ac.group(0)+s[m_pp.end():m_ac.start()]+s[m_ac.end():]
 open('/root/lp/index.html','w').write(s)
 print('ok',len(s))
