@@ -1736,3 +1736,37 @@ html, body.hx { overflow-x: clip; }
   .bl-cta { flex-direction: column; align-items: flex-start; padding: 24px 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .bl-card, .bl-img img, .bl-sm, .bl-chip { transition: none; } .bl-crumb, .bl-count { animation: none !important; } }
+
+/* v104 fullscreen windows */
+.fm .about-backdrop, .about-modal .about-backdrop { background: #fffaf2; backdrop-filter: none; }
+.fm-scroll, .about-scroll { padding: 0; display: block; overscroll-behavior: contain; }
+.fm-wrap, .about-wrap { max-width: none; width: 100%; margin: 0; min-height: 100%; }
+.fm-card { border-radius: 0; border: 0; box-shadow: none; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: #fffaf2; animation: fsIn .32s cubic-bezier(.2,.7,.2,1) both; }
+.fm-card > .fm-panel:not([hidden]) { flex: 1 1 auto; display: flex; flex-direction: column; }
+.fm-panel > .fm-foot { margin-top: auto; }
+.fm .about-close, .about-modal .about-close { position: fixed; top: 18px; right: 22px; z-index: 30; width: 52px; height: 52px; box-shadow: 0 0 0 4px rgba(255,250,242,.85), 0 10px 20px -10px rgba(59,34,24,.7); }
+.fm .about-close:hover, .about-modal .about-close:hover { background: #f4b8c4; }
+@keyframes fsIn { from { opacity: 0; translate: 0 22px; } to { opacity: 1; translate: 0 0; } }
+.fm-panel .pg-hero { padding-top: 96px; }
+/* about us fullscreen */
+.about-modal .about-card { max-width: none; min-height: 100vh; min-height: 100dvh; border-radius: 0; border: 0; box-shadow: none; grid-template-columns: minmax(300px, 38%) 1fr; background: #fffaf2; animation: fsIn .32s cubic-bezier(.2,.7,.2,1) both; }
+.about-modal .about-side { position: sticky; top: 0; height: 100vh; height: 100dvh; padding: 60px 40px; border-right: 1.5px solid #3b2218; background: #f7d99a; overflow: hidden; }
+.about-modal .about-tile { width: 168px; height: 168px; border-radius: 48px; } .about-modal .about-tile svg { width: 118px; height: 118px; }
+.about-modal .about-name { font-size: 46px; margin-top: 28px; } .about-modal .about-role { font-size: 14px; }
+.about-modal .about-body { align-self: center; max-width: 780px; padding: 96px 64px 96px 72px; }
+.about-modal .about-body h2 { font-size: clamp(38px, 5vw, 68px); line-height: 1; margin: 20px 0 12px; }
+.about-modal .about-body p { font-size: 20px; line-height: 1.65; margin-top: 20px; }
+.about-modal .about-body .about-sign { font-size: 34px; margin-top: 34px; }
+@media (max-width: 860px) {
+  .fm .about-close, .about-modal .about-close { top: 12px; right: 12px; width: 46px; height: 46px; }
+  .fm-panel .pg-hero { padding-top: 78px; }
+  .about-modal .about-card { grid-template-columns: 1fr; }
+  .about-modal .about-side { position: relative; height: auto; padding: 78px 24px 28px; border-right: 0; border-bottom: 1.5px solid #3b2218; }
+  .about-modal .about-tile { width: 84px; height: 84px; border-radius: 26px; } .about-modal .about-tile svg { width: 58px; height: 58px; }
+  .about-modal .about-name { font-size: 30px; margin: 0; }
+  .about-modal .about-body { align-self: auto; padding: 34px 22px 60px; }
+  .about-modal .about-body p { font-size: 17.5px; }
+  .about-modal .about-body h2 { font-size: 38px; }
+}
+@media (prefers-reduced-motion: reduce) { .fm-card, .about-modal .about-card { animation: none; } }
+.fm-panel > .fm-foot { box-sizing: border-box; width: 100%; max-width: 1180px; margin-inline: auto; }

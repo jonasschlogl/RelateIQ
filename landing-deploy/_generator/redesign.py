@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=103')
+s=s.replace('css/home.css?v=11','css/home.css?v=104')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -319,11 +319,15 @@ FOOT_HTML = """<footer class="hx-foot">
     </div>
   </footer>"""
 ABOUT_JS = """<script>(function(){var m=document.getElementById('about');if(!m)return;var last=null;
-function open(){last=document.activeElement;m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();if(location.hash!=='#about')history.replaceState(null,'','#about')}
-function close(){m.hidden=true;document.body.classList.remove('about-open');if(location.hash==='#about')history.replaceState(null,'',location.pathname+location.search);if(last&&last.focus)last.focus()}
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#about"]');if(a){e.preventDefault();e.stopPropagation();open();return}if(e.target.closest&&e.target.closest('[data-close]'))close()},true);
+function show(){m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();var sc=m.querySelector('.about-scroll');if(sc)sc.scrollTop=0}
+function hide(){m.hidden=true;document.body.classList.remove('about-open');if(last&&last.focus)last.focus()}
+function open(init){last=document.activeElement;show();if(init)history.replaceState(null,'','#about');else history.pushState({ab:1},'','#about')}
+function clean(){if(location.hash==='#about')history.replaceState(null,'',location.pathname+location.search)}
+function close(){if(history.state&&history.state.ab)history.back();else{hide();clean()}}
+window.addEventListener('popstate',function(){if(location.hash==='#about'){if(m.hidden)show()}else if(!m.hidden)hide()});
+document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var a=t.closest('a[href="#about"]');if(a){e.preventDefault();e.stopPropagation();if(m.hidden)open();return}if(!m.hidden&&(t.closest('[data-close]')||t.classList.contains('about-scroll')||t.classList.contains('about-wrap')))close()},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
-if(location.hash==='#about')open();})();</script>"""
+if(location.hash==='#about')open(true);})();</script>"""
 PRICE_JS = """<script>(function(){var mq=window.matchMedia('(max-width:760px)'),s=document.getElementById('pricing');if(!s)return;
 var b=document.createElement('button');b.type='button';b.className='pr-close';b.setAttribute('aria-label','Close pricing');var k=document.createElement('button');k.type='button';k.className='pr-back';k.setAttribute('aria-label','Back');k.innerHTML='<i></i>Back';var bar=document.createElement('div');bar.className='pr-bar';var ti=document.createElement('b');ti.textContent='Pricing';bar.appendChild(k);bar.appendChild(ti);bar.appendChild(b);document.body.appendChild(bar);k.addEventListener('click',function(){close()});
 function open(){[].forEach.call(s.querySelectorAll('.hx-reveal'),function(e){e.classList.add('in')});document.body.classList.add('pricing-open');s.scrollTop=0;if(location.hash!=='#pricing')history.replaceState(null,'','#pricing')}
