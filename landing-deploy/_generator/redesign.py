@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=100')
+s=s.replace('css/home.css?v=11','css/home.css?v=101')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -283,6 +283,7 @@ FOOT_HTML = """<footer class="hx-foot">
             <a href="#learn-practice" data-feature="practice" data-umami-event="footer-feature-practice">Partner Practice</a>
             <a href="#learn-coach" data-feature="coach" data-umami-event="footer-feature-coach">Coach Chat</a>
             <a href="#learn-message" data-feature="message" data-umami-event="footer-feature-message">Message check</a>
+            <a href="#learn-more" data-feature="more" data-umami-event="footer-feature-more">Other tools</a>
             <a href="#pricing">Pricing</a>
           </div>
           <div class="ft-col">
@@ -668,17 +669,52 @@ def _panel(i,f):
 PGEND={'practice':('Have the talk twice. Once here, once for real.','Rehearse with an AI that answers like your partner, get honest feedback, and walk in ready.'),
  'coach':('Someone to think it through with, any hour.','Honest, remembers your story, and always ends with one small next step.'),
  'message':('Know how it lands before you hit send.','Paste a draft, see the risk, and send the version you actually mean.')}
+
+# ---- "Other tools" window (the nine smaller tools, simpler than the flagship windows)
+def MN(title,body,tag=''): return '<div class="mn"><div class="mn-h"><b>%s</b>%s</div>%s</div>'%(title,('<em>%s</em>'%tag) if tag else '',body)
+_cal='<div class="mn-cal">'+''.join('<i class="%s"></i>'%c for c in ['','f','','f','f','','','f','','','f','p','f','','','f','f','','p','f','','','f','','f','f','p',''])+'</div>'
+_ICO=lambda d:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">%s</svg>'%d
+MORE=[
+ ('After a fight','Free','A short calming guide for the first hour. Pro adds a message to reach out.',
+  MN('The first hour',CHK('Breathe slowly')+CHK('Step away for a while',False)+CHK('Reach out when calm',False))),
+ ('Playbook','Free','One small thing to try. See what really works for you.',
+  MN('Try this','<div class="ap-try">Ask for a time, not an answer.</div>'+PILLS('Worked','Did not help',on=('Worked',)))),
+ ('Daily check-in and question','Free','One private minute a day.',
+  MN('Today','<div class="mn-moods"><i></i><i></i><i class="on"></i><i></i><i></i></div><div class="ap-r y"><small>Question of the day</small><span>What made you feel close this week?</span></div>')),
+ ('Share with your partner','Free','Share what you choose. No account needed.',
+  MN('Share','<div class="mn-link">'+_ICO('<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>')+'<span>relationshipaiadvice.com/s/&hellip;</span></div>'+PILLS('You choose what','No account needed'))),
+ ('Therapist summary','Free','A one-page summary of a chat, to download or print.',
+  '<div class="mn mn-doc"><h5>Summary for your therapist</h5>'+BARS(92,70)+'<h5>Patterns</h5>'+BARS(86,52)+'</div>'),
+ ('Weekly focus and ideas','Pro','One focus a week, plus ideas for gestures and dates.',
+  MN('This week','<div class="ap-r pk"><small>Focus</small><span>Listen first, answer second</span></div>'+PILLS('A small gesture','A date idea'))),
+ ('Insights','Pro','Patterns the coach notices, in a weekly summary.',
+  MN('Weekly summary',CH([3,5,4,7,8],['Mon','Wed','Fri','Sat','Sun'])+'<div class="ap-mm"><i></i>You calm down faster</div>')),
+ ('Talk plan and hard mode','Premium','An opening line, what to avoid, and a hard mode.',
+  MN('Talk plan',ROW('Opening line','&ldquo;I miss us. Can we talk tonight?&rdquo;','y')+PILLS('Calm','Defensive','Cold',on=('Defensive',)))),
+ ('Monthly review and your year','Premium','A calm look back at your month and year.',
+  MN('Your month',_cal+'<div class="mn-leg"><span><i class="f"></i>Check-ins</span><span><i class="p"></i>Talks</span></div>')),
+]
+def _panel_more():
+    cards=''.join('<div class="mo-c"><div class="mo-t">%s</div><div class="mo-b"><h3>%s<em class="mo-p %s">%s</em></h3><p>%s</p></div></div>'%(art,t,pl.lower(),pl,d) for t,pl,d,art in MORE)
+    also=''.join('<span>%s</span>'%x for x in ['Dictate with your voice','Add screenshots and files','Save more than one partner profile','Choose Fast or Advanced AI for each chat'])
+    return ('<article class="fm-panel pg mo" id="learn-more" data-f="more" hidden style="--tint:#f7d99a">'
+     '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>Other tools</b><span>After the chat ends</span></span><h2 id="fm-title-more">Small tools that help <em>after the chat ends.</em></h2>'
+     '<p class="fm-sub">Nine more tools around the three main ones, so the work carries on between conversations.</p>'
+     '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-more">Get early access</a><span class="hx-free">Free to try</span></div></div>'
+     '<section class="pg-sec mo-sec"><div class="mo-grid">'+cards+'</div><div class="mo-also"><b>Also included</b>'+also+'</div></section>'
+     '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
+     '<button type="button" class="fm-next" data-go="practice">Next: Partner Practice <span aria-hidden="true">&rarr;</span></button></div></article>')
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
- '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
+ '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+_panel_more()+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
 function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
 function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
 [].forEach.call(p.querySelectorAll('.tb-ex,.tb-cap'),function(x){x.classList.toggle('on',+x.getAttribute('data-i')===i)});var st=p.querySelector('.tb-stage');if(st)st.setAttribute('data-i',i)}
 var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
 function arm(){if(io)io.disconnect();var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
-var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
-T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*50)+'ms'});
+var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.mo-c,.mo-also,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
+T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li,.mo-c')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*(e.matches('.mo-c')?70:50))+'ms'});
 io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{root:sc0,threshold:.12,rootMargin:'0px 0px -6% 0px'});
 T.forEach(function(e){io.observe(e)});par()}
 function par(){tk=false;var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!sc0)return;var r0=sc0.getBoundingClientRect(),c=r0.top+r0.height/2;[].forEach.call(p.querySelectorAll('.pg-f'),function(f){var r=f.getBoundingClientRect();if(r.bottom<r0.top-200||r.top>r0.bottom+200)return;var v=((r.top+r.height/2)-c)/r0.height;f.style.setProperty('--p',Math.max(-1,Math.min(1,v)).toFixed(3))})}
@@ -688,14 +724,14 @@ if(was&&!init)history.pushState({fm:1},'','#learn-'+id);else history.replaceStat
 function hide(){m.hidden=true;document.body.classList.remove('about-open');if(last&&last.focus)last.focus()}
 function clean(){if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search)}
 function close(){if(history.state&&history.state.fm){history.back()}else{hide();clean()}}
-window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
+window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
 if(!m.hidden&&(t.classList.contains('fm-scroll')||t.classList.contains('fm-wrap'))){close();return}
 var tb=t.closest('.tb-b');if(tb){e.preventDefault();pick(tb.closest('.fm-panel'),+tb.getAttribute('data-i'));return}
 var n=t.closest('.fm-next');if(n){show(n.getAttribute('data-go'));history.replaceState(history.state,'','#learn-'+cur);return}
 if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');if(link){hide();clean()}else close();if(!link)return}},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
-var h=location.hash.match(/^#learn-(practice|message|coach)$/);if(h)open(h[1],true);})();</script>"""
+var h=location.hash.match(/^#learn-(practice|message|coach|more)$/);if(h)open(h[1],true);})();</script>"""
 
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
