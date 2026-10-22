@@ -829,6 +829,7 @@ s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC
 
 # ---- nav: add "Our approach" link
 s=_re.sub(r'(<a href="#tools">Features</a>\s*)(<a href="#pricing">Pricing</a>)',lambda m:m.group(1)+'<a href="#approach" data-nogate>Our approach</a>\n        '+m.group(2),s,count=1)
+s=_re.sub(r'(<a href="#pricing">Pricing</a>\s*)(<a href="#faq">FAQ</a>)',lambda m:m.group(1)+'<a href="#blog" data-nogate>Blog</a>\n        '+m.group(2),s,count=1)
 
 # ---- page-wide motion: floating hearts in hero and final card
 s=s.replace('<section class="hx-hero">','<section class="hx-hero">'+FLOATS,1)
