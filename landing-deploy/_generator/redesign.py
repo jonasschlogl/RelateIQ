@@ -827,13 +827,6 @@ var h=location.hash.match(/^#learn-(practice|message|coach|more|blog-[a-z]+)$/);
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
 
-# ---- move "Our approach" up, right below the hero
-_m=_re.search(r'\s*<section class="hx-sec" id="approach">.*?</section>',s,flags=_re.S)
-if _m:
-    _blk=_m.group(0); s=s.replace(_blk,'',1)
-    _k=s.index('<section class="hx-sec hx-tools" id="tools">')
-    s=s[:_k]+_blk.strip()+'\n  '+s[_k:]
-
 # ---- page-wide motion: floating hearts in hero and final card
 s=s.replace('<section class="hx-hero">','<section class="hx-hero">'+FLOATS,1)
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+FLOATS,1)
