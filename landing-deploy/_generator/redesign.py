@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=102')
+s=s.replace('css/home.css?v=11','css/home.css?v=103')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -289,8 +289,15 @@ FOOT_HTML = """<footer class="hx-foot">
           <div class="ft-col">
             <h4>About</h4>
             <a href="#about" class="ft-about" data-about data-umami-event="click-about-footer">About us</a>
-            <a href="/blog/">Blog</a>
             <a href="method.html">Our method</a>
+          </div>
+          <div class="ft-col">
+            <h4>From the blogs</h4>
+            <a href="#learn-blog-attachment" data-feature="blog-attachment" data-umami-event="footer-blog-attachment">Attachment styles</a>
+            <a href="#learn-blog-communication" data-feature="blog-communication" data-umami-event="footer-blog-communication">Communication</a>
+            <a href="#learn-blog-conflict" data-feature="blog-conflict" data-umami-event="footer-blog-conflict">Conflict</a>
+            <a href="#learn-blog-repair" data-feature="blog-repair" data-umami-event="footer-blog-repair">Repairing a relationship</a>
+            <a href="#learn-blog-overthinking" data-feature="blog-overthinking" data-umami-event="footer-blog-overthinking">Overthinking</a>
           </div>
           <div class="ft-col">
             <h4>Help</h4>
@@ -725,17 +732,52 @@ def _panel_more():
      '<section class="pg-sec mo-sec"><div class="mo-grid">'+cards+'</div><div class="mo-also"><b>Also included</b>'+also+'</div></section>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="practice">Next: Partner Practice <span aria-hidden="true">&rarr;</span></button></div></article>')
+
+BPOSTS={
+ 'attachment':('how-attachment-styles-work-in-relationships','2026-10-08','attachment styles','8 Oct 2026 \u00b7 5 min read','Attachment styles in relationships: secure, anxious, avoidant and fearful-avoidant explained','What attachment styles are, how anxious, avoidant, secure and fearful-avoidant attachment show up in dating and texting, and why your attachment style isn\'t fixed.'),
+ 'apology':('how-to-apologize-to-your-partner','2026-10-08','apologies','8 Oct 2026 \u00b7 4 min read','How to apologize to your partner (and what makes an apology actually work)','How to apologize to your partner in a way that lands. What research on apologies found, a simple structure, real examples and what to avoid when you say sorry.'),
+ 'overthink':('how-to-stop-overthinking-in-a-relationship','2026-10-08','overthinking','8 Oct 2026 \u00b7 5 min read','How to stop overthinking in a relationship (a calmer way to handle the what-if spiral)','Overthinking in a relationship, like replaying texts or reading into silence, is very common. Here is a practical way to break the loop and talk to your partner.'),
+ 'habits':('relationship-advice-communication-habits','2026-10-05','communication','5 Oct 2026 \u00b7 3 min read','Relationship advice: 7 communication habits that change how you argue','Practical relationship advice on how to communicate better. Seven small habits, from softer starts to taking breaks, that make hard conversations go better.'),
+ 'fix':('how-to-fix-a-relationship','2026-10-04','repair','4 Oct 2026 \u00b7 2 min read','How to fix a relationship: where to start when it feels broken','A calm, step-by-step starting point for a relationship that feels distant or stuck, from stopping arguments from escalating to rebuilding closeness.'),
+ 'problems':('relationship-problems-that-keep-coming-back','2026-10-03','recurring problems','3 Oct 2026 \u00b7 3 min read','5 relationship problems that keep coming back (and what\'s usually underneath)','The same relationship problems show up in almost every couple: chores, time, money, intimacy and the fight that never ends. Here\'s what\'s usually underneath.'),
+}
+BTOPICS=[
+ ('attachment','Attachment styles','Attachment style is the pattern you learned for getting close to people, and how you react when closeness feels uncertain.',['attachment','overthink'],'#f7d99a'),
+ ('communication','Communication','How you say something often matters more than what you say. A few small habits change how hard conversations go.',['habits','apology','problems'],'#f4b8c4'),
+ ('conflict','Conflict','Every couple argues. What matters is how a fight starts, how it escalates and how you find your way back to each other.',['problems','habits','apology','fix'],'#f8c7a3'),
+ ('repair','Repairing a relationship','Repair is what you do when things have gone wrong: slowing down, owning your part and rebuilding trust one small step at a time.',['fix','apology','problems'],'#f7d99a'),
+ ('overthinking','Overthinking','Overthinking is the loop of replaying texts, guessing what silence means and imagining the worst. It is common and it can be calmed.',['overthink','attachment'],'#f4b8c4'),
+]
+BARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+def _panel_blog(i,t):
+    key,name,dfn,posts,tint=t
+    cards=''
+    for n,k in enumerate(posts):
+        sl,dt,tag,meta,ti,ds=BPOSTS[k]
+        cards+=('<a class="bl-card%s" href="/blog/%s/"%s data-umami-event="blog-topic-%s-%s"><div class="bl-img"><img src="/img/blog/%s-%s-1.svg?v=2" alt="" width="1200" height="630" loading="lazy"></div>'
+          '<div class="bl-body"><div class="bl-top"><span class="bl-tag">%s</span><span class="bl-meta">%s</span></div><h3>%s</h3><p>%s</p><span class="bl-read">Read article %s</span></div></a>')%(
+          ' bl-x' if n>=3 else '',sl,' hidden' if n>=3 else '',key,sl,dt,sl,tag,meta,ti,ds,BARROW)
+    more='<button type="button" class="bl-sm" data-show><span>Show more</span></button>' if len(posts)>3 else ''
+    chips=''.join('<a href="#learn-blog-%s" data-feature="blog-%s" class="bl-chip">%s</a>'%(o[0],o[0],o[1]) for o in BTOPICS if o[0]!=key)
+    cnt='%d article%s'%(len(posts),'' if len(posts)==1 else 's')
+    return ('<article class="fm-panel pg bl" id="learn-blog-%s" data-f="blog-%s" hidden style="--tint:%s">'
+     '<div class="pg-hero bl-hero">'%(key,key,tint)+FLOATS+'<nav class="bl-crumb" aria-label="Breadcrumb"><a href="/blog/">Articles</a><i>/</i><b>%s</b></nav>'%name+
+     '<h2 id="fm-title-blog-%s">%s</h2><p class="fm-sub">%s</p><span class="bl-count">%s</span></div>'%(key,name,dfn,cnt)+
+     '<section class="pg-sec bl-sec"><div class="bl-list">'+cards+'</div>'+more+
+     '<div class="bl-topics"><b>More topics</b><div>'+chips+'</div></div>'
+     '<div class="bl-cta"><div><h3>Want help in the moment?</h3><p>Ask the coach what to say, check a message before you send it or practise a hard talk.</p></div><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-blog-%s">Get early access</a></div></section>'%key+
+     '<div class="fm-foot"><p>Articles are for general information and do not replace professional care. If you are in a crisis, please contact a professional or a helpline in your country.</p><a class="fm-next bl-all" href="/blog/">All articles <span aria-hidden="true">&rarr;</span></a></div></article>')
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
- '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+_panel_more()+'</div></div></div></div>')
+ '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+_panel_more()+''.join(_panel_blog(i,t) for i,t in enumerate(BTOPICS))+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
-function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
+function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id;[].forEach.call(p.querySelectorAll('.bl-x'),function(x){x.hidden=true});var b=p.querySelector('.bl-sm');if(b)b.hidden=false});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;P.forEach(function(p){pick(p,0)});var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
 function pick(p,i){[].forEach.call(p.querySelectorAll('.tb-b'),function(b){var o=+b.getAttribute('data-i')===i;b.classList.toggle('on',o);b.setAttribute('aria-selected',o?'true':'false');if(o){var l=b.parentNode;if(l.scrollWidth>l.clientWidth+4)l.scrollTo({left:Math.max(0,b.offsetLeft-20),behavior:'smooth'})}});
 [].forEach.call(p.querySelectorAll('.tb-ex,.tb-cap'),function(x){x.classList.toggle('on',+x.getAttribute('data-i')===i)});var st=p.querySelector('.tb-stage');if(st)st.setAttribute('data-i',i)}
 var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
 function arm(){if(io)io.disconnect();var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
-var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.mo-c,.mo-also,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
-T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li,.mo-c')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*(e.matches('.mo-c')?70:50))+'ms'});
+var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.tbx,.mo-c,.mo-also,.pg-good li,.pg-end h3,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth,.bl-card:not(.bl-x),.bl-topics,.bl-cta'));
+T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li,.mo-c,.bl-card')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*(e.matches('.mo-c')?70:e.matches('.bl-card')?90:50))+'ms'});
 io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{root:sc0,threshold:.12,rootMargin:'0px 0px -6% 0px'});
 T.forEach(function(e){io.observe(e)});par()}
 function par(){tk=false;var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!sc0)return;var r0=sc0.getBoundingClientRect(),c=r0.top+r0.height/2;[].forEach.call(p.querySelectorAll('.pg-f'),function(f){var r=f.getBoundingClientRect();if(r.bottom<r0.top-200||r.top>r0.bottom+200)return;var v=((r.top+r.height/2)-c)/r0.height;f.style.setProperty('--p',Math.max(-1,Math.min(1,v)).toFixed(3))})}
@@ -745,14 +787,15 @@ if(was&&!init)history.pushState({fm:1},'','#learn-'+id);else history.replaceStat
 function hide(){m.hidden=true;document.body.classList.remove('about-open');if(last&&last.focus)last.focus()}
 function clean(){if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search)}
 function close(){if(history.state&&history.state.fm){history.back()}else{hide();clean()}}
-window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
+window.addEventListener('popstate',function(){var q=location.hash.match(/^#learn-(practice|message|coach|more|blog-[a-z]+)$/);if(q){if(m.hidden)open(q[1],true);else show(q[1])}else if(!m.hidden)hide()});
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
 if(!m.hidden&&(t.classList.contains('fm-scroll')||t.classList.contains('fm-wrap'))){close();return}
+var sm=t.closest('.bl-sm');if(sm){e.preventDefault();var pp=sm.closest('.fm-panel');[].forEach.call(pp.querySelectorAll('.bl-x'),function(x,i){x.hidden=false;x.classList.add('rv');x.style.transitionDelay=(i*90)+'ms';requestAnimationFrame(function(){requestAnimationFrame(function(){x.classList.add('in')})})});sm.hidden=true;return}
 var tb=t.closest('.tb-b');if(tb){e.preventDefault();pick(tb.closest('.fm-panel'),+tb.getAttribute('data-i'));return}
-var n=t.closest('.fm-next');if(n){show(n.getAttribute('data-go'));history.replaceState(history.state,'','#learn-'+cur);return}
+var n=t.closest('.fm-next[data-go]');if(n){show(n.getAttribute('data-go'));history.replaceState(history.state,'','#learn-'+cur);return}
 if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');if(link){hide();clean()}else close();if(!link)return}},true);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
-var h=location.hash.match(/^#learn-(practice|message|coach|more)$/);if(h)open(h[1],true);})();</script>"""
+var h=location.hash.match(/^#learn-(practice|message|coach|more|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
 
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
