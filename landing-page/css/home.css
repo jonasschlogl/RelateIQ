@@ -1869,3 +1869,13 @@ html, body.hx { overflow-x: clip; }
   .hx-foot .ft-main .ft-logo { justify-self: start; }
 }
 .fm-site .hx-foot { padding: 28px 0 40px; }
+/* v112 blog topic cards side by side */
+.bl-sec { max-width: 1180px; padding: 48px 32px 8px; }
+.bl-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
+.bl-card { display: flex; flex-direction: column; grid-template-columns: none; }
+.bl-card[hidden] { display: none; }
+.bl-img { min-height: 0; aspect-ratio: 1200 / 630; border-right: 0; border-bottom: 1.5px solid #3b2218; flex: none; }
+.bl-body { flex: 1; padding: 22px 24px 24px; }
+.bl-body h3 { font-size: 20px; }
+@media (max-width: 1060px) { .bl-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
+@media (max-width: 700px) { .bl-list { grid-template-columns: 1fr; } .bl-sec { padding: 30px 16px 4px; } }
