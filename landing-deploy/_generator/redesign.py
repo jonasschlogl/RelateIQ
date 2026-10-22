@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=132')
+s=s.replace('css/home.css?v=11','css/home.css?v=133')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -221,7 +221,7 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
-
+        <!--XT-->
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
@@ -868,6 +868,26 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)c
 var h=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
 
 XM='''<div class="xm-row"><p><b>Nine more small tools</b> for after the chat ends.</p><div class="xm-btns"><a href="#learn-more" data-feature="more" class="hx-btn ghost" data-umami-event="explore-more-tools-deck">Explore more tools <span aria-hidden="true">&rarr;</span></a><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a></div></div>'''
+
+# ---- "Explore more tools": expandable panel under the three cards
+_XT_IC={
+ 'After a fight':'<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>',
+ 'Playbook':'<path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9 8h7M9 12h5"/>',
+ 'Daily check-in and question':'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+ 'Share with your partner':'<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>',
+ 'Therapist summary':'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/>',
+ 'Weekly focus and ideas':'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+ 'Insights':'<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>',
+ 'Talk plan and hard mode':'<path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/>',
+ 'Monthly review and your year':'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>'}
+def _xt():
+    items=''.join('<li class="xt-i%d"><span class="xt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg></span><div><h3>%s<em class="mo-p %s">%s</em></h3><p>%s</p></div></li>'%(i%3,_XT_IC[t],t,pl.lower(),pl,d) for i,(t,pl,d,art) in enumerate(MORE))
+    return ('<div class="xt" id="xt"><button type="button" class="xt-btn" id="xt-btn" aria-expanded="false" aria-controls="xt-panel" data-umami-event="explore-more-tools">'
+      '<span class="xt-t"><b>Explore more tools</b><small>Nine small tools for after the chat ends</small></span><i class="xt-chev" aria-hidden="true"></i></button>'
+      '<div class="xt-panel" id="xt-panel" role="region" aria-labelledby="xt-btn" inert><div class="xt-clip"><ul class="xt-grid">'+items+'</ul>'
+      '<p class="xt-foot"><a href="#learn-more" data-feature="more" data-umami-event="xt-open-window">See them all with examples <span aria-hidden="true">&rarr;</span></a></p></div></div></div>'
+      '<script>(function(){var x=document.getElementById("xt"),b=document.getElementById("xt-btn"),p=document.getElementById("xt-panel");if(!x||!b||!p)return;b.addEventListener("click",function(){var o=b.getAttribute("aria-expanded")!=="true";b.setAttribute("aria-expanded",o?"true":"false");x.classList.toggle("open",o);if(o){p.removeAttribute("inert");setTimeout(function(){var r=b.getBoundingClientRect(),h=window.innerHeight;if(r.top<90||r.top>h*.35)window.scrollTo({top:r.top+window.scrollY-110,behavior:"smooth"})},180)}else p.setAttribute("inert","")})})();</script>')
+s=s.replace('<!--XT-->',_xt(),1)
 # ---- landing: "See all articles" opens the all-articles window (with topic filter)
 _sa='<a href="/blog/" class="btn btn-ghost">See all articles</a>'
 assert _sa in s
