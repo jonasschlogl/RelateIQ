@@ -802,26 +802,21 @@ SU_ENV=_su_ico('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7
 SU_IG=_su_ico('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/>')
 def _panel_support():
     big=('<div class="su-big">'
-     '<div class="su-c su-mail"><div class="su-t"><span class="su-ic">'+SU_ENV+'</span></div><div class="su-b"><h3>Email us</h3><p>The best way to reach us for anything: questions, bugs, billing or feedback. We usually reply within 24 hours.</p>'
+     '<div class="su-c su-mail"><div class="su-t"><span class="su-ic">'+SU_ENV+'</span></div><div class="su-b"><h3>Email us</h3><p>The best way to reach us for anything: questions, bugs, feedback or ideas.</p>'
      '<a class="su-addr" href="mailto:'+SUMAIL+'" data-umami-event="support-email">'+SUMAIL+'</a>'
      '<a class="hx-btn" href="mailto:'+SUMAIL+'?subject=Hello%20RelationshipAI" data-umami-event="support-email-btn">Write an email</a></div></div>'
-     '<div class="su-c su-ig"><div class="su-t"><span class="su-ic">'+SU_IG+'</span></div><div class="su-b"><h3>Message us on Instagram</h3><p>Prefer a quick chat? Send us a DM or leave a comment. A real person reads every message.</p>'
+     '<div class="su-c su-ig"><div class="su-t"><span class="su-ic">'+SU_IG+'</span></div><div class="su-b"><h3>Message us on Instagram</h3><p>Prefer a quick chat? Send us a DM or leave a comment and we will reply there.</p>'
      '<a class="su-addr" href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" data-umami-event="support-ig">@relationshipai_</a>'
      '<a class="hx-btn ghost" href="https://ig.me/m/relationshipai_" target="_blank" rel="noopener noreferrer" data-umami-event="support-ig-btn">Send a DM <span aria-hidden="true">&rarr;</span></a></div></div></div>')
-    topics=[('Account and billing','Plans, upgrades, cancellations or a question about your account. Include the email you signed up with.','Account%20or%20billing%20question',_su_ico('<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10.5h18M7 15h3"/>')),
-            ('Feedback and ideas','Something confusing, something missing, or something you loved. We read all of it and it shapes what we build next.','Feedback%20for%20RelationshipAI',_su_ico('<path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/>')),
-            ('Partnerships and press','Therapists, creators, writers and teams who want to work with us or write about RelationshipAI.','Partnership%20or%20press',_su_ico('<path d="M8 12l3 3 5-6"/><circle cx="12" cy="12" r="9"/>'))]
-    cards=''.join('<a class="su-t2" href="mailto:%s?subject=%s" data-umami-event="support-topic-%d"><span class="su-ic">%s</span><h3>%s</h3><p>%s</p><span class="post-more">Email us %s</span></a>'%(SUMAIL,sub,i,ic,t,d,BARROW) for i,(t,d,sub,ic) in enumerate(topics))
     return ('<article class="fm-panel pg su" id="learn-support" data-f="support" hidden style="--tint:#f4b8c4">'
-     '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>Support</b><span>Replies within 24 hours</span></span><h2 id="fm-title-support">We would love to <em>hear from you.</em></h2>'
-     '<p class="fm-sub">Questions, feedback, a bug or something that did not feel right. Write to us and a real person answers.</p>'
+     '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>Support</b><span>We read every message</span></span><h2 id="fm-title-support">We would love to <em>hear from you.</em></h2>'
+     '<p class="fm-sub">Questions, feedback, a bug or something that did not feel right. Write to us by email or on Instagram and we will get back to you.</p>'
      '<div class="fm-cta"><a href="mailto:'+SUMAIL+'" class="hx-btn" data-umami-event="cta-support-hero">Email us</a><span class="hx-free">or message us on Instagram</span></div></div>'
      '<section class="pg-sec su-sec"><h3 class="su-h">Get in touch</h3>'+big+
-     '<h3 class="su-h">What can we help with?</h3><div class="su-grid">'+cards+'</div>'
-     '<div class="su-note"><div><h3>How fast do we reply?</h3><p>Usually within 24 hours, often sooner. For an urgent billing question, put &ldquo;Urgent&rdquo; and the email of your account in the subject line.</p></div>'
+     '<div class="su-note"><div><h3>Looking for a quick answer?</h3><p>Many common questions are already answered in our FAQ.</p></div>'
      '<a href="#faq" class="hx-btn ghost" data-fclose data-umami-event="support-faq">Read the FAQ <span aria-hidden="true">&rarr;</span></a></div></section>'
      '<div class="fm-foot"><p>RelationshipAI cannot help in an emergency. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
-     '<a class="fm-next bl-all" href="#faq" data-fclose>Read the FAQ <span aria-hidden="true">&rarr;</span></a></div></article>')
+     '</div></article>')
 
 FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap">'+WINBG+_wnav('data-fclose')+
