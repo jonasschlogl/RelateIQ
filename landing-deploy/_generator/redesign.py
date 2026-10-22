@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=119')
+s=s.replace('css/home.css?v=11','css/home.css?v=121')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -781,8 +781,8 @@ def _panel_blog(i,t):
     cards=''
     for n,k in enumerate(posts):
         sl,dt,tag,meta,ti,ds=BPOSTS[k]
-        cards+=('<a class="bl-card%s" href="/blog/%s/"%s data-umami-event="blog-topic-%s-%s"><div class="bl-img"><img src="/img/blog/%s-%s-1.svg?v=2" alt="" width="1200" height="630" loading="lazy"></div>'
-          '<div class="bl-body"><div class="bl-top"><span class="bl-tag">%s</span><span class="bl-meta">%s</span></div><h3>%s</h3><p>%s</p><span class="bl-read">Read article %s</span></div></a>')%(
+        cards+=('<a class="post-card bl-card%s" href="/blog/%s/"%s data-umami-event="blog-topic-%s-%s"><span class="post-thumb"><img src="/img/blog/%s-%s-1.svg?v=2" alt="" width="1200" height="630" loading="lazy"></span>'
+          '<div class="post-card-top"><span class="post-tag">%s</span><span class="post-meta">%s</span></div><h3>%s</h3><p>%s</p><span class="post-more">Read article %s</span></a>')%(
           ' bl-x' if n>=3 else '',sl,' hidden' if n>=3 else '',key,sl,dt,sl,tag,meta,ti,ds,BARROW)
     more='<button type="button" class="bl-sm" data-show><span>Show more</span></button>' if len(posts)>3 else ''
     chips=''.join('<a href="#learn-blog-%s" data-feature="blog-%s" class="bl-chip">%s</a>'%(o[0],o[0],o[1]) for o in BTOPICS if o[0]!=key)
