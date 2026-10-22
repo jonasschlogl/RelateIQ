@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=93')
+s=s.replace('css/home.css?v=11','css/home.css?v=94')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -513,59 +513,116 @@ MIC='<div class="u-mic"><span></span><span></span><span></span><span></span><spa
 SHOT='<div class="u-shot"><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div>'
 DOC='<div class="u-doc"><b>Summary for your therapist</b><i></i><i class="s"></i><i></i><i class="s"></i><i></i></div>'
 CAL='<div class="u-cal"><div class="d"><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b class="on">S</b></div><div class="ev"><b>Sunday, 8 PM</b><span>20 minutes &middot; one topic &middot; one small step</span></div></div>'
+
+# ---- v94 richer examples: a small app card plus overlapping satellite cards (static; only page colours)
+def AP(title,sub,body,av='A',tag=''):
+    return ('<div class="ap"><div class="ap-h"><i>%s</i><div><b>%s</b><span>%s</span></div>%s</div><div class="ap-b">%s</div></div>'
+            %(av,title,sub,('<em class="ap-tag">%s</em>'%tag) if tag else '',body))
+def SAT(html,pos='s1',cls=''): return '<div class="sat %s %s">%s</div>'%(pos,cls,html)
+def M(t,k='me'): return '<div class="ap-m %s">%s</div>'%(k,t)
+def ROW(label,text,cls=''): return '<div class="ap-r %s"><small>%s</small><span>%s</span></div>'%(cls,label,text)
+def CHK(t,on=True): return '<div class="ap-k %s"><i></i><span>%s</span></div>'%('on' if on else '',t)
+def PILLS(*t,on=()): return '<div class="ap-p">'+''.join('<b class="%s">%s</b>'%('on' if x in on else '',x) for x in t)+'</div>'
+def GA(n,label):
+    d=157*n/10
+    return ('<div class="ap-g"><svg viewBox="0 0 120 70"><path d="M10 62 A50 50 0 0 1 110 62" fill="none" stroke="currentColor" stroke-opacity=".14" stroke-width="12" stroke-linecap="round"/>'
+            '<path d="M10 62 A50 50 0 0 1 110 62" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="%.0f 200"/></svg><b>%d<em>/10</em></b><span>%s</span></div>')%(d,n,label)
+def CH(pts,labels):
+    xs=[14+i*(92/(len(pts)-1)) for i in range(len(pts))]; ys=[64-p*5.4 for p in pts]
+    area='M%s L%.0f,70 L%.0f,70 Z'%(' L'.join('%.0f,%.0f'%(x,y) for x,y in zip(xs,ys)),xs[-1],xs[0])
+    line=' '.join('%.0f,%.0f'%(x,y) for x,y in zip(xs,ys))
+    dots=''.join('<circle cx="%.0f" cy="%.0f" r="4.2" fill="#fffaf2" stroke="#3b2218" stroke-width="2.4"/>'%(x,y) for x,y in zip(xs,ys))
+    lab=''.join('<span>%s</span>'%l for l in labels)
+    return '<div class="ap-c"><svg viewBox="0 0 120 74"><path d="%s" fill="#f7d99a" opacity=".7"/><polyline points="%s" fill="none" stroke="#3b2218" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>%s</svg><div class="ap-cl">%s</div></div>'%(area,line,dots,lab)
+CYC=('<svg class="ap-cy" viewBox="0 0 160 118"><g transform="translate(0,10)"><path d="M28 48a52 30 0 0 1 104 0" fill="none" stroke="#3b2218" stroke-width="3" stroke-linecap="round"/><path d="M132 48a52 30 0 0 1-104 0" fill="none" stroke="#3b2218" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/><path d="M126 40l8 8 4-10z" fill="#3b2218"/><path d="M34 56l-8-8-4 10z" fill="#3b2218"/></g>'
+     '<text x="80" y="9" text-anchor="middle" font-size="9" font-weight="800" fill="#3b2218">YOU ASK</text><text x="80" y="115" text-anchor="middle" font-size="9" font-weight="800" fill="#3b2218">THEY WITHDRAW</text></svg>')
+IMG_BELL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/></svg>'
+IMG_LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'
+IMG_MIC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg>'
+IMG_FLAME='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .3 1.4 1 2 2 2-.5-3 .5-5 1-8z"/></svg>'
+IMG_BOLT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>'
+IMG_IMG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-4.5 4 3.5 3-2.5 4 3.5"/></svg>'
+IMG_DOC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>'
+IMG_MSG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>'
+BARS=lambda *w: '<div class="ap-bars">'+''.join('<i style="width:%d%%"></i>'%x for x in w)+'</div>'
 ART={
  'practice':[
-  AV('A','Alex','Partner &middot; gets defensive when criticised')+B('That&rsquo;s not fair, I&rsquo;ve been swamped.','ai')+TG('Needs time','Avoids conflict'),
-  '<div class="u-flow">'+CD('Chat 1','He went quiet again&hellip;')+CD('Chat 2','Cancelled plans&hellip;')+'<div class="u-arr">&darr;</div>'+CD('Alex, as learned','Withdraws under stress. Needs a calm start.','dk')+'</div>',
-  CD('Alex really wrote','&ldquo;ok. whatever works for u.&rdquo;')+'<div class="u-arr">&darr;</div>'+B('ok. i guess we can do thursday.','ai')+TG('Voice matched'),
-  CD('Went well','You started with a feeling.','g')+CD('Watch for','You slipped into &ldquo;always&rdquo;.','y')+CD('Try','Add what you will offer too.','b'),
-  GAUGE(8),
-  CD('Opening line','&ldquo;I miss us. Can we talk tonight?&rdquo;')+CD('Avoid','&ldquo;always&rdquo;, &ldquo;never&rdquo;')+CD('If it heats up','Pause, name the feeling.'),
-  '<div class="u-hard"><div class="sl"><span>Calm</span><i><b></b></i><span>Tough</span></div></div>'+B('You always do this!','ai')+TG('Defensive','Cold',hot=('Defensive',)),
-  LINE([4,6,8]),
-  '<div class="u-who"><b>Partner</b><b>Ex</b><b>Parent</b><b>Boss</b><b>Friend</b></div>'+AV('+','Add a profile','Save as many as you need'),
+  (AP('Rehearsal with Alex','Playing Alex, in character',M('I felt hurt when you cancelled again.')+M('Here we go. I have been swamped, okay?','ai')+M('I am not blaming you. I just miss us.')+M('...I know. I am sorry. Thursday?','ai'),'A','Live'),
+   SAT('<small>Profile</small><b>Alex, partner</b><span>Gets defensive when criticised</span>'+PILLS('Needs time','Avoids conflict'),'s2'),''),
+  (AP('Alex, as learned','From 6 of your chats',ROW('Under stress','Goes quiet, withdraws')+ROW('Needs','A calm, soft start')+ROW('Reacts badly to','Being rushed or listed at'),'A','Learned'),
+   SAT('<small>From Coach Chat</small><span>&ldquo;He went quiet again after I asked about the trip.&rdquo;</span>','s1'),''),
+  (AP('Alex&rsquo;s real words','Pasted from your phone',M('ok. whatever works for u.','ai')+M('fine. dont wait up','ai')+'<div class="ap-sep">Rehearses in this voice</div>'+M('ok. i guess we can do thursday.','ai'),'A','3 messages'),
+   SAT('<small>Voice matched</small><span>Short, lowercase, dry</span>','s2'),''),
+  (AP('Your debrief','After your rehearsal',ROW('Went well','You started with a feeling, not blame.','y')+ROW('Watch for','You slipped into &ldquo;always&rdquo; once.')+ROW('Try next','Add what you can offer too.','pk'),'&#10003;'),
+   SAT(GA(8,'Readiness'),'s1','gs'),''),
+  (AP('Readiness','Rehearsals with Alex',GA(8,'Ready to talk')+'<div class="ap-s2"><b>5</b><i></i><b>7</b><i></i><b class="on">8</b></div>','&#9733;'),
+   SAT('<small>Since your first try</small><b>+3</b>','s1'),''),
+  (AP('Your talk plan','Linked to your rehearsal',ROW('Opening line','&ldquo;I miss us. Can we talk tonight?&rdquo;','y')+ROW('Avoid','&ldquo;always&rdquo;, &ldquo;never&rdquo;, raising old fights')+ROW('If it heats up','Pause. Name the feeling. Return in ten minutes.'),'&#9998;','Premium'),
+   SAT(CHK('Pick a calm time'),'s2'),''),
+  (AP('Difficulty','Hard mode',PILLS('Calm','Defensive','Cold','Angry',on=('Defensive',))+M('You always do this!','ai')+M('I hear you. Can we slow down?'),IMG_FLAME,'Premium'),
+   SAT('<small>Alex now</small><b>Defensive</b><span>pushes back, shuts down</span>','s1'),''),
+  (AP('Progress with Alex','Last 3 rehearsals',CH([4,6,8],['Mon','Wed','Fri']),'&#8599;','Premium'),
+   SAT('<small>Readiness</small><b>4 &rarr; 8</b>','s1'),''),
+  (AP('Who are you practising with?','Save as many as you need','<div class="ap-l"><i>A</i><b>Alex</b><span>Partner</span></div><div class="ap-l"><i>M</i><b>Mum</b><span>Parent</span></div><div class="ap-l"><i>B</i><b>Ben</b><span>Boss</span></div><div class="ap-l"><i>J</i><b>Jamie</b><span>Ex</span></div>','+','Pro'),
+   SAT('<small>Any language</small><span>English, Deutsch, Slovensky&hellip;</span>','s2'),''),
  ],
  'coach':[
-  B('He went quiet again after I asked about the trip.')+B('What usually happens in the minutes after that?','ai')+B('What do you do next?','ai'),
-  CYCLE,
-  '<div class="u-mem"><b>Works late on Tuesdays</b><b>Withdraws when stressed</b><b>Likes clear plans</b><b>Last fight: the trip</b></div>',
-  CD('Your view','I just wanted an answer.')+'<div class="u-bal">&#9878;</div>'+CD('Their view','I felt pushed.')+CD('Your share','Asking three times in a row.','y'),
-  '<div class="u-meth"><b>Gottman</b><b>EFT</b><b>CBT</b><b>NVC</b><b>Imago</b><b>Narrative</b><b>ACT</b></div>',
-  CAL,
-  CD('Try this','Ask for a time, not an answer.','y')+'<div class="u-bell">&#128276; In 2 days: how did it go?</div>'+TG('Worked','Did not help','Did not get to it'),
-  SHOT+MIC,
-  DOC,
+  (AP('Coach','Asks before it advises',M('He went quiet again after I asked about the trip.')+M('That sounds frustrating. Two quick questions first.','ai')+M('1. What usually happens in the minutes after?<br>2. What do you do next?','ai'),'C'),
+   SAT('<small>Question 1 of 2</small><span>So the advice fits you, not a generic couple.</span>','s2'),''),
+  (AP('Pattern spotted','Seen in 4 of your chats',CYC+'<div class="ap-nm"><small>Plain name</small>The chase and retreat cycle</div>','&#8635;'),
+   SAT('<small>Next time</small><span>You will see it as it starts.</span>','s1'),''),
+  (AP('What I remember','About you and your partner','<div class="ap-mm"><i></i>Works late on Tuesdays</div><div class="ap-mm"><i></i>Withdraws when stressed</div><div class="ap-mm"><i></i>Likes a clear plan</div><div class="ap-mm"><i></i>Last fight: the trip</div>','&#9825;'),
+   SAT('<small>No starting from zero</small><span>Memory carries across every chat.</span>','s2'),''),
+  (AP('Both sides','An honest read','<div class="ap-two"><div>'+ROW('Your view','I just wanted an answer.')+'</div><div>'+ROW('Their view','I felt pushed.')+'</div></div>'+ROW('Your share','Asking three times in a row.','y'),'&#9878;'),
+   SAT('<small>Honest, not harsh</small><span>It does not just agree with you.</span>','s2'),''),
+  (AP('Blended for you','Real couples methods','<div class="ap-me"><b>Gottman</b><span>Start softly, repair early</span></div><div class="ap-me"><b>EFT</b><span>The need under the anger</span></div><div class="ap-me"><b>NVC</b><span>Say it without blame</span></div><div class="ap-me"><b>Attachment</b><span>Why you each react</span></div>','&#9733;'),
+   SAT(PILLS('CBT','Imago','Narrative','ACT'),'s2','sp'),''),
+  (AP('Your plan','This week',CHK('Weekly check-in, Sunday 8 PM')+CHK('Time-out agreement',False)+CHK('10-minute listening exercise',False),'&#10003;'),
+   SAT('<small>Sunday</small><b>8:00 PM</b><span>20 minutes, one topic</span>','s1'),''),
+  (AP('Try this','Saved as an experiment','<div class="ap-try">Ask for a time, not an answer: &ldquo;Can we talk Sunday at 8?&rdquo;</div><div class="ap-fu">'+IMG_BELL+'Two days later: how did it go?</div>'+PILLS('Worked','Did not help','Did not get to it',on=('Worked',)),IMG_BOLT),
+   SAT('<small>Next step</small><span>It adjusts to what happened.</span>','s2'),''),
+  (AP('Photo and voice','Add the real conversation','<div class="ap-shot"><i></i><i class="r"></i><i></i><i class="r"></i></div><div class="ap-voice">'+IMG_MIC+'<span>&ldquo;He just said fine and left...&rdquo;</span></div>',IMG_IMG),
+   SAT('<small>Replies in your language</small><span>Dictate in any language.</span>','s2'),''),
+  (AP('Summary for your therapist','One page, from your chat','<div class="ap-doc"><h5>What is going on</h5>'+BARS(92,70)+'<h5>Patterns</h5>'+BARS(88,60)+'<h5>What you tried</h5>'+BARS(80,46)+'</div>',IMG_DOC),
+   SAT('<small>Print or save</small><b>PDF</b>','s1'),''),
  ],
  'message':[
-  B('Fine. Do whatever you want.')+'<div class="u-risk"><span>Risk</span><i><b></b></i><em>High</em></div>',
-  '<div class="u-hl">&ldquo;Fine. Do <mark>whatever you want</mark>. You <mark>always</mark> do this.&rdquo;</div>'+TG('Sounds cold','Blames',hot=('Blames',)),
-  CD('Calmer','I&rsquo;m upset you decided without me. Can we talk tonight?')+CD('Warmer','I felt left out. I&rsquo;d love to be part of the plan.','p')+CD('Direct','Next time, ask me before you book.','s'),
-  CD('They wrote first','Booked the trip for May 12. You&rsquo;re free, right?')+B('Fine. Do whatever you want.'),
-  '<div class="u-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>0</b><span>drafts saved</span></div>',
-  AV('S','Sam','Goes quiet when criticised')+CD('Tailored version','I felt left out. Can we pick the dates together?','p'),
+  (AP('Message check','Before you send','<div class="ap-draft">Fine. Do whatever you want.</div><div class="ap-risk"><span>Risk</span><i><b></b></i><em>High</em></div>'+ROW('Reads as','Cold and closed-off. Likely to start a fight.','pk'),IMG_MSG),
+   SAT('<small>Likely reaction</small><span>&ldquo;What did I do now?&rdquo;</span>','s2'),''),
+  (AP('Risky words','Quoted from your draft','<div class="ap-draft">&ldquo;Fine. Do <mark>whatever you want</mark>. You <mark>always</mark> do this.&rdquo;</div>'+ROW('whatever you want','Sounds like giving up','pk')+ROW('always','Blames, invites defending'),'!'),
+   SAT('<small>2 flags</small><span>With a reason for each</span>','s1'),''),
+  (AP('Pick a version','Keeps your point, drops the blame','<div class="ap-v"><small>Calmer</small>I am upset you decided without me. Can we talk tonight?</div><div class="ap-v w"><small>Warmer</small>I felt left out. I would love to be part of the plan.</div><div class="ap-v d"><small>Direct</small>Next time, ask me before you book.</div>','&#10022;'),
+   SAT('<small>Your voice</small><span>Same language you write in</span>','s1'),''),
+  (AP('Add context','Optional','<div class="ap-m ai">Booked the trip for May 12. You are free, right?</div><div class="ap-m me">Fine. Do whatever you want.</div>'+ROW('Background','They booked it without asking me.','y'),'&#9998;'),
+   SAT('<small>Better read</small><span>It fits your situation.</span>','s2'),''),
+  (AP('Privacy','What happens to your draft','<div class="ap-pv"><span class="no">Not stored</span>The text you paste</div><div class="ap-pv"><span>Kept</span>A usage counter only</div>'+IMG_LOCK.replace('<svg','<svg class="ap-lk"'),IMG_LOCK),
+   SAT('<small>Drafts saved</small><b>0</b>','s1'),''),
+  (AP('Tailored to Sam','Premium','<div class="ap-v"><small>Generic</small>I felt left out. Can we talk?</div><div class="ap-v w"><small>For Sam, who goes quiet when criticised</small>I would love to pick the dates together. No rush, tell me what works.</div>','S','Premium'),
+   SAT('<small>Uses</small><span>Profile, memory, Playbook</span>','s2'),''),
  ],
 }
-FEATS=[FEATS[0],FEATS[2],FEATS[1]]
+HEART='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>'
+FLOATS='<div class="fl" aria-hidden="true">'+''.join('<span class="f%d">%s</span>'%(k,HEART) for k in range(1,8))+'</div>'
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
     art=ART[f['id']]
-    hero=''.join('<div class="pg-card c%d"><div class="u">%s</div></div>'%(k+1,art[k]) for k in range(3))
+    hero=''.join('<div class="pg-card c%d">%s</div>'%(k+1,art[k][0]) for k in range(3))
     tri=''.join('<div class="pg-i"><span class="pg-ic">%s</span><h4>%s</h4><p>%s</p></div>'%(h[0],h[1],h[2]) for h in f['helps'])
     feats=''
     for n,c in enumerate(f['caps']):
         cta=('<a href="#join" class="hx-btn pg-btn" data-fclose data-umami-event="cta-feature-%s-%d">Get early access</a>'%(f['id'],n)) if n%3==0 else ''
-        feats+=('<div class="pg-f"><div class="pg-ft"><span class="pg-n">%02d</span><h4>%s%s</h4><p>%s</p>%s</div><div class="pg-fa"><div class="u">%s</div></div></div>'
-                %(n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2],cta,art[n]))
+        feats+=('<div class="pg-f"><div class="pg-ft"><span class="pg-n">%02d</span><h4>%s%s</h4><p>%s</p>%s</div><div class="pg-fa"><span class="dc d1"></span><span class="dc d2"></span><span class="dc d3"></span><div class="ex">%s</div></div></div>'
+                %(n+1,c[1],('<em class="fm-plan">%s</em>'%c[3]) if c[3] else '',c[2],cta,art[n][0]+art[n][1]))
     meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
     return ('<article class="fm-panel pg" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
-     '<div class="pg-hero"><span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
+     '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div>'
      '<div class="pg-stage">%s</div></div>'
      '<section class="pg-sec pg-help"><h3>%s</h3><p class="pg-lead">%s</p><div class="pg-3">%s</div></section>'
      '<section class="pg-sec pg-all"><h3>%s</h3><div class="pg-fs">%s</div>%s</section>'
      '<section class="pg-sec pg-good"><h3>Made for moments like these</h3><ul class="fm-good">%s</ul></section>'
-     '<div class="pg-end"><h3>%s</h3><p>%s</p><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
+     '<div class="pg-end">'+FLOATS+'<h3>%s</h3><p>%s</p><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
      '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],hero,
@@ -577,7 +634,15 @@ FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-labe
  '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
  '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
 FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
-function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id)}
+function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id);arm()}
+var io=null,sc0=m.querySelector('.fm-scroll'),tk=false;
+function arm(){if(io)io.disconnect();var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
+var T=[].slice.call(p.querySelectorAll('.pg-sec>h3,.pg-lead,.pg-i,.pg-ft,.pg-fa,.pg-good li,.pg-end h3,.pg-end>p,.pg-end .fm-cta,.pg-end .fm-avail,.fm-meth'));
+T.forEach(function(e,i){e.classList.remove('in');e.classList.add('rv');if(e.matches('.pg-ft'))e.classList.toggle('rl',!!e.closest('.pg-f:nth-child(even)'));if(e.matches('.pg-fa'))e.classList.toggle('rl',!e.closest('.pg-f:nth-child(even)'));var li=e.matches('.pg-good li')?[].indexOf.call(e.parentNode.children,e):0;e.style.transitionDelay=(li*50)+'ms'});
+io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{root:sc0,threshold:.12,rootMargin:'0px 0px -6% 0px'});
+T.forEach(function(e){io.observe(e)});par()}
+function par(){tk=false;var p=m.querySelector('.fm-panel:not([hidden])');if(!p||!sc0)return;var r0=sc0.getBoundingClientRect(),c=r0.top+r0.height/2;[].forEach.call(p.querySelectorAll('.pg-f'),function(f){var r=f.getBoundingClientRect();if(r.bottom<r0.top-200||r.top>r0.bottom+200)return;var v=((r.top+r.height/2)-c)/r0.height;f.style.setProperty('--p',Math.max(-1,Math.min(1,v)).toFixed(3))})}
+if(sc0)sc0.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(par)}},{passive:true});
 function open(id){if(m.hidden)last=document.activeElement;show(id);m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();history.replaceState(null,'','#learn-'+id)}
 function close(){m.hidden=true;document.body.classList.remove('about-open');if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search);if(last&&last.focus)last.focus()}
 document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
