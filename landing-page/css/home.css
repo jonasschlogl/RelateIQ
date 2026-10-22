@@ -1122,3 +1122,76 @@ html, body.hx { overflow-x: clip; }
   .hx-foot .ft-col { gap: 10px; }
   .hx-foot .ft-base p { font-size: 13px; }
 }
+
+/* v81: feature windows (Partner Practice, Message check, Coach Chat) */
+.fm[hidden], .fm-panel[hidden] { display: none; }
+.fm { position: fixed; inset: 0; z-index: 210; }
+.fm-scroll { position: absolute; inset: 0; overflow-y: auto; padding: 4vh 16px; display: flex; -webkit-overflow-scrolling: touch; }
+.fm-wrap { position: relative; width: 100%; max-width: 1080px; margin: auto; }
+.fm .about-close { top: 14px; right: 14px; z-index: 5; }
+.fm-card { background: #fff3e2; border-radius: 52px; border: 1px solid rgba(59,34,24,.7); box-shadow: 0 30px 56px -30px rgba(59,34,24,.6); overflow: hidden; animation: aboutIn .28s ease both; color: #3b2218; }
+.fm-hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 20px; padding: 64px 40px 0 64px; background: linear-gradient(180deg, var(--tint) 0%, var(--tint) 78%, #fff3e2 100%); overflow: hidden; }
+.fm-kick { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; background: #fff3e2; border: 1px solid rgba(59,34,24,.6); font-size: 12.5px; letter-spacing: .04em; }
+.fm-kick b { font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.fm-kick span { opacity: .75; font-weight: 600; }
+.fm-hero h2 { margin: 18px 0 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -.03em; text-wrap: balance; }
+.fm-hero h2 em { font-style: normal; color: #fff3e2; }
+.fm-sub { margin-top: 18px; font-size: 18.5px; line-height: 1.5; max-width: 480px; color: #432719; }
+.fm-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-bottom: 56px; }
+.fm-art { position: relative; align-self: end; display: flex; justify-content: center; height: 540px; overflow: hidden; }
+.fm-phone { zoom: .86; transform: rotate(3deg); margin: 30px 0 -90px; }
+.fm-sec { padding: 56px 64px 0; }
+.fm-sec:last-of-type { padding-bottom: 0; }
+.fm-goal { text-align: center; padding-top: 64px; }
+.fm-goal h3 { max-width: 760px; margin: 0 auto; font-size: clamp(26px, 3vw, 38px); line-height: 1.12; letter-spacing: -.025em; text-wrap: balance; }
+.fm-goal p { max-width: 700px; margin: 18px auto 0; font-size: 18px; line-height: 1.6; color: #432719; }
+.fm-h { margin: 0 0 26px; text-align: center; font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -.02em; }
+.fm-helps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fm-hi { padding: 26px 24px 28px; border-radius: 28px; background: #fffaf2; border: 1px solid rgba(59,34,24,.22); }
+.fm-ic { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--tint); margin-bottom: 16px; }
+.fm-ic svg { width: 26px; height: 26px; }
+.fm-hi h4 { margin: 0 0 8px; font: 700 20px/1.2 var(--font-display); letter-spacing: -.01em; }
+.fm-hi p { font-size: 16px; line-height: 1.5; color: #432719; }
+.fm-good { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.fm-good li { padding: 11px 18px; border-radius: 999px; background: var(--tint); font-weight: 700; font-size: 15.5px; border: 1px solid rgba(59,34,24,.25); }
+.fm-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fm-step { display: flex; flex-direction: column; gap: 10px; }
+.fm-sn { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #3b2218; color: #fff3e2; font: 800 15px/1 var(--font-body); }
+.fm-step h4 { margin: 0; font: 700 19px/1.2 var(--font-display); }
+.fm-snip { flex: 1; min-height: 150px; display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 18px; border-radius: 26px; background: var(--tint); border: 1px solid rgba(59,34,24,.25); }
+.fm-b { max-width: 92%; padding: 10px 14px; border-radius: 18px; font: 600 15px/1.3 var(--font-display); }
+.fm-b.me { align-self: flex-end; background: #3b2218; color: #fff3e2; border-bottom-right-radius: 5px; }
+.fm-b.ai { align-self: flex-start; background: #fff3e2; border-bottom-left-radius: 5px; }
+.fm-note { padding: 12px 14px; border-radius: 18px; background: #fff3e2; font: 600 15px/1.3 var(--font-display); }
+.fm-note.alt { background: #fffaf2; }
+.fm-note.pk { background: #f6b6c4; }
+.fm-note small { display: block; margin-bottom: 4px; font: 800 10px var(--font-body); letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
+.fm-mem { align-self: flex-start; padding: 5px 11px; border-radius: 999px; background: #fff3e2; font: 700 11.5px var(--font-body); color: #7a5645; }
+.fm-avail { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 48px 64px 0; padding: 18px 24px; border-radius: 999px; background: #3b2218; color: #fff3e2; text-align: center; }
+.fm-avail b { font: 800 12px var(--font-body); letter-spacing: .12em; text-transform: uppercase; opacity: .65; }
+.fm-avail span { font-weight: 600; font-size: 15.5px; }
+.fm-foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 34px 64px 44px; }
+.fm-foot p { max-width: 520px; font-size: 13.5px; line-height: 1.5; color: #5a3b2b; }
+.fm-next { cursor: pointer; font: 700 16px var(--font-body); padding: 14px 22px; border-radius: 999px; border: 1px solid rgba(59,34,24,.7); background: #f7d99a; color: #3b2218; }
+.fm-next:hover { background: #fff; }
+@media (max-width: 860px) {
+  .fm-hero { grid-template-columns: 1fr; padding: 54px 22px 0; gap: 0; }
+  .fm-cta { padding-bottom: 28px; }
+  .fm-art { height: 430px; }
+  .fm-phone { zoom: .68; margin: 16px 0 -80px; }
+  .fm-sec { padding: 40px 20px 0; }
+  .fm-goal { padding-top: 44px; }
+  .fm-helps, .fm-steps { grid-template-columns: 1fr; gap: 12px; }
+  .fm-hi { padding: 20px 20px 22px; border-radius: 22px; }
+  .fm-snip { min-height: 0; }
+  .fm-avail { margin: 34px 18px 0; border-radius: 26px; padding: 16px 18px; }
+  .fm-foot { padding: 26px 20px 34px; }
+}
+@media (max-width: 760px) {
+  .fm-scroll { padding: 3vh 8px; }
+  .fm-card { border-radius: 32px; }
+  .fm .about-close { top: 10px; right: 10px; }
+  .fm-hero h2 { font-size: 34px; }
+  .fm-sub { font-size: 16.5px; }
+}
+.fm-hero h2 em { color: #8a4a30; }

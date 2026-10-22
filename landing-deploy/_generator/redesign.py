@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=79')
+s=s.replace('css/home.css?v=11','css/home.css?v=81')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -280,9 +280,9 @@ FOOT_HTML = """<footer class="hx-foot">
         <div class="ft-grid">
           <div class="ft-col">
             <h4>Product</h4>
-            <a href="#coach">Coach Chat</a>
-            <a href="#message">Message check</a>
-            <a href="#practice">Partner Practice</a>
+            <a href="#learn-coach" data-feature="coach" data-umami-event="footer-feature-coach">Coach Chat</a>
+            <a href="#learn-message" data-feature="message" data-umami-event="footer-feature-message">Message check</a>
+            <a href="#learn-practice" data-feature="practice" data-umami-event="footer-feature-practice">Partner Practice</a>
             <a href="#pricing">Pricing</a>
           </div>
           <div class="ft-col">
@@ -351,8 +351,106 @@ function tog(id){var x=all[id];set(id,x[0].classList.contains('acc-closed'))}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);if(all[id]&&window.matchMedia('(max-width:760px)').matches){set(id,true);setTimeout(function(){all[id][0].scrollIntoView({behavior:'smooth',block:'start'})},60)}},true);
 if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script>"""
 import re as _re
+
+# ---- feature windows (opened from the footer Product links)
+def _ico(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+d+'</svg>'
+I_CHAT=_ico('<path d="M4 5h16v11H9l-5 4z"/>')
+I_COMPASS=_ico('<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>')
+I_HEART=_ico('<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>')
+I_EYE=_ico('<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>')
+I_SPARK=_ico('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>')
+I_HAND=_ico('<path d="M5 12l4 4L19 6"/>')
+I_BRAIN=_ico('<path d="M3 12h4l3-7 4 14 3-7h4"/>')
+I_MOON=_ico('<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/>')
+I_LOOP=_ico('<path d="M20 12a8 8 0 1 1-2.5-5.8"/><path d="M20 4v5h-5"/>')
+PH_PRACTICE=('<div class="hs on"><div class="hs-top"><i></i>Partner Practice</div><div class="hs-lbl">Rehearse the hard talk first</div>'
+ '<div class="bb me">You always cancel on me.</div><div class="bb ai">Here we go again. I was just tired.</div>'
+ '<div class="hs-card bt"><small>Coach note</small>Starting with blame made them defensive. <b>Try:</b> &ldquo;I felt hurt when plans fell through.&rdquo;</div>'
+ '<div class="hs-inp"><span>Say it your way&hellip;</span><b>&uarr;</b></div></div>')
+PH_MESSAGE=('<div class="hs on"><div class="hs-top"><i></i>Message check</div><div class="hs-lbl">Your draft</div>'
+ '<div class="hs-card pk">Fine. Do whatever you want.<span>Reads as cold &middot; likely to start a fight</span></div><div class="hs-arrow">&darr;</div>'
+ '<div class="hs-lbl">Says what you actually mean</div><div class="hs-card bt">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?<span>Honest, calm, invites a reply</span></div>'
+ '<div class="hs-chips"><b>Calmer</b><i>Warmer</i><i>Direct</i></div></div>')
+PH_COACH=('<div class="hs on"><div class="hs-top"><i></i>Coach Chat</div><div class="hs-lbl">2:07 AM &middot; can&rsquo;t sleep</div>'
+ '<div class="bb me">He went quiet again.</div><div class="hs-mem"><i></i>Remembers: he withdraws when stressed</div>'
+ '<div class="bb ai">That&rsquo;s his stress pattern, not rejection.</div><div class="hs-card bt"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>'
+ '<div class="hs-inp"><span>Tell it what happened&hellip;</span><b>&uarr;</b></div></div>')
+FEATS=[
+ dict(id='practice',tag='Partner Practice',when='Before the talk',tint='#f7d99a',
+  h='Say it out loud <em>before it&rsquo;s real.</em>',
+  sub='Rehearse a hard conversation with an AI that plays your partner. Nothing is at stake, so you can find the words that actually land.',
+  phone=PH_PRACTICE,
+  goalh='The goal: walk into the talk calm, not defensive.',
+  goal='Most hard conversations go wrong in the first sentence. It comes out as blame, the other person defends, and the real point gets lost. Partner Practice lets you try that first sentence, and the next ten, before it counts.',
+  helps=[(I_CHAT,'Try it as many ways as you like','Say it one way, then another. The AI answers the way a real person might, so you feel how each version lands.'),
+         (I_COMPASS,'A short debrief afterwards','You get a few lines on what worked, what made things tense, and one thing to try next.'),
+         (I_HEART,'Softer starts, same message','Lead with how you feel and what you need, not with what they did wrong.')],
+  good=['Raising something you have avoided','Asking for more time together','Saying sorry properly','Setting a boundary','Talking to a parent, ex or boss (Pro)'],
+  steps=[('Pick who and what','<div class="fm-note"><small>Who</small>My partner</div><div class="fm-note alt"><small>What I want to say</small>You cancelled plans again.</div>'),
+         ('Rehearse the talk','<div class="fm-b me">I felt hurt when plans fell through.</div><div class="fm-b ai">I didn&rsquo;t realise. I&rsquo;m sorry.</div>'),
+         ('Read the debrief','<div class="fm-note"><small>What worked</small>You started with how you felt, not with blame.</div><div class="fm-note alt"><small>Try next</small>Add what you need from them.</div>')],
+  avail='Free: 1 rehearsal (up to 8 messages) with a debrief. Pro: unlimited rehearsals, with a partner, ex, parent or boss.'),
+ dict(id='message',tag='Message check',when='Before you send',tint='#f8c7a3',
+  h='Read it the way <em>they will.</em>',
+  sub='Paste a message before you send it. See how it may land, then pick a calmer, warmer or more direct version.',
+  phone=PH_MESSAGE,
+  goalh='The goal: stop a text from starting a fight you did not mean to start.',
+  goal='Short messages lose their tone. &ldquo;Fine. Do whatever you want.&rdquo; can read as cold or as hurt, and the other person will pick one. Message check shows how a draft may read and gives you versions that say what you actually mean.',
+  helps=[(I_EYE,'See how it may land','Spot cold, sharp or confusing wording before the other person does.'),
+         (I_SPARK,'Three ways to say it','Calmer, warmer or more direct. Keep your point, change the delivery.'),
+         (I_HAND,'Your words, your call','Nothing is sent for you. You decide what, if anything, to send.')],
+  good=['Replying when you are angry','An apology you keep rewriting','A text after a long silence','Saying no kindly','Messages with a lot riding on them'],
+  steps=[('Paste your draft','<div class="fm-b me">Fine. Do whatever you want.</div>'),
+         ('See how it reads','<div class="fm-note pk"><small>Reads as</small>Cold. Likely to start a fight.</div>'),
+         ('Pick a version','<div class="fm-note"><small>Calmer</small>I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?</div>')],
+  avail='Free: 3 tries. Pro: 10 a day, with two rewrites each.'),
+ dict(id='coach',tag='Coach Chat',when='When it hurts',tint='#f4b8c4',
+  h='A coach that <em>already knows</em> your story.',
+  sub='Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',
+  phone=PH_COACH,
+  goalh='The goal: understand what is going on and decide what to say, instead of spiralling.',
+  goal='After a fight or a long silence your head loops. Coach Chat helps you slow down, notices patterns across your chats, such as how someone reacts when stressed, and ends with one small thing to try.',
+  helps=[(I_MOON,'Remembers your story','Your partner and your past chats stay in context, so the advice fits your situation.'),
+         (I_LOOP,'Spots patterns','Notices what keeps repeating, using well-known couples methods like Gottman and attachment theory.'),
+         (I_COMPASS,'Ends with a next step','Not only comfort. One thing to say or do tomorrow.')],
+  good=['After a fight','When you cannot sleep','When they went quiet','Overthinking a message','Making sense of a pattern'],
+  steps=[('Tell it what happened','<div class="fm-b me">He went quiet again.</div>'),
+         ('It connects the dots','<div class="fm-mem">Remembers: he withdraws when stressed</div><div class="fm-b ai">That&rsquo;s his stress pattern, not rejection.</div>'),
+         ('Take one thing with you','<div class="fm-note"><small>Tomorrow, try</small>&ldquo;I miss you. Can we talk after dinner?&rdquo;</div>')],
+  avail='Free: 8 messages a day, with memory of your chats.'),
+]
+def _panel(i,f):
+    nxt=FEATS[(i+1)%len(FEATS)]
+    helps=''.join('<div class="fm-hi"><span class="fm-ic">%s</span><h4>%s</h4><p>%s</p></div>'%h for h in f['helps'])
+    good=''.join('<li>%s</li>'%g for g in f['good'])
+    steps=''.join('<div class="fm-step"><span class="fm-sn">%d</span><h4>%s</h4><div class="fm-snip">%s</div></div>'%(n+1,t,html) for n,(t,html) in enumerate(f['steps']))
+    return ('<article class="fm-panel" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
+     '<div class="fm-hero"><div class="fm-copy"><span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
+     '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div></div>'
+     '<div class="fm-art"><div class="hph fm-phone"><div class="hph-frame"><i class="hph-notch"></i><div class="hph-scr">%s</div></div></div></div></div>'
+     '<div class="fm-sec fm-goal"><h3>%s</h3><p>%s</p></div>'
+     '<div class="fm-sec"><h3 class="fm-h">How it helps</h3><div class="fm-helps">%s</div></div>'
+     '<div class="fm-sec fm-goodwrap"><h3 class="fm-h">Good for</h3><ul class="fm-good">%s</ul></div>'
+     '<div class="fm-sec"><h3 class="fm-h">How it works</h3><div class="fm-steps">%s</div></div>'
+     '<div class="fm-avail"><b>What you get</b><span>%s</span></div>'
+     '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
+     '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['phone'],f['goalh'],f['goal'],helps,good,steps,f['avail'],nxt['id'],nxt['tag'])
+FM_HTML=('<div class="fm" id="feature" role="dialog" aria-modal="true" aria-label="Feature details" hidden>'
+ '<div class="about-backdrop" data-fclose></div><div class="fm-scroll"><div class="fm-wrap"><button type="button" class="about-close" data-fclose aria-label="Close"></button>'
+ '<div class="fm-card">'+''.join(_panel(i,f) for i,f in enumerate(FEATS))+'</div></div></div></div>')
+FM_JS = """<script>(function(){var m=document.getElementById('feature');if(!m)return;var P=[].slice.call(m.querySelectorAll('.fm-panel')),last=null,cur=null;
+function show(id){P.forEach(function(p){p.hidden=p.dataset.f!==id});cur=id;var sc=m.querySelector('.fm-scroll');if(sc)sc.scrollTop=0;var a=m.querySelector('.fm-panel:not([hidden]) h2');if(a)m.setAttribute('aria-labelledby',a.id)}
+function open(id){if(m.hidden)last=document.activeElement;show(id);m.hidden=false;document.body.classList.add('about-open');var c=m.querySelector('.about-close');if(c)c.focus();history.replaceState(null,'','#learn-'+id)}
+function close(){m.hidden=true;document.body.classList.remove('about-open');if(/^#learn-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search);if(last&&last.focus)last.focus()}
+document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var f=t.closest('[data-feature]');if(f){e.preventDefault();e.stopPropagation();open(f.getAttribute('data-feature'));return}
+var n=t.closest('.fm-next');if(n){show(n.getAttribute('data-go'));history.replaceState(null,'','#learn-'+cur);return}
+if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');close();if(!link)return}},true);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
+var h=location.hash.match(/^#learn-(practice|message|coach)$/);if(h)open(h[1]);})();</script>"""
+
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
-s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+CMP_JS+ACC_JS+FIT_JS,1)
+s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
