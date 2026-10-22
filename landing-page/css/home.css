@@ -2088,3 +2088,22 @@ body.unveil #approach .apr-head { animation-delay: .12s; } body.unveil #approach
 @keyframes xt-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @media (max-width: 880px) { .pg-foot { flex-wrap: wrap; gap: 14px; } .xt-bub { margin-left: 0; width: 100%; max-width: none; } .xt-bub-t b { font-size: 17px; } .xt-bub-t small { font-size: 12.5px; } .xt-bub-t { flex: 1; } .xt-bub-ic { width: 44px; height: 44px; } .xt-bub-go { width: 36px; height: 36px; } }
 @media (prefers-reduced-motion: reduce) { .xt-bub { animation: none; } }
+
+/* v143 life layer (js/alive.js): gentle, never hides content without JS */
+.alive-prog { position: fixed; left: 0; top: 0; z-index: 9999; width: 100%; height: 3px; background: linear-gradient(90deg, #f7d99a, #f4b8c4 55%, #b78d74); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+.alive .av { opacity: 0; translate: 0 34px; scale: .97; transition: opacity .8s ease, translate .9s cubic-bezier(.2,.8,.2,1), scale .9s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--i, 0) * 90ms); }
+.alive .av.in { opacity: 1; translate: 0 0; scale: 1; }
+.alive .aw-h .aw { display: inline-block; opacity: 0; translate: 0 .55em; transition: opacity .6s ease, translate .8s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--w, 0) * 55ms + .05s); }
+.alive .aw-h.in .aw { opacity: 1; translate: 0 0; }
+.hx-links a.is-on:not(.hx-btn) { color: #3b2218; background: rgba(247,217,154,.75); border-radius: 999px; }
+.hx-links a:not(.hx-btn) { transition: background .3s ease, color .3s ease; }
+.lit { position: relative; }
+@media (hover: hover) and (pointer: fine) {
+  .lit::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; background: radial-gradient(260px circle at var(--lx, 50%) var(--ly, 50%), rgba(255,243,226,.5), transparent 70%); transition: opacity .35s ease; }
+  .lit:hover::after { opacity: 1; }
+  .trust-item.lit::after { background: radial-gradient(260px circle at var(--lx, 50%) var(--ly, 50%), rgba(255,243,226,.12), transparent 70%); }
+}
+.apr-pt:hover .apr-ic, .trust-item:hover .trust-icon { animation: aliveWig .7s ease; }
+@keyframes aliveWig { 0% { rotate: 0deg; } 25% { rotate: -9deg; scale: 1.08; } 60% { rotate: 7deg; scale: 1.08; } 100% { rotate: 0deg; scale: 1; } }
+.hx-btn:active, .btn:active { scale: .97; }
+@media (prefers-reduced-motion: reduce) { .alive-prog { display: none; } }
