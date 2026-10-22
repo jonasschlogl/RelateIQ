@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=78')
+s=s.replace('css/home.css?v=11','css/home.css?v=79')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -160,7 +160,6 @@ tools='''<section class="hx-sec hx-tools" id="tools">
 tools_end='''<section class="hx-sec hx-tools-end">
       <div class="hx-wrap">
         <div class="hx-center-cta hx-reveal"><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a> <span class="hx-free">Free to try</span></div>
-        <div class="hx-frame hx-center-frame"><b>Inspired by</b><span>The Gottman Method</span><i></i><span>Attachment theory</span><i></i><span>Nonviolent Communication</span></div>
       </div>
     </section>'''
 s=s[:a]+tools+s[b:]
@@ -275,39 +274,39 @@ ABOUT_HTML = """
   </div>"""
 FOOT_HTML = """<footer class="hx-foot">
     <div class="hx-wrap">
-      <div class="ft-grid">
-        <div class="ft-col">
-          <h4>Company</h4>
-          <a href="#about" class="ft-about" data-about data-umami-event="click-about-footer">About us</a>
-          <a href="/blog/">Blog</a>
-          <a href="method.html">Our method</a>
-        </div>
-        <div class="ft-col">
-          <h4>Product</h4>
-          <a href="#coach">Coach Chat</a>
-          <a href="#message">Message check</a>
-          <a href="#practice">Partner Practice</a>
-          <a href="#pricing">Pricing</a>
-        </div>
-        <div class="ft-col">
-          <h4>Support</h4>
-          <a href="#faq">FAQ</a>
-          <a href="#join">Early access</a>
-        </div>
-        <div class="ft-col">
-          <h4>Legal</h4>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </div>
-        <div class="ft-col ft-right">
-          <h4>Follow</h4>
-          <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer">@relationshipai_</a>
+      <div class="ft-band"><b>Inspired by</b><span>The Gottman Method</span><span>Attachment theory</span><span>Nonviolent Communication</span></div>
+      <div class="ft-main">
+        <a href="index.html" class="hx-brand ft-logo"><img src="logo-tile.svg" alt="" width="38" height="38" /><span>Relationship<b>AI</b></span></a>
+        <div class="ft-grid">
+          <div class="ft-col">
+            <h4>Product</h4>
+            <a href="#coach">Coach Chat</a>
+            <a href="#message">Message check</a>
+            <a href="#practice">Partner Practice</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div class="ft-col">
+            <h4>About</h4>
+            <a href="#about" class="ft-about" data-about data-umami-event="click-about-footer">About us</a>
+            <a href="/blog/">Blog</a>
+            <a href="method.html">Our method</a>
+          </div>
+          <div class="ft-col">
+            <h4>Help</h4>
+            <a href="#faq">FAQ</a>
+            <a href="#join">Early access</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+          </div>
+          <div class="ft-col">
+            <h4>Social</h4>
+            <a href="https://www.instagram.com/relationshipai_/" target="_blank" rel="noopener noreferrer" class="ft-ig" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-footer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@relationshipai_</span></a>
+          </div>
         </div>
       </div>
       <div class="ft-base">
-        <a href="index.html" class="hx-brand"><img src="logo-tile.svg" alt="" width="34" height="34" /><span>Relationship<b>AI</b></span></a>
-        <p>RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic care. If you&rsquo;re in a crisis, please contact a professional or a helpline in your country.</p>
         <p class="ft-copy">&copy; 2026 RelationshipAI</p>
+        <p>RelationshipAI is an AI tool for personal growth and does not replace professional psychological or therapeutic care. If you&rsquo;re in a crisis, please contact a professional or a helpline in your country.</p>
       </div>
     </div>
   </footer>"""
