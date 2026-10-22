@@ -1926,3 +1926,5 @@ html, body.hx { overflow-x: clip; }
   .about-modal .about-card { margin: 78px 8px 0; border-radius: 38px; min-height: 0; background: #fffaf2; }
   .about-modal .about-side { position: relative; top: auto; height: auto; padding: 28px 22px; background: #f7d99a; }
 }
+.ft-soc { display: flex; align-items: center; gap: 16px; }
+.ft-soc .ft-pin svg { width: 24px; height: 24px; }
