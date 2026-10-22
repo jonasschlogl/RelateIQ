@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=123')
+s=s.replace('css/home.css?v=11','css/home.css?v=124')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -157,11 +157,7 @@ tools='''<section class="hx-sec hx-tools" id="tools">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
       </div>
     </section>'''
-tools_end='''<section class="hx-sec hx-tools-end">
-      <div class="hx-wrap">
-        <div class="hx-center-cta hx-reveal"><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a> <span class="hx-free">Free to try</span></div>
-      </div>
-    </section>'''
+tools_end=''
 s=s[:a]+tools+s[b:]
 import re as _re
 s=_re.sub(r'<ul class="chap-facts">.*?</ul>\s*','',s,flags=_re.S)
@@ -225,6 +221,7 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
+        <div class="xm-row"><p><b>Nine more small tools</b> for after the chat ends.</p><div class="xm-btns"><a href="#learn-more" data-feature="more" class="hx-btn ghost" data-umami-event="explore-more-tools-deck">Explore more tools <span aria-hidden="true">&rarr;</span></a><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a></div></div>
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
@@ -235,7 +232,7 @@ function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
 function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
-function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.querySelector('.hx-tools-end');if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.getElementById('compare');if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-96,behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){{free();return}}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
@@ -376,7 +373,7 @@ mk('#compare .compare-table-wrap','How it stacks up','after');
 mk('#pricing .plan-compare-wrap','Compare every feature','before');
 })();</script>"""
 FIT_JS = """<script>(function(){function fit(){var d=document.documentElement,w=window.innerWidth;if(d.scrollWidth>w+1){var m=document.querySelector('meta[name=viewport]');if(m){m.setAttribute('content','width='+w+', initial-scale=1');setTimeout(function(){m.setAttribute('content','width=device-width, initial-scale=1.0')},60)}window.scrollTo(0,window.scrollY)}}window.addEventListener('load',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300)});setTimeout(fit,1200)})();</script>"""
-ACC_JS = """<script>(function(){var D=[['more','More tools','Small tools after the chat ends'],['compare','How it compares','Versus a generic chatbot and therapy'],['trust','Privacy &amp; trust','What you tell it stays yours'],['approach','Our approach','Why it is built the way it is'],['pricing','Pricing','Free, Pro and Premium'],['blog','From the blog','Relationship advice, tips &amp; guides'],['faq','FAQ','Answers to common questions']];
+ACC_JS = """<script>(function(){var D=[['compare','How it compares','Versus a generic chatbot and therapy'],['trust','Privacy &amp; trust','What you tell it stays yours'],['approach','Our approach','Why it is built the way it is'],['pricing','Pricing','Free, Pro and Premium'],['blog','From the blog','Relationship advice, tips &amp; guides'],['faq','FAQ','Answers to common questions']];
 var all={};
 D.forEach(function(d){var sec=document.getElementById(d[0]);if(!sec)return;
  var b=document.createElement('button');b.type='button';b.className='acc-btn';b.setAttribute('aria-expanded','false');b.innerHTML='<span class="acc-t"><b>'+d[1]+'</b><small>'+d[2]+'</small></span><i class="acc-i" aria-hidden="true"></i>';
@@ -848,6 +845,13 @@ if(t.closest('[data-fclose]')&&!m.hidden){var link=t.closest('a[href^="#"]');if(
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close()});
 var h=location.hash.match(/^#learn-(practice|message|coach|more|support|blog-[a-z]+)$/);if(h)open(h[1],true);})();</script>"""
 
+XM='''<div class="xm-row"><p><b>Nine more small tools</b> for after the chat ends.</p><div class="xm-btns"><a href="#learn-more" data-feature="more" class="hx-btn ghost" data-umami-event="explore-more-tools-deck">Explore more tools <span aria-hidden="true">&rarr;</span></a><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a></div></div>'''
+# ---- landing: the nine other tools live in their own window now
+_a=s.index('<section class="hx-sec" id="more">'); _b=s.index('</section>',_a)+len('</section>')
+s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
+_n="on a Tuesday.</p></div>"
+assert _n in s
+s=s.replace(_n,_n+'\n        <div class="hx-wrap xm-end">'+XM.replace('<p><b>Nine more small tools</b> for after the chat ends.</p>','<p><b>Want more?</b> Nine small tools for after the chat ends.</p>').replace('explore-more-tools-deck','explore-more-tools-compare')+'</div>',1)
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
 
