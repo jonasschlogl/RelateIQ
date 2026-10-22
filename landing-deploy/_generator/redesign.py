@@ -221,7 +221,7 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
-        <div class="xm-row"><p><b>Nine more small tools</b> for after the chat ends.</p><div class="xm-btns"><a href="#learn-more" data-feature="more" class="hx-btn ghost" data-umami-event="explore-more-tools-deck">Explore more tools <span aria-hidden="true">&rarr;</span></a><a href="#join" class="hx-btn" data-umami-event="cta-tools">Get early access</a></div></div>
+
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
@@ -849,9 +849,6 @@ XM='''<div class="xm-row"><p><b>Nine more small tools</b> for after the chat end
 # ---- landing: the nine other tools live in their own window now
 _a=s.index('<section class="hx-sec" id="more">'); _b=s.index('</section>',_a)+len('</section>')
 s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
-_n="on a Tuesday.</p></div>"
-assert _n in s
-s=s.replace(_n,_n+'\n        <div class="hx-wrap xm-end">'+XM.replace('<p><b>Nine more small tools</b> for after the chat ends.</p>','<p><b>Want more?</b> Nine small tools for after the chat ends.</p>').replace('explore-more-tools-deck','explore-more-tools-compare')+'</div>',1)
 s=_re.sub(r'<footer class="hx-foot">.*?</footer>',lambda mo:FOOT_HTML,s,count=1,flags=_re.S)
 s=s.replace('</footer>','</footer>'+ABOUT_HTML+ABOUT_JS+FM_HTML+FM_JS+CMP_JS+ACC_JS+FIT_JS,1)
 
