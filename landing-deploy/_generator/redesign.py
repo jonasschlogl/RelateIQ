@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=126')
+s=s.replace('css/home.css?v=11','css/home.css?v=127')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -884,6 +884,11 @@ _a=s.index('<section class="hx-sec" id="approach">'); _b=s.index('</section>',_a
 _sec=s[_a:_b]; s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
 _c=s.index('<section class="hx-sec" id="compare">')
 s=s[:_c]+_sec+'\n\n    '+s[_c:]
+# ...and "What you tell it stays yours" right under it
+_a=s.index('<section class="hx-sec" id="trust">'); _b=s.index('</section>',_a)+len('</section>')
+_tr=s[_a:_b]; s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
+_c=s.index('<section class="hx-sec" id="compare">')
+s=s[:_c]+_tr+'\n\n    '+s[_c:]
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
