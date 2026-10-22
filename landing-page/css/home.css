@@ -1559,3 +1559,22 @@ html, body.hx { overflow-x: clip; }
 .hx-btn:not(.ghost):not(.sm)::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; background: rgba(255,255,255,.35); animation: pgShine 5s ease-in-out infinite; pointer-events: none; }
 .post-card:hover, .more-card:hover, .price-card:hover { translate: 0 -4px; }
 @media (prefers-reduced-motion: reduce) { .sp, .hx-hero .fl, .hx-final .fl { display: none; } .stg { opacity: 1; translate: none; scale: none; transition: none; } .hx-hero .hx-copy > *, .hero-art, .hx-btn::after { animation: none !important; } }
+
+/* v97: "How X helps you" trio with drawn illustrations (like paired.com) */
+.pg-help { padding: 56px 48px 0; }
+.pg-help > h3 { font-size: clamp(28px, 3.4vw, 46px); }
+.pg-help .pg-lead { max-width: 640px; margin-top: 16px; }
+.pg-help .pg-3 { margin-top: 34px; gap: 36px; }
+.pg-art { display: block; width: 190px; height: 152px; margin: 0 auto 18px; overflow: visible; animation: pgBob 6s ease-in-out infinite; }
+.pg-i:nth-child(2) .pg-art { animation-delay: -2s; } .pg-i:nth-child(3) .pg-art { animation-delay: -4s; }
+@keyframes pgBob { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
+.pg-help .pg-i h4 { font-size: 22px; } .pg-help .pg-i p { max-width: 330px; margin: 0 auto; }
+.pg-tabs { padding-top: 56px; }
+@media (max-width: 960px) { .pg-help { padding: 40px 18px 0; } .pg-art { width: 160px; height: 128px; } .pg-help .pg-3 { gap: 26px; } .pg-tabs { padding-top: 40px; } }
+@media (prefers-reduced-motion: reduce) { .pg-art { animation: none; } }
+@media (max-width: 960px) {
+  .pg-help .pg-3 { gap: 14px; margin-top: 24px; }
+  .pg-help .pg-i { display: grid; grid-template-columns: 104px 1fr; column-gap: 14px; align-items: center; text-align: left; }
+  .pg-help .pg-art { grid-row: 1 / span 2; width: 104px; height: 84px; margin: 0; }
+  .pg-help .pg-i h4 { font-size: 17px; margin: 0 0 4px; align-self: end; } .pg-help .pg-i p { font-size: 14.5px; line-height: 1.45; margin: 0; max-width: none; align-self: start; }
+}

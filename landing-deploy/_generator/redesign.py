@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=96')
+s=s.replace('css/home.css?v=11','css/home.css?v=97')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -603,6 +603,43 @@ ART={
 }
 HEART_ICON='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>'
 FLOATS='<div class="fl" aria-hidden="true">'+''.join('<span class="f%d">%s</span>'%(k,HEART_ICON) for k in range(1,8))+'</div>'
+
+# ---- drawn illustrations for the "How X helps you" trio (page colours only)
+_K,_G,_P,_C,_B,_W='#3b2218','#f7d99a','#f4b8c4','#f8c7a3','#b78d74','#fffaf2'
+def _h(x,y,sc,fill,extra=''): return '<path d="%s" transform="translate(%s %s) scale(%s)" fill="%s" %s/>'%(HEART,x,y,sc,fill,extra)
+_SP='M0-10 C1-3 3-1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3-1 -1-3 0-10Z'
+def _sp(x,y,sc,fill): return '<path d="%s" transform="translate(%s %s) scale(%s)" fill="%s"/>'%(_SP,x,y,sc,fill)
+def _svg(b): return '<svg class="pg-art" viewBox="0 0 200 160" aria-hidden="true">%s</svg>'%b
+ILL={
+ 'a1':_svg('<rect x="70" y="20" width="100" height="68" rx="28" fill="%s"/><path d="M146 84 L162 108 L132 90Z" fill="%s"/>'%(_K,_K)+_sp(120,54,1.6,_W)+_sp(148,38,.8,_G)
+      +'<rect x="22" y="52" width="104" height="72" rx="30" fill="%s"/><path d="M54 118 L40 144 L74 122Z" fill="%s"/>'%(_P,_P)+_h(48,66,.58,_K)+'<circle cx="104" cy="92" r="4" fill="%s"/><circle cx="116" cy="92" r="4" fill="%s" opacity=".5"/>'%(_K,_K)),
+ 'a2':_svg('<rect x="58" y="34" width="100" height="116" rx="14" fill="%s"/><rect x="48" y="24" width="100" height="116" rx="14" fill="%s" stroke="%s" stroke-width="3"/><path d="M48 38a14 14 0 0 1 14-14h72a14 14 0 0 1 14 14v10H48z" fill="%s"/>'%(_C,_W,_K,_K)
+      +'<rect x="66" y="68" width="62" height="9" rx="4.5" fill="%s"/><rect x="66" y="86" width="48" height="9" rx="4.5" fill="%s"/><rect x="66" y="104" width="56" height="9" rx="4.5" fill="%s"/>'%(_C,_C,_C)
+      +'<circle cx="136" cy="116" r="22" fill="%s" stroke="%s" stroke-width="3"/><path d="M125 116 l8 8 14-16" fill="none" stroke="%s" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'%(_G,_K,_K)+_h(34,18,.3,_P)),
+ 'a3':_svg('<path d="M100 20 q-30 20 -30 60 q0 40 30 60" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round" opacity=".35"/><path d="M100 20 q30 20 30 60 q0 40 -30 60" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round" opacity=".35"/>'%(_K,_K)
+      +'<path d="M100 28 q-46 28 -46 52 q0 34 46 52" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round" opacity=".18"/><path d="M100 28 q46 28 46 52 q0 34 -46 52" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round" opacity=".18"/>'%(_K,_K)
+      +_h(48,34,1.04,_P)+_h(108,22,.5,_G,'stroke="%s" stroke-width="3"'%_K)+_sp(46,40,1,_G)+_sp(160,110,1.2,_C)),
+ 'm1':_svg('<rect x="26" y="28" width="148" height="96" rx="34" fill="%s"/><path d="M60 118 L44 148 L84 124Z" fill="%s"/>'%(_G,_G)
+      +'<path d="M54 76 q46 -44 92 0 q-46 44 -92 0z" fill="%s" stroke="%s" stroke-width="4" stroke-linejoin="round"/><circle cx="100" cy="76" r="17" fill="%s"/><circle cx="100" cy="76" r="7" fill="%s"/><circle cx="106" cy="70" r="3.5" fill="%s"/>'%(_W,_K,_P,_K,_W)
+      +'<path d="M78 42 l-6 -12 M100 36 v-14 M122 42 l6 -12" stroke="%s" stroke-width="4" stroke-linecap="round"/>'%_K),
+ 'm2':_svg('<rect x="22" y="14" width="112" height="40" rx="18" fill="%s"/><rect x="38" y="62" width="130" height="40" rx="18" fill="%s"/><rect x="22" y="110" width="104" height="40" rx="18" fill="%s"/>'%(_G,_P,_C)
+      +'<rect x="38" y="28" width="60" height="7" rx="3.5" fill="%s"/><rect x="54" y="76" width="82" height="7" rx="3.5" fill="%s"/><rect x="54" y="88" width="48" height="7" rx="3.5" fill="%s"/><rect x="38" y="124" width="66" height="7" rx="3.5" fill="%s"/>'%(_K,_K,_K,_K)
+      +_h(142,16,.3,_K)+_sp(176,50,1,_G)+_sp(150,138,.8,_P)),
+ 'm3':_svg('<rect x="24" y="22" width="116" height="82" rx="28" fill="%s" stroke="%s" stroke-width="3"/><path d="M52 100 L42 126 L76 104Z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/><rect x="46" y="48" width="72" height="8" rx="4" fill="%s"/><rect x="46" y="66" width="48" height="8" rx="4" fill="%s"/>'%(_W,_K,_W,_K,_C,_C)
+      +'<circle cx="148" cy="108" r="30" fill="%s" stroke="%s" stroke-width="3"/><path d="M148 122 V96 M136 107 l12 -12 12 12" fill="none" stroke="%s" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'%(_P,_K,_K)+_h(120,14,.36,_P,'stroke="%s" stroke-width="3"'%_K)+_sp(176,50,1.1,_G)),
+ 'c1':_svg('<path d="M100 40 C80 28 50 28 28 38 V130 C50 120 80 120 100 132 Z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/><path d="M100 40 C120 28 150 28 172 38 V130 C150 120 120 120 100 132 Z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>'%(_W,_K,_C,_K)
+      +_h(46,52,.5,_P)+'<rect x="116" y="56" width="42" height="7" rx="3.5" fill="%s"/><rect x="116" y="72" width="34" height="7" rx="3.5" fill="%s"/><rect x="116" y="88" width="40" height="7" rx="3.5" fill="%s"/>'%(_K,_K,_K)
+      +'<path d="M132 28 v34 l9 -8 9 8 v-34z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>'%(_G,_K)+_sp(22,24,1,_G)+_sp(178,126,.9,_P)),
+ 'c2':_svg('<circle cx="100" cy="80" r="52" fill="%s" opacity=".55"/><path d="M52 80 a48 48 0 0 1 82 -34" fill="none" stroke="%s" stroke-width="6" stroke-linecap="round"/><path d="M148 80 a48 48 0 0 1 -82 34" fill="none" stroke="%s" stroke-width="6" stroke-linecap="round"/><path d="M132 28 l10 20 -22 4z" fill="%s"/><path d="M68 132 l-10 -20 22 -4z" fill="%s"/>'%(_G,_K,_K,_K,_K)
+      +_h(76,58,.48,_P,'stroke="%s" stroke-width="3"'%_K)+'<circle cx="34" cy="48" r="6" fill="%s"/><circle cx="170" cy="118" r="6" fill="%s"/>'%(_P,_C)),
+ 'c3':_svg('<path d="M12 142 q30 -8 60 0 t60 0 t56 0" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round"/><rect x="92" y="18" width="10" height="126" rx="5" fill="%s" stroke="%s" stroke-width="3"/>'%(_K,_B,_K)
+      +'<path d="M96 30 H40 l-14 14 14 14 H96z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/><path d="M100 70 H152 l16 14 -16 14 H100z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>'%(_P,_K,_K,_K)
+      +_h(44,34,.2,_W)+_h(126,74,.2,_W)+_sp(162,34,1,_G)+_sp(30,112,.8,_C)),
+}
+ILLMAP={'practice':['a1','a2','a3'],'message':['m1','m2','m3'],'coach':['c1','c2','c3']}
+HELPH={'practice':('How Partner Practice helps you walk in ready','Hard conversations rarely get a second try. Here you get the first one for free, so the real one goes better.'),
+ 'message':('How Message check helps you send what you mean','Short messages lose their tone. See how yours will land before the other person does.'),
+ 'coach':('How Coach Chat helps you see clearly','It asks, remembers, names what keeps repeating, and ends with one small thing to do next.')}
 def _panel(i,f):
     nxt=FEATS[(i+1)%len(FEATS)]
     art=ART[f['id']]
@@ -614,18 +651,20 @@ def _panel(i,f):
                %(on,'true' if n==0 else 'false',n,c[0],c[1],plan,c[2]))
         exs+='<div class="tb-ex%s" data-i="%d"><div class="ex">%s</div></div>'%(on,n,art[n][0]+art[n][1])
         caps+='<div class="tb-cap%s" data-i="%d"><h4>%s%s</h4><p>%s</p></div>'%(on,n,c[1],plan,c[2])
+    tri=''.join('<div class="pg-i">%s<h4>%s</h4><p>%s</p></div>'%(ILL[ILLMAP[f['id']][k]],h[1],h[2]) for k,h in enumerate(f['helps']))
     meth=('<div class="fm-meth"><b>Draws on</b>'+''.join('<span>%s</span>'%m for m in f['methods'])+'</div>') if f.get('methods') else ''
     good=''.join('<li>%s</li>'%g for g in f['good'])
     return ('<article class="fm-panel pg" id="learn-%s" data-f="%s" hidden style="--tint:%s">'
      '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>%s</b><span>%s</span></span><h2 id="fm-title-%s">%s</h2><p class="fm-sub">%s</p>'
      '<div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-%s">Get early access</a><span class="hx-free">Free to try</span></div>'
-     '<p class="pg-goal"><b>%s</b></p></div>'
+     '</div>'
+     '<section class="pg-sec pg-help"><h3>%s</h3><p class="pg-lead">%s</p><div class="pg-3">%s</div></section>'
      '<section class="pg-sec pg-tabs"><h3>%s</h3><div class="tbx"><div class="tb-list" role="tablist">%s</div><div class="tb-stage" data-i="0"><span class="dc d1"></span><span class="dc d2"></span><span class="dc d3"></span>%s</div><div class="tb-caps">%s</div></div>%s</section>'
      '<section class="pg-sec pg-good"><h3>Good for</h3><ul class="fm-good">%s</ul></section>'
      '<div class="pg-end">'+FLOATS+'<h3>%s</h3><div class="fm-cta"><a href="#join" class="hx-btn" data-fclose data-umami-event="cta-feature-end-%s">Get early access</a></div><div class="fm-avail"><b>What you get</b><span>%s</span></div></div>'
      '<div class="fm-foot"><p>Not a replacement for therapy. If you are in a crisis, please contact a professional or a helpline in your country.</p>'
      '<button type="button" class="fm-next" data-go="%s">Next: %s <span aria-hidden="true">&rarr;</span></button></div>'
-     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],f['goalh'],f['capsh'],btns,exs,caps,meth,good,PGEND[f['id']][0],f['id'],f['avail'],nxt['id'],nxt['tag'])
+     '</article>')%(f['id'],f['id'],f['tint'],f['tag'],f['when'],f['id'],f['h'],f['sub'],f['id'],HELPH[f['id']][0],HELPH[f['id']][1],tri,f['capsh'],btns,exs,caps,meth,good,PGEND[f['id']][0],f['id'],f['avail'],nxt['id'],nxt['tag'])
 PGEND={'practice':('Have the talk twice. Once here, once for real.','Rehearse with an AI that answers like your partner, get honest feedback, and walk in ready.'),
  'coach':('Someone to think it through with, any hour.','Honest, remembers your story, and always ends with one small next step.'),
  'message':('Know how it lands before you hit send.','Paste a draft, see the risk, and send the version you actually mean.')}
