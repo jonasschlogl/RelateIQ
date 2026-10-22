@@ -232,7 +232,7 @@ function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
 function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
-function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.getElementById('compare');if(t)window.scrollTo({{top:t.getBoundingClientRect().top+window.scrollY-96,behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';if(n>=P.length){{locked=false;document.body.classList.remove('gated');gate.innerHTML='All seen. Keep scrolling';setTimeout(function(){{var t=document.getElementById('approach');if(t&&t.classList.contains('acc-closed')&&window.matchMedia('(max-width:760px)').matches){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}var tt=(t&&!window.matchMedia('(max-width:760px)').matches&&t.querySelector('.mission-block'))||t;if(tt)window.scrollTo({{top:tt.getBoundingClientRect().top+window.scrollY-(tt===t?96:156),behavior:'smooth'}});gate.innerHTML=''}},750)}}}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){{free();return}}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
@@ -867,7 +867,7 @@ def _mbi(d): return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 _MB_CH=[('Gottman Method','g'),('Emotionally Focused Therapy','p'),('CBT for couples','c'),('Nonviolent Communication','k'),('Imago dialogue','p'),('Attachment theory','g'),('Solution-focused work','c'),('Narrative work','k'),('Acceptance and commitment','g')]
 _MB_NEW=('<div class="mission-block mb2">'+FLOATS+'<div class="mb-copy"><span class="section-tag">Our approach</span>'
  '<h2>We&rsquo;d rather be useful than exciting</h2>'
- '<p>One job: help you think clearly about your relationship and find words that land.</p>'
+ '<p>Three tools with one job: help you think clearly about your relationship and find words that land.</p>'
  '<ul class="mb-pts">'
  '<li><i>'+_mbi('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>')+'</i><div><b>Built for one thing</b><span>Clearer thinking and better words. Nothing else.</span></div></li>'
  '<li><i>'+_mbi('<path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>')+'</i><div><b>No tricks to keep you chatting</b><span>No streaks, no guilt, no nagging.</span></div></li>'
@@ -880,6 +880,11 @@ _MB_NEW=('<div class="mission-block mb2">'+FLOATS+'<div class="mb-copy"><span cl
  '</div></div>')
 assert _MB_OLD in s
 s=s.replace(_MB_OLD,_MB_NEW,1)
+# move "Our approach" right under the three tools
+_a=s.index('<section class="hx-sec" id="approach">'); _b=s.index('</section>',_a)+len('</section>')
+_sec=s[_a:_b]; s=s[:_a].rstrip()+'\n\n    '+s[_b:].lstrip()
+_c=s.index('<section class="hx-sec" id="compare">')
+s=s[:_c]+_sec+'\n\n    '+s[_c:]
 
 # ---- blog thumbnails on the home cards (shown on mobile only)
 import glob as _g, os as _os
