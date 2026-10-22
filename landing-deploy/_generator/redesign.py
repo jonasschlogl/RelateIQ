@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=117')
+s=s.replace('css/home.css?v=11','css/home.css?v=119')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -274,7 +274,7 @@ ABOUT_HTML = """
             <p>The hardest conversations rarely happen at convenient times. They happen late at night, with a message half typed and a mind that will not settle. That is when support is most valuable and least available, and it is the gap RelationshipAI was created to close.</p>
             <p>The results were strong enough that Jonas recognised the same approach could serve everyday people, not only those in therapy or in crisis. Today, RelationshipAI is built for anyone who has ever stared at a message and wondered how to say it right.</p>
             <p class="about-sign">Guided by established couples therapy methods, and clear about where professional support takes over.</p>
-            <div class="about-cta"><a href="#join" class="hx-btn" data-close data-umami-event="cta-about-end">Get early access</a><a href="method.html" class="ab-link" data-umami-event="about-method">Our method <span aria-hidden="true">&rarr;</span></a></div>
+            <div class="about-cta"><a href="#join" class="hx-btn" data-close data-umami-event="cta-about-end">Get early access</a><a href="method.html" class="hx-btn ghost" data-umami-event="about-method">Our method <span aria-hidden="true">&rarr;</span></a></div>
           </div>
         </div>
       </div>
