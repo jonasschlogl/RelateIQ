@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=101')
+s=s.replace('css/home.css?v=11','css/home.css?v=102')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -688,14 +688,35 @@ MORE=[
  ('Weekly focus and ideas','Pro','One focus a week, plus ideas for gestures and dates.',
   MN('This week','<div class="ap-r pk"><small>Focus</small><span>Listen first, answer second</span></div>'+PILLS('A small gesture','A date idea'))),
  ('Insights','Pro','Patterns the coach notices, in a weekly summary.',
-  MN('Weekly summary',CH([3,5,4,7,8],['Mon','Wed','Fri','Sat','Sun'])+'<div class="ap-mm"><i></i>You calm down faster</div>')),
+  MN('Across your chats',CH([3,5,4,7,8],['Mon','Wed','Fri','Sat','Sun'])+'<div class="ap-mm"><i></i>You calm down faster</div>')),
  ('Talk plan and hard mode','Premium','An opening line, what to avoid, and a hard mode.',
   MN('Talk plan',ROW('Opening line','&ldquo;I miss us. Can we talk tonight?&rdquo;','y')+PILLS('Calm','Defensive','Cold',on=('Defensive',)))),
  ('Monthly review and your year','Premium','A calm look back at your month and year.',
   MN('Your month',_cal+'<div class="mn-leg"><span><i class="f"></i>Check-ins</span><span><i class="p"></i>Talks</span></div>')),
 ]
+
+MORE_TXT={
+ 'After a fight':('A calm-down guide for the first hour after an argument, so you do not make it worse. Pro and Premium also write a short message you can use to reach out.',
+   ['Settle your body first, then a few simple rules for the next hour','Pro: a personal message to reach out, 3 a month','Premium: unlimited, tailored to you, with a check-in the next day']),
+ 'Playbook':('Turns advice into small experiments. When the coach suggests something to try, one tap saves it, and two days later a reminder asks how it went.',
+   ['Mark each try: worked, did not help, did not get to it','Reminder by email and push after two days','Premium: an AI read of everything that works for you']),
+ 'Daily check-in and question':('One private minute a day. Rate how connected you feel, from 1 to 10, and answer one question about your relationship.',
+   ['Over 100 questions that do not repeat, then new ones made for you','Always optional, and it never blocks anything else','A reminder with your own question, by email or push']),
+ 'Share with your partner':('Share only what you choose. Add specific things one at a time, then send your partner a link they can open without an account.',
+   ['Nothing is ever shared automatically','You see everything before it goes out','Turn the link off or delete it any time']),
+ 'Therapist summary':('Turns a Coach Chat conversation into a one-page summary for your own therapist: what is going on, the recurring themes and points to discuss.',
+   ['Print it or save it as a PDF','Made once per chat, regenerate any time','Premium: a printable one-page Therapist pack with your story']),
+ 'Weekly focus and ideas':('One thing to focus on this week, plus ideas for small gestures and dates, based on what the coach knows about you and your partner.',
+   ['Pro: the focus of the week, also in your weekly email, and 3 ideas','Premium: why and when, a recap of last week and 5 tailored ideas','Premium: refresh any time, plus a Monday reminder']),
+ 'Insights':('Looks across all your Coach Chat conversations, not just one, and names the patterns that keep coming back.',
+   ['Patterns named from several chats, in plain words','Connection over time, from your own daily ratings','The coach uses them, so advice builds on what it has seen']),
+ 'Talk plan and hard mode':('Two extras for Partner Practice. Talk plan prepares the real conversation, and hard mode makes the practice partner push back harder.',
+   ['Talk plan: an opening line, what to avoid and how to respond if it heats up','Hard mode: defensive, cold or angry reactions, so the real talk feels easier','Progress across your rehearsals with the same person']),
+ 'Monthly review and your year':('On the 1st you get a calm look back at last month: what came up, what helped and one small thing to try next. Your year so far zooms out across the whole year.',
+   ['Written for you automatically, private to you','Push and email when it is ready','Ends with one small thing to try next']),
+}
 def _panel_more():
-    cards=''.join('<div class="mo-c"><div class="mo-t">%s</div><div class="mo-b"><h3>%s<em class="mo-p %s">%s</em></h3><p>%s</p></div></div>'%(art,t,pl.lower(),pl,d) for t,pl,d,art in MORE)
+    cards=''.join('<div class="mo-c"><div class="mo-t">%s</div><div class="mo-b"><h3>%s<em class="mo-p %s">%s</em></h3><p>%s</p><ul>%s</ul></div></div>'%(art,t,pl.lower(),pl,MORE_TXT[t][0],''.join('<li>%s</li>'%x for x in MORE_TXT[t][1])) for t,pl,d,art in MORE)
     also=''.join('<span>%s</span>'%x for x in ['Dictate with your voice','Add screenshots and files','Save more than one partner profile','Choose Fast or Advanced AI for each chat'])
     return ('<article class="fm-panel pg mo" id="learn-more" data-f="more" hidden style="--tint:#f7d99a">'
      '<div class="pg-hero">'+FLOATS+'<span class="fm-kick"><b>Other tools</b><span>After the chat ends</span></span><h2 id="fm-title-more">Small tools that help <em>after the chat ends.</em></h2>'
