@@ -1995,3 +1995,12 @@ body.hx > header.hx-nav { position: fixed; z-index: 60; }
 .xm-end { margin-top: 8px; }
 .xm-end .xm-row { margin-top: 26px; }
 @media (max-width: 760px) { .xm-row { border-radius: 30px; padding: 18px 16px; margin-top: 22px; } .xm-row p { text-align: center; } }
+/* v125 Our approach: full-width pink band with scalloped edges instead of a bubble (desktop) */
+@media (min-width: 761px) {
+  #approach { position: relative; margin: 76px 0 96px; padding: 96px 0 108px; background: #f6c4ce; border: 0; border-radius: 0; box-shadow: none; }
+  #approach::before, #approach::after { content: ""; position: absolute; left: 0; right: 0; height: 40px; background: #f6c4ce; pointer-events: none; -webkit-mask-size: 80px 40px; mask-size: 80px 40px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; }
+  #approach::before { top: -39px; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 A40 40 0 0 1 80 40 Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40 A40 40 0 0 1 80 40 Z'/%3E%3C/svg%3E"); }
+  #approach::after { bottom: -39px; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 0 A40 40 0 0 0 80 0 Z'/%3E%3C/svg%3E"); }
+  #approach .mission-block.mb2 { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0 24px; overflow: visible; }
+  #approach .mb-card { box-shadow: 0 24px 44px -26px rgba(59,34,24,.55); }
+}
