@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=146')
+s=s.replace('css/home.css?v=11','css/home.css?v=147')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -202,11 +202,22 @@ dm="""<div class="hx-demo" id="demo-box">
               <div class="dm-card dm-after"><small>Try this instead</small><p id="dm-fix"></p><span class="dm-why" id="dm-why"></span></div>
               <div class="dm-tone" hidden><button type="button" class="on" data-t="calm">Calmer</button></div>
             </div>"""
-def page(n,cls,idn,when,h,p,vis,nxt,name='',ex=''):
+
+def _pd_top(l,d): return '<div class="pd-top pd-i" style="--d:%ss"><i></i>%s <em>Example</em></div>'%(d,l)
+def _pd_a(t,d): return '<div class="pd-row pd-a"><span class="pd-dots pd-i2" style="--d:%ss" aria-hidden="true"><b></b><b></b><b></b></span><div class="pd-b a pd-i" style="--d:%ss">%s</div></div>'%(d,round(d+.9,2),t)
+def _pd_u(t,d): return '<div class="pd-b u pd-i" style="--d:%ss">%s</div>'%(d,t)
+DEMO_P='<div class="pg-demo" aria-hidden="true">'+_pd_top('Practice with Alex',.1)+_pd_u('There&rsquo;s something I want to tell you.',.5)+_pd_a('Okay. I&rsquo;m listening.',1.3)+_pd_u('When plans change, I feel unimportant.',3.0)+'<div class="pd-card bt pd-i" style="--d:3.9s"><small>Debrief</small>Calm start, clear feeling. <b>Next time:</b> say what you need.</div></div>'
+DEMO_C='<div class="pg-demo" aria-hidden="true">'+_pd_top('Coach Chat',.1)+_pd_u('We had the same fight again.',.5)+'<div class="pd-mem pd-i" style="--d:1.4s"><i></i>Remembers: the Tuesday dishes fight</div>'+_pd_a('Let&rsquo;s look underneath it this time.',2.2)+'<div class="pd-card bt pd-i" style="--d:3.9s"><small>Try saying</small>&ldquo;I feel unseen when I carry the house alone. Can we split it differently?&rdquo;</div></div>'
+DEMO_M=('<div class="pg-demo" aria-hidden="true">'+_pd_top('Message check',.1)+'<div class="pd-lbl pd-i" style="--d:.5s">Your draft</div>'
+ '<div class="pd-card pk pd-i" style="--d:.8s">Fine. Do whatever you want.<span>Reads cold. Likely to start a fight.</span></div>'
+ '<div class="pd-arrow pd-i" style="--d:1.7s">&darr;</div><div class="pd-lbl pd-i" style="--d:2.0s">Says what you mean</div>'
+ '<div class="pd-card bt pd-i" style="--d:2.4s"><div class="pd-swp"><p class="pd-sw s1">I&rsquo;m upset you didn&rsquo;t tell me. Can we talk tonight?</p><p class="pd-sw s2">I felt left out. I&rsquo;d love to talk tonight.</p><p class="pd-sw s3">I&rsquo;m upset you didn&rsquo;t tell me. I need us to talk tonight.</p></div><span>Honest, calm, invites a reply</span></div>'
+ '<div class="pd-chips pd-i" style="--d:3.1s"><b class="c1">Calmer</b><i class="c2">Warmer</i><i class="c3">Direct</i></div></div>')
+def page(n,cls,idn,when,h,p,vis,nxt,name='',ex='',demo=''):
     return f"""<article class="page {cls}" id="{idn}" data-i="{int(n)-1}">
           <div class="pg-in">
             <button type="button" class="pg-head"><span class="fnum">{n}</span><span class="ftxt"><small><b>{name}</b><span>{when}</span></small><h3>{h}</h3></span><span class="pg-turn" aria-hidden="true">Next</span></button>
-            <div class="flag-body"><p>{p}</p></div>
+            <div class="flag-body"><p>{p}</p>{demo}</div>
             <div class="pg-foot"><button type="button" class="pg-next">{nxt}</button>{ex}</div>
           </div>
         </article>"""
@@ -216,17 +227,20 @@ acc=f"""<section class="hx-sec hx-tools" id="tools">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Three tools</span><h2>Pick the moment. <em>We&rsquo;ll help with the words.</em></h2></div>
         <div class="deck hx-reveal" id="deck">
           <div class="deck-stage">
-        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner, so you can rehearse a hard conversation with nothing at stake. Afterwards you get a short debrief on what worked and what to try next.',pm,'Next','Partner Practice')}
-        {page('02','f2','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat')}
-        {page('03','f3','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check',XBUB)}
+        {page('01','f1','practice','Before the talk','Say it out loud <em>before it&rsquo;s real</em>.','An AI plays your partner, so you can rehearse a hard conversation with nothing at stake. Afterwards you get a short debrief on what worked and what to try next.',pm,'Next','Partner Practice','',DEMO_P)}
+        {page('02','f2','coach','When it hurts','A coach that <em>already knows</em> your story.','Tell it what happened. It remembers your partner and your past chats, so you never start from zero, even at 2am.',cm,'Next','Coach Chat','',DEMO_C)}
+        {page('03','f3','message','Before you send','Read it the way <em>they will</em>.','Paste a message before you send it. It shows how it may land and suggests a calmer, warmer or more direct version.',dm,'Next','Message check',XBUB,DEMO_M)}
           </div>
           <p class="deck-gate" id="deck-gate" aria-live="polite"></p>
         </div>
       </div>
     </section>
     <script>(function(){{var deck=document.getElementById('deck');if(!deck)return;var st=deck.querySelector('.deck-stage'),P=[].slice.call(deck.querySelectorAll('.page')),D=[].slice.call(deck.querySelectorAll('.deck-dots button')),N=['Partner Practice','Coach Chat','Message check'],a=0,dir=1,ro;
-function nat(p){{var c=p.querySelector('.pg-in').children,t=0;for(var k=0;k<c.length;k++)t+=c[k].offsetHeight;return t+26}}
-function lay(){{var h=0;P.forEach(function(p){{h=Math.max(h,nat(p))}});st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}})}}
+function nat(p){{var c=p.querySelector('.pg-in').children,t=0;for(var k=0;k<c.length;k++)t+=c[k].offsetHeight;var dm=p.querySelector('.pg-demo');if(dm&&getComputedStyle(dm).position==='absolute'){{var ft=p.querySelector('.pg-foot');t=Math.max(t,dm.offsetTop+dm.offsetHeight+(ft?ft.offsetHeight:140)-6)}}return t+26}}
+var vis=false,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;function play(p){{var d=p&&p.querySelector('.pg-demo');if(!d||rm)return;d.classList.remove('run');void d.offsetWidth;d.classList.add('run')}}
+if(!rm)P.forEach(function(p){{var d=p.querySelector('.pg-demo');if(d)d.classList.add('arm')}});
+if(window.IntersectionObserver)new IntersectionObserver(function(en){{en.forEach(function(x){{if(x.isIntersecting&&!vis){{vis=true;play(P[a])}}}})}},{{threshold:.3}}).observe(deck);
+function lay(){{var h=0;P.forEach(function(p){{h=Math.max(h,nat(p))}});st.style.height=h+'px';var nx=dir>0&&a<P.length-1?a+1:(dir<0&&a>0?a-1:(a>0?a-1:a+1)),fw=nx>a;P.forEach(function(p,i){{p.dataset.s=i<a?'turned':i==a?'front':i==a+1?'b1':'b2';p.style.height=h+'px';if(i==a){{p.removeAttribute('inert');p.removeAttribute('aria-hidden');p.querySelector('.pg-next').innerHTML=(fw?'Next: ':'Back: ')+N[nx]+(fw?' &rarr;':' &larr;');p.querySelector('.pg-turn').textContent=fw?'Next':'Back'}}else{{p.setAttribute('inert','');p.setAttribute('aria-hidden','true')}}}});D.forEach(function(d,i){{d.classList.toggle('on',i==a);d.setAttribute('aria-selected',i==a)}});deck.dataset.c=a;if(vis&&P[a]._pl!==1){{play(P[a])}}P.forEach(function(p,i){{p._pl=i==a?1:0}})}}
 function go(n){{a=n;seen[n]=1;lay();upd();if(window.ResizeObserver&&!ro){{ro=new ResizeObserver(lay);P.forEach(function(p){{[].slice.call(p.querySelector('.pg-in').children).forEach(function(c){{ro.observe(c)}})}})}}}}
 function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
@@ -242,7 +256,12 @@ setTimeout(function(){{B.classList.remove('unveil');gate.innerHTML=''}},d+900)}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){{free();return}}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
-P.forEach(function(p){{p.addEventListener('click',function(e){{if(!p.dataset.s||p.dataset.s!=='front')return;if(e.target.closest('.hx-demo, a, input, select, textarea')&&!e.target.closest('.pg-next'))return;step()}})}});
+(function(){{var sx=0,sy=0,dx=0,drag=null,moved=false;
+st.addEventListener('pointerdown',function(e){{if(e.pointerType==='mouse'&&e.button!==0)return;var p=e.target.closest('.page');if(!p||p.dataset.s!=='front')return;if(e.target.closest('a,button,input,select,textarea,.hx-demo'))return;drag=p;sx=e.clientX;sy=e.clientY;dx=0;moved=false}});
+st.addEventListener('pointermove',function(e){{if(!drag)return;var ddx=e.clientX-sx,ddy=e.clientY-sy;if(!moved){{if(Math.abs(ddx)<9||Math.abs(ddx)<Math.abs(ddy)*1.2){{if(Math.abs(ddy)>14)drag=null;return}}moved=true;drag.style.transition='none';try{{st.setPointerCapture(e.pointerId)}}catch(x){{}}}}dx=ddx;drag.style.transform='translateX('+dx+'px) rotate('+(dx/48).toFixed(2)+'deg)'}});
+function end(){{if(!drag)return;var p=drag;drag=null;if(!moved)return;p.style.transition='';p.style.transform='';p.dataset.sw=1;setTimeout(function(){{delete p.dataset.sw}},80);if(dx<-90&&a<P.length-1){{dir=1;go(a+1)}}else if(dx>90&&a>0){{dir=-1;go(a-1)}}dx=0}}
+st.addEventListener('pointerup',end);st.addEventListener('pointercancel',end)}})();
+P.forEach(function(p){{p.addEventListener('click',function(e){{if(!p.dataset.s||p.dataset.s!=='front'||p.dataset.sw)return;if(e.target.closest('.hx-demo, a, input, select, textarea')&&!e.target.closest('.pg-next'))return;step()}})}});
 D.forEach(function(d){{d.addEventListener('click',function(){{var n=+d.dataset.go;if(n>a)dir=1;else if(n<a)dir=-1;go(n)}})}});
 function hash(){{var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}}
 addEventListener('hashchange',hash);addEventListener('resize',lay);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);go(0);hash();}})();</script>"""

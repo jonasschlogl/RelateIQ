@@ -2114,3 +2114,58 @@ body.unveil #approach .apr-head { animation-delay: .12s; } body.unveil #approach
   #approach.acc:not(.acc-closed) .acc-btn, #compare.acc:not(.acc-closed) .acc-btn, #pricing.acc:not(.acc-closed) .acc-btn, #faq.acc:not(.acc-closed) .acc-btn { background: #fff3e2; }
   #compare.acc:not(.acc-closed) h2 em, #approach.acc:not(.acc-closed) h2 em, #pricing.acc:not(.acc-closed) h2 em, #faq.acc:not(.acc-closed) h2 em { color: #8a4a30; }
 }
+
+/* v147 live demos inside the three cards + swipe + color glow */
+.deck { position: relative; isolation: isolate; }
+.deck-stage .page { touch-action: pan-y; }
+.deck::before { content: ""; position: absolute; left: 4%; right: 4%; top: 6%; bottom: 10%; z-index: -1; border-radius: 50%; filter: blur(70px); opacity: .55; background: #f7d99a; transition: background .9s ease; pointer-events: none; }
+.deck[data-c="1"]::before { background: #f8c7a3; } .deck[data-c="2"]::before { background: #f4b8c4; }
+.pg-demo { position: relative; width: 100%; margin-top: 22px; padding: 16px 16px 18px; border-radius: 28px; background: #fffaf2; border: 1px solid rgba(59,34,24,.7); box-shadow: 0 20px 36px -22px rgba(59,34,24,.6), 0 2px 6px -2px rgba(59,34,24,.2); display: flex; flex-direction: column; gap: 9px; text-align: left; color: #3b2218; }
+.pd-top { display: flex; align-items: center; gap: 8px; font: 700 14px var(--font-body); }
+.pd-top i { width: 9px; height: 9px; border-radius: 50%; background: #e5718a; }
+.pd-top em { margin-left: auto; font: 800 10px var(--font-body); letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: #f7d99a; border: 1px solid rgba(59,34,24,.4); }
+.pd-b { max-width: 88%; padding: 10px 14px; border-radius: 18px; font: 500 15px/1.35 var(--font-body); }
+.pd-b.u { align-self: flex-end; background: #f7d99a; border-bottom-right-radius: 5px; }
+.pd-b.a { background: #f4e3d2; border-bottom-left-radius: 5px; }
+.pd-row { position: relative; align-self: flex-start; max-width: 88%; }
+.pd-row .pd-b { max-width: none; }
+.pd-dots { position: absolute; left: 0; top: 0; display: none; gap: 5px; padding: 14px 16px; border-radius: 18px; border-bottom-left-radius: 5px; background: #f4e3d2; opacity: 0; }
+.pd-dots b { width: 7px; height: 7px; border-radius: 50%; background: #3b2218; opacity: .55; animation: pdTyp 1s ease-in-out infinite; }
+.pd-dots b:nth-child(2) { animation-delay: .15s; } .pd-dots b:nth-child(3) { animation-delay: .3s; }
+.pd-mem { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border-radius: 999px; background: #f4b8c4; border: 1px solid rgba(59,34,24,.45); font: 700 13px var(--font-body); }
+.pd-mem i { width: 8px; height: 8px; border-radius: 50%; background: #3b2218; }
+.pd-card { padding: 11px 14px 12px; border-radius: 18px; font: 500 15px/1.4 var(--font-body); }
+.pd-card small, .pd-lbl { display: block; font: 800 10.5px var(--font-body); letter-spacing: .09em; text-transform: uppercase; color: #8a4a30; margin-bottom: 4px; }
+.pd-lbl { margin: 2px 0 -3px; }
+.pd-card.bt { background: #f7d99a; border: 1px solid rgba(59,34,24,.35); }
+.pd-card.pk { background: #f4b8c4; border: 1px solid rgba(59,34,24,.35); }
+.pd-card > span { display: block; margin-top: 6px; font: 700 12px var(--font-body); color: #8a4a30; }
+.pd-arrow { align-self: center; font: 700 18px/1 var(--font-body); color: #8a4a30; }
+.pd-swp { display: grid; } .pd-sw { grid-area: 1 / 1; margin: 0; } .pd-sw.s2, .pd-sw.s3 { opacity: 0; }
+.pd-chips { display: flex; gap: 6px; }
+.pd-chips b, .pd-chips i { font: 700 12.5px var(--font-body); font-style: normal; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(59,34,24,.5); background: #fff3e2; color: #3b2218; }
+.pd-chips b { background: #3b2218; color: #fff3e2; }
+@keyframes pdIn { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes pdDots { 0% { opacity: 0; } 12%, 82% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes pdTyp { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+.pg-demo.arm:not(.run) .pd-i { opacity: 0; }
+.pg-demo.arm.run .pd-i { animation: pdIn .55s cubic-bezier(.2,.8,.2,1) var(--d, 0s) both; }
+.pg-demo.arm.run .pd-dots { display: inline-flex; animation: pdDots .9s ease var(--d, 0s) both; }
+@keyframes pdS1 { 0%, 30% { opacity: 1; } 33%, 96% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes pdS2 { 0%, 30% { opacity: 0; } 33%, 63% { opacity: 1; } 66%, 100% { opacity: 0; } }
+@keyframes pdS3 { 0%, 63% { opacity: 0; } 66%, 96% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes pdC1 { 0%, 30% { background: #3b2218; color: #fff3e2; } 33%, 96% { background: #fff3e2; color: #3b2218; } 100% { background: #3b2218; color: #fff3e2; } }
+@keyframes pdC2 { 0%, 30% { background: #fff3e2; color: #3b2218; } 33%, 63% { background: #3b2218; color: #fff3e2; } 66%, 100% { background: #fff3e2; color: #3b2218; } }
+@keyframes pdC3 { 0%, 63% { background: #fff3e2; color: #3b2218; } 66%, 96% { background: #3b2218; color: #fff3e2; } 100% { background: #fff3e2; color: #3b2218; } }
+.pg-demo.arm.run .pd-sw.s1 { animation: pdS1 9s linear 4.6s infinite; } .pg-demo.arm.run .pd-sw.s2 { animation: pdS2 9s linear 4.6s infinite; } .pg-demo.arm.run .pd-sw.s3 { animation: pdS3 9s linear 4.6s infinite; }
+.pg-demo.arm.run .pd-chips .c1 { animation: pdC1 9s linear 4.6s infinite; } .pg-demo.arm.run .pd-chips .c2 { animation: pdC2 9s linear 4.6s infinite; } .pg-demo.arm.run .pd-chips .c3 { animation: pdC3 9s linear 4.6s infinite; }
+@media (min-width: 881px) {
+  #tools .pg-demo { position: absolute; right: 70px; top: 150px; width: min(410px, 33%); margin: 0; z-index: 2; }
+  #tools .pg-head { padding-right: calc(min(410px, 33%) + 130px); position: static; }
+  #tools .page .flag-body { padding-right: calc(min(410px, 33%) + 130px); }
+  #tools .pg-turn { position: absolute; top: 90px; right: 70px; margin: 0; }
+  #tools .ftxt h3 { font-size: clamp(34px, 4vw, 58px); }
+  #tools .pg-foot { position: relative; z-index: 3; }
+}
+@media (max-width: 880px) { #tools .pg-demo { margin: 20px 0 0; padding: 13px 13px 15px; border-radius: 24px; } .pd-b, .pd-card { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .deck::before { transition: none; } }
