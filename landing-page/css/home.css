@@ -2169,3 +2169,23 @@ body.unveil #approach .apr-head { animation-delay: .12s; } body.unveil #approach
 }
 @media (max-width: 880px) { #tools .pg-demo { margin: 20px 0 0; padding: 13px 13px 15px; border-radius: 24px; } .pd-b, .pd-card { font-size: 14px; } }
 @media (prefers-reduced-motion: reduce) { .deck::before { transition: none; } }
+
+/* v148 clear "unlocked" cue after the third card */
+.gate-go { position: relative; display: inline-flex; align-items: center; gap: 14px; margin: 8px auto 0; padding: 9px 10px 9px 10px; border: 1px solid #3b2218; border-radius: 999px; background: #3b2218; color: #fff3e2; cursor: pointer; font-family: var(--font-body); text-align: left; box-shadow: 0 18px 30px -14px rgba(59,34,24,.75); animation: ggIn .7s cubic-bezier(.2,.9,.3,1.25) both; }
+.gate-go::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; border: 2px solid #f7d99a; opacity: 0; animation: ggRing 1.8s ease-out .4s infinite; pointer-events: none; }
+.gg-i { position: relative; flex: none; width: 40px; height: 40px; border-radius: 50%; background: #f7d99a; }
+.gg-i::after { content: ""; position: absolute; left: 14px; top: 8px; width: 9px; height: 17px; border: solid #3b2218; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+.gg-t b { display: block; font: 700 17px/1.15 var(--font-display); letter-spacing: -.01em; }
+.gg-t small { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; opacity: .8; }
+.gg-a { position: relative; flex: none; width: 40px; height: 40px; margin-left: 6px; border-radius: 50%; background: #f7d99a; animation: ggBob 1.3s ease-in-out .8s infinite; }
+.gg-a::before { content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; border: solid #3b2218; border-width: 0 2.5px 2.5px 0; transform: translate(-50%, -66%) rotate(45deg); }
+.gate-go:hover { transform: translateY(-3px); }
+.gate-go:focus-visible { outline: 2px solid #fff3e2; outline-offset: 4px; }
+.deck-gate:has(.gate-go) { min-height: 0; padding-top: 6px; }
+@keyframes ggIn { from { opacity: 0; transform: translateY(14px) scale(.8); } to { opacity: 1; transform: none; } }
+@keyframes ggRing { 0% { opacity: .85; transform: scale(1); } 100% { opacity: 0; transform: scale(1.22, 1.5); } }
+@keyframes ggBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@media (max-width: 700px) { .gg-t b { font-size: 16px; } .gate-go { gap: 12px; } }
+@media (prefers-reduced-motion: reduce) { .gate-go, .gate-go::before, .gg-a { animation: none; } }
+.gate-go .gg-t b { display: block; margin: 0; padding: 0; border: 0; background: none; border-radius: 0; font-size: 17px; }
+.deck-gate:has(.gate-go) { position: sticky; bottom: 16px; z-index: 60; }

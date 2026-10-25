@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=147')
+s=s.replace('css/home.css?v=11','css/home.css?v=150')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -246,13 +246,21 @@ function step(){{if(a==P.length-1)dir=-1;else if(a==0)dir=1;go(a+dir)}}
 deck.classList.add('js');
 var gate=document.getElementById('deck-gate'),sec=document.getElementById('tools'),seen={{}},locked=false;
 function after(t){{if(!t)return false;var p=sec.compareDocumentPosition(t);return !!(p&4)&&!(p&16)}}
-function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){{gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}}locked=false;gate.innerHTML='<span class="gate-ok"><i aria-hidden="true"></i>All three seen</span>';setTimeout(unveil,1700)}}
-function unveil(){{var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}
-var xb=document.getElementById('xt-btn'),y=xb?xb.getBoundingClientRect().top+window.scrollY-(mob?104:170):(t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY);if(!calm)B.classList.add('unveil');
+function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){{gate.innerHTML='Open all three to continue <b>'+n+'/3</b>';return}}locked=false;unlock()}}
+var went=false,auto=0;
+function unlock(){{var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}
+if(!calm)B.classList.add('unveil');
+gate.innerHTML='<button type="button" class="gate-go" data-umami-event="deck-unlocked"><span class="gg-i" aria-hidden="true"></span><span class="gg-t"><b>Unlocked</b><small>Keep going</small></span><span class="gg-a" aria-hidden="true"></span></button>';
+gate.querySelector('.gate-go').addEventListener('click',function(){{clearTimeout(auto);leave()}});
+setTimeout(function(){{B.classList.remove('unveil')}},2300);
+['wheel','touchstart','keydown'].forEach(function(e){{addEventListener(e,function(){{clearTimeout(auto)}},{{once:true,passive:true}})}});
+auto=setTimeout(leave,calm?0:1600)}}
+function leave(){{if(went)return;went=true;var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,t=document.getElementById('approach');
+var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY;
 var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){{stop=true}}['wheel','touchstart','keydown','mousedown'].forEach(function(e){{addEventListener(e,halt,{{once:true,passive:true}})}});
 function tick(n){{if(stop)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/d),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;window.scrollTo({{top:from+(y-from)*e,behavior:'instant'}});if(p<1)requestAnimationFrame(tick)}}
 if(calm)window.scrollTo({{top:y,behavior:'instant'}});else requestAnimationFrame(function(){{requestAnimationFrame(tick)}});
-setTimeout(function(){{B.classList.remove('unveil');gate.innerHTML=''}},d+900)}}
+setTimeout(function(){{gate.innerHTML=''}},d+700)}}
 function free(){{if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}}
 locked=true;document.body.classList.add('gated');function chk(){{try{{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}}catch(x){{}}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){{var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){{free();return}}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{{if(after(document.querySelector(h))){{e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({{top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'}});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}}}catch(x){{}}}});
