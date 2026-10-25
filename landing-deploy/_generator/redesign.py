@@ -1,6 +1,7 @@
 # v12 warm light redesign: transforms index.v11.html -> index.html
 import re
 s=open('/root/lp/index.v11.html').read()
+s=s.replace('Get relationship advice and tips from an AI relationship coach, 24/7. Talk it through in Coach Chat, check a message before you send it, rehearse the hard conversation in Partner Practice. Inspired by the Gottman Method, attachment theory and Nonviolent Communication.','Relationship advice from an AI coach, 24/7. Rehearse the hard talk, check a message before you send it, and get calm help even at 2 AM.')  # v154: meta description under 160 chars
 
 HEART='M50 88 C20 64 6 46 6 30 C6 16 17 8 29 8 C38 8 46 13 50 21 C54 13 62 8 71 8 C83 8 94 16 94 30 C94 46 80 64 50 88 Z'
 def clover(cls='',gid='c'):
