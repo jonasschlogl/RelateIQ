@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=150')
+s=s.replace('css/home.css?v=11','css/home.css?v=151')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -250,11 +250,10 @@ function upd(){{var n=Object.keys(seen).length;if(!locked)return;if(n<P.length){
 var went=false,auto=0;
 function unlock(){{var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;B.classList.remove('gated');var t=document.getElementById('approach');if(t&&mob&&t.classList.contains('acc-closed')){{var ab=t.querySelector('.acc-btn');if(ab)ab.click()}}
 if(!calm)B.classList.add('unveil');
-gate.innerHTML='<button type="button" class="gate-go" data-umami-event="deck-unlocked"><span class="gg-i" aria-hidden="true"></span><span class="gg-t"><b>Unlocked</b><small>Keep going</small></span><span class="gg-a" aria-hidden="true"></span></button>';
-gate.querySelector('.gate-go').addEventListener('click',function(){{clearTimeout(auto);leave()}});
+gate.innerHTML='';
 setTimeout(function(){{B.classList.remove('unveil')}},2300);
 ['wheel','touchstart','keydown'].forEach(function(e){{addEventListener(e,function(){{clearTimeout(auto)}},{{once:true,passive:true}})}});
-auto=setTimeout(leave,calm?0:1600)}}
+auto=setTimeout(leave,calm?0:1400)}}
 function leave(){{if(went)return;went=true;var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,t=document.getElementById('approach');
 var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY;
 var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){{stop=true}}['wheel','touchstart','keydown','mousedown'].forEach(function(e){{addEventListener(e,halt,{{once:true,passive:true}})}});
