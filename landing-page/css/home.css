@@ -2097,13 +2097,20 @@ body.unveil #approach .apr-head { animation-delay: .12s; } body.unveil #approach
 .alive .aw-h.in .aw { opacity: 1; translate: 0 0; }
 .hx-links a.is-on:not(.hx-btn) { color: #3b2218; background: rgba(247,217,154,.75); border-radius: 999px; }
 .hx-links a:not(.hx-btn) { transition: background .3s ease, color .3s ease; }
-.lit { position: relative; }
-@media (hover: hover) and (pointer: fine) {
-  .lit::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; background: radial-gradient(260px circle at var(--lx, 50%) var(--ly, 50%), rgba(255,243,226,.5), transparent 70%); transition: opacity .35s ease; }
-  .lit:hover::after { opacity: 1; }
-  .trust-item.lit::after { background: radial-gradient(260px circle at var(--lx, 50%) var(--ly, 50%), rgba(255,243,226,.12), transparent 70%); }
-}
+@media (hover: hover) and (pointer: fine) { }
 .apr-pt:hover .apr-ic, .trust-item:hover .trust-icon { animation: aliveWig .7s ease; }
 @keyframes aliveWig { 0% { rotate: 0deg; } 25% { rotate: -9deg; scale: 1.08; } 60% { rotate: 7deg; scale: 1.08; } 100% { rotate: 0deg; scale: 1; } }
 .hx-btn:active, .btn:active { scale: .97; }
 @media (prefers-reduced-motion: reduce) { .alive-prog { display: none; } }
+
+/* v145 mobile: every opened tab becomes a rounded colored panel, like Privacy & trust and From the blog */
+@media (max-width: 760px) {
+  #compare.acc:not(.acc-closed), #approach.acc:not(.acc-closed), #pricing.acc:not(.acc-closed), #faq.acc:not(.acc-closed) { margin: 12px 8px 0 !important; border-radius: 38px; padding: 22px 0 30px !important; border: 1px solid rgba(59,34,24,.55); box-shadow: 0 34px 60px -38px rgba(59,34,24,.55); overflow: hidden; }
+  #approach.acc:not(.acc-closed) { background: #f4b8c4; }
+  #compare.acc:not(.acc-closed) { background: #f7d99a; }
+  #pricing.acc:not(.acc-closed) { background: #f7d99a; }
+  #faq.acc:not(.acc-closed) { background: #f4b8c4; }
+  #compare.acc:not(.acc-closed) .hx-kicker, #pricing.acc:not(.acc-closed) .hx-kicker, #faq.acc:not(.acc-closed) .hx-kicker { background: #fff3e2; }
+  #approach.acc:not(.acc-closed) .acc-btn, #compare.acc:not(.acc-closed) .acc-btn, #pricing.acc:not(.acc-closed) .acc-btn, #faq.acc:not(.acc-closed) .acc-btn { background: #fff3e2; }
+  #compare.acc:not(.acc-closed) h2 em, #approach.acc:not(.acc-closed) h2 em, #pricing.acc:not(.acc-closed) h2 em, #faq.acc:not(.acc-closed) h2 em { color: #8a4a30; }
+}

@@ -52,7 +52,7 @@ s=s.replace('<img src="logo-mark.svg" alt="" width="34" height="34" />','<img sr
 import re as _re
 s=_re.sub(r'<!--LANG-SWITCH-->.*?<!--/LANG-SWITCH-->','<!--LANG-SWITCH--><!--/LANG-SWITCH-->',s,flags=_re.S)
 s=_re.sub(r'<!--LANG-ALTS-->.*?<!--/LANG-ALTS-->','<!--LANG-ALTS--><!--/LANG-ALTS-->',s,flags=_re.S)
-s=s.replace('css/home.css?v=11','css/home.css?v=143')
+s=s.replace('css/home.css?v=11','css/home.css?v=146')
 s=s.replace('<meta name="theme-color" content="#130b0f" />','<meta name="theme-color" content="#fff4e1" />')
 
 # ---- hero + ribbon
@@ -907,7 +907,7 @@ s=_re.sub(r'(<a href="#pricing">Pricing</a>\s*)(<a href="#faq">FAQ</a>)',lambda 
 s=s.replace('<section class="hx-hero">','<section class="hx-hero">'+FLOATS,1)
 s=s.replace('<div class="hx-final hx-reveal">','<div class="hx-final hx-reveal">'+FLOATS,1)
 s=s.replace('js/home.js?v=4','js/home.js?v=5')
-s=s.replace('<script src="js/home.js?v=5"></script>','<script src="js/home.js?v=5"></script><script defer src="js/alive.js?v=2"></script>',1)
+s=s.replace('<script src="js/home.js?v=5"></script>','<script src="js/home.js?v=5"></script><script defer src="js/alive.js?v=3"></script>',1)
 
 # ---- our approach: richer layout
 _MB_OLD=s[s.index('<div class="mission-block">'):s.index('</div></div>',s.index('Read our method'))+len('</div></div>')]
@@ -1014,6 +1014,6 @@ _method=(_head_m+'<body class="hx mt">'+_pb+_nav+'<main>'
  '<section class="hx-sec mt-sec"><div class="hx-wrap"><div class="pg-fs">'+_mt_rows+'</div></div></section>'
  '<section class="hx-sec mt-sec"><div class="hx-wrap"><div class="hx-head hx-reveal"><span class="hx-kicker">Honest by design</span><h2>What this does and doesn&rsquo;t mean</h2></div>'+_hon+'</div></section>'
  '<section class="hx-sec"><div class="hx-wrap"><div class="hx-final">'+FLOATS+'<h2>See it applied to something you&rsquo;re actually dealing with</h2><p class="sub">Try Coach Chat free, no card required.</p><a href="index.html#join" class="hx-btn" data-umami-event="cta-method-banner">Get early access</a></div></div></section>'
- '</main>'+_foot+'<script src="js/home.js?v=5"></script><script defer src="js/alive.js?v=2"></script></body></html>')
+ '</main>'+_foot+'<script src="js/home.js?v=5"></script><script defer src="js/alive.js?v=3"></script></body></html>')
 open('/root/lp/method.html','w').write(_method)
 print('method ok',len(_method))

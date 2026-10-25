@@ -146,15 +146,5 @@
       });
       b.addEventListener("mouseleave", function () { var cur = b.style.translate || "0px 0px"; b.style.translate = ""; if (b.animate) b.animate([{ translate: cur }, { translate: "0px 0px" }], { duration: 300, easing: "cubic-bezier(.2,.8,.2,1)" }); });
     });
-
-    // 8. soft light that follows the cursor on cards
-    $$(".price-card, .post-card, .apr-pt, .trust-item, .faq-item").forEach(function (c) {
-      c.classList.add("lit");
-      c.addEventListener("mousemove", function (e) {
-        var r = c.getBoundingClientRect();
-        c.style.setProperty("--lx", (e.clientX - r.left).toFixed(0) + "px");
-        c.style.setProperty("--ly", (e.clientY - r.top).toFixed(0) + "px");
-      });
-    });
   });
 })();
