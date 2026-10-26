@@ -243,9 +243,11 @@ function markdown(src) {
 // Each post has three illustrations: /img/blog/<file-name>-1.svg (also the card thumbnail and the share image),
 // -2.svg and -3.svg (placed inside the article). Translated posts use the same images (same file name).
 const IMG_DIR = path.join(LANDING, "img", "blog");
-const IMG_V = "4"; // bump when the illustrations change (cache busting)
-const imgFile = (key, n, ext = "svg") => `/img/blog/${key}-${n}.${ext}${ext === "svg" ? `?v=${IMG_V}` : ""}`;
-const hasImgs = (key) => fs.existsSync(path.join(IMG_DIR, `${key}-1.svg`));
+const IMG_V = "5"; // bump when the illustrations change (cache busting)
+// photos (.jpg, from Pexels) win over the older illustrations (.svg) when both exist
+const imgExt = (key) => (fs.existsSync(path.join(IMG_DIR, `${key}-1.jpg`)) ? "jpg" : "svg");
+const imgFile = (key, n, ext = imgExt(key)) => `/img/blog/${key}-${n}.${ext}${ext === "png" ? "" : `?v=${IMG_V}`}`;
+const hasImgs = (key) => fs.existsSync(path.join(IMG_DIR, `${key}-1.jpg`)) || fs.existsSync(path.join(IMG_DIR, `${key}-1.svg`));
 const figure = (key, n) => `<figure class="article-fig"><img src="${imgFile(key, n)}" alt="" width="800" height="450" loading="lazy" decoding="async" /></figure>`;
 // put illustration 2 and 3 before the headings at one third and two thirds of the article
 function withImages(p) {
@@ -532,7 +534,7 @@ function postPage(ctx, p, all) {
   const avatar = fs.existsSync(path.join(LANDING, "img", "jonas.jpg"))
     ? `<img class="avatar" src="/img/jonas.jpg" alt="" width="64" height="64" />`
     : `<img class="avatar" src="/logo-tile.svg" alt="" width="64" height="64" />`;
-  const ogPng = hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : null;
+  const ogPng = imgExt(p.key) === "jpg" && hasImgs(p.key) ? `${SITE}${imgFile(p.key, 1, "jpg")}` : hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : null;
   return page(ctx, {
     title: `${p.title} | ${CONFIG.siteName}`,
     description: p.description,

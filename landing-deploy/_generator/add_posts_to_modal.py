@@ -18,10 +18,14 @@ def meta(sl):
     g=lambda p: re.search(p,b,re.S).group(1)
     return dict(tag=g(r'<span class="post-tag">(.*?)</span>'),meta=g(r'<span class="post-meta">(.*?)</span>'),ti=g(r'<h3>(.*?)</h3>'),ds=g(r'<p>(.*?)</p>'))
 ARROW=re.search(r'<span class="post-more">Read article (<svg.*?</svg>)</span>',s,re.S).group(1)
+import glob
+def KEY(sl):
+    f=glob.glob(os.path.join(ROOT,'landing-page','img','blog','*-'+sl+'-1.jpg'))[0]
+    return os.path.basename(f)[:-6]
 def card(sl,m,pre,dt=None,x=False):
-    return ('<a class="post-card bl-card%s" href="/blog/%s/"%s%s data-umami-event="%s-%s"><span class="post-thumb"><img src="/img/blog/card-%s.svg?v=1" alt="" width="1200" height="630" loading="lazy"></span>'
+    return ('<a class="post-card bl-card%s" href="/blog/%s/"%s%s data-umami-event="%s-%s"><span class="post-thumb"><img src="/img/blog/%s-1.jpg?v=5" alt="" width="1200" height="630" loading="lazy"></span>'
             '<div class="post-card-top"><span class="post-tag">%s</span><span class="post-meta">%s</span></div><h3>%s</h3><p>%s</p><span class="post-more">Read article %s</span></a>')%(
-            ' bl-x' if x else '',sl,' hidden' if x else '',(' data-t="%s"'%dt) if dt else '',pre,sl,sl,m['tag'],m['meta'],m['ti'],m['ds'],ARROW)
+            ' bl-x' if x else '',sl,' hidden' if x else '',(' data-t="%s"'%dt) if dt else '',pre,sl,KEY(sl),m['tag'],m['meta'],m['ti'],m['ds'],ARROW)
 CARD_RE=re.compile(r'<a class="post-card bl-card[^>]*href="/blog/([^/"]+)/".*?</a>',re.S)
 def panel_bounds(pid):
     i=s.index('id="%s"'%pid); i=s.rfind('<article',0,i); j=s.index('</article>',i)+len('</article>'); return i,j
