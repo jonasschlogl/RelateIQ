@@ -44,11 +44,12 @@ const I18N_DIR = path.join(HERE, "i18n");
 
 const INSTAGRAM = "https://www.instagram.com/relationshipai_/";
 
+import { page as shellPage } from "./shell.mjs";
 const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
-  staticPages: ["", "method.html", "privacy.html", "terms.html"],
+  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/"],
   cssVersion: "26",
   jsVersion: "21",
 };
@@ -168,7 +169,7 @@ function parseFrontMatter(raw) {
   const meta = {};
   for (const line of m[1].split("\n")) {
     const i = line.indexOf(":");
-    if (i > 0) meta[line.slice(0, i).trim().toLowerCase()] = line.slice(i + 1).trim().replace(/^["']|["']$/g, "");
+    if (i > 0) meta[line.slice(0, i).trim().toLowerCase()] = line.slice(i + 1).trim().replace(/^["']|["']$/g, "").replace(/\\"/g, '"');
   }
   return { meta, body: m[2] };
 }
@@ -392,52 +393,8 @@ function jsDict(ctx) {
   return Object.keys(o).length ? `<script>window.RAI_T=${JSON.stringify(o).replace(/</g, "\\u003c")};</script>\n  ` : "";
 }
 
-function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, targets, altTargets, image = `${SITE}/og-image.png` }) {
-  const canonical = `${SITE}${pagePath}`;
-  return `<!DOCTYPE html>
-<html lang="${ctx.lang.htmlLang}">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${attr(title)}</title>
-  <meta name="description" content="${attr(description)}" />
-  <link rel="canonical" href="${canonical}" />
-  ${alternatesHtml(altTargets || targets)}
-  <meta property="og:title" content="${attr(title)}" />
-  <meta property="og:description" content="${attr(description)}" />
-  <meta property="og:type" content="${type}" />
-  <meta property="og:url" content="${canonical}" />
-  <meta property="og:locale" content="${ctx.lang.locale.replace("-", "_")}" />
-  <meta property="og:image" content="${image}" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${attr(title)}" />
-  <meta name="twitter:description" content="${attr(description)}" />
-  <meta name="twitter:image" content="${image}" />
-  <link rel="icon" href="/favicon.ico" sizes="48x48" />
-  <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
-  <link rel="icon" href="/favicon-48.png?v=4" sizes="48x48" type="image/png" />
-  <link rel="icon" href="/favicon-32.png?v=4" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/favicon-16.png?v=4" sizes="16x16" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=75" />
-  <link rel="stylesheet" href="/css/landing.css?v=${CONFIG.cssVersion}" />
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="${CONFIG.umami}"></script>
-${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
-<body class="lp blog">
-
-${navHtml(ctx, targets)}
-
-${body}
-
-${footerHtml(ctx)}
-
-  ${jsDict(ctx)}<script src="/js/landing.js?v=${CONFIG.jsVersion}"></script>
-</body>
-</html>
-`;
+function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, image = `${SITE}/og-image.png` }) {
+  return shellPage({ title, description, path: pagePath, type, body, jsonld, image, cls: "sp-blog" });
 }
 
 const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug}/">
@@ -450,7 +407,7 @@ const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug
 const ctaBox = (ctx, event) => `<div class="article-cta">
   <h2>${ctx.T(EN.ctaH2)}</h2>
   <p>${ctx.T(EN.ctaP)}</p>
-  <a href="#" class="btn btn-gradient" data-cta data-umami-event="${event}">${ctx.T(EN.cta)}</a>
+  <a href="/early-access/" class="btn btn-gradient" data-cta data-umami-event="${event}">${ctx.T(EN.cta)}</a>
   <p class="ig-line">${ctx.T(EN.ctaIg)} <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-article"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
 </div>`;
 
@@ -487,7 +444,7 @@ function blogIndexPage(ctx, all) {
       <div class="cta-banner">
         <h2>${T(EN.bannerH2)}</h2>
         <p>${T(EN.bannerP)}</p>
-        <a href="#" class="btn" data-cta data-umami-event="cta-blog-banner">${T(EN.cta)}</a>
+        <a href="/early-access/" class="btn" data-cta data-umami-event="cta-blog-banner">${T(EN.cta)}</a>
       </div>
     </section>
   </main>`,
@@ -511,7 +468,7 @@ function adCard(ctx, p, extra = "") {
           <div class="ad-body">
             <h3>${title}</h3>
             <p>${text}</p>
-            <a href="#" class="btn btn-gradient" data-cta data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
+            <a href="/early-access/" class="btn btn-gradient" data-cta data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
             <small>${T(EN.adNote)}</small>
           </div>
         </div>`;
@@ -551,8 +508,8 @@ function postPage(ctx, p, all) {
           <div class="article-tags">${p.tags.map((t) => `<span class="post-tag">${esc(t)}</span>`).join("")}</div>
           <h1>${esc(p.title)}</h1>
           <div class="article-byline">
-            <a href="/#about" class="avatar-link" aria-label="About us">${avatar}</a>
-            <p>${T(EN.by)} <a href="/#about" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
+            <a href="/about/" class="avatar-link" aria-label="About us">${avatar}</a>
+            <p>${T(EN.by)} <a href="/about/" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
           </div>
           ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
           ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
@@ -601,7 +558,7 @@ function homeBlock(ctx) {
           <p>${T(EN.homeP)}</p>
         </div>
         <div class="post-grid">${posts.slice(0, 3).map((p) => card(ctx, p)).join("\n")}</div>
-        <p class="blog-all"><a href="${ctx.prefix ? `${ctx.prefix}/blog/` : "#learn-blog-all"}"${ctx.prefix ? "" : ' data-feature="blog-all"'} class="btn btn-ghost">${T(EN.seeAll)}</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
+        <p class="blog-all"><a href="${ctx.prefix ? `${ctx.prefix}/blog/` : "/blog/"}" class="btn btn-ghost">${T(EN.seeAll)}</a> <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-blog-home"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
       </div>
     </section>`;
 }
@@ -755,3 +712,4 @@ function build() {
 }
 
 try { build(); } catch (e) { console.error("site build failed (site will deploy without these changes):", e); }
+try { await import("./build-pages.mjs"); } catch (e) { console.error("pages build failed:", e); }
