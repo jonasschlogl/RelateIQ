@@ -33,3 +33,28 @@
     });
   }
 })();
+
+/* horizontal pin for the three tools (desktop, motion allowed). Falls back to the stacked deck otherwise.
+   Reaching the end of the pin "opens" all three cards for the deck's unlock gate. */
+(function () {
+  var hp = document.querySelector('[data-hp]'), deck = document.getElementById('deck'); if (!hp || !deck) return;
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, tr = hp.querySelector('.f-htrack'), bar = hp.querySelector('.f-hbar i'), cards = [].slice.call(hp.querySelectorAll('.f-hc')), opened = false, root = document.documentElement;
+  function on() { return !rm && innerWidth > 900; }
+  function size() {
+    var yes = on(); root.classList.toggle('f-pinon', yes);
+    if (!yes) { hp.style.height = ''; return; }
+    hp.style.height = (tr.scrollWidth - innerWidth + innerHeight + 160) + 'px';
+  }
+  function open() { if (opened) return; opened = true; for (var i = 0; i < 2; i++) { var f = deck.querySelector('.page[data-s="front"] .pg-next'); if (f) f.click(); } }
+  function mv() {
+    if (!on()) return;
+    var r = hp.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (hp.offsetHeight - innerHeight)));
+    tr.style.transform = 'translateX(' + (-p * (tr.scrollWidth - innerWidth)).toFixed(1) + 'px)';
+    if (bar) bar.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+    cards.forEach(function (c) { var cr = c.getBoundingClientRect(); if (cr.left < innerWidth * .62 && cr.right > innerWidth * .3 && r.top < innerHeight * .5) c.classList.add('live'); });
+    if (p > .985) open();
+  }
+  addEventListener('resize', function () { size(); mv(); });
+  addEventListener('scroll', mv, { passive: true });
+  size(); mv(); setTimeout(function () { size(); mv(); }, 600); addEventListener('load', function () { size(); mv(); });
+})();
