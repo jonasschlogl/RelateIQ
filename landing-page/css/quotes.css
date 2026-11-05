@@ -1,5 +1,5 @@
 /* Quotes section: editorial three-column layout, round photos, hairline dividers */
-.qs-sec{position:relative;padding:118px 0 112px;background:radial-gradient(60% 70% at 50% 0%,rgba(245,143,171,.1),transparent 72%),radial-gradient(40% 50% at 8% 100%,rgba(249,217,138,.06),transparent 70%),#3b2218}
+.qs-sec{position:relative;padding:118px 0 112px;background:radial-gradient(60% 70% at 50% 0%,rgba(245,143,171,.1),transparent 72%),#3b2218}
 .qs-head{text-align:center;margin-bottom:76px}
 .qs-eyebrow{display:inline-flex;align-items:center;gap:10px;font:800 12px "DM Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f58fab}
 .qs-eyebrow::before,.qs-eyebrow::after{content:"";width:26px;height:1px;background:currentColor;opacity:.6}
