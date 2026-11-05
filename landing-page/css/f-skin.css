@@ -1,0 +1,323 @@
+/* ==========================================================================
+   RelationshipAI "Cocoa Heart" skin (concept F). Loaded after premium.css.
+   Flat logo colours only: cocoa #3b2218, pink #f58fab, butter #f9d98a, cream #fff3e2.
+   It re-points the premium tokens to a dark palette; light "islands" (phone UI,
+   deck cards, pink Pro card) re-set the light tokens locally.
+   ========================================================================== */
+:root {
+  --f-cocoa: #3b2218; --f-cocoa-d: #2a1710; --f-cream: #fff3e2; --f-pink: #f58fab; --f-butter: #f9d98a;
+  --p-bg: #3b2218; --p-ink: #fff3e2; --p-ink-2: rgba(255,243,226,.8); --p-ink-3: rgba(255,243,226,.62);
+  --p-card: rgba(255,243,226,.06); --p-line: rgba(255,243,226,.14); --p-line-2: rgba(255,243,226,.26);
+  --p-rose: #f58fab; --p-rose-ink: #f58fab; --p-rose-tint: rgba(245,143,171,.16);
+  --p-gold: #f9d98a; --p-gold-tint: rgba(249,217,138,.14);
+  --p-sh-1: none; --p-sh-2: 0 40px 80px -40px rgba(0,0,0,.55);
+  --deep: var(--p-ink); --amber: var(--p-gold); --muted: var(--p-ink-2); --faint: var(--p-ink-3);
+  --cocoa-2: var(--p-ink-2); --butter: var(--p-gold-tint); --blush: var(--p-rose-tint);
+  --line: var(--p-line); --line-2: var(--p-line-2);
+}
+/* light islands */
+.hph, body.hx .deck .page, .fm-wrap .page, body.hx .price-card.pro, body.hx .price-card.featured {
+  --p-ink: #3b2218; --p-ink-2: #6b5246; --p-ink-3: #7d675b; --p-card: #fff;
+  --p-line: rgba(59,34,24,.1); --p-line-2: rgba(59,34,24,.18); --p-rose-tint: #fceaee; --p-gold-tint: #fff3d6;
+  --deep: #3b2218; --muted: #6b5246; --faint: #7d675b; --line: rgba(59,34,24,.1); --line-2: rgba(59,34,24,.18); color: #3b2218;
+}
+
+html, body.hx { background: #3b2218 !important; color: var(--f-cream); }
+html.hc, html.hc * { cursor: none !important; }
+meta[name=theme-color] { }
+body.hx h1, body.hx h2, body.hx h3 { color: var(--f-cream); }
+body.hx h1, body.hx h2, body.hx h3, body.hx .hx-brand { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "WONK" 0; }
+body.hx .hx-head h2 em, body.hx .chap-copy h2 em, body.hx #blog .section-head h2 em, body.hx #faq h2 em,
+body.hx .apr-head h2 em, body.hx #trust .hx-head h2 em, body.hx .hx-grad em { color: var(--f-pink) !important; font-style: italic; font-weight: 480; }
+body.hx .hx-head h2, body.hx #blog .section-head h2, body.hx .apr-head h2, body.hx .hx-final h2 {
+  font-weight: 520; letter-spacing: -.03em; line-height: .98; font-size: clamp(40px, 5.6vw, 84px); color: var(--f-cream);
+}
+body.hx .hx-head p, body.hx #blog .section-head p, body.hx .apr-head p, body.hx .hx-final p.sub { color: var(--p-ink-2); }
+body.hx .hx-kicker, body.hx .section-tag {
+  background: transparent !important; color: var(--f-butter) !important; border: 0 !important; padding: 0;
+  font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
+}
+body.hx .hx-kicker i { background: var(--f-pink); }
+body.hx .hx-sec { padding: 120px 0; }
+
+/* ---------- nav ---------- */
+body.hx .hx-nav .hx-wrap {
+  background: rgba(59,34,24,.82); border: 1px solid rgba(255,243,226,.14);
+  box-shadow: 0 20px 50px -24px rgba(0,0,0,.6);
+}
+body.hx .hx-links, body.hx .hx-links a:not(.hx-btn) { color: rgba(255,243,226,.82); }
+body.hx .hx-links a:not(.hx-btn):hover, body.hx .hx-links a.on { color: var(--f-butter); background: transparent; }
+body.hx .hx-brand, body.hx .hx-brand b, body.hx .hx-brand span { color: var(--f-cream); }
+body.hx .hx-burger { background: rgba(255,243,226,.1); color: var(--f-cream); border-color: rgba(255,243,226,.22); }
+body.hx .hx-links.open, body.hx #links.open { background: #3b2218; }
+
+/* ---------- buttons ---------- */
+body.hx .hx-btn, body.hx .btn { background: var(--f-pink); color: #3b2218; border: 0; box-shadow: none; font-weight: 700; transition: background .3s, transform .35s cubic-bezier(.2,.8,.2,1); }
+body.hx .hx-btn:hover, body.hx .btn:hover { background: var(--f-butter); color: #3b2218; box-shadow: none; }
+body.hx .hx-btn.sm { background: var(--f-pink); }
+body.hx .hx-btn.ghost, body.hx .hx-btn.outline, body.hx .btn.ghost { background: transparent; color: var(--f-cream); box-shadow: inset 0 0 0 1.5px rgba(255,243,226,.35); }
+body.hx .hx-btn.ghost:hover, body.hx .hx-btn.outline:hover { background: var(--f-cream); color: #3b2218; }
+
+/* ---------- forms ---------- */
+body.hx .hx-form { background: var(--f-cream); border: 0; box-shadow: none; }
+body.hx .hx-form:focus-within { box-shadow: 0 0 0 4px var(--f-pink); }
+body.hx .hx-form input[type=email] { color: #3b2218; background: transparent; }
+body.hx .hx-form input::placeholder { color: rgba(59,34,24,.55); }
+body.hx .hx-form .hx-btn { background: #3b2218; color: var(--f-cream); }
+body.hx .hx-form .hx-btn:hover { background: var(--f-pink); color: #3b2218; }
+body.hx .hx-note, body.hx .hx-note b { color: var(--p-ink-2); }
+body.hx .hx-err { color: #ffb3c1; }
+body.hx .hx-done { color: var(--f-cream); background: rgba(255,243,226,.1); border: 0; }
+
+/* ---------- hero ---------- */
+body.hx .hx-hero { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; min-height: 100vh; padding: 150px 0 90px; position: relative; overflow: hidden; border: 0 !important; margin: 0 !important; width: 100% !important; }
+body.hx .hx-hero::before, body.hx .hx-hero::after { display: none !important; }
+body.hx .hx-hero .fl, body.hx .hx-hero .hero-bg { display: none !important; }
+.f-giant { position: absolute; left: 50%; top: 46%; width: min(1200px, 150vw); transform: translate(-50%, -50%); opacity: .13; pointer-events: none; z-index: 0; }
+.f-giant svg { width: 100%; animation: f-spin 140s linear infinite; }
+@keyframes f-spin { to { transform: rotate(360deg); } }
+body.hx .hx-hero .hero-grid { position: relative; z-index: 2; }
+body.hx .hx-copy h1 { font-size: clamp(54px, 7.2vw, 118px); line-height: .94; letter-spacing: -.035em; font-weight: 520; color: var(--f-cream); }
+body.hx .hx-copy h1 .hx-l1 { color: var(--f-cream); }
+body.hx .hx-rot em, body.hx .hx-copy h1 em { color: var(--f-pink) !important; background: none !important; font-style: italic !important; font-weight: 480 !important; padding: 0; text-decoration: none !important; }
+body.hx .hx-sub { color: var(--p-ink-2); font-size: 21px; }
+.f-mark { display: block; width: 84px; margin: 0 0 24px; }
+.f-mark svg { width: 100%; }
+@media (max-width: 960px) { .f-mark { margin-inline: auto; } }
+
+/* hero phone: light screen on cocoa, butter bezel */
+body.hx .hph-frame { background: var(--f-butter) !important; border: 0 !important; box-shadow: 0 50px 90px -40px rgba(0,0,0,.7) !important; }
+body.hx .hph-notch { background: #3b2218 !important; }
+
+/* ---------- marquee strip ---------- */
+.f-big { padding: 34px 0; border-block: 1.5px solid rgba(255,243,226,.16); overflow: hidden; display: flex; position: relative; z-index: 2; }
+.f-big .m { display: flex; align-items: center; gap: 40px; flex: none; padding-right: 40px; font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(50px, 7.4vw, 112px); letter-spacing: -.03em; white-space: nowrap; line-height: 1; animation: f-marq 36s linear infinite; }
+.f-big:hover .m { animation-play-state: paused; }
+.f-big .m span:nth-child(3n+1) { color: var(--f-pink); } .f-big .m span:nth-child(3n+2) { color: var(--f-butter); } .f-big .m span:nth-child(3n) { color: var(--f-cream); }
+.f-big .m svg { width: .66em; height: .66em; flex: none; }
+@keyframes f-marq { to { transform: translateX(-100%); } }
+body.hx .meth-strip { color: var(--p-ink-2); }
+body.hx .meth-strip b { color: var(--f-butter); }
+body.hx .meth-strip span { color: var(--f-cream); }
+
+/* ---------- tools deck: flat colour cards ---------- */
+body.hx .deck .page { border: 0 !important; box-shadow: none !important; }
+body.hx .deck .page.f1 { background: var(--f-pink) !important; }
+body.hx .deck .page.f2 { background: var(--f-butter) !important; }
+body.hx .deck .page.f3 { background: var(--f-cream) !important; }
+body.hx .deck .page .fnum { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .deck .page h3, body.hx .deck .page h3 em, body.hx .deck .page p, body.hx .deck .page small, body.hx .deck .page small b { color: #3b2218 !important; }
+body.hx .deck .page h3 em { font-style: italic; }
+body.hx .deck .page .pg-turn, body.hx .deck .page small b { background: rgba(255,255,255,.55) !important; }
+body.hx .deck .page .pg-next, body.hx .deck .page .pg-foot .hx-btn { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .deck .page .pg-demo { background: #fffaf0; }
+body.hx .deck-note, body.hx .deck-count, body.hx .deck-hint { color: var(--p-ink-2); }
+
+/* ---------- approach ---------- */
+body.hx #approach .apr { background: transparent !important; box-shadow: none !important; border: 0 !important; }
+body.hx #approach .apr > *, body.hx .apr-head { background: transparent; }
+body.hx #approach .apr-card, body.hx #approach .apr-item, body.hx #approach [class*="apr-c"] { background: transparent !important; border: 1.5px solid rgba(255,243,226,.2) !important; color: var(--f-cream) !important; box-shadow: none !important; }
+body.hx #approach .apr-card:hover, body.hx #approach .apr-item:hover { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx #approach h3, body.hx #approach p { color: inherit; }
+
+/* ---------- compare ---------- */
+body.hx .compare-table-wrap { background: rgba(255,243,226,.05) !important; border: 1.5px solid rgba(255,243,226,.16) !important; box-shadow: none !important; }
+body.hx .compare-table th, body.hx .compare-table td { background: transparent !important; color: var(--f-cream) !important; border-color: rgba(255,243,226,.14) !important; }
+body.hx .compare-table th.compare-highlight, body.hx .compare-table td.compare-highlight, body.hx .compare-table td:nth-child(2) { background: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .compare-table thead th { font-family: "Fraunces", serif; }
+body.hx .compare-note { color: var(--p-ink-2); }
+
+/* ---------- trust ---------- */
+body.hx #trust { background: transparent !important; }
+body.hx #trust .hx-wrap, body.hx #trust .trust-row { background: transparent !important; box-shadow: none !important; }
+body.hx .trust-item { background: rgba(255,243,226,.07) !important; border: 0 !important; box-shadow: none !important; color: var(--f-cream); transition: background .35s, transform .45s cubic-bezier(.2,.8,.2,1); }
+body.hx .trust-item:hover { background: rgba(245,143,171,.26) !important; transform: translateY(-4px); }
+body.hx .trust-item h3 { color: var(--f-cream); } body.hx .trust-item p { color: var(--p-ink-2); }
+body.hx .trust-icon { background: var(--f-pink) !important; } body.hx .trust-item:nth-child(even) .trust-icon { background: var(--f-butter) !important; }
+body.hx .trust-icon svg { stroke: #3b2218 !important; }
+
+/* ---------- pricing ---------- */
+body.hx .billing-toggle { background: rgba(255,243,226,.08) !important; border: 0 !important; }
+body.hx .billing-btn { color: var(--f-cream) !important; background: transparent !important; }
+body.hx .billing-btn.active { background: var(--f-cream) !important; color: #3b2218 !important; }
+body.hx .billing-save { background: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .price-card { background: transparent !important; border: 1.5px solid rgba(255,243,226,.22) !important; box-shadow: none !important; color: var(--f-cream); }
+body.hx .price-card h3, body.hx .price-card .price, body.hx .price-card .price-amt, body.hx .price-card li { color: inherit; }
+body.hx .price-card.pro, body.hx .price-card.featured, body.hx .price-card:nth-child(2) { background: var(--f-pink) !important; border-color: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .price-card:nth-child(3) { border-color: var(--f-butter) !important; }
+body.hx .price-card:nth-child(2) * { color: #3b2218; }
+body.hx .price-card:nth-child(2) .hx-btn, body.hx .price-card:nth-child(2) .btn { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .price-card .hx-btn, body.hx .price-card .btn { background: var(--f-cream) !important; color: #3b2218 !important; }
+body.hx .price-card:nth-child(3) .hx-btn { background: var(--f-butter) !important; }
+body.hx .price-card svg { stroke: currentColor; }
+body.hx .price-card li svg, body.hx .price-card li::before { color: inherit; }
+body.hx .price-card .badge, body.hx .price-badge, body.hx .price-best { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx .price-persona { color: inherit; opacity: .7; }
+body.hx .compare-toggle, body.hx .peek-toggle, body.hx details.compare-more > summary { background: rgba(255,243,226,.07) !important; color: var(--f-cream) !important; border: 0 !important; box-shadow: none !important; }
+body.hx .pricing-note, body.hx .pricing-trust, body.hx .pricing-trust span { color: var(--p-ink-2) !important; }
+
+/* ---------- blog ---------- */
+body.hx #blog { background: transparent !important; }
+body.hx #blog .blog-card, body.hx #blog article { background: rgba(255,243,226,.06) !important; border: 0 !important; box-shadow: none !important; color: var(--f-cream); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+body.hx #blog .blog-card:hover { transform: translateY(-8px); }
+body.hx #blog h3, body.hx #blog h3 a { color: var(--f-cream); } body.hx #blog p { color: var(--p-ink-2); }
+body.hx #blog .blog-cat, body.hx #blog .tag, body.hx #blog [class*="cat"] { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx #blog a.btn, body.hx #blog .section-cta a { background: transparent !important; color: var(--f-cream) !important; box-shadow: inset 0 0 0 1.5px rgba(255,243,226,.35) !important; }
+
+/* ---------- faq ---------- */
+body.hx .faq-item { background: rgba(255,243,226,.06) !important; border: 0 !important; box-shadow: none !important; color: var(--f-cream); }
+body.hx .faq-item summary { color: var(--f-cream) !important; } body.hx .faq-item p { color: var(--p-ink-2); }
+body.hx .faq-item summary::after, body.hx .faq-item summary::before { color: #3b2218; }
+body.hx .faq-item summary .plus, body.hx .faq-item summary i { background: var(--f-pink) !important; color: #3b2218 !important; }
+
+/* ---------- final CTA ---------- */
+body.hx .hx-final { background: var(--f-pink) !important; border-radius: 56px !important; box-shadow: none !important; position: relative; overflow: hidden; }
+body.hx .hx-final h2, body.hx .hx-final p, body.hx .hx-final .hx-note { color: #3b2218; }
+body.hx .hx-final h2 em, body.hx .hx-final .hx-grad em { color: var(--f-cream) !important; }
+body.hx .hx-final .hx-form { background: var(--f-cream); }
+body.hx .hx-final .fclover { display: block !important; opacity: .5; }
+body.hx .hx-final > * { position: relative; z-index: 1; } body.hx .hx-final > .fclover { position: absolute; z-index: 0; }
+
+/* ---------- footer ---------- */
+body.hx .hx-foot { background: #2a1710 !important; }
+
+/* ---------- heart cursor + burst ---------- */
+.f-cur { position: fixed; left: 0; top: 0; z-index: 300; pointer-events: none; opacity: 0; margin: -11px 0 0 -11px; width: 22px; height: 22px; }
+.f-cur svg { width: 100%; height: 100%; transition: transform .35s cubic-bezier(.2,.8,.2,1); } .f-cur.big svg { transform: scale(2.6); }
+.f-bh { position: fixed; z-index: 300; pointer-events: none; width: 22px; height: 22px; } .f-bh svg { width: 100%; height: 100%; }
+
+/* ---------- lit statement ---------- */
+.f-st { padding: 150px 0 60px; position: relative; z-index: 2; }
+.f-st .f-lead { font-family: "Fraunces", Georgia, serif; font-weight: 520; letter-spacing: -.03em; font-size: clamp(36px, 5.8vw, 92px); line-height: 1.04; max-width: 18ch; }
+.f-st .lw { color: rgba(255,243,226,.18); transition: color .45s; } .f-st .lw.on { color: var(--f-cream); }
+
+@media (max-width: 900px) { body.hx .hx-sec { padding: 76px 0; } body.hx .hx-final { border-radius: 36px !important; } .f-st { padding: 90px 0 30px; } }
+@media (prefers-reduced-motion: reduce) { .f-big .m, .f-giant svg { animation: none !important; } }
+
+/* ==========================================================================
+   pass 2: beat the layered premium.css rules (ids + !important)
+   ========================================================================== */
+body.hx .hx-hero h1 .hx-rot em, body.hx .hx-copy h1 .hx-rot em {
+  background: none !important; color: var(--f-pink) !important; -webkit-text-fill-color: var(--f-pink) !important; padding: 0 .06em .1em !important;
+  border-radius: 0 !important; font-style: italic !important; font-weight: 480 !important;
+}
+body.hx .hx-hero h1 .hx-l1 { -webkit-text-fill-color: var(--f-cream) !important; color: var(--f-cream) !important; }
+body.hx .hx-kicker, body.hx .section-tag, body.hx #compare .hx-kicker, body.hx #trust .hx-kicker, body.hx #approach .hx-kicker, body.hx #tools .hx-kicker,
+body.hx #pricing .hx-kicker, body.hx #faq .hx-kicker, body.hx #blog .section-tag {
+  background: transparent !important; color: var(--f-butter) !important; border: 0 !important; padding: 0 !important; opacity: 1 !important; box-shadow: none !important;
+}
+body.hx .hx-kicker::before, body.hx .section-tag::before { background: var(--f-pink) !important; }
+body.hx #approach, body.hx #trust, body.hx #compare, body.hx #tools { background: transparent !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; border: 0 !important; color: var(--f-cream); }
+body.hx #approach { padding: 40px 0 120px !important; }
+body.hx #approach .apr-head h2 em { background: none !important; color: var(--f-pink) !important; font-style: italic !important; }
+body.hx #approach .apr-head p, body.hx .apr-head p { color: var(--p-ink-2) !important; opacity: 1 !important; }
+body.hx #approach .apr-pt, body.hx .apr-pt { background: transparent !important; border: 1.5px solid rgba(255,243,226,.2) !important; box-shadow: none !important; transition: background .4s, transform .5s cubic-bezier(.2,.8,.2,1) !important; }
+body.hx #approach .apr-pt:hover { background: var(--f-butter) !important; transform: translateY(-8px) !important; }
+body.hx .apr-pt h3 { color: var(--f-cream) !important; } body.hx .apr-pt p { color: var(--p-ink-2) !important; }
+body.hx .apr-pt:hover h3, body.hx .apr-pt:hover p { color: #3b2218 !important; }
+body.hx .apr-ic { background: var(--f-pink) !important; color: #3b2218 !important; border: 0 !important; } body.hx .apr-pt:nth-child(even) .apr-ic { background: var(--f-butter) !important; }
+body.hx .apr-ic svg { stroke: #3b2218 !important; color: #3b2218 !important; }
+body.hx .apr-meth, body.hx .mb-card { background: rgba(255,243,226,.06) !important; border: 0 !important; color: var(--f-cream) !important; box-shadow: none !important; }
+body.hx .apr-by small { color: var(--f-butter) !important; } body.hx .apr-note b { color: var(--f-cream) !important; } body.hx .apr-note a { color: var(--f-pink) !important; }
+body.hx .apr-nic { background: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .mb-chips b, body.hx .mb-chips span { background: var(--f-cream) !important; color: #3b2218 !important; border: 0 !important; }
+body.hx .apr-by .mb-chips b.apr-more { background: transparent !important; color: var(--f-cream) !important; border: 1px dashed rgba(255,243,226,.5) !important; }
+
+/* deck cards: flat pink / butter / cream */
+body.hx .deck .page, body.hx .deck .page#practice, body.hx .deck .page#coach, body.hx .deck .page#message { background-image: none !important; box-shadow: none !important; border: 0 !important; }
+body.hx .deck .page.f1, body.hx .deck .page#practice { background-color: var(--f-pink) !important; }
+body.hx .deck .page.f2, body.hx .deck .page#coach { background-color: var(--f-butter) !important; }
+body.hx .deck .page.f3, body.hx .deck .page#message { background-color: var(--f-cream) !important; }
+body.hx .deck .page .pg-head small b { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .deck .page .pg-head small span { color: #3b2218 !important; }
+body.hx .deck .page .pg-head h3 em { background: none !important; color: #3b2218 !important; font-style: italic !important; padding: 0 !important; }
+body.hx .deck .page .pg-turn { background: rgba(255,255,255,.6) !important; color: #3b2218 !important; border: 0 !important; }
+body.hx .deck .page .pg-demo { background: #fffaf0 !important; box-shadow: none !important; }
+body.hx .deck .page .pg-demo * { color: #3b2218; }
+body.hx .deck-gate, body.hx .deck-gate b { color: var(--f-cream) !important; }
+body.hx .deck-gate b { background: var(--f-pink) !important; color: #3b2218 !important; border: 0 !important; }
+body.hx .deck-dots button { background: rgba(255,243,226,.08) !important; color: var(--f-cream) !important; border-color: rgba(255,243,226,.25) !important; }
+body.hx .deck-dots button.on { background: var(--f-cream) !important; color: #3b2218 !important; }
+body.hx .deck-dots button i { background: currentColor !important; }
+
+/* trust */
+body.hx #trust .trust-item { background: rgba(255,243,226,.07) !important; border: 0 !important; }
+body.hx #trust .trust-item:hover { background: rgba(245,143,171,.26) !important; }
+body.hx #trust .trust-icon { background: var(--f-pink) !important; }
+body.hx #trust .trust-item:nth-child(even) .trust-icon { background: var(--f-butter) !important; }
+body.hx #trust h2, body.hx #trust h2 em { color: var(--f-cream) !important; } body.hx #trust h2 em { color: var(--f-pink) !important; }
+
+/* pricing: premium uses .price-card.featured */
+body.hx .price-card, body.hx .price-card.featured { border: 1.5px solid rgba(255,243,226,.22) !important; background: transparent !important; box-shadow: none !important; color: var(--f-cream) !important; }
+body.hx .price-card * { color: inherit; }
+body.hx .price-card.featured { background: var(--f-pink) !important; border-color: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .price-card.featured .price-persona, body.hx .price-card.featured p, body.hx .price-card.featured li { color: #3b2218 !important; }
+body.hx .price-card.featured .hx-btn { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .price-card .hx-btn { background: var(--f-cream) !important; color: #3b2218 !important; }
+body.hx .price-card:not(.featured):last-child { border-color: var(--f-butter) !important; }
+body.hx .price-card:not(.featured):last-child .hx-btn { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx .price-badge, body.hx .badge-best, body.hx .price-card .badge { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx .price-card li svg, body.hx .price-card svg { color: currentColor; stroke: currentColor; }
+body.hx .plan-compare, body.hx .plan-compare summary { background: rgba(255,243,226,.06) !important; border: 0 !important; color: var(--f-cream) !important; box-shadow: none !important; }
+body.hx .plan-compare summary::after, body.hx .faq-item summary::after { background: var(--f-pink) !important; color: #3b2218 !important; }
+body.hx .faq-item[open] summary::after { background: var(--f-butter) !important; }
+body.hx .faq-item { background: rgba(255,243,226,.06) !important; border: 0 !important; }
+body.hx .faq-item summary { color: var(--f-cream) !important; }
+
+/* blog */
+body.hx .post-card { background: rgba(255,243,226,.06) !important; border: 0 !important; box-shadow: none !important; color: var(--f-cream) !important; }
+body.hx .post-card h3, body.hx .post-card h3 a { color: var(--f-cream) !important; } body.hx .post-card p, body.hx .post-card .meta, body.hx .post-card time { color: var(--p-ink-2) !important; }
+
+/* final + footer */
+body.hx .hx-final { background: var(--f-pink) !important; border-radius: 56px !important; box-shadow: none !important; padding: 130px 32px 120px !important; }
+body.hx .hx-final h2, body.hx .hx-final p.sub, body.hx .hx-final .hx-note { color: #3b2218 !important; opacity: 1 !important; }
+body.hx .hx-final h2 { font-size: clamp(46px, 7.4vw, 120px); }
+body.hx .hx-final h2 em, body.hx .hx-final .hx-grad, body.hx .hx-final .hx-grad em { background: none !important; color: var(--f-cream) !important; font-style: italic !important; }
+body.hx .hx-final .fclover { display: block !important; opacity: .5; width: 520px; right: -140px; bottom: -190px; }
+body.hx .hx-foot { background: #2a1710 !important; border-radius: 56px 56px 0 0 !important; margin: 110px 10px 0 !important; }
+body.hx .deck-gate:not(:empty) { color: var(--f-cream); }
+.f-st .lw { color: rgba(255,243,226,.26); }
+
+/* pass 3 */
+body.hx .hx-final .fclover { display: none !important; }
+.f-fin { position: absolute !important; left: 50%; top: 50%; width: min(860px, 120vw); opacity: .32; pointer-events: none; z-index: 0 !important; transform: translate(-50%, -50%); }
+.f-fin svg { width: 100%; animation: f-spin 100s linear infinite; }
+body.hx .hph-scr, body.hx .hph .hs { background: #fffaf0 !important; color: #3b2218; }
+body.hx .hph .hs-top, body.hx .hph .hs-top *, body.hx .hph .hs-lbl, body.hx .hph .hs-card, body.hx .hph .hs-card *, body.hx .hph .hs-inp, body.hx .hph .hs-mem, body.hx .hph .bb.ai { color: #3b2218 !important; }
+body.hx .hph .bb.me, body.hx .deck .page .pd-b.u { color: var(--f-cream) !important; background: #3b2218 !important; }
+body.hx .hph .hs-card.pk { background: var(--f-pink) !important; } body.hx .hph .hs-card.bt, body.hx .hph .hs-mem { background: var(--f-butter) !important; }
+body.hx .hph-tabs button { background: rgba(59,34,24,.08) !important; color: #3b2218 !important; border-color: transparent !important; }
+body.hx .hph-tabs button.on { background: #3b2218 !important; color: var(--f-cream) !important; }
+body.hx .hph .hs-card small, body.hx .hph .hs-card span { color: #3b2218 !important; opacity: .7; }
+body.hx .hph .hs-lbl { opacity: .6; }
+body.hx .deck .page .pd-card.bt, body.hx .deck .page .pd-mem { background: var(--f-butter) !important; }
+body.hx .deck .page .pd-card.pk { background: var(--f-pink) !important; }
+body.hx .deck .page .pd-b.a { background: #fff !important; }
+body.hx .post-tag { background: var(--f-butter) !important; color: #3b2218 !important; }
+body.hx .post-card:nth-child(even) .post-tag { background: var(--f-pink) !important; }
+body.hx .post-more { color: var(--f-pink) !important; }
+
+/* mobile accordion rows (built by js) */
+body.hx .acc-btn, body.hx #compare .acc-btn, body.hx #trust .acc-btn, body.hx #approach .acc-btn, body.hx #faq .acc-btn,
+body.hx #more .acc-btn, body.hx #blog .acc-btn, body.hx #pricing .acc-btn {
+  background: rgba(255,243,226,.08) !important; border: 0 !important; box-shadow: none !important;
+}
+body.hx #approach .acc-btn { background: var(--f-pink) !important; } body.hx #compare .acc-btn { background: var(--f-butter) !important; }
+body.hx .acc-btn, body.hx .acc-btn .acc-t b, body.hx #trust .acc-btn, body.hx #trust .acc-btn b, body.hx #trust .acc-btn small, body.hx .acc-btn small { color: var(--f-cream) !important; }
+body.hx #approach .acc-btn, body.hx #approach .acc-btn b, body.hx #approach .acc-btn small, body.hx #compare .acc-btn, body.hx #compare .acc-btn b, body.hx #compare .acc-btn small { color: #3b2218 !important; }
+body.hx .acc-btn .acc-i { background: var(--f-pink) !important; color: #3b2218 !important; }
+@media (max-width: 960px) { body.hx .hx-form { max-width: 100%; } body.hx .hx-copy { min-width: 0; } }
+body.hx #approach .acc-btn .acc-i, body.hx #compare .acc-btn .acc-i { background: #3b2218 !important; color: var(--f-cream) !important; }
+
+/* modals (About, Feature details) stay light pages */
+#about, #feature, .fm, .about-wrap, .fm-wrap {
+  --p-bg: #faf6f0; --p-ink: #3b2218; --p-ink-2: #6b5246; --p-ink-3: #7d675b; --p-card: #fff; --p-line: rgba(59,34,24,.1); --p-line-2: rgba(59,34,24,.18);
+  --deep: #3b2218; --muted: #6b5246; --faint: #7d675b; --line: rgba(59,34,24,.1); --line-2: rgba(59,34,24,.18); color: #3b2218;
+}
+body.hx #about h1, body.hx #about h2, body.hx #about h3, body.hx #feature h1, body.hx #feature h2, body.hx #feature h3 { color: #3b2218 !important; }
+body.hx #about h1 em, body.hx #about h2 em, body.hx #feature h2 em, body.hx #feature h1 em { color: #c4486a !important; }
+body.hx #about .hx-kicker, body.hx #about .section-tag, body.hx #feature .hx-kicker, body.hx #feature .section-tag { color: #8a4a30 !important; }
+body.hx #about .hx-nav .hx-brand, body.hx #feature .hx-nav .hx-brand, body.hx #about .hx-brand b, body.hx #feature .hx-brand b, body.hx #about .hx-brand span, body.hx #feature .hx-brand span,
+body.hx #about .hx-nav a, body.hx #feature .hx-nav a { color: #3b2218 !important; }
+body.hx #about p, body.hx #feature p { color: #432719; }
+body.hx #about .hx-btn, body.hx #feature .hx-btn { color: #3b2218 !important; }
