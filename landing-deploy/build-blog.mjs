@@ -49,7 +49,7 @@ const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
-  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "quiz/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/"],
+  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "start/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/"],
   cssVersion: "26",
   jsVersion: "21",
 };

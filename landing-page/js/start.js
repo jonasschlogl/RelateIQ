@@ -1,4 +1,4 @@
-/* RelationshipAI quiz funnel. One screen per step; answers stay in memory only.
+/* RelationshipAI get-started funnel. One screen per step; answers stay in memory only.
    The final email is posted to the same /api/subscribe endpoint as the landing page forms. */
 (function () {
   'use strict';
@@ -139,7 +139,7 @@
     back.style.visibility = s.noBack ? 'hidden' : 'visible';
     prog.style.width = s.pct + '%';
     prog.parentNode.setAttribute('aria-valuenow', s.pct);
-    track('quiz-step-' + s.id);
+    track('start-step-' + s.id);
     var f = node.querySelector('input,button.qz-btn');
     if (f && s.id === 'email') { /* don't auto-focus on touch: avoids the keyboard jump */ }
   }
@@ -158,10 +158,10 @@
   function sIntro(next, node) {
     node.className += ' qz-intro';
     node.innerHTML =
-      '<div class="art"><img src="/img/hero-scene-m.webp" alt="" width="1000" height="935" fetchpriority="high" /><div class="brand"><img src="/logo-tile.svg" alt="" /><span>Relationship<b>AI</b></span></div></div>' +
+      '<div class="art"><picture><source media="(max-width: 760px)" srcset="/img/hero-scene-m.webp" /><img src="/img/hero-scene.webp" alt="" width="2560" height="1333" fetchpriority="high" /></picture><div class="brand"><img src="/logo-tile.svg" alt="" /><span>Relationship<b>AI</b></span></div></div>' +
       '<div class="body"><h1>Know how <em>you</em> love.</h1>' +
-      '<p class="qz-sub">A 90-second quiz on how you text, fight and make up. Then a coach that speaks your language.</p>' +
-      '<button type="button" class="qz-btn" data-umami-event="quiz-start">Start the quiz ' + ARROW + '</button>' +
+      '<p class="qz-sub">A few quick questions on how you text, fight and make up. Then a coach that speaks your language.</p>' +
+      '<button type="button" class="qz-btn" data-umami-event="start-begin">Get started ' + ARROW + '</button>' +
       '<div class="qz-note"><span>Free</span><span>90 seconds</span><span>No card</span></div></div>';
     node.querySelector('.qz-btn').addEventListener('click', next);
   }
@@ -235,7 +235,7 @@
     node = stage.lastElementChild;
     result = RESULTS[decide()];
     document.body.style.setProperty('--rbg', result.bg);
-    track('quiz-result-' + result.key);
+    track('start-result-' + result.key);
     node.innerHTML = '<h2 class="qz-h" id="rh">A pattern is showing up…</h2><div class="qz-load" id="rl"><div class="sk"></div><div class="ln"></div><div class="ln s"></div></div>';
     later(function () {
       node.querySelector('#rh').textContent = 'Here’s your style.';
@@ -245,7 +245,7 @@
         '<div class="qz-res" style="--rbg:' + result.bg + '"><div class="art">' + clover(result.hearts) + '</div>' +
         '<small>Your attachment style</small><h3>' + result.name + '</h3><p><b>' + result.tag + '</b> ' + result.txt + '</p></div>' +
         '<h3 class="qz-trh">The traits you lean toward</h3><div class="qz-traits">' + traits + '</div>' +
-        '<div class="qz-sticky over"><button type="button" class="qz-btn" data-umami-event="quiz-reveal-continue">Continue ' + ARROW + '</button><p class="qz-legal" style="margin-top:10px">For fun and reflection, not a diagnosis.</p></div>';
+        '<div class="qz-sticky over"><button type="button" class="qz-btn" data-umami-event="start-reveal-continue">Continue ' + ARROW + '</button><p class="qz-legal" style="margin-top:10px">For fun and reflection, not a diagnosis.</p></div>';
       node.querySelector('.qz-btn').addEventListener('click', next);
       node.scrollTo({ top: 0 });
     }, 2300);
@@ -267,7 +267,7 @@
     node.innerHTML = '<h2 class="qz-h">Real replies.<br>In your voice.</h2><p class="qz-sub">Here’s how your coach would rework a message in your pattern.</p>' +
       '<div class="qz-seg" role="tablist"><button type="button" class="on" data-m="before" role="tab">Before</button><button type="button" data-m="after" role="tab">After</button></div>' +
       '<div class="qz-phone"><div class="who"><i></i>Message check</div><div class="qz-swap" id="sw"></div></div>' +
-      '<div class="qz-sticky" style="margin-top:auto"><button type="button" class="qz-btn" data-umami-event="quiz-replies-continue">Continue ' + ARROW + '</button></div>';
+      '<div class="qz-sticky" style="margin-top:auto"><button type="button" class="qz-btn" data-umami-event="start-replies-continue">Continue ' + ARROW + '</button></div>';
     var sw = node.querySelector('#sw');
     var btns = node.querySelectorAll('.qz-seg button');
     function paint(m) {
@@ -302,7 +302,7 @@
     var dots = '';
     for (var k = 0; k < 3; k++) dots += '<i' + (k === n ? ' class="on"' : '') + '></i>';
     node.innerHTML = '<div class="vis">' + v.vis + '</div><h2>' + v.h + '</h2><p class="qz-sub">' + v.p + '</p><div class="qz-dots">' + dots + '</div>' +
-      '<div class="qz-sticky"><button type="button" class="qz-btn" data-umami-event="quiz-vp-' + (n + 1) + '">Continue ' + ARROW + '</button></div>';
+      '<div class="qz-sticky"><button type="button" class="qz-btn" data-umami-event="start-vp-' + (n + 1) + '">Continue ' + ARROW + '</button></div>';
     node.querySelector('.qz-btn').addEventListener('click', next);
   }
 
@@ -316,7 +316,7 @@
       '<input type="text" class="qz-hp" name="website" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" /></div>' +
       '<p class="qz-err" id="er" role="alert"></p>' +
       '<div class="qz-spacer"></div>' +
-      '<button type="submit" class="qz-btn" id="eb" data-umami-event="quiz-email-submit">Save my result ' + ARROW + '</button>' +
+      '<button type="submit" class="qz-btn" id="eb" data-umami-event="start-email-submit">Save my result ' + ARROW + '</button>' +
       '<p class="qz-legal">By continuing you agree to our <a href="/terms/">Terms</a> and <a href="/privacy/">Privacy Policy</a>. One email when we open, no spam. Unsubscribe anytime.</p></form>';
     var f = node.querySelector('#ef'), em = node.querySelector('#em'), er = node.querySelector('#er'), eb = node.querySelector('#eb'), hp = node.querySelector('#hp');
     var RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
@@ -326,11 +326,11 @@
       var v = em.value.trim();
       if (!RE.test(v)) { em.classList.add('bad'); er.textContent = 'Please enter a valid email address.'; em.focus(); return; }
       eb.disabled = true; eb.firstChild.nodeValue = 'Saving… ';
-      var body = { email: v, source: 'quiz', plan: result ? result.key : '', billing: '', website: hp.value, t: Date.now() - T0 };
+      var body = { email: v, source: 'get-started', plan: result ? result.key : '', billing: '', website: hp.value, t: Date.now() - T0 };
       fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok) { SAVED = v; track('quiz-email-success'); go(steps.length - 1); return; }
+          if (res.ok) { SAVED = v; track('start-email-success'); go(steps.length - 1); return; }
           throw new Error(res.j && res.j.error || 'fail');
         })
         .catch(function (err) {
@@ -343,16 +343,16 @@
   function sDone(next) {
     var node = stage.lastElementChild;
     node.className += ' qz-done';
-    var shareUrl = 'https://relationshipaiadvice.com/quiz/';
+    var shareUrl = 'https://relationshipaiadvice.com/start/';
     node.innerHTML = '<div class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg></div>' +
       '<h2 class="qz-h">You’re on the list.</h2><p class="qz-sub">We’ll email you once, the day RelationshipAI opens. Your result will be inside.</p>' +
       '<div class="mini" style="--rbg:' + result.bg + '"><div class="m">' + clover(result.hearts) + '</div><div><small>Your style</small><b>' + result.name + '</b></div></div>' +
-      '<div class="btns"><button type="button" class="qz-btn" id="sh" data-umami-event="quiz-share">Send this quiz to someone</button>' +
-      '<a class="qz-btn ghost" href="/" data-umami-event="quiz-back-home">Back to the site</a></div>';
+      '<div class="btns"><button type="button" class="qz-btn" id="sh" data-umami-event="start-share">Share with someone</button>' +
+      '<a class="qz-btn ghost" href="/" data-umami-event="start-back-home">Back to the site</a></div>';
     var sh = node.querySelector('#sh');
     sh.addEventListener('click', function () {
       var text = 'I got ' + result.name + '. What’s your attachment style?';
-      if (navigator.share) { navigator.share({ title: 'Attachment style quiz', text: text, url: shareUrl }).catch(function () {}); return; }
+      if (navigator.share) { navigator.share({ title: 'Attachment style', text: text, url: shareUrl }).catch(function () {}); return; }
       var done = function () { sh.textContent = 'Link copied'; };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareUrl).then(done, done); else done();
     });
