@@ -1,0 +1,194 @@
+/* ==========================================================================
+   RelationshipAI premium skin (loaded after home.css, overrides only).
+   Direction: calm, light, spacious. Soft tinted page, big rounded surfaces,
+   white cards with whisper-thin borders, cocoa as the single strong colour,
+   pink + gold as small accents. No hard borders, no pop shadows, no scallops.
+   ========================================================================== */
+:root {
+  --p-bg: #fbf6ef;
+  --p-bg-2: #f8ebe3;
+  --p-ink: #3b2218;
+  --p-ink-2: #5a4033;
+  --p-ink-3: #8a7266;
+  --p-card: #ffffff;
+  --p-line: rgba(59, 34, 24, .08);
+  --p-line-2: rgba(59, 34, 24, .14);
+  --p-blush: #fdeaee;
+  --p-pink: #f4b8c4;
+  --p-gold: #f7d99a;
+  --p-gold-soft: #fff1d2;
+  --p-peach-soft: #fde9db;
+  --p-rose: #d9567a;
+  --p-sh-1: 0 1px 2px rgba(59, 34, 24, .05), 0 8px 24px -12px rgba(59, 34, 24, .14);
+  --p-sh-2: 0 2px 4px rgba(59, 34, 24, .04), 0 28px 60px -30px rgba(59, 34, 24, .28);
+  --p-r: 32px;
+  --p-r-lg: 48px;
+  --pop: none;
+}
+
+/* ---------- canvas ---------- */
+html { background: var(--p-bg); }
+body.hx {
+  background: linear-gradient(180deg, var(--p-bg) 0%, var(--p-bg) 38%, var(--p-bg-2) 100%) fixed !important;
+  color: var(--p-ink);
+}
+body.hx::before { display: none; }
+body.hx > .page-bg { opacity: .22; }
+.hx h1, .hx h2, .hx h3 { color: var(--p-ink); }
+
+/* ---------- nav: floating white pill ---------- */
+body.hx .hx-nav { top: 14px; }
+body.hx .hx-nav .hx-wrap {
+  width: min(1080px, 100% - 28px); padding: 8px 8px 8px 22px;
+  background: rgba(255, 255, 255, .86); border: 1px solid var(--p-line);
+  box-shadow: 0 1px 2px rgba(59,34,24,.04), 0 14px 40px -18px rgba(59,34,24,.25);
+  backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+}
+body.hx .hx-nav.scrolled .hx-wrap { box-shadow: 0 1px 2px rgba(59,34,24,.05), 0 18px 44px -18px rgba(59,34,24,.3); }
+body.hx .hx-links { font-weight: 600; color: var(--p-ink-2); }
+body.hx .hx-links a:not(.hx-btn):hover { color: var(--p-ink); }
+body.hx .hx-brand b { color: var(--p-rose); }
+body.hx .hx-burger { background: #fff; border: 1px solid var(--p-line-2); }
+
+/* ---------- buttons: cocoa pills ---------- */
+body.hx .hx-btn, body.hx .btn {
+  background: var(--p-ink); color: #fff8ee; border: 0; font-weight: 700;
+  box-shadow: 0 1px 2px rgba(59,34,24,.2), 0 10px 22px -10px rgba(59,34,24,.5);
+}
+body.hx .hx-btn:hover, body.hx .btn:hover { transform: translateY(-1px); background: #2a160e; box-shadow: 0 1px 2px rgba(59,34,24,.2), 0 16px 30px -12px rgba(59,34,24,.55); }
+body.hx .hx-btn:active, body.hx .btn:active { transform: translateY(0); }
+body.hx .hx-btn.ghost, body.hx .btn.btn-ghost { background: #fff; color: var(--p-ink); border: 1px solid var(--p-line-2); box-shadow: none; }
+body.hx .hx-btn.ghost:hover, body.hx .btn.btn-ghost:hover { background: #fff; border-color: var(--p-ink); }
+body.hx .hx-btn.sm { padding: 11px 20px; }
+
+/* ---------- forms ---------- */
+body.hx .hx-form { background: #fff; border: 1px solid var(--p-line-2); box-shadow: var(--p-sh-1); }
+body.hx .hx-form:focus-within { border-color: var(--p-ink); box-shadow: 0 0 0 4px rgba(244,184,196,.45); }
+body.hx .hx-form input::placeholder { color: var(--p-ink-3); }
+body.hx .hx-form .hx-btn { box-shadow: none; }
+body.hx .hx-note { color: var(--p-ink-3); }
+body.hx .hx-done { background: var(--p-gold-soft); border: 1px solid var(--p-line); box-shadow: var(--p-sh-1); }
+
+/* ---------- kicker + section headings ---------- */
+body.hx .hx-kicker, body.hx .section-tag {
+  background: rgba(59,34,24,.06); border: 0; color: var(--p-ink-2);
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 16px;
+}
+body.hx .hx-head h2, body.hx #blog .section-head h2 { font-weight: 600; letter-spacing: -.035em; color: var(--p-ink); }
+body.hx .hx-head p, body.hx .hx-sec > .hx-wrap > .hx-head p, body.hx #blog .section-head p { color: var(--p-ink-2); }
+/* replace marker highlight with soft rose text */
+body.hx .hx-head h2 em, body.hx .chap-copy h2 em, body.hx #blog .section-head h2 em, body.hx #faq h2 em, body.hx .apr-head h2 em {
+  background: none; color: var(--p-rose); font-style: normal; padding: 0;
+}
+body.hx .hx-sec { padding: 96px 0; }
+
+/* ---------- hero: one large rounded surface ---------- */
+body.hx .hx-hero {
+  margin: 84px 16px 0; padding: 72px 0 64px; border-radius: var(--p-r-lg); overflow: hidden;
+  background:
+    radial-gradient(70% 90% at 88% 10%, rgba(244,184,196,.55) 0%, transparent 60%),
+    radial-gradient(60% 80% at 8% 100%, rgba(247,217,154,.55) 0%, transparent 60%),
+    linear-gradient(180deg, #fffaf4 0%, #fdeee6 100%);
+  box-shadow: inset 0 0 0 1px var(--p-line);
+}
+body.hx .hx-hero .hero-bg { opacity: .5; }
+body.hx .hx-hero .fl { opacity: .5; }
+body.hx .hx-hero h1 { font-weight: 600; letter-spacing: -.04em; color: var(--p-ink); line-height: 1; }
+body.hx .hx-hero h1 .hx-l1 { color: var(--p-ink); }
+body.hx .hx-hero h1 .hx-rot em, body.hx .hx-hero h1 .hx-rot { color: var(--p-rose); }
+body.hx .hx-hero h1 .hx-rot em { font-style: normal; background: linear-gradient(100deg, #e5718a, #b03a60); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+body.hx .hx-hero .hx-sub { color: var(--p-ink-2); font-size: 20px; }
+
+/* phone: lighter bezel, softer shadow */
+body.hx .hph-frame { box-shadow: 0 2px 4px rgba(59,34,24,.1), 0 50px 90px -40px rgba(59,34,24,.55), inset 0 0 0 1px rgba(255,255,255,.08); }
+
+/* ---------- tools deck ---------- */
+body.hx .page, body.hx .page#message, body.hx .page#coach, body.hx .page#practice {
+  border: 0; border-radius: 44px; box-shadow: var(--p-sh-2), inset 0 0 0 1px var(--p-line);
+}
+body.hx .page.f1, body.hx .page#practice { background: var(--p-gold-soft); }
+body.hx .page.f2, body.hx .page#coach { background: var(--p-blush); }
+body.hx .page.f3, body.hx .page#message { background: var(--p-peach-soft); }
+body.hx .deck-gate { color: var(--p-ink-2); }
+body.hx .deck-gate b { background: #fff; border: 1px solid var(--p-line-2); }
+
+/* ---------- approach: rounded blush surface (no scallops) ---------- */
+@media (min-width: 761px) {
+  body.hx #approach { margin: 40px 16px 40px; padding: 104px 0 112px; border-radius: var(--p-r-lg); background: var(--p-blush); box-shadow: inset 0 0 0 1px var(--p-line); }
+  body.hx #approach::before, body.hx #approach::after { display: none !important; }
+}
+body.hx .apr-pt { background: #fff; border: 1px solid var(--p-line); border-radius: var(--p-r); box-shadow: var(--p-sh-1); }
+body.hx .apr-pt:hover { transform: translateY(-3px); box-shadow: var(--p-sh-2); }
+body.hx .apr-ic { border: 0; }
+body.hx .apr-meth { background: rgba(255,255,255,.7); border: 1px solid var(--p-line); border-radius: var(--p-r); }
+
+/* ---------- compare table ---------- */
+body.hx #compare table, body.hx #compare .cmp, body.hx #compare .compare-wrap { border: 0; border-radius: var(--p-r); box-shadow: var(--p-sh-2), inset 0 0 0 1px var(--p-line); }
+
+/* ---------- trust: rounded cocoa surface ---------- */
+@media (min-width: 761px) {
+  body.hx #trust { margin: 40px 16px; padding: 104px 0 112px; border-radius: var(--p-r-lg); }
+  body.hx #trust::before, body.hx #trust::after { display: none !important; }
+}
+
+/* ---------- pricing ---------- */
+body.hx .price-card { background: #fff; border: 1px solid var(--p-line); box-shadow: var(--p-sh-1); }
+body.hx .price-card.featured { background: linear-gradient(170deg, var(--p-gold-soft), var(--p-blush)); border: 1px solid var(--p-line-2); box-shadow: var(--p-sh-2); }
+body.hx .billing-toggle { background: #fff; border: 1px solid var(--p-line-2); box-shadow: none; }
+body.hx .billing-btn.active { background: var(--p-ink); color: #fff8ee; }
+
+/* ---------- blog ---------- */
+body.hx #blog.blog-latest { background: transparent; border: 0; box-shadow: none; }
+body.hx .post-card { background: #fff; border: 1px solid var(--p-line); border-radius: var(--p-r); box-shadow: var(--p-sh-1); }
+body.hx .post-card:hover { transform: translateY(-3px); box-shadow: var(--p-sh-2); }
+@media (min-width: 761px) { body.hx #blog .post-thumb { border-bottom: 0; } }
+
+/* ---------- faq ---------- */
+body.hx .faq-item { background: #fff; border: 1px solid var(--p-line); box-shadow: none; border-radius: 26px; }
+body.hx .faq-item[open] { border-color: var(--p-line-2); box-shadow: var(--p-sh-1); }
+
+/* ---------- final CTA ---------- */
+body.hx .hx-final {
+  border: 0; border-radius: var(--p-r-lg); box-shadow: inset 0 0 0 1px var(--p-line);
+  background:
+    radial-gradient(60% 80% at 90% 0%, rgba(247,217,154,.6) 0%, transparent 60%),
+    linear-gradient(160deg, #fbd2dc 0%, #f9dccb 100%);
+}
+body.hx .hx-final h2 em { background: none; color: var(--p-rose); font-style: normal; }
+
+/* ---------- footer ---------- */
+body.hx .ft-band { border-radius: 999px; }
+
+/* ---------- v1.1 fixes ---------- */
+body.hx .hx-btn:not(.ghost):not(.sm)::after, body.hx .pg-hero .hx-btn::after, body.hx .pg-end .hx-btn::after, body.hx .pg-btn::after { background: rgba(255,255,255,.12); }
+body.hx #trust h2, body.hx #trust .trust-item h3 { color: #fff6e9; }
+body.hx #trust .hx-kicker { background: rgba(255,246,233,.08); color: var(--p-gold); }
+body.hx #trust .hx-head h2 em { color: var(--p-gold); }
+body.hx .trust-item { background: rgba(255,246,233,.06); border: 1px solid rgba(255,246,233,.12); border-radius: 28px; }
+
+body.hx .compare-table-wrap { background: #fff; border: 0; border-radius: var(--p-r); box-shadow: var(--p-sh-2), inset 0 0 0 1px var(--p-line); }
+body.hx .compare-table thead th { border-bottom: 1px solid var(--p-line-2); font-weight: 700; }
+body.hx .compare-table th, body.hx .compare-table td { border-bottom-color: var(--p-line); }
+body.hx .compare-highlight, body.hx .compare-table th.compare-highlight { background: var(--p-blush); }
+body.hx .compare-table td.yes::before { color: var(--p-rose); }
+body.hx #compare .hx-kicker { background: rgba(59,34,24,.06); }
+
+body.hx .plan-compare { background: #fff; border: 1px solid var(--p-line); border-radius: 26px; box-shadow: none; }
+body.hx .plan-compare summary::after, body.hx .faq-item summary::after { background: var(--p-gold-soft); border: 0; color: var(--p-ink); }
+body.hx .faq-item[open] summary::after { background: var(--p-pink); }
+body.hx .hx-final h2 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -.04em; }
+
+/* ---------- mobile polish ---------- */
+@media (max-width: 760px) {
+  body.hx .acc-btn, body.hx #compare .acc-btn, body.hx #trust .acc-btn, body.hx #approach .acc-btn, body.hx #faq .acc-btn, body.hx #more .acc-btn, body.hx #blog .acc-btn, body.hx #pricing .acc-btn {
+    background: #fff; border: 1px solid var(--p-line); box-shadow: var(--p-sh-1); color: var(--p-ink); border-radius: 26px;
+  }
+  body.hx #trust .acc-btn { background: var(--p-ink); color: #fff6e9; border-color: transparent; }
+  body.hx .acc-i { border: 0; background: var(--p-gold-soft); }
+  body.hx #trust .acc-i { background: var(--p-gold); }
+  body.hx .hx-hero { margin: 78px 10px 0; padding: 44px 0 40px; border-radius: 36px; }
+  body.hx .ft-band { border-radius: 32px; }
+  body.hx .hx-final { border-radius: 36px; }
+  body.hx .page, body.hx .page#message, body.hx .page#coach, body.hx .page#practice { border-radius: 32px; }
+  body.hx #approach, body.hx #trust { border-radius: 36px; }
+}
