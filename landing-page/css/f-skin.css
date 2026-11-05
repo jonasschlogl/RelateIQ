@@ -370,3 +370,16 @@ body.hx .hx-hero .hx-copy { left: 0 !important; }
   .f-herobg img { inset: auto 0 0 0; height: auto; width: 100%; object-position: 50% 100%; }
   .f-herobg::after { background: linear-gradient(180deg, #2a1710 0%, rgba(42,23,16,.55) 34%, rgba(42,23,16,0) 52%, rgba(59,34,24,0) 82%, #3b2218 100%); }
 }
+
+/* hero CTA: quiz button + waitlist link */
+body.hx .hx-hero .hx-cta { display:flex; align-items:center; gap:14px 26px; flex-wrap:wrap; margin-top:30px; }
+body.hx .hx-hero .hx-cta .hx-btn { padding:18px 32px; font-size:17px; border-radius:99px; }
+body.hx .hx-hero .hx-cta .hx-alt { color:var(--f-cream); font-weight:600; font-size:15px; text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(255,243,226,.4); }
+body.hx .hx-hero .hx-cta .hx-alt:hover { color:var(--f-butter); text-decoration-color:var(--f-butter); }
+body.hx .hx-hero .hx-note { color:rgba(255,243,226,.82); }
+body.hx .hx-hero .hx-note b { color:var(--f-butter); }
+@media (max-width:760px){
+  body.hx .hx-hero .hx-cta { justify-content:center; flex-direction:column; gap:14px; }
+  body.hx .hx-hero .hx-cta .hx-btn { width:100%; max-width:340px; text-align:center; justify-content:center; }
+  body.hx .hx-hero .hx-note { text-align:center; }
+}
