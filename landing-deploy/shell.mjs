@@ -56,7 +56,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/home.css?v=153" />
   <link rel="stylesheet" href="/css/premium.css?v=5" />
   <link rel="stylesheet" href="/css/f-skin.css?v=9" />
-  <link rel="stylesheet" href="/css/pages.css?v=2" />
+  <link rel="stylesheet" href="/css/pages.css?v=3" />
   <meta name="theme-color" content="#3b2218" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>

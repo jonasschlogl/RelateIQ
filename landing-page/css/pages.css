@@ -152,8 +152,8 @@ body.spg.sp-method .pg-n { display: inline-flex; width: auto; background: #3b221
 body.spg.sp-method .pg-ft { text-align: left; } body.spg.sp-method .pg-ft h2 { margin-top: 0; }
 body.spg.sp-method .mt-c h3, body.spg.sp-method .mt-c b, body.spg.sp-method .mt-c h4 { color: #3b2218 !important; }
 body.spg.sp-method .mt-c p, body.spg.sp-method .mt-c li { color: #4a2d20 !important; }
-body.spg.sp-method .mt-c.c { background: transparent !important; }
-body.spg.sp-method .mt-c.c h3 { color: #fff3e2 !important; } body.spg.sp-method .mt-c.c p { color: #e9d5c0 !important; }
+body.spg.sp-method .mt-c.c { background: #fff3e2 !important; box-shadow: none; }
+body.spg.sp-method .mt-c.c i { background: #3b2218; } body.spg.sp-method .mt-c.c i svg { stroke: #f58fab; }
 body.spg.sp-method .mt-c.a { background: #f9d98a !important; } body.spg.sp-method .mt-c.b { background: #f58fab !important; }
 body.spg.sp-method .hx-sec .hx-head h2 { color: #fff3e2; }
 body.spg.sp-method .hx-final .hx-wrap { max-width: 980px; margin: 0 auto; background: #f58fab; border-radius: 44px; padding: 80px 30px; }
