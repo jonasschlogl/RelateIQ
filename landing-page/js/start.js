@@ -56,24 +56,28 @@
 
   var RESULTS = {
     A: { name: 'The Anxious Heart', tag: 'You love with your whole chest.',
+         gift: 'Devotion', hard: 'The waiting', desc: 'You notice every shift in tone and reach for closeness fast. When love feels uncertain, you lean in.', tip: 'say the need out loud, calmly, instead of sending the 2am text.',
          txt: 'You notice every shift in tone and reach for closeness fast. Your gift is devotion. Your hard part is the waiting.',
          bg: '#f58fab', hearts: ['#fff3e2', '#f9d98a', '#fff3e2', '#f9d98a'], key: 'anxious', trait: [.12, .2, .1, .4],
          before: 'Why haven’t you replied?? I guess I don’t matter.',
          after: 'I’m feeling a little anxious waiting to hear from you. Could you send me a quick note when you can?',
          note: ['Reads as: panic', 'Your need is reassurance. Say that instead of the accusation.'] },
     V: { name: 'The Guarded Heart', tag: 'You feel deeply, quietly.',
+         gift: 'Steadiness', hard: 'Letting people see the storm', desc: 'You protect your calm by keeping some distance. You care deeply, you just show it quietly.', tip: 'name the pause and promise a return, so space never feels like leaving.',
          txt: 'You protect your calm by keeping some distance. Your gift is steadiness. Your hard part is letting people see the storm.',
          bg: '#f9d98a', hearts: ['#3b2218', '#f58fab', '#3b2218', '#f58fab'], key: 'avoidant', trait: [.85, .8, .8, .6],
          before: 'Fine. Do whatever you want.',
          after: 'I need a little time to think. I’ll come back to you tonight, and I do want to talk.',
          note: ['Reads as: cold', 'Name the pause and promise a return. Space stops feeling like leaving.'] },
     S: { name: 'The Steady Heart', tag: 'You bring the warm, calm room.',
+         gift: 'Balance', hard: 'Patience on anxious days', desc: 'You can ask for what you need and hear a no without falling apart. You make the room feel safe.', tip: 'keep you steady, and give you words for the days your partner is not.',
          txt: 'You can ask for what you need and hear a no without falling apart. Your gift is balance. Your hard part is staying patient with anxious days.',
          bg: '#f8c7a3', hearts: ['#f58fab', '#f9d98a', '#f58fab', '#f9d98a'], key: 'secure', trait: [.5, .3, .45, .3],
          before: 'You always do this.',
          after: 'When plans change last minute I feel a bit sidelined. Can we find a better way to handle it?',
          note: ['Reads as: blame', 'Swap “always” for a feeling and a small ask.'] },
     F: { name: 'The Push-Pull Heart', tag: 'You want closeness and fear it.',
+         gift: 'Depth', hard: 'The whiplash', desc: 'Part of you runs toward love and part of you braces for impact. You feel everything, fully.', tip: 'say both halves out loud and move at a pace you trust.',
          txt: 'Part of you runs toward love and part of you braces for impact. Your gift is depth. Your hard part is the whiplash.',
          bg: '#f58fab', hearts: ['#f9d98a', '#3b2218', '#f9d98a', '#3b2218'], key: 'fearful', trait: [.5, .6, .15, .75],
          before: 'Come here. No wait, just leave me alone.',
@@ -111,15 +115,12 @@
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
   // build the step list
-  QUESTIONS.forEach(function (q, n) { steps.push({ id: 'q-' + q.id, pct: 6 + n * 7, fn: function (go) { sQuestion(q, go); } }); });
-  steps.push({ id: 'pairs', pct: 30, fn: sPairs });
-  steps.push({ id: 'reveal', pct: 52, fn: sReveal });
-  steps.push({ id: 'gen', pct: 62, fn: sGen, auto: true, noBack: true });
-  steps.push({ id: 'replies', pct: 72, fn: sReplies });
-  steps.push({ id: 'vp1', pct: 80, fn: function (go) { sVP(0, go); } });
-  steps.push({ id: 'vp2', pct: 85, fn: function (go) { sVP(1, go); } });
-  steps.push({ id: 'vp3', pct: 90, fn: function (go) { sVP(2, go); } });
-  steps.push({ id: 'email', pct: 96, fn: sEmail });
+  QUESTIONS.forEach(function (q, n) { steps.push({ id: 'q-' + q.id, pct: 8 + n * 8, fn: function (go) { sQuestion(q, go); } }); });
+  steps.push({ id: 'pairs', pct: 34, fn: sPairs });
+  steps.push({ id: 'reveal', pct: 54, fn: sReveal });
+  steps.push({ id: 'gen', pct: 66, fn: sGen, auto: true, noBack: true });
+  steps.push({ id: 'replies', pct: 80, fn: sReplies });
+  steps.push({ id: 'email', pct: 94, fn: sEmail });
   steps.push({ id: 'done', pct: 100, fn: sDone, noBack: true });
 
   function show(i, dir) {
@@ -211,7 +212,8 @@
       box.dataset.lock = '1';
       cards[n].classList.add('sel');
       score[PAIRS[pairN][n].s]++;
-      later(function () { delete box.dataset.lock; advance(); }, 480);
+      later(function () { box.classList.add('leaving'); }, 330);
+      later(function () { delete box.dataset.lock; advance(); }, 520);
     }
     node.querySelector('#pskip').addEventListener('click', function () { if (!box.dataset.lock) advance(); });
     render();
@@ -229,23 +231,41 @@
     return best;
   }
 
+  var DECO = [[8, 14, 20, -14, .5], [84, 10, 26, 18, .45], [90, 58, 18, 24, .4], [12, 70, 24, -22, .38], [70, 86, 16, 8, .35], [32, 90, 14, -8, .3], [50, 6, 12, 12, .3]];
+  function artHTML() {
+    var d = '';
+    DECO.forEach(function (o, n) {
+      d += '<svg class="fl" style="left:' + o[0] + '%;top:' + o[1] + '%;width:' + o[2] + 'px;--r:' + o[3] + 'deg;opacity:' + o[4] + ';animation-delay:-' + (n * 0.9) + 's" viewBox="0 0 100 100" aria-hidden="true"><path d="' + HEART + '" fill="#fff3e2"/></svg>';
+    });
+    return '<div class="rc-art"><i class="ring"></i><i class="ring r2"></i>' + d + clover(result.hearts).replace('<svg ', '<svg class="clv" ') + '</div>';
+  }
   function sReveal(next, node) {
     node = stage.lastElementChild;
     result = RESULTS[decide()];
     root.style.setProperty('--rbg', result.bg);
     track('start-result-' + result.key);
-    node.innerHTML = '<h2 class="qz-h" id="rh">A pattern is showing up…</h2><div class="qz-load" id="rl"><div class="sk"></div><div class="ln"></div><div class="ln s"></div></div>';
+    node.innerHTML = '<h2 class="qz-h" id="rh">A pattern is showing up\u2026</h2><div class="qz-load" id="rl"><div class="sk"></div><div class="ln"></div><div class="ln s"></div></div>';
     later(function () {
-      node.querySelector('#rh').textContent = 'Here’s your style.';
-      var traits = '';
-      TRAITS.forEach(function (t, n) { traits += '<div class="qz-tr"><span>' + t[0] + '</span><i style="--p:' + Math.round(result.trait[n] * 100) + '%"></i><span>' + t[1] + '</span></div>'; });
-      node.querySelector('#rl').outerHTML =
-        '<div class="qz-res" style="--rbg:' + result.bg + '"><div class="art">' + clover(result.hearts) + '</div>' +
-        '<small>Your attachment style</small><h3>' + result.name + '</h3><p><b>' + result.tag + '</b> ' + result.txt + '</p></div>' +
-        '<h3 class="qz-trh">The traits you lean toward</h3><div class="qz-traits">' + traits + '</div>' +
-        '<div class="qz-sticky over"><button type="button" class="qz-btn" data-umami-event="start-reveal-continue">Continue ' + ARROW + '</button><p class="qz-legal" style="margin-top:10px">For fun and reflection, not a diagnosis.</p></div>';
-      node.querySelector('.qz-btn').addEventListener('click', next);
-      node.scrollTo({ top: 0 });
+      var h = node.querySelector('#rh'), rl = node.querySelector('#rl');
+      h.classList.add('flip'); rl.classList.add('gone');
+      later(function () {
+        h.textContent = 'Here\u2019s your style.'; h.classList.remove('flip');
+        var traits = '';
+        TRAITS.forEach(function (t, n) { traits += '<div class="qz-tr"><span>' + t[0] + '</span><i style="--p:' + Math.round(result.trait[n] * 100) + '%"></i><span>' + t[1] + '</span></div>'; });
+        var nm = result.name, cut = nm.lastIndexOf(' ');
+        var rcHTML =
+          '<div class="qz-rc" style="--rbg:' + result.bg + '">' + artHTML() +
+          '<div class="rc-body"><span class="rc-eye">Your attachment style</span>' +
+          '<h3>' + nm.slice(0, cut) + ' <em>' + nm.slice(cut + 1) + '</em></h3>' +
+          '<p class="rc-tag">' + result.tag + '</p><p class="rc-desc">' + result.desc + '</p>' +
+          '<div class="rc-facts"><div><small>Your gift</small><b>' + result.gift + '</b></div><div><small>Your hard part</small><b>' + result.hard + '</b></div></div>' +
+          '<div class="rc-tip"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="' + HEART + '" fill="#f58fab"/></svg><p><b>Your coach will</b> ' + result.tip + '</p></div></div></div>';
+        rl.outerHTML = rcHTML +
+          '<h3 class="qz-trh">The traits you lean toward</h3><div class="qz-traits">' + traits + '</div>' +
+          '<div class="qz-sticky over"><button type="button" class="qz-btn" data-umami-event="start-reveal-continue">Continue ' + ARROW + '</button><p class="qz-legal" style="margin-top:10px">For fun and reflection, not a diagnosis.</p></div>';
+        node.querySelector('.qz-btn').addEventListener('click', next);
+        node.scrollTo({ top: 0 });
+      }, 260);
     }, 2300);
   }
 
