@@ -413,3 +413,77 @@ body.hx .hx-hero h1 .hx-rot em {
   background: var(--p-ink) !important; color: #fff3e2 !important; -webkit-text-fill-color: #fff3e2;
   padding: .04em .3em .1em !important; border-radius: .46em .46em .46em .1em !important; font-weight: 560 !important;
 }
+
+/* ==========================================================================
+   v4  ONE SYSTEM: everything is built from the logo gradient
+   strong gradient  = hero, final CTA, featured plan
+   soft gradient    = tool cards, approach block, highlights, icons
+   neutral          = cream page, white cards, cocoa text / buttons / footer
+   No flat gold or flat rose surfaces any more.
+   ========================================================================== */
+:root {
+  --g-strong: linear-gradient(135deg, #f8d98f 0%, #f7bf9a 48%, #f29cb3 100%);
+  --g-mid:    linear-gradient(135deg, #f9d594 0%, #f6b392 50%, #ee8ea8 100%);
+  --g-soft:   linear-gradient(135deg, #fdebc4 0%, #fbd9c4 52%, #f9c8d5 100%);
+  --g-faint:  linear-gradient(135deg, #fff3d6 0%, #fde6da 55%, #fcdbe3 100%);
+  --p-brand: var(--g-strong);
+}
+
+/* ---- section label: white bubble with a gradient dot ---- */
+body.hx .hx-kicker, body.hx .section-tag, body.hx #compare .hx-kicker, body.hx #trust .hx-kicker, body.hx #approach .hx-kicker {
+  background: #fff !important; color: var(--p-ink) !important; box-shadow: 0 1px 2px rgba(59,34,24,.06), 0 6px 14px -8px rgba(59,34,24,.25);
+  display: inline-flex; align-items: center; gap: 9px; letter-spacing: .1em;
+}
+body.hx .hx-kicker::before, body.hx .section-tag::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--g-strong); flex: none; }
+body.hx .hx-kicker i { display: none; }
+
+/* ---- tool cards: one family of soft gradients ---- */
+body.hx .page, body.hx .page.f1, body.hx .page#practice { background: var(--g-soft) !important; }
+body.hx .page.f2, body.hx .page#coach { background: var(--g-mid) !important; }
+body.hx .page.f3, body.hx .page#message { background: var(--g-faint) !important; }
+body.hx .pg-turn { background: rgba(255,255,255,.75); }
+body.hx .pg-demo .pd-card.bt, body.hx .pg-demo .pd-mem, body.hx .hs-card.bt, body.hx .hs-mem { background: var(--g-faint); }
+body.hx .pg-demo .pd-card.pk, body.hx .hs-card.pk { background: #fde3ea; }
+body.hx .pd-b.u, body.hx .bb.me { background: var(--p-ink); }
+
+/* ---- approach: soft gradient block ---- */
+@media (min-width: 761px) { body.hx #approach { background: var(--g-soft); } }
+body.hx #approach .hx-kicker { background: #fff !important; }
+body.hx .apr-ic, body.hx .trust-icon, body.hx .xt-bub-ic, body.hx .xt-bub-go { background: var(--g-strong) !important; }
+body.hx .apr-meth { background: rgba(255,255,255,.6); }
+
+/* ---- compare: gradient column ---- */
+body.hx .compare-highlight, body.hx .compare-table td.compare-highlight { background: var(--g-faint); }
+body.hx .compare-table th.compare-highlight { background: var(--g-strong); color: var(--p-ink); }
+
+/* ---- pricing ---- */
+body.hx .price-card.featured { background: var(--g-strong); }
+body.hx .billing-save { background: var(--g-strong); color: var(--p-ink); }
+body.hx .billing-btn.active { background: var(--p-ink); }
+
+/* ---- small accents ---- */
+body.hx .post-tag { background: var(--g-soft); color: var(--p-ink); }
+body.hx .faq-item summary::after, body.hx .plan-compare summary::after { background: var(--g-soft); }
+body.hx .faq-item[open] summary::after { background: var(--g-strong); }
+body.hx .meth-strip b { color: var(--p-ink); opacity: .6; }
+body.hx .hx-done { background: var(--g-faint); }
+body.hx .acc-i, body.hx #trust .acc-i { background: var(--g-soft); }
+
+/* ---- final CTA matches hero ---- */
+body.hx .hx-final { background: var(--g-strong); }
+
+/* ---- trust (cocoa) uses the same gradient for its accents ---- */
+body.hx #trust .hx-kicker { background: #fff !important; }
+
+/* ---- mobile accordions: one style ---- */
+@media (max-width: 760px) {
+  body.hx #approach .acc-btn, body.hx #compare .acc-btn, body.hx #pricing .acc-btn, body.hx #blog .acc-btn, body.hx #faq .acc-btn, body.hx #trust .acc-btn {
+    background: #fff; border: 1px solid var(--p-line); box-shadow: var(--p-sh-1);
+  }
+  body.hx #trust .acc-btn, body.hx #trust .acc-btn b, body.hx #trust .acc-btn small { color: var(--p-ink) !important; }
+  body.hx #approach { background: transparent; }
+}
+body.hx .compare-highlight, body.hx .compare-table td.compare-highlight { background: #fdeadb; }
+body.hx #trust .trust-icon { background: var(--g-strong) !important; }
+body.hx .hx-kicker, body.hx .section-tag { border: 1px solid var(--p-line-2) !important; }
+@media (max-width: 960px) { body.hx .hx-hero h1 .hx-rot { justify-items: center; } }
