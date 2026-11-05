@@ -658,7 +658,7 @@ function build() {
   let enHome = fs.existsSync(homeFile) ? fs.readFileSync(homeFile, "utf8") : "";
   if (enHome) {
     if (BLOCK_RE.test(enHome)) enHome = enHome.replace(BLOCK_RE, `<!--BLOG-LATEST-->\n    ${homeBlock(all[0])}\n    <!--/BLOG-LATEST-->`);
-    else console.warn("WARNING: BLOG-LATEST markers not found in index.html");
+    // (no blog section on the home page anymore: the blog lives in the footer only)
     if (!ALTS_RE.test(enHome) || !SWITCH_RE.test(enHome)) console.warn("WARNING: LANG-ALTS / LANG-SWITCH markers not found in index.html");
     enHome = enHome.replace(ALTS_RE, altsBlock(all)).replace(SWITCH_RE, switchBlock(all[0], all));
     fs.writeFileSync(homeFile, enHome);
