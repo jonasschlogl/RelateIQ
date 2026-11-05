@@ -61,9 +61,9 @@
 
 /* gentle parallax on the photographic scene below the hero */
 (function () {
-  var s = document.querySelector('.f-shot'); if (!s) return; var img = s.querySelector('img');
+  var s = document.querySelector('.f-herobg'); if (!s) return; var img = s.querySelector('img'); if (innerWidth < 761) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var tick = false;
-  function f() { tick = false; var r = s.getBoundingClientRect(), h = innerHeight; if (r.bottom < 0 || r.top > h) return; var p = (r.top + r.height / 2 - h / 2) / h; img.style.transform = 'translateY(' + (p * -18).toFixed(1) + 'px) scale(' + (1.01 + Math.abs(p) * .015).toFixed(3) + ')'; }
+  function f() { tick = false; var r = s.getBoundingClientRect(), h = innerHeight; if (r.bottom < 0 || r.top > h) return; var p = (r.top + r.height / 2 - h / 2) / h; img.style.transform = 'translateY(' + (p * 40).toFixed(1) + 'px) scale(' + (1.01 + Math.abs(p) * .015).toFixed(3) + ')'; }
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(f); } }, { passive: true }); f();
 })();
