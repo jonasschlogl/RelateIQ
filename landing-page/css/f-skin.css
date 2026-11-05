@@ -354,3 +354,19 @@ body.hx .f-hc p { color: #3b2218; opacity: .85; max-width: 36ch; font-size: 17.5
 .f-chips { display: flex; gap: 6px; background: none !important; padding: 0 !important; } .f-chips b, .f-chips i { font-style: normal; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 99px; background: rgba(59,34,24,.08); } .f-chips b { background: #3b2218; color: var(--f-cream); }
 @media (max-width: 900px) { .f-hp { display: none !important; } html .deck { display: block !important; } }
 body.hx .hx-links a.on:not(.hx-btn), body.hx .hx-links a[aria-current] { background: var(--f-butter) !important; color: #3b2218 !important; }
+
+/* ---- hero is text only + full-bleed photographic scene right below ---- */
+body.hx .hx-hero { min-height: 82vh; padding: 150px 0 80px; display: flex; align-items: center; }
+body.hx .hx-hero .hero-grid { display: block !important; max-width: 980px; margin: 0 auto; text-align: center; }
+body.hx .hx-hero .hx-copy { margin: 0 auto; left: 0 !important; align-items: center; display: flex; flex-direction: column; }
+body.hx .hx-hero .f-mark { margin-inline: auto; }
+body.hx .hx-hero h1 { margin-inline: auto; text-align: center; }
+body.hx .hx-hero .hx-sub { margin-inline: auto; text-align: center; }
+body.hx .hx-hero .hx-form { margin-inline: auto; }
+body.hx .hx-hero .hx-note { text-align: center; }
+.f-shot { position: relative; width: 100%; aspect-ratio: 1920 / 1000; max-height: 100vh; overflow: hidden; background: #2a1710; }
+.f-shot img { position: absolute; inset: -2% 0; width: 100%; height: 104%; object-fit: cover; object-position: 60% 50%; display: block; will-change: transform; }
+.f-shot::before, .f-shot::after { content: ""; position: absolute; left: 0; right: 0; height: 9%; z-index: 1; pointer-events: none; }
+.f-shot::before { top: 0; background: linear-gradient(#3b2218, rgba(59,34,24,0)); }
+.f-shot::after { bottom: 0; background: linear-gradient(rgba(59,34,24,0), #3b2218); }
+@media (max-width: 760px) { .f-shot { aspect-ratio: 4 / 4.4; } .f-shot img { object-position: 50% 50%; } body.hx .hx-hero { min-height: 0; padding: 120px 0 56px; } }

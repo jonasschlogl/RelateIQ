@@ -18,7 +18,7 @@
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });
   addEventListener('resize', frame); frame();
   /* 2. heart cursor that lags behind the pointer; click bursts hearts */
-  if (false) {
+  if (!rm && matchMedia('(hover:hover) and (pointer:fine)').matches) {
     var cu = $('.f-cur'); if (!cu) return;
     document.documentElement.classList.add('hc');
     var x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y, h = cu.innerHTML;
@@ -57,4 +57,13 @@
   addEventListener('resize', function () { size(); mv(); });
   addEventListener('scroll', mv, { passive: true });
   size(); mv(); setTimeout(function () { size(); mv(); }, 600); addEventListener('load', function () { size(); mv(); });
+})();
+
+/* gentle parallax on the photographic scene below the hero */
+(function () {
+  var s = document.querySelector('.f-shot'); if (!s) return; var img = s.querySelector('img');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var tick = false;
+  function f() { tick = false; var r = s.getBoundingClientRect(), h = innerHeight; if (r.bottom < 0 || r.top > h) return; var p = (r.top + r.height / 2 - h / 2) / h; img.style.transform = 'translateY(' + (p * -18).toFixed(1) + 'px) scale(' + (1.01 + Math.abs(p) * .015).toFixed(3) + ')'; }
+  addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(f); } }, { passive: true }); f();
 })();
