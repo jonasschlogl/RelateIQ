@@ -399,3 +399,17 @@ body.hx .apr-pt h3, body.hx .post-card h3, body.hx .trust-item h3, body.hx .pric
 body.hx .hx-btn, body.hx .btn, body.hx .hx-form input, body.hx .hx-kicker, body.hx .hx-links { font-family: var(--font-body); }
 body.hx .hx-kicker, body.hx .section-tag { font-weight: 700; }
 body.hx .meth-strip span { font-family: var(--font-display); font-weight: 560; font-size: 18px; }
+
+/* ---------- v3.2 headings: one colour, no marker underline ---------- */
+body.hx h1 em, body.hx h2 em, body.hx h3 em, body.hx .hx-head h2 em, body.hx .chap-copy h2 em, body.hx #blog .section-head h2 em,
+body.hx #faq h2 em, body.hx .apr-head h2 em, body.hx .hx-final h2 em, body.hx .hx-grad em, body.hx #approach .apr-head h2 em,
+body.hx #trust .hx-head h2 em, body.hx .pg-head h3 em, body.hx .ftxt h3 em, body.hx .hx-final .hx-grad {
+  background: none !important; color: inherit !important; padding: 0 !important; border-radius: 0 !important;
+  font-weight: inherit !important; font-style: normal !important;
+}
+body.hx #trust h2, body.hx #trust h2 em { color: #fff3e2 !important; }
+/* hero chat-bubble phrase stays */
+body.hx .hx-hero h1 .hx-rot em {
+  background: var(--p-ink) !important; color: #fff3e2 !important; -webkit-text-fill-color: #fff3e2;
+  padding: .04em .3em .1em !important; border-radius: .46em .46em .46em .1em !important; font-weight: 560 !important;
+}
