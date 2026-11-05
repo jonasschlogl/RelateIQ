@@ -192,3 +192,9 @@ body.hx .hx-final h2 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -.04em
   body.hx .page, body.hx .page#message, body.hx .page#coach, body.hx .page#practice { border-radius: 32px; }
   body.hx #approach, body.hx #trust { border-radius: 36px; }
 }
+
+/* ---------- methods strip under hero ---------- */
+body.hx .meth-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 34px; margin: 36px auto 0; padding: 0 12px; color: var(--p-ink-2); }
+body.hx .meth-strip b { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--p-ink-3); font-weight: 700; }
+body.hx .meth-strip span { font: 600 18px/1.2 var(--font-display); letter-spacing: -.01em; color: var(--p-ink); opacity: .78; }
+@media (max-width: 760px) { body.hx .meth-strip { gap: 8px 20px; margin-top: 26px; } body.hx .meth-strip span { font-size: 16px; } body.hx .meth-strip b { flex-basis: 100%; text-align: center; } }
