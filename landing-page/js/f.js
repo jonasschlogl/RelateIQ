@@ -18,7 +18,7 @@
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });
   addEventListener('resize', frame); frame();
   /* 2. heart cursor that lags behind the pointer; click bursts hearts */
-  if (!rm && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  if (false) {
     var cu = $('.f-cur'); if (!cu) return;
     document.documentElement.classList.add('hc');
     var x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y, h = cu.innerHTML;

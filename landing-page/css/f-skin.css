@@ -23,7 +23,7 @@
 }
 
 html, body.hx { background: #3b2218 !important; color: var(--f-cream); }
-html.hc, html.hc * { cursor: none !important; }
+html.hc, html.hc * { cursor: auto !important; }
 meta[name=theme-color] { }
 body.hx h1, body.hx h2, body.hx h3 { color: var(--f-cream); }
 body.hx h1, body.hx h2, body.hx h3, body.hx .hx-brand { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "WONK" 0; }
@@ -182,7 +182,7 @@ body.hx .hx-final > * { position: relative; z-index: 1; } body.hx .hx-final > .f
 body.hx .hx-foot { background: #2a1710 !important; }
 
 /* ---------- heart cursor + burst ---------- */
-.f-cur { position: fixed; left: 0; top: 0; z-index: 300; pointer-events: none; opacity: 0; margin: -11px 0 0 -11px; width: 22px; height: 22px; }
+.f-cur { display: none !important; position: fixed; left: 0; top: 0; z-index: 300; pointer-events: none; opacity: 0; margin: -11px 0 0 -11px; width: 22px; height: 22px; }
 .f-cur svg { width: 100%; height: 100%; transition: transform .35s cubic-bezier(.2,.8,.2,1); } .f-cur.big svg { transform: scale(2.6); }
 .f-bh { position: fixed; z-index: 300; pointer-events: none; width: 22px; height: 22px; } .f-bh svg { width: 100%; height: 100%; }
 
