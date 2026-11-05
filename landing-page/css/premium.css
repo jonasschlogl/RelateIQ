@@ -241,3 +241,161 @@ body.hx .hx-foot h4, body.hx .hx-foot strong { color: var(--p-ink); }
 body.hx .ft-band { display: none; }
 body.hx .acc-btn, body.hx .acc-btn .acc-t b, body.hx .acc-btn .acc-t small, body.hx #trust .acc-btn, body.hx #trust .acc-btn b, body.hx #trust .acc-btn small { color: var(--p-ink) !important; }
 body.hx .acc-btn small { color: var(--p-ink-2) !important; }
+
+/* ==========================================================================
+   v3  BRAND DNA
+   Same calm cream base, but the brand colours now live on big surfaces:
+   gold + rose gradient (the logo), cocoa (the logo tile), clover mark and
+   chat-bubble shapes as the two signature motifs. Text is always cocoa.
+   ========================================================================== */
+:root {
+  --p-rose: #f29cb3;
+  --p-rose-tint: #fbd5df;
+  --p-gold: #f6cf78;
+  --p-gold-tint: #fbe3a8;
+  --p-brand: linear-gradient(135deg, #f8d98f 0%, #f7bf9a 48%, #f29cb3 100%);
+}
+
+/* clover mark is allowed again, but only the big brand ones */
+body.hx .hx-hero .hero-bg, body.hx .hx-final .fclover, body.hx .hx-final > svg { display: block !important; }
+body.hx .hx-hero .hero-bg { opacity: 1; }
+body.hx .hx-final .fclover { opacity: 1; width: 380px; right: -60px; bottom: -100px; transform: rotate(-12deg); }
+
+/* ---- hero: the logo gradient as a surface ---- */
+body.hx .hx-hero { background: var(--p-brand); box-shadow: none; }
+body.hx .hx-hero .hx-sub { color: var(--p-ink); font-weight: 500; }
+body.hx .hx-hero .hx-note, body.hx .hx-hero .hx-note b { color: var(--p-ink); }
+body.hx .hx-hero .hx-note { opacity: .75; }
+/* rotating phrase = a chat bubble */
+body.hx .hx-hero h1 .hx-rot { display: grid; justify-items: start; margin-top: .14em; -webkit-text-fill-color: initial; color: inherit; }
+body.hx .hx-hero h1 .hx-rot em {
+  display: inline-block; width: max-content; max-width: 100%; padding: .04em .3em .1em; background: var(--p-ink);
+  color: #fff3e2; -webkit-text-fill-color: #fff3e2; border-radius: .46em .46em .46em .1em; font-weight: 600;
+}
+body.hx .hx-form { border: 0; box-shadow: 0 18px 40px -22px rgba(59,34,24,.55); }
+body.hx .hph-frame { box-shadow: 0 2px 4px rgba(59,34,24,.15), 0 50px 80px -34px rgba(59,34,24,.65); }
+
+/* ---- headings: marker underline in brand gold (original signature) ---- */
+body.hx .hx-head h2 em, body.hx .chap-copy h2 em, body.hx #blog .section-head h2 em, body.hx #faq h2 em,
+body.hx .apr-head h2 em, body.hx .hx-final h2 em, body.hx .hx-grad em {
+  color: var(--p-ink) !important; font-weight: inherit;
+  background: linear-gradient(transparent 62%, var(--p-gold) 62%, var(--p-gold) 92%, transparent 92%) !important;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .08em;
+}
+body.hx .pg-head h3 em, body.hx .ftxt h3 em { color: var(--p-ink) !important; background: rgba(255,255,255,.7) !important; padding: 0 .12em; border-radius: .2em; font-weight: inherit; }
+body.hx .hx-head p, body.hx .apr-head p, body.hx #blog .section-head p, body.hx .compare-note { color: var(--p-ink); opacity: .78; }
+
+/* ---- section label: gold bubble ---- */
+body.hx .hx-kicker, body.hx .section-tag, body.hx #compare .hx-kicker, body.hx #trust .hx-kicker {
+  background: var(--p-gold) !important; color: var(--p-ink) !important; border: 0 !important;
+  border-radius: 999px 999px 999px 6px; padding: 8px 16px; font-weight: 800;
+}
+body.hx .hx-kicker i { background: var(--p-ink); }
+
+/* ---- tools deck: gold / rose / cream cards, cocoa numbers ---- */
+body.hx .page, body.hx .page.f1, body.hx .page#practice { background: var(--p-gold) !important; }
+body.hx .page.f2, body.hx .page#coach { background: var(--p-rose) !important; }
+body.hx .page.f3, body.hx .page#message { background: #fff3e2 !important; }
+body.hx .page { box-shadow: 0 30px 60px -34px rgba(59,34,24,.45); }
+body.hx .pg-head small b { background: var(--p-ink); color: #fff3e2; }
+body.hx .pg-head small span { color: var(--p-ink); opacity: .7; }
+body.hx .flag-body > p { color: var(--p-ink); }
+body.hx .pg-turn { background: rgba(255,255,255,.7); }
+body.hx .pg-demo { background: #fff; border: 0; box-shadow: 0 24px 44px -28px rgba(59,34,24,.55); }
+body.hx .pg-demo .pd-card.bt, body.hx .pg-demo .pd-mem { background: var(--p-gold-tint); }
+body.hx .pg-demo .pd-card.pk { background: var(--p-rose-tint); }
+body.hx .deck-gate b { background: var(--p-ink); color: #fff3e2; border: 0; }
+body.hx .xt-bub { background: var(--p-ink); border: 0; }
+body.hx .xt-bub, body.hx .xt-bub .xt-bub-t, body.hx .xt-bub .xt-bub-t b, body.hx .xt-bub .xt-bub-t small { color: #fff3e2; }
+body.hx .xt-bub-ic, body.hx .xt-bub-go { background: var(--p-gold); }
+
+/* ---- approach: rose block, white cards ---- */
+@media (min-width: 761px) {
+  body.hx #approach { margin: 40px 16px; padding: 104px 0 112px; border-radius: var(--p-r-lg); background: var(--p-rose); }
+}
+body.hx #approach .hx-kicker { background: #fff3e2 !important; }
+body.hx #approach .apr-head h2 em { background: linear-gradient(transparent 62%, #fff3e2 62%, #fff3e2 92%, transparent 92%) !important; }
+body.hx #approach .apr-head p { opacity: .85; }
+body.hx .apr-pt { border: 0; box-shadow: 0 24px 44px -28px rgba(59,34,24,.5); }
+body.hx .apr-ic { background: var(--p-gold) !important; }
+body.hx .apr-meth { border: 0; background: rgba(255,255,255,.55); }
+body.hx .mb-chips b { background: #fff !important; border: 0 !important; }
+
+/* ---- compare: gold column ---- */
+body.hx .compare-highlight, body.hx .compare-table th.compare-highlight { background: var(--p-gold-tint); }
+body.hx .compare-table th.compare-highlight { background: var(--p-gold); }
+body.hx .compare-table td.yes::before { color: var(--p-ink); }
+
+/* ---- trust: cocoa block (the logo tile colour) ---- */
+@media (min-width: 761px) {
+  body.hx #trust { margin: 40px 16px; padding: 104px 0 112px; border-radius: var(--p-r-lg); background: var(--p-ink); }
+}
+body.hx #trust h2, body.hx #trust .trust-item h3 { color: #fff3e2; }
+body.hx #trust .hx-head h2 em { color: var(--p-ink) !important; background: var(--p-gold) !important; padding: 0 .14em; border-radius: .2em; }
+body.hx #trust .trust-item { background: rgba(255,243,226,.07); border: 1px solid rgba(255,243,226,.14); box-shadow: none; }
+body.hx #trust .trust-item p { color: rgba(255,243,226,.78); }
+body.hx #trust .trust-icon { background: var(--p-gold) !important; }
+
+/* ---- pricing: featured card in brand gold -> rose ---- */
+body.hx .price-card.featured { background: var(--p-brand); border: 0; box-shadow: 0 34px 60px -32px rgba(59,34,24,.55); }
+body.hx .price-card.featured .price-persona, body.hx .price-card.featured p, body.hx .price-card.featured li { color: var(--p-ink); }
+body.hx .price-card.featured .hx-btn { background: var(--p-ink); }
+body.hx .billing-save { background: var(--p-rose); }
+
+/* ---- blog / faq ---- */
+body.hx .post-tag { background: var(--p-gold); border: 0; color: var(--p-ink); }
+body.hx .post-card, body.hx .faq-item, body.hx .price-card, body.hx .plan-compare { border: 1px solid rgba(59,34,24,.1); }
+body.hx .faq-item summary::after, body.hx .plan-compare summary::after { background: var(--p-gold); }
+body.hx .faq-item[open] summary::after { background: var(--p-rose); }
+
+/* ---- final CTA: bookends the hero ---- */
+body.hx .hx-final { background: var(--p-brand); box-shadow: none; overflow: hidden; }
+body.hx .hx-final h2, body.hx .hx-final .hx-note, body.hx .hx-final p.sub { color: var(--p-ink); }
+body.hx .hx-final p.sub { opacity: .85; }
+body.hx .hx-final .hx-form { border: 0; box-shadow: 0 18px 40px -22px rgba(59,34,24,.55); }
+body.hx .hx-final h2 em { background: linear-gradient(transparent 62%, #fff3e2 62%, #fff3e2 92%, transparent 92%) !important; }
+
+/* ---- footer: cocoa base for the page end ---- */
+body.hx .hx-foot { background: var(--p-ink) !important; color: rgba(255,243,226,.72); border-radius: var(--p-r-lg) var(--p-r-lg) 0 0; margin: 96px 10px 0; padding: 64px 0 56px; }
+body.hx .hx-foot a { color: rgba(255,243,226,.78); }
+body.hx .hx-foot a:hover { color: #fff3e2; }
+body.hx .hx-foot h4, body.hx .hx-foot h3, body.hx .hx-foot strong, body.hx .hx-foot .hx-brand, body.hx .hx-foot .hx-brand b, body.hx .hx-foot .ft-logo span { color: #fff3e2 !important; }
+body.hx #trust .hx-kicker { background: var(--p-gold) !important; color: var(--p-ink) !important; opacity: 1 !important; }
+body.hx .hx-foot p { color: rgba(255,243,226,.6); }
+
+/* ---- mobile ---- */
+@media (max-width: 760px) {
+  body.hx .hx-hero { margin: 78px 10px 0; }
+  body.hx #approach, body.hx #trust { margin: 24px 10px; padding: 8px 0; border-radius: 34px; }
+  body.hx #approach { background: transparent; }
+  body.hx .acc-btn, body.hx .acc-btn .acc-t b, body.hx .acc-btn .acc-t small { color: var(--p-ink) !important; }
+  body.hx #approach .acc-btn { background: var(--p-rose); border: 0; }
+  body.hx #compare .acc-btn { background: var(--p-gold); border: 0; }
+  body.hx #trust .acc-btn { background: var(--p-ink); border: 0; }
+  body.hx #trust .acc-btn, body.hx #trust .acc-btn b, body.hx #trust .acc-btn small { color: #fff3e2 !important; }
+  body.hx #pricing .acc-btn, body.hx #blog .acc-btn, body.hx #faq .acc-btn { background: #fff; }
+  body.hx .hx-foot { border-radius: 34px 34px 0 0; }
+}
+
+/* ==========================================================================
+   v3.1 TYPE: Fraunces (soft, warm serif for headlines) + DM Sans (clean body)
+   ========================================================================== */
+:root {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+body.hx { font-family: var(--font-body); }
+body.hx h1, body.hx h2, body.hx h3, body.hx .hx-brand, body.hx .price-card h3, body.hx .faq-item summary, body.hx .compare-table thead th {
+  font-family: var(--font-display); font-variation-settings: "SOFT" 100, "WONK" 0; font-optical-sizing: auto;
+}
+body.hx .hx-hero h1, body.hx .hx-head h2, body.hx .apr-head h2, body.hx .hx-final h2, body.hx #blog .section-head h2 {
+  font-weight: 560; letter-spacing: -.028em; line-height: 1.04;
+}
+body.hx .hx-hero h1 { font-size: clamp(44px, 5.6vw, 82px); line-height: 1; letter-spacing: -.032em; }
+body.hx .hx-hero h1 .hx-rot em { font-weight: 560; }
+body.hx .hx-brand { font-weight: 600; letter-spacing: -.02em; }
+body.hx .pg-head h3, body.hx .ftxt h3 { font-weight: 560; letter-spacing: -.02em; }
+body.hx .apr-pt h3, body.hx .post-card h3, body.hx .trust-item h3, body.hx .price-card h3 { font-weight: 600; letter-spacing: -.015em; }
+body.hx .hx-btn, body.hx .btn, body.hx .hx-form input, body.hx .hx-kicker, body.hx .hx-links { font-family: var(--font-body); }
+body.hx .hx-kicker, body.hx .section-tag { font-weight: 700; }
+body.hx .meth-strip span { font-family: var(--font-display); font-weight: 560; font-size: 18px; }
