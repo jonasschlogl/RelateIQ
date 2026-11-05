@@ -96,10 +96,9 @@
   var ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
   /* ---------- state ---------- */
-  var stage = document.getElementById('stage');
-  var top = document.getElementById('top');
-  var prog = document.getElementById('prog');
-  var back = document.getElementById('back');
+  var root = null, stage = null, top = null, prog = null, back = null;
+  var standalone = document.body && document.body.hasAttribute('data-qz-standalone');
+  var isOpen = false;
   var answers = {};
   var score = { A: 0, V: 0, S: 0, F: 0 };
   var result = null;
@@ -112,7 +111,6 @@
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
   // build the step list
-  steps.push({ id: 'intro', pct: 0, fn: sIntro });
   QUESTIONS.forEach(function (q, n) { steps.push({ id: 'q-' + q.id, pct: 6 + n * 7, fn: function (go) { sQuestion(q, go); } }); });
   steps.push({ id: 'pairs', pct: 30, fn: sPairs });
   steps.push({ id: 'reveal', pct: 52, fn: sReveal });
@@ -134,7 +132,7 @@
     stage.appendChild(node);
     var next = function () { go(i + 1); };
     s.fn(next, node);
-    top.hidden = (s.id === 'intro');
+    top.hidden = false;
     back.disabled = !!s.noBack || i === 0;
     back.style.visibility = s.noBack ? 'hidden' : 'visible';
     prog.style.width = s.pct + '%';
@@ -144,7 +142,7 @@
     if (f && s.id === 'email') { /* don't auto-focus on touch: avoids the keyboard jump */ }
   }
   function go(i) { if (i >= steps.length) return; hist.push(idx); show(i); }
-  back.addEventListener('click', function () {
+  function onBack() {
     var s = steps[idx];
     if (s.noBack || !hist.length) return;
     var prev = hist.pop();
@@ -152,7 +150,7 @@
     while (steps[prev] && steps[prev].auto && hist.length) prev = hist.pop();
     if (steps[prev].id === 'pairs') { score = { A: 0, V: 0, S: 0, F: 0 }; pairN = 0; }
     show(prev, 'back');
-  });
+  }
 
   /* ---------- steps ---------- */
   function sIntro(next, node) {
@@ -234,7 +232,7 @@
   function sReveal(next, node) {
     node = stage.lastElementChild;
     result = RESULTS[decide()];
-    document.body.style.setProperty('--rbg', result.bg);
+    root.style.setProperty('--rbg', result.bg);
     track('start-result-' + result.key);
     node.innerHTML = '<h2 class="qz-h" id="rh">A pattern is showing up…</h2><div class="qz-load" id="rl"><div class="sk"></div><div class="ln"></div><div class="ln s"></div></div>';
     later(function () {
@@ -358,5 +356,72 @@
     });
   }
 
-  show(0);
+  /* ---------- mount: overlay on the landing page, or standalone on /start/ ---------- */
+  var X_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  function build() {
+    root = document.createElement('div');
+    root.className = 'qz-ov';
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.setAttribute('aria-label', 'Get started with RelationshipAI');
+    root.tabIndex = -1;
+    root.innerHTML =
+      '<div class="qz-bg" aria-hidden="true"></div><main class="qz-col" aria-live="polite">' +
+      '<header class="qz-top"><a class="qz-brand" href="/" aria-label="RelationshipAI home"><img src="/logo-tile.svg" alt="" width="34" height="34" /><span>Relationship<b>AI</b></span></a>' +
+      '<button type="button" class="qz-back" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+      '<div class="qz-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100"><i></i></div>' +
+      '<button type="button" class="qz-x" aria-label="Close">' + X_SVG + '</button></header>' +
+      '<div class="qz-stage"></div></main>';
+    document.body.appendChild(root);
+    stage = root.querySelector('.qz-stage');
+    top = root.querySelector('.qz-top');
+    prog = root.querySelector('.qz-prog i');
+    back = root.querySelector('.qz-back');
+    back.addEventListener('click', onBack);
+    root.querySelector('.qz-x').addEventListener('click', requestClose);
+    root.querySelector('.qz-brand').addEventListener('click', function (e) { if (!standalone) { e.preventDefault(); requestClose(); } });
+  }
+  function reset() {
+    clearTimers();
+    answers = {}; score = { A: 0, V: 0, S: 0, F: 0 }; result = null; hist = []; idx = 0; pairN = 0; SAVED = null;
+    root.style.removeProperty('--rbg');
+    stage.innerHTML = '';
+    T0 = Date.now();
+    show(0);
+  }
+  function open() {
+    if (isOpen) return;
+    if (!root) build();
+    isOpen = true;
+    root.classList.add('on');
+    if (!standalone) {
+      document.documentElement.style.overflow = 'hidden';
+      try { history.pushState({ qz: 1 }, '', '#get-started'); } catch (e) {}
+    }
+    reset();
+    track('start-open');
+    try { root.focus({ preventScroll: true }); } catch (e) {}
+  }
+  function doClose() {
+    if (!isOpen || standalone) return;
+    isOpen = false;
+    clearTimers();
+    root.classList.remove('on');
+    document.documentElement.style.overflow = '';
+  }
+  function requestClose() {
+    if (standalone) { location.href = '/'; return; }
+    if (history.state && history.state.qz) history.back(); else doClose();
+  }
+  window.addEventListener('popstate', function () { if (isOpen && !standalone) doClose(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen) requestClose(); });
+  document.addEventListener('click', function (e) {
+    if (standalone || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href="/start/"],a[href="/start"],a[data-qz-open]');
+    if (!a) return;
+    e.preventDefault();
+    open();
+  });
+  window.RAIFunnel = { open: open };
+  if (standalone) open();
 })();
