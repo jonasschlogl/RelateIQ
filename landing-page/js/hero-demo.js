@@ -7,7 +7,7 @@
   var tabs = [].slice.call(root.querySelectorAll('.dm-tab'));
   var cur = 0, stopped = false;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var DUR = [11, 12, 11];
+  var DUR = [9, 9, 12];
 
   function fit() {
     var w = window.innerWidth, h = window.innerHeight, ps;
@@ -47,28 +47,33 @@
     }
   });
 
-  /* tone rewrites in the Message check demo */
-  var REW = [
-    ['I’m upset and I need a minute. Can we talk tonight?', 'Risk: low'],
-    ['I’m hurt, and I still want to work this out. Tonight?', 'Risk: low'],
-    ['I’m upset you didn’t tell me. I’d like to talk tonight.', 'Risk: medium']
+  /* Message check: one short draft, a tone gauge and three one-tap rewrites */
+  var STATES = [
+    { t: 'Fine.', k: .08, v: 'Likely to start a fight', c: 'bad' },
+    { t: 'I need a minute.', k: .84, v: 'Safe to send', c: 'good' },
+    { t: 'I\u2019m hurt. Let\u2019s talk.', k: .94, v: 'Warm and clear', c: 'good' },
+    { t: 'I\u2019m upset. Tonight?', k: .7, v: 'Direct and calm', c: 'good' }
   ];
   var tbtn = [].slice.call(root.querySelectorAll('.dm-tn button'));
-  var rwp = root.querySelector('#dm-rwp'), rwt = root.querySelector('#dm-rwt');
-  function setTone(n) {
-    tbtn.forEach(function (b, k) { b.classList.toggle('on', k === n); });
-    rwp.classList.add('sw');
-    setTimeout(function () { rwp.textContent = REW[n][0]; rwt.textContent = REW[n][1]; rwp.classList.remove('sw'); }, 230);
+  var bp = root.querySelector('#dm-bp'), vd = root.querySelector('#dm-vd'), gauge = root.querySelector('#dm-g');
+  function setState(n, active) {
+    tbtn.forEach(function (b, k) { b.classList.toggle('on', active && k === n - 1); });
+    bp.classList.add('sw');
+    setTimeout(function () {
+      bp.textContent = STATES[n].t; vd.textContent = STATES[n].v; vd.className = 'vd ' + STATES[n].c;
+      gauge.style.setProperty('--k', STATES[n].k); bp.classList.remove('sw');
+    }, 220);
   }
-  function resetTone() { tbtn.forEach(function (b, k) { b.classList.toggle('on', k === 0); }); rwp.textContent = REW[0][0]; rwt.textContent = REW[0][1]; }
-  tbtn.forEach(function (b, n) { b.addEventListener('click', function () { stopped = true; root.classList.add('stopped'); setTone(n); }); });
+  function resetTone() { tbtn.forEach(function (b) { b.classList.remove('on'); }); bp.textContent = STATES[0].t; vd.textContent = STATES[0].v; vd.className = 'vd bad'; gauge.style.setProperty('--k', STATES[0].k); }
+  tbtn.forEach(function (b, n) { b.addEventListener('click', function () { stopped = true; root.classList.add('stopped'); setState(n + 1, true); }); });
 
-  // when auto-advancing the Message check demo, flip through the tones once so people see it is interactive
+  // when the demo plays on its own, step through the tones so people see it is interactive
   var obs = new MutationObserver(function () {
     var p = panels[2];
     if (p.classList.contains('on') && !stopped && !reduce) {
-      setTimeout(function () { if (!stopped && p.classList.contains('on')) setTone(1); }, 6200);
-      setTimeout(function () { if (!stopped && p.classList.contains('on')) setTone(2); }, 8200);
+      [[2400, 1], [5200, 2], [7800, 3]].forEach(function (s) {
+        setTimeout(function () { if (!stopped && p.classList.contains('on')) setState(s[1], true); }, s[0]);
+      });
     }
   });
   obs.observe(panels[2], { attributes: true, attributeFilter: ['class'] });
