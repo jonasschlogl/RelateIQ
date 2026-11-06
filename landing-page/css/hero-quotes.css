@@ -16,6 +16,7 @@ body.hx .hx-hero .hero-grid { position: relative; }
 .hq-card blockquote::after { content: "\201D"; margin-left: .04em; color: var(--c); }
 .hq-by { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
 .hq-by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none; }
+.hq-ini { width: 44px; height: 44px; border-radius: 50%; flex: none; display: grid; place-items: center; background: #fff3e2; color: #3b2218; font: 700 16px/1 Fraunces, Georgia, serif; font-style: normal; }
 .hq-by b { display: block; font: 800 12px/1 "DM Sans", sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--c); text-shadow: 0 1px 10px rgba(30,12,6,.6); }
 @media (prefers-reduced-motion: no-preference) { .hq > li { animation: hqIn .8s cubic-bezier(.2,.8,.2,1) both; } .hq > li:nth-child(2) { animation-delay: .15s; } .hq > li:nth-child(3) { animation-delay: .3s; } }
 @keyframes hqIn { from { opacity: 0; translate: 0 22px; } to { opacity: 1; translate: 0 0; } }
