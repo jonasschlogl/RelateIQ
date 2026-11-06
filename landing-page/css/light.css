@@ -78,3 +78,53 @@ body.hx .hx-foot .ft-grid { border-bottom-color: rgba(59,34,24,.14); }
 body.hx .trust-item h3, body.hx #trust .trust-item h3 { color: #3b2218 !important; }
 body.hx .trust-item p, body.hx #trust .trust-item p { color: #6b5246 !important; }
 body.hx .compare-table tbody td, body.hx .compare-table tbody th { color: #3b2218 !important; }
+
+/* ===== Higher contrast from "Our approach" down: saturated flat cards, darker body text ===== */
+body.hx #approach, body.hx #compare, body.hx #trust, body.hx #pricing, body.hx #faq, body.hx #join {
+  --p-ink-2: #4a2d20; --p-ink-3: #5c4034; --muted: #4a2d20; --faint: #5c4034; --cocoa-2: #4a2d20;
+}
+body.hx #approach .hx-head p, body.hx .apr-head p, body.hx #approach .apr-head p, body.hx #pricing .hx-head p, body.hx #faq p { color: #4a2d20 !important; }
+/* approach */
+body.hx #approach .apr-pt, body.hx .apr-pt { background: #f58fab !important; }
+body.hx #approach .apr-pt:nth-child(2), body.hx .apr-pt:nth-child(2) { background: #f9d98a !important; }
+body.hx #approach .apr-pt:nth-child(3), body.hx .apr-pt:nth-child(3) { background: #f8c7a3 !important; }
+body.hx #approach .apr-pt:hover { background: #3b2218 !important; }
+body.hx #approach .apr-pt:hover h3 { color: #fff3e2 !important; } body.hx #approach .apr-pt:hover p { color: #f3dcc4 !important; }
+body.hx .apr-pt p { color: #3b2218 !important; }
+body.hx .apr-ic, body.hx .apr-pt:nth-child(even) .apr-ic { background: #3b2218 !important; color: #f9d98a !important; }
+body.hx .apr-ic svg { stroke: #f9d98a; }
+body.hx .apr-meth, body.hx .mb-card { background: #3b2218 !important; color: #fff3e2 !important; }
+body.hx .apr-by small { color: #f9d98a !important; } body.hx .apr-note b { color: #fff3e2 !important; } body.hx .apr-note a { color: #f58fab !important; }
+body.hx .apr-meth p, body.hx .apr-note, body.hx .apr-meth span:not(.mb-chips *) { color: #f3dcc4; }
+body.hx .mb-chips b, body.hx .mb-chips span { background: #fff3e2 !important; color: #3b2218 !important; }
+body.hx .apr-by .mb-chips b.apr-more { background: transparent !important; color: #fff3e2 !important; border-color: rgba(255,243,226,.55) !important; }
+/* compare */
+body.hx .compare-table-wrap { background: #fff !important; border: 2px solid #3b2218 !important; }
+body.hx .compare-table th, body.hx .compare-table td { border-color: rgba(59,34,24,.28) !important; }
+body.hx .compare-table thead th { background: #3b2218 !important; color: #fff3e2 !important; }
+body.hx .compare-table thead th:nth-child(2) { background: #f58fab !important; color: #3b2218 !important; }
+body.hx .compare-table td:nth-child(2), body.hx .compare-table th:nth-child(2) { font-weight: 700; }
+/* trust */
+body.hx .trust-item, body.hx #trust .trust-item { background: #f58fab !important; }
+body.hx .trust-item:nth-child(even), body.hx #trust .trust-item:nth-child(even) { background: #f9d98a !important; }
+body.hx .trust-item:hover, body.hx #trust .trust-item:hover { background: #f8c7a3 !important; }
+body.hx .trust-item p, body.hx #trust .trust-item p { color: #3b2218 !important; }
+body.hx .trust-icon, body.hx #trust .trust-icon, body.hx .trust-item:nth-child(even) .trust-icon, body.hx #trust .trust-item:nth-child(even) .trust-icon { background: #3b2218 !important; color: #f9d98a !important; }
+body.hx .trust-icon svg { stroke: #f9d98a; }
+/* pricing */
+body.hx .billing-toggle { background: #f9d98a !important; }
+body.hx .price-card, body.hx .price-card.featured { border: 2px solid #3b2218 !important; }
+body.hx .price-card:not(.featured):last-child, body.hx .price-card:nth-child(3) { background: #f9d98a !important; }
+body.hx .price-card .price-desc, body.hx .price-card .price-billed, body.hx .price-card li, body.hx .price-card span { color: #3b2218; }
+body.hx .price-card .hx-btn, body.hx .price-card .btn { background: #f9d98a !important; color: #3b2218 !important; box-shadow: inset 0 0 0 2px #3b2218; }
+body.hx .price-card:nth-child(3) .hx-btn, body.hx .price-card:not(.featured):last-child .hx-btn { background: #3b2218 !important; color: #fff3e2 !important; box-shadow: none; }
+body.hx .compare-toggle, body.hx .peek-toggle, body.hx details.compare-more > summary, body.hx .plan-compare, body.hx .plan-compare summary { background: #f9d98a !important; }
+/* faq */
+body.hx .faq-item { background: #f9d98a !important; }
+body.hx .faq-item:nth-child(even) { background: #f58fab !important; }
+body.hx .faq-item p { color: #3b2218; }
+body.hx .faq-item summary::after { background: #3b2218 !important; color: #fff3e2 !important; }
+body.hx .faq-item[open] summary::after { background: #3b2218 !important; }
+/* footer */
+body.hx .hx-foot, body.hx .hx-foot p, body.hx .ft-base, body.hx .ft-base p { color: #4a2d20 !important; }
+body.hx .apr-ic svg, body.hx .trust-icon svg, body.hx .apr-pt:nth-child(even) .apr-ic svg { stroke: #f9d98a !important; color: #f9d98a !important; }
