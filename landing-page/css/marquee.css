@@ -1,11 +1,11 @@
-/* Running terms under the hero: white band, cocoa words moving past */
-.mq{position:relative;overflow:hidden;padding:16px 0 14px;background:#fff}
+/* Running terms under the hero: cocoa band, white words moving past */
+.mq{position:relative;overflow:hidden;padding:16px 0 14px;background:#3b2218}
 .mq::before,.mq::after{content:"";position:absolute;top:0;bottom:0;width:9%;z-index:2;pointer-events:none}
-.mq::before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}
-.mq::after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
+.mq::before{left:0;background:linear-gradient(90deg,#3b2218,rgba(59,34,24,0))}
+.mq::after{right:0;background:linear-gradient(270deg,#3b2218,rgba(59,34,24,0))}
 .mq-track{display:flex;width:max-content;animation:mqRun 88s linear infinite}
 .mq ul{display:flex;align-items:center;flex:none;margin:0;padding:0;list-style:none}
-.mq li{display:flex;align-items:center;white-space:nowrap;margin-right:clamp(40px,4.4vw,72px);font:600 clamp(14px,1.25vw,17px)/1.1 Fraunces,serif;letter-spacing:-.005em;color:#3b2218}
+.mq li{display:flex;align-items:center;white-space:nowrap;margin-right:clamp(40px,4.4vw,72px);font:600 clamp(14px,1.25vw,17px)/1.1 Fraunces,serif;letter-spacing:-.005em;color:#fff}
 @keyframes mqRun{to{transform:translateX(-50%)}}
 @media (max-width:760px){.mq{padding:13px 0 12px}.mq-track{animation-duration:62s}.mq li{margin-right:38px;font-size:14.5px}}
-@media (prefers-reduced-motion:reduce){.mq-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.mq ul[aria-hidden]{display:none}.mq li{display:flex;align-items:center;white-space:nowrap;margin-right:clamp(40px,4.4vw,72px);font:600 clamp(14px,1.25vw,17px)/1.1 Fraunces,serif;letter-spacing:-.005em;color:#3b2218}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.mq ul[aria-hidden]{display:none}.mq li{display:flex;align-items:center;white-space:nowrap;margin-right:clamp(40px,4.4vw,72px);font:600 clamp(14px,1.25vw,17px)/1.1 Fraunces,serif;letter-spacing:-.005em;color:#fff}
