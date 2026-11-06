@@ -128,3 +128,5 @@ body.hx .faq-item[open] summary::after { background: #3b2218 !important; }
 /* footer */
 body.hx .hx-foot, body.hx .hx-foot p, body.hx .ft-base, body.hx .ft-base p { color: #4a2d20 !important; }
 body.hx .apr-ic svg, body.hx .trust-icon svg, body.hx .apr-pt:nth-child(even) .apr-ic svg { stroke: #f9d98a !important; color: #f9d98a !important; }
+/* flagship tool cards: titles fully cocoa */
+body.hx main > section .f-hc h3, body.hx main > section .f-hc h3 em, body.hx main > section .deck .page h3, body.hx main > section .deck .page h3 em { color: #3b2218 !important; -webkit-text-fill-color: #3b2218; }
