@@ -120,3 +120,5 @@ body.hx .hx-foot, body.hx .hx-foot p, body.hx .ft-base, body.hx .ft-base p { col
 body.hx .apr-ic svg, body.hx .trust-icon svg, body.hx .apr-pt:nth-child(even) .apr-ic svg { stroke: #f9d98a !important; color: #f9d98a !important; }
 /* flagship tool cards: titles fully cocoa */
 body.hx main > section .f-hc h3, body.hx main > section .f-hc h3 em, body.hx main > section .deck .page h3, body.hx main > section .deck .page h3 em { color: #3b2218 !important; -webkit-text-fill-color: #3b2218; }
+/* nav pill: solid cocoa once the page scrolls, so it stays crisp over white */
+body.hx .hx-nav.scrolled .hx-wrap { background: #3b2218; box-shadow: 0 14px 30px -16px rgba(59,34,24,.55); }

@@ -1,0 +1,67 @@
+/* Light theme for all sub pages (Pricing, About, Method, tools, Blog, legal ...).
+   pages.css "v2" is written with tokens (--card, --cream, --soft ...). Here the dark tokens are flipped
+   to white/cream/cocoa, then every place that used a token the other way round (buttons, selected tabs) is fixed. */
+body.spg {
+  background: #fff; color: #3b2218;
+  --card: #fff3e2; --card2: #ffffff; --cream: #3b2218; --soft: #5b3a2c;
+}
+body.spg .sp-main { background: #fff; }
+/* buttons that were cocoa with cream text */
+body.spg .sp-panel .pg-end .hx-btn, body.spg .sp-panel .su-note .hx-btn, body.spg .sp-panel .bl-cta .hx-btn,
+body.spg.sp-legal .cta-banner .btn, body.spg.sp-legal .cta-banner .hx-btn, body.spg .article-cta .btn, body.spg .ad-body .btn,
+body.spg .sp-end-card .hx-btn, body.spg .cta-banner .btn, body.spg .share-btn { background: #3b2218 !important; color: #fff3e2 !important; }
+body.spg .sp-panel .fm-next { background: #3b2218; color: #fff3e2; } body.spg .sp-panel .fm-next:hover { background: #f58fab; color: #3b2218; }
+body.spg .sp-panel .su-b .hx-btn.ghost, body.spg .sp-panel .su-ig .hx-btn { background: #3b2218 !important; color: #fff3e2 !important; }
+body.spg .about-cta .hx-btn.ghost { border-color: #3b2218; color: #3b2218 !important; background: transparent !important; }
+body.spg .sp-panel .pg-hero .hx-btn:not(.ghost) { color: #3b2218; }
+/* tabs */
+body.spg .sp-panel .tb-b:hover { background: rgba(59,34,24,.05) !important; }
+body.spg .sp-panel .tb-b.on { background: #f9d98a !important; }
+body.spg .sp-panel .tb-b.on b { color: #3b2218 !important; } body.spg .sp-panel .tb-b.on .tb-d, body.spg .sp-panel .tb-b.on .tb-d span { color: #4a2d20 !important; }
+body.spg .sp-panel .tb-i { background: rgba(59,34,24,.08) !important; } body.spg .sp-panel .tb-i svg { stroke: #c93f6b; }
+body.spg .sp-panel .tb-b.on .tb-i { background: #fff3e2 !important; } body.spg .sp-panel .tb-b.on .tb-i svg { stroke: #3b2218; }
+@media (max-width: 760px) {
+  body.spg .sp-panel .tb-b { background: rgba(59,34,24,.06) !important; }
+  body.spg .sp-panel .tb-b.on { background: #f9d98a !important; }
+  body.spg .sp-panel .tb-b.on b { color: #3b2218 !important; }
+}
+/* hard-coded light-on-dark colours */
+body.spg .sp-panel .fm-foot, body.spg .sp-panel .fm-foot p { color: #7a5645; }
+body.spg .sp-panel .pg-lead, body.spg .sp-panel .fm-sub { color: #5b3a2c !important; }
+body.spg .article-byline p, body.spg .article-back, body.spg .article-fig figcaption, body.spg .post-card .post-meta, body.spg.sp-legal .legal-meta { color: #7a5645 !important; }
+body.spg .article-back:hover { color: #c93f6b !important; }
+body.spg .sp-panel .su-addr, body.spg .sp-panel .su-b a:not(.su-addr):not(.hx-btn), body.spg .sp-panel .post-more, body.spg .post-more, body.spg .sp-panel .bl-card .post-more { color: #c93f6b !important; text-decoration-color: rgba(201,63,107,.4); }
+body.spg .toc-title { color: #c93f6b !important; } body.spg .toc a:hover, body.spg .toc a.on { color: #c93f6b !important; }
+body.spg.sp-method .mt-src small { color: #c93f6b; } body.spg.sp-method .mt-src svg { stroke: #c93f6b; }
+body.spg.sp-method .mt-src { background: #fff !important; }
+body.spg .article-body a, body.spg.sp-legal .legal a { color: #c93f6b; }
+body.spg.sp-legal .legal-toc a:hover { color: #c93f6b !important; }
+body.spg .about-body .about-sign { color: #c93f6b !important; border-top-color: rgba(59,34,24,.15); }
+body.spg.sp-legal .legal h3 { border-top-color: rgba(59,34,24,.12); }
+body.spg.sp-legal .legal-table td, body.spg .article-body td { color: #4a2d20; border-top-color: rgba(59,34,24,.12); }
+body.spg .article-body hr { border-top-color: rgba(59,34,24,.15); }
+body.spg .article-body strong { color: #3b2218; }
+body.spg .article-body th, body.spg.sp-legal .legal-table th { background: #3b2218; color: #fff3e2; }
+body.spg .article-body blockquote { background: #f9d98a; }
+body.spg .sp-panel .mo-b li::marker { color: #c93f6b; }
+body.spg .sp-panel .mo-also b { color: #c93f6b; }
+body.spg .sp-panel .mo-also { color: #5b3a2c; }
+/* hero headlines that sat on the dark page */
+body.spg.sp-method .mt-hero h1, body.spg .blog-hero h1, body.spg.sp-method .hx-sec .hx-head h2, body.spg .more-head h2, body.spg .more-head, body.spg .more-posts .more-head h2 { color: #3b2218; }
+body.spg.sp-method .mt-lead, body.spg .blog-hero p { color: #5b3a2c; }
+body.spg.sp-method .mt-hero h1 em { color: #e9658f; }
+body.spg .ig-line { color: #4a2d20 !important; } body.spg .ig-line a { color: #3b2218; }
+/* card colours on white: cream, butter, peach (no dark cards) */
+body.spg .post-card, body.spg .sp-panel .bl-card { background: #fff3e2 !important; color: #3b2218 !important; }
+body.spg .post-card:nth-child(3n+2), body.spg .sp-panel .bl-card:nth-child(3n+2) { background: #f9d98a !important; }
+body.spg .post-card:nth-child(3n+3), body.spg .sp-panel .bl-card:nth-child(3n+3) { background: #f8c7a3 !important; }
+body.spg .post-card h3, body.spg .sp-panel .bl-card h3 { color: #3b2218 !important; } body.spg .post-card p, body.spg .sp-panel .bl-card p { color: #5b3a2c !important; }
+body.spg .post-tag, body.spg .sp-panel .bl-card .post-tag { background: #3b2218 !important; color: #fff3e2 !important; }
+body.spg .sp-panel .su-c, body.spg .sp-panel .su-t2, body.spg .sp-panel .mo-c, body.spg .sp-panel .bl-topics a, body.spg .sp-panel .bl-x { background: #fff3e2 !important; }
+body.spg .sp-panel .mo-c:nth-child(3n+2) { background: #f9d98a !important; }
+body.spg .sp-panel .mo-also span, body.spg .sp-panel .mo-also a { background: #fff3e2; color: #3b2218; }
+body.spg .sp-panel .su-note { background: #f9d98a !important; }
+body.spg .hx-nav .hx-wrap { background: #3b2218; box-shadow: 0 14px 30px -16px rgba(59,34,24,.55); }
+body.spg .about-body .section-tag { background: #f58fab; color: #3b2218; }
+body.spg .about-card { border: 0 !important; box-shadow: none !important; outline: 0; }
+body.spg .sp-wrap { border: 0; box-shadow: none; background: transparent; }
