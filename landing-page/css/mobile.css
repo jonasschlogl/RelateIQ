@@ -190,6 +190,48 @@
   body.hx .hx-nav .hx-wrap, body.hx .hx-nav.scrolled .hx-wrap { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(59,34,24,.97) !important; }
   body.hx #tools .page { box-shadow: none !important; contain: layout style; }
 
+  /* ---------- firstchair-inspired layer ---------- */
+  /* nav slides away on scroll down */
+  body.hx .hx-nav { transition: transform .38s cubic-bezier(.2,.7,.2,1); }
+  body.hx .hx-nav.m-nav-hide { transform: translateY(-130%); }
+  /* blinking square in the pill kickers */
+  body.hx .hx-sec .hx-kicker::before, body.hx .hx-sec .section-tag::before { content: ""; width: 7px; height: 7px; background: #f58fab; flex: none; animation: mBlink 1.6s steps(1) infinite; }
+  @keyframes mBlink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: .15; } }
+  /* word-by-word headline reveal */
+  .m-motion .m-split .m-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .14em; margin-bottom: -.14em; }
+  .m-motion .m-split .m-w > span { display: inline-block; transform: translateY(112%) rotate(4deg); transform-origin: 0 100%; }
+  .m-motion .m-split.m-in .m-w > span { transform: none; transition: transform .85s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--w, 0) * 55ms); }
+  /* cards start tilted and straighten while rising */
+  .m-motion .m-rise { transform: translateY(34px) rotate(var(--r, 0deg)) scale(.97); }
+  .m-motion #tools .page.m-rise { transform: translateY(34px) rotate(var(--r, 0deg)); }
+  .m-motion .m-rise.m-in, .m-motion #tools .page.m-rise.m-in { transform: none; }
+  /* ticker strip */
+  .m-ticker { overflow: hidden; margin: 22px -14px 6px; padding: 14px 0; background: #f9d98a; transform: rotate(-2deg); color: #3b2218; contain: paint; }
+  .m-ticker-in { display: flex; width: max-content; animation: mTick 26s linear infinite; }
+  .m-ticker-in > div { display: flex; align-items: center; flex: none; }
+  .m-ticker span { font: 800 13px/1 "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; padding: 0 18px; }
+  .m-ticker i { width: 8px; height: 8px; background: #f58fab; flex: none; }
+  @keyframes mTick { to { transform: translateX(-50%); } }
+  /* spinning sticker */
+  .hx-final { position: relative; }
+  body.hx .hx-final > .m-sticker { position: absolute !important; top: 10px; right: 10px; width: 78px; height: 78px; border-radius: 50%; background: #fff3e2; color: #3b2218; z-index: 3; }
+  .m-sticker svg { width: 100%; height: 100%; display: block; }
+  .m-st-ring { transform-origin: 60px 60px; animation: mSpin 16s linear infinite; }
+  .m-sticker text { font: 800 11px "DM Sans", sans-serif; fill: currentColor; }
+  .m-st-heart { fill: #e9658f; transform-origin: 60px 60px; animation: mBeat 1.6s ease-in-out infinite; }
+  @keyframes mSpin { to { transform: rotate(360deg); } }
+  /* carousel arrows */
+  .m-dots .m-arr { appearance: none; border: 0; width: 40px; height: 40px; border-radius: 50%; background: #3b2218; color: #fff3e2; display: grid; place-items: center; padding: 0; margin: -8px 0; flex: none; transition: transform .2s; -webkit-tap-highlight-color: transparent; }
+  .m-dots .m-arr:active { transform: scale(.9); }
+  .m-dots .m-arr.prev { margin-right: 10px; } .m-dots .m-arr.next { margin-left: 10px; }
+  .m-dots { align-items: center; margin-top: 18px; }
+  /* hero clover turns slowly with the scroll (compositor-driven, no JS) */
+  @supports (animation-timeline: scroll()) {
+    body.hx .hx-hero .f-giant { animation: mFloat 9s ease-in-out infinite, mTurn linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
+    @keyframes mTurn { to { rotate: 80deg; } }
+  }
+  @media (prefers-reduced-motion: reduce) { .m-ticker-in, .m-st-ring, .m-st-heart { animation: none !important; } .m-nav-hide { transform: none !important; } }
+
   /* dots */
   .m-dots { display: flex; justify-content: center; gap: 7px; margin: 14px 0 0; }
   .m-dots i { width: 7px; height: 7px; border-radius: 99px; background: rgba(59,34,24,.18); transition: width .25s, background .25s; }
