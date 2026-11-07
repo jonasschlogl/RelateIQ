@@ -1,0 +1,41 @@
+/* Phone-only: "View full table" button + full-screen sheet with one card per row. Only transforms animate. */
+@media (max-width: 760px) {
+  body.hx .cmp-open { gap: 10px; margin: 18px auto 0; padding: 15px 26px; border: 0 !important; border-radius: 99px; background: #3b2218 !important; color: #fff3e2 !important; box-shadow: none !important; font: 800 15px "DM Sans", sans-serif; transition: transform .2s; -webkit-tap-highlight-color: transparent; }
+  body.hx .cmp-open:active { transform: scale(.96); }
+  body.hx .cmp-open span { font-size: 18px; color: #f58fab; }
+  body.hx .plan-compare-wrap .cmp-open { margin: 4px auto 14px; }
+
+  body.hx .cmp-sheet:not([hidden]) { background: #fff3e2; z-index: 400; animation: csUp .38s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes csUp { from { transform: translateY(100%); } to { transform: none; } }
+  body.hx .cmp-bar { flex: none; padding: max(16px, env(safe-area-inset-top)) 18px 10px 24px; gap: 12px; }
+  body.hx .cmp-bar b { font: 600 27px/1.1 Fraunces, Georgia, serif; letter-spacing: -.02em; color: #3b2218; }
+  body.hx .cmp-ctl button.cmp-x { width: 46px; height: 46px; border: 0 !important; background: #3b2218 !important; flex: none; }
+  body.hx .cmp-ctl button.cmp-x::before, body.hx .cmp-ctl button.cmp-x::after { background: #fff3e2 !important; }
+  body.hx .cmp-scroll { flex: 1; margin: 0; padding: 6px 14px 40px; border: 0 !important; border-radius: 0; background: none; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+
+  .cs-card { background: #fff; border-radius: 28px; padding: 20px 14px 12px 18px; margin-bottom: 10px; }
+  .cs-card h4 { margin: 0 0 12px; font: 600 19px/1.22 Fraunces, Georgia, serif; letter-spacing: -.01em; color: #3b2218; padding-right: 6px; }
+  .cs-row { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; padding: 8px 6px 8px 0; border-radius: 18px; }
+  .cs-row.hl { background: #fde2ea; padding-left: 6px; margin-left: -6px; }
+  .cs-chip { display: block; text-align: center; padding: 8px 4px; border-radius: 99px; font: 800 11.5px/1 "DM Sans", sans-serif; letter-spacing: .01em; color: #3b2218; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cs-v { display: flex; align-items: center; font: 600 15px/1.35 "DM Sans", sans-serif; color: #3b2218; }
+  .cs-v.yes::before, .cs-v.no::before { display: block; flex: none; width: 20px; height: 20px; margin-right: 8px; border-radius: 50%; text-align: center; font: 800 12px/20px "DM Sans", sans-serif; }
+  .cs-v.yes::before { content: "\2713"; background: #3b2218; color: #fff3e2; }
+  .cs-v.no { color: rgba(59,34,24,.62); }
+  .cs-v.no::before { content: "\2715"; background: rgba(59,34,24,.1); color: rgba(59,34,24,.6); }
+  .cs-v.partial { color: #5b3d2e; }
+  /* chip colours */
+  .cs-cmp .cs-row.p0 .cs-chip { background: #f58fab; }
+  .cs-cmp .cs-row.p1 .cs-chip { background: #f9d98a; }
+  .cs-cmp .cs-row.p2 .cs-chip { background: #f8c7a3; }
+  .cs-plan .cs-row.p0 .cs-chip { background: #f9d98a; }
+  .cs-plan .cs-row.p1 .cs-chip { background: #f58fab; }
+  .cs-plan .cs-row.p2 .cs-chip { background: #3b2218; color: #fff3e2; }
+
+  /* pricing: the "Compare every feature" row opens the sheet directly */
+  body.hx #pricing .plan-compare { margin: 14px 18px 0 !important; border: 0 !important; border-radius: 28px !important; background: #f9d98a !important; }
+  body.hx #pricing .plan-compare > summary { padding: 18px 16px 18px 24px !important; background: none !important; font: 600 20px/1.2 Fraunces, Georgia, serif !important; color: #3b2218 !important; -webkit-tap-highlight-color: transparent; }
+  body.hx #pricing .plan-compare > summary::after { content: "\2922" !important; width: 40px !important; height: 40px !important; border: 0 !important; background: #3b2218 !important; color: #f58fab !important; font-size: 19px !important; }
+  body.hx #pricing .plan-compare[open] > summary::after { content: "\2922" !important; }
+  body.hx #pricing .plan-compare > .plan-compare-wrap { display: none !important; }
+}
