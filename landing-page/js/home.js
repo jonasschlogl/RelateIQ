@@ -6,18 +6,22 @@
 
   // nav: solid background after scrolling, mobile menu
   var nav = $("#nav"), burger = $("#burger"), links = $("#links");
-  function onScroll() {
-    if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
-    var st = $("#sticky"), hero = $(".hx-hero"), join = $("#join");
-    if (st && hero && join) {
-      var past = window.scrollY > hero.offsetHeight * 0.8;
-      var jr = join.getBoundingClientRect();
-      var inJoin = jr.top < window.innerHeight * 0.85;
-      st.classList.toggle("show", past && !inJoin);
+  var st = $("#sticky"), heroEl = $(".hx-hero"), joinEl = $("#join"), isScrolled = null, isShown = null, scrollTick = false;
+  function doScroll() {
+    scrollTick = false;
+    var y = window.scrollY;
+    var sc = y > 24;
+    if (nav && sc !== isScrolled) { isScrolled = sc; nav.classList.toggle("scrolled", sc); }
+    if (st && heroEl && joinEl) {
+      var past = y > heroEl.offsetHeight * 0.8;
+      var inJoin = joinEl.getBoundingClientRect().top < window.innerHeight * 0.85;
+      var show = past && !inJoin;
+      if (show !== isShown) { isShown = show; st.classList.toggle("show", show); }
     }
   }
+  function onScroll() { if (!scrollTick) { scrollTick = true; window.requestAnimationFrame(doScroll); } }
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  doScroll();
   if (burger && links) {
     burger.addEventListener("click", function () {
       var open = links.classList.toggle("open");
@@ -251,7 +255,6 @@
   function frame() {
     tick = false;
     var y = window.scrollY || 0, h = Math.max(1, root.scrollHeight - window.innerHeight);
-    root.style.setProperty("--sy", y.toFixed(0));
     bar.style.transform = "scaleX(" + Math.min(1, y / h).toFixed(4) + ")";
   }
   window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });

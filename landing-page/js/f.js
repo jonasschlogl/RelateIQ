@@ -13,7 +13,7 @@
       var r = el.getBoundingClientRect(), p = clamp((H * .85 - r.top) / (H * .6 + r.height * .4)), ws = $$('.lw', el);
       ws.forEach(function (w, i) { w.classList.toggle('on', rm || i / ws.length < p); });
     });
-    if (giant && !rm) giant.style.transform = 'translate(-50%,-50%) rotate(' + (scrollY * .04).toFixed(1) + 'deg)';
+    if (giant && !rm && innerWidth > 760) giant.style.transform = 'translate(-50%,-50%) rotate(' + (scrollY * .04).toFixed(1) + 'deg)';
   }
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });
   addEventListener('resize', frame); frame();
