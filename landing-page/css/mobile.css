@@ -111,18 +111,11 @@
   .ex-sec > .hx-wrap, .ts-sec > .hx-wrap { display: flex; flex-direction: column; width: 100%; }
   .ex-note { order: 3; display: block !important; margin: 14px 28px 0 !important; font: 500 12.5px/1.5 "DM Sans", sans-serif !important; color: #5b3a2c !important; opacity: .8; }
   .ts-note { display: none !important; }
-  .ex-grid, .ts-grid {
+  .ts-grid {
     display: flex !important; columns: auto !important; gap: 12px !important; margin: 0 !important; padding: 4px 16px 6px !important;
     overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
-  .ex-grid::-webkit-scrollbar, .ts-grid::-webkit-scrollbar { display: none; }
-
-  .ex-card, .ex-card.c1 { flex: 0 0 76% !important; height: 410px !important; grid-column: auto; grid-row: auto; scroll-snap-align: center; padding: 10px !important; border-radius: 36px !important; }
-  .ex-tag { top: 22px !important; left: 22px !important; font-size: 10px !important; padding: 7px 12px; }
-  .ex-ph img, .ex-card.c1 .ex-ph img { height: calc(100% - 28px); }
-  .ex-id, .ex-card.c1 .ex-id { padding: 16px 16px 18px; border-radius: 28px; }
-  .ex-id b, .ex-card.c1 .ex-id b { font-size: 25px; }
-  .ex-id p, .ex-card.c1 .ex-id p { font-size: 13.5px; margin-top: 6px; line-height: 1.35; }
+  .ts-grid::-webkit-scrollbar { display: none; }
 
   .ts-card { flex: 0 0 82%; scroll-snap-align: center; display: flex; flex-direction: column; margin: 0 !important; padding: 26px 24px 22px !important; border-radius: 36px !important; break-inside: auto; }
   .ts-sec .ts-card:nth-child(n+4) { display: flex !important; }
@@ -132,10 +125,23 @@
   .ts-card .ts-by { margin-top: auto; padding-top: 22px; }
   .ts-more { display: none !important; }
 
+  /* ---------- experts: bento like desktop (one tall card + four) ---------- */
+  .ex-grid { display: grid !important; grid-template-columns: 1.22fr 1fr !important; grid-template-rows: 186px 186px 232px !important; gap: 10px !important; margin: 0 !important; padding: 4px 16px 6px !important; overflow: visible !important; }
+  body.hx .ex-card { height: auto !important; min-height: 0; padding: 7px !important; border-radius: 30px !important; flex: none !important; grid-column: auto !important; grid-row: auto !important; }
+  body.hx .ex-card.c1 { grid-row: 1 / span 2 !important; }
+  .ex-tag { top: 15px !important; left: 15px !important; font-size: 8.5px !important; letter-spacing: .1em !important; padding: 5px 9px !important; }
+  .ex-ph img, .ex-card.c1 .ex-ph img { height: calc(100% - 14px); }
+  .ex-id, .ex-card.c1 .ex-id { padding: 9px 8px 10px; border-radius: 22px; }
+  .ex-id b { font-size: 16px; line-height: 1.1; }
+  .ex-card.c1 .ex-id { padding: 12px 10px 13px; }
+  .ex-card.c1 .ex-id b { font-size: 21px; }
+  .ex-id p { display: none; }
+  .ex-card.c1 .ex-id p { display: block; font-size: 12px; margin-top: 4px; line-height: 1.3; }
+
   /* dots */
   .m-dots { display: flex; justify-content: center; gap: 7px; margin: 14px 0 0; }
   .m-dots i { width: 7px; height: 7px; border-radius: 99px; background: rgba(59,34,24,.18); transition: width .25s, background .25s; }
   .m-dots i.on { width: 22px; background: #3b2218; }
-  .ex-sec .m-dots { order: 2; }
+  .ex-sec .m-dots { display: none; }
 }
 @media (min-width: 701px) { .m-dots { display: none; } }
