@@ -41,7 +41,8 @@
   .hx-hero .hq.js .hq-by b { font-size: 11px; letter-spacing: .14em; }
   .hx-hero .hq.js .hq-nav { justify-content: flex-start; margin-top: 16px; }
   .hx-hero .hq-nav img { width: 38px; height: 38px; }
-  .mq { display: none !important; }
+  .mq { display: block !important; margin: 8px 8px 0; border-radius: 28px; padding: 17px 0 16px; }
+  .mq li { font-size: 15px; margin-right: 40px; }
 
   /* ---------- three tools: plain stack of cards, same look as desktop ---------- */
   body.hx .hx-tools { padding-top: 44px; }
@@ -72,7 +73,7 @@
 
   /* stacking cards: each one slides over the previous, with a ghost number and a floating heart */
   #tools .deck-stage { gap: 0 !important; padding-bottom: 8px; }
-  body.hx #tools .page { position: sticky !important; margin-bottom: 14px; min-height: 250px; box-shadow: 0 -10px 30px -18px rgba(59,34,24,.35) !important; transform-origin: center top; }
+  body.hx #tools .page { position: sticky !important; margin-bottom: 14px; min-height: 322px; box-shadow: 0 -10px 30px -18px rgba(59,34,24,.35) !important; transform-origin: center top; }
   body.hx #tools .page.f1 { top: 84px !important; z-index: 1 !important; }
   body.hx #tools .page.f2 { top: 98px !important; z-index: 2 !important; }
   body.hx #tools .page.f3 { top: 112px !important; z-index: 3 !important; margin-bottom: 0; }
@@ -119,7 +120,7 @@
   body.hx #join { padding: 28px 0 0; }
   body.hx #join .hx-wrap { padding-left: 16px; padding-right: 16px; }
   body.hx { padding-bottom: 0 !important; }
-  body.hx .hx-final { padding: 48px 20px 36px !important; min-height: 0 !important; border-radius: 36px !important; }
+  body.hx .hx-final { padding: 118px 20px 36px !important; min-height: 0 !important; border-radius: 36px !important; }
   .hx-final .f-fin, .hx-final .fclover { opacity: .22; }
   .hx-final h2 { font-size: 34px !important; line-height: 1.1 !important; }
   body.hx .hx-final p.sub { margin-top: 34px !important; font-size: 16px; }
@@ -205,16 +206,9 @@
   .m-motion .m-rise { transform: translateY(34px) rotate(var(--r, 0deg)) scale(.97); }
   .m-motion #tools .page.m-rise { transform: translateY(34px) rotate(var(--r, 0deg)); }
   .m-motion .m-rise.m-in, .m-motion #tools .page.m-rise.m-in { transform: none; }
-  /* ticker strip */
-  .m-ticker { overflow: hidden; margin: 22px -14px 6px; padding: 14px 0; background: #f9d98a; transform: rotate(-2deg); color: #3b2218; contain: paint; }
-  .m-ticker-in { display: flex; width: max-content; animation: mTick 26s linear infinite; }
-  .m-ticker-in > div { display: flex; align-items: center; flex: none; }
-  .m-ticker span { font: 800 13px/1 "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; padding: 0 18px; }
-  .m-ticker i { width: 8px; height: 8px; background: #f58fab; flex: none; }
-  @keyframes mTick { to { transform: translateX(-50%); } }
   /* spinning sticker */
   .hx-final { position: relative; }
-  body.hx .hx-final > .m-sticker { position: absolute !important; top: 10px; right: 10px; width: 78px; height: 78px; border-radius: 50%; background: #fff3e2; color: #3b2218; z-index: 3; }
+  body.hx .hx-final > .m-sticker { position: absolute !important; top: 22px; left: 50%; margin-left: -39px; width: 78px; height: 78px; border-radius: 50%; background: #fff3e2; color: #3b2218; z-index: 3; }
   .m-sticker svg { width: 100%; height: 100%; display: block; }
   .m-st-ring { transform-origin: 60px 60px; animation: mSpin 16s linear infinite; }
   .m-sticker text { font: 800 11px "DM Sans", sans-serif; fill: currentColor; }
@@ -230,7 +224,12 @@
     body.hx .hx-hero .f-giant { animation: mFloat 9s ease-in-out infinite, mTurn linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
     @keyframes mTurn { to { rotate: 80deg; } }
   }
-  @media (prefers-reduced-motion: reduce) { .m-ticker-in, .m-st-ring, .m-st-heart { animation: none !important; } .m-nav-hide { transform: none !important; } }
+  @media (prefers-reduced-motion: reduce) { .m-st-ring, .m-st-heart { animation: none !important; } .m-nav-hide { transform: none !important; } }
+
+  /* pricing: next card peeks in, plus arrows */
+  body.hx #pricing .pricing-grid { padding: 14px 16px 8px !important; margin: 0 -16px !important; scroll-padding: 0 16px; }
+  body.hx #pricing .pricing-grid > .price-card { flex: 0 0 78% !important; scroll-snap-align: start !important; }
+  #pricing .m-dots { margin-top: 12px; }
 
   /* dots */
   .m-dots { display: flex; justify-content: center; gap: 7px; margin: 14px 0 0; }

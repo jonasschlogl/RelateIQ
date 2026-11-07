@@ -8,7 +8,7 @@
     dots.setAttribute('aria-hidden', 'true');
     cards.forEach(function () { dots.appendChild(document.createElement('i')); });
     list.insertAdjacentElement('afterend', dots);
-    if (list.classList.contains('ts-grid')) {
+    if (list.classList.contains('ts-grid') || list.classList.contains('pricing-grid')) {
       var mk = function (dir) {
         var b = document.createElement('button');
         b.type = 'button'; b.className = 'm-arr ' + (dir < 0 ? 'prev' : 'next');
@@ -22,9 +22,9 @@
     }
     var d = dots.querySelectorAll('i');
     function update() {
-      var mid = list.scrollLeft + list.clientWidth / 2, best = 0, bd = 1e9;
+      var lr = list.getBoundingClientRect(), mid = lr.left + lr.width / 2, best = 0, bd = 1e9;
       cards.forEach(function (c, i) {
-        var dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+        var r = c.getBoundingClientRect(), dist = Math.abs(r.left + r.width / 2 - mid);
         if (dist < bd) { bd = dist; best = i; }
       });
       for (var i = 0; i < d.length; i++) d[i].className = i === best ? 'on' : '';
@@ -32,5 +32,5 @@
     list.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
     update();
   }
-  document.querySelectorAll('.ex-grid, .ts-grid').forEach(init);
+  document.querySelectorAll('.ex-grid, .ts-grid, #pricing .pricing-grid').forEach(init);
 })();

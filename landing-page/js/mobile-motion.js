@@ -61,17 +61,6 @@
   }, { threshold: 0.4 });
   heads.forEach(function (h) { io2.observe(h); });
 
-  /* ---- ticker strip under the hero ---- */
-  var hero = document.querySelector('.hx-hero');
-  if (hero) {
-    var words = ['Reply with a clear head', 'Say the hard thing kindly', 'Practice before the talk', 'Read it the way they will', 'Private by default'];
-    var row = words.map(function (w) { return '<span>' + w + '</span><i></i>'; }).join('');
-    var strip = document.createElement('div');
-    strip.className = 'm-ticker'; strip.setAttribute('aria-hidden', 'true');
-    strip.innerHTML = '<div class="m-ticker-in"><div>' + row + '</div><div>' + row + '</div></div>';
-    hero.insertAdjacentElement('afterend', strip);
-  }
-
   /* ---- spinning sticker on the final card ---- */
   var fin = document.querySelector('.hx-final');
   if (fin) {
