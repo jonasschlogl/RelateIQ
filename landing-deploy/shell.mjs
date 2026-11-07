@@ -59,6 +59,8 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/pages.css?v=3" />
   <link rel="stylesheet" href="/css/light.css?v=10" />
   <link rel="stylesheet" href="/css/light-pages.css?v=1" />
+  <link rel="stylesheet" href="/css/mobile-pages.css?v=4" />
+  <link rel="stylesheet" href="/css/mobile-sheet.css?v=6" />
   <meta name="theme-color" content="#3b2218" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
@@ -71,7 +73,7 @@ ${body}
   </main>
 
   ${footer}
-  <script src="/js/home.js?v=5"></script><script defer src="/js/f.js?v=6"></script><script defer src="/js/pages.js?v=1"></script>
+  <script src="/js/home.js?v=5"></script><script defer src="/js/f.js?v=6"></script><script defer src="/js/pages.js?v=2"></script><script defer src="/js/mobile-pages.js?v=1"></script><script defer src="/js/carousel-dots.js?v=3"></script><script defer src="/js/table-sheet.js?v=1"></script>
 </body>
 </html>
 `;

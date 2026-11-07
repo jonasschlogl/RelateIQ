@@ -1,0 +1,77 @@
+/* Phone layer for every sub page (footer pages, tools, method, blog, legal). Matches the home page: flat cards, cocoa footer panel,
+   nothing clipped, nothing animating off screen. Loaded after light-pages.css. */
+@media (max-width: 700px) {
+  /* ---- nav: solid pill (no blur), slides away while scrolling down ---- */
+  body.hx .hx-nav .hx-wrap, body.hx .hx-nav.scrolled .hx-wrap { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(59,34,24,.97) !important; }
+  body.hx .hx-nav { transition: transform .38s cubic-bezier(.2,.7,.2,1); }
+  body.hx .hx-nav.m-nav-hide { transform: translateY(-170%); visibility: hidden; transition: transform .38s cubic-bezier(.2,.7,.2,1), visibility 0s .38s; }
+  body.hx .hx-nav.m-nav-hide .hx-wrap { box-shadow: none !important; }
+  .hx-sticky:not(.show) { visibility: hidden; }
+
+  /* ---- footer: same cocoa panel as the home page ---- */
+  body.hx .hx-foot { margin-top: 36px !important; padding: 40px 0 36px !important; background: #3b2218 !important; color: #f3dcc4 !important; border-radius: 36px 36px 0 0 !important; text-align: left; }
+  body.hx .hx-foot a, body.hx .hx-foot .ft-col a, body.hx .hx-foot .ft-col a:visited { color: #fff3e2 !important; text-decoration: none; }
+  body.hx .hx-foot h4 { color: #f58fab !important; }
+  body.hx .hx-foot .hx-brand span, body.hx .hx-foot .hx-brand b { color: #fff3e2 !important; }
+  body.hx .hx-foot .ft-copy { color: #fff3e2 !important; }
+  body.hx .hx-foot .ft-base p { color: #f3dcc4 !important; }
+  body.hx .hx-foot svg { color: #fff3e2; }
+  .hx-foot .ft-col:nth-child(3), .hx-foot .ft-band { display: none; }
+  .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
+  .hx-foot .ft-grid { row-gap: 22px; }
+  body.hx { padding-bottom: 0 !important; }
+
+  /* ---- page rhythm ---- */
+  body.spg .su-h, body.spg .pg-sec > h3 { padding-left: 4px; padding-right: 4px; }
+  body.spg .pg-sec { padding-left: 18px !important; padding-right: 18px !important; }
+  .sp-main { padding: 96px 12px 0 !important; }
+  body.spg .sp-panel, body.spg .sp-main > section { border-radius: 32px; }
+
+  /* ---- decoration: still, and never doing work off screen ---- */
+  body.spg .dc { animation: none !important; translate: none !important; }
+  body.spg .dc.d3 { display: none; }
+  body.spg .pg-stage::before, body.spg .pg-stage::after { animation: none !important; }
+  body.spg .fl span { animation: none !important; }
+  html.m-io :is(.pg-hero, .mt-hero, .pg-stage, .tb-stage, .pg-end, .sp-end, .pg-fa, .mb-art, .hx-hero, .hx-final):not(.m-live) *,
+  html.m-io :is(.pg-hero, .mt-hero, .pg-stage, .tb-stage, .pg-end, .sp-end, .pg-fa, .mb-art, .hx-hero, .hx-final):not(.m-live) *::before,
+  html.m-io :is(.pg-hero, .mt-hero, .pg-stage, .tb-stage, .pg-end, .sp-end, .pg-fa, .mb-art, .hx-hero, .hx-final):not(.m-live) *::after { animation-play-state: paused !important; }
+
+  /* ---- method: the three topic links as clean full-width pills ---- */
+  body.spg.sp-method .mt-hero { padding: 40px 0 24px; }
+  body.spg.sp-method .mt-has { flex-direction: column; align-items: stretch; gap: 10px; max-width: 360px; margin: 26px auto 0; }
+  body.spg.sp-method .mt-ha { font: 700 15.5px/1.2 "DM Sans", sans-serif !important; width: 100%; justify-content: flex-start; padding: 10px 20px 10px 12px; white-space: normal; line-height: 1.2; text-align: left; }
+  body.spg.sp-method .mt-ha svg, body.spg.sp-method .mt-ha .pg-art { flex: none; width: 46px !important; height: 38px !important; max-width: none; }
+  body.spg.sp-method .pg-ft { padding: 26px 22px 22px; }
+  body.spg.sp-method .pg-fa { padding: 28px 14px 34px; }
+
+  /* ---- illustration cards: nothing hangs outside the box any more ---- */
+  .pg-fa .ex, .tb-stage .ex, .mb-art .ex { display: flex; flex-direction: column; width: 100%; max-width: 380px; }
+  .ex .sat { position: relative !important; inset: auto !important; max-width: 100% !important; margin: 12px 0 0; transform: none !important; align-self: stretch; }
+  .ex .sat b { font-size: 19px; }
+  .ex .sat .ap-p { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .ex .sat .ap-p b { display: inline-block; font: 700 12px/1 "DM Sans", sans-serif; padding: 7px 11px; border-radius: 99px; }
+  .ex .sat.sp { max-width: 100% !important; }
+  .tb-stage { padding-bottom: 24px; }
+  .ap-two { gap: 7px; }
+  .ap-two > div { min-width: 0; }
+  .ap-r { padding: 10px 11px; }
+  .ap-r span { font-size: 13.5px; overflow-wrap: anywhere; }
+
+  /* ---- feature tabs: swipe row with a fade on the right edge ---- */
+  body.spg .sp-panel .tb-list { scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  body.spg .sp-panel .tb-b { scroll-snap-align: start; }
+
+  /* ---- "What you get" band on the coloured end cards ---- */
+  body.spg .fm-avail { max-width: 100%; border-radius: 28px; padding: 14px 18px; }
+
+  /* ---- pricing page: next card peeks in, arrows + dots (same as home) ---- */
+  body.hx #pricing .pricing-grid { padding: 14px 16px 8px !important; margin: 0 -16px !important; scroll-padding: 0 16px; }
+  body.hx #pricing .pricing-grid > .price-card { flex: 0 0 78% !important; scroll-snap-align: start !important; }
+  .m-dots { display: flex; justify-content: center; align-items: center; gap: 7px; margin: 18px 0 0; }
+  .m-dots i { width: 7px; height: 7px; border-radius: 99px; background: rgba(59,34,24,.18); transition: width .25s, background .25s; }
+  .m-dots i.on { width: 22px; background: #3b2218; }
+  .m-dots .m-arr { appearance: none; border: 0; width: 40px; height: 40px; border-radius: 50%; background: #3b2218; color: #fff3e2; display: grid; place-items: center; padding: 0; margin: -8px 0; flex: none; transition: transform .2s; -webkit-tap-highlight-color: transparent; }
+  .m-dots .m-arr:active { transform: scale(.9); }
+  .m-dots .m-arr.prev { margin-right: 10px; } .m-dots .m-arr.next { margin-left: 10px; }
+}
+@media (min-width: 701px) { .m-dots { display: none; } }

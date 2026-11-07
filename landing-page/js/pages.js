@@ -32,7 +32,7 @@
   /* parallax on feature rows */
   var rows = $$('.pg-f'), tick = false;
   function par() { tick = false; var H = innerHeight; rows.forEach(function (f) { var r = f.getBoundingClientRect(); if (r.bottom < -200 || r.top > H + 200) return; var v = ((r.top + r.height / 2) - H / 2) / H; f.style.setProperty('--p', Math.max(-1, Math.min(1, v)).toFixed(3)); }); }
-  if (rows.length && !rm) { addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(par); } }, { passive: true }); par(); }
+  if (rows.length && !rm && innerWidth > 700) { addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(par); } }, { passive: true }); par(); }
   /* article: table of contents highlight + share */
   var toc = $('.toc'), heads = $$('.article-body h2[id]');
   if (toc && heads.length && 'IntersectionObserver' in window) {
