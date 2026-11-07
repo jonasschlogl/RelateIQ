@@ -6,7 +6,7 @@
   body.hx .hx-nav { transition: transform .38s cubic-bezier(.2,.7,.2,1); }
   body.hx .hx-nav.m-nav-hide { transform: translateY(-170%); visibility: hidden; transition: transform .38s cubic-bezier(.2,.7,.2,1), visibility 0s .38s; }
   body.hx .hx-nav.m-nav-hide .hx-wrap { box-shadow: none !important; }
-  .hx-sticky:not(.show) { visibility: hidden; }
+  body.hx .hx-sticky { display: none !important; }
 
   /* ---- footer: same cocoa panel as the home page ---- */
   body.hx .hx-foot { margin-top: 36px !important; padding: 40px 0 36px !important; background: #3b2218 !important; color: #f3dcc4 !important; border-radius: 36px 36px 0 0 !important; text-align: left; }
@@ -17,6 +17,12 @@
   body.hx .hx-foot .ft-base p { color: #f3dcc4 !important; }
   body.hx .hx-foot svg { color: #fff3e2; }
   .hx-foot .ft-band { display: none; }
+  /* footer blogs: full-width row of chips instead of a long list */
+  .hx-foot .ft-col:nth-child(3) { grid-column: 1 / -1; }
+  .hx-foot .ft-col:nth-child(3) { flex-direction: row !important; flex-wrap: wrap; gap: 8px !important; }
+  .hx-foot .ft-col:nth-child(3) h4 { flex: 0 0 100%; }
+  body.hx .hx-foot .ft-col:nth-child(3) a { display: inline-block; padding: 10px 15px; border-radius: 99px; background: rgba(255,243,226,.1); font: 600 14px/1.1 "DM Sans", sans-serif; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+  body.hx .hx-foot .ft-col:nth-child(3) h4 + a { background: #f58fab; color: #3b2218 !important; font-weight: 800; }
   .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
   .hx-foot .ft-grid { row-gap: 22px; }
   body.hx { padding-bottom: 0 !important; }
