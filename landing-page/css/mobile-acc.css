@@ -15,11 +15,6 @@
     content: ""; position: absolute; z-index: -1; right: -34px; top: -44px; width: 132px; height: 132px; border-radius: 50%;
     background: rgba(255,255,255,.26); transition: transform .6s cubic-bezier(.2,.8,.2,1), background-color .35s;
   }
-  /* big ghost number */
-  body.hx section.acc > .acc-btn::after {
-    content: attr(data-n); position: absolute; z-index: -1; right: 64px; bottom: -14px;
-    font: 600 74px/1 "Fraunces", Georgia, serif; letter-spacing: -.04em; color: #3b2218; opacity: .07; transition: opacity .35s, color .35s;
-  }
   /* icon tile */
   body.hx .acc-btn .acc-ic {
     flex: 0 0 48px; width: 48px; height: 48px; border-radius: 17px; display: grid; place-items: center;
@@ -39,7 +34,6 @@
   body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-t b { color: #fff3e2 !important; }
   body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-t small { color: #f3dcc4 !important; opacity: .85; }
   body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"]::before { background: rgba(245,143,171,.18); transform: scale(1.25); }
-  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"]::after { color: #fff3e2; opacity: .08; }
   body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-ic { background: #f58fab; color: #3b2218; transform: rotate(-8deg) scale(1.06); }
   /* one soft shine when it opens */
   body.hx section.acc > .acc-btn .acc-shine { position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; width: 38%; pointer-events: none; opacity: 0;
