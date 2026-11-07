@@ -16,13 +16,7 @@
   body.hx .hx-foot .ft-copy { color: #fff3e2 !important; }
   body.hx .hx-foot .ft-base p { color: #f3dcc4 !important; }
   body.hx .hx-foot svg { color: #fff3e2; }
-  .hx-foot .ft-band { display: none; }
-  /* footer blogs: full-width row of chips instead of a long list */
-  .hx-foot .ft-col:nth-child(3) { grid-column: 1 / -1; }
-  .hx-foot .ft-col:nth-child(3) { flex-direction: row !important; flex-wrap: wrap; gap: 8px !important; }
-  .hx-foot .ft-col:nth-child(3) h4 { flex: 0 0 100%; }
-  body.hx .hx-foot .ft-col:nth-child(3) a { display: inline-block; padding: 10px 15px; border-radius: 99px; background: rgba(255,243,226,.1); font: 600 14px/1.1 "DM Sans", sans-serif; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
-  body.hx .hx-foot .ft-col:nth-child(3) h4 + a { background: #f58fab; color: #3b2218 !important; font-weight: 800; }
+  .hx-foot .ft-col:nth-child(3), .hx-foot .ft-band { display: none; }
   .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
   .hx-foot .ft-grid { row-gap: 22px; }
   body.hx { padding-bottom: 0 !important; }
@@ -69,6 +63,26 @@
 
   /* ---- "What you get" band on the coloured end cards ---- */
   body.spg .fm-avail { max-width: 100%; border-radius: 28px; padding: 14px 18px; }
+
+  /* ---- blog lists: featured first card + two-column grid of compact cards ---- */
+  body.spg .post-grid, body.spg .bl-list { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  body.spg .post-card { border-radius: 26px; padding: 0 0 14px; gap: 8px; }
+  body.spg .post-card:first-child { grid-column: 1 / -1; padding-bottom: 20px; gap: 10px; }
+  body.spg .post-card .post-thumb { aspect-ratio: 4 / 3; }
+  body.spg .post-card:first-child .post-thumb { aspect-ratio: 16 / 9; }
+  body.spg .post-card > :not(.post-thumb) { margin-left: 14px !important; margin-right: 14px !important; }
+  body.spg .post-card:first-child > :not(.post-thumb) { margin-left: 20px !important; margin-right: 20px !important; }
+  body.spg .post-card .post-card-top { margin-top: 4px; gap: 4px; }
+  body.spg .post-card .post-tag { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 5px 9px; font-size: 9.5px; letter-spacing: .05em; }
+  body.spg .post-card .post-meta { display: none; }
+  body.spg .post-card h3 { font-size: 16.5px !important; line-height: 1.17 !important; margin-top: 0 !important; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  body.spg .post-card p, body.spg .post-card .post-more { display: none; }
+  body.spg .post-card:first-child .post-meta { display: block; font-size: 12.5px; }
+  body.spg .post-card:first-child h3 { font-size: 23px !important; line-height: 1.1 !important; -webkit-line-clamp: 5; }
+  body.spg .post-card:first-child p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 15px !important; }
+  body.spg .post-card:first-child .post-more { display: inline-flex; }
+  body.spg .post-card .post-card-top { flex-direction: column; align-items: flex-start; }
+  body.spg .post-card:first-child .post-card-top { flex-direction: row; align-items: center; }
 
   /* ---- pricing page: next card peeks in, arrows + dots (same as home) ---- */
   body.hx #pricing .pricing-grid { padding: 14px 16px 8px !important; margin: 0 -16px !important; scroll-padding: 0 16px; }
