@@ -58,7 +58,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/f-skin.css?v=9" />
   <link rel="stylesheet" href="/css/pages.css?v=3" />
   <link rel="stylesheet" href="/css/light.css?v=11" />
-  <link rel="stylesheet" href="/css/pricing-v2.css?v=1" />
+  <link rel="stylesheet" href="/css/pricing-v2.css?v=2" />
   <link rel="stylesheet" href="/css/light-pages.css?v=1" />
   <meta name="theme-color" content="#3b2218" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
