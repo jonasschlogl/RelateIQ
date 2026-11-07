@@ -103,6 +103,7 @@ body.hx .trust-icon, body.hx #trust .trust-icon, body.hx .trust-item:nth-child(e
 body.hx .trust-icon svg { stroke: #f9d98a; }
 /* pricing */
 body.hx .billing-toggle { background: #f9d98a !important; }
+body.hx .price-card, body.hx .price-card.featured { border: 2px solid #3b2218 !important; }
 body.hx .price-card:not(.featured):last-child, body.hx .price-card:nth-child(3) { background: #f9d98a !important; }
 body.hx .price-card .price-desc, body.hx .price-card .price-billed, body.hx .price-card li, body.hx .price-card span { color: #3b2218; }
 body.hx .price-card .hx-btn, body.hx .price-card .btn { background: #f9d98a !important; color: #3b2218 !important; box-shadow: inset 0 0 0 2px #3b2218; }
