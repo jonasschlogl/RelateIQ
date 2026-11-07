@@ -10,7 +10,8 @@
   function frame() {
     tick = false; var H = innerHeight;
     lit.forEach(function (el) {
-      var r = el.getBoundingClientRect(), p = clamp((H * .85 - r.top) / (H * .6 + r.height * .4)), ws = $$('.lw', el);
+      var r = el.getBoundingClientRect(), p = clamp((H * .85 - r.top) / (H * .6 + r.height * .4)), ws = el._lw || (el._lw = $$('.lw', el));
+      if (!rm && (r.bottom < -H || r.top > H * 2)) return;
       ws.forEach(function (w, i) { w.classList.toggle('on', rm || i / ws.length < p); });
     });
     if (giant && !rm && innerWidth > 760) giant.style.transform = 'translate(-50%,-50%) rotate(' + (scrollY * .04).toFixed(1) + 'deg)';

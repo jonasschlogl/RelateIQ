@@ -16,6 +16,7 @@
     var tick = false;
     function prog() {
       tick = false;
+      if (w.innerWidth <= 700) return;
       var h = root.scrollHeight - w.innerHeight;
       bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, Math.max(0, w.scrollY / h)) : 0).toFixed(4) + ")";
     }
@@ -112,6 +113,7 @@
     var spy = false;
     function sp() {
       spy = false;
+      if (w.innerWidth <= 700) return;
       var y = w.innerHeight * 0.38, cur = null;
       map.forEach(function (x) { var r = x.s.getBoundingClientRect(); if (r.height && r.top <= y && r.bottom > y) cur = x; });
       map.forEach(function (x) { x.a.classList.toggle("is-on", x === cur); });

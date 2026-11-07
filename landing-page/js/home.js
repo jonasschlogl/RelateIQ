@@ -254,6 +254,7 @@
   var tick = false;
   function frame() {
     tick = false;
+    if (window.innerWidth <= 700) return;
     var y = window.scrollY || 0, h = Math.max(1, root.scrollHeight - window.innerHeight);
     bar.style.transform = "scaleX(" + Math.min(1, y / h).toFixed(4) + ")";
   }

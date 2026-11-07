@@ -194,7 +194,8 @@
   /* ---------- firstchair-inspired layer ---------- */
   /* nav slides away on scroll down */
   body.hx .hx-nav { transition: transform .38s cubic-bezier(.2,.7,.2,1); }
-  body.hx .hx-nav.m-nav-hide { transform: translateY(-130%); }
+  body.hx .hx-nav.m-nav-hide { transform: translateY(-170%); visibility: hidden; transition: transform .38s cubic-bezier(.2,.7,.2,1), visibility 0s .38s; }
+  body.hx .hx-nav.m-nav-hide .hx-wrap { box-shadow: none !important; }
   /* blinking square in the pill kickers */
   body.hx .hx-sec .hx-kicker::before, body.hx .hx-sec .section-tag::before { content: ""; width: 7px; height: 7px; background: #f58fab; flex: none; animation: mBlink 1.6s steps(1) infinite; }
   @keyframes mBlink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: .15; } }
@@ -219,17 +220,22 @@
   .m-dots .m-arr:active { transform: scale(.9); }
   .m-dots .m-arr.prev { margin-right: 10px; } .m-dots .m-arr.next { margin-left: 10px; }
   .m-dots { align-items: center; margin-top: 18px; }
-  /* hero clover turns slowly with the scroll (compositor-driven, no JS) */
-  @supports (animation-timeline: scroll()) {
-    body.hx .hx-hero .f-giant { animation: mFloat 9s ease-in-out infinite, mTurn linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
-    @keyframes mTurn { to { rotate: 80deg; } }
-  }
   @media (prefers-reduced-motion: reduce) { .m-st-ring, .m-st-heart { animation: none !important; } .m-nav-hide { transform: none !important; } }
 
   /* pricing: next card peeks in, plus arrows */
   body.hx #pricing .pricing-grid { padding: 14px 16px 8px !important; margin: 0 -16px !important; scroll-padding: 0 16px; }
   body.hx #pricing .pricing-grid > .price-card { flex: 0 0 78% !important; scroll-snap-align: start !important; }
   #pricing .m-dots { margin-top: 12px; }
+
+  /* ---------- steadier scrolling (iPhone Safari) ---------- */
+  /* flagship stack: nothing transformed, transitioned or animated on or inside the sticky cards */
+  body.hx #tools .deck, body.hx #tools .deck.hx-reveal, body.hx #tools .deck-stage { opacity: 1 !important; transform: none !important; transition: none !important; will-change: auto !important; }
+  body.hx #tools .page, body.hx #tools .page.m-rise { will-change: auto !important; contain: none !important; transform: none !important; transition: none !important; opacity: 1 !important; }
+  #tools .pg-head .ftxt small b::after { display: none !important; animation: none !important; }
+  #tools .page .flag-body::after { animation: none !important; }
+  /* infinite animations only run while their section is on screen */
+  html.m-io .hx-hero:not(.m-live) *, html.m-io .hx-final:not(.m-live) *, html.m-io .mq:not(.m-live) .mq-track { animation-play-state: paused !important; }
+  html.m-io .hx-kicker:not(.m-live)::before, html.m-io .section-tag:not(.m-live)::before { animation-play-state: paused !important; }
 
   /* dots */
   .m-dots { display: flex; justify-content: center; gap: 7px; margin: 14px 0 0; }

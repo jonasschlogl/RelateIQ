@@ -5,7 +5,7 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
   var sets = [
-    ['.ex-grid', '.ex-card'], ['.ts-grid', '.ts-card'], ['#tools .deck-stage', '.page'],
+    ['.ex-grid', '.ex-card'], ['.ts-grid', '.ts-card'],
     ['.f-st', '.hx-wrap'], ['.hx-final', null], ['.hx-foot .ft-grid', '.ft-col']
   ];
   var targets = [];
@@ -88,4 +88,11 @@
       });
     }, { passive: true });
   }
+
+  /* ---- pause infinite animations that are off screen ---- */
+  var liveIO = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.target.classList.toggle('m-live', e.isIntersecting); });
+  }, { rootMargin: '80px 0px' });
+  document.querySelectorAll('.hx-hero, .hx-final, .mq, .hx-kicker, .section-tag').forEach(function (n) { liveIO.observe(n); });
+  document.documentElement.classList.add('m-io');
 })();
