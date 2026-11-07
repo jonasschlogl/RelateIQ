@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Expandable sections + FAQ (phones). One idea: a flat pastel card that, when
+   opened, flips to the cocoa of the hero/footer, with a spring "+" -> "x".
+   Animations are transform/opacity only and run once, on tap.
+   ========================================================================== */
+@media (max-width: 700px) {
+  /* ---------- section bars (Our approach, How it compares, Privacy, Pricing, FAQ) ---------- */
+  body.hx section.acc > .acc-btn {
+    position: relative; overflow: hidden; isolation: isolate; gap: 14px !important;
+    padding: 18px 18px 18px 18px !important; min-height: 92px;
+    transition: background-color .35s ease, transform .2s ease !important;
+  }
+  /* ghost circle, the same one the flagship cards wear */
+  body.hx section.acc > .acc-btn::before {
+    content: ""; position: absolute; z-index: -1; right: -34px; top: -44px; width: 132px; height: 132px; border-radius: 50%;
+    background: rgba(255,255,255,.26); transition: transform .6s cubic-bezier(.2,.8,.2,1), background-color .35s;
+  }
+  /* big ghost number */
+  body.hx section.acc > .acc-btn::after {
+    content: attr(data-n); position: absolute; z-index: -1; right: 64px; bottom: -14px;
+    font: 600 74px/1 "Fraunces", Georgia, serif; letter-spacing: -.04em; color: #3b2218; opacity: .07; transition: opacity .35s, color .35s;
+  }
+  /* icon tile */
+  body.hx .acc-btn .acc-ic {
+    flex: 0 0 48px; width: 48px; height: 48px; border-radius: 17px; display: grid; place-items: center;
+    background: rgba(255,255,255,.5); color: #3b2218; transition: background-color .35s, color .35s, transform .5s cubic-bezier(.3,1.6,.5,1);
+  }
+  body.hx .acc-btn .acc-ic svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  body.hx section.acc > .acc-btn .acc-t { flex: 1 1 auto; }
+  /* the + button springs round into an x */
+  body.hx section.acc > .acc-btn .acc-i { transition: transform .5s cubic-bezier(.3,1.6,.5,1), background-color .3s !important; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-i { transform: rotate(135deg); background: #f58fab !important; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-i::before,
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-i::after { background: #3b2218 !important; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-i::after { transform: translate(-50%, -50%) rotate(90deg) !important; }
+
+  /* open: the bar turns cocoa */
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] { background: #3b2218 !important; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-t b { color: #fff3e2 !important; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-t small { color: #f3dcc4 !important; opacity: .85; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"]::before { background: rgba(245,143,171,.18); transform: scale(1.25); }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"]::after { color: #fff3e2; opacity: .08; }
+  body.hx :is(#approach,#compare,#trust,#pricing,#faq).acc > .acc-btn[aria-expanded="true"] .acc-ic { background: #f58fab; color: #3b2218; transform: rotate(-8deg) scale(1.06); }
+  /* one soft shine when it opens */
+  body.hx section.acc > .acc-btn .acc-shine { position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; width: 38%; pointer-events: none; opacity: 0;
+    background: linear-gradient(100deg, transparent, rgba(255,243,226,.22), transparent); transform: translateX(-140%); }
+  body.hx section.acc > .acc-btn.acc-pop .acc-shine { animation: accShine .9s ease .05s 1 both; }
+  body.hx section.acc > .acc-btn > * { position: relative; z-index: 1; }
+  @keyframes accShine { 0% { opacity: 1; transform: translateX(-140%); } 100% { opacity: 1; transform: translateX(380%); } }
+
+  /* the content slides up in sequence */
+  body.hx section.acc:not(.acc-closed) > *:not(.acc-btn) { animation: accIn .6s cubic-bezier(.2,.8,.2,1) both; }
+  body.hx section.acc:not(.acc-closed) > *:not(.acc-btn):nth-child(3) { animation-delay: .07s; }
+  body.hx section.acc:not(.acc-closed) > *:not(.acc-btn):nth-child(4) { animation-delay: .14s; }
+  @keyframes accIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- FAQ items ---------- */
+  body.hx .faq-item { position: relative; overflow: hidden; isolation: isolate; border-radius: 24px !important; transition: background-color .35s ease, transform .2s ease !important; -webkit-tap-highlight-color: transparent; }
+  body.hx .faq-item:active { transform: scale(.985); }
+  body.hx .faq-item::before { content: ""; position: absolute; z-index: -1; right: -30px; top: -38px; width: 104px; height: 104px; border-radius: 50%; background: rgba(255,255,255,.26); transition: transform .6s cubic-bezier(.2,.8,.2,1), background-color .35s; pointer-events: none; }
+  body.hx .faq-item summary { position: relative; padding: 18px 18px 18px 20px !important; gap: 14px !important; font: 600 16.5px/1.28 "DM Sans", sans-serif !important; }
+  body.hx .faq-item summary::after {
+    content: "+" !important; flex: 0 0 34px !important; width: 34px !important; height: 34px !important; border-radius: 50% !important; display: grid; place-items: center;
+    background: #3b2218 !important; color: #fff3e2 !important; font: 500 22px/1 "DM Sans", sans-serif !important; padding-bottom: 2px;
+    transition: transform .5s cubic-bezier(.3,1.6,.5,1), background-color .3s, color .3s;
+  }
+  body.hx .faq-item[open] summary::after { content: "+" !important; transform: rotate(135deg); background: #f58fab !important; color: #3b2218 !important; }
+  /* open: the card turns cocoa, the answer reads in cream */
+  body.hx .faq-item[open] { background: #3b2218 !important; }
+  body.hx .faq-item[open]::before { background: rgba(245,143,171,.16); transform: scale(1.3); }
+  body.hx .faq-item[open] summary { color: #fff3e2 !important; }
+  body.hx .faq-item p { padding: 0 20px 20px !important; font: 500 15.5px/1.62 "DM Sans", sans-serif !important; }
+  body.hx .faq-item[open] p, body.hx #faq .faq-item[open] p { color: #f3dcc4 !important; animation: accIn .5s cubic-bezier(.2,.8,.2,1) .05s both; }
+  body.hx .faq-item p a { color: #f58fab !important; }
+  body.hx .faq .faq-item { margin: 0; }
+  body.hx #faq .hx-wrap { margin: 0 !important; width: 100% !important; max-width: none !important; padding: 0 16px !important; }
+  body.hx #faq .faq { padding: 0 !important; gap: 10px !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    body.hx section.acc:not(.acc-closed) > *:not(.acc-btn), body.hx .faq-item[open] p, body.hx section.acc > .acc-btn.acc-pop .acc-shine { animation: none !important; }
+    body.hx section.acc > .acc-btn, body.hx .acc-btn .acc-ic, body.hx .faq-item, body.hx .faq-item summary::after { transition: none !important; }
+  }
+}
