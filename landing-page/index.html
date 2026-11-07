@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="css/hero-quotes.css?v=8" />
   <link rel="stylesheet" href="css/testers.css?v=2" />
   <link rel="stylesheet" href="css/light.css?v=10" />
-  <link rel="stylesheet" href="css/mobile.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=13" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#3b2218" />
@@ -139,7 +139,7 @@ function tick(n){if(stop)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/d),e=p
 if(calm)window.scrollTo({top:y,behavior:'instant'});else requestAnimationFrame(function(){requestAnimationFrame(tick)});
 setTimeout(function(){gate.innerHTML=''},d+700)}
 function free(){if(!locked)return;locked=false;document.body.classList.remove('gated');gate.innerHTML=''}
-locked=true;document.body.classList.add('gated');function chk(){try{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}catch(x){}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
+if(!window.matchMedia('(max-width:700px)').matches){locked=true;document.body.classList.add('gated')}function chk(){try{var ht=location.hash&&location.hash.length>1?document.querySelector(location.hash):null;if(after(ht))free()}catch(x){}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',chk);else chk();addEventListener('hashchange',chk);
 document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l&&l.hasAttribute('data-nogate')){free();return}if(!l||!locked)return;var h=l.getAttribute('href');if(h.length<2)return;try{if(after(document.querySelector(h))){e.preventDefault();var bu=document.getElementById('burger'),lk=document.getElementById('links');if(lk)lk.classList.remove('open');window.scrollTo({top:deck.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'});gate.classList.remove('nudge');void gate.offsetWidth;gate.classList.add('nudge')}}catch(x){}});
 (function(){var sx=0,sy=0,dx=0,drag=null,moved=false;
 st.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;var p=e.target.closest('.page');if(!p||p.dataset.s!=='front')return;if(e.target.closest('a,button,input,select,textarea,.hx-demo'))return;drag=p;sx=e.clientX;sy=e.clientY;dx=0;moved=false});
