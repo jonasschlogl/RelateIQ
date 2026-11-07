@@ -7,15 +7,15 @@
   html, body.hx { background: #fff !important; }
   
   /* ---------- section heads ---------- */
-  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) { padding-top: 44px; padding-bottom: 8px; }
-  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head { margin-bottom: 20px !important; padding: 0 20px; text-align: center; }
-  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-kicker, body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .section-tag {
+  body.hx .hx-sec { padding-top: 44px; padding-bottom: 8px; }
+  body.hx .hx-sec .hx-head { margin-bottom: 20px !important; padding: 0 20px; text-align: center; }
+  body.hx .hx-sec .hx-kicker, body.hx .hx-sec .section-tag {
     display: inline-flex !important; align-items: center; gap: 8px; margin: 0 auto 14px !important;
     padding: 8px 14px !important; border-radius: 99px !important; background: #fff3e2 !important; color: #3b2218 !important;
     font: 800 11px/1 "DM Sans", sans-serif !important; letter-spacing: .12em !important; text-transform: uppercase;
   }
-  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head h2 { font-size: 32px !important; line-height: 1.08 !important; letter-spacing: -.02em; text-wrap: balance; margin: 0 !important; }
-  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head p { display: none !important; }
+  body.hx .hx-sec .hx-head h2 { font-size: 32px !important; line-height: 1.08 !important; letter-spacing: -.02em; text-wrap: balance; margin: 0 !important; }
+  body.hx .hx-sec .hx-head p { display: none !important; }
 
   /* ---------- hero: one rounded cocoa panel ---------- */
   body.hx .hx-hero { margin: 8px 8px 0; border-radius: 36px; background: #3b2218 !important; padding: 100px 0 30px !important; }
@@ -90,4 +90,37 @@
   .hx-foot .ft-col:nth-child(3), .hx-foot .ft-band { display: none; }
   .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
   .hx-foot .ft-grid { row-gap: 22px; }
+
+  /* ---------- swipe carousels: experts + testers ---------- */
+  .ex-sec, .ts-sec { padding: 44px 0 6px !important; }
+  .ex-sec > .hx-wrap, .ts-sec > .hx-wrap { display: flex; flex-direction: column; width: 100%; }
+  .ex-note { order: 3; display: block !important; margin: 14px 28px 0 !important; font: 500 12.5px/1.5 "DM Sans", sans-serif !important; color: #5b3a2c !important; opacity: .8; }
+  .ts-note { display: none !important; }
+  .ex-grid, .ts-grid {
+    display: flex !important; columns: auto !important; gap: 12px !important; margin: 0 !important; padding: 4px 16px 6px !important;
+    overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .ex-grid::-webkit-scrollbar, .ts-grid::-webkit-scrollbar { display: none; }
+
+  .ex-card, .ex-card.c1 { flex: 0 0 76% !important; height: 410px !important; grid-column: auto; grid-row: auto; scroll-snap-align: center; padding: 10px !important; border-radius: 36px !important; }
+  .ex-tag { top: 22px !important; left: 22px !important; font-size: 10px !important; padding: 7px 12px; }
+  .ex-ph img, .ex-card.c1 .ex-ph img { height: calc(100% - 28px); }
+  .ex-id, .ex-card.c1 .ex-id { padding: 16px 16px 18px; border-radius: 28px; }
+  .ex-id b, .ex-card.c1 .ex-id b { font-size: 25px; }
+  .ex-id p, .ex-card.c1 .ex-id p { font-size: 13.5px; margin-top: 6px; line-height: 1.35; }
+
+  .ts-card { flex: 0 0 82%; scroll-snap-align: center; display: flex; flex-direction: column; margin: 0 !important; padding: 26px 24px 22px !important; border-radius: 36px !important; break-inside: auto; }
+  .ts-sec .ts-card:nth-child(n+4) { display: flex !important; }
+  .ts-card::before { content: "\201C"; font: 600 64px/.6 Fraunces, Georgia, serif; color: rgba(59,34,24,.28); height: 30px; }
+  .ts-card .ts-rate { order: -1; margin-bottom: 8px; }
+  .ts-card blockquote { font-size: 19px !important; line-height: 1.38 !important; margin-top: 4px; }
+  .ts-card .ts-by { margin-top: auto; padding-top: 22px; }
+  .ts-more { display: none !important; }
+
+  /* dots */
+  .m-dots { display: flex; justify-content: center; gap: 7px; margin: 14px 0 0; }
+  .m-dots i { width: 7px; height: 7px; border-radius: 99px; background: rgba(59,34,24,.18); transition: width .25s, background .25s; }
+  .m-dots i.on { width: 22px; background: #3b2218; }
+  .ex-sec .m-dots { order: 2; }
 }
+@media (min-width: 701px) { .m-dots { display: none; } }
