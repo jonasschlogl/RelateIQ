@@ -134,7 +134,7 @@
   body.hx .hx-foot .ft-copy { color: #fff3e2 !important; }
   body.hx .hx-foot .ft-base p { color: #f3dcc4 !important; }
   body.hx .hx-foot svg { color: #fff3e2; }
-  .hx-foot .ft-col:nth-child(3), .hx-foot .ft-band { display: none; }
+  .hx-foot .ft-band { display: none; }
   .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
   .hx-foot .ft-grid { row-gap: 22px; }
 
