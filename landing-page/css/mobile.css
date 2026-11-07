@@ -1,57 +1,37 @@
-/* Mobile (<=700px): shorter, calmer page. Desktop is untouched. */
+/* ==========================================================================
+   Mobile (<=700px): one calm card system, inspired by Paired's phone layout.
+   Rules: white page, 16px side margin, one idea per card, big radius (32-36px),
+   flat pastel fills, cocoa text, centred headings, pill kickers. Desktop untouched.
+   ========================================================================== */
 @media (max-width: 700px) {
-  /* hero: no big logo mark (it is already in the nav), no dead space under the quotes */
-  .hx-hero { padding: 96px 0 28px !important; }
+  html, body.hx { background: #fff !important; }
+  
+  /* ---------- section heads ---------- */
+  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) { padding-top: 44px; padding-bottom: 8px; }
+  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head { margin-bottom: 20px !important; padding: 0 20px; text-align: center; }
+  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-kicker, body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .section-tag {
+    display: inline-flex !important; align-items: center; gap: 8px; margin: 0 auto 14px !important;
+    padding: 8px 14px !important; border-radius: 99px !important; background: #fff3e2 !important; color: #3b2218 !important;
+    font: 800 11px/1 "DM Sans", sans-serif !important; letter-spacing: .12em !important; text-transform: uppercase;
+  }
+  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head h2 { font-size: 32px !important; line-height: 1.08 !important; letter-spacing: -.02em; text-wrap: balance; margin: 0 !important; }
+  body.hx .hx-sec:not(.ex-sec):not(.ts-sec) .hx-head p { display: none !important; }
+
+  /* ---------- hero: one rounded cocoa panel ---------- */
+  body.hx .hx-hero { margin: 8px 8px 0; border-radius: 36px; background: #3b2218 !important; padding: 100px 0 30px !important; }
+  .f-herobg img { display: none !important; }
   .hx-hero .f-mark { display: none; }
-  .hx-hero h1 { margin-top: 8px; }
+  .hx-hero h1 { font-size: 40px !important; line-height: 1.04; margin: 0; }
   .hx-hero .hx-sub { font-size: 17px; margin-top: 14px; }
-  .hx-hero .hx-cta { margin-top: 22px; }
-  .hx-hero .hq { margin-top: 26px; }
+  .hx-hero .hx-cta { margin-top: 24px; }
+  .hx-hero .hq { margin-top: 28px; }
   .hx-hero .hq.js .hq-card blockquote { font-size: 21px; }
+  .mq { display: none !important; }
 
-  /* section rhythm */
-  .hx-sec { padding-top: 56px; padding-bottom: 28px; }
-  .hx-head { margin-bottom: 22px !important; }
-  .hx-head p, .ex-note, .ts-sub { font-size: 15px; line-height: 1.5; }
-  .ex-note, .ts-sec .hx-head p { display: none; }
-
-  /* experts: 2 columns of compact cards, first one full width */
-  .ex-sec { padding: 56px 0 12px; }
-  .ex-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin-top: 22px !important; }
-  .ex-card { height: 250px !important; padding: 8px !important; border-radius: 26px !important; }
-  .ex-card.c1 { grid-column: 1 / -1; height: 250px !important; }
-  .ex-tag { top: 14px !important; left: 14px !important; font-size: 8.5px !important; padding: 5px 9px; }
-  .ex-ph img { height: calc(100% - 20px); }
-  .ex-id, .ex-card.c1 .ex-id { padding: 10px 10px 12px; border-radius: 20px; }
-  .ex-id b, .ex-card.c1 .ex-id b { font-size: 17px; }
-  .ex-id p, .ex-card.c1 .ex-id p { font-size: 12px; margin-top: 3px; line-height: 1.3; }
-  .ex-card.c1 .ex-ph img { height: calc(100% - 10px); }
-
-  /* footer: fewer columns of links */
-  .hx-foot { padding-top: 36px; }
-
-  /* testers: three cards, then "Show more" */
-  .ts-sec { padding: 56px 0 24px !important; }
-  .ts-grid { margin-top: 22px !important; }
-  .ts-card { padding: 20px 20px 16px !important; margin-bottom: 10px !important; }
-  .ts-card blockquote, .ts-card p { font-size: 16px; line-height: 1.45; }
-  .ts-sec:not(.open) .ts-card:nth-child(n+4) { display: none !important; }
-
-  /* statement strip */
-  .f-st { padding: 36px 0 8px !important; }
-  .f-st .f-lead { font-size: 28px !important; line-height: 1.12; }
-
-  /* final CTA card */
-  body.hx .hx-final { padding: 48px 20px 40px !important; min-height: 0 !important; }
-  body.hx #join { padding-top: 24px; padding-bottom: 0; }
-  .hx-final .f-fin { opacity: .6; }
-
-  /* footer: shorter, drop the blog-topic column */
-  .hx-foot { margin-top: 40px !important; padding: 36px 0 40px !important; }
-  .hx-foot .ft-col:nth-child(3) { display: none; }
-  .hx-foot .ft-band { display: none; }
-
-  /* tools deck: tighter card */
+  /* ---------- tools deck ---------- */
+  body.hx .hx-tools { padding-top: 44px; }
+  #tools .deck { margin: 22px 8px 0 !important; }
+  #tools .page { border-radius: 36px; }
   #tools .pg-head { padding-top: 26px !important; padding-bottom: 6px !important; }
   #tools .pg-head .fnum { transform: scale(.8); transform-origin: left center; height: 40px; }
   #tools .pg-head small span { display: none; }
@@ -59,10 +39,55 @@
   #tools .flag-body > p { font-size: 16px !important; line-height: 1.45; }
   #tools .pg-demo { margin-top: 14px !important; }
   #tools .pg-foot { padding-top: 16px; padding-bottom: 12px; }
-  #tools .deck { margin-top: 24px !important; }
 
-  /* footer */
-  .hx-foot .ft-band { padding: 0 !important; margin: 0; }
+  /* ---------- statement strip as a card ---------- */
+  body.hx .f-st { padding: 0 !important; margin: 36px 16px 0; }
+  body.hx .f-st .hx-wrap { background: #3b2218; border-radius: 36px; padding: 34px 24px !important; width: auto; max-width: none; }
+  .f-st .f-lead { font-size: 27px !important; line-height: 1.14; max-width: none; }
+  body.hx .f-st .lw { color: rgba(255,243,226,.32) !important; } body.hx .f-st .lw.on { color: #fff3e2 !important; }
+  body.hx .f-st .lw.on.pk, body.hx .f-st .f-lead em { color: #f58fab !important; }
+  .hx-sticky:not(.show) { visibility: hidden; }
+  body.hx .ts-sec { padding-bottom: 0 !important; }
+  body.hx .f-st { margin-top: 20px !important; }
+
+  /* ---------- accordion rows: same card, different pastel ---------- */
+  body.hx section.acc { margin: 10px 0 0 !important; padding: 0 !important; background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+  body.hx section.acc > .acc-btn {
+    width: calc(100% - 32px) !important; margin: 0 16px !important; padding: 20px 20px 20px 24px !important;
+    border: 0 !important; border-radius: 32px !important; box-shadow: none !important; color: #3b2218 !important;
+  }
+  body.hx #approach > .acc-btn { background: #f9d98a !important; }
+  body.hx #compare  > .acc-btn { background: #f8c7a3 !important; }
+  body.hx #trust    > .acc-btn { background: #f4b8c4 !important; }
+  body.hx #pricing  > .acc-btn { background: #f58fab !important; }
+  body.hx #faq      > .acc-btn { background: #fff3e2 !important; }
+  body.hx section.acc > .acc-btn .acc-t b { color: #3b2218 !important; font: 600 23px/1.1 "Fraunces", Georgia, serif; }
+  body.hx section.acc > .acc-btn .acc-t small { color: #3b2218 !important; opacity: .72; font: 600 13px/1.3 "DM Sans", sans-serif; }
+  body.hx section.acc > .acc-btn .acc-i { flex: 0 0 40px; width: 40px; height: 40px; border: 0 !important; background: #3b2218 !important; }
+  body.hx section.acc > .acc-btn .acc-i::before, body.hx section.acc > .acc-btn .acc-i::after { background: #fff3e2 !important; }
+  body.hx section.acc:not(.acc-closed) > .acc-btn { margin-bottom: 22px !important; }
+  body.hx #approach.acc, body.hx #compare.acc, body.hx #trust.acc, body.hx #pricing.acc, body.hx #faq.acc { padding: 0 !important; margin: 10px 0 0 !important; background: none !important; }
+  body.hx #approach.acc:not(.acc-closed), body.hx #compare.acc:not(.acc-closed), body.hx #trust.acc:not(.acc-closed), body.hx #pricing.acc:not(.acc-closed), body.hx #faq.acc:not(.acc-closed) { padding-bottom: 16px !important; }
+
+  /* ---------- final CTA ---------- */
+  body.hx #join { padding: 28px 0 0; }
+  body.hx #join .hx-wrap { padding-left: 16px; padding-right: 16px; }
+  body.hx { padding-bottom: 0 !important; }
+  body.hx .hx-final { padding: 48px 20px 36px !important; min-height: 0 !important; border-radius: 36px !important; }
+  .hx-final .f-fin, .hx-final .fclover { opacity: .22; }
+  .hx-final h2 { font-size: 34px !important; line-height: 1.1 !important; }
+  body.hx .hx-final p.sub { margin-top: 34px !important; font-size: 16px; }
+  .hx-final .hx-form { margin-top: 24px !important; }
+
+  /* ---------- footer: cocoa panel, same as hero ---------- */
+  body.hx .hx-foot { margin-top: 36px !important; padding: 40px 0 36px !important; background: #3b2218 !important; color: #f3dcc4 !important; border-radius: 36px 36px 0 0 !important; text-align: left; }
+  body.hx .hx-foot a, body.hx .hx-foot .ft-col a, body.hx .hx-foot .ft-col a:visited { color: #fff3e2 !important; text-decoration: none; }
+  body.hx .hx-foot h4 { color: #f58fab !important; }
+  body.hx .hx-foot .hx-brand span, body.hx .hx-foot .hx-brand b { color: #fff3e2 !important; }
+  body.hx .hx-foot .ft-copy { color: #fff3e2 !important; }
+  body.hx .hx-foot .ft-base p { color: #f3dcc4 !important; }
+  body.hx .hx-foot svg { color: #fff3e2; }
+  .hx-foot .ft-col:nth-child(3), .hx-foot .ft-band { display: none; }
   .hx-foot .ft-main { padding-top: 6px !important; padding-bottom: 20px !important; }
   .hx-foot .ft-grid { row-gap: 22px; }
 }
