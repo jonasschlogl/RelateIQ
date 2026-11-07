@@ -1,0 +1,27 @@
+/* Hero voices: small round photo + speech bubble with a quote about love */
+.qv-root{position:absolute;right:clamp(24px,6vw,110px);top:54%;transform:translateY(-50%);z-index:2;width:min(470px,36vw);min-width:380px;display:flex;flex-direction:column;gap:20px;margin:0;padding:0;list-style:none}
+.qv-row{display:flex;align-items:flex-end;gap:12px}
+.qv-row:nth-child(2){flex-direction:row-reverse}
+.qv-ph{flex:none;width:62px;height:62px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#f9d98a,#f58fab);box-shadow:0 10px 22px -8px rgba(0,0,0,.6)}
+.qv-ph img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid #2a1710;background:#2a1710}
+.qv-bub{position:relative;flex:0 1 auto;max-width:390px;margin:0 0 4px;padding:15px 24px 14px;border-radius:26px;color:#3b2218;box-shadow:0 22px 40px -22px rgba(0,0,0,.7)}
+.qv-row:nth-child(1) .qv-bub{background:#fff3e2}
+.qv-row:nth-child(2) .qv-bub{background:#f9d98a}
+.qv-row:nth-child(3) .qv-bub{background:#f7b7c6}
+.qv-bub::before{content:"";position:absolute;bottom:0;left:-8px;width:20px;height:18px;background:inherit;clip-path:path("M20 0V18H10C6 18 2 17 0 16C5 14 8 10 8 4V0Z")}
+.qv-row:nth-child(2) .qv-bub::before{left:auto;right:-8px;transform:scaleX(-1)}
+.qv-bub p{margin:0;font:400 16px/1.42 "DM Sans",sans-serif;letter-spacing:0;text-align:left}
+.qv-bub b{display:block;margin-top:8px;text-align:left;font:800 10.5px "DM Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(59,34,24,.6)}
+.qv-row{opacity:0;transform:translateY(14px);animation:qvIn .7s cubic-bezier(.2,.8,.2,1) forwards}
+.qv-row:nth-child(1){animation-delay:.5s}.qv-row:nth-child(2){animation-delay:.95s}.qv-row:nth-child(3){animation-delay:1.4s}
+@keyframes qvIn{to{opacity:1;transform:none}}
+@media (max-height:820px) and (min-width:981px){
+  .qv-root{gap:14px}.qv-ph{width:52px;height:52px}.qv-bub{padding:12px 20px 11px}.qv-bub p{font-size:14.5px}.qv-bub b{margin-top:6px}
+}
+@media (max-width:980px){
+  .qv-root{position:static;transform:none;width:auto;min-width:0;max-width:470px;margin:36px auto 0;padding:0 16px;box-sizing:border-box;gap:16px}
+  .qv-ph{width:54px;height:54px}
+  .qv-bub{max-width:none}
+  .qv-bub p{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.qv-row{animation:none;opacity:1;transform:none}}
