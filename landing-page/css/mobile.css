@@ -70,6 +70,26 @@
 
   #tools .pg-demo { display: none !important; }
 
+  /* stacking cards: each one slides over the previous, with a ghost number and a floating heart */
+  #tools .deck-stage { gap: 0 !important; padding-bottom: 8px; }
+  body.hx #tools .page { position: sticky !important; margin-bottom: 14px; min-height: 250px; box-shadow: 0 -10px 30px -18px rgba(59,34,24,.35) !important; transform-origin: center top; }
+  body.hx #tools .page.f1 { top: 84px !important; z-index: 1 !important; }
+  body.hx #tools .page.f2 { top: 98px !important; z-index: 2 !important; }
+  body.hx #tools .page.f3 { top: 112px !important; z-index: 3 !important; margin-bottom: 0; }
+  #tools .page::before { content: ""; display: block !important; position: absolute; right: -30px; top: -30px; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,.22); pointer-events: none; }
+  #tools .page::after { display: block !important; background: none !important; -webkit-mask: none !important; mask: none !important; width: auto !important; height: auto !important; left: auto !important; bottom: auto !important; transform: none !important; opacity: 1 !important; filter: none !important; animation: none !important; z-index: 0; position: absolute; right: 20px; top: 12px; font: 600 92px/1 Fraunces, Georgia, serif; letter-spacing: -.04em; color: rgba(59,34,24,.13); pointer-events: none; }
+  #tools .page.f1::after { content: "01"; } #tools .page.f2::after { content: "02"; } #tools .page.f3::after { content: "03"; }
+  #tools .pg-head .ftxt small b { position: relative; overflow: hidden; }
+  #tools .pg-head .ftxt small b::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255,243,226,.45), transparent); animation: mShine 3.6s ease-in-out infinite; }
+  #tools .page .flag-body::after { content: ""; display: block; width: 28px; height: 26px; margin-top: 16px; background: currentColor; opacity: .5; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; animation: mBeat 2.2s ease-in-out infinite; }
+  @keyframes mShine { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+  @keyframes mBeat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.22); } 28% { transform: scale(1); } 42% { transform: scale(1.14); } 56% { transform: scale(1); } }
+  @supports (animation-timeline: view()) {
+    #tools .page .pg-in { animation: mRise linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    @keyframes mRise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  }
+  @media (prefers-reduced-motion: reduce) { #tools .pg-head .ftxt small b::after, #tools .page .flag-body::after { animation: none !important; } }
+
   /* ---------- statement strip as a card ---------- */
   body.hx .f-st { padding: 0 !important; margin: 36px 16px 0; }
   body.hx .f-st .hx-wrap { background: #3b2218; border-radius: 36px; padding: 34px 24px !important; width: auto; max-width: none; }
