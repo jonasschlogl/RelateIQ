@@ -29,6 +29,8 @@
   .hx-hero .hx-copy { text-align: left; align-items: flex-start; }
   .hx-hero .f-mark { display: none !important; }
   .hx-hero h1, .hx-hero h1 .hx-rot, .hx-hero h1 .hx-rot em { text-align: left !important; justify-items: start; text-indent: 0; padding-left: 0; margin-left: 0; }
+  body.hx .hx-hero h1 .hx-rot { justify-items: start !important; }
+  body.hx .hx-hero h1 .hx-rot em { padding-left: 0 !important; margin-left: -.005em !important; justify-self: start !important; white-space: nowrap; }
   .hx-hero h1 { font-size: 45px !important; line-height: 1.02; margin: 0; letter-spacing: -.03em; }
   .hx-hero .hx-sub { font-size: 17.5px; line-height: 1.42; margin: 20px 0 0 !important; max-width: 14em; text-align: left; opacity: .92; }
   body.hx .hx-hero .hx-cta { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; justify-content: flex-start !important; align-items: center !important; gap: 16px; width: auto !important; max-width: none !important; margin: 30px 0 0 !important; }
