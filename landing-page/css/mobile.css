@@ -17,15 +17,28 @@
   body.hx .hx-sec .hx-head h2 { font-size: 32px !important; line-height: 1.08 !important; letter-spacing: -.02em; text-wrap: balance; margin: 0 !important; }
   body.hx .hx-sec .hx-head p { display: none !important; }
 
-  /* ---------- hero: one rounded cocoa panel ---------- */
-  body.hx .hx-hero { margin: 8px 8px 0; border-radius: 36px; background: #3b2218 !important; padding: 100px 0 30px !important; }
-  .f-herobg img { display: none !important; }
-  .hx-hero .f-mark { display: none; }
-  .hx-hero h1 { font-size: 40px !important; line-height: 1.04; margin: 0; }
-  .hx-hero .hx-sub { font-size: 17px; margin-top: 14px; }
-  .hx-hero .hx-cta { margin-top: 24px; }
-  .hx-hero .hq { margin-top: 28px; }
-  .hx-hero .hq.js .hq-card blockquote { font-size: 21px; }
+  /* ---------- hero: rounded panel with the desktop texture + pink heart ---------- */
+  body.hx .hx-hero { margin: 8px 8px 0; border-radius: 36px; background: #3b2218 !important; padding: 112px 0 34px !important; overflow: hidden; }
+  .f-herobg { position: absolute !important; inset: 0 !important; z-index: 0; }
+  .f-herobg img { display: block !important; position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none; object-fit: cover; object-position: 78% 100%; opacity: 1; }
+  .hx-hero .hx-wrap { width: 100% !important; padding-left: 26px !important; padding-right: 26px !important; box-sizing: border-box; }
+  .hx-hero .hero-grid { gap: 0 !important; }
+  .hx-hero h1, .hx-hero h1 .hx-rot, .hx-hero h1 .hx-rot em { text-align: left !important; justify-items: start; text-indent: 0; padding-left: 0; margin-left: 0; }
+  .hx-hero .hx-copy { text-align: left; align-items: flex-start; }
+  .hx-hero .f-mark { display: block; width: 54px; margin: 0 0 22px; }
+  .hx-hero .f-mark svg { width: 54px; height: auto; }
+  .hx-hero h1 { font-size: 46px !important; line-height: 1.02; margin: 0; text-align: left; }
+  .hx-hero .hx-sub { font-size: 17px; line-height: 1.4; margin: 16px 0 0 !important; max-width: 17em; text-align: left; opacity: .92; }
+  .hx-hero .hx-cta { display: flex; align-items: center; gap: 18px; margin-top: 26px; flex-wrap: wrap; justify-content: flex-start; }
+  body.hx .hx-hero .hx-cta { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; justify-content: flex-start !important; align-items: center !important; gap: 16px; width: auto !important; max-width: none !important; margin-left: 0 !important; }
+  .hx-hero .hx-cta .hx-alt { white-space: nowrap; }
+  body.hx .hx-hero .hx-cta .hx-btn { width: auto !important; flex: none; padding-left: 30px; padding-right: 30px; }
+  .hx-hero .hx-cta .hx-alt { margin: 0; font-size: 14.5px; }
+  .hx-hero .hq { margin: 46px 0 0 !important; max-width: 72%; text-align: left; }
+  .hx-hero .hq.js .hq-card { text-align: left; align-items: flex-start; }
+  .hx-hero .hq.js .hq-card blockquote { font-size: 20px; line-height: 1.22; }
+  .hx-hero .hq.js .hq-nav { justify-content: flex-start; margin-top: 18px; }
+  .hx-hero .hq-nav img { width: 40px; height: 40px; }
   .mq { display: none !important; }
 
   /* ---------- three tools: plain stack of cards, same look as desktop ---------- */
