@@ -40,21 +40,3 @@ body.hx #pricing .plan-compare-wrap { border-top: 1.5px solid rgba(59,34,24,.12)
   body.hx #pricing .pricing-grid .price-card, body.hx #pricing .pricing-grid .price-card.featured { padding: 30px 24px 26px !important; border-radius: 30px !important; }
   body.hx #pricing .price-card .price-value { font-size: 50px; }
 }
-
-/* v2.1: Pro stands out (cocoa card), Free button readable */
-body.hx #pricing .pricing-grid .price-card.featured { background: #3b2218 !important; color: #fff3e2 !important; }
-body.hx #pricing .price-card.featured .price-persona { color: rgba(255,243,226,.7) !important; }
-body.hx #pricing .price-card.featured h3,
-body.hx #pricing .price-card.featured .price-value,
-body.hx #pricing .price-card.featured .price-value span,
-body.hx #pricing .price-card.featured .price-desc,
-body.hx #pricing .price-card.featured .price-features li,
-body.hx #pricing .price-card.featured .price-features li span { color: #fff3e2 !important; }
-body.hx #pricing .price-card.featured .price-billed { color: rgba(255,243,226,.72) !important; }
-body.hx #pricing .price-card.featured .price-desc { border-bottom-color: rgba(255,243,226,.2); }
-body.hx #pricing .price-card.featured .price-features li svg { stroke: #f58fab !important; color: #f58fab !important; }
-body.hx #pricing .price-card.featured .price-features li.no svg { stroke: #fff3e2 !important; }
-body.hx #pricing .price-card.featured .price-badge { background: #f58fab !important; color: #3b2218 !important; }
-body.hx #pricing .price-card.featured .hx-btn { background: #f58fab !important; color: #3b2218 !important; }
-body.hx #pricing .price-card:first-child .hx-btn { background: #f58fab !important; color: #3b2218 !important; }
-body.hx #pricing .price-card.featured strong, body.hx #pricing .price-card.featured b, body.hx #pricing .price-card.featured .price-features li strong { color: #fff3e2 !important; }
