@@ -8,29 +8,38 @@
   body.hx .cmp-sheet:not([hidden]) { background: #fff3e2; z-index: 400; animation: csUp .38s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes csUp { from { transform: translateY(100%); } to { transform: none; } }
   body.hx .cmp-bar { flex: none; padding: max(16px, env(safe-area-inset-top)) 18px 10px 24px; gap: 12px; }
-  body.hx .cmp-bar b { font: 600 27px/1.1 Fraunces, Georgia, serif; letter-spacing: -.02em; color: #3b2218; }
-  body.hx .cmp-ctl button.cmp-x { width: 46px; height: 46px; border: 0 !important; background: #3b2218 !important; flex: none; }
-  body.hx .cmp-ctl button.cmp-x::before, body.hx .cmp-ctl button.cmp-x::after { background: #fff3e2 !important; }
-  body.hx .cmp-scroll { flex: 1; margin: 0; padding: 6px 14px 40px; border: 0 !important; border-radius: 0; background: none; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+  body.hx .cmp-bar b { font: 600 24px/1.1 Fraunces, Georgia, serif; letter-spacing: -.02em; color: #3b2218; }
+    body.hx .cmp-scroll { flex: 1; margin: 0; padding: 6px 14px 40px; border: 0 !important; border-radius: 0; background: none; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
 
-  .cs-card { background: #fff; border-radius: 28px; padding: 20px 14px 12px 18px; margin-bottom: 10px; }
-  .cs-card h4 { margin: 0 0 12px; font: 600 19px/1.22 Fraunces, Georgia, serif; letter-spacing: -.01em; color: #3b2218; padding-right: 6px; }
-  .cs-row { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; padding: 8px 6px 8px 0; border-radius: 18px; }
-  .cs-row.hl { background: #fde2ea; padding-left: 6px; margin-left: -6px; }
-  .cs-chip { display: block; text-align: center; padding: 8px 4px; border-radius: 99px; font: 800 11.5px/1 "DM Sans", sans-serif; letter-spacing: .01em; color: #3b2218; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .cs-v { display: flex; align-items: center; font: 600 15px/1.35 "DM Sans", sans-serif; color: #3b2218; }
-  .cs-v.yes::before, .cs-v.no::before { display: block; flex: none; width: 20px; height: 20px; margin-right: 8px; border-radius: 50%; text-align: center; font: 800 12px/20px "DM Sans", sans-serif; }
-  .cs-v.yes::before { content: "\2713"; background: #3b2218; color: #fff3e2; }
-  .cs-v.no { color: rgba(59,34,24,.62); }
-  .cs-v.no::before { content: "\2715"; background: rgba(59,34,24,.1); color: rgba(59,34,24,.6); }
-  .cs-v.partial { color: #5b3d2e; }
-  /* chip colours */
-  .cs-cmp .cs-row.p0 .cs-chip { background: #f58fab; }
-  .cs-cmp .cs-row.p1 .cs-chip { background: #f9d98a; }
-  .cs-cmp .cs-row.p2 .cs-chip { background: #f8c7a3; }
-  .cs-plan .cs-row.p0 .cs-chip { background: #f9d98a; }
-  .cs-plan .cs-row.p1 .cs-chip { background: #f58fab; }
-  .cs-plan .cs-row.p2 .cs-chip { background: #3b2218; color: #fff3e2; }
+  /* the real table, restyled; scaled with transform for zoom */
+  body.hx .cs-table tr, body.hx .cs-table td, body.hx .cs-table th { opacity: 1 !important; translate: none !important; scale: none !important; transform: none !important; animation: none !important; transition: none !important; }
+  body.hx .cs-table thead th { color: #3b2218 !important; }
+  body.hx .cs-plan thead th:nth-child(4) { color: #fff3e2 !important; }
+  body.hx .cmp-scroll { touch-action: pan-x pan-y; }
+  .cs-zw { position: relative; margin: 0 auto; }
+  .cs-table { position: absolute; left: 0; top: 0; transform-origin: 0 0; width: 580px; min-width: 0 !important; table-layout: fixed; border-collapse: separate !important; border-spacing: 0 7px !important; border: 0 !important; background: none !important; font-family: "DM Sans", sans-serif; color: #3b2218; }
+  .cs-table col, .cs-table colgroup { display: none; }
+  body.hx .cs-table th, body.hx .cs-table td { border: 0 !important; box-shadow: none !important; text-align: left; vertical-align: middle; padding: 15px 14px !important; font: 600 15.5px/1.32 "DM Sans", sans-serif !important; color: #3b2218 !important; background: #fff !important; }
+  .cs-table tbody tr > :first-child { width: 190px; border-radius: 22px 0 0 22px; padding-left: 20px !important; font-weight: 700 !important; }
+  .cs-table tbody tr > :last-child { border-radius: 0 22px 22px 0; }
+  .cs-table thead th { padding: 14px 10px !important; text-align: center; font: 800 13.5px/1.2 "DM Sans", sans-serif !important; border-radius: 99px; }
+  body.hx .cs-table thead th:first-child { background: none !important; }
+  body.hx .cs-table thead th { background-clip: padding-box; }
+  body.hx .cs-table tbody td.compare-highlight { background: #fde2ea !important; }
+  body.hx .cs-cmp thead th:nth-child(2) { background: #f58fab !important; } body.hx .cs-cmp thead th:nth-child(3) { background: #f9d98a !important; } body.hx .cs-cmp thead th:nth-child(4) { background: #f8c7a3 !important; }
+  body.hx .cs-plan thead th:nth-child(2) { background: #f9d98a !important; } body.hx .cs-plan thead th:nth-child(3) { background: #f58fab !important; } body.hx .cs-plan thead th:nth-child(4) { background: #3b2218 !important; color: #fff3e2 !important; }
+  .cs-table td.yes::before, .cs-table td.no::before { display: inline-block; width: 19px; height: 19px; margin-right: 7px; border-radius: 50%; text-align: center; vertical-align: -4px; font: 800 11px/19px "DM Sans", sans-serif; }
+  .cs-table td.yes::before { content: "\2713"; background: #3b2218; color: #fff3e2; }
+  .cs-table td.no { color: rgba(59,34,24,.62) !important; }
+  .cs-table td.no::before { content: "\2715"; background: rgba(59,34,24,.1); color: rgba(59,34,24,.6); }
+  .cs-table td.partial, .cs-table td.na { color: #5b3d2e !important; }
+  .cs-table td svg { width: 22px; height: 22px; display: block; stroke: #3b2218; stroke-width: 2.6; fill: none; }
+  .cs-table td.pt-no svg { stroke: rgba(59,34,24,.4); }
+  body.hx .cmp-ctl { gap: 8px; }
+  body.hx .cmp-ctl button { width: 46px; height: 46px; border: 0 !important; background: #3b2218 !important; flex: none; }
+  body.hx .cmp-ctl button::before, body.hx .cmp-ctl button::after { background: #fff3e2 !important; }
+  body.hx .cmp-hint { flex: none; margin: 0; padding: 8px 20px max(16px, env(safe-area-inset-bottom)); text-align: center; font: 600 13px "DM Sans", sans-serif; color: #7a5a49; }
+  body.hx .cmp-scroll { padding: 6px 10px 12px; }
 
   /* pricing: the "Compare every feature" row opens the sheet directly */
   body.hx #pricing .plan-compare { margin: 14px 18px 0 !important; border: 0 !important; border-radius: 28px !important; background: #f9d98a !important; }

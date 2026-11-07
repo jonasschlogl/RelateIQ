@@ -14,7 +14,10 @@
       if (!rm && (r.bottom < -H || r.top > H * 2)) return;
       ws.forEach(function (w, i) { w.classList.toggle('on', rm || i / ws.length < p); });
     });
-    if (giant && !rm && innerWidth > 760) giant.style.transform = 'translate(-50%,-50%) rotate(' + (scrollY * .04).toFixed(1) + 'deg)';
+    if (giant && !rm) {
+      if (innerWidth > 760) giant.style.transform = 'translate(-50%,-50%) rotate(' + (scrollY * .04).toFixed(1) + 'deg)';
+      else { var gs = giant._svg || (giant._svg = giant.querySelector('svg')); if (gs && scrollY < H * 1.6) gs.style.transform = 'rotate(' + (scrollY * .06).toFixed(1) + 'deg)'; }
+    }
   }
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(frame); } }, { passive: true });
   addEventListener('resize', frame); frame();
