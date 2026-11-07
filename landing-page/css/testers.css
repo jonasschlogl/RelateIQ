@@ -6,6 +6,9 @@
 .ts-card { break-inside: avoid; margin: 0 0 18px; padding: 28px 28px 24px; border-radius: 34px; background: #fff3e2; color: #3b2218; }
 .ts-card:nth-child(5n+2) { background: #f9d98a; } .ts-card:nth-child(5n+3) { background: #f8c7a3; }
 .ts-card:nth-child(5n+4) { background: #f4b8c4; } .ts-card:nth-child(5n+5) { background: #f58fab; }
+.ts-rate { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; }
+.ts-stars { font-size: 20px; line-height: 1; letter-spacing: .08em; background: linear-gradient(90deg, #3b2218 calc(var(--r) / 5 * 100%), rgba(59,34,24,.2) 0); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.ts-rate b { font: 800 13px/1 "DM Sans", sans-serif; color: #3b2218; }
 .ts-card blockquote { margin: 0; font: 500 clamp(17px, 1.35vw, 19.5px)/1.42 Fraunces, Georgia, serif; letter-spacing: -.008em; color: #3b2218; }
 .ts-by { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
 .ts-by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none; background: #fff; }
