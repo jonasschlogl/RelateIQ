@@ -3,6 +3,7 @@
    Rules: white page, 16px side margin, one idea per card, big radius (32-36px),
    flat pastel fills, cocoa text, centred headings, pill kickers. Desktop untouched.
    ========================================================================== */
+img.fl-ph { display: none; }
 @media (max-width: 700px) {
   html, body.hx { background: #fff !important; }
   
@@ -72,10 +73,19 @@
   #tools .flag-body > p { font-size: 15px !important; line-height: 1.45; opacity: .88; margin: 0 !important; max-width: none; }
 
   #tools .pg-demo { display: none !important; }
+  /* photo on each flagship card: fills the card's lower half, same height on all three */
+  body.hx #tools .page { min-height: 468px; display: flex; flex-direction: column; }
+  #tools .page .pg-in { flex: 1 1 auto; }
+  #tools .page .flag-body { flex: 1 1 auto; }
+  #tools img.fl-ph { display: block; flex: 1 1 150px; min-height: 150px; width: 100%; height: auto; margin-top: 18px; border-radius: 24px; object-fit: cover; object-position: 50% 35%; background: rgba(59,34,24,.08); }
+  #tools .page.f1 img.fl-ph { object-position: 50% 30%; }
+  #tools .page.f2 img.fl-ph { object-position: 50% 45%; }
+  #tools .page.f3 img.fl-ph { object-position: 50% 28%; }
+  #tools .page .flag-body::after { display: none !important; }
 
   /* stacking cards: each one slides over the previous, with a ghost number and a floating heart */
   #tools .deck-stage { gap: 0 !important; padding-bottom: 8px; }
-  body.hx #tools .page { position: sticky !important; margin-bottom: 14px; min-height: 322px; box-shadow: 0 -10px 30px -18px rgba(59,34,24,.35) !important; transform-origin: center top; }
+  body.hx #tools .page { position: sticky !important; margin-bottom: 14px; min-height: 468px; box-shadow: 0 -10px 30px -18px rgba(59,34,24,.35) !important; transform-origin: center top; }
   body.hx #tools .page.f1 { top: 84px !important; z-index: 1 !important; }
   body.hx #tools .page.f2 { top: 98px !important; z-index: 2 !important; }
   body.hx #tools .page.f3 { top: 112px !important; z-index: 3 !important; margin-bottom: 0; }
