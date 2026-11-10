@@ -1,11 +1,8 @@
 ---
 title: "Love bombing: 7 signs it's too much, too fast (and how it differs from real love)"
-date: 2026-11-09
+date: 2026-11-10
 description: Flowers every day, "I've never felt this way" on date three. Is it romance or love bombing? 7 warning signs, how it differs from real love and what to do.
 tags: love bombing, red flags
-draft: true
-approved: true
-topics: attachment, conflict
 ---
 At first it feels like a film. They text all day, plan every weekend and tell you after two weeks that they've never felt like this before. Your friends are a bit jealous. You feel chosen.
 
