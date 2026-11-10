@@ -1,11 +1,8 @@
 ---
 title: "Breadcrumbing: 6 signs someone is keeping you on the hook (and what to do)"
-date: 2026-11-09
+date: 2026-11-10
 description: A like here, a "hey stranger" there, but never a real plan. Breadcrumbing explained, 6 signs it's happening to you and how to step off the trail.
 tags: breadcrumbing, mixed signals
-draft: true
-approved: true
-topics: overthinking, attachment
 ---
 They haven't asked you out in weeks. But every few days there's something. A like on your story. A "haha" on a meme. A late-night "hey you, how've you been?" that goes nowhere. Just enough to keep you thinking about them, never enough to actually get somewhere.
 
