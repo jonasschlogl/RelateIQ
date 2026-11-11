@@ -4,6 +4,7 @@ date: 2026-11-12
 description: Torn between staying and leaving? 10 honest questions to ask yourself before you break up, what research says about feeling torn and how to decide calmly.
 tags: should I break up, relationship doubts
 draft: true
+approved: true
 topics: repair, conflict
 ---
 Some days you're sure you want to leave. Other days you remember why you fell for them and can't imagine life without them. You've made mental lists, asked friends, maybe typed "should I break up with my partner" into Google at 2am.
