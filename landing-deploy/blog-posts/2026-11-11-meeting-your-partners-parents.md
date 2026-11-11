@@ -3,8 +3,6 @@ title: "Meeting your partner's parents for the first time: 10 tips to make it go
 date: 2026-11-11
 description: Nervous about meeting your partner's parents, maybe over the holidays? 10 practical tips, what to talk about, what to avoid and lines that help.
 tags: meeting your partner's parents, meeting the parents
-draft: true
-topics: communication
 ---
 Meeting your partner's parents for the first time can feel like a job interview where you don't know the questions. You want them to like you. You want your partner to be proud. And with the holidays coming, the first meeting often happens at a big family dinner, with relatives, traditions and very little time to prepare.
 
