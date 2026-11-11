@@ -3,9 +3,6 @@ title: "Emotionally unavailable partner: 7 signs and what you can actually do"
 date: 2026-11-11
 description: Close one day, distant the next? 7 signs of an emotionally unavailable partner, why it happens and what you can do without losing yourself.
 tags: emotionally unavailable, attachment
-draft: true
-approved: true
-topics: attachment, overthinking
 ---
 They're fun, kind and great company. But whenever things get a little deeper, they change the subject, go quiet or suddenly get busy. You feel close one day and miles apart the next.
 
