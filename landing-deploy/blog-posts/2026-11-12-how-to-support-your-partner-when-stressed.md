@@ -4,6 +4,7 @@ date: 2026-11-12
 description: Your partner is stressed and you want to help, but not make it worse. 8 practical ways to support them, what to say and what research says works best.
 tags: support your partner when stressed, stress in relationships
 draft: true
+approved: true
 topics: communication, conflict
 ---
 Your partner comes home quiet. They answer in one word, scroll on their phone and snap at a small thing. You can tell they're stressed. You want to help, but every attempt seems to land wrong: advice feels like criticism, questions feel like pressure, and giving space feels like not caring.
