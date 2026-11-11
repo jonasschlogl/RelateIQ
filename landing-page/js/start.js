@@ -25,33 +25,39 @@
     ghost: '<path d="M6 21V11a6 6 0 0 1 12 0v10l-3-2-3 2-3-2z"/><circle cx="10" cy="11" r=".9"/><circle cx="14" cy="11" r=".9"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.400 1.400M17.600 17.600L19 19M19 5l-1.400 1.400M6.400 17.600L5 19"/>'
   };
+  var CK = '<span class="qz-ck" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="' + HEART + '" fill="#f58fab"/></svg></span>';
+  function photo(file, pos, icon) {
+    return '<span class="qz-ph"><img src="' + PH + file + '.webp" alt="" width="600" height="600" decoding="async" draggable="false" style="--pos:' + (pos || '50% 35%') + '">' + (icon ? ic(icon) : '') + CK + '</span>';
+  }
+  function warm(list) { (list || []).forEach(function (f) { var im = new Image(); im.src = PH + f + '.webp'; }); }
   function ic(name) { return '<span class="qz-ic"><svg viewBox="0 0 24 24" aria-hidden="true">' + (IC[name] || '') + '</svg></span>'; }
 
   /* ---------- content ---------- */
+  var PH = '/img/quiz/';
   var QUESTIONS = [
     { id: 'why', h: 'What brings you here?', opts: [
-      ['We fight about the same things', 'bolt'], ['I overthink every text', 'chat'],
-      ['A hard talk is coming up', 'door'], ['Just curious about me', 'eye'] ] },
+      ['We fight about the same things', 'bolt', 'why-fight', '44% 30%'], ['I overthink every text', 'chat', 'why-overthink', '50% 30%'],
+      ['A hard talk is coming up', 'door', 'why-talk', '50% 40%'], ['Just curious about me', 'eye', 'why-curious', '50% 28%'] ] },
     { id: 'status', h: 'Where are you right now?', opts: [
-      ['Single, and learning', 'sun'], ['Dating someone', 'heart'],
-      ['In a relationship', 'users'], ['It’s complicated', 'link'] ] },
+      ['Single, and learning', 'sun', 'st-single', '38% 30%'], ['Dating someone', 'heart', 'st-dating', '56% 40%'],
+      ['In a relationship', 'users', 'st-rel', '58% 45%'], ['It’s complicated', 'link', 'st-compl', '55% 30%'] ] },
     { id: 'hard', h: 'Which moment is the hardest?', opts: [
-      ['Waiting for a reply', 'clock'], ['The hour after a fight', 'moon'],
-      ['Saying how I really feel', 'chat'], ['Feeling distance grow', 'wave'] ] }
+      ['Waiting for a reply', 'clock', 'hd-wait', '40% 40%'], ['The hour after a fight', 'moon', 'hd-after', '40% 30%'],
+      ['Saying how I really feel', 'chat', 'hd-feel', '50% 40%'], ['Feeling distance grow', 'wave', 'hd-dist', '50% 45%'] ] }
   ];
 
   // each pair: [a, b]; every option adds one point to a style
   var PAIRS = [
-    [ { t: 'I keep checking my phone for their reply.', i: 'phone', s: 'A' },
-      { t: 'A day without texting? Totally fine.', i: 'cup', s: 'V' } ],
-    [ { t: 'After a fight I need to talk it out now.', i: 'chat', s: 'A' },
-      { t: 'After a fight I need space first.', i: 'door', s: 'V' } ],
-    [ { t: 'I fear I’ll be too much if I ask for more.', i: 'ghost', s: 'F' },
-      { t: 'Being close and being apart both feel okay.', i: 'shield', s: 'S' } ],
-    [ { t: 'I say “it’s fine” when it isn’t.', i: 'wave', s: 'V' },
-      { t: 'I say what I feel, kindly, and let it go.', i: 'sun', s: 'S' } ],
-    [ { t: 'I overthink every message before I send it.', i: 'eye', s: 'A' },
-      { t: 'I pull back when things get too intense.', i: 'door', s: 'V' } ]
+    [ { t: 'I keep checking my phone for their reply.', i: 'phone', s: 'A', p: 'p1a', pos: '66% 30%' },
+      { t: 'A day without texting? Totally fine.', i: 'cup', s: 'V', p: 'p1b', pos: '60% 35%' } ],
+    [ { t: 'After a fight I need to talk it out now.', i: 'chat', s: 'A', p: 'p2a', pos: '12% 35%' },
+      { t: 'After a fight I need space first.', i: 'door', s: 'V', p: 'p2b', pos: '50% 35%' } ],
+    [ { t: 'I fear I’ll be too much if I ask for more.', i: 'ghost', s: 'F', p: 'p3a', pos: '50% 35%' },
+      { t: 'Being close and being apart both feel okay.', i: 'shield', s: 'S', p: 'p3b', pos: '55% 45%' } ],
+    [ { t: 'I say “it’s fine” when it isn’t.', i: 'wave', s: 'V', p: 'p4a', pos: '50% 25%' },
+      { t: 'I say what I feel, kindly, and let it go.', i: 'sun', s: 'S', p: 'p4b', pos: '50% 30%' } ],
+    [ { t: 'I overthink every message before I send it.', i: 'eye', s: 'A', p: 'p5a', pos: '25% 40%' },
+      { t: 'I pull back when things get too intense.', i: 'door', s: 'V', p: 'p5b', pos: '50% 50%' } ]
   ];
 
   var RESULTS = {
@@ -123,10 +129,16 @@
   steps.push({ id: 'email', pct: 94, fn: sEmail });
   steps.push({ id: 'done', pct: 100, fn: sDone, noBack: true });
 
+  function warmStep(i) {
+    var q = QUESTIONS[i];
+    if (q && steps[i] && /^q-/.test(steps[i].id)) warm(q.opts.map(function (o) { return o[2]; }));
+    else if (steps[i] && steps[i].id === 'pairs') warm(PAIRS[0].map(function (o) { return o.p; }));
+  }
   function show(i, dir) {
     clearTimers();
     var s = steps[i];
     idx = i;
+    warmStep(i + 1);
     var old = stage.firstElementChild;
     if (old) { old.classList.add('out'); setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 280); }
     var node = el('<section class="qz-step' + (dir === 'back' ? ' back' : '') + '" data-step="' + s.id + '"></section>');
@@ -168,7 +180,7 @@
   function sQuestion(q, next, node) {
     node = stage.lastElementChild;
     var html = '<h2 class="qz-h">' + esc(q.h) + '</h2><div class="qz-opts">';
-    q.opts.forEach(function (o, n) { html += '<button type="button" class="qz-opt" data-n="' + n + '">' + ic(o[1]) + '<span>' + esc(o[0]) + '</span></button>'; });
+    q.opts.forEach(function (o, n) { html += '<button type="button" class="qz-opt" data-n="' + n + '">' + photo(o[2], o[3], o[1]) + '<span class="qz-lb">' + esc(o[0]) + '</span></button>'; });
     html += '</div><p class="qz-foot">You can change anything later.</p>';
     node.innerHTML = html;
     node.querySelectorAll('.qz-opt').forEach(function (b) {
@@ -190,12 +202,13 @@
     var count = node.querySelector('#pcount');
     function render() {
       var p = PAIRS[pairN];
+      if (PAIRS[pairN + 1]) warm(PAIRS[pairN + 1].map(function (o) { return o.p; }));
       count.textContent = (pairN + 1) + ' of 5';
       box.className = 'qz-pair swap';
       box.innerHTML = '';
       p.forEach(function (o, n) {
-        var b = el('<button type="button" class="qz-pc" data-n="' + n + '">' + ic(o.i) +
-          '<p>' + esc(o.t) + '</p><svg class="heart" viewBox="0 0 100 100" aria-hidden="true"><path d="' + HEART + '" fill="#f58fab"/></svg></button>');
+        var b = el('<button type="button" class="qz-pc" data-n="' + n + '">' + photo(o.p, o.pos, o.i) +
+          '<p>' + esc(o.t) + '</p></button>');
         b.addEventListener('click', function () { choose(n); });
         box.appendChild(b);
       });
