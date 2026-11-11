@@ -464,8 +464,8 @@ function adCard(ctx, p, extra = "") {
   const text = T(EN[`ad${kind[0].toUpperCase()}${kind.slice(1)}Text`]);
   const img = kind === "check" ? "check" : kind === "practice" ? "practice" : "coach";
   return `<div class="ad-card ${extra}">
-          <img class="ad-img" src="/img/scene-${img}.svg?v=2" alt="" width="360" height="470" loading="lazy" />
           <div class="ad-body">
+            <span class="ad-ic" aria-hidden="true"></span>
             <h3>${title}</h3>
             <p>${text}</p>
             <a href="/early-access/" class="btn btn-gradient" data-cta data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>

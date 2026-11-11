@@ -35,11 +35,19 @@
   if (rows.length && !rm && innerWidth > 700) { addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(par); } }, { passive: true }); par(); }
   /* article: table of contents highlight + share */
   var toc = $('.toc'), heads = $$('.article-body h2[id]');
-  if (toc && heads.length && 'IntersectionObserver' in window) {
-    var links = {}; $$('a', toc).forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-    var cur = null, set = function (id) { if (id === cur || !links[id]) return; cur = id; Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === id); }); };
-    var io2 = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) set(e.target.id); }); }, { rootMargin: '-110px 0px -65% 0px', threshold: 0 });
-    heads.forEach(function (h) { io2.observe(h); }); set(heads[0].id);
+  if (toc && heads.length) {
+    var links = {}, order = [], ol = $('ol', toc), cur = null, tk = false;
+    $$('a', toc).forEach(function (a) { var id = a.getAttribute('href').slice(1); links[id] = a; order.push(id); });
+    var set = function (id) {
+      if (id === cur || !links[id]) return; cur = id;
+      order.forEach(function (k) { var on = k === id; links[k].classList.toggle('on', on); links[k].classList.toggle('active', on); });
+      var a = links[id]; if (ol) ol.style.setProperty('--fill', (a.offsetTop + a.offsetHeight / 2) + 'px');
+      if (toc.scrollHeight > toc.clientHeight + 2) { var tr = toc.getBoundingClientRect(), ar = a.getBoundingClientRect(); if (ar.top < tr.top + 24 || ar.bottom > tr.bottom - 24) toc.scrollTop += (ar.top - tr.top) - tr.height / 2 + ar.height / 2; }
+    };
+    var spy = function () { tk = false; if (innerWidth <= 1050) return; var line = innerHeight * .32, id = heads[0].id; heads.forEach(function (h) { if (h.getBoundingClientRect().top <= line) id = h.id; }); set(id); };
+    addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(spy); } }, { passive: true });
+    addEventListener('resize', function () { cur = null; spy(); });
+    spy();
   }
   $$('[data-share]').forEach(function (btn) {
     btn.addEventListener('click', function () {
