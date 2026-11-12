@@ -204,6 +204,13 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json({ limit: "25mb" }));
+// The public website (relationshipaiadvice.com) is the landing page now, so the
+// app's own root goes straight to the login page. login.html forwards people who
+// are already signed in to the chat.
+app.get(["/", "/index.html"], (req, res) => {
+  const q = req.originalUrl.indexOf("?");
+  res.redirect(302, "/login.html" + (q >= 0 ? req.originalUrl.slice(q) : ""));
+});
 app.use(
   express.static(path.join(__dirname, "public"), {
     etag: false,
@@ -3468,7 +3475,7 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
       line_items: [{ price: priceId, quantity: 1 }],
       allow_promotion_codes: true,
       success_url: `${APP_URL}/dashboard.html?upgraded=1`,
-      cancel_url: `${APP_URL}/index.html#pricing`,
+      cancel_url: `${APP_URL}/dashboard.html`,
       metadata: { userId: user.id, plan },
     });
 

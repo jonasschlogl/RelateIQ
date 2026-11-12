@@ -62,7 +62,7 @@ const EN = {
   pricing: "Pricing",
   blog: "Blog",
   faq: "FAQ",
-  cta: "Get early access",
+  cta: "Try it free",
   menu: "Menu",
   language: "Language",
   disclaimer:
@@ -407,7 +407,7 @@ const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug
 const ctaBox = (ctx, event) => `<div class="article-cta">
   <h2>${ctx.T(EN.ctaH2)}</h2>
   <p>${ctx.T(EN.ctaP)}</p>
-  <a href="/early-access/" class="btn btn-gradient" data-cta data-umami-event="${event}">${ctx.T(EN.cta)}</a>
+  <a href="https://app.relationshipaiadvice.com/register.html" class="btn btn-gradient" data-umami-event="${event}">${ctx.T(EN.cta)}</a>
   <p class="ig-line">${ctx.T(EN.ctaIg)} <a href="${INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram @relationshipai_" data-umami-event="click-instagram-article"><img src="/img/instagram.svg" alt="" width="20" height="20" style="display:inline-block;vertical-align:-5px;margin-right:7px;border-radius:6px;flex-shrink:0" />@relationshipai_</a></p>
 </div>`;
 
@@ -444,7 +444,7 @@ function blogIndexPage(ctx, all) {
       <div class="cta-banner">
         <h2>${T(EN.bannerH2)}</h2>
         <p>${T(EN.bannerP)}</p>
-        <a href="/early-access/" class="btn" data-cta data-umami-event="cta-blog-banner">${T(EN.cta)}</a>
+        <a href="https://app.relationshipaiadvice.com/register.html" class="btn" data-umami-event="cta-blog-banner">${T(EN.cta)}</a>
       </div>
     </section>
   </main>`,
@@ -468,7 +468,7 @@ function adCard(ctx, p, extra = "") {
             <span class="ad-ic" aria-hidden="true"></span>
             <h3>${title}</h3>
             <p>${text}</p>
-            <a href="/early-access/" class="btn btn-gradient" data-cta data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
+            <a href="https://app.relationshipaiadvice.com/register.html" class="btn btn-gradient" data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
             <small>${T(EN.adNote)}</small>
           </div>
         </div>`;

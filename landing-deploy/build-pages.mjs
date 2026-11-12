@@ -20,10 +20,10 @@ function panelHtml(id) {
   h = h.replace(/<button type="button" class="fm-next([^"]*)" data-go="([a-z-]+)">([\s\S]*?)<\/button>/g, (m, c, go, inner) => `<a class="fm-next${c}" href="${URL_OF[go]}">${inner}</a>`);
   h = h.replace(/href="#learn-([a-z-]+)"(\s+data-feature="[a-z-]+")?/g, (m, k) => `href="${URL_OF[k] || "/"}"`);
   h = h.replace(/\sdata-fclose/g, "").replace(/\sdata-feature="[a-z-]+"/g, "");
-  h = h.replace(/href="#join"/g, 'href="/early-access/"').replace(/href="#faq"/g, 'href="/faq/"').replace(/href="#pricing"/g, 'href="/pricing/"');
+  h = h.replace(/href="#join"/g, 'href="https://app.relationshipaiadvice.com/register.html"').replace(/href="#faq"/g, 'href="/faq/"').replace(/href="#pricing"/g, 'href="/pricing/"');
   return h;
 }
-const JOIN_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Your next conversation can go <em>better.</em></h2><p>Join the list. We&rsquo;ll write once, the day we open.</p><a class="hx-btn" href="/early-access/" data-umami-event="cta-page-end">Get early access</a></div></div></section>`;
+const JOIN_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Your next conversation can go <em>better.</em></h2><p>Create a free account and talk it through tonight. No card needed.</p><a class="hx-btn" href="https://app.relationshipaiadvice.com/register.html" data-umami-event="cta-page-end">Try it free</a></div></div></section>`;
 
 const PAGES = [
   { slug: "partner-practice", panel: "practice", title: "Partner Practice: rehearse the hard conversation | RelationshipAI", desc: "An AI plays your partner, in character, so you can rehearse a hard conversation, get a debrief and a readiness score, and walk in knowing how it can go." },
@@ -46,11 +46,11 @@ for (const p of PAGES) {
 
 // about
 write("about/index.html", page({ title: "About RelationshipAI | Built for the 2am moment", description: "RelationshipAI was founded by Jonas, who wanted calm, structured help for the hardest conversations, available at 2am.", path: "/about/", cls: "sp-about",
-  body: `<div class="sp-wrap">${read("about.html").replace('href="#join"', 'href="/early-access/"').replace('href="method.html"', 'href="/method/"').replace(/\sdata-close/g, "")}</div>` }));
+  body: `<div class="sp-wrap">${read("about.html").replace('href="#join"', 'href="https://app.relationshipaiadvice.com/register.html"').replace('href="method.html"', 'href="/method/"').replace(/\sdata-close/g, "")}</div>` }));
 
 // legal + method (existing copy, new shell)
 const LEGAL = { method: ["Our Method | RelationshipAI", "The research RelationshipAI's coaching is grounded in (the Gottman Method, attachment theory, and Nonviolent Communication) with sources, not just name-dropping.", "sp-method"],
-  privacy: ["Privacy Policy | RelationshipAI", "How RelationshipAI collects, uses and protects your information, including your conversations, partner profiles and early-access email. Plain language, no selling of data, no AI training on your chats.", "sp-legal"],
+  privacy: ["Privacy Policy | RelationshipAI", "How RelationshipAI collects, uses and protects your information, including your conversations and partner profiles. Plain language, no selling of data, no AI training on your chats.", "sp-legal"],
   terms: ["Terms of Service | RelationshipAI", "The rules for using RelationshipAI: what the service is and isn't, your account, acceptable use, plans and billing, and limits of liability.", "sp-legal"] };
 for (const [k, [t, d, c]] of Object.entries(LEGAL)) write(`${k}/index.html`, page({ title: t, description: d, path: `/${k}/`, cls: c, body: read(`${k}.html`) }));
 
@@ -58,11 +58,11 @@ for (const [k, [t, d, c]] of Object.entries(LEGAL)) write(`${k}/index.html`, pag
 for (const [slug, id, title, desc] of [
   ["pricing", "pricing", "Pricing | RelationshipAI", "Start free. Upgrade when it helps. Pro and Premium plans for RelationshipAI, billed monthly or yearly."],
   ["faq", "faq", "FAQ | RelationshipAI", "Answers to common questions about RelationshipAI: privacy, therapy, partners, plans and more."],
-  ["early-access", "join", "Get early access | RelationshipAI", "Join the RelationshipAI list. We'll write once, the day we open."],
+  ["early-access", "join", "Try RelationshipAI free | RelationshipAI", "Create a free RelationshipAI account in about a minute. No card needed."],
 ]) {
   let sec = homeSection(id);
   if (!sec) { console.warn(`pages: section #${id} not found in index.html`); continue; }
-  sec = sec.replace(/href="#join"/g, 'href="/early-access/"').replace(/href="#faq"/g, 'href="/faq/"');
+  sec = sec.replace(/href="#join"/g, 'href="https://app.relationshipaiadvice.com/register.html"').replace(/href="#faq"/g, 'href="/faq/"');
   write(`${slug}/index.html`, page({ title, description: desc, path: `/${slug}/`, cls: `sp-sec sp-${slug}`, body: sec }));
 }
 console.log(`pages: ${PAGES.length + 1 + Object.keys(LEGAL).length + 3} pages written`);

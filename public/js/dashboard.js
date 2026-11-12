@@ -394,7 +394,7 @@ function renderBillingActions(me) {
   if (me.plan === "free") {
     box.innerHTML = `
       <button class="btn btn-gradient" id="upgrade-btn" type="button">Upgrade to Pro</button>
-      <a href="index.html#pricing" class="btn btn-ghost btn-sm" style="margin-left:8px;">See all plans</a>
+      <a href="https://relationshipaiadvice.com/pricing/" class="btn btn-ghost btn-sm" style="margin-left:8px;">See all plans</a>
     `;
     document.getElementById("upgrade-btn").addEventListener("click", (e) => {
       const btn = e.currentTarget;
@@ -445,7 +445,7 @@ function wireEmailPreferences(me) {
     const digestLabel = digestBox.closest(".email-pref-toggle");
     if (digestLabel && !digestLabel.querySelector(".pref-upgrade-hint")) {
       const hint = document.createElement("a");
-      hint.href = "index.html#pricing";
+      hint.href = "https://relationshipaiadvice.com/pricing/";
       hint.className = "pref-upgrade-hint";
       hint.textContent = "Pro feature: upgrade";
       digestLabel.appendChild(hint);

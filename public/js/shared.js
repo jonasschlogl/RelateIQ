@@ -232,6 +232,21 @@ function consumePendingPlan() {
   }
 })();
 
+// The website's pricing buttons link to register.html?plan=pro&billing=yearly.
+// Store that choice so register/login can go straight to checkout afterwards.
+(function capturePlanFromUrl() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const plan = q.get("plan");
+    if (plan === "pro" || plan === "premium") {
+      const billing = q.get("billing");
+      setPendingPlan(plan, billing === "monthly" || billing === "yearly" ? billing : "");
+    }
+  } catch (e) {
+    /* ignore storage errors */
+  }
+})();
+
 function consumePendingReferral() {
   try {
     const code = localStorage.getItem("relateiq_referral_code");

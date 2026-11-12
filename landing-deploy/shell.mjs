@@ -14,7 +14,7 @@ function parts() {
   const nav = (h.match(/<header class="hx-nav"[\s\S]*?<\/header>/) || [""])[0]
     .replace(/href="#/g, 'href="/#').replace(/href="index\.html"/g, 'href="/"').replace(/src="logo-tile\.svg"/g, 'src="/logo-tile.svg"')
     .replace(/ data-nogate/g, "").replace(/<a href="\/#faq">FAQ<\/a>/, '<a href="/faq/">FAQ</a>').replace(/<a href="\/#pricing">Pricing<\/a>/, '<a href="/pricing/">Pricing</a>')
-    .replace(/<a href="\/#blog">Blog<\/a>/, '<a href="/blog/">Blog</a>').replace(/href="\/#join"/, 'href="/early-access/"');
+    .replace(/<a href="\/#blog">Blog<\/a>/, '<a href="/blog/">Blog</a>').replace(/href="\/#join"/, 'href="https://app.relationshipaiadvice.com/register.html"');
   const footer = (h.match(/<footer class="hx-foot">[\s\S]*?<\/footer>/) || [""])[0]
     .replace(/href="index\.html"/g, 'href="/"').replace(/src="logo-tile\.svg"/g, 'src="/logo-tile.svg"');
   const section = (id) => { const m = h.match(new RegExp(`<section class="hx-sec" id="${id}">[\\s\\S]*?<\\/section>`)); return m ? m[0] : ""; };
@@ -55,7 +55,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/home.css?v=153" />
   <link rel="stylesheet" href="/css/premium.css?v=5" />
-  <link rel="stylesheet" href="/css/f-skin.css?v=9" />
+  <link rel="stylesheet" href="/css/f-skin.css?v=10" />
   <link rel="stylesheet" href="/css/pages.css?v=3" />
   <link rel="stylesheet" href="/css/light.css?v=10" />
   <link rel="stylesheet" href="/css/light-pages.css?v=1" />
@@ -75,7 +75,7 @@ ${body}
   </main>
 
   ${footer}
-  <script src="/js/home.js?v=5"></script><script defer src="/js/f.js?v=6"></script><script defer src="/js/pages.js?v=3"></script><script defer src="/js/mobile-pages.js?v=1"></script><script defer src="/js/mobile-acc.js?v=1"></script><script defer src="/js/carousel-dots.js?v=3"></script><script defer src="/js/table-sheet.js?v=1"></script>
+  <script src="/js/home.js?v=8"></script><script defer src="/js/f.js?v=6"></script><script defer src="/js/pages.js?v=3"></script><script defer src="/js/mobile-pages.js?v=1"></script><script defer src="/js/mobile-acc.js?v=1"></script><script defer src="/js/carousel-dots.js?v=3"></script><script defer src="/js/table-sheet.js?v=1"></script>
 </body>
 </html>
 `;

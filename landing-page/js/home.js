@@ -182,7 +182,7 @@
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
     $$(".amt[data-monthly], .price-billed[data-monthly]").forEach(function (el) { el.textContent = el.dataset[mode]; });
-    $$("[data-plan]").forEach(function (el) { el.setAttribute("data-umami-event-billing", mode); });
+    $$("[data-plan]").forEach(function (el) { el.setAttribute("data-umami-event-billing", mode); if (el.tagName === "A") el.href = "https://app.relationshipaiadvice.com/register.html?plan=" + el.getAttribute("data-plan") + "&billing=" + mode; });
   }
   bbtns.forEach(function (b) { b.addEventListener("click", function () { applyBilling(b.dataset.billing); }); });
   if (bbtns.length) applyBilling("yearly");

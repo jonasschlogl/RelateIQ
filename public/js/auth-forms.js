@@ -9,6 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorBox = document.getElementById("form-error");
   const successBox = document.getElementById("form-success");
 
+  // Already signed in (e.g. coming from the website's "Try it free" or "Log in"):
+  // skip the form. A plan picked on the website goes straight to checkout.
+  if ((registerForm || loginForm) && typeof getToken === "function" && getToken()) {
+    const plan = consumePendingPlan();
+    if (plan) startCheckout(plan);
+    else window.location.replace("chat.html");
+    return;
+  }
+
   function showError(msg) {
     if (!errorBox) return;
     errorBox.textContent = msg;

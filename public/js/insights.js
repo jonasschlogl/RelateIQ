@@ -69,7 +69,7 @@ function renderInsightsLock() {
   stateEl.innerHTML =
     `<p><strong>Insights comes with Pro.</strong></p>` +
     `<p>It looks across your Coach Chat conversations and names the patterns you might miss, such as what keeps coming back and when you both go quiet. Pro also sends it as a short weekly summary.</p>` +
-    `<p><a href="index.html#pricing" class="btn btn-gradient">See Pro</a></p>`;
+    `<p><a href="https://relationshipaiadvice.com/pricing/" class="btn btn-gradient">See Pro</a></p>`;
 }
 
 function renderNotEnoughData(data) {

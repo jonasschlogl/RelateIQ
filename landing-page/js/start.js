@@ -1,5 +1,5 @@
 /* RelationshipAI get-started funnel. One screen per step; answers stay in memory only.
-   The final email is posted to the same /api/subscribe endpoint as the landing page forms. */
+   The last step sends people to the free sign-up in the app. Nothing from the quiz is sent anywhere. */
 (function () {
   'use strict';
 
@@ -126,8 +126,7 @@
   steps.push({ id: 'reveal', pct: 54, fn: sReveal });
   steps.push({ id: 'gen', pct: 66, fn: sGen, auto: true, noBack: true });
   steps.push({ id: 'replies', pct: 80, fn: sReplies });
-  steps.push({ id: 'email', pct: 94, fn: sEmail });
-  steps.push({ id: 'done', pct: 100, fn: sDone, noBack: true });
+  steps.push({ id: 'email', pct: 100, fn: sEmail });
 
   function warmStep(i) {
     var q = QUESTIONS[i];
@@ -340,35 +339,13 @@
   var SAVED = null;
   function sEmail(next) {
     var node = stage.lastElementChild;
-    node.innerHTML = '<h2 class="qz-h">Save your result.<br>Get early access.</h2>' +
-      '<p class="qz-sub">We’ll email you once, the day RelationshipAI opens, with your result inside.</p>' +
-      '<div class="qz-chips"><span>Your pattern</span><span>Your coach</span><span>Early access</span><span>Free to start</span></div>' +
-      '<form id="ef" novalidate><div class="qz-field"><label for="em">Email address</label><input id="em" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required />' +
-      '<input type="text" class="qz-hp" name="website" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" /></div>' +
-      '<p class="qz-err" id="er" role="alert"></p>' +
+    node.innerHTML = '<h2 class="qz-h">Your coach is ready.<br>Try it free.</h2>' +
+      '<p class="qz-sub">Create a free account and talk through what is on your mind, with a coach that fits how you love.</p>' +
+      '<div class="qz-chips"><span>Free to start</span><span>No card</span><span>Private</span></div>' +
+      (result ? '<div class="qz-credit" style="margin-top:22px"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="' + HEART + '" fill="#f58fab"/></svg><div><b>' + esc(result.name) + '</b><span>' + esc(result.tag) + '</span></div></div>' : '') +
       '<div class="qz-spacer"></div>' +
-      '<button type="submit" class="qz-btn" id="eb" data-umami-event="start-email-submit">Save my result ' + ARROW + '</button>' +
-      '<p class="qz-legal">By continuing you agree to our <a href="/terms/">Terms</a> and <a href="/privacy/">Privacy Policy</a>. One email when we open, no spam. Unsubscribe anytime.</p></form>';
-    var f = node.querySelector('#ef'), em = node.querySelector('#em'), er = node.querySelector('#er'), eb = node.querySelector('#eb'), hp = node.querySelector('#hp');
-    var RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
-    em.addEventListener('input', function () { em.classList.remove('bad'); er.textContent = ''; });
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var v = em.value.trim();
-      if (!RE.test(v)) { em.classList.add('bad'); er.textContent = 'Please enter a valid email address.'; em.focus(); return; }
-      eb.disabled = true; eb.firstChild.nodeValue = 'Saving… ';
-      var body = { email: v, source: 'get-started', plan: result ? result.key : '', billing: '', website: hp.value, t: Date.now() - T0 };
-      fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
-        .then(function (res) {
-          if (res.ok) { SAVED = v; track('start-email-success'); go(steps.length - 1); return; }
-          throw new Error(res.j && res.j.error || 'fail');
-        })
-        .catch(function (err) {
-          eb.disabled = false; eb.firstChild.nodeValue = 'Save my result ';
-          er.textContent = err && err.message === 'invalid_email' ? 'That email doesn’t look right.' : 'Something went wrong. Please try again in a moment.';
-        });
-    });
+      '<a class="qz-btn" href="https://app.relationshipaiadvice.com/register.html" data-umami-event="start-signup" style="margin-top:26px;text-decoration:none">Try it free ' + ARROW + '</a>' +
+      '<p class="qz-legal" style="font-size:14px">Already have an account? <a href="https://app.relationshipaiadvice.com/login.html" data-umami-event="start-login">Log in</a></p>';
   }
 
   function sDone(next) {
