@@ -231,3 +231,93 @@ body:has(.auth-page) { background: #2a1710; }
 .focus-card, .couple-intro-card, .couple-invite-card { border: 0; border-radius: var(--radius-lg); }
 .share-link-box, .pb-note-box { background: rgba(255, 243, 226, 0.07); border: 0; border-radius: 18px; }
 .verify-banner, .practice-limit-banner { border: 0; border-radius: 20px; background: rgba(249, 217, 138, 0.14); }
+
+/* ==========================================================================
+   v2: full app polish
+   ========================================================================== */
+
+/* nav "More" menu: readable on the cream dropdown */
+.site-nav .nav-links .nav-more-menu a, .nav-links .nav-more-menu a:not(.btn) { color: #3b2218 !important; background: transparent; padding: 10px 14px; font-weight: 500; }
+.site-nav .nav-links .nav-more-menu a:hover { background: rgba(59, 34, 24, 0.08) !important; color: #3b2218 !important; }
+.nav-more-btn[aria-expanded="true"] { background: rgba(255, 243, 226, 0.12); }
+
+/* ---------- dashboard layout ---------- */
+.profile-card.has-peek { margin-top: 0; }
+.dashboard { max-width: 1180px; padding: 22px 20px 80px; }
+.dashboard-card-header { flex-wrap: wrap; row-gap: 8px; }
+.usage-box .label { text-transform: none; letter-spacing: 0; font-weight: 600; font-size: 14px; color: rgba(59, 34, 24, 0.78); }
+.profile-card .pro-feature, .profile-card .email-pref-toggle a, .profile-card a:not(.btn) { color: #a3244f; font-weight: 700; }
+.profile-card .email-prefs .label { font-size: 11px; }
+#explore-card .mode-card { color: #3b2218; }
+#explore-card .mode-card-tag, #explore-card .plan-tag { background: #3b2218; color: #fff3e2; border: 0; border-radius: 999px; padding: 3px 9px; font-size: 10.5px; letter-spacing: 0.08em; }
+#explore-card .modes-more summary, #explore-card .modes-more > button { border-radius: 999px; }
+.conversation-row { border-radius: 16px; border-color: var(--border); padding: 12px 14px; }
+.conversation-row:hover { background: rgba(255, 243, 226, 0.07); }
+#invite-card .referral-box span, #privacy-card .referral-box span { color: var(--text-muted); font-size: 14px; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 999px) {
+  .dashboard > .profile-card { order: 1; }
+  .dashboard > #explore-card { order: 2; }
+  .dashboard > #convos-card { order: 3; }
+  .dashboard > #checkin-card { order: 4; }
+  .dashboard > #memory-card { order: 5; }
+  .dashboard > #invite-card { order: 6; }
+  .dashboard > #privacy-card { order: 7; }
+  .dashboard > #delete-card { order: 8; }
+}
+@media (min-width: 1000px) {
+  .dashboard { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; align-items: start; padding: 28px 32px 90px; }
+  .dashboard > * { grid-column: span 12; margin: 0 !important; }
+  .dashboard > .profile-card { grid-column: span 5; order: 1; align-self: stretch; }
+  .dashboard > #checkin-card { grid-column: span 7; order: 2; align-self: stretch; }
+  .dashboard:has(#checkin-card[style*="none"]) > .profile-card { grid-column: span 12; }
+  .dashboard > #explore-card { order: 3; }
+  .dashboard > #convos-card { grid-column: span 7; order: 4; }
+  .dashboard > #memory-card { grid-column: span 5; order: 5; }
+  .dashboard:has(#memory-card[style*="none"]) > #convos-card { grid-column: span 12; }
+  .dashboard > #invite-card { grid-column: span 4; order: 6; align-self: stretch; }
+  .dashboard > #privacy-card { grid-column: span 4; order: 7; align-self: stretch; }
+  .dashboard > #delete-card { grid-column: span 4; order: 8; align-self: stretch; }
+  .dashboard > .verify-banner, .dashboard > .dash-banner { order: 0; }
+  #invite-card .referral-box, #privacy-card .referral-box { flex-direction: column; align-items: stretch; gap: 10px; }
+  #invite-card .referral-box .btn, #privacy-card .referral-box .btn { width: 100%; }
+}
+
+/* ---------- chat: phones ---------- */
+@media (max-width: 700px) {
+  .chat-topbar { padding: 12px 14px; gap: 8px; }
+  .topbar-account { flex-wrap: nowrap; gap: 6px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .topbar-account::-webkit-scrollbar { display: none; }
+  .topbar-account .user-label { display: none; }
+  .topbar-account .btn-sm { font-size: 0; padding: 10px; gap: 0; flex: none; }
+  .topbar-account .btn-sm .ico { margin: 0; width: 17px; height: 17px; }
+  .plan-badge, .usage-badge { flex: none; white-space: nowrap; }
+  .input-area { padding: 10px; border-radius: 26px; margin: 0 8px 6px; width: auto; align-self: stretch; }
+  .quality-row { gap: 8px; margin-bottom: 8px; }
+  .quality-note { display: none; }
+  .composer-row { gap: 6px; align-items: flex-end; }
+  .attach-btn, .mic-btn { width: 40px; height: 40px; flex: none; }
+  .input-area textarea { min-height: 44px; padding: 11px 14px; font-size: 16px; }
+  #send-btn { padding: 12px 16px; flex: none; }
+  .chat-disclaimer { font-size: 11px; padding: 0 16px; }
+  .ai-msg, .user-msg, .partner-msg { max-width: 88%; }
+}
+
+/* ---------- printable documents (therapist summary, insights) ---------- */
+.summary-paper { background: var(--cream); border: 0; border-radius: 32px; box-shadow: var(--shadow-lg);
+  --text: #3b2218; --text-muted: rgba(59, 34, 24, 0.76); --text-faint: rgba(59, 34, 24, 0.6); --border: rgba(59, 34, 24, 0.14); --border-strong: rgba(59, 34, 24, 0.3); --surface: rgba(59, 34, 24, 0.06); --accent-2-text: #a0422f; color: var(--text); }
+.summary-paper h1, .summary-paper h2, .summary-paper h3 { color: #3b2218; }
+.summary-paper .btn-gradient, .summary-paper .btn-primary { background: #3b2218; color: #fff3e2; }
+.summary-paper .btn-gradient:hover:not(:disabled) { background: var(--pink); color: #3b2218; }
+
+/* ---------- premium / locked feature cards: flat pastel ---------- */
+.pb-premium-lock { background: var(--butter); --text: #3b2218; --text-muted: rgba(59, 34, 24, 0.76); --text-faint: rgba(59, 34, 24, 0.6); --border: rgba(59, 34, 24, 0.14); --border-strong: rgba(59, 34, 24, 0.3); --surface: rgba(59, 34, 24, 0.07); --accent-2-text: #3b2218; color: var(--text); }
+.focus-card.focus-locked { background: var(--peach); --text: #3b2218; --text-muted: rgba(59, 34, 24, 0.76); --border: rgba(59, 34, 24, 0.14); --accent-2-text: #3b2218; color: var(--text); }
+.pb-premium-lock h2, .pb-premium-lock h3, .focus-card.focus-locked h2, .focus-card.focus-locked h3 { color: #3b2218; }
+.pb-premium-lock .btn-gradient, .focus-locked .btn-gradient, .pb-premium-lock .btn-primary, .focus-locked .btn-primary { background: #3b2218; color: #fff3e2; }
+.pb-premium-lock .btn-gradient:hover:not(:disabled), .focus-locked .btn-gradient:hover:not(:disabled) { background: #fff3e2; color: #3b2218; }
+.pb-premium-lock svg, .pb-premium-lock li::before { color: #3b2218; stroke: currentColor; }
+.pb-lock { background: var(--pink); color: #3b2218; }
+.pb-premium-lock .pb-lock, .focus-locked .pb-lock { background: #3b2218; color: var(--butter); }
+.try-card-label, .try-card .try-card-label { color: #a3244f; font-weight: 700; letter-spacing: 0.14em; }
+.site-nav-app { max-width: 1180px; padding-left: 32px; padding-right: 32px; }
+@media (max-width: 700px) { .site-nav-app { padding-left: 18px; padding-right: 18px; } .mode-card { padding: 18px; } }

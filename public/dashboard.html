@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=68" />
-  <link rel="stylesheet" href="css/app-theme.css?v=1" />
+  <link rel="stylesheet" href="css/app-theme.css?v=2" />
   <script src="js/i18n.js?v=1"></script>
 </head>
 <body>
@@ -105,7 +105,7 @@
       <div id="memory-body" class="memory-body"></div>
     </section>
 
-    <section class="dashboard-card">
+    <section class="dashboard-card" id="privacy-card">
       <div class="dashboard-card-header">
         <h2>Privacy &amp; your data</h2>
       </div>
@@ -116,7 +116,7 @@
       </div>
     </section>
 
-    <section class="dashboard-card danger-zone">
+    <section class="dashboard-card danger-zone" id="delete-card">
       <div class="dashboard-card-header">
         <h2>Delete account</h2>
       </div>
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <section class="dashboard-card">
+    <section class="dashboard-card" id="invite-card">
       <div class="dashboard-card-header">
         <h2>Invite a friend or partner</h2>
       </div>
@@ -146,7 +146,7 @@
       <p class="text-muted referral-stats" id="referral-stats" style="display:none;"></p>
     </section>
 
-    <section class="dashboard-card">
+    <section class="dashboard-card" id="explore-card">
       <div class="dashboard-card-header">
         <h2>Explore RelationshipAI</h2>
       </div>
@@ -222,7 +222,7 @@
       </details>
     </section>
 
-    <section class="dashboard-card">
+    <section class="dashboard-card" id="convos-card">
       <div class="dashboard-card-header">
         <h2>Your conversations</h2>
         <a href="chat.html?new=1" class="btn btn-primary btn-sm">+ New</a>
