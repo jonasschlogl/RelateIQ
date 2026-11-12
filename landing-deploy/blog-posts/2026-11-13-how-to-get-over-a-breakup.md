@@ -4,6 +4,7 @@ date: 2026-11-13
 description: Can't stop thinking about your ex? 9 practical, research-backed steps for how to get over a breakup, what helps, what makes it worse and when it gets easier.
 tags: how to get over a breakup, heartbreak
 draft: true
+approved: true
 topics: repair, overthinking
 ---
 You keep picking up your phone to text them. A song in the supermarket ruins your afternoon. Everyone says "it gets easier", but right now it doesn't feel like it will.
