@@ -1,2 +1,5 @@
+# The app is not meant for search results: every response carries
+# "X-Robots-Tag: noindex, nofollow". Crawling stays allowed so search
+# engines can see that header and drop any app pages they already know.
 User-agent: *
 Allow: /

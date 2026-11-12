@@ -198,6 +198,10 @@ app.use((req, res, next) => {
   res.setHeader("X-Frame-Options", "SAMEORIGIN");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   res.setHeader("Permissions-Policy", "camera=(), geolocation=()");
+  // The app (app.relationshipaiadvice.com) is for signed-in people, not for search.
+  // Keep every page out of Google so the website's own pages rank instead.
+  // robots.txt still allows crawling, otherwise Google could never see this header.
+  res.setHeader("X-Robots-Tag", "noindex, nofollow");
   if (req.secure || req.headers["x-forwarded-proto"] === "https") {
     res.setHeader("Strict-Transport-Security", "max-age=15552000; includeSubDomains");
   }
