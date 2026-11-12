@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           btn.textContent = "Redirecting to checkout…";
           startCheckout(pendingPlan);
         } else {
-          window.location.href = "chat.html";
+          window.location.href = "welcome.html";
         }
       } catch (err) {
         showError(err.message);

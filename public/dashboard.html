@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My account · RelationshipAI</title>
+  <title>Home · RelationshipAI</title>
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
   <link rel="icon" href="/favicon-48.png?v=3" sizes="48x48" type="image/png" />
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=68" />
-  <link rel="stylesheet" href="css/app-theme.css?v=2" />
+  <link rel="stylesheet" href="css/app-theme.css?v=3" />
   <script src="js/i18n.js?v=1"></script>
 </head>
 <body>
@@ -24,6 +24,7 @@
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="nav-menu">
       <a href="admin.html" id="nav-admin" style="display:none;">Admin</a>
+      <a href="dashboard.html" class="nav-current">Home</a>
       <a href="chat.html" class="nav-primary">Coach Chat</a>
       <a href="chat.html?mode=practice" class="nav-primary">Partner Practice</a>
       <a href="message.html" class="nav-primary">Message check</a>
@@ -39,116 +40,20 @@
         <a href="review.html">Monthly review and your year</a>
         </div>
       </div>
-      <a href="dashboard.html" class="nav-current">My account</a>
-      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
     </nav>
   </header>
 
-  <main class="dashboard">
-    <section class="dashboard-card profile-card has-peek">
-      <img class="peek peek-dash" src="img/peek-flame.svg" alt="" width="84" height="109" />
-      <h1 id="profile-name">…</h1>
-      <p class="text-muted" id="profile-email"></p>
-
-      <div class="profile-meta">
-        <div><span class="label">Plan</span><span id="profile-plan">…</span></div>
-        <div><span class="label">Member since</span><span id="profile-since">…</span></div>
-      </div>
-
-      <div class="usage-box" id="usage-box" style="display:none;">
-        <span class="label" id="usage-label">Today's AI messages (Free plan)</span>
-        <span id="usage-count">0 / 8</span>
-      </div>
-      <div class="usage-box" id="strong-usage-box" style="display:none;">
-        <span class="label" id="strong-usage-label">Advanced-model messages this month</span>
-        <span id="strong-usage-count">0 / 0</span>
-      </div>
-
-      <div class="billing-actions" id="billing-actions"></div>
-
-      <div class="email-prefs" id="email-prefs">
-        <span class="label">Email me</span>
-        <label class="email-pref-toggle">
-          <input type="checkbox" id="pref-checkin" checked />
-          Daily check-in reminders
-        </label>
-        <label class="email-pref-toggle">
-          <input type="checkbox" id="pref-digest" checked />
-          Weekly insights digest
-        </label>
-      </div>
-
-      <div class="email-prefs" id="push-prefs">
-        <span class="label">Browser notifications</span>
-        <button class="btn btn-ghost btn-sm" id="push-toggle-btn" type="button">Enable notifications</button>
-        <span class="text-muted" id="push-status" style="font-size:12.5px;"></span>
-      </div>
+  <main class="dashboard dash-simple">
+    <section class="dash-hero">
+      <p class="dash-hello">Hi <span id="hero-name">there</span></p>
+      <h1>What&rsquo;s on your mind today?</h1>
+      <p class="dash-lead">Tell your coach what happened. It takes a minute, and it stays private.</p>
+      <a href="chat.html?new=1" class="btn btn-gradient dash-start">Start a conversation</a>
+      <p class="dash-meta" id="hero-meta"></p>
     </section>
-
-    <section class="dashboard-card checkin-card" id="checkin-card" style="display:none;">
-      <div class="dashboard-card-header">
-        <h2>Daily check-in</h2>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <span class="streak-badge" id="streak-badge" style="display:none;"></span>
-          <span class="section-tag" style="margin:0;">Optional</span>
-        </div>
-      </div>
-      <p class="text-muted" style="margin-bottom:0;">One rating and one question, to help you notice how the relationship is actually going. Completely optional, skip it anytime. Nothing depends on it.</p>
-      <div id="checkin-body"></div>
-    </section>
-
-    <section class="dashboard-card" id="memory-card" style="display:none;">
-      <div class="dashboard-card-header">
-        <h2>What RelationshipAI remembers</h2>
-      </div>
-      <p class="text-muted">Notes your coach keeps between conversations, so you don't have to explain everything again. They are private, only you can see them, and you can remove anything here.</p>
-      <div id="memory-body" class="memory-body"></div>
-    </section>
-
-    <section class="dashboard-card" id="privacy-card">
-      <div class="dashboard-card-header">
-        <h2>Privacy &amp; your data</h2>
-      </div>
-      <p class="text-muted">Download everything RelationshipAI has stored about your account (your profile, partner profiles, and full conversation history) as a JSON file. See our <a href="privacy.html">privacy policy</a> for details on what's stored and why.</p>
-      <div class="referral-box">
-        <span>A complete copy of your account data</span>
-        <button class="btn btn-gradient btn-sm" id="export-data-btn" type="button">Download my data</button>
-      </div>
-    </section>
-
-    <section class="dashboard-card danger-zone" id="delete-card">
-      <div class="dashboard-card-header">
-        <h2>Delete account</h2>
-      </div>
-      <p class="text-muted">Permanently deletes your account, every conversation, partner profile, check-in, and shared link. This can't be undone. Download your data above first if you want to keep a copy.</p>
-      <button class="btn btn-danger btn-sm" id="delete-account-open-btn" type="button">Delete my account</button>
-
-      <div class="danger-zone-confirm" id="delete-account-confirm" style="display:none;">
-        <div class="form-error" id="delete-account-error" style="display:none;"></div>
-        <label for="delete-account-password">Enter your password to confirm</label>
-        <input type="password" id="delete-account-password" autocomplete="current-password" />
-        <div class="danger-zone-actions">
-          <button class="btn btn-ghost btn-sm" id="delete-account-cancel-btn" type="button">Cancel</button>
-          <button class="btn btn-danger btn-sm" id="delete-account-confirm-btn" type="button">Yes, permanently delete my account</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="dashboard-card" id="invite-card">
-      <div class="dashboard-card-header">
-        <h2>Invite a friend or partner</h2>
-      </div>
-      <p class="text-muted">When someone you invite subscribes to a paid plan, you both get a month free.</p>
-      <div class="referral-box">
-        <span id="referral-link-text">Loading your invite link…</span>
-        <button class="btn btn-gradient btn-sm" id="copy-referral-btn" type="button">Copy link</button>
-      </div>
-      <p class="text-muted referral-stats" id="referral-stats" style="display:none;"></p>
-    </section>
-
     <section class="dashboard-card" id="explore-card">
       <div class="dashboard-card-header">
-        <h2>Explore RelationshipAI</h2>
+        <h2>Your tools</h2>
       </div>
       <div class="modes-grid modes-grid-core">
         <a href="chat.html" class="mode-card mode-card-flagship">
@@ -221,18 +126,118 @@
         </div>
       </details>
     </section>
-
     <section class="dashboard-card" id="convos-card">
       <div class="dashboard-card-header">
-        <h2>Your conversations</h2>
+        <h2>Recent conversations</h2>
         <a href="chat.html?new=1" class="btn btn-primary btn-sm">+ New</a>
       </div>
       <div id="conversation-list" class="conversation-list"></div>
     </section>
+    <section class="dashboard-card checkin-card" id="checkin-card" style="display:none;">
+      <div class="dashboard-card-header">
+        <h2>Daily check-in</h2>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="streak-badge" id="streak-badge" style="display:none;"></span>
+          <span class="section-tag" style="margin:0;">Optional</span>
+        </div>
+      </div>
+      <p class="text-muted" style="margin-bottom:0;">One rating and one question, to help you notice how the relationship is actually going. Completely optional, skip it anytime. Nothing depends on it.</p>
+      <div id="checkin-body"></div>
+    </section>
+    <details class="dash-settings" id="dash-settings">
+      <summary><span>Account &amp; settings</span><small>Plan, emails, notifications, your data</small></summary>
+      <div class="dash-settings-body">
+    <section class="dashboard-card profile-card has-peek">
+      <img class="peek peek-dash" src="img/peek-flame.svg" alt="" width="84" height="109" />
+      <h1 id="profile-name">…</h1>
+      <p class="text-muted" id="profile-email"></p>
+
+      <div class="profile-meta">
+        <div><span class="label">Plan</span><span id="profile-plan">…</span></div>
+        <div><span class="label">Member since</span><span id="profile-since">…</span></div>
+      </div>
+
+      <div class="usage-box" id="usage-box" style="display:none;">
+        <span class="label" id="usage-label">Today's AI messages (Free plan)</span>
+        <span id="usage-count">0 / 8</span>
+      </div>
+      <div class="usage-box" id="strong-usage-box" style="display:none;">
+        <span class="label" id="strong-usage-label">Advanced-model messages this month</span>
+        <span id="strong-usage-count">0 / 0</span>
+      </div>
+
+      <div class="billing-actions" id="billing-actions"></div>
+
+      <div class="email-prefs" id="email-prefs">
+        <span class="label">Email me</span>
+        <label class="email-pref-toggle">
+          <input type="checkbox" id="pref-checkin" checked />
+          Daily check-in reminders
+        </label>
+        <label class="email-pref-toggle">
+          <input type="checkbox" id="pref-digest" checked />
+          Weekly insights digest
+        </label>
+      </div>
+
+      <div class="email-prefs" id="push-prefs">
+        <span class="label">Browser notifications</span>
+        <button class="btn btn-ghost btn-sm" id="push-toggle-btn" type="button">Enable notifications</button>
+        <span class="text-muted" id="push-status" style="font-size:12.5px;"></span>
+      </div>
+    </section>
+    <section class="dashboard-card" id="memory-card" style="display:none;">
+      <div class="dashboard-card-header">
+        <h2>What RelationshipAI remembers</h2>
+      </div>
+      <p class="text-muted">Notes your coach keeps between conversations, so you don't have to explain everything again. They are private, only you can see them, and you can remove anything here.</p>
+      <div id="memory-body" class="memory-body"></div>
+    </section>
+    <section class="dashboard-card" id="invite-card">
+      <div class="dashboard-card-header">
+        <h2>Invite a friend or partner</h2>
+      </div>
+      <p class="text-muted">When someone you invite subscribes to a paid plan, you both get a month free.</p>
+      <div class="referral-box">
+        <span id="referral-link-text">Loading your invite link…</span>
+        <button class="btn btn-gradient btn-sm" id="copy-referral-btn" type="button">Copy link</button>
+      </div>
+      <p class="text-muted referral-stats" id="referral-stats" style="display:none;"></p>
+    </section>
+    <section class="dashboard-card" id="privacy-card">
+      <div class="dashboard-card-header">
+        <h2>Privacy &amp; your data</h2>
+      </div>
+      <p class="text-muted">Download everything RelationshipAI has stored about your account (your profile, partner profiles, and full conversation history) as a JSON file. See our <a href="privacy.html">privacy policy</a> for details on what's stored and why.</p>
+      <div class="referral-box">
+        <span>A complete copy of your account data</span>
+        <button class="btn btn-gradient btn-sm" id="export-data-btn" type="button">Download my data</button>
+      </div>
+    </section>
+    <section class="dashboard-card danger-zone" id="delete-card">
+      <div class="dashboard-card-header">
+        <h2>Delete account</h2>
+      </div>
+      <p class="text-muted">Permanently deletes your account, every conversation, partner profile, check-in, and shared link. This can't be undone. Download your data above first if you want to keep a copy.</p>
+      <button class="btn btn-danger btn-sm" id="delete-account-open-btn" type="button">Delete my account</button>
+
+      <div class="danger-zone-confirm" id="delete-account-confirm" style="display:none;">
+        <div class="form-error" id="delete-account-error" style="display:none;"></div>
+        <label for="delete-account-password">Enter your password to confirm</label>
+        <input type="password" id="delete-account-password" autocomplete="current-password" />
+        <div class="danger-zone-actions">
+          <button class="btn btn-ghost btn-sm" id="delete-account-cancel-btn" type="button">Cancel</button>
+          <button class="btn btn-danger btn-sm" id="delete-account-confirm-btn" type="button">Yes, permanently delete my account</button>
+        </div>
+      </div>
+    </section>
+        <div class="dash-logout"><button class="btn btn-ghost" id="logout-btn" type="button">Log out</button></div>
+      </div>
+    </details>
   </main>
 
   <script src="js/shared.js?v=23"></script>
   <script src="js/checkin.js?v=1"></script>
-  <script src="js/dashboard.js?v=22"></script>
+  <script src="js/dashboard.js?v=23"></script>
 </body>
 </html>

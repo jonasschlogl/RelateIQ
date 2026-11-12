@@ -250,6 +250,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("profile-email").textContent = me.email;
     document.getElementById("profile-plan").textContent = planLabel(me.plan);
     document.getElementById("profile-since").textContent = formatDate(me.createdAt);
+    // simple greeting at the top of the home screen
+    const heroName = document.getElementById("hero-name");
+    if (heroName) heroName.textContent = (me.name || "").trim().split(/\s+/)[0] || "there";
+    const heroMeta = document.getElementById("hero-meta");
+    if (heroMeta) {
+      if (me.plan === "free") {
+        const left = Math.max(0, (me.usageLimit || 0) - (me.usage?.count || 0));
+        heroMeta.innerHTML = `${planLabel(me.plan)} plan · ${left} of ${me.usageLimit} messages left today · <a href="#dash-settings" id="hero-upgrade">Upgrade</a>`;
+        heroMeta.querySelector("#hero-upgrade")?.addEventListener("click", () => { const d = document.getElementById("dash-settings"); if (d) d.open = true; });
+      } else {
+        heroMeta.textContent = `${planLabel(me.plan)} plan`;
+      }
+    }
 
     if (me.plan === "free") {
       const usageBox = document.getElementById("usage-box");

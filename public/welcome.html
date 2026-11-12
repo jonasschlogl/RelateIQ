@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome · RelationshipAI</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-48.png?v=3" sizes="48x48" type="image/png" />
+  <link rel="icon" href="/favicon-32.png?v=3" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon-16.png?v=3" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=65" />
+  <link rel="stylesheet" href="css/app-theme.css?v=3" />
+  <script src="js/i18n.js?v=1"></script>
+</head>
+<body class="welcome-body">
+
+  <main class="welcome-page">
+    <a href="dashboard.html" class="brand welcome-brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="36" height="36" />Relationship<span>AI</span></a>
+
+    <h1>Welcome<span id="welcome-name"></span>.</h1>
+    <p class="welcome-lead">What would help most right now? Pick one, you can try the others anytime.</p>
+
+    <div class="welcome-options">
+      <a class="welcome-opt" href="chat.html?new=1" data-umami-event="welcome-talk">
+        <span class="welcome-ph"><img src="img/welcome/talk.webp" alt="" width="700" height="1050" /></span>
+        <span class="welcome-txt"><b>Talk something through</b><small>Tell your coach what happened. You get calm, concrete advice.</small></span>
+      </a>
+      <a class="welcome-opt" href="chat.html?mode=practice" data-umami-event="welcome-practice">
+        <span class="welcome-ph"><img src="img/welcome/practice.webp" alt="" width="1200" height="800" /></span>
+        <span class="welcome-txt"><b>Prepare for a hard talk</b><small>Rehearse it first. The AI plays your partner, then gives you feedback.</small></span>
+      </a>
+      <a class="welcome-opt" href="message.html" data-umami-event="welcome-message">
+        <span class="welcome-ph"><img src="img/welcome/message.webp" alt="" width="700" height="1050" /></span>
+        <span class="welcome-txt"><b>Check a message</b><small>Paste a text before you send it and see how it may land.</small></span>
+      </a>
+    </div>
+
+    <a class="welcome-skip" href="dashboard.html" data-umami-event="welcome-skip">Just look around</a>
+    <p class="welcome-note">Private to you. Not a replacement for therapy.</p>
+  </main>
+
+  <script src="js/shared.js?v=23"></script>
+  <script>
+    requireAuth();
+    try {
+      var u = getUser();
+      var first = u && u.name ? String(u.name).trim().split(/\s+/)[0] : "";
+      if (first) document.getElementById("welcome-name").textContent = ", " + first;
+    } catch (e) {}
+  </script>
+</body>
+</html>

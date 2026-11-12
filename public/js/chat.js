@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   const user = getUser();
+  // free plan: keep the composer simple (no answer-quality switch)
+  document.body.classList.toggle("plan-free", !user || !user.plan || user.plan === "free");
   const userLabel = document.getElementById("user-label");
   if (userLabel && user) userLabel.textContent = user.name || user.email;
   renderPlanBadge(user?.plan);
