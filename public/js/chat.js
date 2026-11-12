@@ -89,7 +89,7 @@ function composerPlaceholder(mode) {
   if (mode === "practice") {
     return isNarrow ? "Type what you'd say…" : "Type what you'd actually say…";
   }
-  return isNarrow ? "What's going on?" : "Tell me what's going on in your relationship…";
+  return isNarrow ? "What's going on?" : "What's going on?";
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -1120,26 +1120,22 @@ function renderEmptyState() {
        </div>`
     : "";
   const isCoach = currentConvCtx.mode !== "practice";
+  // Kept deliberately short: a greeting and three tap-to-start ideas.
   const STARTERS = [
-    "My partner has gone quiet and I don't know why.",
     "We keep having the same argument.",
-    "I want to bring up something difficult.",
+    "My partner has gone quiet.",
     "I'm overthinking something they said.",
   ];
   const startHtml = isCoach
-    ? `<div class="empty-start">
-         <div class="empty-start-label">Not sure where to begin? Tap one, then add the details</div>
-         <div class="empty-starters">${STARTERS.map((t) => `<button type="button" class="pb-choice empty-starter" data-text="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div>
-         <div class="empty-start-label">Or start with a tool</div>
-         <div class="empty-tools">
-           <a class="empty-tool" href="message.html"><strong>Message check</strong><span>See how a text may land before you send it</span></a>
-           <a class="empty-tool" href="sos.html"><strong>After a fight</strong><span>A minute to settle, then words to reach out with</span></a>
-           <a class="empty-tool" href="chat.html?mode=practice"><strong>Partner Practice</strong><span>Rehearse a hard conversation first</span></a>
-         </div>
-       </div>`
+    ? `<div class="empty-start"><div class="empty-starters">${STARTERS.map((t) => `<button type="button" class="pb-choice empty-starter" data-text="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div></div>`
     : "";
+  let firstName = "";
+  try { firstName = String((getUser() || {}).name || "").trim().split(/\s+/)[0] || ""; } catch (e) { /* ignore */ }
+  const heading = isCoach
+    ? `${firstName ? "Hi " + escapeHtml(firstName) + ", what" : "What"}&rsquo;s on your mind?`
+    : "Say it the way you would to them.";
   chatDiv.innerHTML =
-    `<div id="empty-state" class="empty-chat"><img class="empty-mascot" src="img/${currentConvCtx.mode === "practice" ? "wisp-heart" : "wisp-candle"}.svg" alt="" width="${currentConvCtx.mode === "practice" ? 84 : 62}" height="${currentConvCtx.mode === "practice" ? 110 : 130}" /><h2>Hi there</h2><p>Tell me what's going on in your relationship, and let's work through it together.</p>${tipHtml}${startHtml}</div>`;
+    `<div id="empty-state" class="empty-chat"><h2>${heading}</h2>${startHtml}</div>`;
   chatDiv.querySelectorAll(".empty-starter").forEach((b) =>
     b.addEventListener("click", () => {
       const inp = document.getElementById("input");

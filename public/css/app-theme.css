@@ -356,3 +356,19 @@ body:has(.auth-page) { background: #2a1710; }
 }
 
 @media (max-width: 759px) { .dash-hero::after { width: 150px; height: 150px; right: -70px; top: -70px; } }
+
+/* ---------- coach chat: less text on screen ---------- */
+.sidebar-section-label { display: none; }
+.topbar-account .user-label { display: none; }
+.topbar-account .btn-sm { font-size: 0; padding: 10px; gap: 0; background: var(--surface); box-shadow: none; }
+.topbar-account .btn-sm .ico { margin: 0; width: 17px; height: 17px; }
+.message-row.ai .message-role-label { font-size: 0; gap: 0; margin-bottom: 6px; }
+#chat-disclaimer span { display: none; }
+.chat-disclaimer { font-size: 11.5px; margin-top: 4px; }
+.empty-chat { margin: auto; text-align: center; }
+.empty-chat h2 { margin-bottom: 22px; }
+.empty-start { display: flex; justify-content: center; }
+.empty-starters { justify-content: center; gap: 10px; }
+.empty-starter { padding: 11px 18px; font-size: 14.5px; }
+.msg-feedback, .feedback-row { opacity: 0.55; }
+.message-row:hover .msg-feedback, .message-row:hover .feedback-row { opacity: 1; }
