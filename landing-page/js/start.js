@@ -27,37 +27,37 @@
   };
   var CK = '<span class="qz-ck" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="' + HEART + '" fill="#f58fab"/></svg></span>';
   function photo(file, pos, icon) {
-    return '<span class="qz-ph"><img src="' + PH + file + '.webp" alt="" width="600" height="600" decoding="async" draggable="false" style="--pos:' + (pos || '50% 35%') + '">' + (icon ? ic(icon) : '') + CK + '</span>';
+    return '<span class="qz-ph"><img src="' + PH + file + '.webp?v=2" alt="" width="600" height="600" decoding="async" draggable="false" style="--pos:' + (pos || '50% 35%') + '">' + (icon ? ic(icon) : '') + CK + '</span>';
   }
-  function warm(list) { (list || []).forEach(function (f) { var im = new Image(); im.src = PH + f + '.webp'; }); }
+  function warm(list) { (list || []).forEach(function (f) { var im = new Image(); im.src = PH + f + '.webp?v=2'; }); }
   function ic(name) { return '<span class="qz-ic"><svg viewBox="0 0 24 24" aria-hidden="true">' + (IC[name] || '') + '</svg></span>'; }
 
   /* ---------- content ---------- */
   var PH = '/img/quiz/';
   var QUESTIONS = [
     { id: 'why', h: 'What brings you here?', opts: [
-      ['We fight about the same things', 'bolt', 'why-fight', '44% 30%'], ['I overthink every text', 'chat', 'why-overthink', '50% 30%'],
-      ['A hard talk is coming up', 'door', 'why-talk', '50% 40%'], ['Just curious about me', 'eye', 'why-curious', '50% 28%'] ] },
+      ['We fight about the same things', 'bolt', 'why-fight', '50% 40%'], ['I overthink every text', 'chat', 'why-overthink', '45% 40%'],
+      ['A hard talk is coming up', 'door', 'why-talk', '40% 40%'], ['Just curious about me', 'eye', 'why-curious', '50% 35%'] ] },
     { id: 'status', h: 'Where are you right now?', opts: [
-      ['Single, and learning', 'sun', 'st-single', '38% 30%'], ['Dating someone', 'heart', 'st-dating', '56% 40%'],
-      ['In a relationship', 'users', 'st-rel', '58% 45%'], ['It’s complicated', 'link', 'st-compl', '55% 30%'] ] },
+      ['Single, and learning', 'sun', 'st-single', '50% 40%'], ['Dating someone', 'heart', 'st-dating', '40% 35%'],
+      ['In a relationship', 'users', 'st-rel', '50% 45%'], ['It’s complicated', 'link', 'st-compl', '50% 40%'] ] },
     { id: 'hard', h: 'Which moment is the hardest?', opts: [
-      ['Waiting for a reply', 'clock', 'hd-wait', '40% 40%'], ['The hour after a fight', 'moon', 'hd-after', '40% 30%'],
-      ['Saying how I really feel', 'chat', 'hd-feel', '50% 40%'], ['Feeling distance grow', 'wave', 'hd-dist', '50% 45%'] ] }
+      ['Waiting for a reply', 'clock', 'hd-wait', '55% 40%'], ['The hour after a fight', 'moon', 'hd-after', '65% 45%'],
+      ['Saying how I really feel', 'chat', 'hd-feel', '60% 45%'], ['Feeling distance grow', 'wave', 'hd-dist', '50% 45%'] ] }
   ];
 
   // each pair: [a, b]; every option adds one point to a style
   var PAIRS = [
-    [ { t: 'I keep checking my phone for their reply.', i: 'phone', s: 'A', p: 'p1a', pos: '66% 30%' },
-      { t: 'A day without texting? Totally fine.', i: 'cup', s: 'V', p: 'p1b', pos: '60% 35%' } ],
-    [ { t: 'After a fight I need to talk it out now.', i: 'chat', s: 'A', p: 'p2a', pos: '12% 35%' },
-      { t: 'After a fight I need space first.', i: 'door', s: 'V', p: 'p2b', pos: '50% 35%' } ],
-    [ { t: 'I fear I’ll be too much if I ask for more.', i: 'ghost', s: 'F', p: 'p3a', pos: '50% 35%' },
-      { t: 'Being close and being apart both feel okay.', i: 'shield', s: 'S', p: 'p3b', pos: '55% 45%' } ],
-    [ { t: 'I say “it’s fine” when it isn’t.', i: 'wave', s: 'V', p: 'p4a', pos: '50% 25%' },
-      { t: 'I say what I feel, kindly, and let it go.', i: 'sun', s: 'S', p: 'p4b', pos: '50% 30%' } ],
-    [ { t: 'I overthink every message before I send it.', i: 'eye', s: 'A', p: 'p5a', pos: '25% 40%' },
-      { t: 'I pull back when things get too intense.', i: 'door', s: 'V', p: 'p5b', pos: '50% 50%' } ]
+    [ { t: 'I keep checking my phone for their reply.', i: 'phone', s: 'A', p: 'p1a', pos: '45% 50%' },
+      { t: 'A day without texting? Totally fine.', i: 'cup', s: 'V', p: 'p1b', pos: '50% 60%' } ],
+    [ { t: 'After a fight I need to talk it out now.', i: 'chat', s: 'A', p: 'p2a', pos: '72% 45%' },
+      { t: 'After a fight I need space first.', i: 'door', s: 'V', p: 'p2b', pos: '50% 45%' } ],
+    [ { t: 'I fear I’ll be too much if I ask for more.', i: 'ghost', s: 'F', p: 'p3a', pos: '40% 50%' },
+      { t: 'Being close and being apart both feel okay.', i: 'shield', s: 'S', p: 'p3b', pos: '55% 50%' } ],
+    [ { t: 'I say “it’s fine” when it isn’t.', i: 'wave', s: 'V', p: 'p4a', pos: '30% 40%' },
+      { t: 'I say what I feel, kindly, and let it go.', i: 'sun', s: 'S', p: 'p4b', pos: '50% 50%' } ],
+    [ { t: 'I overthink every message before I send it.', i: 'eye', s: 'A', p: 'p5a', pos: '45% 45%' },
+      { t: 'I pull back when things get too intense.', i: 'door', s: 'V', p: 'p5b', pos: '88% 55%' } ]
   ];
 
   var RESULTS = {
