@@ -1,0 +1,181 @@
+{
+ "note": "Unsplash photos used on the blog (never reuse). id -> photographer, file",
+ "photos": {
+  "unsplash:-YOxHG0REzU": {
+   "by": "Vitaly Gariev",
+   "file": "2026-10-03-relationship-problems-that-keep-coming-back-1.jpg"
+  },
+  "unsplash:Wu_GJrVYUjY": {
+   "by": "Toa Heftiba",
+   "file": "2026-10-03-relationship-problems-that-keep-coming-back-3.jpg"
+  },
+  "unsplash:ELnxUDFs6ec": {
+   "by": "Priscilla Du Preez \ud83c\udde8\ud83c\udde6",
+   "file": "2026-10-04-how-to-fix-a-relationship-1.jpg"
+  },
+  "unsplash:bVAY3coCf6s": {
+   "by": "Jose Chomali",
+   "file": "2026-10-04-how-to-fix-a-relationship-3.jpg"
+  },
+  "unsplash:TxSVqNgnjq4": {
+   "by": "Brooke Cagle",
+   "file": "2026-10-05-relationship-advice-communication-habits-1.jpg"
+  },
+  "unsplash:be8AmxavYp8": {
+   "by": "Jonathan J. Castellon",
+   "file": "2026-10-05-relationship-advice-communication-habits-3.jpg"
+  },
+  "unsplash:-SDgOlirIaY": {
+   "by": "Hunters Race",
+   "file": "2026-10-08-how-attachment-styles-work-in-relationships-1.jpg"
+  },
+  "unsplash:FO18LpXMlvk": {
+   "by": "Kristina Litvjak",
+   "file": "2026-10-08-how-attachment-styles-work-in-relationships-3.jpg"
+  },
+  "unsplash:ZQtk_VAvO7Y": {
+   "by": "Toni Osmundson",
+   "file": "2026-10-08-how-to-apologize-to-your-partner-1.jpg"
+  },
+  "unsplash:HluBkwE9Iwo": {
+   "by": "Fidel Fernando",
+   "file": "2026-10-08-how-to-apologize-to-your-partner-3.jpg"
+  },
+  "unsplash:GwD3z579c94": {
+   "by": "kevin laminto",
+   "file": "2026-10-08-how-to-stop-overthinking-in-a-relationship-1.jpg"
+  },
+  "unsplash:QofjUnxy9LY": {
+   "by": "Becca Tapert",
+   "file": "2026-10-08-how-to-stop-overthinking-in-a-relationship-3.jpg"
+  },
+  "unsplash:lSMf7GJoDz4": {
+   "by": "Ren\u00e9 Ranisch",
+   "file": "2026-10-26-date-night-questions-for-couples-1.jpg"
+  },
+  "unsplash:9vqDpwaBPQ8": {
+   "by": "Taylor Gray",
+   "file": "2026-10-26-date-night-questions-for-couples-3.jpg"
+  },
+  "unsplash:rjzW_IIjBJc": {
+   "by": "Matheus C\u00e2mara da Silva",
+   "file": "2026-10-26-deep-questions-to-ask-your-partner-1.jpg"
+  },
+  "unsplash:d1hBfHYcAF8": {
+   "by": "Ryan Jacobson",
+   "file": "2026-10-26-deep-questions-to-ask-your-partner-3.jpg"
+  },
+  "unsplash:jCXU0qdPouc": {
+   "by": "Chermiti Mohamed",
+   "file": "2026-10-26-green-flags-in-a-relationship-1.jpg"
+  },
+  "unsplash:6rKkr2fh2-I": {
+   "by": "Giorgio Trovato",
+   "file": "2026-10-26-green-flags-in-a-relationship-3.jpg"
+  },
+  "unsplash:Jqk9QJgmH0Q": {
+   "by": "Tani Eisenstein",
+   "file": "2026-10-26-how-to-rebuild-trust-after-a-fight-1.jpg"
+  },
+  "unsplash:ciUUTJfFmI0": {
+   "by": "Natalie Runnerstrom",
+   "file": "2026-10-26-how-to-rebuild-trust-after-a-fight-3.jpg"
+  },
+  "unsplash:cM5RHqSIp80": {
+   "by": "Marco Palumbo",
+   "file": "2026-10-26-how-to-say-i-love-you-without-words-1.jpg"
+  },
+  "unsplash:1tK1Fkrn34A": {
+   "by": "Mitchell Luo",
+   "file": "2026-10-26-how-to-say-i-love-you-without-words-3.jpg"
+  },
+  "unsplash:H_Uu6LC83SU": {
+   "by": "Noah Samuel Franz",
+   "file": "2026-11-07-holidays-with-your-partners-family-1.jpg"
+  },
+  "unsplash:iawJWGoxHSQ": {
+   "by": "R. G",
+   "file": "2026-11-07-holidays-with-your-partners-family-3.jpg"
+  },
+  "unsplash:Z0B1b8Xl4Jw": {
+   "by": "Lensabl",
+   "file": "2026-11-09-breadcrumbing-1.jpg"
+  },
+  "unsplash:CPQfGe1ucq4": {
+   "by": "Marwan Ahmed",
+   "file": "2026-11-09-breadcrumbing-3.jpg"
+  },
+  "unsplash:WqSWLtKrDEY": {
+   "by": "Omar:. Lopez-Rincon",
+   "file": "2026-11-09-clear-coding-dating-1.jpg"
+  },
+  "unsplash:5couLbjrpOw": {
+   "by": "Jakub \u017berdzicki",
+   "file": "2026-11-09-clear-coding-dating-3.jpg"
+  },
+  "unsplash:BD6OTAyFG3Y": {
+   "by": "Vitaly Gariev",
+   "file": "2026-11-09-how-to-talk-about-money-with-your-partner-1.jpg"
+  },
+  "unsplash:IMj2Nsxiq7Q": {
+   "by": "Finde Zukunft",
+   "file": "2026-11-09-how-to-talk-about-money-with-your-partner-3.jpg"
+  },
+  "unsplash:PYP3x1lEUXU": {
+   "by": "Evelyn Akhmerov",
+   "file": "2026-11-09-love-bombing-1.jpg"
+  },
+  "unsplash:B0dvIX_b1ok": {
+   "by": "Ionela Mat",
+   "file": "2026-11-09-love-bombing-3.jpg"
+  },
+  "unsplash:NA5bxbiLr7o": {
+   "by": "Vitaly Gariev",
+   "file": "2026-11-11-emotionally-unavailable-partner-1.jpg"
+  },
+  "unsplash:ZWgnHo8-TME": {
+   "by": "Compagnons",
+   "file": "2026-11-11-emotionally-unavailable-partner-3.jpg"
+  },
+  "unsplash:WGCV2mAVUDs": {
+   "by": "The Ridge Ohio",
+   "file": "2026-11-11-meeting-your-partners-parents-1.jpg"
+  },
+  "unsplash:EiL2KnuY0hc": {
+   "by": "David Todd McCarty",
+   "file": "2026-11-11-meeting-your-partners-parents-3.jpg"
+  },
+  "unsplash:KQfxVDHGCUg": {
+   "by": "Kylli Kittus",
+   "file": "2026-11-12-how-to-support-your-partner-when-stressed-1.jpg"
+  },
+  "unsplash:uwinmIQD8nU": {
+   "by": "Vitaly Gariev",
+   "file": "2026-11-12-how-to-support-your-partner-when-stressed-3.jpg"
+  },
+  "unsplash:u0vgcIOQG08": {
+   "by": "Jens Lelie",
+   "file": "2026-11-12-should-i-break-up-with-my-partner-1.jpg"
+  },
+  "unsplash:h1OhvEIIcxs": {
+   "by": "Rosie Steggles",
+   "file": "2026-11-12-should-i-break-up-with-my-partner-3.jpg"
+  },
+  "unsplash:sLp-kPZatLc": {
+   "by": "Dmitry Schemelev",
+   "file": "2026-11-13-how-to-get-over-a-breakup-1.jpg"
+  },
+  "unsplash:oUmi4m5BfM4": {
+   "by": "Vladimir Fedotov",
+   "file": "2026-11-13-how-to-get-over-a-breakup-3.jpg"
+  },
+  "unsplash:LZ03UAy1SMc": {
+   "by": "Kelly Sikkema",
+   "file": "2026-11-13-relationship-anxiety-1.jpg"
+  },
+  "unsplash:MGj66mX6WQg": {
+   "by": "Alexey Demidov",
+   "file": "2026-11-13-relationship-anxiety-3.jpg"
+  }
+ }
+}
