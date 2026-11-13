@@ -3,9 +3,6 @@ title: "Relationship anxiety: 7 signs and how to calm it without pushing your pa
 date: 2026-11-13
 description: Constant worry that they'll leave, even when things are good? 7 signs of relationship anxiety, where it comes from and practical ways to calm it.
 tags: relationship anxiety, attachment
-draft: true
-approved: true
-topics: overthinking, attachment
 ---
 Everything is fine. They texted good morning, you had a nice weekend, nothing is wrong. And yet there's this voice: what if they're losing interest? What if this is too good to last? What if they leave?
 
