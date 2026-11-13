@@ -4,6 +4,7 @@ date: 2026-11-14
 description: Always doubting your own memory after a fight? 8 signs of gaslighting in a relationship, real examples of what it sounds like and how to trust yourself again.
 tags: gaslighting in a relationship, emotional manipulation
 draft: true
+approved: true
 topics: conflict, overthinking
 ---
 You're sure you remember what happened. Then you bring it up, and somehow you end the conversation apologising, confused and wondering if you're the problem. It happens again. And again. Slowly, you stop trusting your own memory.
