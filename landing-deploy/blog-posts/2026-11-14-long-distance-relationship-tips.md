@@ -3,9 +3,6 @@ title: "Long distance relationship tips: 10 ways to stay close when you're far a
 date: 2026-11-14
 description: Making a long distance relationship work is hard, especially over the holidays. 10 practical long distance relationship tips, what research says about distance and closeness, real examples and lines you can use.
 tags: long distance relationship tips, LDR
-draft: true
-approved: true
-topics: communication
 ---
 You say goodnight through a screen. You count days on a calendar. You miss them at the small moments, like a funny thing on the way home that you can only send as a text.
 
