@@ -57,3 +57,16 @@
     });
   });
 })();
+
+/* copy buttons in articles (lines to say, share link) */
+(function () {
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-copy]');
+    if (!b) return;
+    e.preventDefault();
+    var t = b.getAttribute('data-copy'), done = b.getAttribute('data-done') || 'Copied', old = b.textContent;
+    function ok() { b.classList.add('done'); if (b.tagName === 'BUTTON') b.textContent = done; setTimeout(function () { b.classList.remove('done'); if (b.tagName === 'BUTTON') b.textContent = old; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+    try { if (window.umami) window.umami.track(b.classList.contains('sb-btn') ? 'share-copy-link' : 'blog-say-copy'); } catch (_) {}
+  });
+})();

@@ -77,7 +77,7 @@ const EN = {
   blogSub: "Practical guides on communication, conflict and connection, drawing on methods real therapists use.",
   blogEmpty: "New articles are on the way.",
   bannerH2: "Ready for a clearer head?",
-  bannerP: "Be among the first to try Coach Chat and Partner Practice. Free to start, no card needed.",
+  bannerP: "Try Coach Chat, Partner Practice and Message check. Free to start, no card needed.",
   readArticle: "Read article",
   minRead: "{n} min read",
   back: "← All articles",
@@ -85,7 +85,7 @@ const EN = {
   articleNote:
     "This article is general information for personal growth and not a substitute for professional advice. If you feel unsafe in your relationship, please contact a local support service or helpline.",
   ctaH2: "Want help applying this to your own relationship?",
-  ctaP: "Talk it through in Coach Chat, then rehearse the conversation in Partner Practice. Free to start, opening soon.",
+  ctaP: "Talk it through in Coach Chat, then rehearse the conversation in Partner Practice. Free to start, no card needed.",
   ctaIg: "Or get daily tips on",
   homeTag: "From the blog",
   homeH2: "Relationship advice, tips & guides",
@@ -104,6 +104,15 @@ const EN = {
   adPracticeTitle: "Rehearse the hard talk",
   adPracticeText: "Practice with an AI that plays your partner. Completely private.",
   adNote: "Free to start · No card needed",
+  glance: "At a glance",
+  updated: "Updated",
+  sayTry: "Try saying",
+  sayInstead: "Instead of",
+  copy: "Copy",
+  copied: "Copied",
+  sayCheck: "Check how it lands",
+  faqTitle: "Quick answers",
+  shareTitle: "Found this useful? Share it",
 };
 const AUTHOR = "Jonáš Schlögl";
 // which tool the sidebar card promotes, per article (default: Coach Chat)
@@ -112,7 +121,18 @@ const AD_BY_POST = {
   "2026-10-05-relationship-advice-communication-habits": "check",
   "2026-10-03-relationship-problems-that-keep-coming-back": "practice",
   "2026-10-04-how-to-fix-a-relationship": "practice",
+  "2026-11-09-breadcrumbing": "check",
+  "2026-11-09-clear-coding-dating": "check",
+  "2026-11-09-love-bombing": "check",
+  "2026-10-08-how-to-stop-overthinking-in-a-relationship": "check",
+  "2026-11-13-relationship-anxiety": "check",
+  "2026-11-09-how-to-talk-about-money-with-your-partner": "practice",
+  "2026-11-07-holidays-with-your-partners-family": "practice",
+  "2026-11-11-meeting-your-partners-parents": "practice",
+  "2026-10-26-how-to-rebuild-trust-after-a-fight": "practice",
+  "2026-11-11-emotionally-unavailable-partner": "practice",
 };
+const APP_SIGNUP = "https://app.relationshipaiadvice.com/register.html";
 
 // Texts used by landing.js (the waitlist dialog and the mobile helpers).
 const JS_TEXTS = [
@@ -189,6 +209,33 @@ function inline(text) {
   return s;
 }
 
+// ----- "what to say" lines: copyable script cards
+const QUOTE_RE = /^["\u201c][^"\u201c\u201d]{12,}["\u201d]\.?$/;
+const SAY_RE = /^(Try|Try saying|Say|Say it simply|Instead of|You could say|Ask|Something like)\s*:\s*(["\u201c].{8,}["\u201d]\.?)$/i;
+const unq = (q) => q.trim().replace(/\.$/, "").replace(/^["\u201c]|["\u201d]$/g, "");
+function sayCard(q, label, actions = true) {
+  const t = unq(q);
+  return `<div class="say"><span class="say-k">${esc(label)}</span><p class="say-q">\u201c${inline(t)}\u201d</p>${actions ? `<div class="say-a"><button type="button" class="say-copy" data-copy="${attr(t)}" data-done="${attr(EN.copied)}">${esc(EN.copy)}</button><a class="say-try" href="${APP_SIGNUP}" data-umami-event="blog-say-check">${esc(EN.sayCheck)} \u2192</a></div>` : ""}</div>`;
+}
+function swapCard(a, b) {
+  const x = unq(a), y = unq(b);
+  return `<div class="say say-swap"><div class="say-row say-bad"><span class="say-k">${esc(EN.sayInstead)}</span><p class="say-q">\u201c${inline(x)}\u201d</p></div><div class="say-row say-good"><span class="say-k">${esc(EN.sayTry)}</span><p class="say-q">\u201c${inline(y)}\u201d</p><div class="say-a"><button type="button" class="say-copy" data-copy="${attr(y)}" data-done="${attr(EN.copied)}">${esc(EN.copy)}</button><a class="say-try" href="${APP_SIGNUP}" data-umami-event="blog-say-check">${esc(EN.sayCheck)} \u2192</a></div></div></div>`;
+}
+
+// lines inside a paragraph: 'Try: "..."' or 'Instead of "...", try "..."' are lifted out into cards
+const INLINE_SAY = /(^|[.!?]\s+|["\u201d]\s+|\*\*\s+)((?:try(?: something like| saying)?|say(?: it simply| to your partner| something like)?|you (?:could|can) say|something like|for example)\s*:?\s*)["\u201c]([^"\u201c\u201d]{12,260})["\u201d][.,]?/i;
+const INLINE_SWAP = /(^|[.!?]\s+)instead of\s*:?\s*["\u201c]([^"\u201c\u201d]{8,200})["\u201d],?\s*try(?: saying)?\s*:?\s*["\u201c]([^"\u201c\u201d]{8,260})["\u201d][.,]?/i;
+function sayInline(para, depth = 0) {
+  if (depth > 2) return `<p>${inline(para)}</p>`;
+  const sw = para.match(INLINE_SWAP), sy = para.match(INLINE_SAY);
+  const m = sw && (!sy || sw.index <= sy.index) ? sw : sy;
+  if (!m) return `<p>${inline(para)}</p>`;
+  const start = m.index + m[1].length, end = m.index + m[0].length;
+  const before = para.slice(0, start).trim(), after = para.slice(end).trim();
+  const card = m === sw ? swapCard(`"${m[2]}"`, `"${m[3]}"`) : sayCard(`"${m[3]}"`, EN.sayTry, true);
+  return (before ? `<p>${inline(before)}</p>` : "") + card + (after ? sayInline(after, depth + 1) : "");
+}
+
 function markdown(src) {
   const lines = src.replace(/\r\n/g, "\n").split("\n");
   const out = [];
@@ -214,6 +261,15 @@ function markdown(src) {
       i++; continue;
     }
     if (/^(-{3,}|\*{3,})\s*$/.test(line)) { out.push("<hr />"); i++; continue; }
+    // GitHub-style table: | a | b | followed by |---|---|
+    if (/^\s*\|.*\|\s*$/.test(line) && i + 1 < lines.length && /^\s*\|?\s*:?-{3,}/.test(lines[i + 1])) {
+      const cells = (l) => l.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      const head = cells(line); i += 2;
+      const rows = [];
+      while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) rows.push(cells(lines[i++]));
+      out.push(`<div class="table-scroll"><table><thead><tr>${head.map((h) => `<th>${inline(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+      continue;
+    }
     if (/^>\s?/.test(line)) {
       const buf = [];
       while (i < lines.length && /^>\s?/.test(lines[i])) buf.push(lines[i++].replace(/^>\s?/, ""));
@@ -223,6 +279,8 @@ function markdown(src) {
     if (/^\s*[-*]\s+/.test(line)) {
       const items = [];
       while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) items.push(lines[i++].replace(/^\s*[-*]\s+/, ""));
+      // a list made only of quoted lines becomes a stack of copyable lines
+      if (items.length > 1 && items.every((t) => QUOTE_RE.test(t.trim()))) { out.push(`<div class="say-stack">${items.map((t) => sayCard(t.trim(), EN.sayTry, true)).join("")}</div>`); continue; }
       out.push("<ul>" + items.map((t) => `<li>${inline(t)}</li>`).join("") + "</ul>");
       continue;
     }
@@ -235,7 +293,19 @@ function markdown(src) {
     const buf = [];
     while (i < lines.length && lines[i].trim() && !/^(#{1,4}\s|>|```|\s*[-*]\s+|\s*\d+[.)]\s+|-{3,}\s*$)/.test(lines[i])) buf.push(lines[i++]);
     if (!buf.length) { i++; continue; }
-    out.push(`<p>${inline(buf.join(" "))}</p>`);
+    const para = buf.join(" ").trim();
+    // "Instead of: ..." followed by "Try: ..." becomes one before/after card
+    const sm = para.match(SAY_RE);
+    if (sm && /^instead of/i.test(sm[1])) {
+      let j = i; while (j < lines.length && !lines[j].trim()) j++;
+      const next = j < lines.length ? lines[j].trim().match(SAY_RE) : null;
+      if (next && !/^instead of/i.test(next[1])) { out.push(swapCard(sm[2], next[2])); i = j + 1; continue; }
+    }
+    if (sm) { out.push(sayCard(sm[2], /^instead of/i.test(sm[1]) ? EN.sayInstead : EN.sayTry, !/^instead of/i.test(sm[1]))); continue; }
+    if (QUOTE_RE.test(para) && para.length < 420) { out.push(sayCard(para, EN.sayTry, true)); continue; }
+    const lab = para.match(/^\*\*([^*]{3,80})\*\*\s*(["\u201c][^"\u201c\u201d]{12,}["\u201d]\.?)$/);
+    if (lab) { out.push(sayCard(lab[2], lab[1].replace(/[.:]$/, ""), true)); continue; }
+    out.push(sayInline(para));
   }
   return { html: out.join("\n"), headings };
 }
@@ -287,7 +357,8 @@ function loadPosts(dir, englishByKey) {
       const words = body.split(/\s+/).filter(Boolean).length;
       const tags = (meta.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
       const description = meta.description || body.replace(/[#*_>`\[\]()-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 155);
-      posts.push({ key, slug, title: meta.title, date, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
+      const updated = /^\d{4}-\d{2}-\d{2}$/.test(meta.updated || "") ? meta.updated : null;
+      posts.push({ key, slug, title: meta.title, date, updated, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
     } catch (e) {
       console.warn(`WARNING: skipped ${dir}/${file}: ${e.message}`);
     }
@@ -455,6 +526,59 @@ function blogIndexPage(ctx, all) {
   });
 }
 
+// ----- article enhancements: at-a-glance box, early tool card, FAQ accordion, callouts
+const TOOL = {
+  check: { k: "Message check", title: "Not sure how your text will land?", text: "Paste it in and see how it may read to them, plus a calmer version you can send.",
+    demo: '<div class="tc-b me">Fine. Do whatever you want.</div><div class="tc-tag">Likely to read as: cold</div><div class="tc-b ai">I\u2019m upset and need a bit of time. Can we talk tonight?</div>' },
+  practice: { k: "Partner Practice", title: "Rehearse this conversation first", text: "An AI plays your partner so you can try the words before the real talk. Then you get feedback.",
+    demo: '<div class="tc-b me">Can we talk about this weekend? I want us to plan it together.</div><div class="tc-b them">Sure. What\u2019s on your mind?</div><div class="tc-tag">Feedback: calm start, clear ask</div>' },
+  coach: { k: "Coach Chat", title: "Talk it through with a coach", text: "Tell it what happened and get calm, concrete next steps. Private, any time, even at 2am.",
+    demo: '<div class="tc-b me">We had the same fight again and I don\u2019t know what to say.</div><div class="tc-b ai">Let\u2019s slow it down. What did you most want them to hear?</div>' },
+};
+function toolCard(p) {
+  const kind = AD_BY_POST[p.key] || "coach", t = TOOL[kind];
+  return `<aside class="tool-card tc-${kind}"><div class="tc-copy"><span class="tc-k">${t.k} \u00b7 Free</span><p class="tc-h">${t.title}</p><p class="tc-p">${t.text}</p><a class="btn btn-gradient" href="${APP_SIGNUP}" data-umami-event="cta-blog-inline-${kind}">Try it free</a><small>No card needed</small></div><div class="tc-demo" aria-hidden="true">${t.demo}</div></aside>`;
+}
+function enhance(p) {
+  let h = p.html;
+  // FAQ: an H2 like "Quick answers" / "FAQ" followed by H3 questions becomes an accordion
+  const faq = [];
+  h = h.replace(/(<h2 id="[^"]+">[^<]*(?:quick answers|faq|frequently asked|common questions)[^<]*<\/h2>)([\s\S]*?)(?=<h2[\s>]|$)/i, (m, head, body) => {
+    const parts = body.split(/(?=<h3[\s>])/);
+    const pre = parts[0].startsWith("<h3") ? "" : parts.shift();
+    const items = parts.map((x) => {
+      const q = (x.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [, ""])[1];
+      const a = x.replace(/<h3[^>]*>[\s\S]*?<\/h3>/, "").trim();
+      faq.push({ q: stripTags(q), a: stripTags(a) });
+      return `<details class="faq-item"><summary>${q}</summary><div class="faq-a">${a}</div></details>`;
+    });
+    return `${head}${pre}<div class="faq-list">${items.join("")}</div>\n`;
+  });
+  // callouts
+  h = h.replace(/(<h2 id="[^"]+">A note on safety<\/h2>)([\s\S]*?)(?=<h2[\s>]|<p><em>|$)/i, '<section class="callout callout-safety">$1$2</section>\n');
+  h = h.replace(/(<h2 id="sources">Sources<\/h2>)([\s\S]*?)$/i, '<section class="sources-box">$1$2</section>');
+  // at a glance: numbered headings (## 1. / ### 1.)
+  const nums = [...h.matchAll(/<h([23]) id="([^"]+)">\s*(\d+)[.)]\s*([\s\S]*?)<\/h\1>/g)].map((m) => ({ id: m[2], n: m[3], text: stripTags(m[4]) }));
+  const glance = nums.length >= 3 ? `<nav class="glance" aria-label="${attr(EN.glance)}"><p class="glance-k">${EN.glance}</p><ol>${nums.map((x) => `<li><a href="#${x.id}">${esc(x.text)}</a></li>`).join("")}</ol></nav>` : "";
+  const first = h.search(/<h2[\s>]/);
+  const insert = glance + toolCard(p);
+  h = first > 0 ? h.slice(0, first) + insert + "\n" + h.slice(first) : insert + h;
+  return { html: h, faq };
+}
+function shareBar(p, url) {
+  const u = encodeURIComponent(url), t = encodeURIComponent(p.title);
+  const img = hasImgs(p.key) ? encodeURIComponent(`${SITE}${imgFile(p.key, 1)}`) : "";
+  const ic = {
+    link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    wa: '<path d="M4 20l1.3-4A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.7 2 3.7 4.5 4.5l1-1.2 1.8.8c-.2 1-1 1.6-2 1.6A6.5 6.5 0 0 1 7.6 9c0-1 .6-1.8 1.6-2l.8 1.8z"/>',
+    pin: '<circle cx="12" cy="12" r="9"/><path d="M11 8.5c2.6-.6 4.6.8 4.2 3.2-.3 2-2 3.2-3.6 2.4M11.5 9.5L9.5 19"/>',
+    fb: '<path d="M14 8h2V5h-2.5C11.6 5 10.5 6.2 10.5 8v2H8.5v3h2v7h3v-7h2.3l.4-3h-2.7V8.4c0-.3.2-.4.5-.4z"/>',
+    x: '<path d="M5 5l14 14M19 5L5 19"/>',
+  };
+  const b = (k, href, label, extra = "") => `<a class="sb-btn" ${href ? `href="${href}" target="_blank" rel="noopener noreferrer"` : 'href="#" role="button"'} aria-label="${label}" title="${label}" ${extra} data-umami-event="share-${k}"><svg viewBox="0 0 24 24" aria-hidden="true">${ic[k]}</svg></a>`;
+  return `<div class="share-bar"><p>${EN.shareTitle}</p><div class="sb-row">${b("link", "", "Copy link", `data-copy="${attr(url)}" data-done="${attr(EN.linkCopied)}"`)}${b("wa", `https://wa.me/?text=${t}%20${u}`, "Share on WhatsApp")}${b("pin", `https://www.pinterest.com/pin/create/button/?url=${u}&media=${img}&description=${t}`, "Save on Pinterest")}${b("fb", `https://www.facebook.com/sharer/sharer.php?u=${u}`, "Share on Facebook")}${b("x", `https://x.com/intent/post?url=${u}&text=${t}`, "Share on X")}</div></div>`;
+}
+
 // ----- article extras: table of contents, sidebar card, share icons
 const stripTags = (h) => h.replace(/<[^>]+>/g, "").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
 function tocOf(p) {
@@ -484,8 +608,10 @@ function shareRow(ctx, p, url) {
         </div>`;
 }
 
-function postPage(ctx, p, all) {
+function postPage(ctx, p0, all) {
   const { T, posts } = ctx;
+  const enh = enhance(p0);
+  const p = { ...p0, html: enh.html };
   const others = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
   const { exact, fallback } = switcherTargets("post", p.key, all);
   const url = `${SITE}${ctx.prefix}/blog/${p.slug}/`;
@@ -512,7 +638,7 @@ function postPage(ctx, p, all) {
           <h1>${esc(p.title)}</h1>
           <div class="article-byline">
             <a href="/about/" class="avatar-link" aria-label="About us">${avatar}</a>
-            <p>${T(EN.by)} <a href="/about/" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
+            <p>${T(EN.by)} <a href="/about/" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${p.updated ? `${T(EN.updated)} ${fmtDate(p.updated, ctx.locale)}` : fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
           </div>
           ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
           ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
@@ -520,6 +646,7 @@ function postPage(ctx, p, all) {
 ${withImages(p)}
           </div>
           ${ctaBox(ctx, "cta-blog-article")}
+          ${shareBar(p, url)}
           <p class="article-note">${T(EN.articleNote)}</p>
           ${adCard(ctx, p, "ad-mobile")}
         </div>
@@ -539,15 +666,18 @@ ${withImages(p)}
       </div>
     </section>` : ""}
   </main>`,
-    jsonld: {
-      "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description,
-      datePublished: p.date, dateModified: p.date, mainEntityOfPage: url,
+    jsonld: enh.faq.length ? { "@context": "https://schema.org", "@graph": [articleLd(ctx, p, url, ogPng), { "@type": "FAQPage", mainEntity: enh.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] } : { "@context": "https://schema.org", ...articleLd(ctx, p, url, ogPng) },
+  });
+}
+function articleLd(ctx, p, url, ogPng) {
+  return {
+      "@type": "Article", headline: p.title, description: p.description,
+      datePublished: p.date, dateModified: p.updated || p.date, mainEntityOfPage: url,
       inLanguage: ctx.lang.htmlLang,
       image: ogPng || `${SITE}/og-image.png`,
       author: { "@type": "Person", name: AUTHOR, url: INSTAGRAM },
       publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
-    },
-  });
+  };
 }
 
 function homeBlock(ctx) {

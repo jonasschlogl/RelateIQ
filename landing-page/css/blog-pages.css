@@ -105,3 +105,94 @@ body.hx.spg .ad-card .btn:hover::after { transform: translateX(4px); }
 body.hx.spg .ad-card small { align-self: center; margin-top: 2px; font: 600 12px/1.3 "DM Sans", sans-serif; color: #6b4a3a !important; }
 @media (prefers-reduced-motion: reduce) { body.hx.spg .ad-card::after { animation: none; } body.hx.spg .toc a, body.hx.spg .toc ol::after { transition: none; } }
 body.hx.spg .article-body h2[id] { scroll-margin-top: 112px; }
+
+/* ==========================================================================
+   Article components (v2): at a glance, inline tool card, copyable lines,
+   tables, FAQ accordion, callouts, share bar
+   ========================================================================== */
+body.sp-blog .article-body { --c: #3b2218; --p: #f58fab; --b: #f9d98a; }
+/* at a glance */
+.article-body .glance { margin: 30px 0 26px; padding: 22px 26px 18px; border-radius: 26px; background: #f9d98a; }
+.article-body .glance-k { margin: 0 0 12px !important; font-size: 12px !important; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #3b2218 !important; }
+.article-body .glance ol { list-style: none; margin: 0; padding: 0; counter-reset: g; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; }
+body.sp-blog .article-body .glance li { counter-increment: g; margin: 0 !important; padding: 0 !important; }
+.article-body .glance li::before { display: none; }
+body.sp-blog .article-body .glance a { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; color: #3b2218 !important; text-decoration: none !important; font-weight: 600; font-size: 15.5px; line-height: 1.35; }
+.article-body .glance a::before { content: counter(g); flex: none; width: 24px; height: 24px; border-radius: 50%; background: #3b2218; color: #f9d98a; font-size: 12.5px; font-weight: 800; display: grid; place-items: center; margin-top: -1px; }
+body.sp-blog .article-body .glance a:hover { text-decoration: underline !important; text-underline-offset: 3px; }
+@media (max-width: 640px) { .article-body .glance ol { grid-template-columns: 1fr; } }
+
+/* inline tool card (like a product card early in the article) */
+.article-body .tool-card { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 22px; align-items: center; margin: 8px 0 34px; padding: 24px; border-radius: 28px; background: #f58fab; color: #3b2218; }
+.article-body .tc-k { display: inline-block; background: #3b2218; color: #fff3e2; font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 6px 11px; border-radius: 99px; }
+.article-body .tool-card .tc-h { margin: 12px 0 6px !important; font-family: Fraunces, Georgia, serif; font-size: 25px !important; line-height: 1.12 !important; color: #3b2218 !important; font-weight: 500; }
+.article-body .tool-card .tc-p { margin: 0 0 16px !important; font-size: 15.5px !important; line-height: 1.5 !important; color: rgba(59, 34, 24, .82) !important; }
+.article-body .tool-card .btn { background: #3b2218 !important; color: #fff3e2 !important; border-radius: 99px; padding: 13px 22px; font-weight: 700; display: inline-flex; text-decoration: none; }
+.article-body .tool-card .btn:hover { background: #fff3e2 !important; color: #3b2218 !important; }
+.article-body .tool-card small { display: block; margin-top: 9px; font-size: 12.5px; color: rgba(59, 34, 24, .72); }
+.article-body .tc-demo { background: #fff3e2; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 18px 34px -22px rgba(59, 34, 24, .5); }
+.article-body .tc-b { max-width: 88%; padding: 9px 13px; border-radius: 16px; font-size: 13.5px; line-height: 1.4; }
+.article-body .tc-b.me { align-self: flex-end; background: #3b2218; color: #fff3e2; border-bottom-right-radius: 5px; }
+.article-body .tc-b.them, .article-body .tc-b.ai { align-self: flex-start; background: #fff; color: #3b2218; border-bottom-left-radius: 5px; box-shadow: inset 0 0 0 1px rgba(59, 34, 24, .1); }
+.article-body .tc-b.ai { background: #f9d98a; box-shadow: none; }
+.article-body .tc-tag { align-self: center; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #a3244f; background: rgba(245, 143, 171, .22); padding: 5px 10px; border-radius: 99px; }
+@media (max-width: 640px) { .article-body .tool-card { grid-template-columns: 1fr; padding: 20px; } .article-body .tc-demo { order: -1; } }
+
+/* copyable "what to say" lines */
+.article-body .say { margin: 18px 0 22px; padding: 18px 20px 16px; border-radius: 22px; background: #fff; box-shadow: 0 1px 0 rgba(59, 34, 24, .04), 0 14px 30px -24px rgba(59, 34, 24, .45); position: relative; }
+.article-body .say::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 4px; border-radius: 0 4px 4px 0; background: #f58fab; }
+.article-body .say-k { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #a3244f; margin-bottom: 6px; }
+.article-body .say .say-q { margin: 0 !important; font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 20px !important; line-height: 1.42 !important; color: #3b2218 !important; }
+.article-body .say-a { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 12px; }
+.article-body .say-copy { font: inherit; font-size: 13.5px; font-weight: 700; color: #3b2218; background: #fff3e2; border: 0; border-radius: 99px; padding: 8px 15px 8px 34px; cursor: pointer; position: relative; transition: background .2s; }
+.article-body .say-copy::before { content: ""; position: absolute; left: 13px; top: 50%; width: 13px; height: 13px; margin-top: -7px; border-radius: 3px; box-shadow: inset 0 0 0 2px #3b2218, 3px -3px 0 -1px #fff3e2, 3px -3px 0 1px #3b2218; }
+.article-body .say-copy:hover { background: #f9d98a; }
+.article-body .say-copy.done { background: #3b2218; color: #fff3e2; }
+.article-body .say-copy.done::before { box-shadow: inset 0 0 0 2px #fff3e2; }
+body.sp-blog .article-body .say-try { font-size: 13.5px; font-weight: 700; color: #a3244f !important; text-decoration: none !important; }
+.article-body .say-try:hover { text-decoration: underline; text-underline-offset: 3px; }
+.article-body .say-stack { display: grid; gap: 10px; margin: 16px 0 22px; }
+.article-body .say-stack .say { margin: 0; }
+.article-body .say-swap { padding: 0; overflow: hidden; }
+.article-body .say-swap::before { display: none; }
+.article-body .say-row { padding: 16px 20px; }
+.article-body .say-bad { background: #f6eadb; }
+.article-body .say-bad .say-k { color: rgba(59, 34, 24, .6); }
+.article-body .say-bad .say-q { color: rgba(59, 34, 24, .62) !important; text-decoration: line-through; text-decoration-color: rgba(163, 36, 79, .45); text-decoration-thickness: 1.5px; font-size: 18px !important; }
+.article-body .say-good { background: #fff; position: relative; }
+.article-body .say-good::before { content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 4px; border-radius: 0 4px 4px 0; background: #f58fab; }
+
+/* tables */
+.article-body .table-scroll { overflow-x: auto; margin: 20px 0 26px; border-radius: 20px; background: #fff; box-shadow: 0 14px 30px -26px rgba(59, 34, 24, .5); }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; min-width: 520px; }
+.article-body th { background: #3b2218; color: #fff3e2; text-align: left; font-weight: 700; padding: 13px 16px; font-size: 13px; letter-spacing: .04em; }
+.article-body td { padding: 12px 16px; border-top: 1px solid rgba(59, 34, 24, .08); color: #3b2218; vertical-align: top; }
+.article-body tr:nth-child(even) td { background: #fffaf3; }
+
+/* FAQ accordion */
+.article-body .faq-list { display: grid; gap: 10px; margin: 16px 0 10px; }
+body.sp-blog .article-body .faq-item { background: #fff !important; border-radius: 20px !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; }
+body.sp-blog .article-body .faq-item summary { list-style: none; background: none !important; cursor: pointer; padding: 17px 54px 17px 20px; font-weight: 700; font-size: 16.5px; color: #3b2218; position: relative; }
+.article-body .faq-item summary::-webkit-details-marker { display: none; }
+.article-body .faq-item summary::after { content: "+"; position: absolute; right: 16px; top: 50%; width: 28px; height: 28px; margin-top: -14px; border-radius: 50%; background: #f9d98a; display: grid; place-items: center; font-size: 19px; line-height: 1; transition: transform .25s; }
+.article-body .faq-item[open] summary::after { transform: rotate(45deg); background: #f58fab; }
+.article-body .faq-a { padding: 0 20px 16px; }
+.article-body .faq-a p { margin: 0 0 8px !important; font-size: 16px !important; }
+
+/* callouts */
+.article-body .callout-safety { margin: 30px 0; padding: 22px 24px 8px; border-radius: 24px; background: #f8c7a3; }
+.article-body .callout-safety h2 { margin-top: 0 !important; font-size: 24px !important; display: flex; align-items: center; gap: 10px; }
+.article-body .callout-safety h2::before { content: "!"; flex: none; width: 28px; height: 28px; border-radius: 50%; background: #3b2218; color: #f8c7a3; font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 16px; display: grid; place-items: center; }
+.article-body .callout-safety p { color: #3b2218 !important; }
+.article-body .sources-box { margin-top: 30px; padding: 20px 24px 10px; border-radius: 22px; background: rgba(59, 34, 24, .05); }
+.article-body .sources-box h2 { font-size: 20px !important; margin-top: 0 !important; }
+.article-body .sources-box li, .article-body .sources-box p { font-size: 14px !important; line-height: 1.55 !important; }
+
+/* share bar */
+.share-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; margin: 26px 0 6px; padding: 16px 18px 16px 22px; border-radius: 22px; background: #fff; }
+.share-bar p { margin: 0 !important; font-weight: 700; font-size: 15px; color: #3b2218; }
+.share-bar .sb-row { display: flex; gap: 8px; }
+.share-bar .sb-btn { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #fff3e2; color: #3b2218; transition: background .2s, transform .2s; }
+.share-bar .sb-btn:hover { background: #f58fab; transform: translateY(-2px); }
+.share-bar .sb-btn.done { background: #3b2218; color: #fff3e2; }
+.share-bar svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
