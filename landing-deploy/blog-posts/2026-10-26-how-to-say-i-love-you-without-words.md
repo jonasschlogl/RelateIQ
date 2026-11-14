@@ -50,6 +50,36 @@ Pick one thing from the list and do it tomorrow. Then ask your partner at the en
 
 If saying what you need feels hard, RelationshipAI is an AI relationship coach that can help you find the words. It isn't therapy, but it's a calm place to practise. For more ideas on staying close, our guide to [communication habits](/blog/relationship-advice-communication-habits/) is a good next read.
 
+## Quick answers
+
+### How do you show love without saying it?
+
+Through small, consistent actions: remembering what matters to them, taking something off their plate, a hug without an agenda, a message that asks for nothing, and full attention when they talk.
+
+### What are the five love languages?
+
+Words of affirmation, quality time, physical touch, acts of service and receiving gifts. The idea is popular, but research suggests people are happier when they receive all kinds of love, not only one "language".
+
+### Are love languages scientifically proven?
+
+Not really. A review of ten studies found no support for the claim that couples do better when they share the same love language. Thinking of love as a balanced diet of different kinds of care fits the research better.
+
+### How do I know what makes my partner feel loved?
+
+Ask them directly: "When do you feel most loved by me?" Also notice what they do for you, because people often show love the way they'd like to receive it.
+
+### What are small ways to show love every day?
+
+Make their coffee, send a quick "thinking of you" message, ask about something they mentioned yesterday, or put your phone away when they talk. Small things done often add up.
+
+### How can I show love to a partner who's stressed?
+
+Take a task off their list, give them quiet time if they want it, and ask what kind of support would help most. Our guide on [supporting a stressed partner](/blog/how-to-support-your-partner-when-stressed/) has more ideas.
+
+### Is it okay if my partner rarely says "I love you"?
+
+Many people show love more through actions than words, often because of how they grew up. If you'd like to hear it more, you can say so kindly: "I know you love me, and I'd really like to hear it sometimes."
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

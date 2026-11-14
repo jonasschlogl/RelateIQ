@@ -41,3 +41,33 @@ Naming the pattern out loud helps more than fighting inside it. You could say, "
 A problem that keeps returning usually points to a need nobody has said out loud. Name the need, ask for one specific thing, and notice how each of you responds.
 
 If a problem involves fear, control or anyone being hurt, it's beyond communication skills. Please reach out to a professional or a support service where you live.
+
+## Quick answers
+
+### Why do we keep having the same argument?
+
+Usually because the argument is about a surface issue, like dishes or screen time, while the real need underneath (feeling supported, respected or close) never gets said out loud. Until that need is named, the same fight keeps finding new topics.
+
+### Is it normal for couples to fight about the same things for years?
+
+Yes. Many couples have a few long-running differences that never fully disappear. What matters is whether you can talk about them calmly and with some humour, or whether each round leaves more hurt behind.
+
+### What are the most common relationship problems?
+
+Chores and the mental load, not enough time or attention, money, different needs for closeness and the same fight repeating are some of the most common. They often show up together, because they all touch the same needs for fairness, connection and respect.
+
+### How do we stop a recurring fight from escalating?
+
+Agree on a short pause when either of you feels flooded, then come back at a set time. Start the second attempt softly, with how you feel and one specific request, instead of a list of everything that went wrong. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) shows how.
+
+### How do we split the mental load more fairly?
+
+Make the invisible work visible first: list everything it takes to run your home, including planning and remembering, not just doing. Then hand over whole tasks, from noticing to finishing, rather than asking the other person to "help".
+
+### What if we want different amounts of closeness?
+
+That's very common and not a sign you're incompatible. Talk about what closeness and space each mean to you, and agree on a rhythm that gives both, like protected time together plus time that's clearly your own. Our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/) explains why this difference can feel so charged.
+
+### When should we get outside help?
+
+If the same problem has been going round for months, if talking about it always ends badly, or if one of you has stopped trying, a couples therapist can help you see the pattern from the outside. If there is fear, control or anyone being hurt, contact a support service first.

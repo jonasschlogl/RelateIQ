@@ -75,6 +75,36 @@ Researchers who study how couples spend time have found that doing new things to
 
 If you want a deeper set to try on a quiet night at home, we've put together [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/). And if you'd like help putting a hard thought into words before you say it, RelationshipAI is an AI relationship coach you can practise with. It isn't therapy, but it can help you start the conversation.
 
+## Quick answers
+
+### What are good questions to ask on a date night?
+
+Mix light and deeper ones: start with fun questions about favourite memories or silly hypotheticals, then move to questions about your relationship and your dreams. Open questions that start with "what" or "how" work better than yes-or-no ones.
+
+### How many questions should we ask in one evening?
+
+Fewer than you think. Three to five good questions with real follow-up usually beat twenty rushed ones. Let the conversation wander when it gets interesting.
+
+### What if my partner isn't into deep conversations?
+
+Start light and keep it playful, like a game rather than an interview. Let them pick the questions too, and don't push if they pass on one. Comfort with deeper topics often grows once it feels safe and fun.
+
+### How often should couples have a date night?
+
+There's no magic number. What matters is that it's regular and protected, whether that's once a week or twice a month. A short, focused hour together can do more than a long evening on your phones.
+
+### Can we use these questions on a video call?
+
+Yes. They work well for long distance couples too. Our [long distance relationship tips](/blog/long-distance-relationship-tips/) have more ideas for staying close when you're apart.
+
+### What if a question starts an argument?
+
+Pause and treat it as useful information, not a failed date. Say something like "That clearly matters to you, can we talk about it properly another day?" and go back to something lighter.
+
+### What's the difference between date night questions and deep questions?
+
+Date night questions are meant to be fun and easy to start with. [Deep questions](/blog/deep-questions-to-ask-your-partner/) go further into your stories, fears and needs, and are better for a calm evening with more time.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

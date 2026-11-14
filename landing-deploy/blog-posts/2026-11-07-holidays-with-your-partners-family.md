@@ -94,6 +94,22 @@ You don't have to like them, but it helps to be respectful and to keep the visit
 
 Talk about it before the next visit, when things are calm. Be specific: "When your mum commented on my weight, I needed you to say something." If it keeps happening, it's worth working on together, because feeling backed up is a big part of feeling safe in a relationship.
 
+### How do we decide whose family to spend the holidays with?
+
+Talk about it early, before invitations arrive. Many couples alternate years, split the days, or host their own celebration. What matters most is that you decide together and present the plan as a team.
+
+### How do I handle rude comments from my partner's family?
+
+Have a short, warm line ready, like "Thanks, we're happy with how things are," and change the subject. If it keeps happening, ask your partner to speak to their own family.
+
+### What if the holidays are causing fights between us?
+
+Agree on the plan, a signal and an exit before you go, and keep some time just for the two of you. Talk about how it went afterwards, kindly and in private, not in the car on the way home.
+
+### Is it okay to skip a family holiday?
+
+Yes. You're allowed to protect your energy and your relationship. If you skip, tell the family early and kindly, and offer another time to see them.
+
 ## A note on safety
 
 Family tension is normal. Being insulted, threatened, controlled or made to feel afraid is not, and it's not something you should just put up with because it's the holidays. If you feel unsafe with your partner or their family, please reach out to a local helpline or support service.

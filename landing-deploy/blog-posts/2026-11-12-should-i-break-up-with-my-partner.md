@@ -153,6 +153,18 @@ Not necessarily right away. Feelings in long relationships rise and fall, and th
 
 There's no perfect time. If you've already decided, waiting weeks just to get through the holidays can feel dishonest and draining for both of you. If you're still unsure, the holidays aren't a reason to rush.
 
+### How do you know when it's time to break up?
+
+Common signs are lost respect, feeling unsafe, big life goals that really clash, and problems that haven't changed despite honest conversations. If you imagine the next five years without any change and feel mostly dread, take that seriously.
+
+### Is it wrong to break up with someone you still love?
+
+No. You can love someone and still not be right together, for example if you want very different lives. Loving someone and choosing to stay are related, but they're not the same thing.
+
+### What should I say when I break up with someone?
+
+Keep it short, clear and kind. For example: "I've thought about this for a long time, and I don't think we're right for each other anymore." Avoid long lists of problems and don't leave false hope.
+
 ## A note on safety
 
 If your partner hurts you, threatens you, controls your money or who you see, or makes you feel afraid, please reach out to a local helpline or support service before you end the relationship. Leaving can be the riskiest moment, and support services can help you plan it safely.

@@ -189,6 +189,14 @@ No. It's a common pairing and it can be hard, because each person's way of copin
 
 They're closely related. "Disorganized" is the term used in research on children. In adults, the high-anxiety, high-avoidance pattern is usually called fearful or fearful-avoidant.
 
+### What attachment style is the most difficult?
+
+Fearful-avoidant attachment is often described as the hardest to live with, because the person wants closeness and fears it at the same time. It's also a pattern that can improve a lot with steady relationships and support from a therapist.
+
+### Can two avoidant people be in a relationship?
+
+Yes. They may get along easily at first because neither pushes for closeness, but problems can stay hidden for a long time. It helps to agree on regular check-ins, so important feelings get said before they turn into distance.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

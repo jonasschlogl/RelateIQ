@@ -101,6 +101,22 @@ Yes. Some people move fast because they're anxious, lonely or used to intense re
 
 Not always. Research has linked it with narcissistic traits and low self-esteem, but one behaviour isn't a diagnosis. Focus on how the relationship makes you feel rather than trying to label the other person.
 
+### What's the difference between love bombing and real love?
+
+Real love usually grows at a pace that matches how well you know each other, and it respects your boundaries and your life outside the relationship. Love bombing feels overwhelming, fast and intense, and the warmth often disappears when you disagree or say no.
+
+### What happens after love bombing stops?
+
+Often the attention drops suddenly, and criticism, control or coldness can take its place. Many people then try hard to get the early version back, which is what makes the pattern so confusing.
+
+### How do I respond to love bombing?
+
+Slow things down on purpose, keep your own plans and friendships, and notice how they react when you say no. A caring partner adjusts. A love bomber often pushes harder or turns cold.
+
+### Is it a red flag if someone says "I love you" very early?
+
+Not on its own. Some people are simply expressive. It becomes a warning sign when it comes with pressure, like pushing for commitment, constant contact or getting upset when you want to slow down.
+
 ## A note on safety
 
 If the intensity has turned into checking your phone, controlling who you see, threats, or making you afraid, that's not passion. It's a safety issue. Please reach out to a local helpline or support service, or talk to someone you trust.

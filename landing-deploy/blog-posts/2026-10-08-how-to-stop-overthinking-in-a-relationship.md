@@ -166,6 +166,18 @@ Usually not. In one study of people with generalized anxiety disorder, 91.4% of 
 
 Often, yes. A calm "I sometimes overthink when I don't hear from you, it's my thing to work on" helps your partner understand you without making them responsible for fixing it.
 
+### Why do I overthink everything in my relationship?
+
+Usually because your mind is trying to protect you from uncertainty, and in a relationship the missing information is often inside the other person's head. People higher in attachment anxiety tend to notice signs of distance faster, which makes the loop start more easily.
+
+### How do I stop overthinking at night?
+
+Calm your body first with slow breathing or a few minutes of cyclic sighing, then write the worry down and tell yourself you'll look at it tomorrow. Put the phone in another room so you're not tempted to check for messages.
+
+### Can overthinking ruin a relationship?
+
+It can put strain on it if it turns into constant checking, testing or accusations. Overthinking itself is very common, though, and it improves a lot when you learn to separate facts from stories and ask for what you need directly.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

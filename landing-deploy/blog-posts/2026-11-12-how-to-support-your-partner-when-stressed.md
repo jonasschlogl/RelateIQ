@@ -59,6 +59,36 @@ Supporting someone is tiring. Keep your own routines, see friends and ask for su
 
 Stress makes small arguments more likely. If you find yourselves fighting more often, it's worth learning a few [communication habits](/blog/relationship-advice-communication-habits/) that keep arguments from escalating. And if something hurtful was said, our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) can help you repair it.
 
+## Quick answers
+
+### How do I know if my partner is stressed?
+
+Watch for changes like being quieter or more irritable than usual, sleeping badly, or seeming distracted. Gently naming it can help: "You seem really stretched lately. How are you doing?"
+
+### What should I say to my stressed partner?
+
+Ask what they need instead of guessing: "Do you want me to listen, help, or distract you?" Listening without rushing to fix things is often the most helpful thing you can do.
+
+### What should I not say to someone who is stressed?
+
+Avoid "Just relax", "It's not that bad" or jumping straight to solutions they didn't ask for. These can make your partner feel unheard, even if you mean well.
+
+### How do I support my partner without taking on their stress?
+
+Care about their stress without trying to carry all of it. Keep your own routines, sleep and support, and say honestly when you need a break too.
+
+### What if my partner takes their stress out on me?
+
+Don't take every bad mood personally, but you don't have to accept being treated badly either. Calmly say what you noticed and what you need: "I know you're stressed, and I still need you not to snap at me."
+
+### How can I help my partner relax after work?
+
+Give them a little time to land before asking questions, take a task off their plate, or suggest something calming you can do together, like a walk. Ask what works for them, because everyone recharges differently.
+
+### When should a stressed partner get professional help?
+
+If stress lasts for weeks, affects their sleep, work or mood most days, or comes with signs of anxiety or depression, encourage them kindly to talk to a doctor or therapist.
+
 ## A note on safety
 
 Stress explains a bad mood. It doesn't excuse threats, intimidation or control. If your partner's stress turns into behaviour that makes you feel unsafe, please reach out to a local helpline or support service. And if your partner seems overwhelmed for a long time, encourage them to talk to a doctor or a mental health professional.

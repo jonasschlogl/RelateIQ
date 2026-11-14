@@ -104,6 +104,22 @@ Repeated gaslighting is a form of emotional abuse. It often appears alongside ot
 
 Slowly, with support. Notes, trusted friends and time away from the confusion all help. A therapist can also help you rebuild confidence in your own perception.
 
+### What are examples of gaslighting phrases?
+
+Common ones are "That never happened", "You're too sensitive", "You're remembering it wrong" and "Everyone agrees with me". One of these on its own isn't always gaslighting. A repeated pattern that makes you doubt your memory is.
+
+### What's the difference between gaslighting and disagreeing?
+
+In a normal disagreement, two people remember things differently and try to understand each other. Gaslighting is a pattern where one person repeatedly denies your reality so that you start to doubt yourself.
+
+### How do I respond to someone who is gaslighting me?
+
+Stay calm and stick to what you know: "I remember it differently, and I trust my memory." Don't try to win the argument, write things down, and talk to someone you trust.
+
+### Can a gaslighter change?
+
+Some people can, if they recognise the pattern and really want to work on it, often with professional help. But change has to show up in consistent behaviour over time, not just promises.
+
 ## A note on safety
 
 If gaslighting comes with threats, controlling where you go, checking your phone, controlling money or making you afraid, please reach out to a local helpline or domestic abuse support service. You don't need to be sure it's "bad enough" to ask for help.

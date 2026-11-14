@@ -60,6 +60,36 @@ And clear coding doesn't stop once you're together. The same habit of saying wha
 
 The hardest part of clear coding is usually the exact words. If you want to check how a message might land before you send it, or practise the "what are we?" conversation first, RelationshipAI can help you find wording that's honest without being heavy. It isn't therapy, but it's a calm place to start.
 
+## Quick answers
+
+### What does clear coding mean in dating?
+
+It means being upfront about your intentions and feelings, instead of playing games or sending mixed signals. You say what you're looking for and let your actions match your words.
+
+### Is clear coding the same as oversharing?
+
+No. Clear coding is about being honest about what you want, not telling your whole life story on the first date. You can be clear and still keep some things private until trust grows.
+
+### When should I tell someone what I'm looking for?
+
+Early, but not in the first five minutes. A good moment is once you know you enjoy each other's company, often by the second or third date.
+
+### How do I ask someone where things are going?
+
+Keep it simple and calm: "I'm enjoying this and I'm looking for something serious. Where are you at?" Their answer, and how they act afterwards, tells you a lot.
+
+### Is clear coding the opposite of breadcrumbing?
+
+In a way, yes. [Breadcrumbing](/blog/breadcrumbing/) keeps you guessing with small signals, while clear coding tells you where you stand.
+
+### What if being clear scares someone off?
+
+Then they probably weren't looking for the same thing, and you've saved yourself time. Being clear filters for people who want what you want.
+
+### How do I say I'm not interested without ghosting?
+
+Send a short, kind message: "I enjoyed meeting you, but I don't feel a romantic connection. Wishing you the best." It's honest and respectful, and you don't owe a long explanation.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

@@ -84,6 +84,22 @@ Sometimes it's calculated, but often it isn't. People may want attention without
 
 Only if you want to. One honest message asking what they want is fair. If nothing changes after that, you don't owe them more replies.
 
+### What does breadcrumbing mean in dating?
+
+It means someone gives you just enough attention, like likes, short replies or vague plans, to keep you interested, without actually moving the relationship forward.
+
+### How do I stop being breadcrumbed?
+
+Ask a clear question, like "I'd like to see you this week, does Thursday work?" Notice what they do, not what they say. If the pattern doesn't change, step back and give your attention to people who show up.
+
+### Can breadcrumbing happen in a relationship, not just dating?
+
+Yes. A partner can offer small signs of affection while avoiding real time, commitment or hard conversations. If you constantly feel unsure where you stand, that's worth talking about.
+
+### How do I know if they're breadcrumbing or just busy?
+
+Busy people who are interested still make concrete plans, even if they're later. Breadcrumbing usually stays vague for weeks, with attention that appears mostly when you pull away.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

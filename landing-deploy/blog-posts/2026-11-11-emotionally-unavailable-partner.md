@@ -96,6 +96,22 @@ They often overlap, but they're not the same. Avoidant attachment is one common 
 
 Keep it short, specific and calm, and pick a relaxed moment. Talk about one example and how it made you feel, then give them time to respond instead of expecting a big conversation right away.
 
+### What causes someone to be emotionally unavailable?
+
+It can come from past hurt, growing up where feelings weren't talked about, stress, or an avoidant attachment pattern. It's usually a way of protecting themselves, not a sign that they don't care at all.
+
+### Should I stay with an emotionally unavailable partner?
+
+Look at whether they're willing to work on it and whether anything actually changes over time. If you've asked clearly and nothing changes, and you feel lonely most of the time, it may be worth asking [whether to stay](/blog/should-i-break-up-with-my-partner/).
+
+### How do I know if I'm the one who's emotionally unavailable?
+
+Notice whether you change the subject when things get personal, pull away after closeness, or feel trapped when someone needs you. Being honest about that is the first step to changing it.
+
+### What's the difference between needing space and being emotionally unavailable?
+
+Someone who needs space says so, and comes back. Someone who is emotionally unavailable avoids closeness again and again, without explaining or returning to the conversation.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

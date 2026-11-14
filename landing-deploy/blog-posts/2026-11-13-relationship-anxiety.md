@@ -82,6 +82,36 @@ Sometimes your gut is picking up on something real. If your partner is inconsist
 
 If you want to talk through a worry before it turns into a fight, RelationshipAI is an AI relationship coach that's there at 2am too. It isn't therapy, but it's a calm place to start.
 
+## Quick answers
+
+### What is relationship anxiety?
+
+It's a pattern of persistent worry about your relationship, like whether your partner really loves you, whether they'll leave, or whether it's the right relationship, even when nothing clearly bad is happening.
+
+### Is relationship anxiety normal?
+
+Some worry is very common, especially early on or after a hurt. It becomes a problem when it's constant, drives you to seek reassurance again and again, or stops you from enjoying the relationship.
+
+### Can relationship anxiety ruin a relationship?
+
+It can put strain on it if it leads to constant testing, checking or accusations. But it's very workable, especially when you name it, share it calmly and practise pausing before you act on it.
+
+### How do I stop needing reassurance all the time?
+
+Notice the urge, pause, and calm your body before asking. Then ask once, clearly, instead of many times. Over time, sitting with a little uncertainty makes the anxiety smaller.
+
+### Is relationship anxiety a sign I'm with the wrong person?
+
+Not necessarily. Anxiety can show up in good relationships, often because of past experiences. The difference is whether there's a real pattern of behaviour you can describe in facts, or mostly a feeling.
+
+### How is relationship anxiety connected to attachment style?
+
+People higher in attachment anxiety tend to worry more about rejection and notice signs of distance faster. Our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/) explains this pattern and how it can change.
+
+### When should I see a therapist for relationship anxiety?
+
+If it's affecting your sleep, work or mood most days, or if it comes with panic, a therapist can help a lot. Cognitive behavioural therapy has good evidence for anxiety.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

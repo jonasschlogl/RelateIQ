@@ -73,6 +73,36 @@ If weeks pass and you can't sleep, eat or function, or if you feel hopeless, ple
 
 And if you just want somewhere to put your thoughts into words, RelationshipAI is an AI relationship coach you can talk to at any hour. It isn't therapy, but it's a calm place to start.
 
+## Quick answers
+
+### How long does it take to get over a breakup?
+
+There's no fixed timeline. Many people notice the worst pain easing after a few weeks to a few months, with good and bad days mixed together. A bad day after a good week doesn't mean you're back at the start.
+
+### Should I stay friends with my ex?
+
+Not right away, in most cases. Limiting contact for a while gives your feelings time to settle. Some exes can become friends later, once neither of you is hoping for more.
+
+### Is it normal to still love my ex?
+
+Yes. Feelings don't switch off when a relationship ends. Instead of fighting them, accept that they're there and remind yourself why the relationship ended.
+
+### How do I stop thinking about my ex?
+
+You probably can't stop completely at first, and trying too hard often makes it worse. Limit what keeps the loop going, like checking their profile, and fill your days with people, movement and things that are yours.
+
+### Why does a breakup hurt so much physically?
+
+Losing a close relationship affects your body as well as your mind. Sleep, appetite and energy often change for a while. Looking after your body is part of healing, not a distraction from it.
+
+### Should I get back together with my ex?
+
+Ask yourself what would be different this time, in facts rather than hopes. If the reasons you broke up haven't changed, getting back together often brings the same problems back.
+
+### When should I get professional help after a breakup?
+
+If you can't function day to day for weeks, can't sleep or eat, or have thoughts of harming yourself, please reach out to a doctor, therapist or crisis line right away.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

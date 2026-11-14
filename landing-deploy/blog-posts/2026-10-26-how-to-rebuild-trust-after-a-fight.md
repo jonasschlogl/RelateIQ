@@ -71,6 +71,22 @@ It usually means they don't feel the repair is finished yet. Instead of "Why are
 
 It can. Couples who repair well often learn something useful about each other: what hurts, what helps and how to come back together. That doesn't happen automatically, but it's a realistic goal.
 
+### How long does it take to rebuild trust after a fight?
+
+There's no honest timeline. It depends on what was said or done and whether the same thing keeps repeating. Small, consistent actions over days and weeks usually rebuild trust faster than big promises.
+
+### What should I say after a big fight?
+
+Start with your part, without conditions: "I'm sorry I said that. It wasn't fair." Then listen to how it affected your partner before explaining your side. Our guide on [how to apologize](/blog/how-to-apologize-to-your-partner/) has examples.
+
+### Should we talk about the fight right away?
+
+Not while either of you is still heated. Take a break of about twenty minutes or longer, then come back when you're both calm enough to listen.
+
+### How do I rebuild trust if I keep breaking promises?
+
+Make smaller promises you can definitely keep, and then keep them. Trust grows from a track record, so one realistic promise kept beats three ambitious ones broken.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

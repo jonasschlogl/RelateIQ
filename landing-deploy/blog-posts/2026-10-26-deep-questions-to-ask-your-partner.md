@@ -62,6 +62,36 @@ Try not to defend, explain or correct on the spot. Thank them for telling you, a
 
 If you'd rather start lighter, here are 25 [date night questions for couples](/blog/date-night-questions-for-couples/). And if putting a feeling into words is the hard part, RelationshipAI is an AI relationship coach you can practise with. It isn't therapy, but it can help you find a way in.
 
+## Quick answers
+
+### What are some deep questions to ask your partner?
+
+Questions about their childhood, what makes them feel loved, what they're afraid of and what they hope your future looks like. For example: "When do you feel closest to me?" or "What's something you've never told anyone?"
+
+### When is the best time to ask deep questions?
+
+A calm, unhurried moment when you're both relaxed, like a walk, a long dinner or a quiet evening at home. Avoid the middle of an argument or when one of you is tired or stressed.
+
+### How do I ask deep questions without it feeling like an interview?
+
+Ask one question, listen fully and share your own answer too. Follow-up questions like "What was that like for you?" matter more than getting through a list.
+
+### What if my partner doesn't want to answer?
+
+Let them pass without pressure. Some people need time to think, or need to feel safe before they open up. You can say "No rush, I'd love to hear it whenever you're ready."
+
+### How do deep questions help a relationship?
+
+They help you keep learning about each other, which can fade after the early months. Sharing personal things in a safe, responsive way is one of the ways people build closeness.
+
+### What if I hear something that hurts?
+
+Thank them for being honest, take a breath, and say how you feel without attacking. You don't have to solve it right away. "I'm glad you told me. Can we talk more about it tomorrow?" is a good answer.
+
+### What's a good first deep question for a new relationship?
+
+Start gently, with something like "What's a moment that shaped who you are?" or "What did your family teach you about love?" Save heavier topics for when you know each other better.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

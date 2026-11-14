@@ -84,6 +84,22 @@ Not unless they ask. Keep it simple and honest: "We're really happy together and
 
 If you'd like to practise what to say, or think through a tricky family situation, RelationshipAI is an AI relationship coach that can help you plan the conversation. It isn't therapy, but it's a calm place to start.
 
+### What should I wear to meet my partner's parents?
+
+Dress one level up from what you'd normally wear for the setting, and ask your partner for a hint about how formal the family is. Clean and comfortable is usually right.
+
+### What should I bring when meeting the parents?
+
+A small thank-you, like flowers, a dessert or something from your home region. Ask your partner what their parents would like, and avoid anything too expensive.
+
+### What topics should I avoid?
+
+Keep politics, money and past relationships light or skip them altogether at the first meeting. Ask about their interests, their family and how they met, and let them lead on anything sensitive.
+
+### What if my partner's parents don't like me?
+
+Give it time. First meetings are often awkward, and opinions can change as they get to know you. Stay polite and consistent, and talk with your partner about how to handle it as a team.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

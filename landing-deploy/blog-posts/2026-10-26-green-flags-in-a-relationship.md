@@ -46,6 +46,36 @@ Nobody has all eight all the time. People have bad days, stressful weeks and old
 
 It also helps to know that attachment styles shape how people show these behaviours. Someone who tends toward anxious or avoidant attachment can still be a loving, safe partner, especially when both of you understand your patterns. We explain this in our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/).
 
+## Quick answers
+
+### What are the biggest green flags in a relationship?
+
+Feeling safe and calm around your partner, being able to disagree without fear, quick repair after arguments, and a partner who celebrates your wins and respects your boundaries. Consistency over time matters more than any single gesture.
+
+### What is the difference between a green flag and a red flag?
+
+Green flags are behaviours that make a relationship feel safe, respectful and honest. Red flags are behaviours that make you feel afraid, controlled, confused or small, like contempt, pressure or dishonesty.
+
+### Can a relationship have green flags and red flags at the same time?
+
+Yes. Most relationships have both strengths and problems. The key questions are how serious the red flags are and whether there's a repeated pattern. Anything involving fear or control should be taken seriously.
+
+### Are green flags in the early stages of dating different?
+
+Early on, look for consistency: they do what they say, they're curious about you, and they respect your pace. Our guide to [clear coding](/blog/clear-coding-dating/) shows what honest communication looks like in early dating.
+
+### What if my partner doesn't show many green flags?
+
+Look at whether it's a lack of skill or a lack of care. Many people never learned how to express feelings or repair after a fight, and that can be learned. If you mostly feel anxious or small, though, pay attention to that.
+
+### How do I become a green flag partner?
+
+Say when you're upset instead of going silent, repair quickly after arguments, ask before assuming, and celebrate your partner's good news. Small, consistent actions matter more than big gestures.
+
+### Is it a green flag if my partner gives me space?
+
+Usually, yes, as long as they also stay connected and say when they'll be back. Respecting "I need a minute" is a sign of a secure, caring partner.
+
 ## A note on safety
 
 Controlling behaviour, constant monitoring, cruelty or making you feel afraid are not signs of passion or worry, and they aren't something a list of green flags can fix. If you feel unsafe in your relationship, please reach out to a local helpline or support service.

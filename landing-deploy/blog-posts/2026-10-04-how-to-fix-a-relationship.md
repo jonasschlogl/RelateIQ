@@ -39,6 +39,36 @@ Instead of "What's wrong with us?", try "What would help you feel closer to me r
 
 If you've tried this for a few weeks and the same fights keep coming back, or one of you has stopped trying, a couples therapist can spot patterns that are hard to see from the inside. An AI coach can be useful for thinking things through and rehearsing difficult conversations in between sessions, but it doesn't replace professional care.
 
+## Quick answers
+
+### Can a broken relationship be fixed?
+
+Often, yes, if both people still want to try and both feel safe. What it takes is less about one big conversation and more about stopping the escalation, rebuilding small good moments and talking about one issue at a time.
+
+### Where do I start if everything feels wrong?
+
+Start by stopping things from getting worse: fewer harsh words, more pauses when either of you is flooded. Then pick one small, specific issue to talk about, not the whole relationship at once.
+
+### Can one person fix a relationship alone?
+
+One person can change the tone a lot, because a calmer start and quicker repair often invite the same from the other person. But a relationship needs two people to change in the long run. If only you are trying for weeks, that's important information.
+
+### How long does it take to fix a relationship?
+
+There's no fixed timeline. Many couples notice a calmer atmosphere within a few weeks of changing how they argue, while deeper issues like broken trust take longer. Judge it by direction: is it slowly getting better, or not at all?
+
+### What if my partner doesn't want to work on it?
+
+Ask what they're willing to do, even if it's small, and be honest about how serious this feels to you. If they don't want to try at all, you can't change that for them, and it may be time to ask yourself [whether to stay](/blog/should-i-break-up-with-my-partner/).
+
+### Is couples therapy worth it?
+
+It can be especially helpful when the same fights keep coming back or you've stopped being able to talk without hurting each other. A trained therapist can spot patterns that are hard to see from inside the relationship.
+
+### How do we rebuild the good moments?
+
+Plan small, regular moments of connection: a walk without phones, a weekly date night, asking about each other's day with real interest. Our list of [date night questions](/blog/date-night-questions-for-couples/) is an easy place to start.
+
 ## A note on safety
 
 All of this assumes two people who feel safe with each other. If you're afraid of your partner, feel controlled, or are being hurt, fixing the relationship isn't the goal. Please contact a local support service or helpline.

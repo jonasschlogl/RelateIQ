@@ -162,6 +162,18 @@ Briefly, and after you've taken responsibility. One sentence of context can help
 
 Save "sorry" for when you actually did something wrong. For everything else, try "thank you" instead: "Thanks for waiting" rather than "Sorry I'm late again." It keeps your apologies meaningful.
 
+### What should a sincere apology include?
+
+Name what you did specifically, take responsibility without "if" or "but", acknowledge how it affected your partner, offer to repair it and give them time. Research found that taking responsibility and offering to repair matter most.
+
+### How do I apologize when I don't think I was completely wrong?
+
+Apologize for your part, specifically and without conditions: "I'm sorry I raised my voice." You can talk about the rest of the disagreement later, once the hurt has been acknowledged.
+
+### How long should I wait before apologizing?
+
+Long enough for both of you to be calm, often around twenty minutes after a heated argument, but not so long that it looks like you're avoiding it. If you need time, say so: "I want to apologize properly when we're both calmer."
+
 ## A note on safety
 
 In some relationships, apologies are part of a harmful cycle: hurtful or frightening behaviour, then a warm apology and promises, then the same behaviour again. If your partner hurts you, threatens you or makes you afraid, an apology doesn't oblige you to stay or to forgive. Please reach out to a local helpline or support service, who can help you think about your options safely.

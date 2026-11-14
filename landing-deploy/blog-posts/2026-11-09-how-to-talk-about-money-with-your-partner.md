@@ -58,6 +58,36 @@ Sometimes it will. Money touches deep things. If you notice voices rising, call 
 
 Afterwards, a sincere apology for the tone, not the opinion, goes a long way. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) shows how. And if the same money argument keeps returning, it may be one of the [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/), where the real issue sits underneath.
 
+## Quick answers
+
+### When should couples start talking about money?
+
+Earlier than most people think, ideally before you move in together or share big expenses. Start with goals and habits rather than numbers, and build up from there.
+
+### Should couples combine their finances?
+
+There's no single right answer. Some couples share everything, some keep it separate, and many use a mix, like a joint account for shared costs plus personal money. What matters is that you both agree and it feels fair.
+
+### How do we stop fighting about money?
+
+Pick a calm moment, not the moment of a surprise bill. Talk about what money means to each of you, agree on a "no need to ask" amount for personal spending, and make it a regular check-in rather than an emergency talk.
+
+### What if my partner earns much more than me?
+
+Talk openly about what feels fair to both of you. Some couples split shared costs in proportion to income instead of 50/50. The goal is that neither of you feels controlled or taken advantage of.
+
+### How do I bring up debt with my partner?
+
+Choose a calm, private moment and be honest: "There's something I want to tell you about my finances, and I'd like us to plan together." Hiding debt usually does more damage than the debt itself.
+
+### How often should couples talk about money?
+
+A short, regular check-in, for example once a month, works better for many couples than rare, stressful talks. It keeps small worries from building up.
+
+### Is controlling money a red flag?
+
+Yes. If your partner controls all the money, checks every purchase or stops you from having access to your own money, that can be a form of abuse. Please contact a local support service if this is happening.
+
 ## A note on safety
 
 Disagreeing about money is normal. Having your money controlled is not. If a partner takes your income, stops you from accessing accounts, runs up debt in your name or uses money to control where you go, that's financial abuse. Please reach out to a local helpline or support service.

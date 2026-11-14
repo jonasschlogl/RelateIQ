@@ -565,7 +565,7 @@ function enhance(p) {
   let h = p.html;
   // FAQ: an H2 like "Quick answers" / "FAQ" followed by H3 questions becomes an accordion
   const faq = [];
-  h = h.replace(/(<h2 id="[^"]+">[^<]*(?:quick answers|faq|frequently asked|common questions)[^<]*<\/h2>)([\s\S]*?)(?=<h2[\s>]|$)/i, (m, head, body) => {
+  h = h.replace(/(<h2 id="[^"]+">[^<]*(?:quick answers|faq|frequently asked|common questions)[^<]*<\/h2>)([\s\S]*?)(?=<h2[\s>]|<p><em>|$)/i, (m, head, body) => {
     const parts = body.split(/(?=<h3[\s>])/);
     const pre = parts[0].startsWith("<h3") ? "" : parts.shift();
     const items = parts.map((x) => {

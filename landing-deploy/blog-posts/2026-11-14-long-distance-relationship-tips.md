@@ -81,6 +81,22 @@ Surprise each other, plan visits, do activities together online and keep sharing
 
 If you want to check how a message might come across before you send it, or talk through a worry at 2am, RelationshipAI is an AI relationship coach that can help. It isn't therapy, but it's a calm place to start.
 
+### How do you make a long distance relationship work?
+
+Agree on a plan for ending the distance, find a communication rhythm that suits both of you, share small everyday things, and always know when you'll see each other next.
+
+### What are the biggest challenges of long distance relationships?
+
+Missing everyday closeness, worries that grow in silence, misunderstandings over text, and the cost and stress of travel. Talking about these openly helps more than pretending they're not there.
+
+### How do you handle jealousy in a long distance relationship?
+
+Name it calmly instead of accusing: "I felt a bit left out when I didn't hear from you last night." Ask for what would help, and look at the facts rather than the story your worry is telling.
+
+### What should couples do on a video call?
+
+Do things together, not just talk: cook the same meal, watch a film, play an online game, or ask each other some [date night questions](/blog/date-night-questions-for-couples/).
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
