@@ -273,6 +273,24 @@ function markdown(src) {
     if (/^>\s?/.test(line)) {
       const buf = [];
       while (i < lines.length && /^>\s?/.test(lines[i])) buf.push(lines[i++].replace(/^>\s?/, ""));
+      // "> **Example: ...**" becomes a scenario box, "> **Why it works**" an explainer box
+      const bm = buf[0].match(/^\*\*(Example|Why (?:it|this) works)([^*]*)\*\*\s*(.*)$/i);
+      if (bm) {
+        const kind = /^example/i.test(bm[1]) ? "scenario" : "why";
+        const title = (bm[1] + bm[2]).replace(/:\s*$/, "").trim();
+        const paras = []; let cur = [bm[3]];
+        for (const l of buf.slice(1)) { if (!l.trim()) { paras.push(cur.join(" ").trim()); cur = []; } else cur.push(l); }
+        paras.push(cur.join(" ").trim());
+        const body = paras.filter(Boolean).map((t) => {
+          const q = t.match(/^(Try|Instead of)\s*:\s*(["\u201c].+["\u201d]\.?)$/i);
+          return q ? sayCard(q[2], /^instead/i.test(q[1]) ? EN.sayInstead : EN.sayTry, !/^instead/i.test(q[1])) : `<p>${inline(t)}</p>`;
+        }).join("");
+        const ic = kind === "scenario"
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+        out.push(`<aside class="xbox x-${kind}"><p class="xbox-k">${ic}<span>${inline(title)}</span></p>${body}</aside>`);
+        continue;
+      }
       out.push(`<blockquote>${inline(buf.join(" "))}</blockquote>`);
       continue;
     }
@@ -650,6 +668,7 @@ function postPage(ctx, p0, all) {
           <div class="article-body">
 ${withImages(p)}
           </div>
+          ${methodBox(ctx, p)}
           ${ctaBox(ctx, "cta-blog-article")}
           ${shareBar(p, url)}
           <p class="article-note">${T(EN.articleNote)}</p>
@@ -673,6 +692,26 @@ ${withImages(p)}
   </main>`,
     jsonld: enh.faq.length ? { "@context": "https://schema.org", "@graph": [articleLd(ctx, p, url, ogPng), { "@type": "FAQPage", mainEntity: enh.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] } : { "@context": "https://schema.org", ...articleLd(ctx, p, url, ogPng) },
   });
+}
+function methodBox(ctx, p) {
+  const { T } = ctx;
+  const nSrc = (p.html.match(/<h2 id="sources">[\s\S]*$/i)?.[0].match(/<li>/g) || []).length;
+  const when = fmtDate(p.updated || p.date, ctx.locale);
+  const li = [
+    "We start from peer-reviewed studies and established couples therapy methods, such as the Gottman Method, attachment research and Nonviolent Communication.",
+    nSrc ? `Numbers and study results are linked to their sources (${nSrc} in this guide).` : "Numbers and study results are linked to their sources.",
+    "Examples and scenarios are illustrative composites, not real people or clients.",
+    p.updated ? "Drafted with AI assistance, then checked against the cited sources before publishing." : "Drafted with AI assistance, based on the sources listed below.",
+  ];
+  return `<aside class="method-box" aria-label="${attr(T("About this guide"))}">
+            <div class="mb-head">
+              <img class="mb-av" src="/logo-tile.svg" alt="" width="44" height="44" />
+              <div><p class="mb-k">${T("About this guide")}</p><p class="mb-by">${T("Written by")} <a href="/about/">${AUTHOR}</a>, ${T("founder of RelationshipAI")}</p></div>
+            </div>
+            <p class="mb-t">${T("How we make our guides")}</p>
+            <ul>${li.map((t) => `<li>${T(t)}</li>`).join("")}</ul>
+            <p class="mb-foot"><span>${p.updated ? T("Last reviewed") : T("Published")} ${when}</span><a href="/method/" data-umami-event="blog-method-link">${T("Our method")} \u2192</a></p>
+          </aside>`;
 }
 function articleLd(ctx, p, url, ogPng) {
   return {
