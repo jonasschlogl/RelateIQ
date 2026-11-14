@@ -47,9 +47,9 @@ When your partner explains how it felt, your instinct will be to explain what yo
 Try: "That makes sense. Tell me more about how it felt."
 
 > **Example: the joke at the party**
-> At a friend's birthday, Tomáš makes a joke about Lenka's cooking in front of everyone. On the way home she's quiet, then upset. His first reflex: "It was just a joke, you know I didn't mean it." That starts a second fight.
+> At a friend's birthday, Tom makes a joke about Laura's cooking in front of everyone. On the way home she's quiet, then upset. His first reflex: "It was just a joke, you know I didn't mean it." That starts a second fight.
 >
-> The next morning he tries again. He asks how it felt, and listens. Lenka says she felt small in front of people she wanted to impress. Tomáš doesn't argue. He says he understands why that hurt, and that he won't make jokes at her expense in public again. The second conversation takes ten minutes and does more than the whole evening of arguing.
+> The next morning he tries again. He asks how it felt, and listens. Laura says she felt small in front of people she wanted to impress. Tom doesn't argue. He says he understands why that hurt, and that he won't make jokes at her expense in public again. The second conversation takes ten minutes and does more than the whole evening of arguing.
 
 ## 4. Make one small, specific promise, and keep it
 

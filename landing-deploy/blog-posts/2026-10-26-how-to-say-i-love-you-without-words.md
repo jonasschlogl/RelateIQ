@@ -27,7 +27,7 @@ Try: "You mentioned you were nervous about the presentation. How did it go?"
 Not as a favour you'll remind them of later, but as a quiet decision. Do the thing they usually do, like the school form, the dishes or the groceries, without being asked. Being relieved of a task is one of the clearest ways to feel cared for, especially when life is busy.
 
 > **Example: the Monday morning**
-> Petra always does the Monday school run, and Mondays are her hardest workday. One week, without saying anything in advance, her husband gets up early, makes the kids' lunches and takes them to school. When she comes down, there's coffee ready and a note: "Go get them today." She later says it felt more loving than the flowers he bought her on her birthday.
+> Paige always does the Monday school run, and Mondays are her hardest workday. One week, without saying anything in advance, her husband gets up early, makes the kids' lunches and takes them to school. When she comes down, there's coffee ready and a note: "Go get them today." She later says it felt more loving than the flowers he bought her on her birthday.
 
 ## 3. Turn toward the small stuff
 

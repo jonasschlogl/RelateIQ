@@ -51,7 +51,7 @@ If a friend asked what's going on between you, you'd struggle to explain. That v
 This is the most important sign. A healthy connection leaves you feeling calmer. Breadcrumbing leaves you checking your phone and replaying texts. If that sounds familiar, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help you break the loop.
 
 > **Example: three months of "soon"**
-> Kristýna matched with Daniel in August. They had one great date. Since then, he likes all her stories, sends a funny meme every week or so and once wrote "we need to do that again!!" at midnight. Every time she suggests a day, he's "slammed this week, but soon". Whenever she stops replying for a few days, a new message appears.
+> Chloe matched with Daniel in August. They had one great date. Since then, he likes all her stories, sends a funny meme every week or so and once wrote "we need to do that again!!" at midnight. Every time she suggests a day, he's "slammed this week, but soon". Whenever she stops replying for a few days, a new message appears.
 >
 > In three months, there's been one date and around forty small reactions. Each one gives her a little lift, and none of them changes anything. That's breadcrumbing.
 
@@ -102,7 +102,7 @@ Try: "I've enjoyed our chats, but I want something more consistent. I'm going to
 - **Put your attention where it's returned.** Text a friend instead of refreshing the chat. Make a plan with someone who makes plans back.
 
 > **Example: the message that ended it**
-> After another "soon", Kristýna writes: "I'd like to see you, but I'm not up for more of this back and forth. If you want to meet, suggest a day. If not, no hard feelings." Daniel replies with a laughing emoji and "haha you're so direct". No day. She mutes him and goes for dinner with friends. Two weeks later he sends "hey stranger". She doesn't reply, and is surprised how little it bothers her.
+> After another "soon", Chloe writes: "I'd like to see you, but I'm not up for more of this back and forth. If you want to meet, suggest a day. If not, no hard feelings." Daniel replies with a laughing emoji and "haha you're so direct". No day. She mutes him and goes for dinner with friends. Two weeks later he sends "hey stranger". She doesn't reply, and is surprised how little it bothers her.
 
 ## Breadcrumbing in a relationship
 

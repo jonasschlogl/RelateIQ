@@ -60,7 +60,7 @@ If you want to know whether you're exclusive, ask. It feels scary for about thre
 Try: "Are you seeing other people right now? Totally fine either way, I'd just like to know."
 
 > **Example: the exclusivity question**
-> Matěj and Klára have been on six dates. Matěj notices he's started checking whether she's online. On their next walk, he says: "I really like where this is going. I've stopped seeing other people. Where are you at?" Klára laughs, relieved, and says she'd deleted the app two weeks ago but didn't know how to bring it up. Ten seconds of courage saved them both weeks of guessing.
+> Matt and Clara have been on six dates. Matt notices he's started checking whether she's online. On their next walk, he says: "I really like where this is going. I've stopped seeing other people. Where are you at?" Clara laughs, relieved, and says she'd deleted the app two weeks ago but didn't know how to bring it up. Ten seconds of courage saved them both weeks of guessing.
 
 ### 4. Be clear when you're not interested, too
 

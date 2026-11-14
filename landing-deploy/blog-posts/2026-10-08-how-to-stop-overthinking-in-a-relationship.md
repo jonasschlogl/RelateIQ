@@ -46,7 +46,7 @@ Most spirals follow the same four steps. Seeing them laid out helps you catch th
 The behaviour in step four brings a moment of relief, which teaches your brain to do it again next time. That's why the loop gets stronger the more you feed it.
 
 > **Example: the "ok" text**
-> Petra sends her boyfriend a long message about a hard day at work. He replies "ok". Within ten minutes she has reread the message twice, checked when he was last online and drafted three replies. By the time he calls an hour later (he was driving), she's convinced he doesn't care, and the call starts with "Why do you even bother replying?"
+> Paige sends her boyfriend a long message about a hard day at work. He replies "ok". Within ten minutes she has reread the message twice, checked when he was last online and drafted three replies. By the time he calls an hour later (he was driving), she's convinced he doesn't care, and the call starts with "Why do you even bother replying?"
 >
 > Nothing in the facts had changed. Only the story had grown.
 
@@ -117,8 +117,8 @@ This is a request, not a rule for your partner's behaviour. If you notice you're
 
 ## A full example: from spiral to conversation
 
-> **Example: Jakub's Friday night**
-> Jakub's girlfriend is at a work party. She said she'd text when she leaves. At 11:30 there's nothing. He feels the familiar tightness and catches himself refreshing her Instagram.
+> **Example: Jacob's Friday night**
+> Jacob's girlfriend is at a work party. She said she'd text when she leaves. At 11:30 there's nothing. He feels the familiar tightness and catches himself refreshing her Instagram.
 >
 > Name: "I'm spiralling." Body: five minutes of cyclic sighing on the balcony. Facts and story: the fact is no text yet. The story is "she's having more fun without me." What else could be true? The party is loud and she hasn't left yet. Need: he wants to know she's safe getting home. Action: one message, then the phone goes in another room.
 >

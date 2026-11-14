@@ -88,7 +88,7 @@ Instead of: "Cool. Anyway, what should we order?"
 Try: "Wait, really? Tell me more about that. What did it feel like?"
 
 > **Example: the question that changed the evening**
-> Lucie and Pavel have been together nine years. At dinner, Lucie asks question 17: "What did you want to be when you were ten?" Pavel laughs and says "a forest ranger", then talks for twenty minutes about the summers at his grandad's cottage, the dog he had there, and how much he misses being outdoors. Lucie had never heard most of it. The next weekend, they go hiking for the first time in years.
+> Lucy and Paul have been together nine years. At dinner, Lucy asks question 17: "What did you want to be when you were ten?" Paul laughs and says "a forest ranger", then talks for twenty minutes about the summers at his grandad's cottage, the dog he had there, and how much he misses being outdoors. Lucy had never heard most of it. The next weekend, they go hiking for the first time in years.
 >
 > One question, a real follow-up and some genuine interest. That's often all it takes.
 

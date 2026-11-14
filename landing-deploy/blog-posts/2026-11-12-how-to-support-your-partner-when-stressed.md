@@ -41,7 +41,7 @@ This is the step most people skip. Some people want solutions, some want to vent
 Try: "Do you want advice, do you want me to just listen, or do you want a distraction?"
 
 > **Example: the advice that didn't help**
-> Veronika comes home upset about her manager. Her partner Ondřej immediately starts listing solutions: talk to HR, update her CV, set boundaries. Veronika gets more and more frustrated and finally says "Forget it." Ondřej feels unappreciated. He was trying to help.
+> Vicky comes home upset about her manager. Her partner Oliver immediately starts listing solutions: talk to HR, update her CV, set boundaries. Vicky gets more and more frustrated and finally says "Forget it." Oliver feels unappreciated. He was trying to help.
 >
 > The next time, he asks first: "Do you want ideas, or do you just need to vent?" She says vent. He listens for fifteen minutes, mostly nodding. Afterwards she says she feels much better, and asks for his advice herself the next day.
 

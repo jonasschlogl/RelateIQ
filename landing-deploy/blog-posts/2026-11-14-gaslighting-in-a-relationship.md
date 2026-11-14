@@ -74,7 +74,7 @@ Sometimes it's easier to recognise in actual words. Some common lines:
 Any of these can be said once in a heated moment. It becomes gaslighting when it's a pattern that leaves you doubting your reality.
 
 > **Example: the forgotten promise**
-> Kateřina's partner promised to come to her sister's birthday. On the day, he says he never agreed to it. She shows him the message where he wrote "of course, I'll be there". He laughs and says she clearly took it the wrong way, that she's been "really stressed lately" and keeps "remembering things weirdly". She ends up apologising for bringing it up.
+> Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed to it. She shows him the message where he wrote "of course, I'll be there". He laughs and says she clearly took it the wrong way, that she's been "really stressed lately" and keeps "remembering things weirdly". She ends up apologising for bringing it up.
 >
 > One incident like this could be a misunderstanding. When it happens every few weeks, with the conversation always ending in her apologising, it's a pattern.
 

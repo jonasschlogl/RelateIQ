@@ -27,7 +27,7 @@ There are two important exceptions. If you're afraid of your partner, feel contr
 "Fixing it" is too vague to act on. Before you talk to your partner, get clear on what would feel different if things were better. More affection? A fairer split at home? Feeling listened to? Write it down in a sentence or two. It keeps you from arguing about everything and helps you ask for something specific.
 
 > **Example: from "everything's wrong" to one sentence**
-> Klara feels her relationship with Ondřej has become cold. When she sits down to write what "better" would look like, she realises it's mostly two things: she wants him to ask about her day, and she wants one evening a week without screens. That's something they can actually talk about, unlike "you don't love me like before".
+> Clara feels her relationship with Oliver has become cold. When she sits down to write what "better" would look like, she realises it's mostly two things: she wants him to ask about her day, and she wants one evening a week without screens. That's something they can actually talk about, unlike "you don't love me like before".
 
 ## Step 2: Stop the escalation first
 

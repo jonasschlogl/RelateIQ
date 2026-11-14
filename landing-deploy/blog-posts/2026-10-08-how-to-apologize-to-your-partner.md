@@ -50,9 +50,9 @@ Different people valued different parts. People who think of themselves more as 
 | "We agreed on this." | Acknowledging the broken rule | "We agreed I'd check with you first, and I didn't." |
 
 > **Example: the apology that missed**
-> Jana is upset that Marek invited his friends for the weekend without asking her. Marek apologizes and offers to cancel (compensation). Jana still feels hurt. What she needed to hear was that he'd broken an agreement they'd made about the flat, and that he understood why that left her feeling like a guest in her own home.
+> Jane is upset that Mark invited his friends for the weekend without asking her. Mark apologizes and offers to cancel (compensation). Jane still feels hurt. What she needed to hear was that he'd broken an agreement they'd made about the flat, and that he understood why that left her feeling like a guest in her own home.
 >
-> When Marek tries again ("We agreed we'd check with each other before inviting people, and I didn't. I get why that made you feel sidelined"), the conversation changes.
+> When Mark tries again ("We agreed we'd check with each other before inviting people, and I didn't. I get why that made you feel sidelined"), the conversation changes.
 
 ## A simple 5-step structure for apologizing to your partner
 

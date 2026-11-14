@@ -62,7 +62,7 @@ Distance makes it easy to overthink a short reply or a missed call. Instead of b
 Try: "You seemed quiet today, is everything okay?"
 
 > **Example: the missed call**
-> Ondřej is in Prague, Mia in Copenhagen. She misses their usual Sunday call without a message. By 10 pm, Ondřej has decided she was out with her new colleagues and forgot about him. He writes a long, hurt message, then deletes it and sends: "Missed you tonight. Everything okay?" Mia replies the next morning: she'd fallen asleep at 8 after a migraine. The long message would have started a fight about something that never happened.
+> Oliver is in Prague, Mia in Copenhagen. She misses their usual Sunday call without a message. By 10 pm, Oliver has decided she was out with her new colleagues and forgot about him. He writes a long, hurt message, then deletes it and sends: "Missed you tonight. Everything okay?" Mia replies the next morning: she'd fallen asleep at 8 after a migraine. The long message would have started a fight about something that never happened.
 
 ### 7. Handle conflict on a call, not over text
 

@@ -51,7 +51,7 @@ Why? Because family members will usually take a comment from their own child or 
 Try: "When your aunt asks when we're getting married, could you jump in? It's easier coming from you."
 
 > **Example: the career comments**
-> Every visit, Lukas's father asks Anna when she's going to get "a real job" instead of freelancing. Anna smiles through it, then cries in the car. This year, they agree in advance that Lukas will handle it. When the question comes, he says lightly: "Dad, Anna's business is doing great, I'm really proud of her. Anyway, how's the new car?" His father drops it. Later, Lukas has a short private word with him. Anna says it's the first Christmas she felt Lukas was really on her side.
+> Every visit, Luke's father asks Anna when she's going to get "a real job" instead of freelancing. Anna smiles through it, then cries in the car. This year, they agree in advance that Luke will handle it. When the question comes, he says lightly: "Dad, Anna's business is doing great, I'm really proud of her. Anyway, how's the new car?" His father drops it. Later, Luke has a short private word with him. Anna says it's the first Christmas she felt Luke was really on her side.
 
 ## 4. Agree on a signal and an exit
 

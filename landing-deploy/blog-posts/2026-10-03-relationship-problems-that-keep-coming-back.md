@@ -31,7 +31,7 @@ It looks like a fight about the dishes. Most of the time it's about fairness, an
 In a lot of households one person does the planning as well as the doing: remembering the appointments, noticing the empty fridge, keeping the whole week in their head. That work is invisible, and invisible work is where resentment grows.
 
 > **Example: the birthday present**
-> Every year, Tereza buys the birthday present for her partner's mum. She remembers the date, asks what she'd like, orders it and writes the card. This year she forgets, and her partner says, "Why didn't you get something for my mum?" The argument that follows isn't about the present. It's about years of carrying a job nobody agreed she'd do.
+> Every year, Tessa buys the birthday present for her partner's mum. She remembers the date, asks what she'd like, orders it and writes the card. This year she forgets, and her partner says, "Why didn't you get something for my mum?" The argument that follows isn't about the present. It's about years of carrying a job nobody agreed she'd do.
 
 What helps is describing the pattern and asking for one concrete thing. "You never help" gives your partner nothing to act on. Handing over a whole task, from noticing to finishing, works much better than asking for "help".
 
@@ -62,7 +62,7 @@ Try: "When you think about money, what does it give you? For me it's mostly feel
 When one person wants more affection or sex than the other, it quickly turns into a story. One feels rejected, the other feels pressured, and both start protecting themselves. Underneath, it's often a need for closeness on one side and a need for space and no pressure on the other.
 
 > **Example: the goodnight kiss**
-> Jonas reaches for his partner most evenings and is often turned down. He starts to feel unwanted and stops trying. His partner, who had felt pressured, now feels relieved and also strangely lonely. Months later, neither of them is happy, and neither has said what they actually feel.
+> Jake reaches for his partner most evenings and is often turned down. He starts to feel unwanted and stops trying. His partner, who had felt pressured, now feels relieved and also strangely lonely. Months later, neither of them is happy, and neither has said what they actually feel.
 >
 > What changes things is a calm talk away from the bedroom, where each says what makes them feel close, and what makes them feel pressured.
 

@@ -42,7 +42,7 @@ Before you talk numbers, talk about what money meant in your families. Was it ti
 Try: "What was money like in your house growing up?"
 
 > **Example: the new sofa**
-> Jana buys a sofa without asking. Petr is furious, and the argument quickly becomes "you're irresponsible" versus "you're controlling". A week later, over a calm dinner, they talk about their childhoods. Petr's family lost their house when he was twelve, and any unplanned spending makes him feel that floor drop again. Jana's mother had to justify every purchase to her father, and being questioned feels like that to her. Nothing about the sofa changed, but they now understand why it hurt. They agree on a simple rule for big purchases, and the topic stops being explosive.
+> Jane buys a sofa without asking. Pete is furious, and the argument quickly becomes "you're irresponsible" versus "you're controlling". A week later, over a calm dinner, they talk about their childhoods. Pete's family lost their house when he was twelve, and any unplanned spending makes him feel that floor drop again. Jane's mother had to justify every purchase to her father, and being questioned feels like that to her. Nothing about the sofa changed, but they now understand why it hurt. They agree on a simple rule for big purchases, and the topic stops being explosive.
 
 ## 3. Talk about goals before rules
 

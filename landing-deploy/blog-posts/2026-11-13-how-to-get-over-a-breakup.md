@@ -46,7 +46,7 @@ After a breakup, memory tends to edit out the bad parts. A small study by Sandra
 Writing an honest list of what didn't work can help when you catch yourself romanticising the past.
 
 > **Example: the list in her phone**
-> Two weeks after the breakup, Simona keeps scrolling through old photos of holidays and smiling selfies. She writes a short note in her phone: the times he forgot her birthday plans, how he never wanted to meet her friends, the evenings she felt lonely next to him. Whenever she finds herself missing "the good times", she reads the list. It doesn't make the sadness disappear, but it reminds her that the relationship in her head is not the one she actually had.
+> Two weeks after the breakup, Sophie keeps scrolling through old photos of holidays and smiling selfies. She writes a short note in her phone: the times he forgot her birthday plans, how he never wanted to meet her friends, the evenings she felt lonely next to him. Whenever she finds herself missing "the good times", she reads the list. It doesn't make the sadness disappear, but it reminds her that the relationship in her head is not the one she actually had.
 
 ### 4. Don't fight the love, just accept it
 
@@ -102,7 +102,7 @@ A simple way to try it:
 There's no fixed timeline. It depends on how long you were together, how it ended and what else is happening in your life. Many people notice the worst pain easing after a few weeks to a few months, with good and bad days mixed together. Healing usually isn't a straight line. A bad day after a good week doesn't mean you're back at the start.
 
 > **Example: three months later**
-> Right after the breakup, Michal thought about his ex every few minutes. After a month, it was mostly mornings and evenings. After three months, he noticed one Sunday afternoon that he hadn't thought about her all day, and then felt a little sad about that too. Two weeks later, a song brought everything back for an evening. The next day was fine again. That up-and-down pattern is what healing usually looks like.
+> Right after the breakup, Michael thought about his ex every few minutes. After a month, it was mostly mornings and evenings. After three months, he noticed one Sunday afternoon that he hadn't thought about her all day, and then felt a little sad about that too. Two weeks later, a song brought everything back for an evening. The next day was fine again. That up-and-down pattern is what healing usually looks like.
 
 ## If you're the one who ended it
 

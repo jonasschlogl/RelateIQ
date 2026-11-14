@@ -51,7 +51,7 @@ You know their favourite films and what they think about politics, but not what 
 This is often the clearest sign. You're in a relationship, but you still feel on your own.
 
 > **Example: the perfect weekend, then silence**
-> Barbora and Jakub spend an amazing weekend at the lake. On Sunday night he says it's the happiest he's been in years. On Monday he replies to her messages with one word. By Wednesday she's convinced she did something wrong. When they finally talk, Jakub admits that feeling that happy scared him a bit, and he "needed to get his head straight".
+> Bella and Jacob spend an amazing weekend at the lake. On Sunday night he says it's the happiest he's been in years. On Monday he replies to her messages with one word. By Wednesday she's convinced she did something wrong. When they finally talk, Jacob admits that feeling that happy scared him a bit, and he "needed to get his head straight".
 >
 > Nothing was wrong with the weekend. The closeness itself set off his alarm.
 
@@ -106,7 +106,7 @@ Keep friends, hobbies and support outside the relationship, so you're not depend
 If they're unwilling to work on it, or the loneliness doesn't change, it's okay to decide this relationship can't give you what you need. Changing is their job. You can support it, but you can't do it for them.
 
 > **Example: what change can look like**
-> After a calm talk, Jakub agrees to try one thing: when he needs space, he'll say so and say when he'll be back, instead of going quiet. The first few times it's clumsy ("need a bit of time, talk tomorrow?"), but it's enough. Barbora stops spiralling, and because she's not chasing him, he comes back sooner. Six months later, he's the one who suggests they go away together again.
+> After a calm talk, Jacob agrees to try one thing: when he needs space, he'll say so and say when he'll be back, instead of going quiet. The first few times it's clumsy ("need a bit of time, talk tomorrow?"), but it's enough. Bella stops spiralling, and because she's not chasing him, he comes back sooner. Six months later, he's the one who suggests they go away together again.
 
 ## Is it them, or is it me?
 

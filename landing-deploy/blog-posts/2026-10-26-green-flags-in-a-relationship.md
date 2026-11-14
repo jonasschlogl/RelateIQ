@@ -40,9 +40,9 @@ The conversation doesn't turn into a trial. They want to know your side, even wh
 Try: "Help me understand what you mean by that."
 
 > **Example: the holiday plans**
-> Ema wants to spend Christmas with her family. Her partner Filip wanted a trip just for the two of them. Instead of arguing about who's right, Filip asks: "What does Christmas with your family mean to you?" Ema explains that her grandmother is getting older and this might be one of the last Christmases with her. Filip's position softens, and they plan a trip for New Year instead.
+> Emma wants to spend Christmas with her family. Her partner Philip wanted a trip just for the two of them. Instead of arguing about who's right, Philip asks: "What does Christmas with your family mean to you?" Emma explains that her grandmother is getting older and this might be one of the last Christmases with her. Philip's position softens, and they plan a trip for New Year instead.
 >
-> Curiosity didn't mean Filip gave up what he wanted. It meant they found a solution that worked for both.
+> Curiosity didn't mean Philip gave up what he wanted. It meant they found a solution that worked for both.
 
 ## 4. They celebrate your wins
 
@@ -87,7 +87,7 @@ Many of the most important green flags happen in tiny moments. Gottman calls the
 In a study that followed newlyweds for six years, couples who stayed married had turned toward each other's bids 86% of the time. Couples who later divorced had done so only 33% of the time.
 
 > **Example: the bird outside the window**
-> "Look, there's a woodpecker on the tree," says Sára, looking out of the kitchen window. Her partner could ignore it, or say "mm" without looking up. Instead he comes over, looks and says "Oh wow, I've never seen one here." It took five seconds. Repeated hundreds of times a year, moments like this are what makes a relationship feel warm.
+> "Look, there's a woodpecker on the tree," says Sarah, looking out of the kitchen window. Her partner could ignore it, or say "mm" without looking up. Instead he comes over, looks and says "Oh wow, I've never seen one here." It took five seconds. Repeated hundreds of times a year, moments like this are what makes a relationship feel warm.
 
 ## Green flags in early dating
 

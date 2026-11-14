@@ -61,7 +61,7 @@ They suggest you don't need your friends that much, or they plan so much togethe
 The clearest test is what happens when you say no, set a limit or have a normal disagreement. A secure partner stays kind. A love bomber may turn cold, sulk or punish you, and then shower you with affection again once you give in.
 
 > **Example: the weekend away**
-> Three weeks after meeting, Martin surprises Eliška with a booked weekend in Vienna. She's touched, and also a bit overwhelmed. When she says she already promised that weekend to her sister, his mood changes completely. He goes quiet, then says he's "just disappointed she doesn't feel the same". She cancels on her sister. In Vienna, he's wonderful again.
+> Three weeks after meeting, Martin surprises Ellie with a booked weekend in Vienna. She's touched, and also a bit overwhelmed. When she says she already promised that weekend to her sister, his mood changes completely. He goes quiet, then says he's "just disappointed she doesn't feel the same". She cancels on her sister. In Vienna, he's wonderful again.
 >
 > On its own, a surprise trip is romantic. What makes this a warning sign is the reaction to her "no", and the fact that she ended up rearranging her life to make the warmth come back.
 
@@ -80,7 +80,7 @@ Some people are simply enthusiastic and expressive, especially early on. The dif
 A useful self-check: do you feel safe to slow things down? If yes, it's probably just a lot of love. If the idea of asking to take it slower makes you nervous about their reaction, pay attention to that feeling. Our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what a steady, healthy start tends to look like.
 
 > **Example: just very keen**
-> Adéla's new boyfriend texts a lot, compliments her often and told her he was falling for her after a month. When she says she's feeling a bit rushed, he says: "Totally fair, I get excited. Tell me if it's too much." He keeps texting, a bit less, and is happy when she spends weekends with her friends. That's enthusiasm, not love bombing. The difference is how he responded to her limit.
+> Grace's new boyfriend texts a lot, compliments her often and told her he was falling for her after a month. When she says she's feeling a bit rushed, he says: "Totally fair, I get excited. Tell me if it's too much." He keeps texting, a bit less, and is happy when she spends weekends with her friends. That's enthusiasm, not love bombing. The difference is how he responded to her limit.
 
 ## What to do if you think you're being love bombed
 

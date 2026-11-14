@@ -63,9 +63,9 @@ Try: "That's interesting, I hadn't thought about it like that. How did you two e
 Parents notice how you are with their child more than what you say. Small things matter: including your partner in conversations, listening when they talk and being on their side if someone teases them.
 
 > **Example: the quiet dad**
-> Tomáš meets Lucie's parents over Sunday lunch. Her mum is chatty, but her dad barely says a word, and Tomáš spends the first hour convinced he's failing. Then he notices a fishing magazine on the shelf and asks about it. Her dad lights up and talks for twenty minutes about a lake near their cottage. On the way home, Lucie laughs: "He invited you fishing. He's never invited anyone fishing."
+> Tom meets Lucy's parents over Sunday lunch. Her mum is chatty, but her dad barely says a word, and Tom spends the first hour convinced he's failing. Then he notices a fishing magazine on the shelf and asks about it. Her dad lights up and talks for twenty minutes about a lake near their cottage. On the way home, Lucy laughs: "He invited you fishing. He's never invited anyone fishing."
 >
-> Tomáš didn't need to be impressive. He needed to be curious.
+> Tom didn't need to be impressive. He needed to be curious.
 
 ## After the meeting
 

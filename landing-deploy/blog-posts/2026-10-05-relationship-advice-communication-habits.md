@@ -61,9 +61,9 @@ This also avoids what Gottman calls criticism: attacking your partner's characte
 Behind most complaints sits a need: to feel respected, supported, close or free. "I'm furious the dishes are still there" often means "I need to know I'm not carrying this alone." Once you say the need out loud, your partner has something they can actually respond to.
 
 > **Example: the dishes argument that wasn't about dishes**
-> Every few days, Eva and Lukas argue about the kitchen. Eva says he never cleans up. Lukas lists the times he did. It goes nowhere.
+> Every few days, Eva and Luke argue about the kitchen. Eva says he never cleans up. Luke lists the times he did. It goes nowhere.
 >
-> One evening Eva tries something different: "I think the dishes are just the part I can see. What I really need is to feel that we're running this house together, because lately I feel like the manager." Lukas stops defending and asks what would help. They split the evenings, and the dishes stop being a topic.
+> One evening Eva tries something different: "I think the dishes are just the part I can see. What I really need is to feel that we're running this house together, because lately I feel like the manager." Luke stops defending and asks what would help. They split the evenings, and the dishes stop being a topic.
 
 ## 4. Make one clear request
 
