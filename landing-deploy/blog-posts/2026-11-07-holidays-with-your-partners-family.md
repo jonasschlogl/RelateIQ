@@ -1,14 +1,30 @@
 ---
 title: "Holidays with your partner's family: 9 ways to get through it as a team"
 date: 2026-11-07
-description: Spending the holidays with your partner's family can be lovely and exhausting at once. 9 practical ways to plan it, handle tense moments and still enjoy it.
+description: Spending the holidays with your partner's family can be lovely and exhausting at once. What research says about holiday stress and in-laws, 9 practical ways to plan it, handle tense moments and still enjoy it.
 tags: holidays with your partner's family, in-laws
+updated: 2026-11-14
 ---
 Spending the holidays with your partner's family is a strange mix. You're a guest, but also sort of family. You don't know the house rules, the old jokes or which topics are off limits. And you're doing it at the most stressful time of the year.
 
-That last part isn't just a feeling. In a 2023 survey for the American Psychological Association, 89% of US adults said something about the holiday season stresses them, and around one in five named family conflict, either happening or expected. So if you feel a knot in your stomach about Christmas with the in-laws, you're in good company.
+That last part isn't just a feeling. In a 2023 Harris Poll survey of 2,061 US adults for the American Psychological Association, 89% said concerns like money, missing loved ones or family conflict cause them stress over the holidays. 43% said holiday stress gets in the way of enjoying the season. So if you feel a knot in your stomach about Christmas with the in-laws, you're in good company.
 
-The good news is that most of the stress comes from a few predictable things, and most of them can be sorted out before you even pack. Here are nine ways to get through the holidays with your partner's family as a team.
+The good news is that most of the stress comes from a few predictable things, and most of them can be sorted out before you even pack. Here are nine ways to get through the holidays with your partner's family as a team, with examples, lines you can use and what research says about in-laws.
+
+## Why the holidays are so hard on couples
+
+Holidays put a lot of pressure on a small space. Long days together, different family traditions, old roles that adults fall back into the moment they walk into their parents' house, plus money, travel and too little sleep.
+
+> **Why it works this way**
+> When people go home for the holidays, they often slip back into the role they had growing up: the responsible one, the baby of the family, the one who keeps the peace. Their partner suddenly sees a different version of the person they know. At the same time, the partner is in unfamiliar territory with no allies except the person who just became someone's child again. That mismatch, more than any single relative, is behind a lot of holiday tension between couples.
+
+| Common holiday stress | What helps |
+|---|---|
+| Different expectations about the plan | Agree on days, sleeping and must-dos in advance |
+| Not knowing the family's unwritten rules | A two-minute briefing from your partner |
+| Awkward or hurtful comments | A short, warm line and your partner stepping in |
+| No time alone together | One small daily ritual just for the two of you |
+| Arguing about it afterwards | A kind debrief that starts with thanks |
 
 ## 1. Agree on the plan before you go
 
@@ -22,7 +38,9 @@ Try: "Can we talk about the holidays this weekend? I want us to be on the same p
 
 Every family has an unwritten rulebook. Who carves, who hosts, whether people open presents on the 24th or the 25th, which uncle shouldn't be asked about his job. You can't know any of this, and nobody expects you to, as long as someone briefs you.
 
-Ask your partner for a two-minute tour: "Who's going to be there? Is there anything I should avoid bringing up? Anything that would really make your mum happy?" Most people love being asked. It also turns your partner into your ally rather than a bystander.
+Ask your partner for a two-minute tour. Most people love being asked. It also turns your partner into your ally rather than a bystander.
+
+Try: "Who's going to be there? Is there anything I should avoid bringing up? Anything that would really make your mum happy?"
 
 ## 3. Split the hard jobs: they handle their family
 
@@ -30,7 +48,10 @@ This is one of the most useful rules couples therapists suggest. Each of you dea
 
 Why? Because family members will usually take a comment from their own child or sibling much better than from the newcomer. When you push back yourself, it can easily become "the girlfriend who was rude at Christmas". When your partner does it, it's just family business.
 
-Say to your partner: "When your aunt asks when we're getting married, could you jump in? It's easier coming from you."
+Try: "When your aunt asks when we're getting married, could you jump in? It's easier coming from you."
+
+> **Example: the career comments**
+> Every visit, Lukas's father asks Anna when she's going to get "a real job" instead of freelancing. Anna smiles through it, then cries in the car. This year, they agree in advance that Lukas will handle it. When the question comes, he says lightly: "Dad, Anna's business is doing great, I'm really proud of her. Anyway, how's the new car?" His father drops it. Later, Lukas has a short private word with him. Anna says it's the first Christmas she felt Lukas was really on her side.
 
 ## 4. Agree on a signal and an exit
 
@@ -42,7 +63,7 @@ This matters more than it sounds. Psychologist John Gottman calls it flooding wh
 
 When you're surrounded by relatives all day, your relationship can quietly disappear. You end up next to each other for days without really talking.
 
-Protect a small daily ritual. A morning coffee before anyone else is up. A walk after lunch. Five minutes in the car before you go in. Gottman's research on "turning toward" found that couples who stay together respond to each other's small bids for attention much more often than couples who split up. The holidays are full of bids that get missed because the room is noisy.
+Protect a small daily ritual. A morning coffee before anyone else is up. A walk after lunch. Five minutes in the car before you go in. In Gottman's six-year study of newlyweds, couples who stayed together had responded to each other's small bids for attention 86% of the time, compared with 33% for couples who later divorced. The holidays are full of bids that get missed because the room is noisy.
 
 ## 6. Pick your battles, and let most things go
 
@@ -54,7 +75,7 @@ A useful question is: "Will this matter on the 2nd of January?" If not, let it g
 
 Small gestures go a long way with in-laws. Bring a dish from your own family's tradition, a good bottle, or a small gift for the host. Offer to help in the kitchen, clear the table, take the kids out to play.
 
-Helping also gives you something to do with your hands when the conversation gets awkward. And people tend to warm up to someone they've washed dishes next to.
+Helping also gives you something to do with your hands when the conversation gets awkward. And people tend to warm up to someone they've washed dishes next to. If it's one of your first visits, our guide to [meeting your partner's parents](/blog/meeting-your-partners-parents/) has more first-impression tips.
 
 ## 8. Handle the tense questions with a short, warm line
 
@@ -70,9 +91,18 @@ If a comment crosses a real line, step out and tell your partner. That's what th
 
 ## 9. Debrief kindly afterwards
 
-On the way home, there's a strong pull to list everything that went wrong. Try to start with what went well, and with thanks: "Thank you for having my back with your brother. I really noticed."
+On the way home, there's a strong pull to list everything that went wrong. Try to start with what went well, and with thanks.
 
-Then talk about what you'd change next year, calmly and without attacking their family. "Your family is too much" will make your partner defend them. "I'd love a bit more time for just us next year, maybe two nights instead of four" gives them something they can say yes to.
+Try: "Thank you for having my back with your brother. I really noticed."
+
+Then talk about what you'd change next year, calmly and without attacking their family.
+
+Instead of: "Your family is too much."
+
+Try: "I'd love a bit more time for just us next year, maybe two nights instead of four."
+
+> **Why it works**
+> People defend their families almost automatically, even when they privately agree with you. "Your family is too much" forces your partner to choose between you and them. A specific request about next year doesn't. It's about what the two of you want, which is something your partner can say yes to without betraying anyone.
 
 ## What most advice gets wrong
 
@@ -80,7 +110,20 @@ A lot of articles say the goal is to get your in-laws to love you. It's nice whe
 
 There's even a surprising finding here. Relationship researcher Terri Orbuch followed married couples for 26 years. When husbands felt close to their wife's parents, the couple's risk of divorce was about 20% lower. But when wives felt close to their husband's parents, the risk was about 20% higher. Her explanation is that very close ties can make it harder to set boundaries, so in-law involvement starts to feel like meddling. So you don't need to become best friends with their mum. Warm, polite and with clear boundaries is plenty.
 
-## Holidays with your partner's family: quick answers
+## Splitting the holidays fairly
+
+Deciding where to go is often harder than being there. Some options couples use:
+
+| Option | Works well when | Watch out for |
+|---|---|---|
+| Alternate years | Families live far apart | One side may feel they "lost" a year |
+| Split the days | Families are close by | Lots of travel on the same day |
+| Host your own | You want new traditions | Can feel like a big step for parents |
+| Visit after the main day | Schedules are tight | Some families care a lot about the date |
+
+There's no right answer. What matters is that the decision feels fair to both of you over time, and that you present it to your families together.
+
+## Quick answers
 
 ### Do we have to spend every holiday with the same family?
 
@@ -94,17 +137,9 @@ You don't have to like them, but it helps to be respectful and to keep the visit
 
 Talk about it before the next visit, when things are calm. Be specific: "When your mum commented on my weight, I needed you to say something." If it keeps happening, it's worth working on together, because feeling backed up is a big part of feeling safe in a relationship.
 
-### How do we decide whose family to spend the holidays with?
-
-Talk about it early, before invitations arrive. Many couples alternate years, split the days, or host their own celebration. What matters most is that you decide together and present the plan as a team.
-
 ### How do I handle rude comments from my partner's family?
 
 Have a short, warm line ready, like "Thanks, we're happy with how things are," and change the subject. If it keeps happening, ask your partner to speak to their own family.
-
-### What if the holidays are causing fights between us?
-
-Agree on the plan, a signal and an exit before you go, and keep some time just for the two of you. Talk about how it went afterwards, kindly and in private, not in the car on the way home.
 
 ### Is it okay to skip a family holiday?
 
@@ -114,7 +149,7 @@ Yes. You're allowed to protect your energy and your relationship. If you skip, t
 
 Family tension is normal. Being insulted, threatened, controlled or made to feel afraid is not, and it's not something you should just put up with because it's the holidays. If you feel unsafe with your partner or their family, please reach out to a local helpline or support service.
 
-If you'd like to plan the "can we talk about the holidays" conversation, or rehearse what to say to your partner about their family, RelationshipAI is an AI relationship coach that can help you think it through. You can also read our guides on [communication habits](/blog/relationship-advice-communication-habits/), [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) and [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/), in case the holidays don't go to plan. It isn't therapy, but it's a calm place to start.
+If you'd like to plan the "can we talk about the holidays" conversation, or rehearse what to say to your partner about their family, RelationshipAI is an AI relationship coach that can help you think it through in Partner Practice. You can also read our guides on [communication habits](/blog/relationship-advice-communication-habits/) and [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/), in case the holidays don't go to plan. It isn't therapy, but it's a calm place to start.
 
 *This article is general information, not therapy or medical advice.*
 

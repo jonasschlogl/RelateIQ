@@ -153,10 +153,6 @@ Not necessarily right away. Feelings in long relationships rise and fall, and th
 
 There's no perfect time. If you've already decided, waiting weeks just to get through the holidays can feel dishonest and draining for both of you. If you're still unsure, the holidays aren't a reason to rush.
 
-### How do you know when it's time to break up?
-
-Common signs are lost respect, feeling unsafe, big life goals that really clash, and problems that haven't changed despite honest conversations. If you imagine the next five years without any change and feel mostly dread, take that seriously.
-
 ### Is it wrong to break up with someone you still love?
 
 No. You can love someone and still not be right together, for example if you want very different lives. Loving someone and choosing to stay are related, but they're not the same thing.

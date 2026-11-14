@@ -1,7 +1,7 @@
 ---
 title: "Love bombing: 7 signs it's too much, too fast (and how it differs from real love)"
 date: 2026-11-10
-description: Flowers every day, "I've never felt this way" on date three. Is it romance or love bombing? 7 warning signs, how it differs from real love and what to do.
+description: Flowers every day, "I've never felt this way" on date three. Is it romance or love bombing? What research says, 7 warning signs, real examples, how it differs from real love and what to do.
 tags: love bombing, red flags
 updated: 2026-11-14
 ---
@@ -9,19 +9,26 @@ At first it feels like a film. They text all day, plan every weekend and tell yo
 
 Then something shifts. The affection starts to come with conditions. And you begin to wonder whether that perfect start was real, or a way to pull you in fast.
 
-That's the question behind love bombing, one of the most searched relationship terms of the last few years. Here's what it actually means, the signs to watch for and how to tell it apart from someone who is simply very into you.
+That's the question behind love bombing, one of the most searched relationship terms of the last few years. This guide explains what it actually means, what the research says, the seven signs to watch for, how to tell it apart from someone who is simply very into you, and what to do if you're not sure.
 
 ## What is love bombing?
 
 Love bombing is an overwhelming amount of attention, affection and promises early in a relationship, used, consciously or not, to create fast attachment and a sense of debt. The term originally described recruitment tactics in cults. Today people use it for dating, especially when that intense start is later followed by control, criticism or coldness.
 
-The pattern often looks like a cycle. First the flood of affection. Then, once you're invested, the affection is pulled back or used as leverage. Then it comes back again, which makes the bad parts easier to forgive.
+The pattern often looks like a cycle:
+
+1. **The flood.** Constant attention, compliments, gifts and big plans for the future.
+2. **The pull-back.** Once you're invested, the affection is withdrawn or used as leverage, often when you set a limit or disagree.
+3. **The return.** The warmth comes back, sometimes even stronger, which makes the hard parts easier to forgive and harder to see.
+
+> **Why it works this way**
+> Intense early attention feels wonderful, and it can create a powerful sense of closeness before you really know someone. When the warmth later becomes unpredictable, you don't compare it with how a healthy partner behaves. You compare it with the amazing start, and you try hard to get that version back. The memory of the beginning becomes the hook. That's why many people stay much longer than they would if the relationship had started the way it later became.
 
 ## What the research says
 
 Love bombing hasn't been studied much, but one early study gives useful clues. Researchers at the University of Arkansas surveyed 484 young adults in 2017. People with higher narcissistic traits and lower self-esteem were more likely to love bomb, and love bombing was also linked to heavy texting and social media use in the relationship.
 
-In other words, the intensity often says more about the other person's needs than about you. That's worth remembering when it feels personal.
+In other words, the intensity often says more about the other person's needs than about you. That's worth remembering when it feels personal. It was one small student study, so it can't tell us how common love bombing is or prove what causes it. But it fits what many therapists describe.
 
 ## 7 signs of love bombing
 
@@ -53,6 +60,11 @@ They suggest you don't need your friends that much, or they plan so much togethe
 
 The clearest test is what happens when you say no, set a limit or have a normal disagreement. A secure partner stays kind. A love bomber may turn cold, sulk or punish you, and then shower you with affection again once you give in.
 
+> **Example: the weekend away**
+> Three weeks after meeting, Martin surprises Eliška with a booked weekend in Vienna. She's touched, and also a bit overwhelmed. When she says she already promised that weekend to her sister, his mood changes completely. He goes quiet, then says he's "just disappointed she doesn't feel the same". She cancels on her sister. In Vienna, he's wonderful again.
+>
+> On its own, a surprise trip is romantic. What makes this a warning sign is the reaction to her "no", and the fact that she ended up rearranging her life to make the warmth come back.
+
 ## Love bombing or just a lot of love?
 
 Some people are simply enthusiastic and expressive, especially early on. The difference isn't how much affection there is. It's what happens around it.
@@ -65,13 +77,18 @@ Some people are simply enthusiastic and expressive, especially early on. The dif
 | Gifts and gestures | Feel generous | Feel like you owe something back |
 | Over time | Steady | Hot, then cold, then hot again |
 
-A useful self-check: do you feel safe to slow things down? If yes, it's probably just a lot of love. If the idea of saying "can we take it slower?" makes you nervous about their reaction, pay attention to that feeling. Our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what a steady, healthy start tends to look like.
+A useful self-check: do you feel safe to slow things down? If yes, it's probably just a lot of love. If the idea of asking to take it slower makes you nervous about their reaction, pay attention to that feeling. Our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what a steady, healthy start tends to look like.
+
+> **Example: just very keen**
+> Adéla's new boyfriend texts a lot, compliments her often and told her he was falling for her after a month. When she says she's feeling a bit rushed, he says: "Totally fair, I get excited. Tell me if it's too much." He keeps texting, a bit less, and is happy when she spends weekends with her friends. That's enthusiasm, not love bombing. The difference is how he responded to her limit.
 
 ## What to do if you think you're being love bombed
 
 ### Slow it down on purpose
 
-Say it simply: "I really like you, and I want to get to know you properly. Can we take things a bit slower?" Then watch the reaction. Respect is a good sign. Pressure, guilt or anger tells you a lot.
+Say it simply. Then watch the reaction. Respect is a good sign. Pressure, guilt or anger tells you a lot.
+
+Try: "I really like you, and I want to get to know you properly. Can we take things a bit slower?"
 
 ### Keep your own life full
 
@@ -81,11 +98,18 @@ Try: "I'd love to see you on Sunday. Saturday I already have plans with my frien
 
 ### Talk to someone outside the relationship
 
-Intensity can make it hard to see clearly. Ask a friend you trust: "Does this seem normal to you?" People who know you well often notice patterns before you do.
+Intensity can make it hard to see clearly. Ask a friend you trust whether it seems normal to them. People who know you well often notice patterns before you do.
 
 ### Trust patterns over promises
 
 Words are easy at the start. Look at how they behave over weeks, especially when things aren't going their way. If you're wondering whether you're overreacting, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help you separate real warning signs from anxious spirals.
+
+> **Why it works**
+> Slowing down is the best test because it costs a caring person very little. Someone who really likes you can wait a few weeks to meet your parents. Someone who needs fast attachment, for whatever reason, will find a slower pace hard to accept. Their reaction to your pace tells you more than any amount of flowers.
+
+## Why it's hard to see from the inside
+
+If you're being love bombed, you're not naive. The early phase feels genuinely good, and our culture often celebrates whirlwind romances. People who lean towards an anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/), or who have been through a lonely period, can find intense attention especially convincing. That isn't a weakness. It's a very human response to feeling wanted.
 
 ## Quick answers about love bombing
 
@@ -108,10 +132,6 @@ Real love usually grows at a pace that matches how well you know each other, and
 ### What happens after love bombing stops?
 
 Often the attention drops suddenly, and criticism, control or coldness can take its place. Many people then try hard to get the early version back, which is what makes the pattern so confusing.
-
-### How do I respond to love bombing?
-
-Slow things down on purpose, keep your own plans and friendships, and notice how they react when you say no. A caring partner adjusts. A love bomber often pushes harder or turns cold.
 
 ### Is it a red flag if someone says "I love you" very early?
 

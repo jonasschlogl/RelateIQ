@@ -152,17 +152,9 @@ Yes. According to the Gottman Institute, about 69% of relationship conflicts are
 
 Ask for a time rather than a talk right now: "Can we find twenty minutes this weekend to talk about how we split the chores?" A clear, short, scheduled conversation feels much less threatening than an open-ended one.
 
-### How can I communicate better with my partner over text?
-
-Keep text for logistics and warmth, and move anything tense to a call or a face-to-face talk. Tone gets lost in writing, so a short "Can we talk about this tonight?" is usually better than a long message.
-
 ### What is a soft start-up?
 
 It's a way to open a hard conversation by describing how you feel about a specific situation and asking for something positive, instead of starting with criticism. For example: "I'm stressed about the bills. Could we look at them together on Sunday?"
-
-### How do I stop getting defensive?
-
-Notice the urge to explain or counter-attack and look for the part of the complaint that's true, even if it's small. Saying "You're right, I did forget" first usually makes the rest of the conversation much easier.
 
 ## A note on safety
 

@@ -174,10 +174,6 @@ Usually because your mind is trying to protect you from uncertainty, and in a re
 
 Calm your body first with slow breathing or a few minutes of cyclic sighing, then write the worry down and tell yourself you'll look at it tomorrow. Put the phone in another room so you're not tempted to check for messages.
 
-### Can overthinking ruin a relationship?
-
-It can put strain on it if it turns into constant checking, testing or accusations. Overthinking itself is very common, though, and it improves a lot when you learn to separate facts from stories and ask for what you need directly.
-
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
