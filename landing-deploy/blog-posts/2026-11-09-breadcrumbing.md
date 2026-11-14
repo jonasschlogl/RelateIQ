@@ -3,6 +3,7 @@ title: "Breadcrumbing: 6 signs someone is keeping you on the hook (and what to d
 date: 2026-11-10
 description: A like here, a "hey stranger" there, but never a real plan. Breadcrumbing explained, 6 signs it's happening to you and how to step off the trail.
 tags: breadcrumbing, mixed signals
+updated: 2026-11-14
 ---
 They haven't asked you out in weeks. But every few days there's something. A like on your story. A "haha" on a meme. A late-night "hey you, how've you been?" that goes nowhere. Just enough to keep you thinking about them, never enough to actually get somewhere.
 
@@ -40,6 +41,15 @@ If a friend asked what's going on between you, you'd struggle to explain. That v
 
 This is the most important sign. A healthy connection leaves you feeling calmer. Breadcrumbing leaves you checking your phone and replaying texts. If that sounds familiar, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help you break the loop.
 
+## Breadcrumbing or just busy?
+
+| | Just busy | Breadcrumbing |
+|---|---|---|
+| Plans | Suggests another time when they cancel | Plans stay "soon" |
+| Replies | Slow, but they come back to the conversation | Quick likes, few real chats |
+| When you ask "what is this?" | Gives a clear answer | Changes the subject or goes quiet |
+| How you feel | A bit impatient | Anxious and unsure |
+
 ## Why it's so hard to walk away
 
 Unpredictable rewards are powerful. When attention arrives at random, every message feels like a small win, and your brain keeps waiting for the next one. If you lean towards an anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/), the pull can be even stronger, because the uncertainty itself feels like a reason to try harder.
@@ -54,9 +64,25 @@ You have two good options, and both start with being honest.
 
 **Or step off the trail.** If you've asked before and nothing changed, you don't owe them another round. You can mute, unfollow or send one calm message: "I don't think we want the same thing, so I'm going to step back. Take care."
 
+Try: "I've enjoyed our chats, but I want something more consistent. I'm going to step back. Take care."
+
 Whichever you choose, put your attention where it's returned. Text a friend instead of refreshing the chat. Make a plan with someone who makes plans back.
 
 If you're not sure how to word that message, RelationshipAI can help you check how it might land before you send it. It isn't therapy, but it's a calm place to start.
+
+## Quick answers
+
+### Is breadcrumbing the same as ghosting?
+
+No. Ghosting means someone disappears completely. Breadcrumbing means they don't disappear, but they don't really show up either. They keep in touch just enough to stay on your radar.
+
+### Why do people breadcrumb?
+
+Sometimes it's calculated, but often it isn't. People may want attention without commitment, keep options open, feel lonely or avoid an awkward conversation. Their reason matters less than how it leaves you feeling.
+
+### Should I reply to someone who's breadcrumbing me?
+
+Only if you want to. One honest message asking what they want is fair. If nothing changes after that, you don't owe them more replies.
 
 *This article is general information, not therapy or medical advice.*
 

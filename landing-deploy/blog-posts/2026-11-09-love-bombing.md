@@ -3,6 +3,7 @@ title: "Love bombing: 7 signs it's too much, too fast (and how it differs from r
 date: 2026-11-10
 description: Flowers every day, "I've never felt this way" on date three. Is it romance or love bombing? 7 warning signs, how it differs from real love and what to do.
 tags: love bombing, red flags
+updated: 2026-11-14
 ---
 At first it feels like a film. They text all day, plan every weekend and tell you after two weeks that they've never felt like this before. Your friends are a bit jealous. You feel chosen.
 
@@ -56,8 +57,13 @@ The clearest test is what happens when you say no, set a limit or have a normal 
 
 Some people are simply enthusiastic and expressive, especially early on. The difference isn't how much affection there is. It's what happens around it.
 
-- **Healthy enthusiasm** respects your pace, is happy when you see your friends, and stays kind when you say no.
-- **Love bombing** speeds things up, needs you to match the intensity, and changes temperature when you set a boundary.
+| | Healthy enthusiasm | Love bombing |
+|---|---|---|
+| Pace | Respects yours | Speeds everything up |
+| Your friends | Happy you see them | Wants you to need them less |
+| When you say no | Stays kind | Turns cold, sulks or pushes |
+| Gifts and gestures | Feel generous | Feel like you owe something back |
+| Over time | Steady | Hot, then cold, then hot again |
 
 A useful self-check: do you feel safe to slow things down? If yes, it's probably just a lot of love. If the idea of saying "can we take it slower?" makes you nervous about their reaction, pay attention to that feeling. Our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what a steady, healthy start tends to look like.
 
@@ -70,6 +76,8 @@ Say it simply: "I really like you, and I want to get to know you properly. Can w
 ### Keep your own life full
 
 Keep seeing your friends, doing your hobbies and making your own plans. A good partner fits into your life. They don't replace it.
+
+Try: "I'd love to see you on Sunday. Saturday I already have plans with my friends."
 
 ### Talk to someone outside the relationship
 

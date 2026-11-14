@@ -3,6 +3,7 @@ title: Attachment styles in relationships: secure, anxious, avoidant and fearful
 date: 2026-10-08
 description: What attachment styles are, how anxious, avoidant, secure and fearful-avoidant attachment show up in dating and texting, and why your attachment style isn't fixed.
 tags: attachment styles, anxious attachment
+updated: 2026-11-14
 ---
 You've probably seen the terms before: anxious attachment, avoidant attachment, secure attachment. They show up in memes, podcasts and relationship advice everywhere. Underneath the internet version, though, there's real research, and it's more useful and more hopeful than most of the posts suggest.
 
@@ -18,6 +19,13 @@ Later, researcher Kim Bartholomew described adult attachment along two dimension
 - **Attachment avoidance:** discomfort with closeness and with depending on others.
 
 Combine low and high levels of each and you get four styles.
+
+| Style | Anxiety | Avoidance | A late reply might feel like |
+|---|---|---|---|
+| Secure | Low | Low | "They're probably busy. I'll hear from them later." |
+| Anxious | High | Low | "Did I do something wrong? Should I text again?" |
+| Avoidant | Low | High | "Good, a bit of space. I'll reply tomorrow." |
+| Fearful-avoidant | High | High | "I want them to reply, and I'm also ready to pull away." |
 
 ## The four attachment styles
 
@@ -59,7 +67,29 @@ A few caveats are worth knowing:
 - **If you're secure:** Stay patient. Your steadiness helps a partner who is anxious or avoidant, but you still get to have needs and limits.
 - **If you're fearful-avoidant:** Go slowly, notice the push and pull, and consider support from a therapist trained in attachment work.
 
+A few lines that help each style ask for what they need:
+
+Try: "I'm feeling a bit unsure today. Could you tell me we're okay?"
+
+Try: "I need an hour on my own to think. Can we talk at 8?"
+
+Try: "I want to be close, and it also scares me a bit. Can we go slowly?"
+
 If you'd like help working out what to say in a specific situation, RelationshipAI is an AI relationship coach built around these ideas. It can help you write a message, rehearse a hard conversation, or understand a pattern. It isn't therapy and can't diagnose you, but it can be a helpful place to think out loud.
+
+## Quick answers
+
+### Can your attachment style change?
+
+Yes. Researchers describe attachment as patterns that can shift over time, especially through steady, supportive relationships and therapy. Many people move toward a more secure style as adults.
+
+### What is the most common attachment style?
+
+In studies of adults, secure attachment usually comes out as the most common style. Most people also show a mix of patterns rather than fitting neatly into one box.
+
+### How do I know my partner's attachment style?
+
+You can notice patterns, like how they react to distance or conflict, but it's better not to label them. Talk about what each of you needs when you feel stressed. That conversation is more useful than any quiz result.
 
 *This article is general information, not therapy or medical advice.*
 
