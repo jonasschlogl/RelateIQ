@@ -60,7 +60,8 @@ for (const [slug, id, title, desc] of [
   ["faq", "faq", "FAQ | RelationshipAI", "Answers to common questions about RelationshipAI: privacy, therapy, partners, plans and more."],
   ["early-access", "join", "Try RelationshipAI free | RelationshipAI", "Create a free RelationshipAI account in about a minute. No card needed."],
 ]) {
-  let sec = homeSection(id);
+  // the full sections live in pages-src/home-<id>.html (the home page only shows a short version)
+  let sec = fs.existsSync(path.join(SRC, `home-${id}.html`)) ? read(`home-${id}.html`) : homeSection(id);
   if (!sec) { console.warn(`pages: section #${id} not found in index.html`); continue; }
   sec = sec.replace(/href="#join"/g, 'href="https://app.relationshipaiadvice.com/register.html"').replace(/href="#faq"/g, 'href="/faq/"');
   write(`${slug}/index.html`, page({ title, description: desc, path: `/${slug}/`, cls: `sp-sec sp-${slug}`, body: sec }));
