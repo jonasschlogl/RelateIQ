@@ -151,7 +151,7 @@ export const QUIZZES = [
     tool: ["/partner-practice/", "Rehearse your next hard talk", "Partner Practice plays your partner so you can try a calmer way to say it before the real conversation.", "Practise your next hard talk before it's real."],
   },  {
     slug: "overthinker",
-    cat: "overthinking",
+    cat: "attachment",
     tint: "#f9cfae",
     kicker: "Overthinking quiz",
     h: "What kind of <em>overthinker</em> are you?",
@@ -196,7 +196,7 @@ export const QUIZZES = [
   },
   {
     slug: "relationship-needs",
-    cat: "check-up",
+    cat: "health",
     tint: "#f9e2ae",
     kicker: "Relationship check-up",
     h: "What does your relationship <em>need right now?</em>",
@@ -333,13 +333,18 @@ export const QUIZZES = [
 
 const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 const SITE = "https://relationshipaiadvice.com";
+// Fixed quiz topics. Do NOT add new topics: every new quiz goes into one of these four.
+// attachment = how you attach and feel (attachment, overthinking, jealousy, insecurity, trust in yourself)
+// love       = how you give and receive love (love languages, comfort, affection, romance, gifts, dates)
+// conflict   = fights and communication (fight style, apology, repair, how you talk, boundaries)
+// health     = how the relationship is doing (needs, check-ups, compatibility, trust, future, red/green flags)
 const CATS = [
-  ["attachment", "Attachment"],
+  ["attachment", "Attachment & feelings"],
   ["love", "Love & affection"],
-  ["conflict", "Conflict"],
-  ["overthinking", "Overthinking"],
-  ["check-up", "Relationship check-up"],
+  ["conflict", "Conflict & communication"],
+  ["health", "Relationship health"],
 ];
+for (const q of QUIZZES) if (!CATS.some(([k]) => k === q.cat)) throw new Error(`Quiz "${q.slug}" uses unknown topic "${q.cat}". Use one of: ${CATS.map(([k]) => k).join(", ")}. Do not add new topics.`);
 const catName = (c) => (CATS.find((x) => x[0] === c) || [, "Quiz"])[1];
 const plain = (h) => h.replace(/<[^>]+>/g, "");
 const img = (q) => `/img/quiz-pages/${q.slug}.jpg`;
@@ -386,7 +391,7 @@ const card = (q, ev) => `<a class="post-card qz-pc" href="/quiz/${q.slug}/" data
       </div>
     </section>
   </main>
-<script>(function(){var b=document.querySelectorAll(".qz-chip"),c=document.querySelectorAll(".qz-pc");function set(k){var ok=false;b.forEach(function(x){var on=x.dataset.cat===k;x.classList.toggle("is-on",on);x.setAttribute("aria-pressed",on);if(on)ok=true});if(!ok)return set("all");c.forEach(function(x){x.hidden=!(k==="all"||x.dataset.cat===k)})}b.forEach(function(x){x.addEventListener("click",function(){set(x.dataset.cat);try{history.replaceState(null,"",x.dataset.cat==="all"?location.pathname:"#"+x.dataset.cat)}catch(e){}})});var h=location.hash.slice(1);if(h)set(h)})();</script>`,
+<script>(function(){var b=document.querySelectorAll(".qz-chip"),c=document.querySelectorAll(".qz-pc");function set(k){var ok=false;b.forEach(function(x){var on=x.dataset.cat===k;x.classList.toggle("is-on",on);x.setAttribute("aria-pressed",on);if(on)ok=true});if(!ok)return set("all");c.forEach(function(x){x.hidden=!(k==="all"||x.dataset.cat===k)})}b.forEach(function(x){x.addEventListener("click",function(){set(x.dataset.cat);try{history.replaceState(null,"",x.dataset.cat==="all"?location.pathname:"#"+x.dataset.cat)}catch(e){}})});var h=location.hash.slice(1);if(h)set(h);window.addEventListener("hashchange",function(){set(location.hash.slice(1)||"all")})})();</script>`,
     jsonld: { "@context": "https://schema.org", "@type": "CollectionPage", name: "Free relationship quizzes", url: `${SITE}/quiz/`, hasPart: QUIZZES.map((q) => ({ "@type": "Quiz", name: q.kicker, url: `${SITE}/quiz/${q.slug}/` })) },
   }));
 }
