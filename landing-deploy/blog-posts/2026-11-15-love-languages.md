@@ -3,8 +3,6 @@ title: "Love languages: what the 5 really are, what research says and how to use
 date: 2026-11-15
 description: Words, time, gifts, help or touch? What the 5 love languages are, what new research really says about them and a better way to use them in your relationship.
 tags: love languages, showing love
-draft: true
-topics: communication
 ---
 You plan a thoughtful surprise. Your partner says thanks, but seems more excited when you simply sit with them on the sofa and put your phone away. Or you tell them every day how much you love them, and they say they'd rather you just helped with the dishes.
 
