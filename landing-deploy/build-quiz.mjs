@@ -468,6 +468,7 @@ function latestPost() {
   const body = `<div class="lk-wrap">
   <div class="lk-head"><img src="/logo-tile.svg" alt="" width="64" height="64" /><h1>Relationship<b>AI</b></h1><p>Free quizzes and calm help for the hard conversations.</p></div>
   ${item(`/quiz/${f.slug}/`, `links-featured-${f.slug}`, f.tint, "The quiz from our video", f.h, "7 questions · 2 minutes · get your full result", true)}
+  ${item("/", "links-main-site", "#f58fab", "The main site", "Meet your <em>AI relationship coach</em>", "Practise hard talks, check your texts, get calm advice · free to start", true)}
   <p class="lk-label">More quizzes</p>
   ${rest.map((q) => item(`/quiz/${q.slug}/`, `links-quiz-${q.slug}`, q.tint, esc(q.kicker), q.h, "")).join("\n  ")}
   <p class="lk-label">Try the coach</p>
