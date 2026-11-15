@@ -24,7 +24,7 @@ function parts() {
 export const homeSection = (id) => parts().section(id);
 
 /** Wrap `body` (the <main> contents) into a full page in the current design. */
-export function page({ title, description, path: p, type = "website", body, jsonld, image = `${SITE}/og-image.png`, cls = "", noindex = false }) {
+export function page({ title, description, path: p, type = "website", body, jsonld, image = `${SITE}/og-image.png`, cls = "", noindex = false, head = "" }) {
   const { nav, footer } = parts();
   const canonical = `${SITE}${p}`;
   return `<!DOCTYPE html>
@@ -63,7 +63,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/mobile-sheet.css?v=6" />
   <link rel="stylesheet" href="/css/mobile-acc.css?v=4" />
   <link rel="stylesheet" href="/css/blog-pages.css?v=8" />
-  <meta name="theme-color" content="#3b2218" />
+  <meta name="theme-color" content="#3b2218" />${head ? "\n" + head : ""}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
 <body class="hx spg ${cls}">

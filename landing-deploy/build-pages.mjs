@@ -66,3 +66,6 @@ for (const [slug, id, title, desc] of [
   write(`${slug}/index.html`, page({ title, description: desc, path: `/${slug}/`, cls: `sp-sec sp-${slug}`, body: sec }));
 }
 console.log(`pages: ${PAGES.length + 1 + Object.keys(LEGAL).length + 3} pages written`);
+
+// free quizzes (/quiz/)
+await import("./build-quiz.mjs");
