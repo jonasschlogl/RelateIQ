@@ -4,6 +4,7 @@ date: 2026-11-16
 description: A little jealousy is normal, but it can quietly damage trust. Why jealousy in a relationship happens, when it becomes a problem and 7 calm ways to handle it.
 tags: jealousy in a relationship, insecurity
 draft: true
+approved: true
 topics: overthinking, attachment
 ---
 They laugh at a message and you want to know who it's from. Their new colleague comes up in conversation a few times and something tightens in your chest. You know it's probably nothing. But the feeling doesn't care what you know.

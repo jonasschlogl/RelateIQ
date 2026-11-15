@@ -4,6 +4,7 @@ date: 2026-11-16
 description: Not sure if it's normal fighting or something worse? 10 signs of a toxic relationship, how it differs from a hard patch and practical next steps if you recognise it.
 tags: signs of a toxic relationship, red flags
 draft: true
+approved: true
 topics: conflict, repair
 ---
 You feel tense before they get home. You rehearse what to say so it won't start a fight. Your friends have stopped asking how things are going, because you always say "fine". And yet there are good days too, which makes it even harder to tell what's really going on.
