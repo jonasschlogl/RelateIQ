@@ -6,12 +6,13 @@ import path from "node:path";
 import { page, LANDING, esc } from "./shell.mjs";
 
 const write = (rel, html) => { const f = path.join(LANDING, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
-const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=3" />`;
+const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=4" />`;
 const REG = "https://app.relationshipaiadvice.com/register.html";
 
 export const QUIZZES = [
   {
     slug: "attachment-style",
+    cat: "attachment",
     tint: "#f4b8c4",
     kicker: "Attachment style quiz",
     h: "What's your <em>attachment style?</em>",
@@ -56,6 +57,7 @@ export const QUIZZES = [
   },
   {
     slug: "love-language",
+    cat: "love",
     tint: "#f7d99a",
     kicker: "Love language quiz",
     h: "How do you really need <em>to be loved?</em>",
@@ -105,6 +107,7 @@ export const QUIZZES = [
   },
   {
     slug: "fight-style",
+    cat: "conflict",
     tint: "#f8c7a3",
     kicker: "Conflict style quiz",
     h: "What kind of partner are you <em>in a fight?</em>",
@@ -146,48 +149,208 @@ export const QUIZZES = [
     ],
     article: ["/blog/how-to-rebuild-trust-after-a-fight/", "How to rebuild trust after a fight"],
     tool: ["/partner-practice/", "Rehearse your next hard talk", "Partner Practice plays your partner so you can try a calmer way to say it before the real conversation."],
+  },  {
+    slug: "overthinker",
+    cat: "overthinking",
+    tint: "#f9cfae",
+    kicker: "Overthinking quiz",
+    h: "What kind of <em>overthinker</em> are you?",
+    sub: "Seven quick questions about what your mind does when love feels uncertain. Pick the answer that sounds most like you, not the one you wish was true.",
+    title: "Overthinking quiz: what kind of overthinker are you? | RelationshipAI",
+    desc: "Free 2-minute overthinking quiz for relationships. Find out if you replay, decode or predict the worst, and get one calming thing to try this week.",
+    card: "Do you replay, decode or predict the worst? Find your overthinking pattern.",
+    note: "This quiz is for self-reflection. It is not a clinical assessment or a diagnosis.",
+    qs: [
+      ["They reply with just \"ok\". You…", ["Replay what you said earlier", "Analyse the full stop and the tone", "Picture them losing interest", "Assume they're busy and move on"]],
+      ["It's 1 am and you can't sleep. You're thinking about…", ["An awkward thing you said last week", "A message you still can't read clearly", "Where this relationship will be in a year", "Nothing much, you'd be asleep"]],
+      ["Your partner seems quiet at dinner. You…", ["Go back over your day for mistakes", "Study their face for clues", "Wonder if this is the beginning of the end", "Ask if they're okay"]],
+      ["After a small argument, your mind…", ["Plays it on repeat", "Picks apart every word they used", "Jumps to \"we're not going to make it\"", "Lets it go once you've talked"]],
+      ["They haven't liked your new post. You…", ["Wonder if you posted something wrong", "Check if they liked someone else's", "Decide they're pulling away", "Don't notice"]],
+      ["Before a big conversation, you…", ["Rehearse what you said last time", "Plan what every reaction might mean", "Imagine the worst way it could go", "Think about what you want, then stop"]],
+      ["A friend says \"you're overthinking it\". You…", ["Think about why they said that", "Ask what exactly they meant", "Worry they're tired of you", "Agree and change the subject"]],
+    ],
+    results: [
+      { name: "The Replayer", line: "Your mind lives in the last conversation.",
+        text: "You go back over what was said, again and again, looking for the moment it went wrong. It feels like learning from it, but replaying rarely brings new information. Mostly it brings the feeling back.",
+        good: ["You care about how your words land", "You are quick to own your mistakes"],
+        watch: ["Apologising for things nobody noticed", "Losing sleep over conversations that are already over"],
+        tip: "Give the replay a time slot: 10 minutes in the evening, written down. When it shows up at 2 pm, tell yourself \"later\"." },
+      { name: "The Decoder", line: "You read between every line.",
+        text: "A full stop, a short reply, a different emoji. You notice everything and try to work out what it means. Your attention is a gift, but most messages carry far less meaning than your mind gives them.",
+        good: ["You pick up on small changes fast", "You are emotionally perceptive"],
+        watch: ["Treating the tone of a text as a fact", "Checking \"last seen\" and read receipts"],
+        tip: "Write down what the message actually says, then two other explanations for it. Still unsure? Ask one simple question instead of guessing." },
+      { name: "The Fortune Teller", line: "Your mind runs ahead to the worst ending.",
+        text: "One quiet evening and you are already picturing the breakup. Your mind is trying to protect you by preparing for pain. But in one study of people with anxiety, more than 9 in 10 of their worries never came true.",
+        good: ["You think ahead and plan", "You take the relationship seriously"],
+        watch: ["Reacting to a future that hasn't happened", "Pulling away first so you can't get hurt"],
+        tip: "When the worst-case movie starts, ask yourself: what do I actually know right now? Say only that sentence out loud." },
+      { name: "The Settled One", line: "You let things go once they're said.",
+        text: "Uncertainty doesn't grab you for long. You ask when you want to know, and you don't build stories in the gaps. That calm is valuable, especially if your partner tends to overthink.",
+        good: ["You don't make small things bigger", "You ask instead of guessing"],
+        watch: ["Your calm can look like not caring", "Missing it when your partner needs reassurance"],
+        tip: "If your partner overthinks, send one small, clear message when plans change. It costs you seconds and saves them hours." },
+    ],
+    article: ["/blog/how-to-stop-overthinking-in-a-relationship/", "How to stop overthinking in a relationship"],
+    tool: ["/message-check/", "Check a text instead of overthinking it", "Message check shows how a message will probably land, so you don't have to guess."],
+  },
+  {
+    slug: "relationship-needs",
+    cat: "check-up",
+    tint: "#f9e2ae",
+    kicker: "Relationship check-up",
+    h: "What does your relationship <em>need right now?</em>",
+    sub: "Seven quick questions about how things have felt between you lately. Answer for the last few weeks, not your best or worst day.",
+    title: "Relationship check-up quiz: what does your relationship need right now? | RelationshipAI",
+    desc: "Free 2-minute relationship check-up. Find out if you need more time together, better talks, more fun or more teamwork, and get one thing to try this week.",
+    card: "More time, better talks, more fun or more teamwork? Find what would help most.",
+    note: "This quiz is for self-reflection. It is not a clinical assessment.",
+    qs: [
+      ["Lately, your evenings together look like…", ["Two people on two phones", "Talking, but mostly about logistics", "The same routine every night", "One of you doing everything"]],
+      ["The last time you felt really close was…", ["Hard to remember", "After a good, honest talk", "On a trip or a fun day out", "When they helped with something hard"]],
+      ["Small frustrations usually come from…", ["Not seeing each other enough", "Feeling misunderstood", "Feeling bored or stuck", "Feeling like you carry more"]],
+      ["If you could add one thing to this week, it would be…", ["An evening with no screens", "One honest conversation", "Something new and silly together", "Help with the to-do list"]],
+      ["When you argue, it's often about…", ["Not making time", "How something was said", "Nothing really, you just feel flat", "Who does what"]],
+      ["You'd feel most loved if they…", ["Planned time just for you two", "Really listened without fixing", "Surprised you with something fun", "Took something off your plate"]],
+      ["Which sentence fits best right now?", ["We're busy, but we miss each other", "We keep missing each other's point", "We're good, just on autopilot", "I need to feel we're a team again"]],
+    ],
+    results: [
+      { name: "More time together", line: "You don't need more love. You need more of each other.",
+        text: "Life has crowded out the moments that keep you close. It's common and very fixable. Closeness grows from small, regular moments more than from big gestures.",
+        good: ["You still want each other's company", "The bond is there, it just needs space"],
+        watch: ["Living side by side on separate screens", "Saving connection for \"when things calm down\""],
+        tip: "Pick one evening this week with phones out of the room for 30 minutes. Ask one real question, like \"What's been on your mind lately?\"" },
+      { name: "Better talks", line: "You're talking, but not always hearing each other.",
+        text: "The love is there, but conversations end in misunderstanding more than you'd like. Often it's not what you say but how a talk starts. Small changes in how you start and how you listen make a big difference.",
+        good: ["You both still try to talk things through", "You care about being understood"],
+        watch: ["Starting hard talks with blame", "Defending instead of listening"],
+        tip: "Start your next hard talk with \"I feel ___ about ___, and I need ___\". Then repeat back what you heard before you answer." },
+      { name: "More fun", line: "You're solid, just stuck on autopilot.",
+        text: "Nothing is really wrong, but things feel flat. Routines are comfortable, and they can also make a relationship feel like sharing a flat. Research on couples suggests that doing new things together can bring back some of the early spark.",
+        good: ["You have a stable base", "You feel safe with each other"],
+        watch: ["Mistaking comfort for boredom", "Only talking about chores and plans"],
+        tip: "Plan one small first this week: a new recipe, a walk somewhere new, or three date night questions you've never asked." },
+      { name: "More teamwork", line: "You need to feel you're in this together.",
+        text: "One of you is carrying more, or it feels that way. Over time, an uneven load turns into quiet resentment. The fix is rarely a big talk about everything. It's a clear, fair split of real tasks.",
+        good: ["You're both committed to making life work", "You notice what needs doing"],
+        watch: ["Keeping score in silence", "Asking for \"help\" instead of handing over whole tasks"],
+        tip: "List everything that keeps your home running, including planning and remembering. Then hand over one whole task, from noticing to finishing." },
+    ],
+    article: ["/blog/relationship-problems-that-keep-coming-back/", "5 relationship problems that keep coming back"],
+    tool: ["/partner-practice/", "Rehearse the talk you keep putting off", "Partner Practice plays your partner so you can try a calm way to ask for what you need."],
   },
 ];
 
-const heart = `<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 2.8 4.5 6.2 4.5c2.1 0 3.7 1.2 4.6 2.7.4.6 1.4.6 1.8 0 .9-1.5 2.5-2.7 4.6-2.7 3.4 0 5.3 3.5 3.8 7.1C19.5 16.4 12 21 12 21z"/></svg>`;
-const floats = `<div class="fl" aria-hidden="true">${[1, 2, 3, 4, 5, 6, 7].map((i) => `<span class="f${i}">${heart}</span>`).join("")}</div>`;
 const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const SITE = "https://relationshipaiadvice.com";
+const CATS = [
+  ["attachment", "Attachment"],
+  ["love", "Love & affection"],
+  ["conflict", "Conflict"],
+  ["overthinking", "Overthinking"],
+  ["check-up", "Relationship check-up"],
+];
+const catName = (c) => (CATS.find((x) => x[0] === c) || [, "Quiz"])[1];
+const plain = (h) => h.replace(/<[^>]+>/g, "");
+const img = (q) => `/img/quiz-pages/${q.slug}.jpg`;
+const META = "7 questions · 2 min";
 
-// hub
-const cards = QUIZZES.map((q) => `<a class="qz-card" href="/quiz/${q.slug}/" style="--tint:${q.tint}" data-umami-event="quiz-hub-${q.slug}">
-  <span class="qz-card-top"><span class="qz-pill">${esc(q.kicker)}</span><span class="qz-meta">7 questions · 2 min</span></span>
+// quiz card in the same markup as the blog cards
+const card = (q, ev) => `<a class="post-card qz-pc" href="/quiz/${q.slug}/" data-cat="${q.cat}" data-umami-event="${ev}-${q.slug}">
+  <span class="post-thumb"><img src="${img(q)}" alt="" width="1200" height="800" loading="lazy" decoding="async" /></span>
+  <div class="post-card-top"><span class="post-tag">${esc(catName(q.cat))}</span><span class="post-meta">${META}</span></div>
   <h3>${q.h}</h3>
   <p>${esc(q.card)}</p>
-  <span class="qz-go">Take the quiz ${arrow}</span>
-</a>`).join("\n");
+  <span class="post-more">Take the quiz ${arrow}</span>
+</a>`;
 
-write("quiz/index.html", page({
-  title: "Free relationship quizzes | RelationshipAI",
-  description: "Free 2-minute relationship quizzes: attachment style, love language and conflict style. Get your result and one thing to try with your partner this week.",
-  path: "/quiz/", cls: "sp-feature qz-page", head: HEAD,
-  body: `<div class="sp-panel"><article class="fm-panel pg qz-hub" style="--tint:#f4b8c4"><div class="pg-hero">${floats}<span class="fm-kick"><b>Free quizzes</b><span>2 minutes each</span></span><h2>Get to know <em>how you love.</em></h2><p class="fm-sub">Short psychology quizzes about you and your relationship. Answer honestly, get your result and one thing to try with your partner this week.</p></div>
-<div class="fm-body"><section class="pg-sec"><div class="qz-grid">
-${cards}
-</div><p class="qz-foot-note">More quizzes every week. Seen one in our videos? Your full result is here.</p></section></div></article></div>`,
-}));
+// ---------- hub: /quiz/ (blog index layout + category filter) ----------
+{
+  const used = CATS.filter(([k]) => QUIZZES.some((q) => q.cat === k));
+  const chip = (k, label, n, on = false) => `<button type="button" class="qz-chip${on ? " is-on" : ""}" data-cat="${k}" aria-pressed="${on}" data-umami-event="quiz-filter-${k}">${esc(label)}<span>${n}</span></button>`;
+  const chips = [chip("all", "All", QUIZZES.length, true), ...used.map(([k, l]) => chip(k, l, QUIZZES.filter((q) => q.cat === k).length))].join("");
+  write("quiz/index.html", page({
+    title: "Free relationship quizzes | RelationshipAI",
+    description: "Free 2-minute relationship quizzes: attachment style, love language, conflict style, overthinking and a relationship check-up. Get your result and one thing to try this week.",
+    path: "/quiz/", cls: "sp-blog qz-page qz-hubpage", head: HEAD,
+    body: `  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <span class="section-tag">Free quizzes</span>
+        <h1>Get to know how you love</h1>
+        <p>Short psychology quizzes about you and your relationship. Seven questions, two minutes, and one thing to try with your partner this week.</p>
+        <div class="qz-chips" role="group" aria-label="Quiz topics">${chips}</div>
+      </div>
+    </section>
+    <section class="blog-list">
+      <div class="container">
+        <div class="post-grid qz-grid2">${QUIZZES.map((q) => card(q, "quiz-hub")).join("\n")}</div>
+        <p class="qz-foot-note">New quizzes every week. Seen one in our videos? Your full result is here.</p>
+      </div>
+    </section>
+    <section>
+      <div class="cta-banner">
+        <h2>Know your pattern? Now practise the talk.</h2>
+        <p>Partner Practice plays your partner, so you can try a calmer way to say the hard thing before the real conversation.</p>
+        <a href="${REG}" class="btn" data-umami-event="cta-quiz-banner">Try it free</a>
+      </div>
+    </section>
+  </main>
+<script>(function(){var b=document.querySelectorAll(".qz-chip"),c=document.querySelectorAll(".qz-pc");function set(k){var ok=false;b.forEach(function(x){var on=x.dataset.cat===k;x.classList.toggle("is-on",on);x.setAttribute("aria-pressed",on);if(on)ok=true});if(!ok)return set("all");c.forEach(function(x){x.hidden=!(k==="all"||x.dataset.cat===k)})}b.forEach(function(x){x.addEventListener("click",function(){set(x.dataset.cat);try{history.replaceState(null,"",x.dataset.cat==="all"?location.pathname:"#"+x.dataset.cat)}catch(e){}})});var h=location.hash.slice(1);if(h)set(h)})();</script>`,
+    jsonld: { "@context": "https://schema.org", "@type": "CollectionPage", name: "Free relationship quizzes", url: `${SITE}/quiz/`, hasPart: QUIZZES.map((q) => ({ "@type": "Quiz", name: q.kicker, url: `${SITE}/quiz/${q.slug}/` })) },
+  }));
+}
 
-// each quiz
+// ---------- each quiz: blog article layout ----------
 for (const q of QUIZZES) {
   const data = { slug: q.slug, kicker: q.kicker, tint: q.tint, qs: q.qs, results: q.results, article: q.article, tool: q.tool, reg: REG };
-  const others = QUIZZES.filter((o) => o.slug !== q.slug).map((o) => `<a href="/quiz/${o.slug}/" data-umami-event="quiz-next-${o.slug}">${esc(o.kicker)} ${arrow}</a>`).join("");
+  const others = QUIZZES.filter((o) => o.slug !== q.slug);
+  const sameFirst = [...others.filter((o) => o.cat === q.cat), ...others.filter((o) => o.cat !== q.cat)].slice(0, 3);
+  const types = q.results.map((r) => `<li><span>${esc(r.name)}</span></li>`).join("");
   write(`quiz/${q.slug}/index.html`, page({
-    title: q.title, description: q.desc, path: `/quiz/${q.slug}/`, cls: "sp-feature qz-page", head: HEAD,
-    jsonld: { "@context": "https://schema.org", "@type": "Quiz", name: q.kicker, about: q.desc, educationalUse: "self-reflection", url: `https://relationshipaiadvice.com/quiz/${q.slug}/` },
-    body: `<div class="sp-panel"><article class="fm-panel pg qz-one" style="--tint:${q.tint}"><div class="pg-hero">${floats}<nav class="bl-crumb" aria-label="Breadcrumb"><a href="/quiz/">Quizzes</a><i>/</i><b>${esc(q.kicker)}</b></nav><span class="fm-kick"><b>${esc(q.kicker)}</b><span>2 min</span></span><h2>${q.h}</h2><p class="fm-sub">${esc(q.sub)}</p></div>
-<div class="fm-body"><section class="pg-sec qz-sec">
-  <div class="qz-box" id="quiz" data-quiz="${q.slug}" aria-live="polite">
-    <noscript><p>Please turn on JavaScript to take the quiz.</p></noscript>
-  </div>
-  <p class="qz-note">${esc(q.note)}</p>
-  <div class="qz-more"><span>More quizzes</span>${others}<a href="/quiz/">All quizzes ${arrow}</a></div>
-</section></div></article></div>
+    title: q.title, description: q.desc, path: `/quiz/${q.slug}/`, cls: "sp-blog qz-page qz-quizpage", head: HEAD, image: `${SITE}${img(q)}`,
+    jsonld: { "@context": "https://schema.org", "@type": "Quiz", name: q.kicker, about: q.desc, educationalUse: "self-reflection", url: `${SITE}/quiz/${q.slug}/`, image: `${SITE}${img(q)}` },
+    body: `  <main>
+    <article class="article qz-article" style="--tint:${q.tint}">
+      <div class="container article-layout">
+        <div class="article-wrap article-main">
+          <a href="/quiz/" class="article-back">← All quizzes</a>
+          <div class="article-tags"><a class="post-tag" href="/quiz/#${q.cat}">${esc(catName(q.cat))}</a><span class="post-tag qz-tag-soft">${META}</span></div>
+          <h1>${q.h}</h1>
+          <p class="qz-lead">${esc(q.sub)}</p>
+          <figure class="article-fig article-hero qz-hero"><img src="${img(q)}" alt="" width="1200" height="800" decoding="async" fetchpriority="high" /></figure>
+          <div class="qz-box" id="quiz" data-quiz="${q.slug}" aria-live="polite">
+            <noscript><p>Please turn on JavaScript to take the quiz.</p></noscript>
+          </div>
+          <p class="qz-note">${esc(q.note)}</p>
+        </div>
+        <aside class="article-aside">
+          <nav class="toc qz-facts" aria-label="About this quiz">
+            <p class="toc-title">Possible results</p>
+            <ol>${types}</ol>
+            <p class="qz-facts-k">7 questions · 2 minutes · free, no sign-up</p>
+          </nav>
+          <div class="ad-card">
+            <div class="ad-body">
+              <span class="ad-ic" aria-hidden="true"></span>
+              <h3>${esc(q.tool[1])}</h3>
+              <p>${esc(q.tool[2])}</p>
+              <a href="${REG}" class="btn btn-gradient" data-umami-event="cta-quiz-sidebar">Try it free</a>
+              <small>Free to start. No card needed.</small>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </article>
+    <section class="blog-list more-posts">
+      <div class="container">
+        <div class="more-head"><h2>More quizzes</h2><a class="qz-all" href="/quiz/" data-umami-event="quiz-all">All quizzes ${arrow}</a></div>
+        <div class="post-grid">${sameFirst.map((o) => card(o, "quiz-next")).join("\n")}</div>
+      </div>
+    </section>
+  </main>
 <script type="application/json" id="quiz-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
-<script defer src="/js/quiz.js?v=2"></script>`,
+<script defer src="/js/quiz.js?v=3"></script>`,
   }));
 }
 // ---------- /links/: the page behind the link in bio ----------
