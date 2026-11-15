@@ -6,7 +6,7 @@ import path from "node:path";
 import { page, LANDING, esc } from "./shell.mjs";
 
 const write = (rel, html) => { const f = path.join(LANDING, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
-const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=2" />`;
+const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=3" />`;
 const REG = "https://app.relationshipaiadvice.com/register.html";
 
 export const QUIZZES = [
@@ -173,7 +173,7 @@ ${cards}
 
 // each quiz
 for (const q of QUIZZES) {
-  const data = { slug: q.slug, qs: q.qs, results: q.results, article: q.article, tool: q.tool, reg: REG };
+  const data = { slug: q.slug, kicker: q.kicker, tint: q.tint, qs: q.qs, results: q.results, article: q.article, tool: q.tool, reg: REG };
   const others = QUIZZES.filter((o) => o.slug !== q.slug).map((o) => `<a href="/quiz/${o.slug}/" data-umami-event="quiz-next-${o.slug}">${esc(o.kicker)} ${arrow}</a>`).join("");
   write(`quiz/${q.slug}/index.html`, page({
     title: q.title, description: q.desc, path: `/quiz/${q.slug}/`, cls: "sp-feature qz-page", head: HEAD,
@@ -187,7 +187,37 @@ for (const q of QUIZZES) {
   <div class="qz-more"><span>More quizzes</span>${others}<a href="/quiz/">All quizzes ${arrow}</a></div>
 </section></div></article></div>
 <script type="application/json" id="quiz-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
-<script defer src="/js/quiz.js?v=1"></script>`,
+<script defer src="/js/quiz.js?v=2"></script>`,
   }));
 }
-console.log(`quiz: ${QUIZZES.length + 1} pages written`);
+// ---------- /links/: the page behind the link in bio ----------
+// FEATURED = the quiz from the newest video. Change it when a new quiz video goes out.
+const FEATURED = "attachment-style";
+function latestPost() {
+  const dir = path.join(path.dirname(new URL(import.meta.url).pathname), "blog-posts");
+  const posts = fs.readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(f)).map((f) => {
+    const t = fs.readFileSync(path.join(dir, f), "utf8"); const fm = (t.match(/^---\n([\s\S]*?)\n---/) || [, ""])[1];
+    const get = (k) => ((fm.match(new RegExp(`^${k}:\\s*(.*)$`, "m")) || [, ""])[1] || "").trim().replace(/^"(.*)"$/, "$1").replace(/\\"/g, '"');
+    return { file: f, date: get("date"), title: get("title"), draft: /^(true|yes)$/i.test(get("draft")), slug: get("slug") || f.slice(11, -3) };
+  }).filter((p) => !p.draft && p.date && p.date <= new Date().toISOString().slice(0, 10)).sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts[0];
+}
+{
+  const f = QUIZZES.find((q) => q.slug === FEATURED) || QUIZZES[0];
+  const rest = QUIZZES.filter((q) => q !== f);
+  const post = latestPost();
+  const item = (href, ev, tint, k, h, p, big = false) => `<a class="lk-item${big ? " lk-big" : ""}" href="${href}" style="--tint:${tint}" data-umami-event="${ev}"><span class="lk-k">${k}</span><span class="lk-h">${h}</span>${p ? `<span class="lk-p">${p}</span>` : ""}<span class="lk-go">${arrow}</span></a>`;
+  const body = `<div class="lk-wrap">
+  <div class="lk-head"><img src="/logo-tile.svg" alt="" width="64" height="64" /><h1>Relationship<b>AI</b></h1><p>Free quizzes and calm help for the hard conversations.</p></div>
+  ${item(`/quiz/${f.slug}/`, `links-featured-${f.slug}`, f.tint, "The quiz from our video", f.h, "7 questions · 2 minutes · get your full result", true)}
+  <p class="lk-label">More quizzes</p>
+  ${rest.map((q) => item(`/quiz/${q.slug}/`, `links-quiz-${q.slug}`, q.tint, esc(q.kicker), q.h, "")).join("\n  ")}
+  <p class="lk-label">Try the coach</p>
+  ${item(REG, "links-try-free", "#3b2218", "Free, no card needed", "Rehearse a hard conversation <em>before it's real</em>", "An AI plays your partner so you can practise what to say.")}
+  ${post ? `<p class="lk-label">New on the blog</p>\n  ${item(`/blog/${post.slug}/`, "links-latest-article", "#f9cfae", "Latest article", esc(post.title), "")}` : ""}
+  <p class="lk-foot"><a href="/" data-umami-event="links-home">relationshipaiadvice.com</a> · <a href="/quiz/" data-umami-event="links-all-quizzes">All quizzes</a> · <a href="/blog/" data-umami-event="links-blog">Blog</a></p>
+</div>
+<script>try{var s=new URLSearchParams(location.search).get("utm_source");if(s)sessionStorage.setItem("ra_src",s)}catch(e){}</script>`;
+  write("links/index.html", page({ title: "RelationshipAI: free relationship quizzes", description: "The quiz from our video, more free relationship quizzes and the AI coach for hard conversations.", path: "/links/", cls: "lk-page", head: HEAD, noindex: true, body }));
+}
+console.log(`quiz: ${QUIZZES.length + 2} pages written`);

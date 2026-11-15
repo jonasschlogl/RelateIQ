@@ -68,3 +68,48 @@ body.qz-page .qz-more a { display: inline-flex; align-items: center; gap: 6px; t
 body.qz-page .qz-box { position: relative; z-index: 3; }
 body.qz-page .qz-result, body.qz-page .qz-opts, body.qz-page .qz-head { text-align: left; }
 body.qz-page .qz-r-cta, body.qz-page .qz-r-col, body.qz-page .qz-r-tip { text-align: left; }
+
+/* share row on the result */
+body.qz-page .qz-r-share { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+body.qz-page .qz-share-img { display: inline-flex; align-items: center; gap: 8px; background: #3b2218; color: #fff3e2; border: 1.5px solid #3b2218; border-radius: 999px; padding: 12px 20px; font: inherit; font-weight: 700; cursor: pointer; }
+body.qz-page .qz-share-img svg { width: 18px; height: 18px; stroke: currentColor; }
+body.qz-page .qz-share-img:disabled { opacity: .6; cursor: progress; }
+
+/* quiz pages on phones: short header so question 1 is on the first screen */
+@media (max-width: 700px) {
+  body.qz-page .qz-one .pg-hero { padding: 26px 18px 22px !important; }
+  body.qz-page .qz-one .pg-hero .fl, body.qz-page .qz-one .pg-hero .bl-crumb, body.qz-page .qz-one .pg-hero .fm-sub { display: none !important; }
+  body.qz-page .qz-one .pg-hero h2 { font-size: 30px !important; margin-top: 12px !important; }
+  body.qz-page .qz-one .fm-body .pg-sec { padding-top: 16px !important; }
+  body.qz-page .qz-box { padding: 18px 16px 20px; min-height: 0; }
+  body.qz-page .qz-q { font-size: 25px; margin-bottom: 16px; }
+  body.qz-page .qz-bar { margin-bottom: 16px; }
+  body.qz-page .qz-opts { gap: 9px; }
+}
+
+/* /links/ (link in bio) */
+body.lk-page .sp-main { padding-top: 96px; }
+body.lk-page .lk-wrap { max-width: 560px; margin: 0 auto; padding: 0 16px 60px; display: flex; flex-direction: column; gap: 12px; }
+body.lk-page .lk-head { text-align: center; margin-bottom: 10px; }
+body.lk-page .lk-head img { border-radius: 18px; box-shadow: 0 14px 28px -16px rgba(59,34,24,.7); }
+body.lk-page .lk-head h1 { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "opsz" 144; font-size: 34px; font-weight: 600; color: #3b2218; margin: 10px 0 4px; letter-spacing: -.02em; }
+body.lk-page .lk-head h1 b { color: #8a4a30; font-weight: 600; }
+body.lk-page .lk-head p { margin: 0; color: #6b5246; font-size: 16px; }
+body.lk-page .lk-label { margin: 14px 4px 0; font: 700 12.5px "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #c93f6b; }
+body.lk-page .lk-item { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 18px 64px 18px 20px; border-radius: 24px; background: #fffaf2; border: 1.5px solid #3b2218; box-shadow: 4px 4px 0 #3b2218; color: #3b2218 !important; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
+body.lk-page .lk-item:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #3b2218; }
+body.lk-page .lk-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; border-radius: 24px 0 0 24px; background: var(--tint); }
+body.lk-page .lk-k { font: 700 12px "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #8a4a30; }
+body.lk-page .lk-h { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "opsz" 144; font-size: 22px; font-weight: 600; line-height: 1.12; }
+body.lk-page .lk-h em { font-style: italic; color: #8a4a30; }
+body.lk-page .lk-p { font-size: 14.5px; color: #6b5246; }
+body.lk-page .lk-go { position: absolute; right: 18px; top: 50%; translate: 0 -50%; width: 36px; height: 36px; border-radius: 50%; background: #3b2218; display: grid; place-items: center; }
+body.lk-page .lk-go svg { width: 18px; height: 18px; stroke: #fff3e2; }
+body.lk-page .lk-big { background: var(--tint); padding: 26px 70px 26px 24px; }
+body.lk-page .lk-big::before { display: none; }
+body.lk-page .lk-big .lk-h { font-size: 32px; }
+body.lk-page .lk-big .lk-p { color: #4a2d20; }
+body.lk-page .lk-foot { text-align: center; margin-top: 18px; font-size: 14px; color: #6b5246; }
+body.lk-page .lk-foot a { color: #3b2218 !important; font-weight: 700; }
+body.lk-page footer.hx-foot, body.lk-page .hx-sticky { display: none !important; }
+body.lk-page .lk-head img { display: block; margin: 0 auto; }
