@@ -168,3 +168,7 @@ body.qz-quizpage .qz-box .qz-r-cta h4, body.qz-quizpage .qz-box .qz-r-cta p { co
 body.qz-quizpage .qz-box .qz-r-name em { color: #c93f6b; }
 body.qz-hubpage .qz-chips { max-width: none; }
 @media (max-width: 700px) { body.qz-quizpage .qz-box { padding: 20px 14px; } }
+body.qz-page .qz-r-cta { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; padding: 20px 24px; }
+body.qz-page .qz-r-cta p { margin: 0; font: 600 19px/1.3 "Fraunces", Georgia, serif; flex: 1 1 240px; color: #fff3e2 !important; opacity: 1; }
+body.qz-page .qz-r-cta .qz-r-btns { margin: 0; }
+@media (max-width: 560px) { body.qz-page .qz-r-cta { flex-direction: column; align-items: stretch; } body.qz-page .qz-r-cta p { flex: none; } body.qz-page .qz-r-cta .hx-btn { width: 100%; text-align: center; } }

@@ -6,7 +6,7 @@ import path from "node:path";
 import { page, LANDING, esc } from "./shell.mjs";
 
 const write = (rel, html) => { const f = path.join(LANDING, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
-const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=4" />`;
+const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=5" />`;
 const REG = "https://app.relationshipaiadvice.com/register.html";
 
 export const QUIZZES = [
@@ -53,7 +53,7 @@ export const QUIZZES = [
         tip: "Notice the moment you want to pull back. Name it instead of acting on it: \"I'm feeling scared right now, not angry. Give me a minute.\"" },
     ],
     article: ["/blog/how-attachment-styles-work-in-relationships/", "How attachment styles work in relationships"],
-    tool: ["/coach-chat/", "Talk it through with Coach Chat", "Coach Chat remembers your story and helps you handle the moments your attachment style makes hard."],
+    tool: ["/coach-chat/", "Talk it through with Coach Chat", "Coach Chat remembers your story and helps you handle the moments your attachment style makes hard.", "Want help with the moments your pattern makes hard?"],
   },
   {
     slug: "love-language",
@@ -103,7 +103,7 @@ export const QUIZZES = [
         tip: "Suggest one phone-free hour each week, same day, same time. Protected time beats random good intentions." },
     ],
     article: ["/blog/love-languages/", "The 5 love languages, explained"],
-    tool: ["/message-check/", "Ask for what you need with Message check", "Write how you want to ask for more of your love language, and see how it will land before you send it."],
+    tool: ["/message-check/", "Ask for what you need with Message check", "Write how you want to ask for more of your love language, and see how it will land before you send it.", "Ask for what you need, and see how it lands first."],
   },
   {
     slug: "fight-style",
@@ -148,7 +148,7 @@ export const QUIZZES = [
         tip: "Ask: \"Do you want to solve this now, or do you need a bit of time first?\" Matching their pace is part of repair." },
     ],
     article: ["/blog/how-to-rebuild-trust-after-a-fight/", "How to rebuild trust after a fight"],
-    tool: ["/partner-practice/", "Rehearse your next hard talk", "Partner Practice plays your partner so you can try a calmer way to say it before the real conversation."],
+    tool: ["/partner-practice/", "Rehearse your next hard talk", "Partner Practice plays your partner so you can try a calmer way to say it before the real conversation.", "Practise your next hard talk before it's real."],
   },  {
     slug: "overthinker",
     cat: "overthinking",
@@ -192,7 +192,7 @@ export const QUIZZES = [
         tip: "If your partner overthinks, send one small, clear message when plans change. It costs you seconds and saves them hours." },
     ],
     article: ["/blog/how-to-stop-overthinking-in-a-relationship/", "How to stop overthinking in a relationship"],
-    tool: ["/message-check/", "Check a text instead of overthinking it", "Message check shows how a message will probably land, so you don't have to guess."],
+    tool: ["/message-check/", "Check a text instead of overthinking it", "Message check shows how a message will probably land, so you don't have to guess.", "Check a text before you overthink it."],
   },
   {
     slug: "relationship-needs",
@@ -237,7 +237,7 @@ export const QUIZZES = [
         tip: "List everything that keeps your home running, including planning and remembering. Then hand over one whole task, from noticing to finishing." },
     ],
     article: ["/blog/relationship-problems-that-keep-coming-back/", "5 relationship problems that keep coming back"],
-    tool: ["/partner-practice/", "Rehearse the talk you keep putting off", "Partner Practice plays your partner so you can try a calm way to ask for what you need."],
+    tool: ["/partner-practice/", "Rehearse the talk you keep putting off", "Partner Practice plays your partner so you can try a calm way to ask for what you need.", "Practise the talk you keep putting off."],
   },
 ];
 
@@ -350,7 +350,7 @@ for (const q of QUIZZES) {
     </section>
   </main>
 <script type="application/json" id="quiz-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
-<script defer src="/js/quiz.js?v=3"></script>`,
+<script defer src="/js/quiz.js?v=4"></script>`,
   }));
 }
 // ---------- /links/: the page behind the link in bio ----------
