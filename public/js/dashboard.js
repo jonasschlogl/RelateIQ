@@ -76,7 +76,7 @@ function setupDeleteAccount() {
     const password = passwordInput ? passwordInput.value : "";
     showError("");
     if (!password) {
-      showError("Enter your password to confirm.");
+      showError("Enter your password (or your email address) to confirm.");
       return;
     }
 
@@ -87,7 +87,8 @@ function setupDeleteAccount() {
     try {
       const res = await authFetch("/api/account", {
         method: "DELETE",
-        body: JSON.stringify({ password }),
+        // People who log in with email codes have no password: they confirm with their email address instead.
+        body: JSON.stringify(password.includes("@") ? { password, confirmEmail: password } : { password }),
       });
       const data = await safeJson(res);
       if (!res.ok) {

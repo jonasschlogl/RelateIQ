@@ -3027,6 +3027,152 @@ app.post("/api/auth/login", authRateLimit, (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
+// Email-code sign-in (passwordless) — "Continue with email".
+// Step 1 (/api/auth/email-code): we email a 6-digit code and hand back a
+// signed challenge token that carries an HMAC of (email, nonce, code), so the
+// code itself is never stored or sent to the browser. Step 2 (…/verify): the
+// browser sends challenge + code; if it matches, we log the person in, or
+// create the account if that email is new. Entering the code proves control of
+// the inbox, so the email is marked verified.
+// Guards: codes expire after 10 minutes, are single use, allow 5 wrong tries,
+// and sends are throttled per email (30 s apart, 6 per hour) on top of the
+// shared per-IP limiter. The counters live in memory (single instance, resets
+// on redeploy), which is enough to stop guessing a 1-in-a-million code.
+// Same response whether or not the email has an account, so this can't be
+// used to find out who is registered.
+// ---------------------------------------------------------------------------
+const LOGIN_CODE_TTL_MS = 10 * 60 * 1000;
+const LOGIN_CODE_MAX_TRIES = 5;
+const loginCodeState = new Map(); // nonce -> { tries, used, exp }
+const loginCodeSends = new Map(); // email -> [timestamps]
+setInterval(() => {
+  const now = Date.now();
+  for (const [n, st] of loginCodeState) if (st.exp < now) loginCodeState.delete(n);
+  for (const [e, arr] of loginCodeSends) {
+    const kept = arr.filter((t) => now - t < 60 * 60 * 1000);
+    if (kept.length) loginCodeSends.set(e, kept); else loginCodeSends.delete(e);
+  }
+}, 10 * 60 * 1000).unref();
+
+function loginCodeHmac(email, nonce, code) {
+  return crypto.createHmac("sha256", JWT_SECRET).update(`${email}|${nonce}|${code}`).digest("hex");
+}
+const looksLikeEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 254;
+
+app.post("/api/auth/email-code", authRateLimit, async (req, res) => {
+  try {
+    const email = String((req.body || {}).email || "").trim().toLowerCase();
+    if (!looksLikeEmail(email)) return res.status(400).json({ error: "Enter a valid email address." });
+
+    const now = Date.now();
+    const sends = (loginCodeSends.get(email) || []).filter((t) => now - t < 60 * 60 * 1000);
+    if (sends.length && now - sends[sends.length - 1] < 30 * 1000) {
+      return res.status(429).json({ error: "We just sent you a code. Please wait 30 seconds before asking for another one." });
+    }
+    if (sends.length >= 6) {
+      return res.status(429).json({ error: "Too many codes requested for this email. Please try again in an hour." });
+    }
+
+    const code = String(crypto.randomInt(0, 1000000)).padStart(6, "0");
+    const nonce = crypto.randomBytes(12).toString("hex");
+    const existing = getUserByEmail(email);
+    const html = emailShell({
+      bodyHtml: `
+        <p>${existing ? "Here is your code to log in to RelationshipAI:" : "Here is your code to create your RelationshipAI account:"}</p>
+        <p style="margin:24px 0; font-size:34px; font-weight:700; letter-spacing:8px; color:#f9d98a;">${code}</p>
+        <p style="color:#b6a795; font-size:13px;">This code works for 10 minutes and can only be used once. If you didn't ask for it, you can safely ignore this email.</p>
+      `,
+    });
+    const sent = await sendEmail({ to: email, subject: `${code} is your RelationshipAI code`, html });
+    if (sent && sent.skipped) {
+      if (!process.env.RESEND_API_KEY && process.env.NODE_ENV !== "production") {
+        console.log(`[dev] login code for ${email}: ${code}`); // local testing only, never in production
+      } else {
+        return res.status(502).json({ error: "We couldn't send the email right now. Please try again in a moment." });
+      }
+    }
+
+    sends.push(now);
+    loginCodeSends.set(email, sends);
+    loginCodeState.set(nonce, { tries: 0, used: false, exp: now + LOGIN_CODE_TTL_MS });
+    const challenge = jwt.sign({ scope: "login-code", email, nonce, h: loginCodeHmac(email, nonce, code) }, JWT_SECRET, { expiresIn: Math.floor(LOGIN_CODE_TTL_MS / 1000) });
+    res.json({ challenge, expiresInSeconds: Math.floor(LOGIN_CODE_TTL_MS / 1000) });
+  } catch (err) {
+    console.error("Email-code send error:", err);
+    res.status(500).json({ error: "Something went wrong. Please try again." });
+  }
+});
+
+app.post("/api/auth/email-code/verify", authRateLimit, (req, res) => {
+  try {
+    const { challenge, referralCode, acceptedTerms, name } = req.body || {};
+    const code = String((req.body || {}).code || "").replace(/\s+/g, "");
+    const expired = () => res.status(400).json({ error: "That code has expired. Please request a new one.", expired: true });
+    if (!challenge || !/^\d{6}$/.test(code)) return res.status(400).json({ error: "Enter the 6-digit code from your email." });
+
+    let payload;
+    try { payload = jwt.verify(String(challenge), JWT_SECRET); } catch { return expired(); }
+    if (payload.scope !== "login-code" || !payload.email || !payload.nonce) return expired();
+
+    const st = loginCodeState.get(payload.nonce);
+    if (!st || st.used || st.exp < Date.now()) return expired();
+    if (st.tries >= LOGIN_CODE_MAX_TRIES) { st.used = true; return res.status(400).json({ error: "Too many wrong tries. Please request a new code.", expired: true }); }
+
+    const given = Buffer.from(loginCodeHmac(payload.email, payload.nonce, code), "hex");
+    const want = Buffer.from(String(payload.h), "hex");
+    if (given.length !== want.length || !crypto.timingSafeEqual(given, want)) {
+      st.tries += 1;
+      const left = LOGIN_CODE_MAX_TRIES - st.tries;
+      if (left <= 0) st.used = true;
+      return res.status(401).json({ error: left > 0 ? `That code isn't right. ${left} ${left === 1 ? "try" : "tries"} left.` : "Too many wrong tries. Please request a new code.", expired: left <= 0 });
+    }
+
+    const email = payload.email;
+    let user = getUserByEmail(email);
+    let isNew = false;
+    if (!user) {
+      if (acceptedTerms !== true) {
+        return res.status(400).json({ error: "Please accept the Terms of Service and Privacy Policy to create an account." });
+      }
+      const db = loadDb();
+      let referrer = null;
+      if (referralCode) referrer = getUserByReferralCode(String(referralCode).trim().toLowerCase()) || null;
+      user = {
+        id: generateId("user"),
+        email,
+        name: String(name || "").trim().slice(0, 80) || email.split("@")[0],
+        plan: "free",
+        createdAt: new Date().toISOString(),
+        usage: { date: todayKey(), count: 0 },
+        attachmentStyle: null,
+        stripeCustomerId: null,
+        stripeSubscriptionId: null,
+        subscriptionStatus: null,
+        referralCode: generateUniqueReferralCode(db),
+        referredBy: referrer ? referrer.id : null,
+        referralRewardGranted: false,
+        emailCheckinReminders: true,
+        emailWeeklyDigest: true,
+        lifetimeAttachmentCount: 0,
+        lifetimePracticeConversations: 0,
+        termsAcceptedAt: new Date().toISOString(),
+        emailVerifiedAt: new Date().toISOString(),
+      };
+      isNew = true;
+    } else if (!user.emailVerifiedAt) {
+      user.emailVerifiedAt = new Date().toISOString(); // they just proved they own this inbox
+    }
+    st.used = true;
+    saveUser(user);
+
+    res.json({ token: signToken(user), user: publicUser(user), isNew });
+  } catch (err) {
+    console.error("Email-code verify error:", err);
+    res.status(500).json({ error: "Something went wrong while logging you in. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // Password reset — a signed, scope-limited token (same pattern as the email
 // unsubscribe link above), not a row in a table, so there's nothing extra to
 // store or clean up: it's just a JWT that only ever does one thing, for one
@@ -3199,12 +3345,22 @@ app.get("/api/me/export", authMiddleware, (req, res) => {
 // half-deleted, since by that point it's already gone from the database.
 app.delete("/api/account", authMiddleware, (req, res) => {
   try {
-    const { password } = req.body || {};
-    if (!password) {
-      return res.status(400).json({ error: "Enter your password to confirm account deletion." });
-    }
-    if (!req.user.passwordHash || !bcrypt.compareSync(password, req.user.passwordHash)) {
-      return res.status(401).json({ error: "Incorrect password." });
+    const { password, confirmEmail } = req.body || {};
+    if (!req.user.passwordHash) {
+      // Signed in with email codes, so there is no password: ask them to type their email instead.
+      if (!confirmEmail) {
+        return res.status(400).json({ error: "Type your email address to confirm account deletion." });
+      }
+      if (String(confirmEmail).trim().toLowerCase() !== req.user.email) {
+        return res.status(401).json({ error: "That isn't the email address on this account." });
+      }
+    } else {
+      if (!password) {
+        return res.status(400).json({ error: "Enter your password to confirm account deletion." });
+      }
+      if (!bcrypt.compareSync(password, req.user.passwordHash)) {
+        return res.status(401).json({ error: "Incorrect password." });
+      }
     }
 
     const userId = req.user.id;

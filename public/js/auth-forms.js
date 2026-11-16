@@ -2,6 +2,8 @@
 // (login.html / register.html / forgot-password.html / reset-password.html).
 
 document.addEventListener("DOMContentLoaded", () => {
+  const emailForm = document.getElementById("email-form");
+  const codeForm = document.getElementById("code-form");
   const registerForm = document.getElementById("register-form");
   const loginForm = document.getElementById("login-form");
   const forgotPasswordForm = document.getElementById("forgot-password-form");
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Already signed in (e.g. coming from the website's "Try it free" or "Log in"):
   // skip the form. A plan picked on the website goes straight to checkout.
-  if ((registerForm || loginForm) && typeof getToken === "function" && getToken()) {
+  if ((registerForm || loginForm || emailForm) && typeof getToken === "function" && getToken()) {
     const plan = consumePendingPlan();
     if (plan) startCheckout(plan);
     else window.location.replace("chat.html");
@@ -28,6 +30,167 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!successBox) return;
     successBox.textContent = msg;
     successBox.style.display = msg ? "block" : "none";
+  }
+
+
+  // ---- Email + 6-digit code (log in or sign up in one flow) -----------------
+  if (emailForm && codeForm) {
+    const emailInput = document.getElementById("email");
+    const codeInput = document.getElementById("code");
+    const codeEmail = document.getElementById("code-email");
+    const resendBtn = document.getElementById("code-resend");
+    const changeBtn = document.getElementById("code-change");
+    const codeSubmit = codeForm.querySelector("button[type=submit]");
+    let challenge = null;
+    let sentTo = "";
+    let cooldownTimer = null;
+    let verifying = false;
+    const heading = document.querySelector(".auth-card h1");
+    const intro = document.querySelector(".auth-card > .text-muted");
+    const headingText = heading ? heading.textContent : "";
+    const introText = intro ? intro.textContent : "";
+
+    function startCooldown(secs) {
+      clearInterval(cooldownTimer);
+      let left = secs;
+      resendBtn.disabled = true;
+      const tick = () => {
+        resendBtn.textContent = left > 0 ? `Send a new code (${left}s)` : "Send a new code";
+        if (left <= 0) { clearInterval(cooldownTimer); resendBtn.disabled = false; }
+        left -= 1;
+      };
+      tick();
+      cooldownTimer = setInterval(tick, 1000);
+    }
+
+    async function requestCode(email) {
+      const res = await fetch("/api/auth/email-code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error(data.error || "Couldn't send the code. Please try again.");
+      challenge = data.challenge;
+      sentTo = email;
+    }
+
+    function showCodeStep() {
+      emailForm.style.display = "none";
+      const pw = document.getElementById("login-form");
+      const alt = document.querySelector(".auth-alt");
+      if (pw) pw.style.display = "none";
+      if (alt) alt.style.display = "none";
+      codeForm.style.display = "";
+      if (heading) heading.textContent = "Check your email";
+      if (intro) intro.style.display = "none";
+      codeEmail.textContent = sentTo;
+      codeInput.value = "";
+      codeInput.focus();
+      startCooldown(30);
+    }
+
+    emailForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      showError("");
+      const email = emailInput.value.trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError("Enter a valid email address."); return; }
+      const btn = emailForm.querySelector("button[type=submit]");
+      const label = btn.textContent;
+      btn.disabled = true; btn.textContent = "Sending code…";
+      try {
+        await requestCode(email);
+        showCodeStep();
+      } catch (err) {
+        showError(err.message);
+      } finally {
+        btn.disabled = false; btn.textContent = label;
+      }
+    });
+
+    resendBtn.addEventListener("click", async () => {
+      showError("");
+      resendBtn.disabled = true;
+      try {
+        await requestCode(sentTo);
+        codeInput.value = ""; codeInput.focus();
+        startCooldown(30);
+      } catch (err) {
+        showError(err.message);
+        startCooldown(30);
+      }
+    });
+
+    changeBtn.addEventListener("click", () => {
+      showError("");
+      clearInterval(cooldownTimer);
+      challenge = null;
+      codeForm.style.display = "none";
+      emailForm.style.display = "";
+      if (heading) heading.textContent = headingText;
+      if (intro) { intro.textContent = introText; intro.style.display = ""; }
+      const alt = document.querySelector(".auth-alt");
+      if (alt) alt.style.display = "";
+      emailInput.focus();
+    });
+
+    async function verifyCode() {
+      if (verifying) return;
+      const code = codeInput.value.replace(/\D/g, "");
+      if (code.length !== 6) { showError("Enter the 6-digit code from your email."); return; }
+      verifying = true;
+      showError("");
+      const label = codeSubmit.textContent;
+      codeSubmit.disabled = true; codeSubmit.textContent = "Checking…";
+      try {
+        const res = await fetch("/api/auth/email-code/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ challenge, code, acceptedTerms: true, referralCode: consumePendingReferral() }),
+        });
+        const data = await safeJson(res);
+        if (!res.ok) {
+          const err = new Error(data.error || "That code didn't work. Please try again.");
+          err.expired = !!data.expired;
+          throw err;
+        }
+        setSession(data.token, data.user);
+        const pendingPlan = consumePendingPlan();
+        if (pendingPlan) {
+          codeSubmit.textContent = "Redirecting to checkout…";
+          startCheckout(pendingPlan);
+        } else {
+          window.location.href = data.isNew ? "welcome.html" : "chat.html";
+        }
+      } catch (err) {
+        showError(err.message);
+        if (err.expired) { challenge = null; }
+        codeSubmit.disabled = false; codeSubmit.textContent = label;
+        codeInput.select();
+        verifying = false;
+      }
+    }
+
+    codeForm.addEventListener("submit", (e) => { e.preventDefault(); verifyCode(); });
+    // Submit by itself as soon as all 6 digits are in (also handles paste and the iOS/Android autofill from the email).
+    codeInput.addEventListener("input", () => {
+      codeInput.value = codeInput.value.replace(/[^\d ]/g, "");
+      if (codeInput.value.replace(/\D/g, "").length === 6) verifyCode();
+    });
+
+    const toggle = document.getElementById("toggle-password");
+    const pwForm = document.getElementById("login-form");
+    if (toggle && pwForm) {
+      toggle.addEventListener("click", () => {
+        const showPw = pwForm.style.display === "none";
+        pwForm.style.display = showPw ? "" : "none";
+        emailForm.style.display = showPw ? "none" : "";
+        toggle.textContent = showPw ? "Use an email code instead" : "Use a password instead";
+        showError("");
+        if (showPw) { const pe = document.getElementById("pw-email"); pe.value = emailInput.value; (pe.value ? document.getElementById("password") : pe).focus(); }
+        else emailInput.focus();
+      });
+    }
   }
 
   if (registerForm) {
@@ -79,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       showError("");
 
-      const email = document.getElementById("email").value.trim();
+      const email = (document.getElementById("pw-email") || document.getElementById("email")).value.trim();
       const password = document.getElementById("password").value;
       const btn = loginForm.querySelector("button[type=submit]");
       const originalLabel = btn.textContent;
