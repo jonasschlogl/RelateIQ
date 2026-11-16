@@ -3,7 +3,7 @@
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var root = document.documentElement; root.classList.add("mo2");
   if (innerWidth < 901 || !("IntersectionObserver" in window)) return;
-  var groups = [".ex-grid > li", ".ts-grid > li", ".faq > *"];
+  var groups = [".ex-grid > li", ".ts-grid > li"];
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { threshold: .15, rootMargin: "0px 0px -6% 0px" });
