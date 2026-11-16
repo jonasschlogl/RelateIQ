@@ -26,7 +26,7 @@ function panelHtml(id) {
 const JOIN_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Your next conversation can go <em>better.</em></h2><p>Create a free account and talk it through tonight. No card needed.</p><a class="hx-btn" href="https://app.relationshipaiadvice.com/register.html" data-umami-event="cta-page-end">Try it free</a></div></div></section>`;
 
 const TRY_URL = "https://app.relationshipaiadvice.com/try.html";
-const TRY_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Try it right now. <em>No account.</em></h2><p>Paste a message you are not sure about and see how it may land. Free, private, takes ten seconds.</p><a class="hx-btn" href="${TRY_URL}" data-umami-event="cta-message-try">Check a message</a></div></div></section>`;
+const TRY_CTA = read("try-widget.html");
 
 const PAGES = [
   { slug: "partner-practice", panel: "practice", title: "Partner Practice: rehearse the hard conversation | RelationshipAI", desc: "An AI plays your partner, in character, so you can rehearse a hard conversation, get a debrief and a readiness score, and walk in knowing how it can go." },

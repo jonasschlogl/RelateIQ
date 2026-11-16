@@ -1,0 +1,21 @@
+<section class="hx-sec try-sec" id="try" aria-label="Try Message check">
+  <link rel="stylesheet" href="/css/try.css?v=2" />
+  <div class="hx-wrap">
+    <div class="hx-head"><span class="hx-kicker">Try it now &middot; no account</span><h2>Paste the message. <em>See how it lands.</em></h2></div>
+    <p class="try-sub">Not sure how a text will sound to them? Check it before you send it. Free, private, takes ten seconds.</p>
+    <div class="try-card" id="try-card">
+      <label for="try-draft">The message you&rsquo;re thinking of sending</label>
+      <textarea id="try-draft" maxlength="800" rows="4" placeholder="e.g. You always do this. I&rsquo;m tired of having to ask for everything."></textarea>
+      <div class="try-ex"><span>Or try one:</span>
+        <button type="button" data-ex="Fine. Do whatever you want.">&ldquo;Fine. Do whatever you want.&rdquo;</button>
+        <button type="button" data-ex="You never listen to me.">&ldquo;You never listen to me.&rdquo;</button>
+        <button type="button" data-ex="We need to talk.">&ldquo;We need to talk.&rdquo;</button>
+      </div>
+      <p class="try-err" id="try-err" role="alert" hidden></p>
+      <div class="try-row"><button type="button" class="hx-btn" id="try-go" data-umami-event="try-landing-go">Check my message</button><span class="try-left" id="try-left"></span></div>
+      <div id="try-out" aria-live="polite"></div>
+    </div>
+    <p class="try-fine">Nothing is saved. Not a replacement for therapy.</p>
+  </div>
+  <script defer src="/js/try.js?v=1"></script>
+</section>

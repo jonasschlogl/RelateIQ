@@ -127,14 +127,29 @@ for (const legacy of [process.env.STRIPE_PRICE_PREMIUM, process.env.STRIPE_PRICE
 const KNOWN_APP_ORIGINS = new Set(
   [APP_URL, "https://terrific-spirit-production.up.railway.app", "http://localhost:3000", "http://127.0.0.1:3000"].filter(Boolean)
 );
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin || KNOWN_APP_ORIGINS.has(origin)) return callback(null, true);
-      callback(new Error("Not allowed by CORS"));
-    },
-  })
+const appCors = cors({
+  origin(origin, callback) {
+    if (!origin || KNOWN_APP_ORIGINS.has(origin)) return callback(null, true);
+    callback(new Error("Not allowed by CORS"));
+  },
+});
+// The public website may call ONLY the no-account endpoints (free Message check
+// and the event beacon). Nothing else on the API is opened to it.
+const PUBLIC_SITE_ORIGINS = new Set(
+  ["https://relationshipaiadvice.com", "https://www.relationshipaiadvice.com", ...String(process.env.EXTRA_PUBLIC_ORIGINS || "").split(",").map((x) => x.trim())].filter(Boolean)
 );
+const publicSiteCors = cors({
+  origin(origin, callback) {
+    if (!origin || PUBLIC_SITE_ORIGINS.has(origin) || KNOWN_APP_ORIGINS.has(origin)) return callback(null, true);
+    callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+});
+app.use((req, res, next) => {
+  const isPublic = req.path === "/api/events" || req.path.startsWith("/api/public/");
+  return (isPublic ? publicSiteCors : appCors)(req, res, next);
+});
 
 // Stripe webhook needs the raw, unparsed request body to verify its
 // signature, so this route is registered BEFORE the global express.json()
