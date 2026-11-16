@@ -1,0 +1,58 @@
+/* Motion layer for the homepage: staggered word reveals, glass panel, drifting light, floating phones,
+   tool tabs that follow the scroll. Only animation and layout polish; copy, colours and images are unchanged.
+   Everything is gated by html.mo (set by motion.js) and prefers-reduced-motion. */
+
+/* --- hero headline: words rise out of a mask --- */
+.mo .mwo { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .06em .14em; margin: 0 -.06em -.14em; }
+.mo .mwi { display: inline-block; transform: translateY(112%); animation: moUp 1s cubic-bezier(.2, .8, .15, 1) forwards; animation-delay: calc(.12s + var(--i) * .09s); }
+@keyframes moUp { to { transform: none; } }
+.mo .hx-hero .hx-sub, .mo .hx-hero .hx-cta { animation: moFade 1s cubic-bezier(.2, .8, .2, 1) .55s backwards; }
+.mo .hx-hero .hx-cta { animation-delay: .75s; }
+@keyframes moFade { from { opacity: 0; transform: translateY(18px); } }
+
+/* --- hero: drifting light behind the copy --- */
+body.hx .hx-hero::before, body.hx .hx-hero::after { display: block !important; content: ""; position: absolute; pointer-events: none; border-radius: 50%; filter: blur(46px); mix-blend-mode: screen; z-index: 1; }
+body.hx .hx-hero::before { width: 52vw; height: 52vw; left: -14vw; top: 6%; background: radial-gradient(circle, rgba(245, 143, 171, .34), transparent 66%); animation: moBlobA 20s ease-in-out infinite alternate; }
+body.hx .hx-hero::after { width: 44vw; height: 44vw; right: -8vw; bottom: -6%; background: radial-gradient(circle, rgba(249, 217, 138, .26), transparent 66%); animation: moBlobB 24s ease-in-out infinite alternate; }
+@keyframes moBlobA { to { transform: translate(14vw, 10vh) scale(1.18); } }
+@keyframes moBlobB { to { transform: translate(-12vw, -8vh) scale(1.15); } }
+
+/* --- hero quotes: frosted glass panel that floats --- */
+.hq { padding: 34px 34px 28px; border-radius: 38px; background: linear-gradient(160deg, rgba(255, 243, 226, .15), rgba(255, 243, 226, .04)); border: 1px solid rgba(255, 243, 226, .26); -webkit-backdrop-filter: blur(18px) saturate(1.25); backdrop-filter: blur(18px) saturate(1.25); box-shadow: 0 50px 90px -46px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .28); box-sizing: border-box; }
+.mo .hq { animation: moFloat 9s ease-in-out infinite; }
+@keyframes moFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+
+/* --- hero button: arrow chip --- */
+body.hx .hx-hero .hx-cta .hx-btn { display: inline-flex; align-items: center; gap: 12px; }
+body.hx .hx-hero .hx-cta .hx-btn::after { content: "\2192"; display: inline-grid; place-items: center; width: 28px; height: 28px; margin-right: -14px; border-radius: 50%; background: #3b2218; color: #fff3e2; font-size: 14px; line-height: 1; transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+body.hx .hx-hero .hx-cta .hx-btn:hover::after { transform: translateX(4px) rotate(-45deg); }
+
+/* --- section headings: words fill in as you scroll --- */
+.mo .sw { opacity: .16; transition: opacity .25s linear; }
+.mo .sw-done .sw { opacity: 1; }
+
+/* --- widget entrance and idle float --- */
+.mo .tw { opacity: 0; transform: translateY(56px) scale(.965); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); }
+.mo .tw.in { opacity: 1; transform: none; }
+.mo .tw-ph { animation: moFloatR 8s ease-in-out infinite; }
+@keyframes moFloatR { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+/* --- three tools: phones float, pill tabs follow the scroll --- */
+.mo .f-ph { animation: moFloatP 7s ease-in-out infinite; }
+.mo .f-hc.b .f-ph { animation-delay: -2.4s; } .mo .f-hc.c .f-ph { animation-delay: -4.6s; }
+@keyframes moFloatP { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+.mt-tabs { display: none; }
+html.f-pinon .mt-tabs { display: inline-flex; gap: 4px; margin-left: auto; padding: 5px; border-radius: 99px; background: rgba(59, 34, 24, .06); box-shadow: inset 0 0 0 1px rgba(59, 34, 24, .08); }
+.mt-tabs button { font: 600 13px/1 "DM Sans", Inter, sans-serif; letter-spacing: .01em; color: #6b5246; background: transparent; border: 0; border-radius: 99px; padding: 10px 18px; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s; }
+.mt-tabs button:hover { color: #3b2218; }
+.mt-tabs button[aria-selected="true"] { background: #fff; color: #3b2218; box-shadow: 0 6px 16px -8px rgba(59, 34, 24, .5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mo .mwi { transform: none; animation: none; }
+  .mo .sw { opacity: 1; } .mo .tw { opacity: 1; transform: none; transition: none; }
+  .mo .hq, .mo .tw-ph, .mo .f-ph, body.hx .hx-hero::before, body.hx .hx-hero::after { animation: none; }
+}
+
+@media (max-width: 880px) {
+  body.hx .hq { width: 100% !important; max-width: 340px !important; margin: 40px 0 0 !important; padding: 26px 24px 22px; }
+}
