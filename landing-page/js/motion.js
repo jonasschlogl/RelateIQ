@@ -36,19 +36,26 @@
     io.observe(tw);
   } else if (tw) tw.classList.add("in");
 
-  /* 4. scene tabs in the pinned story bar */
-  var hp = document.querySelector("[data-hp]"), bar = hp && hp.querySelector(".f-hbar"), tabs = null, btns = [], at = 0;
-  function mark() { btns.forEach(function (b, i) { b.setAttribute("aria-selected", i === at ? "true" : "false"); }); }
-  document.addEventListener("fstory:init", function (e) {
-    if (!bar) return; if (tabs) tabs.remove();
-    tabs = document.createElement("nav"); tabs.className = "mt-tabs"; tabs.setAttribute("role", "tablist"); tabs.setAttribute("aria-label", "Sections");
-    btns = e.detail.labels.map(function (l, i) {
-      var b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab"); b.textContent = l;
-      b.addEventListener("click", function () { if (window.fStoryGo) window.fStoryGo(i); });
+  /* 4. tool tabs that follow the pinned horizontal scroll */
+  var hp = document.querySelector("[data-hp]"), bar = hp && hp.querySelector(".f-hbar");
+  if (hp && bar) {
+    var cards = [].slice.call(hp.querySelectorAll(".f-hc")), tr = hp.querySelector(".f-htrack");
+    var tabs = document.createElement("nav"); tabs.className = "mt-tabs"; tabs.setAttribute("role", "tablist"); tabs.setAttribute("aria-label", "Tools");
+    var btns = cards.map(function (c, i) {
+      var t = c.querySelector(".f-tag b"), b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab"); b.textContent = t ? t.textContent : "Tool " + (i + 1);
+      b.addEventListener("click", function () {
+        var max = tr.scrollWidth - innerWidth, p = max > 0 ? Math.max(0, Math.min(1, (cards[i].offsetLeft - 120) / max)) : 0;
+        scrollTo({ top: hp.getBoundingClientRect().top + scrollY + p * (hp.offsetHeight - innerHeight), behavior: "smooth" });
+      });
       tabs.appendChild(b); return b;
     });
-    bar.appendChild(tabs); mark();
-  });
-  document.addEventListener("fstory:scene", function (e) { at = e.detail.i; mark(); });
-  document.addEventListener("fstory:off", function () { if (tabs) { tabs.remove(); tabs = null; btns = []; } });
+    bar.appendChild(tabs);
+    var cur = -1;
+    function sync() {
+      var idx = 0; cards.forEach(function (c, i) { if (c.getBoundingClientRect().left < innerWidth * .45) idx = i; });
+      if (idx !== cur) { cur = idx; btns.forEach(function (b, i) { b.setAttribute("aria-selected", i === idx ? "true" : "false"); }); }
+    }
+    addEventListener("scroll", sync, { passive: true }); addEventListener("resize", sync); sync();
+  }
 })();
