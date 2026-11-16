@@ -1,4 +1,4 @@
-// Monthly review (Premium): a calm look back at one month. The numbers come
+// Monthly review (Pro): a calm look back at one month. The numbers come
 // from the server (real check-in scores, counts); the AI writes the words.
 
 let reviewState = { reviews: [], current: null, previous: null, selected: null };
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadYear();
 });
 
-// Your year so far (Premium): the monthly reviews rolled into one story.
+// Your year so far (Pro): the monthly reviews rolled into one story.
 let yearData = null;
 
 async function loadYear() {
@@ -19,7 +19,7 @@ async function loadYear() {
   try {
     const res = await authFetch("/api/year");
     const d = await safeJson(res);
-    if (!res.ok || d.locked) return; // non-Premium already sees the Premium lock above
+    if (!res.ok || d.locked) return; // non-Pro already sees the Pro lock above
     yearData = d;
     renderYear();
   } catch (e) {
@@ -102,7 +102,7 @@ async function load() {
     if (data.locked) {
       renderPremiumLock(el, {
         title: "A calm look back, every month",
-        text: "Premium writes you a review at the start of each month, and you can ask for one any time.",
+        text: "Pro writes you a review at the start of each month, and you can ask for one any time.",
         bullets: [
           "What kept coming up in your chats and check-ins",
           "How your connection score moved, with real numbers",

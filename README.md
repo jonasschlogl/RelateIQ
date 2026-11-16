@@ -142,7 +142,11 @@ All counters are markers in the `docs` table (kinds `mcheck`, `sos`, `focus`, `i
 
 ## Pricing & costs (why the limits are what they are)
 
-Prices: Pro €9.99/mo (€69.99/yr), Premium €19.99/mo (€149.99/yr), Free €0. Estimated from measured token usage and OpenAI list prices (October 2026, per 1M tokens: gpt-6-luna $0.10 in / $0.50 out, gpt-6.1-sol $2.00 in / $10.00 out, cached input 10x cheaper); re-check these when OpenAI changes pricing.
+**One paid plan.** It is sold as **Pro: €9.99/mo or €69.99/yr, with a 7-day free trial** (once per account, card collected up front; `TRIAL_DAYS` env overrides the length). Internally it runs as the full-featured `premium` tier, so every paid feature is included; the old two-tier text below is kept for the cost maths. In Stripe, `STRIPE_PRICE_PRO` and `STRIPE_PRICE_PRO_YEARLY` must be the prices of this single plan (the old Premium price ids are only used to recognise existing subscribers). Strong-model budget is 300 messages a month and the fair-use cap 1,000 messages a month (`PREMIUM_STRONG_MODEL_BUDGET`, `PREMIUM_MONTHLY_AI_LIMIT`). Free €0.
+
+Funnel analytics: a small `events` table (names and counts only, never message text) feeds the "Journey" card on the admin page (signup, first real use, Pro prompts, checkout, trial, day-2 return). The no-account Message check lives at `/try.html` (`TRY_PER_IP_PER_DAY`, default 2; `TRY_GLOBAL_PER_DAY`, default 300).
+
+Previously: Pro €9.99/mo (€69.99/yr), Premium €19.99/mo (€149.99/yr), Free €0. Estimated from measured token usage and OpenAI list prices (October 2026, per 1M tokens: gpt-6-luna $0.10 in / $0.50 out, gpt-6.1-sol $2.00 in / $10.00 out, cached input 10x cheaper); re-check these when OpenAI changes pricing.
 
 Measured on the live app: a Coach Chat request is ~2.3k prompt tokens plus history, ~150-200 output tokens, and the reasoning models spend 0-50 reasoning tokens at `reasoning_effort: "low"` (use `/api/admin/coach-test` to re-measure).
 

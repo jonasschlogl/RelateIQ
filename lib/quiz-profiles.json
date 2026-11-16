@@ -1,0 +1,182 @@
+{
+ "attachment-style": {
+  "title": "Attachment style quiz",
+  "results": [
+   {
+    "name": "Secure",
+    "line": "You can be close without losing yourself.",
+    "text": "You trust that love can be steady. You say what you need, you give space without panicking, and a fight does not feel like the end of the world. Secure does not mean perfect. It means you can repair."
+   },
+   {
+    "name": "Anxious",
+    "line": "You love deeply and you notice everything.",
+    "text": "When love feels uncertain, your mind fills the silence with worst-case stories. A late reply can feel like a warning sign. That is not neediness. It is a nervous system that learned closeness can disappear."
+   },
+   {
+    "name": "Avoidant",
+    "line": "You value your freedom and you protect it.",
+    "text": "Closeness can start to feel like pressure, so you pull back to feel like yourself again. You are not cold. You learned early that relying on people was risky, so you rely on yourself."
+   },
+   {
+    "name": "Fearful-avoidant",
+    "line": "You want closeness and you fear it at the same time.",
+    "text": "Part of you reaches for love and part of you braces for getting hurt. It can feel like push and pull, even to you. Often this comes from love that once felt both safe and painful."
+   }
+  ]
+ },
+ "love-language": {
+  "title": "Love language quiz",
+  "results": [
+   {
+    "name": "Words of affirmation",
+    "line": "You feel loved when love is said out loud.",
+    "text": "Compliments, \"I'm proud of you\" and sweet texts land deep with you. Silence or harsh words in a fight hit just as deep. You don't need speeches, you need to hear it."
+   },
+   {
+    "name": "Physical touch",
+    "line": "You feel loved when you feel close.",
+    "text": "A hug, a hand on your back, falling asleep next to each other. Touch is how you feel safe and connected. Days without affection can make you feel far apart, even when nothing is wrong."
+   },
+   {
+    "name": "Acts of service",
+    "line": "You feel loved when someone makes life lighter.",
+    "text": "Dinner handled, the car fixed, the thing you hate doing already done. For you, love is a verb. Broken promises and \"I'll do it later\" feel like you don't matter."
+   },
+   {
+    "name": "Receiving gifts",
+    "line": "You feel loved when someone was thinking of you.",
+    "text": "It's never about the price. A note, a snack you love, something they saw and thought of you. The gift is proof you were on their mind. Forgotten special days can sting."
+   },
+   {
+    "name": "Quality time",
+    "line": "You feel loved when you have their full attention.",
+    "text": "Phones away, a long walk, a real conversation. Time together is how you feel connected. A partner scrolling while you talk can feel like being alone in the same room."
+   }
+  ]
+ },
+ "fight-style": {
+  "title": "Conflict style quiz",
+  "results": [
+   {
+    "name": "The Fire Starter",
+    "line": "You fight to be heard.",
+    "text": "When it matters, you push. Your voice gets louder because you are scared the problem won't get solved. The trouble is that criticism and blame make the other person defend, not listen."
+   },
+   {
+    "name": "The Wall",
+    "line": "You go quiet to keep things from getting worse.",
+    "text": "When a fight heats up, your body floods and you shut down. To your partner it can look like you don't care, when really you are overwhelmed. Researchers call this stonewalling."
+   },
+   {
+    "name": "The Peacekeeper",
+    "line": "You end fights fast, even when it costs you.",
+    "text": "You apologize first, agree quickly and let it go, because conflict feels unsafe. Peace returns, but your own needs never get said, and resentment quietly builds."
+   },
+   {
+    "name": "The Repairer",
+    "line": "You fight to fix it, not to win.",
+    "text": "You can stay in a hard conversation, listen and look for a way back to each other. Couples who repair well are the ones who last. Your job is to stay patient when your partner can't do it yet."
+   }
+  ]
+ },
+ "overthinker": {
+  "title": "Overthinking quiz",
+  "results": [
+   {
+    "name": "The Replayer",
+    "line": "Your mind lives in the last conversation.",
+    "text": "You go back over what was said, again and again, looking for the moment it went wrong. It feels like learning from it, but replaying rarely brings new information. Mostly it brings the feeling back."
+   },
+   {
+    "name": "The Decoder",
+    "line": "You read between every line.",
+    "text": "A full stop, a short reply, a different emoji. You notice everything and try to work out what it means. Your attention is a gift, but most messages carry far less meaning than your mind gives them."
+   },
+   {
+    "name": "The Fortune Teller",
+    "line": "Your mind runs ahead to the worst ending.",
+    "text": "One quiet evening and you are already picturing the breakup. Your mind is trying to protect you by preparing for pain. But in one study of people with anxiety, more than 9 in 10 of their worries never came true."
+   },
+   {
+    "name": "The Settled One",
+    "line": "You let things go once they're said.",
+    "text": "Uncertainty doesn't grab you for long. You ask when you want to know, and you don't build stories in the gaps. That calm is valuable, especially if your partner tends to overthink."
+   }
+  ]
+ },
+ "relationship-needs": {
+  "title": "Relationship check-up",
+  "results": [
+   {
+    "name": "More time together",
+    "line": "You don't need more love. You need more of each other.",
+    "text": "Life has crowded out the moments that keep you close. It's common and very fixable. Closeness grows from small, regular moments more than from big gestures."
+   },
+   {
+    "name": "Better talks",
+    "line": "You're talking, but not always hearing each other.",
+    "text": "The love is there, but conversations end in misunderstanding more than you'd like. Often it's not what you say but how a talk starts. Small changes in how you start and how you listen make a big difference."
+   },
+   {
+    "name": "More fun",
+    "line": "You're solid, just stuck on autopilot.",
+    "text": "Nothing is really wrong, but things feel flat. Routines are comfortable, and they can also make a relationship feel like sharing a flat. Research on couples suggests that doing new things together can bring back some of the early spark."
+   },
+   {
+    "name": "More teamwork",
+    "line": "You need to feel you're in this together.",
+    "text": "One of you is carrying more, or it feels that way. Over time, an uneven load turns into quiet resentment. The fix is rarely a big talk about everything. It's a clear, fair split of real tasks."
+   }
+  ]
+ },
+ "comfort-style": {
+  "title": "Comfort style quiz",
+  "results": [
+   {
+    "name": "The Fixer",
+    "line": "You show love by solving things.",
+    "text": "When someone you love is struggling, you see a problem and want to help right away. Your practical care is real and valuable. The risk is that advice can land as \"your feelings are a task to finish\" when your partner only wanted to be heard."
+   },
+   {
+    "name": "The Listener",
+    "line": "You make space for feelings.",
+    "text": "You don't rush or fix. You let your partner talk and you stay with them in it. That kind of patience helps people feel understood. Sometimes, though, quiet can look like you have nothing to say."
+   },
+   {
+    "name": "The Hugger",
+    "line": "You comfort without words.",
+    "text": "A hug, a hand on their back, sitting close. You use touch to say \"I'm here\", and for many people it works faster than words. The catch is that some people need space or words first, and touch can feel like too much in the wrong moment."
+   },
+   {
+    "name": "The Lightener",
+    "line": "You make hard moments feel lighter.",
+    "text": "You bring warmth, snacks, humour and a change of scene. That can break a spiral and remind your partner that life goes on. Timing matters though: a joke too early can feel like brushing their feelings aside."
+   }
+  ]
+ },
+ "apology-style": {
+  "title": "Apology style quiz",
+  "results": [
+   {
+    "name": "Feelings first",
+    "line": "You need to feel the regret.",
+    "text": "An apology lands for you when you can tell it comes from the heart. Warm words and a sincere tone matter more than a perfect explanation. If it sounds cold or rushed, it can feel like it doesn't count."
+   },
+   {
+    "name": "Own it",
+    "line": "You need responsibility, not excuses.",
+    "text": "For you, a good apology names exactly what went wrong and who did it, with no \"but\". Hearing someone take responsibility is what makes you feel safe again."
+   },
+   {
+    "name": "Make it right",
+    "line": "You need to see effort.",
+    "text": "Words alone don't settle it for you. You feel better when someone does something to fix the problem or make it up to you. Real effort tells you it mattered."
+   },
+   {
+    "name": "Change it",
+    "line": "You need to know it won't happen again.",
+    "text": "An apology without change feels empty to you. You trust people who show they've learned something and act differently next time. Repeated mistakes hurt more than the first one."
+   }
+  ]
+ }
+}

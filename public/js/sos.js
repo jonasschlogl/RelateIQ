@@ -1,5 +1,5 @@
 // After a fight: a calm-down guide (everyone) and a personal message to reach
-// out with (Pro: 3 a month, Premium: unlimited, tailored, with a next-day
+// out with (Pro: 3 a month, Pro: unlimited, tailored, with a next-day
 // check-in). Limits are enforced on the server.
 
 let sosState = { plan: "free", usage: null, partners: [] };
@@ -86,7 +86,7 @@ function renderReachOut() {
       ? `<label class="practice-setup-field-label" for="sos-partner">Who was it with? <span class="text-muted">(tailors it to them)</span></label>
          <select id="sos-partner"><option value="">Not specified</option>${sosState.partners.map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name)}</option>`).join("")}</select>`
       : !premium
-      ? `<p class="text-muted mc-note"><span class="pb-lock">Premium</span> tailors it to them and checks in with you the next day. <a href="#" id="sos-see-premium">See Premium</a></p>`
+      ? `<p class="text-muted mc-note"><span class="pb-lock">Pro</span> tailors it to them and checks in with you the next day. <a href="#" id="sos-see-premium">Try Pro free</a></p>`
       : "";
   el.innerHTML = `
     <section class="dashboard-card sos-card">
@@ -150,10 +150,10 @@ async function runSos() {
       if (data.sosLimit) {
         sosError(data.error);
         const go = await showAppConfirm(
-          "You've used your 3 messages for this month. Premium has no limit, tailors each message to them and checks in with you the next day.",
-          { confirmLabel: "See Premium", cancelLabel: "Not now" }
+          "You've used your messages for now. Pro has no monthly limit, tailors each message to them and checks in with you the next day. Try it free for 7 days.",
+          { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
         );
-        if (go) startCheckout("premium");
+        if (go) startCheckout("pro");
       } else {
         sosError(data.error || "Couldn't put that together right now.");
       }

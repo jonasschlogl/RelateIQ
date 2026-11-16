@@ -25,6 +25,9 @@ function panelHtml(id) {
 }
 const JOIN_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Your next conversation can go <em>better.</em></h2><p>Create a free account and talk it through tonight. No card needed.</p><a class="hx-btn" href="https://app.relationshipaiadvice.com/register.html" data-umami-event="cta-page-end">Try it free</a></div></div></section>`;
 
+const TRY_URL = "https://app.relationshipaiadvice.com/try.html";
+const TRY_CTA = `<section class="sp-end"><div class="hx-wrap"><div class="sp-end-card"><h2>Try it right now. <em>No account.</em></h2><p>Paste a message you are not sure about and see how it may land. Free, private, takes ten seconds.</p><a class="hx-btn" href="${TRY_URL}" data-umami-event="cta-message-try">Check a message</a></div></div></section>`;
+
 const PAGES = [
   { slug: "partner-practice", panel: "practice", title: "Partner Practice: rehearse the hard conversation | RelationshipAI", desc: "An AI plays your partner, in character, so you can rehearse a hard conversation, get a debrief and a readiness score, and walk in knowing how it can go." },
   { slug: "coach-chat", panel: "coach", title: "Coach Chat: a relationship coach that remembers your story | RelationshipAI", desc: "Talk it through at 2am. Coach Chat remembers your partner and your past chats, so you never start from zero." },
@@ -41,7 +44,7 @@ const PAGES = [
 for (const p of PAGES) {
   const cls = p.panel.startsWith("blog") ? "sp-topic" : "sp-feature";
   write(`${p.slug}/index.html`, page({ title: p.title, description: p.desc, path: `/${p.slug}/`, cls,
-    body: `<div class="sp-panel">${panelHtml(p.panel)}</div>\n${p.panel.startsWith("blog") || p.panel === "support" ? "" : JOIN_CTA}` }));
+    body: `<div class="sp-panel">${panelHtml(p.panel)}</div>\n${p.panel === "message" ? TRY_CTA : ""}${p.panel.startsWith("blog") || p.panel === "support" ? "" : JOIN_CTA}` }));
 }
 
 // about
@@ -56,7 +59,7 @@ for (const [k, [t, d, c]] of Object.entries(LEGAL)) write(`${k}/index.html`, pag
 
 // sections lifted from the home page, so they never drift apart
 for (const [slug, id, title, desc] of [
-  ["pricing", "pricing", "Pricing | RelationshipAI", "Start free. Upgrade when it helps. Pro and Premium plans for RelationshipAI, billed monthly or yearly."],
+  ["pricing", "pricing", "Pricing | RelationshipAI", "Start free. Upgrade when it helps. Pro with a 7-day free trial, billed monthly or yearly."],
   ["faq", "faq", "FAQ | RelationshipAI", "Answers to common questions about RelationshipAI: privacy, therapy, partners, plans and more."],
   ["early-access", "join", "Try RelationshipAI free | RelationshipAI", "Create a free RelationshipAI account in about a minute. No card needed."],
 ]) {

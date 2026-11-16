@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             await new Promise((r) => setTimeout(r, 150));
             const go = await showAppConfirm(
               "You've used your 1 free therapist summary export. Pro gives you unlimited exports, unlimited Practice and no daily message limit.",
-              { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+              { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
             );
             if (go) startCheckout("pro");
             return;
@@ -333,8 +333,8 @@ async function onQualityClick(q) {
   if (q === "advanced" && !canChooseAdvancedHere()) {
     await new Promise((r) => setTimeout(r, 150));
     const go = await showAppConfirm(
-      "Advanced answers use our most capable AI model, for deeper and more nuanced replies. Pro includes some every month, and Premium includes more, plus the deeper tools.",
-      { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+      "Advanced answers use our most capable AI model, for deeper and more nuanced replies. Pro includes a generous monthly amount, plus the deeper tools. Try it free for 7 days.",
+      { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
     );
     if (go) startCheckout("pro");
     return;
@@ -363,7 +363,7 @@ function updateExportButtonVisibility() {
   }
 }
 
-// Premium: the short plan for this talk, shown as a collapsible card right
+// Pro: the short plan for this talk, shown as a collapsible card right
 // under the partner banner. `plan` is the object stored by POST /api/talks.
 function renderPracticePlan(plan, open) {
   document.getElementById("practice-plan")?.remove();
@@ -510,7 +510,7 @@ function formatFileSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
-// `opts.upgradeRequired` renders a real "Upgrade to Pro" button alongside
+// `opts.upgradeRequired` renders a real "Try Pro free" button alongside
 // the message (wired straight to Stripe Checkout via startCheckout, same as
 // the pricing page buttons) and skips the auto-hide timeout — a plan-limit
 // notice needs to stay up long enough to actually be read and acted on, not
@@ -539,13 +539,13 @@ function showComposerError(msg, opts) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-gradient btn-sm";
-    btn.textContent = "Upgrade to Pro";
+    btn.textContent = "Try Pro free";
     btn.addEventListener("click", () => {
       btn.disabled = true;
       btn.textContent = "Redirecting…";
       startCheckout("pro").finally(() => {
         btn.disabled = false;
-        btn.textContent = "Upgrade to Pro";
+        btn.textContent = "Try Pro free";
       });
     });
     el.appendChild(btn);
@@ -1232,7 +1232,7 @@ async function renderPracticeSetup() {
               <span class="intensity-option-desc">Gentler, for building confidence</span>
             </button>
             <button type="button" class="intensity-option" data-value="tough" aria-pressed="false">
-              <span class="intensity-option-title">Hard <span class="intensity-lock">Premium</span></span>
+              <span class="intensity-option-title">Hard <span class="intensity-lock">Pro</span></span>
               <span class="intensity-option-desc">Guarded and defensive, a real stress test</span>
             </button>
           </div>
@@ -1255,7 +1255,7 @@ async function renderPracticeSetup() {
         </label>
         <label class="role-swap-row" for="practice-plan-first">
           <span class="role-swap-text">
-            <span class="role-swap-title">Get a short plan first <span class="intensity-lock">Premium</span></span>
+            <span class="role-swap-title">Get a short plan first <span class="intensity-lock">Pro</span></span>
             <span class="role-swap-desc">Opening line, what to avoid, how they might react</span>
           </span>
           <span class="switch">
@@ -1340,15 +1340,15 @@ async function renderPracticeSetup() {
     if (getUser()?.plan === "premium") return;
     e.preventDefault();
     const go = await showAppConfirm(
-      "A short plan for the talk is part of Premium: the opening line, what to avoid and how they might react, shown above your rehearsal.",
-      { confirmLabel: "See Premium", cancelLabel: "Not now" }
+      "A short plan for the talk is part of Pro: the opening line, what to avoid and how they might react, shown above your rehearsal.",
+      { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
     );
     if (go) startCheckout("premium");
   });
   document.querySelectorAll(".intensity-option").forEach((btn) => {
     btn.addEventListener("click", async () => {
       if (btn.dataset.value === "tough" && getUser()?.plan !== "premium") {
-        const go = await showAppConfirm("Hard mode is part of Premium: your partner stays guarded and defensive, a real stress test for the talk you're dreading.", { confirmLabel: "See Premium", cancelLabel: "Not now" });
+        const go = await showAppConfirm("Hard mode is part of Pro: your partner stays guarded and defensive, a real stress test for the talk you're dreading.", { confirmLabel: "Try Pro free", cancelLabel: "Not now" });
         if (go) startCheckout("premium");
         return;
       }
@@ -1436,7 +1436,7 @@ async function renderPracticeSetup() {
 // setup screen (task #92) — shown BEFORE anyone picks a partner, so hitting
 // FREE_LIFETIME_PRACTICE_CONVERSATIONS is never a surprise 403 after
 // already filling out a scenario and picking someone to practice with.
-// Pro/Premium have no lifetime cap (practiceConversations is null for
+// Pro/Pro have no lifetime cap (practiceConversations is null for
 // them — see publicUser in server.js), so this stays hidden. Once the free
 // rehearsal(s) are used up, this doubles as the primary "upgrade" nudge for
 // Practice mode, right where someone would otherwise hit a dead end.
@@ -1465,13 +1465,13 @@ function renderPracticeLimitBanner(user) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-gradient btn-sm";
-    btn.textContent = "Upgrade to Pro";
+    btn.textContent = "Try Pro free";
     btn.addEventListener("click", () => {
       btn.disabled = true;
       btn.textContent = "Redirecting…";
       startCheckout("pro").finally(() => {
         btn.disabled = false;
-        btn.textContent = "Upgrade to Pro";
+        btn.textContent = "Try Pro free";
       });
     });
     banner.appendChild(btn);
@@ -1481,7 +1481,7 @@ function renderPracticeLimitBanner(user) {
 }
 
 // Inline error for the Practice setup screen (task #92) — same visual shape
-// as showComposerError (text + an optional "Upgrade to Pro" button for a
+// as showComposerError (text + an optional "Try Pro free" button for a
 // plan-limit rejection), but composer-error's element lives inside
 // #input-area, which is hidden (showComposer(false)) while this screen is
 // showing, so composer-error itself is invisible here. This targets its own
@@ -1505,13 +1505,13 @@ function showPracticeSetupError(msg, opts) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-gradient btn-sm";
-    btn.textContent = "Upgrade to Pro";
+    btn.textContent = "Try Pro free";
     btn.addEventListener("click", () => {
       btn.disabled = true;
       btn.textContent = "Redirecting…";
       startCheckout("pro").finally(() => {
         btn.disabled = false;
-        btn.textContent = "Upgrade to Pro";
+        btn.textContent = "Try Pro free";
       });
     });
     el.appendChild(btn);
@@ -1777,7 +1777,7 @@ async function startPracticeConversation({ partnerProfileId, scenario, intensity
   const conv = await safeJson(res);
   if (!res.ok) return { ok: false, error: conv.error, upgradeRequired: !!conv.upgradeRequired };
   if (planFirst) {
-    // Premium: build the short plan for this talk and attach it to the rehearsal.
+    // Pro: build the short plan for this talk and attach it to the rehearsal.
     // If it fails the rehearsal still opens, just without the plan.
     try {
       const tr = await authFetch("/api/talks", { method: "POST", body: JSON.stringify({ topic: scenario, partnerProfileId }) });
@@ -1896,7 +1896,7 @@ async function showPracticeUpgradeModal() {
   await new Promise((r) => setTimeout(r, 150));
   const go = await showAppConfirm(
     "Your free rehearsal is finished. You can still read it and get your debrief. To keep practicing, Pro gives you unlimited rehearsals on a stronger AI, with a debrief after each one.",
-    { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+    { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
   );
   if (go) startCheckout("pro");
 }
@@ -1915,7 +1915,7 @@ async function showDailyLimitUpgradeModal() {
   await new Promise((r) => setTimeout(r, 150));
   const go = await showAppConfirm(
     "You've used your 8 free messages for today. They reset tomorrow, or Pro removes the daily limit (fair use applies) and gives you unlimited Practice, more partner profiles and unlimited attachments.",
-    { confirmLabel: "Upgrade to Pro", cancelLabel: "Maybe tomorrow" }
+    { confirmLabel: "Try Pro free", cancelLabel: "Maybe tomorrow" }
   );
   if (go) startCheckout("pro");
 }
@@ -1951,13 +1951,13 @@ function updatePracticeCap(cap) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-gradient btn-sm";
-    btn.textContent = "Upgrade to Pro";
+    btn.textContent = "Try Pro free";
     btn.addEventListener("click", () => {
       btn.disabled = true;
       btn.textContent = "Redirecting…";
       startCheckout("pro").finally(() => {
         btn.disabled = false;
-        btn.textContent = "Upgrade to Pro";
+        btn.textContent = "Try Pro free";
       });
     });
     el.appendChild(btn);
@@ -2607,7 +2607,7 @@ function appendPracticeDebrief(debrief, ctx) {
   card.appendChild(heading);
 
   // Readiness (everyone) and progress across rehearsals with this person
-  // (Premium; others get a one-line hint once they have 2+ rehearsals).
+  // (Pro; others get a one-line hint once they have 2+ rehearsals).
   if (typeof debrief.readiness === "number") {
     const r = document.createElement("div");
     r.className = "readiness";
@@ -2621,7 +2621,7 @@ function appendPracticeDebrief(debrief, ctx) {
     } else if (debrief.progressLocked) {
       const line = document.createElement("div");
       line.className = "readiness-progress";
-      line.innerHTML = 'Premium shows how your score changes across rehearsals. <a href="#">See Premium</a>';
+      line.innerHTML = 'Pro shows how your score changes across rehearsals. <a href="#">Try Pro free</a>';
       line.querySelector("a").addEventListener("click", (e) => {
         e.preventDefault();
         startCheckout("premium");
@@ -2690,7 +2690,7 @@ function appendPracticeDebrief(debrief, ctx) {
 // "Try again" on the practice debrief card (task #91). Free-plan users
 // only get FREE_LIFETIME_PRACTICE_CONVERSATIONS rehearsal(s) total, so this
 // can legitimately fail with the same upgrade-required shape sendMessage
-// already handles — reuses showComposerError (with its "Upgrade to Pro"
+// already handles — reuses showComposerError (with its "Try Pro free"
 // button) rather than a bare alert() for that specific case, since the
 // composer is always visible during Practice mode, debrief card or not.
 async function retryPracticeConversation(ctx, btn) {
@@ -2900,7 +2900,7 @@ async function sendMessage() {
 }
 
 // ---------------------------------------------------------------------------
-// Plan badge — shows Free/Pro/Premium in the top bar, links to the account
+// Plan badge — shows Free/Pro/Pro in the top bar, links to the account
 // page. Renders immediately from the cached session so there's no flash of
 // nothing, then quietly refreshes from the server in case the plan changed
 // since login (e.g. just upgraded via Stripe Checkout).
@@ -2909,7 +2909,7 @@ async function sendMessage() {
 function renderPlanBadge(plan) {
   const badge = document.getElementById("plan-badge");
   if (!badge || !plan) return;
-  const label = { free: "Free", pro: "Pro", premium: "Premium" }[plan] || "Free";
+  const label = { free: "Free", pro: "Pro", premium: "Pro" }[plan] || "Free";
   badge.textContent = label;
   badge.classList.toggle("plan-badge-paid", plan !== "free");
 }
@@ -2918,7 +2918,7 @@ function renderPlanBadge(plan) {
 // to the plan badge — see the .usage-badge comment in style.css for why:
 // this used to be invisible until the person actually hit the wall (see
 // isOverDailyLimit in server.js) and got a hard error with no warning.
-// Pro/Premium have no daily cap, so the badge just stays hidden for them.
+// Pro/Pro have no daily cap, so the badge just stays hidden for them.
 // Accepts the same shape /api/me and every message-send response return:
 // { plan, usage: { date, count } | undefined, usageLimit }.
 function renderUsageBadge(user) {

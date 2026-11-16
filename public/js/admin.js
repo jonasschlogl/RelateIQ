@@ -60,6 +60,10 @@ function renderAdmin(data) {
       ${statTile("Active this week", data.activeThisWeek)}
     </div>
     <div class="dashboard-card" style="margin-top:20px;">
+      <div class="dashboard-card-header"><h2 style="font-size:16px;">Journey &middot; last 30 days</h2></div>
+      <div id="funnel"></div>
+    </div>
+    <div class="dashboard-card" style="margin-top:20px;">
       <div class="dashboard-card-header"><h2 style="font-size:16px;">Signups &middot; last 30 days</h2></div>
       <div id="signups-chart" class="admin-chart"></div>
     </div>
@@ -79,6 +83,7 @@ function renderAdmin(data) {
       <div id="feedback-downvotes"></div>
     </div>
   `;
+  renderFunnel(document.getElementById("funnel"), data.funnel);
   renderSignupsChart(document.getElementById("signups-chart"), data.signupsByDay);
   renderPlanBreakdown(document.getElementById("plan-breakdown"), data.planCounts);
   renderFeedback(document.getElementById("feedback-summary"), document.getElementById("feedback-downvotes"), data.feedback);
@@ -185,8 +190,8 @@ function renderPlanBreakdown(container, planCountsIn) {
   const planCounts = planCountsIn || {};
   const entries = [
     { key: "free", label: "Free", color: "var(--text-faint)" },
-    { key: "pro", label: "Pro", color: "var(--accent-1)" },
-    { key: "premium", label: "Premium", color: "var(--accent-2)" },
+    { key: "pro", label: "Pro (old plan)", color: "var(--accent-1)" },
+    { key: "premium", label: "Pro", color: "var(--accent-2)" },
   ];
   const max = Math.max(1, ...entries.map((e) => planCounts[e.key] || 0));
   container.innerHTML = entries
@@ -259,4 +264,24 @@ async function loadBackups() {
   } catch (err) {
     /* non-critical */
   }
+}
+
+
+// Where people get to: free try, sign-up, first real use, Pro prompts, checkout, trial.
+// "People" are distinct users (or anonymous visitors before sign-up). Day-2 return
+// is the share of people who signed up 2+ days ago and came back on a later day.
+function renderFunnel(container, f) {
+  if (!container || !f) return;
+  const max = Math.max(1, ...f.steps.map((s) => s.people));
+  const rows = f.steps
+    .map(
+      (s) => `<div class="plan-row" style="display:flex;align-items:center;gap:10px;margin:6px 0;">
+        <span style="flex:0 0 260px;font-size:13.5px;">${escapeHtml(s.label)}</span>
+        <span style="flex:1;background:var(--surface-2,rgba(0,0,0,.06));border-radius:6px;height:10px;overflow:hidden;"><span style="display:block;height:100%;width:${Math.round((s.people / max) * 100)}%;background:var(--accent-1);"></span></span>
+        <b style="flex:0 0 40px;text-align:right;">${s.people}</b></div>`
+    )
+    .join("");
+  const d2 = f.day2 || { cohort: 0, returned: 0 };
+  const pct = d2.cohort ? Math.round((d2.returned / d2.cohort) * 100) + "%" : "n/a";
+  container.innerHTML = `${rows}<p class="text-muted" style="font-size:13px;margin-top:12px;">Came back on a later day (signed up 2+ days ago): <b>${d2.returned}</b> of ${d2.cohort} (${pct}).</p>`;
 }

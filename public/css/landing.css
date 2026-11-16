@@ -590,3 +590,6 @@
   .lp .price-card .price-features { grid-column: 1 / -1; grid-row: 7; display: none; margin: 10px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
   .lp .price-card.is-open .price-features { display: block; }
 }
+
+/* Single paid plan: two price cards (Free + Pro) */
+.pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin-left: auto; margin-right: auto; }

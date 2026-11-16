@@ -26,6 +26,10 @@ import {
   backupDatabaseTo,
   getDatabaseFilePath,
   incrementUserColumn,
+  logEvent,
+  countEventsSince,
+  eventDaysForUsers,
+  userIdsWithEvent,
   saveConversation,
   deleteConversation,
   appendConversationMessages,
@@ -89,15 +93,27 @@ app.set("trust proxy", true);
 const cleanEnvId = (v) => (v ? String(v).replace(/\\n|\\r/g, "").replace(/^[\s"']+|[\s"']+$/g, "") : v);
 const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(cleanEnvId(process.env.STRIPE_SECRET_KEY)) : null;
 const APP_URL = (process.env.APP_URL || `http://localhost:${process.env.PORT || 3000}`).replace(/\/$/, "");
-const PLAN_TO_STRIPE_PRICE = { pro: cleanEnvId(process.env.STRIPE_PRICE_PRO), premium: cleanEnvId(process.env.STRIPE_PRICE_PREMIUM) };
-// Optional yearly prices (a second Stripe price per plan). Without them,
-// "yearly" checkouts are refused rather than silently billing monthly.
-const PLAN_TO_STRIPE_PRICE_YEARLY = { pro: cleanEnvId(process.env.STRIPE_PRICE_PRO_YEARLY), premium: cleanEnvId(process.env.STRIPE_PRICE_PREMIUM_YEARLY) };
+// ONE paid plan. It is sold as "Pro" (EUR 9.99/mo or 69.99/yr, 7-day free trial)
+// and runs internally as the full-featured "premium" tier, so every paid
+// feature (tailored replies, hard mode, talk plans, reviews, therapist pack)
+// is included. STRIPE_PRICE_PRO / STRIPE_PRICE_PRO_YEARLY are the prices of
+// that single plan. The old Premium price ids (if still set) are only used to
+// recognise existing subscribers; nothing new is ever sold on them.
+const SINGLE_PLAN = "premium";
+const PLAN_TO_STRIPE_PRICE = { [SINGLE_PLAN]: cleanEnvId(process.env.STRIPE_PRICE_PRO) };
+// Optional yearly price. Without it, "yearly" checkouts are refused rather
+// than silently billing monthly.
+const PLAN_TO_STRIPE_PRICE_YEARLY = { [SINGLE_PLAN]: cleanEnvId(process.env.STRIPE_PRICE_PRO_YEARLY) };
+const TRIAL_DAYS = Number(process.env.TRIAL_DAYS) || 7;
 const STRIPE_PRICE_TO_PLAN = {};
 for (const map of [PLAN_TO_STRIPE_PRICE, PLAN_TO_STRIPE_PRICE_YEARLY]) {
   for (const [plan, priceId] of Object.entries(map)) {
     if (priceId) STRIPE_PRICE_TO_PLAN[priceId] = plan;
   }
+}
+for (const legacy of [process.env.STRIPE_PRICE_PREMIUM, process.env.STRIPE_PRICE_PREMIUM_YEARLY]) {
+  const id = cleanEnvId(legacy);
+  if (id && !STRIPE_PRICE_TO_PLAN[id]) STRIPE_PRICE_TO_PLAN[id] = SINGLE_PLAN;
 }
 
 // Locked down to the app's own origin(s) instead of wide-open cors() — the
@@ -147,7 +163,9 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
         user.stripeSubscriptionId = session.subscription;
         user.subscriptionStatus = "active";
         if (session.metadata?.plan) user.plan = session.metadata.plan;
+        if (session.metadata?.trial === "1" && !user.trialUsedAt) user.trialUsedAt = new Date().toISOString();
         saveUser(user);
+        track(session.metadata?.trial === "1" ? "trial_started" : "paid", user.id);
 
         // First time this user has ever converted to paid — this is the
         // one moment a referral reward can fire, so it can't be triggered
@@ -246,6 +264,15 @@ if (IS_HOSTED && !process.env.JWT_SECRET) {
   );
   process.exit(1);
 }
+// Funnel analytics: names and counts only, never message text. Never allowed to break a request.
+function track(name, userId, meta, anonId) {
+  try {
+    logEvent({ name, userId: userId || null, anonId: anonId || null, meta: meta || null });
+  } catch (e) {
+    /* analytics must never break the product */
+  }
+}
+const activeSeen = new Set(); // "userId:YYYY-MM-DD", so "active" is logged once per user per day
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me-in-production";
 const FREE_DAILY_LIMIT = 8;
 
@@ -255,7 +282,7 @@ const FREE_DAILY_LIMIT = 8;
 // than the subscription). These are generous — a normal heavy user is
 // nowhere near them — and tunable from Railway env vars without a deploy.
 const PRO_MONTHLY_LIMIT = Number(process.env.PRO_MONTHLY_AI_LIMIT) || 1000;
-const PREMIUM_MONTHLY_LIMIT = Number(process.env.PREMIUM_MONTHLY_AI_LIMIT) || 1500;
+const PREMIUM_MONTHLY_LIMIT = Number(process.env.PREMIUM_MONTHLY_AI_LIMIT) || 1000;
 function monthlyLimitFor(plan) {
   if (plan === "pro") return PRO_MONTHLY_LIMIT;
   if (plan === "premium") return PREMIUM_MONTHLY_LIMIT;
@@ -364,7 +391,7 @@ function modelForPractice(plan) {
 // prompt sizes (see README "Pricing & costs"); tunable from Railway env vars.
 const PREMIUM_MODEL_BUDGET = {
   pro: Number(process.env.PRO_STRONG_MODEL_BUDGET) || 200, // Partner Practice only
-  premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 500,
+  premium: Number(process.env.PREMIUM_STRONG_MODEL_BUDGET) || 300,
 };
 // Pro only: a small separate allowance of strong-model Coach Chat messages
 // (a taste of Premium; Practice has its own, bigger budget above).
@@ -871,6 +898,20 @@ function buildPastChatsContext(db, userId, currentConvId) {
   return out;
 }
 
+const QUIZ_PROFILES = JSON.parse(fs.readFileSync(path.join(__dirname, "lib", "quiz-profiles.json"), "utf8"));
+function quizProfileBlock(user) {
+  const qp = user && user.quizProfile;
+  if (!qp || typeof qp !== "object") return "";
+  const lines = [];
+  for (const [slug, v] of Object.entries(qp)) {
+    const quiz = QUIZ_PROFILES[slug];
+    const res = quiz && quiz.results[v && v.r];
+    if (res) lines.push(`- ${quiz.title}: "${res.name}". ${res.line}`);
+  }
+  if (!lines.length) return "";
+  return `\n\nBefore signing up, this person took short self-reflection quizzes on our website. Their results, as a gentle starting hint about how they tend to feel and react (self-reported in two minutes, not a diagnosis):\n${lines.join("\n")}\nUse it quietly to pitch your advice at the right level from the first message (for example, offer calming and checking-the-facts tools to someone who overthinks, or direct and clear wording to someone who avoids). Never announce or recite the result, never label them with it, and drop it as soon as what they tell you says otherwise.`;
+}
+
 function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookContext, pastChatsContext) {
   const styleKey = user?.attachmentStyle;
   const style = styleKey ? ATTACHMENT_STYLES[styleKey] : null;
@@ -882,6 +923,10 @@ function buildCoachSystemPrompt(user, partner, recentCheckinContext, playbookCon
     prompt += `\n\nWhat we know about this user's own attachment style (${style.name}): ${style.desc}\nLet this quietly inform how you coach them, for example, an anxious-leaning person may need reassurance that a pause in their partner's reply isn't a crisis, while an avoidant-leaning person may need encouragement to actually voice something rather than manage it alone. Don't mention their attachment style, diagnose them with it, or bring it up unprompted, only use it to calibrate your tone and advice.`;
   }
 
+  // The quiz result the person brought with them from the website: a starting
+  // hint about their pattern, never a diagnosis. Replaced by real conversation.
+  const quizBlock = quizProfileBlock(user);
+  if (quizBlock) prompt += quizBlock;
   if (memory) {
     prompt += `\n\nWhat RelationshipAI has noticed across this user's past Coach Chat conversations, as recurring themes/patterns (not a transcript (a standing summary, refreshed periodically):\n${memory}\nUse this quietly to keep continuity) so they don't have to re-explain context they've already given, and so you can gently notice if the same pattern is resurfacing, but never quote it back verbatim, recite it as a diagnosis, or make them feel monitored. The same limits as for earlier conversations apply: it is background, never today's fact, and one old mention is not a pattern or an ongoing emergency. It counts toward knowing enough: whatever it already tells you about their relationship, their history, their patterns, what they tried and how they like to be helped, you do not ask again. Ask only about what is missing, and use it to judge whether you are in the understanding stage or ready to give real guidance. If today's conversation doesn't match it, trust what they're telling you now over this summary.\n\nIf the note above includes a line starting "Open thread:" or "Most recent suggestion:", that's something in motion (often a concrete thing you told this user to try) and they haven't confirmed how it went. A real coach remembers that and checks in, but only once and only when it fits: if this is a new conversation or very early in one, and what the user brings up now touches the same thing, ask about it briefly, like picking up a thread ("did you end up bringing that up with her?"), after you have answered what they just wrote. If their message is about something else, or they have already addressed it, leave it alone. Never make the check-in the whole reply, and never ask about it twice in the same conversation.`;
   }
@@ -1923,6 +1968,7 @@ function publicUser(user) {
     attachmentStyle: user.attachmentStyle || null,
     hasBilling: !!user.stripeCustomerId,
     subscriptionStatus: user.subscriptionStatus || null,
+    trialEligible: !user.trialUsedAt && !user.stripeSubscriptionId,
     // Undefined/missing means "not yet opted out" — treat as true so
     // accounts created before this feature existed default to opted-in,
     // same as brand-new ones.
@@ -1978,7 +2024,7 @@ function publicPartner(p) {
 }
 
 function planLabel(plan) {
-  return { free: "Free", pro: "Pro", premium: "Premium" }[plan] || "Free";
+  return { free: "Free", pro: "Pro", premium: "Pro" }[plan] || "Free";
 }
 
 function todayKey() {
@@ -2000,6 +2046,12 @@ function authMiddleware(req, res, next) {
     if (!user) return res.status(401).json({ error: "Invalid session." });
     req.user = user;
     req.db = db;
+    const activeKey = `${user.id}:${todayKey()}`;
+    if (!activeSeen.has(activeKey)) {
+      if (activeSeen.size > 50000) activeSeen.clear();
+      activeSeen.add(activeKey);
+      track("active", user.id);
+    }
     next();
   } catch (err) {
     return res.status(401).json({ error: "Invalid or expired session." });
@@ -2312,7 +2364,7 @@ app.delete("/api/playbook/:id", authMiddleware, (req, res) => {
 // doesn't, and what to try next. Needs a few finished experiments first.
 app.post("/api/playbook/summary", authMiddleware, async (req, res) => {
   if (req.user.plan !== "premium") {
-    return res.status(403).json({ error: "The playbook analysis is part of Premium.", upgrade: true });
+    return res.status(403).json({ error: "The playbook analysis is part of Pro.", upgrade: true });
   }
   if (isOverDailyLimit(req.user, res)) return;
   const done = listExperimentsForUser(req.user.id).filter((r) => r.status !== "active");
@@ -2353,7 +2405,7 @@ app.post("/api/playbook/summary", authMiddleware, async (req, res) => {
 
 function requirePremium(req, res) {
   if (req.user.plan === "premium") return true;
-  res.status(403).json({ error: "This is part of Premium.", upgrade: true, plan: req.user.plan });
+  res.status(403).json({ error: "This is part of Pro.", upgrade: true, plan: req.user.plan });
   return false;
 }
 
@@ -2923,6 +2975,7 @@ app.post("/api/auth/register", authRateLimit, (req, res) => {
     };
 
     saveUser(user);
+    track("signup", user.id, { via: "password" });
 
     if (!user.emailVerifiedAt) {
       sendVerificationEmail(user).catch((err) => console.error("Verification email failed:", err));
@@ -3168,6 +3221,7 @@ app.post("/api/auth/email-code/verify", authRateLimit, (req, res) => {
     }
     st.used = true;
     saveUser(user);
+    if (isNew) track("signup", user.id, { via: "code" });
 
     res.json({ token: signToken(user), user: publicUser(user), isNew });
   } catch (err) {
@@ -3264,6 +3318,7 @@ app.get("/api/auth/google/callback", authRateLimit, async (req, res) => {
     if (!user) { user = createPasswordlessUser({ email, name: idp.name || idp.given_name, referralCode: st.ref }); isNew = true; }
     else if (!user.emailVerifiedAt) user.emailVerifiedAt = new Date().toISOString();
     saveUser(user);
+    if (isNew) track("signup", user.id, { via: "google" });
 
     const handoff = jwt.sign({ scope: "oauth-handoff", sub: user.id, isNew, jti: crypto.randomBytes(12).toString("hex") }, JWT_SECRET, { expiresIn: 120 });
     res.redirect(`/google-callback.html#t=${encodeURIComponent(handoff)}`);
@@ -3600,6 +3655,150 @@ app.post("/api/push/unsubscribe", authMiddleware, (req, res) => {
 // is tracked or stored just for this dashboard.
 // ---------------------------------------------------------------------------
 
+// What the person arrived with: a website quiz result and where they came
+// from. Called once after login by shared.js; idempotent and tightly validated.
+app.post("/api/me/onboarding-context", authMiddleware, (req, res) => {
+  try {
+    const b = req.body || {};
+    const user = req.user;
+    let changed = false;
+    const slug = typeof b.quiz === "string" ? b.quiz : "";
+    const r = Number.isInteger(Number(b.r)) && b.r !== "" && b.r !== null ? Number(b.r) : -1;
+    if (QUIZ_PROFILES[slug] && r >= 0 && r < QUIZ_PROFILES[slug].results.length) {
+      user.quizProfile = { ...(user.quizProfile || {}), [slug]: { r, at: new Date().toISOString() } };
+      changed = true;
+      track("quiz_profile_saved", user.id, { quiz: slug });
+    }
+    const src = typeof b.src === "string" ? b.src.replace(/[^a-z0-9_-]/gi, "").slice(0, 30) : "";
+    const isFresh = user.createdAt && Date.now() - new Date(user.createdAt).getTime() < 24 * 60 * 60 * 1000;
+    if (!user.signupSource && isFresh) {
+      user.signupSource = QUIZ_PROFILES[slug] ? "quiz:" + slug : src || "direct";
+      changed = true;
+    }
+    if (changed) saveUser(user);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Onboarding context error:", err);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+// Anonymous event beacon from public pages and paywall prompts. Whitelisted names only.
+const PUBLIC_EVENTS = new Set(["try_view", "try_cta_click", "paywall_view", "pricing_view", "register_view"]);
+app.post("/api/events", (req, res) => {
+  const b = req.body || {};
+  const name = String(b.name || "");
+  if (PUBLIC_EVENTS.has(name)) {
+    let userId = null;
+    const header = req.headers.authorization || "";
+    if (header.startsWith("Bearer ")) {
+      try { userId = jwt.verify(header.slice(7), JWT_SECRET).sub || null; } catch { /* anonymous */ }
+    }
+    const anonId = typeof b.anonId === "string" ? b.anonId.replace(/[^a-z0-9_-]/gi, "").slice(0, 40) : null;
+    const where = typeof b.where === "string" ? b.where.replace(/[^a-z0-9_:. -]/gi, "").slice(0, 40) : null;
+    track(name, userId, where ? { where } : null, anonId);
+  }
+  res.status(204).end();
+});
+
+// ---------------------------------------------------------------------------
+// Try Message check without an account (the "aha" before sign-up). Same coach
+// prompt, the fast model, two rewrites, nothing stored. Limited per IP per day
+// and globally per day so it cannot be used to run up the AI bill.
+// ---------------------------------------------------------------------------
+const TRY_PER_IP_PER_DAY = Number(process.env.TRY_PER_IP_PER_DAY) || 2;
+const TRY_GLOBAL_PER_DAY = Number(process.env.TRY_GLOBAL_PER_DAY) || 300;
+const tryState = { day: "", global: 0, ips: new Map() };
+function tryRoll() {
+  const today = todayKey();
+  if (tryState.day !== today) {
+    tryState.day = today;
+    tryState.global = 0;
+    tryState.ips = new Map();
+  }
+}
+const tryLeft = (ip) => Math.max(0, TRY_PER_IP_PER_DAY - (tryState.ips.get(ip) || 0));
+
+app.get("/api/public/message-check", (req, res) => {
+  tryRoll();
+  res.json({ remaining: tryState.global >= TRY_GLOBAL_PER_DAY ? 0 : tryLeft(req.ip || "unknown") });
+});
+
+app.post("/api/public/message-check", async (req, res) => {
+  try {
+    tryRoll();
+    const ip = req.ip || "unknown";
+    if (tryLeft(ip) <= 0) {
+      return res.status(429).json({ error: "You've used your free checks for today. Create a free account to keep going.", needAccount: true, remaining: 0 });
+    }
+    if (tryState.global >= TRY_GLOBAL_PER_DAY) {
+      return res.status(429).json({ error: "The free try is busy right now. Create a free account to check your message.", needAccount: true, remaining: 0 });
+    }
+    const b = req.body || {};
+    const draft = asStr(b.draft, 800);
+    if (draft.length < 3) return res.status(400).json({ error: "Paste the message you're thinking of sending." });
+    // Count the attempt up front so parallel requests cannot bypass the limit.
+    tryState.global += 1;
+    tryState.ips.set(ip, (tryState.ips.get(ip) || 0) + 1);
+    const labels = ["Calmer", "More direct"];
+    let raw;
+    try {
+      raw = await aiJson(
+        MESSAGE_CHECK_PROMPT,
+        [`Version labels to produce, in order: ${labels.join(", ")}`, `The message they are thinking of sending:\n"""\n${draft}\n"""`].join("\n\n"),
+        0.6,
+        STANDARD_MODEL
+      );
+    } catch (e) {
+      tryState.global = Math.max(0, tryState.global - 1);
+      tryState.ips.set(ip, Math.max(0, (tryState.ips.get(ip) || 1) - 1));
+      throw e;
+    }
+    const versions = asPairs(raw.versions, labels.length, "label", "text").map((v, i) => ({ label: v.label || labels[i], text: v.text }));
+    if (!versions.length || !asStr(raw.read, 400)) {
+      tryState.global = Math.max(0, tryState.global - 1);
+      tryState.ips.set(ip, Math.max(0, (tryState.ips.get(ip) || 1) - 1));
+      return res.status(500).json({ error: "Couldn't check that right now. Please try again." });
+    }
+    const risk = ["low", "medium", "high"].includes(String(raw.risk).toLowerCase()) ? String(raw.risk).toLowerCase() : "medium";
+    const anonId = typeof b.anonId === "string" ? b.anonId.replace(/[^a-z0-9_-]/gi, "").slice(0, 40) : null;
+    track("try_check", null, null, anonId);
+    res.json({ read: asStr(raw.read, 400), risk, flags: asList(raw.flags, 3, 200), versions, remaining: tryLeft(ip) });
+  } catch (err) {
+    console.error("Public message check error:", err.message);
+    res.status(500).json({ error: "Couldn't check that right now. Please try again." });
+  }
+});
+
+// Last 30 days: how far people get. "people" = distinct users (or anonymous
+// visitors for the pre-signup steps). Day-2 return = signed up at least 2 days
+// ago and active again on a later calendar day.
+function buildFunnel(db) {
+  const since = new Date(Date.now() - 30 * 86400000).toISOString();
+  const ev = countEventsSince(since);
+  const n = (name) => (ev[name] ? ev[name].people : 0);
+  const DAY = 86400000;
+  const cohort = db.users.filter((u) => u.createdAt && Date.now() - new Date(u.createdAt).getTime() >= 2 * DAY && Date.now() - new Date(u.createdAt).getTime() < 30 * DAY);
+  const daysByUser = {};
+  for (const r of eventDaysForUsers("active", since)) (daysByUser[r.userId] = daysByUser[r.userId] || []).push(r.day);
+  const returned = cohort.filter((u) => (daysByUser[u.id] || []).some((d) => d > String(u.createdAt).slice(0, 10))).length;
+  return {
+    days: 30,
+    steps: [
+      { key: "try_view", label: "Opened the free try", people: n("try_view") },
+      { key: "try_check", label: "Used the free try", people: n("try_check") },
+      { key: "try_cta_click", label: "Clicked create account after the try", people: n("try_cta_click") },
+      { key: "signup", label: "Signed up", people: n("signup") },
+      { key: "first_action", label: "Did something real (chat, check, practice)", people: new Set([...userIdsWithEvent("coach_message", since), ...userIdsWithEvent("message_check", since), ...userIdsWithEvent("practice_start", since), ...userIdsWithEvent("sos_message", since)]).size },
+      { key: "paywall_view", label: "Saw a Pro prompt", people: n("paywall_view") },
+      { key: "checkout_started", label: "Started checkout", people: n("checkout_started") },
+      { key: "trial_started", label: "Started the free trial", people: n("trial_started") },
+      { key: "paid", label: "Paid without trial", people: n("paid") },
+    ],
+    day2: { cohort: cohort.length, returned },
+  };
+}
+
 app.get("/api/admin/stats", authMiddleware, adminMiddleware, (req, res) => {
   const db = req.db;
   const now = Date.now();
@@ -3691,6 +3890,7 @@ app.get("/api/admin/stats", authMiddleware, adminMiddleware, (req, res) => {
     sharesTotal,
     shareItemsTotal,
     pushSubCount: db.pushSubscriptions.length,
+    funnel: buildFunnel(db),
     signupsByDay,
     feedback: {
       up: feedbackUp,
@@ -3712,7 +3912,8 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
     return res.status(503).json({ error: "Payments aren't set up on this server yet." });
   }
   try {
-    const { plan, billing } = req.body || {};
+    const { billing } = req.body || {};
+    const plan = SINGLE_PLAN; // one paid plan, whatever the client asked for
     const yearly = billing === "yearly";
     const priceId = (yearly ? PLAN_TO_STRIPE_PRICE_YEARLY : PLAN_TO_STRIPE_PRICE)[plan];
     if (!priceId) {
@@ -3744,17 +3945,21 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
       saveUser(user);
     }
 
+    // 7-day free trial, once per account (a card is still collected up front).
+    const eligibleForTrial = TRIAL_DAYS > 0 && !user.trialUsedAt && !user.stripeSubscriptionId;
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       customer: customerId,
       client_reference_id: user.id,
       line_items: [{ price: priceId, quantity: 1 }],
       allow_promotion_codes: true,
+      ...(eligibleForTrial ? { subscription_data: { trial_period_days: TRIAL_DAYS } } : {}),
       success_url: `${APP_URL}/dashboard.html?upgraded=1`,
       cancel_url: `${APP_URL}/dashboard.html`,
-      metadata: { userId: user.id, plan },
+      metadata: { userId: user.id, plan, trial: eligibleForTrial ? "1" : "0" },
     });
 
+    track("checkout_started", user.id, { trial: eligibleForTrial, yearly });
     res.json({ url: session.url });
   } catch (err) {
     console.error("Checkout session error:", err);
@@ -3771,6 +3976,9 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
 app.post("/api/billing/change-plan", authMiddleware, async (req, res) => {
   if (!stripe) return res.status(503).json({ error: "Payments aren't set up on this server yet." });
   try {
+    // There is only one paid plan now, so there is nothing to switch to.
+    return res.status(400).json({ error: "There is a single paid plan. Manage or cancel it from your account page." });
+    // eslint-disable-next-line no-unreachable
     const { plan } = req.body || {};
     const user = req.user;
     if (!["pro", "premium"].includes(plan)) return res.status(400).json({ error: "That's not a valid paid plan." });
@@ -3867,7 +4075,7 @@ app.post("/api/billing/portal", authMiddleware, async (req, res) => {
 // Only a counter marker is stored (doc kind "mcheck"), never the text itself.
 // ---------------------------------------------------------------------------
 
-const MESSAGE_CHECK_LIMITS = { free: { lifetime: 3 }, pro: { perDay: 10 }, premium: { perDay: 100 } };
+const MESSAGE_CHECK_LIMITS = { free: { lifetime: 3 }, pro: { perDay: 10 }, premium: { perDay: 40 } };
 
 function messageCheckUsage(user) {
   const docs = listDocs(user.id, "mcheck");
@@ -3912,8 +4120,8 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
       return res.status(403).json({
         error:
           user.plan === "free"
-            ? `The Free plan includes ${usage.limit} message checks. Upgrade to Pro for ${MESSAGE_CHECK_LIMITS.pro.perDay} a day.`
-            : `You've used today's ${usage.limit} message checks. They reset tomorrow${user.plan === "pro" ? ", or go Premium for no limit" : ""}.`,
+            ? `The Free plan includes ${usage.limit} message checks. Pro gives you ${MESSAGE_CHECK_LIMITS.premium.perDay} a day.`
+            : `You've used today's ${usage.limit} message checks. They reset tomorrow.`,
         messageCheckLimit: true,
         upgradeRequired: true,
         usage,
@@ -3950,6 +4158,7 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
     const risk = ["low", "medium", "high"].includes(String(raw.risk).toLowerCase()) ? String(raw.risk).toLowerCase() : "medium";
 
     saveDoc({ id: generateId("mchk"), userId: user.id, kind: "mcheck", key: generateId("mk"), title: "", data: {} });
+    track("message_check", user.id);
     if (user.plan !== "free") bumpUsage(user, mcModel);
 
     res.json({
@@ -4018,7 +4227,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
     const usage = sosUsage(user);
     if (usage.used >= usage.limit) {
       return res.status(403).json({
-        error: `You've used your ${usage.limit} messages for this month. They reset on the 1st, or go Premium for no limit.`,
+        error: `You've used your ${usage.limit} messages for this month. They reset on the 1st.`,
         sosLimit: true,
         upgradeRequired: true,
         usage,
@@ -4067,6 +4276,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
       data: { followUpAt, withName: partner ? partner.name : null },
     });
     bumpUsage(user, sosModel);
+    track("sos_message", user.id);
     res.json({ ...result, followUp: !!followUpAt, tailored: !!(premium && (partner || playbook || user.relationshipMemory)), usage: sosUsage(user) });
   } catch (err) {
     console.error("SOS error:", err.message);
@@ -4598,7 +4808,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
   const { mode, partnerProfileId, scenario, intensity, roleSwap } = req.body || {};
   const isPractice = mode === "practice";
   if (isPractice && intensity === "tough" && req.user.plan !== "premium") {
-    return res.status(403).json({ error: "Hard mode is part of Premium.", upgradeRequired: true });
+    return res.status(403).json({ error: "Hard mode is part of Pro.", upgradeRequired: true });
   }
 
   let partner = null;
@@ -4668,6 +4878,7 @@ app.post("/api/conversations", authMiddleware, async (req, res) => {
     updatedAt: new Date().toISOString(),
   };
   saveConversation(conv);
+  if (isPractice) track("practice_start", req.user.id);
   if (isPractice && req.user.plan === "free") {
     incrementUserColumn(req.user.id, "lifetimePracticeConversations", 1);
   }
@@ -5014,6 +5225,7 @@ app.post("/api/conversations/:id/messages", authMiddleware, async (req, res) => 
     const assistantMessage = { id: generateId("msg"), role: "assistant", content: reply, at: new Date().toISOString() };
     if (suggestion) assistantMessage.suggestion = suggestion;
     appendConversationMessages(conv.id, [assistantMessage], { updatedAt: assistantMessage.at, title });
+    track(conv.mode === "practice" ? "practice_message" : "coach_message", req.user.id);
 
     if (!freePractice) bumpUsage(user, chatModel, { coachPool: user.plan === "pro" && !isPractice });
     if (!isPractice) scheduleMemoryUpdate(req.user.id);

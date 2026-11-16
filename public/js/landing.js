@@ -1,7 +1,7 @@
 // Landing page behaviour for the app's own home page. Same page, same
 // behaviour as the public site (demo tabs, Monthly/Yearly switch, scroll
 // reveal, floating button); the only difference is that the buttons lead
-// into the real app (register / chat) and the Pro/Premium buttons go to
+// into the real app (register / chat) and the Pro/Pro buttons go to
 // Stripe Checkout instead of a waitlist dialog.
 
 let selectedBilling = "yearly";

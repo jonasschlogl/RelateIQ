@@ -65,6 +65,7 @@ function showAppAlert(message) {
 // account", for a "Delete…" prompt. `await` the result the same way you
 // would the return value of window.confirm().
 function showAppConfirm(message, opts) {
+  if (opts && opts.confirmLabel === "Try Pro free") trackEvent("paywall_view", "dialog");
   return new Promise((resolve) => {
     let settled = false;
     const confirmLabel = (opts && opts.confirmLabel) || "OK";
@@ -219,6 +220,72 @@ function consumePendingPlan() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Funnel events (names only, never text) and what a person arrives with from
+// the website: which quiz result they got and which page sent them.
+// ---------------------------------------------------------------------------
+function getAnonId() {
+  try {
+    let id = localStorage.getItem("relateiq_anon");
+    if (!id) {
+      id = "a" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36);
+      localStorage.setItem("relateiq_anon", id);
+    }
+    return id;
+  } catch (e) {
+    return null;
+  }
+}
+
+function trackEvent(name, where) {
+  try {
+    const headers = { "Content-Type": "application/json" };
+    const t = getToken();
+    if (t) headers.Authorization = "Bearer " + t;
+    fetch("/api/events", { method: "POST", headers, keepalive: true, body: JSON.stringify({ name, where: where || null, anonId: getAnonId() }) }).catch(() => {});
+  } catch (e) {
+    /* analytics must never break a page */
+  }
+}
+
+(function captureOnboardingContextFromUrl() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const quiz = q.get("quiz");
+    const r = q.get("qr");
+    const src = q.get("src");
+    if (quiz && r !== null && /^[a-z-]{1,40}$/.test(quiz) && /^[0-9]{1,2}$/.test(r)) {
+      localStorage.setItem("relateiq_quiz", JSON.stringify({ quiz, r: Number(r) }));
+    }
+    if (src && /^[a-z0-9_-]{1,30}$/i.test(src)) localStorage.setItem("relateiq_src", src);
+  } catch (e) {
+    /* ignore storage errors */
+  }
+})();
+
+// After any kind of login, hand the server the quiz result / source once.
+async function sendOnboardingContext() {
+  try {
+    if (!getToken()) return;
+    const quizRaw = localStorage.getItem("relateiq_quiz");
+    const src = localStorage.getItem("relateiq_src");
+    if (!quizRaw && !src) return;
+    const body = {};
+    if (quizRaw) Object.assign(body, JSON.parse(quizRaw));
+    if (src) body.src = src;
+    const res = await authFetch("/api/me/onboarding-context", { method: "POST", body: JSON.stringify(body) });
+    if (res.ok) {
+      localStorage.removeItem("relateiq_quiz");
+      localStorage.removeItem("relateiq_src");
+    }
+  } catch (e) {
+    /* try again on the next page */
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(sendOnboardingContext, 400);
+});
+
 // Referral links point at register.html?ref=CODE, but someone might land on
 // the homepage first and click through to register.html without the query
 // string — so every page captures ?ref= into storage on load, and register
@@ -270,8 +337,8 @@ async function startCheckout(plan, billing) {
     });
     const data = await safeJson(res);
     if (!res.ok && data.usePortal) {
-      // Already subscribed: switch plans in place instead of starting a second subscription.
-      await changePlanInPlace(plan);
+      // Already subscribed: manage it in the billing portal instead of starting a second subscription.
+      await openBillingPortal();
       return;
     }
     if (!res.ok || !data.url) {
@@ -594,26 +661,26 @@ function renderVerifyBanner(user) {
   });
 }
 
-// Premium teaser card shared by the Premium-only pages (monthly review, hard
+// Pro teaser card shared by the Pro-only pages (monthly review, hard
 // talk, therapist pack): says what the page does and offers the upgrade.
 function renderPremiumLock(el, opts) {
   const items = (opts.bullets || []).map((b) => `<li>${escapeHtml(b)}</li>`).join("");
   el.innerHTML = `
     <section class="dashboard-card pb-premium-lock">
-      <span class="pb-lock">Premium</span>
+      <span class="pb-lock">Pro</span>
       <h2>${escapeHtml(opts.title)}</h2>
       <p class="text-muted">${escapeHtml(opts.text)}</p>
       ${items ? `<ul class="pb-lock-list">${items}</ul>` : ""}
-      <button type="button" class="btn btn-gradient" id="lock-upgrade-btn">See Premium</button>
+      <button type="button" class="btn btn-gradient" id="lock-upgrade-btn">Try Pro free</button>
     </section>`;
   el.querySelector("#lock-upgrade-btn").addEventListener("click", () => startCheckout("premium"));
 }
 
 
-// Switch an active subscription to the other plan (Pro <-> Premium). Stripe
+// Switch an active subscription to the other plan (Pro <-> Pro). Stripe
 // prorates: the difference for the rest of the period is charged or credited.
 async function changePlanInPlace(plan) {
-  const name = plan === "premium" ? "Premium" : "Pro";
+  const name = plan === "premium" ? "Pro" : "Pro";
   const ok = await showAppConfirm(
     `Switch your plan to ${name}? Stripe will charge or credit only the difference for the rest of your current billing period, using the card you already have on file.`,
     { confirmLabel: `Switch to ${name}`, cancelLabel: "Not now" }

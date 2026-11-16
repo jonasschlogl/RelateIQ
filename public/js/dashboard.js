@@ -407,8 +407,7 @@ function renderBillingActions(me) {
 
   if (me.plan === "free") {
     box.innerHTML = `
-      <button class="btn btn-gradient" id="upgrade-btn" type="button">Upgrade to Pro</button>
-      <a href="https://relationshipaiadvice.com/pricing/" class="btn btn-ghost btn-sm" style="margin-left:8px;">See all plans</a>
+      <button class="btn btn-gradient" id="upgrade-btn" type="button">${me.trialEligible === false ? "Upgrade to Pro" : "Start your 7-day free trial"}</button>
     `;
     document.getElementById("upgrade-btn").addEventListener("click", (e) => {
       const btn = e.currentTarget;
@@ -627,7 +626,7 @@ async function loadReferrals() {
 // ---------------------------------------------------------------------------
 
 function planLabel(plan) {
-  return { free: "Free", pro: "Pro", premium: "Premium" }[plan] || "Free";
+  return { free: "Free", pro: "Pro", premium: "Pro" }[plan] || "Free";
 }
 
 function formatDate(iso) {

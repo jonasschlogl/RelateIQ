@@ -1,5 +1,5 @@
 // Playbook page: small experiments from Coach advice. Three simple groups —
-// "Trying now", "What worked", "Didn't help" — plus a Premium read-out.
+// "Trying now", "What worked", "Didn't help" — plus a Pro read-out.
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logout-btn")?.addEventListener("click", logout);
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadIdeas();
 });
 
-// Ideas for this week (Pro: 3; Premium: 5, tailored, refreshable; Free: teaser).
+// Ideas for this week (Pro: 3; Pro: 5, tailored, refreshable; Free: teaser).
 async function loadIdeas(refresh) {
   const el = document.getElementById("ideas-card");
   if (!el) return;
@@ -39,7 +39,7 @@ async function loadIdeas(refresh) {
       ${
         d.canRefresh
           ? '<div class="focus-actions"><button type="button" class="btn btn-ghost btn-sm" id="ideas-refresh">Show me different ideas</button></div>'
-          : '<p class="text-muted focus-teaser"><span class="pb-lock">Premium</span> gives you 5 ideas tailored to them, and new ones whenever you want. <a href="#" id="ideas-see-premium">See Premium</a></p>'
+          : '<p class="text-muted focus-teaser"><span class="pb-lock">Pro</span> gives you 5 ideas tailored to them, and new ones whenever you want. <a href="#" id="ideas-see-premium">Try Pro free</a></p>'
       }
     </section>`;
     el.querySelectorAll("button[data-n]").forEach((b) =>
@@ -71,7 +71,7 @@ async function loadIdeas(refresh) {
   }
 }
 
-// This week's focus (Pro: the sentence; Premium: also why, when and a recap
+// This week's focus (Pro: the sentence; Pro: also why, when and a recap
 // of last week; Free: a teaser).
 async function loadFocus() {
   const el = document.getElementById("focus-card");
@@ -101,7 +101,7 @@ async function loadFocus() {
       ${recap}
       <div class="focus-actions"><button type="button" class="btn btn-primary btn-sm" id="focus-try">Add to my Playbook</button>
         <span class="text-muted focus-msg" id="focus-msg"></span></div>
-      ${d.plan === "pro" ? `<p class="text-muted focus-teaser"><span class="pb-lock">Premium</span> adds why it fits you, the best moment to try it, and a recap of last week. <a href="#" id="focus-see-premium">See Premium</a></p>` : ""}
+      ${d.plan === "pro" ? `<p class="text-muted focus-teaser"><span class="pb-lock">Pro</span> adds why it fits you, the best moment to try it, and a recap of last week. <a href="#" id="focus-see-premium">Try Pro free</a></p>` : ""}
     </section>`;
     document.getElementById("focus-see-premium")?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -313,9 +313,9 @@ function sectionPremium(d) {
     });
   } else {
     sec.innerHTML = `
-      <h2 class="pb-h">What your playbook says <span class="pb-lock">Premium</span></h2>
-      <p class="text-muted pb-none">Premium reads your whole playbook and tells you what keeps working for you, what doesn't, and what to try next.</p>
-      <button type="button" class="btn btn-ghost btn-sm" id="pb-premium-btn">See Premium</button>`;
+      <h2 class="pb-h">What your playbook says <span class="pb-lock">Pro</span></h2>
+      <p class="text-muted pb-none">Pro reads your whole playbook and tells you what keeps working for you, what doesn't, and what to try next.</p>
+      <button type="button" class="btn btn-ghost btn-sm" id="pb-premium-btn">Try Pro free</button>`;
     sec.querySelector("#pb-premium-btn").addEventListener("click", () => startCheckout("premium"));
   }
   return sec;

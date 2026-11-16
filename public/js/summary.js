@@ -138,7 +138,7 @@ async function showExportUpgradeModal() {
   await new Promise((r) => setTimeout(r, 150));
   const go = await showAppConfirm(
     "You've used your 1 free therapist summary export. You can still open the one you made. Pro gives you unlimited exports, unlimited Practice and no daily message limit.",
-    { confirmLabel: "Upgrade to Pro", cancelLabel: "Not now" }
+    { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
   );
   if (go) startCheckout("pro");
 }

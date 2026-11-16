@@ -169,7 +169,7 @@
     r.appendChild(el("div", "qz-r-tip", "<h4>Try this week</h4><p>" + esc(R.tip) + "</p>"));
     var cta = el("div", "qz-r-cta");
     cta.innerHTML = "<p>" + esc(D.tool[3]) + "</p>" +
-      '<div class="qz-r-btns"><a class="hx-btn" href="' + D.reg + '" data-umami-event="quiz-cta-register-' + D.slug + '">Try it free</a></div>';
+      '<div class="qz-r-btns"><a class="hx-btn" href="' + D.reg + '?quiz=' + encodeURIComponent(D.slug) + '&qr=' + main + '" data-umami-event="quiz-cta-register-' + D.slug + '">Try it free</a></div>';
     r.appendChild(cta);
     var acts = el("div", "qz-r-acts");
     acts.innerHTML = '<a class="qz-link" href="' + D.article[0] + '" data-umami-event="quiz-article-' + D.slug + '">Read: ' + esc(D.article[1]) + " " + arrow + "</a>";

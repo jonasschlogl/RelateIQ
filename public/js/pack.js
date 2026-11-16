@@ -1,4 +1,4 @@
-// Therapist pack (Premium): a one-page "story so far" built from the user's
+// Therapist pack (Pro): a one-page "story so far" built from the user's
 // whole history, meant to be printed or saved as PDF and handed to a
 // therapist. Numbers come from real data; the AI writes the words.
 
@@ -25,7 +25,7 @@ async function load() {
       document.querySelector(".summary-shell").appendChild(holder);
       renderPremiumLock(holder, {
         title: "Your whole story, on one page",
-        text: "Premium turns everything you've shared into a briefing a therapist can read in five minutes.",
+        text: "Pro turns everything you've shared into a briefing a therapist can read in five minutes.",
         bullets: [
           "Background, recurring patterns and what's weighing on you now",
           "What you tried that helped, and what didn't",

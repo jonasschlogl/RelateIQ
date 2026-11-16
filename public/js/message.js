@@ -44,7 +44,7 @@ function renderForm() {
       ? `<label class="practice-setup-field-label" for="mc-partner">Who is it for? <span class="text-muted">(tailors the replies to them)</span></label>
          <select id="mc-partner"><option value="">Not specified</option>${mcState.partners.map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name)}</option>`).join("")}</select>`
       : `<p class="text-muted mc-note">Add a partner profile in Practice and your replies get tailored to them.</p>`
-    : `<p class="text-muted mc-note"><span class="pb-lock">Premium</span> tailors the replies to the person and to what has worked for you before. <a href="#" id="mc-see-premium">See Premium</a></p>`;
+    : `<p class="text-muted mc-note"><span class="pb-lock">Pro</span> tailors the replies to the person and to what has worked for you before. <a href="#" id="mc-see-premium">Try Pro free</a></p>`;
 
   el.innerHTML = `
     <section class="dashboard-card mc-card">
@@ -78,14 +78,15 @@ function showError(msg) {
 }
 
 async function limitDialog(data) {
-  const toPremium = mcState.plan === "pro";
+  if (mcState.plan !== "free") {
+    await showAppAlert("You've used today's checks. They reset tomorrow.");
+    return;
+  }
   const go = await showAppConfirm(
-    mcState.plan === "free"
-      ? "You've used your 3 free message checks. Pro gives you 10 a day, with two rewrites each. Premium has no limit and tailors every reply to the person."
-      : "You've used today's checks. They reset tomorrow, or Premium removes the limit and tailors every reply to the person.",
-    { confirmLabel: toPremium ? "See Premium" : "Upgrade to Pro", cancelLabel: "Not now" }
+    "You've used your 3 free message checks. Pro gives you 40 a day, three rewrites each, tailored to the person. Try it free for 7 days.",
+    { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
   );
-  if (go) startCheckout(toPremium ? "premium" : "pro");
+  if (go) startCheckout("pro");
 }
 
 async function runCheck() {
@@ -139,8 +140,8 @@ function renderResult(d) {
   const lockedCard =
     mcState.plan === "premium"
       ? ""
-      : `<div class="mc-version mc-version-locked"><div class="mc-version-head"><strong>Warmer</strong><span class="pb-lock">Premium</span></div>
-         <p class="text-muted">A third version in a softer tone, tailored to them. <a href="#" id="mc-unlock">See Premium</a></p></div>`;
+      : `<div class="mc-version mc-version-locked"><div class="mc-version-head"><strong>Warmer</strong><span class="pb-lock">Pro</span></div>
+         <p class="text-muted">A third version in a softer tone, tailored to them. <a href="#" id="mc-unlock">Try Pro free</a></p></div>`;
   out.innerHTML = `
     <section class="dashboard-card mc-card mc-result-card">
       <div class="mc-read"><span class="mc-risk mc-risk-${escapeHtml(d.risk)}">${escapeHtml(RISK_LABEL[d.risk] || "")}</span>
