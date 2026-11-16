@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="css/f-skin.css?v=10" />
   <link rel="stylesheet" href="css/start.css?v=5" />
   <link rel="stylesheet" href="css/marquee.css?v=6" />
-  <link rel="stylesheet" href="css/try.css?v=7" />
+  <link rel="stylesheet" href="css/try.css?v=9" />
   <link rel="stylesheet" href="css/experts.css?v=3" />
   <link rel="stylesheet" href="css/hero-quotes.css?v=8" />
   <link rel="stylesheet" href="css/testers.css?v=2" />
@@ -91,29 +91,19 @@
 
     <section class="hx-sec try-sec" id="try" aria-label="Try Message check">
   <div class="hx-wrap">
-    <div class="tw" id="try-card">
-      <div class="tw-text">
-        <span class="f-tag"><b>Message check</b> Try it now</span>
-        <h2>Paste the message. <em>See how it lands.</em></h2>
-        <p>Not sure how a text will sound to them? Check it before you send it. No account, nothing saved.</p>
-        <div class="tw-ex" role="group" aria-label="Example messages">
-          <span>Or try one</span>
-          <button type="button" data-ex="Fine. Do whatever you want.">&ldquo;Fine. Do whatever you want.&rdquo;</button>
-          <button type="button" data-ex="You never listen to me.">&ldquo;You never listen to me.&rdquo;</button>
-          <button type="button" data-ex="We need to talk.">&ldquo;We need to talk.&rdquo;</button>
-        </div>
-        <ul class="tw-pts"><li>Free, no card</li><li>Private</li><li>10 seconds</li></ul>
-      </div>
+    <div class="tw tw-min" id="try-card">
+      <h2>Will your text start a fight? <em>Check it first.</em></h2>
       <div class="tw-ph">
         <i class="tw-notch"></i>
         <div class="tw-scr">
           <div class="tw-top"><span class="tw-pt"><i></i>Message check</span><span class="tw-left" id="try-left"></span></div>
           <div class="tw-msgs" id="try-msgs" aria-live="polite">
-            <div class="tw-b ai">What are you about to send? Paste it below and I&rsquo;ll read it the way they will.</div>
+            <div class="tw-b ai">Paste what you&rsquo;re about to send.</div>
           </div>
+          <div class="tw-ex" role="group" aria-label="Example messages"><button type="button" data-ex="Fine. Do whatever you want.">&ldquo;Fine. Do whatever you want.&rdquo;</button><button type="button" data-ex="You never listen to me.">&ldquo;You never listen to me.&rdquo;</button><button type="button" data-ex="We need to talk.">&ldquo;We need to talk.&rdquo;</button></div>
           <p class="tw-err" id="try-err" role="alert" hidden></p>
           <div class="tw-bar">
-            <textarea id="try-draft" maxlength="800" rows="1" placeholder="Type or paste your message&hellip;" aria-label="The message you are thinking of sending"></textarea>
+            <textarea id="try-draft" maxlength="800" rows="1" placeholder="Paste your message&hellip;" aria-label="The message you are thinking of sending"></textarea>
             <button type="button" id="try-go" class="tw-send" aria-label="Check my message" data-umami-event="try-landing-go"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>

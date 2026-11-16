@@ -61,3 +61,16 @@ body.hx .tw p { color: #3b2218; opacity: .88; font-size: 17.5px; line-height: 1.
   .tw-scr { height: 520px; }
 }
 @media (prefers-reduced-motion: reduce) { .tw-b, .tw-cta, .tw-dots i { animation: none; } .tw-msgs { scroll-behavior: auto; } }
+
+/* Minimal variant (homepage): hook headline + the phone, nothing else */
+body.hx .tw.tw-min { grid-template-columns: 1fr; justify-items: center; text-align: center; max-width: 760px; gap: 30px; padding: 56px 32px 48px; }
+body.hx .tw.tw-min h2 { margin: 0; max-width: 16ch; font-size: clamp(38px, 5.4vw, 68px); line-height: .98; }
+body.hx .tw.tw-min h2 em { display: block; }
+.tw-min .tw-ph { transform: none; width: min(340px, 100%); }
+.tw-min .tw-scr { height: 500px; }
+.tw-min .tw-ex { margin: 0; padding: 0 2px 2px; gap: 6px; justify-content: flex-start; }
+.tw-min .tw-ex button { font-size: 12.5px; padding: 8px 12px; }
+.tw-min.used .tw-ex { display: none; }
+@media (max-width: 900px) { body.hx .tw.tw-min { padding: 40px 18px 34px; border-radius: 34px; } .tw-min .tw-scr { height: 480px; } }
+.mo .tw-min .tw-ph { animation: none; }
+.tw-min .tw-scr { text-align: left; }
