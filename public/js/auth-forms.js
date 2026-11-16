@@ -78,8 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function showCodeStep() {
       emailForm.style.display = "none";
       const pw = document.getElementById("login-form");
+      const alt = document.querySelector(".auth-alt");
       if (pw) pw.style.display = "none";
-      document.querySelectorAll(".auth-hide-on-code").forEach((el) => (el.style.display = "none"));
+      if (alt) alt.style.display = "none";
       codeForm.style.display = "";
       if (heading) heading.textContent = "Check your email";
       if (intro) intro.style.display = "none";
@@ -88,12 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       codeInput.focus();
       startCooldown(30);
     }
-
-    const continueBtn = document.getElementById("email-continue");
-    const emailOk = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
-    const syncContinue = () => { if (continueBtn) continueBtn.disabled = !emailOk(); };
-    emailInput.addEventListener("input", syncContinue);
-    syncContinue();
 
     emailForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -109,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (err) {
         showError(err.message);
       } finally {
-        btn.textContent = label; syncContinue();
+        btn.disabled = false; btn.textContent = label;
       }
     });
 
@@ -134,7 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
       emailForm.style.display = "";
       if (heading) heading.textContent = headingText;
       if (intro) { intro.textContent = introText; intro.style.display = ""; }
-      document.querySelectorAll(".auth-hide-on-code").forEach((el) => (el.style.display = ""));
+      const alt = document.querySelector(".auth-alt");
+      if (alt) alt.style.display = "";
       emailInput.focus();
     });
 
