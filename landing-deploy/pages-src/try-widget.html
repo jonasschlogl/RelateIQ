@@ -1,20 +1,35 @@
 <section class="hx-sec try-sec" id="try" aria-label="Try Message check">
   <div class="hx-wrap">
-    <div class="hx-head"><span class="hx-kicker">Try it now &middot; no account</span><h2>Paste the message. <em>See how it lands.</em></h2></div>
-    <p class="try-sub">Not sure how a text will sound to them? Check it before you send it. Free, private, takes ten seconds.</p>
-    <div class="try-card" id="try-card">
-      <label for="try-draft">The message you&rsquo;re thinking of sending</label>
-      <textarea id="try-draft" maxlength="800" rows="4" placeholder="e.g. You always do this. I&rsquo;m tired of having to ask for everything."></textarea>
-      <div class="try-ex"><span>Or try one:</span>
-        <button type="button" data-ex="Fine. Do whatever you want.">&ldquo;Fine. Do whatever you want.&rdquo;</button>
-        <button type="button" data-ex="You never listen to me.">&ldquo;You never listen to me.&rdquo;</button>
-        <button type="button" data-ex="We need to talk.">&ldquo;We need to talk.&rdquo;</button>
+    <div class="tw" id="try-card">
+      <img class="tw-deco d1" src="/img/peek-heart-gold.svg" alt="" aria-hidden="true" width="220" height="165" loading="lazy" />
+      <img class="tw-deco d2" src="/img/peek-heart-rose.svg" alt="" aria-hidden="true" width="260" height="195" loading="lazy" />
+      <div class="tw-text">
+        <span class="f-tag"><b>Message check</b> Try it now</span>
+        <h2>Paste the message. <em>See how it lands.</em></h2>
+        <p>Not sure how a text will sound to them? Check it before you send it. No account, nothing saved.</p>
+        <div class="tw-ex" role="group" aria-label="Example messages">
+          <span>Or try one</span>
+          <button type="button" data-ex="Fine. Do whatever you want.">&ldquo;Fine. Do whatever you want.&rdquo;</button>
+          <button type="button" data-ex="You never listen to me.">&ldquo;You never listen to me.&rdquo;</button>
+          <button type="button" data-ex="We need to talk.">&ldquo;We need to talk.&rdquo;</button>
+        </div>
+        <ul class="tw-pts"><li>Free, no card</li><li>Private</li><li>10 seconds</li></ul>
       </div>
-      <p class="try-err" id="try-err" role="alert" hidden></p>
-      <div class="try-row"><button type="button" class="hx-btn" id="try-go" data-umami-event="try-landing-go">Check my message</button><span class="try-left" id="try-left"></span></div>
-      <div id="try-out" aria-live="polite"></div>
+      <div class="tw-ph">
+        <i class="tw-notch"></i>
+        <div class="tw-scr">
+          <div class="tw-top"><span class="tw-pt"><i></i>Message check</span><span class="tw-left" id="try-left"></span></div>
+          <div class="tw-msgs" id="try-msgs" aria-live="polite">
+            <div class="tw-b ai">What are you about to send? Paste it below and I&rsquo;ll read it the way they will.</div>
+          </div>
+          <p class="tw-err" id="try-err" role="alert" hidden></p>
+          <div class="tw-bar">
+            <textarea id="try-draft" maxlength="800" rows="1" placeholder="Type or paste your message&hellip;" aria-label="The message you are thinking of sending"></textarea>
+            <button type="button" id="try-go" class="tw-send" aria-label="Check my message" data-umami-event="try-landing-go"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="try-fine">Nothing is saved. Not a replacement for therapy.</p>
   </div>
-  <script defer src="/js/try.js?v=1"></script>
+  <script defer src="/js/try.js?v=3"></script>
 </section>

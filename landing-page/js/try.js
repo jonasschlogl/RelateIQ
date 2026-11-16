@@ -1,11 +1,12 @@
-// Free Message check on the landing page: no account, nothing saved. Calls the app's public endpoint.
+// Free Message check on the landing page: a chat inside a phone. No account, nothing saved.
 (function () {
   var card = document.getElementById("try-card");
   if (!card) return;
   var local = /^(localhost|127\.)/.test(location.hostname);
   var API = local ? "http://localhost:3010" : "https://app.relationshipaiadvice.com";
   var REG = "https://app.relationshipaiadvice.com/register.html?src=landing-try";
-  var draft = document.getElementById("try-draft"), go = document.getElementById("try-go"), err = document.getElementById("try-err"), out = document.getElementById("try-out"), left = document.getElementById("try-left");
+  var draft = document.getElementById("try-draft"), go = document.getElementById("try-go"), err = document.getElementById("try-err"),
+      msgs = document.getElementById("try-msgs"), left = document.getElementById("try-left");
   var busy = false, remaining = null;
 
   function anon() {
@@ -23,17 +24,19 @@
   function setErr(msg) { err.textContent = msg || ""; err.hidden = !msg; }
   function leftText() {
     if (remaining === null) return "";
-    if (remaining <= 0) return "No free checks left today";
-    return remaining === 1 ? "1 free check left today" : remaining + " free checks left today";
+    if (remaining <= 0) return "0 checks left";
+    return remaining === 1 ? "1 free check left" : remaining + " free checks left";
   }
-  function ctaBlock(title, text, where) {
-    var box = el("div", "try-cta"); box.appendChild(el("h3", "", title)); box.appendChild(el("p", "", text));
-    var a = el("a", "hx-btn", "Create free account"); a.href = REG;
+  function toBottom() { msgs.scrollTop = msgs.scrollHeight; }
+  function add(node) { msgs.appendChild(node); toBottom(); return node; }
+  function ctaBubble(title, text, where) {
+    var box = el("div", "tw-cta"); box.appendChild(el("b", "", title)); box.appendChild(el("span", "", text));
+    var a = el("a", "", "Create free account"); a.href = REG;
     a.addEventListener("click", function () { beacon("try_cta_click", where); umami("try-landing-cta-" + where); });
     box.appendChild(a); return box;
   }
+  function autosize() { draft.style.height = "auto"; draft.style.height = Math.min(draft.scrollHeight, 96) + "px"; }
 
-  // First view of the widget
   var seen = false;
   function onView() { if (seen) return; seen = true; beacon("try_view", "landing"); }
   if ("IntersectionObserver" in window) {
@@ -44,53 +47,56 @@
     if (typeof d.remaining === "number") { remaining = d.remaining; left.textContent = leftText(); }
   }).catch(function () {});
 
-  [].forEach.call(card.querySelectorAll(".try-ex button"), function (b) {
-    b.addEventListener("click", function () { draft.value = b.getAttribute("data-ex"); draft.focus(); setErr(""); });
-  });
-
   var LABEL = { low: "Low risk", medium: "Could go wrong", high: "High risk" };
   function render(d) {
-    out.innerHTML = "";
-    var read = el("div", "try-read");
-    read.appendChild(el("span", "try-risk " + (d.risk || "medium"), LABEL[d.risk] || ""));
-    read.appendChild(el("p", "", d.read));
-    out.appendChild(read);
-    if ((d.flags || []).length) { var ul = el("ul", "try-flags"); d.flags.forEach(function (f) { ul.appendChild(el("li", "", f)); }); out.appendChild(ul); }
-    out.appendChild(el("h3", "try-h", "Versions you can send"));
-    d.versions.forEach(function (v) {
-      var box = el("div", "try-ver"), head = el("div", "try-ver-head");
-      head.appendChild(el("strong", "", v.label));
-      var cp = el("button", "try-copy", "Copy"); cp.type = "button";
+    var first = null;
+    var read = el("div", "tw-b ai");
+    read.appendChild(el("span", "tw-risk " + (d.risk || "medium"), LABEL[d.risk] || "Read"));
+    read.appendChild(el("p", "t", d.read));
+    if ((d.flags || []).length) { var ul = el("ul"); d.flags.forEach(function (f) { ul.appendChild(el("li", "", f)); }); read.appendChild(ul); }
+    first = add(read);
+    d.versions.forEach(function (v, i) {
+      var b = el("div", "tw-b note" + (i ? " rose" : "")), head = el("div", "tw-head");
+      head.appendChild(el("small", "", v.label));
+      var cp = el("button", "tw-copy", "Copy"); cp.type = "button";
       cp.addEventListener("click", function () { try { navigator.clipboard.writeText(v.text).then(function () { cp.textContent = "Copied"; setTimeout(function () { cp.textContent = "Copy"; }, 1500); }); } catch (e) {} });
-      head.appendChild(cp); box.appendChild(head); box.appendChild(el("p", "", v.text)); out.appendChild(box);
+      head.appendChild(cp); b.appendChild(head); b.appendChild(el("p", "t", v.text)); add(b);
     });
-    var lock = el("div", "try-ver locked"), lh = el("div", "try-ver-head");
-    lh.appendChild(el("strong", "", "Tailored to them")); lh.appendChild(el("span", "try-lock", "Free account"));
-    lock.appendChild(lh); lock.appendChild(el("p", "", "Say who it is for and get a version that fits how they react.")); out.appendChild(lock);
-    out.appendChild(ctaBlock("Want this every time, tailored to your partner?", "Create a free account (no card): more checks, a coach that remembers your story, and a place to rehearse the hard talk.", "after"));
+    var lock = el("div", "tw-b lock"); lock.appendChild(el("small", "", "Tailored to them · free account"));
+    lock.appendChild(el("p", "t", "Say who it is for and get a version that fits how they react.")); add(lock);
+    add(ctaBubble("Want this every time?", "Create a free account (no card): more checks, a coach that remembers your story, and a place to rehearse the hard talk.", "after"));
+    msgs.scrollTop = Math.max(0, first.offsetTop - 10);
   }
 
-  go.addEventListener("click", function () {
+  function submit(text) {
     if (busy) return;
-    var text = draft.value.trim();
+    text = (text || draft.value).trim();
     if (text.length < 3) { setErr("Paste the message you're thinking of sending."); return; }
-    setErr(""); busy = true; go.disabled = true; go.textContent = "Reading it…";
-    umami("try-landing-check");
+    setErr(""); busy = true; go.disabled = true; umami("try-landing-check");
+    add(el("div", "tw-b me", text)); draft.value = ""; autosize();
+    var typing = el("div", "tw-b ai"); var dots = el("span", "tw-dots"); dots.innerHTML = "<i></i><i></i><i></i>"; typing.appendChild(dots); add(typing);
     fetch(API + "/api/public/message-check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ draft: text, anonId: anon() }) })
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
       .then(function (res) {
         var d = res.d || {};
         if (typeof d.remaining === "number") remaining = d.remaining;
         left.textContent = leftText();
+        typing.remove();
         if (!res.ok) {
-          setErr(d.error || "Couldn't check that right now.");
-          if (d.needAccount) { out.innerHTML = ""; out.appendChild(ctaBlock("That's your free checks for today", "Create a free account (no card) to keep checking messages and get replies that fit you.", "gate")); }
+          if (d.needAccount) add(ctaBubble("That's your free checks for today", "Create a free account (no card) to keep checking messages and get replies that fit you.", "gate"));
+          else add(el("div", "tw-b ai", d.error || "Couldn't check that right now. Please try again."));
           return;
         }
         render(d);
-        out.scrollIntoView({ behavior: "smooth", block: "nearest" });
       })
-      .catch(function () { setErr("Couldn't connect. Please try again."); })
-      .then(function () { busy = false; go.disabled = false; go.textContent = "Check my message"; });
+      .catch(function () { typing.remove(); add(el("div", "tw-b ai", "Couldn't connect. Please try again.")); })
+      .then(function () { busy = false; go.disabled = false; });
+  }
+
+  go.addEventListener("click", function () { submit(); });
+  draft.addEventListener("input", autosize);
+  draft.addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } });
+  [].forEach.call(card.querySelectorAll(".tw-ex button"), function (b) {
+    b.addEventListener("click", function () { submit(b.getAttribute("data-ex")); });
   });
 })();
