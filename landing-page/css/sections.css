@@ -1,0 +1,39 @@
+/* Below-the-hero sections: one living warm backdrop, glassy kickers, bigger headings, cards that rise in and lift on hover.
+   Copy, colours and images are unchanged. Hero is not touched. */
+
+/* --- backdrop: sections become transparent over a soft, slowly drifting warm gradient --- */
+body.hx main { position: relative; isolation: isolate; background: linear-gradient(180deg, #fff 0, #fff5e9 6%, #fff1e2 26%, #fff6ee 48%, #ffeee0 70%, #fff6ee 90%, #fff 100%); }
+body.hx main::before, body.hx main::after { content: ""; position: fixed; z-index: -1; pointer-events: none; border-radius: 50%; filter: blur(70px); }
+body.hx main::before { width: 60vw; height: 60vw; left: -22vw; top: 8vh; background: radial-gradient(circle, rgba(245, 143, 171, .20), transparent 68%); animation: sxA 26s ease-in-out infinite alternate; }
+body.hx main::after { width: 52vw; height: 52vw; right: -18vw; bottom: -6vh; background: radial-gradient(circle, rgba(249, 217, 138, .30), transparent 68%); animation: sxB 30s ease-in-out infinite alternate; }
+@keyframes sxA { to { transform: translate(18vw, 22vh) scale(1.15); } }
+@keyframes sxB { to { transform: translate(-16vw, -18vh) scale(1.2); } }
+body.hx main > section:not(.hx-hero), body.hx main > section.try-sec, body.hx main > section.hx-tools, body.hx #approach, body.hx #trust, body.hx #compare, body.hx #tools, body.hx #pricing, body.hx #faq, body.hx #experts, body.hx #testers { background: transparent !important; }
+
+/* --- headings: bigger, kicker as a glass chip --- */
+body.hx main > section:not(.hx-hero) .hx-head h2 { font-size: clamp(40px, 5.4vw, 80px); }
+body.hx main > section:not(.hx-hero) .hx-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 99px; background: rgba(255, 255, 255, .72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 8px 24px -14px rgba(59, 34, 24, .35), inset 0 0 0 1px rgba(59, 34, 24, .06); }
+
+/* --- cards: soft depth, lift on hover --- */
+.ex-card, .ts-card, .apr-pt, .trust-item, .price-card, .faq-item { transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s cubic-bezier(.2, .8, .2, 1); }
+.ex-card, .ts-card, .apr-pt, .trust-item { box-shadow: 0 30px 50px -36px rgba(59, 34, 24, .45); }
+@media (hover: hover) {
+  .ex-card:hover, .ts-card:hover, .apr-pt:hover, .trust-item:hover { transform: translateY(-8px); box-shadow: 0 44px 60px -34px rgba(59, 34, 24, .55); }
+  .price-card:hover { transform: translateY(-6px); }
+  .faq-item:hover { transform: translateX(4px); }
+}
+
+/* --- entrance (desktop, motion allowed; set by sections.js) --- */
+.sx2 .sx { opacity: 0; transform: translateY(46px) scale(.965); }
+.sx2 .sx.in { opacity: 1; transform: none; transition: opacity .9s cubic-bezier(.2, .8, .2, 1) var(--d, 0s), transform .9s cubic-bezier(.2, .8, .2, 1) var(--d, 0s), box-shadow .45s; }
+
+/* --- closing card: hearts drift --- */
+.mo2 .f-fin svg { animation: sxF 12s ease-in-out infinite; }
+.mo2 .f-fin svg:nth-child(2) { animation-duration: 15s; animation-delay: -4s; }
+.mo2 .f-fin svg:nth-child(3) { animation-duration: 18s; animation-delay: -8s; }
+@keyframes sxF { 0%, 100% { translate: 0 0; rotate: 0deg; } 50% { translate: 0 -18px; rotate: 4deg; } }
+
+@media (prefers-reduced-motion: reduce) {
+  body.hx main::before, body.hx main::after, .mo2 .f-fin svg { animation: none; }
+  .sx2 .sx { opacity: 1; transform: none; }
+}
