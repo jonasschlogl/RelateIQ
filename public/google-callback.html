@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Signing you in · RelationshipAI</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=65" />
+  <link rel="stylesheet" href="css/app-theme.css?v=7" />
+</head>
+<body>
+  <div class="auth-page">
+    <a href="https://relationshipaiadvice.com/" class="brand auth-brand"><img class="brand-mark" src="logo-mark.svg" alt="" width="40" height="40" /><b class="brand-text">Relationship<span>AI</span></b></a>
+    <div class="auth-card">
+      <h1 id="cb-title">Signing you in…</h1>
+      <p class="text-muted" id="cb-text">Just a second.</p>
+      <p class="auth-alt" id="cb-back" style="display:none;"><a href="login.html">Back to log in</a></p>
+    </div>
+  </div>
+  <script src="js/shared.js?v=23"></script>
+  <script>
+    (async function () {
+      const fail = (msg) => {
+        document.getElementById("cb-title").textContent = "Couldn't sign you in";
+        document.getElementById("cb-text").textContent = msg || "Please try again.";
+        document.getElementById("cb-back").style.display = "";
+      };
+      const t = new URLSearchParams(window.location.hash.slice(1)).get("t");
+      history.replaceState(null, "", window.location.pathname); // keep the token out of the address bar
+      if (!t) return fail("That sign-in link is missing or already used.");
+      try {
+        const res = await fetch("/api/auth/oauth-handoff", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ token: t }) });
+        const data = await safeJson(res);
+        if (!res.ok) return fail(data.error);
+        setSession(data.token, data.user);
+        try { localStorage.removeItem("relateiq_referral_code"); } catch (e) { /* ignore */ }
+        const plan = consumePendingPlan();
+        if (plan) startCheckout(plan);
+        else window.location.replace(data.isNew ? "welcome.html" : "chat.html");
+      } catch (e) {
+        fail("We couldn't connect. Please try again.");
+      }
+    })();
+  </script>
+</body>
+</html>

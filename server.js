@@ -3059,6 +3059,33 @@ function loginCodeHmac(email, nonce, code) {
 }
 const looksLikeEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 254;
 
+function createPasswordlessUser({ email, name, referralCode }) {
+  const db = loadDb();
+  let referrer = null;
+  if (referralCode) referrer = getUserByReferralCode(String(referralCode).trim().toLowerCase()) || null;
+  return {
+    id: generateId("user"),
+    email,
+    name: String(name || "").trim().slice(0, 80) || email.split("@")[0],
+    plan: "free",
+    createdAt: new Date().toISOString(),
+    usage: { date: todayKey(), count: 0 },
+    attachmentStyle: null,
+    stripeCustomerId: null,
+    stripeSubscriptionId: null,
+    subscriptionStatus: null,
+    referralCode: generateUniqueReferralCode(db),
+    referredBy: referrer ? referrer.id : null,
+    referralRewardGranted: false,
+    emailCheckinReminders: true,
+    emailWeeklyDigest: true,
+    lifetimeAttachmentCount: 0,
+    lifetimePracticeConversations: 0,
+    termsAcceptedAt: new Date().toISOString(),
+    emailVerifiedAt: new Date().toISOString(), // they proved they own the inbox
+  };
+}
+
 app.post("/api/auth/email-code", authRateLimit, async (req, res) => {
   try {
     const email = String((req.body || {}).email || "").trim().toLowerCase();
@@ -3134,30 +3161,7 @@ app.post("/api/auth/email-code/verify", authRateLimit, (req, res) => {
       if (acceptedTerms !== true) {
         return res.status(400).json({ error: "Please accept the Terms of Service and Privacy Policy to create an account." });
       }
-      const db = loadDb();
-      let referrer = null;
-      if (referralCode) referrer = getUserByReferralCode(String(referralCode).trim().toLowerCase()) || null;
-      user = {
-        id: generateId("user"),
-        email,
-        name: String(name || "").trim().slice(0, 80) || email.split("@")[0],
-        plan: "free",
-        createdAt: new Date().toISOString(),
-        usage: { date: todayKey(), count: 0 },
-        attachmentStyle: null,
-        stripeCustomerId: null,
-        stripeSubscriptionId: null,
-        subscriptionStatus: null,
-        referralCode: generateUniqueReferralCode(db),
-        referredBy: referrer ? referrer.id : null,
-        referralRewardGranted: false,
-        emailCheckinReminders: true,
-        emailWeeklyDigest: true,
-        lifetimeAttachmentCount: 0,
-        lifetimePracticeConversations: 0,
-        termsAcceptedAt: new Date().toISOString(),
-        emailVerifiedAt: new Date().toISOString(),
-      };
+      user = createPasswordlessUser({ email, name, referralCode });
       isNew = true;
     } else if (!user.emailVerifiedAt) {
       user.emailVerifiedAt = new Date().toISOString(); // they just proved they own this inbox
@@ -3168,6 +3172,118 @@ app.post("/api/auth/email-code/verify", authRateLimit, (req, res) => {
     res.json({ token: signToken(user), user: publicUser(user), isNew });
   } catch (err) {
     console.error("Email-code verify error:", err);
+    res.status(500).json({ error: "Something went wrong while logging you in. Please try again." });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Continue with Google (OAuth 2.0 authorization-code flow, server side).
+// Only active when GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are set; the
+// buttons stay hidden otherwise (see /api/auth/providers). In the Google Cloud
+// console, add this authorized redirect URI:  <APP_URL>/api/auth/google/callback
+// Flow: /start sets a CSRF cookie and sends the person to Google -> Google
+// sends them back to /callback with a code -> we swap it for the ID token
+// directly with Google over TLS (client secret stays on the server), require a
+// verified email, find or create the account, then redirect to
+// google-callback.html with a short-lived, single-use handoff token in the URL
+// fragment (never sent to servers or logs); that page trades it for a session.
+// ---------------------------------------------------------------------------
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
+const GOOGLE_AUTH_URL = process.env.GOOGLE_AUTH_URL || "https://accounts.google.com/o/oauth2/v2/auth";
+const GOOGLE_TOKEN_URL = process.env.GOOGLE_TOKEN_URL || "https://oauth2.googleapis.com/token";
+const googleEnabled = () => !!(GOOGLE_CLIENT_ID && GOOGLE_CLIENT_SECRET);
+const googleRedirectUri = () => `${APP_URL}/api/auth/google/callback`;
+const usedHandoffs = new Map(); // jti -> exp
+setInterval(() => { const now = Date.now(); for (const [k, v] of usedHandoffs) if (v < now) usedHandoffs.delete(k); }, 10 * 60 * 1000).unref();
+
+function readCookie(req, name) {
+  const m = String(req.headers.cookie || "").split(/;\s*/).find((c) => c.startsWith(name + "="));
+  return m ? decodeURIComponent(m.slice(name.length + 1)) : "";
+}
+const googleCookie = (value, maxAge) =>
+  `g_state=${value}; HttpOnly; SameSite=Lax; Path=/api/auth/google; Max-Age=${maxAge}${APP_URL.startsWith("https://") ? "; Secure" : ""}`;
+
+app.get("/api/auth/providers", (req, res) => {
+  res.json({ google: googleEnabled() });
+});
+
+app.get("/api/auth/google/start", authRateLimit, (req, res) => {
+  if (!googleEnabled()) return res.status(404).send("Google sign-in isn't set up yet.");
+  const nonce = crypto.randomBytes(16).toString("hex");
+  const ref = String(req.query.ref || "").trim().slice(0, 40);
+  const state = jwt.sign({ scope: "google-state", nonce, ref }, JWT_SECRET, { expiresIn: 600 });
+  res.setHeader("Set-Cookie", googleCookie(nonce, 600));
+  const qs = new URLSearchParams({
+    client_id: GOOGLE_CLIENT_ID,
+    redirect_uri: googleRedirectUri(),
+    response_type: "code",
+    scope: "openid email profile",
+    state,
+    prompt: "select_account",
+  });
+  res.redirect(`${GOOGLE_AUTH_URL}?${qs}`);
+});
+
+app.get("/api/auth/google/callback", authRateLimit, async (req, res) => {
+  const fail = (why) => res.redirect(`/login.html?google=${encodeURIComponent(why)}`);
+  try {
+    if (!googleEnabled()) return fail("off");
+    res.setHeader("Set-Cookie", googleCookie("", 0)); // one-time cookie
+    if (req.query.error) return fail("cancelled");
+
+    let st;
+    try { st = jwt.verify(String(req.query.state || ""), JWT_SECRET); } catch { return fail("expired"); }
+    const cookieNonce = readCookie(req, "g_state");
+    if (st.scope !== "google-state" || !cookieNonce || cookieNonce.length !== String(st.nonce).length ||
+        !crypto.timingSafeEqual(Buffer.from(cookieNonce), Buffer.from(String(st.nonce)))) return fail("expired");
+
+    const tokenRes = await fetch(GOOGLE_TOKEN_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        code: String(req.query.code || ""),
+        client_id: GOOGLE_CLIENT_ID,
+        client_secret: GOOGLE_CLIENT_SECRET,
+        redirect_uri: googleRedirectUri(),
+        grant_type: "authorization_code",
+      }),
+    });
+    const tok = await tokenRes.json().catch(() => ({}));
+    if (!tokenRes.ok || !tok.id_token) { console.error("Google token exchange failed:", tokenRes.status, tok.error || ""); return fail("failed"); }
+
+    // The ID token came straight from Google's token endpoint over TLS, so its contents can be trusted; we still check who it is for.
+    const idp = jwt.decode(tok.id_token) || {};
+    const issOk = idp.iss === "https://accounts.google.com" || idp.iss === "accounts.google.com";
+    if (!issOk || idp.aud !== GOOGLE_CLIENT_ID || !idp.exp || idp.exp * 1000 < Date.now()) return fail("failed");
+    const email = String(idp.email || "").trim().toLowerCase();
+    if (!looksLikeEmail(email) || !(idp.email_verified === true || idp.email_verified === "true")) return fail("unverified");
+
+    let user = getUserByEmail(email);
+    let isNew = false;
+    if (!user) { user = createPasswordlessUser({ email, name: idp.name || idp.given_name, referralCode: st.ref }); isNew = true; }
+    else if (!user.emailVerifiedAt) user.emailVerifiedAt = new Date().toISOString();
+    saveUser(user);
+
+    const handoff = jwt.sign({ scope: "oauth-handoff", sub: user.id, isNew, jti: crypto.randomBytes(12).toString("hex") }, JWT_SECRET, { expiresIn: 120 });
+    res.redirect(`/google-callback.html#t=${encodeURIComponent(handoff)}`);
+  } catch (err) {
+    console.error("Google callback error:", err);
+    fail("failed");
+  }
+});
+
+app.post("/api/auth/oauth-handoff", authRateLimit, (req, res) => {
+  try {
+    let p;
+    try { p = jwt.verify(String((req.body || {}).token || ""), JWT_SECRET); } catch { return res.status(400).json({ error: "That sign-in link expired. Please try again." }); }
+    if (p.scope !== "oauth-handoff" || usedHandoffs.has(p.jti)) return res.status(400).json({ error: "That sign-in link expired. Please try again." });
+    usedHandoffs.set(p.jti, Date.now() + 5 * 60 * 1000);
+    const user = getUserById(p.sub);
+    if (!user) return res.status(400).json({ error: "We couldn't find that account. Please try again." });
+    res.json({ token: signToken(user), user: publicUser(user), isNew: !!p.isNew });
+  } catch (err) {
+    console.error("OAuth handoff error:", err);
     res.status(500).json({ error: "Something went wrong while logging you in. Please try again." });
   }
 });

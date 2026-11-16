@@ -75,6 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
       sentTo = email;
     }
 
+    // "Continue with Google": shown only when the server has Google keys configured.
+    const googleBlock = document.getElementById("google-block");
+    const googleBtn = document.getElementById("google-btn");
+    if (googleBlock && googleBtn) {
+      fetch("/api/auth/providers").then((r) => r.json()).then((p) => {
+        if (!p || !p.google) return;
+        let ref = "";
+        try { ref = localStorage.getItem("relateiq_referral_code") || ""; } catch (e) { /* ignore */ }
+        if (ref) googleBtn.href = "/api/auth/google/start?ref=" + encodeURIComponent(ref);
+        googleBlock.style.display = "";
+        googleBlock.dataset.on = "1";
+      }).catch(() => {});
+    }
+    const googleErrors = { cancelled: "Google sign-in was cancelled.", expired: "That sign-in took too long. Please try again.", unverified: "Your Google email isn't verified, so we can't use it. Try the email code instead.", failed: "Google sign-in didn't work. Please try again or use your email.", off: "Google sign-in isn't available right now." };
+    const gErr = new URLSearchParams(window.location.search).get("google");
+    if (gErr) showError(googleErrors[gErr] || googleErrors.failed);
+
     function showCodeStep() {
       emailForm.style.display = "none";
       const pw = document.getElementById("login-form");
@@ -82,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (pw) pw.style.display = "none";
       if (alt) alt.style.display = "none";
       codeForm.style.display = "";
+      if (googleBlock) googleBlock.style.display = "none";
       if (heading) heading.textContent = "Check your email";
       if (intro) intro.style.display = "none";
       codeEmail.textContent = sentTo;
@@ -127,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       challenge = null;
       codeForm.style.display = "none";
       emailForm.style.display = "";
+      if (googleBlock && googleBlock.dataset.on) googleBlock.style.display = "";
       if (heading) heading.textContent = headingText;
       if (intro) { intro.textContent = introText; intro.style.display = ""; }
       const alt = document.querySelector(".auth-alt");
