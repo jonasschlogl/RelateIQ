@@ -1,0 +1,61 @@
+/* Scroll story: the tools, live Message check, experts and early testers share one pinned stage.
+   As you scroll, scenes swap (fade, lift, soft blur). Desktop + motion allowed only (html.f-story is set by js/f.js). */
+html.f-story .f-hstick { justify-content: flex-start; gap: 0; padding: 92px 0 26px; box-sizing: border-box; }
+html.f-story .f-hbar { position: relative; z-index: 4; padding-bottom: 6px; }
+html.f-story .f-htrack { display: block; position: relative; flex: 1; min-height: 0; width: auto; padding: 0; transform: none !important; will-change: auto; }
+
+html.f-story .f-sc { position: absolute; left: 50%; top: 50%; margin: 0; opacity: 0; visibility: hidden; pointer-events: none; filter: blur(8px);
+  transform: translate(-50%, -43%) scale(.94);
+  transition: opacity .5s ease, transform .9s cubic-bezier(.2, .8, .2, 1), filter .5s ease, visibility 0s linear .9s; }
+html.f-story .f-sc.is-past { transform: translate(-50%, -57%) scale(.94); }
+html.f-story .f-sc.is-on { opacity: 1; visibility: visible; pointer-events: auto; filter: none; transform: translate(-50%, -50%) scale(1);
+  transition: opacity .6s ease .12s, transform .95s cubic-bezier(.2, .8, .2, 1) .08s, filter .6s ease .12s, visibility 0s; }
+
+/* live Message check scene */
+html.f-story .f-sc-try, body.hx .tw.f-sc-try { width: min(1000px, 82vw); max-width: none; opacity: 0; }
+body.hx .tw.f-sc-try.is-on { opacity: 1; }
+html.f-story .f-sc-try .tw-ph { animation: none; }
+body.hx main > section#tools .f-sc-try h2 em { color: #3b2218 !important; -webkit-text-fill-color: #3b2218 !important; }
+body.hx main > section#tools .f-sc-try h2 { color: #3b2218 !important; -webkit-text-fill-color: #3b2218 !important; font-size: clamp(34px, 3.8vw, 54px) !important; }
+
+/* experts + testers scenes */
+html.f-story .f-sc-free { width: min(1180px, 92vw); padding: 0; }
+html.f-story .f-sc-free .hx-reveal, html.f-story .f-sc-free .sx, html.f-story .f-sc-free .sw { opacity: 1 !important; transform: none !important; }
+html.f-story .f-sc-free .hx-head { margin: 0; text-align: center; }
+body.hx main > section#tools .f-sc-free .hx-head h2 { font-size: clamp(32px, 3.6vw, 52px) !important; margin-top: 10px; }
+html.f-story .f-sc-free .ex-note, html.f-story .f-sc-free .ts-note { margin-top: 12px; font-size: 14.5px; }
+
+html.f-story .f-sc-free .ex-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: 1fr; height: clamp(300px, calc(100vh - 400px), 430px); margin-top: 26px; gap: 14px; }
+html.f-story .f-sc-free .ex-card, html.f-story .f-sc-free .ex-card.c1 { grid-row: auto; border-radius: 30px; padding: 10px; height: auto; }
+html.f-story .f-sc-free .ex-tag { top: 18px; left: 18px; font-size: 10px; padding: 5px 10px; }
+html.f-story .f-sc-free .ex-id, html.f-story .f-sc-free .ex-card.c1 .ex-id { padding: 12px 12px 14px; border-radius: 22px; }
+html.f-story .f-sc-free .ex-id b, html.f-story .f-sc-free .ex-card.c1 .ex-id b { font-size: clamp(18px, 1.5vw, 22px); }
+html.f-story .f-sc-free .ex-id p, html.f-story .f-sc-free .ex-card.c1 .ex-id p { font-size: 12.5px; margin-top: 4px; }
+
+html.f-story .f-sc-free .ts-grid { columns: auto; display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); grid-auto-columns: 330px; gap: 14px; width: max-content; margin: 26px 0 0; padding: 0 0 4px;
+  animation: stPan 46s ease-in-out infinite alternate; }
+html.f-story .f-sc-free:hover .ts-grid { animation-play-state: paused; }
+html.f-story .f-sc-free .ts-card { margin: 0; padding: 18px 20px 16px; border-radius: 26px; }
+html.f-story .f-sc-free .ts-rate { margin-bottom: 8px; }
+html.f-story .f-sc-free .ts-card blockquote { font-size: 14.5px; line-height: 1.4; }
+html.f-story .f-sc-free .ts-by { margin-top: 12px; }
+html.f-story .f-sc-free .ts-by img { width: 36px; height: 36px; }
+html.f-story .f-sc-free .ts-more { display: none; }
+html.f-story .f-sc-free.ts-sec { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+@keyframes stPan { from { transform: translateX(0); } to { transform: translateX(calc(100% * -1 + min(1180px, 92vw))); } }
+
+/* inner items rise in when their scene becomes active */
+html.f-story .f-sc.is-on .ex-card { animation: stRise .8s cubic-bezier(.2, .8, .2, 1) both; }
+html.f-story .f-sc.is-on .ex-card:nth-child(2) { animation-delay: .1s; } html.f-story .f-sc.is-on .ex-card:nth-child(3) { animation-delay: .2s; }
+html.f-story .f-sc.is-on .ex-card:nth-child(4) { animation-delay: .3s; } html.f-story .f-sc.is-on .ex-card:nth-child(5) { animation-delay: .4s; }
+html.f-story .f-sc.is-on .hx-head, html.f-story .f-sc.is-on .f-hc-t { animation: stRise .8s cubic-bezier(.2, .8, .2, 1) .05s both; }
+@keyframes stRise { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.f-story .f-sc, html.f-story .f-sc.is-on { transition: none; filter: none; }
+  html.f-story .f-sc-free .ts-grid, html.f-story .f-sc.is-on .ex-card, html.f-story .f-sc.is-on .hx-head, html.f-story .f-sc.is-on .f-hc-t { animation: none; }
+}
+
+/* the original stacked sections are emptied into the stage; hide the empty shells */
+html.f-story #try, html.f-story #experts, html.f-story #testers { display: none !important; }
+html.f-story .mt-tabs button { padding: 9px 13px; font-size: 12.5px; }

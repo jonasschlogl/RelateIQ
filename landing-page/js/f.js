@@ -38,26 +38,65 @@
   }
 })();
 
-/* horizontal pin for the three tools (desktop, motion allowed). Falls back to the stacked deck otherwise.
-   Reaching the end of the pin "opens" all three cards for the deck's unlock gate. */
+/* Scroll story (desktop, motion allowed): one pinned stage; as you scroll the scenes swap in and out
+   (the three tools, the live Message check, experts, early testers). Mobile / reduced motion keep the stacked deck and sections.
+   Reaching the last scene "opens" all three tool pages for the deck's unlock gate. */
 (function () {
   var hp = document.querySelector('[data-hp]'), deck = document.getElementById('deck'); if (!hp || !deck) return;
-  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, tr = hp.querySelector('.f-htrack'), bar = hp.querySelector('.f-hbar i'), cards = [].slice.call(hp.querySelectorAll('.f-hc')), opened = false, root = document.documentElement;
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, tr = hp.querySelector('.f-htrack'), bar = hp.querySelector('.f-hbar i'),
+      tools = [].slice.call(hp.querySelectorAll('.f-hc')), scenes = [], moved = [], opened = false, root = document.documentElement, cur = -1, labels = [], mounted = false;
   function on() { return !rm && innerWidth > 900; }
+  function park(node) { moved.push({ node: node, parent: node.parentNode, next: node.nextSibling }); }
+  function scene(node, cls, label) { node.classList.add('f-sc', cls); node.setAttribute('data-label', label); tr.appendChild(node); scenes.push(node); }
+  function mount() {
+    if (mounted) return; mounted = true; scenes = []; moved = [];
+    tools.forEach(function (c, i) { c.classList.add('f-sc'); var t = c.querySelector('.f-tag b'); c.setAttribute('data-label', ['Practice', 'Coach', 'Check'][i] || (t ? t.textContent : 'Tool')); scenes.push(c); });
+    var tw = document.getElementById('try-card'), ex = document.querySelector('#experts > .hx-wrap'), ts = document.querySelector('#testers > .hx-wrap');
+    if (tw) { park(tw); scene(tw, 'f-sc-try', 'Try it'); }
+    if (ex) { park(ex); ex.classList.add('ex-sec'); scene(ex, 'f-sc-free', 'Experts'); }
+    if (ts) { park(ts); ts.classList.add('ts-sec'); scene(ts, 'f-sc-free', 'Testers'); }
+    root.classList.add('f-story'); cur = -1; labels = scenes.map(function (s) { return s.getAttribute('data-label'); });
+    document.dispatchEvent(new CustomEvent('fstory:init', { detail: { labels: labels } }));
+  }
+  function unmount() {
+    if (!mounted) return; mounted = false;
+    moved.slice().reverse().forEach(function (m) { m.node.style.zoom = ''; m.node.classList.remove('f-sc', 'f-sc-try', 'f-sc-free', 'is-on', 'is-past', 'ex-sec', 'ts-sec'); m.node.removeAttribute('data-label'); m.parent.insertBefore(m.node, m.next); });
+    tools.forEach(function (c) { c.classList.remove('f-sc', 'is-on', 'is-past'); c.removeAttribute('data-label'); });
+    moved = []; scenes = []; tools.forEach(function (c) { c.style.zoom = ''; }); root.classList.remove('f-story'); document.dispatchEvent(new CustomEvent('fstory:off'));
+  }
+  function fit() {
+    if (!mounted) return;
+    var avail = tr.clientHeight - 12;
+    scenes.forEach(function (s) { s.style.zoom = ''; var h = s.offsetHeight; if (h > avail && avail > 200) s.style.zoom = (avail / h).toFixed(3); });
+  }
+  function per() { return innerHeight * .85; }
   function size() {
     var yes = on(); root.classList.toggle('f-pinon', yes);
-    if (!yes) { hp.style.height = ''; return; }
-    hp.style.height = (tr.scrollWidth - innerWidth + innerHeight + 160) + 'px';
+    if (!yes) { unmount(); hp.style.height = ''; return; }
+    mount(); hp.style.height = Math.round(innerHeight + (scenes.length - 1) * per()) + 'px'; fit();
   }
   function open() { if (opened) return; opened = true; for (var i = 0; i < 2; i++) { var f = deck.querySelector('.page[data-s="front"] .pg-next'); if (f) f.click(); } }
+  function set(i) {
+    if (i === cur) return; cur = i;
+    scenes.forEach(function (s, k) {
+      s.classList.toggle('is-on', k === i); s.classList.toggle('is-past', k < i);
+      if (k === i) { s.removeAttribute('inert'); s.removeAttribute('aria-hidden'); } else { s.setAttribute('inert', ''); s.setAttribute('aria-hidden', 'true'); }
+      if (k === i && s.classList.contains('f-hc')) s.classList.add('live');
+    });
+    document.dispatchEvent(new CustomEvent('fstory:scene', { detail: { i: i, n: scenes.length } }));
+  }
   function mv() {
-    if (!on()) return;
-    var r = hp.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (hp.offsetHeight - innerHeight)));
-    tr.style.transform = 'translateX(' + (-p * (tr.scrollWidth - innerWidth)).toFixed(1) + 'px)';
+    if (!on() || !mounted) return;
+    var r = hp.getBoundingClientRect(), span = hp.offsetHeight - innerHeight, p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
     if (bar) bar.style.transform = 'scaleX(' + p.toFixed(3) + ')';
-    cards.forEach(function (c) { var cr = c.getBoundingClientRect(); if (cr.left < innerWidth * .62 && cr.right > innerWidth * .3 && r.top < innerHeight * .5) c.classList.add('live'); });
+    set(Math.min(scenes.length - 1, Math.round(p * (scenes.length - 1) + (.0001))));
     if (p > .985) open();
   }
+  window.fStoryGo = function (i) {
+    if (!mounted || i < 0 || i >= scenes.length) return;
+    var span = hp.offsetHeight - innerHeight, y = hp.getBoundingClientRect().top + scrollY + (scenes.length > 1 ? i / (scenes.length - 1) : 0) * span;
+    scrollTo({ top: y, behavior: 'smooth' });
+  };
   addEventListener('resize', function () { size(); mv(); });
   addEventListener('scroll', mv, { passive: true });
   size(); mv(); setTimeout(function () { size(); mv(); }, 600); addEventListener('load', function () { size(); mv(); });
