@@ -15,6 +15,24 @@
     });
   }
 
+  /* 1b. hero phone: a looping chat demo */
+  var ph = document.querySelector(".hh-phone");
+  if (ph) {
+    var bub = [].slice.call(ph.querySelectorAll(".hh-b")), typ = ph.querySelector(".hh-typing"), timers = [];
+    var at = function (ms, fn) { timers.push(setTimeout(fn, ms)); };
+    function run() {
+      bub.forEach(function (b) { b.classList.remove("show"); }); typ.classList.remove("show");
+      at(900, function () { bub[0].classList.add("show"); });
+      at(1900, function () { typ.classList.add("show"); });
+      at(3100, function () { typ.classList.remove("show"); bub[1].classList.add("show"); });
+      at(4300, function () { typ.classList.add("show"); });
+      at(5600, function () { typ.classList.remove("show"); bub[2].classList.add("show"); });
+      at(11000, function () { bub.forEach(function (b) { b.classList.remove("show"); }); });
+      at(12000, run);
+    }
+    run();
+  }
+
   /* 2. section headings: words fill in with scroll */
   var heads = [].slice.call(document.querySelectorAll("main > section:not(.hx-hero):not(.try-sec) .hx-head h2")), items = [];
   function split(node, out) {
