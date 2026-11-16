@@ -190,8 +190,7 @@ function renderPlanBreakdown(container, planCountsIn) {
   const planCounts = planCountsIn || {};
   const entries = [
     { key: "free", label: "Free", color: "var(--text-faint)" },
-    { key: "pro", label: "Pro (old plan)", color: "var(--accent-1)" },
-    { key: "premium", label: "Pro", color: "var(--accent-2)" },
+    { key: "premium", label: "Pro", color: "var(--accent-1)" },
   ];
   const max = Math.max(1, ...entries.map((e) => planCounts[e.key] || 0));
   container.innerHTML = entries

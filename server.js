@@ -3928,7 +3928,7 @@ app.post("/api/billing/checkout", authMiddleware, async (req, res) => {
 
     if (user.stripeSubscriptionId && user.subscriptionStatus === "active") {
       return res.status(400).json({
-        error: "You already have an active subscription. Manage or change your plan from your account page.",
+        error: "You already have an active subscription. Manage your plan from your account page.",
         usePortal: true,
       });
     }
@@ -4070,7 +4070,7 @@ app.post("/api/billing/portal", authMiddleware, async (req, res) => {
 // ---------------------------------------------------------------------------
 // Message check: paste a text before you send it and see how it may land,
 // with rewrites. Plans: Free 3 checks in total (a taste), Pro 10 a day with
-// 2 rewrites, Premium effectively unlimited with 3 rewrites on the advanced
+// 2 rewrites (legacy), the single paid plan 40 a day with 3 rewrites on the advanced
 // model, tailored to the person (their profile) and what has worked before.
 // Only a counter marker is stored (doc kind "mcheck"), never the text itself.
 // ---------------------------------------------------------------------------
@@ -4227,7 +4227,7 @@ app.post("/api/sos", authMiddleware, async (req, res) => {
     const usage = sosUsage(user);
     if (usage.used >= usage.limit) {
       return res.status(403).json({
-        error: `You've used your ${usage.limit} messages for this month. They reset on the 1st.`,
+        error: usage.period === "month" ? `You've used your ${usage.limit} messages for this month. They reset on the 1st.` : `You've used today's ${usage.limit} messages. They reset tomorrow.`,
         sosLimit: true,
         upgradeRequired: true,
         usage,

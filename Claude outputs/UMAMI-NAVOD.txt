@@ -36,11 +36,11 @@ REALTIME
   cta-mode-practice      klik na "Try Partner Practice"
   plan-free              klik na tlacidlo v cenniku, plan Free ("Start free")
   plan-pro               klik na tlacidlo v cenniku, plan Pro
-  plan-premium           klik na tlacidlo v cenniku, plan Premium
+  (plan-premium uz neexistuje, je len jeden platny plan Pro)
   click-instagram-footer klik na Instagram v pate stranky
   cta-blog-article       klik na CTA v clanku blogu
 
-  Pri plan-pro a plan-premium ma udalost aj vlastnost "billing":
+  Pri plan-pro ma udalost aj vlastnost "billing":
     yearly  = clovek mal zvolenu rocnu cenu
     monthly = clovek mal zvolenu mesacnu cenu
   (Stranka sa otvara na Yearly, takze na zaciatku bude yearly prevazovat.
@@ -71,9 +71,8 @@ zmes viacerych miest.
    Pod 3 % = problem v texte alebo vzhlade stranky.
 3) Ktore tlacidlo vyhrava: hero vs. cennik vs. banner. Ukaze ti, co ludi
    pritahuje (ci hned vyzva, alebo az cena).
-4) Cennik: plan-pro vs. plan-premium vs. plan-free. Ak vacsina klika na Free,
-   ludia chcu skusit, nie platit. Ak je Premium vyssie nez ocakavas, mozes
-   znizit cenu Pro a viac zdoraznit "Together".
+4) Cennik: plan-pro vs. plan-free. Ak vacsina klika na Free, ludia chcu
+   skusit, nie platit. Pro ma 7-dnovy trial, sleduj aj vyzvy "try-cta-click" v appke (admin, karta Journey).
 5) Mobil vs. desktop v Devices: z Instagramu pride temer vsetko z mobilu,
    takze skontroluj stranku hlavne na mobile.
 

@@ -32,7 +32,7 @@ function usageText() {
   if (!u) return "";
   const left = Math.max(0, u.limit - u.used);
   if (mcState.plan === "free") return `${left} of ${u.limit} free checks left`;
-  if (mcState.plan === "pro") return `${left} of ${u.limit} checks left today`;
+  return `${left} of ${u.limit} checks left today`;
   return "";
 }
 
