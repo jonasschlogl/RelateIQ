@@ -73,6 +73,7 @@
     text = (text || draft.value).trim();
     if (text.length < 3) { setErr("Paste the message you're thinking of sending."); return; }
     setErr(""); busy = true; go.disabled = true; umami("try-landing-check");
+    card.classList.add("used");
     add(el("div", "tw-b me", text)); draft.value = ""; autosize();
     var typing = el("div", "tw-b ai"); var dots = el("span", "tw-dots"); dots.innerHTML = "<i></i><i></i><i></i>"; typing.appendChild(dots); add(typing);
     fetch(API + "/api/public/message-check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ draft: text, anonId: anon() }) })
