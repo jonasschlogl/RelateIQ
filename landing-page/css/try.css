@@ -1,9 +1,6 @@
 /* Free Message check on the landing page: a feature-card look with a phone chat inside */
 .try-sec { padding-block: clamp(56px, 8vw, 110px) clamp(20px, 3vw, 40px); }
 body.hx .tw { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: center; background: #f58fab; color: #3b2218; border-radius: 44px; padding: 52px 56px; max-width: 1080px; margin: 0 auto; isolation: isolate; }
-.tw-deco { position: absolute; z-index: -1; pointer-events: none; height: auto; }
-.tw-deco.d1 { width: 230px; right: 24%; top: -62px; transform: rotate(14deg); opacity: .95; }
-.tw-deco.d2 { width: 300px; left: -90px; bottom: -110px; transform: rotate(-12deg); opacity: .55; }
 .tw-text { position: relative; }
 body.hx .tw .f-tag { display: inline-block; color: #3b2218; }
 body.hx .tw h2 { font-family: "Fraunces", Georgia, serif; font-size: clamp(36px, 4.6vw, 62px); line-height: 1; letter-spacing: -.03em; font-weight: 520; color: #3b2218; margin: 16px 0 16px; max-width: none; }
@@ -60,8 +57,7 @@ body.hx .tw p { color: #3b2218; opacity: .88; font-size: 17.5px; line-height: 1.
 @media (max-width: 900px) {
   body.hx .tw { grid-template-columns: 1fr; padding: 34px 22px 40px; border-radius: 34px; gap: 30px; }
   body.hx .tw h2 { max-width: none; }
-  .tw-deco.d1 { right: -34px; top: -46px; width: 150px; opacity: .9; } .tw-deco.d2 { left: -80px; bottom: -80px; }
-  .tw-ph { width: min(330px, 100%); transform: none; }
+    .tw-ph { width: min(330px, 100%); transform: none; }
   .tw-scr { height: 520px; }
 }
 @media (prefers-reduced-motion: reduce) { .tw-b, .tw-cta, .tw-dots i { animation: none; } .tw-msgs { scroll-behavior: auto; } }
