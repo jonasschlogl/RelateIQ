@@ -1,21 +1,10 @@
-/* Homepage motion: hero word reveal, scroll-filled headings, widget entrance, tool tabs. Pure enhancement. */
+/* Homepage motion: scroll-filled headings, widget entrance, tool tabs. Pure enhancement. */
 (function () {
   var rm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (rm) return;
   var root = document.documentElement; root.classList.add("mo");
 
-  /* 1. hero headline: first line, word by word */
-  var l1 = document.querySelector(".hx-hero h1 .hx-l1");
-  if (l1 && l1.children.length === 0) {
-    var words = l1.textContent.trim().split(/\s+/); l1.setAttribute("aria-label", l1.textContent.trim()); l1.textContent = "";
-    words.forEach(function (w, i) {
-      var o = document.createElement("span"); o.className = "mwo"; o.setAttribute("aria-hidden", "true");
-      var n = document.createElement("span"); n.className = "mwi"; n.style.setProperty("--i", i); n.textContent = w;
-      o.appendChild(n); l1.appendChild(o); if (i < words.length - 1) l1.appendChild(document.createTextNode(" "));
-    });
-  }
-
-  /* 2. section headings: words fill in with scroll */
+  /* 1. section headings: words fill in with scroll */
   var heads = [].slice.call(document.querySelectorAll("main > section:not(.hx-hero):not(.try-sec) .hx-head h2")), items = [];
   function split(node, out) {
     [].slice.call(node.childNodes).forEach(function (c) {
