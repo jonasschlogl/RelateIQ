@@ -40,35 +40,24 @@
 })();
 
 /* horizontal pin for the three tools (desktop, motion allowed). Falls back to the stacked deck otherwise.
-   Each card first "plays": its chat bubbles appear one by one as you scroll while the track stands still;
-   only when the last bubble is in does the track slide on to the next card. Reaching the end "opens" all three cards for the deck's unlock gate. */
+   Reaching the end of the pin "opens" all three cards for the deck's unlock gate. */
 (function () {
   var hp = document.querySelector('[data-hp]'), deck = document.getElementById('deck'); if (!hp || !deck) return;
-  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, tr = hp.querySelector('.f-htrack'), bar = hp.querySelector('.f-hbar i'), cards = [].slice.call(hp.querySelectorAll('.f-hc')), opened = false, root = document.documentElement,
-      bubbles = cards.map(function (c) { return [].slice.call(c.querySelectorAll('.f-b')); }), T = [.04, .27, .5, .73], W = .2, D = 0, S = 0, X = 0;
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, tr = hp.querySelector('.f-htrack'), bar = hp.querySelector('.f-hbar i'), cards = [].slice.call(hp.querySelectorAll('.f-hc')), opened = false, root = document.documentElement;
   function on() { return !rm && innerWidth > 900; }
-  var sm = function (x) { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
-  function clear() { bubbles.forEach(function (bs) { bs.forEach(function (b) { b.style.opacity = ""; b.style.transform = ""; }); }); }
   function size() {
     var yes = on(); root.classList.toggle('f-pinon', yes);
-    if (!yes) { hp.style.height = ''; clear(); cards.forEach(function (c) { c.classList.add('live'); }); return; }
-    cards.forEach(function (c) { c.classList.remove('live'); });
-    X = tr.scrollWidth - innerWidth; D = Math.max(420, Math.round(innerHeight * .8));
-    S = X + D * cards.length + 160; hp.style.height = (S + innerHeight) + 'px';
+    if (!yes) { hp.style.height = ''; return; }
+    hp.style.height = (tr.scrollWidth - innerWidth + innerHeight + 160) + 'px';
   }
   function open() { if (opened) return; opened = true; for (var i = 0; i < 2; i++) { var f = deck.querySelector('.page[data-s="front"] .pg-next'); if (f) f.click(); } }
   function mv() {
-    if (!on() || !S) return;
-    var r = hp.getBoundingClientRect(), y = Math.min(S, Math.max(0, -r.top)), n = cards.length, m = X / (n - 1), x = 0, rest = y;
-    /* timeline: [card 0 plays][slide][card 1 plays][slide][card 2 plays] */
-    for (var i = 0; i < n; i++) {
-      var q = Math.min(1, Math.max(0, rest / D)); rest -= D;
-      bubbles[i].forEach(function (b, k) { var a = sm((q - T[Math.min(k, 3)]) / W); b.style.opacity = a.toFixed(3); b.style.transform = "translateY(" + ((1 - a) * 14).toFixed(1) + "px) scale(" + (.96 + .04 * a).toFixed(3) + ")"; });
-      if (i < n - 1) { var s = Math.min(1, Math.max(0, rest / m)); x += s * m; rest -= m; }
-    }
-    tr.style.transform = 'translateX(' + (-x).toFixed(1) + 'px)';
-    if (bar) bar.style.transform = 'scaleX(' + Math.min(1, y / (S - 160)).toFixed(3) + ')';
-    if (y >= S - 60) open();
+    if (!on()) return;
+    var r = hp.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (hp.offsetHeight - innerHeight)));
+    tr.style.transform = 'translateX(' + (-p * (tr.scrollWidth - innerWidth)).toFixed(1) + 'px)';
+    if (bar) bar.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+    cards.forEach(function (c) { var cr = c.getBoundingClientRect(); if (cr.left < innerWidth * .62 && cr.right > innerWidth * .3 && r.top < innerHeight * .5) c.classList.add('live'); });
+    if (p > .985) open();
   }
   addEventListener('resize', function () { size(); mv(); });
   addEventListener('scroll', mv, { passive: true });
