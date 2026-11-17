@@ -3,8 +3,6 @@ title: "Situationship: what it is, 8 signs you're in one and how to get clarity"
 date: 2026-11-17
 description: More than friends, not quite a relationship? What a situationship is, 8 signs you're in one, why so many people end up there and how to get clarity without drama.
 tags: situationship, undefined relationship
-draft: true
-topics: communication, overthinking
 ---
 You see each other most weekends. You text every day. You've met a few of their friends. But if someone asked "are you two together?", neither of you would know what to say.
 

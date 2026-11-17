@@ -3,8 +3,6 @@ title: "How to rebuild trust after cheating: a realistic step-by-step guide for 
 date: 2026-11-17
 description: Can a relationship recover after cheating? A realistic, step-by-step guide to rebuild trust after cheating, what each partner needs to do and how long it takes.
 tags: rebuild trust after cheating, infidelity
-draft: true
-topics: repair, conflict
 ---
 The moment you found out, or the moment you confessed, everything changed. Now you're both somewhere in the aftermath: hurt, angry, guilty, confused, and maybe still hoping this can be saved.
 
