@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="css/motion.css?v=8" />
   <link rel="stylesheet" href="css/sections.css?v=2" />
 <link rel="stylesheet" href="css/why.css?v=3" />
-<link rel="stylesheet" href="css/proof.css?v=15" />
+<link rel="stylesheet" href="css/proof.css?v=16" />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RelationshipAI","url":"https://relationshipaiadvice.com/","logo":"https://relationshipaiadvice.com/icon-512.png","sameAs":["https://www.instagram.com/relationshipai_/"]},{"@type":"WebSite","name":"RelationshipAI","url":"https://relationshipaiadvice.com/"}]}</script>
   <meta name="theme-color" content="#3b2218" />
@@ -90,7 +90,7 @@
   <script defer src="js/try-fx.js?v=3"></script>
   <script defer src="js/motion.js?v=6"></script>
   <script defer src="js/sections.js?v=3"></script>
-  <script defer src="js/proof.js?v=8"></script>
+  <script defer src="js/proof.js?v=9"></script>
 
     <section class="hx-sec try-sec" id="try" aria-label="Try Message check">
   <div class="hx-wrap">
@@ -168,8 +168,8 @@ gate.innerHTML='';
 setTimeout(function(){B.classList.remove('unveil')},2300);
 ['wheel','touchstart','keydown'].forEach(function(e){addEventListener(e,function(){clearTimeout(auto)},{once:true,passive:true})});
 auto=setTimeout(leave,calm?0:1400)}
-function leave(){if(went)return;went=true;var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,t=document.getElementById('manifesto')||document.getElementById('approach');
-var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:150):window.scrollY;
+function leave(){if(went)return;went=true;var B=document.body,mob=window.matchMedia('(max-width:760px)').matches,calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,t=document.getElementById('proof')||document.getElementById('manifesto');
+var y=t?t.getBoundingClientRect().top+window.scrollY-(mob?96:0):window.scrollY;
 var from=window.scrollY,d=Math.min(1500,Math.max(900,Math.abs(y-from)*.9)),t0=null,stop=false;function halt(){stop=true}['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,halt,{once:true,passive:true})});
 function tick(n){if(stop)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/d),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;window.scrollTo({top:from+(y-from)*e,behavior:'instant'});if(p<1)requestAnimationFrame(tick)}
 if(calm)window.scrollTo({top:y,behavior:'instant'});else requestAnimationFrame(function(){requestAnimationFrame(tick)});
@@ -187,12 +187,12 @@ D.forEach(function(d){d.addEventListener('click',function(){var n=+d.dataset.go;
 function hash(){var m=location.hash&&document.querySelector('.page'+location.hash);if(m)go(+m.dataset.i)}
 addEventListener('hashchange',hash);addEventListener('resize',lay);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);go(0);hash();})();</script>
 
-        <section class="f-st" id="manifesto"><div class="hx-wrap"><p class="f-lead" data-lit>Most apps want your attention. We want your next talk to go better. One job: clearer thinking and better words.</p></div></section>
 
-    <section class="px" id="proof" aria-label="Experts and early testers">
+    <section class="px" id="proof" aria-label="Our promise, experts and early testers">
       <div class="px-stick">
         <div class="px-panels">
-    <div class="hx-sec ex-sec px-panel is-on" id="experts" aria-label="Experts who inspired RelationshipAI">
+    <div class="f-st px-panel is-on" id="manifesto" aria-label="Our promise"><div class="hx-wrap"><p class="f-lead" data-lit>Most apps want your attention. We want your next talk to go better. One job: clearer thinking and better words.</p></div></div>
+    <div class="hx-sec ex-sec px-panel" id="experts" aria-label="Experts who inspired RelationshipAI">
       <div class="hx-wrap">
         <div class="hx-head hx-reveal"><span class="hx-kicker">Inspired by</span><h2>The experts behind <em>the ideas.</em></h2></div>
         <p class="ex-note">Decades of research on couples shaped how we think about hard conversations. These are some of the people whose work inspired RelationshipAI. They are not affiliated with us and do not endorse the app.</p>
@@ -214,7 +214,7 @@ addEventListener('hashchange',hash);addEventListener('resize',lay);if(document.f
       </div>
     </div>
         </div>
-        <div class="why-foot px-foot"><div class="why-tabs" role="tablist" aria-label="Experts and early testers"><i class="why-ind" aria-hidden="true"></i><button type="button" role="tab" aria-controls="experts" aria-selected="true">Experts</button><button type="button" role="tab" aria-controls="testers" aria-selected="false">Early testers</button></div></div>
+        <div class="why-foot px-foot"><div class="why-tabs" role="tablist" aria-label="Our promise, experts and early testers"><i class="why-ind" aria-hidden="true"></i><button type="button" role="tab" aria-controls="manifesto" aria-selected="true">Our promise</button><button type="button" role="tab" aria-controls="experts" aria-selected="false">Experts</button><button type="button" role="tab" aria-controls="testers" aria-selected="false">Early testers</button></div></div>
       </div>
     </section>
     <section class="hx-sec" id="compare">
@@ -504,7 +504,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script><script>(function(){function fit(){var d=document.documentElement,w=window.innerWidth;if(d.scrollWidth>w+1){var m=document.querySelector('meta[name=viewport]');if(m){m.setAttribute('content','width='+w+', initial-scale=1');setTimeout(function(){m.setAttribute('content','width=device-width, initial-scale=1.0')},60)}window.scrollTo(0,window.scrollY)}}window.addEventListener('load',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300)});setTimeout(fit,1200)})();</script><script>(function(){var pb=document.querySelector('body > .page-bg'),f=document.querySelector('body > footer.hx-foot');if(!pb||!f)return;function fit(){pb.style.bottom='auto';pb.style.height=Math.max(0,f.getBoundingClientRect().top+window.scrollY)+'px'}fit();addEventListener('load',fit);addEventListener('resize',fit);if(window.ResizeObserver)new ResizeObserver(fit).observe(document.body);setTimeout(fit,600);setTimeout(fit,2000)})();(function(){[].forEach.call(document.querySelectorAll('.fm-wrap,.about-wrap'),function(w){var pb=w.querySelector(':scope > .page-bg'),site=w.querySelector('.fm-site');if(!pb||!site)return;function fit(){var h=site.getBoundingClientRect().top-w.getBoundingClientRect().top;if(h>0){pb.style.bottom='auto';pb.style.height=h+'px'}}if(window.ResizeObserver)new ResizeObserver(fit).observe(w);fit()})})();</script>
 
   <a href="https://app.relationshipaiadvice.com/register.html" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Try it free</a>
-  <script src="js/home.js?v=8"></script><script defer src="js/hero-quotes.js?v=1"></script><script defer src="js/testers.js?v=1"></script><script defer src="js/carousel-dots.js?v=3"></script><script defer src="js/mobile-motion.js?v=7"></script><script defer src="js/mobile-acc.js?v=1"></script><script defer src="js/alive.js?v=4"></script><script defer src="js/f.js?v=10"></script>
+  <script src="js/home.js?v=8"></script><script defer src="js/hero-quotes.js?v=1"></script><script defer src="js/testers.js?v=1"></script><script defer src="js/carousel-dots.js?v=3"></script><script defer src="js/mobile-motion.js?v=7"></script><script defer src="js/mobile-acc.js?v=1"></script><script defer src="js/alive.js?v=4"></script><script defer src="js/f.js?v=11"></script>
 <script defer src="js/start.js?v=7"></script>
 </body>
 </html>

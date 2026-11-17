@@ -101,3 +101,8 @@ html.px-pin body.hx #approach .apr-by .mb-chips b.apr-more { border: 1px dashed 
 html.px-pin body.hx #approach .apr-note b { color: #3b2218 !important; }
 html.px-pin body.hx #approach .apr-note a { color: #c93f6b !important; }
 html.px-pin body.hx #approach .apr-nic { background: #f58fab !important; color: #3b2218 !important; }
+
+/* the statement is the first panel of the stage; its words light up with scroll (js/proof.js) */
+html.px-pin #manifesto { padding: 0 !important; margin: 0 !important; }
+html.px-pin #manifesto > .hx-wrap { display: flex !important; align-items: center; height: 100%; max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+html.px-pin #manifesto .f-lead { margin: 0; font-size: clamp(36px, min(5.6vw, 10.5vh), 92px); max-width: 18ch; }

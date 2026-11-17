@@ -10,6 +10,7 @@
   function frame() {
     tick = false; var H = innerHeight;
     lit.forEach(function (el) {
+      if (document.documentElement.classList.contains('px-pin') && el.closest('.px-panel')) return;
       var r = el.getBoundingClientRect(), p = clamp((H * .85 - r.top) / (H * .6 + r.height * .4)), ws = el._lw || (el._lw = $$('.lw', el));
       if (!rm && (r.bottom < -H || r.top > H * 2)) return;
       ws.forEach(function (w, i) { w.classList.toggle('on', rm || i / ws.length < p); });
