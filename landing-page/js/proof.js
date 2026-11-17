@@ -56,8 +56,15 @@
     var r = sec.getBoundingClientRect(), span = sec.offsetHeight - innerHeight, p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
     setPanel(p < R[0][1] + .015 ? 0 : p < R[1][1] + .015 ? 1 : 2); frame(p);
   }
+  var apr = document.getElementById("approach"), mani = document.getElementById("manifesto"), pnl = sec.querySelector(".px-panels");
+  /* desktop: manifesto above the stage and "Our approach" as its last panel. Below 900px / reduced motion everything returns to the original page order: experts, early testers, manifesto, our approach. */
+  function place(yes) {
+    if (!apr || !pnl) return;
+    if (yes) { if (apr.parentNode !== pnl) pnl.appendChild(apr); if (mani && mani.nextElementSibling !== sec) sec.parentNode.insertBefore(mani, sec); }
+    else { if (mani && sec.nextElementSibling !== mani) sec.parentNode.insertBefore(mani, sec.nextSibling); if (apr.previousElementSibling !== mani || apr.parentNode === pnl) (mani || sec).parentNode.insertBefore(apr, (mani || sec).nextSibling); }
+  }
   function layout() {
-    var yes = on(); pinned = yes; root.classList.toggle("px-pin", yes);
+    var yes = on(); place(yes); panels = [].slice.call(sec.querySelectorAll(".px-panel")); pinned = yes; root.classList.toggle("px-pin", yes);
     sec.style.height = yes ? Math.round(innerHeight * TOTAL) + "px" : "";
     geo = null; if (yes) mountCols(); else unmountCols();
     if (!yes) { clearInline(); cur = -1; panels.forEach(function (p) { p.removeAttribute("inert"); p.removeAttribute("aria-hidden"); p.classList.remove("is-past"); p.classList.add("is-on"); }); tabs.forEach(function (b, k) { b.setAttribute("aria-selected", k === 0 ? "true" : "false"); }); return; }
