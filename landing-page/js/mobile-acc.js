@@ -8,7 +8,7 @@
     pricing: '<path d="M3.5 12.2V5.5a2 2 0 0 1 2-2h6.7l8.3 8.3a2 2 0 0 1 0 2.8l-6.2 6.2a2 2 0 0 1-2.8 0z"/><circle cx="8" cy="8" r="1.4"/>',
     faq: '<circle cx="12" cy="12" r="9"/><path d="M9.4 9.6a2.7 2.7 0 1 1 3.9 2.4c-.9.5-1.3 1-1.3 2"/><path d="M12 17.2v.1"/>'
   };
-  var ORDER = ['approach', 'compare', 'trust', 'pricing', 'faq'];
+  var ORDER = ['compare', 'trust', 'pricing', 'faq'];
   function decorate() {
     [].forEach.call(document.querySelectorAll('section.acc > .acc-btn'), function (b) {
       if (b.getAttribute('data-n')) return;
