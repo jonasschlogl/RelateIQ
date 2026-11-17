@@ -38,3 +38,36 @@ html.px-pin .px-panel .ts-card { margin: 0; padding: 24px 26px 22px; border-radi
 html.px-pin .px-panel .ts-card blockquote { font-size: clamp(15px, 1.15vw, 17px); line-height: 1.42; }
 html.px-pin .px-panel .ts-more { display: none; }
 @media (prefers-reduced-motion: reduce) { html.px-pin .px-panel { transition: none; } }
+
+/* our approach: heading left + note right, three tall principle cards rise in, then the "guided by" strip */
+html.px-pin body.hx #approach.px-panel { padding: 0 !important; margin: 0 !important; }
+html.px-pin #approach > .hx-wrap { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; }
+html.px-pin #approach .apr { display: contents; }
+html.px-pin #approach .apr-head { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: minmax(0, 1fr) 340px; column-gap: 56px; text-align: left; margin: 0; max-width: none; }
+html.px-pin #approach .apr-head .section-tag { grid-column: 1; grid-row: 1; justify-self: start; margin: 0; }
+html.px-pin #approach .apr-head h2 { grid-column: 1; grid-row: 2; margin: 14px 0 0; max-width: 22ch; text-align: left; font-size: clamp(34px, min(4.8vw, 7.2vh), 70px); line-height: .98; letter-spacing: -.035em; }
+html.px-pin #approach .apr-head p { grid-column: 2; grid-row: 1 / 3; align-self: start; margin: 34px 0 0; max-width: none; text-align: left; font: 500 15.5px/1.5 "DM Sans", Inter, sans-serif; color: #5b3a2c; }
+html.px-pin #approach .apr-pts { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 16px; margin: clamp(18px, 3vh, 34px) 0 0; min-height: 0; counter-reset: apr; }
+html.px-pin #approach .apr-pt { position: relative; justify-content: flex-end; gap: 12px; padding: 30px 30px 32px; border-radius: 34px; counter-increment: apr; transition: none !important; will-change: transform, opacity;
+  opacity: var(--a, 1); transform: translateY(calc((1 - var(--a, 1)) * 90px)) scale(calc(.9 + .1 * var(--a, 1))); filter: blur(calc((1 - var(--a, 1)) * 7px)); }
+html.px-pin #approach .apr-pt:hover { transform: translateY(calc((1 - var(--a, 1)) * 90px)) scale(calc(.9 + .1 * var(--a, 1))) !important; }
+html.px-pin #approach .apr-ic { position: absolute; top: 28px; left: 30px; margin: 0; width: 68px; height: 68px; }
+html.px-pin #approach .apr-pt::after { content: "0" counter(apr); position: absolute; top: 34px; right: 32px; font: 700 15px/1 "DM Sans", Inter, sans-serif; letter-spacing: .16em; color: rgba(59,34,24,.45); }
+html.px-pin #approach .apr-pt h3 { font-size: clamp(30px, 3vw, 46px); line-height: 1; letter-spacing: -.03em; }
+html.px-pin #approach .apr-pt p { font-size: clamp(16px, 1.25vw, 19px); max-width: 24ch; }
+html.px-pin #approach .apr-meth { grid-column: 1; grid-row: 3; margin: 16px 0 0; padding: 16px 26px; border-radius: 28px; will-change: transform, opacity;
+  opacity: var(--a, 1); transform: translateY(calc((1 - var(--a, 1)) * 60px)); filter: blur(calc((1 - var(--a, 1)) * 6px)); }
+html.px-pin #approach .apr-by { flex: 1 1 auto; }
+html.px-pin #approach .apr-by small { margin-bottom: 8px; }
+html.px-pin #approach .apr-by .mb-chips { gap: 8px; flex-wrap: wrap; }
+html.px-pin #approach .apr-by .mb-chips b { font-size: 13px; padding: 8px 13px; }
+html.px-pin #approach .apr-meth { gap: 14px 28px; flex-wrap: nowrap; }
+html.px-pin #approach .apr-note { flex: none; }
+@media (max-height: 780px) {
+  html.px-pin #approach .apr-pt { padding: 22px 24px 24px; gap: 8px; }
+  html.px-pin #approach .apr-ic { top: 20px; left: 24px; width: 52px; height: 52px; border-radius: 18px; }
+  html.px-pin #approach .apr-ic svg { width: 24px; height: 24px; }
+  html.px-pin #approach .apr-pt::after { top: 26px; right: 26px; }
+  html.px-pin #approach .apr-pt h3 { font-size: clamp(26px, 2.6vw, 36px); }
+  html.px-pin #approach .apr-pt p { font-size: 15.5px; }
+}
