@@ -71,3 +71,33 @@ html.px-pin #approach .apr-note { flex: none; }
   html.px-pin #approach .apr-pt h3 { font-size: clamp(26px, 2.6vw, 36px); }
   html.px-pin #approach .apr-pt p { font-size: 15.5px; }
 }
+
+/* our approach, v2: illustrated cards (art sits in the flow above the text), zig-zag like the experts, number pill */
+.apr-art { display: none; }
+html.px-pin #approach .apr-ic { display: none; }
+html.px-pin #approach .apr-pts { align-items: stretch; }
+html.px-pin #approach .apr-pt { justify-content: flex-start; gap: 6px; padding: 22px 28px 28px; overflow: hidden; isolation: isolate; box-shadow: 0 34px 50px -34px rgba(59,34,24,.55) !important; }
+html.px-pin #approach .apr-pt::before { content: ""; position: absolute; z-index: -1; left: 50%; top: 2%; width: min(86%, 340px); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.62), rgba(255,255,255,0) 66%); }
+html.px-pin #approach .apr-art { display: block; flex: 1 1 0; min-height: 0; width: 100%; margin-top: 14px; overflow: visible; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+html.px-pin #approach .apr-pt:hover .apr-art { transform: scale(1.06) rotate(-2.5deg); }
+html.px-pin #approach .apr-pt h3, html.px-pin #approach .apr-pt p { position: relative; }
+html.px-pin #approach .apr-pt::after { top: 24px; left: 26px; right: auto; padding: 8px 13px 7px; border-radius: 99px; background: #3b2218; color: #fff3e2; font-size: 12.5px; letter-spacing: .14em; }
+html.px-pin body.hx #approach .apr-pt:nth-child(1):hover { background: #f58fab !important; }
+html.px-pin body.hx #approach .apr-pt:nth-child(2):hover { background: #f9d98a !important; }
+html.px-pin body.hx #approach .apr-pt:nth-child(3):hover { background: #f8c7a3 !important; }
+html.px-pin body.hx #approach .apr-pt:hover h3 { color: #3b2218 !important; }
+html.px-pin body.hx #approach .apr-pt:hover p { color: #3b2218 !important; }
+html.px-pin #approach .a-bob { animation: aprBob 5s ease-in-out infinite; }
+html.px-pin #approach .apr-pt:nth-child(2) .a-bob { animation-delay: -1.6s; } html.px-pin #approach .apr-pt:nth-child(3) .a-bob { animation-delay: -3.2s; }
+html.px-pin #approach .a-tw { transform-box: fill-box; transform-origin: center; animation: aprTw 3.2s ease-in-out infinite; }
+@keyframes aprBob { 50% { transform: translateY(-7px); } }
+@keyframes aprTw { 50% { opacity: .35; scale: .6; } }
+@media (max-height: 780px) {
+  html.px-pin #approach .apr-pt { padding: 18px 24px 22px; }
+  html.px-pin #approach .apr-art { margin-top: 26px; }
+  html.px-pin #approach .apr-pt::after { top: 18px; left: 22px; }
+}
+html.px-pin #approach .apr-pt h3 { font-size: clamp(28px, 2.5vw, 40px); }
+html.px-pin #approach .apr-pt p { font-size: clamp(15px, 1.15vw, 17px); }
+html.px-pin #approach .apr-pts { margin-top: clamp(12px, 2.2vh, 24px); }
+@media (max-height: 780px) { html.px-pin #approach .apr-art { margin-top: 12px; } html.px-pin #approach .apr-pt h3 { font-size: clamp(25px, 2.2vw, 32px); } html.px-pin #approach .apr-pt p { font-size: 15px; } }
