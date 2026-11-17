@@ -1,4 +1,4 @@
-// Our approach + experts + early testers on one sticky stage, scroll-driven (desktop only; elsewhere they stack).
+// Experts + early testers + our approach on one sticky stage, scroll-driven (desktop only; elsewhere they stack).
 // Each panel owns a slice of the scroll: items rise in one by one; the testimonials drift up in three columns.
 (function () {
   var sec = document.getElementById("proof"); if (!sec) return;
@@ -7,7 +7,7 @@
       aprItems = [].slice.call(sec.querySelectorAll("#approach .apr-pt, #approach .apr-meth")), exCards = [].slice.call(sec.querySelectorAll(".ex-card")),
       tsGrid = sec.querySelector(".ts-grid"), tsCards = [].slice.call(sec.querySelectorAll(".ts-card")), tsOrder = tsCards.slice(), cols = [],
       root = document.documentElement, cur = -1, pinned = false, geo = null, TOTAL = 4.6,
-      R = [[0, .278], [.278, .583], [.583, 1]], TARGET = [.26, .56, .88];
+      R = [[0, .26], [.26, .70], [.70, 1]], TARGET = [.24, .66, .95];
   function on() { return !rm && innerWidth > 900; }
   var sm = function (x) { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
   function moveInd() { var b = tabs[Math.max(0, cur)]; if (!b || !ind) return; ind.style.width = b.offsetWidth + "px"; ind.style.transform = "translateX(" + b.offsetLeft + "px)"; }
@@ -39,11 +39,11 @@
   function rise(items, lp, step) { items.forEach(function (c, k) { c.style.setProperty("--a", sm((lp / .9 - (.05 + k * step)) / .22).toFixed(3)); }); }
   function lp(p, i) { return Math.min(1, Math.max(0, (p - R[i][0]) / (R[i][1] - R[i][0]))); }
   function frame(p) {
-    rise(aprItems, lp(p, 0), .2);
-    rise(exCards, lp(p, 1), .15);
+    rise(exCards, lp(p, 0), .15);
+    rise(aprItems, lp(p, 2), .2);
     // testers: three columns drift up (staggered start); every column ends with its last card in view
     if (!geo) measure(); if (!geo) return;
-    var q = Math.min(1, Math.max(0, (p - (R[2][0] - .04)) / (1 - (R[2][0] - .04)))), V = geo.view, dys = cols.map(function (d, c) {
+    var q = Math.min(1, Math.max(0, (p - (R[1][0] - .04)) / (R[1][1] - (R[1][0] - .04)))), V = geo.view, dys = cols.map(function (d, c) {
       var start = V * (.62 + c * .2), end = Math.min(0, V - geo.colH[c] - 4), dy = start + (end - start) * q; d.style.translate = "0 " + dy.toFixed(1) + "px"; return dy;
     });
     tsOrder.forEach(function (c, i) {
@@ -72,7 +72,7 @@
   document.addEventListener("click", function (e) {
     if (e.defaultPrevented || !pinned) return;
     var a = e.target.closest && e.target.closest('a[href="#approach"], a[href="#experts"], a[href="#testers"]'); if (!a) return;
-    var i = ["#approach", "#experts", "#testers"].indexOf(a.getAttribute("href")); if (i < 0) return;
+    var i = ["#experts", "#testers", "#approach"].indexOf(a.getAttribute("href")); if (i < 0) return;
     e.preventDefault(); goPanel(i);
   });
   addEventListener("resize", function () { layout(); scroll(); });
