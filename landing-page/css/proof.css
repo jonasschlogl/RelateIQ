@@ -1,45 +1,40 @@
-/* Experts + early testers share one sticky stage (desktop, motion allowed): scroll or use the tabs to swap them.
+/* Experts + early testers on one sticky stage (desktop, motion allowed).
+   Heading left, note right. Scrolling reveals the expert cards one by one, then testimonials drift up in three columns.
    Below 900px / reduced motion the two blocks simply stack as before. */
 body.hx main > section#proof { background: transparent !important; padding: 0; position: relative; }
 .px-foot { display: none; }
-html.px-pin .px-stick { position: sticky; top: 0; height: 100vh; box-sizing: border-box; padding: 92px 0 30px; display: flex; flex-direction: column; overflow: hidden; }
+html.px-pin .px-stick { position: sticky; top: 0; height: 100vh; box-sizing: border-box; padding: 92px 0 26px; display: flex; flex-direction: column; overflow: hidden; }
 html.px-pin .px-panels { flex: 1; min-height: 0; display: grid; }
-html.px-pin .px-foot { display: flex; margin-top: 14px; }
-html.px-pin .px-panel { grid-area: 1 / 1; align-self: center; padding: 0 !important; opacity: 0; visibility: hidden; pointer-events: none; filter: blur(8px);
-  transform: translateY(46px) scale(.97); transition: opacity .5s ease, transform .9s cubic-bezier(.2, .8, .2, 1), filter .5s ease, visibility 0s linear .9s; }
-html.px-pin .px-panel.is-past { transform: translateY(-46px) scale(.97); }
-html.px-pin .px-panel.is-on { opacity: 1; visibility: visible; pointer-events: auto; filter: none; transform: none; transition: opacity .6s ease .1s, transform .95s cubic-bezier(.2, .8, .2, 1) .06s, filter .6s ease .1s, visibility 0s; }
+html.px-pin .px-foot { display: flex; margin-top: 16px; }
+html.px-pin .px-panel { grid-area: 1 / 1; padding: 0 !important; min-height: 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(30px); transition: opacity .45s ease, transform .7s cubic-bezier(.2, .8, .2, 1), visibility 0s linear .7s; }
+html.px-pin .px-panel.is-on { opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition: opacity .55s ease .1s, transform .8s cubic-bezier(.2, .8, .2, 1) .05s, visibility 0s; }
+html.px-pin .px-panel.is-past { transform: translateY(-30px); }
+
+/* layout: heading left, note right, content below */
+html.px-pin .px-panel > .hx-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; grid-template-rows: auto minmax(0, 1fr); column-gap: 56px; height: 100%; max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
 html.px-pin .px-panel .hx-reveal, html.px-pin .px-panel .sx, html.px-pin .px-panel .sw { opacity: 1 !important; transform: none !important; }
-html.px-pin .px-panel .hx-head { margin: 0 auto; max-width: none; width: 100%; text-align: center; }
-body.hx main > section#proof .px-panel .hx-head h2 { font-size: clamp(32px, min(4.2vw, 6.4vh), 60px) !important; margin-top: 10px; }
-html.px-pin .px-panel .ex-note, html.px-pin .px-panel .ts-note { margin-top: 12px; font-size: 14.5px; }
+html.px-pin .px-panel .hx-head { grid-column: 1; grid-row: 1; margin: 0; max-width: none; text-align: left; }
+html.px-pin .px-panel .hx-head .hx-kicker { margin: 0; }
+body.hx main > section#proof .px-panel .hx-head h2 { margin: 14px 0 0; max-width: 13ch; text-align: left; font-size: clamp(34px, min(4.8vw, 7.2vh), 70px) !important; line-height: .98; letter-spacing: -.035em; }
+html.px-pin .px-panel .ex-note, html.px-pin .px-panel .ts-note { grid-column: 2; grid-row: 1; align-self: start; margin: 34px 0 0; max-width: none; text-align: left; font: 500 15.5px/1.5 "DM Sans", Inter, sans-serif; color: #5b3a2c; }
+html.px-pin .px-panel .ex-grid, html.px-pin .px-panel .ts-grid { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(18px, 3vh, 34px); min-height: 0; }
 
-/* experts: five portrait cards in a row */
-html.px-pin .px-panel .ex-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: 1fr; height: clamp(290px, calc(100vh - 430px), 430px); margin-top: 26px; gap: 14px; }
-html.px-pin .px-panel .ex-card, html.px-pin .px-panel .ex-card.c1 { grid-row: auto; border-radius: 30px; padding: 10px; height: auto; }
-html.px-pin .px-panel .ex-tag { top: 18px; left: 18px; font-size: 10px; padding: 5px 10px; }
-html.px-pin .px-panel .ex-id, html.px-pin .px-panel .ex-card.c1 .ex-id { padding: 12px 12px 14px; border-radius: 22px; }
-html.px-pin .px-panel .ex-id b, html.px-pin .px-panel .ex-card.c1 .ex-id b { font-size: clamp(18px, 1.5vw, 22px); }
-html.px-pin .px-panel .ex-id p, html.px-pin .px-panel .ex-card.c1 .ex-id p { font-size: 12.5px; margin-top: 4px; }
+/* experts: five tall cards, zig-zag, each rises in with scroll (--a is set by js, 0..1) */
+html.px-pin .px-panel .ex-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr); gap: 16px; height: auto; padding: 0; }
+html.px-pin .px-panel .ex-card, html.px-pin .px-panel .ex-card.c1 { grid-row: auto; height: auto; border-radius: 32px; padding: 10px; transition: none;
+  opacity: var(--a, 1); transform: translateY(calc((1 - var(--a, 1)) * 90px)) scale(calc(.9 + .1 * var(--a, 1))); filter: blur(calc((1 - var(--a, 1)) * 7px)); will-change: transform, opacity; }
+html.px-pin .px-panel .ex-card:nth-child(odd) { margin-bottom: clamp(14px, 4.5vh, 40px); }
+html.px-pin .px-panel .ex-card:nth-child(even) { margin-top: clamp(14px, 4.5vh, 40px); }
+html.px-pin .px-panel .ex-tag { top: 20px; left: 20px; font-size: 10.5px; padding: 6px 11px; }
+html.px-pin .px-panel .ex-id, html.px-pin .px-panel .ex-card.c1 .ex-id { padding: 14px 14px 16px; border-radius: 24px; }
+html.px-pin .px-panel .ex-id b, html.px-pin .px-panel .ex-card.c1 .ex-id b { font-size: clamp(19px, 1.7vw, 25px); }
+html.px-pin .px-panel .ex-id p, html.px-pin .px-panel .ex-card.c1 .ex-id p { font-size: 13px; margin-top: 5px; }
 
-/* testers: two rows of cards that drift sideways across the full width */
-html.px-pin .px-panel.ts-sec { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
-html.px-pin .px-panel .ts-grid { columns: auto; display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); grid-auto-columns: 330px; gap: 14px; width: max-content; margin: 26px 0 0 calc(50% - 50vw); padding: 0 max(24px, calc(50vw - 590px)) 4px; animation: pxPan 50s ease-in-out infinite alternate; }
-html.px-pin .px-panel .ts-grid:hover { animation-play-state: paused; }
-html.px-pin .px-panel .ts-card { margin: 0; padding: 18px 20px 16px; border-radius: 26px; }
-html.px-pin .px-panel .ts-rate { margin-bottom: 8px; }
-html.px-pin .px-panel .ts-card blockquote { font-size: 14.5px; line-height: 1.4; }
-html.px-pin .px-panel .ts-by { margin-top: 12px; }
-html.px-pin .px-panel .ts-by img { width: 36px; height: 36px; }
+/* testers: three columns of cards drift up; js sets each card's translate / opacity / scale */
+html.px-pin .px-panel .ts-grid { columns: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-content: start; align-items: start; position: relative; overflow: hidden; padding: 0; height: auto;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent); }
+html.px-pin .px-col { position: relative; display: flex; flex-direction: column; gap: 16px; will-change: transform; }
+html.px-pin .px-panel .ts-card { margin: 0; padding: 24px 26px 22px; border-radius: 30px; will-change: transform, opacity; }
+html.px-pin .px-panel .ts-card blockquote { font-size: clamp(15px, 1.15vw, 17px); line-height: 1.42; }
 html.px-pin .px-panel .ts-more { display: none; }
-@keyframes pxPan { from { transform: translateX(0); } to { transform: translateX(calc(100vw - 100%)); } }
-
-/* items rise in when their panel becomes active */
-html.px-pin .px-panel.is-on .hx-head { animation: pxRise .8s cubic-bezier(.2, .8, .2, 1) .1s both; }
-html.px-pin .px-panel.is-on .ex-card { animation: pxRise .8s cubic-bezier(.2, .8, .2, 1) both; }
-html.px-pin .px-panel.is-on .ex-card:nth-child(2) { animation-delay: .12s; } html.px-pin .px-panel.is-on .ex-card:nth-child(3) { animation-delay: .24s; }
-html.px-pin .px-panel.is-on .ex-card:nth-child(4) { animation-delay: .36s; } html.px-pin .px-panel.is-on .ex-card:nth-child(5) { animation-delay: .48s; }
-html.px-pin .px-panel.is-on .ts-card { animation: pxRise .8s cubic-bezier(.2, .8, .2, 1) both; }
-html.px-pin .px-panel.is-on .ts-card:nth-child(-n+4) { animation-delay: .15s; }
-@keyframes pxRise { from { opacity: 0; translate: 0 34px; } to { opacity: 1; translate: 0 0; } }
-@media (prefers-reduced-motion: reduce) { html.px-pin .px-panel, html.px-pin .px-panel.is-on { transition: none; filter: none; } html.px-pin .px-panel .ts-grid, html.px-pin .px-panel.is-on * { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { html.px-pin .px-panel { transition: none; } }
