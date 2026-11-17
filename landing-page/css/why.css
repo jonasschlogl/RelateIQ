@@ -1,0 +1,63 @@
+/* "In action": a sticky stage. As you scroll, example chats play (typing dots, bubbles) and the tabs below follow. */
+body.hx main > section#why { background: transparent !important; padding: 0; position: relative; }
+.why-stick { position: relative; padding: 84px 0 70px; display: flex; flex-direction: column; gap: 34px; overflow: hidden; }
+.why-grid { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .9;
+  background-image: linear-gradient(rgba(59,34,24,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,34,24,.05) 1px, transparent 1px); background-size: 150px 150px; background-position: center;
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 80%); mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 80%); }
+.why-wrap { position: relative; z-index: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.why-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+.why-kick { display: inline-flex; align-items: center; gap: 10px; font: 600 17px/1 "DM Sans", Inter, sans-serif; color: #e9658f; }
+.why-kmark { width: 22px; height: 22px; }
+body.hx main > section#why .why-h { margin: 16px 0 0; max-width: 22ch; font-family: "Fraunces", Georgia, serif; font-weight: 520; letter-spacing: -.035em; line-height: .98; font-size: clamp(36px, min(5vw, 7.4vh), 74px); color: #3b2218 !important; -webkit-text-fill-color: #3b2218; }
+body.hx main > section#why .why-h span { color: #e9658f; -webkit-text-fill-color: #e9658f; font-style: italic; font-weight: 480; }
+.why-p { flex: none; max-width: 330px; margin: 30px 0 0; font: 500 17px/1.45 "DM Sans", Inter, sans-serif; color: #5b3a2c; }
+
+.why-mid { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 36px); padding: 0 24px; }
+.why-mark { flex: none; width: clamp(150px, min(20vw, 30vh), 290px); animation: whyFloat 7s ease-in-out infinite; }
+.why-clover { display: block; width: 100%; height: auto; transform: rotate(var(--r, 0deg)); transition: transform 1.2s cubic-bezier(.3, 1.25, .4, 1); filter: drop-shadow(0 26px 30px rgba(233,101,143,.28)); }
+.why-mark.pulse .why-clover { animation: whyPulse .7s cubic-bezier(.3, 1.4, .5, 1); }
+@keyframes whyFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+@keyframes whyPulse { 40% { scale: 1.1; } }
+
+.why-chats { position: relative; display: grid; width: min(640px, 100%); }
+.why-ex { position: absolute; left: 0; top: -26px; font: 700 11px/1 "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #9a7e70; }
+.why-chat { grid-area: 1 / 1; display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 16px); visibility: hidden; }
+.why-chat.is-on { visibility: visible; }
+.wr { position: relative; display: flex; }
+.wr.me { justify-content: flex-end; }
+.wb { max-width: 88%; padding: clamp(13px, 2.1vh, 21px) clamp(20px, 2.3vw, 32px); border-radius: 32px; font: 500 clamp(16px, min(1.6vw, 2.5vh), 22px)/1.28 "DM Sans", Inter, sans-serif; letter-spacing: -.012em;
+  opacity: 0; transform: translateY(24px) scale(.95); filter: blur(5px); transition: opacity .5s ease, transform .75s cubic-bezier(.2, .8, .2, 1), filter .5s ease; }
+.wb.on { opacity: 1; transform: none; filter: none; }
+.wb.ai { background: #fff; color: #3b2218; border-bottom-left-radius: 12px; box-shadow: 0 26px 50px -24px rgba(59,34,24,.35), 0 2px 6px rgba(59,34,24,.05); }
+.wb.me { background: #f58fab; color: #3b2218; border-bottom-right-radius: 12px; box-shadow: 0 22px 40px -22px rgba(233,101,143,.9); }
+.dots { position: absolute; left: 0; top: 0; display: flex; gap: 6px; padding: 19px 24px; border-radius: 32px 32px 32px 12px; background: #fff; box-shadow: 0 20px 40px -22px rgba(59,34,24,.3); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.dots.on { opacity: 1; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: #3b2218; opacity: .35; animation: whyDot 1s infinite; }
+.dots i:nth-child(2) { animation-delay: .15s; } .dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes whyDot { 0%, 60%, 100% { transform: none; opacity: .3; } 30% { transform: translateY(-5px); opacity: .9; } }
+
+.why-foot { position: relative; z-index: 1; display: flex; justify-content: center; padding: 0 16px; }
+.why-tabs { position: relative; display: inline-flex; max-width: 100%; padding: 7px; border-radius: 99px; background: rgba(59,34,24,.06); box-shadow: inset 0 0 0 1px rgba(59,34,24,.05); overflow-x: auto; scrollbar-width: none; }
+.why-tabs::-webkit-scrollbar { display: none; }
+.why-ind { position: absolute; left: 0; top: 7px; bottom: 7px; width: 0; border-radius: 99px; background: #fff; box-shadow: 0 8px 22px -10px rgba(59,34,24,.45); transition: transform .55s cubic-bezier(.2, .8, .2, 1), width .55s cubic-bezier(.2, .8, .2, 1); }
+.why-tabs button { position: relative; z-index: 1; flex: none; font: 600 16px/1 "DM Sans", Inter, sans-serif; color: #7a5f52; background: none; border: 0; padding: 15px 26px; border-radius: 99px; cursor: pointer; transition: color .3s; white-space: nowrap; }
+.why-tabs button:hover { color: #3b2218; }
+.why-tabs button[aria-selected="true"] { color: #3b2218; }
+
+/* pinned scroll mode (desktop, motion allowed) */
+html.why-pin .why-stick { position: sticky; top: 0; height: 100vh; box-sizing: border-box; padding: 96px 0 34px; gap: clamp(8px, 2vh, 28px); }
+
+@media (max-width: 900px) {
+  .why-stick { padding: 56px 0 48px; gap: 26px; }
+  .why-top { flex-direction: column; gap: 14px; }
+  .why-p { margin: 0; max-width: 40ch; font-size: 16px; }
+  .why-mid { flex-direction: column; gap: 8px; padding: 0 16px; }
+  .why-mark { width: 120px; }
+  .why-ex { position: static; margin-bottom: 14px; display: block; }
+  .why-chats { display: block; }
+  .why-chat { display: none; }
+  .why-chat.is-on { display: flex; }
+  .wb { font-size: 16px; max-width: 92%; }
+  .why-tabs button { padding: 12px 14px; font-size: 13.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .why-mark, .dots i { animation: none; } .wb { transition: none; opacity: 1; transform: none; filter: none; } .why-clover { transition: none; } }
