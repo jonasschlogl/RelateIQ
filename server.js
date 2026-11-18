@@ -6358,6 +6358,62 @@ async function sendPushToUser(userId, { title, body, url }) {
   }
 }
 
+// Personal version of the daily reminder: instead of a generic question it picks up something
+// the coach already knows is in motion (an open thread from memory, or the chat from the last week).
+// Never used when memory mentions safety concerns, and the same line is not repeated within 4 days.
+// The subject and the push stay neutral, the details only appear inside the email to the person themself.
+const PERSONAL_REMINDER_KIND = "reminder";
+const PERSONAL_REMINDER_KEY = "personal";
+function personalReminderFor(user, db) {
+  try {
+    const { mem } = loadMemoryDoc(user.id);
+    if (/safety concern/i.test(JSON.stringify(mem || {}))) return null;
+    const DAY = 24 * 60 * 60 * 1000;
+    const memFresh = mem && mem.updatedAt && Date.now() - new Date(mem.updatedAt).getTime() < 14 * DAY;
+    let pick = null;
+    const open = memFresh && mem.openThreads && mem.openThreads[0] && mem.openThreads[0].text;
+    if (open) pick = { kind: "thread", text: String(open) };
+    if (!pick) {
+      const recent = db.conversations
+        .filter(
+          (c) =>
+            c.userId === user.id &&
+            (c.mode || "coach") === "coach" &&
+            c.title &&
+            c.title !== "New conversation" &&
+            Date.now() - new Date(c.updatedAt || c.createdAt || 0).getTime() < 7 * DAY
+        )
+        .sort((a, b) => new Date(b.updatedAt || b.createdAt || 0) - new Date(a.updatedAt || a.createdAt || 0))[0];
+      if (recent) pick = { kind: "chat", text: String(recent.title) };
+    }
+    if (!pick) return null;
+    const last = getDocByKey(user.id, PERSONAL_REMINDER_KIND, PERSONAL_REMINDER_KEY);
+    const lastData = last && last.data;
+    if (lastData && lastData.text === pick.text && Date.now() - new Date(lastData.at || 0).getTime() < 4 * DAY) return null;
+    return pick;
+  } catch (err) {
+    console.error("Personal reminder lookup failed:", err.message);
+    return null;
+  }
+}
+function markPersonalReminderSent(user, pick) {
+  try {
+    const last = getDocByKey(user.id, PERSONAL_REMINDER_KIND, PERSONAL_REMINDER_KEY);
+    saveDoc({
+      id: (last && last.id) || generateId("doc"),
+      userId: user.id,
+      kind: PERSONAL_REMINDER_KIND,
+      key: PERSONAL_REMINDER_KEY,
+      title: "Personal reminder",
+      data: { text: pick.text, at: new Date().toISOString() },
+      createdAt: last && last.createdAt,
+      notifiedAt: null,
+    });
+  } catch (err) {
+    console.error("Could not record personal reminder:", err.message);
+  }
+}
+
 async function runDailyCheckinReminders() {
   const db = loadDb();
   const today = todayKey();
@@ -6384,24 +6440,51 @@ async function runDailyCheckinReminders() {
       console.error("Reminder question lookup failed:", err.message);
     }
 
+    const personal = personalReminderFor(user, db);
+    const btn = (href, label) =>
+      `<p><a href="${href}" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">${label}</a></p>`;
+
     if (user.email && user.emailCheckinReminders !== false) {
-      const html = emailShell({
-        unsubscribeUrl: unsubscribeLink(user, "checkin"),
-        bodyHtml: `
+      let subject = "Today's RelationshipAI check-in";
+      let bodyHtml = `
           <p>Hey ${escapeForEmail(user.name)},</p>
           <p>Today's check-in question:</p>
           <p style="font-style:italic; color:#d1a05a;">"${escapeForEmail(question)}"</p>
-          <p><a href="${APP_URL}/dashboard.html" style="display:inline-block; margin-top:8px; background:linear-gradient(135deg,#d1a05a,#a8455c); color:#1a1410; text-decoration:none; padding:10px 20px; border-radius:100px; font-weight:600;">Answer it →</a></p>
-        `,
-      });
-      await sendEmail({ to: user.email, subject: "Today's RelationshipAI check-in", html });
+          ${btn(`${APP_URL}/dashboard.html`, "Answer it →")}
+        `;
+      if (personal) {
+        const quoted = `<p style="font-style:italic; color:#d1a05a;">&ldquo;${escapeForEmail(personal.text)}&rdquo;</p>`;
+        if (personal.kind === "thread") {
+          subject = "How did it go?";
+          bodyHtml = `
+          <p>Hey ${escapeForEmail(user.name)},</p>
+          <p>Last time, something was still in motion:</p>
+          ${quoted}
+          <p>How did it go? A few lines are enough, and your coach picks up from there.</p>
+          ${btn(`${APP_URL}/chat.html?new=1`, "Tell your coach →")}
+          <p style="color:#b6a795; font-size:13px;">Or just do today's <a href="${APP_URL}/dashboard.html" style="color:#d1a05a;">check-in</a>.</p>
+        `;
+        } else {
+          subject = "Anything new since we last talked?";
+          bodyHtml = `
+          <p>Hey ${escapeForEmail(user.name)},</p>
+          <p>You were last working through:</p>
+          ${quoted}
+          <p>Has anything changed since? Even a short update helps your coach give you something that fits.</p>
+          ${btn(`${APP_URL}/chat.html?new=1`, "Update your coach →")}
+          <p style="color:#b6a795; font-size:13px;">Or just do today's <a href="${APP_URL}/dashboard.html" style="color:#d1a05a;">check-in</a>.</p>
+        `;
+        }
+      }
+      const html = emailShell({ unsubscribeUrl: unsubscribeLink(user, "checkin"), bodyHtml });
+      const sent = await sendEmail({ to: user.email, subject, html });
+      if (personal && sent && !sent.skipped) markPersonalReminderSent(user, personal);
     }
 
-    await sendPushToUser(user.id, {
-      title: "Today's RelationshipAI check-in",
-      body: question,
-      url: "/dashboard.html",
-    });
+    // Push shows on a lock screen: keep it free of personal details.
+    await sendPushToUser(user.id, personal
+      ? { title: "How are things going?", body: "Your coach is ready when you are.", url: "/chat.html?new=1" }
+      : { title: "Today's RelationshipAI check-in", body: question, url: "/dashboard.html" });
   }
 }
 
