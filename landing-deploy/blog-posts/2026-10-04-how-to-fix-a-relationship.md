@@ -118,6 +118,8 @@ Ongoing contempt, one partner who has completely checked out, or a relationship 
 
 All of this assumes two people who feel safe with each other. If you're afraid of your partner, feel controlled, or are being hurt, fixing the relationship isn't the goal. Please contact a local support service or helpline.
 
+If trust was broken, start with [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) or [trust issues in a relationship](/blog/trust-issues-in-a-relationship/). If you're not sure the relationship is safe to fix, read the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) first.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

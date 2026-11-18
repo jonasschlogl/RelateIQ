@@ -160,6 +160,8 @@ It's a way to open a hard conversation by describing how you feel about a specif
 
 These habits are for ordinary conflict between two people who both feel safe. If your conversations regularly become frightening, cruel or controlling, that's a different situation. Please reach out to a professional or a support service in your country.
 
+These habits matter most in the conversations couples avoid. See our guides on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/), [love languages](/blog/love-languages/) and, when arguing stops being healthy, the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/).
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

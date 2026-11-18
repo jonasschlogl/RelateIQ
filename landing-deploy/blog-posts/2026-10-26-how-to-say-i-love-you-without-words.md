@@ -111,6 +111,8 @@ Ask them directly: "When do you feel most loved by me?" Also notice what they do
 
 Many people show love more through actions than words, often because of how they grew up. If you'd like to hear it more, you can say so kindly: "I know you love me, and I'd really like to hear it sometimes."
 
+If you're apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) have more ideas for showing love from far away.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

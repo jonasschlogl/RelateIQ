@@ -167,6 +167,8 @@ If your partner hurts you, threatens you, controls your money or who you see, or
 
 If you want to think out loud with someone, or practise how to say a hard sentence, RelationshipAI is an AI relationship coach that can help you sort your thoughts. It isn't therapy, but it's a calm place to start.
 
+Some situations call for a closer look before you decide: [love bombing](/blog/love-bombing/), a [codependent relationship](/blog/codependent-relationship/) or a [situationship](/blog/situationship/) that never became more.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

@@ -137,6 +137,8 @@ Usually, yes, as long as they also stay connected and say when they'll be back. 
 
 Controlling behaviour, constant monitoring, cruelty or making you feel afraid are not signs of passion or worry, and they aren't something a list of green flags can fix. If you feel unsafe in your relationship, please reach out to a local helpline or support service.
 
+It also helps to know the opposite. Our guides on [love bombing](/blog/love-bombing/), [gaslighting](/blog/gaslighting-in-a-relationship/) and the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) show what to watch out for.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

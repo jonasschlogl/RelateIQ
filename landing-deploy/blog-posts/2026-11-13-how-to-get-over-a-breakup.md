@@ -140,6 +140,8 @@ Ask yourself what would be different this time, in facts rather than hopes. If t
 
 It can. Research summarised by the American Psychological Association notes that breakups can lead to personal growth, and writing about what you learned may help. That doesn't make the pain less real, but it can be part of what comes after.
 
+If the relationship involved control or manipulation, our guides on [love bombing](/blog/love-bombing/) and [gaslighting](/blog/gaslighting-in-a-relationship/) can help you make sense of what happened.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

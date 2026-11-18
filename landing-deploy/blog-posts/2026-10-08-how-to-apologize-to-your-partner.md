@@ -178,6 +178,8 @@ Long enough for both of you to be calm, often around twenty minutes after a heat
 
 In some relationships, apologies are part of a harmful cycle: hurtful or frightening behaviour, then a warm apology and promises, then the same behaviour again. If your partner hurts you, threatens you or makes you afraid, an apology doesn't oblige you to stay or to forgive. Please reach out to a local helpline or support service, who can help you think about your options safely.
 
+If the hurt goes deeper than one argument, our guides on [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) cover the longer road back. And if you keep apologising for things that aren't your fault, read about [gaslighting in a relationship](/blog/gaslighting-in-a-relationship/).
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

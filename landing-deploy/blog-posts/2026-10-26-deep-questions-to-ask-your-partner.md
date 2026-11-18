@@ -132,6 +132,8 @@ Thank them for being honest, take a breath, and say how you feel without attacki
 
 Start gently, with something like "What's a moment that shaped who you are?" or "What did your family teach you about love?" Save heavier topics for when you know each other better.
 
+Questions are one way to feel close. For others, see [how to say I love you without words](/blog/how-to-say-i-love-you-without-words/) and [love languages](/blog/love-languages/).
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

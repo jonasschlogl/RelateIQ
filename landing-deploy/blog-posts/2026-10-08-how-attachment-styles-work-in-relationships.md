@@ -197,6 +197,8 @@ Fearful-avoidant attachment is often described as the hardest to live with, beca
 
 Yes. They may get along easily at first because neither pushes for closeness, but problems can stay hidden for a long time. It helps to agree on regular check-ins, so important feelings get said before they turn into distance.
 
+Want to go deeper on a specific pattern? Read about [relationship anxiety](/blog/relationship-anxiety/), [jealousy in a relationship](/blog/jealousy-in-a-relationship/), [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) and the [codependent relationship](/blog/codependent-relationship/), where caring turns into losing yourself.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

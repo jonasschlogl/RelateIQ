@@ -124,6 +124,8 @@ If the same problem has been going round for months, if talking about it always 
 
 If a problem involves fear, control or anyone being hurt, it's beyond communication skills. Please reach out to a professional or a support service where you live.
 
+Two recurring problems deserve their own guides: [jealousy in a relationship](/blog/jealousy-in-a-relationship/) and the feeling that [your partner is losing interest](/blog/signs-your-partner-is-losing-interest/).
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

@@ -174,6 +174,8 @@ Usually because your mind is trying to protect you from uncertainty, and in a re
 
 Calm your body first with slow breathing or a few minutes of cyclic sighing, then write the worry down and tell yourself you'll look at it tomorrow. Put the phone in another room so you're not tempted to check for messages.
 
+Overthinking often grows in uncertain situations. If you're not sure where you stand, our guides on [situationships](/blog/situationship/), [breadcrumbing](/blog/breadcrumbing/) and the [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) can help you tell real warning signs from anxious spirals.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
