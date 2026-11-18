@@ -3,9 +3,6 @@ title: "Codependent relationship: 8 signs and how to care without losing yoursel
 date: 2026-11-18
 description: Always putting your partner first until there's nothing left of you? 8 signs of a codependent relationship, where it comes from and how to build a healthier balance.
 tags: codependent relationship, people pleasing
-draft: true
-approved: true
-topics: attachment, repair
 ---
 You know their mood before they walk in the door. You cancel plans if they seem down. You fix, soothe and manage, and you feel guilty when you don't. People call you caring, and you are. But lately you've started to wonder where you went.
 
