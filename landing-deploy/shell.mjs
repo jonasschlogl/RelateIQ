@@ -24,7 +24,7 @@ function parts() {
 export const homeSection = (id) => parts().section(id);
 
 /** Wrap `body` (the <main> contents) into a full page in the current design. */
-export function page({ title, description, path: p, type = "website", body, jsonld, image = `${SITE}/og-image.png`, cls = "", noindex = false, head = "" }) {
+export function page({ title, description, path: p, type = "website", body, jsonld, image = `${SITE}/og-image.png?v=2`, cls = "", noindex = false, head = "" }) {
   const { nav, footer } = parts();
   const canonical = `${SITE}${p}`;
   return `<!DOCTYPE html>

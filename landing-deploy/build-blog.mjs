@@ -485,7 +485,7 @@ function jsDict(ctx) {
   return Object.keys(o).length ? `<script>window.RAI_T=${JSON.stringify(o).replace(/</g, "\\u003c")};</script>\n  ` : "";
 }
 
-function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, image = `${SITE}/og-image.png` }) {
+function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, image = `${SITE}/og-image.png?v=2` }) {
   return shellPage({ title, description, path: pagePath, type, body, jsonld, image, cls: "sp-blog" });
 }
 
@@ -725,7 +725,7 @@ function articleLd(ctx, p, url, ogPng) {
       "@type": "Article", headline: p.title, description: p.description,
       datePublished: p.date, dateModified: p.updated || p.date, mainEntityOfPage: url,
       inLanguage: ctx.lang.htmlLang,
-      image: ogPng || `${SITE}/og-image.png`,
+      image: ogPng || `${SITE}/og-image.png?v=2`,
       author: { "@type": "Person", name: AUTHOR, url: INSTAGRAM },
       publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
   };
