@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     list.innerHTML = "";
 
     if (!Array.isArray(conversations) || conversations.length === 0) {
-      list.innerHTML = '<p class="text-muted">You don\'t have any conversations yet. <a href="chat.html">Start your first chat</a>.</p>';
+      list.innerHTML = '<div class="convo-empty"><p>No conversations yet. Your first one takes a minute.</p><a href="chat.html?new=1" class="btn btn-primary btn-sm">Start your first chat</a></div>';
     } else {
       conversations.forEach((c) => {
         const row = document.createElement("div");
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             row.remove();
             if (!list.querySelector(".conversation-row")) {
-              list.innerHTML = '<p class="text-muted">You don\'t have any conversations yet. <a href="chat.html">Start your first chat</a>.</p>';
+              list.innerHTML = '<div class="convo-empty"><p>No conversations yet. Your first one takes a minute.</p><a href="chat.html?new=1" class="btn btn-primary btn-sm">Start your first chat</a></div>';
             }
           } catch (err) {
             console.error(err);

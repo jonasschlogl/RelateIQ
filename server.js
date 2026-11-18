@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
@@ -240,6 +241,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+// Gzip text responses (HTML, CSS, JS, SVG, JSON): the app shipped ~250 kB of uncompressed assets per page.
+app.use(compression());
 app.use(express.json({ limit: "25mb" }));
 // The public website (relationshipaiadvice.com) is the landing page now, so the
 // app's own root goes straight to the login page. login.html forwards people who
@@ -250,13 +253,15 @@ app.get(["/", "/index.html"], (req, res) => {
 });
 app.use(
   express.static(path.join(__dirname, "public"), {
-    etag: false,
-    lastModified: false,
-    setHeaders: (res) => {
-      // Prevent the browser from caching HTML/CSS/JS during development —
-      // otherwise it can keep serving an old version of a file after you've
-      // updated it, which looks exactly like a bug that isn't there.
-      res.setHeader("Cache-Control", "no-store");
+    // ETag + Last-Modified so the browser revalidates and gets a cheap 304 instead of the whole file.
+    setHeaders: (res, filePath) => {
+      // HTML/CSS/JS: always revalidate, so an updated file shows up immediately (no stale copies),
+      // but an unchanged one is not downloaded again. Images and icons rarely change: keep a day.
+      if (/\.(html|css|js)$/i.test(filePath) || /sw\.js$/i.test(filePath)) {
+        res.setHeader("Cache-Control", "no-cache");
+      } else {
+        res.setHeader("Cache-Control", "public, max-age=86400");
+      }
     },
   })
 );
