@@ -32,10 +32,14 @@
     var t = Math.min(1, Math.max(0, (q - .06) / .78)), k = Math.ceil(t * n);
     words.forEach(function (w, i) { w.classList.toggle("on", i < k); });
   }
-  function clearInline() { exCards.concat(trItems).forEach(function (c) { c.style.removeProperty("--a"); }); }
+  function clearInline() { exCards.concat(trItems).forEach(function (c) { c.style.removeProperty("--a"); }); tabs.forEach(function (b) { b.style.removeProperty("--f"); b.classList.remove("done"); }); }
   function rise(items, lp, step) { items.forEach(function (c, k) { c.style.setProperty("--a", sm((lp / .9 - (.05 + k * step)) / .22).toFixed(3)); }); }
   function lp(p, i) { return Math.min(1, Math.max(0, (p - R[i][0]) / (R[i][1] - R[i][0]))); }
-  function frame(p) { lit(lp(p, 0)); rise(exCards, lp(p, 1), .15); rise(trItems, lp(p, 2), .2); }
+  function frame(p) {
+    lit(lp(p, 0)); rise(exCards, lp(p, 1), .15); rise(trItems, lp(p, 2), .2);
+    /* the three tabs fill from left to right as their panel is scrolled through */
+    tabs.forEach(function (b, i) { var f = lp(p, i); b.style.setProperty("--f", f.toFixed(3)); b.classList.toggle("done", f >= .999); });
+  }
   function scroll() {
     if (!pinned) return;
     var r = sec.getBoundingClientRect(), span = sec.offsetHeight - innerHeight, p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;

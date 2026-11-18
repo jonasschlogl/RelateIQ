@@ -131,3 +131,9 @@ html.px-pin #trust .trust-icon { position: absolute; top: 20px; left: 20px; z-in
 html.px-pin #trust .trust-item > div:not(.trust-icon) { flex: none; background: #fff; border-radius: 24px; padding: 15px 18px 17px; text-align: center; }
 html.px-pin #trust .trust-item h3 { font-size: clamp(19px, 1.7vw, 25px); margin: 0 0 6px; }
 html.px-pin #trust .trust-item p { font-size: 14px; color: #6b5246 !important; }
+
+/* stage tabs: instead of a sliding pill, each tab fills left to right with the scroll through its panel */
+.px-foot .why-ind { display: none; }
+.px-foot .why-tabs button { isolation: isolate; }
+.px-foot .why-tabs button::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: calc(var(--f, 0) * 100%); min-width: 0; z-index: -1; border-radius: 99px; background: #fff; box-shadow: 0 8px 22px -12px rgba(59,34,24,.45); }
+.px-foot .why-tabs button.done { color: #3b2218; }
