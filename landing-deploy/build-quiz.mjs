@@ -6,7 +6,7 @@ import path from "node:path";
 import { page, LANDING, esc } from "./shell.mjs";
 
 const write = (rel, html) => { const f = path.join(LANDING, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
-const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=5" />`;
+const HEAD = `  <link rel="stylesheet" href="/css/quiz.css?v=6" />`;
 const REG = "https://app.relationshipaiadvice.com/register.html";
 
 export const QUIZZES = [
