@@ -671,7 +671,7 @@ function postPage(ctx, p0, all) {
             <p>${T(EN.by)} <a href="/about/" class="author" data-umami-event="click-author">${AUTHOR}</a><span class="dot">·</span>${p.updated ? `${T(EN.updated)} ${fmtDate(p.updated, ctx.locale)}` : fmtDate(p.date, ctx.locale)}<span class="dot">·</span>${T(EN.minRead).replace("{n}", p.minutes)}</p>
           </div>
           ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
-          ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
+          ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="${figAlt(p.key, 1) || attr(p.title)}" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
           <div class="article-body">
 ${withImages(p)}
           </div>
