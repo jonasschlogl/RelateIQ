@@ -409,3 +409,36 @@ body:has(.auth-page) { background: #2a1710; }
 .convo-empty p { margin: 0; color: var(--text-muted); font-size: 15.5px; }
 .convo-empty .btn { white-space: nowrap; }
 .checkin-card .checkin-answer { background: transparent; }
+
+/* ---------- Coach Chat empty screen: context chips and tool cards ---------- */
+.empty-chat { max-width: 760px; }
+.empty-chat .empty-sub { margin: -10px 0 22px; color: var(--text-muted); }
+.empty-start { text-align: center; }
+.ctx-toggle { display: inline-flex; align-items: baseline; gap: 6px; margin: 18px auto 0; padding: 6px 10px; background: none; border: 0; color: #a3244f; font: 700 14px var(--font-body); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.ctx-toggle small { font-weight: 500; color: var(--text-muted); text-decoration: none; }
+.ctx-panel { margin: 14px auto 0; padding: 18px 20px; max-width: 620px; background: var(--surface); border-radius: 24px; text-align: left; display: grid; gap: 14px; }
+.ctx-panel[hidden] { display: none; }
+.ctx-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.ctx-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ctx-chip { border: 0; border-radius: 999px; padding: 9px 15px; background: #fff; color: var(--cocoa); font: 600 14px var(--font-body); box-shadow: inset 0 0 0 1.5px var(--border); cursor: pointer; transition: background .15s, box-shadow .15s; }
+.ctx-chip:hover { background: var(--butter); box-shadow: none; }
+.ctx-chip.is-on { background: var(--cocoa); color: var(--cream); box-shadow: none; }
+.empty-start-label { margin: 30px 0 12px; text-align: center; }
+.empty-tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: left; }
+.empty-tool { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 22px; border: 0; color: var(--cocoa); background: var(--butter); text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.empty-tool:nth-child(2) { background: var(--pink); }
+.empty-tool:nth-child(3) { background: var(--peach); }
+.empty-tool:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.empty-tool-ico { width: 36px; height: 36px; border-radius: 50%; background: var(--cocoa); display: grid; place-items: center; margin-bottom: 8px; }
+.empty-tool-ico svg { width: 18px; height: 18px; stroke: var(--butter); }
+.empty-tool strong { font: 400 18px/1.2 var(--font-display); color: var(--cocoa); }
+.empty-tool > span:last-child { font-size: 13.5px; line-height: 1.4; color: rgba(59, 34, 24, 0.78); }
+@media (max-width: 759px) {
+  .empty-tools { grid-template-columns: 1fr; gap: 10px; }
+  .empty-tool { display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; align-items: center; padding: 12px 14px; }
+  .empty-tool-ico { grid-row: 1 / span 2; margin: 0; }
+  .ctx-panel { padding: 14px; border-radius: 20px; }
+  .ctx-toggle { flex-direction: column; align-items: center; gap: 2px; }
+  .ctx-toggle small { display: block; text-align: center; }
+}
+.empty-chat .empty-start { display: block; width: 100%; }

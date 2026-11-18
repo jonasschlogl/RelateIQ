@@ -1110,6 +1110,32 @@ function dismissDetailTip() {
   }
 }
 
+// Optional context chips on the empty Coach screen. Each pick becomes one plain
+// sentence in the message box (editable before sending), so the coach can skip
+// the basic questions and answer the real situation from the first reply.
+const CONTEXT_GROUPS = [
+  { key: "rel", label: "Us", opts: [
+    ["Dating", "We're dating."],
+    ["Under a year", "We've been together under a year."],
+    ["1 to 5 years", "We've been together 1 to 5 years."],
+    ["Over 5 years", "We've been together over 5 years."],
+    ["Married", "We're married."],
+    ["Separated", "We're separated."],
+  ] },
+  { key: "dur", label: "How long has this been going on?", opts: [
+    ["Just happened", "It just happened."],
+    ["A few weeks", "It's been going on for a few weeks."],
+    ["Months", "It's been going on for months."],
+    ["Years", "It's been going on for years."],
+  ] },
+  { key: "want", label: "What do you want?", opts: [
+    ["Understand it", "I want to understand what's going on."],
+    ["Stop the fights", "I want the fights to stop."],
+    ["Know what to say", "I need to know what to say."],
+    ["Decide something", "I need to decide something."],
+  ] },
+];
+
 function renderEmptyState() {
   const chatDiv = document.getElementById("chat");
   const showTip = currentConvCtx.mode !== "practice" && !isDetailTipDismissed();
@@ -1126,8 +1152,24 @@ function renderEmptyState() {
     "My partner has gone quiet.",
     "I'm overthinking something they said.",
   ];
+  const ICO = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+  const TOOLS = [
+    { href: "message.html", title: "Check a message", sub: "Paste a text before you send it and see how it may land.", ico: ICO('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/>') },
+    { href: "chat.html?mode=practice", title: "Practice a hard talk", sub: "Rehearse it first. The AI plays your partner.", ico: ICO('<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>') },
+    { href: "sos.html", title: "We just had a fight", sub: "A calm guide and a message to reach out.", ico: ICO('<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>') },
+  ];
+  const ctxGroupHtml = (g) =>
+    `<div class="ctx-group"><span class="ctx-label">${escapeHtml(g.label)}</span><div class="ctx-chips">${g.opts
+      .map((o, i) => `<button type="button" class="ctx-chip" data-g="${g.key}" data-i="${i}" aria-pressed="false">${escapeHtml(o[0])}</button>`)
+      .join("")}</div></div>`;
   const startHtml = isCoach
-    ? `<div class="empty-start"><div class="empty-starters">${STARTERS.map((t) => `<button type="button" class="pb-choice empty-starter" data-text="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div></div>`
+    ? `<div class="empty-start">
+         <div class="empty-starters">${STARTERS.map((t) => `<button type="button" class="pb-choice empty-starter" data-text="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div>
+         <button type="button" class="ctx-toggle" id="ctx-toggle" aria-expanded="false">Add a little context <small>(optional, makes the answer more specific)</small></button>
+         <div class="ctx-panel" id="ctx-panel" hidden>${CONTEXT_GROUPS.map(ctxGroupHtml).join("")}</div>
+         <p class="empty-start-label">Or start with a tool</p>
+         <div class="empty-tools">${TOOLS.map((t) => `<a class="empty-tool" href="${t.href}"><span class="empty-tool-ico">${t.ico}</span><strong>${escapeHtml(t.title)}</strong><span>${escapeHtml(t.sub)}</span></a>`).join("")}</div>
+       </div>`
     : "";
   let firstName = "";
   try { firstName = String((getUser() || {}).name || "").trim().split(/\s+/)[0] || ""; } catch (e) { /* ignore */ }
@@ -1135,12 +1177,50 @@ function renderEmptyState() {
     ? `${firstName ? "Hi " + escapeHtml(firstName) + ", what" : "What"}&rsquo;s on your mind?`
     : "Say it the way you would to them.";
   chatDiv.innerHTML =
-    `<div id="empty-state" class="empty-chat"><h2>${heading}</h2>${startHtml}</div>`;
+    `<div id="empty-state" class="empty-chat"><h2>${heading}</h2>${isCoach ? '<p class="empty-sub">Private to you. A minute is enough.</p>' : ""}${startHtml}</div>`;
+  const ctxPanel = document.getElementById("ctx-panel");
+  const ctxToggle = document.getElementById("ctx-toggle");
+  const openCtx = () => {
+    if (!ctxPanel || !ctxPanel.hidden) return;
+    ctxPanel.hidden = false;
+    ctxToggle?.setAttribute("aria-expanded", "true");
+  };
+  ctxToggle?.addEventListener("click", () => {
+    if (!ctxPanel) return;
+    ctxPanel.hidden = !ctxPanel.hidden;
+    ctxToggle.setAttribute("aria-expanded", ctxPanel.hidden ? "false" : "true");
+  });
   chatDiv.querySelectorAll(".empty-starter").forEach((b) =>
     b.addEventListener("click", () => {
       const inp = document.getElementById("input");
       if (!inp) return;
       inp.value = b.dataset.text + " ";
+      inp.dispatchEvent(new Event("input", { bubbles: true }));
+      inp.focus();
+      inp.setSelectionRange(inp.value.length, inp.value.length);
+      openCtx();
+    })
+  );
+  // Chips: keep one sentence per group in the message box, after whatever the person typed.
+  const ctxPick = {};
+  const allCtxSentences = CONTEXT_GROUPS.flatMap((g) => g.opts.map((o) => o[1]));
+  chatDiv.querySelectorAll(".ctx-chip").forEach((chip) =>
+    chip.addEventListener("click", () => {
+      const inp = document.getElementById("input");
+      if (!inp) return;
+      const g = CONTEXT_GROUPS.find((x) => x.key === chip.dataset.g);
+      const idx = Number(chip.dataset.i);
+      ctxPick[g.key] = ctxPick[g.key] === idx ? undefined : idx;
+      chatDiv.querySelectorAll(`.ctx-chip[data-g="${g.key}"]`).forEach((c) => {
+        const on = ctxPick[g.key] === Number(c.dataset.i);
+        c.classList.toggle("is-on", on);
+        c.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      let base = inp.value;
+      allCtxSentences.forEach((t) => { base = base.split(t).join(""); });
+      base = base.replace(/\s+/g, " ").trim();
+      const extra = CONTEXT_GROUPS.map((x) => (ctxPick[x.key] !== undefined ? x.opts[ctxPick[x.key]][1] : "")).filter(Boolean).join(" ");
+      inp.value = (base ? base + " " : "") + extra + (extra ? " " : "");
       inp.dispatchEvent(new Event("input", { bubbles: true }));
       inp.focus();
       inp.setSelectionRange(inp.value.length, inp.value.length);
