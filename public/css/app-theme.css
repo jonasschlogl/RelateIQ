@@ -657,3 +657,140 @@ body { overscroll-behavior-y: none; }
 #message-page .mc-version-locked p { color: var(--cocoa); }
 
 .practice-more .practice-setup-field-label { font: 700 14.5px var(--font-body); margin: 4px 0 10px; }
+
+/* ==========================================================================
+   Round 7: the same bold colour blocks on every other mode
+   (Home, After a fight, Playbook, Insights, Daily check-in, Share, Review).
+   Pink = things you fill in, butter = information, peach = secondary, cocoa = emphasis.
+   ========================================================================== */
+
+/* any plain card on a tool page is a colour block, never cream on cream */
+.tool-page .dashboard-card { background: var(--butter); color: var(--cocoa); box-shadow: 0 22px 44px -30px rgba(59, 34, 24, .6); }
+.tool-page .dashboard-card p, .tool-page .dashboard-card .text-muted { color: rgba(59, 34, 24, .8); }
+.tool-page .dashboard-card h2, .tool-page .dashboard-card h3 { color: var(--cocoa); }
+.tool-page .dashboard-card .section-tag, .dashboard-card .section-tag { color: var(--cocoa); opacity: .8; }
+.tool-page .dashboard-card textarea, .tool-page .dashboard-card input[type="text"], .tool-page .dashboard-card select {
+  background: #fff; border: 2px solid transparent; color: var(--cocoa); box-shadow: 0 8px 18px -12px rgba(59, 34, 24, .5);
+}
+.tool-page .dashboard-card textarea:focus, .tool-page .dashboard-card input:focus, .tool-page .dashboard-card select:focus { border-color: var(--cocoa); }
+.tool-page .dashboard-card .btn-gradient, .tool-page .dashboard-card .btn-primary { background: var(--cocoa); color: var(--butter); }
+.tool-page .dashboard-card .btn-gradient:hover:not(:disabled), .tool-page .dashboard-card .btn-primary:hover:not(:disabled) { background: #4d2f22; }
+.tool-page .dashboard-card .btn-ghost { background: rgba(255, 255, 255, .55); color: var(--cocoa); border: 0; }
+.tool-page .dashboard-card .btn-ghost:hover:not(:disabled) { background: #fff; }
+.tool-page .pb-lock, .tool-page .dashboard-card .pb-lock { background: var(--cocoa); color: var(--butter); }
+.pb-choice { background: #fff; border: 2px solid transparent; color: var(--cocoa); box-shadow: 0 5px 12px -8px rgba(59, 34, 24, .5); }
+.pb-choice:hover { border-color: var(--cocoa); }
+.pb-choice.is-picked { background: var(--cocoa); color: var(--butter); }
+
+/* head-of-page buttons that sat bare on the page */
+.tool-page > div > .dashboard-card-header h2 { font-size: 24px; }
+.tool-page > div > .dashboard-card-header .btn-primary { background: var(--cocoa); color: var(--butter); padding: 11px 20px; }
+
+/* ---------- After a fight ---------- */
+#sos-page .sos-card { border-radius: 28px; padding: 26px 26px 24px; }
+#sos-page .sos-card:nth-of-type(1) { background: var(--butter); }
+#sos-page .sos-card:nth-of-type(2) { background: var(--peach); }
+#sos-page .sos-card:nth-of-type(3), #sos-page .sos-card.sos-locked { background: var(--pink); }
+#sos-page .sos-card.sos-result { background: var(--pink); }
+#sos-page .practice-setup-field-label, #sos-page .sos-card > h2 { font: 500 22px/1.2 var(--font-display); color: var(--cocoa); }
+#sos-page .sos-circle { background: #fff; color: var(--cocoa); box-shadow: 0 0 0 14px rgba(255, 255, 255, .45); }
+#sos-page .sos-list li { color: var(--cocoa); font-size: 15.5px; }
+#sos-page .sos-list li::marker { color: var(--cocoa); }
+#sos-page .mc-version { background: #fff; border: 0; border-left: 8px solid var(--cocoa); border-radius: 20px; box-shadow: 0 12px 24px -16px rgba(59, 34, 24, .55); }
+#sos-page .mc-version p { color: var(--cocoa); }
+#sos-page .mc-version .btn-ghost { background: var(--cocoa); color: var(--butter); }
+
+/* ---------- Playbook ---------- */
+.pb-steps li { border: 0; box-shadow: none; color: var(--cocoa); }
+.pb-steps li:nth-child(1) { background: var(--butter); }
+.pb-steps li:nth-child(2) { background: var(--peach); }
+.pb-steps li:nth-child(3) { background: var(--pink); }
+.pb-steps .pb-step-num { background: var(--cocoa); color: var(--butter); }
+.pb-steps span:not(.pb-step-num) { color: rgba(59, 34, 24, .78); }
+#playbook-page .focus-card:nth-of-type(odd) { background: var(--pink); }
+#playbook-page .focus-card:nth-of-type(even) { background: var(--peach); }
+#playbook-page .pb-empty { background: var(--butter); }
+.pb-row { border-top-color: rgba(59, 34, 24, .15); }
+.pb-meta { color: rgba(59, 34, 24, .72); }
+.pb-note-box textarea { background: #fff; border-color: transparent; }
+
+/* ---------- Daily check-in ---------- */
+.checkin-card, #daily-page .checkin-card { background: var(--pink); color: var(--cocoa); box-shadow: 0 22px 44px -30px rgba(59, 34, 24, .6); }
+.checkin-card p, .checkin-card .text-muted, .checkin-card label { color: rgba(59, 34, 24, .85); }
+.checkin-card .section-tag { color: var(--cocoa); }
+.checkin-card h2, .checkin-card .checkin-question { color: var(--cocoa); }
+.checkin-card .checkin-question { font-size: 19px; line-height: 1.45; }
+.checkin-card .btn-ghost { background: rgba(255, 255, 255, .6); color: var(--cocoa); border: 0; }
+.checkin-card .btn-ghost:hover:not(:disabled) { background: #fff; }
+.checkin-card .btn-gradient, .checkin-card .btn-primary { background: var(--cocoa); color: var(--butter); }
+.checkin-card input[type="range"] { accent-color: var(--cocoa); }
+.couple-history-toggle, #daily-page > .btn-ghost, #daily-page .btn-ghost.btn-sm { background: var(--cocoa); color: var(--butter); border: 0; }
+.couple-answer-block, .couple-history-entry { background: #fff; border-radius: 18px; color: var(--cocoa); }
+
+/* ---------- Share ---------- */
+.share-card { background: var(--butter); border: 0; border-radius: 24px; color: var(--cocoa); box-shadow: 0 16px 30px -22px rgba(59, 34, 24, .6); padding: 20px 24px; }
+.share-card:nth-child(even) { background: var(--peach); }
+.share-card-main h3 { color: var(--cocoa); font-size: 18px; }
+.share-card-main p { color: rgba(59, 34, 24, .78); }
+#share-list-view .dashboard-card-header .btn-primary { background: var(--cocoa); color: var(--butter); padding: 11px 20px; }
+#share-list > p.text-muted { background: var(--butter); border-radius: 24px; padding: 22px 26px; color: var(--cocoa); font-weight: 500; }
+.share-link-box, .share-conversation-warning { background: var(--butter); color: var(--cocoa); border: 0; border-radius: 20px; }
+.share-item-row { background: #fff; border: 0; border-radius: 18px; box-shadow: 0 8px 18px -12px rgba(59, 34, 24, .5); }
+
+/* ---------- Insights, Review, Therapist pack: a coloured head on the sheet ---------- */
+@media screen {
+  .summary-paper { padding: 0 40px 40px; overflow: hidden; box-shadow: 0 26px 50px -30px rgba(59, 34, 24, .65); }
+  .summary-header { background: var(--pink); margin: 0 -40px 30px; padding: 34px 40px 28px; border: 0; }
+  .summary-header h1 { color: var(--cocoa); font-size: clamp(28px, 4vw, 36px); }
+  .summary-header .summary-subtitle { color: rgba(59, 34, 24, .85); }
+  .summary-section { color: var(--cocoa); }
+  #insights-state .btn-gradient, #summary-state .btn-gradient, .summary-paper .btn-gradient { background: var(--cocoa); color: var(--butter); }
+  .trend-list-row, .pack-facts { background: var(--butter); border-radius: 18px; color: var(--cocoa); }
+}
+@media screen and (max-width: 640px) {
+  .summary-paper { padding: 0 20px 28px; }
+  .summary-header { margin: 0 -20px 24px; padding: 28px 20px 22px; }
+}
+.pb-tabs a { background: var(--butter); color: var(--cocoa); font-weight: 600; }
+.pb-tabs a:hover { background: var(--peach); }
+.pb-tabs a.is-current { background: var(--cocoa); color: var(--butter); }
+.pb-tabs a .pb-lock { background: var(--cocoa); color: var(--butter); }
+.pb-tabs a.is-current .pb-lock { background: var(--pink); color: var(--cocoa); }
+
+#review-page .rv-card, .rv-card { background: var(--butter); }
+.rv-chip { background: #fff; color: var(--cocoa); border: 0; font-weight: 600; }
+.rv-score { background: var(--cocoa); color: var(--cream); border: 0; border-radius: 20px; }
+.rv-score-num { color: var(--butter); }
+.rv-score-of, .rv-score-sub { color: rgba(255, 243, 226, .8); }
+.rv-theme p, .rv-note, .rv-list { color: rgba(59, 34, 24, .85); }
+.yr-bar-fill { background: var(--cocoa); }
+.yr-bar-val, .yr-bar-label { color: var(--cocoa); }
+
+/* ---------- Home ---------- */
+.dash-simple #convos-card .conversation-list { background: var(--butter); box-shadow: 0 20px 40px -28px rgba(59, 34, 24, .6); padding: 8px; }
+.dash-simple #convos-card .conversation-row { color: var(--cocoa); }
+.dash-simple #convos-card .conversation-row:hover { background: #fff; }
+.dash-simple #convos-card .conversation-row .text-muted, .dash-simple #convos-card .conversation-row span { color: rgba(59, 34, 24, .75); }
+.dash-simple #convos-card .btn-primary { background: var(--cocoa); color: var(--butter); }
+.convo-empty { color: var(--cocoa); }
+.dash-simple #checkin-card { background: var(--pink); padding: 28px; }
+.dash-simple #checkin-card .dashboard-card-header h2 { color: var(--cocoa); }
+.dash-settings { background: var(--peach); box-shadow: 0 20px 40px -30px rgba(59, 34, 24, .6); }
+.dash-settings > summary small { color: rgba(59, 34, 24, .78); }
+.modes-more > summary, details.modes-more > summary { background: var(--cocoa); color: var(--butter); border: 0; font-weight: 700; }
+.modes-more-count { background: var(--butter); color: var(--cocoa); }
+
+/* round 7 fixes */
+.summary-header .summary-brand, .summary-header .summary-brand span { color: #fff; -webkit-text-fill-color: #fff; background: none; }
+.summary-header .summary-brand { color: var(--cocoa); -webkit-text-fill-color: var(--cocoa); }
+.checkin-card p, .checkin-card .text-muted { color: var(--cocoa); }
+.couple-history-toggle { display: block; width: auto; margin: 18px auto 0; border-radius: 999px; padding: 11px 24px; font-weight: 700; }
+.pb-lock-list li::before { border-color: var(--cocoa); }
+#playbook-page .focus-card { background: var(--pink); }
+#playbook-page .focus-card ~ .focus-card { background: var(--peach); }
+.dash-simple #convos-card .conversation-row, .dash-simple #convos-card .conversation-row * { color: var(--cocoa); }
+.dash-simple #convos-card .conversation-row svg { opacity: .6; }
+.couple-history-toggle { width: fit-content; max-width: max-content; margin-left: auto; margin-right: auto; }
+#playbook-page #focus-card .focus-card { background: var(--pink); }
+#playbook-page #ideas-card .focus-card, #playbook-page #ideas .focus-card, #playbook-page .focus-card.focus-ideas { background: var(--peach); }
+.checkin-card .checkin-question, #daily-page .checkin-question { color: var(--cocoa) !important; }
