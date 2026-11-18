@@ -87,7 +87,7 @@ input[type="checkbox"], input[type="radio"], input[type="range"] { accent-color:
   padding: 10px 12px 10px 22px; background: var(--cocoa); border-radius: 999px; box-shadow: 0 14px 34px -18px rgba(59, 34, 24, 0.55);
 }
 .site-nav-app .brand { color: var(--cream); font-family: var(--font-display); font-weight: 500; font-size: 19px; }
-.brand span { color: var(--pink); }
+.brand span { color: inherit; -webkit-text-fill-color: currentColor; background: none; font-weight: inherit; }
 .site-nav-app .nav-links a, .site-nav-app .nav-more-btn { color: rgba(255, 243, 226, 0.84); border-radius: 999px; padding: 9px 14px; font-weight: 500; transition: background 0.25s, color 0.25s; }
 .site-nav-app .nav-links a:hover, .site-nav-app .nav-more-btn:hover { background: rgba(255, 243, 226, 0.1); color: var(--cream); }
 .site-nav-app .nav-links a.nav-current { background: var(--pink); color: var(--cocoa) !important; font-weight: 700; }
@@ -781,8 +781,7 @@ body { overscroll-behavior-y: none; }
 .modes-more-count { background: var(--butter); color: var(--cocoa); }
 
 /* round 7 fixes */
-.summary-header .summary-brand, .summary-header .summary-brand span { color: #fff; -webkit-text-fill-color: #fff; background: none; }
-.summary-header .summary-brand { color: var(--cocoa); -webkit-text-fill-color: var(--cocoa); }
+.summary-header .summary-brand, .summary-header .summary-brand span { color: var(--cocoa); -webkit-text-fill-color: var(--cocoa); background: none; }
 .checkin-card p, .checkin-card .text-muted { color: var(--cocoa); }
 .couple-history-toggle { display: block; width: auto; margin: 18px auto 0; border-radius: 999px; padding: 11px 24px; font-weight: 700; }
 .pb-lock-list li::before { border-color: var(--cocoa); }
