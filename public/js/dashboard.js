@@ -312,10 +312,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const list = document.getElementById("conversation-list");
     list.innerHTML = "";
 
-    if (!Array.isArray(conversations) || conversations.length === 0) {
+    const real = Array.isArray(conversations) ? conversations.filter((c) => !((c.mode || "coach") === "coach" && (!c.title || c.title === "New conversation"))) : conversations;
+    if (!Array.isArray(real) || real.length === 0) {
       list.innerHTML = '<div class="convo-empty"><p>No conversations yet. Your first one takes a minute.</p><a href="chat.html?new=1" class="btn btn-primary btn-sm">Start your first chat</a></div>';
     } else {
-      conversations.forEach((c) => {
+      real.forEach((c) => {
         const row = document.createElement("div");
         row.className = "conversation-row";
 

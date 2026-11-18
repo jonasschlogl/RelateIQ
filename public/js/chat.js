@@ -304,6 +304,8 @@ function applyQualityUI() {
   if (!row) return;
   const u = getUser();
   const canAdv = canChooseAdvancedHere();
+  // Free accounts cannot use Advanced, and a locked switch they cannot judge is only noise.
+  row.style.display = canAdv ? "" : "none";
   const eff = effectiveQuality();
   row.querySelectorAll(".quality-btn").forEach((b) => {
     const on = b.dataset.quality === eff;
@@ -949,11 +951,15 @@ function appendHistoryGroups(container, list, opts) {
 // to hide any of them here.
 const HISTORY_SIDEBAR_RECENT_LIMIT = 8;
 
+// A coach chat that never got a first message is only a placeholder: keep it out of the lists.
+const isBlankCoachChat = (c) => (c.mode || "coach") === "coach" && (!c.title || c.title === "New conversation");
+
 function renderHistory() {
   const historyDiv = document.getElementById("history");
   historyDiv.innerHTML = "";
+  const shown = conversations.filter((c) => !isBlankCoachChat(c));
 
-  if (conversations.length === 0) {
+  if (shown.length === 0) {
     const empty = document.createElement("div");
     empty.className = "history-empty";
     empty.textContent = "No conversations yet";
@@ -968,7 +974,7 @@ function renderHistory() {
   // Search always runs over the FULL conversations list (never just the
   // capped view below), so it can always find what it's looking for.
   const query = (document.getElementById("history-search")?.value || "").trim().toLowerCase();
-  const filtered = query ? conversations.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : conversations;
+  const filtered = query ? shown.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : shown;
 
   if (filtered.length === 0) {
     const empty = document.createElement("div");
@@ -990,7 +996,7 @@ function renderHistory() {
   const viewAllBtn = document.createElement("button");
   viewAllBtn.type = "button";
   viewAllBtn.className = "history-view-all-btn";
-  viewAllBtn.textContent = `View all conversations (${conversations.length}) →`;
+  viewAllBtn.textContent = `View all conversations (${shown.length}) →`;
   viewAllBtn.addEventListener("click", openHistoryModal);
   historyDiv.appendChild(viewAllBtn);
 }
@@ -1019,7 +1025,8 @@ function openHistoryModal() {
     const listEl = card.querySelector("#history-modal-list");
     listEl.innerHTML = "";
     const query = (card.querySelector("#history-modal-search")?.value || "").trim().toLowerCase();
-    const filtered = query ? conversations.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : conversations;
+    const base = conversations.filter((c) => !isBlankCoachChat(c));
+    const filtered = query ? base.filter((c) => (c.title || "New conversation").toLowerCase().includes(query)) : base;
 
     if (filtered.length === 0) {
       const empty = document.createElement("div");
@@ -1298,8 +1305,8 @@ async function renderPracticeSetup() {
           <div class="scenario-chip-row" id="scenario-chip-row" style="display:none;"></div>
         </div>
 
-        <div class="practice-setup-divider"></div>
-
+        <details class="practice-more">
+        <summary>More options <small>Intensity, swap roles, a plan first</small></summary>
         <div class="practice-setup-field">
           <label class="practice-setup-field-label">Intensity</label>
           <div class="intensity-toggle" id="intensity-toggle" role="group" aria-label="Practice intensity">
@@ -1343,6 +1350,7 @@ async function renderPracticeSetup() {
             <span class="switch-track"><span class="switch-thumb"></span></span>
           </span>
         </label>
+        </details>
       </div>
 
       <div class="practice-setup-partners">
@@ -1646,7 +1654,9 @@ function renderPartnerList() {
   listDiv.innerHTML = "";
 
   if (partners.length === 0) {
-    listDiv.innerHTML = '<p class="text-muted" style="text-align:center;">No partner profiles yet. Create one below to get started.</p>';
+    listDiv.innerHTML = '<p class="text-muted" style="text-align:center;">Tell me about them in a few words and we start.</p>';
+    // Nothing to pick from yet: show the short form straight away instead of a button that opens it.
+    if (!editingPartnerId && document.getElementById("partner-form")?.style.display === "none") openPartnerForm(null);
     return;
   }
 

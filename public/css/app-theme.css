@@ -442,3 +442,12 @@ body:has(.auth-page) { background: #2a1710; }
   .ctx-toggle small { display: block; text-align: center; }
 }
 .empty-chat .empty-start { display: block; width: 100%; }
+
+/* ---------- Partner Practice setup: options stay out of the way until wanted ---------- */
+.practice-more { margin-top: 14px; border-top: 1.5px solid var(--border); padding-top: 4px; }
+.practice-more > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 8px; padding: 12px 0; font: 700 14.5px var(--font-body); color: var(--cocoa); }
+.practice-more > summary::-webkit-details-marker { display: none; }
+.practice-more > summary::after { content: "+"; margin-left: auto; font-size: 18px; color: var(--text-muted); }
+.practice-more[open] > summary::after { content: "\2212"; }
+.practice-more > summary small { font-weight: 500; color: var(--text-muted); }
+.practice-more .practice-setup-field { margin-top: 6px; }
