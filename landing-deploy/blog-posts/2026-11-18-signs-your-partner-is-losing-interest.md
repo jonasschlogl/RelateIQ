@@ -3,9 +3,6 @@ title: "Signs your partner is losing interest: 9 real signals and what to do bef
 date: 2026-11-18
 description: Shorter texts, fewer plans, less touch? 9 real signs your partner is losing interest, how to tell it from a busy phase and what to say to reconnect.
 tags: signs your partner is losing interest, emotional distance
-draft: true
-approved: true
-topics: overthinking, attachment
 ---
 Their texts got shorter. Plans that used to be easy now take effort. They're on their phone more when you're together. You can't point to one big thing, but the warmth feels lower than it used to, and you've started to wonder: are they losing interest?
 
