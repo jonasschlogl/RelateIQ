@@ -61,6 +61,11 @@ function renderForm() {
         <span class="text-muted mc-usage" id="mc-usage">${escapeHtml(usageText())}</span>
       </div>
     </section>
+    <ul class="mc-steps" id="mc-steps">
+      <li><b>1</b><span>Paste what you're about to send</span></li>
+      <li><b>2</b><span>See how it may land</span></li>
+      <li><b>3</b><span>Send a version that works</span></li>
+    </ul>
     <div id="mc-result"></div>`;
 
   document.getElementById("mc-go").addEventListener("click", runCheck);
@@ -136,6 +141,7 @@ const RISK_LABEL = { low: "Low risk", medium: "Could go wrong", high: "High risk
 
 function renderResult(d) {
   const out = document.getElementById("mc-result");
+  document.getElementById("mc-steps")?.remove();
   const flags = (d.flags || []).length ? `<ul class="mc-flags">${d.flags.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}</ul>` : "";
   const lockedCard =
     mcState.plan === "premium"

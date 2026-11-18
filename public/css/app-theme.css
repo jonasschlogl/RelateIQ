@@ -503,3 +503,157 @@ body:has(.auth-page) { background: #2a1710; }
   .user-msg { max-width: 90%; padding: 12px 17px; }
   .partner-msg { max-width: 94%; }
 }
+
+/* ==========================================================================
+   Round 6: no pale-on-pale. Overscroll, start cards, Practice, Message check.
+   ========================================================================== */
+
+/* Canvas colour behind the page, and no white rubber-band at the top or bottom. */
+html { background: var(--paper); overscroll-behavior-y: none; }
+html:has(.auth-page) { background: #2a1710; }
+body { overscroll-behavior-y: none; }
+.chat-messages, .messages, #chat, .sidebar, .sidebar-list { overscroll-behavior: contain; }
+
+/* Start screen tool cards: the first one used to lose to an older rule and turned cream on cream. */
+.empty-tools .empty-tool { border: 0; box-shadow: 0 10px 24px -16px rgba(59, 34, 24, 0.45); }
+.empty-tools .empty-tool:nth-child(1) { background: var(--butter); }
+.empty-tools .empty-tool:nth-child(2) { background: var(--pink); }
+.empty-tools .empty-tool:nth-child(3) { background: var(--peach); }
+.empty-tools .empty-tool:hover { box-shadow: 0 16px 30px -16px rgba(59, 34, 24, 0.55); }
+
+/* ---------- Partner Practice: two bold colour blocks ---------- */
+.practice-setup { max-width: 660px; }
+.practice-setup-intro h2 { font-size: clamp(30px, 4.2vw, 42px); line-height: 1.08; }
+.practice-setup-intro p { color: var(--cocoa); opacity: .82; font-size: 16px; }
+.practice-limit-banner { background: var(--cocoa); color: var(--cream); border-radius: 999px; padding: 10px 18px; font-weight: 600; font-size: 14px; text-align: center; }
+.practice-limit-banner a { color: var(--butter); }
+
+.practice-setup-card, .practice-setup-partners { border-radius: 28px; padding: 26px 26px 22px; margin-top: 18px; box-shadow: 0 22px 44px -28px rgba(59, 34, 24, 0.6); }
+.practice-setup-card { background: var(--pink); }
+.practice-setup-partners { background: var(--butter); }
+.practice-setup-card p, .practice-setup-partners p { color: var(--cocoa); opacity: .85; }
+
+.practice-setup-card .practice-setup-field-label, .practice-setup-partners > .practice-setup-field-label {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 12px; color: var(--cocoa);
+  font: 500 21px/1.2 var(--font-display); letter-spacing: -0.01em; text-transform: none;
+}
+.practice-setup-card .practice-setup-field-label .text-muted { font: 500 13px var(--font-body); color: rgba(59, 34, 24, .7); }
+.practice-setup-card > .practice-setup-field:first-child > .practice-setup-field-label::before,
+.practice-setup-partners > .practice-setup-field-label::before {
+  content: "1"; flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--cocoa); color: var(--butter); font: 700 15px var(--font-body);
+}
+.practice-setup-partners > .practice-setup-field-label::before { content: "2"; }
+
+.practice-setup-card input[type="text"], .practice-setup-partners input, .practice-setup-partners textarea, .practice-setup-partners select {
+  background: #fff; border: 2px solid transparent; color: var(--cocoa); box-shadow: 0 6px 16px -10px rgba(59, 34, 24, .45);
+}
+.practice-setup-card input[type="text"]:focus, .practice-setup-partners input:focus, .practice-setup-partners textarea:focus, .practice-setup-partners select:focus { border-color: var(--cocoa); }
+.practice-setup-card input::placeholder, .practice-setup-partners input::placeholder, .practice-setup-partners textarea::placeholder { color: rgba(59, 34, 24, .5); }
+.scenario-library-toggle { color: var(--cocoa); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; opacity: 1; }
+.scenario-chip { background: #fff; color: var(--cocoa); border: 0; font-weight: 600; box-shadow: 0 4px 12px -8px rgba(59, 34, 24, .5); }
+.scenario-chip:hover { background: var(--cocoa); color: var(--butter); }
+
+.practice-more { border-top: 2px solid rgba(59, 34, 24, .18); }
+.practice-more > summary { color: var(--cocoa); }
+.practice-more > summary small, .practice-more > summary::after { color: rgba(59, 34, 24, .75); }
+.intensity-option { background: #fff; border: 2px solid transparent; box-shadow: 0 6px 14px -10px rgba(59, 34, 24, .5); }
+.intensity-option:hover { border-color: var(--cocoa); }
+.intensity-option.is-active { background: var(--cocoa); border-color: var(--cocoa); }
+.intensity-option.is-active .intensity-option-title { color: var(--butter); }
+.intensity-option.is-active .intensity-option-desc { color: rgba(255, 243, 226, .8); }
+.intensity-option-desc, .role-swap-desc { color: rgba(59, 34, 24, .72); }
+.role-swap-title { color: var(--cocoa); font-size: 14.5px; }
+.practice-setup-card .switch-track { background: rgba(59, 34, 24, .28); border-color: transparent; }
+.practice-setup-card .switch-thumb { background: #fff; }
+.practice-setup-card .switch input:checked ~ .switch-track { background: var(--cocoa); border-color: var(--cocoa); }
+.practice-setup-card .switch input:checked ~ .switch-track .switch-thumb { background: var(--butter); }
+
+/* partner cards sit white on the butter block */
+.practice-setup-partners .partner-list { margin: 0 0 14px; }
+.practice-setup-partners > .partner-list > p { text-align: left !important; font-size: 15px; margin: -2px 0 14px; }
+.partner-card { background: #fff; border: 2px solid transparent; border-radius: 20px; padding: 14px 16px; box-shadow: 0 10px 22px -14px rgba(59, 34, 24, .55); }
+.partner-card:hover { border-color: var(--cocoa); transform: translateY(-1px); }
+.partner-card-avatar { background: var(--cocoa); color: var(--butter); font-weight: 700; }
+.partner-card .partner-name { color: var(--cocoa); font-size: 16px; }
+.partner-card .partner-context { color: rgba(59, 34, 24, .7); }
+.partner-card-actions .text-faint { background: var(--pink); color: var(--cocoa); font-weight: 700; font-size: 13px; padding: 7px 14px; border-radius: 999px; }
+.partner-style-tag { background: var(--butter); color: var(--cocoa); }
+.partner-learn-meta, .partner-learn-toggle { color: rgba(59, 34, 24, .75); }
+.practice-setup-partners .btn-ghost { background: var(--cocoa); color: var(--butter); border: 0; }
+.practice-setup-partners .btn-ghost:hover:not(:disabled) { background: #4d2f22; }
+
+/* the profile form lives inside the butter block */
+.practice-setup-partners .partner-form { background: transparent; border: 0; padding: 0; margin-top: 4px; }
+.practice-setup-partners .partner-form label { color: var(--cocoa); font-size: 14px; font-weight: 700; margin-top: 16px; }
+.practice-setup-partners .partner-form label .text-muted { color: rgba(59, 34, 24, .7); font-weight: 500; }
+.practice-setup-partners .partner-form .btn-gradient { background: var(--cocoa); color: var(--butter); }
+.practice-setup-partners .partner-form .btn-gradient:hover:not(:disabled) { background: #4d2f22; }
+.practice-setup-partners .partner-form .btn-ghost { background: rgba(59, 34, 24, .12); color: var(--cocoa); }
+.partner-form-actions { margin-top: 18px; }
+@media (max-width: 560px) {
+  .practice-setup-card, .practice-setup-partners { padding: 20px 16px 16px; border-radius: 24px; }
+  .practice-setup-card .practice-setup-field-label, .practice-setup-partners > .practice-setup-field-label { font-size: 19px; }
+}
+
+/* ---------- Message check ---------- */
+#message-page { max-width: 760px; }
+#message-page .mc-card:not(.mc-result-card) {
+  background: var(--pink); border-radius: 30px; padding: 30px; gap: 14px;
+  box-shadow: 0 24px 48px -30px rgba(59, 34, 24, .65);
+}
+#message-page .mc-card .practice-setup-field-label { font: 500 22px/1.2 var(--font-display); color: var(--cocoa); letter-spacing: -.01em; margin: 0; }
+#message-page .mc-card textarea, #message-page .mc-card select {
+  background: #fff; border: 2px solid transparent; color: var(--cocoa); font-size: 16px; line-height: 1.5; border-radius: 20px; padding: 16px 18px;
+  box-shadow: 0 8px 20px -12px rgba(59, 34, 24, .5);
+}
+#message-page .mc-card textarea:focus, #message-page .mc-card select:focus { border-color: var(--cocoa); }
+#message-page .mc-card textarea::placeholder { color: rgba(59, 34, 24, .5); }
+#message-page #mc-draft { min-height: 150px; }
+#message-page .mc-theirs { background: rgba(255, 255, 255, .35); border-radius: 18px; padding: 4px 16px; }
+#message-page .mc-theirs[open] { padding-bottom: 14px; }
+#message-page .mc-theirs summary { padding: 12px 0; margin: 0; font-weight: 700; color: var(--cocoa); }
+#message-page .mc-theirs summary .text-muted { font-weight: 500; color: rgba(59, 34, 24, .72); }
+#message-page .mc-note { color: var(--cocoa); opacity: .85; }
+#message-page .mc-note a { color: var(--cocoa); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+#message-page .pb-lock { background: var(--cocoa); color: var(--butter); }
+#message-page .mc-actions { gap: 16px; margin-top: 4px; }
+#message-page #mc-go { background: var(--cocoa); color: var(--butter); padding: 15px 30px; font-size: 16px; box-shadow: 0 14px 26px -14px rgba(59, 34, 24, .8); }
+#message-page #mc-go:hover:not(:disabled) { background: #4d2f22; }
+#message-page .mc-usage { color: var(--cocoa); opacity: .8; font-weight: 600; }
+#message-page .form-error { background: #fff; border-radius: 14px; padding: 10px 14px; }
+
+.mc-steps { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mc-steps li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 22px; background: var(--butter); color: var(--cocoa); font-weight: 600; font-size: 14.5px; line-height: 1.3; }
+.mc-steps li:nth-child(2) { background: var(--peach); }
+.mc-steps li:nth-child(3) { background: var(--cocoa); color: var(--cream); }
+.mc-steps b { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--cocoa); color: var(--butter); font: 700 15px var(--font-body); }
+.mc-steps li:nth-child(3) b { background: var(--butter); color: var(--cocoa); }
+@media (max-width: 640px) {
+  #message-page .mc-card:not(.mc-result-card) { padding: 20px 16px; border-radius: 24px; }
+  .mc-steps { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* result */
+#message-page .mc-result-card { background: transparent; padding: 0; gap: 16px; box-shadow: none; }
+#message-page .mc-read { background: var(--cocoa); color: var(--cream); border-radius: 26px; padding: 24px 26px; }
+#message-page .mc-read p { color: var(--cream); font-size: 17px; line-height: 1.55; margin: 12px 0 0; }
+#message-page .mc-read .mc-tailored { color: var(--butter); font-size: 13px; }
+#message-page .mc-risk { border: 0; font-weight: 700; font-size: 13px; padding: 5px 14px; color: var(--cocoa); }
+#message-page .mc-risk-low { background: #9fdcb0; }
+#message-page .mc-risk-medium { background: var(--butter); }
+#message-page .mc-risk-high { background: #f4a095; }
+#message-page .mc-flags { background: var(--peach); color: var(--cocoa); border-radius: 22px; padding: 18px 22px 18px 40px; font-size: 15px; }
+#message-page .pb-h { font-size: 26px; margin: 10px 0 0; }
+#message-page .mc-versions { gap: 14px; }
+#message-page .mc-version { background: #fff; border: 0; border-left: 8px solid var(--pink); border-radius: 22px; padding: 18px 22px; box-shadow: 0 14px 28px -18px rgba(59, 34, 24, .55); }
+#message-page .mc-version:nth-child(2) { border-left-color: var(--butter); }
+#message-page .mc-version:nth-child(3) { border-left-color: var(--peach); }
+#message-page .mc-version p { color: var(--cocoa); font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; }
+#message-page .mc-version-head strong { font: 500 19px var(--font-display); color: var(--cocoa); }
+#message-page .mc-version .btn-ghost { background: var(--cocoa); color: var(--butter); border: 0; padding: 8px 18px; font-size: 13.5px; }
+#message-page .mc-version .btn-ghost:hover { background: #4d2f22; }
+#message-page .mc-version-locked { opacity: 1; background: transparent; border: 2px dashed rgba(59, 34, 24, .4); border-left-width: 2px; box-shadow: none; }
+#message-page .mc-version-locked p { color: var(--cocoa); }
+
+.practice-more .practice-setup-field-label { font: 700 14.5px var(--font-body); margin: 4px 0 10px; }

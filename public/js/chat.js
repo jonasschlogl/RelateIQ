@@ -1358,7 +1358,6 @@ async function renderPracticeSetup() {
         <div class="form-error" id="practice-setup-error" style="display:none;"></div>
         <div class="partner-list" id="partner-list"><p class="text-muted">Loading…</p></div>
         <button class="btn btn-ghost btn-block" id="show-partner-form-btn" type="button">+ Create a new partner profile</button>
-      </div>
       <form class="partner-form" id="partner-form" style="display:none;">
         <div class="form-error" id="partner-form-error" style="display:none;"></div>
         <label for="partner-name">Name</label>
@@ -1382,6 +1381,7 @@ async function renderPracticeSetup() {
           <button type="button" class="btn btn-ghost btn-block" id="partner-form-cancel-btn" style="display:none;">Cancel</button>
         </div>
       </form>
+      </div>
     </div>
   `;
 
