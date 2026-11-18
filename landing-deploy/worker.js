@@ -133,10 +133,13 @@ async function indexNow(request, env, url) {
   const host = url.host;
   const urlList = [...picked].filter((u) => { try { return new URL(u).host === host; } catch (_) { return false; } }).slice(0, 10000);
   if (!urlList.length) return json({ ok: true, sent: 0 });
-  const r = await fetch("https://api.indexnow.org/indexnow", {
-    method: "POST",
-    headers: { "content-type": "application/json; charset=utf-8" },
-    body: JSON.stringify({ host, key: INDEXNOW_KEY, keyLocation: `https://${host}/${INDEXNOW_KEY}.txt`, urlList }),
-  });
-  return json({ ok: r.ok, status: r.status, sent: urlList.length });
+  // try the shared endpoint first, then the engines directly (they share submissions with each other)
+  const body = JSON.stringify({ host, key: INDEXNOW_KEY, keyLocation: `https://${host}/${INDEXNOW_KEY}.txt`, urlList });
+  const tried = [];
+  for (const ep of ["https://api.indexnow.org/indexnow", "https://www.bing.com/indexnow", "https://yandex.com/indexnow"]) {
+    const r = await fetch(ep, { method: "POST", headers: { "content-type": "application/json; charset=utf-8" }, body });
+    tried.push([ep, r.status]);
+    if (r.ok) return json({ ok: true, endpoint: ep, status: r.status, sent: urlList.length, tried });
+  }
+  return json({ ok: false, sent: urlList.length, tried });
 }
