@@ -122,3 +122,12 @@ html.px-pin #trust .trust-icon svg { width: 46%; height: 46%; }
 html.px-pin #trust .trust-item h3 { font-size: clamp(20px, 1.9vw, 28px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 8px; }
 html.px-pin #trust .trust-item p { font-size: 14.5px; line-height: 1.45; margin: 0; }
 body.hx main > section#testers { background: transparent !important; }
+
+/* privacy cards: photo + dark icon chip on top, white text panel below (same language as the expert cards) */
+.tr-ph { display: none; }
+html.px-pin #trust .trust-item { padding: 10px; gap: 10px; justify-content: flex-start; align-items: stretch; position: relative; overflow: hidden; }
+html.px-pin #trust .tr-ph { display: block; flex: 1 1 0; min-height: 0; width: 100%; height: auto; border-radius: 24px; object-fit: cover; object-position: 50% 35%; background: rgba(59,34,24,.1); }
+html.px-pin #trust .trust-icon { position: absolute; top: 20px; left: 20px; z-index: 2; width: 52px; height: 52px; }
+html.px-pin #trust .trust-item > div:not(.trust-icon) { flex: none; background: #fff; border-radius: 24px; padding: 15px 18px 17px; text-align: center; }
+html.px-pin #trust .trust-item h3 { font-size: clamp(19px, 1.7vw, 25px); margin: 0 0 6px; }
+html.px-pin #trust .trust-item p { font-size: 14px; color: #6b5246 !important; }
