@@ -2317,6 +2317,8 @@ function appendMessage(role, text, animate, ctx, attachments, messageId, feedbac
   } else {
     label.textContent = isUser ? "You" : isPractice ? ctx.partnerName || "Partner" : "RelationshipAI";
   }
+  // Initial for the partner avatar in a rehearsal.
+  if (isPractice && !isUser) label.dataset.initial = String((ctx && ctx.partnerName) || "P").trim().charAt(0).toUpperCase() || "P";
   row.appendChild(label);
 
   const bubble = document.createElement("div");
@@ -2885,6 +2887,8 @@ async function sendMessage() {
   const userBubble = appendMessage("user", message, false, currentConvCtx, attachmentsForDisplay);
   const thinkingText = currentConvCtx.mode === "practice" ? `${currentConvCtx.partnerName || "Your partner"} is typing…` : "RelationshipAI is thinking…";
   const thinkingBubble = appendMessage("assistant", thinkingText, false, currentConvCtx);
+  thinkingBubble.classList.add("is-thinking");
+  thinkingBubble.setAttribute("aria-label", thinkingText);
 
   // If the send fails for any reason (plan limit, server error, dropped
   // connection), put the person back exactly where they started instead of
