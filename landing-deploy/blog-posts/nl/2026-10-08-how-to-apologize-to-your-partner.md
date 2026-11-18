@@ -1,8 +1,8 @@
 ---
-title: Sorry zeggen tegen je partner (en wat een excuus echt laat werken)
+title: "Sorry zeggen tegen je partner: zo bied je excuses aan die echt landen"
 date: 2026-10-08
-description: Hoe bied je je partner excuses aan die aankomen? Wat onderzoek vond over excuses, een eenvoudige opbouw, voorbeelden en wat je beter vermijdt als je sorry zegt.
-tags: sorry zeggen tegen je partner, excuses
+description: Sorry zeggen tegen je vriend, vriendin of partner op een manier die werkt: wat onderzoek zegt, 5 stappen om excuses aan te bieden en voorbeelden.
+tags: sorry zeggen, excuses aanbieden
 slug: sorry-zeggen-tegen-je-partner
 ---
 De meesten van ons weten hoe je “sorry” zegt. Minder mensen weten hoe je excuses aanbiedt zodat de ander zich gehoord voelt. Een gehaast “sorry, oké?” kan je partner zich slechter laten voelen dan daarvoor, en een lange, defensieve uitleg kan hetzelfde doen.

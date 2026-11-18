@@ -1,8 +1,8 @@
 ---
-title: Je relatie herstellen: waar begin je als het voelt alsof het kapot is
+title: "Relatie redden: waar begin je als je relatie kapot voelt"
 date: 2026-10-04
-description: Hoe herstel je een relatie die afstandelijk of vastgelopen voelt? Een rustig stappenplan, van ruzies niet laten escaleren tot weer dichter naar elkaar toe.
-tags: relatie herstellen, relatieproblemen
+description: Je relatie redden als die afstandelijk of vastgelopen voelt: een rustig begin, stap voor stap, van minder ruzie naar weer dichter bij elkaar komen.
+tags: relatie redden, relatie herstellen
 slug: relatie-herstellen
 ---
 Als een relatie kapot voelt, is de eerste neiging om alles tegelijk te repareren. Het grote gesprek voeren, elke oude ruzie uitpraten, allebei je gedrag veranderen. Het pakt bijna altijd verkeerd uit. Wat beter werkt is kleiner: een paar rustige stappen, in een verstandige volgorde.

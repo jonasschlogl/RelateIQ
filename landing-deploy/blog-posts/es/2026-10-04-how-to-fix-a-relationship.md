@@ -1,9 +1,9 @@
 ---
-title: Cómo arreglar una relación: por dónde empezar cuando se siente rota
+title: "Cómo arreglar una relación de pareja: por dónde empezar cuando se siente rota"
 slug: como-arreglar-una-relacion
 date: 2026-10-04
-description: ¿Cómo arreglar una relación que se siente distante o estancada? Un punto de partida calmado, paso a paso, desde frenar las discusiones hasta recuperar cercanía.
-tags: cómo arreglar una relación, problemas de pareja
+description: Cómo arreglar una relación de pareja cuando está distante o estancada: un punto de partida tranquilo, paso a paso, para dejar de discutir y volver a acercaros.
+tags: cómo arreglar una relación, salvar la relación
 ---
 Cuando una relación se siente rota, el primer impulso es arreglarlo todo a la vez. Tener la gran charla, zanjar cada discusión pasada, cambiar la forma de actuar de ambos. Casi siempre sale mal. Lo que funciona mejor es algo más pequeño: unos pocos pasos tranquilos, dados en un orden con sentido.
 

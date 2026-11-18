@@ -1,8 +1,8 @@
 ---
-title: "Stiluri de atașament în relație: atașament sigur, anxios, evitant și temător-evitant explicate"
+title: "Stiluri de atașament în relație: sigur, anxios, evitant și dezorganizat"
 date: 2026-10-08
-description: Ce sunt stilurile de atașament, cum apar atașamentul anxios, evitant, sigur și temător-evitant în dating și în mesaje, și de ce stilul tău nu e bătut în cuie.
-tags: stiluri de atașament, atașament anxios
+description: Stilurile de atașament în relație explicate: atașament sigur, anxios, evitant și dezorganizat, cum influențează cuplul și ce poți face.
+tags: stiluri de atașament, atașament în relație
 slug: stiluri-de-atasament-in-relatie
 ---
 Probabil ai mai întâlnit termenii: atașament anxios, atașament evitant, atașament sigur. Apar în meme-uri, în podcasturi și în sfaturile despre relații de peste tot. Sub versiunea de pe internet există însă cercetare reală, mai utilă și mai încurajatoare decât sugerează majoritatea postărilor.

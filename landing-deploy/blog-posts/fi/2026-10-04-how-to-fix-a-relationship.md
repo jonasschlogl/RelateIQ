@@ -1,8 +1,8 @@
 ---
-title: "Parisuhteen korjaaminen: mistä aloittaa, kun kaikki tuntuu rikkinäiseltä"
+title: "Parisuhdekriisi: näin korjaat suhteen, kun kaikki tuntuu rikki"
 date: 2026-10-04
-description: Miten korjata parisuhde, joka tuntuu etäiseltä tai jumiin jääneeltä? Rauhallinen aloitus askel askeleelta: riitojen pysäyttämisestä läheisyyden rakentamiseen.
-tags: parisuhteen korjaaminen, parisuhdeongelmat
+description: Parisuhdekriisi tai etäiseksi muuttunut suhde? Rauhallinen alku parisuhteen korjaamiseen askel kerrallaan, riitojen lopettamisesta läheisyyden palauttamiseen.
+tags: parisuhdekriisi, parisuhteen korjaaminen
 slug: parisuhteen-korjaaminen
 ---
 Kun parisuhde tuntuu rikkinäiseltä, ensimmäinen vaisto on korjata kaikki kerralla. Käydä se iso keskustelu, sopia jokainen vanha riita ja muuttaa kummankin käytöstä. Se kostautuu melkein aina. Paremmin toimii pienempi tapa: muutama rauhallinen askel järkevässä järjestyksessä.

@@ -1,9 +1,9 @@
 ---
-title: Anknytningsstilar i relationer: trygg, orolig, undvikande och rädd-undvikande förklarade
+title: "Anknytningsstilar i relationer: trygg, ängslig, undvikande och desorganiserad"
 date: 2026-10-08
 slug: anknytningsstilar-i-relationer
-description: Vad anknytningsstilar är, hur orolig, undvikande, trygg och rädd-undvikande anknytning märks i dejting och sms, och varför din stil inte är huggen i sten.
-tags: anknytningsstilar, orolig anknytning
+description: Anknytningsstilar i relationer förklarade: trygg, ängslig, undvikande och desorganiserad anknytning, hur de påverkar förhållandet och vad ni kan göra.
+tags: anknytningsstilar, anknytning i relationer
 ---
 Du har säkert sett termerna förut: orolig anknytning, undvikande anknytning, trygg anknytning. De dyker upp i memes, poddar och relationsråd överallt. Bakom internetversionen finns det dock verklig forskning, och den är mer användbar och mer hoppfull än de flesta inlägg låter påskina.
 

@@ -1,9 +1,9 @@
 ---
-title: 5 problemas de pareja que siempre vuelven (y qué suele haber debajo)
+title: "Problemas de pareja que siempre vuelven: 5 causas y cómo solucionarlos"
 slug: problemas-de-pareja-que-se-repiten
 date: 2026-10-03
-description: Los mismos problemas de pareja aparecen en casi todas las relaciones: tareas, tiempo, dinero, intimidad y la discusión eterna. Esto suele haber debajo.
-tags: problemas de pareja, consejos de pareja
+description: Problemas de pareja que se repiten una y otra vez: 5 causas habituales, qué suele haber debajo y cómo solucionarlos sin repetir la misma discusión.
+tags: problemas de pareja, solucionar problemas de pareja
 ---
 Si discutes con tu pareja una y otra vez por lo mismo, no estás haciendo nada raro ni equivocado. Los investigadores de pareja han visto que la mayoría de los conflictos de una relación, cerca de dos tercios en los estudios de John Gottman, nunca se resuelven del todo. Nacen de diferencias de personalidad, de necesidades y de hábitos que no desaparecen sin más. Lo que distingue a las parejas que están bien de las que sufren es sobre todo cómo manejan esas diferencias, no que las tengan o no.
 

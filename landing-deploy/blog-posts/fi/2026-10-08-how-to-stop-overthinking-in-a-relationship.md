@@ -1,8 +1,8 @@
 ---
-title: "Miten lopettaa ylianalysointi parisuhteessa (rauhallisempi tapa käsitellä entä jos -kierre)"
+title: "Ylianalysointi parisuhteessa: miten lopettaa liika miettiminen"
 date: 2026-10-08
-description: Ylianalysointi parisuhteessa, kuten viestien kelaaminen ja hiljaisuuden tulkitseminen, on yleistä. Näin katkaiset kierteen ja puhut kumppanillesi.
-tags: ylianalysointi parisuhteessa, parisuhdeahdistus
+description: Ylianalysointi ja liika miettiminen parisuhteessa: miksi sitä tapahtuu, miten pääset entä jos -kierteestä ja mitä voit sanoa kumppanillesi.
+tags: ylianalysointi, overthinking parisuhteessa
 slug: ylianalysointi-parisuhteessa
 ---
 Kello on 23. Kumppanisi ei ole vastannut kolmeen tuntiin. Luet viimeisen viestin uudestaan, katsot, onko hän ollut paikalla, ja puoleenyöhön mennessä mielesi on kirjoittanut kokonaisen tarinan siitä, miten hän menettää kiinnostuksensa.

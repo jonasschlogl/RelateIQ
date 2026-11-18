@@ -1,8 +1,8 @@
 ---
-title: "Cum să nu mai faci overthinking în relație (un mod mai calm de a ieși din spirala „și dacă”)"
+title: "Overthinking în relație: cum să nu te mai gândești prea mult"
 date: 2026-10-08
-description: Overthinking în relație, de la mesaje recitite la tăceri interpretate, e comun. Iată cum rupi bucla, îți verifici presupunerile și vorbești cu partenerul.
-tags: overthinking în relație, anxietate în relație
+description: Overthinking în relație: de ce te gândești prea mult, cum ieși din spirala „și dacă” și ce îi poți spune partenerului.
+tags: overthinking în relație, gânduri obsesive în relație
 slug: overthinking-in-relatie
 ---
 Sunt ora 23:00. Partenerul tău nu a răspuns de trei ore. Recitești ultimul mesaj, verifici dacă a fost online, iar până la miezul nopții mintea ta a scris o poveste întreagă despre cum își pierde interesul.

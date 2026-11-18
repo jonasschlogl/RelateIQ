@@ -1,8 +1,8 @@
 ---
-title: "Parisuhdeneuvot: 7 viestintätapaa, jotka muuttavat tapaasi riidellä"
+title: "Kommunikaatio parisuhteessa: 7 tapaa, jotka muuttavat riitelyn"
 date: 2026-10-05
-description: Käytännön parisuhdeneuvoja kommunikaatioon. Seitsemän pientä tapaa pehmeästä aloituksesta taukoihin, jotka tekevät vaikeista keskusteluista helpompia.
-tags: parisuhdeneuvot, kommunikaatio
+description: Kommunikaatio-ongelmat parisuhteessa: 7 tutkimukseen perustuvaa tapaa, jotka muuttavat tapaanne riidellä, ja lauseita, joita voit käyttää jo tänään.
+tags: kommunikaatio parisuhteessa, parisuhdeneuvot
 slug: parisuhdeneuvot-kommunikaatio
 ---
 Useimmat parisuhdeneuvot kuulostavat itsestään selviltä, kunnes olet keskellä riitaa. Silloin itsestään selvät asiat (pysy rauhallisena, kuuntele, älä sano sitä, minkä tulet katumaan) osoittautuvat vaikeimmiksi. Hyvä uutinen on, että hyvä kommunikaatio on taito, ja taidot kehittyvät pienillä, täsmällisillä tavoilla eikä suurilla päätöksillä.

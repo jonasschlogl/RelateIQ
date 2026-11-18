@@ -1,9 +1,9 @@
 ---
-title: Så räddar du en relation: var du ska börja när den känns trasig
+title: "Rädda ert förhållande: var du börjar när relationen känns trasig"
 date: 2026-10-04
 slug: radda-en-relation
-description: Undrar du hur man räddar en relation som känns avlägsen eller fastlåst? En lugn startpunkt, steg för steg, från att stoppa bråken till att bygga upp närheten.
-tags: radda en relation, relationsproblem
+description: Så räddar du ett förhållande som känns distanserat eller fastlåst: en lugn början, steg för steg, från att sluta bråka till att hitta tillbaka till varandra.
+tags: rädda förhållandet, rädda en relation
 ---
 När en relation känns trasig är den första instinkten att fixa allt på en gång. Ta det stora samtalet, göra upp om varje gammalt bråk, ändra hur ni båda beter er. Nästan alltid slår det tillbaka. Det som fungerar bättre är mindre: några lugna steg, i en vettig ordning.
 

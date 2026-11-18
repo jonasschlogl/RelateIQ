@@ -1,9 +1,9 @@
 ---
-title: 5 relationsproblem som ständigt kommer tillbaka (och vad som oftast ligger bakom)
+title: "Lösa relationsproblem: 5 problem som ständigt kommer tillbaka"
 date: 2026-10-03
 slug: relationsproblem-som-kommer-tillbaka
-description: Samma relationsproblem dyker upp hos nästan alla par: hushållet, tiden, pengarna, närheten och bråket som aldrig tar slut. Så här ser det ofta ut under ytan.
-tags: relationsproblem, relationstips
+description: Så löser ni relationsproblem som kommer tillbaka gång på gång: 5 vanliga orsaker, vad som ofta ligger bakom och hur ni bryter mönstret.
+tags: lösa relationsproblem, hjälp med relationsproblem
 ---
 Om du och din partner bråkar om samma sak om och om igen är det inte så att just ni gör något ovanligt fel. Forskare som studerar par har sett att de flesta konflikter, ungefär två tredjedelar i John Gottmans studier, aldrig blir helt lösta. De bottnar i skillnader i personlighet, behov och vanor som inte bara försvinner. Det som skiljer par som mår bra från par som kämpar är mest hur de hanterar skillnaderna, inte om de finns.
 

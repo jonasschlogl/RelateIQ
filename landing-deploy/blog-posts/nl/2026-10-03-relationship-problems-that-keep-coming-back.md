@@ -1,8 +1,8 @@
 ---
-title: 5 relatieproblemen die steeds terugkomen (en wat er meestal onder zit)
+title: "Relatieproblemen oplossen: 5 problemen die steeds terugkomen"
 date: 2026-10-03
-description: Bijna elk stel kent dezelfde relatieproblemen: huishouden, tijd, geld, intimiteit en de ruzie die steeds terugkomt. Dit zit er meestal onder.
-tags: relatieproblemen, relatietips
+description: Relatieproblemen oplossen die steeds terugkomen: 5 veelvoorkomende oorzaken, wat er meestal onder zit en hoe je het patroon doorbreekt.
+tags: relatieproblemen oplossen, terugkerende relatieproblemen
 slug: terugkerende-relatieproblemen
 ---
 Als jij en je partner steeds dezelfde ruzie hebben, doe je niet iets uniek verkeerd. Onderzoekers hebben ontdekt dat de meeste conflicten tussen partners, ongeveer twee derde in de studies van John Gottman, nooit helemaal worden opgelost. Ze komen voort uit verschillen in persoonlijkheid, behoeften en gewoonten die niet zomaar verdwijnen. Het verschil tussen stellen die het goed doen en stellen die het zwaar hebben zit vooral in hoe ze met die verschillen omgaan, niet in of ze ze hebben.

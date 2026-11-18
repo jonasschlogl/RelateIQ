@@ -1,8 +1,8 @@
 ---
-title: Piekeren in je relatie stoppen (een rustigere aanpak voor de wat-als-spiraal)
+title: "Piekeren over je relatie: zo stop je met overdenken"
 date: 2026-10-08
-description: Piekeren in een relatie, zoals berichten herlezen of stilte uitleggen, is heel gewoon. Zo doorbreek je de lus, check je je aannames en praat je erover.
-tags: piekeren in je relatie, relatieangst
+description: Piekeren over je relatie en alles overdenken? Waarom het gebeurt, hoe je uit de wat-als-spiraal komt en wat je tegen je partner kunt zeggen.
+tags: piekeren over relatie, overdenken in een relatie
 slug: piekeren-in-je-relatie-stoppen
 ---
 Het is 23.00 uur. Je partner heeft al drie uur niet gereageerd. Je leest het laatste bericht opnieuw, kijkt of diegene online is geweest, en tegen middernacht heeft je hoofd een heel verhaal geschreven over hoe de interesse verdwijnt.

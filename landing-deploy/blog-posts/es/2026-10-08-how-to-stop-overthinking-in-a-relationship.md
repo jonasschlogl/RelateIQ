@@ -1,9 +1,9 @@
 ---
-title: "Cómo dejar de darle vueltas a todo en pareja (una forma más calmada de frenar la espiral del «¿y si…?»)"
+title: "Cómo dejar de pensar demasiado en tu relación (overthinking en pareja)"
 slug: como-dejar-de-darle-vueltas-en-pareja
 date: 2026-10-08
-description: Darle vueltas a todo en pareja, como releer mensajes o interpretar silencios, es muy común. Rompe el bucle, revisa tus suposiciones y habla con tu pareja.
-tags: darle vueltas a todo en pareja, ansiedad en la relación
+description: Cómo dejar de pensar demasiado y darle vueltas a todo en tu relación: por qué pasa, cómo frenar la espiral del «¿y si…?» y qué decirle a tu pareja.
+tags: dejar de pensar demasiado, overthinking en pareja
 ---
 Son las 11 de la noche. Tu pareja lleva tres horas sin responder. Relees el último mensaje, miras si estuvo en línea y, a medianoche, tu mente ya ha escrito una historia entera sobre cómo está perdiendo el interés.
 

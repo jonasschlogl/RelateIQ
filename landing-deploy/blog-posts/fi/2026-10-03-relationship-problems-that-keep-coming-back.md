@@ -1,8 +1,8 @@
 ---
-title: 5 toistuvaa parisuhdeongelmaa ja mitä niiden alla yleensä piilee
+title: "Parisuhdeongelmat, jotka toistuvat: 5 syytä ja miten ne ratkaistaan"
 date: 2026-10-03
-description: Samat parisuhdeongelmat toistuvat lähes kaikilla pareilla: kotityöt, aika, raha, läheisyys ja riita, joka ei lopu. Tässä se, mitä niiden alla yleensä on.
-tags: parisuhdeongelmat, parisuhdevinkit
+description: Parisuhdeongelmat, jotka palaavat yhä uudelleen: 5 yleistä syytä, mitä niiden alla usein on ja miten kuvion saa katkaistua.
+tags: parisuhdeongelmat, toistuvat riidat
 slug: toistuvat-parisuhdeongelmat
 ---
 Jos sinä ja kumppanisi riitelette yhä uudestaan samasta asiasta, et tee mitään erityisen väärin. Parisuhdetutkijat ovat havainneet, että suurinta osaa pariskuntien erimielisyyksistä, John Gottmanin tutkimuksissa noin kahta kolmasosaa, ei koskaan ratkaista kokonaan. Ne johtuvat persoonallisuuksien, tarpeiden ja tapojen eroista, jotka eivät katoa mihinkään. Pärjäävät parit eroavat ongelmista kärsivistä pareista lähinnä siinä, miten he käsittelevät nämä erot, ei siinä, onko niitä.

@@ -1,8 +1,8 @@
 ---
-title: "Relatieadvies: 7 communicatiegewoonten die veranderen hoe je ruzie maakt"
+title: "Communicatieproblemen in je relatie: 7 tips om beter te communiceren"
 date: 2026-10-05
-description: Praktisch relatieadvies over beter communiceren. Zeven kleine gewoonten, van een zachtere start tot een pauze nemen, waarmee moeilijke gesprekken beter gaan.
-tags: relatieadvies, communicatie
+description: Communicatieproblemen in je relatie oplossen: 7 gewoonten uit onderzoek die veranderen hoe jullie ruzie maken, met zinnen die je vandaag kunt gebruiken.
+tags: communicatie in een relatie, communicatieproblemen relatie
 slug: relatieadvies-beter-communiceren
 ---
 Het meeste relatieadvies klinkt vanzelfsprekend, tot je midden in een ruzie zit. Dan blijken de vanzelfsprekende dingen (rustig blijven, luisteren, niet zeggen wat je later betreurt) juist het moeilijkst. Het goede nieuws is dat goed communiceren een vaardigheid is, en vaardigheden verbeteren door kleine, specifieke gewoonten in plaats van grote voornemens.

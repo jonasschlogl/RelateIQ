@@ -1,8 +1,8 @@
 ---
-title: "5 probleme de cuplu care revin mereu (și ce se ascunde de obicei dedesubt)"
+title: "Probleme în cuplu care revin mereu: 5 cauze și cum le rezolvi"
 date: 2026-10-03
-description: Aceleași probleme de cuplu apar aproape peste tot: treburile casei, timpul, banii, apropierea și cearta fără sfârșit. Iată ce se ascunde de obicei dedesubt.
-tags: probleme de cuplu, sfaturi pentru relație
+description: Probleme în cuplu care revin iar și iar: 5 cauze frecvente, ce se ascunde de obicei dedesubt și cum rupi tiparul fără aceeași ceartă.
+tags: probleme în cuplu, probleme de cuplu
 slug: probleme-de-cuplu-care-revin
 ---
 Dacă tu și partenerul tău vă certați mereu pe aceeași temă, nu faceți ceva greșit într-un fel anume. Cercetătorii au observat că cele mai multe conflicte dintr-un cuplu, cam două treimi în studiile lui John Gottman, nu se rezolvă niciodată complet. Ele vin din diferențe de personalitate, de nevoi și de obiceiuri care nu dispar pur și simplu. Ce deosebește cuplurile care merg bine de cele care se chinuie este mai ales felul în care își gestionează diferențele, nu faptul că le au.

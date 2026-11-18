@@ -1,8 +1,8 @@
 ---
-title: "Miten pyytää anteeksi kumppanilta (ja mikä tekee anteeksipyynnöstä oikeasti toimivan)"
+title: "Anteeksipyyntö kumppanille: näin pyydät anteeksi oikein"
 date: 2026-10-08
-description: Miten pyytää anteeksi kumppanilta niin, että se menee perille. Mitä tutkimus kertoo anteeksipyynnöistä, yksinkertainen rakenne, esimerkkejä ja mitä välttää.
-tags: anteeksipyyntö kumppanille, anteeksipyyntö
+description: Miten pyytää anteeksi kumppanilta, tyttöystävältä tai poikaystävältä niin, että se toimii: mitä tutkimus sanoo, 5 vaihetta ja esimerkkejä.
+tags: miten pyytää anteeksi, anteeksipyyntö
 slug: anteeksipyynto-kumppanille
 ---
 Useimmat meistä osaavat sanoa ”anteeksi”. Harvempi osaa pyytää anteeksi niin, että toinen kokee tulleensa kuulluksi. Hätäinen ”anteeksi, okei?” voi jättää kumppanin oloon, joka on huonompi kuin ennen, ja pitkä, puolustautuva selitys voi tehdä saman.

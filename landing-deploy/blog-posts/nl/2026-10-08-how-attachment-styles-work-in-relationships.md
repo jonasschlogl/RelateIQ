@@ -1,8 +1,8 @@
 ---
-title: "Hechtingsstijlen in relaties: veilig, angstig, vermijdend en angstig-vermijdend uitgelegd"
+title: "Hechtingsstijlen in relaties: veilig, angstig, vermijdend en gedesorganiseerd"
 date: 2026-10-08
-description: Wat hechtingsstijlen zijn, hoe angstige, vermijdende, veilige en angstig-vermijdende hechting zich uiten bij daten en appen, en waarom je stijl niet vastligt.
-tags: hechtingsstijlen, angstige hechting
+description: Hechtingsstijlen in relaties uitgelegd: veilige, angstige, vermijdende en gedesorganiseerde hechting, wat ze met je relatie doen en hoe je ermee omgaat.
+tags: hechtingsstijlen, hechting in relaties
 slug: hechtingsstijlen-in-relaties
 ---
 Je hebt de termen vast wel eens gezien: angstige hechting, vermijdende hechting, veilige hechting. Ze duiken overal op in memes, podcasts en relatieadvies. Onder de internetversie zit echter echt onderzoek, en dat is nuttiger en hoopvoller dan de meeste posts doen vermoeden.

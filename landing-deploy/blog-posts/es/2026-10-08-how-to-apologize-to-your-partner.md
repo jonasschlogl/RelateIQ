@@ -1,9 +1,9 @@
 ---
-title: Cómo pedir perdón a tu pareja (y qué hace que una disculpa funcione de verdad)
+title: "Cómo disculparse con tu pareja (novia o novio): cómo pedir perdón de verdad"
 slug: como-pedir-perdon-a-tu-pareja
 date: 2026-10-08
-description: Cómo pedir perdón a tu pareja para que llegue de verdad: qué dice la investigación, una estructura sencilla, ejemplos reales y qué evitar al decir lo siento.
-tags: cómo pedir perdón a tu pareja, disculpas
+description: Cómo disculparse con tu pareja, tu novia o tu novio para que de verdad funcione: qué dice la ciencia, 5 pasos para pedir perdón y ejemplos de qué decir.
+tags: cómo disculparse con tu pareja, pedir perdón
 ---
 La mayoría sabemos decir «lo siento». Menos gente sabe pedir perdón de una forma que haga sentir escuchada a la otra persona. Un «perdón, ¿vale?» soltado con prisa puede dejar a tu pareja peor que antes, y una explicación larga y a la defensiva puede hacer lo mismo.
 

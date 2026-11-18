@@ -1,8 +1,8 @@
 ---
-title: "Cum îți repari relația: de unde începi când simți că s-a stricat"
+title: "Cum să-ți salvezi relația: de unde începi când simți că s-a stricat"
 date: 2026-10-04
-description: Te întrebi cum să-ți repari relația când e distantă sau blocată? Un punct de plecare calm, pas cu pas, de la oprirea certurilor la reconstruirea apropierii.
-tags: cum îți repari relația, probleme de cuplu
+description: Cum să-ți salvezi relația când e distantă sau blocată: un punct de plecare calm, pas cu pas, de la oprirea certurilor la reconstruirea apropierii.
+tags: cum să-ți salvezi relația, cum să-ți repari relația
 slug: cum-sa-iti-repari-relatia
 ---
 Când simți că relația s-a stricat, primul impuls e să repari totul dintr-odată. Să porți discuția cea mare, să închizi toate certurile vechi, să schimbați amândoi felul în care vă purtați. Aproape întotdeauna se întoarce împotriva ta. Funcționează mai bine ceva mai mic: câțiva pași calmi, făcuți într-o ordine firească.

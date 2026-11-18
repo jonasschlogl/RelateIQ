@@ -1,8 +1,8 @@
 ---
-title: "Kiintymystyylit parisuhteessa: turvallinen, ahdistunut, välttelevä ja pelokas välttelevä selitettynä"
+title: "Kiintymystyylit parisuhteessa: turvallinen, ahdistunut, välttelevä ja jäsentymätön"
 date: 2026-10-08
-description: Mitä kiintymystyylit ovat, miten ahdistunut, välttelevä, turvallinen ja pelokas välttelevä kiintymys näkyvät seurustelussa ja miksi tyylisi voi muuttua.
-tags: kiintymystyylit, ahdistunut kiintymys
+description: Kiintymystyylit ja kiintymyssuhde parisuhteessa selitettynä: turvallinen, ahdistunut, välttelevä ja jäsentymätön tyyli ja miten ne näkyvät suhteessa.
+tags: kiintymystyylit, kiintymyssuhde
 slug: kiintymystyylit-parisuhteessa
 ---
 Olet luultavasti törmännyt termeihin: ahdistunut kiintymys, välttelevä kiintymys, turvallinen kiintymys. Ne pyörivät meemeissä, podcasteissa ja parisuhdeneuvoissa kaikkialla. Netin version alla on kuitenkin oikeaa tutkimusta, ja se on hyödyllisempää ja toiveikkaampaa kuin useimmat julkaisut antavat ymmärtää.

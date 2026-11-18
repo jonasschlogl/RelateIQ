@@ -1,9 +1,9 @@
 ---
-title: Estilos de apego en pareja: seguro, ansioso, evitativo y temeroso-evitativo explicados
+title: "Tipos de apego en la pareja: seguro, ansioso, evitativo y desorganizado"
 slug: estilos-de-apego-en-pareja
 date: 2026-10-08
-description: Qué son los estilos de apego, cómo se notan el apego ansioso, evitativo, seguro y temeroso-evitativo al salir con alguien y por qué el tuyo no es fijo.
-tags: estilos de apego, apego ansioso
+description: Tipos de apego en la pareja explicados: apego seguro, ansioso, evitativo y desorganizado (temeroso-evitativo), cómo influyen en la relación y cómo trabajarlos.
+tags: tipos de apego, apego en la pareja
 ---
 Seguro que has visto estos términos antes: apego ansioso, apego evitativo, apego seguro. Aparecen en memes, pódcast y consejos de pareja por todas partes. Pero debajo de la versión de internet hay investigación de verdad, y es más útil y más esperanzadora de lo que sugieren la mayoría de las publicaciones.
 

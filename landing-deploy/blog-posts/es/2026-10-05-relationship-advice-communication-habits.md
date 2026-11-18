@@ -1,9 +1,9 @@
 ---
-title: "Consejos de pareja: 7 hábitos de comunicación que cambian cómo discuten"
+title: "Comunicación en pareja: 7 hábitos para discutir mejor y entenderse"
 slug: consejos-de-pareja-comunicacion
 date: 2026-10-05
-description: Consejos prácticos de pareja para comunicarse mejor. Siete hábitos pequeños, desde empezar con suavidad hasta hacer pausas, para mejorar charlas difíciles.
-tags: consejos de pareja, comunicación
+description: Comunicación en pareja: 7 hábitos respaldados por la investigación que cambian cómo discutís, con frases concretas para usar desde hoy.
+tags: comunicación en pareja, consejos de pareja
 ---
 La mayoría de los consejos de pareja suenan obvios hasta que estás en plena discusión. Entonces las partes obvias (mantén la calma, escucha, no digas lo que luego lamentarás) resultan ser las más difíciles. La buena noticia es que comunicarse bien es una habilidad, y las habilidades mejoran con hábitos pequeños y concretos, no con grandes propósitos.
 

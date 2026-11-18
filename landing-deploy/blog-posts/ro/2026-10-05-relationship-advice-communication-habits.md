@@ -1,8 +1,8 @@
 ---
-title: "Sfaturi pentru relație: 7 obiceiuri de comunicare care schimbă felul în care vă certați"
+title: "Comunicarea în cuplu: 7 obiceiuri care schimbă felul în care vă certați"
 date: 2026-10-05
-description: Sfaturi practice pentru relație despre comunicare: șapte obiceiuri mici, de la începuturi mai blânde la pauze, care fac conversațiile grele să meargă mai bine.
-tags: sfaturi pentru relație, comunicare
+description: Comunicarea în cuplu: 7 obiceiuri susținute de cercetări care schimbă felul în care vă certați, cu fraze concrete pe care le poți folosi de azi.
+tags: comunicarea în cuplu, sfaturi pentru relație
 slug: sfaturi-relatie-comunicare-in-cuplu
 ---
 Cele mai multe sfaturi pentru relație sună evident, până ajungi în mijlocul unei certuri. Atunci părțile evidente (păstrează-ți calmul, ascultă, nu spune ceea ce vei regreta) se dovedesc cele mai grele. Vestea bună e că a comunica bine este o abilitate, iar abilitățile se dezvoltă prin obiceiuri mici și concrete, nu prin hotărâri mari.

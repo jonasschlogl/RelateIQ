@@ -1,9 +1,9 @@
 ---
-title: "Relationsråd: 7 kommunikationsvanor som förändrar hur ni bråkar"
+title: "Kommunikation i förhållandet: 7 vanor som förändrar hur ni bråkar"
 date: 2026-10-05
 slug: relationsrad-battre-kommunikation
-description: Praktiska relationsråd om hur ni kommunicerar bättre. Sju små vanor, från mjukare inledningar till pauser, som gör svåra samtal lättare att ta.
-tags: relationsråd, kommunikation
+description: Kommunikation i förhållandet: 7 forskningsbaserade vanor som förändrar hur ni bråkar, med konkreta meningar ni kan använda redan i dag.
+tags: kommunikation i förhållandet, relationsråd
 ---
 De flesta relationsråd låter självklara tills du står mitt i ett bråk. Då visar sig det självklara (var lugn, lyssna, säg inte det du kommer att ångra) vara det svåraste. Den goda nyheten är att god kommunikation är en färdighet, och färdigheter förbättras genom små, konkreta vanor snarare än stora föresatser.
 

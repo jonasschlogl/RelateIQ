@@ -1,9 +1,9 @@
 ---
-title: Så slutar du övertänka i en relation (ett lugnare sätt att hantera tänk-om-spiralen)
+title: "Sluta övertänka i relationen: så tar du dig ur tänk-om-spiralen"
 date: 2026-10-08
 slug: sluta-overtanka-i-relationen
-description: Att övertänka i en relation, som att älta sms eller tolka tystnad, är mycket vanligt. Så bryter du loopen, prövar dina antaganden och pratar med din partner.
-tags: övertänka i relationen, relationsoro
+description: Så slutar du övertänka och överanalysera i ditt förhållande: varför det händer, hur du bryter tänk-om-spiralen och vad du kan säga till din partner.
+tags: sluta övertänka, övertänka i relationen
 ---
 Klockan är 23. Din partner har inte svarat på tre timmar. Du läser det senaste meddelandet igen, kollar om hen var online, och vid midnatt har ditt huvud skrivit en hel berättelse om hur hen tappar intresset.
 
