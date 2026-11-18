@@ -576,7 +576,7 @@ function enhance(p) {
   let h = p.html;
   // FAQ: an H2 like "Quick answers" / "FAQ" followed by H3 questions becomes an accordion
   const faq = [];
-  h = h.replace(/(<h2 id="[^"]+">[^<]*(?:quick answers|faq|frequently asked|common questions)[^<]*<\/h2>)([\s\S]*?)(?=<h2[\s>]|<p><em>|$)/i, (m, head, body) => {
+  h = h.replace(/(<h2 id="[^"]+">[^<]*(?:quick answers|faq|frequently asked|common questions|respuestas rápidas|preguntas frecuentes|snabba svar|vanliga frågor|răspunsuri rapide|întrebări frecvente|nopeat vastaukset|usein kysyt|snelle antwoorden|veelgestelde vragen)[^<]*<\/h2>)([\s\S]*?)(?=<h2[\s>]|<p><em>|$)/i, (m, head, body) => {
     const parts = body.split(/(?=<h3[\s>])/);
     const pre = parts[0].startsWith("<h3") ? "" : parts.shift();
     const items = parts.map((x) => {
@@ -708,7 +708,7 @@ ${withImages(p)}
       </div>
     </section>` : ""}
   </main>`,
-    jsonld: enh.faq.length ? { "@context": "https://schema.org", "@graph": [articleLd(ctx, p, url, ogPng), { "@type": "FAQPage", mainEntity: enh.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] } : { "@context": "https://schema.org", ...articleLd(ctx, p, url, ogPng) },
+    jsonld: { "@context": "https://schema.org", "@graph": [articleLd(ctx, p, url, ogPng), breadcrumbLd(ctx, p, url), ...(enh.faq.length ? [{ "@type": "FAQPage", mainEntity: enh.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : [])] },
   });
 }
 function methodBox(ctx, p) {
@@ -730,6 +730,16 @@ function methodBox(ctx, p) {
             <ul>${li.map((t) => `<li>${T(t)}</li>`).join("")}</ul>
             <p class="mb-foot"><span>${p.updated ? T("Last reviewed") : T("Published")} ${when}</span><a href="/method/" data-umami-event="blog-method-link">${T("Our method")} \u2192</a></p>
           </aside>`;
+}
+function breadcrumbLd(ctx, p, url) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: CONFIG.siteName, item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: ctx.T(EN.blog), item: `${SITE}${ctx.prefix}/blog/` },
+      { "@type": "ListItem", position: 3, name: p.title, item: url },
+    ],
+  };
 }
 function articleLd(ctx, p, url, ogPng) {
   return {

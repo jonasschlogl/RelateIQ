@@ -20,6 +20,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/subscribe") return subscribe(request, env, url);
     if (url.pathname === "/api/export") return exportCsv(request, env, url);
+    if (url.pathname === "/api/indexnow") return indexNow(request, env, url);
     if (url.pathname.startsWith("/api/")) return json({ ok: false, error: "not_found" }, 404);
     return env.ASSETS ? env.ASSETS.fetch(request) : new Response("Not found", { status: 404 });
   },
@@ -102,4 +103,40 @@ function safeEqual(a, b) {
   let r = 0;
   for (let i = 0; i < a.length; i++) r |= a.charCodeAt(i) ^ b.charCodeAt(i);
   return r === 0;
+}
+
+// ------------------------------------------------------------ IndexNow
+// Tells Bing, Yandex, Seznam, Naver (and through Bing also ChatGPT search) about new or changed pages.
+//   /api/indexnow            -> every sitemap URL changed in the last 2 days, plus its translations
+//   /api/indexnow?days=7     -> last 7 days
+//   /api/indexnow?all=1      -> every URL in the sitemap
+// Only URLs of this site are ever sent, so the endpoint needs no secret.
+const INDEXNOW_KEY = "f64f4d21ef161d5615becedfe2e0ebdf";
+async function indexNow(request, env, url) {
+  if (!env.ASSETS) return json({ ok: false, error: "no_assets" }, 500);
+  const res = await env.ASSETS.fetch(new Request(`${url.origin}/sitemap.xml`));
+  if (!res.ok) return json({ ok: false, error: "no_sitemap" }, 500);
+  const xml = await res.text();
+  const all = url.searchParams.get("all") === "1";
+  const days = Math.min(60, Math.max(1, parseInt(url.searchParams.get("days") || "2", 10) || 2));
+  const since = new Date(Date.now() - days * 864e5).toISOString().slice(0, 10);
+  const picked = new Set();
+  for (const block of xml.match(/<url>[\s\S]*?<\/url>/g) || []) {
+    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1];
+    const lastmod = (block.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1];
+    if (!loc) continue;
+    if (all || (lastmod && lastmod >= since)) {
+      picked.add(loc);
+      for (const m of block.matchAll(/hreflang="[^"]+" href="([^"]+)"/g)) picked.add(m[1]);
+    }
+  }
+  const host = url.host;
+  const urlList = [...picked].filter((u) => { try { return new URL(u).host === host; } catch (_) { return false; } }).slice(0, 10000);
+  if (!urlList.length) return json({ ok: true, sent: 0 });
+  const r = await fetch("https://api.indexnow.org/indexnow", {
+    method: "POST",
+    headers: { "content-type": "application/json; charset=utf-8" },
+    body: JSON.stringify({ host, key: INDEXNOW_KEY, keyLocation: `https://${host}/${INDEXNOW_KEY}.txt`, urlList }),
+  });
+  return json({ ok: r.ok, status: r.status, sent: urlList.length });
 }
