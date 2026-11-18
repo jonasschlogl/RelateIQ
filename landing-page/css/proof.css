@@ -106,3 +106,19 @@ html.px-pin body.hx #approach .apr-nic { background: #f58fab !important; color: 
 html.px-pin #manifesto { padding: 0 !important; margin: 0 !important; }
 html.px-pin #manifesto > .hx-wrap { display: flex !important; align-items: center; height: 100%; max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
 html.px-pin #manifesto .f-lead { margin: 0; font-size: clamp(36px, min(5.6vw, 10.5vh), 92px); max-width: 18ch; }
+
+/* privacy ("What you tell it stays yours") as the third panel of the stage: four tall cards rise in one by one */
+html.px-pin body.hx #trust.px-panel { padding: 0 !important; margin: 0 !important; border-radius: 0 !important; }
+html.px-pin #trust > .acc-btn { display: none !important; }
+html.px-pin #trust .hx-wrap > .hx-reveal:not(.hx-head) { grid-column: 1 / -1; grid-row: 2; min-height: 0; margin-top: clamp(18px, 3vh, 34px); }
+html.px-pin #trust .trust-row { max-width: none !important; display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; height: 100%; margin: 0; }
+html.px-pin #trust .trust-item { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 18px; padding: 24px 24px 26px; border-radius: 32px; min-height: 0; transition: none !important; will-change: transform, opacity;
+  opacity: var(--a, 1); transform: translateY(calc((1 - var(--a, 1)) * 90px)) scale(calc(.9 + .1 * var(--a, 1))); filter: blur(calc((1 - var(--a, 1)) * 7px)); box-shadow: 0 30px 50px -36px rgba(59,34,24,.45) !important; }
+html.px-pin #trust .trust-item:hover { transform: translateY(calc((1 - var(--a, 1)) * 90px)) scale(calc(.9 + .1 * var(--a, 1))) !important; }
+html.px-pin #trust .trust-item:nth-child(odd) { margin-bottom: clamp(10px, 3vh, 28px); }
+html.px-pin #trust .trust-item:nth-child(even) { margin-top: clamp(10px, 3vh, 28px); }
+html.px-pin #trust .trust-icon { flex: none; width: clamp(60px, 5.4vw, 80px); height: clamp(60px, 5.4vw, 80px); margin: 0; border-radius: 30%; display: grid; place-items: center; }
+html.px-pin #trust .trust-icon svg { width: 46%; height: 46%; }
+html.px-pin #trust .trust-item h3 { font-size: clamp(20px, 1.9vw, 28px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 8px; }
+html.px-pin #trust .trust-item p { font-size: 14.5px; line-height: 1.45; margin: 0; }
+body.hx main > section#testers { background: transparent !important; }
