@@ -159,7 +159,11 @@ const JS_TEXTS = [
 // ---------------------------------------------------------------- languages
 // English only: translations stay in i18n/ but are not built. To bring languages back, restore the line below.
 // const LANGS = fs.existsSync(path.join(I18N_DIR, "langs.json")) ? JSON.parse(fs.readFileSync(path.join(I18N_DIR, "langs.json"), "utf8")) : [];
-const LANGS = [];
+// Blog posts are translated only into these languages (the ones Google shows the most).
+// Translated home pages stay off: the translated blogs link to the English home page.
+const BLOG_LANGS = ["es", "sv", "ro", "fi", "nl"];
+const TRANSLATED_HOME = false;
+const LANGS = (fs.existsSync(path.join(I18N_DIR, "langs.json")) ? JSON.parse(fs.readFileSync(path.join(I18N_DIR, "langs.json"), "utf8")) : []).filter((l) => BLOG_LANGS.includes(l.code));
 const EN_LANG = { code: "en", htmlLang: "en", hreflang: "en", name: "English", short: "EN", locale: "en-GB" };
 
 function loadDict(code) {
@@ -394,7 +398,9 @@ function makeCtx(lang, dict, posts) {
     const v = dict[k];
     return typeof v === "string" && v ? v : en;
   };
-  return { lang, dict, T, prefix: lang.code === "en" ? "" : `/${lang.code}`, posts, locale: lang.locale };
+  const prefix = lang.code === "en" ? "" : `/${lang.code}`;
+  const hasHome = lang.code === "en" || (TRANSLATED_HOME && !!dict);
+  return { lang, dict, T, prefix, homePrefix: hasHome ? prefix : "", hasHome, posts, locale: lang.locale };
 }
 
 let ctxList = []; // languages that are live (have a dictionary or posts)
@@ -416,12 +422,11 @@ function switcherOld(current, targets, ctx) {
   return `<details class="lang-switch"><summary aria-label="${attr(ctx.T(EN.language))}">${GLOBE}<span>${current.short}</span></summary><ul class="lang-list">${items}</ul></details>`;
 }
 
-function alternatesHtml(targets) { return ""; } // hreflang disabled (English only)
-function alternatesHtmlOld(targets) {
+function alternatesHtml(targets) {
   const links = [];
   for (const l of liveLangs()) if (targets[l.code]) links.push(`<link rel="alternate" hreflang="${l.hreflang}" href="${SITE}${targets[l.code]}" />`);
   if (targets.en) links.push(`<link rel="alternate" hreflang="x-default" href="${SITE}${targets.en}" />`);
-  return links.join("\n  ");
+  return links.length > 2 ? links.join("\n  ") : "";
 }
 
 // URL of the same page in every language: kind = "home" | "blog" | "post". Missing = null.
@@ -429,7 +434,7 @@ function targetsFor(kind, key, all) {
   const t = {};
   for (const c of all) {
     const p = c.prefix;
-    if (kind === "home") t[c.lang.code] = c.lang.code === "en" || c.dict ? `${p}/` : null;
+    if (kind === "home") t[c.lang.code] = c.hasHome ? `${p}/` : null;
     else if (kind === "blog") t[c.lang.code] = c.posts.length || c.lang.code === "en" ? `${p}/blog/` : null;
     else {
       const post = c.posts.find((x) => x.key === key);
@@ -444,22 +449,22 @@ function switcherTargets(kind, key, all) {
   const fallback = {};
   for (const c of all) {
     fallback[c.lang.code] =
-      exact[c.lang.code] || (kind === "post" && c.posts.length ? `${c.prefix}/blog/` : c.lang.code === "en" || c.dict ? `${c.prefix}/` : null);
+      exact[c.lang.code] || (kind === "post" && c.posts.length ? `${c.prefix}/blog/` : c.hasHome ? `${c.prefix}/` : null);
   }
   return { exact, fallback };
 }
 
 // ------------------------------------------------------------------ templates
 function navHtml(ctx, targets) {
-  const { T, prefix } = ctx;
+  const { T, prefix, homePrefix } = ctx;
   return `  <header class="site-nav">
-    <a href="${prefix || ""}/" class="brand"><img class="brand-mark" src="/logo-tile.svg" alt="" width="38" height="38" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
+    <a href="${homePrefix}/" class="brand"><img class="brand-mark" src="/logo-tile.svg" alt="" width="38" height="38" style="display:inline-block;vertical-align:middle;margin:-5px 10px 0 0" />Relationship<span>AI</span></a>
     <button class="nav-toggle" id="nav-toggle" aria-label="${attr(T(EN.menu))}">☰</button>
     <nav class="nav-links" id="nav-menu">
-      <a href="${prefix}/#features">${T(EN.features)}</a>
-      <a href="${prefix}/#pricing">${T(EN.pricing)}</a>
+      <a href="${homePrefix}/#features">${T(EN.features)}</a>
+      <a href="${homePrefix}/#pricing">${T(EN.pricing)}</a>
       <a href="${prefix}/blog/">${T(EN.blog)}</a>
-      <a href="${prefix}/#faq">${T(EN.faq)}</a>
+      <a href="${homePrefix}/#faq">${T(EN.faq)}</a>
       ${switcher(ctx.lang, targets, ctx)}
       <a href="#" class="btn btn-gradient btn-sm" data-cta data-umami-event="cta-blog-nav">${T(EN.cta)}</a>
     </nav>
@@ -485,8 +490,13 @@ function jsDict(ctx) {
   return Object.keys(o).length ? `<script>window.RAI_T=${JSON.stringify(o).replace(/</g, "\\u003c")};</script>\n  ` : "";
 }
 
-function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, image = `${SITE}/og-image.png?v=2` }) {
-  return shellPage({ title, description, path: pagePath, type, body, jsonld, image, cls: "sp-blog" });
+function page(ctx, { title, description, path: pagePath, type = "website", body, jsonld, image = `${SITE}/og-image.png?v=2`, altTargets }) {
+  let h = shellPage({ title, description, path: pagePath, type, body, jsonld, image, cls: "sp-blog" });
+  // language of the page + hreflang links to the same page in the other languages
+  h = h.replace(/<html lang="[^"]*"/, `<html lang="${ctx.lang.htmlLang}"`);
+  const alts = altTargets ? alternatesHtml(altTargets) : "";
+  if (alts && alts.split("\n").length > 2) h = h.replace(/(<link rel="canonical"[^>]*>)/, `$1\n  ${alts}`);
+  return h;
 }
 
 const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug}/">
@@ -849,7 +859,7 @@ function build() {
 
     // translated home pages
     for (const ctx of ctxList) {
-      if (!ctx.dict) continue;
+      if (!ctx.dict || !ctx.hasHome) continue;
       const stats = { hit: 0, miss: new Set() };
       write(`${ctx.lang.code}/index.html`, localizeHome(enHome, ctx, all, stats));
       const missing = [...stats.miss];

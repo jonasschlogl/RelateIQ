@@ -17,7 +17,7 @@ Pravidlá:
 
 ## Jazyky (preklady)
 
-Stránka je dostupná v 16 jazykoch (angličtina + sv, no, da, fi, de, fr, es, it, pt, nl, pl, cs, sk, ro, hu). Hlavný jazyk je angličtina, ostatné sú dáta:
+Blog sa generuje po anglicky + v 5 jazykoch: es, sv, ro, fi, nl (`BLOG_LANGS` v `build-blog.mjs`, preložené hlavné stránky sú vypnuté: `TRANSLATED_HOME = false`). Každý nový článok musí mať preklad do všetkých 5 jazykov. Preložený článok bez `date:` preberie dátum anglického, a kým je anglický `draft: true`, preklad sa nezverejní. Ostatné jazyky presmerováva `landing-page/_redirects` na angličtinu:
 
 - Texty hlavnej stránky: `landing-deploy/i18n/<kód>.json` (anglický text -> preklad). Čo nemá preklad, ostane po anglicky.
 - Preložené články: `landing-deploy/blog-posts/<kód>/<ten istý názov súboru>.md` (hlavička navyše obsahuje `slug:`, malé písmená bez diakritiky).
