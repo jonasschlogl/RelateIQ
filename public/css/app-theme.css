@@ -9,7 +9,7 @@
   --cocoa: #3b2218; --cream: #fff3e2; --pink: #f58fab; --butter: #f9d98a; --peach: #f8c7a3; --blush: #f4b8c4;
   --paper: #fffaf4;
 
-  --bg: #fffaf4;
+  --bg: #fff3e2;
   --bg-elevated: #ffffff;
   --surface: #fff3e2;
   --surface-hover: #fbe9d3;
@@ -509,7 +509,7 @@ body:has(.auth-page) { background: #2a1710; }
    ========================================================================== */
 
 /* Canvas colour behind the page, and no white rubber-band at the top or bottom. */
-html { background: var(--paper); overscroll-behavior-y: none; }
+html { background: var(--bg); overscroll-behavior-y: none; }
 html:has(.auth-page) { background: #2a1710; }
 body { overscroll-behavior-y: none; }
 .chat-messages, .messages, #chat, .sidebar, .sidebar-list { overscroll-behavior: contain; }
@@ -794,3 +794,13 @@ body { overscroll-behavior-y: none; }
 #playbook-page #focus-card .focus-card { background: var(--pink); }
 #playbook-page #ideas-card .focus-card, #playbook-page #ideas .focus-card, #playbook-page .focus-card.focus-ideas { background: var(--peach); }
 .checkin-card .checkin-question, #daily-page .checkin-question { color: var(--cocoa) !important; }
+
+/* checkboxes stay visible on coloured blocks */
+.dash-settings input[type="checkbox"], .dashboard-card input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--cocoa); border-radius: 5px; background: #fff;
+  vertical-align: -3px; cursor: pointer; flex: none;
+}
+.dash-settings input[type="checkbox"]:checked, .dashboard-card input[type="checkbox"]:checked {
+  background: var(--cocoa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f9d98a' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 13px no-repeat;
+}
+.dash-settings .btn-ghost { background: #fff; color: var(--cocoa); border: 0; }
