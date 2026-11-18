@@ -370,6 +370,7 @@ function loadPosts(dir, englishByKey) {
       if (/^(true|yes|1)$/i.test(meta.draft || "")) { console.log(`skip draft: ${file}`); continue; }
       const key = file.replace(/\.md$/, "");
       const en = englishByKey && englishByKey.get(key);
+      if (englishByKey && !en && fs.existsSync(path.join(POSTS_DIR, file))) { console.log(`skip translation of draft: ${file}`); continue; }
       if (englishByKey && !en) throw new Error("no English post with this file name");
       if (!meta.title) throw new Error("missing 'title:'");
       const date = meta.date || (en && en.date);
