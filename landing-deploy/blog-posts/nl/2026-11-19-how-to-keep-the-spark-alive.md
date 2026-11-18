@@ -1,12 +1,12 @@
 ---
-title: "De vonk levend houden in een lange relatie: 9 dingen die echt werken"
-slug: de-vonk-levend-houden-in-je-relatie
-description: Moet de vonk verdwijnen? Hoe je de vonk levend houdt in een lange relatie, wat onderzoek naar blijvende liefde laat zien en 9 praktische ideeën om deze week te proberen.
-tags: de vonk levend houden, lange relatie
+title: "De vonk in je relatie levend houden: 9 dingen die echt werken"
+slug: vonk-in-je-relatie
+description: De vonk in je relatie levend houden, ook na jaren: wat onderzoek naar blijvende liefde laat zien en 9 praktische ideeën om deze week te proberen.
+tags: vonk in je relatie, de vonk terug
 ---
 In het begin voelde alles elektrisch. Jullie konden niet wachten om elkaar te zien, appten de hele dag en bleven praten tot twee uur 's nachts. Nu houden jullie van elkaar, maar de avonden bestaan vooral uit Netflix, scrollen en "wat wil je eten vanavond?".
 
-Die verandering is normaal. Maar het betekent niet dat de vonk moet verdwijnen. Onderzoek laat zien dat veel stellen die al lang samen zijn nog steeds erg verliefd zijn, en dat zij andere dingen doen dan stellen die uit elkaar groeien. Deze gids legt uit hoe je de vonk levend houdt, wat het onderzoek liet zien en negen praktische dingen die je kunt proberen.
+Die verandering is normaal. Maar het betekent niet dat de vonk in je relatie moet verdwijnen. Onderzoek laat zien dat veel stellen die al lang samen zijn nog steeds erg verliefd zijn, en dat zij andere dingen doen dan stellen die uit elkaar groeien. Deze gids legt uit hoe je de vonk levend houdt, wat het onderzoek liet zien en negen praktische dingen die je kunt proberen.
 
 ## Kan liefde na vele jaren intens blijven?
 
@@ -29,7 +29,7 @@ In een bekende reeks experimenten vroegen Arthur Aron en collega's stellen om ti
 > **Waarom het zo werkt**
 > Aan het begin van een relatie is alles nieuw: nieuwe plekken, nieuwe verhalen, nieuwe kanten van elkaar. Ons brein koppelt die opwinding aan de persoon met wie we zijn. Na verloop van tijd vervangt routine het nieuwe, en het gevoel neemt af. Als jullie samen iets nieuws doen, halen jullie een beetje van die vroege opwinding terug, en koppelt je brein die opnieuw aan je partner. Het hoeft niet extreem te zijn. Een nieuwe wandeling, een kookcursus of een weekend ergens waar jullie nog nooit zijn geweest kan al genoeg zijn.
 
-## 9 manieren om de vonk levend te houden
+## 9 manieren om de vonk in je relatie levend te houden
 
 ### 1. Probeer regelmatig samen iets nieuws
 

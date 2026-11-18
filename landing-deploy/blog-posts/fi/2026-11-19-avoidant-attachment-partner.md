@@ -2,15 +2,15 @@
 title: "Välttelevä kiintymyssuhde kumppanilla: 8 merkkiä ja miten rakastaa ihmistä, joka tarvitsee tilaa"
 slug: valtteleva-kiintymyssuhde-kumppani
 description: Läheinen yhtenä päivänä, etäinen seuraavana? 8 merkkiä välttelevästä kiintymyssuhteesta kumppanilla, miksi hän vetäytyy läheisyyden jälkeen ja miten rakentaa läheisyyttä jahtaamatta.
-tags: välttelevä kiintymyssuhde, tarvitsee tilaa
+tags: välttelevä kiintymyssuhde, välttelevä kiintymystyyli
 ---
 Teillä oli ihana viikonloppu yhdessä. Sitten maanantaina kumppanisi hiljenee, vastaa hitaammin ja tuntuu tarvitsevan paljon omaa aikaa. Mietit, mitä teit väärin. Todennäköisesti et mitään. Mutta sama kuvio toistuu yhä uudelleen.
 
-Jos tämä kuulostaa tutulta, kumppanillasi voi olla välttelevä kiintymystyyli. Se on yksi parisuhdepsykologian haetuimmista aiheista, koska se on niin yleinen ja niin hämmentävä elää. Suuressa, valtakunnallisesti edustavassa yhdysvaltalaistutkimuksessa noin neljännes aikuisista kuvasi itseään tavalla, joka sopi välttelevään kiintymykseen.
+Jos tämä kuulostaa tutulta, kumppanillasi voi olla välttelevä kiintymyssuhde, eli välttelevä kiintymystyyli. Se on yksi parisuhdepsykologian haetuimmista aiheista, koska se on niin yleinen ja niin hämmentävä elää. Suuressa, valtakunnallisesti edustavassa yhdysvaltalaistutkimuksessa noin neljännes aikuisista kuvasi itseään tavalla, joka sopi välttelevään kiintymykseen.
 
 Tämä opas kertoo, miltä välttelevä kiintymys näyttää, miksi välttelevät kumppanit vetäytyvät, kun asiat muuttuvat läheisiksi, ja miten voit rakentaa läheisemmän suhteen jahtaamatta ja kadottamatta itseäsi.
 
-## Mitä välttelevä kiintymys on?
+## Mitä välttelevä kiintymyssuhde on?
 
 Kiintymystyylit kuvaavat, miten yleensä suhtaudumme läheisyyteen ja riippuvuuteen suhteissa. Välttelevän tyylin ihmiset oppivat, usein jo varhain, ettei toisiin nojaaminen ollut turvallista tai toivottua. Siksi heistä tuli hyvin omavaraisia.
 
@@ -110,7 +110,7 @@ Jos haluat suunnitella, miten puhua tarpeista ja tilasta ilman että siitä tule
 
 ## Nopeat vastaukset
 
-### Mitä välttelevä kiintymys on?
+### Mitä välttelevä kiintymyssuhde on?
 
 Tapa olla suhteessa, jossa ihminen arvostaa itsenäisyyttä paljon ja kokee läheisyyden ja toisista riippumisen epämukavana, usein varhaisten kokemusten vuoksi.
 

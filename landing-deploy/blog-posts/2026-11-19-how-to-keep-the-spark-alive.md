@@ -4,6 +4,7 @@ date: 2026-11-19
 description: Does the spark have to fade? How to keep the spark alive in a long-term relationship, what research on lasting love found and 9 practical ideas you can try this week.
 tags: keep the spark alive, long-term relationship
 draft: true
+approved: true
 topics: communication, repair
 ---
 At the start, everything felt electric. You couldn't wait to see each other, texted all day and stayed up talking until 2am. Now you love each other, but evenings look a lot like Netflix, scrolling and "what do you want for dinner?"

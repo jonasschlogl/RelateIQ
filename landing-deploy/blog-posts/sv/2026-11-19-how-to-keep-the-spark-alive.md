@@ -6,7 +6,7 @@ tags: hålla gnistan vid liv, långt förhållande
 ---
 I början kändes allt elektriskt. Ni längtade efter att ses, skrev till varandra hela dagarna och satt uppe och pratade till två på natten. Nu älskar ni varandra, men kvällarna ser mest ut som Netflix, scrollande och "vad vill du äta i kväll?".
 
-Den förändringen är normal. Men det betyder inte att gnistan måste försvinna. Forskning tyder på att många par som varit tillsammans länge fortfarande är väldigt förälskade, och att de gör saker annorlunda än par som glider isär. Den här guiden förklarar hur ni håller gnistan vid liv, vad forskningen har visat och nio praktiska saker ni kan testa.
+Den förändringen är normal. Men det betyder inte att gnistan måste försvinna, det går att hålla gnistan vid liv. Forskning tyder på att många par som varit tillsammans länge fortfarande är väldigt förälskade, och att de gör saker annorlunda än par som glider isär. Den här guiden förklarar hur ni håller gnistan vid liv, vad forskningen har visat och nio praktiska saker ni kan testa.
 
 ## Kan kärleken vara intensiv efter många år?
 

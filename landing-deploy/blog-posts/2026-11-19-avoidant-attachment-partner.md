@@ -4,6 +4,7 @@ date: 2026-11-19
 description: Close one day, distant the next? 8 signs of avoidant attachment in a partner, why they pull away when things get close and how to build closeness without chasing.
 tags: avoidant attachment, needing space
 draft: true
+approved: true
 topics: attachment, communication
 ---
 You had a lovely weekend together. Then on Monday they go quiet, take longer to reply and seem to need a lot of time alone. You wonder what you did wrong. Nothing, probably. But the pattern keeps repeating.

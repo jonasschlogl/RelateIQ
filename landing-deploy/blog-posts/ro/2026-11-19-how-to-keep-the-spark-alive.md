@@ -1,12 +1,12 @@
 ---
-title: "Cum să păstrezi scânteia într-o relație de lungă durată: 9 lucruri care funcționează cu adevărat"
-slug: cum-sa-pastrezi-scanteia-in-relatie
-description: Trebuie să se stingă scânteia? Cum să păstrezi scânteia într-o relație de lungă durată, ce arată cercetările despre iubirea de durată și 9 idei practice de încercat săptămâna asta.
-tags: păstrarea scânteii, relație de lungă durată
+title: "Cum să păstrezi scânteia în relație: 9 lucruri care funcționează și după ani"
+slug: scanteia-in-relatie
+description: Cum să păstrezi scânteia în relație și după ani: ce arată cercetările despre iubirea de durată și 9 idei practice de încercat săptămâna asta.
+tags: scânteia în relație, relație de lungă durată
 ---
 La început, totul părea electric. Abia așteptați să vă vedeți, vă scriați toată ziua și stăteați de vorbă până la două noaptea. Acum vă iubiți, dar serile seamănă mult cu Netflix, scrollat pe telefon și „ce mâncăm diseară?".
 
-Schimbarea asta e normală. Dar nu înseamnă că scânteia trebuie să dispară. Cercetările arată că multe cupluri împreună de mulți ani rămân foarte îndrăgostite și că ele fac lucrurile altfel decât cuplurile care se îndepărtează. Acest ghid explică cum să păstrezi scânteia, ce au descoperit cercetătorii și nouă lucruri practice pe care le poți încerca.
+Schimbarea asta e normală. Dar nu înseamnă că scânteia în relație trebuie să dispară. Cercetările arată că multe cupluri împreună de mulți ani rămân foarte îndrăgostite și că ele fac lucrurile altfel decât cuplurile care se îndepărtează. Acest ghid explică cum să păstrezi scânteia, ce au descoperit cercetătorii și nouă lucruri practice pe care le poți încerca.
 
 ## Poate iubirea de lungă durată să rămână intensă?
 
@@ -29,7 +29,7 @@ Ce aveau în comun aceste cupluri? Se gândeau pozitiv la partener, se gândeau 
 > **De ce funcționează așa**
 > La începutul unei relații totul e nou: locuri noi, povești noi, laturi noi ale celuilalt. Creierul leagă entuziasmul acela de persoana cu care suntem. Cu timpul, rutina ia locul noutății, iar sentimentul se estompează. Când faceți ceva nou împreună, readuceți puțin din entuziasmul de la început, iar creierul îl leagă din nou de partenerul tău. Nu trebuie să fie ceva extrem. O drumeție nouă, un curs de gătit sau un weekend într-un loc unde n-ați mai fost pot fi de ajuns.
 
-## 9 moduri de a păstra scânteia
+## 9 moduri de a păstra scânteia în relație
 
 ### 1. Încercați ceva nou împreună, în mod regulat
 

@@ -1,12 +1,12 @@
 ---
-title: "Näin pidät kipinän yllä pitkässä parisuhteessa: 9 asiaa, jotka oikeasti toimivat"
-slug: kipinan-yllapitaminen-parisuhteessa
-description: Pitääkö kipinän sammua? Näin pidät kipinän yllä pitkässä parisuhteessa, mitä tutkimus kestävästä rakkaudesta kertoo ja 9 käytännön ideaa kokeiltavaksi jo tällä viikolla.
-tags: kipinän ylläpitäminen, pitkä parisuhde
+title: "Kipinä parisuhteessa: 9 keinoa pitää se yllä pitkässäkin suhteessa"
+slug: kipina-parisuhteessa
+description: Kipinä parisuhteessa: pitääkö sen sammua? Mitä tutkimus kestävästä rakkaudesta kertoo ja 9 käytännön keinoa pitää kipinä yllä jo tällä viikolla.
+tags: kipinä parisuhteessa, pitkä parisuhde
 ---
 Alussa kaikki tuntui sähköiseltä. Ette malttaneet odottaa näkemistä, viestittelitte koko päivän ja juttelitte kahteen asti yöllä. Nyt rakastatte toisianne, mutta illat näyttävät lähinnä Netflixiltä, puhelimen selaamiselta ja kysymykseltä "mitä syötäisiin tänään?".
 
-Muutos on normaali. Se ei kuitenkaan tarkoita, että kipinän pitäisi kadota. Tutkimusten mukaan monet pitkään yhdessä olleet parit ovat yhä hyvin rakastuneita, ja he tekevät asioita eri tavalla kuin parit, jotka ajautuvat erilleen. Tämä opas kertoo, miten kipinän voi pitää yllä, mitä tutkimus on löytänyt ja yhdeksän käytännön asiaa, joita voitte kokeilla.
+Muutos on normaali. Se ei kuitenkaan tarkoita, että kipinä parisuhteessa katoaisi. Tutkimusten mukaan monet pitkään yhdessä olleet parit ovat yhä hyvin rakastuneita, ja he tekevät asioita eri tavalla kuin parit, jotka ajautuvat erilleen. Tämä opas kertoo, miten kipinän voi pitää yllä, mitä tutkimus on löytänyt ja yhdeksän käytännön asiaa, joita voitte kokeilla.
 
 ## Voiko pitkä rakkaus pysyä intensiivisenä?
 
@@ -29,7 +29,7 @@ Tunnetussa koesarjassa Arthur Aron kollegoineen pyysi pareja viettämään aikaa
 > **Miksi se toimii näin**
 > Suhteen alussa kaikki on uutta: uusia paikkoja, uusia tarinoita, uusia puolia toisesta. Aivot yhdistävät tämän innostuksen ihmiseen, jonka kanssa olemme. Ajan myötä rutiini korvaa uutuuden, ja tunne hiipuu. Kun teette yhdessä jotain uutta, tuotte takaisin vähän alkuajan innostusta, ja aivot yhdistävät sen taas kumppaniisi. Sen ei tarvitse olla mitään äärimmäistä. Uusi retkireitti, kokkikurssi tai viikonloppu paikassa, jossa ette ole ennen käyneet, voi riittää.
 
-## 9 tapaa pitää kipinä yllä
+## Kipinä parisuhteessa: 9 tapaa pitää se yllä
 
 ### 1. Kokeilkaa säännöllisesti jotain uutta yhdessä
 
