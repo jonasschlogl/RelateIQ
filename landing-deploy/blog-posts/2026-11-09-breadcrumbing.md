@@ -2,7 +2,7 @@
 title: "Breadcrumbing: 9 real questions about being kept on the hook, answered"
 date: 2026-11-10
 updated: 2026-11-19
-description: "Breadcrumbing: what it is, why it hurts more than a clear no, how to tell it from someone who's just busy, and what to say. 9 real questions answered with research."
+description: "Breadcrumbing: what it is, why it hurts more than a clear no, how to tell it from someone who's just busy, and what to say. 9 real questions, answered."
 tags: breadcrumbing, mixed signals
 ---
 Breadcrumbing is when someone gives you just enough attention to keep you interested, but never enough to build anything: a like on your story, a "hey stranger" every few weeks, plans that stay "soon". You don't need another definition. You probably need answers to the questions you've been turning over at night.
