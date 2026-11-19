@@ -2,7 +2,7 @@
 title: "How to support your partner when they're stressed: what to say, what to do, what to skip"
 date: 2026-11-12
 updated: 2026-11-19
-description: "How to support your partner when they're stressed, with ready-to-use words for work stress, family pressure, burnout and bad moods, plus the research on why the best support is often barely noticed."
+description: "How to support your partner when stressed: ready-to-use words for work stress, family pressure and burnout, and why the best support often goes unnoticed."
 tags: support your partner when stressed, stress in relationships
 ---
 Here is a finding that surprises most people. In a classic study of couples where one partner was preparing for a major exam, the support that helped the most was often support the stressed partner **didn't even notice**. The other partner had done something helpful, but the stressed partner hadn't registered it as "being supported".

@@ -2,7 +2,7 @@
 title: "Gaslighting in a relationship, or just a disagreement? 5 questions that tell them apart"
 date: 2026-11-14
 updated: 2026-11-19
-description: "Gaslighting in a relationship is real, but the word is overused. 5 questions to tell gaslighting from ordinary disagreement, what recent research found, and how to trust yourself again."
+description: "Gaslighting in a relationship is real, but the word is overused. 5 questions to tell it from ordinary disagreement, what new research found, and how to heal."
 tags: gaslighting in a relationship, emotional manipulation
 ---
 "Gaslighting" was Merriam-Webster's word of the year in 2022, and since then it has been used for almost everything: a partner remembering a dinner differently, a friend disagreeing, a boss changing their mind. That creates two problems. People in ordinary arguments start to see their partner as an abuser. And people who really are being gaslit find the word has lost its weight.

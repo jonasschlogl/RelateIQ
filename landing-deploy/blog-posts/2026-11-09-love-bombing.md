@@ -2,7 +2,7 @@
 title: "Love bombing: how it unfolds week by week, and how to tell it from real love"
 date: 2026-11-10
 updated: 2026-11-19
-description: "Love bombing rarely looks like a red flag at first. Follow one relationship from week 1 to month 3, see the turning points, what research and abuse experts say, and what to do at each stage."
+description: "Love bombing rarely looks like a red flag at first. Follow one relationship from week 1 to month 3, with the turning points experts describe and what to do."
 tags: love bombing, red flags
 ---
 Love bombing is hard to spot for a simple reason: at the start, it feels exactly like the romance people hope for. A list of red flags is easy to read in hindsight. In the moment, the flags look like flowers.

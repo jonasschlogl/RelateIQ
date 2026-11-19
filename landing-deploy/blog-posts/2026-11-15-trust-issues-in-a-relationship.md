@@ -2,7 +2,7 @@
 title: "Trust issues in a relationship: how trust is really built, and the loop that keeps doubt alive"
 date: 2026-11-15
 updated: 2026-11-19
-description: "Trust issues in a relationship explained: what trust is made of, why constant reassurance can backfire, a self-check for past vs present, and what actually builds trust again, based on relationship research."
+description: "Trust issues in a relationship: what trust is made of, why constant reassurance backfires, a self-check for past vs present hurt, and what rebuilds trust."
 tags: trust issues in a relationship, rebuilding trust
 ---
 Most people with trust issues know the checklist by heart: checking the phone, expecting the worst, needing reassurance, testing the partner. What's less obvious is *why* the usual fixes so often don't work, and why someone can get a hundred reassurances and still not feel safe.

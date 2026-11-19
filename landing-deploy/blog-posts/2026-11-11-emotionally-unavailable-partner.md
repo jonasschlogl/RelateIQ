@@ -2,7 +2,7 @@
 title: "Emotionally unavailable partner: the 5 different reasons behind it, and what helps with each"
 date: 2026-11-11
 updated: 2026-11-19
-description: "An emotionally unavailable partner isn't always avoidant. 5 different reasons someone shuts down, from alexithymia to masculine norms to depression, how to tell which one you're facing, and what actually helps."
+description: "An emotionally unavailable partner isn't always avoidant. 5 different reasons people shut down, how to tell which one you're facing, and what actually helps."
 tags: emotionally unavailable, attachment
 ---
 "Emotionally unavailable" is usually treated as one thing: a partner who won't open up, full stop. But the same behaviour, changing the subject, going quiet in hard moments, keeping things light, can come from very different places. And what helps depends completely on which one it is.

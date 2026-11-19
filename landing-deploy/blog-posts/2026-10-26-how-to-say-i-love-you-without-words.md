@@ -2,7 +2,7 @@
 title: "How to say \"I love you\" without words: 25 small ways, for every kind of day"
 date: 2026-10-26
 updated: 2026-11-19
-description: "How to say \"I love you\" without words: 25 small gestures sorted by moment, from busy mornings to hard days and long distance, plus what research on touch, gratitude and small moments shows actually lands."
+description: "How to say \"I love you\" without words: 25 small gestures for busy mornings, hard days and long distance, and what research shows actually lands."
 tags: show love, love languages
 ---
 "I love you" is three words. Showing it is a thousand small things, and most of them take less than a minute. The trick is knowing which small thing fits the moment. A long hug lands differently on a stressful evening than on a Sunday morning, and a funny text can be perfect on a busy day and wrong after a fight.

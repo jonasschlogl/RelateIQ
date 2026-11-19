@@ -2,7 +2,7 @@
 title: "Love languages: 6 popular beliefs, checked against the research"
 date: 2026-11-15
 updated: 2026-11-19
-description: "Love languages are everywhere, but what holds up? 6 popular beliefs about the 5 love languages checked against studies from 2017 to 2024, and a better way to use them with your partner."
+description: "Love languages are everywhere, but what holds up? 6 popular beliefs about the 5 love languages checked against recent studies, and a better way to use them."
 tags: love languages, showing love
 ---
 Words of affirmation, quality time, receiving gifts, acts of service, physical touch. Gary Chapman's five love languages, first published in 1992, have become one of the most quoted relationship ideas in the world. Dating profiles list them. Couples take the quiz on the second date.

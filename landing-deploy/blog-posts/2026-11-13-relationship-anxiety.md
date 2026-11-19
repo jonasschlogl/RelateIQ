@@ -2,7 +2,7 @@
 title: "Relationship anxiety: a toolkit for the next 2 minutes, the next day and the next month"
 date: 2026-11-13
 updated: 2026-11-19
-description: "Relationship anxiety toolkit: what to do in the first 2 minutes of a spiral, how to handle the day, and what changes it over a month, with research on worry, breathing and why anxious attachment can soften with time."
+description: "Relationship anxiety toolkit: what to do in the first 2 minutes of a spiral, through the day and over a month, with research on worry, breathing and attachment."
 tags: relationship anxiety, attachment
 ---
 Relationship anxiety is the constant background question: *are we okay?* A slow reply becomes a sign. A flat "ok" becomes a verdict. A good evening is followed by a fear that it won't last. You may love your partner and still feel like you're bracing for something.

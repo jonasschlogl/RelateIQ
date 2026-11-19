@@ -2,7 +2,7 @@
 title: "Signs of a toxic relationship: a 3-level check for unhealthy, toxic and controlling"
 date: 2026-11-16
 updated: 2026-11-19
-description: "Signs of a toxic relationship sorted into three levels: unhealthy but fixable, toxic patterns, and coercive control. A clear self-check, what research says about why it's hard to leave, and safe next steps."
+description: "Signs of a toxic relationship in three levels: unhealthy but fixable, toxic patterns and coercive control, with a clear self-check and safe next steps."
 tags: signs of a toxic relationship, red flags
 ---
 "Toxic" has become an everyday word for anything from a partner who forgets your birthday to one who controls your money. That's a problem, because those situations need completely different responses. A relationship going through a rough patch might need a better conversation. A controlling one might need a safety plan.

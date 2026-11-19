@@ -2,7 +2,7 @@
 title: "How to get over a breakup: a recovery plan for the first 48 hours, 2 weeks and 3 months"
 date: 2026-11-13
 updated: 2026-11-19
-description: "How to get over a breakup, stage by stage: what to do in the first 48 hours, the first two weeks and the months after, and what research says about why you'll likely recover faster than you fear."
+description: "How to get over a breakup, stage by stage: the first 48 hours, the first two weeks and the months after, and why you'll likely recover faster than you fear."
 tags: how to get over a breakup, heartbreak
 ---
 Right now it probably feels like this will last forever. Here is something worth holding on to: in a study that followed dating couples every two weeks for nine months, researchers led by Paul Eastwick asked people to predict how upset they would be if their relationship ended. When breakups actually happened, people were less distressed than they had predicted, and the ones who had been most in love overestimated their future pain the most.

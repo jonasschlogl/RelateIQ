@@ -2,7 +2,7 @@
 title: "Jealousy in a relationship: 7 myths that make it worse (and what research shows)"
 date: 2026-11-16
 updated: 2026-11-19
-description: "Jealousy in a relationship isn't one feeling. 7 common myths, what research on reactive vs suspicious jealousy, rumination and phone checking shows, and what actually calms it."
+description: "Jealousy in a relationship isn't one feeling. 7 common myths checked against research on suspicion, rumination and phone checking, and what calms it."
 tags: jealousy in a relationship, insecurity
 ---
 Most advice about jealousy in a relationship treats it as one thing: a bad feeling you should get rid of. Research says it is at least two different things, and they behave very differently. One is a short, sharp sting when something actually happens. The other is a slow loop of suspicion, checking and replaying that can grow without anything happening at all.

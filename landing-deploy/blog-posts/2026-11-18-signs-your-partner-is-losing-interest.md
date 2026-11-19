@@ -2,7 +2,7 @@
 title: "Signs your partner is losing interest: what each signal can really mean"
 date: 2026-11-18
 updated: 2026-11-19
-description: "Signs your partner is losing interest, decoded: shorter texts, less touch, fewer plans. For each signal, the three most likely explanations, what research says actually predicts a relationship fading, and what to say."
+description: "Signs your partner is losing interest, decoded: shorter texts, less touch, fewer plans. The likely reasons behind each one, what research says, and what to say."
 tags: signs your partner is losing interest, emotional distance
 ---
 Shorter replies. Fewer plans. Less touch. When you notice your partner pulling back, your mind usually jumps to one explanation: they're falling out of love. Sometimes that's true. Often it isn't. The same signal can come from stress, depression, a phone habit or a relationship that has slowly gone on autopilot.

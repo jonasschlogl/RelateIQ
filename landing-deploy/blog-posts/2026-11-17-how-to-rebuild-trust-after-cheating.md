@@ -2,7 +2,7 @@
 title: "How to rebuild trust after cheating: the 4 stages couples go through, and what each partner does"
 date: 2026-11-17
 updated: 2026-11-19
-description: "How to rebuild trust after cheating, stage by stage: what couples who healed describe, what a 2026 study of 3,400 people found about who stays together, and what the betrayed and unfaithful partner each need to do."
+description: "How to rebuild trust after cheating, stage by stage: what a 2026 study of 3,400 people found about who stays together, and what each partner needs to do."
 tags: rebuild trust after cheating, infidelity
 ---
 If you've just found out, or just confessed, this probably feels like the end of the world. Here are two things research says that are worth knowing right now.

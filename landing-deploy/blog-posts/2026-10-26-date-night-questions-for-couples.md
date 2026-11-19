@@ -2,7 +2,7 @@
 title: "Date night questions for couples: 40 questions and 5 games to make the evening fun"
 date: 2026-10-26
 updated: 2026-11-19
-description: "Date night questions for couples, turned into 5 simple games: the question jar, hot seat, this-or-that and more, with 40 playful-to-meaningful questions and what research says about couple time and playfulness."
+description: "Date night questions for couples, turned into 5 easy games, from the question jar to hot seat, with 40 playful-to-deep questions and the research behind them."
 tags: date night questions, questions for couples
 ---
 A list of date night questions can feel like homework: two people at a restaurant, one reading from a phone, the other wondering what's going on. The fix is simple. Turn the questions into a game. Games lower the pressure, add laughter, and somehow make the bigger questions easier to answer.

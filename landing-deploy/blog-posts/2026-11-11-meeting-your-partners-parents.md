@@ -2,7 +2,7 @@
 title: "Meeting your partner's parents for the first time: what to say in the 12 most awkward moments"
 date: 2026-11-11
 updated: 2026-11-19
-description: "Meeting your partner's parents for the first time? Ready-to-use answers for the 12 moments people dread most, plus what research says about why their approval matters more than you'd think."
+description: "Meeting your partner's parents for the first time? Ready-to-use answers for the 12 moments people dread most, and why research says their approval matters."
 tags: meeting your partner's parents, meeting the parents
 ---
 Most advice about meeting your partner's parents says the same things: dress nicely, bring flowers, be yourself. Fine, but that isn't what keeps people awake the night before. What keeps them awake is the *moments*: the silence after "So, what do you do?", the question about marriage, the political comment from Dad.

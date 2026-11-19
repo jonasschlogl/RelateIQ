@@ -2,7 +2,7 @@
 title: "Holidays with your partner's family: a game plan from two weeks before to the drive home"
 date: 2026-11-07
 updated: 2026-11-19
-description: "Holidays with your partner's family, planned step by step: what to agree two weeks before, how to handle arrival, tense moments and comments at the table, and the drive home, plus what research says about in-laws and couples."
+description: "Holidays with your partner's family, step by step: what to agree beforehand, how to handle tense moments at the table, and what research says."
 tags: holidays with your partner's family, in-laws
 ---
 Holidays with your partner's family can be lovely. They can also be four days of politeness, unfamiliar rules, comments about your job, and the feeling that your partner turns into a different person the moment they walk through their parents' door.

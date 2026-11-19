@@ -2,7 +2,7 @@
 title: "Long distance relationship tips: what helps while apart, during visits and after you close the gap"
 date: 2026-11-14
 updated: 2026-11-19
-description: "Long distance relationship tips for all three phases: staying close while apart, making visits work, and the risky part most guides skip, moving to the same city. Backed by research on LDRs."
+description: "Long distance relationship tips for all three phases: staying close apart, making visits work, and the risky part most guides skip, finally living together."
 tags: long distance relationship tips, LDR
 ---
 Most long distance relationship tips focus on the time apart: video calls, care packages, watching films in sync. That matters. But research points to a part of long distance that gets far less attention and causes a surprising number of breakups: the moment you finally live in the same place.

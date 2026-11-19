@@ -2,7 +2,7 @@
 title: "Deep questions to ask your partner: 30 questions, and how to answer so they keep talking"
 date: 2026-10-26
 updated: 2026-11-19
-description: "30 deep questions to ask your partner, sorted by how deep they go and where to ask them, plus what research says matters even more than the question: how you respond to the answer."
+description: "30 deep questions to ask your partner, sorted by how deep they go, plus what research says matters even more than the question: how you respond to the answer."
 tags: deep questions to ask your partner, questions for couples
 ---
 Most lists of deep questions to ask your partner hand you 100 questions and stop there. But anyone who has tried one over dinner knows the question is the easy part. What happens in the next ten seconds, how you react to the answer, decides whether your partner opens up further or quietly closes the door.

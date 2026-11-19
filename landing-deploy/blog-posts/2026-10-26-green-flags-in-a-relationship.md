@@ -2,7 +2,7 @@
 title: "Green flags in a relationship: 9 signs of a healthy partner, and how to spot each one"
 date: 2026-10-26
 updated: 2026-11-19
-description: "9 green flags in a relationship, each with a simple way to spot it in real life, plus the research behind them: how partners react to good news, support your goals and help you become who you want to be."
+description: "9 green flags in a relationship, each with a simple way to spot it in real life, and the research on how a good partner reacts to your news, goals and growth."
 tags: green flags in a relationship, healthy relationship
 ---
 Red flags get all the attention. But if you've been through a difficult relationship, the bigger challenge is often recognising what *good* looks like. Healthy can feel strange at first. Calm can feel like boredom. Consistency can feel too good to trust.

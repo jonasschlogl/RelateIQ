@@ -2,7 +2,7 @@
 title: "How to talk about money with your partner: a 'money date' agenda and what to say in 4 tricky situations"
 date: 2026-11-09
 updated: 2026-11-19
-description: "How to talk about money with your partner without a fight: a 4-round 'money date' agenda, what research says about joint accounts, spenders vs savers and hidden spending, and calm words for debt and income gaps."
+description: "How to talk about money with your partner without a fight: a 4-round money date agenda, what research says about joint accounts, and calm words for debt."
 tags: talk about money with your partner, money and relationships
 ---
 Money is one of the few topics most couples avoid until it's urgent: a card is maxed out, a big purchase appears, the rent goes up. Then the talk happens in the worst possible mood.
