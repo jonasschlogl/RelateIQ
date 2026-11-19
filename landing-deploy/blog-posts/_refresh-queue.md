@@ -27,7 +27,7 @@
 - [x] 2026-11-13-relationship-anxiety (refreshed 2026-11-19: toolkit 2 minutes / day / month, 5 sources)
 - [x] 2026-10-26-green-flags-in-a-relationship (refreshed 2026-11-19: 9 flags with how to spot each, 4 sources)
 - [x] 2026-10-26-how-to-rebuild-trust-after-a-fight (refreshed 2026-11-19: tonight/morning/week + 21-minute reappraisal, 4 sources)
-- [ ] 2026-11-12-should-i-break-up-with-my-partner
+- [x] 2026-11-12-should-i-break-up-with-my-partner (refreshed 2026-11-19: light edit: added 2020 PNAS study of 11,000 couples, fewer template parts)
 - [ ] 2026-11-19-avoidant-attachment-partner (has 5 translations: update them too)
 # Pillar posts last: they rank and have translations. Keep their keywords, H1 keyword and best sections; mainly remove template boxes, vary structure, check sources.
 - [ ] 2026-10-08-how-to-apologize-to-your-partner

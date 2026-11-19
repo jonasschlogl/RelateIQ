@@ -3,7 +3,7 @@ title: "Should I break up with my partner? 10 honest questions to help you decid
 date: 2026-11-12
 description: Should I break up with my partner? 10 honest questions to help you decide, what research on 37,000+ people says about why relationships end.
 tags: should I break up, relationship doubts
-updated: 2026-11-14
+updated: 2026-11-19
 ---
 Some days you're sure you want to leave. Other days you remember why you fell for them and can't imagine life without them. You've made mental lists, asked friends, maybe typed "should I break up with my partner" into Google at 2am.
 
@@ -32,6 +32,8 @@ The strongest predictors of staying together weren't personality traits or how s
 | Depending on the relationship | Among the strongest |
 | Satisfaction, alternatives, investments | Moderate |
 | Personality traits | Weak |
+
+A newer, even larger analysis points the same way. In 2020, Samantha Joel and more than 80 colleagues used machine learning on 43 long-term studies of more than 11,000 couples. The strongest predictors of how happy people were in their relationship were all about the relationship as they experienced it: feeling that their partner was committed, appreciating their partner, sexual satisfaction, feeling that their partner was satisfied, and less conflict. Individual traits like personality or attachment style added very little once those were known. One sobering detail: none of these predictors could reliably forecast whether a relationship would get better or worse over time. How you feel about the relationship now is real information. It just can't predict the future on its own.
 
 What does that mean for you? Not that you should stay because you depend on someone, or leave because you're not satisfied today. It means the questions that matter most are about the relationship's core: do you still feel committed, do you still love this person, and do you still want your lives to be connected? Those are the questions below.
 
@@ -102,7 +104,7 @@ These examples are illustrative, not real people, but they show how the same que
 >
 > This is the pattern Gottman warns about most. It isn't automatically the end, but it's serious. If both of them want to try, it needs real work, ideally with a therapist, and soon. If only one of them wants to try, that's an answer too.
 
-## What most advice gets wrong
+## There is no scorecard
 
 A lot of articles treat breaking up as a test you pass or fail. Count the red flags, add up the score, done. Real life is messier. You can love someone and still not be right together. You can have real problems and still have a relationship worth fighting for.
 
@@ -174,8 +176,8 @@ Some situations call for a closer look before you decide: [love bombing](/blog/l
 ## Sources
 
 - Joel, S., MacDonald, G., & Page-Gould, E. (2018). Wanting to stay and wanting to go: Unpacking the content and structure of relationship stay/leave decision processes. *Social Psychological and Personality Science*, 9(6), 631-644. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2017/08/170817122138.htm)
+- Joel, S., Eastwick, P. W., Allison, C. J., et al. (2020). Machine learning uncovers the most robust self-report predictors of relationship quality across 43 longitudinal couples studies. *Proceedings of the National Academy of Sciences*, 117(32), 19061-19071. Summary in [Psychology Today](https://psychologytoday.com/ie/blog/dating-and-mating/202007/the-strongest-predictors-of-romantic-relationship-quality)
 - Le, B., Dove, N. L., Agnew, C. R., Korn, M. S., & Mutso, A. A. (2010). Predicting nonmarital romantic relationship dissolution: A meta-analytic synthesis. *Personal Relationships*, 17(3), 377-390. [Haverford College repository](https://scholarship.haverford.edu/psychology_facpubs/271)
 - Spielmann, S. S., MacDonald, G., Maxwell, J. A., Joel, S., Peragine, D., Muise, A., & Impett, E. A. (2013). Settling for less out of fear of being single. *Journal of Personality and Social Psychology*, 105(6), 1049-1073. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2013/12/131203133728.htm)
-- Gottman Institute: [This one thing is the biggest predictor of divorce](https://www.gottman.com/blog/this-one-thing-is-the-biggest-predictor-of-divorce/)
 - Gottman Institute: [Everything turns into an argument (on perpetual problems)](https://www.gottman.com/blog/everything-turns-into-an-argument/)
 - American Psychological Association: [Breakups aren't all bad: Coping strategies to promote positive outcomes](https://www.apa.org/topics/marriage-relationships/relationship-breakups)
