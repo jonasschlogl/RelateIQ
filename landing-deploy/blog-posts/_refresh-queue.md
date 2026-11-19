@@ -15,7 +15,7 @@
 - [x] 2026-11-17-situationship (refreshed 2026-11-19: decision guide stay/define/leave, 4 sources incl. 2024-2025 studies)
 - [x] 2026-11-18-signs-your-partner-is-losing-interest (refreshed 2026-11-19: signal decoder, 5 sources incl. 2025 meta-analysis)
 - [ ] 2026-11-19-avoidant-attachment-partner (2 sources)
-- [ ] 2026-10-26-deep-questions-to-ask-your-partner (3 sources)
+- [x] 2026-10-26-deep-questions-to-ask-your-partner (refreshed 2026-11-19: 30 questions by depth + how to respond, 4 sources)
 - [ ] 2026-10-26-how-to-say-i-love-you-without-words (3 sources)
 - [x] 2026-11-11-emotionally-unavailable-partner (refreshed 2026-11-19: 5 reasons explained, 5 sources)
 - [x] 2026-11-17-how-to-rebuild-trust-after-cheating (refreshed 2026-11-19: 4 stages model, 5 sources incl. 2023 and 2026 studies)
