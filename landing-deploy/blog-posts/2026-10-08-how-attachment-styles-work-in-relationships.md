@@ -13,7 +13,7 @@ This guide explains where attachment styles come from, what the studies actually
 
 Attachment theory started with British psychiatrist John Bowlby, who wanted to understand why babies separated from their caregivers became so distressed. His answer was that humans are born with an attachment system: a built-in drive to stay close to the people who keep us safe. Psychologist Mary Ainsworth then watched how one-year-olds reacted when their mother left a room and came back. She found consistent patterns. Some babies were upset and then easily comforted (secure). Some acted as if they didn't care (avoidant). Some were upset and hard to settle, clinging and angry at the same time (anxious-ambivalent).
 
-In 1987, Cindy Hazan and Phillip Shaver asked a bold question: does the same system shape how adults fall in love? They printed a "love quiz" in a local newspaper and asked readers to pick which of three short descriptions best fit their romantic relationships. Of the 620 people whose answers they analysed, about 56% chose the secure description, about 25% the avoidant one and about 19% the anxious one. Those numbers were strikingly close to what Ainsworth had found in babies, and they launched decades of research on adult attachment.
+In 1987, Cindy Hazan and Phillip Shaver asked a bold question: does the same system shape how adults fall in love? They printed a "love quiz" in a local newspaper and asked readers to pick which of three short descriptions best fit their romantic relationships. Of the 620 people whose answers they analyzed, about 56% chose the secure description, about 25% the avoidant one and about 19% the anxious one. Those numbers were strikingly close to what Ainsworth had found in babies, and they launched decades of research on adult attachment.
 
 | Study | Who | Secure | Avoidant | Anxious |
 |---|---|---|---|---|
@@ -62,7 +62,7 @@ Being secure doesn't mean never feeling jealous, hurt or insecure. It means thos
 
 High anxiety, low avoidance. People with an anxious attachment style want a lot of closeness and reassurance, and they are quick to notice any sign of distance. When a partner goes quiet, the thought "did I do something wrong?" arrives fast. They may text several times, check when the other person was last online, or need to talk it through immediately.
 
-The strength here is real: anxious partners are often warm, attentive and emotionally tuned in. The challenge is that worry can feel exactly like fact, and the behaviour that comes from that worry (more texts, more questions, more checking) can push away the very person they want to feel close to.
+The strength here is real: anxious partners are often warm, attentive and emotionally tuned in. The challenge is that worry can feel exactly like fact, and the behavior that comes from that worry (more texts, more questions, more checking) can push away the very person they want to feel close to.
 
 > **Example: the three-message evening**
 > Lena's boyfriend replies "ok" to a long message about her day. Within an hour she has sent "Is everything alright?", then "You seem off", then "Never mind, forget it." He was at the gym and didn't see any of them. When he finally calls, she's already hurt and he feels accused of something he didn't do.
@@ -108,7 +108,7 @@ No, and this is the most important point in this whole guide.
 
 The first study to follow the same people across several decades was published in 2019 by William Chopik and colleagues. They combined five long-running studies covering 628 people, tracked across a span of 59 years between the ages of 13 and 72. Attachment anxiety tended to rise in adolescence and young adulthood and then fall steadily through the rest of life. Attachment avoidance started higher in adolescence and declined slowly over time. At every age, people who were in a close romantic relationship tended to score lower on both anxiety and avoidance.
 
-That doesn't prove that a relationship *causes* someone to become more secure. It might also be that more secure people find it easier to stay in relationships. But it fits what therapists see every day: attachment patterns can shift, especially through reliable relationships, understanding your history and practising new responses when the old alarm goes off. Researchers sometimes call this "earned security".
+That doesn't prove that a relationship *causes* someone to become more secure. It might also be that more secure people find it easier to stay in relationships. But it fits what therapists see every day: attachment patterns can shift, especially through reliable relationships, understanding your history and practicing new responses when the old alarm goes off. Researchers sometimes call this "earned security".
 
 A few caveats are worth knowing:
 
@@ -147,7 +147,7 @@ Try: "I'm feeling a bit unsure today. Could you tell me we're okay?"
 
 - **Take the space, but announce it.** The problem is rarely the break. It's the silence around it. Say that you need time, and say when you'll be back.
 - **Come back when you said you would.** That's what builds trust. Each time you return, your partner's alarm learns it can relax.
-- **Practise one small vulnerable sentence a week.** It doesn't have to be a big speech. "I missed you today" counts.
+- **Practice one small vulnerable sentence a week.** It doesn't have to be a big speech. "I missed you today" counts.
 
 Try: "I need an hour on my own to think. Can we talk at 8?"
 
@@ -173,7 +173,7 @@ If you'd like help working out what to say in a specific situation, Relationship
 
 ### Can your attachment style change?
 
-Yes. A study that combined data on 628 people across a 59-year span found that attachment anxiety and avoidance both tended to decrease across adulthood, and people in close relationships scored lower on both. Therapy, reliable relationships and practising new responses all help.
+Yes. A study that combined data on 628 people across a 59-year span found that attachment anxiety and avoidance both tended to decrease across adulthood, and people in close relationships scored lower on both. Therapy, reliable relationships and practicing new responses all help.
 
 ### What is the most common attachment style?
 

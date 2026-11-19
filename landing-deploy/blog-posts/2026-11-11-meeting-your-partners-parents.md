@@ -82,7 +82,7 @@ Learn a greeting and a "thank you" in their language. It's remembered for years.
 ### 9. A question about your family
 
 Share what you're comfortable with. If your family situation is complicated, a short, calm answer is enough.
-"My parents separated when I was young, so it's mostly me and my mum. We're close."
+"My parents separated when I was young, so it's mostly me and my mom. We're close."
 
 ### 10. They seem cold or distant
 
@@ -103,7 +103,7 @@ Talk about it later, in private.
 Thank them by name, mention one specific thing you enjoyed.
 "Thank you so much for having me. The stories about the camping trips were the best part of my week."
 
-A short message afterwards via your partner ("Please thank your mum again for dinner") adds a nice finish.
+A short message afterwards via your partner ("Please thank your mom again for dinner") adds a nice finish.
 
 ## Afterwards: the debrief
 
@@ -115,7 +115,7 @@ If you'll be spending holidays with them soon, our guide on [holidays with your 
 
 ## If you're the one introducing your partner
 
-Brief both sides. Tell your parents one or two things your partner loves talking about, and tell your partner what to avoid. During the evening, include your partner in the conversation and step in if a question goes too far: "Let's not grill them on the first night, Mum."
+Brief both sides. Tell your parents one or two things your partner loves talking about, and tell your partner what to avoid. During the evening, include your partner in the conversation and step in if a question goes too far: "Let's not grill them on the first night, Mom."
 
 If you're nervous about a specific conversation, like telling your parents about a relationship they may not approve of, RelationshipAI's Partner Practice lets you rehearse it with an AI playing the other person, privately. It isn't therapy, but it can help you find calm words.
 

@@ -46,3 +46,7 @@ Search Console shows most English pages sit at position 50 to 90 for big head te
 - Before choosing, search the exact phrase and look at the top 10: if page 1 is all big health publishers with exact-match titles, skip it; if it has forums (Reddit, Quora), small blogs or loosely matching pages, it is a good target.
 - Prefer topics that already get impressions in Search Console (apologising, repair, relationship problems, communication, attachment) and build clusters around them, linking every new article to and from its pillar.
 - Never a second article for a covered keyword; a narrower sub-question of a pillar is fine and should link to it.
+
+## 8. Spelling and audience (Jonas, 19 Nov 2026: reach the US)
+Write English articles in American English: behavior, apologize, realize, color, practice (verb too), program, defense, toward, mom, roommates, trash, apartment, dollars ($). This overrides the skill's older "British English" note. Use examples that work for a US reader (soccer, not football; bar, not pub). Translations follow their own language norms.
+Every "A note on safety" section ends with the US contacts line: the National Domestic Violence Hotline (1-800-799-7233, text START to 88788, thehotline.org) and the 988 Suicide & Crisis Lifeline (call or text 988), plus "Outside the US, contact a local helpline."

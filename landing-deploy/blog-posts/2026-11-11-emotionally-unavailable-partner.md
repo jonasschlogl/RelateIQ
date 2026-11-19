@@ -5,11 +5,11 @@ updated: 2026-11-19
 description: "An emotionally unavailable partner isn't always avoidant. 5 different reasons people shut down, how to tell which one you're facing, and what actually helps."
 tags: emotionally unavailable, attachment
 ---
-"Emotionally unavailable" is usually treated as one thing: a partner who won't open up, full stop. But the same behaviour, changing the subject, going quiet in hard moments, keeping things light, can come from very different places. And what helps depends completely on which one it is.
+"Emotionally unavailable" is usually treated as one thing: a partner who won't open up, full stop. But the same behavior, changing the subject, going quiet in hard moments, keeping things light, can come from very different places. And what helps depends completely on which one it is.
 
 Pushing someone with an avoidant attachment style for a big talk tends to backfire. Asking someone with alexithymia "how do you feel?" may genuinely stump them. Waiting patiently for someone who isn't invested can cost you years.
 
-So this guide doesn't give you a list of signs. It gives you five different reasons people are emotionally unavailable, how to recognise each one, and what tends to help.
+So this guide doesn't give you a list of signs. It gives you five different reasons people are emotionally unavailable, how to recognize each one, and what tends to help.
 
 ## First, what it looks like from your side
 
@@ -31,7 +31,7 @@ It also tends to create a loop. A large review by Paul Schrodt and colleagues fo
 
 **What it looks like:** when you ask "How do you feel about it?", they look puzzled, say "fine" or "I don't know", and seem honestly unsure, not evasive. They may notice tension in their body but can't name the emotion. They're often better at practical help than emotional talk.
 
-**What's underneath:** *alexithymia*, a personality trait that makes it hard to recognise and describe emotions. In a study of 155 married couples, Nick Frye-Cox and Colin Hesse found it in about 7.5% of men and 6.5% of women, similar to general population estimates. Alexithymia was linked to lower marital quality, largely through loneliness and difficulty with intimate communication.
+**What's underneath:** *alexithymia*, a personality trait that makes it hard to recognize and describe emotions. In a study of 155 married couples, Nick Frye-Cox and Colin Hesse found it in about 7.5% of men and 6.5% of women, similar to general population estimates. Alexithymia was linked to lower marital quality, largely through loneliness and difficulty with intimate communication.
 
 **What helps:** smaller, more concrete questions. Instead of "How do you feel about your dad?", try "On a scale of 1 to 10, how stressed were you after that call?" or "Was that more annoying or more upsetting?" Notice their care in actions. And know that therapy can help people build an emotional vocabulary.
 
@@ -51,7 +51,7 @@ Try: "You don't have to explain it perfectly. Even 'today was rough' helps me fe
 
 **What's underneath:** not a lack of interest, but a lack of capacity. When someone is struggling, emotional availability is often the first thing to go.
 
-**What helps:** ask about them, not about the relationship. "You've seemed really low lately. How are you, honestly?" Support practically. If it lasts for weeks, gently encourage them to see a doctor or counsellor. It's also encouraging that, in a study of more than 200 newlywed couples, Paula Pietromonaco and colleagues found that a partner's responsiveness helped protect relationship quality from the effects of depression and outside stress. Your steadiness matters. Our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) can help.
+**What helps:** ask about them, not about the relationship. "You've seemed really low lately. How are you, honestly?" Support practically. If it lasts for weeks, gently encourage them to see a doctor or counselor. It's also encouraging that, in a study of more than 200 newlywed couples, Paula Pietromonaco and colleagues found that a partner's responsiveness helped protect relationship quality from the effects of depression and outside stress. Your steadiness matters. Our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) can help.
 
 ## Reason 5: They're unavailable *to you*
 
@@ -59,7 +59,7 @@ Try: "You don't have to explain it perfectly. Even 'today was rough' helps me fe
 
 **What's underneath:** not a capacity problem, but a commitment problem. They may not want the relationship you want.
 
-**What helps:** clarity, not patience. Ask directly what they want. If the answer, or their behaviour over the next weeks, says they're not invested, believe it. Our guides on [situationships](/blog/situationship/), [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) and [whether to break up](/blog/should-i-break-up-with-my-partner/) may help.
+**What helps:** clarity, not patience. Ask directly what they want. If the answer, or their behavior over the next weeks, says they're not invested, believe it. Our guides on [situationships](/blog/situationship/), [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) and [whether to break up](/blog/should-i-break-up-with-my-partner/) may help.
 
 ## Which one is it?
 
@@ -74,7 +74,7 @@ Try: "You don't have to explain it perfectly. Even 'today was rough' helps me fe
 Many people are a mix. The table is a starting point for a conversation, not a diagnosis.
 
 > **Example: the wrong question**
-> For a year, Priyanka kept asking Marco how he felt about his father's illness, and he kept saying "fine". She took it as shutting her out. When a counsellor suggested he might simply struggle to name emotions, she tried a different question: "What's the hardest part of visiting him?" He answered straight away: "Seeing him not recognise the dog." It was the most open he'd been in months. He hadn't been hiding. He'd been missing the words.
+> For a year, Priyanka kept asking Marco how he felt about his father's illness, and he kept saying "fine". She took it as shutting her out. When a counselor suggested he might simply struggle to name emotions, she tried a different question: "What's the hardest part of visiting him?" He answered straight away: "Seeing him not recognize the dog." It was the most open he'd been in months. He hadn't been hiding. He'd been missing the words.
 
 ## Looking after yourself
 
@@ -103,6 +103,8 @@ It depends on whether things are slowly improving, whether they're willing to tr
 ## A note on safety
 
 Emotional distance is not the same as cruelty. If a partner uses silence to punish you, controls you, or makes you afraid, that's a different situation. Please contact a local support service or helpline.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

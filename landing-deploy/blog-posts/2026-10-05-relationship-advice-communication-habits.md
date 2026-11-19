@@ -48,13 +48,13 @@ Instead of: "You always ignore me when you're on your phone."
 Try: "I've been missing time with you lately. Could we put our phones away after dinner?"
 
 > **Why the first sentence matters so much**
-> A harsh start puts the other person on defence before they've heard what you actually want. Once someone feels attacked, their energy goes into protecting themselves, not into understanding you. A soft start keeps both of you in the same team for long enough to talk about the real issue. It isn't about being nice instead of honest. It's about being honest in a way the other person can actually hear.
+> A harsh start puts the other person on defense before they've heard what you actually want. Once someone feels attacked, their energy goes into protecting themselves, not into understanding you. A soft start keeps both of you in the same team for long enough to talk about the real issue. It isn't about being nice instead of honest. It's about being honest in a way the other person can actually hear.
 
 ## 2. Describe, don't diagnose
 
 "You're being selfish" is a verdict. "You said you'd be home at six and it's now eight" is an observation. Nonviolent Communication, the method developed by psychologist Marshall Rosenberg, starts with observations because it's hard to argue with a fact and very easy to argue with a label.
 
-This also avoids what Gottman calls criticism: attacking your partner's character ("You're so lazy") rather than complaining about a specific behaviour ("The bins didn't go out again"). A complaint can be fixed. A character attack can only be defended.
+This also avoids what Gottman calls criticism: attacking your partner's character ("You're so lazy") rather than complaining about a specific behavior ("The trash didn't go out again"). A complaint can be fixed. A character attack can only be defended.
 
 ## 3. Name the need underneath
 
@@ -107,11 +107,11 @@ Even couples who communicate well say the wrong thing sometimes. What sets them 
 Repairs work best when they happen quickly and when the other person accepts them, even if the repair is a little clumsy.
 
 > **Example: a repair in the middle of an argument**
-> Halfway through a tense talk about holiday plans, Sofia snaps: "You always do what your mum wants." She sees Martin's face drop. Instead of carrying on, she stops: "Wait. That was unfair, and it's not what I mean. Can I try again?" Martin takes a breath and nods. The second version ("I'd like us to decide together before we tell your family") leads to an actual plan.
+> Halfway through a tense talk about holiday plans, Sofia snaps: "You always do what your mom wants." She sees Martin's face drop. Instead of carrying on, she stops: "Wait. That was unfair, and it's not what I mean. Can I try again?" Martin takes a breath and nods. The second version ("I'd like us to decide together before we tell your family") leads to an actual plan.
 
 ## The four horsemen and their antidotes
 
-Gottman's research identified four communication patterns that reliably predict relationship breakdown. Each one has an antidote, and you'll recognise several of the seven habits above.
+Gottman's research identified four communication patterns that reliably predict relationship breakdown. Each one has an antidote, and you'll recognize several of the seven habits above.
 
 | Horseman | What it sounds like | Antidote |
 |---|---|---|
@@ -134,7 +134,7 @@ Try: "Wait, you got it? That's huge. How did they tell you?"
 
 ## Where to start
 
-Don't try all seven at once. Pick one, maybe the soft start, and use it for a week. If you want to practise before a real conversation, writing down what you plan to say, or saying it out loud first, can make a bigger difference than you'd expect.
+Don't try all seven at once. Pick one, maybe the soft start, and use it for a week. If you want to practice before a real conversation, writing down what you plan to say, or saying it out loud first, can make a bigger difference than you'd expect.
 
 RelationshipAI is an AI relationship coach that can help with exactly this. Coach Chat can help you turn an angry first draft into a soft start, and Partner Practice lets you rehearse the conversation before you have it. It isn't therapy, but it's a calm place to prepare.
 
@@ -165,6 +165,8 @@ It's a way to open a hard conversation by describing how you feel about a specif
 These habits are for ordinary conflict between two people who both feel safe. If your conversations regularly become frightening, cruel or controlling, that's a different situation. Please reach out to a professional or a support service in your country.
 
 These habits matter most in the conversations couples avoid. See our guides on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/), [love languages](/blog/love-languages/) and, when arguing stops being healthy, the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/).
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

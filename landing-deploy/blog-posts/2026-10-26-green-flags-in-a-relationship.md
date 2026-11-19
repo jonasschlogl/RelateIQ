@@ -5,7 +5,7 @@ updated: 2026-11-19
 description: "9 green flags in a relationship, each with a simple way to spot it in real life, and the research on how a good partner reacts to your news, goals and growth."
 tags: green flags in a relationship, healthy relationship
 ---
-Red flags get all the attention. But if you've been through a difficult relationship, the bigger challenge is often recognising what *good* looks like. Healthy can feel strange at first. Calm can feel like boredom. Consistency can feel too good to trust.
+Red flags get all the attention. But if you've been through a difficult relationship, the bigger challenge is often recognizing what *good* looks like. Healthy can feel strange at first. Calm can feel like boredom. Consistency can feel too good to trust.
 
 This guide lists nine green flags in a relationship, but with a twist: for each one, there's a simple way to actually notice it, in early dating or years in. Several come from research on what separates thriving couples from the rest.
 
@@ -17,7 +17,7 @@ This guide lists nine green flags in a relationship, but with a twist: for each 
 
 ## 2. They support your goals without taking over
 
-**Why it matters:** In a study where couples talked about their personal goals, Brooke Feeney found that *responsive, non-intrusive* support (encouraging without controlling) was linked to the partner feeling happier, having higher self-esteem and feeling more confident about reaching their goals. Pushing, criticising or taking over the plan didn't help.
+**Why it matters:** In a study where couples talked about their personal goals, Brooke Feeney found that *responsive, non-intrusive* support (encouraging without controlling) was linked to the partner feeling happier, having higher self-esteem and feeling more confident about reaching their goals. Pushing, criticizing or taking over the plan didn't help.
 
 **How to spot it:** Mention something you want to try: a course, a career change, a marathon. A green-flag partner asks questions, offers help if you want it, and doesn't make you feel silly or selfish for wanting it.
 
@@ -25,7 +25,7 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 
 ## 3. You become more like the person you want to be
 
-**Why it matters:** Researchers call this the *Michelangelo phenomenon*: a close partner who sees you as the person you hope to become, and treats you that way, helps you grow towards that version of yourself. In a study of dating couples, Stephen Drigotas found it was strongly linked to personal well-being, even after accounting for how satisfied people were with the relationship.
+**Why it matters:** Researchers call this the *Michelangelo phenomenon*: a close partner who sees you as the person you hope to become, and treats you that way, helps you grow toward that version of yourself. In a study of dating couples, Stephen Drigotas found it was strongly linked to personal well-being, even after accounting for how satisfied people were with the relationship.
 
 **How to spot it:** Ask yourself: since this relationship started, am I more or less like the person I want to be? Braver, calmer, more creative, more yourself? Or smaller and more careful?
 
@@ -57,7 +57,7 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 
 **Why it matters:** Gottman's research on newlyweds found that couples still together six years later had responded to each other's small "bids" for attention, like a comment, a question or a touch, far more often than couples who later divorced.
 
-**How to spot it:** When you point at something out of the window or mention a song you like, do they look, ask, react? Small moments of turning towards you are among the most reliable green flags there are.
+**How to spot it:** When you point at something out of the window or mention a song you like, do they look, ask, react? Small moments of turning toward you are among the most reliable green flags there are.
 
 ## 9. You feel calmer after talking to them
 
@@ -66,7 +66,7 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 **How to spot it:** After a conversation about something hard, do you feel lighter or more anxious? If you consistently feel worse, confused or on edge, that's worth paying attention to.
 
 > **Example: the boring Tuesday**
-> After a relationship full of drama, Leila started dating Ravi and kept waiting for "the catch". He replied when he said he would. He asked about her exam and remembered the result. When she was upset, he said so, and they sorted it out over dinner. "For the first two months I thought something was missing," she said. "Then I realised what was missing was the anxiety."
+> After a relationship full of drama, Leila started dating Ravi and kept waiting for "the catch". He replied when he said he would. He asked about her exam and remembered the result. When she was upset, he said so, and they sorted it out over dinner. "For the first two months I thought something was missing," she said. "Then I realized what was missing was the anxiety."
 
 ## Green flags in early dating
 
@@ -84,9 +84,9 @@ Nobody shows all nine all the time. Everyone has bad days, old habits and moment
 
 ## How to be a green flag partner
 
-Most of these are skills, not personality traits. Pick one to practise this week: respond enthusiastically to your partner's good news, ask one curious question during your next disagreement, or reach out first after a tense moment. Our guides on [communication habits](/blog/relationship-advice-communication-habits/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) go deeper.
+Most of these are skills, not personality traits. Pick one to practice this week: respond enthusiastically to your partner's good news, ask one curious question during your next disagreement, or reach out first after a tense moment. Our guides on [communication habits](/blog/relationship-advice-communication-habits/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) go deeper.
 
-If you want to practise responding better in tense moments, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build new habits. If overthinking makes it hard to trust a good relationship, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
+If you want to practice responding better in tense moments, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build new habits. If overthinking makes it hard to trust a good relationship, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
 
 ## Quick answers
 
@@ -109,6 +109,8 @@ Yes. What matters is the overall pattern, and whether problems can be talked abo
 ## A note on safety
 
 If your partner controls you, threatens you or makes you afraid, green flags elsewhere don't cancel that out. Please contact a local domestic abuse helpline or support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

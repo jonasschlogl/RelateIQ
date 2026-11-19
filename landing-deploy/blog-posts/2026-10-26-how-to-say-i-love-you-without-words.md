@@ -31,13 +31,13 @@ So here are 25 ways to say "I love you" without words, sorted by the kind of day
 7. Ask about the thing they mentioned this morning. Remembering is love in disguise.
 8. Do the chore they hate, without announcing it.
 9. Sit close on the sofa instead of at opposite ends.
-10. When they share something, turn towards it: look up, ask a question, react.
+10. When they share something, turn toward it: look up, ask a question, react.
 
 ## On hard days
 
 11. Bring them something warm and say nothing.
 12. Hold them a little longer than usual. Touch can say "I'm here" better than advice.
-13. Take one task off their list for the week: dinner, the bins, the phone call they're dreading.
+13. Take one task off their list for the week: dinner, the trash, the phone call they're dreading.
 14. Text "No need to reply, just thinking of you."
 15. Ask "Do you want to talk or do you want a distraction?" and follow their lead.
 
@@ -54,7 +54,7 @@ Our guide on [supporting your partner when they're stressed](/blog/how-to-suppor
 ## From far away
 
 21. Send a photo of something that reminded you of them, with no explanation.
-22. Order their favourite food to their door after a long day.
+22. Order their favorite food to their door after a long day.
 23. Watch the same film at the same time and text during it.
 24. Record a voice note instead of a text. Hearing your voice matters.
 

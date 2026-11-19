@@ -42,7 +42,7 @@ In a 2022 study of 100 couples, Olha Mostova, Maciej Stolarski and Gerald Matthe
 **Use it like this:** this is the useful core of the whole idea. Notice what lands for your partner, and do more of it, on purpose.
 
 > **Belief 3 and Belief 4 aren't a contradiction**
-> Having the *same* preference doesn't matter much. *Responding to your partner's* preference does. One is about your types. The other is about your behaviour. The research supports the behaviour.
+> Having the *same* preference doesn't matter much. *Responding to your partner's* preference does. One is about your types. The other is about your behavior. The research supports the behavior.
 
 ## Belief 5: "Your love language is who you are"
 
@@ -66,7 +66,7 @@ Put the research together and a simpler, more useful version of the idea emerges
 
 | Instead of | Try |
 |---|---|
-| Taking a quiz once and labelling each other | Asking what would help right now, and asking again later |
+| Taking a quiz once and labeling each other | Asking what would help right now, and asking again later |
 | Waiting for your partner to guess | Saying clearly what makes you feel loved |
 | Giving love the way *you* like to receive it | Noticing what actually lands for *them* |
 | Keeping score of who did what | Aiming for a varied "diet" of care over time |

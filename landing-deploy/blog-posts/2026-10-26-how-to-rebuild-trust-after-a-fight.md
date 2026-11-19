@@ -7,7 +7,7 @@ tags: rebuild trust, after an argument
 ---
 A bad fight can leave a strange silence afterwards. You've both said things you didn't quite mean, and now even passing the salt feels careful. The fight is over, but the trust hasn't come back yet.
 
-Most advice on rebuilding trust after a fight talks about apologies, and those matter. But research points to three things that get far less attention: *when* you try to repair, *who* leads the recovery, and a short writing exercise that changed how couples experienced their fights over a whole year. This guide is organised by time: tonight, the next morning, and the week after.
+Most advice on rebuilding trust after a fight talks about apologies, and those matter. But research points to three things that get far less attention: *when* you try to repair, *who* leads the recovery, and a short writing exercise that changed how couples experienced their fights over a whole year. This guide is organized by time: tonight, the next morning, and the week after.
 
 ## Tonight: don't try to fix it yet
 
@@ -47,7 +47,7 @@ In practice: if you're the calmer one this time, go first. Offer a hug, a coffee
 
 ### Make one small promise, and keep it
 
-Trust grows back through predictable behaviour, not big declarations. One specific, keepable promise beats five vague ones.
+Trust grows back through predictable behavior, not big declarations. One specific, keepable promise beats five vague ones.
 
 Try: "Next time I feel myself getting heated, I'll say 'I need ten minutes' instead of carrying on."
 
@@ -69,20 +69,20 @@ Seven minutes. Done.
 
 ### Reconnect on purpose
 
-After a fight, couples often avoid each other a little, even when it's resolved. Do something deliberately warm together: a walk, a meal, a film on the sofa. Small moments of turning towards each other, responding to a comment, a touch, a question, rebuild closeness faster than any big conversation. Our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/) has ideas.
+After a fight, couples often avoid each other a little, even when it's resolved. Do something deliberately warm together: a walk, a meal, a film on the sofa. Small moments of turning toward each other, responding to a comment, a touch, a question, rebuild closeness faster than any big conversation. Our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/) has ideas.
 
 > **Example: the Sunday drive**
-> Elena and Matteo had the same fight every few weeks: about his phone at dinner. After one bad evening, they tried the 21-minute exercise separately. Elena wrote that a neutral observer would see "two tired people who both feel unheard". Matteo wrote that the observer would notice he grabbed his phone when he felt criticised. When they compared notes on a Sunday drive, the fight felt different. "We're still the same people," Elena said. "We just stopped seeing each other as the enemy."
+> Elena and Matteo had the same fight every few weeks: about his phone at dinner. After one bad evening, they tried the 21-minute exercise separately. Elena wrote that a neutral observer would see "two tired people who both feel unheard". Matteo wrote that the observer would notice he grabbed his phone when he felt criticized. When they compared notes on a Sunday drive, the fight felt different. "We're still the same people," Elena said. "We just stopped seeing each other as the enemy."
 
 ## If you're the one who was hurt
 
-You're allowed to need time. Trust after a hurtful fight doesn't come back because someone said sorry once. It comes back as their behaviour matches their words. Tell your partner what would help you.
+You're allowed to need time. Trust after a hurtful fight doesn't come back because someone said sorry once. It comes back as their behavior matches their words. Tell your partner what would help you.
 
 Try: "I appreciate the apology. What would really help me is seeing that the next disagreement goes differently."
 
 ## How long does it take?
 
-After a single fight, often days. After repeated hurtful fights, it can take weeks or months of consistent behaviour. If the same fight keeps coming back, our guide on [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) can help you find the pattern underneath, and our [communication habits](/blog/relationship-advice-communication-habits/) guide helps prevent the next escalation.
+After a single fight, often days. After repeated hurtful fights, it can take weeks or months of consistent behavior. If the same fight keeps coming back, our guide on [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) can help you find the pattern underneath, and our [communication habits](/blog/relationship-advice-communication-habits/) guide helps prevent the next escalation.
 
 ## When it's more than a fight
 
@@ -111,6 +111,8 @@ Often, yes. A fight that ends in genuine repair can show both of you that the re
 ## A note on safety
 
 Arguments happen in every relationship. Threats, intimidation, breaking things or physical harm do not. If you're afraid of your partner, please contact a local domestic abuse helpline or support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

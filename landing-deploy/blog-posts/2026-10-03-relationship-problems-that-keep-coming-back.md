@@ -31,7 +31,7 @@ It looks like a fight about the dishes. Most of the time it's about fairness, an
 In a lot of households one person does the planning as well as the doing: remembering the appointments, noticing the empty fridge, keeping the whole week in their head. That work is invisible, and invisible work is where resentment grows.
 
 > **Example: the birthday present**
-> Every year, Tessa buys the birthday present for her partner's mum. She remembers the date, asks what she'd like, orders it and writes the card. This year she forgets, and her partner says, "Why didn't you get something for my mum?" The argument that follows isn't about the present. It's about years of carrying a job nobody agreed she'd do.
+> Every year, Tessa buys the birthday present for her partner's mom. She remembers the date, asks what she'd like, orders it and writes the card. This year she forgets, and her partner says, "Why didn't you get something for my mom?" The argument that follows isn't about the present. It's about years of carrying a job nobody agreed she'd do.
 
 What helps is describing the pattern and asking for one concrete thing. "You never help" gives your partner nothing to act on. Handing over a whole task, from noticing to finishing, works much better than asking for "help".
 
@@ -70,7 +70,7 @@ Talk about it at a calm moment, and stay curious. Say what feels good as well as
 
 ## 5. The same fight, again
 
-This one sits behind many of the others. A very common version is pursue and withdraw: one person pushes for a conversation, the other goes quiet to avoid a blow-up, and each reaction makes the other's behaviour stronger. In a 2014 meta-analysis of 74 studies with more than 14,000 participants, couples caught in this demand and withdraw pattern reported lower satisfaction, less intimacy and poorer communication.
+This one sits behind many of the others. A very common version is pursue and withdraw: one person pushes for a conversation, the other goes quiet to avoid a blow-up, and each reaction makes the other's behavior stronger. In a 2014 meta-analysis of 74 studies with more than 14,000 participants, couples caught in this demand and withdraw pattern reported lower satisfaction, less intimacy and poorer communication.
 
 Attachment theory gives a useful way to look at it. The person pushing is often afraid of losing the connection. The person withdrawing is often trying not to get overwhelmed. Both are trying to protect the relationship, in opposite ways.
 
@@ -92,7 +92,7 @@ Whatever the topic, the same four steps tend to help:
 3. **Say the need underneath.** "I need to feel that we're a team" or "I need some time that's just mine."
 4. **Ask for one specific thing.** Something you can both try this week, then check in about it.
 
-The goal with perpetual problems isn't to win or to make the difference disappear. It's to be able to talk about it with some understanding, and ideally a bit of humour. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) has more on how to start these talks softly.
+The goal with perpetual problems isn't to win or to make the difference disappear. It's to be able to talk about it with some understanding, and ideally a bit of humor. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) has more on how to start these talks softly.
 
 If you'd like to prepare, RelationshipAI is an AI relationship coach that can help you put the need into words in Coach Chat and rehearse the conversation in Partner Practice. It isn't therapy, but it can help you go in calmer.
 
@@ -108,7 +108,7 @@ Usually because the argument is about a surface issue, like dishes or screen tim
 
 ### Is it normal for couples to fight about the same things for years?
 
-Yes. According to the Gottman Institute, about 69% of relationship conflicts are about perpetual problems that may never fully go away. What matters is whether you can talk about them calmly and with some humour, or whether each round leaves more hurt behind.
+Yes. According to the Gottman Institute, about 69% of relationship conflicts are about perpetual problems that may never fully go away. What matters is whether you can talk about them calmly and with some humor, or whether each round leaves more hurt behind.
 
 ### What are the most common relationship problems?
 
@@ -127,6 +127,8 @@ If the same problem has been going round for months, if talking about it always 
 If a problem involves fear, control or anyone being hurt, it's beyond communication skills. Please reach out to a professional or a support service where you live.
 
 Two recurring problems deserve their own guides: [jealousy in a relationship](/blog/jealousy-in-a-relationship/) and the feeling that [your partner is losing interest](/blog/signs-your-partner-is-losing-interest/).
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

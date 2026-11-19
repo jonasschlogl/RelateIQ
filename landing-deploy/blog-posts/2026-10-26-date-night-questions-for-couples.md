@@ -11,7 +11,7 @@ Below are five easy formats, 40 questions to play them with, and a bit of resear
 
 ## Why date night (and playing) is worth it
 
-**Regular couple time matters.** In a report for the National Marriage Project at the University of Virginia, W. Bradford Wilcox and Jeffrey Dew analysed large US surveys and found that couples who spent time alone together at least once a week were markedly more likely to report high-quality relationships and lower divorce rates. It's an association, not proof that date nights cause happiness, but it's a consistent pattern. They also noted that novel, active activities went with higher relationship quality.
+**Regular couple time matters.** In a report for the National Marriage Project at the University of Virginia, W. Bradford Wilcox and Jeffrey Dew analyzed large US surveys and found that couples who spent time alone together at least once a week were markedly more likely to report high-quality relationships and lower divorce rates. It's an association, not proof that date nights cause happiness, but it's a consistent pattern. They also noted that novel, active activities went with higher relationship quality.
 
 **Playfulness is linked to connection.** In a study of 211 couples, René Proyer and colleagues found that some kinds of adult playfulness, like good-natured teasing and enjoying playing with ideas, were linked to more relationship and sexual satisfaction and more fascination with one's partner.
 
@@ -82,7 +82,7 @@ Instead of questions, use prompts that start with "Tell me about a time...". Eac
 21. Tell me about a time you got completely lost.
 22. Tell me about the best teacher you ever had.
 23. Tell me about a time you were really brave.
-24. Tell me about your favourite place as a kid.
+24. Tell me about your favorite place as a kid.
 25. Tell me about a time you laughed so hard you couldn't stop.
 26. Tell me about a decision that changed your life.
 27. Tell me about a time someone surprised you with kindness.

@@ -16,7 +16,7 @@ Researchers Samantha Joel, Geoff MacDonald and Elizabeth Page-Gould asked people
 The most striking result: about half of the people had strong reasons on both sides at the same time. Feeling torn isn't a sign you're doing it wrong. It's what this decision usually feels like.
 
 > **Why the "right" answer rarely feels clear**
-> We tend to imagine that a "right" decision would feel clear. But relationships aren't one thing. They're dozens of things at once: the person, the shared life, the history, the future you pictured, the friends, the flat, the routines. Some of those can be wonderful while others are breaking down. Ambivalence isn't confusion. It's an accurate reading of a mixed situation. The goal isn't to make the mixed feelings disappear. It's to work out which parts matter most to you.
+> We tend to imagine that a "right" decision would feel clear. But relationships aren't one thing. They're dozens of things at once: the person, the shared life, the history, the future you pictured, the friends, the apartment, the routines. Some of those can be wonderful while others are breaking down. Ambivalence isn't confusion. It's an accurate reading of a mixed situation. The goal isn't to make the mixed feelings disappear. It's to work out which parts matter most to you.
 
 ## What research says predicts a breakup
 
@@ -94,7 +94,7 @@ These examples are illustrative, not real people, but they show how the same que
 > **Example: the bad season**
 > Anna and Peter have been arguing constantly since their daughter was born eight months ago. Anna feels unseen and exhausted. But when she thinks back, the first three years were warm and easy, and Peter still makes her laugh on the rare evenings they're alone.
 >
-> Her answers point to a bad season: respect is intact, the problems started with a huge life change, and they've never had a calm conversation about how the baby changed things. Her next step isn't a breakup. It's a real talk, some practical help and maybe a few sessions with a couples counsellor.
+> Her answers point to a bad season: respect is intact, the problems started with a huge life change, and they've never had a calm conversation about how the baby changed things. Her next step isn't a breakup. It's a real talk, some practical help and maybe a few sessions with a couples counselor.
 
 > **Example: the life-goals clash**
 > Chris is 34 and wants children. His partner of five years has always said she doesn't, and recently said it more firmly. They love each other, rarely fight and have a good life together.
@@ -102,7 +102,7 @@ These examples are illustrative, not real people, but they show how the same que
 > Nothing here is "wrong" with either of them. But question 6 has a clear answer, and question 7 makes Chris feel a quiet dread. Sometimes the hardest breakups are between two good people who want different lives.
 
 > **Example: the slow fade of respect**
-> Lucia notices she rolls her eyes when her partner talks about his job. He makes sarcastic comments about her friends. They both apologise less than they used to, and evenings feel like living with a flatmate who's slightly annoyed with you.
+> Lucia notices she rolls her eyes when her partner talks about his job. He makes sarcastic comments about her friends. They both apologize less than they used to, and evenings feel like living with a roommate who's slightly annoyed with you.
 >
 > This is the pattern Gottman warns about most. It isn't automatically the end, but it's serious. If both of them want to try, it needs real work, ideally with a therapist, and soon. If only one of them wants to try, that's an answer too.
 
@@ -120,14 +120,14 @@ If you've been going back and forth for months, a bit of structure can help.
 2. **Separate the solvable from the unsolvable.** Chores, time together and how you argue can often change. Different life goals, broken respect and fear usually don't change by themselves.
 3. **Have one clear conversation.** Tell your partner how serious this is and what would need to change. Their response is important information.
 4. **Give it a defined time.** Agree on something concrete for a few weeks or months, and then honestly check in with yourself. Open-ended "let's see" periods tend to drag on.
-5. **Get an outside view.** A therapist, a counsellor or a trusted friend who isn't involved can notice what you can't.
+5. **Get an outside view.** A therapist, a counselor or a trusted friend who isn't involved can notice what you can't.
 
 > **Why it works**
 > When you're torn, your mind tends to cycle between two pictures: the best moments of the relationship and the worst ones. Writing things down, testing whether change is possible and setting a time frame moves you from that loop into real information. You stop asking "how do I feel today?" and start asking "what actually happened when we tried?" That's a much better basis for a decision you'll have to live with.
 
 ## If you decide to stay
 
-Make it an active choice, not just avoiding the decision. Tell your partner what needs to change, and agree on something concrete. Consider couples counselling if you've been stuck for a long time. And if trust was broken, our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) can help.
+Make it an active choice, not just avoiding the decision. Tell your partner what needs to change, and agree on something concrete. Consider couples counseling if you've been stuck for a long time. And if trust was broken, our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) can help.
 
 Try: "I've had real doubts about us lately, and I want to work on it with you. Can we talk about what needs to change?"
 
@@ -137,7 +137,7 @@ Be clear and kind. Choose a private moment, say it directly and don't leave fals
 
 Try: "I've thought about this for a long time, and I don't think we're right for each other anymore."
 
-Then lean on friends and family, and give yourself time to grieve, even if you were the one who left. Breakups hurt, but research summarised by the American Psychological Association shows they can also lead to real personal growth. In one study by psychologist Gary Lewandowski, people who spent 15 to 30 minutes a day for three days writing about the positive sides of their breakup felt better afterwards, especially when the breakup had been mutual. Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) has more on the weeks after.
+Then lean on friends and family, and give yourself time to grieve, even if you were the one who left. Breakups hurt, but research summarized by the American Psychological Association shows they can also lead to real personal growth. In one study by psychologist Gary Lewandowski, people who spent 15 to 30 minutes a day for three days writing about the positive sides of their breakup felt better afterwards, especially when the breakup had been mutual. Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) has more on the weeks after.
 
 ## Quick answers
 
@@ -169,9 +169,11 @@ Keep it short, clear and kind. For example: "I've thought about this for a long 
 
 If your partner hurts you, threatens you, controls your money or who you see, or makes you feel afraid, please reach out to a local helpline or support service before you end the relationship. Leaving can be the riskiest moment, and support services can help you plan it safely.
 
-If you want to think out loud with someone, or practise how to say a hard sentence, RelationshipAI is an AI relationship coach that can help you sort your thoughts. It isn't therapy, but it's a calm place to start.
+If you want to think out loud with someone, or practice how to say a hard sentence, RelationshipAI is an AI relationship coach that can help you sort your thoughts. It isn't therapy, but it's a calm place to start.
 
 Some situations call for a closer look before you decide: [love bombing](/blog/love-bombing/), a [codependent relationship](/blog/codependent-relationship/) or a [situationship](/blog/situationship/) that never became more.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

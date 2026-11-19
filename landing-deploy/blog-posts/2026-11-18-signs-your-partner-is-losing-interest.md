@@ -13,7 +13,7 @@ This guide decodes the most common signs, one by one, with the likely explanatio
 
 **It's usually not the fights.** In the PAIR Project, Ted Huston and colleagues followed 168 couples from their wedding day for 13 years. What best predicted distress and divorce wasn't conflict. It was the *loss* of early love and affection, especially in the first two years. Couples don't usually argue their way out of love. They drift.
 
-**It shows up in small moments.** John Gottman's research on newlyweds looked at "bids": small attempts to connect, like a comment, a question or a touch. Couples still together six years later had turned towards each other's bids 86% of the time. Couples who later divorced had done so only 33% of the time.
+**It shows up in small moments.** John Gottman's research on newlyweds looked at "bids": small attempts to connect, like a comment, a question or a touch. Couples still together six years later had turned toward each other's bids 86% of the time. Couples who later divorced had done so only 33% of the time.
 
 **The phone plays a part.** In a 2016 study of US adults, James Roberts and Meredith David found that 46% said their partner "phubbed" them (paid attention to their phone instead of them), and that feeling phubbed was linked to more conflict and lower relationship satisfaction. A 2025 meta-analysis pooling 52 studies and almost 20,000 people confirmed the pattern: partner phubbing went with lower relationship satisfaction and more conflict.
 
@@ -44,7 +44,7 @@ So the signs worth watching are not dramatic. They're the small daily ones. That
 ### Less curiosity about your life
 
 **Could mean:** they're consumed by something of their own, or depressed. Or they've emotionally withdrawn.
-**Look at:** the bids. When you share something, do they turn towards you (ask, react, engage), ignore it, or turn against it with irritation? A pattern of turning away matters more than any single moment.
+**Look at:** the bids. When you share something, do they turn toward you (ask, react, engage), ignore it, or turn against it with irritation? A pattern of turning away matters more than any single moment.
 
 ### More time apart, by choice
 
@@ -70,7 +70,7 @@ So the signs worth watching are not dramatic. They're the small daily ones. That
 
 ## Before you talk: check your own lens
 
-If you lean towards anxiety in relationships, a normal busy week can feel like rejection. Ask yourself: have *they* changed, or has my worry level changed? Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) help you separate the two.
+If you lean toward anxiety in relationships, a normal busy week can feel like rejection. Ask yourself: have *they* changed, or has my worry level changed? Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) help you separate the two.
 
 ## What to say
 
@@ -84,7 +84,7 @@ Try: "Things have felt a bit distant between us. Is something on your mind, abou
 
 Then listen. Their answer might be about work, health, something you did, or the relationship. Each needs a different response, and you won't know which until you ask.
 
-And turn towards them, on purpose, in small ways: respond to their bids, put your own phone away, suggest something you both used to enjoy. Huston's research suggests that protecting affection is what keeps couples together, so don't wait for them to go first. Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) can help restart real conversations.
+And turn toward them, on purpose, in small ways: respond to their bids, put your own phone away, suggest something you both used to enjoy. Huston's research suggests that protecting affection is what keeps couples together, so don't wait for them to go first. Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) can help restart real conversations.
 
 > **Example: not about us**
 > For weeks, Hana felt Tom had gone cold: no initiative, short answers, no interest in weekend plans. She'd rehearsed a "where is this going" talk. Instead she opened with: "You've seemed really flat lately. How are you, honestly?" Tom was quiet for a long time, then said work had been crushing him for months and he'd been ashamed to admit how low he felt. The distance was real. The reason wasn't her. He saw a doctor a week later.
@@ -111,7 +111,7 @@ Do a bit of both: give space to breathe, but don't go silent. Gently say what yo
 
 ### Could it be depression rather than losing interest?
 
-Yes. If they've lost interest in many things, not just you, and seem flat or low most days, depression may be part of it. Encourage them to talk to a doctor or counsellor.
+Yes. If they've lost interest in many things, not just you, and seem flat or low most days, depression may be part of it. Encourage them to talk to a doctor or counselor.
 
 *This article is general information, not therapy or medical advice.*
 

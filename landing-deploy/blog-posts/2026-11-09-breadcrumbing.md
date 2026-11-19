@@ -51,7 +51,7 @@ Their reason explains it. It doesn't oblige you to keep accepting it.
 
 In the same 2023 study, the people who had been breadcrumbed described the pull clearly: nearly half hoped it would turn into something, some expected the other person's feelings to catch up, and some found it hard to set a boundary.
 
-If you lean towards an anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/), the pull can be even stronger, because the uncertainty itself feels like a reason to try harder. Noticing that is the first step to not acting on it automatically.
+If you lean toward an anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/), the pull can be even stronger, because the uncertainty itself feels like a reason to try harder. Noticing that is the first step to not acting on it automatically.
 
 ## 6. "Should I ask them directly?"
 
@@ -65,7 +65,7 @@ Their response *is* the answer. A real plan means something. "Haha we'll see" al
 
 You don't owe a speech to someone who has given you crumbs. A short, kind message is enough:
 
-"I've realised I want something more consistent than this. I'm going to step back. Take care."
+"I've realized I want something more consistent than this. I'm going to step back. Take care."
 
 Then mute, archive or unfollow, whatever stops the crumbs from landing. That isn't petty. It protects the progress you've made from the next "hey stranger".
 
@@ -84,6 +84,8 @@ If you want help writing that "are we doing this or not?" message without soundi
 ## A note on safety
 
 If someone uses on-and-off attention together with threats, pressure for sexual content, or attempts to control you, that's no longer just breadcrumbing. Please talk to someone you trust or contact a local support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

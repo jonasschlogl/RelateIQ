@@ -145,6 +145,8 @@ Yes, but it takes awareness from both sides. Without it, the anxious partner may
 
 Needing space is not the same as control or punishment. If a partner uses silence to hurt you, controls what you do or makes you afraid, please reach out to a local helpline or support service.
 
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources

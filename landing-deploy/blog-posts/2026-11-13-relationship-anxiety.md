@@ -52,20 +52,20 @@ Try: "I'm feeling a bit wobbly today. Could we have dinner together tonight?"
 ## The next month: changing the pattern
 
 **Tell your partner once, calmly.** Not as an accusation, as information.
-Try: "I've realised I get anxious about us sometimes, especially when we're apart. It's not about anything you've done. It helps me a lot when you text if you're going to be late."
+Try: "I've realized I get anxious about us sometimes, especially when we're apart. It's not about anything you've done. It helps me a lot when you text if you're going to be late."
 
 A partner who understands what's going on can help without being on call 24/7.
 
-**Collect evidence, not reassurance.** Once a week, write down three moments when your partner showed they care. Over time this retrains your attention towards what's real instead of what's feared.
+**Collect evidence, not reassurance.** Once a week, write down three moments when your partner showed they care. Over time this retrains your attention toward what's real instead of what's feared.
 
 **Understand where it comes from.** Relationship anxiety often has roots: past breakups, being cheated on, growing up with unpredictable care, or a more anxious temperament. Our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/) can help you understand your pattern. And if it shows up as constant replaying, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
 
 **Notice if fear is keeping you somewhere.** In research led by Stephanie Spielmann, people with a stronger fear of being single were more willing to settle for less responsive partners and to stay in relationships they weren't happy in. Anxiety doesn't only make good relationships feel shaky. It can also keep people in the wrong ones.
 
-**Get support if it's taking over.** If anxiety affects your sleep, work or daily life, or you feel anxious in most areas, not just the relationship, a therapist can help a lot. Cognitive behavioural therapy and attachment-focused approaches both have good track records with anxiety.
+**Get support if it's taking over.** If anxiety affects your sleep, work or daily life, or you feel anxious in most areas, not just the relationship, a therapist can help a lot. Cognitive behavioral therapy and attachment-focused approaches both have good track records with anxiety.
 
 > **Example: the Friday night text**
-> Every Friday, when Elif's partner Jonah went out with his football team, she'd spend the evening checking her phone and sending "having fun?" messages. One month she tried the toolkit. When the urge came, she named it, did two minutes of breathing, and wrote her three explanations on a sticky note. She told Jonah once: "I get anxious on Fridays. A single text when you get to the pub would help." He was happy to. By the fourth Friday she noticed she'd watched an entire film without checking her phone.
+> Every Friday, when Elif's partner Jonah went out with his soccer team, she'd spend the evening checking her phone and sending "having fun?" messages. One month she tried the toolkit. When the urge came, she named it, did two minutes of breathing, and wrote her three explanations on a sticky note. She told Jonah once: "I get anxious on Fridays. A single text when you get to the bar would help." He was happy to. By the fourth Friday she noticed she'd watched an entire film without checking her phone.
 
 ## Is it anxiety, or is something really wrong?
 
@@ -83,7 +83,7 @@ Yes, some worry is very common, especially early in a relationship or after past
 
 ### Can relationship anxiety ruin a relationship?
 
-It can strain one, mostly through behaviours like constant reassurance-seeking, testing or checking. Working on those behaviours makes a big difference.
+It can strain one, mostly through behaviors like constant reassurance-seeking, testing or checking. Working on those behaviors makes a big difference.
 
 ### Is relationship anxiety a sign I'm with the wrong person?
 

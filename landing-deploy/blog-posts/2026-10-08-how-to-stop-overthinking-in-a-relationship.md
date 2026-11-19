@@ -41,9 +41,9 @@ Most spirals follow the same four steps. Seeing them laid out helps you catch th
 | 1. Trigger | Something small and ambiguous | A short "ok" in reply to a long message |
 | 2. Story | Your mind fills the gap | "They're annoyed. They're losing interest." |
 | 3. Body | Your alarm system reacts | Tight chest, racing heart, can't focus |
-| 4. Behaviour | You act to make the feeling stop | Checking their profile, sending another text, rereading old chats |
+| 4. Behavior | You act to make the feeling stop | Checking their profile, sending another text, rereading old chats |
 
-The behaviour in step four brings a moment of relief, which teaches your brain to do it again next time. That's why the loop gets stronger the more you feed it. When the story is about someone else catching your partner's eye, the same loop often shows up as [jealousy in a relationship](/blog/jealousy-in-a-relationship/).
+The behavior in step four brings a moment of relief, which teaches your brain to do it again next time. That's why the loop gets stronger the more you feed it. When the story is about someone else catching your partner's eye, the same loop often shows up as [jealousy in a relationship](/blog/jealousy-in-a-relationship/).
 
 > **Example: the "ok" text**
 > Paige sends her boyfriend a long message about a hard day at work. He replies "ok". Within ten minutes she has reread the message twice, checked when he was last online and drafted three replies. By the time he calls an hour later (he was driving), she's convinced he doesn't care, and the call starts with "Why do you even bother replying?"
@@ -60,7 +60,7 @@ The first step is small: notice that you're in it. "I'm doing the what-if thing 
 
 When you're anxious, your body is part of the problem. John Gottman's research on couples found that during heated conflict, heart rate can climb above 100 beats per minute, and at that point people struggle to take in what's being said. The same principle applies to a spiral at midnight: you can't think clearly while your body is on alert.
 
-One simple tool is cyclic sighing. In a 2023 Stanford study, 111 healthy volunteers practised a breathing or mindfulness exercise for five minutes a day for a month. All the breathing groups improved their mood more than the mindfulness group, and cyclic sighing helped most. It was a preliminary study, but the technique is free and takes minutes:
+One simple tool is cyclic sighing. In a 2023 Stanford study, 111 healthy volunteers practiced a breathing or mindfulness exercise for five minutes a day for a month. All the breathing groups improved their mood more than the mindfulness group, and cyclic sighing helped most. It was a preliminary study, but the technique is free and takes minutes:
 
 1. Breathe in through your nose.
 2. When your lungs feel full, take a second, short sip of air.
@@ -94,9 +94,9 @@ Try: "Could you send me a quick message when you're running late? It really help
 
 ### 5. Give worry a time and place
 
-This technique is often called worry postponement, and it's widely used in cognitive behavioural therapy. Instead of fighting every worry as it appears, you set aside a fixed window, for example 15 to 30 minutes in the early evening, and tell yourself "I'll think about this then." When a worry shows up at 2 pm, you jot it down and let it wait.
+This technique is often called worry postponement, and it's widely used in cognitive behavioral therapy. Instead of fighting every worry as it appears, you set aside a fixed window, for example 15 to 30 minutes in the early evening, and tell yourself "I'll think about this then." When a worry shows up at 2 pm, you jot it down and let it wait.
 
-A small preliminary study by Shannon McGowan and Evelyn Behar found that people who practised scheduled worry time reported less worry than a comparison group. Many people also notice that by the time the window arrives, most of the worries feel smaller, and the ones that still matter are easier to look at calmly.
+A small preliminary study by Shannon McGowan and Evelyn Behar found that people who practiced scheduled worry time reported less worry than a comparison group. Many people also notice that by the time the window arrives, most of the worries feel smaller, and the ones that still matter are easier to look at calmly.
 
 > **Why delaying a worry works better than fighting it**
 > Worry postponement doesn't ask you to stop worrying, which almost never works. It only asks you to delay it. That teaches your brain two things: that a worrying thought doesn't need an immediate response, and that you can feel uncertain for a few hours and be okay. Both lessons weaken the spiral over time.
@@ -113,7 +113,7 @@ Instead of: "Why don't you ever text me back?"
 
 Try: "I noticed I get anxious when I don't hear from you for a long stretch. It would really help if you could send a quick message when you're stuck in meetings. Would that work for you?"
 
-This is a request, not a rule for your partner's behaviour. If you notice you're asking for constant check-ins or monitoring where they are, that's a sign to pause and look at what the worry is really about.
+This is a request, not a rule for your partner's behavior. If you notice you're asking for constant check-ins or monitoring where they are, that's a sign to pause and look at what the worry is really about.
 
 ## A full example: from spiral to conversation
 
@@ -130,7 +130,7 @@ This is a request, not a rule for your partner's behaviour. If you notice you're
 
 It's worth saying plainly: overthinking and good instincts are not the same thing. If your partner is regularly dishonest, disappears without explanation, or makes you feel small, your discomfort may be information, not anxiety.
 
-The test isn't "do I feel worried?" It's "is there a repeated pattern of behaviour I can describe in facts?" One late reply is not a pattern. Three broken promises in a month, described without interpretation, is. If you can describe a pattern, the next step is a clear conversation about that pattern, not more silent analysis.
+The test isn't "do I feel worried?" It's "is there a repeated pattern of behavior I can describe in facts?" One late reply is not a pattern. Three broken promises in a month, described without interpretation, is. If you can describe a pattern, the next step is a clear conversation about that pattern, not more silent analysis.
 
 ## How to tell your partner you overthink
 
@@ -144,7 +144,7 @@ If you're reading this because your partner overthinks, a few small things make 
 
 ## When to get extra support
 
-If overthinking is constant, affects your sleep or work, or comes with panic, a licensed therapist can help. Cognitive behavioural therapy has good evidence for anxiety and worry, and many people find short-term work makes a big difference.
+If overthinking is constant, affects your sleep or work, or comes with panic, a licensed therapist can help. Cognitive behavioral therapy has good evidence for anxiety and worry, and many people find short-term work makes a big difference.
 
 Between sessions or conversations, tools can help too. RelationshipAI is an AI relationship coach you can talk to when your mind is racing, to sort what you know from what you're imagining and plan what to say. It isn't therapy, but it can be a calmer second voice at 11 pm.
 

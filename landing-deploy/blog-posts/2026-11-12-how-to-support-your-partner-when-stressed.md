@@ -23,7 +23,7 @@ Lisa Neff and Benjamin Karney studied newlywed couples over several years and fo
 
 So if your stressed partner snaps about the towel on the floor, it probably isn't about the towel. Knowing this makes it much easier not to take it personally, and not to start a fight about tone at the worst possible moment.
 
-The good news comes from a 2021 study by Paula Pietromonaco, Nickola Overall and Sally Powers. Following more than 200 newlywed couples, they found that stress was linked to relationship quality dropping over time, *except* when the partner was highly responsive: listening, trying to understand, and recognising what was needed. With a responsive partner, the stressed person's relationship looked much like that of people with low stress.
+The good news comes from a 2021 study by Paula Pietromonaco, Nickola Overall and Sally Powers. Following more than 200 newlywed couples, they found that stress was linked to relationship quality dropping over time, *except* when the partner was highly responsive: listening, trying to understand, and recognizing what was needed. With a responsive partner, the stressed person's relationship looked much like that of people with low stress.
 
 ## What to say, by type of stress
 
@@ -47,7 +47,7 @@ When their family is the source:
 - "You don't have to defend them to me, and you don't have to attack them either. I'm just on your side."
 - "Do you want me to come with you, or would it be easier if I stayed out of it?"
 
-Skip: piling on with your own criticism of their family. They can criticise their mum. It lands very differently when you do it.
+Skip: piling on with your own criticism of their family. They can criticize their mom. It lands very differently when you do it.
 
 ### Deadlines and exams
 
@@ -61,9 +61,9 @@ Skip: "You should have started earlier." Even if it's true, it isn't useful now.
 
 Burnout isn't one bad day, so one good evening won't fix it.
 - "You've been running on empty for weeks. I'm worried about you. What would make next week ten percent lighter?"
-- "Would it help if we cancelled a few things this month?"
+- "Would it help if we canceled a few things this month?"
 
-If it goes on for a long time or they seem low most days, gently raise the idea of talking to a doctor or counsellor: "You don't have to figure this out alone. Would you be open to talking to someone?"
+If it goes on for a long time or they seem low most days, gently raise the idea of talking to a doctor or counselor: "You don't have to figure this out alone. Would you be open to talking to someone?"
 
 ### When they take it out on you
 
@@ -74,7 +74,7 @@ Support doesn't mean absorbing everything. You can be kind and clear at the same
 ### Over text, when you're apart
 
 - "Thinking of you today. No need to reply."
-- "I've ordered your favourite for when you get home."
+- "I've ordered your favorite for when you get home."
 - "You're doing more than you think you are."
 
 The "no need to reply" matters. It gives comfort without adding a task.
@@ -130,11 +130,13 @@ Some people cope by withdrawing. Say you're there, leave the door open, and help
 
 ### When should a stressed partner get professional help?
 
-If stress lasts for weeks, affects sleep, eating or work, or they seem hopeless, encourage them to talk to a doctor or counsellor. If they mention not wanting to live, contact emergency services or a crisis line right away.
+If stress lasts for weeks, affects sleep, eating or work, or they seem hopeless, encourage them to talk to a doctor or counselor. If they mention not wanting to live, contact emergency services or a crisis line right away.
 
 ## A note on safety
 
-Stress can explain a bad mood. It never excuses threats, intimidation or violence. If your partner's stress turns into behaviour that makes you afraid, please contact a local domestic abuse helpline or support service.
+Stress can explain a bad mood. It never excuses threats, intimidation or violence. If your partner's stress turns into behavior that makes you afraid, please contact a local domestic abuse helpline or support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

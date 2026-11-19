@@ -19,7 +19,7 @@ And in a study by Crystal Jiang and Jeffrey Hancock, long-distance couples felt 
 
 So the odds are fine. The question is how to use each phase well.
 
-The same habits seem to keep both kinds of couple happy. In a 2021 study of 232 young adults in long-distance relationships and 263 in geographically close ones, Kaitlyn Goldsmith and Sandra Byers found that maintenance behaviours such as staying in touch, talking about the future and thinking fondly of each other were linked to higher satisfaction in both groups, in much the same way.
+The same habits seem to keep both kinds of couple happy. In a 2021 study of 232 young adults in long-distance relationships and 263 in geographically close ones, Kaitlyn Goldsmith and Sandra Byers found that maintenance behaviors such as staying in touch, talking about the future and thinking fondly of each other were linked to higher satisfaction in both groups, in much the same way.
 
 ## Phase 1: while you're apart
 
@@ -53,9 +53,9 @@ A date on the calendar turns "I miss you" from a weight into a countdown.
 
 When you only have three days, every hour feels like it has to be wonderful. That pressure is one reason first evenings so often end in a fight. Plan one or two nice things and leave lots of ordinary time: cooking, errands, being bored together on the sofa.
 
-### Practise real life, not just holiday life
+### Practice real life, not just holiday life
 
-In a study of long-distance dating couples, Laura Stafford and Andy Merolla found that partners apart idealised each other more: more romantic, more reminiscing, more sense of agreement, and the less often they saw each other face to face, the stronger the idealisation. That feels lovely, but it can hide real differences. Visits are your chance to see each other tired, busy and grumpy. Do some boring weekdays together if you can.
+In a study of long-distance dating couples, Laura Stafford and Andy Merolla found that partners apart idealized each other more: more romantic, more reminiscing, more sense of agreement, and the less often they saw each other face to face, the stronger the idealization. That feels lovely, but it can hide real differences. Visits are your chance to see each other tired, busy and grumpy. Do some boring weekdays together if you can.
 
 ### Don't save every problem for the visit
 
@@ -63,7 +63,7 @@ If you've been holding a difficult conversation for "when we're together", the v
 
 ## Phase 3: when you close the gap
 
-This is the part most guides skip, and research says it matters. In Stafford and Merolla's study, long-distance couples were more stable than close-by couples *while they were apart*, but a good number broke up after they moved to the same place. Longer gaps between visits and very strong idealisation during the distance predicted that instability.
+This is the part most guides skip, and research says it matters. In Stafford and Merolla's study, long-distance couples were more stable than close-by couples *while they were apart*, but a good number broke up after they moved to the same place. Longer gaps between visits and very strong idealization during the distance predicted that instability.
 
 Why? Because suddenly you're dealing with each other's actual habits, schedules and moods every day, after months or years of best-version visits. Plus one of you has usually moved, and may be lonely, jobless or homesick.
 
@@ -72,7 +72,7 @@ Why? Because suddenly you're dealing with each other's actual habits, schedules 
 
 How to make the landing softer:
 
-**Talk about the practical stuff before the move.** Money, chores, alone time, how much you'll socialise. Our guide on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) helps with the trickiest one.
+**Talk about the practical stuff before the move.** Money, chores, alone time, how much you'll socialize. Our guide on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) helps with the trickiest one.
 
 **Protect the mover's independent life.** The person who moved needs their own friends, work and routines quickly, or they'll lean on the relationship for everything.
 

@@ -15,7 +15,7 @@ Situationships have only recently become a research topic, and most of the work 
 
 **They're real relationships, with less security.** In a 2024 study, Langlais and colleagues defined a situationship as a romantic relationship with time spent together and physical or sexual intimacy, but no label and low commitment. When college students compared their recent romantic experiences, situationships involved similar physical closeness to committed relationships, but significantly lower satisfaction and commitment. And they often didn't turn into committed relationships.
 
-**People stay because some needs are met.** In a 2025 follow-up combining interviews and a survey of 89 students, the things most linked to feeling satisfied and committed in a situationship were emotional investment, talking about the future, being prioritised, and having emotional needs met: affection, attention, feeling understood. Many participants saw the situationship as a possible path to a real relationship. Langlais described it as a kind of "relationship purgatory", a waiting room before becoming official.
+**People stay because some needs are met.** In a 2025 follow-up combining interviews and a survey of 89 students, the things most linked to feeling satisfied and committed in a situationship were emotional investment, talking about the future, being prioritized, and having emotional needs met: affection, attention, feeling understood. Many participants saw the situationship as a possible path to a real relationship. Langlais described it as a kind of "relationship purgatory", a waiting room before becoming official.
 
 **Why that matters for you:** a situationship can feel good enough to stay in, because some needs really are met. But "good enough for now" can quietly become months. That's where an older idea from relationship research helps.
 
@@ -35,16 +35,16 @@ A committed relationship? Something casual but honest? Not sure yet? There's no 
 **2. How do I feel most of the time in this?**
 Mostly calm and happy, or mostly anxious, checking my phone and wondering where I stand?
 
-**3. What does their behaviour (not their words) say they want?**
-Do they make plans ahead, include you in their life, prioritise you? Or is it last-minute, private and on their terms?
+**3. What does their behavior (not their words) say they want?**
+Do they make plans ahead, include you in their life, prioritize you? Or is it last-minute, private and on their terms?
 
 Now find your path:
 
 | If... | Your path is probably... |
 |---|---|
 | You're happy with casual, you feel calm, and you suspect they feel the same | **Stay, but say it out loud** |
-| You want more, and their behaviour suggests they might too | **Define it** |
-| You want more, and their behaviour says they don't | **Walk away** |
+| You want more, and their behavior suggests they might too | **Define it** |
+| You want more, and their behavior says they don't | **Walk away** |
 | You feel anxious most of the time, whatever you want | **Define it or walk away**, not stay |
 
 ## Path 1: Stay, but say it out loud
@@ -59,7 +59,7 @@ And agree on the basics, such as whether you're seeing other people and how you'
 
 Pick a calm moment, not straight after a jealous spiral or at 1am by text. Keep it short, say what you want, and give them room to answer honestly.
 
-Try: "I really like what we have, and I've realised I want it to be a proper relationship. How do you feel about that?"
+Try: "I really like what we have, and I've realized I want it to be a proper relationship. How do you feel about that?"
 
 Then **listen to the answer, including the vague ones**:
 - "Yes, me too" is a yes.
@@ -72,12 +72,12 @@ If the answer is unclear, ask once more, kindly: "I hear you. To be honest, I ne
 
 This is the hardest path, because some of your needs were being met. The Langlais research explains why it hurts: you're not leaving nothing, you're leaving a partial relationship and the hope attached to it.
 
-Try: "I've realised I want something more committed than this, and I don't think that's what you want. So I'm going to step back. I've really enjoyed our time together."
+Try: "I've realized I want something more committed than this, and I don't think that's what you want. So I'm going to step back. I've really enjoyed our time together."
 
 You don't need their agreement, and you don't need a long explanation. Then give yourself real distance: mute, archive, don't reply to the "hey stranger" two weeks later. That message is often [breadcrumbing](/blog/breadcrumbing/), and replying restarts the cycle. Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) applies to situationships too. The grief is real even without a label.
 
 > **Example: the six-month weekend**
-> For six months, Jules and Ari spent most weekends together, but Ari changed the subject whenever "us" came up. Jules finally asked, calmly, over coffee. Ari said he "didn't want to ruin it with labels". Jules went home and did the three questions. Want: a relationship. Feeling: anxious most weeks. His behaviour: no plans beyond Saturday, never met his friends. The table said walk away. It took two more weeks to actually do it, and a month to stop checking his stories. Three months later, Jules said the hardest part had been the deciding, not the leaving.
+> For six months, Jules and Ari spent most weekends together, but Ari changed the subject whenever "us" came up. Jules finally asked, calmly, over coffee. Ari said he "didn't want to ruin it with labels". Jules went home and did the three questions. Want: a relationship. Feeling: anxious most weeks. His behavior: no plans beyond Saturday, never met his friends. The table said walk away. It took two more weeks to actually do it, and a month to stop checking his stories. Three months later, Jules said the hardest part had been the deciding, not the leaving.
 
 ## If you're the one who doesn't want more
 

@@ -9,13 +9,13 @@ If you've just found out, or just confessed, this probably feels like the end of
 
 First, many couples do stay together. In a large 2026 survey of 3,429 people who had experienced infidelity, by Kathleen Nickerson, John Gottman and colleagues, most reported still being together with their partner. The sample came from people following affair-recovery therapists online, so it's more hopeful than the general population, but it shows what's possible.
 
-Second, recovery isn't one moment of forgiveness. It's a process with recognisable stages. In a 2023 study, Stephen Fife and colleagues interviewed 16 couples who had stayed together after sexual infidelity and described their healing as meaningful. Their stories followed four stages: **revelation, initial reactions, stabilising, and revitalising**. This guide walks through each one, with what each partner needs to do.
+Second, recovery isn't one moment of forgiveness. It's a process with recognizable stages. In a 2023 study, Stephen Fife and colleagues interviewed 16 couples who had stayed together after sexual infidelity and described their healing as meaningful. Their stories followed four stages: **revelation, initial reactions, stabilizing, and revitalising**. This guide walks through each one, with what each partner needs to do.
 
 ## Stage 1: Revelation
 
 Whether the affair was discovered or confessed, this is the moment the ground disappears.
 
-**For the betrayed partner:** you don't need to decide anything today. Not whether to stay, not whether to forgive. Your only job is to get through the next days safely. Tell one trusted person. Sleep, eat, breathe. Strong reactions are normal: clinicians who specialise in affairs, like Donald Baucom, Douglas Snyder and Kristina Coop Gordon, describe infidelity as a traumatic event for the betrayed partner, with intrusive thoughts, hypervigilance and emotional swings that can last a long time.
+**For the betrayed partner:** you don't need to decide anything today. Not whether to stay, not whether to forgive. Your only job is to get through the next days safely. Tell one trusted person. Sleep, eat, breathe. Strong reactions are normal: clinicians who specialize in affairs, like Donald Baucom, Douglas Snyder and Kristina Coop Gordon, describe infidelity as a traumatic event for the betrayed partner, with intrusive thoughts, hypervigilance and emotional swings that can last a long time.
 
 **For the unfaithful partner:** this is where trust is either made worse or starts to be rebuilt. Tell the truth about the basics. Partial confessions that later turn out to be incomplete ("trickle truth") are often described by couples as more damaging than the affair itself.
 
@@ -34,7 +34,7 @@ The first weeks and months are usually the most chaotic: anger, grief, questions
 > **Why repeated questions aren't a failure**
 > Betrayed partners often ask the same questions many times. It can feel to the unfaithful partner like the conversation is going in circles. It isn't. Each time the answer is the same, and given without irritation, the betrayed partner's mind gets a little more evidence that the truth is stable now. Consistency is how the first layer of trust, predictability, starts to grow back.
 
-## Stage 3: Stabilising
+## Stage 3: Stabilizing
 
 Over time, things become less raw. Couples in the Fife study described this phase as assessing the damage, affirming their commitment to each other, and establishing accountability.
 
@@ -53,7 +53,7 @@ Try (unfaithful partner): "Thank you for telling me. What would help right now?"
 
 In the final stage, couples in the Fife study described seeking reconnection, communicating more deeply, re-establishing trust, and moving from an early, decided forgiveness to a deeper, felt one.
 
-This is where couples build something new, not just patch the old. Shared time, real conversations, new rituals. Some couples report that their relationship became better than before, though researchers urge caution about that claim, and it's never a reason the affair was "worth it". Our guides on [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) and [green flags in a relationship](/blog/green-flags-in-a-relationship/) can help you picture what you're building towards.
+This is where couples build something new, not just patch the old. Shared time, real conversations, new rituals. Some couples report that their relationship became better than before, though researchers urge caution about that claim, and it's never a reason the affair was "worth it". Our guides on [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) and [green flags in a relationship](/blog/green-flags-in-a-relationship/) can help you picture what you're building toward.
 
 > **Example: the second year**
 > When Rosa found messages between Dan and a colleague, she nearly left the same night. In the first months they barely spoke without fighting. Dan answered every question, the same ones, again and again, and moved to a different team at work. Around month eight, Rosa noticed she'd stopped checking his phone. In the second year they started having a Thursday walk, no phones, where they talked about everything except the affair. "Forgiving him was a decision I made in month three," she said later. "Actually feeling it took most of a year."
@@ -93,6 +93,8 @@ For many couples, yes. Approaches built specifically for affair recovery work th
 ## A note on safety
 
 Discovering infidelity can bring intense emotions. If anger turns into threats or violence, or if you're afraid of your partner, please contact a local support service or helpline. And if you're struggling to cope or having thoughts of harming yourself, contact emergency services or a crisis line now.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

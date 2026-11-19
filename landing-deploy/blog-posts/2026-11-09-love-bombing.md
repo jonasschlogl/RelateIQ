@@ -39,7 +39,7 @@ Sam wants a Friday night with old friends. Alex is warm about it on the surface,
 
 **What it feels like:** Guilt. Sam starts seeing friends less, because it's easier.
 
-**What may be happening:** This is the stage that matters most. A partner who loves you can feel disappointed and still respect your plans. In love bombing, the warmth starts to depend on you doing what they want. Early isolation from friends is one of the most consistent warning signs that domestic abuse organisations describe.
+**What may be happening:** This is the stage that matters most. A partner who loves you can feel disappointed and still respect your plans. In love bombing, the warmth starts to depend on you doing what they want. Early isolation from friends is one of the most consistent warning signs that domestic abuse organizations describe.
 
 **What to do now:** Keep the plans. Tell a friend honestly what's going on, not the polished version.
 
@@ -49,7 +49,7 @@ The affection still comes, but now in waves. After a disagreement Alex goes cold
 
 **What it feels like:** Walking on eggshells, while still remembering how good it was at the start.
 
-**What may be happening:** The intense start has become something to win back. The UK charity Women's Aid describes love bombing as "a dangerous tactic often used by abusers in the early stages of the relationship". In 2023 the UK's Crown Prosecution Service included love bombing in its guidance on controlling or coercive behaviour.
+**What may be happening:** The intense start has become something to win back. The UK charity Women's Aid describes love bombing as "a dangerous tactic often used by abusers in the early stages of the relationship". In 2023 the UK's Crown Prosecution Service included love bombing in its guidance on controlling or coercive behavior.
 
 Not every love bomber becomes abusive, and not every whirlwind romance is love bombing. But this stage, warmth as reward and coldness as punishment, is where kind intentions and control part ways.
 
@@ -59,7 +59,7 @@ Not every love bomber becomes abusive, and not every whirlwind romance is love b
 
 There isn't much research yet, but what exists points in one direction. In a 2017 study of 484 young adults at the University of Arkansas, researchers led by C. C. Strutzenberg found that people with more narcissistic traits and lower self-esteem were more likely to love bomb, and that love bombing went together with heavy texting and social media use in the relationship.
 
-That's useful because it moves the focus. The intensity often says more about the other person's needs (for control, for admiration, for reassurance) than about how special you are. The Turkish study found something else worth knowing: people who had experienced love bombing reported lower confidence in handling their own romantic relationships. If you've been through it, a dip in trusting your own judgement is a common after-effect, not a personal failing.
+That's useful because it moves the focus. The intensity often says more about the other person's needs (for control, for admiration, for reassurance) than about how special you are. The Turkish study found something else worth knowing: people who had experienced love bombing reported lower confidence in handling their own romantic relationships. If you've been through it, a dip in trusting your own judgment is a common after-effect, not a personal failing.
 
 ## Love bombing or someone who's just very keen?
 
@@ -73,7 +73,7 @@ That's useful because it moves the focus. The intensity often says more about th
 
 The single most useful test is the first column's first row. Say "slower, please" and see what happens.
 
-If you're unsure whether you're overthinking, our guide to [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what steady, healthy interest looks like. The opposite pattern, very little but just enough, is [breadcrumbing](/blog/breadcrumbing/). And someone who is simply clear about what they want is practising [clear coding](/blog/clear-coding-dating/).
+If you're unsure whether you're overthinking, our guide to [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what steady, healthy interest looks like. The opposite pattern, very little but just enough, is [breadcrumbing](/blog/breadcrumbing/). And someone who is simply clear about what they want is practicing [clear coding](/blog/clear-coding-dating/).
 
 If you'd like to rehearse saying "let's slow down" before you say it, RelationshipAI's Partner Practice lets you try the conversation with an AI that plays your partner, privately. It isn't therapy, but it can make the real conversation easier.
 
@@ -89,7 +89,7 @@ Some people rush intensely because of their own anxiety, without a plan to contr
 
 ### Is love bombing a sign of narcissism?
 
-Research links it to narcissistic traits, but not everyone who love bombs is a narcissist. Focus on the behaviour and how it changes over time, not a diagnosis.
+Research links it to narcissistic traits, but not everyone who love bombs is a narcissist. Focus on the behavior and how it changes over time, not a diagnosis.
 
 ### What happens after love bombing stops?
 
@@ -98,6 +98,8 @@ Often affection becomes conditional: warmth when you comply, coldness or critici
 ## A note on safety
 
 If a partner checks your phone, cuts you off from friends, controls money, threatens you or makes you afraid, this may be coercive control, which is a form of domestic abuse. It's not your fault. Please contact a local domestic abuse helpline or support service. If your phone may be monitored, use a friend's phone or a safe computer.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

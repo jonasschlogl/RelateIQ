@@ -35,7 +35,7 @@ A partner who never feels a twinge is not necessarily indifferent. And a partner
 
 ## Myth 3: "Thinking it through will make me feel better"
 
-This one feels true, because analysing feels like doing something. But in a study of 199 people in relationships, Rachel Elphinston and colleagues found that jealous *thinking* was linked to lower relationship satisfaction, and that a big part of the link ran through **rumination**: going over the same worries again and again.
+This one feels true, because analyzing feels like doing something. But in a study of 199 people in relationships, Rachel Elphinston and colleagues found that jealous *thinking* was linked to lower relationship satisfaction, and that a big part of the link ran through **rumination**: going over the same worries again and again.
 
 In other words, the replaying is not the cure. It's often the mechanism that turns a passing worry into lasting unhappiness. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has practical ways to interrupt the loop.
 
@@ -46,7 +46,7 @@ In other words, the replaying is not the cure. It's often the mechanism that tur
 
 Checking rarely settles anything. If you find nothing, the relief lasts minutes and the doubt returns ("maybe they deleted it"). If you find something ambiguous, you now have a fight *and* a breach of trust on your side.
 
-Interestingly, the same Elphinston study found that checking-up behaviours had a mixed pattern: they were linked to more rumination, but not simply to lower satisfaction. Checking isn't always a sign the relationship is failing. It is, however, a reliable way to keep the worry alive.
+Interestingly, the same Elphinston study found that checking-up behaviors had a mixed pattern: they were linked to more rumination, but not simply to lower satisfaction. Checking isn't always a sign the relationship is failing. It is, however, a reliable way to keep the worry alive.
 
 It's also worth knowing what can trigger the urge. A 2022 study of 346 people in relationships by Janneke Schokkenbroek and colleagues found that people whose partners often ignored them for their phones ("phubbing") were somewhat more likely to look through their partner's messages or online activity. The effect was small, but the message is useful: snooping sometimes grows out of feeling ignored, not only out of suspicion. That's something you can talk about.
 
@@ -60,7 +60,7 @@ The fix isn't to delete everything. It's to notice when you're scrolling *to loo
 
 You've probably heard that men are more upset by sexual infidelity and women by emotional infidelity. Some studies do find that pattern, mostly when people are forced to choose one or the other. But when David DeSteno and colleagues let people rate how upsetting each one was on a scale, instead of picking between them, the difference between men and women largely disappeared.
 
-The practical takeaway: don't assume you know what will hurt your partner because of their gender. Ask. "What would feel like a betrayal to you?" is a surprisingly good conversation to have *before* anything goes wrong.
+The practical takeout: don't assume you know what will hurt your partner because of their gender. Ask. "What would feel like a betrayal to you?" is a surprisingly good conversation to have *before* anything goes wrong.
 
 ## Myth 7: "Jealousy means something is wrong with the relationship"
 
@@ -86,7 +86,7 @@ Try: "When you're going to be out late, a quick text would really help me relax.
 
 ## If your partner is the jealous one
 
-Be patient with the feeling and firm about the behaviour. You can reassure without giving up your privacy or friendships.
+Be patient with the feeling and firm about the behavior. You can reassure without giving up your privacy or friendships.
 
 Try: "I understand you feel worried, and I want to help. I'm also not okay with you going through my phone. Can we talk about what would actually help you feel safer?"
 
@@ -116,7 +116,9 @@ When it is used to control: checking, restricting who your partner sees, demandi
 
 ## A note on safety
 
-Jealousy is one of the most common justifications for controlling and abusive behaviour. If a partner monitors your phone, isolates you from friends, threatens you or makes you afraid, please contact a local domestic abuse helpline or support service. Our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) may help you see the pattern clearly.
+Jealousy is one of the most common justifications for controlling and abusive behavior. If a partner monitors your phone, isolates you from friends, threatens you or makes you afraid, please contact a local domestic abuse helpline or support service. Our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) may help you see the pattern clearly.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

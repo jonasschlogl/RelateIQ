@@ -99,7 +99,7 @@ If an answer leads to a disagreement, our guide on [communication habits](/blog/
 
 One deep evening is lovely. A small habit is what actually changes a relationship. Some couples pick one question every Sunday morning, or keep a list on their phone for long drives. For lighter, more playful questions, see our [date night questions for couples](/blog/date-night-questions-for-couples/). If you're far apart, they work beautifully on video calls too, see our [long distance relationship tips](/blog/long-distance-relationship-tips/). And if you're about to meet the family, a few Level 2 questions about their childhood will help you before [meeting your partner's parents](/blog/meeting-your-partners-parents/).
 
-If you'd like to practise responding well, especially to a hard answer, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build the habit.
+If you'd like to practice responding well, especially to a hard answer, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build the habit.
 
 ## Quick answers
 

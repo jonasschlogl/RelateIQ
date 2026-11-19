@@ -50,7 +50,7 @@ Different people valued different parts. People who think of themselves more as 
 | "We agreed on this." | Acknowledging the broken rule | "We agreed I'd check with you first, and I didn't." |
 
 > **Example: the apology that missed**
-> Jane is upset that Mark invited his friends for the weekend without asking her. Mark apologizes and offers to cancel (compensation). Jane still feels hurt. What she needed to hear was that he'd broken an agreement they'd made about the flat, and that he understood why that left her feeling like a guest in her own home.
+> Jane is upset that Mark invited his friends for the weekend without asking her. Mark apologizes and offers to cancel (compensation). Jane still feels hurt. What she needed to hear was that he'd broken an agreement they'd made about the apartment, and that he understood why that left her feeling like a guest in her own home.
 >
 > When Mark tries again ("We agreed we'd check with each other before inviting people, and I didn't. I get why that made you feel sidelined"), the conversation changes.
 
@@ -60,7 +60,7 @@ You don't need all six elements every time. Here is a short structure built on t
 
 **1. Name what you did, specifically.** "I'm sorry I was late" is fine. "I'm sorry I said you were overreacting in front of your friends" is better. Being specific shows you actually understand, and that you're not just apologizing to end the tension.
 
-**2. Own it without conditions.** Skip "if" and "but." "I'm sorry if you were hurt" and "I'm sorry, but you also..." turn the apology into a defence. This is the element Lewicki's research found mattered most.
+**2. Own it without conditions.** Skip "if" and "but." "I'm sorry if you were hurt" and "I'm sorry, but you also..." turn the apology into a defense. This is the element Lewicki's research found mattered most.
 
 **3. Acknowledge the impact.** "That probably made you feel dismissed and embarrassed." You don't have to agree with every detail of how they feel, but you do want them to see you're trying to understand it. This is the empathy component.
 
@@ -82,7 +82,7 @@ Here's what the structure looks like in a real situation, compared with how it o
 >
 > Try: "I'm sorry I got home two hours late and didn't even message you. You spent the afternoon cooking and then sat here waiting, wondering where I was. That's not okay. From now on, if I'm going to be late, I'll text before I'm late, not after. Can I make it up to you on Friday? And I understand if you're still annoyed tonight."
 
-The first version explains, minimises and asks the partner to move on. The second names the action, shows the impact, offers a concrete fix and leaves room. It takes about twenty seconds longer to say.
+The first version explains, minimizes and asks the partner to move on. The second names the action, shows the impact, offers a concrete fix and leaves room. It takes about twenty seconds longer to say.
 
 ## More examples
 
@@ -99,7 +99,7 @@ The first version explains, minimises and asks the partner to move on. The secon
 "I'm sorry I kept looking at my phone while you were telling me about your day. You deserved my full attention. Can you tell me again? I'm listening now."
 
 **Breaking a promise about chores**
-"I said I'd sort the bins and I didn't, again. That's on me. I'll do them tonight, and I've put a reminder in my phone for every Thursday."
+"I said I'd take out the trash and I didn't, again. That's on me. I'll do it tonight, and I've put a reminder in my phone for every Thursday."
 
 **Sharing something private with friends**
 "I'm sorry I told my friends about our argument. That was between us, and I made you look bad without you even being there. I won't share our private things again, and if you want, I'll tell them I was out of line."
@@ -113,7 +113,7 @@ The first version explains, minimises and asks the partner to move on. The secon
 - **Keeping score:** "I apologized last time, now it's your turn" turns repair into a trade.
 - **Apologizing for everything:** If you say sorry constantly, the word loses meaning, and it can hide real conflict you haven't discussed.
 
-Saying sorry often isn't a problem in itself, though. In two studies published in 2023, Karina Schumann, Emily Ritchie and Amanda Forest found that people who apologise frequently were seen as warmer and more honest, and that their apologies were not taken any less seriously. The risk isn't the number of apologies. It's apologies that are rushed or empty.
+Saying sorry often isn't a problem in itself, though. In two studies published in 2023, Karina Schumann, Emily Ritchie and Amanda Forest found that people who apologize frequently were seen as warmer and more honest, and that their apologies were not taken any less seriously. The risk isn't the number of apologies. It's apologies that are rushed or empty.
 
 Here are the most common slips side by side with what tends to land better:
 
@@ -140,11 +140,11 @@ Apologizing is half of the skill. Receiving one is the other half.
 
 ## When sorry isn't enough
 
-If the same thing keeps happening, the apology isn't the missing piece. Change in behaviour is. Words matter, and repeated actions matter more. A useful test: has anything actually been different in the weeks after the last apology?
+If the same thing keeps happening, the apology isn't the missing piece. Change in behavior is. Words matter, and repeated actions matter more. A useful test: has anything actually been different in the weeks after the last apology?
 
 For bigger breaches, like lying, cheating or breaking a major promise, one good conversation is the start, not the end. Trust is rebuilt through consistent actions over time. Our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) goes into that process step by step.
 
-If apologies keep going nowhere, or the pattern involves disrespect, a couples therapist can help you both see what's happening underneath. If you want to practise what to say before a hard conversation, RelationshipAI is an AI relationship coach that can help you put an apology into words and rehearse it in Partner Practice. It isn't therapy, but it can help you start.
+If apologies keep going nowhere, or the pattern involves disrespect, a couples therapist can help you both see what's happening underneath. If you want to practice what to say before a hard conversation, RelationshipAI is an AI relationship coach that can help you put an apology into words and rehearse it in Partner Practice. It isn't therapy, but it can help you start.
 
 ## Quick answers
 
@@ -154,7 +154,7 @@ For small things, yes. For something that really hurt, a text can open the door 
 
 ### What if my partner won't accept my apology?
 
-Give it time. Accepting an apology isn't a switch, and pushing for forgiveness often makes it slower. Keep doing the thing you promised. Changed behaviour over the next few weeks says more than a second apology.
+Give it time. Accepting an apology isn't a switch, and pushing for forgiveness often makes it slower. Keep doing the thing you promised. Changed behavior over the next few weeks says more than a second apology.
 
 ### Should I explain why I did it?
 
@@ -178,9 +178,11 @@ Long enough for both of you to be calm, often around twenty minutes after a heat
 
 ## A note on safety
 
-In some relationships, apologies are part of a harmful cycle: hurtful or frightening behaviour, then a warm apology and promises, then the same behaviour again. If your partner hurts you, threatens you or makes you afraid, an apology doesn't oblige you to stay or to forgive. Please reach out to a local helpline or support service, who can help you think about your options safely.
+In some relationships, apologies are part of a harmful cycle: hurtful or frightening behavior, then a warm apology and promises, then the same behavior again. If your partner hurts you, threatens you or makes you afraid, an apology doesn't oblige you to stay or to forgive. Please reach out to a local helpline or support service, who can help you think about your options safely.
 
-If the hurt goes deeper than one argument, our guides on [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) cover the longer road back. And if you keep apologising for things that aren't your fault, read about [gaslighting in a relationship](/blog/gaslighting-in-a-relationship/).
+If the hurt goes deeper than one argument, our guides on [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) cover the longer road back. And if you keep apologizing for things that aren't your fault, read about [gaslighting in a relationship](/blog/gaslighting-in-a-relationship/).
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

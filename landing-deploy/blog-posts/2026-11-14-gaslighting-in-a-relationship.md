@@ -22,7 +22,7 @@ In gaslighting, only one version of reality is allowed, and it's never yours. Ev
 | "I don't remember saying that, but maybe I did." | "I never said that. You're making things up again." |
 | "I see it differently." | "That's not what happened, and you know it." |
 | "I didn't mean it that way, sorry it hurt." | "You're way too sensitive. Nobody else would be upset." |
-| You both sometimes concede | You always end up apologising |
+| You both sometimes concede | You always end up apologizing |
 
 ## Question 2: Is it about the event, or about your mind?
 
@@ -36,10 +36,10 @@ If your arguments regularly end with a verdict on your mental state, notice that
 
 Anyone can say something unfair once, in a heated moment. Gaslighting is a pattern over time.
 
-The Klein study found a common arc. Most relationships started with intense affection, big gestures and grand plans, very like [love bombing](/blog/love-bombing/). Then came blame for things that weren't the participant's fault, and behaviour that swung unpredictably between anger and affection, or between yelling and cold silence.
+The Klein study found a common arc. Most relationships started with intense affection, big gestures and grand plans, very like [love bombing](/blog/love-bombing/). Then came blame for things that weren't the participant's fault, and behavior that swung unpredictably between anger and affection, or between yelling and cold silence.
 
 > **Example: the birthday**
-> Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed. She shows him his message: "of course, I'll be there". He laughs and says she's "been really stressed lately" and keeps "remembering things weirdly". She ends up apologising.
+> Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed. She shows him his message: "of course, I'll be there". He laughs and says she's "been really stressed lately" and keeps "remembering things weirdly". She ends up apologizing.
 >
 > Once, that's a frustrating evening. Every few weeks, always ending with her apology, it's a pattern.
 
@@ -77,11 +77,11 @@ It's a good sign that you're asking. Watch for these habits in yourself: dismiss
 
 ### What's the difference between gaslighting and disagreeing?
 
-In a disagreement, both versions can exist. In gaslighting, only one version is allowed, and the other person's memory, judgement or sanity is repeatedly questioned.
+In a disagreement, both versions can exist. In gaslighting, only one version is allowed, and the other person's memory, judgment or sanity is repeatedly questioned.
 
 ### Can someone gaslight without meaning to?
 
-Some people deny or minimise out of shame or defensiveness rather than a plan. The impact can still be harmful. A repeated pattern that leaves you doubting reality is worth addressing either way.
+Some people deny or minimize out of shame or defensiveness rather than a plan. The impact can still be harmful. A repeated pattern that leaves you doubting reality is worth addressing either way.
 
 ### Is gaslighting abuse?
 
@@ -94,6 +94,8 @@ Keep notes, spend time with people who know you well, return to activities that 
 ## A note on safety
 
 Gaslighting often comes alongside other forms of control. If your partner isolates you, monitors you, controls money, threatens you or makes you afraid, please contact a local domestic abuse helpline or support service. You don't need to be sure it's "abuse" to ask for advice.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

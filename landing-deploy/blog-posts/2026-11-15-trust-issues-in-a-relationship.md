@@ -65,7 +65,7 @@ If your partner is mostly reliable and you've felt this way before, the work is 
 
 ### If you're the one struggling to trust
 
-**Swap reassurance questions for observations.** Instead of asking "Do you still love me?", look for the evidence trust research says matters: moments when your partner chose the relationship over their own convenience. Write three down each week. It retrains your attention towards what's real.
+**Swap reassurance questions for observations.** Instead of asking "Do you still love me?", look for the evidence trust research says matters: moments when your partner chose the relationship over their own convenience. Write three down each week. It retrains your attention toward what's real.
 
 **Name the feeling once, then ask for something specific.**
 Instead of: "Are you sure everything's fine with us?"
@@ -88,7 +88,7 @@ Try: "I can tell you've been feeling unsure. I want you to feel safe with me. Wh
 When there's been a real betrayal, the loop above isn't the main issue. Trust needs to be rebuilt through transparency, consistency and time. Our guides on [rebuilding trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [after a fight](/blog/how-to-rebuild-trust-after-a-fight/) walk through that process, and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) covers the first step.
 
 > **Example: three things a week**
-> Lena kept asking Mateo whether he was "sure" about them, and his answers stopped working within hours. She tried something different: every Sunday she wrote down three moments from the week when he'd put them first. He'd cancelled a football night when she was sick. He'd driven her mother to the airport. He'd let her pick the holiday. After a month, she noticed she was asking less. Nothing about Mateo had changed. What changed was what she was looking at.
+> Lena kept asking Mateo whether he was "sure" about them, and his answers stopped working within hours. She tried something different: every Sunday she wrote down three moments from the week when he'd put them first. He'd canceled a football night when she was sick. He'd driven her mother to the airport. He'd let her pick the holiday. After a month, she noticed she was asking less. Nothing about Mateo had changed. What changed was what she was looking at.
 
 If you want to talk through a wave of doubt before it turns into a 1am message, RelationshipAI's Coach Chat can help you separate what you know from what you fear. It isn't therapy, but it can help you pause the loop. If the patterns are long-standing or connected to past hurt, a therapist can help a lot.
 
@@ -116,7 +116,9 @@ When your distrust is a response to repeated lies, secrecy or inconsistency, it'
 
 ## A note on safety
 
-Distrust is sometimes used to justify controlling behaviour: checking phones, tracking locations, restricting friends. If your partner does this, or makes you afraid, please contact a local domestic abuse helpline or support service.
+Distrust is sometimes used to justify controlling behavior: checking phones, tracking locations, restricting friends. If your partner does this, or makes you afraid, please contact a local domestic abuse helpline or support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

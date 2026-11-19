@@ -7,7 +7,7 @@ tags: clear coding, mixed signals
 ---
 Clear coding is the dating trend of simply saying what you want: "I'm looking for something serious", "I'd like to see you again", "I don't think we're a match". Tinder named it one of the defining trends for 2026 and described it as "when intentions finally come with subtitles". In its international survey of 4,000 actively dating 18 to 25 year olds, 64% said emotional honesty is what dating needs most, and 60% wanted clearer communication about intentions.
 
-Most people agree with clear coding in principle. The hard part is the actual words, so they don't sound needy, intense or harsh. That's what this guide is for: 20 messages you can adapt, organised by stage.
+Most people agree with clear coding in principle. The hard part is the actual words, so they don't sound needy, intense or harsh. That's what this guide is for: 20 messages you can adapt, organized by stage.
 
 ## Why clarity works better than playing it cool
 
@@ -62,7 +62,7 @@ This is the part of clear coding people skip, and the part that matters most to 
 17. *After one or two dates:* "I've enjoyed meeting you, but I don't think we're a match. I wanted to tell you rather than just disappear."
 18. *After a few weeks:* "I've been thinking about it, and I don't see this becoming a relationship. You deserve someone who's sure, so I'd rather be honest now."
 19. *If they keep messaging after you've said no:* "I meant what I said. I'm not going to reply further, but I wish you well."
-20. *If you're not ready to date at all:* "I've realised I'm not in the right headspace to date right now. It's not about you, and I'm sorry for the timing."
+20. *If you're not ready to date at all:* "I've realized I'm not in the right headspace to date right now. It's not about you, and I'm sorry for the timing."
 
 > **Example: the message that saved three months**
 > After four dates, Kemal sent message 14. His date, Ana, replied the next morning: she'd just come out of a long relationship and wasn't ready for anything serious. Kemal was disappointed for a day. "But I'd have spent the whole winter wondering," he said. "Instead I knew in twelve hours." Six weeks later he met someone who'd written "looking for something long-term" in her bio. They're still together.

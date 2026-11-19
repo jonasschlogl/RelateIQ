@@ -11,14 +11,14 @@ What works better is smaller: a few calm steps, taken in a sensible order. This 
 
 ## First: is this a relationship that can be fixed?
 
-Most relationships that feel broken are stuck, not finished. Distance, constant arguments, feeling like flatmates, losing the spark: these are common, and they often respond to changes in how you talk and how you spend time together.
+Most relationships that feel broken are stuck, not finished. Distance, constant arguments, feeling like roommates, losing the spark: these are common, and they often respond to changes in how you talk and how you spend time together.
 
 There are two important exceptions. If you're afraid of your partner, feel controlled, or are being hurt, fixing the relationship isn't the goal. Your safety is. And if one of you has already decided to leave, no technique can replace that decision. If you're not sure whether you want to stay, our guide to [deciding whether to break up](/blog/should-i-break-up-with-my-partner/) can help you think it through first.
 
 | Usually fixable | Needs more than these steps |
 |---|---|
 | Constant arguing about everyday things | Fear, threats, control or violence |
-| Feeling distant or like flatmates | One partner has clearly checked out |
+| Feeling distant or like roommates | One partner has clearly checked out |
 | The spark has faded | Ongoing lying or cheating that continues |
 | Stress has pushed you apart | Addiction that isn't being treated |
 
@@ -27,7 +27,7 @@ There are two important exceptions. If you're afraid of your partner, feel contr
 "Fixing it" is too vague to act on. Before you talk to your partner, get clear on what would feel different if things were better. More affection? A fairer split at home? Feeling listened to? Write it down in a sentence or two. It keeps you from arguing about everything and helps you ask for something specific.
 
 > **Example: from "everything's wrong" to one sentence**
-> Clara feels her relationship with Oliver has become cold. When she sits down to write what "better" would look like, she realises it's mostly two things: she wants him to ask about her day, and she wants one evening a week without screens. That's something they can actually talk about, unlike "you don't love me like before".
+> Clara feels her relationship with Oliver has become cold. When she sits down to write what "better" would look like, she realizes it's mostly two things: she wants him to ask about her day, and she wants one evening a week without screens. That's something they can actually talk about, unlike "you don't love me like before".
 
 ## Step 2: Stop the escalation first
 
@@ -40,10 +40,10 @@ Nothing gets rebuilt while you're still hurting each other. Gottman's research i
 | Defensiveness | Counter-complaints, playing the victim | Taking responsibility for your part |
 | Stonewalling | Shutting down and going silent | A short break, with a promise to come back |
 
-You don't have to be perfect. Just notice which one you slip into most, and practise its antidote. The Gottman Institute describes contempt as the single biggest predictor of divorce, so if eye-rolling and mocking have crept in, start there.
+You don't have to be perfect. Just notice which one you slip into most, and practice its antidote. The Gottman Institute describes contempt as the single biggest predictor of divorce, so if eye-rolling and mocking have crept in, start there.
 
 > **Why removing them comes first**
-> Each horseman pushes the other person into self-defence, and once someone is defending themselves, they can't listen. That's why couples can argue about the same thing for years without getting anywhere. Removing the horsemen doesn't solve the problem by itself. It creates the conditions in which a problem can be solved.
+> Each horseman pushes the other person into self-defense, and once someone is defending themselves, they can't listen. That's why couples can argue about the same thing for years without getting anywhere. Removing the horsemen doesn't solve the problem by itself. It creates the conditions in which a problem can be solved.
 
 ## Step 3: Have one small conversation about one thing
 
@@ -80,9 +80,9 @@ If you've tried this for a few weeks and the same fights keep coming back, or on
 
 The evidence is encouraging even for couples in serious trouble. In a large trial led by Andrew Christensen, 134 chronically and seriously distressed married couples received up to a year of couple therapy. Five years after treatment ended, about half were significantly better than when they started, and about a third were doing as well as ordinary happy couples. About a quarter had separated or divorced.
 
-Help doesn't always have to mean weekly therapy, either. In a randomised trial of 300 couples, Brian Doss and colleagues tested OurRelationship, a self-guided online programme of a few hours with short coach calls. Compared with couples on a waiting list, those who did the programme reported clearly higher relationship satisfaction and fewer depressive symptoms, and most of the gains were still there a year later.
+Help doesn't always have to mean weekly therapy, either. In a randomized trial of 300 couples, Brian Doss and colleagues tested OurRelationship, a self-guided online program of a few hours with short coach calls. Compared with couples on a waiting list, those who did the program reported clearly higher relationship satisfaction and fewer depressive symptoms, and most of the gains were still there a year later.
 
-A newer trial led by Yunying Le, with Doss on the team, tested the same programme with 740 low-income couples in 2023. Couples improved clearly compared with a waiting list whether they had a human coach or mostly automated support, and the gains held at the follow-up about four months later.
+A newer trial led by Yunying Le, with Doss on the team, tested the same program with 740 low-income couples in 2023. Couples improved clearly compared with a waiting list whether they had a human coach or mostly automated support, and the gains held at the follow-up about four months later.
 
 An AI coach like RelationshipAI can be useful for thinking things through in Coach Chat and rehearsing difficult conversations in Partner Practice between sessions, but it doesn't replace professional care.
 
@@ -125,6 +125,8 @@ Ongoing contempt, one partner who has completely checked out, or a relationship 
 All of this assumes two people who feel safe with each other. If you're afraid of your partner, feel controlled, or are being hurt, fixing the relationship isn't the goal. Please contact a local support service or helpline.
 
 If trust was broken, start with [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) or [trust issues in a relationship](/blog/trust-issues-in-a-relationship/). If you're not sure the relationship is safe to fix, read the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) first.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

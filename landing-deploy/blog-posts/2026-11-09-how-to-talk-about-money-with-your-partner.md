@@ -41,7 +41,7 @@ Talk about what money is *for* before talking about rules.
 
 ### Round 3: The facts (15 minutes)
 
-Now the practical part. Share honestly, without judgement.
+Now the practical part. Share honestly, without judgment.
 
 - What do we each earn, owe and save?
 - What do we spend each month on the basics?
@@ -56,7 +56,7 @@ Don't try to solve everything. Make one or two small decisions:
 - When you'll do the next money date (once a month works well for many couples).
 
 > **Why stories first**
-> When money talk starts with numbers, people get defensive fast: every figure feels like a judgement. Starting with stories and dreams reminds you both that you're on the same team, and explains *why* your partner gets anxious about savings or generous with gifts. It's much easier to agree on rules once you understand what's underneath them.
+> When money talk starts with numbers, people get defensive fast: every figure feels like a judgment. Starting with stories and dreams reminds you both that you're on the same team, and explains *why* your partner gets anxious about savings or generous with gifts. It's much easier to agree on rules once you understand what's underneath them.
 
 ## Which money set-up suits you?
 
@@ -73,7 +73,7 @@ The Olson study suggests fully merging may help couples feel more united, but wh
 ### 1. You have debt your partner doesn't know about
 
 Tell them sooner rather than later, with a plan.
-"There's something I need to tell you that I've been embarrassed about. I have about €4,000 in credit card debt. I've made a plan to pay it off by next autumn, and I'd like you to know so there's nothing hidden between us."
+"There's something I need to tell you that I've been embarrassed about. I have about $4,000 in credit card debt. I've made a plan to pay it off by next autumn, and I'd like you to know so there's nothing hidden between us."
 
 ### 2. One of you earns much more
 
@@ -82,7 +82,7 @@ Talk about fairness, not equality.
 
 ### 3. Spender meets saver
 
-Name the difference without labelling the person.
+Name the difference without labeling the person.
 "I think we feel very differently about spending. I get anxious when savings go down, and I know you feel restricted when I want to check every purchase. Could we agree on a monthly amount each of us can spend freely, no questions asked?"
 
 ### 4. You found a hidden purchase
@@ -120,6 +120,8 @@ Yes, when one partner controls all the money, restricts access, demands receipts
 ## A note on safety
 
 If your partner controls your access to money, takes your income, prevents you from working or builds up debt in your name, that's financial abuse. Please contact a local domestic abuse helpline or support service. Our guide on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) explains more about control.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy, legal or financial advice.*
 

@@ -9,7 +9,7 @@ topics: communication, repair
 ---
 In a random sample of Americans who had been married for more than ten years, about 40% said they were still "very intensely in love". That finding, from a study led by Daniel O'Leary with Bianca Acevedo and Arthur Aron, surprises most people, because we're told that passion always fades. In a second sample from New York, the figure was about 29%. Lower, but still far from rare.
 
-So the spark doesn't have to go. But "the spark" is a vague word, and vague problems get vague advice: more date nights, more surprises, more lingerie. Most lists of tips miss that couples usually lose one *kind* of spark, not all of them at once. A couple can still laugh together every day and feel no desire at all. Another can have plenty of sex and feel like flatmates the rest of the week.
+So the spark doesn't have to go. But "the spark" is a vague word, and vague problems get vague advice: more date nights, more surprises, more lingerie. Most lists of tips miss that couples usually lose one *kind* of spark, not all of them at once. A couple can still laugh together every day and feel no desire at all. Another can have plenty of sex and feel like roommates the rest of the week.
 
 This guide starts with a short check to find which spark is fading for you, then explains what research says actually helps with that one.
 
@@ -43,7 +43,7 @@ In earlier experiments, Aron and colleagues had couples spend time on activities
 
 **What most advice gets wrong.** "Exciting" doesn't mean skydiving. In a 2021 study on planning date nights, Cheryl Harasymchuk and colleagues found that what mattered was whether the couple themselves saw a date as exciting. How exciting outside coders rated the dates was only marginally related. A first attempt at making dumplings can count if neither of you has done it before.
 
-**Try this:** each of you writes five things you've never done together that cost less than a takeaway. Swap lists, and pick one from your partner's list each fortnight.
+**Try this:** each of you writes five things you've never done together that cost less than a takeout. Swap lists, and pick one from your partner's list each two weeks.
 
 ## If desire is low: more connection, less pressure
 
@@ -73,8 +73,8 @@ How you think about desire matters too. In six studies with almost 1,900 people,
 
 | Fading spark | Common sign | Start with |
 |---|---|---|
-| Novelty | "Every week is the same" | One new thing each fortnight |
-| Desire | Feeling like flatmates | A low-pressure talk about feeling wanted |
+| Novelty | "Every week is the same" | One new thing each two weeks |
+| Desire | Feeling like roommates | A low-pressure talk about feeling wanted |
 | Attention | Talking only about logistics | One real question a week |
 | Warmth | Touch only before sex, or not at all | One daily ritual of affection |
 
@@ -119,6 +119,8 @@ Talk about it as a shared project, not a complaint. "I'd love us to feel closer.
 ## A note on safety
 
 Wanting more closeness is normal. But nobody should be pressured into intimacy. If a partner pushes, controls or frightens you, that isn't about the spark. Please reach out to a local helpline or support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

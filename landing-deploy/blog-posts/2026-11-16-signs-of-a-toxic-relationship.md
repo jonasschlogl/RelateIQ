@@ -14,14 +14,14 @@ So instead of one long list of red flags, this guide sorts the signs of a toxic 
 These are patterns many couples fall into, especially under stress. They hurt, and they're worth taking seriously, but they're usually two-sided and often change when both people want them to.
 
 - Arguments go in circles and nobody feels heard.
-- One of you criticises, the other gets defensive.
+- One of you criticizes, the other gets defensive.
 - One of you pushes to talk, the other withdraws.
 - You've stopped doing nice things for each other.
 - Small resentments pile up because you avoid hard conversations.
 
 **What makes it Level 1:** both of you can still admit mistakes, both of you sometimes try to repair, and you don't feel afraid.
 
-**Next step:** a calm, specific conversation, and maybe couples counselling. Our guides to [communication habits](/blog/relationship-advice-communication-habits/) and [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) are good starting points.
+**Next step:** a calm, specific conversation, and maybe couples counseling. Our guides to [communication habits](/blog/relationship-advice-communication-habits/) and [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) are good starting points.
 
 ## Level 2: Toxic patterns
 
@@ -39,7 +39,7 @@ Here the problem is no longer just how you argue. It's how you're treated. Coupl
 **Next step:** name the pattern once, calmly, and watch the response.
 Try: "When you mock me in front of your friends, I feel humiliated. I need that to stop."
 
-A partner who can change will feel uncomfortable and then try. A partner who doubles down, mocks the request or turns it back on you is giving you important information. Couples counselling can help at this level, but only if both people are genuinely willing.
+A partner who can change will feel uncomfortable and then try. A partner who doubles down, mocks the request or turns it back on you is giving you important information. Couples counseling can help at this level, but only if both people are genuinely willing.
 
 ## Level 3: Control and abuse
 
@@ -55,13 +55,13 @@ Signs include:
 - Deciding what you wear, eat, or where you go.
 - Threats: to leave, to hurt you, to hurt themselves, to share private images, to take the children.
 - Making you doubt your own memory or sanity ([gaslighting](/blog/gaslighting-in-a-relationship/)).
-- You feel afraid of their reaction, and plan your behaviour around it.
+- You feel afraid of their reaction, and plan your behavior around it.
 
-Subtle control is also the kind people most often miss. In a 2025 study of 1,872 American adults, Julie-Ann Jordan and colleagues found that people recognised obvious abuse easily, but rated quieter controlling behaviour as more ordinary and less serious, especially when the person being controlled was a man. If someone tells you it's "just how relationships are", that doesn't make it so.
+Subtle control is also the kind people most often miss. In a 2025 study of 1,872 American adults, Julie-Ann Jordan and colleagues found that people recognized obvious abuse easily, but rated quieter controlling behavior as more ordinary and less serious, especially when the person being controlled was a man. If someone tells you it's "just how relationships are", that doesn't make it so.
 
 **What makes it Level 3:** fear and control. If you're changing your life to avoid their anger, that matters more than how often anything happens.
 
-**Next step:** don't confront alone, and don't rely on couples counselling, which isn't recommended when one partner controls or fears the other. Talk to a domestic abuse helpline or support service. They can help you think through options safely, whether or not you want to leave.
+**Next step:** don't confront alone, and don't rely on couples counseling, which isn't recommended when one partner controls or fears the other. Talk to a domestic abuse helpline or support service. They can help you think through options safely, whether or not you want to leave.
 
 ## A quick self-check: the last month
 
@@ -70,7 +70,7 @@ Think about the last four weeks, not the best or worst day. Which statements are
 1. I've felt afraid of my partner's reaction. *(Level 3)*
 2. I've been checked, tracked or restricted in who I see or what I spend. *(Level 3)*
 3. I've been mocked, insulted or treated with contempt. *(Level 2)*
-4. I've apologised for things I don't believe were my fault, just to end it. *(Level 2)*
+4. I've apologized for things I don't believe were my fault, just to end it. *(Level 2)*
 5. We've had the same argument several times without resolving it. *(Level 1)*
 6. We've both said hurtful things, and both tried to make up. *(Level 1)*
 
@@ -78,16 +78,16 @@ Your highest level is the one to act on. One Level 3 statement outweighs several
 
 ## Why it's so hard to leave, even when you know
 
-If you recognise Level 2 or 3, you may also notice a strong urge to explain it away. That's not weakness. In a study of women at a shelter, Caryl Rusbult and John Martz found that whether women went back to an abusive partner was strongly linked to their commitment, and that commitment was shaped by practical things: fewer or worse economic alternatives, more invested in the relationship (for example, being married), and less severe abuse.
+If you recognize Level 2 or 3, you may also notice a strong urge to explain it away. That's not weakness. In a study of women at a shelter, Caryl Rusbult and John Martz found that whether women went back to an abusive partner was strongly linked to their commitment, and that commitment was shaped by practical things: fewer or worse economic alternatives, more invested in the relationship (for example, being married), and less severe abuse.
 
 In other words, staying often has more to do with money, children, housing and shared history than with how much someone "lets" themselves be treated badly. That's why support services focus on practical options, not just feelings. And unpredictable affection, warmth after coldness, can make the good moments feel even more intense, which is part of why [love bombing](/blog/love-bombing/) cycles are so confusing.
 
 > **Example: the tipping point**
-> For two years, Yuki told herself Ben was "just stressed" when he mocked her cooking in front of friends. When he started reading her messages and asking why she'd texted her sister, she wrote down a month of what happened, as a counsellor at a helpline had suggested. Seeing it on paper changed something. "I'd been treating every incident as separate," she said later. "Written down, it was obviously one thing."
+> For two years, Yuki told herself Ben was "just stressed" when he mocked her cooking in front of friends. When he started reading her messages and asking why she'd texted her sister, she wrote down a month of what happened, as a counselor at a helpline had suggested. Seeing it on paper changed something. "I'd been treating every incident as separate," she said later. "Written down, it was obviously one thing."
 
 ## Am I the toxic one?
 
-Asking the question is a good sign. Look honestly at Level 1 and 2 in your own behaviour: contempt, never apologising, punishing with silence, controlling your partner's choices. If you recognise them, you can change them, and a therapist can help. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) is a good place to start repairing.
+Asking the question is a good sign. Look honestly at Level 1 and 2 in your own behavior: contempt, never apologizing, punishing with silence, controlling your partner's choices. If you recognize them, you can change them, and a therapist can help. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) is a good place to start repairing.
 
 If you want to think through what's happening in a calm, private space, or rehearse a hard conversation for a Level 1 or 2 situation, RelationshipAI's Coach Chat and Partner Practice can help. They aren't therapy and aren't a safety service. For Level 3, please contact a helpline.
 
@@ -114,6 +114,8 @@ Not necessarily. Frequent fights that stay respectful and get repaired are diffe
 ## A note on safety
 
 If you're afraid of your partner, are being controlled, threatened or hurt, please contact a local domestic abuse helpline or support service. If you're in immediate danger, call emergency services. If your phone or computer may be monitored, use a friend's device or a safe computer.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

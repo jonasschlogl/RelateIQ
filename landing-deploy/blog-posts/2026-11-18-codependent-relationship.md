@@ -7,7 +7,7 @@ tags: codependent relationship, people pleasing
 ---
 Being the one who notices, helps and holds things together is not a problem. Many good relationships run on exactly that. The question people search for when they type "codependent relationship" is usually a quieter one: *when did caring start to cost me this much?*
 
-This guide doesn't hand you a label. It gives you three tests that separate generous care from codependency, explains what the research does and does not show, and gives you words for the first, awkward steps back towards yourself.
+This guide doesn't hand you a label. It gives you three tests that separate generous care from codependency, explains what the research does and does not show, and gives you words for the first, awkward steps back toward yourself.
 
 ## Caring and codependency look the same from outside
 
@@ -51,7 +51,7 @@ Count how many times last week you swallowed a small "actually, I'd prefer..." t
 
 Codependency is a popular word, but a messy scientific concept. It's not a diagnosis, there's no agreed definition, and much of what you read online goes beyond the evidence. Here is what is reasonably well supported.
 
-**It seems to be more about the self than about the relationship.** In a study of 318 adults, Jessica Lampis and colleagues found that *differentiation of self* (being able to stay yourself while close to someone, without getting swept up in their emotions or cutting off) predicted codependent behaviour more strongly than how well the couple was getting along. In plain words: codependency often travels with you from relationship to relationship.
+**It seems to be more about the self than about the relationship.** In a study of 318 adults, Jessica Lampis and colleagues found that *differentiation of self* (being able to stay yourself while close to someone, without getting swept up in their emotions or cutting off) predicted codependent behavior more strongly than how well the couple was getting along. In plain words: codependency often travels with you from relationship to relationship.
 
 **It shows up in how couples handle stress.** A 2023 study of 246 adults in relationships in Hungary, by Zsuzsa Happ and colleagues, found that higher codependency went together with more negative ways of reacting to each other's stress and with lower life satisfaction. Interestingly, it was *not* linked to less positive support. Codependent partners weren't less caring. They were caught in more of the unhelpful patterns around the caring.
 
@@ -61,7 +61,7 @@ Codependency is a popular word, but a messy scientific concept. It's not a diagn
 
 ## What to do this week
 
-You don't need to overhaul your relationship. Change here starts very small, because every step back towards yourself will feel selfish at first. That feeling is the old rule talking, not the truth.
+You don't need to overhaul your relationship. Change here starts very small, because every step back toward yourself will feel selfish at first. That feeling is the old rule talking, not the truth.
 
 **Pick one thing to stop managing.** Not the biggest one. Maybe you stop texting them reminders about their own appointments. Let the small consequence happen.
 
@@ -72,7 +72,7 @@ You don't need to overhaul your relationship. Change here starts very small, bec
 **Put one thing in your calendar that is only yours.** A class, a run, a friend. Keep it even if they seem a bit low that evening.
 
 > **Example: the travel plans**
-> Priya always planned their holidays around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realised I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The holiday wasn't the point. The point was that she was in it.
+> Priya always planned their holidays around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realized I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The holiday wasn't the point. The point was that she was in it.
 
 ## Words for when it feels hard
 
@@ -121,6 +121,8 @@ Not necessarily. Many couples rebalance. But if your partner controls you, punis
 ## A note on safety
 
 If you feel unable to leave, are being threatened or hurt, or your partner controls your money, phone or friendships, please contact a local domestic abuse helpline or support service. You deserve support for yourself, not only for the person you care for.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

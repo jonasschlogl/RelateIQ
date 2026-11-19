@@ -63,19 +63,19 @@ Smile, glance at your partner. "We'll let you know when there's news!" Then chan
 "I think we see that one differently. Who wants more potatoes?"
 
 **A comment that crosses a line:**
-This is your partner's job. Afterwards, privately: "When your mum said that about my family, it really hurt. Would you be willing to say something if it happens again?"
+This is your partner's job. Afterwards, privately: "When your mom said that about my family, it really hurt. Would you be willing to say something if it happens again?"
 
 **Your partner doesn't back you up:**
 Don't fight about it in front of the family. Use your signal, take a break together, and talk in private. Bryant's research is a good reason to take this seriously: how couples handle in-law tension tends to spill into how they feel about each other.
 
 > **Example: the seating plan**
-> Every Christmas, Sofia was seated at the far end of the table from Nikhil, next to his uncle who liked to quiz her about her "real plans". This year, during the planning talk two weeks before, she mentioned it. Nikhil quietly asked his mum to seat them together. "It sounds tiny," Sofia said. "But it was the first Christmas I felt like we were a team in that house instead of me being the guest."
+> Every Christmas, Sofia was seated at the far end of the table from Nikhil, next to his uncle who liked to quiz her about her "real plans". This year, during the planning talk two weeks before, she mentioned it. Nikhil quietly asked his mom to seat them together. "It sounds tiny," Sofia said. "But it was the first Christmas I felt like we were a team in that house instead of me being the guest."
 
 ## The drive home: the kind debrief
 
 The car ride home is where a lot of couples have their worst fight of the holidays, because both are tired and full of feelings. Agree beforehand: no deep debrief on the drive. Play music, get food, talk tomorrow.
 
-When you do debrief, start with what went well, then one thing each of you would change next time. Criticising your partner's family can feel like criticising them. Psychologist Terri Orbuch's long-term research on married couples is a useful reminder that in-law relationships play out over decades, not over one visit. The goal is warmth and respect with healthy boundaries, not perfection.
+When you do debrief, start with what went well, then one thing each of you would change next time. Criticizing your partner's family can feel like criticizing them. Psychologist Terri Orbuch's long-term research on married couples is a useful reminder that in-law relationships play out over decades, not over one visit. The goal is warmth and respect with healthy boundaries, not perfection.
 
 Try: "I'm glad we went. I loved seeing your dad with the kids. Next year, could we stay two nights instead of four?"
 
@@ -106,7 +106,7 @@ You don't have to love them, but you do need to be civil and kind. Focus on a fe
 
 ### What if my partner won't stand up for me?
 
-Talk about it calmly before the next visit, with specific examples. Ask for something concrete, like stepping in when a certain topic comes up. A couples counsellor can help if it keeps happening.
+Talk about it calmly before the next visit, with specific examples. Ask for something concrete, like stepping in when a certain topic comes up. A couples counselor can help if it keeps happening.
 
 ### Is it okay to skip a family holiday?
 
@@ -114,7 +114,9 @@ Yes, sometimes. Taking a year off, or limiting the visit, can be a healthy choic
 
 ## A note on safety
 
-If a family member is abusive, threatening or makes you feel unsafe, you don't owe anyone your presence. Your safety comes first. If your partner pressures you to accept harmful behaviour, please talk to someone you trust or contact a local support service.
+If a family member is abusive, threatening or makes you feel unsafe, you don't owe anyone your presence. Your safety comes first. If your partner pressures you to accept harmful behavior, please talk to someone you trust or contact a local support service.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 

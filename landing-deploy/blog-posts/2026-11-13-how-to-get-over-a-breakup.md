@@ -80,7 +80,7 @@ There's no fixed number, and anyone who promises one is guessing. Many people no
 | You start making plans that don't involve them | You're drinking or using more to cope |
 | You can see both good and bad in the relationship | You feel hopeless or think about hurting yourself |
 
-If anything in the right column sounds like you, please talk to a doctor or counsellor. If you're thinking about ending your life, contact emergency services or a crisis line right away.
+If anything in the right column sounds like you, please talk to a doctor or counselor. If you're thinking about ending your life, contact emergency services or a crisis line right away.
 
 ## If you're the one who ended it
 
@@ -113,6 +113,8 @@ Only if the reasons it ended have really changed, not just because you miss them
 ## A note on safety
 
 If your ex is contacting you after you've asked them to stop, threatening you, or turning up uninvited, that may be harassment. Please contact a local support service or the police. And if you're struggling to cope and having thoughts of harming yourself, contact emergency services or a crisis line now.
+
+In the US, you can reach the National Domestic Violence Hotline at 1-800-799-7233, by texting START to 88788 or at [thehotline.org](https://www.thehotline.org/), and the 988 Suicide & Crisis Lifeline by calling or texting 988. Outside the US, contact a local helpline.
 
 *This article is general information, not therapy or medical advice.*
 
