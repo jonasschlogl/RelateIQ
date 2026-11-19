@@ -256,3 +256,12 @@ img.fl-ph { display: none; }
   .ex-sec .m-dots { display: none; }
 }
 @media (min-width: 701px) { .m-dots { display: none; } }
+
+/* ---- breathing room between the early-testers carousel and the accordion cards below it ---- */
+@media (max-width: 700px) {
+  body.hx .ts-sec { padding-bottom: 44px !important; }
+  .ts-sec .m-dots { margin-top: 20px; }
+  body.hx #compare.acc { margin-top: 0 !important; }
+  body.hx #trust.acc, body.hx #pricing.acc, body.hx #faq.acc { margin-top: 14px !important; }
+  body.hx #faq.acc { margin-bottom: 10px; }
+}
