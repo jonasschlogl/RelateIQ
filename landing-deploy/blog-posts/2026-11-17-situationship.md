@@ -94,6 +94,66 @@ Try: "I've realised I want something more committed, and I don't think we want t
 > **Example: the holiday question**
 > Olivia had been seeing Jack for four months. When he asked what she was doing over the holidays, she realised she had no idea whether they'd see each other or meet each other's families. She told him: "Honestly, I'd love to spend some of the holidays with you, but I'm not sure what we are. Can we talk about that?" Jack admitted he'd been wondering too. They agreed to be exclusive, and the anxiety Olivia had felt for months started to fade.
 
+## A quick self-check: is this working for you?
+
+Before you decide anything, take a few minutes with these questions. There are no right answers, only your honest ones.
+
+| Question to ask yourself | What it may tell you |
+|---|---|
+| Do I feel calm or anxious most days after we've been in touch? | Calm usually means it works for you. Constant worry means something is missing. |
+| If nothing changed for six more months, would I be happy? | If the answer is no, it's time to talk. |
+| Do I hide what I want because I'm afraid they'll pull away? | Hiding your needs to keep someone close rarely ends well. |
+| Do they make plans and reply in a steady way, or only when it suits them? | Steady effort shows interest better than nice words. |
+| Am I saying no to other people or plans while I wait for them? | You may be giving much more than you're getting. |
+| Would I feel relieved if they asked to make it official? | That tells you what you really want. |
+
+If most of your answers point to worry, waiting or holding back, this situationship probably isn't working for you anymore, even if the time together is lovely. That's not a failure. It's useful information about what you need.
+
+## What to say in common situationship moments
+
+Knowing what you want is one thing. Finding the words is often harder. Here are some calm lines you can adapt.
+
+### When you want to know if you're exclusive
+
+Try: "I'm not seeing anyone else, and I'd like to know if you are. It's okay either way, I just want to know where I stand."
+
+### When they say "let's not put a label on it"
+
+You don't need to argue about the word. Ask what it means in practice.
+
+Try: "That's fair, we don't need a big label. But can we agree on a few things, like whether we're seeing other people and how often we want to see each other?"
+
+If they avoid even that, take note. It tells you more than the label would.
+
+### When they go distant after a close week
+
+Try: "I've noticed it's been quieter since last weekend. Is everything okay with us?"
+
+Keep it light and ask once. If this hot and cold pattern keeps repeating, our guide on [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) may help you understand it.
+
+### When you're happy with casual but want honesty
+
+Try: "I like how things are right now and I don't need more. I just want us both to say so if that changes."
+
+### When they want more and you don't
+
+It's kinder to say this early than to let them hope.
+
+Try: "I really care about you, and I don't want to lead you on. I'm not looking for a relationship right now. I understand if that changes things for you."
+
+## When a situationship ends
+
+Ending something that never had a name can still hurt a lot. You may feel you have no "right" to be sad, because you were never officially together. But the feelings were real, so the loss is real too.
+
+A few things can help:
+
+- Mute or unfollow them for a while, so you're not checking their stories.
+- Tell one or two friends what happened, even if it feels small.
+- Avoid "just checking in" messages for at least a few weeks.
+- Write down what you learned about what you want next time.
+
+Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) has more ideas, and most of them work just as well after a situationship.
+
 ## What most articles miss
 
 Many articles treat situationships as a red flag. But sometimes they're just an early stage that nobody has named yet. The problem isn't the situationship itself. It's staying in one when it no longer matches what you want.
@@ -132,9 +192,17 @@ Because there are real feelings, but no clear commitment, and uncertainty keeps 
 
 Be honest and kind, say what you want that this isn't giving you, and then give yourself some space from them.
 
+### Is it okay to want a situationship?
+
+Yes. If you both honestly want something casual and you both know it, that's a fair choice. It works best when you check in now and then, because feelings can change.
+
+### When should I ask "what are we"?
+
+There's no perfect time. If you've been seeing each other regularly and you keep wondering where you stand, that's usually a good sign it's time to ask.
+
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
-- YouGov (2024): [Half of 18-to-34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationshi.)
+- YouGov (2024): [Half of 18-to-34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship)
 - Whitchurch, E. R., Wilson, T. D., & Gilbert, D. T. (2011). "He loves me, he loves me not...": Uncertainty can increase romantic attraction. *Psychological Science*, 22(2), 172-175.

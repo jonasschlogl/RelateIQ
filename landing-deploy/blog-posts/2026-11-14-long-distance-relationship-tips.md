@@ -94,6 +94,53 @@ Friends, hobbies and goals of your own make the waiting easier and give you more
 | Saving all problems for visits | Talk about small things as they come up |
 | No end date in sight | Have the "where are we going" talk, kindly and honestly |
 
+## A simple weekly long distance routine
+
+Tips are easier to follow when they become habits. Here's an example week that keeps you connected without making your phone a full-time job. Adjust it to your lives and time zones.
+
+| Day | Small habit | Why it helps |
+|---|---|---|
+| Monday | A short "good morning" voice note | Starts the week with their voice, not just text |
+| Tuesday | Send one photo of something ordinary from your day | Keeps you part of each other's daily life |
+| Wednesday | A 20-minute call with phones down and no multitasking | Gives you focused time in the middle of the week |
+| Thursday | Ask one deeper question by text or voice note | Keeps you learning about each other |
+| Friday | Shared activity: a film, a game or cooking on video | Something to do together, not only talk about |
+| Saturday | Free day, or a relaxed call if you like | Leaves room for your own life |
+| Sunday | A weekly check-in call (see below) | Catches small worries before they grow |
+
+You don't need all of it every week. The point is knowing roughly when you'll hear from each other, so a quiet day doesn't feel like a warning. For Thursday, our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) is a good place to start.
+
+### The Sunday check-in
+
+Once a week, take ten minutes to talk about the relationship itself, not just your news. Keep it light and kind:
+
+- What felt good between us this week?
+- Was there a moment you felt far away or left out?
+- Is our rhythm of calls and messages still working for you?
+- What's one thing we're looking forward to?
+
+Try: "Can we do our little check-in? I want to hear how this week felt for you."
+
+If you notice you feel loved in different ways, for example calls versus small surprises, our guide on [love languages](/blog/love-languages/) can help you talk about it.
+
+## When the distance starts to hurt
+
+Almost every long distance couple has a hard stretch: a cancelled visit, a busy month, loneliness in a new city. That's normal. What matters is whether you can talk about it. Signs it's time for an honest conversation:
+
+- You dread calls, or keep them short to avoid real topics.
+- You've stopped telling each other about your day.
+- The "until when?" question makes one of you change the subject every time.
+- You feel more relief than sadness when a call is cancelled.
+- You feel jealous or suspicious most of the time.
+
+None of these means it's over. They mean something needs attention. Pick a calm time, ideally on video, and start with how you feel, not what they did wrong.
+
+Try: "I've been feeling far away from you lately, and I miss how close we were. Can we talk about what's changed for both of us?"
+
+Try: "I need to talk about the future. Not knowing is getting hard for me."
+
+Then listen. Your partner may be struggling too. If trust is the hard part, our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) may help you sort real warning signs from worry.
+
 ## Long distance over the holidays
 
 The holidays can be the hardest time to be apart. Plan something special: open gifts together on a video call, send a small parcel, or agree on a "holiday call" time that works with both families. If you're visiting each other's families for the first time, our guides on [meeting your partner's parents](/blog/meeting-your-partners-parents/) and [holidays with your partner's family](/blog/holidays-with-your-partners-family/) can help.
@@ -117,6 +164,14 @@ Surprise each other, plan visits, do activities together online and keep sharing
 ### How do you handle jealousy in a long distance relationship?
 
 Name it calmly instead of accusing: "I felt a bit left out when I didn't hear from you last night." Ask for what would help, and look at the facts rather than the story your worry is telling.
+
+### When should you close the distance?
+
+When you both want it and have a realistic plan for work, money and where to live. Agree on a rough time frame together, so one person doesn't carry the whole decision.
+
+### What if one of you wants to give up?
+
+First ask what feels hardest right now. Sometimes a clearer plan or a sooner visit is enough. If one of you no longer wants the relationship, honesty is kinder than a slow fade.
 
 *This article is general information, not therapy or medical advice.*
 

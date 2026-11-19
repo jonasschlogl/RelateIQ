@@ -102,6 +102,58 @@ Counselling can help couples with unhealthy communication. But if there's contro
 
 If things don't change, it may be time to think about leaving. Our guide [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) has questions that can help. And if you do leave, [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help with what comes after.
 
+## A self-check: look at the last month
+
+Single moments can fool you. One bad fight can make a good relationship feel toxic, and one lovely weekend can make a hurtful pattern feel fine. So look at the last month as a whole, and answer honestly, just for yourself.
+
+| Question | Yes / No |
+|---|---|
+| Did I hold back an opinion because I was afraid of the reaction? | |
+| Did I apologise for something that wasn't my fault, just to end the tension? | |
+| Did I feel relieved when my partner wasn't home? | |
+| Did I cancel plans with friends or family to avoid a fight? | |
+| Did I hide or soften what happened when a friend asked? | |
+| Did I doubt my memory of a conversation after we argued about it? | |
+| After our fights, did we talk it through and both say sorry where it fit? | |
+| Did I feel free to say no to something without being punished for it? | |
+
+The first six questions point to warning signs, the last two to health. There's no score that decides for you. But several "yes" answers to the first six and "no" to the last two is a pattern worth taking seriously.
+
+If your life now revolves around your partner's moods, our guide on [codependent relationships](/blog/codependent-relationship/) may help.
+
+## What to say: calm lines for hard moments
+
+When you're used to walking on eggshells, it's hard to find words in the moment. Short, calm sentences are easier to say and harder to twist. You don't need to win. You only need to say what is okay for you.
+
+**When they start attacking who you are**
+
+Try: "I'm happy to talk about what happened. I'm not okay with being called names. Let's talk again when we're both calmer."
+
+**When they go silent to punish you**
+
+Try: "I can see you're upset. I'm here when you're ready to talk. I'm going to get on with my evening in the meantime."
+
+**When they question your memory**
+
+Try: "We remember this differently. I'm not going to argue about what I saw. I'd rather talk about how we both felt."
+
+**When they get angry about time with friends**
+
+Try: "I love our time together, and I also need my friends. I'm going on Friday."
+
+### Watch how they respond
+
+How your partner reacts to a calm boundary tells you a lot. Everyone gets defensive sometimes, so look at the next days and weeks, not only the first few minutes.
+
+| A hopeful response | A worrying response |
+|---|---|
+| "You're right, that wasn't fair. I'm sorry." | "You're too sensitive." |
+| They change the behaviour, even slowly | Things go back to how they were within days |
+| They ask what would help | They make you pay for raising it |
+| They accept a pause and come back to talk | They follow you, block the door or keep pushing |
+
+If a calm boundary leads to threats, rage or punishment, focus on your own support and safety rather than finding better words. No script can fix a pattern only one person wants to change.
+
 ## What most articles miss
 
 Many lists of "toxic signs" make it sound like one person is a villain and the other a victim. Sometimes that's true. But often, two people have fallen into unhealthy patterns together, like criticism met with defensiveness, or pursuing met with withdrawing. Those patterns can change if both people want to.
@@ -135,6 +187,14 @@ Love, hope, shared history and unpredictable affection all pull you back. It's c
 ### Am I the toxic one?
 
 If you're asking, you're already reflecting, which is a good sign. Look honestly at your patterns and consider talking to a therapist.
+
+### Can a relationship start out lovely and become toxic later?
+
+Yes. Many toxic patterns start small after a very warm beginning. Intense early attention can sometimes be part of the pattern, which our guide on [love bombing](/blog/love-bombing/) explains.
+
+### How do I set a boundary with a toxic partner?
+
+Keep it short and calm, say what you will and won't accept, then follow through. If boundaries are met with threats or punishment, focus on your safety and outside support.
 
 ### How do I leave a toxic relationship?
 
