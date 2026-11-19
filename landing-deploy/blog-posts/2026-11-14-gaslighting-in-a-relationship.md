@@ -1,167 +1,106 @@
 ---
-title: "Gaslighting in a relationship: 8 signs, real examples and what to do"
+title: "Gaslighting in a relationship, or just a disagreement? 5 questions that tell them apart"
 date: 2026-11-14
-description: "Gaslighting in a relationship: 8 signs, real examples of what it sounds like, how it differs from normal disagreement and how to trust yourself again."
+updated: 2026-11-19
+description: "Gaslighting in a relationship is real, but the word is overused. 5 questions to tell gaslighting from ordinary disagreement, what recent research found, and how to trust yourself again."
 tags: gaslighting in a relationship, emotional manipulation
-updated: 2026-11-14
 ---
-You're sure you remember what happened. Then you bring it up, and somehow you end the conversation apologising, confused and wondering if you're the problem. It happens again. And again. Slowly, you stop trusting your own memory.
+"Gaslighting" was Merriam-Webster's word of the year in 2022, and since then it has been used for almost everything: a partner remembering a dinner differently, a friend disagreeing, a boss changing their mind. That creates two problems. People in ordinary arguments start to see their partner as an abuser. And people who really are being gaslit find the word has lost its weight.
 
-That pattern has a name: gaslighting. It's become one of the most searched relationship words of the last few years. In 2022, lookups for "gaslighting" on Merriam-Webster rose by 1740%, and it was named word of the year. Many people were finally finding a word for something they'd felt for a long time.
+Philosopher Kate Abramson, author of *On Gaslighting*, put it simply in a 2026 NPR interview: "If everything gets called gaslighting, nobody takes it seriously anymore." Psychoanalyst Robin Stern, who wrote *The Gaslight Effect*, was just as direct: "Gaslighting is not a disagreement."
 
-This guide explains what gaslighting really is (and what it isn't), the eight most common signs, what it sounds like in everyday conversations, why it's so effective, and practical steps to protect yourself and trust your own mind again.
+So how do you tell the difference? These five questions help.
 
-## What is gaslighting in a relationship?
+## Question 1: Is there room for two versions?
 
-Gaslighting is a form of emotional manipulation where one person repeatedly makes the other doubt their memory, perception or feelings. Over time, the person being gaslit becomes confused, less confident and more dependent on the other person's version of reality.
+In a normal disagreement, both people can say "I remember it differently" and leave it there. Memory is imperfect, and couples misremember things all the time.
 
-The name comes from the 1940s film *Gaslight*, in which a husband secretly dims the gas lights at home and then insists his wife is imagining it.
+In gaslighting, only one version of reality is allowed, and it's never yours. Even when you have evidence, a message or a witness, your version gets dismissed, reframed or laughed off.
 
-It's important to know what gaslighting is not. Two people remembering an argument differently is normal. Disagreeing about what happened is normal. Gaslighting is a repeated pattern that makes one person feel they can't trust their own mind.
-
-| Normal disagreement | Gaslighting |
+| Ordinary disagreement | Gaslighting |
 |---|---|
-| "I remember it differently." | "That never happened. You're making it up." |
-| Both versions can exist | Only one version is allowed, and it's never yours |
-| You feel frustrated, but still yourself | You feel confused and start doubting your memory |
-| It happens sometimes | It's a repeated pattern |
-| You can talk about how each of you felt | Your feelings are treated as the problem |
+| "I don't remember saying that, but maybe I did." | "I never said that. You're making things up again." |
+| "I see it differently." | "That's not what happened, and you know it." |
+| "I didn't mean it that way, sorry it hurt." | "You're way too sensitive. Nobody else would be upset." |
+| You both sometimes concede | You always end up apologising |
 
-## 8 signs of gaslighting
+## Question 2: Is it about the event, or about your mind?
 
-### 1. They deny things you clearly remember
+Disagreements are about *what happened*. Gaslighting slides into *what's wrong with you*: your memory, your stability, your sanity.
 
-"I never said that." "That didn't happen." Even when you're certain, or have the message in front of you.
+In a 2023 study, psychologist Willis Klein and colleagues asked 65 people who believed they had been gaslit by a romantic partner to describe it. Every single participant said their partner insulted and demeaned them, often implying their grip on reality was weak, calling them crazy, stupid or overly emotional. Sociologist Paige Sweet, who has studied gaslighting in abusive relationships, summed it up in the same NPR piece: gaslighting is "someone trying to make you seem or feel crazy."
 
-### 2. They tell you you're too sensitive
+If your arguments regularly end with a verdict on your mental state, notice that.
 
-Your feelings are treated as the problem: "You're overreacting." "You always make a big deal out of nothing."
+## Question 3: Does it come in a pattern?
 
-### 3. You often feel confused after talking to them
+Anyone can say something unfair once, in a heated moment. Gaslighting is a pattern over time.
 
-You start a conversation about one thing and end up somewhere else entirely, usually apologising.
+The Klein study found a common arc. Most relationships started with intense affection, big gestures and grand plans, very like [love bombing](/blog/love-bombing/). Then came blame for things that weren't the participant's fault, and behaviour that swung unpredictably between anger and affection, or between yelling and cold silence.
 
-### 4. They twist your words
-
-What you said gets repeated back in a different way, so you end up defending something you never meant.
-
-### 5. They question your memory or sanity
-
-"You're forgetting things again." "Are you sure you're okay?" Said often enough, you start to wonder.
-
-### 6. They turn others against your version
-
-"Even your sister thinks you're being dramatic." Whether it's true or not, it makes you feel alone.
-
-### 7. Kindness is used to reset the pattern
-
-After a hard moment, they're suddenly warm and loving, which makes you doubt that anything bad happened at all.
-
-### 8. You've stopped trusting yourself
-
-You check things over and over, keep notes or ask friends whether something "really" happened. This is often the clearest sign.
-
-## What gaslighting sounds like
-
-Sometimes it's easier to recognise in actual words. Some common lines:
-
-- "You're remembering it wrong."
-- "I was joking, why are you so serious?"
-- "You're imagining things again."
-- "Nobody else would put up with you."
-- "If you really loved me, you wouldn't bring this up."
-
-Any of these can be said once in a heated moment. It becomes gaslighting when it's a pattern that leaves you doubting your reality.
-
-> **Example: the forgotten promise**
-> Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed to it. She shows him the message where he wrote "of course, I'll be there". He laughs and says she clearly took it the wrong way, that she's been "really stressed lately" and keeps "remembering things weirdly". She ends up apologising for bringing it up.
+> **Example: the birthday**
+> Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed. She shows him his message: "of course, I'll be there". He laughs and says she's "been really stressed lately" and keeps "remembering things weirdly". She ends up apologising.
 >
-> One incident like this could be a misunderstanding. When it happens every few weeks, with the conversation always ending in her apologising, it's a pattern.
+> Once, that's a frustrating evening. Every few weeks, always ending with her apology, it's a pattern.
 
-## Why gaslighting works
+## Question 4: How do you feel after you talk?
 
-> **Why it works this way**
-> Most of us trust the people we love. When someone close to us says confidently that we're wrong, our first instinct is to question ourselves, not them. That's normally a healthy instinct: it helps us admit mistakes. Gaslighting exploits it. Each time you doubt yourself a little, you rely a little more on their version of events. Over months, your own memory starts to feel less reliable than their word. That's why gaslighting is often hard to spot from the inside, and why outside perspectives and written notes help so much.
+Pay attention to how conversations leave you. After an ordinary disagreement you might feel annoyed, sad or unresolved. After gaslighting, people describe something different: confusion, a fog, the sense that they can't trust their own memory, and a habit of rehearsing conversations in advance to avoid "getting it wrong".
 
-Sociologist Paige Sweet studied gaslighting through life-story interviews with 43 women who had survived domestic violence. She argues that it isn't only a personal quirk. It draws on stereotypes, especially the old idea that women are emotional and irrational, which make the gaslighter's version seem more believable. Abusers also used other vulnerabilities, like someone's immigration status or past mental health records, to make their partner look "crazy" to others.
+In the Klein study, people described their sense of self as shrinking, withering or broken. In a 2025 study of survivors of intimate partner violence, Helen Hailes and Lisa Goodman described how gaslighting fed long-term self-doubt and was tied into broader patterns of power and control in the relationship.
 
-## What most articles miss
+## Question 5: Who benefits?
 
-The word gaslighting is now used a lot, sometimes for any disagreement. That can make it harder for people who are really being gaslit to be taken seriously. And it can make normal conflict feel more dangerous than it is.
+Sweet's research adds a useful lens. In life-story interviews with 43 women who had survived domestic violence, she found that gaslighting often draws on existing stereotypes and vulnerabilities, like the idea that women are "emotional", or someone's past mental health history or immigration status, to make one person's version seem more believable to others. Ask: does doubting myself always happen to suit the other person? Do they gain control, avoid responsibility or get their way when I doubt myself?
 
-A useful test: in a normal disagreement, both people can say "I see it differently" and still respect each other's experience. In gaslighting, only one version of reality is allowed, and it's never yours.
+Not all denial is calculated. Some people deny things because they feel ashamed or defensive. The effect can still hurt, and it's still worth addressing. But a pattern that consistently benefits one person and costs the other deserves to be taken seriously.
 
-It's also worth knowing that not all denial is deliberate. Some people deny or minimise things because they feel ashamed or defensive. The effect on you can still be harmful, but it may change how you approach the conversation.
+## What to do if you think you're being gaslit
 
-## What to do if you're being gaslit
+**Write things down.** Dates, what was said, how you felt. Not to win arguments, but to give your own memory something to stand on.
 
-### Write things down
+**Talk to someone outside the relationship.** In the Klein study, the most common thing that helped people recover was time with friends and family, especially kind, empathetic people. Many said their partners had tried to keep them away from exactly those people.
 
-Keep a private note of what happened, with dates. Not to win arguments, but so you have something steady to come back to when you start doubting yourself. Keep it somewhere your partner can't access.
+**Stop trying to win the argument.** With a gaslighter, more evidence rarely helps. You can simply say: "I remember it differently, and I'm not going to argue about my memory." Then stop.
 
-### Talk to someone you trust
+**Get back things that are yours.** People in the Klein study described regaining their sense of self through outdoor exercise, yoga, mindfulness and returning to old hobbies.
 
-An outside view helps. Ask a friend whether what you're describing sounds normal to them. Gaslighting thrives in isolation.
+**Decide what you need.** Sometimes that's a serious conversation or couples therapy. Sometimes it's leaving. Our guide on [whether to break up](/blog/should-i-break-up-with-my-partner/) can help you think it through, and our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) helps afterwards.
 
-### Name what you notice, calmly
+If you're not sure whether you're overthinking, RelationshipAI's Coach Chat can help you lay out what happened calmly and look at it from a few angles. It isn't therapy and can't judge your relationship for you, but writing it out often makes the pattern clearer. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) may also help with the replaying.
 
-If you feel safe doing so, you can state your experience without asking them to agree. You don't need them to agree to know what you saw.
+## If you're worried you're the one doing it
 
-Try: "I remember it differently, and I'm not going to argue about what I experienced."
-
-### Stop trying to win the argument
-
-You can't out-argue someone who keeps changing the facts. Step away from the conversation instead of going round in circles. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help when the doubt keeps replaying.
-
-Try: "We see this differently. I'm going to take a break from this conversation."
-
-> **Why it works**
-> Gaslighting usually needs you to keep arguing, because every round is another chance to make you doubt yourself. When you calmly state your experience and step away, you stop handing over the question of what's real. You're not trying to convince them anymore. You're just refusing to give up your own perception.
-
-### Decide what you need
-
-If your partner is willing to listen and change, couples therapy can help. If the pattern continues, it may be time to ask harder questions. Our article on [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) can help you think it through. And if you do leave, our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help with the weeks after.
-
-## Rebuilding trust in yourself
-
-After a long period of gaslighting, many people find it hard to trust their own judgement, even with friends or at work. That's a normal effect, and it can heal.
-
-- **Start small.** Notice small things you got right today: a time, a detail, a feeling.
-- **Reconnect with people.** Friends who knew you before can remind you who you are.
-- **Get support.** A therapist can help you untangle what happened and rebuild confidence in your own perception.
-- **Give it time.** Trust in yourself comes back gradually, the same way it was worn down.
-
-If you want a calm space to sort out what happened in a conversation, or to practise saying "I remember it differently", RelationshipAI is an AI relationship coach that can help. It isn't therapy, but it's a calm place to start.
+It's a good sign that you're asking. Watch for these habits in yourself: dismissing your partner's feelings as "too sensitive", insisting your memory is always right, or turning their complaint into a conversation about their flaws. Try instead: "I don't remember it that way, but I believe it felt that way to you. Tell me more."
 
 ## Quick answers
 
+### What's the difference between gaslighting and disagreeing?
+
+In a disagreement, both versions can exist. In gaslighting, only one version is allowed, and the other person's memory, judgement or sanity is repeatedly questioned.
+
 ### Can someone gaslight without meaning to?
 
-Sometimes people deny or minimise things because they feel defensive or ashamed, without a plan to manipulate. The effect on you can still be harmful, and the same steps apply: trust your experience and talk about the pattern.
+Some people deny or minimise out of shame or defensiveness rather than a plan. The impact can still be harmful. A repeated pattern that leaves you doubting reality is worth addressing either way.
 
 ### Is gaslighting abuse?
 
-Repeated gaslighting is a form of emotional abuse. It often appears alongside other controlling behaviour, like isolating you from friends or controlling money.
+As a repeated pattern used to control or undermine someone, yes, it's a form of emotional abuse and often part of coercive control.
 
-### How do I trust myself again?
+### How do I trust myself again after gaslighting?
 
-Slowly, with support. Notes, trusted friends and time away from the confusion all help. A therapist can also help you rebuild confidence in your own perception.
-
-### What's the difference between gaslighting and disagreeing?
-
-In a normal disagreement, two people remember things differently and try to understand each other. Gaslighting is a pattern where one person repeatedly denies your reality so that you start to doubt yourself.
-
-### Can a gaslighter change?
-
-Some people can, if they recognise the pattern and really want to work on it, often with professional help. But change has to show up in consistent behaviour over time, not just promises.
+Keep notes, spend time with people who know you well, return to activities that are yours, and consider talking to a therapist. Self-trust usually comes back gradually.
 
 ## A note on safety
 
-If gaslighting comes with threats, controlling where you go, checking your phone, controlling money or making you afraid, please reach out to a local helpline or domestic abuse support service. You don't need to be sure it's "bad enough" to ask for help.
+Gaslighting often comes alongside other forms of control. If your partner isolates you, monitors you, controls money, threatens you or makes you afraid, please contact a local domestic abuse helpline or support service. You don't need to be sure it's "abuse" to ask for advice.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
-- Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Klein, W., Li, S., & Wood, S. (2023). A qualitative analysis of gaslighting in romantic relationships. *Personal Relationships*, 30(4), 1316-1340. Summary by the author for the [Society for Personality and Social Psychology](https://spsp.org/news/character-and-context-blog/klein-gaslighting-relationships)
+- Hailes, H. P., & Goodman, L. A. (2025). "They're out to take away your sanity": A qualitative investigation of gaslighting in intimate partner violence. *Journal of Family Violence*, 40(2), 269-282. [Boston College record](https://boots.bc.edu/islandora/object/bc-ir:109473)
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Summary on [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
+- NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), with Robin Stern, Paige Sweet and Kate Abramson
+- Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
