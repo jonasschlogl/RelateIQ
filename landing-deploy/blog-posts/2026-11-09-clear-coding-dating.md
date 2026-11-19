@@ -1,7 +1,7 @@
 ---
 title: "Clear coding in dating: what it means and 5 ways to do it without oversharing"
 date: 2026-11-09
-description: Tired of decoding mixed signals? Clear coding means saying what you want in dating, early and kindly. What it is, why mixed signals feel so addictive, real examples and 5 ways to do it.
+description: Clear coding in dating means saying what you want, early and kindly. What it is, why mixed signals feel addictive and 5 ways to do it without oversharing.
 tags: clear coding, mixed signals
 updated: 2026-11-14
 ---

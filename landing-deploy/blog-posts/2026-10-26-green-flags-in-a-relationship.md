@@ -1,7 +1,7 @@
 ---
 title: "Green flags in a relationship: 8 signs of a healthy partner"
 date: 2026-10-26
-description: Healthy relationships are quiet. 8 green flags in a relationship, from saying "I'm upset" calmly to repairing fast, what research says about each one, real examples and how to spot them early.
+description: "8 green flags in a relationship that show a healthy partner, from saying \"I'm upset\" calmly to repairing fast, with research and real examples."
 tags: green flags in a relationship, healthy relationship
 updated: 2026-11-14
 ---

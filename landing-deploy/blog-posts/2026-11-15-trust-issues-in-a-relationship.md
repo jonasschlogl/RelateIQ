@@ -1,7 +1,7 @@
 ---
 title: "Trust issues in a relationship: 8 signs, where they come from and how to heal"
 date: 2026-11-15
-description: Checking their phone, expecting the worst, struggling to feel safe? 8 signs of trust issues in a relationship, what causes them and practical steps to rebuild trust.
+description: "Trust issues in a relationship: 8 signs like checking their phone or expecting the worst, what causes them and practical steps to heal."
 tags: trust issues in a relationship, rebuilding trust
 ---
 Your partner is late home and your stomach drops. They laugh at a message and you want to know who it's from. Nothing has happened, and yet part of you is always waiting for something to go wrong.

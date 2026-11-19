@@ -1,7 +1,7 @@
 ---
 title: How to stop overthinking in a relationship (a calmer way to handle the what-if spiral)
 date: 2026-10-08
-description: Overthinking in a relationship, like replaying texts or reading into silence, is very common. What research says about worry, why the spiral feels so convincing, and 7 practical steps to break the loop and talk to your partner.
+description: "How to stop overthinking in a relationship: why the what-if spiral feels so convincing and 7 practical steps to break the loop and talk to your partner."
 tags: overthinking in a relationship, relationship anxiety
 updated: 2026-11-14
 ---

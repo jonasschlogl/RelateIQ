@@ -1,7 +1,7 @@
 ---
 title: "Deep questions to ask your partner: 20 questions to feel closer"
 date: 2026-10-26
-description: 20 deep questions to ask your partner for more closeness, grouped by theme, what research says about how closeness grows, simple rules for asking and what to do when the answer is hard to hear.
+description: 20 deep questions to ask your partner to feel closer, grouped by theme, with simple rules for asking and what to do when an answer is hard to hear.
 tags: deep questions to ask your partner, questions for couples
 updated: 2026-11-14
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Relationship advice: 7 communication habits that change how you argue"
 date: 2026-10-05
-description: Practical, research-based relationship advice on how to communicate better. Seven small habits, from softer starts to taking breaks, what decades of couples research found, real examples and lines you can use tonight.
+description: "Relationship advice that changes how you argue: 7 research-based communication habits, from softer starts to taking breaks, with lines to use tonight."
 tags: relationship advice, communication
 updated: 2026-11-14
 ---

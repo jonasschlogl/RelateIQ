@@ -1,7 +1,7 @@
 ---
 title: How to apologize to your partner (and what makes an apology actually work)
 date: 2026-10-08
-description: How to apologize to your partner in a way that lands. What research on apologies and forgiveness found, a simple 5-step structure, real examples and what to avoid when you say sorry in a relationship.
+description: "How to apologize to your partner so it actually lands: a simple 5-step structure based on apology research, real examples and what to avoid saying."
 tags: how to apologize to your partner, apology
 updated: 2026-11-14
 ---

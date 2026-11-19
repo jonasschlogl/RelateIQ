@@ -1,7 +1,7 @@
 ---
 title: "Emotionally unavailable partner: 7 signs and what you can actually do"
 date: 2026-11-11
-description: Close one day, distant the next? 7 signs of an emotionally unavailable partner, what research says about avoidant attachment, real examples and what you can do without losing yourself.
+description: Emotionally unavailable partner? 7 signs, what research says about avoidant attachment, real examples and what you can do without losing yourself.
 tags: emotionally unavailable, attachment
 updated: 2026-11-14
 ---

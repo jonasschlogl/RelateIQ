@@ -1,7 +1,7 @@
 ---
 title: "Gaslighting in a relationship: 8 signs, real examples and what to do"
 date: 2026-11-14
-description: Always doubting your own memory after a fight? 8 signs of gaslighting in a relationship, real examples of what it sounds like, how it differs from normal disagreement and how to trust yourself again.
+description: "Gaslighting in a relationship: 8 signs, real examples of what it sounds like, how it differs from normal disagreement and how to trust yourself again."
 tags: gaslighting in a relationship, emotional manipulation
 updated: 2026-11-14
 ---

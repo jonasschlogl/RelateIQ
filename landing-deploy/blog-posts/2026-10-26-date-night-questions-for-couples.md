@@ -1,7 +1,7 @@
 ---
 title: "Date night questions for couples: 25 questions that start real conversations"
 date: 2026-10-26
-description: Out of things to say at dinner? 25 date night questions for couples, from light and funny to meaningful, the research on why personal questions bring you closer, and simple rules that make the conversation work.
+description: 25 date night questions for couples, from light and funny to deep, plus the research on why personal questions bring you closer and how to ask them.
 tags: date night questions, questions for couples
 updated: 2026-11-14
 ---

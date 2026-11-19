@@ -1,7 +1,7 @@
 ---
 title: "How to rebuild trust after a fight: 6 steps that actually help"
 date: 2026-10-26
-description: After a big argument, trust can feel shaky. 6 practical, research-based steps to rebuild trust after a fight, real examples of what to say, and what to do when the breach goes beyond an argument.
+description: "How to rebuild trust after a fight: 6 practical, research-based steps, real examples of what to say and what to do when it goes beyond an argument."
 tags: rebuild trust, after an argument
 updated: 2026-11-14
 ---

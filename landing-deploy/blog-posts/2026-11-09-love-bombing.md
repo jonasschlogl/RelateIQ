@@ -1,7 +1,7 @@
 ---
 title: "Love bombing: 7 signs it's too much, too fast (and how it differs from real love)"
 date: 2026-11-10
-description: Flowers every day, "I've never felt this way" on date three. Is it romance or love bombing? What research says, 7 warning signs, real examples, how it differs from real love and what to do.
+description: Love bombing or real romance? 7 warning signs it's too much, too fast, what research says, real examples and how it differs from real love.
 tags: love bombing, red flags
 updated: 2026-11-14
 ---

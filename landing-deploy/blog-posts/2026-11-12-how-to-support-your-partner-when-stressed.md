@@ -1,7 +1,7 @@
 ---
 title: "How to support your partner when they're stressed: 8 things that actually help"
 date: 2026-11-12
-description: Your partner is stressed and you want to help, but not make it worse. What research on coping as a couple found, 8 practical ways to support them, real examples and what to say.
+description: "How to support your partner when they're stressed: 8 things that actually help, based on research on coping as a couple, with what to say."
 tags: support your partner when stressed, stress in relationships
 updated: 2026-11-14
 ---

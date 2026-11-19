@@ -1,7 +1,7 @@
 ---
 title: Attachment styles in relationships: secure, anxious, avoidant and fearful-avoidant explained
 date: 2026-10-08
-description: What attachment styles are, what the research actually found, how anxious, avoidant, secure and fearful-avoidant attachment show up in dating and texting, and how to move toward security.
+description: "Attachment styles explained: how secure, anxious, avoidant and fearful-avoidant attachment show up in dating, what research found and how to feel more secure."
 tags: attachment styles, anxious attachment
 updated: 2026-11-14
 ---

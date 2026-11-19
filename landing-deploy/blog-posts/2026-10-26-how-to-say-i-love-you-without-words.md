@@ -1,7 +1,7 @@
 ---
 title: "How to say \"I love you\" without words: 7 small ways to show love"
 date: 2026-10-26
-description: Love shows up in small, daily things. 7 simple ways to say "I love you" without words, what research says about small moments and love languages, real examples and how to start today.
+description: "How to say \"I love you\" without words: 7 small, everyday ways to show love, what research says about small moments and how to start today."
 tags: show love, love languages
 updated: 2026-11-14
 ---

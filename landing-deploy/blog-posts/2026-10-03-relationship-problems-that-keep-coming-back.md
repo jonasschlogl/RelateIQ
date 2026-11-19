@@ -1,7 +1,7 @@
 ---
 title: 5 relationship problems that keep coming back (and what's usually underneath)
 date: 2026-10-03
-description: The same relationship problems show up in almost every couple: chores, time, money, closeness and the fight that never ends. What research says, what's usually underneath and how to talk about each one.
+description: "Relationship problems that keep coming back: chores, time, money, closeness and the endless fight. What's usually underneath and how to talk about each one."
 tags: relationship problems, relationship tips
 updated: 2026-11-14
 ---

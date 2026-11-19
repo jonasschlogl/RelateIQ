@@ -1,7 +1,7 @@
 ---
 title: "Breadcrumbing: 6 signs someone is keeping you on the hook (and what to do)"
 date: 2026-11-10
-description: A like here, a "hey stranger" there, but never a real plan. Breadcrumbing explained, what research says about how it affects you, 6 signs it's happening, real examples and how to step off the trail.
+description: "Breadcrumbing: a like here, a \"hey stranger\" there, never a plan. 6 signs someone is keeping you on the hook, real examples and how to step away."
 tags: breadcrumbing, mixed signals
 updated: 2026-11-14
 ---

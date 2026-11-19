@@ -1,7 +1,7 @@
 ---
 title: "Relationship anxiety: 7 signs and how to calm it without pushing your partner away"
 date: 2026-11-13
-description: Constant worry that they'll leave, even when things are good? 7 signs of relationship anxiety, where it comes from, what research says, real examples and practical ways to calm it.
+description: "Relationship anxiety: 7 signs, where the constant worry comes from and practical ways to calm it without pushing your partner away."
 tags: relationship anxiety, attachment
 updated: 2026-11-14
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Should I break up with my partner? 10 honest questions to help you decide"
 date: 2026-11-12
-description: Torn between staying and leaving? 10 honest questions to ask yourself before you break up, what research on 37,000+ people says about why relationships end, real examples and how to decide calmly.
+description: Should I break up with my partner? 10 honest questions to help you decide, what research on 37,000+ people says about why relationships end.
 tags: should I break up, relationship doubts
 updated: 2026-11-14
 ---

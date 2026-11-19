@@ -1,7 +1,7 @@
 ---
 title: "How to get over a breakup: 9 steps that actually help you heal"
 date: 2026-11-13
-description: Can't stop thinking about your ex? 9 practical, research-backed steps for how to get over a breakup, why it hurts so much, what helps, what makes it worse, real examples and when it gets easier.
+description: "How to get over a breakup: 9 research-backed steps that help you heal, why it hurts so much, what makes it worse and when it gets easier."
 tags: how to get over a breakup, heartbreak
 updated: 2026-11-14
 ---

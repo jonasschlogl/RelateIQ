@@ -1,7 +1,7 @@
 ---
 title: "Holidays with your partner's family: 9 ways to get through it as a team"
 date: 2026-11-07
-description: Spending the holidays with your partner's family can be lovely and exhausting at once. What research says about holiday stress and in-laws, 9 practical ways to plan it, handle tense moments and still enjoy it.
+description: "Holidays with your partner's family: 9 ways to plan the visit, handle tense moments with in-laws and still enjoy it as a team."
 tags: holidays with your partner's family, in-laws
 updated: 2026-11-14
 ---

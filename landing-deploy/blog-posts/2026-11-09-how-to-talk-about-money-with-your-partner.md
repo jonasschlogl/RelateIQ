@@ -1,7 +1,7 @@
 ---
 title: "How to talk about money with your partner: 7 ways to have the talk without a fight"
 date: 2026-11-09
-description: Money talks often turn into fights, especially before the holidays. What research says about money and divorce, 7 calm, practical ways to talk about money with your partner, real examples and lines you can use.
+description: "How to talk about money with your partner without a fight: 7 calm, practical ways to start the talk, what research says and lines you can use."
 tags: talk about money with your partner, money and relationships
 updated: 2026-11-14
 ---

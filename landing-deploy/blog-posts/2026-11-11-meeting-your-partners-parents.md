@@ -1,7 +1,7 @@
 ---
 title: "Meeting your partner's parents for the first time: 10 tips to make it go well"
 date: 2026-11-11
-description: Nervous about meeting your partner's parents, maybe over the holidays? What research says about family approval, 10 practical tips, real examples, what to talk about, what to avoid and lines that help.
+description: Meeting your partner's parents for the first time? 10 practical tips, what to talk about, what to avoid and lines that help it go well.
 tags: meeting your partner's parents, meeting the parents
 updated: 2026-11-14
 ---
