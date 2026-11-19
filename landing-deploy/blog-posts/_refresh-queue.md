@@ -11,7 +11,7 @@
 - [x] 2026-11-14-long-distance-relationship-tips (refreshed 2026-11-19: 3 phases incl. closing the gap, 4 sources)
 - [x] 2026-11-15-love-languages (refreshed 2026-11-19: 6 beliefs checked against research, 5 sources)
 - [x] 2026-11-15-trust-issues-in-a-relationship (refreshed 2026-11-19: concept explainer: how trust is built + reassurance loop, 5 sources)
-- [ ] 2026-11-16-signs-of-a-toxic-relationship (2 sources)
+- [x] 2026-11-16-signs-of-a-toxic-relationship (refreshed 2026-11-19: 3-level self-check, 5 sources)
 - [ ] 2026-11-17-situationship (2 sources)
 - [ ] 2026-11-18-signs-your-partner-is-losing-interest (2 sources)
 - [ ] 2026-11-19-avoidant-attachment-partner (2 sources)

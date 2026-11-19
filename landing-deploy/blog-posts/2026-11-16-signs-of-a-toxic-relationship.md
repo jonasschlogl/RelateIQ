@@ -1,212 +1,124 @@
 ---
-title: "Signs of a toxic relationship: 10 red flags and what to do next"
+title: "Signs of a toxic relationship: a 3-level check for unhealthy, toxic and controlling"
 date: 2026-11-16
-description: "Signs of a toxic relationship: 10 red flags, how it differs from normal fighting or a hard patch, and practical next steps if you recognise it."
+updated: 2026-11-19
+description: "Signs of a toxic relationship sorted into three levels: unhealthy but fixable, toxic patterns, and coercive control. A clear self-check, what research says about why it's hard to leave, and safe next steps."
 tags: signs of a toxic relationship, red flags
 ---
-You feel tense before they get home. You rehearse what to say so it won't start a fight. Your friends have stopped asking how things are going, because you always say "fine". And yet there are good days too, which makes it even harder to tell what's really going on.
+"Toxic" has become an everyday word for anything from a partner who forgets your birthday to one who controls your money. That's a problem, because those situations need completely different responses. A relationship going through a rough patch might need a better conversation. A controlling one might need a safety plan.
 
-"Toxic" is a word people use a lot. But behind it is a real question many people quietly ask themselves: is this normal relationship stuff, or is this relationship hurting me? This guide covers the signs of a toxic relationship, how it differs from a rough patch, and what you can do next.
+So instead of one long list of red flags, this guide sorts the signs of a toxic relationship into three levels. Read through all three, notice which one sounds most like your last month, and then look at the next steps for that level.
 
-## Toxic or just a hard patch?
+## Level 1: Unhealthy, but often fixable
 
-Every couple argues, has bad weeks and goes through stressful seasons. What makes a relationship toxic isn't conflict itself. It's a pattern that leaves one or both people feeling smaller, less safe and less like themselves.
+These are patterns many couples fall into, especially under stress. They hurt, and they're worth taking seriously, but they're usually two-sided and often change when both people want them to.
 
-| A hard patch | A toxic pattern |
-|---|---|
-| Fights are about a specific problem | Fights are about who you are |
-| You can disagree and still feel respected | Disagreeing brings mockery or punishment |
-| You both try to repair after a fight | Repair only happens when you give in |
-| Stress has a clear cause and an end | The tension is always there |
-| You still feel like yourself | You feel smaller, quieter or on edge |
+- Arguments go in circles and nobody feels heard.
+- One of you criticises, the other gets defensive.
+- One of you pushes to talk, the other withdraws.
+- You've stopped doing nice things for each other.
+- Small resentments pile up because you avoid hard conversations.
 
-## 10 signs of a toxic relationship
+**What makes it Level 1:** both of you can still admit mistakes, both of you sometimes try to repair, and you don't feel afraid.
 
-### 1. Contempt
+**Next step:** a calm, specific conversation, and maybe couples counselling. Our guides to [communication habits](/blog/relationship-advice-communication-habits/) and [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) are good starting points.
 
-Eye-rolling, mocking, sarcasm and name-calling. Relationship researcher John Gottman calls contempt the greatest predictor of divorce, because it says "I'm better than you".
+## Level 2: Toxic patterns
 
-### 2. Constant criticism of who you are
+Here the problem is no longer just how you argue. It's how you're treated. Couples researcher John Gottman identified four communication patterns that predicted divorce in his studies, and singled out **contempt** (mockery, eye-rolling, sarcasm, treating a partner as beneath you) as the most damaging. Level 2 is where contempt and its relatives become normal.
 
-Not "I was upset you were late", but "you're so selfish". Criticism of your character, again and again, slowly wears down your confidence.
+- You're mocked, belittled or called names, in private or in front of others.
+- Fights are about who you *are*, not about a specific problem.
+- Your partner almost never takes responsibility. Somehow it always ends up being your fault.
+- The silent treatment is used as punishment, sometimes for days.
+- You feel smaller, quieter or more on edge than before the relationship.
+- Affection feels like a reward you have to earn.
 
-### 3. You walk on eggshells
+**What makes it Level 2:** the pattern is mostly one-directional, it's been going on for a while, and you've noticed yourself changing to avoid it.
 
-You think carefully about what you say and when, because you can't predict their reaction.
+**Next step:** name the pattern once, calmly, and watch the response.
+Try: "When you mock me in front of your friends, I feel humiliated. I need that to stop."
 
-### 4. They never take responsibility
+A partner who can change will feel uncomfortable and then try. A partner who doubles down, mocks the request or turns it back on you is giving you important information. Couples counselling can help at this level, but only if both people are genuinely willing.
 
-Every problem is somehow your fault. Apologies are rare, or come with a "but".
+## Level 3: Control and abuse
 
-### 5. Silent treatment as punishment
+At this level, the issue is power. Sociologist Michael Johnson, who studied many kinds of violence between partners, made an important distinction. Some couples have fights that escalate. But in what he called *intimate terrorism*, harm is part of a broader pattern of **coercive control**: one person systematically controlling the other. Control, not the fights themselves, is what defines it.
 
-Taking a break to calm down is healthy. Going silent for days to make you pay for something is not.
+Coercive control is often not physical. The Victorian government's prevention agency, Respect Victoria, describes it as a long-running, often hidden pattern that gradually erodes a person's boundaries, independence and self-esteem, and stresses that non-physical abuse is "not less serious when it is not physical."
 
-### 6. Jealousy turns into control
+Signs include:
 
-Checking your phone, questioning who you talk to, getting angry when you see friends. Our guide on [jealousy in a relationship](/blog/jealousy-in-a-relationship/) explains where normal jealousy ends.
+- Checking your phone, messages or location.
+- Controlling money, or making you ask for it.
+- Cutting you off from friends and family, slowly or openly.
+- Deciding what you wear, eat, or where you go.
+- Threats: to leave, to hurt you, to hurt themselves, to share private images, to take the children.
+- Making you doubt your own memory or sanity ([gaslighting](/blog/gaslighting-in-a-relationship/)).
+- You feel afraid of their reaction, and plan your behaviour around it.
 
-### 7. You're being isolated
+**What makes it Level 3:** fear and control. If you're changing your life to avoid their anger, that matters more than how often anything happens.
 
-Slowly you see your friends and family less. Maybe they "don't like" them, or it just always causes a fight.
+**Next step:** don't confront alone, and don't rely on couples counselling, which isn't recommended when one partner controls or fears the other. Talk to a domestic abuse helpline or support service. They can help you think through options safely, whether or not you want to leave.
 
-### 8. You doubt your own memory
+## A quick self-check: the last month
 
-They deny things you clearly remember, or tell you you're too sensitive. That pattern is called [gaslighting](/blog/gaslighting-in-a-relationship/).
+Think about the last four weeks, not the best or worst day. Which statements are true?
 
-### 9. The good times feel like a reward
+1. I've felt afraid of my partner's reaction. *(Level 3)*
+2. I've been checked, tracked or restricted in who I see or what I spend. *(Level 3)*
+3. I've been mocked, insulted or treated with contempt. *(Level 2)*
+4. I've apologised for things I don't believe were my fault, just to end it. *(Level 2)*
+5. We've had the same argument several times without resolving it. *(Level 1)*
+6. We've both said hurtful things, and both tried to make up. *(Level 1)*
 
-Affection appears when you behave the way they want, and disappears when you don't.
+Your highest level is the one to act on. One Level 3 statement outweighs several Level 1 statements.
 
-### 10. You don't feel like yourself anymore
+## Why it's so hard to leave, even when you know
 
-This is often the most telling sign. You laugh less, share less and feel anxious more of the time.
+If you recognise Level 2 or 3, you may also notice a strong urge to explain it away. That's not weakness. In a study of women at a shelter, Caryl Rusbult and John Martz found that whether women went back to an abusive partner was strongly linked to their commitment, and that commitment was shaped by practical things: fewer or worse economic alternatives, more invested in the relationship (for example, being married), and less severe abuse.
 
-> **Example: the slow change**
-> Sophie used to love seeing her friends every Friday. Her partner Ryan never forbade it, but every Friday ended in a cold mood, a sigh or a comment like "have fun with your real family". After a few months, Sophie just stopped going. No single moment felt dramatic. Looking back, she realised the pattern had quietly changed her whole life.
+In other words, staying often has more to do with money, children, housing and shared history than with how much someone "lets" themselves be treated badly. That's why support services focus on practical options, not just feelings. And unpredictable affection, warmth after coldness, can make the good moments feel even more intense, which is part of why [love bombing](/blog/love-bombing/) cycles are so confusing.
 
-> **Why it works this way**
-> Toxic patterns rarely start with something obvious. They usually start small and grow slowly, mixed with good moments that make you doubt yourself. Each small change feels like too little to make a fuss about. That's why it helps to look at the pattern over months, not single moments, and to ask a trusted friend what they've noticed.
+> **Example: the tipping point**
+> For two years, Yuki told herself Ben was "just stressed" when he mocked her cooking in front of friends. When he started reading her messages and asking why she'd texted her sister, she wrote down a month of what happened, as a counsellor at a helpline had suggested. Seeing it on paper changed something. "I'd been treating every incident as separate," she said later. "Written down, it was obviously one thing."
 
-## Why it's hard to leave or even name it
+## Am I the toxic one?
 
-If you recognise some of these signs, you might also notice a strong urge to explain them away. That's very human. You love this person, you've invested time, and there are still good moments. Unpredictable affection can even make the good moments feel stronger.
+Asking the question is a good sign. Look honestly at Level 1 and 2 in your own behaviour: contempt, never apologising, punishing with silence, controlling your partner's choices. If you recognise them, you can change them, and a therapist can help. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) is a good place to start repairing.
 
-It also helps to know that you're not alone. According to the US Centers for Disease Control and Prevention, more than 1 in 3 women and more than 1 in 6 men have experienced physical violence, sexual violence or stalking by an intimate partner during their lifetime. The CDC also recognises psychological aggression, like words and actions meant to harm someone emotionally or control them, as a form of intimate partner violence.
+If you want to think through what's happening in a calm, private space, or rehearse a hard conversation for a Level 1 or 2 situation, RelationshipAI's Coach Chat and Partner Practice can help. They aren't therapy and aren't a safety service. For Level 3, please contact a helpline.
 
-## What to do next
-
-### Write down what you notice
-
-Keep a private note of what happens and how it makes you feel. It helps you see the pattern clearly when doubt creeps in.
-
-### Talk to someone outside the relationship
-
-A friend, family member or counsellor can offer a reality check.
-
-Try: "Can I tell you about something that's been happening? I want an honest opinion."
-
-### Try one calm, specific conversation
-
-If you feel safe, name one pattern and what you need. Gottman calls this a "gentle start-up".
-
-Try: "When you call me selfish during arguments, I shut down. I need us to talk about the problem, not about who I am."
-
-Notice the response. A partner who listens, takes responsibility and changes is very different from one who mocks or punishes you for raising it.
-
-### Consider couples counselling, carefully
-
-Counselling can help couples with unhealthy communication. But if there's control, threats or violence, couples therapy is usually not the right first step. Individual support comes first.
-
-### Plan for your future
-
-If things don't change, it may be time to think about leaving. Our guide [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) has questions that can help. And if you do leave, [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help with what comes after.
-
-## A self-check: look at the last month
-
-Single moments can fool you. One bad fight can make a good relationship feel toxic, and one lovely weekend can make a hurtful pattern feel fine. So look at the last month as a whole, and answer honestly, just for yourself.
-
-| Question | Yes / No |
-|---|---|
-| Did I hold back an opinion because I was afraid of the reaction? | |
-| Did I apologise for something that wasn't my fault, just to end the tension? | |
-| Did I feel relieved when my partner wasn't home? | |
-| Did I cancel plans with friends or family to avoid a fight? | |
-| Did I hide or soften what happened when a friend asked? | |
-| Did I doubt my memory of a conversation after we argued about it? | |
-| After our fights, did we talk it through and both say sorry where it fit? | |
-| Did I feel free to say no to something without being punished for it? | |
-
-The first six questions point to warning signs, the last two to health. There's no score that decides for you. But several "yes" answers to the first six and "no" to the last two is a pattern worth taking seriously.
-
-If your life now revolves around your partner's moods, our guide on [codependent relationships](/blog/codependent-relationship/) may help.
-
-## What to say: calm lines for hard moments
-
-When you're used to walking on eggshells, it's hard to find words in the moment. Short, calm sentences are easier to say and harder to twist. You don't need to win. You only need to say what is okay for you.
-
-**When they start attacking who you are**
-
-Try: "I'm happy to talk about what happened. I'm not okay with being called names. Let's talk again when we're both calmer."
-
-**When they go silent to punish you**
-
-Try: "I can see you're upset. I'm here when you're ready to talk. I'm going to get on with my evening in the meantime."
-
-**When they question your memory**
-
-Try: "We remember this differently. I'm not going to argue about what I saw. I'd rather talk about how we both felt."
-
-**When they get angry about time with friends**
-
-Try: "I love our time together, and I also need my friends. I'm going on Friday."
-
-### Watch how they respond
-
-How your partner reacts to a calm boundary tells you a lot. Everyone gets defensive sometimes, so look at the next days and weeks, not only the first few minutes.
-
-| A hopeful response | A worrying response |
-|---|---|
-| "You're right, that wasn't fair. I'm sorry." | "You're too sensitive." |
-| They change the behaviour, even slowly | Things go back to how they were within days |
-| They ask what would help | They make you pay for raising it |
-| They accept a pause and come back to talk | They follow you, block the door or keep pushing |
-
-If a calm boundary leads to threats, rage or punishment, focus on your own support and safety rather than finding better words. No script can fix a pattern only one person wants to change.
-
-## What most articles miss
-
-Many lists of "toxic signs" make it sound like one person is a villain and the other a victim. Sometimes that's true. But often, two people have fallen into unhealthy patterns together, like criticism met with defensiveness, or pursuing met with withdrawing. Those patterns can change if both people want to.
-
-The key question is not "is my partner toxic?" but "is this relationship safe, respectful and able to change?" A relationship where both people can admit mistakes and try again is very different from one where only one person is ever allowed to be right.
-
-If you want to talk through what's happening in a calm, private space, or rehearse a hard conversation first, RelationshipAI is an AI relationship coach that can help. It isn't therapy, but it's a calm place to start.
+If you decide to end things, our guides on [whether to break up](/blog/should-i-break-up-with-my-partner/) and [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help, and our guide to [codependency](/blog/codependent-relationship/) explains why caring can sometimes keep you stuck.
 
 ## Quick answers
 
 ### What are the signs of a toxic relationship?
 
-Contempt, constant criticism, walking on eggshells, no responsibility, silent treatment as punishment, controlling jealousy, isolation, gaslighting and feeling less like yourself.
-
-### Can a toxic relationship be fixed?
-
-Sometimes, if both people recognise the pattern and want to change, often with professional help. If there's violence or control, safety comes first.
+Contempt and belittling, never taking responsibility, silent treatment as punishment, feeling smaller or afraid, and, at the most serious level, control over your phone, money, friends or movements.
 
 ### What's the difference between toxic and abusive?
 
-"Toxic" is an informal word for unhealthy patterns. Abuse is when one person uses power and control over the other, through physical, emotional, sexual or financial harm.
+"Toxic" usually describes harmful patterns like contempt or blame. Abuse involves power and control, including coercive control, threats and violence. When you feel afraid or controlled, treat it as abuse and get support.
+
+### Can a toxic relationship be fixed?
+
+Level 1 patterns often can, and sometimes Level 2 if both people genuinely want to change. Coercive control rarely changes without the controlling partner taking full responsibility and getting specialist help.
 
 ### Is it toxic if we fight a lot?
 
-Not necessarily. Many couples fight and stay happy. It matters how you fight: with respect and repair, or with contempt and punishment.
-
-### Why do I keep going back to a toxic partner?
-
-Love, hope, shared history and unpredictable affection all pull you back. It's common and not a sign of weakness.
-
-### Am I the toxic one?
-
-If you're asking, you're already reflecting, which is a good sign. Look honestly at your patterns and consider talking to a therapist.
-
-### Can a relationship start out lovely and become toxic later?
-
-Yes. Many toxic patterns start small after a very warm beginning. Intense early attention can sometimes be part of the pattern, which our guide on [love bombing](/blog/love-bombing/) explains.
-
-### How do I set a boundary with a toxic partner?
-
-Keep it short and calm, say what you will and won't accept, then follow through. If boundaries are met with threats or punishment, focus on your safety and outside support.
-
-### How do I leave a toxic relationship?
-
-Plan ahead, lean on trusted people, and if you feel unsafe, contact a local helpline or domestic abuse service for help making a safety plan.
+Not necessarily. Frequent fights that stay respectful and get repaired are different from fights that involve contempt, fear or punishment.
 
 ## A note on safety
 
-If your partner threatens you, hurts you, controls your money or who you see, or if you feel afraid, please reach out to a local helpline or domestic abuse service. Leaving can be the most dangerous time, and support services can help you plan it safely. If you're in immediate danger, contact emergency services.
+If you're afraid of your partner, are being controlled, threatened or hurt, please contact a local domestic abuse helpline or support service. If you're in immediate danger, call emergency services. If your phone or computer may be monitored, use a friend's device or a safe computer.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
+- Johnson, M. P. (2008). *A Typology of Domestic Violence: Intimate Terrorism, Violent Resistance, and Situational Couple Violence*. Northeastern University Press. [Summary (US Office of Justice Programs)](https://ojp.gov/ncjrs/virtual-library/abstracts/typology-domestic-violence-intimate-terrorism-violent-resistance)
+- Rusbult, C. E., & Martz, J. M. (1995). Remaining in an abusive relationship: An investment model analysis of nonvoluntary dependence. *Personality and Social Psychology Bulletin*, 21(6), 558-571. [Abstract](https://arch.neicon.ru/xmlui/handle/123456789/3025919)
+- Respect Victoria: [Coercive control, non-physical violence and relationship red flags](https://www.respectvictoria.vic.gov.au/coercive-control-non-physical-violence-and-relationship-red-flags)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
