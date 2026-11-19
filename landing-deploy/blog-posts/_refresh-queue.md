@@ -20,7 +20,7 @@
 - [x] 2026-11-17-how-to-rebuild-trust-after-cheating (refreshed 2026-11-19: 4 stages model, 5 sources incl. 2023 and 2026 studies)
 
 # Added 19 Nov (Jonas: no article should look like a template). Same rules.
-- [ ] 2026-10-26-date-night-questions-for-couples
+- [x] 2026-10-26-date-night-questions-for-couples (refreshed 2026-11-19: 5 games + 40 questions, 4 sources)
 - [ ] 2026-11-07-holidays-with-your-partners-family
 - [ ] 2026-11-09-clear-coding-dating
 - [ ] 2026-11-09-how-to-talk-about-money-with-your-partner
