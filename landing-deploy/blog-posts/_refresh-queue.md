@@ -12,7 +12,7 @@
 - [x] 2026-11-15-love-languages (refreshed 2026-11-19: 6 beliefs checked against research, 5 sources)
 - [x] 2026-11-15-trust-issues-in-a-relationship (refreshed 2026-11-19: concept explainer: how trust is built + reassurance loop, 5 sources)
 - [x] 2026-11-16-signs-of-a-toxic-relationship (refreshed 2026-11-19: 3-level self-check, 5 sources)
-- [ ] 2026-11-17-situationship (2 sources)
+- [x] 2026-11-17-situationship (refreshed 2026-11-19: decision guide stay/define/leave, 4 sources incl. 2024-2025 studies)
 - [ ] 2026-11-18-signs-your-partner-is-losing-interest (2 sources)
 - [ ] 2026-11-19-avoidant-attachment-partner (2 sources)
 - [ ] 2026-10-26-deep-questions-to-ask-your-partner (3 sources)
