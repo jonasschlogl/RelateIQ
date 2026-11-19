@@ -30,6 +30,8 @@ Hay dos excepciones importantes. Si tienes miedo de tu pareja, te sientes contro
 
 > **Ejemplo: de "todo va mal" a una sola frase**
 > Clara siente que su relación con Oliver se ha vuelto fría. Cuando se sienta a escribir qué sería "mejor", se da cuenta de que son sobre todo dos cosas: quiere que él le pregunte por su día y quiere una tarde a la semana sin pantallas. Eso es algo de lo que realmente pueden hablar, a diferencia de "ya no me quieres como antes".
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 ## Paso 2: Frena primero la escalada
 
@@ -75,6 +77,8 @@ Por ejemplo: "¿Qué te ayudaría a sentirte más cerca de mí ahora mismo?"
 
 > **Ejemplo: dos respuestas distintas**
 > Cuando Martin y Eva se hacen esta pregunta, Martin dice que le encantaría más cariño físico. Eva dice que se sentiría más cerca si él se encargara de la rutina de la mañana con los niños, para no estar agotada a las 9. Ninguna respuesta es la que el otro esperaba. Las dos son fáciles de poner en práctica.
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 ## Paso 6: Pide ayuda cuando os quedéis atascados
 

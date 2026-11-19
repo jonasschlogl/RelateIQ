@@ -30,6 +30,8 @@ Er zijn twee belangrijke uitzonderingen. Ben je bang voor je partner, voel je je
 
 > **Voorbeeld: van "alles is fout" naar één zin**
 > Clara voelt dat haar relatie met Oliver kil is geworden. Als ze gaat zitten om op te schrijven wat "beter" zou zijn, merkt ze dat het vooral om twee dingen gaat: ze wil dat hij vraagt hoe haar dag was, en ze wil één avond per week zonder schermen. Daar kunnen ze echt over praten, in tegenstelling tot "je houdt niet meer van me zoals vroeger".
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 ## Stap 2: Stop eerst de escalatie
 
@@ -75,6 +77,8 @@ Probeer: "Wat zou je helpen om je nu dichter bij mij te voelen?"
 
 > **Voorbeeld: twee verschillende antwoorden**
 > Als Martin en Eva elkaar deze vraag stellen, zegt Martin dat hij graag meer lichamelijke genegenheid zou willen. Eva zegt dat ze zich dichterbij zou voelen als hij de ochtendroutine met de kinderen overnam, zodat ze om negen uur niet al uitgeput is. Geen van beide antwoorden is wat de ander verwachtte. Allebei zijn ze makkelijk uit te voeren.
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 ## Stap 6: Zoek hulp als jullie vastlopen
 

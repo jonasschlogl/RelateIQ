@@ -55,6 +55,8 @@ The behavior in step four brings a moment of relief, which teaches your brain to
 > Paige sends her boyfriend a long message about a hard day at work. He replies "ok". Within ten minutes she has reread the message twice, checked when he was last online and drafted three replies. By the time he calls an hour later (he was driving), she's convinced he doesn't care, and the call starts with "Why do you even bother replying?"
 >
 > Nothing in the facts had changed. Only the story had grown.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## 7 steps to stop overthinking
 
@@ -96,7 +98,7 @@ Then ask one question about the story: what else could be true? Maybe the meetin
 
 Underneath most overthinking is a need. It might be reassurance ("I want to know we're okay"), information ("I want to know when you'll be free") or just some attention. Once you know which one, you can ask for it directly instead of searching for it in tiny clues like reply times and emoji.
 
-Try: "Could you send me a quick message when you're running late? It really helps me relax."
+Say it simply: "Could you send me a quick message when you're running late? It really helps me relax."
 
 ### 5. Give worry a time and place
 
@@ -121,6 +123,8 @@ Try: "I noticed I get anxious when I don't hear from you for a long stretch. It 
 
 This is a request, not a rule for your partner's behavior. If you notice you're asking for constant check-ins or monitoring where they are, that's a sign to pause and look at what the worry is really about.
 
+Of the seven, step three is the one I'd start with. Writing down three other explanations feels silly the first time. It's also one of the simplest tools in this whole article, and one of the most effective.
+
 ## A full example: from spiral to conversation
 
 > **Example: Jacob's Friday night**
@@ -131,6 +135,8 @@ This is a request, not a rule for your partner's behavior. If you notice you're 
 > Try: "Hope it's a fun night! Text me when you're heading home so I know you got back okay."
 >
 > The next day, on a calm morning, he tells her that late nights without news make him anxious, and they agree on a simple "leaving now" text.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## What if your worry is accurate?
 
@@ -142,7 +148,7 @@ The test isn't "do I feel worried?" It's "is there a repeated pattern of behavio
 
 Many people hide their overthinking because they're embarrassed by it. But a partner who understands what's going on can help a lot, as long as they're not made responsible for fixing it. Pick a calm moment, not the middle of a spiral.
 
-Try: "I sometimes overthink when I don't hear from you. It's my thing to work on, not your fault. A quick message when plans change really helps me."
+You could say: "I sometimes overthink when I don't hear from you. It's my thing to work on, not your fault. A quick message when plans change really helps me."
 
 ## If your partner is the one who overthinks
 
@@ -152,7 +158,7 @@ If you're reading this because your partner overthinks, a few small things make 
 
 If overthinking is constant, affects your sleep or work, or comes with panic, a licensed therapist can help. Cognitive behavioral therapy has good evidence for anxiety and worry, and many people find short-term work makes a big difference.
 
-Between sessions or conversations, tools can help too. RelationshipAI is an AI relationship coach you can talk to when your mind is racing, to sort what you know from what you're imagining and plan what to say. It isn't therapy, but it can be a calmer second voice at 11 pm.
+When your mind is racing at 11 pm and you don't want to wake anyone up, you can also write it out in Coach Chat. It helps you split what you actually know from what you're imagining, before you send anything.
 
 ## Quick answers
 

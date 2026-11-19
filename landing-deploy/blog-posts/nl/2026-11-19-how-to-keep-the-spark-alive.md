@@ -87,6 +87,8 @@ Kies je laagste gebied en geef het vier weken. Eén verandering tegelijk werkt b
 
 > **Voorbeeld: de dumplingavond**
 > Hannah en Ines waren elf jaar samen. Hun vonktest liet veel warmte en aandacht zien, maar een 0 voor nieuwheid: elke zaterdag was markt, lunch en een film. Ines koos "dumplings leren maken" van Hannahs lijst. Ze maakten er een puinhoop van, deden te veel zout in de vulling en lachten de hele avond. De week erna koos Hannah een nachtelijke duik van Ines' lijst. "Er veranderde niets groots," zei Hannah een maand later. "Maar ik keek weer uit naar zaterdag."
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 ## Als de vonk niet het echte probleem is
 

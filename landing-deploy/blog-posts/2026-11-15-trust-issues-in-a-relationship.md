@@ -65,6 +65,8 @@ Before working on the loop, it helps to know whether your doubt is about this re
 
 If your partner is mostly reliable and you've felt this way before, the work is likely internal, often related to anxious [attachment](/blog/how-attachment-styles-work-in-relationships/) or [relationship anxiety](/blog/relationship-anxiety/). If your partner has been repeatedly unreliable or dishonest, your distrust may be accurate information, not an issue to "fix" in yourself.
 
+This check is the part I'd spend the most time on. So much of the advice about trust assumes the problem is the current partner. Often it's an old one.
+
 ## How to break the loop
 
 ### If you're the one struggling to trust
@@ -73,7 +75,7 @@ If your partner is mostly reliable and you've felt this way before, the work is 
 
 **Name the feeling once, then ask for something specific.**
 Instead of: "Are you sure everything's fine with us?"
-Try: "I've been feeling a bit insecure this week. It would really help if we had a proper evening together on Friday."
+You could say: "I've been feeling a bit insecure this week. It would really help if we had a proper evening together on Friday."
 
 A specific request gives your partner a chance to show dependability. A vague question just restarts the loop.
 
@@ -85,7 +87,7 @@ A specific request gives your partner a chance to show dependability. A vague qu
 
 Be predictable in small ways: reply when you said you would, arrive when you said you'd arrive, follow through on small promises. That builds the first layer of trust. And when it's genuinely costly to you, choose the relationship once in a while, visibly but without making a speech about it.
 
-Try: "I can tell you've been feeling unsure. I want you to feel safe with me. What would actually help, apart from me saying it?"
+Something like: "I can tell you've been feeling unsure. I want you to feel safe with me. What would actually help, apart from me saying it?"
 
 ### If trust was broken in this relationship
 
@@ -93,8 +95,10 @@ When there's been a real betrayal, the loop above isn't the main issue. Trust ne
 
 > **Example: three things a week**
 > Lena kept asking Mateo whether he was "sure" about them, and his answers stopped working within hours. She tried something different: every Sunday she wrote down three moments from the week when he'd put them first. He'd canceled a football night when she was sick. He'd driven her mother to the airport. He'd let her pick the holiday. After a month, she noticed she was asking less. Nothing about Mateo had changed. What changed was what she was looking at.
+>
+> *Names and details in this example are invented to show the idea.*
 
-If you want to talk through a wave of doubt before it turns into a 1am message, RelationshipAI's Coach Chat can help you separate what you know from what you fear. It isn't therapy, but it can help you pause the loop. If the patterns are long-standing or connected to past hurt, a therapist can help a lot.
+When a wave of doubt hits late at night, writing it out first, in a journal or in Coach Chat, can help you pause the loop. If the patterns are long-standing or connected to past hurt, a therapist can help a lot.
 
 ## Quick answers
 

@@ -98,6 +98,8 @@ S-ar putea să nu poată răspunde pe loc la o întrebare emoțională. Lasă-l 
 
 > **Exemplu: tăcerea de luni**
 > După fiecare weekend foarte apropiat, Ben devenea tăcut luni, iar Emily intra în panică și îi trimitea mai multe mesaje. Într-o seară i-a spus calm: „Am observat că ai nevoie de spațiu după ce am fost foarte apropiați. E în regulă, doar că tăcerea îmi e greu de dus. Ai putea să-mi trimiți un scurt «zi aglomerată, te iubesc» când ai nevoie de spațiu?" Ben s-a simțit ușurat. Se simțea vinovat că avea nevoie de spațiu și nu știa cum să spună asta. Un singur mesaj a schimbat felul în care se simțeau amândoi.
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 ### 6. Ai grijă și de nevoile tale
 

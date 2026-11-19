@@ -32,6 +32,8 @@ Involvement is different from approval, though. In a 2024 study of 464 young adu
 2. **"What do they already know about me?"** You don't want to be surprised by your own story.
 3. **"If it gets awkward, what's our signal?"** A word, a look, a hand on the back. It helps more than you'd think.
 
+I'd say this short briefing matters more than anything you say on the day. Most awkward moments come from not knowing the rules everyone else knows.
+
 ## The 12 moments, and what to say
 
 ### 1. The first five minutes
@@ -120,26 +122,6 @@ If you'll be spending holidays with them soon, our guide on [holidays with your 
 ## If you're the one introducing your partner
 
 Brief both sides. Tell your parents one or two things your partner loves talking about, and tell your partner what to avoid. During the evening, include your partner in the conversation and step in if a question goes too far: "Let's not grill them on the first night, Mom."
-
-If you're nervous about a specific conversation, like telling your parents about a relationship they may not approve of, RelationshipAI's Partner Practice lets you rehearse it with an AI playing the other person, privately. It isn't therapy, but it can help you find calm words.
-
-## Quick answers
-
-### When is the right time to meet the parents?
-
-There's no fixed timeline. It's usually when you both see the relationship as serious and your partner feels ready. Cultures and families differ a lot.
-
-### What should I bring when meeting my partner's parents?
-
-Something small and thoughtful: flowers, a dessert, a bottle of something they like (if they drink), or a treat from where you're from. Ask your partner.
-
-### What topics should I avoid?
-
-Anything your partner flags as sensitive, plus heated politics, money and past relationships. Their interests, family stories and your shared plans are safer ground.
-
-### What if my partner's parents don't like me?
-
-Give it time. First meetings rarely decide everything. Keep being respectful, let your partner lead with their family, and focus on how you two handle it as a team.
 
 *This article is general information, not therapy or medical advice.*
 

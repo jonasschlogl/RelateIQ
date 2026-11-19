@@ -52,6 +52,8 @@ Sadness, anger, relief, guilt, all in one afternoon. That's normal. Trying to fo
 > **Why it feels like you've lost part of yourself**
 > In three studies, Erica Slotter, Wendi Gardner and Eli Finkel found that after a breakup people's sense of who they are became less clear. Their sense of self felt, as they put it, "less clear and even smaller", and that loss of clarity contributed to the distress. In a relationship, your routines, plans and even your taste in films get shared. When it ends, you have to sort out which parts were *you*. That sorting is a big part of what healing is.
 
+If you take one thing from this stage, mute them. Not as a statement, just as basic self-care. Every check resets the clock.
+
 ## Stage 3: weeks three to twelve
 
 Now recovery becomes active. The goal shifts from surviving to rebuilding who you are on your own.
@@ -90,7 +92,7 @@ If anything in the right column sounds like you, please talk to a doctor or coun
 
 You're allowed to grieve too. Ending something can still mean losing someone you love, along with the future you'd imagined. Guilt is common, but it isn't proof you made the wrong choice. If you're still unsure whether it was right, our guide on [whether to break up](/blog/should-i-break-up-with-my-partner/) can help you think it through calmly.
 
-If you find yourself wanting to talk it through at 2am when no one is awake, RelationshipAI's Coach Chat is there to help you sort your thoughts and stop the late-night message to your ex. It isn't therapy, but it's a calm place to start.
+And for the 2 am moments when nobody's awake and you're about to text your ex, you can write it to Coach Chat instead. It won't reply with a read receipt.
 
 ## Quick answers
 

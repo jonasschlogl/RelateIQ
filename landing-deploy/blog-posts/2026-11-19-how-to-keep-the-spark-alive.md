@@ -41,6 +41,8 @@ Add up each pair. The area with the lowest score (0 to 2) is where to start. If 
 
 **Quick quiz:** Want a second view on what your relationship needs most right now? The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) points to time together, better talks, more fun or more teamwork.
 
+I like this check because it turns a vague, slightly scary feeling into something you can actually work on. "We've lost the spark" is hard to fix. "We haven't tried anything new in months" isn't.
+
 ## If novelty is low: break the rut, not the bank
 
 **What research shows.** In a long-running study of 123 couples, Irene Tsapelas, Arthur Aron and Terri Orbuch asked people in their seventh year of marriage how often the marriage felt like a rut. Those who felt more bored at year 7 were less satisfied nine years later, at year 16. The link ran through closeness: boredom made couples feel less close, and that lowered satisfaction.
@@ -95,6 +97,8 @@ Pick your lowest area and give it four weeks. One change at a time works better 
 
 > **Example: the dumpling night**
 > Hannah and Ines had been together eleven years. Their spark check showed high warmth and attention but a 0 for novelty: every Saturday was a market, lunch and a film. Ines picked "learn to make dumplings" from Hannah's list. They made a mess, over-salted the filling and laughed through the whole evening. The next week Hannah chose a night swim from Ines's list. "Nothing big changed," Hannah said a month later. "But I started looking forward to Saturdays again."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## When the spark isn't the real problem
 
@@ -102,7 +106,7 @@ Sometimes a fading spark is a symptom. Resentment from fights that never get res
 
 It's also fine for a relationship to have quieter seasons. What matters is that you notice, and come back to each other when life allows.
 
-If bringing this up feels hard, RelationshipAI's Partner Practice lets you rehearse the conversation with an AI playing your partner, and Coach Chat can help you work out what you actually want to ask for. It isn't therapy, but it's a calm place to start.
+Bringing this up can feel awkward, especially the desire part. If you want to work out what you're actually asking for first, Coach Chat can help, and you can rehearse the conversation in Partner Practice.
 
 ## Quick answers
 

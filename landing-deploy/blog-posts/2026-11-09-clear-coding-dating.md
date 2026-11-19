@@ -70,6 +70,10 @@ This is the part of clear coding people skip, and the part that matters most to 
 
 > **Example: the message that saved three months**
 > After four dates, Kemal sent message 14. His date, Ana, replied the next morning: she'd just come out of a long relationship and wasn't ready for anything serious. Kemal was disappointed for a day. "But I'd have spent the whole winter wondering," he said. "Instead I knew in twelve hours." Six weeks later he met someone who'd written "looking for something long-term" in her bio. They're still together.
+>
+> *Names and details in this example are invented to show the idea.*
+
+This is the stage I'd most like people to take seriously. A two-line "I don't think we're a match" costs you a minute and saves the other person days of wondering.
 
 ## What clear coding is not
 
@@ -82,29 +86,7 @@ This is the part of clear coding people skip, and the part that matters most to 
 
 If clarity scares you, it may be because a "no" feels like proof you're unlovable. It isn't. It's just information about fit. If uncertainty sends your mind into overdrive, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) can help. And knowing the opposite patterns helps too: someone who gives you just enough attention to keep you hooked may be [breadcrumbing](/blog/breadcrumbing/), and someone who rushes intensely may be [love bombing](/blog/love-bombing/).
 
-Not sure how your message will come across? RelationshipAI's Message check shows you how a text is likely to land before you send it, and suggests a calmer version if it reads as needy or harsh. It isn't therapy, just a second pair of eyes.
-
-## Quick answers
-
-### What does clear coding mean in dating?
-
-Being upfront and honest about what you want and how you feel, from what you're looking for to whether you'd like a second date, instead of leaving the other person to guess.
-
-### Is clear coding the same as oversharing?
-
-No. Clear coding is about intentions ("I'm looking for something serious"), not about telling your whole life story early on.
-
-### How do I ask someone where things are going?
-
-Keep it short, say what you want first, then ask. "I'm looking for a relationship and I like where this is going. How do you feel?"
-
-### What if being clear scares someone off?
-
-Then they probably weren't looking for the same thing, and you found out early. That saves you both time.
-
-### How do I say I'm not interested without ghosting?
-
-Send a short, kind message: "I've enjoyed meeting you, but I don't think we're a match. I wanted to tell you rather than just disappear."
+Stuck on the wording? Message check shows how a text is likely to come across and suggests a calmer version if it sounds needy or harsh.
 
 *This article is general information, not therapy or medical advice.*
 

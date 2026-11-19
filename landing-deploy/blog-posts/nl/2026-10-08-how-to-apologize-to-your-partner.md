@@ -54,6 +54,8 @@ Verschillende mensen hechtten waarde aan verschillende onderdelen. Mensen die zi
 > Jane is boos dat Mark zijn vrienden voor het weekend heeft uitgenodigd zonder het haar te vragen. Mark biedt zijn excuses aan en stelt voor om het af te zeggen (compensatie). Jane voelt zich nog steeds gekwetst. Wat ze moest horen, was dat hij een afspraak over het appartement had gebroken, en dat hij begreep waarom ze zich daardoor een gast in haar eigen huis voelde.
 >
 > Als Mark het opnieuw probeert ("We hadden afgesproken dat we het elkaar vragen voordat we mensen uitnodigen, en dat heb ik niet gedaan. Ik snap waarom je je buitengesloten voelde"), verandert het gesprek.
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 ## Sorry zeggen tegen je partner in 5 eenvoudige stappen
 
@@ -82,6 +84,8 @@ Zo ziet de structuur eruit in een echte situatie, vergeleken met hoe het vaak ga
 > In plaats van: "Sorry, oké? Het was gekkenwerk op het werk, je weet hoe het is. Het is maar één etentje."
 >
 > Probeer: "Sorry dat ik twee uur te laat thuiskwam en je niet eens een berichtje stuurde. Jij hebt de hele middag gekookt en zat hier vervolgens te wachten en je af te vragen waar ik was. Dat is niet oké. Vanaf nu stuur ik een berichtje voordat ik te laat ben, niet erna. Mag ik het vrijdag goedmaken? En ik snap het als je vanavond nog boos bent."
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 De eerste versie legt uit, bagatelliseert en vraagt de partner om verder te gaan. De tweede benoemt wat er gebeurde, laat de impact zien, biedt een concrete oplossing en laat ruimte. Het duurt ongeveer twintig seconden langer om te zeggen.
 

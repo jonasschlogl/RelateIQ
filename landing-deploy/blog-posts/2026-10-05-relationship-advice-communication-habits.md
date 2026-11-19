@@ -51,7 +51,7 @@ A simple formula: **I feel** (emotion) **about** (specific situation) **and I ne
 
 Instead of: "You always ignore me when you're on your phone."
 
-Try: "I've been missing time with you lately. Could we put our phones away after dinner?"
+Something like: "I've been missing time with you lately. Could we put our phones away after dinner?"
 
 > **Why the first sentence matters so much**
 > A harsh start puts the other person on defense before they've heard what you actually want. Once someone feels attacked, their energy goes into protecting themselves, not into understanding you. A soft start keeps both of you in the same team for long enough to talk about the real issue. It isn't about being nice instead of honest. It's about being honest in a way the other person can actually hear.
@@ -70,6 +70,8 @@ Behind most complaints sits a need: to feel respected, supported, close or free.
 > Every few days, Eva and Luke argue about the kitchen. Eva says he never cleans up. Luke lists the times he did. It goes nowhere.
 >
 > One evening Eva tries something different: "I think the dishes are just the part I can see. What I really need is to feel that we're running this house together, because lately I feel like the manager." Luke stops defending and asks what would help. They split the evenings, and the dishes stop being a topic.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## 4. Make one clear request
 
@@ -91,7 +93,7 @@ In a tense moment, try repeating back what you heard before you respond. "So you
 
 This is also the antidote to defensiveness, another of Gottman's "four horsemen". Defensiveness ("That's not true, you're the one who...") tells your partner their concern doesn't count. Taking responsibility for even a small part ("You're right, I did forget to call") changes the temperature of the conversation.
 
-Try: "Before I answer, let me check I've got it. You felt like I didn't take your plans seriously?"
+For example: "Before I answer, let me check I've got it. You felt like I didn't take your plans seriously?"
 
 ## 6. Take a break when you're flooded
 
@@ -99,7 +101,7 @@ When your heart is pounding and your thoughts are racing, a productive conversat
 
 Pushing through doesn't help. Pausing for at least twenty minutes, doing something calming (not rehearsing your arguments) and then coming back does. What matters most is saying you're coming back.
 
-Try: "I need twenty minutes to calm down, and then I want to finish this."
+One way to put it: "I need twenty minutes to calm down, and then I want to finish this."
 
 > **The difference between a break and stonewalling**
 > Without the promise to return, a break looks exactly like stonewalling, the fourth of Gottman's "four horsemen", where one partner shuts down and withdraws. With the promise, the same break becomes an act of care: "I want to have this conversation well." The person who stays behind can relax because they know the conversation isn't over, and the person who leaves can actually calm down instead of feeling chased.
@@ -114,6 +116,8 @@ Repairs work best when they happen quickly and when the other person accepts the
 
 > **Example: a repair in the middle of an argument**
 > Halfway through a tense talk about holiday plans, Sofia snaps: "You always do what your mom wants." She sees Martin's face drop. Instead of carrying on, she stops: "Wait. That was unfair, and it's not what I mean. Can I try again?" Martin takes a breath and nods. The second version ("I'd like us to decide together before we tell your family") leads to an actual plan.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## The four horsemen and their antidotes
 
@@ -136,13 +140,15 @@ The way you handle conflict depends a lot on what happens between conflicts.
 
 **Respond to good news with real enthusiasm.** Psychologist Shelly Gable and her colleagues ran four studies on what happens when people share good news with a partner. When partners responded actively and enthusiastically ("That's amazing, tell me everything!") rather than flatly ("Nice") or by changing the subject, couples reported higher relationship well-being, including more intimacy and greater satisfaction.
 
-Try: "Wait, you got it? That's huge. How did they tell you?"
+Say it simply: "Wait, you got it? That's huge. How did they tell you?"
 
 ## Where to start
 
 Don't try all seven at once. Pick one, maybe the soft start, and use it for a week. If you want to practice before a real conversation, writing down what you plan to say, or saying it out loud first, can make a bigger difference than you'd expect.
 
-RelationshipAI is an AI relationship coach that can help with exactly this. Coach Chat can help you turn an angry first draft into a soft start, and Partner Practice lets you rehearse the conversation before you have it. It isn't therapy, but it's a calm place to prepare.
+This is honestly the reason Coach Chat exists. You paste in the angry first draft, it helps you turn it into a soft start, and you can rehearse the actual conversation in Partner Practice before you have it.
+
+My own pick would be habit 6, the break with a promise to come back. It sounds the least impressive of the seven, but it's the one that stops a bad argument from turning into a bad week.
 
 ## Quick answers
 

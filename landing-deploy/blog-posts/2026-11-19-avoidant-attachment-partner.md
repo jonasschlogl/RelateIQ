@@ -80,7 +80,7 @@ This can turn into a loop. In a 2022 study of 175 couples, Ione Bretaña and col
 
 When they pull away, the instinct is to text more, ask more, push more. That usually increases the distance. Stay warm and available, and let them come back.
 
-Try: "I can tell you need some space today. That's okay. I'm here when you're ready."
+Something like: "I can tell you need some space today. That's okay. I'm here when you're ready."
 
 ### 2. Make closeness feel safe, not heavy
 
@@ -90,7 +90,7 @@ Side-by-side activities, like walking, cooking or driving, often feel easier tha
 
 Avoidant partners often respond better to clear, specific requests than to emotional pressure. Research backs this up. In a study of 180 couples filmed while one partner asked the other to change something, Nickola Overall and colleagues found that more avoidant partners reacted with more anger and withdrawal. But when the person asking "softened" the request, by respecting their partner's independence and showing they were valued, that anger and withdrawal dropped, and the conversations went better.
 
-Try: "It would really help me if you texted when you need a quiet evening, so I don't worry."
+For example: "It would really help me if you texted when you need a quiet evening, so I don't worry."
 
 ### 4. Notice their way of showing love
 
@@ -100,10 +100,12 @@ Practical help, time together and loyalty may be their language. Our guide to [l
 
 They might not be able to answer an emotional question on the spot. Let them come back to it.
 
-Try: "You don't have to answer now. Can we talk about it tomorrow evening?"
+One way to put it: "You don't have to answer now. Can we talk about it tomorrow evening?"
 
 > **Example: the Monday silence**
 > After every close weekend, Ben would go quiet on Monday, and Emily would panic and send more messages. One evening she told him, calmly: "I've noticed you need some space after we've been really close. That's fine, I just find the silence hard. Could you send a quick 'busy day, love you' when you need room?" Ben was relieved. He'd been feeling guilty about needing space and didn't know how to say it. A single text changed how both of them felt.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ### 6. Look after your own needs
 
@@ -115,7 +117,9 @@ Many articles treat avoidant people as cold or incapable of love. That's unfair 
 
 Attachment styles can also change. Research suggests that secure, consistent relationships and therapy can help people feel safer with closeness over time. The aim isn't to "fix" your partner, but to build a relationship where both of you feel safe: you with enough closeness, and them with enough space.
 
-If you want to plan how to talk about needs and space without it becoming a fight, RelationshipAI is an AI relationship coach that can help you find the words. It isn't therapy, but it's a calm place to start.
+Talking about needs and space without it turning into a fight takes practice. You can plan the conversation in Coach Chat first.
+
+This is the section I'd want every anxious partner to read. Pulling away isn't proof they don't care. It's often proof that caring feels risky to them.
 
 ## Quick answers
 

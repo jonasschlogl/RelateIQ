@@ -59,6 +59,8 @@ Different people valued different parts. People who think of themselves more as 
 > Jane is upset that Mark invited his friends for the weekend without asking her. Mark apologizes and offers to cancel (compensation). Jane still feels hurt. What she needed to hear was that he'd broken an agreement they'd made about the apartment, and that he understood why that left her feeling like a guest in her own home.
 >
 > When Mark tries again ("We agreed we'd check with each other before inviting people, and I didn't. I get why that made you feel sidelined"), the conversation changes.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## A simple 5-step structure for apologizing to your partner
 
@@ -87,6 +89,8 @@ Here's what the structure looks like in a real situation, compared with how it o
 > Instead of: "I'm sorry, okay? Work was crazy, you know how it is. It's just one dinner."
 >
 > Try: "I'm sorry I got home two hours late and didn't even message you. You spent the afternoon cooking and then sat here waiting, wondering where I was. That's not okay. From now on, if I'm going to be late, I'll text before I'm late, not after. Can I make it up to you on Friday? And I understand if you're still annoyed tonight."
+>
+> *Names and details in this example are invented to show the idea.*
 
 The first version explains, minimizes and asks the partner to move on. The second names the action, shows the impact, offers a concrete fix and leaves room. It takes about twenty seconds longer to say.
 
@@ -130,6 +134,8 @@ Here are the most common slips side by side with what tends to land better:
 | "I said sorry, what more do you want?" | "What would help you feel better about this?" |
 | "Sorry, okay? Can we drop it?" | "I'm sorry. Take the time you need, I'm here." |
 
+The one I'd watch for most is "but". It's so tempting to add it: "I'm sorry, but I was tired." The second half always feels important in the moment, and it always cancels the first half.
+
 ## Timing: let things cool down first
 
 An apology works better when both of you can actually listen. John Gottman's research on couples describes "flooding": during a heated conflict, heart rate can climb above 100 beats per minute, sometimes as high as 165, and at that point people struggle to take in what the other person is saying. His guidance is to take a break of around twenty minutes to calm down before returning to the conversation.
@@ -150,7 +156,7 @@ If the same thing keeps happening, the apology isn't the missing piece. Change i
 
 For bigger breaches, like lying, cheating or breaking a major promise, one good conversation is the start, not the end. Trust is rebuilt through consistent actions over time. Our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) goes into that process step by step.
 
-If apologies keep going nowhere, or the pattern involves disrespect, a couples therapist can help you both see what's happening underneath. If you want to practice what to say before a hard conversation, RelationshipAI is an AI relationship coach that can help you put an apology into words and rehearse it in Partner Practice. It isn't therapy, but it can help you start.
+If apologies keep going nowhere, or the pattern involves disrespect, a couples therapist can help you both see what's happening underneath. And if you just can't find the words, you can draft the apology in Coach Chat first and say it out loud in Partner Practice before the real thing.
 
 ## Quick answers
 

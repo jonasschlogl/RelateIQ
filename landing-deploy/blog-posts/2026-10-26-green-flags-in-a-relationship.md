@@ -71,6 +71,8 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 
 > **Example: the boring Tuesday**
 > After a relationship full of drama, Leila started dating Ravi and kept waiting for "the catch". He replied when he said he would. He asked about her exam and remembered the result. When she was upset, he said so, and they sorted it out over dinner. "For the first two months I thought something was missing," she said. "Then I realized what was missing was the anxiety."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Green flags in early dating
 
@@ -86,11 +88,13 @@ In the first weeks, you can't see how someone handles years of stress, but you c
 
 Nobody shows all nine all the time. Everyone has bad days, old habits and moments they're not proud of. Look for patterns over months, not perfection in a single week. And remember that a relationship can have green flags and red flags at the same time. If you're unsure about the red ones, our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) can help you think it through.
 
+Personally, I'd look hardest at number 9. A partner can tick every other box and still leave you anxious after every conversation. How you feel afterwards is data.
+
 ## How to be a green flag partner
 
 Most of these are skills, not personality traits. Pick one to practice this week: respond enthusiastically to your partner's good news, ask one curious question during your next disagreement, or reach out first after a tense moment. Our guides on [communication habits](/blog/relationship-advice-communication-habits/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) go deeper.
 
-If you want to practice responding better in tense moments, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build new habits. If overthinking makes it hard to trust a good relationship, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
+If overthinking makes it hard to trust a good relationship, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
 
 ## Quick answers
 

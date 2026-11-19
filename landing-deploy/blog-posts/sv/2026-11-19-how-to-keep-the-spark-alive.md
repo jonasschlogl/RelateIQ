@@ -87,6 +87,8 @@ Välj ditt lägsta område och ge det fyra veckor. En förändring åt gången f
 
 > **Exempel: dumplingskvällen**
 > Hannah och Ines hade varit tillsammans i elva år. Deras gnisttest visade hög värme och uppmärksamhet men 0 för nyhet: varje lördag var marknad, lunch och film. Ines valde "lära oss göra dumplings" från Hannahs lista. De stökade ner hela köket, saltade fyllningen för mycket och skrattade hela kvällen. Veckan efter valde Hannah ett nattbad från Ines lista. "Inget stort förändrades", sa Hannah en månad senare. "Men jag började längta till lördagarna igen."
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 ## När gnistan inte är det egentliga problemet
 

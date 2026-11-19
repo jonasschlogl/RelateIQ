@@ -80,28 +80,12 @@ Put the research together and a simpler, more useful version of the idea emerges
 
 > **Example: the dishwasher and the compliment**
 > Noor kept doing small jobs around the house to show Callum she cared. Callum kept telling her how beautiful she looked. Both felt a bit unappreciated. When they finally talked about it, Callum admitted the jobs went unnoticed because he'd assumed she just liked things tidy, and Noor said compliments made her uncomfortable but a thank-you for her effort would mean a lot. Nothing about their "types" changed. They just started saying what they noticed.
+>
+> *Names and details in this example are invented to show the idea.*
 
 For more ideas, see our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/), and for steady signs that someone shows love well, our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/). If you're apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) cover love from a distance.
 
-If you'd like help putting into words what makes you feel loved without it sounding like a complaint, RelationshipAI's Coach Chat can help you phrase it. It isn't therapy, but it's a calm place to start.
-
-## Quick answers
-
-### What are the 5 love languages?
-
-Words of affirmation, quality time, receiving gifts, acts of service and physical touch, as described by Gary Chapman in 1992.
-
-### Are love languages scientifically proven?
-
-Partly. Responding to the way your partner likes to receive love is linked to higher satisfaction. But the claims that everyone has one main language, that there are exactly five and that matching matters have little research support.
-
-### Can you have more than one love language?
-
-Yes. Most people value several kinds of affection, and what they need most can change over time.
-
-### What if my partner and I have different love languages?
-
-That's normal and not a problem in itself. What matters is that you both notice and respond to what the other person needs.
+My take: love languages are a good conversation starter and a bad rulebook. Use them to ask better questions, not to decide what your partner is allowed to need.
 
 *This article is general information, not therapy or medical advice.*
 

@@ -35,11 +35,13 @@ The moment you notice it (the phone check, the tight chest, the urge to send a m
 
 **4. Don't send anything yet.** Give it ten minutes. If the message still feels important after that, send it once, calmly.
 
+Step 4 is the one I'd underline. Ten minutes doesn't sound like much, but a message you'd regret sending usually looks very different ten minutes later.
+
 ## The rest of the day: stopping the loop from growing
 
 **Notice the reassurance loop.** Asking "are we okay?" brings relief for an hour, and then the doubt comes back, often stronger. Research on reassurance-seeking (explained in our guide to [trust issues](/blog/trust-issues-in-a-relationship/)) suggests frequent reassurance-seeking is linked to *lower* trust over time. Instead of asking for reassurance, ask for something specific.
 Instead of: "Are you sure you're not annoyed with me?"
-Try: "I'm feeling a bit wobbly today. Could we have dinner together tonight?"
+For example: "I'm feeling a bit wobbly today. Could we have dinner together tonight?"
 
 **Give worry a time slot.** Pick 15 minutes later in the day as your "worry time". When a worry comes before then, write it down and tell yourself: "Later." Many worries look smaller by then, or have resolved on their own.
 
@@ -58,7 +60,7 @@ Try: "I'm feeling a bit wobbly today. Could we have dinner together tonight?"
 ## The next month: changing the pattern
 
 **Tell your partner once, calmly.** Not as an accusation, as information.
-Try: "I've realized I get anxious about us sometimes, especially when we're apart. It's not about anything you've done. It helps me a lot when you text if you're going to be late."
+One way to put it: "I've realized I get anxious about us sometimes, especially when we're apart. It's not about anything you've done. It helps me a lot when you text if you're going to be late."
 
 A partner who understands what's going on can help without being on call 24/7.
 
@@ -72,6 +74,8 @@ A partner who understands what's going on can help without being on call 24/7.
 
 > **Example: the Friday night text**
 > Every Friday, when Elif's partner Jonah went out with his soccer team, she'd spend the evening checking her phone and sending "having fun?" messages. One month she tried the toolkit. When the urge came, she named it, did two minutes of breathing, and wrote her three explanations on a sticky note. She told Jonah once: "I get anxious on Fridays. A single text when you get to the bar would help." He was happy to. By the fourth Friday she noticed she'd watched an entire film without checking her phone.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Is it anxiety, or is something really wrong?
 
@@ -79,7 +83,7 @@ Sometimes your gut is picking up on something real. If your partner is inconsist
 
 A useful check: does the anxiety appear mostly when your partner *does* something specific, or does it appear even when they're being reliable and kind? The first may be information. The second is more likely your anxiety talking.
 
-If you want to talk a spiral through before it turns into a 1am message, RelationshipAI's Coach Chat can help you separate what you know from what you fear, and Message check shows how a text will land before you send it. It isn't therapy, but it can help you pause.
+If a spiral hits late at night, you can talk it through in Coach Chat before it turns into a 1 am message, and check how a text will land before sending it.
 
 ## Quick answers
 

@@ -38,6 +38,8 @@ In a lot of households one person does the planning as well as the doing: rememb
 
 > **Example: the birthday present**
 > Every year, Tessa buys the birthday present for her partner's mom. She remembers the date, asks what she'd like, orders it and writes the card. This year she forgets, and her partner says, "Why didn't you get something for my mom?" The argument that follows isn't about the present. It's about years of carrying a job nobody agreed she'd do.
+>
+> *Names and details in this example are invented to show the idea.*
 
 What helps is describing the pattern and asking for one concrete thing. "You never help" gives your partner nothing to act on. Handing over a whole task, from noticing to finishing, works much better than asking for "help".
 
@@ -51,7 +53,7 @@ Gottman's research gives this a solid basis. In a study that followed newlyweds 
 
 Instead of: "You care more about your phone than about me."
 
-Try: "I miss talking to you in the evenings. Could we keep phones away during dinner this week?"
+You could say: "I miss talking to you in the evenings. Could we keep phones away during dinner this week?"
 
 ## 3. Money
 
@@ -61,7 +63,7 @@ These fights are worth taking seriously. Researchers Jeffrey Dew, Sonya Britt an
 
 Before you argue about numbers, ask each other what money gives you. Then agree on something simple, like a short monthly money talk on a fixed date. Our guide on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) walks through that conversation step by step.
 
-Try: "When you think about money, what does it give you? For me it's mostly feeling safe."
+Something like: "When you think about money, what does it give you? For me it's mostly feeling safe."
 
 ## 4. Different needs for closeness
 
@@ -71,6 +73,8 @@ When one person wants more affection or sex than the other, it quickly turns int
 > Jake reaches for his partner most evenings and is often turned down. He starts to feel unwanted and stops trying. His partner, who had felt pressured, now feels relieved and also strangely lonely. Months later, neither of them is happy, and neither has said what they actually feel.
 >
 > What changes things is a calm talk away from the bedroom, where each says what makes them feel close, and what makes them feel pressured.
+>
+> *Names and details in this example are invented to show the idea.*
 
 Talk about it at a calm moment, and stay curious. Say what feels good as well as what's missing. Differences in desire are very common and don't mean you're incompatible. Our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/) explains why closeness and space can feel so charged for some people.
 
@@ -82,7 +86,7 @@ Attachment theory gives a useful way to look at it. The person pushing is often 
 
 Naming the pattern out loud helps more than fighting inside it. A time-out with a set time to come back is a good thing to agree on before you need it.
 
-Try: "It feels like when I push, you go quiet, and when you go quiet I push harder. Can we try it differently?"
+For example: "It feels like when I push, you go quiet, and when you go quiet I push harder. Can we try it differently?"
 
 > **Why naming the loop helps**
 > Once the pattern has a name, it becomes something you face together instead of something you do to each other. The pursuer can relax a little because the withdrawer has promised to come back. The withdrawer can come back because they're no longer being chased. Many couples find that agreeing on the rules of a pause matters more than solving the original topic.
@@ -100,11 +104,13 @@ Whatever the topic, the same four steps tend to help:
 
 The goal with perpetual problems isn't to win or to make the difference disappear. It's to be able to talk about it with some understanding, and ideally a bit of humor. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) has more on how to start these talks softly.
 
-If you'd like to prepare, RelationshipAI is an AI relationship coach that can help you put the need into words in Coach Chat and rehearse the conversation in Partner Practice. It isn't therapy, but it can help you go in calmer.
+Saying the need out loud is the hard part. If you want a dry run first, you can say it to Coach Chat, see how it sounds, and then rehearse the real conversation in Partner Practice.
 
 ## What to take from this
 
 A problem that keeps returning usually points to a need nobody has said out loud. Name the need, ask for one specific thing, and notice how each of you responds. A recurring fight doesn't mean your relationship is failing. If it already feels broken, our step-by-step guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) is a good place to start. It means there's something important that hasn't been heard yet.
+
+If I could only keep one line from this whole article, it would be this: the topic you fight about is rarely the topic you're actually upset about. Once you find the second one, the first one usually gets much easier.
 
 ## Quick answers
 

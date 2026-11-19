@@ -30,6 +30,8 @@ Det finns två viktiga undantag. Om du är rädd för din partner, känner dig k
 
 > **Exempel: från "allt är fel" till en mening**
 > Clara känner att hennes förhållande med Oliver har blivit kallt. När hon sätter sig ner för att skriva vad "bättre" skulle vara inser hon att det mest handlar om två saker: hon vill att han frågar hur hennes dag har varit, och hon vill ha en kväll i veckan utan skärmar. Det är något de faktiskt kan prata om, till skillnad från "du älskar mig inte som förut".
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 ## Steg 2: Stoppa upptrappningen först
 
@@ -75,6 +77,8 @@ Testa: "Vad skulle hjälpa dig att känna dig närmare mig just nu?"
 
 > **Exempel: två olika svar**
 > När Martin och Eva ställer den frågan till varandra säger Martin att han skulle vilja ha mer fysisk ömhet. Eva säger att hon skulle känna sig närmare om han tog över morgonrutinen med barnen, så att hon inte är slut redan klockan nio. Inget av svaren är vad den andra väntade sig. Båda är lätta att göra något åt.
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 ## Steg 6: Ta hjälp när ni har kört fast
 

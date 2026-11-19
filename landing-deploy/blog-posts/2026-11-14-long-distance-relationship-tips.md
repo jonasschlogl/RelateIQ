@@ -31,7 +31,7 @@ The same habits seem to keep both kinds of couple happy. In a 2021 study of 232 
 
 The single clearest predictor in the Canadian research was a shared sense that the distance will end. You don't need a date in the calendar on week one. You do need to talk about it.
 
-Try: "I don't need a fixed plan yet, but I'd love us to talk about what closing the distance could look like in a year or two."
+Say it simply: "I don't need a fixed plan yet, but I'd love us to talk about what closing the distance could look like in a year or two."
 
 ### Find a rhythm, not a rulebook
 
@@ -81,18 +81,20 @@ How to make the landing softer:
 **Protect the mover's independent life.** The person who moved needs their own friends, work and routines quickly, or they'll lean on the relationship for everything.
 
 **Expect a dip, and name it.**
-Try: "This is harder than I thought it'd be. I don't think it means we're wrong for each other. I think we're just adjusting."
+You could say: "This is harder than I thought it'd be. I don't think it means we're wrong for each other. I think we're just adjusting."
 
 **Keep some long-distance habits.** The weekly proper conversation, the small shared rituals. They don't have to stop just because you share a postcode.
 
 > **Example: the first winter**
 > After two years between Manchester and Lisbon, Inês moved in with Daniel. They'd planned it for months, and the first weeks were wonderful. By December she felt flat. She had no job yet and no friends of her own, and they were arguing about dishes. Daniel thought it meant she regretted moving. One evening she said: "I don't regret us. I just don't have a life here yet." They agreed she'd take an evening class and he'd introduce her to his colleagues' partners. By spring the arguments were back to normal-couple size.
+>
+> *Names and details in this example are invented to show the idea.*
+
+I think this is the most underrated part of long distance. Couples plan for years to be in the same city and then spend almost no time planning what that will actually look like.
 
 ## Long distance over the holidays
 
 Holidays can be the hardest weeks apart, and the most complicated together, especially with two families involved. Our guide on [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers how to plan it as a team. For call ideas when conversation runs dry, try our [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/).
-
-If you want to talk through something before a difficult call, RelationshipAI's Coach Chat can help you sort out what you want to say, and Message check shows how a text might land before you send it. It isn't therapy, just a calm second perspective.
 
 ## Quick answers
 

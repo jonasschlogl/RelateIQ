@@ -65,6 +65,8 @@ Try: "I like talking to you, but I'm looking for something that actually goes so
 
 Their response *is* the answer. A real plan means something. "Haha we'll see" also means something.
 
+My view: yes, once. Not because the answer will always be what you want, but because one clear question gets you out of guessing, and guessing is what keeps you hooked.
+
 ## 7. "How do I step away without a big conversation?"
 
 You don't owe a speech to someone who has given you crumbs. A short, kind message is enough:
@@ -83,7 +85,7 @@ It can leave a mark. In the 2023 study, all nine participants said they had trus
 
 What helps: talking it through with friends, noticing the difference between someone who is consistent and someone who is intense, and, if the worry spirals, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/). It also helps to know the opposite pattern. Someone who is too much, too fast may be [love bombing](/blog/love-bombing/), and someone who is clear about what they want is doing what's called [clear coding](/blog/clear-coding-dating/).
 
-If you want help writing that "are we doing this or not?" message without sounding needy or harsh, RelationshipAI's Message check shows you how a text is likely to land before you send it. It isn't therapy, just a calmer second pair of eyes.
+Writing that "are we doing this or not?" message is the hardest part. If you want a second opinion before you hit send, Message check shows how it's likely to land and whether it reads as needy or harsh.
 
 ## A note on safety
 

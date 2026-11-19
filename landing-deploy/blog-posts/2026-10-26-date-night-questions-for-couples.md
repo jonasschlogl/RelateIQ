@@ -53,6 +53,8 @@ Instead of questions, use prompts that start with "Tell me about a time...". Eac
 
 **Best for:** a slow evening, a long walk, a night with a bottle of wine.
 
+My favorite is the hot seat, mostly because it's the one people are most nervous about and end up enjoying the most.
+
 ## 40 date night questions
 
 ### Light and silly (for hot seat and this-or-that)
@@ -120,32 +122,14 @@ Questions work best when the setting feels different from an ordinary Tuesday. W
 
 > **Example: the guess-my-answer upset**
 > Dana and Mo had been together eight years and were sure they'd ace "guess my answer". Mo guessed Dana's dream holiday was a beach. It was a cooking course in Japan, something she'd mentioned once, years ago. "I felt slightly embarrassed and then completely charmed," Mo said. They booked a cooking class in their city the next month, as a first step.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If one of you isn't into it
 
 Not everyone loves questions. Start with this-or-that, which needs almost no effort, and let your partner pick the game. If they prefer doing things to talking, combine the two: questions during a walk, a board game, or while cooking. Side-by-side activities often make conversation easier than sitting face to face.
 
 If you're apart, every game here works on a video call. More ideas in our [long distance relationship tips](/blog/long-distance-relationship-tips/). And if the evening turns into a conversation about something that's been bothering one of you, our guide to [communication habits](/blog/relationship-advice-communication-habits/) helps keep it kind.
-
-If you'd like help planning a conversation you've been putting off, RelationshipAI's Coach Chat can help you think it through. It isn't therapy, but it's a calm place to start.
-
-## Quick answers
-
-### What are good date night questions for couples?
-
-Mix light ones ("What's your most useless talent?"), relationship ones ("What did you think of me the first time we met?") and a few deeper ones ("What's a dream you've never said out loud?"). Turning them into a game keeps it fun.
-
-### How many questions should we ask in one evening?
-
-There's no right number. Five to ten good ones, with time to follow up, usually beat racing through forty.
-
-### How often should couples have a date night?
-
-Research on couple time suggests that time alone together at least once a week goes with happier relationships. It doesn't need to be a big night out, just protected time for the two of you.
-
-### Can we use these questions on a video call?
-
-Yes. Hot seat, this-or-that and guess my answer all work well on video.
 
 *This article is general information, not therapy or medical advice.*
 

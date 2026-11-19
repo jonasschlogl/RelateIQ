@@ -53,3 +53,10 @@ Every "A note on safety" section ends with the US contacts line: the National Do
 Every English article has a short answer box right before the first H2: "> **The short answer:**" followed by a 35 to 55 word direct answer to the main keyword question (for snippets and AI answers). Translations get the same box in their language.
 Every article (English and translations) has `seo_title:` in the header: max 60 characters, main keyword first, a number or hook, no "| RelationshipAI". The H1 `title:` can stay longer.
 Where a site quiz fits the topic, add one "**Quick quiz:**" line at the end of the first section linking it: /quiz/apology-style/, /quiz/attachment-style/, /quiz/comfort-style/, /quiz/fight-style/, /quiz/love-language/, /quiz/overthinker/, /quiz/relationship-needs/.
+
+## 9. Voice (Jonas, 19 Nov 2026: not one template, natural, some of my own words)
+- One short first-person line or paragraph from Jonas per article ("My take", "If I had to pick one...", "I'd start with..."). Opinions and priorities only. Never invent experiences, relationships, conversations or numbers for him.
+- The RelationshipAI mention is written fresh for each article, in plain words, and left out where it doesn't genuinely help. Never reuse "It isn't therapy, but..." as a closing formula.
+- Every made-up example box ends with a line saying names and details are invented.
+- "Quick answers" only when the questions add something the article body doesn't already answer.
+- Vary how sample lines are introduced (not always "Try:").

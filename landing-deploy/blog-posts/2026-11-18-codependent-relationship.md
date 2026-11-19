@@ -51,6 +51,8 @@ Count how many times last week you swallowed a small "actually, I'd prefer..." t
 > **What the three tests have in common**
 > Each one checks whether *you* still exist in the relationship as someone with needs, opinions and the right to receive. Codependency is not "caring too much". It is caring in a way that has quietly removed you from the people you care for.
 
+Of the three, I'd start with the "no" test. If saying no to your partner feels dangerous rather than just uncomfortable, that tells you more than any label.
+
 ## What the research actually says (and what it doesn't)
 
 Codependency is a popular word, but a messy scientific concept. It's not a diagnosis, there's no agreed definition, and much of what you read online goes beyond the evidence. Here is what is reasonably well supported.
@@ -77,6 +79,8 @@ You don't need to overhaul your relationship. Change here starts very small, bec
 
 > **Example: the travel plans**
 > Priya always planned their holidays around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realized I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The holiday wasn't the point. The point was that she was in it.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Words for when it feels hard
 
@@ -92,35 +96,13 @@ You don't need to overhaul your relationship. Change here starts very small, bec
 **When they push back:**
 "I know this is different from how I usually am. I'm not going anywhere. I'm just trying to show up as a whole person."
 
-If you'd like to rehearse these before you say them, RelationshipAI's Partner Practice lets you try the conversation with an AI that plays your partner, privately and as many times as you want. It isn't therapy, but it can make the real conversation feel less frightening.
+If saying these out loud feels scary, you can rehearse them privately in Partner Practice as many times as you need.
 
 ## When it's not (only) about you
 
 Sometimes codependent habits grow around a partner who really is struggling, with addiction, depression or a crisis, and sometimes around a partner who benefits from your self-erasure. If your partner punishes you for having needs, controls who you see, or makes you afraid, this isn't a codependency problem to fix by trying harder. Our guide to the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) can help you look at it clearly. If you keep pouring care into someone who rarely meets you halfway, read about the [emotionally unavailable partner](/blog/emotionally-unavailable-partner/) too.
 
 It's also worth knowing that the urge to keep someone close at any cost is closely related to anxious [attachment styles](/blog/how-attachment-styles-work-in-relationships/). Understanding your own style can make the pattern feel less like a personal failing and more like something you learned, and can relearn.
-
-## Quick answers
-
-### What is a codependent relationship?
-
-A relationship where caring for, managing or pleasing a partner has become so central that your own needs, opinions and wellbeing drop out. It's not an official diagnosis, but the pattern is real.
-
-### Is codependency the same as being a caring partner?
-
-No. Caring includes yourself. Codependency means helping because not helping feels unsafe, often at the cost of your health, friendships and voice.
-
-### What causes codependency?
-
-There's no single cause. Research points to difficulty staying yourself while close to others, and many people trace it to growing up with criticism, control or an unavailable parent.
-
-### Can a codependent relationship be fixed?
-
-Often, yes, especially if both partners notice the pattern. It usually changes through small, repeated steps: saying what you want, letting your partner handle their own problems, and accepting care. Therapy can help a lot.
-
-### Should I leave a codependent relationship?
-
-Not necessarily. Many couples rebalance. But if your partner controls you, punishes your needs or makes you afraid, your safety comes first.
 
 ## A note on safety
 

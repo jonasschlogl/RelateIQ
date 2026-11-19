@@ -98,6 +98,8 @@ Probeer: "Je hoeft nu niet te antwoorden. Zullen we het er morgenavond over hebb
 
 > **Voorbeeld: de stilte op maandag**
 > Na elk hecht weekend werd Ben op maandag stil, en Emily raakte in paniek en stuurde meer berichten. Op een avond zei ze rustig: "Ik merk dat je ruimte nodig hebt nadat we heel dicht bij elkaar zijn geweest. Dat is prima, ik vind de stilte alleen moeilijk. Wil je een kort 'drukke dag, hou van je' sturen als je even ruimte nodig hebt?" Ben was opgelucht. Hij voelde zich schuldig omdat hij ruimte nodig had en wist niet hoe hij dat moest zeggen. Eén berichtje veranderde hoe ze zich allebei voelden.
+>
+> *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 ### 6. Zorg ook voor je eigen behoeften
 

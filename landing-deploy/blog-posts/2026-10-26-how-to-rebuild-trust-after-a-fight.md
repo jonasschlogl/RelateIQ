@@ -27,13 +27,15 @@ A 2026 study points the same way. Following 378 married couples through ten days
 
 **Quick quiz:** Want to see your own pattern in arguments? The free 2-minute [conflict style quiz](/quiz/fight-style/) shows whether you escalate, shut down, people-please or repair.
 
+I'll be honest, this is the advice people push back on most. Going to bed without fixing it feels wrong. But a calm conversation at breakfast beats a third round at 1 am almost every time.
+
 ## The next morning: repair
 
 ### Own your part, without conditions
 
 Say exactly what you did and how it might have felt, with no "but" and no "if".
 
-Try: "I'm sorry I raised my voice and called your idea stupid. That wasn't fair, and I can imagine it felt humiliating."
+For example: "I'm sorry I raised my voice and called your idea stupid. That wasn't fair, and I can imagine it felt humiliating."
 
 Research on apologies by Roy Lewicki and colleagues found that taking responsibility was the most important element of an effective apology, followed by offering to repair. Our full guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) goes into this in detail.
 
@@ -41,7 +43,7 @@ Research on apologies by Roy Lewicki and colleagues found that taking responsibi
 
 "I didn't mean it that way" may be true, but it's not what your partner needs first. They need to know you understand how it landed.
 
-Try: "Tell me what that was like for you. I want to understand."
+One way to put it: "Tell me what that was like for you. I want to understand."
 
 ### One of you can lead
 
@@ -55,7 +57,7 @@ In practice: if you're the calmer one this time, go first. Offer a hug, a coffee
 
 Trust grows back through predictable behavior, not big declarations. One specific, keepable promise beats five vague ones.
 
-Try: "Next time I feel myself getting heated, I'll say 'I need ten minutes' instead of carrying on."
+Say it simply: "Next time I feel myself getting heated, I'll say 'I need ten minutes' instead of carrying on."
 
 Then do it. Every time you keep a small promise, trust gets a little stronger.
 
@@ -79,6 +81,8 @@ After a fight, couples often avoid each other a little, even when it's resolved.
 
 > **Example: the Sunday drive**
 > Elena and Matteo had the same fight every few weeks: about his phone at dinner. After one bad evening, they tried the 21-minute exercise separately. Elena wrote that a neutral observer would see "two tired people who both feel unheard". Matteo wrote that the observer would notice he grabbed his phone when he felt criticized. When they compared notes on a Sunday drive, the fight felt different. "We're still the same people," Elena said. "We just stopped seeing each other as the enemy."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If you're the one who was hurt
 
@@ -94,7 +98,7 @@ After a single fight, often days. After repeated hurtful fights, it can take wee
 
 If trust was broken by something bigger, like cheating, lying or secret spending, the process is longer. See our guides on [rebuilding trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [trust issues in a relationship](/blog/trust-issues-in-a-relationship/). And if fights involve threats, intimidation or fear, that's not a communication problem. Our guide to [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) can help.
 
-If you'd like to rehearse the repair conversation before having it, RelationshipAI's Partner Practice lets you try it with an AI playing your partner. It isn't therapy, but it can help you find calm words.
+Some people find it easier to rehearse the morning-after conversation first. Partner Practice lets you do that with an AI playing your partner, as many times as you need.
 
 ## Quick answers
 

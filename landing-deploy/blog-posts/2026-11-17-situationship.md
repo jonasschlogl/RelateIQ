@@ -29,6 +29,8 @@ Psychologists Scott Stanley, Galena Rhoades and Howard Markman described the dif
 
 Their work was about couples sliding into living together, but the idea fits situationships perfectly. A situationship is, almost by definition, a relationship nobody has decided on. The guide below is simply a way of turning sliding into deciding, whichever way you decide.
 
+This idea is the one I'd keep. Most situationships aren't anyone's plan. They're a series of small "sure, why not" moments that nobody stopped to question.
+
 ## The decision guide
 
 Answer these three questions honestly. Write the answers down if you can.
@@ -55,7 +57,7 @@ Now find your path:
 
 Casual can be completely fine, if it's honest on both sides. The problem with most situationships isn't that they're casual. It's that each person is guessing.
 
-Try: "I'm enjoying this the way it is, and I'm not looking for anything serious right now. Is that where you are too?"
+Say it simply: "I'm enjoying this the way it is, and I'm not looking for anything serious right now. Is that where you are too?"
 
 And agree on the basics, such as whether you're seeing other people and how you'll handle it if one of you starts wanting more. Then check in again in a couple of months, because feelings move.
 
@@ -76,22 +78,24 @@ If the answer is unclear, ask once more, kindly: "I hear you. To be honest, I ne
 
 This is the hardest path, because some of your needs were being met. The Langlais research explains why it hurts: you're not leaving nothing, you're leaving a partial relationship and the hope attached to it.
 
-Try: "I've realized I want something more committed than this, and I don't think that's what you want. So I'm going to step back. I've really enjoyed our time together."
+You could say: "I've realized I want something more committed than this, and I don't think that's what you want. So I'm going to step back. I've really enjoyed our time together."
 
 You don't need their agreement, and you don't need a long explanation. Then give yourself real distance: mute, archive, don't reply to the "hey stranger" two weeks later. That message is often [breadcrumbing](/blog/breadcrumbing/), and replying restarts the cycle. Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) applies to situationships too. The grief is real even without a label.
 
 > **Example: the six-month weekend**
 > For six months, Jules and Ari spent most weekends together, but Ari changed the subject whenever "us" came up. Jules finally asked, calmly, over coffee. Ari said he "didn't want to ruin it with labels". Jules went home and did the three questions. Want: a relationship. Feeling: anxious most weeks. His behavior: no plans beyond Saturday, never met his friends. The table said walk away. It took two more weeks to actually do it, and a month to stop checking his stories. Three months later, Jules said the hardest part had been the deciding, not the leaving.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If you're the one who doesn't want more
 
 Be honest early, even if it's awkward. Keeping someone in a situationship because it's convenient, while knowing they want more, is where casual turns unkind.
 
-Try: "I really like spending time with you, but I'm not looking for a relationship right now. I'd understand if that's not enough for you."
+Something like: "I really like spending time with you, but I'm not looking for a relationship right now. I'd understand if that's not enough for you."
 
 If uncertainty is making you spiral, our guide on [relationship anxiety](/blog/relationship-anxiety/) can help. And if you're with someone who keeps you close but never lets you in, read about [emotionally unavailable partners](/blog/emotionally-unavailable-partner/).
 
-If you want help writing the "what are we?" message so it sounds calm rather than needy, RelationshipAI's Message check shows how a text is likely to land before you send it, and Partner Practice lets you rehearse the conversation. It isn't therapy, just a calmer place to prepare.
+The "what are we?" message is the one people rewrite ten times. Message check can tell you how it's likely to come across, and Partner Practice lets you rehearse saying it in person.
 
 ## Quick answers
 

@@ -34,6 +34,8 @@ There are two important exceptions. If you're afraid of your partner, feel contr
 
 > **Example: from "everything's wrong" to one sentence**
 > Clara feels her relationship with Oliver has become cold. When she sits down to write what "better" would look like, she realizes it's mostly two things: she wants him to ask about her day, and she wants one evening a week without screens. That's something they can actually talk about, unlike "you don't love me like before".
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Step 2: Stop the escalation first
 
@@ -51,11 +53,13 @@ You don't have to be perfect. Just notice which one you slip into most, and prac
 > **Why removing them comes first**
 > Each horseman pushes the other person into self-defense, and once someone is defending themselves, they can't listen. That's why couples can argue about the same thing for years without getting anywhere. Removing the horsemen doesn't solve the problem by itself. It creates the conditions in which a problem can be solved.
 
+I'd put more weight on this step than on any of the others. Most people want to jump straight to the big talk, and that's exactly where it falls apart. Get the contempt out first. Then talk.
+
 ## Step 3: Have one small conversation about one thing
 
 Skip the "state of the relationship" talk. Pick one topic and a calm moment, not right after work and not in the middle of a fight. How you open matters more than almost anything else: in Gottman's research, the first three minutes of a conversation predicted how it would end 96% of the time.
 
-Try: "I'd like to talk about how we split the housework. I'm not blaming you, I'd just like us to find something that feels fair."
+You could say: "I'd like to talk about how we split the housework. I'm not blaming you, I'd just like us to find something that feels fair."
 
 Keep it to one topic, end with one specific agreement, and stop while it's still going well. A short conversation that ends with a small plan builds far more hope than a long one that ends in tears.
 
@@ -75,10 +79,12 @@ A practical way to start:
 
 Instead of "What's wrong with us?", try a question that points forward. Then answer the same question yourself. It turns blame into information, which is much easier to work with.
 
-Try: "What would help you feel closer to me right now?"
+Something like: "What would help you feel closer to me right now?"
 
 > **Example: two different answers**
 > When Martin and Eva ask each other this, Martin says he'd love more physical affection. Eva says she'd feel closer if he took over the morning routine with the kids, so she isn't exhausted by 9 am. Neither answer is what the other expected. Both are easy to act on.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Step 6: Get help when you're stuck
 
@@ -90,7 +96,7 @@ Help doesn't always have to mean weekly therapy, either. In a randomized trial o
 
 A newer trial led by Yunying Le, with Doss on the team, tested the same program with 740 low-income couples in 2023. Couples improved clearly compared with a waiting list whether they had a human coach or mostly automated support, and the gains held at the follow-up about four months later.
 
-An AI coach like RelationshipAI can be useful for thinking things through in Coach Chat and rehearsing difficult conversations in Partner Practice between sessions, but it doesn't replace professional care.
+Between sessions, it can help to have somewhere to think out loud. That's what I built Coach Chat and Partner Practice for. They're a place to prepare, not a replacement for a good therapist.
 
 ## What if only one of you is trying?
 
@@ -98,7 +104,7 @@ It's very common for one partner to be more motivated than the other, at least a
 
 But a relationship needs two people in the long run. If you've been trying alone for a long time and nothing is changing, say so clearly and calmly. Their response to that conversation is important information.
 
-Try: "I've been really trying to make things better between us, and I need to know you want that too. What are you willing to do?"
+For example: "I've been really trying to make things better between us, and I need to know you want that too. What are you willing to do?"
 
 ## How long does it take?
 

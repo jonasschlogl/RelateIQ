@@ -98,6 +98,8 @@ Kokeile: "Sinun ei tarvitse vastata nyt. Voitaisiinko puhua tästä huomenna ill
 
 > **Esimerkki: maanantain hiljaisuus**
 > Jokaisen läheisen viikonlopun jälkeen Ben hiljeni maanantaina, ja Emily panikoi ja lähetti lisää viestejä. Eräänä iltana hän sanoi rauhallisesti: "Olen huomannut, että tarvitset tilaa sen jälkeen, kun olemme olleet tosi lähellä. Se on ok, minusta hiljaisuus on vain vaikeaa. Voisitko laittaa lyhyen 'kiireinen päivä, rakastan sinua', kun tarvitset tilaa?" Ben helpottui. Hän oli tuntenut syyllisyyttä tilan tarpeestaan eikä tiennyt, miten sanoa sen. Yksi viesti muutti sen, miltä heistä molemmista tuntui.
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 ### 6. Pidä huolta myös omista tarpeistasi
 

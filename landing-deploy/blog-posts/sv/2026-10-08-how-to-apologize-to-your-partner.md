@@ -54,6 +54,8 @@ Olika människor värderade olika delar. De som ser sig själva mer som självst
 > Jane är upprörd över att Mark bjöd in sina vänner över helgen utan att fråga henne. Mark ber om ursäkt och erbjuder sig att ställa in (kompensation). Jane känner sig fortfarande sårad. Det hon behövde höra var att han hade brutit en överenskommelse de gjort om lägenheten, och att han förstod varför det fick henne att känna sig som en gäst i sitt eget hem.
 >
 > När Mark försöker igen ("Vi kom överens om att fråga varandra innan vi bjuder in folk, och det gjorde jag inte. Jag förstår varför du kände dig åsidosatt") förändras samtalet.
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 ## Så ber du om ursäkt till din partner: 5 enkla steg
 
@@ -82,6 +84,8 @@ Så här ser strukturen ut i en verklig situation, jämfört med hur det ofta bl
 > I stället för: "Förlåt, okej? Det var galet på jobbet, du vet hur det är. Det är bara en middag."
 >
 > Testa: "Förlåt att jag kom hem två timmar för sent och inte ens skickade ett sms. Du lagade mat hela eftermiddagen och satt sedan här och väntade och undrade var jag var. Det är inte okej. Från och med nu, om jag blir sen, skickar jag ett sms innan jag blir sen, inte efteråt. Får jag gottgöra det på fredag? Och jag förstår om du fortfarande är irriterad i kväll."
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 Den första versionen förklarar, förminskar och ber partnern gå vidare. Den andra säger vad som hände, visar påverkan, erbjuder en konkret lösning och lämnar utrymme. Den tar ungefär tjugo sekunder längre att säga.
 

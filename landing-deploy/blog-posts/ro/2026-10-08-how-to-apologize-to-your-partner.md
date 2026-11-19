@@ -54,6 +54,8 @@ Oameni diferiți au pus preț pe părți diferite. Cei care se văd mai mult ca 
 > Jane e supărată că Mark și-a invitat prietenii în weekend fără să o întrebe. Mark își cere scuze și se oferă să anuleze (compensare). Jane tot se simte rănită. Avea nevoie să audă că el a încălcat o înțelegere pe care o făcuseră despre apartament și că înțelege de ce asta a făcut-o să se simtă musafir în propria casă.
 >
 > Când Mark încearcă din nou ("Ne-am înțeles să ne întrebăm unul pe altul înainte să invităm pe cineva, și n-am făcut-o. Înțeleg de ce te-ai simțit dată la o parte"), discuția se schimbă.
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 ## 5 pași simpli ca să-ți ceri scuze de la partener
 
@@ -82,6 +84,8 @@ Iată cum arată structura într-o situație reală, comparat cu felul în care 
 > În loc de: "Îmi pare rău, bine? A fost nebunie la muncă, știi cum e. E doar o cină."
 >
 > Încearcă: "Îmi pare rău că am venit acasă cu două ore mai târziu și nici măcar nu ți-am scris. Ai stat toată după-amiaza în bucătărie și apoi ai așteptat aici, întrebându-te unde sunt. Nu e în regulă. De acum înainte, dacă o să întârzii, îți scriu înainte să întârzii, nu după. Pot să repar vineri? Și înțeleg dacă ești încă supărat în seara asta."
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 Prima variantă explică, minimizează și îi cere partenerului să treacă peste. A doua numește fapta, arată efectul, oferă o soluție concretă și lasă spațiu. Durează cam douăzeci de secunde în plus.
 

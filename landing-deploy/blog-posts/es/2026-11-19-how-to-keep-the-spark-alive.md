@@ -87,6 +87,8 @@ Elige tu área más baja y dale cuatro semanas. Un cambio cada vez funciona mejo
 
 > **Ejemplo: la noche de los dumplings**
 > Hannah e Ines llevaban once años juntas. Su test mostraba mucha calidez y atención, pero un 0 en novedad: todos los sábados eran mercado, comida y película. Ines eligió "aprender a hacer dumplings" de la lista de Hannah. Lo dejaron todo perdido, se pasaron con la sal del relleno y se rieron toda la noche. La semana siguiente, Hannah eligió un baño nocturno de la lista de Ines. "No cambió nada grande", dijo Hannah un mes después. "Pero volví a tener ganas de que llegara el sábado."
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 ## Cuando la chispa no es el verdadero problema
 

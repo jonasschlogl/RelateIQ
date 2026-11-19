@@ -87,6 +87,8 @@ Alege zona cu cel mai mic punctaj și dă-i patru săptămâni. O schimbare pe r
 
 > **Exemplu: seara cu găluște**
 > Hannah și Ines erau împreună de unsprezece ani. Testul lor arăta multă căldură și atenție, dar 0 la noutate: fiecare sâmbătă însemna piață, prânz și film. Ines a ales "să învățăm să facem găluște" din lista lui Hannah. Au făcut mizerie, au pus prea multă sare în umplutură și au râs toată seara. Săptămâna următoare, Hannah a ales o baie la miezul nopții din lista lui Ines. "Nu s-a schimbat nimic mare", a spus Hannah o lună mai târziu. "Dar am început din nou să aștept sâmbetele cu drag."
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 ## Când scânteia nu e adevărata problemă
 

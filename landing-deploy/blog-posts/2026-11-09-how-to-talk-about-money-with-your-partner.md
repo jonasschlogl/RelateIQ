@@ -62,6 +62,8 @@ Don't try to solve everything. Make one or two small decisions:
 > **Why stories first**
 > When money talk starts with numbers, people get defensive fast: every figure feels like a judgment. Starting with stories and dreams reminds you both that you're on the same team, and explains *why* your partner gets anxious about savings or generous with gifts. It's much easier to agree on rules once you understand what's underneath them.
 
+I'd resist the urge to skip round 1. Talking about how money worked in your families feels like small talk. It's usually where the real explanation for your arguments is hiding.
+
 ## Which money set-up suits you?
 
 | Set-up | How it works | Can suit couples who... |
@@ -96,30 +98,12 @@ Lead with the feeling, not the accusation.
 
 > **Example: the percentage that ended a year of tension**
 > Nadia earned about twice what Will did, and they split everything 50/50. Will was always broke and quietly resentful, and Nadia couldn't understand why he never wanted to go out. In their first money date, Will said it out loud. They switched to splitting by percentage and kept a small personal budget each. "We'd been fighting about restaurants for a year," Nadia said. "It was never about restaurants."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If the talk still turns into a fight
 
 Take a break when either of you feels flooded, and come back to it later. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) has ways to keep arguments from escalating, and if something hurtful was said, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) can help. If money is part of a bigger stress, see our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/). And if you're about to move in together after long distance, money is one of the big topics to cover first, see our [long distance relationship tips](/blog/long-distance-relationship-tips/).
-
-If you want to rehearse a hard money conversation before you have it, RelationshipAI's Partner Practice lets you try it with an AI playing your partner. It isn't therapy or financial advice, but it can help you find calm words.
-
-## Quick answers
-
-### When should couples start talking about money?
-
-Earlier than most do: before moving in together or making big shared commitments. Start light (stories and goals) and add numbers as trust grows.
-
-### Should couples combine their finances?
-
-There's no single right answer. One experiment found that newly married couples who opened a joint account kept their relationship quality better over two years, but it depends on trust, stability and what you both want.
-
-### How do we stop fighting about money?
-
-Talk regularly at calm times, agree on a few clear rules (like a no-need-to-ask amount), and understand the values behind each other's habits.
-
-### Is controlling money a red flag?
-
-Yes, when one partner controls all the money, restricts access, demands receipts or uses money to punish. That's financial abuse, a form of domestic abuse.
 
 ## A note on safety
 

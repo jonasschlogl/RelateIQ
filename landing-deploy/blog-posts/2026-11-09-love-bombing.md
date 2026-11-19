@@ -35,7 +35,7 @@ In a 2024 survey of 225 university students in Turkey, researchers Duman and Naz
 
 **What to do now:** Slow one thing down on purpose. Say no to the trip, or reply in your own time. Watch the reaction more than the words.
 
-Try: "I'm really enjoying this, and I'd like to take it a bit slower. Can we keep the trip for later?"
+For example: "I'm really enjoying this, and I'd like to take it a bit slower. Can we keep the trip for later?"
 
 ## Month 2: the first "no"
 
@@ -79,7 +79,9 @@ The single most useful test is the first column's first row. Say "slower, please
 
 If you're unsure whether you're overthinking, our guide to [green flags in a relationship](/blog/green-flags-in-a-relationship/) shows what steady, healthy interest looks like. The opposite pattern, very little but just enough, is [breadcrumbing](/blog/breadcrumbing/). And someone who is simply clear about what they want is practicing [clear coding](/blog/clear-coding-dating/).
 
-If you'd like to rehearse saying "let's slow down" before you say it, RelationshipAI's Partner Practice lets you try the conversation with an AI that plays your partner, privately. It isn't therapy, but it can make the real conversation easier.
+Saying "let's slow down" to someone who's showering you with attention is hard. If it helps, you can rehearse it privately in Partner Practice first.
+
+If you only test one thing, test the "no". Say no to something small and watch what happens. Real interest survives a no. Love bombing usually doesn't.
 
 ## Quick answers
 

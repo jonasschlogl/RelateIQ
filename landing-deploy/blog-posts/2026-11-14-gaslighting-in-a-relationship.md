@@ -46,12 +46,16 @@ The Klein study found a common arc. Most relationships started with intense affe
 > Kate's partner promised to come to her sister's birthday. On the day, he says he never agreed. She shows him his message: "of course, I'll be there". He laughs and says she's "been really stressed lately" and keeps "remembering things weirdly". She ends up apologizing.
 >
 > Once, that's a frustrating evening. Every few weeks, always ending with her apology, it's a pattern.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Question 4: How do you feel after you talk?
 
 Pay attention to how conversations leave you. After an ordinary disagreement you might feel annoyed, sad or unresolved. After gaslighting, people describe something different: confusion, a fog, the sense that they can't trust their own memory, and a habit of rehearsing conversations in advance to avoid "getting it wrong".
 
 In the Klein study, people described their sense of self as shrinking, withering or broken. In a 2025 study of survivors of intimate partner violence, Helen Hailes and Lisa Goodman described how gaslighting fed long-term self-doubt and was tied into broader patterns of power and control in the relationship.
+
+If you only answer one of the five questions, I'd make it this one. Your memory can be argued with. A pattern of walking away confused and smaller usually can't.
 
 ## Question 5: Who benefits?
 
@@ -71,7 +75,7 @@ Not all denial is calculated. Some people deny things because they feel ashamed 
 
 **Decide what you need.** Sometimes that's a serious conversation or couples therapy. Sometimes it's leaving. Our guide on [whether to break up](/blog/should-i-break-up-with-my-partner/) can help you think it through, and our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) helps afterwards.
 
-If you're not sure whether you're overthinking, RelationshipAI's Coach Chat can help you lay out what happened calmly and look at it from a few angles. It isn't therapy and can't judge your relationship for you, but writing it out often makes the pattern clearer. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) may also help with the replaying.
+Writing things down as they happen also helps, wherever you do it. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) may also help with the replaying.
 
 ## If you're worried you're the one doing it
 

@@ -47,7 +47,7 @@ It also tends to create a loop. A large review by Paul Schrodt and colleagues fo
 
 **What helps:** make sharing safe and low-stakes. React to small disclosures with warmth, not a big emotional moment. "Thanks for telling me that" goes a long way. Avoid "Finally!" or making it a lesson. Over time, small safe experiences can change the old rule.
 
-Try: "You don't have to explain it perfectly. Even 'today was rough' helps me feel close to you."
+One way to put it: "You don't have to explain it perfectly. Even 'today was rough' helps me feel close to you."
 
 ## Reason 4: They're depleted right now
 
@@ -79,12 +79,16 @@ Many people are a mix. The table is a starting point for a conversation, not a d
 
 > **Example: the wrong question**
 > For a year, Priyanka kept asking Marco how he felt about his father's illness, and he kept saying "fine". She took it as shutting her out. When a counselor suggested he might simply struggle to name emotions, she tried a different question: "What's the hardest part of visiting him?" He answered straight away: "Seeing him not recognize the dog." It was the most open he'd been in months. He hadn't been hiding. He'd been missing the words.
+>
+> *Names and details in this example are invented to show the idea.*
+
+My honest take: reason 5 is the one people least want to consider, and the one worth ruling out first. It hurts, but it saves a lot of time spent fixing the wrong problem.
 
 ## Looking after yourself
 
 Whatever the reason, you're allowed to have needs. If you're always the one reaching, it can slide into exhaustion or [codependency](/blog/codependent-relationship/). Keep friends you can be open with, notice whether things are slowly improving, and decide what you need long term. And if you notice the anxiety is mostly yours, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help.
 
-If you'd like to rehearse a conversation with a partner who tends to shut down, RelationshipAI's Partner Practice lets you try it with an AI that plays your partner, so you can find words that invite rather than pressure. It isn't therapy, but it can help you prepare.
+With a partner who shuts down, the wording matters a lot. Partner Practice lets you try different openings with an AI playing your partner, so you can find the ones that invite instead of pressure.
 
 ## Quick answers
 

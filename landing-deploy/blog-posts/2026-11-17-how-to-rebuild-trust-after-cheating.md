@@ -23,7 +23,7 @@ Whether the affair was discovered or confessed, this is the moment the ground di
 
 **For the unfaithful partner:** this is where trust is either made worse or starts to be rebuilt. Tell the truth about the basics. Partial confessions that later turn out to be incomplete ("trickle truth") are often described by couples as more damaging than the affair itself.
 
-Try: "I did this. It's my responsibility, not yours. I'll answer your questions honestly."
+One way to put it: "I did this. It's my responsibility, not yours. I'll answer your questions honestly."
 
 ## Stage 2: Initial reactions
 
@@ -53,6 +53,8 @@ Over time, things become less raw. Couples in the Fife study described this phas
 Try (betrayed partner): "I'm having a hard day about it. I don't need you to fix it, I just need you to know."
 Try (unfaithful partner): "Thank you for telling me. What would help right now?"
 
+The thing I'd want both partners to hear is that this stage is slow on purpose. Trust doesn't come back from one great conversation. It comes back from a hundred boring, consistent days.
+
 ## Stage 4: Revitalising
 
 In the final stage, couples in the Fife study described seeking reconnection, communicating more deeply, re-establishing trust, and moving from an early, decided forgiveness to a deeper, felt one.
@@ -61,6 +63,8 @@ This is where couples build something new, not just patch the old. Shared time, 
 
 > **Example: the second year**
 > When Rosa found messages between Dan and a colleague, she nearly left the same night. In the first months they barely spoke without fighting. Dan answered every question, the same ones, again and again, and moved to a different team at work. Around month eight, Rosa noticed she'd stopped checking his phone. In the second year they started having a Thursday walk, no phones, where they talked about everything except the affair. "Forgiving him was a decision I made in month three," she said later. "Actually feeling it took most of a year."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## How long does it take?
 
@@ -70,7 +74,7 @@ Usually many months, often a year or more. It depends on how long the affair las
 
 Rebuilding trust requires the unfaithful partner to take full responsibility and the betrayed partner to choose, freely, to try. If the affair continues, if there's ongoing lying, or if you're being pressured or blamed for the betrayal, staying may not be safe or healthy. Our guides on [whether to break up](/blog/should-i-break-up-with-my-partner/) and [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help you if leaving is the right choice.
 
-A therapist experienced with infidelity can help either way. If you're struggling with what to say in the hardest conversations, RelationshipAI's Coach Chat can help you put your thoughts into words, and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) covers the first apology. For the doubt that lingers afterwards, see [trust issues in a relationship](/blog/trust-issues-in-a-relationship/).
+A therapist experienced with infidelity can help either way. If you're stuck on what to say, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) covers the first apology. For the doubt that lingers afterwards, see [trust issues in a relationship](/blog/trust-issues-in-a-relationship/).
 
 ## Quick answers
 

@@ -55,6 +55,8 @@ Cada persona valoraba partes distintas. Quienes se ven sobre todo como individuo
 > Jane está molesta porque Mark invitó a sus amigos el fin de semana sin preguntarle. Mark se disculpa y ofrece cancelarlo (compensación). Jane sigue dolida. Lo que necesitaba oír era que él había roto un acuerdo que tenían sobre el piso, y que entendía por qué eso la hacía sentirse una invitada en su propia casa.
 >
 > Cuando Mark lo intenta otra vez («Quedamos en consultarnos antes de invitar a gente, y no lo hice. Entiendo que te sintieras apartada»), la conversación cambia.
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 ## Cómo pedir perdón a tu pareja en 5 pasos
 
@@ -83,6 +85,8 @@ Así se ve la estructura en una situación real, comparada con cómo suele ir.
 > En lugar de: «Lo siento, ¿vale? El trabajo ha sido una locura, ya sabes cómo es. Es solo una cena».
 >
 > Prueba: «Siento haber llegado dos horas tarde sin ni siquiera escribirte. Te has pasado la tarde cocinando y luego has estado aquí esperando, sin saber dónde estaba. Eso no está bien. A partir de ahora, si voy a llegar tarde, te escribiré antes, no después. ¿Me dejas compensártelo el viernes? Y entiendo si esta noche sigues enfadada».
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 La primera versión explica, quita importancia y le pide a la otra persona que pase página. La segunda nombra lo que hizo, muestra el impacto, ofrece una solución concreta y deja espacio. Se tarda unos veinte segundos más en decirla.
 

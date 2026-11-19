@@ -49,6 +49,8 @@ So here are 25 ways to say "I love you" without words, sorted by the kind of day
 
 Our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) goes deeper into this.
 
+If I had to pick one from the whole list, it would be number 13: quietly taking one task off their plate. It's unglamorous, and it lands every time.
+
 ## When things are good
 
 16. Celebrate their good news like it's your own: ask questions, let them tell the whole story.
@@ -72,6 +74,8 @@ More ideas in our [long distance relationship tips](/blog/long-distance-relation
 
 > **Example: the right gesture at the wrong time**
 > Kofi loved planning surprises for Eva. But when he booked a weekend away during her exam month, she was more stressed than delighted. When they talked about it, she said the most loving thing he'd done that month was quietly doing her laundry the night before her biggest exam. Same intention, different moment. Now he asks himself one question first: what kind of day is she having?
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## How to find out what works for your partner
 
@@ -86,26 +90,6 @@ Then notice what lights them up. And remember Algoe's finding: when *your* partn
 ## When showing love feels hard
 
 If you grew up in a family where affection wasn't shown, gestures can feel awkward at first. Start with the smallest ones: a coffee, a text, a hand on the shoulder. They get easier with practice. If your partner struggles to show affection, our guide on [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) explains some of the reasons why, and what helps.
-
-If you'd like help finding the words for the times when words *are* needed, RelationshipAI's Coach Chat can help you think through what you want to say. It isn't therapy, but it's a calm place to start.
-
-## Quick answers
-
-### How do you show love without saying it?
-
-Small, regular gestures that fit the moment: a warm drink on a hard day, full attention when they talk, a hug, taking a task off their plate, remembering what matters to them.
-
-### What small things make a partner feel loved?
-
-Being noticed and remembered, physical affection without an agenda, practical help when they're stretched, and genuine interest in their day.
-
-### Is it okay if my partner rarely says "I love you"?
-
-Many people show love more through actions than words. If their actions feel caring and consistent, that's love too. You can still tell them you'd enjoy hearing it sometimes.
-
-### Does physical touch really make a difference?
-
-Research suggests it does: affectionate touch in everyday life is linked to better mood and feeling closer, for both the person giving it and the one receiving it.
 
 *This article is general information, not therapy or medical advice.*
 

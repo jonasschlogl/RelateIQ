@@ -98,6 +98,8 @@ Testa: "Du behöver inte svara nu. Kan vi prata om det i morgon kväll?"
 
 > **Exempel: tystnaden på måndagen**
 > Efter varje nära helg blev Ben tyst på måndagen, och Emily fick panik och skickade fler meddelanden. En kväll sa hon lugnt: "Jag har märkt att du behöver utrymme efter att vi har varit riktigt nära. Det är okej, jag tycker bara att tystnaden är jobbig. Kan du skicka ett snabbt 'stressig dag, älskar dig' när du behöver andrum?" Ben blev lättad. Han hade haft dåligt samvete för att han behövde utrymme och visste inte hur han skulle säga det. Ett enda sms ändrade hur de båda mådde.
+>
+> *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 ### 6. Ta hand om dina egna behov
 

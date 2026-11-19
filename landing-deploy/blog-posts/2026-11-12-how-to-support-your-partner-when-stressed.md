@@ -23,6 +23,8 @@ Why? Being obviously helped can carry a hidden message: *you can't cope on your 
 
 **Quick quiz:** Do you comfort by fixing, listening, hugging or lightening the mood? The free 2-minute [comfort style quiz](/quiz/comfort-style/) shows your default and how to adjust it.
 
+This is the finding I'd most want people to know about support. The urge is to make it visible, to show you care. Often the kindest thing is the help they barely notice.
+
 ## Stress makes small things feel big
 
 Lisa Neff and Benjamin Karney studied newlywed couples over several years and found that when people were under more stress than usual, their relationship satisfaction swung more with each good or bad day together. Stress seems to use up the mental energy we normally use to keep small problems in perspective.
@@ -97,6 +99,8 @@ Then remember the answer. That one conversation will make you a better support t
 
 > **Example: the wrong kind of help**
 > When Tomás was stressed about a work launch, Elena kept sending him articles about productivity and asking how she could help. He grew short with her and she felt rejected. On a quieter weekend they talked about it, and he said: "When I'm stressed, I don't want to talk about it. I want normal. Make me laugh, put a film on, don't ask how work is." The next crunch, she did exactly that. He told her afterwards it was the first busy period he hadn't ended up feeling guilty about.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Look after yourself too
 
@@ -114,7 +118,7 @@ Support works both ways. You can make it much easier for your partner to help:
 
 If stress is leading to more arguments, a few [communication habits](/blog/relationship-advice-communication-habits/) can stop small fights from escalating. If something hurtful was said, our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) helps you repair it.
 
-If you want help finding the right words, RelationshipAI's Coach Chat can help you think it through, and Message check lets you see how a text might land before you send it. It isn't therapy, but it's a calm place to start.
+If you're not sure what to say, you can think it through in Coach Chat, or run a text past Message check before you send it.
 
 ## Quick answers
 

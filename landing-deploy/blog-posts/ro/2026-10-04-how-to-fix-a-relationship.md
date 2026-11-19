@@ -30,6 +30,8 @@ Există două excepții importante. Dacă îți e frică de partener, te simți 
 
 > **Exemplu: de la "totul e greșit" la o singură propoziție**
 > Clara simte că relația ei cu Oliver s-a răcit. Când se așază să scrie ce ar însemna "mai bine", își dă seama că e vorba mai ales de două lucruri: vrea ca el să o întrebe cum i-a fost ziua și vrea o seară pe săptămână fără ecrane. Despre asta chiar pot vorbi, spre deosebire de "nu mă mai iubești ca înainte".
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 ## Pasul 2: Oprește mai întâi escaladarea
 
@@ -75,6 +77,8 @@ Un mod practic de a începe:
 
 > **Exemplu: două răspunsuri diferite**
 > Când Martin și Eva își pun întrebarea asta, Martin spune că și-ar dori mai multă afecțiune fizică. Eva spune că s-ar simți mai aproape dacă el ar prelua rutina de dimineață cu copiii, ca ea să nu fie epuizată deja la 9. Niciun răspuns nu e ce se aștepta celălalt. Amândouă sunt ușor de pus în practică.
+>
+> *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 ## Pasul 6: Cereți ajutor când v-ați blocat
 

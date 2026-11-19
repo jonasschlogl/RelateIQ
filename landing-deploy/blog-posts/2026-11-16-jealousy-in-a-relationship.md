@@ -54,6 +54,8 @@ Interestingly, the same Elphinston study found that checking-up behaviors had a 
 
 It's also worth knowing what can trigger the urge. A 2022 study of 346 people in relationships by Janneke Schokkenbroek and colleagues found that people whose partners often ignored them for their phones ("phubbing") were somewhat more likely to look through their partner's messages or online activity. The effect was small, but the message is useful: snooping sometimes grows out of feeling ignored, not only out of suspicion. That's something you can talk about.
 
+I'd say this is the most important myth on the list. Checking feels like it will end the doubt. It almost never does. It just moves the doubt to the next thing.
+
 ## Myth 5: "Social media just shows what's already there"
 
 Social media adds information that would never have reached you otherwise: a like on an old photo, a new follower, a comment from someone you don't know. In a well-known early study, Amy Muise and colleagues found that the more time students spent on Facebook, the more jealousy they reported, and they described a feedback loop. Ambiguous information triggers jealousy, which leads to more checking, which turns up more ambiguous information.
@@ -78,23 +80,25 @@ But if your partner is regularly secretive, inconsistent or dismissive when you 
 
 **Say the feeling, not the accusation.**
 Instead of: "Who is she? Why is she always liking your posts?"
-Try: "I noticed I got a bit jealous when I saw that. It's probably my stuff, but I wanted to tell you rather than stew on it."
+Something like: "I noticed I got a bit jealous when I saw that. It's probably my stuff, but I wanted to tell you rather than stew on it."
 
 **Ask for something specific.** Vague reassurance ("Do you still love me?") fades fast. Specific requests last longer.
-Try: "When you're going to be out late, a quick text would really help me relax."
+For example: "When you're going to be out late, a quick text would really help me relax."
 
 **Agree on what you both consider okay.** Phones, exes, friendships, flirting. Couples differ, and a ten-minute conversation about it removes a lot of guesswork.
 
 > **Example: the gym friend**
 > Maya kept noticing messages from a woman Dev knew from the gym. Instead of checking his phone, she told him: "I've been feeling jealous about your gym friend. I don't think anything's going on, I just feel a bit outside of it." Dev was surprised, then relieved she'd said it. He introduced them the next week. The jealousy didn't vanish overnight, but the story in Maya's head had a real person to replace it.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If your partner is the jealous one
 
 Be patient with the feeling and firm about the behavior. You can reassure without giving up your privacy or friendships.
 
-Try: "I understand you feel worried, and I want to help. I'm also not okay with you going through my phone. Can we talk about what would actually help you feel safer?"
+One way to put it: "I understand you feel worried, and I want to help. I'm also not okay with you going through my phone. Can we talk about what would actually help you feel safer?"
 
-If you'd like to rehearse that conversation first, RelationshipAI's Partner Practice lets you try it with an AI that plays your partner, privately. It isn't therapy, but it can help you find calm words before the real talk.
+If you'd rather practice that conversation first, Partner Practice lets you do it privately with an AI playing your partner.
 
 ## Quick answers
 

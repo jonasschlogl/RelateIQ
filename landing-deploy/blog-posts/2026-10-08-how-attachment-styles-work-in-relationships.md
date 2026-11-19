@@ -63,6 +63,8 @@ Being secure doesn't mean never feeling jealous, hurt or insecure. It means thos
 > Sam texts his girlfriend at 6 pm and gets no reply until 10. He notices a small "huh", checks in once ("Hope your day's okay!") and goes on with his evening. When she replies, explaining the work deadline, he says it's fine and they plan to call the next day.
 >
 > What makes this secure isn't that Sam felt nothing. It's that the feeling didn't turn into a story about the relationship.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ### Anxious attachment (preoccupied)
 
@@ -74,6 +76,8 @@ The strength here is real: anxious partners are often warm, attentive and emotio
 > Lena's boyfriend replies "ok" to a long message about her day. Within an hour she has sent "Is everything alright?", then "You seem off", then "Never mind, forget it." He was at the gym and didn't see any of them. When he finally calls, she's already hurt and he feels accused of something he didn't do.
 >
 > Try: "Hey, I noticed I got a bit anxious when it went quiet. All good with you?"
+>
+> *Names and details in this example are invented to show the idea.*
 
 ### Avoidant attachment (dismissing)
 
@@ -85,6 +89,8 @@ It's usually less about not caring and more about feeling safer with room to bre
 > After a big, emotional conversation about moving in together, Daniel goes quiet for two days. He isn't angry. He feels overloaded and doesn't know what to say yet, so he says nothing. His partner reads the silence as doubt about the whole relationship.
 >
 > Try: "That conversation was a lot for me. I want to keep talking about it, I just need until Sunday to think."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ### Fearful-avoidant attachment (also called fearful)
 
@@ -104,6 +110,8 @@ An anxious partner paired with an avoidant partner can fall into this loop very 
 > Mia brings up that Tom has been on his phone all weekend. Tom says "Can we not do this now?" and goes to the kitchen. Mia follows him: "See, this is exactly what I mean." Tom goes quiet. Mia raises her voice. Tom grabs his keys and goes for a drive. Both of them end the day feeling alone, and both believe the other one started it.
 >
 > What would change the loop: Mia names her need instead of the problem ("I miss you this weekend"), and Tom names his break instead of disappearing ("I'm getting overwhelmed. Give me 20 minutes and I'll come back").
+>
+> *Names and details in this example are invented to show the idea.*
 
 > **Taking the blame out of the room**
 > Naming the loop as something you both do takes the blame out of the room. The pursuer can usually soften once they know the withdrawer is coming back, because what scared them was the disappearance, not the break. And the withdrawer can usually come back once they're not being chased, because what overwhelmed them was the pressure, not the topic. A short, specific promise ("20 minutes, then I'm back") answers both alarms at once.
@@ -136,6 +144,8 @@ Good everyday moments seem to matter, not just big life events. In a 2022 study 
 | "You need a secure partner to heal." | A steady partner helps, but friends, therapy and your own practice matter too. |
 | "Two insecure people can't make it work." | Many do, especially when both understand the pattern and own their part. |
 
+The myth I'd most like to retire is the idea that your style is a verdict. People often use "I'm avoidant" or "he's anxious" as the end of the conversation. It works much better as the start of one.
+
 ## How to use this in everyday life
 
 Understanding your pattern is the first half. The second half is doing one small thing differently the next time the alarm goes off.
@@ -147,7 +157,7 @@ Understanding your pattern is the first half. The second half is doing one small
 - **Ask for what you need directly.** One clear message works better than three hinting ones.
 - **Separate facts from stories.** Our guide to [overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has a step-by-step way to do this.
 
-Try: "I'm feeling a bit unsure today. Could you tell me we're okay?"
+For example: "I'm feeling a bit unsure today. Could you tell me we're okay?"
 
 ### If you lean avoidant
 
@@ -155,13 +165,13 @@ Try: "I'm feeling a bit unsure today. Could you tell me we're okay?"
 - **Come back when you said you would.** That's what builds trust. Each time you return, your partner's alarm learns it can relax.
 - **Practice one small vulnerable sentence a week.** It doesn't have to be a big speech. "I missed you today" counts.
 
-Try: "I need an hour on my own to think. Can we talk at 8?"
+One way to put it: "I need an hour on my own to think. Can we talk at 8?"
 
 ### If you're secure
 
 Stay patient, but don't become the full-time therapist in the relationship. Your steadiness can help a partner who leans anxious or avoidant, and you still get to have needs and limits.
 
-Try: "I'm not going anywhere. And I also need us to talk about this calmly."
+Say it simply: "I'm not going anywhere. And I also need us to talk about this calmly."
 
 ### If you're fearful-avoidant
 
@@ -173,7 +183,7 @@ Try: "I want to be close, and it also scares me a bit. Can we go slowly?"
 
 Pick a calm moment and each answer three questions: When I feel disconnected, what do I usually do? What am I afraid of in that moment? What would help me feel safe? Then agree on one small ritual for the next time the loop starts, like a code word, a 20-minute break with a set return time, or a hand on the shoulder before the talk begins.
 
-If you'd like help working out what to say in a specific situation, RelationshipAI is an AI relationship coach built around these ideas. It can help you write a message, rehearse a hard conversation in Partner Practice or understand a pattern. It isn't therapy and can't diagnose you, but it can be a calm place to think out loud.
+RelationshipAI is built around these ideas, so if you're stuck on what to say in one specific situation, you can work it through there or rehearse it in Partner Practice. Just don't treat it as a diagnosis. It can't give you one, and neither can a quiz.
 
 ## Quick answers
 

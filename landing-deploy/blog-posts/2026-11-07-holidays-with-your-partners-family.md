@@ -37,9 +37,11 @@ Agree on:
 - **Money:** gifts, travel, who pays for what.
 - **What you each need to feel okay:** a morning walk alone, one evening out just the two of you, no shared bedroom with the dog.
 
-Try: "I want this to go well for both of us. What's the one thing you're most worried about, and what's mine?"
+Say it simply: "I want this to go well for both of us. What's the one thing you're most worried about, and what's mine?"
 
 Psychologist Terri Apter, who has studied in-law relationships extensively, found that over 60% of women, compared with about 15% of men, described a difficult relationship with their partner's mother. If that's you, say so before the visit, not halfway through it.
+
+If you only do one thing from this guide, do this talk. So many holiday blow-ups start with two people who had quietly assumed different plans.
 
 ## The day before: the briefing
 
@@ -84,6 +86,8 @@ Don't fight about it in front of the family. Use your signal, take a break toget
 
 > **Example: the seating plan**
 > Every Christmas, Sofia was seated at the far end of the table from Nikhil, next to his uncle who liked to quiz her about her "real plans". This year, during the planning talk two weeks before, she mentioned it. Nikhil quietly asked his mom to seat them together. "It sounds tiny," Sofia said. "But it was the first Christmas I felt like we were a team in that house instead of me being the guest."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## The drive home: the kind debrief
 
@@ -105,8 +109,6 @@ There's no single fair way. Couples commonly:
 What matters most is that you decide together, and that neither of you feels permanently second.
 
 If you're bringing your partner home for the first time, see our guide on [meeting your partner's parents](/blog/meeting-your-partners-parents/), and if you're spending the holidays apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) include ideas for the holidays. When tension spills over between the two of you, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) and our guide on [communication habits](/blog/relationship-advice-communication-habits/) can help.
-
-If you want to rehearse a tricky conversation, like asking your partner to back you up, RelationshipAI's Partner Practice lets you try it with an AI playing your partner. It isn't therapy, but it can help you find calm words before the real talk.
 
 ## Quick answers
 

@@ -78,15 +78,17 @@ So the signs worth watching are not dramatic. They're the small daily ones. That
 
 If you lean toward anxiety in relationships, a normal busy week can feel like rejection. Ask yourself: have *they* changed, or has my worry level changed? Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) help you separate the two.
 
+I'd spend real time on this step. A busy month and a fading relationship can look identical from the inside, especially if you're already worried.
+
 ## What to say
 
 Lead with what you notice and how you feel, not with a conclusion.
 
 Instead of: "You obviously don't care about me anymore."
-Try: "I've noticed we haven't had much time together lately and I miss you. How are you doing, honestly?"
+You could say: "I've noticed we haven't had much time together lately and I miss you. How are you doing, honestly?"
 
 Instead of: "Are you losing interest?"
-Try: "Things have felt a bit distant between us. Is something on your mind, about us or anything else?"
+Something like: "Things have felt a bit distant between us. Is something on your mind, about us or anything else?"
 
 Then listen. Their answer might be about work, health, something you did, or the relationship. Each needs a different response, and you won't know which until you ask.
 
@@ -94,12 +96,14 @@ And turn toward them, on purpose, in small ways: respond to their bids, put your
 
 > **Example: not about us**
 > For weeks, Hana felt Tom had gone cold: no initiative, short answers, no interest in weekend plans. She'd rehearsed a "where is this going" talk. Instead she opened with: "You've seemed really flat lately. How are you, honestly?" Tom was quiet for a long time, then said work had been crushing him for months and he'd been ashamed to admit how low he felt. The distance was real. The reason wasn't her. He saw a doctor a week later.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## If it really is the relationship
 
 Sometimes the honest answer is that they've drifted, or that they're unsure. That hurts, but it's information you can work with. Many couples find their way back with effort on both sides, sometimes with a couples therapist. If your partner says they don't know how they feel, give it a little time, but not unlimited time. Our guides on [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) and [whether to break up](/blog/should-i-break-up-with-my-partner/) may help you decide what you need.
 
-If you want help finding words for that first conversation, RelationshipAI's Coach Chat can help you plan it, and Partner Practice lets you rehearse it with an AI playing your partner. It isn't therapy, but it can make the real talk less frightening.
+If you're dreading that first conversation, you can plan it in Coach Chat and rehearse it in Partner Practice first.
 
 ## Quick answers
 

@@ -80,7 +80,7 @@ This is where most deep conversations are won or lost. Based on what responsiven
 **Reflect the feeling, not just the facts.**
 They say: "My dad never came to my football games."
 Instead of: "Oh, my dad was the same."
-Try: "That sounds like it really hurt. Did you notice it at the time, or only later?"
+You could say: "That sounds like it really hurt. Did you notice it at the time, or only later?"
 
 **Don't fix, judge or correct.** Deep answers are not invitations for advice. "Have you tried talking to him about it?" can wait for another day.
 
@@ -90,38 +90,22 @@ Try: "That sounds like it really hurt. Did you notice it at the time, or only la
 
 > **Example: the follow-up that changed the evening**
 > On a long drive, Amara asked Theo question 9: who taught you the most about love? He said "my gran" and went quiet. Normally she'd have jumped in with her own story. This time she asked: "What did she do that taught you that?" He talked for twenty minutes about weekends at his gran's flat, things she'd never heard. "I'd been asking the right questions for years," Amara said later. "I'd just never waited long enough for the real answer."
+>
+> *Names and details in this example are invented to show the idea.*
+
+If you remember one thing from this list, make it the follow-up question. Asking a deep question is easy. Staying curious about the answer is where the closeness actually comes from.
 
 ## When the answer is hard to hear
 
 Sometimes a deep question uncovers something painful: a need that isn't being met, an old hurt, a worry about the relationship. That's not a sign the question was a mistake. It's the point. Stay calm, thank them for being honest, and ask for time if you need it.
 
-Try: "I'm really glad you told me. I need a little while to think about it. Can we come back to it tomorrow?"
+Something like: "I'm really glad you told me. I need a little while to think about it. Can we come back to it tomorrow?"
 
 If an answer leads to a disagreement, our guide on [communication habits](/blog/relationship-advice-communication-habits/) can help keep it from escalating.
 
 ## Make it a habit, not a one-off
 
 One deep evening is lovely. A small habit is what actually changes a relationship. Some couples pick one question every Sunday morning, or keep a list on their phone for long drives. For lighter, more playful questions, see our [date night questions for couples](/blog/date-night-questions-for-couples/). If you're far apart, they work beautifully on video calls too, see our [long distance relationship tips](/blog/long-distance-relationship-tips/). And if you're about to meet the family, a few Level 2 questions about their childhood will help you before [meeting your partner's parents](/blog/meeting-your-partners-parents/).
-
-If you'd like to practice responding well, especially to a hard answer, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build the habit.
-
-## Quick answers
-
-### What are some deep questions to ask your partner?
-
-"When in your life did you feel most like yourself?", "Who taught you the most about love?", "What do you need more of from me right now?" and "What would you like us to protect, no matter how busy life gets?" are good places to start.
-
-### When is the best time to ask deep questions?
-
-When you're both relaxed and have time, with phones away. Side-by-side moments like walks and drives often feel easier than sitting face to face.
-
-### What if my partner doesn't want to answer?
-
-That's okay. Offer to answer first, choose a lighter question, or try another day. Pressure tends to shut deep conversation down.
-
-### What's a good first deep question for a new relationship?
-
-Start at Level 1, for example "If you could relive one ordinary day from your life, which would it be?", and only move deeper if it feels natural for both of you.
 
 *This article is general information, not therapy or medical advice.*
 

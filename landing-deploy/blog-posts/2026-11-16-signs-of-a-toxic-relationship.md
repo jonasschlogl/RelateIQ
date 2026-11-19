@@ -41,7 +41,7 @@ Here the problem is no longer just how you argue. It's how you're treated. Coupl
 **What makes it Level 2:** the pattern is mostly one-directional, it's been going on for a while, and you've noticed yourself changing to avoid it.
 
 **Next step:** name the pattern once, calmly, and watch the response.
-Try: "When you mock me in front of your friends, I feel humiliated. I need that to stop."
+For example: "When you mock me in front of your friends, I feel humiliated. I need that to stop."
 
 A partner who can change will feel uncomfortable and then try. A partner who doubles down, mocks the request or turns it back on you is giving you important information. Couples counseling can help at this level, but only if both people are genuinely willing.
 
@@ -67,6 +67,8 @@ Subtle control is also the kind people most often miss. In a 2025 study of 1,872
 
 **Next step:** don't confront alone, and don't rely on couples counseling, which isn't recommended when one partner controls or fears the other. Talk to a domestic abuse helpline or support service. They can help you think through options safely, whether or not you want to leave.
 
+I want to be very direct about this level: an app, an article or a better way of talking won't fix it. If this section sounds familiar, the helplines below are the next step.
+
 ## A quick self-check: the last month
 
 Think about the last four weeks, not the best or worst day. Which statements are true?
@@ -88,12 +90,14 @@ In other words, staying often has more to do with money, children, housing and s
 
 > **Example: the tipping point**
 > For two years, Yuki told herself Ben was "just stressed" when he mocked her cooking in front of friends. When he started reading her messages and asking why she'd texted her sister, she wrote down a month of what happened, as a counselor at a helpline had suggested. Seeing it on paper changed something. "I'd been treating every incident as separate," she said later. "Written down, it was obviously one thing."
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## Am I the toxic one?
 
 Asking the question is a good sign. Look honestly at Level 1 and 2 in your own behavior: contempt, never apologizing, punishing with silence, controlling your partner's choices. If you recognize them, you can change them, and a therapist can help. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) is a good place to start repairing.
 
-If you want to think through what's happening in a calm, private space, or rehearse a hard conversation for a Level 1 or 2 situation, RelationshipAI's Coach Chat and Partner Practice can help. They aren't therapy and aren't a safety service. For Level 3, please contact a helpline.
+For Level 1 and 2 situations, it can help to rehearse a hard conversation first, for example in Partner Practice. For Level 3, an app isn't the answer. Please contact a helpline.
 
 If you decide to end things, our guides on [whether to break up](/blog/should-i-break-up-with-my-partner/) and [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help, and our guide to [codependency](/blog/codependent-relationship/) explains why caring can sometimes keep you stuck.
 

@@ -30,6 +30,8 @@ On kaksi tärkeää poikkeusta. Jos pelkäät kumppaniasi, tunnet itsesi kontrol
 
 > **Esimerkki: "kaikki on huonosti" muuttuu yhdeksi lauseeksi**
 > Clarasta tuntuu, että hänen suhteensa Oliveriin on muuttunut kylmäksi. Kun hän istuu kirjoittamaan, mitä "parempi" olisi, hän huomaa, että kyse on lähinnä kahdesta asiasta: hän haluaa Oliverin kysyvän, miten hänen päivänsä meni, ja hän haluaa yhden illan viikossa ilman ruutuja. Niistä he voivat oikeasti puhua, toisin kuin lauseesta "et rakasta minua niin kuin ennen".
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 ## Askel 2: Pysäytä ensin riitojen kärjistyminen
 
@@ -75,6 +77,8 @@ Kokeile: "Mikä auttaisi sinua tuntemaan olosi läheisemmäksi minuun juuri nyt?
 
 > **Esimerkki: kaksi erilaista vastausta**
 > Kun Martin ja Eva kysyvät tätä toisiltaan, Martin sanoo haluavansa enemmän fyysistä hellyyttä. Eva sanoo, että hän tuntisi olonsa läheisemmäksi, jos Martin hoitaisi aamurutiinit lasten kanssa, jotta hän ei olisi uupunut jo yhdeksältä. Kumpikaan vastaus ei ole se, mitä toinen odotti. Molemmat on helppo toteuttaa.
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 ## Askel 6: Hakekaa apua, kun olette jumissa
 

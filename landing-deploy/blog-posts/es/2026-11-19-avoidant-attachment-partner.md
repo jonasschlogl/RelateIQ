@@ -98,6 +98,8 @@ Prueba: «No tienes que responder ahora. ¿Lo hablamos mañana por la noche?».
 
 > **Ejemplo: el silencio del lunes**
 > Después de cada fin de semana muy cercano, Ben se quedaba callado el lunes, y Emily entraba en pánico y le mandaba más mensajes. Una noche ella le dijo, con calma: «He notado que necesitas espacio después de que estemos muy unidos. Está bien, solo que el silencio se me hace difícil. ¿Podrías mandarme un "día liado, te quiero" cuando necesites tu espacio?». Ben sintió alivio. Se sentía culpable por necesitar espacio y no sabía cómo decirlo. Un solo mensaje cambió cómo se sentían los dos.
+>
+> *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 ### 6. Cuida también tus propias necesidades
 

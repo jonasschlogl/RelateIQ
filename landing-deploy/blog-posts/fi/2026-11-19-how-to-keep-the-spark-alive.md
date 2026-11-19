@@ -87,6 +87,8 @@ Valitse heikoin alueesi ja anna sille neljä viikkoa. Yksi muutos kerrallaan toi
 
 > **Esimerkki: dumplingilta**
 > Hannah ja Ines olivat olleet yhdessä yksitoista vuotta. Kipinätesti näytti paljon lämpöä ja huomiota mutta uutuudesta 0: jokainen lauantai oli tori, lounas ja elokuva. Ines valitsi Hannahin listalta "opetellaan tekemään dumplingeja". He sotkivat keittiön, suolasivat täytteen liikaa ja nauroivat koko illan. Seuraavalla viikolla Hannah valitsi Inesin listalta yöuinnin. "Mikään suuri ei muuttunut", Hannah sanoi kuukautta myöhemmin. "Mutta aloin taas odottaa lauantaita."
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 ## Kun kipinä ei ole varsinainen ongelma
 

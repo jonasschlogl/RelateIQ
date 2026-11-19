@@ -54,6 +54,8 @@ Eri ihmiset arvostivat eri osia. Ne, jotka näkevät itsensä enemmän itsenäis
 > Jane on pahoillaan, koska Mark kutsui ystävänsä viikonlopuksi kysymättä häneltä. Mark pyytää anteeksi ja tarjoutuu perumaan (hyvitys). Jane on silti loukkaantunut. Hänen piti kuulla, että Mark oli rikkonut heidän asuntoa koskevan sopimuksensa ja että Mark ymmärsi, miksi Jane tunsi itsensä vieraaksi omassa kodissaan.
 >
 > Kun Mark yrittää uudelleen ("Sovimme, että kysymme toisiltamme ennen kuin kutsumme ketään, enkä kysynyt. Ymmärrän, miksi tunsit itsesi syrjäytetyksi"), keskustelu muuttuu.
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 ## Näin pyydät anteeksi kumppanilta: 5 vaihetta
 
@@ -82,6 +84,8 @@ Näin rakenne näyttää oikeassa tilanteessa verrattuna siihen, miten se usein 
 > Sen sijaan että sanoisit: "Anteeksi, okei? Töissä oli hullua, tiedät miten se menee. Se on vain yksi illallinen."
 >
 > Kokeile: "Anteeksi, että tulin kotiin kaksi tuntia myöhässä enkä edes laittanut viestiä. Sinä vietit iltapäivän kokaten ja sitten istuit täällä odottamassa ja miettimässä, missä olen. Se ei ole okei. Tästä lähtien, jos olen myöhästymässä, laitan viestin ennen kuin myöhästyn, en jälkikäteen. Saanko hyvittää sen perjantaina? Ja ymmärrän, jos olet vielä tänään harmissasi."
+>
+> *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 Ensimmäinen versio selittää, vähättelee ja pyytää kumppania jatkamaan eteenpäin. Toinen nimeää teon, näyttää vaikutuksen, tarjoaa konkreettisen korjauksen ja jättää tilaa. Sen sanominen vie noin kaksikymmentä sekuntia pidempään.
 

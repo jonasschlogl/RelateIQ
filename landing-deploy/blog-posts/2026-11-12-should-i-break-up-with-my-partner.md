@@ -93,6 +93,8 @@ Healthy relationships usually help you grow. You feel more confident, more curio
 
 We're often clearer about other people's lives than our own. Imagine your best friend described your relationship to you, word for word. What would you say to them? Would you be worried? Relieved for them? Would you tell them to try one more time, or ask why they're still there?
 
+If I had to pick one question from the ten, it would be number 7. Not "is it bad right now?" but "if nothing changed, would I be okay in five years?" It cuts through a lot.
+
 ## Three situations, three different answers
 
 These examples are illustrative, not real people, but they show how the same question ("should I leave?") can have very different answers.
@@ -101,16 +103,22 @@ These examples are illustrative, not real people, but they show how the same que
 > Anna and Peter have been arguing constantly since their daughter was born eight months ago. Anna feels unseen and exhausted. But when she thinks back, the first three years were warm and easy, and Peter still makes her laugh on the rare evenings they're alone.
 >
 > Her answers point to a bad season: respect is intact, the problems started with a huge life change, and they've never had a calm conversation about how the baby changed things. Her next step isn't a breakup. It's a real talk, some practical help and maybe a few sessions with a couples counselor.
+>
+> *Names and details in this example are invented to show the idea.*
 
 > **Example: the life-goals clash**
 > Chris is 34 and wants children. His partner of five years has always said she doesn't, and recently said it more firmly. They love each other, rarely fight and have a good life together.
 >
 > Nothing here is "wrong" with either of them. But question 6 has a clear answer, and question 7 makes Chris feel a quiet dread. Sometimes the hardest breakups are between two good people who want different lives.
+>
+> *Names and details in this example are invented to show the idea.*
 
 > **Example: the slow fade of respect**
 > Lucia notices she rolls her eyes when her partner talks about his job. He makes sarcastic comments about her friends. They both apologize less than they used to, and evenings feel like living with a roommate who's slightly annoyed with you.
 >
 > This is the pattern Gottman warns about most. It isn't automatically the end, but it's serious. If both of them want to try, it needs real work, ideally with a therapist, and soon. If only one of them wants to try, that's an answer too.
+>
+> *Names and details in this example are invented to show the idea.*
 
 ## There is no scorecard
 
@@ -135,13 +143,13 @@ If you've been going back and forth for months, a bit of structure can help.
 
 Make it an active choice, not just avoiding the decision. Tell your partner what needs to change, and agree on something concrete. Consider couples counseling if you've been stuck for a long time. And if trust was broken, our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) can help.
 
-Try: "I've had real doubts about us lately, and I want to work on it with you. Can we talk about what needs to change?"
+You could say: "I've had real doubts about us lately, and I want to work on it with you. Can we talk about what needs to change?"
 
 ## If you decide to leave
 
 Be clear and kind. Choose a private moment, say it directly and don't leave false hope. You don't owe a long list of every problem.
 
-Try: "I've thought about this for a long time, and I don't think we're right for each other anymore."
+Something like: "I've thought about this for a long time, and I don't think we're right for each other anymore."
 
 Then lean on friends and family, and give yourself time to grieve, even if you were the one who left. Breakups hurt, but research summarized by the American Psychological Association shows they can also lead to real personal growth. In one study by psychologist Gary Lewandowski, people who spent 15 to 30 minutes a day for three days writing about the positive sides of their breakup felt better afterwards, especially when the breakup had been mutual. Our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) has more on the weeks after.
 
@@ -175,7 +183,7 @@ Keep it short, clear and kind. For example: "I've thought about this for a long 
 
 If your partner hurts you, threatens you, controls your money or who you see, or makes you feel afraid, please reach out to a local helpline or support service before you end the relationship. Leaving can be the riskiest moment, and support services can help you plan it safely.
 
-If you want to think out loud with someone, or practice how to say a hard sentence, RelationshipAI is an AI relationship coach that can help you sort your thoughts. It isn't therapy, but it's a calm place to start.
+Sometimes it helps just to write it all out. You can do that in Coach Chat, or practice saying one hard sentence out loud before you say it for real.
 
 Some situations call for a closer look before you decide: [love bombing](/blog/love-bombing/), a [codependent relationship](/blog/codependent-relationship/) or a [situationship](/blog/situationship/) that never became more.
 
