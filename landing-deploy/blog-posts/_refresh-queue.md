@@ -35,4 +35,4 @@
 - [ ] 2026-10-03-relationship-problems-that-keep-coming-back
 - [ ] 2026-10-08-how-attachment-styles-work-in-relationships
 - [ ] 2026-10-08-how-to-stop-overthinking-in-a-relationship
-- [ ] 2026-10-05-relationship-advice-communication-habits
+- [x] 2026-10-05-relationship-advice-communication-habits (refreshed 2026-11-19: pillar: added Overall 2009 on direct requests, varied boxes, fewer blog links)

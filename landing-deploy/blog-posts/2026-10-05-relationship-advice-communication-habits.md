@@ -3,7 +3,7 @@ title: "Relationship advice: 7 communication habits that change how you argue"
 date: 2026-10-05
 description: "Relationship advice that changes how you argue: 7 research-based communication habits, from softer starts to taking breaks, with lines to use tonight."
 tags: relationship advice, communication
-updated: 2026-11-14
+updated: 2026-11-19
 ---
 Most relationship advice sounds obvious until you're in the middle of an argument. Then the obvious parts (stay calm, listen, don't say the thing you'll regret) turn out to be the hardest. The good news is that communicating well is a skill, and skills improve through small, specific habits rather than big resolutions.
 
@@ -47,7 +47,7 @@ Instead of: "You always ignore me when you're on your phone."
 
 Try: "I've been missing time with you lately. Could we put our phones away after dinner?"
 
-> **Why it works**
+> **Why the first sentence matters so much**
 > A harsh start puts the other person on defence before they've heard what you actually want. Once someone feels attacked, their energy goes into protecting themselves, not into understanding you. A soft start keeps both of you in the same team for long enough to talk about the real issue. It isn't about being nice instead of honest. It's about being honest in a way the other person can actually hear.
 
 ## 2. Describe, don't diagnose
@@ -77,6 +77,8 @@ A good request is:
 
 Bring one request per conversation. Three requests at once sound like a list of failures.
 
+And don't be too afraid of being direct. In a study of 61 couples videotaped while trying to change something about each other, Nickola Overall and colleagues found that clear, direct requests often *felt* less successful in the moment than gentle hinting. But over the following year, it was the direct requests that predicted real change, while hints that felt pleasant at the time didn't. Soft in tone, clear in content is the combination to aim for.
+
 ## 5. Listen to understand, not to reply
 
 In a tense moment, try repeating back what you heard before you respond. "So you've had two weeks of late work, and the chores felt like one more demand. Is that right?" You don't have to agree. You only have to show you understood. Most arguments soften once both people feel heard.
@@ -93,7 +95,7 @@ Pushing through doesn't help. Pausing for at least twenty minutes, doing somethi
 
 Try: "I need twenty minutes to calm down, and then I want to finish this."
 
-> **Why it works**
+> **The difference between a break and stonewalling**
 > Without the promise to return, a break looks exactly like stonewalling, the fourth of Gottman's "four horsemen", where one partner shuts down and withdraws. With the promise, the same break becomes an act of care: "I want to have this conversation well." The person who stays behind can relax because they know the conversation isn't over, and the person who leaves can actually calm down instead of feeling chased.
 
 ## 7. Repair early and often
@@ -166,10 +168,9 @@ These habits matter most in the conversations couples avoid. See our guides on [
 
 ## Sources
 
-- Gottman Institute: [The 6 things that predict divorce](https://www.gottman.com/blog/the-6-things-that-predict-divorce/)
-- Gottman Institute: [The magic relationship ratio, according to science](https://www.gottman.com/blog/the-magic-relationship-ratio-according-science/)
-- Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)
-- Gottman Institute: [Everything turns into an argument (on perpetual problems)](https://www.gottman.com/blog/everything-turns-into-an-argument/)
+- Gottman, J. M. (1994). *What Predicts Divorce? The Relationship Between Marital Processes and Marital Outcomes*. Lawrence Erlbaum.
+- Gottman, J. M., & Silver, N. (1999). *The Seven Principles for Making Marriage Work*. Crown.
 - Gottman Institute: [The four horsemen: criticism, contempt, defensiveness and stonewalling](https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/)
+- Overall, N. C., Fletcher, G. J. O., Simpson, J. A., & Sibley, C. G. (2009). Regulating partners in intimate relationships: The costs and benefits of different communication strategies. *Journal of Personality and Social Psychology*, 96(3), 620-639. [University of Minnesota record](https://experts.umn.edu/en/publications/regulating-partners-in-intimate-relationships-the-costs-and-benef/)
 - Gable, S. L., Reis, H. T., Impett, E. A., & Asher, E. R. (2004). What do you do when things go right? The intrapersonal and interpersonal benefits of sharing positive events. *Journal of Personality and Social Psychology*, 87(2), 228-245. [Abstract on PubMed](https://pubmed.ncbi.nlm.nih.gov/15301629/)
 - Rosenberg, M. B. (2015). *Nonviolent Communication: A Language of Life* (3rd ed.). PuddleDancer Press.
