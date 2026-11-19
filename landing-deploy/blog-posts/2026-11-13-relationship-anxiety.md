@@ -118,7 +118,7 @@ If anxiety is affecting your sleep, work or daily life, a therapist can help. At
 
 ## Is it anxiety, or is something really wrong?
 
-Sometimes your gut is picking up on something real. If your partner is inconsistent, hides things or regularly makes you feel unwanted, the problem may not be your anxiety. Our guides on [breadcrumbing](/blog/breadcrumbing/) and [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) can help you tell the difference. And if something has really changed lately, these [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) can help you look at it calmly.
+Sometimes your gut is picking up on something real. If your partner is inconsistent, hides things or regularly makes you feel unwanted, the problem may not be your anxiety. Our guides on [breadcrumbing](/blog/breadcrumbing/), [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) and the [avoidant attachment partner](/blog/avoidant-attachment-partner/) can help you tell the difference. And if something has really changed lately, these [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) can help you look at it calmly.
 
 A useful question is: do I feel this way with this person specifically, or in every relationship? Another is: can I describe a pattern of their behaviour in facts, without interpretation? If yes, that pattern deserves a calm, direct conversation.
 

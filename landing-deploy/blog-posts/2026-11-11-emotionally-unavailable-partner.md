@@ -13,7 +13,7 @@ If that sounds familiar, you might be with an emotionally unavailable partner. I
 
 An emotionally unavailable person finds it hard to share feelings, accept closeness or rely on someone else. They may want a relationship, but they keep part of themselves out of reach.
 
-It's often linked to an avoidant [attachment style](/blog/how-attachment-styles-work-in-relationships/). In a large, nationally representative US study from 1997, about 59% of adults described themselves as secure, 25% as avoidant and 11% as anxious. So avoidance isn't rare, and it isn't always a sign that someone doesn't care.
+It's often linked to an avoidant [attachment style](/blog/how-attachment-styles-work-in-relationships/). In a large, nationally representative US study from 1997, about 59% of adults described themselves as secure, 25% as avoidant and 11% as anxious. So avoidance isn't rare, and it isn't always a sign that someone doesn't care. Our guide to the [avoidant attachment partner](/blog/avoidant-attachment-partner/) goes deeper into why they pull away after closeness.
 
 Emotional unavailability can also be temporary. Stress, grief, burnout, depression or a painful recent breakup can make someone pull inward for a while, even if they're usually open. If stress is the cause, here's how to [support your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) without pushing.
 

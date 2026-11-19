@@ -73,7 +73,7 @@ The strength here is real: anxious partners are often warm, attentive and emotio
 
 Low anxiety, high avoidance. Avoidant people value independence and tend to feel uncomfortable when a relationship gets very close or emotional. They may pull back when things get intense, change the subject, reply slowly or say "I just need some space."
 
-It's usually less about not caring and more about feeling safer with room to breathe. Many avoidant people care a lot. They just learned that needing someone was risky, so they got very good at not needing anyone. The challenge is that distance feels like rejection to a partner, and silence is easily read as "I don't care."
+It's usually less about not caring and more about feeling safer with room to breathe. Many avoidant people care a lot. They just learned that needing someone was risky, so they got very good at not needing anyone. The challenge is that distance feels like rejection to a partner, and silence is easily read as "I don't care." If you're dating someone like this, our guide to [loving an avoidant partner](/blog/avoidant-attachment-partner/) covers the signs and what helps.
 
 > **Example: the disappearing weekend**
 > After a big, emotional conversation about moving in together, Daniel goes quiet for two days. He isn't angry. He feels overloaded and doesn't know what to say yet, so he says nothing. His partner reads the silence as doubt about the whole relationship.
@@ -92,7 +92,7 @@ One of the best studied patterns in couples research is called demand and withdr
 
 This isn't a small thing. In a 2014 meta-analysis, communication researcher Paul Schrodt and his colleagues combined 74 studies with more than 14,000 participants. Couples caught in the demand and withdraw pattern reported lower relationship satisfaction, less intimacy and poorer communication. The pattern was also linked to anxiety and aggression. And it didn't matter much who did the demanding and who did the withdrawing. The loop itself was the problem.
 
-An anxious partner paired with an avoidant partner can fall into this loop very easily, because each person's way of calming down sets off the other person's alarm.
+An anxious partner paired with an avoidant partner can fall into this loop very easily, because each person's way of calming down sets off the other person's alarm. Our guide to the [avoidant attachment partner](/blog/avoidant-attachment-partner/) shows how to create closeness without chasing.
 
 > **Example: Mia and Tom's Sunday argument**
 > Mia brings up that Tom has been on his phone all weekend. Tom says "Can we not do this now?" and goes to the kitchen. Mia follows him: "See, this is exactly what I mean." Tom goes quiet. Mia raises her voice. Tom grabs his keys and goes for a drive. Both of them end the day feeling alone, and both believe the other one started it.
