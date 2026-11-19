@@ -1,5 +1,5 @@
 ---
-title: "Communicatieproblemen in je relatie: 7 tips om beter te communiceren"
+title: "Communicatieproblemen in je relatie: 7 relatieadvies-tips om beter te communiceren"
 date: 2026-10-05
 description: Communicatieproblemen in je relatie oplossen: 7 gewoonten uit onderzoek die veranderen hoe jullie ruzie maken, met zinnen die je vandaag kunt gebruiken.
 tags: communicatie in een relatie, communicatieproblemen relatie

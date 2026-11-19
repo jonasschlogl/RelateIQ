@@ -1,5 +1,5 @@
 ---
-title: "Kommunikation i förhållandet: 7 vanor som förändrar hur ni bråkar"
+title: "Kommunikationsproblem i relationen: 7 relationsråd som förändrar hur ni bråkar"
 date: 2026-10-05
 slug: relationsrad-battre-kommunikation
 description: Kommunikation i förhållandet: 7 forskningsbaserade vanor som förändrar hur ni bråkar, med konkreta meningar ni kan använda redan i dag.

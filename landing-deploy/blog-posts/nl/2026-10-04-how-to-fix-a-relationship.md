@@ -1,5 +1,5 @@
 ---
-title: "Relatie redden: waar begin je als je relatie kapot voelt"
+title: "Relatie herstellen of redden: waar begin je als je relatie kapot voelt"
 date: 2026-10-04
 description: Je relatie redden als die afstandelijk of vastgelopen voelt: een rustig begin, stap voor stap, van minder ruzie naar weer dichter bij elkaar komen.
 tags: relatie redden, relatie herstellen
