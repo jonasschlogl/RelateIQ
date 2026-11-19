@@ -1,150 +1,123 @@
 ---
-title: "How to get over a breakup: 9 steps that actually help you heal"
+title: "How to get over a breakup: a recovery plan for the first 48 hours, 2 weeks and 3 months"
 date: 2026-11-13
-description: "How to get over a breakup: 9 research-backed steps that help you heal, why it hurts so much, what makes it worse and when it gets easier."
+updated: 2026-11-19
+description: "How to get over a breakup, stage by stage: what to do in the first 48 hours, the first two weeks and the months after, and what research says about why you'll likely recover faster than you fear."
 tags: how to get over a breakup, heartbreak
-updated: 2026-11-14
 ---
-You keep picking up your phone to text them. A song in the supermarket ruins your afternoon. Everyone says "it gets easier", but right now it doesn't feel like it will.
+Right now it probably feels like this will last forever. Here is something worth holding on to: in a study that followed dating couples every two weeks for nine months, researchers led by Paul Eastwick asked people to predict how upset they would be if their relationship ended. When breakups actually happened, people were less distressed than they had predicted, and the ones who had been most in love overestimated their future pain the most.
 
-Learning how to get over a breakup isn't about forgetting someone overnight. It's about slowly getting your life, your sleep and your sense of self back. This guide explains why breakups hurt so much, nine steps that genuinely help (with the research behind them), what tends to make it worse, and how to know when it's time to get more support.
+You'll still hurt. But your brain is probably exaggerating how long and how badly. This guide breaks recovery into three stages, because what helps on day two is different from what helps in month two.
 
-## Why breakups hurt so much
+## Stage 1: the first 48 hours
 
-A breakup isn't only the loss of a person. It's the loss of routines, plans, a shared future and often part of your identity. Your brain is also used to that person being a source of comfort, so when they're gone it keeps reaching for them. That's why the urge to check their profile or text "I miss you" can feel almost physical.
+The goal here is not to feel better. It's to get through without making things harder for future you.
 
-None of that means something is wrong with you. It means you cared, and you're grieving.
+**Tell two people.** Not a group chat, two actual people who can check on you. "I've just broken up with Max. I don't need advice, I just didn't want to be alone with it."
 
-> **Why it works this way**
-> Over months or years, your partner became part of how your mind regulates itself: the person you texted when something happened, the voice that calmed you down, the plan for the weekend. After a breakup, those habits don't stop at once. Your mind keeps reaching for them many times a day, and each time it meets an empty space. Healing is partly the slow process of building new habits and new sources of comfort, so the reaching happens less often.
+**Do the basics on purpose.** Eat something, drink water, sleep even if it's broken, go outside once. Grief is physical, and your body needs looking after.
 
-| What you lose in a breakup | What helps rebuild it |
+**Don't make any big moves.** No long messages, no "one last talk", no deleting every photo at 3am in a rage you'll regret, no new haircut. Decisions made in the first 48 hours are usually made by the pain.
+
+**Write one sentence for later.** On your phone: "Remember why this ended: ___." You'll need it in week two.
+
+## Stage 2: the first two weeks
+
+This is often the hardest stretch. The shock wears off and the missing kicks in.
+
+### Put distance between you and the feed
+
+In a study of 464 people after a breakup, Tara Marshall found that keeping tabs on an ex on Facebook, even without contacting them, went along with more distress, more longing for the ex and less personal growth. Every check reopens the wound.
+
+You don't have to block anyone dramatically. Mute, archive, hide. If they're in your group chats, mute those too for a while.
+
+### Expect the "should I text them?" wave
+
+It usually comes at night or after a drink. Have a plan ready:
+
+1. Open your notes and read the sentence from stage 1.
+2. Write the message to your ex there, not in the chat.
+3. Send it to a friend instead, or sleep on it. You can always send it tomorrow. You almost never will.
+
+### Let the feelings be what they are
+
+Sadness, anger, relief, guilt, all in one afternoon. That's normal. Trying to force yourself to stop loving someone rarely works. Accepting that you still have feelings, and that they will fade, takes away some of their power. If the replaying gets stuck, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has ways to break the loop.
+
+> **Why it feels like you've lost part of yourself**
+> In three studies, Erica Slotter, Wendi Gardner and Eli Finkel found that after a breakup people's sense of who they are became less clear. Their sense of self felt, as they put it, "less clear and even smaller", and that loss of clarity contributed to the distress. In a relationship, your routines, plans and even your taste in films get shared. When it ends, you have to sort out which parts were *you*. That sorting is a big part of what healing is.
+
+## Stage 3: weeks three to twelve
+
+Now recovery becomes active. The goal shifts from surviving to rebuilding who you are on your own.
+
+### Tell the story, out loud or on paper
+
+In a 2015 study by Grace Larson and David Sbarra, people who had recently broken up and repeatedly reflected on the breakup as part of the research (answering questions and speaking about it privately over nine weeks) recovered better than a comparison group. The researchers linked it to a clearer sense of who they were as single people.
+
+You can do a version of this yourself. Once a week, write or record a few minutes on:
+- What happened, in your own words.
+- What you miss, and what you don't.
+- Who you are now that you weren't a month ago.
+
+### Rebuild the parts of you that got quiet
+
+The friend you saw less. The sport you dropped. The music your ex didn't like. The trip you postponed. Pick one this month. You're not trying to "become a new person". You're getting reacquainted with the existing one.
+
+### Get honest about the relationship
+
+When you're steadier, look back without blame or nostalgia. What were the good parts? What wasn't working? What would you want to be different next time? Our guide to [green flags in a relationship](/blog/green-flags-in-a-relationship/) can help you notice what healthy looks like for you. If the relationship involved manipulation, read about [gaslighting](/blog/gaslighting-in-a-relationship/) and [love bombing](/blog/love-bombing/), which can help you make sense of what happened.
+
+## How long does it take?
+
+There's no fixed number, and anyone who promises one is guessing. Many people notice the worst of it easing within weeks to a few months, often in waves rather than a straight line. A bad day in month two doesn't mean you're back at the start. It means you're human.
+
+| Sign you're healing | Sign you might need more support |
 |---|---|
-| A daily source of comfort | Friends, family and routines |
-| Shared plans for the future | New small plans of your own |
-| Part of your identity ("we") | Rediscovering "me" |
-| Daily structure | Sleep, meals and movement at regular times |
+| Whole hours, then days, without thinking of them | Weeks pass and nothing feels any lighter |
+| You can look at a photo and feel sad, not wrecked | You can't sleep, eat or work for long stretches |
+| You start making plans that don't involve them | You're drinking or using more to cope |
+| You can see both good and bad in the relationship | You feel hopeless or think about hurting yourself |
 
-## 9 steps to get over a breakup
-
-### 1. Let yourself grieve
-
-Trying to skip the sad part usually makes it last longer. Cry, feel angry, feel confused. Give the feelings a little time each day instead of fighting them all day.
-
-### 2. Limit contact, at least for a while
-
-Every message, like or "just checking in" reopens the wound. If you can, mute or unfollow them for a few months. It's not about punishing them. It's about giving yourself room to heal.
-
-If you share children, a home or a workplace, keep contact short, practical and about logistics.
-
-Try: "Hi, can you pick up the rest of your things on Saturday between 10 and 12? Thanks."
-
-### 3. Remind yourself of the real relationship
-
-After a breakup, memory tends to edit out the bad parts. A small study by Sandra Langeslag and Michelle Sanchez asked people who were still upset about a breakup to try different ways of coping while looking at photos of their ex. Thinking about the ex's negative traits was the only strategy that reduced feelings of love. It also made people feel a bit worse in the moment, so use it gently.
-
-Writing an honest list of what didn't work can help when you catch yourself romanticising the past.
-
-> **Example: the list in her phone**
-> Two weeks after the breakup, Sophie keeps scrolling through old photos of holidays and smiling selfies. She writes a short note in her phone: the times he forgot her birthday plans, how he never wanted to meet her friends, the evenings she felt lonely next to him. Whenever she finds herself missing "the good times", she reads the list. It doesn't make the sadness disappear, but it reminds her that the relationship in her head is not the one she actually had.
-
-### 4. Don't fight the love, just accept it
-
-In the same study, telling themselves it's okay to still love someone they're no longer with didn't make the feelings vanish, but it didn't make people feel worse either. Love doesn't switch off on command. You can still care about someone and still know it's over.
-
-Try: "It's okay that I still love them. It's also okay that it's over."
-
-### 5. Lean on your people
-
-Call the friend who makes you laugh. Say yes to the invitation, even if you leave early. Breakups can make you want to hide, but connection is one of the strongest protections against feeling stuck.
-
-### 6. Look after your body
-
-Sleep, food, movement and daylight sound boring, but they make a real difference to mood. A daily walk is a small, realistic start. If your thoughts race at night, a few minutes of slow breathing with a long exhale can help your body settle before sleep.
-
-### 7. Rediscover yourself
-
-Relationships shape what you do and who you see. Use this time to pick up an old hobby, try something new or spend time with people you drifted away from. Getting back in touch with who you are on your own is a big part of moving on.
-
-### 8. Notice the overthinking loop
-
-"What if I'd said this?" "Are they happier now?" Replaying the relationship over and over feels productive, but it rarely gives new answers. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has techniques that work after a breakup too, like setting a fixed time for worrying.
-
-### 9. Learn from it, when you're ready
-
-Not today, but later, it helps to ask: what did I learn about what I need? What would I do differently? What would I never accept again? Our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/) can help you picture what you want next.
-
-## Writing can help you heal
-
-Research summarised by the American Psychological Association suggests writing can be a useful tool after a breakup. In one study by psychologist Gary Lewandowski, people wrote for 15 to 30 minutes a day for three days. Those who wrote about the positive sides of their breakup, such as what they learned or what's now possible, felt better afterwards, especially when the breakup had been mutual. The APA also notes that breakups, painful as they are, have the potential to lead to positive outcomes and personal growth.
-
-A simple way to try it:
-
-1. **Day 1:** Write about what happened and how you feel, without editing.
-2. **Day 2:** Write about what the relationship taught you about yourself.
-3. **Day 3:** Write about what's now possible that wasn't before.
-
-> **Why it works**
-> A breakup often leaves a messy, painful story in your head that replays in fragments. Writing forces you to put it into order, with a beginning, a middle and an end. That can make the experience feel more understandable and less overwhelming. Focusing on what you learned or gained doesn't deny the pain. It adds a second part to the story, one where you come out the other side.
-
-## What tends to make it worse
-
-| Feels helpful in the moment | Why it usually backfires |
-|---|---|
-| Checking their social media every day | Restarts the pain and the comparison each time |
-| Sending long messages late at night | Rarely gets the response you hope for |
-| Jumping straight into a rebound | Postpones the grief instead of working through it |
-| Telling yourself you should be "over it" | Adds shame on top of sadness |
-| Isolating yourself completely | Removes your best source of support |
-
-## How long does it take to get over a breakup?
-
-There's no fixed timeline. It depends on how long you were together, how it ended and what else is happening in your life. Many people notice the worst pain easing after a few weeks to a few months, with good and bad days mixed together. Healing usually isn't a straight line. A bad day after a good week doesn't mean you're back at the start.
-
-> **Example: three months later**
-> Right after the breakup, Michael thought about his ex every few minutes. After a month, it was mostly mornings and evenings. After three months, he noticed one Sunday afternoon that he hadn't thought about her all day, and then felt a little sad about that too. Two weeks later, a song brought everything back for an evening. The next day was fine again. That up-and-down pattern is what healing usually looks like.
+If anything in the right column sounds like you, please talk to a doctor or counsellor. If you're thinking about ending your life, contact emergency services or a crisis line right away.
 
 ## If you're the one who ended it
 
-You can still grieve. Ending a relationship you once wanted is painful too, even if it was the right decision. Guilt, relief and sadness can all show up together. If you're still unsure whether it was right, our questions in [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) may help you make peace with it.
+You're allowed to grieve too. Ending something can still mean losing someone you love, along with the future you'd imagined. Guilt is common, but it isn't proof you made the wrong choice. If you're still unsure whether it was right, our guide on [whether to break up](/blog/should-i-break-up-with-my-partner/) can help you think it through calmly.
 
-## When to get more help
-
-If weeks pass and you can't sleep, eat or function, or if you feel hopeless, please talk to a doctor or a mental health professional. If you ever have thoughts of harming yourself, contact a local crisis line right away.
-
-And if you just want somewhere to put your thoughts into words, RelationshipAI is an AI relationship coach you can talk to at any hour. It isn't therapy, but it's a calm place to start.
+If you find yourself wanting to talk it through at 2am when no one is awake, RelationshipAI's Coach Chat is there to help you sort your thoughts and stop the late-night message to your ex. It isn't therapy, but it's a calm place to start.
 
 ## Quick answers
 
 ### How long does it take to get over a breakup?
 
-There's no fixed timeline. Many people notice the worst pain easing after a few weeks to a few months, with good and bad days mixed together. A bad day after a good week doesn't mean you're back at the start.
+It varies a lot. Many people feel noticeably better within a few months, but grief comes in waves. Research suggests people often recover faster than they expect.
 
 ### Should I stay friends with my ex?
 
-Not right away, in most cases. Limiting contact for a while gives your feelings time to settle. Some exes can become friends later, once neither of you is hoping for more.
+Maybe later, rarely right away. Contact and even checking their social media tend to slow recovery. Give yourself real distance first.
 
 ### Is it normal to still love my ex?
 
-Yes. Feelings don't switch off when a relationship ends. Instead of fighting them, accept that they're there and remind yourself why the relationship ended.
+Yes. Love doesn't switch off when a relationship ends. Accepting the feeling, rather than fighting it, usually helps it fade.
 
 ### How do I stop thinking about my ex?
 
-You probably can't stop completely at first, and trying too hard often makes it worse. Limit what keeps the loop going, like checking their profile, and fill your days with people, movement and things that are yours.
+Reduce the triggers (mute, archive, hide), fill your time with people and things that are yours, and give the thoughts a set time and place, like a weekly journal, instead of all day.
 
 ### Should I get back together with my ex?
 
-Ask yourself what would be different this time, in facts rather than hopes. If the reasons you broke up haven't changed, getting back together often brings the same problems back.
+Only if the reasons it ended have really changed, not just because you miss them. Missing someone is normal. It isn't, by itself, a reason to go back.
 
-### Can a breakup make you stronger?
+## A note on safety
 
-It can. Research summarised by the American Psychological Association notes that breakups can lead to personal growth, and writing about what you learned may help. That doesn't make the pain less real, but it can be part of what comes after.
-
-If the relationship involved control or manipulation, our guides on [love bombing](/blog/love-bombing/) and [gaslighting](/blog/gaslighting-in-a-relationship/) can help you make sense of what happened.
+If your ex is contacting you after you've asked them to stop, threatening you, or turning up uninvited, that may be harassment. Please contact a local support service or the police. And if you're struggling to cope and having thoughts of harming yourself, contact emergency services or a crisis line now.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
-- Langeslag, S. J. E., & Sanchez, M. E. (2018). Down-regulation of love feelings after a romantic break-up: Self-report and electrophysiological data. *Journal of Experimental Psychology: General*, 147(5), 720-733. Summary from the [British Psychological Society](https://bps.org.uk/research-digest/researchers-have-compared-different-cognitive-strategies-falling-out-love)
+- Eastwick, P. W., Finkel, E. J., Krishnamurti, T., & Loewenstein, G. (2008). Mispredicting distress following romantic breakup: Revealing the time course of the affective forecasting error. *Journal of Experimental Social Psychology*, 44(3), 800-807. [Full text (PDF)](https://www.cmu.edu/dietrich/sds/docs/loewenstein/MispredictingDistress.pdf)
+- Slotter, E. B., Gardner, W. L., & Finkel, E. J. (2010). Who am I without you? The influence of romantic breakup on the self-concept. *Personality and Social Psychology Bulletin*, 36(2), 147-160. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2010/03/100308132139.htm)
+- Marshall, T. C. (2012). Facebook surveillance of former romantic partners: Associations with postbreakup recovery and personal growth. *Cyberpsychology, Behavior, and Social Networking*, 15(10), 521-526. [Full text (PDF)](https://bura.brunel.ac.uk/bitstream/2438/7014/2/Fulltext.pdf)
+- Larson, G. M., & Sbarra, D. A. (2015). Participating in research on romantic breakups promotes emotional recovery via changes in self-concept clarity. *Social Psychological and Personality Science*, 6(4), 399-406. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2015/01/150106112540.htm)
 - American Psychological Association: [Breakups aren't all bad: Coping strategies to promote positive outcomes](https://www.apa.org/topics/marriage-relationships/relationship-breakups)

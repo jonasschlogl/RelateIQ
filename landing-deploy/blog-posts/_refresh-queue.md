@@ -6,7 +6,7 @@
 - [x] 2026-11-09-breadcrumbing (refreshed 2026-11-19: 9 real questions answered, 4 sources)
 - [x] 2026-11-09-love-bombing (refreshed 2026-11-19: case walkthrough week by week, 4 sources)
 - [x] 2026-11-11-meeting-your-partners-parents (refreshed 2026-11-19: 12 awkward moments with scripts, 4 sources)
-- [ ] 2026-11-13-how-to-get-over-a-breakup (2 sources)
+- [x] 2026-11-13-how-to-get-over-a-breakup (refreshed 2026-11-19: staged recovery plan, 5 sources)
 - [ ] 2026-11-14-gaslighting-in-a-relationship (2 sources)
 - [ ] 2026-11-14-long-distance-relationship-tips (2 sources)
 - [ ] 2026-11-15-love-languages (2 sources; good fit for myth vs fact)
