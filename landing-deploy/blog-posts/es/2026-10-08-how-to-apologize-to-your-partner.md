@@ -16,7 +16,7 @@ Es tentador ver la disculpa como un trámite: dices las palabras, la otra person
 
 En 2010, Ryan Fehr, Michele Gelfand y Monisha Nag combinaron 175 estudios con más de 26.000 participantes para averiguar qué hace que la gente perdone con más facilidad. Las disculpas resultaron ser uno de los factores situacionales más claros. En el conjunto de los estudios, recibir una disculpa tenía una relación entre moderada y fuerte con el perdón (una correlación de 0,42, que es alta para la investigación en psicología). Dicho de otra forma, cómo te disculpas influye de verdad en si tu pareja puede dejarlo atrás.
 
-> **Por qué funciona así**
+> **Lo que de verdad repara una disculpa**
 > Cuando alguien nos hace daño, parte de lo que duele es el mensaje que hay detrás: «no me importas» o «las normas no van conmigo». Una disculpa de verdad envía el mensaje contrario. Dice: veo lo que pasó, veo que te afectó, y nuestra relación me importa más que tener razón. Eso devuelve algo que el error había quitado, y por eso una buena disculpa puede calmar una situación como no lo consigue ninguna explicación.
 
 ## Qué dice la investigación sobre las disculpas que funcionan
@@ -69,7 +69,7 @@ No necesitas los seis elementos cada vez. Esta es una estructura corta basada en
 
 **5. Dale espacio.** No exijas que te perdone en el momento. «Tómate el tiempo que necesites» le dice a tu pareja que respetas su ritmo. Recuerda que pedir perdón fue el elemento menos eficaz en la investigación.
 
-> **Por qué funciona así**
+> **Las cinco preguntas silenciosas**
 > Cada paso responde a una pregunta que tu pareja se hace en silencio. ¿Entiendes lo que hiciste? (concreto). ¿Vas a defenderlo? (sin condiciones). ¿Entiendes lo que me hizo? (impacto). ¿Volverá a pasar? (reparación). ¿Puedo seguir molesta? (espacio). Cuando las cinco preguntas tienen respuesta, queda mucho menos por lo que discutir.
 
 ## Un ejemplo completo, de principio a fin

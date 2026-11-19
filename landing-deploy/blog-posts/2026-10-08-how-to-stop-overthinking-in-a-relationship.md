@@ -3,7 +3,7 @@ title: How to stop overthinking in a relationship (a calmer way to handle the wh
 date: 2026-10-08
 description: "How to stop overthinking in a relationship: why the what-if spiral feels so convincing and 7 practical steps to break the loop and talk to your partner."
 tags: overthinking in a relationship, relationship anxiety
-updated: 2026-11-14
+updated: 2026-11-19
 ---
 It's 11 pm. Your partner hasn't replied for three hours. You reread the last message, check if they were online, and by midnight your mind has written a whole story about how they're losing interest.
 
@@ -98,7 +98,7 @@ This technique is often called worry postponement, and it's widely used in cogni
 
 A small preliminary study by Shannon McGowan and Evelyn Behar found that people who practised scheduled worry time reported less worry than a comparison group. Many people also notice that by the time the window arrives, most of the worries feel smaller, and the ones that still matter are easier to look at calmly.
 
-> **Why it works**
+> **Why delaying a worry works better than fighting it**
 > Worry postponement doesn't ask you to stop worrying, which almost never works. It only asks you to delay it. That teaches your brain two things: that a worrying thought doesn't need an immediate response, and that you can feel uncertain for a few hours and be okay. Both lessons weaken the spiral over time.
 
 ### 6. Write it out, then close the notebook
@@ -184,6 +184,5 @@ Overthinking often grows in uncertain situations. If you're not sure where you s
 - Balban, M. Y., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. *Cell Reports Medicine*. Summary from [Stanford Medicine](https://med.stanford.edu/news/insights/2023/02/cyclic-sighing-can-help-breathe-away-anxiety.html)
 - McGowan, S. K., & Behar, E. (2013). A preliminary investigation of stimulus control training for worry: Effects on anxiety and insomnia. *Behavior Modification*, 37(1), 90-112.
 - Leahy, R. L. (2010). [Make an appointment with your worries](https://www.psychologytoday.com/us/blog/anxiety-files/201005/make-an-appointment-with-your-worries). *Psychology Today*.
-- Gottman Institute: [The 6 things that predict divorce](https://www.gottman.com/blog/the-6-things-that-predict-divorce/)
 - Gottman Institute: [Physiological self-soothing](https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/)
 - Open textbook, Lifespan Human Development (Baylor University Libraries): [Attachment in adulthood](https://openbooks.library.baylor.edu/lifespanhumandevelopment/?p=875)

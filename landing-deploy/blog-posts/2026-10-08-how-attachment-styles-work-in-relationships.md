@@ -3,7 +3,7 @@ title: Attachment styles in relationships: secure, anxious, avoidant and fearful
 date: 2026-10-08
 description: "Attachment styles explained: how secure, anxious, avoidant and fearful-avoidant attachment show up in dating, what research found and how to feel more secure."
 tags: attachment styles, anxious attachment
-updated: 2026-11-14
+updated: 2026-11-19
 ---
 You've probably seen the terms before: anxious attachment, avoidant attachment, secure attachment. They show up in memes, podcasts and TikTok videos about why someone "left you on read". Underneath the internet version there are decades of real research, and it's more useful and more hopeful than most of the posts suggest.
 
@@ -99,7 +99,7 @@ An anxious partner paired with an avoidant partner can fall into this loop very 
 >
 > What would change the loop: Mia names her need instead of the problem ("I miss you this weekend"), and Tom names his break instead of disappearing ("I'm getting overwhelmed. Give me 20 minutes and I'll come back").
 
-> **Why it works**
+> **Taking the blame out of the room**
 > Naming the loop as something you both do takes the blame out of the room. The pursuer can usually soften once they know the withdrawer is coming back, because what scared them was the disappearance, not the break. And the withdrawer can usually come back once they're not being chased, because what overwhelmed them was the pressure, not the topic. A short, specific promise ("20 minutes, then I'm back") answers both alarms at once.
 
 ## Is your attachment style fixed?

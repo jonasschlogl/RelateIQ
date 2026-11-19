@@ -30,9 +30,9 @@
 - [x] 2026-11-12-should-i-break-up-with-my-partner (refreshed 2026-11-19: light edit: added 2020 PNAS study of 11,000 couples, fewer template parts)
 - [ ] 2026-11-19-avoidant-attachment-partner (has 5 translations: update them too)
 # Pillar posts last: they rank and have translations. Keep their keywords, H1 keyword and best sections; mainly remove template boxes, vary structure, check sources.
-- [ ] 2026-10-08-how-to-apologize-to-your-partner
+- [x] 2026-10-08-how-to-apologize-to-your-partner (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
 - [x] 2026-10-04-how-to-fix-a-relationship (refreshed 2026-11-19: pillar: added therapy and online-programme trials, fewer Gottman blog links)
-- [ ] 2026-10-03-relationship-problems-that-keep-coming-back
-- [ ] 2026-10-08-how-attachment-styles-work-in-relationships
-- [ ] 2026-10-08-how-to-stop-overthinking-in-a-relationship
+- [x] 2026-10-03-relationship-problems-that-keep-coming-back (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
+- [x] 2026-10-08-how-attachment-styles-work-in-relationships (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
+- [x] 2026-10-08-how-to-stop-overthinking-in-a-relationship (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
 - [x] 2026-10-05-relationship-advice-communication-habits (refreshed 2026-11-19: pillar: added Overall 2009 on direct requests, varied boxes, fewer blog links)
