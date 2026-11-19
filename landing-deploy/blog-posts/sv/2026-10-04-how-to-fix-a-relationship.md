@@ -1,5 +1,6 @@
 ---
 title: "Rädda relationen: var du börjar när förhållandet känns trasigt"
+seo_title: "Rädda relationen: 6 steg när förhållandet känns trasigt"
 date: 2026-10-04
 slug: radda-en-relation
 description: Så räddar du ett förhållande som känns distanserat eller fastlåst: en lugn början, steg för steg, från att sluta bråka till att hitta tillbaka till varandra.

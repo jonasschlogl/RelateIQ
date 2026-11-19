@@ -1,5 +1,6 @@
 ---
 title: "Comunicarea în cuplu: 7 obiceiuri care schimbă felul în care vă certați"
+seo_title: "Comunicarea în cuplu: 7 obiceiuri pentru certuri mai bune"
 date: 2026-10-05
 description: Comunicarea în cuplu: 7 obiceiuri susținute de cercetări care schimbă felul în care vă certați, cu fraze concrete pe care le poți folosi de azi.
 tags: comunicarea în cuplu, sfaturi pentru relație

@@ -1,5 +1,6 @@
 ---
 title: "How to support your partner when they're stressed: what to say, what to do, what to skip"
+seo_title: "How to Support Your Partner When Stressed: What to Say"
 date: 2026-11-12
 updated: 2026-11-19
 description: "How to support your partner when stressed: ready-to-use words for work stress, family pressure and burnout, and why the best support often goes unnoticed."

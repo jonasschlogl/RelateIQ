@@ -1,5 +1,6 @@
 ---
 title: "Kiintymystyylit parisuhteessa: turvallinen, ahdistunut, välttelevä ja jäsentymätön"
+seo_title: "Kiintymystyylit parisuhteessa: 4 tyyliä selitettynä"
 date: 2026-10-08
 description: Kiintymystyylit ja kiintymyssuhde parisuhteessa selitettynä: turvallinen, ahdistunut, välttelevä ja jäsentymätön tyyli ja miten ne näkyvät suhteessa.
 tags: kiintymystyylit, kiintymyssuhde

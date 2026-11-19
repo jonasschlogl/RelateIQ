@@ -1,5 +1,6 @@
 ---
 title: How to stop overthinking in a relationship (a calmer way to handle the what-if spiral)
+seo_title: "How to Stop Overthinking in a Relationship: 7 Steps"
 date: 2026-10-08
 description: "How to stop overthinking in a relationship: why the what-if spiral feels so convincing and 7 practical steps to break the loop and talk to your partner."
 tags: overthinking in a relationship, relationship anxiety

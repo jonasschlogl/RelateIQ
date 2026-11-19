@@ -27,6 +27,7 @@
 //   date: 2026-10-06
 //   description: One or two sentences for Google and for the blog cards.
 //   tags: relationship advice, communication
+//   seo_title: optional short <title> for Google (max 60 chars, keyword first); the H1 stays `title`
 //   slug: optional-url-name        (translated posts: ASCII letters, digits and dashes only)
 //   draft: true                    (optional: draft posts are not published)
 //   ---
@@ -386,7 +387,7 @@ function loadPosts(dir, englishByKey) {
       const tags = (meta.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
       const description = meta.description || body.replace(/[#*_>`\[\]()-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 155);
       const updated = /^\d{4}-\d{2}-\d{2}$/.test(meta.updated || "") ? meta.updated : null;
-      posts.push({ key, slug, title: meta.title, date, updated, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
+      posts.push({ key, slug, title: meta.title, seoTitle: meta.seo_title || null, date, updated, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
     } catch (e) {
       console.warn(`WARNING: skipped ${dir}/${file}: ${e.message}`);
     }
@@ -679,7 +680,7 @@ function postPage(ctx, p0, all) {
     : `<img class="avatar" src="/logo-tile.svg" alt="" width="64" height="64" />`;
   const ogPng = imgExt(p.key) === "jpg" && hasImgs(p.key) ? `${SITE}${imgFile(p.key, 1, "jpg")}` : hasImgs(p.key) && fs.existsSync(path.join(IMG_DIR, `${p.key}-1.png`)) ? `${SITE}${imgFile(p.key, 1, "png")}` : null;
   return page(ctx, {
-    title: `${p.title} | ${CONFIG.siteName}`,
+    title: p.seoTitle || `${p.title} | ${CONFIG.siteName}`,
     description: p.description,
     path: `${ctx.prefix}/blog/${p.slug}/`,
     type: "article",

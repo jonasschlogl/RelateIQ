@@ -1,5 +1,6 @@
 ---
 title: "Ylianalysointi parisuhteessa: miten lopettaa liika miettiminen"
+seo_title: "Ylianalysointi parisuhteessa: 7 askelta sen lopettamiseen"
 date: 2026-10-08
 description: Ylianalysointi ja liika miettiminen parisuhteessa: miksi sitä tapahtuu, miten pääset entä jos -kierteestä ja mitä voit sanoa kumppanillesi.
 tags: ylianalysointi, overthinking parisuhteessa

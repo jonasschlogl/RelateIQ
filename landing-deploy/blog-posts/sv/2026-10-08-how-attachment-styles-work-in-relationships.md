@@ -1,5 +1,6 @@
 ---
 title: "Anknytningsstilar i relationer: trygg, ängslig, undvikande och desorganiserad"
+seo_title: "Anknytningsstilar i relationer: de 4 typerna förklarade"
 date: 2026-10-08
 slug: anknytningsstilar-i-relationer
 description: Anknytningsstilar i relationer förklarade: trygg, ängslig, undvikande och desorganiserad anknytning, hur de påverkar förhållandet och vad ni kan göra.

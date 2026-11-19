@@ -1,5 +1,6 @@
 ---
 title: "Should I break up with my partner? 10 honest questions to help you decide"
+seo_title: "Should I Break Up With My Partner? 10 Questions to Decide"
 date: 2026-11-12
 description: Should I break up with my partner? 10 honest questions to help you decide, what research on 37,000+ people says about why relationships end.
 tags: should I break up, relationship doubts

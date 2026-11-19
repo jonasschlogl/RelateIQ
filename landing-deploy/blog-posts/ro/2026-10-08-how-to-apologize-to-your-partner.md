@@ -1,5 +1,6 @@
 ---
 title: "Cum să-ți ceri scuze de la iubită sau iubit: cum ceri iertare corect"
+seo_title: "Cum să-ți ceri scuze de la iubită sau iubit: 5 pași"
 description: Cum să-ți ceri scuze de la iubită, iubit sau partener într-un mod care chiar funcționează: ce spun cercetările, 5 pași și exemple de ce să spui.
 tags: cum să-ți ceri scuze, cum să ceri iertare
 slug: cum-sa-iti-ceri-scuze-de-la-partener

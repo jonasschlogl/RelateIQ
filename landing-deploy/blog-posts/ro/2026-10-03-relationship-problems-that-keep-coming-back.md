@@ -1,5 +1,6 @@
 ---
 title: "Probleme în cuplu care revin mereu: 5 cauze și cum le rezolvi"
+seo_title: "Probleme în cuplu care revin mereu: 5 cauze"
 date: 2026-10-03
 description: Probleme în cuplu care revin iar și iar: 5 cauze frecvente, ce se ascunde de obicei dedesubt și cum rupi tiparul fără aceeași ceartă.
 tags: probleme în cuplu, probleme de cuplu

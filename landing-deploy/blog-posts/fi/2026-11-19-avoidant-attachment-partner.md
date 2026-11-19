@@ -1,5 +1,6 @@
 ---
 title: "Välttelevä kiintymyssuhde kumppanilla: 8 merkkiä ja miten rakastaa ihmistä, joka tarvitsee tilaa"
+seo_title: "Välttelevä kiintymyssuhde kumppanilla: 8 merkkiä"
 slug: valtteleva-kiintymyssuhde-kumppani
 description: Läheinen yhtenä päivänä, etäinen seuraavana? 8 merkkiä välttelevästä kiintymyssuhteesta kumppanilla, miksi hän vetäytyy läheisyyden jälkeen ja miten rakentaa läheisyyttä jahtaamatta.
 tags: välttelevä kiintymyssuhde, välttelevä kiintymystyyli

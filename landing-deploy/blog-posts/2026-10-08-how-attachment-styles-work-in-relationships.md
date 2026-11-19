@@ -1,5 +1,6 @@
 ---
 title: Attachment styles in relationships: secure, anxious, avoidant and fearful-avoidant explained
+seo_title: "Attachment Styles in Relationships: The 4 Types Explained"
 date: 2026-10-08
 description: "Attachment styles explained: how secure, anxious, avoidant and fearful-avoidant attachment show up in dating, what research found and how to feel more secure."
 tags: attachment styles, anxious attachment

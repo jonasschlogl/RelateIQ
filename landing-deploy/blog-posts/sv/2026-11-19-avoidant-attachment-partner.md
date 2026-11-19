@@ -1,5 +1,6 @@
 ---
 title: "Undvikande anknytning hos en partner: 8 tecken och hur du älskar någon som behöver utrymme"
+seo_title: "Undvikande anknytning hos partner: 8 tecken"
 slug: undvikande-anknytning-partner
 description: Nära ena dagen, distanserad nästa? 8 tecken på undvikande anknytning hos din partner, varför hen drar sig undan vid närhet och hur ni skapar närhet utan att du jagar.
 tags: undvikande anknytning, behöva utrymme

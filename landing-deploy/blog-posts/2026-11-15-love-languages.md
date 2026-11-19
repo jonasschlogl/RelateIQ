@@ -1,5 +1,6 @@
 ---
 title: "Love languages: 6 popular beliefs, checked against the research"
+seo_title: "Love Languages: 6 Popular Beliefs Checked Against Research"
 date: 2026-11-15
 updated: 2026-11-19
 description: "Love languages are everywhere, but what holds up? 6 popular beliefs about the 5 love languages checked against recent studies, and a better way to use them."

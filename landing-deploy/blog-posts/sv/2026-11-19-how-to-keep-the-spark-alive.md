@@ -1,5 +1,6 @@
 ---
 title: "Så håller ni gnistan vid liv i ett långt förhållande: hitta vilken gnista som falnar och börja där"
+seo_title: "Så håller ni gnistan vid liv i ett långt förhållande"
 slug: halla-gnistan-vid-liv-i-forhallandet
 description: Så håller ni gnistan vid liv i ett långt förhållande: ett test på 2 minuter som visar vilken av 4 gnistor som falnar, vad forskningen säger och en plan på 4 veckor.
 tags: hålla gnistan vid liv, långt förhållande

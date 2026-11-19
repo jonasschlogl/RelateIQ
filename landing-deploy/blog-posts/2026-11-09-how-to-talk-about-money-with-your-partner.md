@@ -1,5 +1,6 @@
 ---
 title: "How to talk about money with your partner: a 'money date' agenda and what to say in 4 tricky situations"
+seo_title: "How to Talk About Money With Your Partner (Without a Fight)"
 date: 2026-11-09
 updated: 2026-11-19
 description: "How to talk about money with your partner without a fight: a 4-round money date agenda, what research says about joint accounts, and calm words for debt."

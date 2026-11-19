@@ -1,5 +1,6 @@
 ---
 title: "Cómo arreglar una relación de pareja: por dónde empezar cuando se siente rota"
+seo_title: "Cómo arreglar una relación de pareja: 6 pasos"
 slug: como-arreglar-una-relacion
 date: 2026-10-04
 description: Cómo arreglar una relación de pareja cuando está distante o estancada: un punto de partida tranquilo, paso a paso, para dejar de discutir y volver a acercaros.

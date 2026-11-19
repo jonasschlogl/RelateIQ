@@ -1,5 +1,6 @@
 ---
 title: "Sorry zeggen tegen je partner: zo bied je excuses aan die echt landen"
+seo_title: "Sorry zeggen tegen je partner: 5 stappen en voorbeelden"
 description: Sorry zeggen tegen je vriend, vriendin of partner op een manier die werkt: wat onderzoek zegt, 5 stappen om excuses aan te bieden en voorbeelden.
 tags: sorry zeggen, excuses aanbieden
 slug: sorry-zeggen-tegen-je-partner

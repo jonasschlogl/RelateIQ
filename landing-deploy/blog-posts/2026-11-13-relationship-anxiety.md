@@ -1,5 +1,6 @@
 ---
 title: "Relationship anxiety: a toolkit for the next 2 minutes, the next day and the next month"
+seo_title: "Relationship Anxiety: What to Do in the Next 2 Minutes"
 date: 2026-11-13
 updated: 2026-11-19
 description: "Relationship anxiety toolkit: what to do in the first 2 minutes of a spiral, through the day and over a month, with research on worry, breathing and attachment."

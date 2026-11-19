@@ -1,5 +1,6 @@
 ---
 title: "Meeting your partner's parents for the first time: what to say in the 12 most awkward moments"
+seo_title: "Meeting Your Partner's Parents: What to Say in 12 Moments"
 date: 2026-11-11
 updated: 2026-11-19
 description: "Meeting your partner's parents for the first time? Ready-to-use answers for the 12 moments people dread most, and why research says their approval matters."

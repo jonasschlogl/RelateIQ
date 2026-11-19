@@ -1,5 +1,6 @@
 ---
 title: How to fix a relationship: where to start when it feels broken
+seo_title: "How to Fix a Relationship: Where to Start, Step by Step"
 date: 2026-10-04
 description: "How to fix a relationship that feels distant or stuck: a calm, research-based plan in 6 steps, from stopping the escalation to rebuilding closeness."
 tags: how to fix a relationship, relationship problems

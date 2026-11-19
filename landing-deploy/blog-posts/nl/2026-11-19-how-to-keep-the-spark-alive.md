@@ -1,5 +1,6 @@
 ---
 title: "De vonk in je relatie levend houden: ontdek welke vonk dooft en begin daar"
+seo_title: "De vonk in je relatie levend houden na jaren"
 slug: vonk-in-je-relatie
 description: De vonk in je relatie levend houden na jaren: een test van 2 minuten die laat zien welke van 4 vonken dooft, wat onderzoek zegt en een plan van 4 weken.
 tags: vonk in je relatie, de vonk terug

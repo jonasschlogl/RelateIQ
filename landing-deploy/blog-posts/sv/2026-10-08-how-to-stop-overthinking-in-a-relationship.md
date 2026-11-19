@@ -1,5 +1,6 @@
 ---
 title: "Sluta övertänka i relationen: så tar du dig ur tänk-om-spiralen"
+seo_title: "Sluta övertänka i relationen: 7 steg ur spiralen"
 date: 2026-10-08
 slug: sluta-overtanka-i-relationen
 description: Så slutar du övertänka och överanalysera i ditt förhållande: varför det händer, hur du bryter tänk-om-spiralen och vad du kan säga till din partner.

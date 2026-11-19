@@ -1,5 +1,6 @@
 ---
 title: "How to rebuild trust after cheating: the 4 stages couples go through, and what each partner does"
+seo_title: "How to Rebuild Trust After Cheating: The 4 Stages"
 date: 2026-11-17
 updated: 2026-11-19
 description: "How to rebuild trust after cheating, stage by stage: what a 2026 study of 3,400 people found about who stays together, and what each partner needs to do."

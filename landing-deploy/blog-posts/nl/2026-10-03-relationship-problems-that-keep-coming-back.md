@@ -1,5 +1,6 @@
 ---
 title: "Relatieproblemen oplossen: 5 problemen die steeds terugkomen"
+seo_title: "Relatieproblemen oplossen: 5 problemen die terugkomen"
 date: 2026-10-03
 description: Relatieproblemen oplossen die steeds terugkomen: 5 veelvoorkomende oorzaken, wat er meestal onder zit en hoe je het patroon doorbreekt.
 tags: relatieproblemen oplossen, terugkerende relatieproblemen

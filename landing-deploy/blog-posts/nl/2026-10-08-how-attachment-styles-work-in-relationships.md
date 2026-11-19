@@ -1,5 +1,6 @@
 ---
 title: "Hechtingsstijlen in relaties: veilig, angstig, vermijdend en gedesorganiseerd"
+seo_title: "Hechtingsstijlen in relaties: de 4 types uitgelegd"
 date: 2026-10-08
 description: Hechtingsstijlen in relaties uitgelegd: veilige, angstige, vermijdende en gedesorganiseerde hechting, wat ze met je relatie doen en hoe je ermee omgaat.
 tags: hechtingsstijlen, hechting in relaties

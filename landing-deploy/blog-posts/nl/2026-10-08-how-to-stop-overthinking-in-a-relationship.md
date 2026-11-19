@@ -1,5 +1,6 @@
 ---
 title: "Piekeren over je relatie: zo stop je met overdenken"
+seo_title: "Piekeren over je relatie: zo stop je met overdenken"
 date: 2026-10-08
 description: Piekeren over je relatie en alles overdenken? Waarom het gebeurt, hoe je uit de wat-als-spiraal komt en wat je tegen je partner kunt zeggen.
 tags: piekeren over relatie, overdenken in een relatie

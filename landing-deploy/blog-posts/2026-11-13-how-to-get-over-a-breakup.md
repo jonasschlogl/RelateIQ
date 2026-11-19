@@ -1,5 +1,6 @@
 ---
 title: "How to get over a breakup: a recovery plan for the first 48 hours, 2 weeks and 3 months"
+seo_title: "How to Get Over a Breakup: 48 Hours, 2 Weeks, 3 Months"
 date: 2026-11-13
 updated: 2026-11-19
 description: "How to get over a breakup, stage by stage: the first 48 hours, the first two weeks and the months after, and why you'll likely recover faster than you fear."

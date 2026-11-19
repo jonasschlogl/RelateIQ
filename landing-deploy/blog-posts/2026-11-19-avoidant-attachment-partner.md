@@ -1,5 +1,6 @@
 ---
 title: "Avoidant attachment in a partner: 8 signs and how to love someone who needs space"
+seo_title: "Avoidant Attachment Partner: 8 Signs and How to Love Them"
 date: 2026-11-19
 description: Close one day, distant the next? 8 signs of avoidant attachment in a partner, why they pull away when things get close and how to build closeness without chasing.
 updated: 2026-11-19

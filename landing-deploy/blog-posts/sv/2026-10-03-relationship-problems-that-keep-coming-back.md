@@ -1,5 +1,6 @@
 ---
 title: "Lösa relationsproblem: 5 problem som ständigt kommer tillbaka"
+seo_title: "Lösa relationsproblem: 5 problem som kommer tillbaka"
 date: 2026-10-03
 slug: relationsproblem-som-kommer-tillbaka
 description: Så löser ni relationsproblem som kommer tillbaka gång på gång: 5 vanliga orsaker, vad som ofta ligger bakom och hur ni bryter mönstret.

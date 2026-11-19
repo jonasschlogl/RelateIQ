@@ -1,5 +1,6 @@
 ---
 title: "Gaslighting in a relationship, or just a disagreement? 5 questions that tell them apart"
+seo_title: "Gaslighting in a Relationship or Disagreement? 5 Questions"
 date: 2026-11-14
 updated: 2026-11-19
 description: "Gaslighting in a relationship is real, but the word is overused. 5 questions to tell it from ordinary disagreement, what new research found, and how to heal."

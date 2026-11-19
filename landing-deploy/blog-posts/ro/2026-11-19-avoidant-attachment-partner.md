@@ -1,5 +1,6 @@
 ---
 title: "Atașamentul evitant la partener: 8 semne și cum să iubești pe cineva care are nevoie de spațiu"
+seo_title: "Atașamentul evitant la partener: 8 semne și ce să faci"
 slug: atasament-evitant-partener
 description: Apropiat într-o zi, distant în următoarea? 8 semne de atașament evitant la partener, de ce se retrage când apare apropierea și cum construiești apropiere fără să alergi după el.
 tags: atașament evitant, nevoie de spațiu

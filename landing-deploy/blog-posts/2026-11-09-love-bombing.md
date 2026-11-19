@@ -1,5 +1,6 @@
 ---
 title: "Love bombing: how it unfolds week by week, and how to tell it from real love"
+seo_title: "Love Bombing: Week-by-Week Signs vs Real Love"
 date: 2026-11-10
 updated: 2026-11-19
 description: "Love bombing rarely looks like a red flag at first. Follow one relationship from week 1 to month 3, with the turning points experts describe and what to do."

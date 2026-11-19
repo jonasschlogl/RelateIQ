@@ -1,5 +1,6 @@
 ---
 title: "Cum să păstrezi scânteia în relație: află care scânteie se stinge și începe cu ea"
+seo_title: "Cum să păstrezi scânteia în relație după ani"
 slug: scanteia-in-relatie
 description: Cum să păstrezi scânteia în relație după ani: un test de 2 minute care arată care dintre cele 4 scântei se stinge, ce spune cercetarea și un plan de 4 săptămâni.
 tags: scânteia în relație, relație de lungă durată

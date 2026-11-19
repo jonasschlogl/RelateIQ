@@ -1,5 +1,6 @@
 ---
 title: "Parisuhdekriisi: näin korjaat suhteen, kun kaikki tuntuu rikki"
+seo_title: "Parisuhdekriisi: näin korjaat suhteen 6 askeleessa"
 date: 2026-10-04
 description: Parisuhdekriisi tai etäiseksi muuttunut suhde? Rauhallinen alku parisuhteen korjaamiseen askel kerrallaan, riitojen lopettamisesta läheisyyden palauttamiseen.
 tags: parisuhdekriisi, parisuhteen korjaaminen

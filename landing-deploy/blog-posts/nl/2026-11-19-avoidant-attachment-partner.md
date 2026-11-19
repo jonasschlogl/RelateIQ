@@ -1,5 +1,6 @@
 ---
 title: "Vermijdende hechting bij je partner: 8 signalen en hoe je houdt van iemand die ruimte nodig heeft"
+seo_title: "Vermijdende hechting bij je partner: 8 signalen"
 slug: vermijdende-hechting-partner
 description: De ene dag dichtbij, de volgende afstandelijk? 8 signalen van vermijdende hechting bij je partner, waarom diegene afstand neemt bij nabijheid en hoe je verbinding opbouwt zonder te jagen.
 tags: vermijdende hechting, ruimte nodig hebben

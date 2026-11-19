@@ -1,5 +1,6 @@
 ---
 title: "Kipinä parisuhteessa: selvitä, mikä kipinä hiipuu, ja aloita siitä"
+seo_title: "Kipinä parisuhteessa: näin pidät sen yllä vuosien jälkeen"
 slug: kipina-parisuhteessa
 description: Miten pitää kipinä yllä pitkässä parisuhteessa: 2 minuutin testi, joka näyttää mikä neljästä kipinästä hiipuu, mitä tutkimus sanoo ja 4 viikon suunnitelma.
 tags: kipinä parisuhteessa, pitkä parisuhde

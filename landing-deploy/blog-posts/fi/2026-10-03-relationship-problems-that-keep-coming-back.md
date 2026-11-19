@@ -1,5 +1,6 @@
 ---
 title: "Parisuhdeongelmat, jotka toistuvat: 5 syytä ja miten ne ratkaistaan"
+seo_title: "Parisuhdeongelmat, jotka toistuvat: 5 syytä"
 date: 2026-10-03
 description: Parisuhdeongelmat, jotka palaavat yhä uudelleen: 5 yleistä syytä, mitä niiden alla usein on ja miten kuvion saa katkaistua.
 tags: parisuhdeongelmat, toistuvat riidat

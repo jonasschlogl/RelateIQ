@@ -1,5 +1,6 @@
 ---
 title: "Signs of a toxic relationship: a 3-level check for unhealthy, toxic and controlling"
+seo_title: "Signs of a Toxic Relationship: A 3-Level Self-Check"
 date: 2026-11-16
 updated: 2026-11-19
 description: "Signs of a toxic relationship in three levels: unhealthy but fixable, toxic patterns and coercive control, with a clear self-check and safe next steps."

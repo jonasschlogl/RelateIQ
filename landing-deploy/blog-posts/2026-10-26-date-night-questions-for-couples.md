@@ -1,5 +1,6 @@
 ---
 title: "Date night questions for couples: 40 questions and 5 games to make the evening fun"
+seo_title: "Date Night Questions for Couples: 40 Questions + 5 Games"
 date: 2026-10-26
 updated: 2026-11-19
 description: "Date night questions for couples, turned into 5 easy games, from the question jar to hot seat, with 40 playful-to-deep questions and the research behind them."

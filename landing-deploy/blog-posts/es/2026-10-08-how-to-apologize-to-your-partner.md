@@ -1,5 +1,6 @@
 ---
 title: "Cómo disculparse con tu pareja (novia o novio): cómo pedir perdón de verdad"
+seo_title: "Cómo disculparse con tu pareja (novia o novio): 5 pasos"
 slug: como-pedir-perdon-a-tu-pareja
 date: 2026-10-08
 updated: 2026-11-18

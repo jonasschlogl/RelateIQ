@@ -1,5 +1,6 @@
 ---
 title: "Tipos de apego en la pareja: seguro, ansioso, evitativo y desorganizado"
+seo_title: "Tipos de apego en la pareja: los 4 estilos explicados"
 slug: estilos-de-apego-en-pareja
 date: 2026-10-08
 description: Tipos de apego en la pareja explicados: apego seguro, ansioso, evitativo y desorganizado (temeroso-evitativo), cómo influyen en la relación y cómo trabajarlos.

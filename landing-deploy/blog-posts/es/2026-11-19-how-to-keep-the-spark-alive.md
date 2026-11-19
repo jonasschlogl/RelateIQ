@@ -1,5 +1,6 @@
 ---
 title: "Cómo mantener la chispa en una relación larga: descubre qué chispa se apaga y arregla esa"
+seo_title: "Cómo mantener la chispa en una relación larga"
 slug: como-mantener-la-chispa-en-la-pareja
 description: Cómo mantener la chispa en una relación larga: un test de 2 minutos para ver cuál de 4 chispas se apaga, qué dice la investigación y un plan de 4 semanas.
 tags: mantener la chispa, relación larga

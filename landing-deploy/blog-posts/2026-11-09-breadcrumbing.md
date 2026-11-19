@@ -1,5 +1,6 @@
 ---
 title: "Breadcrumbing: 9 real questions about being kept on the hook, answered"
+seo_title: "Breadcrumbing: What It Is, Signs and What to Say"
 date: 2026-11-10
 updated: 2026-11-19
 description: "Breadcrumbing: what it is, why it hurts more than a clear no, how to tell it from someone who's just busy, and what to say. 9 real questions, answered."

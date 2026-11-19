@@ -1,5 +1,6 @@
 ---
 title: "Cum să-ți salvezi relația: de unde începi când simți că s-a stricat"
+seo_title: "Cum să-ți salvezi relația: 6 pași de unde începi"
 date: 2026-10-04
 description: Cum să-ți salvezi relația când e distantă sau blocată: un punct de plecare calm, pas cu pas, de la oprirea certurilor la reconstruirea apropierii.
 tags: cum să-ți salvezi relația, cum să-ți repari relația

@@ -1,5 +1,6 @@
 ---
 title: "Kommunikaatio parisuhteessa: 7 tapaa, jotka muuttavat riitelyn"
+seo_title: "Kommunikaatio parisuhteessa: 7 tapaa riidellä paremmin"
 date: 2026-10-05
 description: Kommunikaatio-ongelmat parisuhteessa: 7 tutkimukseen perustuvaa tapaa, jotka muuttavat tapaanne riidellä, ja lauseita, joita voit käyttää jo tänään.
 tags: kommunikaatio parisuhteessa, parisuhdeneuvot

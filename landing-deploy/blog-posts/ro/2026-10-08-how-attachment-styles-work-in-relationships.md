@@ -1,5 +1,6 @@
 ---
 title: "Stiluri de atașament în relație: sigur, anxios, evitant și dezorganizat"
+seo_title: "Stiluri de atașament în relație: cele 4 tipuri explicate"
 date: 2026-10-08
 description: Stilurile de atașament în relație explicate: atașament sigur, anxios, evitant și dezorganizat, cum influențează cuplul și ce poți face.
 tags: stiluri de atașament, atașament în relație

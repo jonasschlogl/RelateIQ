@@ -1,5 +1,6 @@
 ---
 title: "Anteeksipyyntö kumppanille: näin pyydät anteeksi oikein"
+seo_title: "Anteeksipyyntö kumppanille: näin pyydät anteeksi oikein"
 description: Miten pyytää anteeksi kumppanilta, tyttöystävältä tai poikaystävältä niin, että se toimii: mitä tutkimus sanoo, 5 vaihetta ja esimerkkejä.
 tags: miten pyytää anteeksi, anteeksipyyntö
 slug: anteeksipyynto-kumppanille

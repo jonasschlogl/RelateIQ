@@ -1,5 +1,6 @@
 ---
 title: "Apego evitativo en la pareja: 8 señales y cómo querer a alguien que necesita espacio"
+seo_title: "Apego evitativo en la pareja: 8 señales y qué hacer"
 slug: apego-evitativo-en-la-pareja
 description: ¿Cercano un día y distante al siguiente? 8 señales de apego evitativo en tu pareja, por qué se aleja cuando hay intimidad y cómo crear cercanía sin perseguir.
 tags: apego evitativo, necesitar espacio

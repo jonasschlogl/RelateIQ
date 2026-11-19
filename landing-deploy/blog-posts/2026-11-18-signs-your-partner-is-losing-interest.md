@@ -1,5 +1,6 @@
 ---
 title: "Signs your partner is losing interest: what each signal can really mean"
+seo_title: "Signs Your Partner Is Losing Interest, and What They Mean"
 date: 2026-11-18
 updated: 2026-11-19
 description: "Signs your partner is losing interest, decoded: shorter texts, less touch, fewer plans. The likely reasons behind each one, what research says, and what to say."

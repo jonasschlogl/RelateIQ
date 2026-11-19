@@ -1,5 +1,6 @@
 ---
 title: "Cómo dejar de pensar demasiado en tu relación (overthinking en pareja)"
+seo_title: "Cómo dejar de pensar demasiado en tu relación: 7 pasos"
 slug: como-dejar-de-darle-vueltas-en-pareja
 date: 2026-10-08
 description: Cómo dejar de pensar demasiado y darle vueltas a todo en tu relación: por qué pasa, cómo frenar la espiral del «¿y si…?» y qué decirle a tu pareja.

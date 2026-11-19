@@ -1,5 +1,6 @@
 ---
 title: "Comunicación en pareja: 7 hábitos para discutir mejor y entenderse"
+seo_title: "Comunicación en pareja: 7 hábitos para discutir mejor"
 slug: consejos-de-pareja-comunicacion
 date: 2026-10-05
 description: Comunicación en pareja: 7 hábitos respaldados por la investigación que cambian cómo discutís, con frases concretas para usar desde hoy.

@@ -1,5 +1,6 @@
 ---
 title: "Be om ursäkt till din partner: så säger du förlåt så att det känns"
+seo_title: "Be om ursäkt till din partner: 5 steg och exempel"
 slug: be-partner-om-ursakt
 description: Så ber du om ursäkt till din partner, pojkvän eller flickvän på ett sätt som fungerar: vad forskningen säger, 5 steg och exempel på vad du kan säga.
 tags: be om ursäkt, säga förlåt

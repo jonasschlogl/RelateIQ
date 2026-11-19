@@ -1,5 +1,6 @@
 ---
 title: "Problemas de pareja que siempre vuelven: 5 causas y cómo solucionarlos"
+seo_title: "Problemas de pareja que siempre vuelven: 5 causas"
 slug: problemas-de-pareja-que-se-repiten
 date: 2026-10-03
 description: Problemas de pareja que se repiten una y otra vez: 5 causas habituales, qué suele haber debajo y cómo solucionarlos sin repetir la misma discusión.

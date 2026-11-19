@@ -1,5 +1,6 @@
 ---
 title: "Overthinking în relație: cum să nu te mai gândești prea mult"
+seo_title: "Overthinking în relație: 7 pași ca să te oprești"
 date: 2026-10-08
 description: Overthinking în relație: de ce te gândești prea mult, cum ieși din spirala „și dacă” și ce îi poți spune partenerului.
 tags: overthinking în relație, gânduri obsesive în relație

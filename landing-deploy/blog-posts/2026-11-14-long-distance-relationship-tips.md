@@ -1,5 +1,6 @@
 ---
 title: "Long distance relationship tips: what helps while apart, during visits and after you close the gap"
+seo_title: "Long Distance Relationship Tips for Every Stage"
 date: 2026-11-14
 updated: 2026-11-19
 description: "Long distance relationship tips for all three phases: staying close apart, making visits work, and the risky part most guides skip, finally living together."

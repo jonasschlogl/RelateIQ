@@ -1,5 +1,6 @@
 ---
 title: "Situationship: should you stay, define it or walk away? A decision guide"
+seo_title: "Situationship: Stay, Define It or Walk Away? A Guide"
 date: 2026-11-17
 updated: 2026-11-19
 description: "Situationship decision guide: what new research on situationships found, how to decide whether to stay, define it or walk away, and the exact words for each."
