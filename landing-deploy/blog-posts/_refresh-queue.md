@@ -1,6 +1,6 @@
 # Refresh queue (one per evening, see _STYLE.md section 6). Weakest first: fewest sources, most template-like.
 
-- [ ] 2026-11-18-codependent-relationship (1 source)
+- [x] 2026-11-18-codependent-relationship (refreshed 2026-11-19: comparison + three tests, 5 sources)
 - [ ] 2026-11-16-jealousy-in-a-relationship (1 source)
 - [ ] 2026-11-12-how-to-support-your-partner-when-stressed (1 source)
 - [ ] 2026-11-09-breadcrumbing (2 sources)
