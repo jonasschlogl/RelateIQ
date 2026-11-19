@@ -65,6 +65,8 @@ En un estudio clásico, Jeffry Simpson, Steven Rholes y Julia Nelligan grabaron 
 > **La vieja alarma detrás del alejamiento**
 > Para una persona evitativa, necesitar a alguien, o sentirse necesitada, puede activar en silencio una vieja alarma: «apoyarse en la gente acaba en decepción». Alejarse apaga esa alarma. Normalmente no es una decisión sobre ti. Es una forma aprendida de sentirse a salvo. Por eso presionar para tener más cercanía suele salir mal, mientras que una cercanía tranquila y constante, con espacio para respirar, suele funcionar mucho mejor.
 
+Esto puede convertirse en un círculo. En un estudio de 2022 con 175 parejas, Ione Bretaña y sus colegas vieron que las personas más evitativas se retiraban más durante los conflictos, que esa retirada volvía a su pareja más exigente o agresiva, y que ese patrón reducía la satisfacción de los dos. Cuanto más se aleja uno, más presiona el otro, y eso hace que alejarse parezca todavía más necesario.
+
 ## Cómo querer a alguien con apego evitativo
 
 ### 1. No persigas, pero tampoco desaparezcas
@@ -147,5 +149,6 @@ Necesitar espacio no es lo mismo que controlar o castigar. Si tu pareja usa el s
 ## Fuentes
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Resumen](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

@@ -65,6 +65,8 @@ Klassisessa tutkimuksessa Jeffry Simpson, Steven Rholes ja Julia Nelligan kuvasi
 > **Vanha hälytys vetäytymisen takana**
 > Välttelevälle ihmiselle toisen tarvitseminen, tai tarvituksi tuleminen, voi hiljaa laukaista vanhan hälytyksen: "ihmisiin luottaminen johtaa pettymykseen". Vetäytyminen sammuttaa hälytyksen. Se ei yleensä ole päätös sinusta. Se on opittu tapa pysyä turvassa. Siksi läheisyyden vaatiminen kääntyy usein itseään vastaan, kun taas rauhallinen ja tasainen läheisyys, jossa on tilaa hengittää, toimii yleensä paljon paremmin.
 
+Tästä voi tulla kierre. Vuonna 2022 tehdyssä 175 parin tutkimuksessa Ione Bretaña kollegoineen havaitsi, että välttelevämmät ihmiset vetäytyivät riidoissa enemmän, vetäytyminen teki kumppanista vaativamman tai aggressiivisemman, ja tämä kuvio laski molempien tyytyväisyyttä. Mitä enemmän toinen vetäytyy, sitä kovemmin toinen painostaa, ja silloin vetäytyminen tuntuu vielä tarpeellisemmalta.
+
 ## Miten rakastaa ihmistä, jolla on välttelevä kiintymys
 
 ### 1. Älä jahtaa, mutta älä myöskään katoa
@@ -147,5 +149,6 @@ Tilan tarve ei ole sama asia kuin kontrolli tai rangaistus. Jos kumppani käytt�
 ## Lähteet
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Tiivistelmä](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

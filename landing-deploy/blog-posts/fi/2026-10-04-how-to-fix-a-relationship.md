@@ -83,6 +83,8 @@ Näyttö on rohkaisevaa myös pareille, joilla on vakavia ongelmia. Andrew Chris
 
 Avun ei myöskään tarvitse tarkoittaa viikoittaista terapiaa. Satunnaistetussa tutkimuksessa, jossa oli 300 paria, Brian Doss kollegoineen testasi OurRelationship-ohjelmaa, muutaman tunnin itsenäisesti tehtävää verkko-ohjelmaa lyhyine valmentajapuheluineen. Jonotuslistalla oleviin pareihin verrattuna ohjelman tehneet kertoivat olevansa selvästi tyytyväisempiä suhteeseensa ja heillä oli vähemmän masennusoireita, ja suurin osa hyödyistä säilyi vielä vuoden päästä.
 
+Uudemmassa, Yunying Len johtamassa tutkimuksessa, jossa Doss oli mukana, samaa ohjelmaa testattiin vuonna 2023 740 pienituloisella parilla. Parit kohenivat selvästi jonotuslistaan verrattuna, oli heillä sitten ihmisvalmentaja tai lähinnä automaattinen tuki, ja hyödyt säilyivät noin neljän kuukauden seurannassa.
+
 RelationshipAI:n kaltainen tekoälyvalmentaja voi auttaa miettimään asioita Coach Chatissa ja harjoittelemaan vaikeita keskusteluja Partner Practicessa istuntojen välillä, mutta se ei korvaa ammattiapua.
 
 ## Entä jos vain toinen yrittää?
@@ -131,6 +133,7 @@ Jos luottamus on rikottu, aloita oppaista [luottamuksen palauttaminen pettämise
 
 - Christensen, A., Atkins, D. C., Baucom, B., & Yi, J. (2010). Marital status and satisfaction five years following a randomized clinical trial comparing traditional versus integrative behavioral couple therapy. *Journal of Consulting and Clinical Psychology*, 78(2), 225-235. Tiivistelmä: [ScienceDaily](https://www.sciencedaily.com/releases/2010/04/100419151119.htm)
 - Doss, B. D., Cicila, L. N., Georgia, E. J., Roddy, M. K., Nowlan, K. M., Benson, L. A., & Christensen, A. (2016). A randomized controlled trial of the web-based OurRelationship program: Effects on relationship and individual functioning. *Journal of Consulting and Clinical Psychology*, 84(4), 285-296. Tiivistelmä: [Science Trends](https://sciencetrends.com/online-program-for-couples-results-in-long-term-gains-in-relationship-functioning-and-individual-health)
+- Le, Y., Roddy, M. K., Rothman, K., Salivar, E. G., Guttman, S., & Doss, B. D. (2023). A randomized controlled trial of the online OurRelationship program with varying levels of coach support. *Internet Interventions*, 34, 100661. [Full text on PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC10477807/)
 - Gottman, J. M. (1994). *What Predicts Divorce? The Relationship Between Marital Processes and Marital Outcomes*. Lawrence Erlbaum.
 - Gottman, J. M., & Silver, N. (1999). *The Seven Principles for Making Marriage Work*. Crown.
 - Gottman Institute: [The four horsemen: criticism, contempt, defensiveness and stonewalling](https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/)

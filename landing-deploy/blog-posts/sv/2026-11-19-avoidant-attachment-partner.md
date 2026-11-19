@@ -65,6 +65,8 @@ I en klassisk studie filmade Jeffry Simpson, Steven Rholes och Julia Nelligan 83
 > **Det gamla larmet bakom att dra sig undan**
 > För en undvikande person kan det att behöva någon, eller att bli behövd, tyst sätta igång ett gammalt larm: "att lita på andra leder till besvikelse". Att dra sig undan stänger av larmet. Det är oftast inget beslut om dig. Det är ett inlärt sätt att känna sig trygg. Därför slår det ofta fel att pressa på för mer närhet, medan lugn och stadig närhet med utrymme att andas brukar fungera mycket bättre.
 
+Det kan bli en ond cirkel. I en studie från 2022 med 175 par fann Ione Bretaña och kollegor att mer undvikande personer drog sig undan mer under konflikter, att deras tillbakadragande gjorde partnern mer krävande eller aggressiv, och att mönstret sänkte nöjdheten för båda. Ju mer den ena drar sig undan, desto hårdare pressar den andra, och då känns det ännu mer nödvändigt att dra sig undan.
+
 ## Så älskar du någon med undvikande anknytning
 
 ### 1. Jaga inte, men försvinn inte heller
@@ -147,5 +149,6 @@ Att behöva utrymme är inte samma sak som kontroll eller straff. Om en partner 
 ## Källor
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Sammanfattning](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

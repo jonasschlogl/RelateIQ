@@ -65,6 +65,8 @@ In een klassiek onderzoek filmden Jeffry Simpson, Steven Rholes en Julia Nelliga
 > **Het oude alarm achter afstand nemen**
 > Voor iemand met een vermijdende stijl kan iemand nodig hebben, of nodig zijn, ongemerkt een oud alarm laten afgaan: "op mensen leunen eindigt in teleurstelling". Afstand nemen zet dat alarm uit. Het is meestal geen beslissing over jou. Het is een aangeleerde manier om je veilig te voelen. Daarom werkt harder aandringen op nabijheid vaak averechts, terwijl rustige, stabiele nabijheid met ruimte om te ademen veel beter werkt.
 
+Dit kan een vicieuze cirkel worden. In een onderzoek uit 2022 met 175 stellen ontdekten Ione Bretaña en collega's dat mensen die meer vermijdend waren zich tijdens conflicten meer terugtrokken, dat dat terugtrekken hun partner veeleisender of agressiever maakte, en dat dit patroon de tevredenheid van allebei verlaagde. Hoe meer de een zich terugtrekt, hoe harder de ander duwt, en dan voelt terugtrekken nog noodzakelijker.
+
 ## Hoe je houdt van iemand met vermijdende hechting
 
 ### 1. Jaag niet, maar verdwijn ook niet
@@ -147,5 +149,6 @@ Ruimte nodig hebben is niet hetzelfde als controle of straf. Gebruikt je partner
 ## Bronnen
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Samenvatting](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

@@ -66,6 +66,8 @@ In a classic study, Jeffry Simpson, Steven Rholes and Julia Nelligan videotaped 
 > **The old alarm behind pulling away**
 > For an avoidant person, needing someone, or being needed, can quietly activate an old alarm: "relying on people leads to disappointment". Pulling away turns that alarm off. It isn't usually a decision about you. It's a learned way of staying safe. That's why pushing harder for closeness often backfires, while calm, steady closeness with room to breathe tends to work much better.
 
+This can turn into a loop. In a 2022 study of 175 couples, Ione Bretaña and colleagues found that more avoidant people withdrew more during conflict, their withdrawal made their partner more demanding or aggressive, and that pattern lowered satisfaction for both. The more one partner pulls back, the harder the other pushes, which makes pulling back feel even more necessary.
+
 ## How to love someone with avoidant attachment
 
 ### 1. Don't chase, but don't disappear
@@ -148,5 +150,6 @@ Needing space is not the same as control or punishment. If a partner uses silenc
 ## Sources
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Abstract](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

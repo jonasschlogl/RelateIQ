@@ -98,6 +98,8 @@ Try: "I need twenty minutes to calm down, and then I want to finish this."
 > **The difference between a break and stonewalling**
 > Without the promise to return, a break looks exactly like stonewalling, the fourth of Gottman's "four horsemen", where one partner shuts down and withdraws. With the promise, the same break becomes an act of care: "I want to have this conversation well." The person who stays behind can relax because they know the conversation isn't over, and the person who leaves can actually calm down instead of feeling chased.
 
+Withdrawal also tends to pull the other person into the opposite role. In a 2022 study of 175 couples, Ione Bretaña and colleagues found that when one partner withdrew during conflict, the other became more demanding or aggressive, and both patterns went with lower relationship satisfaction for the partner on the receiving end. A clear "I'll be back in twenty minutes" breaks that loop before it starts.
+
 ## 7. Repair early and often
 
 Even couples who communicate well say the wrong thing sometimes. What sets them apart is the repair attempt: a joke at the right moment, a gentle touch, "Can we start that over?" or a plain "Sorry, that came out wrong." Gottman found that when repair attempts keep failing, it's an accurate marker of an unhappy future. So repairs are worth taking seriously, both making them and accepting them.
@@ -168,6 +170,7 @@ These habits matter most in the conversations couples avoid. See our guides on [
 
 ## Sources
 
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Gottman, J. M. (1994). *What Predicts Divorce? The Relationship Between Marital Processes and Marital Outcomes*. Lawrence Erlbaum.
 - Gottman, J. M., & Silver, N. (1999). *The Seven Principles for Making Marriage Work*. Crown.
 - Gottman Institute: [The four horsemen: criticism, contempt, defensiveness and stonewalling](https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/)

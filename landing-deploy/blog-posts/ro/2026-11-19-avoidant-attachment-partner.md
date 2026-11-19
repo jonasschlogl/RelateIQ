@@ -65,6 +65,8 @@ Să-ți repare bicicleta sau să rezerve o excursie poate fi felul lui de a spun
 > **Alarma veche din spatele retragerii**
 > Pentru o persoană evitantă, a avea nevoie de cineva sau a fi necesar cuiva poate porni în liniște o alarmă veche: „dacă te bazezi pe oameni, ajungi dezamăgit". Retragerea oprește alarma. De obicei nu e o decizie despre tine. E un mod învățat de a te simți în siguranță. De aceea, insistența pentru mai multă apropiere are adesea efectul opus, în timp ce o apropiere calmă și constantă, cu loc de respirat, funcționează mult mai bine.
 
+Asta se poate transforma într-un cerc vicios. Într-un studiu din 2022 cu 175 de cupluri, Ione Bretaña și colegii săi au descoperit că persoanele mai evitante se retrăgeau mai mult în timpul conflictelor, că retragerea lor îl făcea pe partener mai insistent sau mai agresiv și că acest tipar scădea satisfacția amândurora. Cu cât unul se retrage mai mult, cu atât celălalt insistă mai tare, iar retragerea pare și mai necesară.
+
 ## Cum să iubești pe cineva cu atașament evitant
 
 ### 1. Nu alerga după el, dar nici nu dispărea
@@ -147,5 +149,6 @@ Nevoia de spațiu nu este același lucru cu controlul sau pedeapsa. Dacă parten
 ## Surse
 
 - Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Rezumat](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.
