@@ -9,7 +9,7 @@
 - [x] 2026-11-13-how-to-get-over-a-breakup (refreshed 2026-11-19: staged recovery plan, 5 sources)
 - [x] 2026-11-14-gaslighting-in-a-relationship (refreshed 2026-11-19: 5-question comparison, 5 sources incl. 2023 and 2025 studies)
 - [x] 2026-11-14-long-distance-relationship-tips (refreshed 2026-11-19: 3 phases incl. closing the gap, 4 sources)
-- [ ] 2026-11-15-love-languages (2 sources; good fit for myth vs fact)
+- [x] 2026-11-15-love-languages (refreshed 2026-11-19: 6 beliefs checked against research, 5 sources)
 - [ ] 2026-11-15-trust-issues-in-a-relationship (2 sources)
 - [ ] 2026-11-16-signs-of-a-toxic-relationship (2 sources)
 - [ ] 2026-11-17-situationship (2 sources)
