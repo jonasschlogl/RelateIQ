@@ -39,3 +39,10 @@ Each article needs one element a reader won't find in the top 5 Google results: 
 
 ## 6. Refreshing an older article
 Take the next unchecked entry in _refresh-queue.md. Keep the file name, slug and main keyword. Rework it to these rules (often into a different format), bring sources to the minimum, remove repeated studies, add `updated: <today>`, rebuild, tick it off, push. Then add a RETRANSLATE line for it to _translation-queue.md (unless it is still unchecked there).
+
+## 7. Choosing the keyword (Jonas, 19 Nov 2026: the site gets almost no impressions)
+Search Console shows most English pages sit at position 50 to 90 for big head terms (toxic relationship, gaslighting, love languages), where Healthline, Psychology Today and Verywell Mind own page 1. A young domain cannot win those. So:
+- Pick specific long-tail questions with clear intent and weak competition, ideally "what to say / what to text / how to word it" situations: e.g. "what to text after a fight with your boyfriend", "how to apologize to your girlfriend over text", "what to say when your partner is hurt by something you said". These match Message check and Partner Practice.
+- Before choosing, search the exact phrase and look at the top 10: if page 1 is all big health publishers with exact-match titles, skip it; if it has forums (Reddit, Quora), small blogs or loosely matching pages, it is a good target.
+- Prefer topics that already get impressions in Search Console (apologising, repair, relationship problems, communication, attachment) and build clusters around them, linking every new article to and from its pillar.
+- Never a second article for a covered keyword; a narrower sub-question of a pillar is fine and should link to it.
