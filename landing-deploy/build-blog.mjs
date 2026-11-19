@@ -113,6 +113,11 @@ const EN = {
   sayCheck: "Check how it lands",
   faqTitle: "Quick answers",
   shareTitle: "Found this useful? Share it",
+  authorRole: "Founder of RelationshipAI",
+  authorBio: "Jonáš built RelationshipAI after seeing how much a calm second perspective helped in his own relationship. He writes about communication, conflict and attachment, drawing on peer-reviewed research and the methods couples therapists use.",
+  authorChecked: "Every source in this article was checked before publishing, and the article is updated when the research changes.",
+  howWeWrite: "How we write and check our articles",
+  aboutAuthor: "About the author",
 };
 const AUTHOR = "Jonáš Schlögl";
 // which tool the sidebar card promotes, per article (default: Coach Chat)
@@ -507,6 +512,17 @@ const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug
   <span class="post-more">${ctx.T(EN.readArticle)} <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
 </a>`;
 
+const authorBox = (ctx, avatar) => {
+  const { T } = ctx;
+  return `<aside class="author-box" aria-label="${attr(T(EN.aboutAuthor))}">
+            <a href="/about/" class="author-box-img" aria-hidden="true" tabindex="-1">${avatar}</a>
+            <div>
+              <p class="author-box-name"><a href="/about/" rel="author">${AUTHOR}</a><span>${T(EN.authorRole)}</span></p>
+              <p>${T(EN.authorBio)}</p>
+              <p class="author-box-check">${T(EN.authorChecked)} <a href="/method/#how-we-write">${T(EN.howWeWrite)} →</a></p>
+            </div>
+          </aside>`;
+};
 const ctaBox = (ctx, event) => `<div class="article-cta">
   <h2>${ctx.T(EN.ctaH2)}</h2>
   <p>${ctx.T(EN.ctaP)}</p>
@@ -686,6 +702,7 @@ function postPage(ctx, p0, all) {
           <div class="article-body">
 ${withImages(p)}
           </div>
+          ${authorBox(ctx, avatar)}
           ${methodBox(ctx, p)}
           ${ctaBox(ctx, "cta-blog-article")}
           ${shareBar(p, url)}
@@ -747,7 +764,7 @@ function articleLd(ctx, p, url, ogPng) {
       datePublished: p.date, dateModified: p.updated || p.date, mainEntityOfPage: url,
       inLanguage: ctx.lang.htmlLang,
       image: ogPng || `${SITE}/og-image.png?v=2`,
-      author: { "@type": "Person", name: AUTHOR, url: INSTAGRAM },
+      author: { "@type": "Person", name: AUTHOR, url: `${SITE}/about/`, jobTitle: "Founder", worksFor: { "@type": "Organization", name: CONFIG.siteName, url: `${SITE}/` }, sameAs: [INSTAGRAM] },
       publisher: { "@type": "Organization", name: CONFIG.siteName, sameAs: [INSTAGRAM], logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
   };
 }

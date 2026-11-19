@@ -248,3 +248,15 @@ body.sp-blog .method-box a { color: #3b2218; text-decoration: underline; text-de
 .method-box li { font-size: 14.5px; line-height: 1.5; color: rgba(59, 34, 24, .8); margin: 4px 0; }
 .method-box .mb-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid rgba(59, 34, 24, .1); font-size: 14px; color: rgba(59, 34, 24, .65); }
 body.sp-blog .method-box .mb-foot a { font-weight: 700; text-decoration: none; }
+
+/* author box under each article */
+body.spg .author-box { display: flex; gap: 16px; align-items: flex-start; margin: 36px 0 8px; padding: 20px 22px; background: #fff7ec; border: 1px solid rgba(59,34,24,.12); border-radius: 18px; }
+body.spg .author-box-img { flex: 0 0 64px; width: 64px; height: 64px; }
+body.spg .author-box-img img { width: 64px !important; height: 64px !important; max-width: none; border-radius: 50%; object-fit: cover; display: block; }
+body.spg .author-box p { margin: 0 0 8px; font-size: .95rem; line-height: 1.55; color: #3b2218; }
+body.spg .author-box p:last-child { margin-bottom: 0; }
+body.spg .author-box-name a { font-weight: 700; color: #3b2218; text-decoration: none; }
+body.spg .author-box-name span { display: block; font-size: .85rem; opacity: .7; }
+body.spg .author-box-check { font-size: .88rem !important; opacity: .85; }
+body.spg .author-box-check a { color: #c2185b; font-weight: 600; }
+@media (max-width: 560px) { body.spg .author-box { flex-direction: column; } }
