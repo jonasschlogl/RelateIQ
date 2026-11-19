@@ -1,124 +1,129 @@
 ---
-title: "De vonk in je relatie levend houden: 9 dingen die echt werken"
+title: "De vonk in je relatie levend houden: ontdek welke vonk dooft en begin daar"
 slug: vonk-in-je-relatie
-description: De vonk in je relatie levend houden, ook na jaren: wat onderzoek naar blijvende liefde laat zien en 9 praktische ideeën om deze week te proberen.
+description: De vonk in je relatie levend houden na jaren: een test van 2 minuten die laat zien welke van 4 vonken dooft, wat onderzoek zegt en een plan van 4 weken.
 tags: vonk in je relatie, de vonk terug
 ---
-In het begin voelde alles elektrisch. Jullie konden niet wachten om elkaar te zien, appten de hele dag en bleven praten tot twee uur 's nachts. Nu houden jullie van elkaar, maar de avonden bestaan vooral uit Netflix, scrollen en "wat wil je eten vanavond?".
+In een willekeurige steekproef van Amerikanen die al meer dan tien jaar getrouwd waren, zei ongeveer 40% nog steeds "zeer intens verliefd" te zijn. Dat resultaat komt uit een onderzoek onder leiding van Daniel O'Leary, samen met Bianca Acevedo en Arthur Aron, en het verrast de meeste mensen, want we horen steeds dat passie altijd verdwijnt. In een tweede steekproef uit New York was het ongeveer 29%. Lager, maar verre van zeldzaam.
 
-Die verandering is normaal. Maar het betekent niet dat de vonk in je relatie moet verdwijnen. Onderzoek laat zien dat veel stellen die al lang samen zijn nog steeds erg verliefd zijn, en dat zij andere dingen doen dan stellen die uit elkaar groeien. Deze gids legt uit hoe je de vonk levend houdt, wat het onderzoek liet zien en negen praktische dingen die je kunt proberen.
+De vonk hoeft dus niet te verdwijnen. Maar "de vonk" is een vaag woord, en vage problemen krijgen vaag advies: meer date-avonden, meer verrassingen, nieuwe lingerie. De meeste tiplijstjes missen dat stellen meestal één *soort* vonk kwijtraken, niet alles tegelijk. Een stel kan elke dag samen lachen en toch helemaal geen verlangen voelen. Een ander stel heeft vaak seks en voelt zich de rest van de week als huisgenoten.
 
-## Kan liefde na vele jaren intens blijven?
+Deze gids om de vonk in je relatie levend te houden begint met een korte test die laat zien welke vonk bij jullie dooft. Daarna lees je wat onderzoek zegt dat precies daarbij helpt.
 
-Er wordt vaak gezegd dat passie altijd afneemt. Het onderzoek is hoopvoller. In een studie onder leiding van Daniel O'Leary, samen met Bianca Acevedo en Arthur Aron, zei ongeveer 40% van de mensen in een willekeurige Amerikaanse steekproef die al meer dan tien jaar getrouwd waren dat ze "heel intens verliefd" waren. In een tweede steekproef uit New York was dat ongeveer 29%.
+## De vonktest in 2 minuten
 
-Wat hadden die stellen gemeen? Ze dachten positief over hun partner, dachten aan elkaar als ze niet samen waren, toonden genegenheid, hadden seks en deden samen nieuwe en uitdagende dingen.
+Lees elke uitspraak en geef een score: 0 = zelden waar, 1 = soms, 2 = vaak. Doe het eerst alleen. Als jullie allebei willen, vergelijk de antwoorden daarna.
 
-| Wat de vonk dooft | Wat de vonk levend houdt |
-|---|---|
-| Elke week dezelfde routine | Samen nieuwe dingen beleven |
-| Alleen over regeldingen praten | Echte gesprekken en nieuwsgierigheid |
-| Elkaar als vanzelfsprekend zien | Opmerken en zeggen wat je waardeert |
-| Alleen genegenheid vlak voor seks | Dagelijkse aanraking en warmte |
-| Naast elkaar leven met de telefoon | Gerichte tijd samen |
+**Nieuwheid**
+- De afgelopen maand deden we samen iets wat nieuw was voor ons allebei.
+- Onze weken voelen niet allemaal hetzelfde.
 
-## Waarom nieuwe ervaringen zo belangrijk zijn
+**Verlangen**
+- Ik voel me begeerd door mijn partner.
+- We kunnen over seks of genegenheid praten zonder dat het ongemakkelijk of gespannen wordt.
 
-In een bekende reeks experimenten vroegen Arthur Aron en collega's stellen om tijd te besteden aan óf "spannende" activiteiten die nieuw voor hen waren, óf "leuke" maar vertrouwde activiteiten. Stellen die de nieuwe, spannende activiteiten deden, meldden een grotere verbetering van hun relatie.
+**Aandacht**
+- Mijn partner is nieuwsgierig naar wat er in mijn hoofd omgaat, niet alleen naar mijn agenda.
+- Ik denk met warmte aan mijn partner als we niet samen zijn.
 
-> **Waarom het zo werkt**
-> Aan het begin van een relatie is alles nieuw: nieuwe plekken, nieuwe verhalen, nieuwe kanten van elkaar. Ons brein koppelt die opwinding aan de persoon met wie we zijn. Na verloop van tijd vervangt routine het nieuwe, en het gevoel neemt af. Als jullie samen iets nieuws doen, halen jullie een beetje van die vroege opwinding terug, en koppelt je brein die opnieuw aan je partner. Het hoeft niet extreem te zijn. Een nieuwe wandeling, een kookcursus of een weekend ergens waar jullie nog nooit zijn geweest kan al genoeg zijn.
+**Warmte**
+- We raken elkaar overdag aan op manieren die nergens naartoe hoeven te leiden.
+- We zeggen nog steeds dankjewel en zien de kleine dingen.
 
-## 9 manieren om de vonk in je relatie levend te houden
+Tel elk paar op. Het gebied met de laagste score (0 tot 2) is waar je begint. Staan er twee gelijk, kies dan het gebied dat je het meest dwarszit. Scoort alles 3 of 4, dan is jullie vonk in goede vorm en is het plan van 4 weken hieronder onderhoud, geen reparatie.
 
-### 1. Probeer regelmatig samen iets nieuws
+## Als nieuwheid laag scoort: doorbreek de sleur, niet je budget
 
-Een nieuw restaurant, een danscursus, een andere wandelroute, een weekendje weg. Zet elke maand één klein nieuw ding in de agenda.
+**Wat onderzoek laat zien.** In een langlopend onderzoek met 123 stellen vroegen Irene Tsapelas, Arthur Aron en Terri Orbuch mensen in hun zevende huwelijksjaar hoe vaak hun huwelijk voelde als een sleur. Wie zich in jaar 7 meer verveelde, was negen jaar later, in jaar 16, minder tevreden. Het verband liep via nabijheid: verveling zorgde dat stellen zich minder verbonden voelden, en dat verlaagde de tevredenheid.
 
-### 2. Voer weer echte gesprekken
+In eerdere experimenten lieten Aron en collega's stellen tijd besteden aan activiteiten die nieuw en spannend voor hen waren, of juist prettig en vertrouwd. De nieuwe en spannende activiteiten zorgden voor een grotere toename in relatiekwaliteit.
 
-Niet over rekeningen of planningen, maar over dromen, herinneringen en wat jullie bezighoudt. Onze lijst met [diepe vragen om je partner te stellen](/blog/deep-questions-to-ask-your-partner/) is een goed begin.
+**Wat de meeste adviezen missen.** "Spannend" betekent niet parachutespringen. In een onderzoek uit 2021 over het plannen van date-avonden ontdekten Cheryl Harasymchuk en collega's dat het erom ging of het stel zelf de date spannend vond. Hoe spannend buitenstaanders de dates vonden, hing er maar marginaal mee samen. Een eerste poging om dumplings te maken kan meetellen als geen van jullie dat ooit heeft gedaan.
 
-Probeer: "Is er iets waar je de laatste tijd over nadenkt waar we het nog niet over hebben gehad?"
+**Probeer dit:** schrijf allebei vijf dingen op die jullie nog nooit samen hebben gedaan en die minder kosten dan een avond afhaal. Ruil de lijstjes en kies om de twee weken iets van de lijst van de ander.
 
-### 3. Houd jullie date night vast, ook als het druk is
+## Als verlangen laag scoort: meer verbinding, minder druk
 
-Het hoeft niet duur te zijn. Het gaat om tijd die beschermd is en gericht op elkaar. Onze [vragen voor een date night met je partner](/blog/date-night-questions-for-couples/) kunnen het weer fris maken.
+**Wat onderzoek laat zien.** In een reeks onderzoeken onder leiding van Amy Muise hielden stellen in vaste relaties drie weken lang een dagboek bij. Op dagen waarop mensen het gevoel hadden dat ze door hun relatie gegroeid waren of iets geleerd hadden, voelden ze meer verlangen naar hun partner, en hadden stellen 25 tot 34% meer kans op seks. Het verband was sterker bij stellen die al langer samen waren. De activiteiten waren vaak heel gewoon. Waar het om ging, was het gevoel iets nieuws te ontdekken met of door de ander.
 
-### 4. Zeg hardop wat je waardeert
+Ook hoe je over verlangen denkt, maakt uit. In zes onderzoeken met bijna 1.900 mensen vergeleken Jessica Maxwell en collega's twee overtuigingen. De ene: een goed seksleven hangt af van de juiste partner vinden (seksuele bestemming). De andere: het vraagt inzet en je aanpassen aan elkaar (seksuele groei). Mensen met sterkere groei-overtuigingen waren tevredener over hun seksleven en hun relatie, en hun partners ook.
 
-Partners die al lang samen zijn, stoppen vaak met de kleine bedankjes en complimenten. Haal ze terug.
+**Wat de meeste adviezen missen.** Veel mensen verwachten dat verlangen uit het niets komt, zoals in het begin. Seksuologen wijzen er vaak op dat verlangen in lange relaties eerder *responsief* is: het komt op als jullie al dichtbij, ontspannen en in contact zijn, niet daarvoor. Wachten tot je eerst "in de stemming" bent, kan betekenen dat je maanden wacht.
 
-Probeer: "Ik vond het zo leuk hoe je iedereen aan het lachen maakte tijdens het eten vanavond."
+**Probeer dit:** voer één rustig gesprek, niet in bed. Bijvoorbeeld: "Waardoor voelde jij je vroeger begeerd door mij, wat ik niet meer doe?" Luister alleen. Niet verdedigen, geen meteen plan.
 
-### 5. Raak elkaar vaker aan, zonder bijbedoeling
+## Als aandacht laag scoort: word weer nieuwsgierig
 
-Knuffels, hand in hand lopen, een hand op de rug. Lichamelijke genegenheid die niet alleen een aanloop naar seks is, houdt de warmte levend.
+**Wat onderzoek laat zien.** In het onderzoek van O'Leary dachten de stellen die intens verliefd bleven positief over hun partner en dachten ze aan de ander als ze niet samen waren. Dat klinkt passief, maar veel ervan komt voort uit weten wat er in de binnenwereld van de ander speelt. Na jaren samen stoppen veel stellen met vragen, omdat ze denken de antwoorden al te kennen.
 
-### 6. Reageer op de kleine momenten
+**Wat de meeste adviezen missen.** De oplossing is niet meer tijd samen. Twee uur logistiek en naast elkaar op je telefoon scrollen bouwt geen aandacht op. Tien minuten echte nieuwsgierigheid doet meer.
 
-Als je partner iets met je deelt, draai je naar diegene toe. Het onderzoek van Gottman liet zien dat stellen die bij elkaar bleven dit veel vaker deden. Onze gids over [signalen dat je partner zijn interesse verliest](/blog/signs-your-partner-is-losing-interest/) legt uit waarom deze momenten zo belangrijk zijn.
+**Probeer dit:** stel één keer per week een vraag waarvan je het antwoord niet weet. "Wat speelt er deze week in je hoofd?" werkt. "Wat zou je doen met een jaar vrij?" ook. Onze lijst met [diepe vragen voor je partner](/blog/deep-questions-to-ask-your-partner/) heeft er meer, geordend op diepgang.
 
-### 7. Flirt weer
+## Als warmte laag scoort: breng de kleine dagelijkse signalen terug
 
-Een ondeugend berichtje overdag, een compliment, een blik door de kamer. Flirten is niet alleen iets voor het begin van een relatie.
+**Wat onderzoek laat zien.** Lichamelijke genegenheid was een van de dingen die de intens verliefde stellen in het onderzoek van O'Leary gemeen hadden. Het is ook de vonk die het stilst dooft, want niemand besluit te stoppen met knuffelen. Het gebeurt gewoon minder, tot het op een dag vooral nog voor de seks gebeurt of helemaal niet.
 
-### 8. Houd ook je eigen vonk levend
+**Wat de meeste adviezen missen.** Grote gebaren lossen het niet op. Een verrassingsweekend is heerlijk, maar het vervangt niet de hand op je schouder terwijl een van jullie kookt. Warmte werkt als ze vaak komt en niets terugverwacht.
 
-Eigen hobby's, vriendschappen en doelen maken je interessanter, voor jezelf en voor je partner. Elkaar een beetje missen kan goed zijn.
+**Probeer dit:** kies één klein dagelijks ritueel, zoals een echte knuffel als een van jullie thuiskomt of een minuut samen in bed voordat je je telefoon pakt. Onze gids over ["ik hou van je" zeggen zonder woorden](/blog/how-to-say-i-love-you-without-words/) heeft ideeën voor elk soort dag.
 
-### 9. Praat over wat jullie willen
+| Dovende vonk | Vaak gezien teken | Begin met |
+|---|---|---|
+| Nieuwheid | "Elke week is hetzelfde" | Om de twee weken iets nieuws |
+| Verlangen | Je voelt je huisgenoten | Een gesprek zonder druk over je begeerd voelen |
+| Aandacht | Alleen praten over logistiek | Eén echte vraag per week |
+| Warmte | Aanraking alleen voor seks, of helemaal niet | Eén dagelijks ritueel van genegenheid |
 
-Verlangen, intimiteit en wat spannend voelt veranderen met de tijd. Er open en zonder druk over praten houdt jullie dicht bij elkaar. Onze gids over [liefdestalen](/blog/love-languages/) kan helpen om te beginnen.
+## Een plan van 4 weken
 
-> **Voorbeeld: het donderdagexperiment**
-> Na acht jaar samen beseften Lucy en Tom dat hun donderdagen er altijd hetzelfde uitzagen: afhaaleten en tv. Ze spraken een "donderdagexperiment" af: één keer per maand zou een van hen iets plannen wat ze geen van beiden ooit hadden gedaan. Het eerste was een pottenbakcursus, waar ze allebei vreselijk slecht in waren. Ze lachten die avond meer dan in maanden. Lucy zei achteraf dat het voelde alsof ze weer aan het daten waren.
+Kies je laagste gebied en geef het vier weken. Eén verandering tegelijk werkt beter dan negen tegelijk.
 
-## Wat de meeste artikelen missen
+- **Week 1: benoem het.** Vertel je partner wat je hebt gemerkt, zonder verwijt. Bijvoorbeeld: "Ik mis het om uit te kijken naar onze weekenden. Zullen we deze maand samen iets nieuws proberen?"
+- **Week 2: één kleine actie.** Doe de stap "probeer dit" voor jouw gebied, één keer.
+- **Week 3: herhaal en stel bij.** Doe het nog een keer. Vraag elkaar wat goed voelde en wat geforceerd.
+- **Week 4: check.** Doe de vonktest opnieuw. Is je gebied zelfs maar één punt gestegen, ga dan door. Zo niet, probeer een andere actie in hetzelfde gebied of ga naar het volgende laagste.
 
-De meeste adviezen over de vonk gaan over grote romantische gebaren. Maar de stellen die het meest verliefd blijven, zijn niet per se degenen met de meeste verrassingen. Het zijn de stellen die elkaar blijven opmerken, nieuwsgierig blijven en elke dag kleine blijken van warmte blijven geven.
+> **Voorbeeld: de dumplingavond**
+> Hannah en Ines waren elf jaar samen. Hun vonktest liet veel warmte en aandacht zien, maar een 0 voor nieuwheid: elke zaterdag was markt, lunch en een film. Ines koos "dumplings leren maken" van Hannahs lijst. Ze maakten er een puinhoop van, deden te veel zout in de vulling en lachten de hele avond. De week erna koos Hannah een nachtelijke duik van Ines' lijst. "Er veranderde niets groots," zei Hannah een maand later. "Maar ik keek weer uit naar zaterdag."
 
-Het is ook goed om te onthouden dat relaties door seizoenen gaan. Een druk jaar met een nieuwe baan of kleine kinderen kan minder vonk hebben, en dat is oké. Het gaat erom dat jullie een beetje ruimte voor elkaar beschermen en daarnaar terugkeren als het leven het toelaat.
+## Als de vonk niet het echte probleem is
 
-Wil je hulp bij het voorbereiden van een gesprek over wat jullie allebei nodig hebben, of ideeën om weer verbinding te maken? RelationshipAI is een AI-relatiecoach die kan helpen. Het is geen therapie, maar wel een rustige plek om te beginnen.
+Soms is een dovende vonk een symptoom. Wrok over ruzies die nooit worden opgelost, één partner die het grootste deel van het huishouden draagt, of een stressvol jaar met een baby kunnen verlangen en warmte uitputten. Daar helpen date-avonden niet tegen. Komt dezelfde ruzie steeds terug, begin dan met onze gids over [relatieproblemen oplossen die steeds terugkomen](/blog/relationship-problems-that-keep-coming-back/). Ben je bang dat je partner afstand neemt, dan helpen de [signalen dat je partner zijn interesse verliest](/blog/signs-your-partner-is-losing-interest/) je om er rustig naar te kijken.
+
+Het is ook prima dat een relatie rustigere periodes heeft. Waar het om gaat, is dat je het merkt en weer naar elkaar toe komt als het leven dat toelaat.
+
+Vind je het lastig om het aan te kaarten? Met Partner Practice van RelationshipAI kun je het gesprek oefenen met een AI die je partner speelt, en Coach Chat helpt je uitzoeken wat je eigenlijk wilt vragen. Het is geen therapie, maar wel een rustige plek om te beginnen.
 
 ## Snelle antwoorden
 
-### Hoe houd je de vonk levend in een relatie?
+### Is het normaal dat de vonk dooft?
 
-Probeer samen nieuwe dingen, voer echte gesprekken, houd date night vast, zeg wat je waardeert, raak elkaar vaak aan, reageer op kleine momenten en flirt.
+De intense, alles overheersende beginfase verandert meestal. Maar onderzoek laat zien dat veel stellen na jaren nog steeds erg verliefd zijn, en een dovende vonk kan vaak weer aangewakkerd worden.
 
-### Is het normaal dat de vonk afneemt?
+### Hoe krijg je de vonk terug na jaren samen?
 
-Ja, de intense beginfase verandert meestal met de tijd. Maar onderzoek laat zien dat veel stellen die al lang samen zijn nog steeds erg verliefd zijn.
+Zoek eerst uit welk deel gedoofd is: nieuwheid, verlangen, aandacht of warmte. Maak daarna één kleine, herhaalde verandering in dat gebied in plaats van alles tegelijk te proberen.
 
-### Kun je de vonk terugkrijgen?
+### Helpen date-avonden echt?
 
-Vaak wel. Nieuwe gedeelde ervaringen, meer aandacht en meer genegenheid kunnen veel van de warmte en opwinding terugbrengen.
+Ze helpen het meest als het iets is wat jullie allebei nieuw of spannend vinden, niet elke keer hetzelfde restaurant. En ze vervangen geen dagelijkse warmte en aandacht.
 
-### Hoe vaak moeten stellen een date night hebben?
+### Wat als maar één van ons meer vonk wil?
 
-Er is geen vaste regel. Veel stellen mikken op één keer per week of om de week. Regelmaat is belangrijker dan hoe bijzonder het is.
+Breng het als een gezamenlijk project, niet als klacht. "Ik zou graag willen dat we ons dichter bij elkaar voelen. Wil je deze maand iets nieuws met me proberen?" is makkelijker om ja op te zeggen dan "We doen nooit meer iets."
 
-### Wat doodt de vonk in een relatie?
+## Een opmerking over veiligheid
 
-Routine, constant schermgebruik, kritiek, elkaar als vanzelfsprekend zien en nooit over iets anders praten dan regeldingen.
-
-### Helpt samen nieuwe dingen doen echt?
-
-Ja. Experimenten van Arthur Aron en collega's lieten zien dat stellen die samen nieuwe, spannende activiteiten deden een grotere verbetering van hun relatie meldden.
-
-### Wat als maar een van ons meer vonk wil?
-
-Praat er vriendelijk en zonder verwijten over. Begin klein, met één nieuwe activiteit of één avond met aandacht voor elkaar, en bouw daarop verder.
-
-## Over veiligheid
-
-Meer nabijheid willen is normaal. Maar als je partner je onder druk zet tot intimiteit, je controleert of je een onveilig gevoel geeft, gaat het niet over de vonk. Neem contact op met een hulplijn of hulpdienst bij jou in de buurt.
+Meer nabijheid willen is normaal. Maar niemand hoort onder druk gezet te worden tot intimiteit. Als je partner je pusht, controleert of bang maakt, gaat het niet over de vonk. Neem contact op met een hulplijn of hulpdienst bij jou in de buurt.
 
 *Dit artikel is algemene informatie, geen therapie of medisch advies.*
 
 ## Bronnen
 
-- O'Leary, K. D., Acevedo, B. P., Aron, A., Huddy, L., & Mashek, D. (2012). Is long-term love more than a rare phenomenon? If so, what are its correlates? *Social Psychological and Personality Science*, 3(2), 241-249. [Samenvatting](https://researchconnect.stonybrook.edu/en/publications/is-long-term-love-more-than-a-rare-phenomenon-if-so-what-are-its-/)
+- O'Leary, K. D., Acevedo, B. P., Aron, A., Huddy, L., & Mashek, D. (2012). Is long-term love more than a rare phenomenon? If so, what are its correlates? *Social Psychological and Personality Science*, 3(2), 241-249. [Stony Brook University](https://researchconnect.stonybrook.edu/en/publications/is-long-term-love-more-than-a-rare-phenomenon-if-so-what-are-its-/)
+- Tsapelas, I., Aron, A., & Orbuch, T. (2009). Marital boredom now predicts less satisfaction 9 years later. *Psychological Science*, 20(5), 543-545. Samenvatting van de [University of Michigan](https://news.umich.edu/seven-year-itch-boredom-can-hurt-a-marriage)
+- Muise, A., Harasymchuk, C., Day, L. C., Bacev-Giles, C., Gere, J., & Impett, E. A. (2019). Broadening your horizons: Self-expanding activities promote desire and satisfaction in established romantic relationships. *Journal of Personality and Social Psychology*. Samenvatting van de [British Psychological Society](https://www.bps.org.uk/research-digest/try-something-new-together-research-shows-engaging-self-expanding-activities)
+- Harasymchuk, C., Walker, D. L., Muise, A., & Impett, E. A. (2021). Planning date nights that promote closeness: The roles of relationship goals and self-expansion. *Journal of Social and Personal Relationships*. Samenvatting op [Psychology Today](https://www.psychologytoday.com/ca/blog/myths-desire/202103/how-plan-date-night-will-make-you-feel-closer)
+- Maxwell, J. A., Muise, A., MacDonald, G., Day, L. C., Rosen, N. O., & Impett, E. A. (2017). How implicit theories of sexuality shape sexual and relationship well-being. *Journal of Personality and Social Psychology*. Samenvatting op [Neuroscience News](https://neurosciencenews.com/psychology-sexual-growth-5445/)
 - Aron, A., Norman, C. C., Aron, E. N., McKenna, C., & Heyman, R. E. (2000). Couples' shared participation in novel and arousing activities and experienced relationship quality. *Journal of Personality and Social Psychology*, 78(2), 273-284. [PubMed](https://pubmed.ncbi.nlm.nih.gov/10707334/)

@@ -1,127 +1,132 @@
 ---
-title: "How to keep the spark alive in a long-term relationship: 9 things that actually work"
+title: "How to keep the spark alive in a long-term relationship: find which spark is fading, then fix that one"
 date: 2026-11-19
-description: Does the spark have to fade? How to keep the spark alive in a long-term relationship, what research on lasting love found and 9 practical ideas you can try this week.
+description: How to keep the spark alive in a long-term relationship: a 2-minute check to find which of 4 sparks is fading, what research says helps, and a 4-week plan.
 tags: keep the spark alive, long-term relationship
 draft: true
 approved: true
 topics: communication, repair
 ---
-At the start, everything felt electric. You couldn't wait to see each other, texted all day and stayed up talking until 2am. Now you love each other, but evenings look a lot like Netflix, scrolling and "what do you want for dinner?"
+In a random sample of Americans who had been married for more than ten years, about 40% said they were still "very intensely in love". That finding, from a study led by Daniel O'Leary with Bianca Acevedo and Arthur Aron, surprises most people, because we're told that passion always fades. In a second sample from New York, the figure was about 29%. Lower, but still far from rare.
 
-That shift is normal. But it doesn't mean the spark has to disappear. Research suggests that many long-term couples stay very much in love, and that what they do differs from couples who drift. This guide explains how to keep the spark alive, what the research found and nine practical things you can try.
+So the spark doesn't have to go. But "the spark" is a vague word, and vague problems get vague advice: more date nights, more surprises, more lingerie. Most lists of tips miss that couples usually lose one *kind* of spark, not all of them at once. A couple can still laugh together every day and feel no desire at all. Another can have plenty of sex and feel like flatmates the rest of the week.
 
-## Can long-term love stay intense?
+This guide starts with a short check to find which spark is fading for you, then explains what research says actually helps with that one.
 
-It's often said that passion always fades. The research is more hopeful. In a study led by Daniel O'Leary, with Bianca Acevedo and Arthur Aron, about 40% of people in a random US sample who had been married for over ten years said they were "very intensely in love". In a second, New York sample, it was about 29%.
+## The 2-minute spark check
 
-What did those couples have in common? They thought positively about their partner, thought about them when apart, showed affection, had sex, and shared new and challenging activities together.
+Read each statement and score it: 0 = rarely true, 1 = sometimes, 2 = often. Do it alone first. If you're both up for it, compare answers later.
 
-| What fades the spark | What keeps it alive |
-|---|---|
-| The same routine every week | New experiences together |
-| Only talking about logistics | Real conversations and curiosity |
-| Taking each other for granted | Noticing and saying what you appreciate |
-| Affection only before sex | Everyday touch and warmth |
-| Living side by side on phones | Focused time together |
+**Novelty**
+- In the last month, we did something together that was new for both of us.
+- Our weeks don't all feel the same.
 
-## Why new experiences matter so much
+**Desire**
+- I feel wanted by my partner.
+- We can talk about sex or affection without it getting awkward or tense.
 
-In a well-known set of experiments, Arthur Aron and colleagues asked couples to spend time on either "exciting" activities that were new to them, or "pleasant" but familiar ones. Couples who did the new, exciting activities reported a bigger increase in relationship quality.
+**Attention**
+- My partner is curious about what's going on in my head, not just my schedule.
+- I think about my partner fondly when we're apart.
 
-> **Why it works this way**
-> At the start of a relationship, everything is new: new places, new stories, new sides of each other. Our brains link that excitement to the person we're with. Over time, routine replaces novelty, and the feeling fades. When you do something new together, you bring back a little of that early excitement, and your brain links it to your partner again. It doesn't need to be extreme. A new hike, a cooking class or a weekend somewhere you've never been can be enough.
+**Warmth**
+- We touch each other during the day in ways that aren't leading anywhere.
+- We still say thank you and notice the small things.
 
-## 9 ways to keep the spark alive
+Add up each pair. The area with the lowest score (0 to 2) is where to start. If two are tied, pick the one that bothers you more. If everything scores 3 or 4, your spark is in decent shape and the 4-week plan below is maintenance, not repair.
 
-### 1. Try something new together, regularly
+## If novelty is low: break the rut, not the bank
 
-A new restaurant, a dance class, a different walking route, a weekend trip. Put one small new thing in the calendar every month.
+**What research shows.** In a long-running study of 123 couples, Irene Tsapelas, Arthur Aron and Terri Orbuch asked people in their seventh year of marriage how often the marriage felt like a rut. Those who felt more bored at year 7 were less satisfied nine years later, at year 16. The link ran through closeness: boredom made couples feel less close, and that lowered satisfaction.
 
-### 2. Have real conversations again
+In earlier experiments, Aron and colleagues had couples spend time on activities that were either new and exciting for them or pleasant and familiar. The new and exciting ones led to bigger increases in relationship quality.
 
-Not about bills or schedules, but about dreams, memories and what's on your mind. Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) is a good place to start.
+**What most advice gets wrong.** "Exciting" doesn't mean skydiving. In a 2021 study on planning date nights, Cheryl Harasymchuk and colleagues found that what mattered was whether the couple themselves saw a date as exciting. How exciting outside coders rated the dates was only marginally related. A first attempt at making dumplings can count if neither of you has done it before.
 
-Try: "What's something you've been thinking about lately that we haven't talked about?"
+**Try this:** each of you writes five things you've never done together that cost less than a takeaway. Swap lists, and pick one from your partner's list each fortnight.
 
-### 3. Keep date night, even when life is busy
+## If desire is low: more connection, less pressure
 
-It doesn't have to be expensive. What matters is time that's protected and focused on each other. Our [date night questions for couples](/blog/date-night-questions-for-couples/) can make it feel fresh.
+**What research shows.** In a set of studies led by Amy Muise, couples in established relationships kept daily diaries for three weeks. On days when people felt they had grown or learned something through their relationship, they reported more desire for their partner, and couples were 25 to 34% more likely to have sex. The link was stronger for couples who had been together longer. The activities themselves were often ordinary. What mattered was the feeling of discovering something new with or through the other person.
 
-### 4. Say what you appreciate, out loud
+How you think about desire matters too. In six studies with almost 1,900 people, Jessica Maxwell and colleagues compared two beliefs. One was that a good sex life comes from finding the right partner (sexual destiny). The other was that it takes effort and adapting to each other (sexual growth). People with stronger growth beliefs were more satisfied with their sex lives and their relationships, and so were their partners.
 
-Long-term partners often stop saying the small thank-yous and compliments. Bring them back.
+**What most advice gets wrong.** Many people expect desire to arrive out of nowhere, like it did at the start. Sex therapists often point out that in long relationships desire tends to be more *responsive*: it shows up once you're already close, relaxed and touching, not before. Waiting to "be in the mood" first can mean waiting for months.
 
-Try: "I love how you made everyone laugh at dinner tonight."
+**Try this:** have one low-stakes conversation, not in bed. Try: "What's something that used to make you feel wanted by me, that I've stopped doing?" Just listen. No defending, no immediate plan.
 
-### 5. Touch more, without an agenda
+## If attention is low: get curious again
 
-Hugs, holding hands, a hand on the back. Physical affection that isn't only a lead-up to sex keeps warmth alive.
+**What research shows.** In the O'Leary study, the couples who stayed intensely in love thought positively about their partner and thought about them when apart. That sounds passive, but much of it comes from knowing what's going on in each other's inner life. After years together, many couples stop asking because they assume they already know the answers.
 
-### 6. Respond to the small moments
+**What most advice gets wrong.** The fix isn't more time together. Two hours of logistics and phone scrolling side by side doesn't build attention. Ten minutes of real curiosity does more.
 
-When your partner shares something, turn towards them. Gottman's research found that couples who stayed together did this far more often. Our guide on [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) explains why these moments matter so much.
+**Try this:** once a week, ask one question you don't know the answer to. "What's been taking up space in your head this week?" works. So does "What would you do with a free year?" Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) has more, sorted by how deep they go.
 
-### 7. Flirt again
+## If warmth is low: bring back small, daily signals
 
-A cheeky text during the day, a compliment, a look across the room. Flirting isn't just for the start of a relationship.
+**What research shows.** Affection was one of the things the intensely-in-love couples in the O'Leary study had in common. It's also the spark that fades most quietly, because nobody decides to stop hugging. It just happens less, until one day it's mostly before sex or not at all.
 
-### 8. Keep your own spark too
+**What most advice gets wrong.** Grand gestures don't fix it. A surprise weekend away is lovely, but it doesn't replace the hand on the shoulder while one of you cooks. Warmth works when it's frequent and expects nothing back.
 
-Hobbies, friendships and goals of your own make you more interesting, to yourself and your partner. Missing each other a little can be good.
+**Try this:** choose one small daily ritual, like a proper hug when one of you gets home or a minute in bed before reaching for the phone. Our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/) has ideas for every kind of day.
 
-### 9. Talk about what you want
+| Fading spark | Common sign | Start with |
+|---|---|---|
+| Novelty | "Every week is the same" | One new thing each fortnight |
+| Desire | Feeling like flatmates | A low-pressure talk about feeling wanted |
+| Attention | Talking only about logistics | One real question a week |
+| Warmth | Touch only before sex, or not at all | One daily ritual of affection |
 
-Desire, intimacy and what feels exciting change over time. Talking about it openly, without pressure, keeps you close. Our guide to [love languages](/blog/love-languages/) can help you start.
+## A 4-week plan
 
-> **Example: the Thursday experiment**
-> After eight years together, Lucy and Tom realised their Thursdays always looked the same: takeaway and TV. They agreed on a "Thursday experiment": once a month, one of them would plan something neither had done before. The first was a pottery class, which they were both terrible at. They laughed more that night than they had in months. Lucy said afterwards it felt like dating again.
+Pick your lowest area and give it four weeks. One change at a time works better than nine at once.
 
-## What most articles miss
+- **Week 1: name it.** Tell your partner what you noticed, without blame. Try: "I miss feeling excited about our weekends. Could we try something new together this month?"
+- **Week 2: one small action.** Do the "try this" step for your area, once.
+- **Week 3: repeat and adjust.** Do it again. Ask each other what felt good and what felt forced.
+- **Week 4: check in.** Score the spark check again. If your area went up by even one point, keep going. If not, try a different action in the same area, or move on to the next lowest.
 
-Most advice about the spark focuses on grand romantic gestures. But the couples who stay most in love aren't necessarily the ones with the most surprises. They're the ones who keep noticing each other, keep being curious, and keep showing small acts of warmth, every day.
+> **Example: the dumpling night**
+> Hannah and Ines had been together eleven years. Their spark check showed high warmth and attention but a 0 for novelty: every Saturday was a market, lunch and a film. Ines picked "learn to make dumplings" from Hannah's list. They made a mess, over-salted the filling and laughed through the whole evening. The next week Hannah chose a night swim from Ines's list. "Nothing big changed," Hannah said a month later. "But I started looking forward to Saturdays again."
 
-It's also worth remembering that relationships move through seasons. A busy year with a new job or small children may have less spark, and that's okay. What matters is that you protect a bit of space for each other, and come back to it when life allows.
+## When the spark isn't the real problem
 
-If you want help planning a conversation about what you both need, or ideas for reconnecting, RelationshipAI is an AI relationship coach that can help. It isn't therapy, but it's a calm place to start.
+Sometimes a fading spark is a symptom. Resentment from fights that never get resolved, one partner carrying most of the household load, or a stressful year with a new baby can all drain desire and warmth. Date nights won't fix those. If the same argument keeps coming back, start with our guide to [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/). If you're worried your partner is pulling away, [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) can help you read what's going on calmly.
+
+It's also fine for a relationship to have quieter seasons. What matters is that you notice, and come back to each other when life allows.
+
+If bringing this up feels hard, RelationshipAI's Partner Practice lets you rehearse the conversation with an AI playing your partner, and Coach Chat can help you work out what you actually want to ask for. It isn't therapy, but it's a calm place to start.
 
 ## Quick answers
 
-### How do you keep the spark alive in a relationship?
-
-Try new things together, have real conversations, keep date night, say what you appreciate, touch often, respond to small moments and flirt.
-
 ### Is it normal for the spark to fade?
 
-Yes, the intense early phase usually changes over time. But research shows many long-term couples stay very much in love.
+The intense, all-consuming early phase usually changes. But research shows many long-term couples stay very much in love, and a fading spark can often be brought back.
 
-### Can you get the spark back?
+### How do you get the spark back after years together?
 
-Often, yes. New shared experiences, more attention and more affection can bring back a lot of the warmth and excitement.
+Find out which part has faded first: novelty, desire, attention or warmth. Then make one small, repeated change in that area rather than trying everything at once.
 
-### How often should couples have date night?
+### Does date night really help?
 
-There's no fixed rule. Many couples aim for once a week or every two weeks. Consistency matters more than how fancy it is.
-
-### What kills the spark in a relationship?
-
-Routine, constant screens, criticism, taking each other for granted and never talking about anything beyond logistics.
-
-### Does doing new things together really help?
-
-Yes. Experiments by Arthur Aron and colleagues found that couples who did new, exciting activities together reported greater increases in relationship quality.
+It helps most when it's something you both find new or exciting, not the same restaurant every time. And it can't replace everyday warmth and attention.
 
 ### What if only one of us wants more spark?
 
-Talk about it kindly and without blame. Start small, with one new activity or one focused evening, and build from there.
+Talk about it as a shared project, not a complaint. "I'd love us to feel closer. Would you try one new thing with me this month?" is easier to say yes to than "We never do anything anymore."
 
 ## A note on safety
 
-Wanting more closeness is normal. But if a partner pressures you into intimacy, controls you or makes you feel unsafe, that's not about the spark. Please reach out to a local helpline or support service.
+Wanting more closeness is normal. But nobody should be pressured into intimacy. If a partner pushes, controls or frightens you, that isn't about the spark. Please reach out to a local helpline or support service.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
-- O'Leary, K. D., Acevedo, B. P., Aron, A., Huddy, L., & Mashek, D. (2012). Is long-term love more than a rare phenomenon? If so, what are its correlates? *Social Psychological and Personality Science*, 3(2), 241-249. [Summary](https://researchconnect.stonybrook.edu/en/publications/is-long-term-love-more-than-a-rare-phenomenon-if-so-what-are-its-/)
+- O'Leary, K. D., Acevedo, B. P., Aron, A., Huddy, L., & Mashek, D. (2012). Is long-term love more than a rare phenomenon? If so, what are its correlates? *Social Psychological and Personality Science*, 3(2), 241-249. [Stony Brook University record](https://researchconnect.stonybrook.edu/en/publications/is-long-term-love-more-than-a-rare-phenomenon-if-so-what-are-its-/)
+- Tsapelas, I., Aron, A., & Orbuch, T. (2009). Marital boredom now predicts less satisfaction 9 years later. *Psychological Science*, 20(5), 543-545. Summary from the [University of Michigan](https://news.umich.edu/seven-year-itch-boredom-can-hurt-a-marriage)
+- Muise, A., Harasymchuk, C., Day, L. C., Bacev-Giles, C., Gere, J., & Impett, E. A. (2019). Broadening your horizons: Self-expanding activities promote desire and satisfaction in established romantic relationships. *Journal of Personality and Social Psychology*. Summary by the [British Psychological Society](https://www.bps.org.uk/research-digest/try-something-new-together-research-shows-engaging-self-expanding-activities)
+- Harasymchuk, C., Walker, D. L., Muise, A., & Impett, E. A. (2021). Planning date nights that promote closeness: The roles of relationship goals and self-expansion. *Journal of Social and Personal Relationships*. Summary on [Psychology Today](https://www.psychologytoday.com/ca/blog/myths-desire/202103/how-plan-date-night-will-make-you-feel-closer)
+- Maxwell, J. A., Muise, A., MacDonald, G., Day, L. C., Rosen, N. O., & Impett, E. A. (2017). How implicit theories of sexuality shape sexual and relationship well-being. *Journal of Personality and Social Psychology*. Summary on [Neuroscience News](https://neurosciencenews.com/psychology-sexual-growth-5445/)
 - Aron, A., Norman, C. C., Aron, E. N., McKenna, C., & Heyman, R. E. (2000). Couples' shared participation in novel and arousing activities and experienced relationship quality. *Journal of Personality and Social Psychology*, 78(2), 273-284. [PubMed](https://pubmed.ncbi.nlm.nih.gov/10707334/)
