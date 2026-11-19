@@ -5,7 +5,7 @@
 - [x] 2026-11-12-how-to-support-your-partner-when-stressed (refreshed 2026-11-19: scripts by type of stress, 4 sources)
 - [x] 2026-11-09-breadcrumbing (refreshed 2026-11-19: 9 real questions answered, 4 sources)
 - [x] 2026-11-09-love-bombing (refreshed 2026-11-19: case walkthrough week by week, 4 sources)
-- [ ] 2026-11-11-meeting-your-partners-parents (2 sources, no table)
+- [x] 2026-11-11-meeting-your-partners-parents (refreshed 2026-11-19: 12 awkward moments with scripts, 4 sources)
 - [ ] 2026-11-13-how-to-get-over-a-breakup (2 sources)
 - [ ] 2026-11-14-gaslighting-in-a-relationship (2 sources)
 - [ ] 2026-11-14-long-distance-relationship-tips (2 sources)
