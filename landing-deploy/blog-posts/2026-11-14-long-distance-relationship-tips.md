@@ -1,181 +1,116 @@
 ---
-title: "Long distance relationship tips: 10 ways to stay close when you're far apart"
+title: "Long distance relationship tips: what helps while apart, during visits and after you close the gap"
 date: 2026-11-14
-description: "Long distance relationship tips: 10 practical ways to stay close when you're far apart, what research says about distance and lines you can use."
+updated: 2026-11-19
+description: "Long distance relationship tips for all three phases: staying close while apart, making visits work, and the risky part most guides skip, moving to the same city. Backed by research on LDRs."
 tags: long distance relationship tips, LDR
 ---
-You say goodnight through a screen. You count days on a calendar. You miss them at the small moments, like a funny thing on the way home that you can only send as a text.
+Most long distance relationship tips focus on the time apart: video calls, care packages, watching films in sync. That matters. But research points to a part of long distance that gets far less attention and causes a surprising number of breakups: the moment you finally live in the same place.
 
-A long distance relationship can feel lonely and uncertain. But it can also be close, honest and strong. This guide explains what research says about distance and closeness, ten practical long distance relationship tips, the most common traps and how to handle them, especially in the weeks around the holidays when distance often feels hardest.
+This guide covers all three phases. First, some reassurance, because the data on long distance is better than its reputation.
 
-## Can long distance actually make you closer?
+## The good news: long distance isn't the problem people think
 
-It sounds strange, but research suggests it can. Communication researchers Crystal Jiang and Jeffrey Hancock asked dating couples, some long distance and some living close by, to record their daily interactions for a week. The long distance couples felt more intimate with each other.
+In a nationally representative US study of 870 people, Gretchen Kelmer and colleagues found that people in long-distance relationships reported *higher* relationship quality on several measures, more dedication and less feeling of being "trapped" than people living close to their partner. At follow-up, they had broken up at about the same rate.
 
-Two things explained it. Long distance partners shared more about themselves, and they tended to see each other's behaviour in a more positive light. Because they had less time together, they made the time count.
+A Canadian study of more than 1,000 people in relationships, by Emma Dargie and colleagues, found few differences between long-distance and close-by couples, including in sexual satisfaction, with long-distance couples doing slightly better in some areas. Two things went with happier long-distance partners: a positive belief that long distance can work, and being fairly confident they would eventually live in the same city.
 
-So distance doesn't have to mean drifting apart. It changes how you connect, and that can be a strength.
+And in a study by Crystal Jiang and Jeffrey Hancock, long-distance couples felt *more* intimate after their daily conversations than close-by couples, partly because they shared more personal things and tended to see each other's messages in a generous light.
 
-> **Why it works this way**
-> When you see someone every day, a lot of connection happens without words: sitting on the same sofa, eating together, a hug in passing. At a distance, that disappears, so couples have to put more into words. They share more about their feelings and their day, and that kind of sharing is exactly what builds closeness. The risk is that the same distance also leaves room for worries to grow, because you can't see the tired face behind a short text. The tips below are about getting the first effect while avoiding the second.
+So the odds are fine. The question is how to use each phase well.
 
-| What distance takes away | What can make up for it |
-|---|---|
-| Everyday physical closeness | Regular calls, voice notes, shared rituals |
-| Seeing each other's mood | Saying how you feel more directly |
-| Doing ordinary things together | Doing things together on a call |
-| Certainty about the future | A shared plan and the next visit in the calendar |
+## Phase 1: while you're apart
 
-## 10 long distance relationship tips
+### Agree on the "why" and the "until when"
 
-### 1. Talk about the plan, including the end of the distance
+The single clearest predictor in the Canadian research was a shared sense that the distance will end. You don't need a date in the calendar on week one. You do need to talk about it.
 
-The biggest question in most long distance relationships is "until when?" You don't need an exact date, but you need a shared direction.
+Try: "I don't need a fixed plan yet, but I'd love us to talk about what closing the distance could look like in a year or two."
 
-Try: "Where do you see us in a year? Is one of us planning to move?"
+### Find a rhythm, not a rulebook
 
-### 2. Find a rhythm, not a rulebook
+Some couples love a long call every night. Others prefer short messages through the day and one proper call at the weekend. Neither is better. What hurts is a mismatch nobody talks about.
 
-Some couples call every night. Others text through the day and call on weekends. There's no right answer, only what feels good for both of you. Agree on it, and adjust when life gets busy.
+Try: "What amount of contact makes you feel close without feeling like a chore?"
 
-### 3. Share the small things
+### Share the boring stuff
 
-Big conversations matter, but so does the boring stuff: what you ate, a funny colleague, the song on the radio. Small updates help you feel part of each other's day. In couples research, responding to these small "bids" for attention is one of the clearest signs of a relationship that lasts: in one six-year study of newlyweds, couples who stayed together had turned toward each other's bids 86% of the time, compared with 33% for couples who divorced.
+Jiang and Hancock's finding is useful: closeness at a distance comes from sharing what's actually going on, not from performing romance. A photo of your terrible lunch can do more than a long love letter.
 
-### 4. Do things together, apart
+### Have hard conversations on a call
 
-Watch the same film at the same time. Cook the same recipe on a video call. Play an online game. Shared experiences give you something to talk about besides "how was your day?" Our list of [date night questions for couples](/blog/date-night-questions-for-couples/) works well on a call too.
+Text strips out tone and invites worst-case readings. If something bothers you, say "Can we talk about something tonight?" and do it with voices, ideally faces. If worries tend to grow in the silence between messages, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [trust issues](/blog/trust-issues-in-a-relationship/) can help.
 
-### 5. Be specific about what you need
+### Always know when you'll see each other next
 
-"I miss you" is lovely. A specific request is something your partner can actually do.
+A date on the calendar turns "I miss you" from a weight into a countdown.
 
-Try: "It would really help me if you called before bed on the days you're busy."
+## Phase 2: during visits
 
-### 6. Don't let worries grow in silence
+### Lower the pressure on "perfect"
 
-Distance makes it easy to overthink a short reply or a missed call. Instead of building a story in your head, ask kindly. If the overthinking is a pattern, our guide on [relationship anxiety](/blog/relationship-anxiety/) may help.
+When you only have three days, every hour feels like it has to be wonderful. That pressure is one reason first evenings so often end in a fight. Plan one or two nice things and leave lots of ordinary time: cooking, errands, being bored together on the sofa.
 
-Try: "You seemed quiet today, is everything okay?"
+### Practise real life, not just holiday life
 
-> **Example: the missed call**
-> Oliver is in Prague, Mia in Copenhagen. She misses their usual Sunday call without a message. By 10 pm, Oliver has decided she was out with her new colleagues and forgot about him. He writes a long, hurt message, then deletes it and sends: "Missed you tonight. Everything okay?" Mia replies the next morning: she'd fallen asleep at 8 after a migraine. The long message would have started a fight about something that never happened.
+In a study of long-distance dating couples, Laura Stafford and Andy Merolla found that partners apart idealised each other more: more romantic, more reminiscing, more sense of agreement, and the less often they saw each other face to face, the stronger the idealisation. That feels lovely, but it can hide real differences. Visits are your chance to see each other tired, busy and grumpy. Do some boring weekdays together if you can.
 
-### 7. Handle conflict on a call, not over text
+### Don't save every problem for the visit
 
-Text strips out tone, and small misunderstandings can turn into big fights. If something is bothering you, move it to a call.
+If you've been holding a difficult conversation for "when we're together", the visit becomes tense before it even starts. Deal with the main issues on calls, and use visits for connection.
 
-Instead of: A long angry message at midnight.
+## Phase 3: when you close the gap
 
-Try: "Something's bothering me and I'd rather talk than text. Can we call later?"
+This is the part most guides skip, and research says it matters. In Stafford and Merolla's study, long-distance couples were more stable than close-by couples *while they were apart*, but a good number broke up after they moved to the same place. Longer gaps between visits and very strong idealisation during the distance predicted that instability.
 
-### 8. Always know when you'll see each other next
+Why? Because suddenly you're dealing with each other's actual habits, schedules and moods every day, after months or years of best-version visits. Plus one of you has usually moved, and may be lonely, jobless or homesick.
 
-Having the next visit in the calendar gives you both something to look forward to. Even if it's months away, a date makes the distance feel temporary.
+> **Why the move can wobble even strong couples**
+> At a distance, your partner partly lives in your imagination, and imagination is generous. Living together replaces the imagined version with the real one, all at once. Nothing has gone wrong. You're just meeting the everyday person, and building a new routine from scratch while one of you is often far from friends and family.
 
-### 9. Make visits about connection, not perfection
+How to make the landing softer:
 
-When you finally meet, it's tempting to pack every minute with plans. Leave room for ordinary time too, like grocery shopping or lazy mornings. That's often what you miss most.
+**Talk about the practical stuff before the move.** Money, chores, alone time, how much you'll socialise. Our guide on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) helps with the trickiest one.
 
-> **Why it works**
-> Visits carry huge expectations, and when every hour has to be perfect, any small disagreement feels like a disaster. Ordinary time is also how you find out what everyday life together would actually be like, which matters a lot if you plan to close the distance one day. A lazy Sunday together can tell you more about your future than a weekend of fancy dinners.
+**Protect the mover's independent life.** The person who moved needs their own friends, work and routines quickly, or they'll lean on the relationship for everything.
 
-### 10. Keep your own life full
+**Expect a dip, and name it.**
+Try: "This is harder than I thought it'd be. I don't think it means we're wrong for each other. I think we're just adjusting."
 
-Friends, hobbies and goals of your own make the waiting easier and give you more to share. A partner who's living a full life is also more interesting to talk to.
+**Keep some long-distance habits.** The weekly proper conversation, the small shared rituals. They don't have to stop just because you share a postcode.
 
-## Common long distance traps
-
-| Trap | What helps |
-|---|---|
-| Calls that feel like a duty | Change the format: a walk-and-talk, a game, a shared film |
-| Jealousy about their new friends | Name it calmly and ask to hear more about their life |
-| Fighting over text | Move anything tense to a call |
-| Saving all problems for visits | Talk about small things as they come up |
-| No end date in sight | Have the "where are we going" talk, kindly and honestly |
-
-## A simple weekly long distance routine
-
-Tips are easier to follow when they become habits. Here's an example week that keeps you connected without making your phone a full-time job. Adjust it to your lives and time zones.
-
-| Day | Small habit | Why it helps |
-|---|---|---|
-| Monday | A short "good morning" voice note | Starts the week with their voice, not just text |
-| Tuesday | Send one photo of something ordinary from your day | Keeps you part of each other's daily life |
-| Wednesday | A 20-minute call with phones down and no multitasking | Gives you focused time in the middle of the week |
-| Thursday | Ask one deeper question by text or voice note | Keeps you learning about each other |
-| Friday | Shared activity: a film, a game or cooking on video | Something to do together, not only talk about |
-| Saturday | Free day, or a relaxed call if you like | Leaves room for your own life |
-| Sunday | A weekly check-in call (see below) | Catches small worries before they grow |
-
-You don't need all of it every week. The point is knowing roughly when you'll hear from each other, so a quiet day doesn't feel like a warning. For Thursday, our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) is a good place to start.
-
-### The Sunday check-in
-
-Once a week, take ten minutes to talk about the relationship itself, not just your news. Keep it light and kind:
-
-- What felt good between us this week?
-- Was there a moment you felt far away or left out?
-- Is our rhythm of calls and messages still working for you?
-- What's one thing we're looking forward to?
-
-Try: "Can we do our little check-in? I want to hear how this week felt for you."
-
-If you notice you feel loved in different ways, for example calls versus small surprises, our guide on [love languages](/blog/love-languages/) can help you talk about it.
-
-## When the distance starts to hurt
-
-Almost every long distance couple has a hard stretch: a cancelled visit, a busy month, loneliness in a new city. That's normal. What matters is whether you can talk about it. Signs it's time for an honest conversation:
-
-- You dread calls, or keep them short to avoid real topics.
-- You've stopped telling each other about your day.
-- The "until when?" question makes one of you change the subject every time.
-- You feel more relief than sadness when a call is cancelled.
-- You feel jealous or suspicious most of the time.
-
-None of these means it's over. They mean something needs attention. Pick a calm time, ideally on video, and start with how you feel, not what they did wrong.
-
-Try: "I've been feeling far away from you lately, and I miss how close we were. Can we talk about what's changed for both of us?"
-
-Try: "I need to talk about the future. Not knowing is getting hard for me."
-
-Then listen. Your partner may be struggling too. If trust is the hard part, our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) may help you sort real warning signs from worry.
+> **Example: the first winter**
+> After two years between Manchester and Lisbon, Inês moved in with Daniel. They'd planned it for months, and the first weeks were wonderful. By December she felt flat. She had no job yet and no friends of her own, and they were arguing about dishes. Daniel thought it meant she regretted moving. One evening she said: "I don't regret us. I just don't have a life here yet." They agreed she'd take an evening class and he'd introduce her to his colleagues' partners. By spring the arguments were back to normal-couple size.
 
 ## Long distance over the holidays
 
-The holidays can be the hardest time to be apart. Plan something special: open gifts together on a video call, send a small parcel, or agree on a "holiday call" time that works with both families. If you're visiting each other's families for the first time, our guides on [meeting your partner's parents](/blog/meeting-your-partners-parents/) and [holidays with your partner's family](/blog/holidays-with-your-partners-family/) can help.
+Holidays can be the hardest weeks apart, and the most complicated together, especially with two families involved. Our guide on [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers how to plan it as a team. For call ideas when conversation runs dry, try our [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/).
 
-If you want to check how a message might come across before you send it, or talk through a worry at 2am, RelationshipAI is an AI relationship coach that can help. It isn't therapy, but it's a calm place to start.
+If you want to talk through something before a difficult call, RelationshipAI's Coach Chat can help you sort out what you want to say, and Message check shows how a text might land before you send it. It isn't therapy, just a calm second perspective.
 
 ## Quick answers
 
 ### Do long distance relationships work?
 
-Many do, especially when both partners communicate openly and share a plan for the future. Distance on its own doesn't decide whether a relationship lasts.
+Often, yes. Studies find long-distance couples are, on average, about as satisfied and about as likely to stay together as couples who live close by.
 
 ### How often should you talk in a long distance relationship?
 
-As often as feels good for both of you. Quality matters more than quantity. A focused 20-minute call can feel closer than hours of distracted chat.
+As often as feels good to both of you. Agree on a rhythm and adjust it. A mismatch nobody mentions hurts more than the amount itself.
 
-### How do you keep the spark in a long distance relationship?
+### What's the hardest part of a long distance relationship?
 
-Surprise each other, plan visits, do activities together online and keep sharing the little things. Flirting by text and voice notes counts too.
-
-### How do you handle jealousy in a long distance relationship?
-
-Name it calmly instead of accusing: "I felt a bit left out when I didn't hear from you last night." Ask for what would help, and look at the facts rather than the story your worry is telling.
+Many people say the time apart, but research suggests the move to the same city is a real risk point too. Planning for that transition helps.
 
 ### When should you close the distance?
 
-When you both want it and have a realistic plan for work, money and where to live. Agree on a rough time frame together, so one person doesn't carry the whole decision.
-
-### What if one of you wants to give up?
-
-First ask what feels hardest right now. Sometimes a clearer plan or a sooner visit is enough. If one of you no longer wants the relationship, honesty is kinder than a slow fade.
+When you both want it and can make it work practically. Feeling fairly sure you'll live in the same place one day is linked to happier long-distance relationships.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
+- Kelmer, G., Rhoades, G. K., Stanley, S., & Markman, H. J. (2013). Relationship quality, commitment, and stability in long-distance relationships. *Family Process*, 52(2), 257-270. [PubMed](https://pubmed.ncbi.nlm.nih.gov/23763685/)
+- Dargie, E., Blair, K. L., Goldfinger, C., & Pukall, C. F. (2015). Go long! Predictors of positive relationship outcomes in long-distance dating relationships. *Journal of Sex & Marital Therapy*, 41(2), 181-202. Summary from the [University of Florida](https://smartcouples.ifas.ufl.edu/dating/coping-with-problems-and-challenges/long-distance-relationships-can-it-work/)
+- Stafford, L., & Merolla, A. J. (2007). Idealization, reunions, and stability in long-distance dating relationships. *Journal of Social and Personal Relationships*, 24(1), 37-54. [Abstract](https://www.scilit.net/publications/551be18c02394506e57b1161fee856f0)
 - Jiang, L. C., & Hancock, J. T. (2013). Absence makes the communication grow fonder: Geographic separation, interpersonal media, and intimacy in dating relationships. *Journal of Communication*, 63(3), 556-577. Summary on [ScienceDaily](https://sciencedaily.com/releases/2013/07/130718101232.htm)
-- Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)
