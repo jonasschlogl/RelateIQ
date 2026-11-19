@@ -23,7 +23,7 @@
 - [x] 2026-10-26-date-night-questions-for-couples (refreshed 2026-11-19: 5 games + 40 questions, 4 sources)
 - [x] 2026-11-07-holidays-with-your-partners-family (refreshed 2026-11-19: timeline game plan, 5 sources)
 - [x] 2026-11-09-clear-coding-dating (refreshed 2026-11-19: 20 messages by stage, 4 sources)
-- [ ] 2026-11-09-how-to-talk-about-money-with-your-partner
+- [x] 2026-11-09-how-to-talk-about-money-with-your-partner (refreshed 2026-11-19: money date agenda + 4 scripts, 4 sources incl. 2023 experiment)
 - [ ] 2026-11-13-relationship-anxiety
 - [ ] 2026-10-26-green-flags-in-a-relationship
 - [ ] 2026-10-26-how-to-rebuild-trust-after-a-fight
