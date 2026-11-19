@@ -1,185 +1,129 @@
 ---
-title: "Jealousy in a relationship: why it happens and 7 ways to handle it calmly"
+title: "Jealousy in a relationship: 7 myths that make it worse (and what research shows)"
 date: 2026-11-16
-description: A little jealousy is normal, but it can quietly damage trust. Why jealousy in a relationship happens, when it becomes a problem and 7 calm ways to handle it.
+updated: 2026-11-19
+description: "Jealousy in a relationship isn't one feeling. 7 common myths, what research on reactive vs suspicious jealousy, rumination and phone checking shows, and what actually calms it."
 tags: jealousy in a relationship, insecurity
 ---
-They laugh at a message and you want to know who it's from. Their new colleague comes up in conversation a few times and something tightens in your chest. You know it's probably nothing. But the feeling doesn't care what you know.
+Most advice about jealousy in a relationship treats it as one thing: a bad feeling you should get rid of. Research says it is at least two different things, and they behave very differently. One is a short, sharp sting when something actually happens. The other is a slow loop of suspicion, checking and replaying that can grow without anything happening at all.
 
-Jealousy in a relationship is one of the most common and most uncomfortable emotions. A little of it is normal and can even show that you care. Too much can quietly damage trust, for both of you. This guide explains why jealousy happens, when it becomes a problem, and seven calm ways to handle it.
+Mixing the two up is behind most of the myths below. Sorting them out is the fastest way to know whether your jealousy is telling you something about your relationship, or something about your mind at 1am.
 
-## Why jealousy happens
+## Myth 1: "Jealousy is one feeling"
 
-Jealousy is a mix of fear, insecurity and sometimes anger, triggered by the idea of losing someone important to you. It's often less about what your partner is doing and more about what the situation means to you.
+Psychologists Robert Rydell and Robert Bringle separated jealousy into two kinds:
 
-Common triggers include:
+- **Reactive jealousy:** the emotional jolt when something real happens, like seeing your partner flirt openly at a party.
+- **Suspicious jealousy:** the thinking and doing side, worrying about what *might* be happening, imagining scenarios, checking up.
 
-- Feeling insecure about yourself or the relationship
-- Past experiences of being cheated on or abandoned
-- An anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/)
-- A real change in your partner's behaviour, like secrecy or distance
-- Social media, where you see only fragments of other people's lives
+In their studies, the two had different roots. Reactive jealousy went together with *more* trust and commitment in the relationship. Suspicious jealousy went together with insecurity, anxious or avoidant attachment and lower self-esteem.
 
-## Social media makes it worse
+| | Reactive jealousy | Suspicious jealousy |
+|---|---|---|
+| Starts with | Something that actually happened | A thought about what might happen |
+| Feels like | A sharp sting that fades | A loop that keeps coming back |
+| Tends to lead to | A conversation | Checking, questioning, replaying |
+| Linked in research to | Trust and commitment | Insecurity and lower self-esteem |
 
-Social media gives jealousy a lot to work with. Researchers Amy Muise, Emily Christofides and Serge Desmarais at the University of Guelph found that the more time college students spent on Facebook, the more jealous they felt about their partners. It also created a loop: jealousy led people to check their partner's profile more, which showed them more ambiguous information, which made them more jealous.
+So the first useful question is not "Am I jealous?" but "Did something happen, or am I reacting to a story in my head?"
 
-The same loop happens today with likes, follows and who views whose stories.
+## Myth 2: "If you weren't jealous, you wouldn't care"
 
-> **Why it works this way**
-> Online, you see small pieces of information without the context. A like, a comment or a new follow could mean almost anything. When you're already a bit insecure, your brain fills the gaps with the worst story. Checking more feels like it will calm the fear, but it usually gives the fear more material. That's why cutting back on checking often helps more than finding "proof".
+There's a grain of truth here, which is why the myth survives. A flash of reactive jealousy often shows you value the relationship. But the line breaks down with the suspicious kind. Constant suspicion isn't proof of love. It's proof of fear, and fear tends to make people controlling rather than closer.
 
-## Healthy jealousy vs controlling jealousy
+A partner who never feels a twinge is not necessarily indifferent. And a partner who checks your messages every night is not necessarily more devoted.
 
-| Healthy jealousy | Controlling jealousy |
-|---|---|
-| A brief feeling you notice and talk about | A constant feeling that drives your actions |
-| "I felt a bit jealous when..." | "Who were you texting? Show me." |
-| You ask for reassurance | You demand passwords or tracking |
-| You trust your partner's friendships | You try to limit who they see |
-| You take responsibility for your feelings | You blame your partner for them |
+## Myth 3: "Thinking it through will make me feel better"
 
-## 7 ways to handle jealousy calmly
+This one feels true, because analysing feels like doing something. But in a study of 199 people in relationships, Rachel Elphinston and colleagues found that jealous *thinking* was linked to lower relationship satisfaction, and that a big part of the link ran through **rumination**: going over the same worries again and again.
 
-### 1. Name the feeling to yourself first
+In other words, the replaying is not the cure. It's often the mechanism that turns a passing worry into lasting unhappiness. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has practical ways to interrupt the loop.
 
-Before you say anything, notice: "I'm feeling jealous." Naming an emotion helps calm it and stops you from acting on it straight away.
+> **Try this when the loop starts**
+> Write the worry down in one sentence. Then write one sentence for what you actually know. "He hasn't replied in three hours" is a fact. "He's talking to someone else" is a story. Set a 15-minute "worry slot" for later in the day, and when the thought comes back before then, tell yourself: "Later, not now." It sounds small. It works because it breaks the replaying, not the feeling.
 
-### 2. Ask what you're really afraid of
+## Myth 4: "Checking their phone will settle it"
 
-Is it that they'll leave? That you're not enough? That it's happening again, like last time? Knowing the fear behind the jealousy helps you ask for the right thing.
+Checking rarely settles anything. If you find nothing, the relief lasts minutes and the doubt returns ("maybe they deleted it"). If you find something ambiguous, you now have a fight *and* a breach of trust on your side.
 
-### 3. Share it without accusing
+Interestingly, the same Elphinston study found that checking-up behaviours had a mixed pattern: they were linked to more rumination, but not simply to lower satisfaction. Checking isn't always a sign the relationship is failing. It is, however, a reliable way to keep the worry alive.
 
-Try: "When you mentioned your new colleague a lot this week, I felt a bit insecure. I know that's partly my stuff. Could you tell me a bit more about her?"
+It's also worth knowing what can trigger the urge. A 2022 study of 346 people in relationships by Janneke Schokkenbroek and colleagues found that people whose partners often ignored them for their phones ("phubbing") were somewhat more likely to look through their partner's messages or online activity. The effect was small, but the message is useful: snooping sometimes grows out of feeling ignored, not only out of suspicion. That's something you can talk about.
 
-This invites closeness. "Why do you keep talking about her?" invites defensiveness.
+## Myth 5: "Social media just shows what's already there"
 
-### 4. Ask for specific reassurance
+Social media adds information that would never have reached you otherwise: a like on an old photo, a new follower, a comment from someone you don't know. In a well-known early study, Amy Muise and colleagues found that the more time students spent on Facebook, the more jealousy they reported, and they described a feedback loop. Ambiguous information triggers jealousy, which leads to more checking, which turns up more ambiguous information.
 
-"It would help if you introduced me to your work friends" is something your partner can actually do. "Promise me you'll never like anyone else" isn't.
+The fix isn't to delete everything. It's to notice when you're scrolling *to look for something* and to stop there.
 
-### 5. Stop checking
+## Myth 6: "Men and women get jealous about completely different things"
 
-Checking their phone or social media might feel calming for a minute, but it usually makes jealousy stronger. Try a simple rule for yourself: when you feel the urge, wait 30 minutes and do something else.
+You've probably heard that men are more upset by sexual infidelity and women by emotional infidelity. Some studies do find that pattern, mostly when people are forced to choose one or the other. But when David DeSteno and colleagues let people rate how upsetting each one was on a scale, instead of picking between them, the difference between men and women largely disappeared.
 
-### 6. Work on your own security
+The practical takeaway: don't assume you know what will hurt your partner because of their gender. Ask. "What would feel like a betrayal to you?" is a surprisingly good conversation to have *before* anything goes wrong.
 
-Your friends, hobbies and goals make you feel more like yourself, and less dependent on one person for your sense of worth. If anxiety keeps coming back, our guide on [relationship anxiety](/blog/relationship-anxiety/) has more tools.
+## Myth 7: "Jealousy means something is wrong with the relationship"
 
-### 7. Talk about boundaries together
+Sometimes it does. Often it doesn't. Suspicious jealousy tends to travel with the person from relationship to relationship, because it's rooted in insecurity and attachment rather than in what the current partner does. If you notice the same fears with every partner, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) are a better starting point than investigating your partner.
 
-Couples have different ideas of what's okay, like texting an ex, close friendships or liking photos. Talk about it calmly, before it becomes a fight.
+But if your partner is regularly secretive, inconsistent or dismissive when you raise concerns, your jealousy may be pointing at something real. Our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) helps you tell the difference.
 
-Try: "Can we talk about what feels okay for both of us with exes and friends? I'd rather agree on it than guess."
+## What actually helps
 
-> **Example: the new colleague**
-> Hannah noticed her partner Tom mentioning a new colleague, Chloe, a lot. Instead of checking his phone, she told him: "I've noticed I'm feeling a bit jealous about Chloe. I don't think you've done anything wrong, I just wanted to tell you." Tom was surprised but relieved she said it. He invited Hannah to the next work drinks. Meeting Chloe in person made the feeling fade quickly.
+**Name which kind it is.** Reactive or suspicious? Did something happen?
 
-## False alarm or real signal? A quick self-check
+**Say the feeling, not the accusation.**
+Instead of: "Who is she? Why is she always liking your posts?"
+Try: "I noticed I got a bit jealous when I saw that. It's probably my stuff, but I wanted to tell you rather than stew on it."
 
-Jealousy feels the same whether it comes from an old fear or from something real. Looking at the facts around the feeling can help you tell the difference.
+**Ask for something specific.** Vague reassurance ("Do you still love me?") fades fast. Specific requests last longer.
+Try: "When you're going to be out late, a quick text would really help me relax."
 
-| Often an old fear (false alarm) | May point to something real |
-|---|---|
-| The feeling is strong, but you can't name anything that changed | Your partner's behaviour has clearly changed |
-| You've felt the same way in past relationships | They hide their phone or get defensive about simple questions |
-| It often starts after scrolling social media | Plans and stories don't add up |
-| Reassurance helps, at least for a while | They mock or dismiss you when you share the feeling |
-| Your partner is open when you ask | You often leave conversations confused about what's true |
+**Agree on what you both consider okay.** Phones, exes, friendships, flirting. Couples differ, and a ten-minute conversation about it removes a lot of guesswork.
 
-If most of what you notice is on the left, the work is mostly inside you: calming the fear, building your own security and asking for small, specific reassurance.
+> **Example: the gym friend**
+> Maya kept noticing messages from a woman Dev knew from the gym. Instead of checking his phone, she told him: "I've been feeling jealous about your gym friend. I don't think anything's going on, I just feel a bit outside of it." Dev was surprised, then relieved she'd said it. He introduced them the next week. The jealousy didn't vanish overnight, but the story in Maya's head had a real person to replace it.
 
-If more is on the right, your feeling may be pointing to a real problem. That still doesn't mean checking their phone. It means a calm, direct conversation about what you've noticed. And if you often leave talks doubting your own memory, read our guide on [gaslighting in a relationship](/blog/gaslighting-in-a-relationship/).
+## If your partner is the jealous one
 
-## What to do in the moment: a short walkthrough
+Be patient with the feeling and firm about the behaviour. You can reassure without giving up your privacy or friendships.
 
-Knowing the steps is easier than using them when the feeling hits. Here's what it can look like in real life.
+Try: "I understand you feel worried, and I want to help. I'm also not okay with you going through my phone. Can we talk about what would actually help you feel safer?"
 
-It's 10 pm. Your partner said they'd be home from a friend's birthday by 9. They haven't replied to your last two messages. Your mind starts writing a story.
-
-**Step 1: Pause.** Notice your body. A tight chest, fast heartbeat, the urge to call again. Say to yourself: "I'm feeling jealous and scared."
-
-**Step 2: Check the facts.** What do you actually know? They're at a party, it's loud, and they're an hour late. What don't you know? Everything else. The worst story is only one of many possible stories.
-
-**Step 3: Write it, don't send it.** Type out what you want to say, then wait 20 minutes. Most angry messages look different after a short break.
-
-**Step 4: Send one calm message.**
-
-Try: "Hey, just checking you're okay. Let me know when you're on your way."
-
-**Step 5: Talk later, not now.** If the late night bothered you, bring it up the next day when you're both rested.
-
-Try: "Last night I got worried when I didn't hear from you. Could you send a quick text next time you're running late?"
-
-If your mind tends to spin stories like this often, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has more ways to calm it.
-
-## If you already acted on jealousy
-
-Maybe you checked their phone, sent an accusing message or made a scene. Most people have done something they regret when they felt jealous. What matters is what you do next.
-
-Own it clearly, without long excuses and without blaming them for how you felt.
-
-Try: "I looked at your phone last night, and that wasn't okay. I was feeling insecure, but that's mine to deal with. I'm sorry. I'd like to talk about the feeling instead next time."
-
-Then show the change over the next few weeks. Trust comes back through steady actions more than through one perfect apology.
-
-## What if your partner is the jealous one?
-
-Be patient but clear. Reassure them where it's reasonable, like sharing plans or introducing friends. But don't give up your friendships, privacy or freedom to manage their fear. If jealousy turns into checking, demands or anger, that's control, and it's not okay.
-
-Try: "I love you and I want you to feel safe. I'm also not going to stop seeing my friends. What could help you feel more secure?"
-
-## What most articles miss
-
-Many articles treat jealousy as something to get rid of. But a small amount of jealousy is a signal, like a smoke alarm. Sometimes it's a false alarm caused by old fears. Sometimes it points to something real, like a partner who has become distant or secretive. The goal isn't to never feel jealous. It's to listen to the feeling, check it calmly and respond in a way that builds trust rather than destroying it. If trust is already shaky, our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) can help.
-
-If you want to plan how to bring up jealousy without starting a fight, or check how a message might come across before you send it, RelationshipAI can help you find calm words. It isn't therapy, but it's a calm place to start.
+If you'd like to rehearse that conversation first, RelationshipAI's Partner Practice lets you try it with an AI that plays your partner, privately. It isn't therapy, but it can help you find calm words before the real talk.
 
 ## Quick answers
 
-### Is jealousy normal in a relationship?
+### Is some jealousy in a relationship normal?
 
-Yes, occasional jealousy is very common. It becomes a problem when it's constant or leads to controlling behaviour.
+Yes. A brief, reactive sting when something real happens is common and can even go with commitment. Constant suspicion, checking and controlling are different and worth addressing.
 
-### Is jealousy a sign of love?
+### What's the difference between healthy and unhealthy jealousy?
 
-Not really. It's a sign that you're afraid of losing something important. Love shows itself through trust, care and respect.
+Healthy jealousy is a feeling you can name and talk about. Unhealthy jealousy turns into surveillance, accusations, restrictions or anger.
 
 ### How do I stop being jealous?
 
-Name the feeling, find the fear behind it, share it calmly, ask for specific reassurance and stop checking. Working on your own security helps too.
+Notice whether something actually happened, interrupt rumination instead of feeding it, share the feeling without accusing, and work on the insecurity underneath, ideally with support.
 
-### What causes jealousy in a relationship?
+### Should I check my partner's phone?
 
-Insecurity, past betrayals, anxious attachment, social media and sometimes real changes in a partner's behaviour.
+It rarely helps. It tends to feed the worry and can damage trust from your side. Talking about what triggered the urge usually gets you further.
 
-### Is it okay to check my partner's phone if I'm jealous?
+### When does jealousy become toxic?
 
-It usually makes jealousy worse and damages trust. Talking about the feeling is almost always more helpful.
-
-### When is jealousy toxic?
-
-When it leads to checking, controlling who your partner sees, anger or threats. That's controlling behaviour, not love.
-
-### How do I deal with a jealous partner?
-
-Reassure where reasonable, keep your own friendships and boundaries, and talk calmly about what would help them feel more secure.
-
-### Why do I get jealous if I've never been cheated on?
-
-Jealousy doesn't need a past betrayal. Insecurity, an anxious attachment style, stress or comparing yourself to others online can all trigger it.
-
-### Can jealousy go away completely?
-
-Probably not completely, and that's okay. As you feel more secure and trust grows, it usually becomes rarer, weaker and easier to talk about.
+When it is used to control: checking, restricting who your partner sees, demanding passwords, threats or punishment. That is a safety issue, not a sign of love.
 
 ## A note on safety
 
-If a partner's jealousy includes checking your phone, tracking your location, controlling who you see, anger or threats, please reach out to a local helpline or support service. Controlling jealousy is a warning sign, not a sign of love. Our article on the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) explains more.
+Jealousy is one of the most common justifications for controlling and abusive behaviour. If a partner monitors your phone, isolates you from friends, threatens you or makes you afraid, please contact a local domestic abuse helpline or support service. Our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) may help you see the pattern clearly.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
+- Rydell, R. J., & Bringle, R. G. (2007). Differentiating reactive and suspicious jealousy. *Social Behavior and Personality*, 35(8), 1099-1114. [DOI](https://doi.org/10.2224/sbp.2007.35.8.1099)
+- Elphinston, R. A., Feeney, J. A., Noller, P., Connor, J. P., & Fitzgerald, J. (2013). Romantic jealousy and relationship satisfaction: The costs of rumination. *Western Journal of Communication*, 77, 293-304. [Full text (PDF)](https://core.ac.uk/download/15152695.pdf)
+- Schokkenbroek, J. M., Hardyns, W., & Ponnet, K. (2022). Phubbed and curious: The relation between partner phubbing and electronic partner surveillance. *Computers in Human Behavior*. Summary on [PsyPost](https://www.psypost.org/romantic-partners-who-get-phubbed-are-more-likely-to-spy-on-digital-communications-study-finds/)
+- DeSteno, D., Bartlett, M. Y., Braverman, J., & Salovey, P. (2002). Sex differences in jealousy: Evolutionary mechanism or artifact of measurement? *Journal of Personality and Social Psychology*, 83(4). Summary in the [APA Monitor](https://www.apa.org/monitor/oct02/planet)
 - Muise, A., Christofides, E., & Desmarais, S. (2009). More information than you ever wanted: Does Facebook bring out the green-eyed monster of jealousy? *CyberPsychology & Behavior*, 12(4), 441-444. Summary on [EurekAlert](https://www.eurekalert.org/news-releases/588514)
