@@ -25,7 +25,7 @@
 - [x] 2026-11-09-clear-coding-dating (refreshed 2026-11-19: 20 messages by stage, 4 sources)
 - [x] 2026-11-09-how-to-talk-about-money-with-your-partner (refreshed 2026-11-19: money date agenda + 4 scripts, 4 sources incl. 2023 experiment)
 - [x] 2026-11-13-relationship-anxiety (refreshed 2026-11-19: toolkit 2 minutes / day / month, 5 sources)
-- [ ] 2026-10-26-green-flags-in-a-relationship
+- [x] 2026-10-26-green-flags-in-a-relationship (refreshed 2026-11-19: 9 flags with how to spot each, 4 sources)
 - [ ] 2026-10-26-how-to-rebuild-trust-after-a-fight
 - [ ] 2026-11-12-should-i-break-up-with-my-partner
 - [ ] 2026-11-19-avoidant-attachment-partner (has 5 translations: update them too)

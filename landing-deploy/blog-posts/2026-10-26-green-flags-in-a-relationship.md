@@ -1,150 +1,118 @@
 ---
-title: "Green flags in a relationship: 8 signs of a healthy partner"
+title: "Green flags in a relationship: 9 signs of a healthy partner, and how to spot each one"
 date: 2026-10-26
-description: "8 green flags in a relationship that show a healthy partner, from saying \"I'm upset\" calmly to repairing fast, with research and real examples."
+updated: 2026-11-19
+description: "9 green flags in a relationship, each with a simple way to spot it in real life, plus the research behind them: how partners react to good news, support your goals and help you become who you want to be."
 tags: green flags in a relationship, healthy relationship
-updated: 2026-11-14
 ---
-Red flags get all the attention. We're good at listing the things that should make us leave. But it's just as useful to know what a healthy relationship looks like, because the good signs are usually quiet. Nobody sends a dramatic text when things are working.
+Red flags get all the attention. But if you've been through a difficult relationship, the bigger challenge is often recognising what *good* looks like. Healthy can feel strange at first. Calm can feel like boredom. Consistency can feel too good to trust.
 
-That quietness is exactly why green flags are easy to miss, especially if you're used to relationships that felt intense, chaotic or uncertain. Calm can even feel boring at first. This guide covers eight green flags that couples research keeps pointing to, why each one matters, what it looks like in real life, and how to become a green flag partner yourself.
+This guide lists nine green flags in a relationship, but with a twist: for each one, there's a simple way to actually notice it, in early dating or years in. Several come from research on what separates thriving couples from the rest.
 
-## Why green flags are easy to overlook
+## 1. They're genuinely happy about your good news
 
-If past relationships taught you that love means highs and lows, a steady partner can feel strange. No guessing games, no dramatic make-ups, no waiting for a reply. Some people mistake that calm for a lack of chemistry.
+**Why it matters:** Psychologist Shelly Gable and colleagues found that the way a partner responds when you share something *good* matters a great deal. When partners responded actively and enthusiastically, people reported more intimacy and daily satisfaction. Responses that were flat, dismissive or turned the conversation back to the partner had the opposite effect.
 
-> **Why it works this way**
-> Uncertainty keeps our attention. In one well-known study, women who didn't know how much a man liked them found him more attractive, and thought about him more, than women who were told he liked them a lot. When we don't know where we stand, our minds keep returning to the person, and that preoccupation can feel like strong attraction. Safety works differently. It frees your attention for the rest of your life. That's why a healthy relationship often feels less like fireworks and more like being able to breathe out.
+**How to spot it:** Share a small win and watch. "That's amazing, tell me everything" is the green flag. "Nice" (back to the phone), "Won't that mean longer hours?" or "Guess what happened to me today" are not.
 
-| Feels exciting, but often isn't healthy | Feels quiet, but is a green flag |
-|---|---|
-| Hot and cold texting | Consistent contact, even when busy |
-| Big gestures after fights | Calm repair soon after a fight |
-| Jealousy as a sign of love | Trust and interest in your life |
-| Guessing what they feel | Being told what they feel |
+## 2. They support your goals without taking over
 
-## 1. They tell you when they're upset
+**Why it matters:** In a study where couples talked about their personal goals, Brooke Feeney found that *responsive, non-intrusive* support (encouraging without controlling) was linked to the partner feeling happier, having higher self-esteem and feeling more confident about reaching their goals. Pushing, criticising or taking over the plan didn't help.
 
-Not with the silent treatment, a sulk or a sharp comment later. They say it directly and calmly. Being able to name a feeling without attacking you is a sign of emotional safety. It means you don't have to guess.
+**How to spot it:** Mention something you want to try: a course, a career change, a marathon. A green-flag partner asks questions, offers help if you want it, and doesn't make you feel silly or selfish for wanting it.
 
-Try: "I'm a bit upset about this. Can we talk?"
+## 3. You become more like the person you want to be
 
-## 2. They can say "I don't know yet"
+**Why it matters:** Researchers call this the *Michelangelo phenomenon*: a close partner who sees you as the person you hope to become, and treats you that way, helps you grow towards that version of yourself. In a study of dating couples, Stephen Drigotas found it was strongly linked to personal well-being, even after accounting for how satisfied people were with the relationship.
 
-Healthy partners don't have an instant answer for everything. "I need to think about it" or "I'm not sure how I feel" is honest, and it leaves room for a real conversation instead of a rushed one. It also means that when they do say yes, they mean it.
+**How to spot it:** Ask yourself: since this relationship started, am I more or less like the person I want to be? Braver, calmer, more creative, more yourself? Or smaller and more careful?
 
-## 3. They stay curious when you disagree
+## 4. They tell you when they're upset, calmly
 
-The conversation doesn't turn into a trial. They want to know your side, even when they don't agree with it. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) describes this as listening to understand, not to reply.
+**Why it matters:** Problems you can name are problems you can fix. Silence, sulking or sudden explosions leave you guessing.
 
-Try: "Help me understand what you mean by that."
+**How to spot it:** After something goes wrong, do they say "That bothered me, can we talk?" or do you find out three days later, from their mood?
 
-> **Example: the holiday plans**
-> Emma wants to spend Christmas with her family. Her partner Philip wanted a trip just for the two of them. Instead of arguing about who's right, Philip asks: "What does Christmas with your family mean to you?" Emma explains that her grandmother is getting older and this might be one of the last Christmases with her. Philip's position softens, and they plan a trip for New Year instead.
->
-> Curiosity didn't mean Philip gave up what he wanted. It meant they found a solution that worked for both.
+## 5. They can lose an argument
 
-## 4. They celebrate your wins
+**Why it matters:** In healthy relationships, disagreement isn't a contest. Each person can say "you're right" or "I hadn't thought of that" without it feeling like defeat.
 
-Psychologist Shelly Gable and her colleagues ran four studies on what happens when people share good news with a partner. When partners responded actively and enthusiastically, couples reported higher relationship well-being, including more intimacy and greater daily satisfaction. A good partner doesn't compete with your success, play it down or change the subject. They light up.
+**How to spot it:** In your next disagreement, notice whether they get curious ("Why do you see it that way?") or only defend. Do they ever change their mind?
 
-| How they respond to "I got the job!" | What it tells you |
-|---|---|
-| "That's amazing! Tell me everything. How did they tell you?" | Active and constructive: the green flag |
-| "Nice." (and back to their phone) | Passive: interest is missing |
-| "Won't that mean longer hours?" | Focuses on the downside first |
-| "Guess what happened to me today..." | Turns the attention away from you |
+## 6. They repair quickly
 
-## 5. They ask before assuming
+**Why it matters:** Every couple has bad moments. What matters is how quickly and how genuinely they're repaired. A sincere apology, a hand on the arm, a joke that breaks the tension, offered the same day rather than a week later.
 
-Instead of building a story in their head and acting on it, they check. That habit alone prevents a lot of unnecessary fights, because most misunderstandings in relationships come from guessing what the other person meant.
-
-Try: "Did you mean it that way, or am I reading too much into it?"
-
-## 6. They repair fast, not days later
-
-Every couple argues. What matters is the repair. John and Julie Gottman's research found that successful couples make and accept "repair attempts": a joke at the right moment, a touch, "Can we start that over?" or a plain "I'm sorry, that came out wrong." In fact, Gottman found that when repair attempts keep failing, it's an accurate marker of an unhappy future.
-
-A partner who repairs quickly doesn't leave the tension hanging for days. If you want to improve your own side of this, see how to [apologize to your partner](/blog/how-to-apologize-to-your-partner/).
-
-> **Why it works**
-> A fight that's repaired the same day stays a fight about one thing. A fight that hangs in the air for days starts to collect other things: old hurts, new assumptions, a feeling that the other person doesn't care. Quick repair keeps small problems small. It also teaches both of you that conflict is survivable, which makes it easier to raise problems early.
+**How to spot it:** After a fight, who reaches out first, and how long does it take? A green-flag partner sometimes reaches out first, and accepts your attempts too. Our guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) shows what a good repair looks like.
 
 ## 7. They respect "I need a minute"
 
-When your heart is racing in the middle of an argument, you can't really listen. Gottman calls this flooding, and his guidance is to take a break of around twenty minutes to calm down and then come back. A green flag is a partner who respects that pause and, just as importantly, actually returns to the conversation. A break that never ends isn't a break. It's avoidance.
+**Why it matters:** When people are overwhelmed in an argument, a short break often helps more than pushing through. A partner who can pause, and actually come back to the topic later, makes conflict safer.
 
-Try: "I need twenty minutes to calm down. Then I want to finish this with you."
+**How to spot it:** Say "Can we take twenty minutes and come back to this?" A green flag is "Okay, I'll make tea", followed by a calmer conversation. Not chasing you from room to room, and not using the break to disappear for days.
 
-## 8. You feel calmer after talking to them
+## 8. They notice the small moments
 
-This one is easy to overlook. After a conversation with a healthy partner, even a hard one, you feel more settled, not more anxious or confused. You don't leave every talk with a knot in your stomach, replaying what you said. If that's missing, our guide to [overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) might help you sort out whether it's your patterns, theirs or a bit of both.
+**Why it matters:** Gottman's research on newlyweds found that couples still together six years later had responded to each other's small "bids" for attention, like a comment, a question or a touch, far more often than couples who later divorced.
 
-## The small daily green flag: turning toward you
+**How to spot it:** When you point at something out of the window or mention a song you like, do they look, ask, react? Small moments of turning towards you are among the most reliable green flags there are.
 
-Many of the most important green flags happen in tiny moments. Gottman calls them "bids": small attempts to connect, like pointing something out, asking a question or sighing after a long day. A partner who turns toward those bids (looking up, answering, showing interest) is building trust in tiny steps.
+## 9. You feel calmer after talking to them
 
-In a study that followed newlyweds for six years, couples who stayed married had turned toward each other's bids 86% of the time. Couples who later divorced had done so only 33% of the time.
+**Why it matters:** The deepest green flag is a feeling: that this person is a safe place. Not exciting every minute, not perfect, but steady.
 
-> **Example: the bird outside the window**
-> "Look, there's a woodpecker on the tree," says Sarah, looking out of the kitchen window. Her partner could ignore it, or say "mm" without looking up. Instead he comes over, looks and says "Oh wow, I've never seen one here." It took five seconds. Repeated hundreds of times a year, moments like this are what makes a relationship feel warm.
+**How to spot it:** After a conversation about something hard, do you feel lighter or more anxious? If you consistently feel worse, confused or on edge, that's worth paying attention to.
+
+> **Example: the boring Tuesday**
+> After a relationship full of drama, Leila started dating Ravi and kept waiting for "the catch". He replied when he said he would. He asked about her exam and remembered the result. When she was upset, he said so, and they sorted it out over dinner. "For the first two months I thought something was missing," she said. "Then I realised what was missing was the anxiety."
 
 ## Green flags in early dating
 
-In the first weeks and months, you can't see how someone handles years of stress. But you can notice:
+In the first weeks, you can't see how someone handles years of stress, but you can notice:
 
-- **Consistency.** They do what they say they'll do, and their messages match their actions.
-- **Respect for your pace.** They don't push for more closeness, commitment or time than you're ready for.
-- **Curiosity.** They ask about your life and remember what you told them.
-- **Honesty about what they want.** Our guide to [clear coding](/blog/clear-coding-dating/) shows what this looks like.
-- **How they treat other people.** Waiters, friends, exes. It shows how they'll treat you when the honeymoon phase ends. Later on, how they handle [meeting your parents](/blog/meeting-your-partners-parents/) tells you a lot too.
+- **Consistency:** their messages match their actions.
+- **Respect for your pace:** no pressure for more closeness, commitment or time than you're ready for. Very fast intensity can be [love bombing](/blog/love-bombing/).
+- **Curiosity:** they ask about your life and remember what you told them.
+- **Honesty about what they want:** our guide to [clear coding](/blog/clear-coding-dating/) shows what that looks like.
+- **How they treat others:** waiters, friends, exes. Later, how they handle [meeting your parents](/blog/meeting-your-partners-parents/) tells you a lot too.
 
 ## Green flags aren't a scorecard
 
-Nobody has all eight all the time. People have bad days, stressful weeks and old habits. What you're looking for is a pattern over time: do these things show up more often than not, and when they don't, can you talk about it?
+Nobody shows all nine all the time. Everyone has bad days, old habits and moments they're not proud of. Look for patterns over months, not perfection in a single week. And remember that a relationship can have green flags and red flags at the same time. If you're unsure about the red ones, our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) can help you think it through.
 
-It also helps to know that attachment styles shape how people show these behaviours. Someone who tends toward anxious or avoidant attachment can still be a loving, safe partner, especially when both of you understand your patterns. We explain this in our guide to [attachment styles](/blog/how-attachment-styles-work-in-relationships/).
+## How to be a green flag partner
 
-## How to become a green flag partner
+Most of these are skills, not personality traits. Pick one to practise this week: respond enthusiastically to your partner's good news, ask one curious question during your next disagreement, or reach out first after a tense moment. Our guides on [communication habits](/blog/relationship-advice-communication-habits/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) go deeper.
 
-Green flags aren't only something to look for. They're something to practise. Pick one from this list and try it this week: say when you're upset instead of going quiet, ask before assuming, or respond to your partner's good news with real enthusiasm. Small, consistent actions matter more than big gestures.
-
-If you'd like to practise how to bring up something that's been bothering you, RelationshipAI is an AI relationship coach that can help you put it into words. It isn't therapy, but it's a calm place to start.
+If you want to practise responding better in tense moments, RelationshipAI's Partner Practice lets you rehearse a conversation with an AI playing your partner. It isn't therapy, but it's a calm place to build new habits. If overthinking makes it hard to trust a good relationship, see [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/).
 
 ## Quick answers
 
 ### What are the biggest green flags in a relationship?
 
-Feeling safe and calm around your partner, being able to disagree without fear, quick repair after arguments, and a partner who celebrates your wins and respects your boundaries. Consistency over time matters more than any single gesture.
+Genuine happiness about your good news, support for your goals without control, honest and calm communication, quick repairs after conflict, and feeling calmer and more yourself around them.
 
 ### What is the difference between a green flag and a red flag?
 
-Green flags are behaviours that make a relationship feel safe, respectful and honest. Red flags are behaviours that make you feel afraid, controlled, confused or small, like contempt, pressure or dishonesty.
-
-### Can a relationship have green flags and red flags at the same time?
-
-Yes. Most relationships have both strengths and problems. The key questions are how serious the red flags are and whether there's a repeated pattern. Anything involving fear or control should be taken seriously.
+Green flags make you feel safe, respected and free to grow. Red flags make you feel anxious, controlled, smaller or confused.
 
 ### Is it normal if a healthy relationship feels boring?
 
-At first it can, especially if past relationships were full of ups and downs. Calm isn't the same as boring, though. A safe relationship leaves room for fun, adventure and real closeness, without the anxiety.
+Often, yes, especially after a chaotic relationship. Calm can feel unfamiliar at first. Boredom that comes with peace is usually a sign of safety, not a lack of love.
 
-### Is it a green flag if my partner gives me space?
+### Can a relationship have green flags and red flags at the same time?
 
-Usually, yes, as long as they also stay connected and say when they'll be back. Respecting "I need a minute" is a sign of a secure, caring partner.
+Yes. What matters is the overall pattern, and whether problems can be talked about and changed.
 
 ## A note on safety
 
-Controlling behaviour, constant monitoring, cruelty or making you feel afraid are not signs of passion or worry, and they aren't something a list of green flags can fix. If you feel unsafe in your relationship, please reach out to a local helpline or support service.
-
-It also helps to know the opposite. Our guides on [love bombing](/blog/love-bombing/), [gaslighting](/blog/gaslighting-in-a-relationship/) and the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) show what to watch out for.
+If your partner controls you, threatens you or makes you afraid, green flags elsewhere don't cancel that out. Please contact a local domestic abuse helpline or support service.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
 - Gable, S. L., Reis, H. T., Impett, E. A., & Asher, E. R. (2004). What do you do when things go right? The intrapersonal and interpersonal benefits of sharing positive events. *Journal of Personality and Social Psychology*, 87(2), 228-245. [Abstract on PubMed](https://pubmed.ncbi.nlm.nih.gov/15301629/)
+- Feeney, B. C. (2004). A secure base: Responsive support of goal strivings and exploration in adult intimate relationships. *Journal of Personality and Social Psychology*, 87(5), 631-648. [DOI](https://doi.org/10.1037/0022-3514.87.5.631)
+- Drigotas, S. M. (2002). The Michelangelo phenomenon and personal well-being. *Journal of Personality*, 70(1), 59-77. [PubMed](https://pubmed.ncbi.nlm.nih.gov/11908536/)
 - Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)
-- Gottman Institute: [The 6 things that predict divorce](https://www.gottman.com/blog/the-6-things-that-predict-divorce/)
-- Gottman Institute: [Physiological self-soothing](https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/)
-- Whitchurch, E. R., Wilson, T. D., & Gilbert, D. T. (2011). "He loves me, he loves me not...": Uncertainty can increase romantic attraction. *Psychological Science*, 22(2), 172-175. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2011/02/110207142623.htm)
