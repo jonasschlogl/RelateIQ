@@ -3,7 +3,7 @@ title: How to fix a relationship: where to start when it feels broken
 date: 2026-10-04
 description: "How to fix a relationship that feels distant or stuck: a calm, research-based plan in 6 steps, from stopping the escalation to rebuilding closeness."
 tags: how to fix a relationship, relationship problems
-updated: 2026-11-14
+updated: 2026-11-19
 ---
 When a relationship feels broken, the first instinct is to fix everything at once. Have the big talk, settle every old argument, change how you both behave. It almost always backfires. You end up arguing about the whole relationship instead of one thing you could actually change, and both of you walk away more hopeless than before.
 
@@ -42,7 +42,7 @@ Nothing gets rebuilt while you're still hurting each other. Gottman's research i
 
 You don't have to be perfect. Just notice which one you slip into most, and practise its antidote. The Gottman Institute describes contempt as the single biggest predictor of divorce, so if eye-rolling and mocking have crept in, start there.
 
-> **Why it works**
+> **Why removing them comes first**
 > Each horseman pushes the other person into self-defence, and once someone is defending themselves, they can't listen. That's why couples can argue about the same thing for years without getting anywhere. Removing the horsemen doesn't solve the problem by itself. It creates the conditions in which a problem can be solved.
 
 ## Step 3: Have one small conversation about one thing
@@ -77,6 +77,10 @@ Try: "What would help you feel closer to me right now?"
 ## Step 6: Get help when you're stuck
 
 If you've tried this for a few weeks and the same fights keep coming back, or one of you has stopped trying, a couples therapist can spot patterns that are hard to see from the inside. It's usually easier to change a pattern before years of hurt have built up around it, so it's worth considering sooner rather than later.
+
+The evidence is encouraging even for couples in serious trouble. In a large trial led by Andrew Christensen, 134 chronically and seriously distressed married couples received up to a year of couple therapy. Five years after treatment ended, about half were significantly better than when they started, and about a third were doing as well as ordinary happy couples. About a quarter had separated or divorced.
+
+Help doesn't always have to mean weekly therapy, either. In a randomised trial of 300 couples, Brian Doss and colleagues tested OurRelationship, a self-guided online programme of a few hours with short coach calls. Compared with couples on a waiting list, those who did the programme reported clearly higher relationship satisfaction and fewer depressive symptoms, and most of the gains were still there a year later.
 
 An AI coach like RelationshipAI can be useful for thinking things through in Coach Chat and rehearsing difficult conversations in Partner Practice between sessions, but it doesn't replace professional care.
 
@@ -124,8 +128,8 @@ If trust was broken, start with [how to rebuild trust after cheating](/blog/how-
 
 ## Sources
 
+- Christensen, A., Atkins, D. C., Baucom, B., & Yi, J. (2010). Marital status and satisfaction five years following a randomized clinical trial comparing traditional versus integrative behavioral couple therapy. *Journal of Consulting and Clinical Psychology*, 78(2), 225-235. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2010/04/100419151119.htm)
+- Doss, B. D., Cicila, L. N., Georgia, E. J., Roddy, M. K., Nowlan, K. M., Benson, L. A., & Christensen, A. (2016). A randomized controlled trial of the web-based OurRelationship program: Effects on relationship and individual functioning. *Journal of Consulting and Clinical Psychology*, 84(4), 285-296. Summary on [Science Trends](https://sciencetrends.com/online-program-for-couples-results-in-long-term-gains-in-relationship-functioning-and-individual-health)
+- Gottman, J. M. (1994). *What Predicts Divorce? The Relationship Between Marital Processes and Marital Outcomes*. Lawrence Erlbaum.
+- Gottman, J. M., & Silver, N. (1999). *The Seven Principles for Making Marriage Work*. Crown.
 - Gottman Institute: [The four horsemen: criticism, contempt, defensiveness and stonewalling](https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/)
-- Gottman Institute: [The 6 things that predict divorce](https://www.gottman.com/blog/the-6-things-that-predict-divorce/)
-- Gottman Institute: [The magic relationship ratio, according to science](https://www.gottman.com/blog/the-magic-relationship-ratio-according-science/)
-- Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)
-- Gottman Institute: [This one thing is the biggest predictor of divorce](https://www.gottman.com/blog/this-one-thing-is-the-biggest-predictor-of-divorce/)
