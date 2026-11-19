@@ -62,7 +62,7 @@ Fixing your bike or booking a trip might be how they say "I care". It's real, ev
 
 In a classic study, Jeffry Simpson, Steven Rholes and Julia Nelligan videotaped 83 dating couples while the woman waited for what she believed would be a stressful experiment. Partners with more avoidant styles behaved differently from more secure partners: they sought less comfort when they were anxious, and gave less support when their partner was anxious.
 
-> **Why it works this way**
+> **The old alarm behind pulling away**
 > For an avoidant person, needing someone, or being needed, can quietly activate an old alarm: "relying on people leads to disappointment". Pulling away turns that alarm off. It isn't usually a decision about you. It's a learned way of staying safe. That's why pushing harder for closeness often backfires, while calm, steady closeness with room to breathe tends to work much better.
 
 ## How to love someone with avoidant attachment
@@ -100,7 +100,7 @@ Try: "You don't have to answer now. Can we talk about it tomorrow evening?"
 
 If you're more anxious in relationships, an avoidant partner can trigger your fears strongly. Keep your own friendships, hobbies and support. Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) may help.
 
-## What most articles miss
+## Avoidant does not mean cold
 
 Many articles treat avoidant people as cold or incapable of love. That's unfair and usually wrong. Avoidant partners can be deeply loyal, steady and caring. They just show it differently and need more room.
 

@@ -62,7 +62,7 @@ Să-ți repare bicicleta sau să rezerve o excursie poate fi felul lui de a spun
 
 Într-un studiu clasic, Jeffry Simpson, Steven Rholes și Julia Nelligan au filmat 83 de cupluri în timp ce femeia aștepta ceea ce credea că va fi un experiment stresant. Partenerii cu un stil mai evitant s-au comportat diferit față de cei mai securizați: au căutat mai puțină alinare când erau neliniștiți și au oferit mai puțin sprijin când partenerul lor era neliniștit.
 
-> **De ce funcționează așa**
+> **Alarma veche din spatele retragerii**
 > Pentru o persoană evitantă, a avea nevoie de cineva sau a fi necesar cuiva poate porni în liniște o alarmă veche: „dacă te bazezi pe oameni, ajungi dezamăgit". Retragerea oprește alarma. De obicei nu e o decizie despre tine. E un mod învățat de a te simți în siguranță. De aceea, insistența pentru mai multă apropiere are adesea efectul opus, în timp ce o apropiere calmă și constantă, cu loc de respirat, funcționează mult mai bine.
 
 ## Cum să iubești pe cineva cu atașament evitant
@@ -100,7 +100,7 @@ S-ar putea să nu poată răspunde pe loc la o întrebare emoțională. Lasă-l 
 
 Dacă tu ești mai anxioasă în relații, un partener evitant îți poate trezi fricile foarte puternic. Păstrează-ți prieteniile, pasiunile și sprijinul. Ghidurile noastre despre [anxietatea în relație](/blog/relationship-anxiety/) și [partenerii indisponibili emoțional](/blog/emotionally-unavailable-partner/) te pot ajuta.
 
-## Ce scapă majoritatea articolelor
+## Evitant nu înseamnă rece
 
 Multe articole îi descriu pe oamenii evitanți ca reci sau incapabili să iubească. E nedrept și de cele mai multe ori fals. Un partener evitant poate fi profund loial, stabil și grijuliu. Doar că arată asta altfel și are nevoie de mai mult spațiu.
 

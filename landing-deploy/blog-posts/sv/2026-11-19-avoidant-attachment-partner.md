@@ -62,7 +62,7 @@ Att laga din cykel eller boka en resa kan vara hens sätt att säga "jag bryr mi
 
 I en klassisk studie filmade Jeffry Simpson, Steven Rholes och Julia Nelligan 83 dejtande par medan kvinnan väntade på något hon trodde skulle bli ett stressande experiment. Partners med en mer undvikande stil betedde sig annorlunda än tryggare partners: de sökte mindre tröst när de var oroliga och gav mindre stöd när partnern var orolig.
 
-> **Därför fungerar det så**
+> **Det gamla larmet bakom att dra sig undan**
 > För en undvikande person kan det att behöva någon, eller att bli behövd, tyst sätta igång ett gammalt larm: "att lita på andra leder till besvikelse". Att dra sig undan stänger av larmet. Det är oftast inget beslut om dig. Det är ett inlärt sätt att känna sig trygg. Därför slår det ofta fel att pressa på för mer närhet, medan lugn och stadig närhet med utrymme att andas brukar fungera mycket bättre.
 
 ## Så älskar du någon med undvikande anknytning
@@ -100,7 +100,7 @@ Testa: "Du behöver inte svara nu. Kan vi prata om det i morgon kväll?"
 
 Om du själv är mer orolig i relationer kan en undvikande partner väcka dina rädslor starkt. Behåll dina vänskaper, intressen och ditt stöd. Våra guider om [relationsångest](/blog/relationship-anxiety/) och [känslomässigt otillgängliga partners](/blog/emotionally-unavailable-partner/) kan hjälpa.
 
-## Det de flesta artiklar missar
+## Undvikande betyder inte kall
 
 Många artiklar beskriver undvikande personer som kalla eller oförmögna att älska. Det är orättvist och oftast fel. En undvikande partner kan vara djupt lojal, stabil och omtänksam. Hen visar det bara på ett annat sätt och behöver mer utrymme.
 

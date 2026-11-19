@@ -62,7 +62,7 @@ Je fiets maken of een reisje boeken kan de manier zijn om te zeggen "je bent bel
 
 In een klassiek onderzoek filmden Jeffry Simpson, Steven Rholes en Julia Nelligan 83 stellen terwijl de vrouw wachtte op wat zij dacht dat een stressvol experiment zou worden. Partners met een meer vermijdende stijl gedroegen zich anders dan meer veilig gehechte partners: ze zochten minder troost als ze zelf angstig waren en gaven minder steun als hun partner angstig was.
 
-> **Waarom het zo werkt**
+> **Het oude alarm achter afstand nemen**
 > Voor iemand met een vermijdende stijl kan iemand nodig hebben, of nodig zijn, ongemerkt een oud alarm laten afgaan: "op mensen leunen eindigt in teleurstelling". Afstand nemen zet dat alarm uit. Het is meestal geen beslissing over jou. Het is een aangeleerde manier om je veilig te voelen. Daarom werkt harder aandringen op nabijheid vaak averechts, terwijl rustige, stabiele nabijheid met ruimte om te ademen veel beter werkt.
 
 ## Hoe je houdt van iemand met vermijdende hechting
@@ -100,7 +100,7 @@ Probeer: "Je hoeft nu niet te antwoorden. Zullen we het er morgenavond over hebb
 
 Als je zelf angstiger bent in relaties, kan een vermijdende partner je angsten sterk triggeren. Houd je vriendschappen, hobby's en steun vast. Onze gidsen over [relatieangst](/blog/relationship-anxiety/) en [emotioneel onbeschikbare partners](/blog/emotionally-unavailable-partner/) kunnen helpen.
 
-## Wat de meeste artikelen missen
+## Vermijdend betekent niet kil
 
 Veel artikelen beschrijven vermijdende mensen als kil of niet in staat om lief te hebben. Dat is oneerlijk en meestal onjuist. Een vermijdende partner kan heel loyaal, stabiel en zorgzaam zijn. Diegene laat het alleen anders zien en heeft meer ruimte nodig.
 

@@ -15,7 +15,7 @@ Researchers Samantha Joel, Geoff MacDonald and Elizabeth Page-Gould asked people
 
 The most striking result: about half of the people had strong reasons on both sides at the same time. Feeling torn isn't a sign you're doing it wrong. It's what this decision usually feels like.
 
-> **Why it works this way**
+> **Why the "right" answer rarely feels clear**
 > We tend to imagine that a "right" decision would feel clear. But relationships aren't one thing. They're dozens of things at once: the person, the shared life, the history, the future you pictured, the friends, the flat, the routines. Some of those can be wonderful while others are breaking down. Ambivalence isn't confusion. It's an accurate reading of a mixed situation. The goal isn't to make the mixed feelings disappear. It's to work out which parts matter most to you.
 
 ## What research says predicts a breakup

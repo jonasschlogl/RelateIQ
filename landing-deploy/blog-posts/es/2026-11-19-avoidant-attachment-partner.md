@@ -62,7 +62,7 @@ Arreglarte la bici o reservar un viaje puede ser su forma de decir «me importas
 
 En un estudio clásico, Jeffry Simpson, Steven Rholes y Julia Nelligan grabaron en vídeo a 83 parejas mientras la mujer esperaba lo que creía que sería un experimento estresante. Las parejas con un estilo más evitativo se comportaron de forma distinta a las más seguras: buscaron menos consuelo cuando estaban nerviosas y dieron menos apoyo cuando la otra persona lo estaba.
 
-> **Por qué funciona así**
+> **La vieja alarma detrás del alejamiento**
 > Para una persona evitativa, necesitar a alguien, o sentirse necesitada, puede activar en silencio una vieja alarma: «apoyarse en la gente acaba en decepción». Alejarse apaga esa alarma. Normalmente no es una decisión sobre ti. Es una forma aprendida de sentirse a salvo. Por eso presionar para tener más cercanía suele salir mal, mientras que una cercanía tranquila y constante, con espacio para respirar, suele funcionar mucho mejor.
 
 ## Cómo querer a alguien con apego evitativo
@@ -100,7 +100,7 @@ Prueba: «No tienes que responder ahora. ¿Lo hablamos mañana por la noche?».
 
 Si en las relaciones tiendes a la ansiedad, una pareja evitativa puede despertar tus miedos con mucha fuerza. Mantén tus amistades, tus aficiones y tu red de apoyo. Nuestras guías sobre [la ansiedad en la relación](/blog/relationship-anxiety/) y [las parejas emocionalmente no disponibles](/blog/emotionally-unavailable-partner/) pueden ayudarte.
 
-## Lo que la mayoría de artículos no cuenta
+## Evitativo no significa frío
 
 Muchos artículos presentan a las personas evitativas como frías o incapaces de amar. Es injusto y casi siempre falso. Una pareja evitativa puede ser muy leal, estable y cariñosa. Simplemente lo demuestra de otra manera y necesita más espacio.
 

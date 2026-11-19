@@ -62,7 +62,7 @@ Pyöräsi korjaaminen tai matkan varaaminen voi olla hänen tapansa sanoa "väli
 
 Klassisessa tutkimuksessa Jeffry Simpson, Steven Rholes ja Julia Nelligan kuvasivat videolle 83 seurustelevaa paria, kun nainen odotti koetta, jonka hän uskoi olevan stressaava. Välttelevämmät kumppanit käyttäytyivät eri tavalla kuin turvallisemmin kiintyneet: he hakivat vähemmän lohtua ollessaan ahdistuneita ja antoivat vähemmän tukea, kun kumppani oli ahdistunut.
 
-> **Miksi se toimii näin**
+> **Vanha hälytys vetäytymisen takana**
 > Välttelevälle ihmiselle toisen tarvitseminen, tai tarvituksi tuleminen, voi hiljaa laukaista vanhan hälytyksen: "ihmisiin luottaminen johtaa pettymykseen". Vetäytyminen sammuttaa hälytyksen. Se ei yleensä ole päätös sinusta. Se on opittu tapa pysyä turvassa. Siksi läheisyyden vaatiminen kääntyy usein itseään vastaan, kun taas rauhallinen ja tasainen läheisyys, jossa on tilaa hengittää, toimii yleensä paljon paremmin.
 
 ## Miten rakastaa ihmistä, jolla on välttelevä kiintymys
@@ -100,7 +100,7 @@ Kokeile: "Sinun ei tarvitse vastata nyt. Voitaisiinko puhua tästä huomenna ill
 
 Jos olet itse suhteissa ahdistuneempi, välttelevä kumppani voi herättää pelkosi voimakkaasti. Pidä kiinni ystävistäsi, harrastuksistasi ja tukiverkostostasi. Oppaamme [parisuhdeahdistuksesta](/blog/relationship-anxiety/) ja [tunnetasolla tavoittamattomista kumppaneista](/blog/emotionally-unavailable-partner/) voivat auttaa.
 
-## Mitä useimmat artikkelit eivät kerro
+## Välttelevä ei tarkoita kylmää
 
 Monet artikkelit kuvaavat välttelevät ihmiset kylminä tai kyvyttöminä rakastamaan. Se on epäreilua ja yleensä väärin. Välttelevä kumppani voi olla syvästi lojaali, vakaa ja välittävä. Hän vain näyttää sen eri tavalla ja tarvitsee enemmän tilaa.
 

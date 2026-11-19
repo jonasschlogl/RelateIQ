@@ -40,7 +40,7 @@ Everyone sits somewhere on both scales. Combine low and high levels of each and 
 
 Researchers usually measure these dimensions with questionnaires such as the Experiences in Close Relationships scale, where you rate statements about how you feel and behave in close relationships. That's very different from a ten-question internet quiz that hands you a label.
 
-> **Why it works this way**
+> **The smoke alarm for closeness**
 > The attachment system works like a smoke alarm for closeness. When a partner feels far away or unreachable, the alarm goes off, and it asks one question: are you there for me? People higher in anxiety tend to have a sensitive alarm that goes off early and loudly, so they move toward the partner to switch it off: calling, texting, asking for reassurance. People higher in avoidance learned, often very early, that reaching out didn't reliably help, so their system turns the volume down instead: they pull back, get busy and handle it alone.
 >
 > Neither strategy is stupid. Each one made sense somewhere. They just clash badly when two people use opposite ones at the same moment.

@@ -13,7 +13,7 @@ Five problems come up more than any others. In each case, the real issue is usua
 
 Most recurring fights follow a simple pattern. Something small happens (the dishes, a late reply, a purchase), it touches a deeper need (to feel respected, supported, safe or free), and the conversation stays on the small thing. Because nobody names the need, the conversation can't resolve it, and the need finds the next small thing a few days later.
 
-> **Why it works this way**
+> **Why the dishes are never just about the dishes**
 > Arguments about surface topics are easier to have than conversations about needs. "You left the dishes again" feels safer to say than "I feel alone in running our life," because the second one makes you vulnerable. But the dishes can never satisfy a need for partnership. So the fight repeats, with new details each time, until someone says the real thing.
 
 | Surface fight | What it's often really about |

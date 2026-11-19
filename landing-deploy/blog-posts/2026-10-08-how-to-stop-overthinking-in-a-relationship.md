@@ -15,7 +15,7 @@ This guide explains what's going on in your head and body when you overthink, wh
 
 When you replay a conversation or imagine every possible reason for a silence, it feels productive. You're "figuring it out." But researchers who study rumination, including the late psychologist Susan Nolen-Hoeksema, describe repetitive replaying of worries as something that tends to keep distress going rather than produce answers. You go around the same loop and nothing new arrives, because the thing you need (information from your partner) isn't in your head.
 
-> **Why it works this way**
+> **Why your brain keeps trying to solve it**
 > Your brain treats uncertainty as a problem to solve, and it's very good at generating possibilities. The trouble is that in relationships, the missing piece is usually something only the other person knows: why they were quiet, what they meant, how they feel. With no new information coming in, your brain can't solve the problem, so it does the next best thing: it keeps rehearsing the worst case so you'll be "prepared". Each round feels like progress and adds a little more anxiety. That's why you can think about a single text for an hour and feel worse, not clearer.
 
 ## How often do our worries actually come true?
