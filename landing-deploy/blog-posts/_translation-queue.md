@@ -6,7 +6,7 @@ Posts marked RETRANSLATE already have an older, shorter translation: overwrite i
 but KEEP the existing `slug:` of each language (those URLs are already indexed by Google).
 
 - [x] 2026-10-08-how-to-apologize-to-your-partner (RETRANSLATE; all 5 done 2026-11-19)
-- [ ] 2026-10-04-how-to-fix-a-relationship (RETRANSLATE)
+- [x] 2026-10-04-how-to-fix-a-relationship (RETRANSLATE; all 5 done 2026-11-19)
 - [ ] 2026-10-03-relationship-problems-that-keep-coming-back (RETRANSLATE)
 - [ ] 2026-10-08-how-attachment-styles-work-in-relationships (RETRANSLATE)
 - [ ] 2026-10-08-how-to-stop-overthinking-in-a-relationship (RETRANSLATE)
