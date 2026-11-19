@@ -41,7 +41,7 @@ Their suggestion is a "balanced diet" approach. A relationship needs a range of 
 
 ### 1. Treat it as a conversation starter, not a test result
 
-The value isn't the label. It's the conversation. Ask each other what made you feel loved recently, and what you'd like more of.
+The value isn't the label. It's the conversation. Ask each other what made you feel loved recently, and what you'd like more of. For everyday ideas, see these ways to [say I love you without words](/blog/how-to-say-i-love-you-without-words/).
 
 Try: "What's something I did this month that made you feel really cared for?"
 
@@ -51,7 +51,7 @@ People often give love the way they'd like to receive it. A partner who always f
 
 ### 3. Ask what they need right now
 
-Needs shift. After a hard week, someone who usually loves words may just want help with dinner.
+Needs shift. After a hard week, someone who usually loves words may just want help with dinner. Our guide on how to [support your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) has more ideas.
 
 Try: "This week has been a lot. What would help you feel most supported, some time together or me taking a few things off your plate?"
 

@@ -86,7 +86,7 @@ A useful self-check: do you feel safe to slow things down? If yes, it's probably
 
 ### Slow it down on purpose
 
-Say it simply. Then watch the reaction. Respect is a good sign. Pressure, guilt or anger tells you a lot.
+Say it simply, which is [clear coding](/blog/clear-coding-dating/) at its best. Then watch the reaction. Respect is a good sign. Pressure, guilt or anger tells you a lot.
 
 Try: "I really like you, and I want to get to know you properly. Can we take things a bit slower?"
 
@@ -105,7 +105,7 @@ Intensity can make it hard to see clearly. Ask a friend you trust whether it see
 Words are easy at the start. Look at how they behave over weeks, especially when things aren't going their way. If you're wondering whether you're overreacting, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help you separate real warning signs from anxious spirals.
 
 > **Why it works**
-> Slowing down is the best test because it costs a caring person very little. Someone who really likes you can wait a few weeks to meet your parents. Someone who needs fast attachment, for whatever reason, will find a slower pace hard to accept. Their reaction to your pace tells you more than any amount of flowers.
+> Slowing down is the best test because it costs a caring person very little. Someone who really likes you can wait a few weeks to [meet your parents](/blog/meeting-your-partners-parents/). Someone who needs fast attachment, for whatever reason, will find a slower pace hard to accept. Their reaction to your pace tells you more than any amount of flowers.
 
 ## Why it's hard to see from the inside
 

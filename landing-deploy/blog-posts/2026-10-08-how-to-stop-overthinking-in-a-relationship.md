@@ -43,7 +43,7 @@ Most spirals follow the same four steps. Seeing them laid out helps you catch th
 | 3. Body | Your alarm system reacts | Tight chest, racing heart, can't focus |
 | 4. Behaviour | You act to make the feeling stop | Checking their profile, sending another text, rereading old chats |
 
-The behaviour in step four brings a moment of relief, which teaches your brain to do it again next time. That's why the loop gets stronger the more you feed it.
+The behaviour in step four brings a moment of relief, which teaches your brain to do it again next time. That's why the loop gets stronger the more you feed it. When the story is about someone else catching your partner's eye, the same loop often shows up as [jealousy in a relationship](/blog/jealousy-in-a-relationship/).
 
 > **Example: the "ok" text**
 > Paige sends her boyfriend a long message about a hard day at work. He replies "ok". Within ten minutes she has reread the message twice, checked when he was last online and drafted three replies. By the time he calls an hour later (he was driving), she's convinced he doesn't care, and the call starts with "Why do you even bother replying?"

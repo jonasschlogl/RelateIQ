@@ -104,7 +104,7 @@ Our guide to [communication habits](/blog/relationship-advice-communication-habi
 
 Love maps go out of date. The person you met five years ago has new worries, new hopes and new favourite things. A few ways to keep updating:
 
-- **One question a week.** Pick one from this list on a fixed evening, like Sunday dinner.
+- **One question a week.** Pick one from this list on a fixed evening, like Sunday dinner. If you live apart, a video call works too, and our [long-distance relationship tips](/blog/long-distance-relationship-tips/) have more ideas like this.
 - **Take turns choosing.** It feels less like a test when your partner picks too.
 - **Revisit old questions.** "What does a good life look like in five years?" has a different answer every year.
 

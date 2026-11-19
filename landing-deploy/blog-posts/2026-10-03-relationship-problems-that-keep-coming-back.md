@@ -39,7 +39,7 @@ Try: "I'm worn out from planning everything. Could you take over dinners on Tues
 
 ## 2. Not enough time or attention
 
-"You're always on your phone" is rarely about the phone. It's about wanting to feel chosen. Small, regular things tend to work better than one big gesture: dinner without screens, ten minutes at the end of the day where you each say how it went, a weekly date that survives a busy week.
+"You're always on your phone" is rarely about the phone. It's about wanting to feel chosen. Small, regular things tend to work better than one big gesture: dinner without screens, ten minutes at the end of the day where you each say how it went, a weekly [date night](/blog/date-night-questions-for-couples/) that survives a busy week.
 
 Gottman's research gives this a solid basis. In a study that followed newlyweds for six years, couples who stayed married had responded to each other's small bids for attention (a comment, a question, a sigh) 86% of the time. Couples who later divorced had done so only 33% of the time. Attention isn't a luxury. It's the everyday material trust is built from.
 
@@ -96,7 +96,7 @@ If you'd like to prepare, RelationshipAI is an AI relationship coach that can he
 
 ## What to take from this
 
-A problem that keeps returning usually points to a need nobody has said out loud. Name the need, ask for one specific thing, and notice how each of you responds. A recurring fight doesn't mean your relationship is failing. It means there's something important that hasn't been heard yet.
+A problem that keeps returning usually points to a need nobody has said out loud. Name the need, ask for one specific thing, and notice how each of you responds. A recurring fight doesn't mean your relationship is failing. If it already feels broken, our step-by-step guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) is a good place to start. It means there's something important that hasn't been heard yet.
 
 ## Quick answers
 

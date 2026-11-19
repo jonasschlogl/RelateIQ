@@ -13,7 +13,7 @@ Clear coding is the answer a lot of people are now choosing. It's one of the big
 
 Clear coding means being upfront about your intentions in dating. That can be "I'm looking for a relationship", "I want to keep this casual" or "I'm not sure yet, but I like spending time with you". The point isn't which answer you give. It's that the other person doesn't have to guess.
 
-The term took off after Tinder's Year in Swipe report. In a survey of 4,000 actively dating 18 to 25 year olds in the US, UK, Canada and Australia, 64% said emotional honesty is what dating needs most, and 60% wanted clearer communication about intentions. Keep in mind that this is a dating app's own survey. Still, the mood is easy to recognise: people are tired of situationships and playing it cool.
+The term took off after Tinder's Year in Swipe report. In a survey of 4,000 actively dating 18 to 25 year olds in the US, UK, Canada and Australia, 64% said emotional honesty is what dating needs most, and 60% wanted clearer communication about intentions. Keep in mind that this is a dating app's own survey. Still, the mood is easy to recognise: people are tired of [situationships](/blog/situationship/) and playing it cool.
 
 | Mixed signals | Clear coding |
 |---|---|
@@ -84,7 +84,7 @@ Saying "I want something serious" and then replying once a week sends a mixed si
 
 ## What clear coding is not
 
-Clear coding isn't a script that forces the other person to give you the answer you want. Someone can be honest and still not be sure yet. "I don't know, but I'd like to keep seeing you" is a clear answer too. What matters is whether their words and actions line up over time.
+Clear coding isn't a script that forces the other person to give you the answer you want. Someone can be honest and still not be sure yet. "I don't know, but I'd like to keep seeing you" is a clear answer too. What matters is whether their words and actions line up over time. If the answer stays foggy for months while they keep you close, read our guide to the [emotionally unavailable partner](/blog/emotionally-unavailable-partner/).
 
 It also isn't oversharing. You don't need to explain your past relationships, your trauma or your full life plan to be clear about what you want. Clarity is about intentions, not your whole story.
 

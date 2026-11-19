@@ -97,7 +97,7 @@ In the first weeks and months, you can't see how someone handles years of stress
 - **Respect for your pace.** They don't push for more closeness, commitment or time than you're ready for.
 - **Curiosity.** They ask about your life and remember what you told them.
 - **Honesty about what they want.** Our guide to [clear coding](/blog/clear-coding-dating/) shows what this looks like.
-- **How they treat other people.** Waiters, friends, exes. It shows how they'll treat you when the honeymoon phase ends.
+- **How they treat other people.** Waiters, friends, exes. It shows how they'll treat you when the honeymoon phase ends. Later on, how they handle [meeting your parents](/blog/meeting-your-partners-parents/) tells you a lot too.
 
 ## Green flags aren't a scorecard
 

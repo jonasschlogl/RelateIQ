@@ -120,7 +120,7 @@ Try: "We see this differently. I'm going to take a break from this conversation.
 
 ### Decide what you need
 
-If your partner is willing to listen and change, couples therapy can help. If the pattern continues, it may be time to ask harder questions. Our article on [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) can help you think it through.
+If your partner is willing to listen and change, couples therapy can help. If the pattern continues, it may be time to ask harder questions. Our article on [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) can help you think it through. And if you do leave, our guide on [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help with the weeks after.
 
 ## Rebuilding trust in yourself
 

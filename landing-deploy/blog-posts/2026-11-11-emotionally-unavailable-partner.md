@@ -15,7 +15,7 @@ An emotionally unavailable person finds it hard to share feelings, accept closen
 
 It's often linked to an avoidant [attachment style](/blog/how-attachment-styles-work-in-relationships/). In a large, nationally representative US study from 1997, about 59% of adults described themselves as secure, 25% as avoidant and 11% as anxious. So avoidance isn't rare, and it isn't always a sign that someone doesn't care.
 
-Emotional unavailability can also be temporary. Stress, grief, burnout, depression or a painful recent breakup can make someone pull inward for a while, even if they're usually open.
+Emotional unavailability can also be temporary. Stress, grief, burnout, depression or a painful recent breakup can make someone pull inward for a while, even if they're usually open. If stress is the cause, here's how to [support your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) without pushing.
 
 > **Why it works this way**
 > Many people who struggle with closeness learned early that relying on others didn't reliably help, or that showing feelings led to criticism or chaos. So they got very good at handling things alone. As adults, closeness can set off an old alarm: if I let myself need this person, I could get hurt. Pulling back calms that alarm. For their partner, though, the same pulling back feels like rejection. Neither person is doing it on purpose, which is exactly why the pattern is so hard to see from the inside.
@@ -57,7 +57,7 @@ This is often the clearest sign. You're in a relationship, but you still feel on
 
 ## Needs space, or emotionally unavailable?
 
-Everyone needs time alone sometimes. The difference is whether they come back.
+Everyone needs time alone sometimes. The difference is whether they come back. If the distance is new and keeps growing, it may be worth looking at the [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/).
 
 | | Needs some space | Emotionally unavailable |
 |---|---|---|
@@ -99,7 +99,7 @@ Try: "I really liked it when you told me about your day yesterday. It made me fe
 
 ### Look after your own needs
 
-Keep friends, hobbies and support outside the relationship, so you're not depending on one person for everything. And try not to overanalyse every distant moment. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help with that.
+Keep friends, hobbies and support outside the relationship, so you're not depending on one person for everything. Bending yourself around their moods for too long can turn into a [codependent relationship](/blog/codependent-relationship/). And try not to overanalyse every distant moment. Our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help with that.
 
 ### Decide what you need long term
 

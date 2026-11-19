@@ -44,7 +44,7 @@ Most contact comes at 11pm or when they're bored. It rarely leads to anything yo
 
 ### 5. You can't answer "what is this?"
 
-If a friend asked what's going on between you, you'd struggle to explain. That vagueness is usually not an accident.
+If a friend asked what's going on between you, you'd struggle to explain. That vagueness is usually not an accident. If you do see each other but it still has no name, you may be in a [situationship](/blog/situationship/) instead.
 
 ### 6. You feel more anxious than happy
 
@@ -106,7 +106,7 @@ Try: "I've enjoyed our chats, but I want something more consistent. I'm going to
 
 ## Breadcrumbing in a relationship
 
-Breadcrumbing doesn't only happen in dating. In a relationship, it can look like a partner who offers just enough affection to keep things going, while avoiding real time together, commitment or hard conversations. Sweet messages, but no plans. Promises about the future that never get closer.
+Breadcrumbing doesn't only happen in dating. In a relationship, it can look like a partner who offers just enough affection to keep things going, while avoiding real time together, commitment or hard conversations. Sweet messages, but no plans. Promises about the future that never get closer. Sometimes it follows a phase of [love bombing](/blog/love-bombing/): lots of attention at the start, then only crumbs.
 
 If you constantly feel unsure where you stand with someone you're already with, that's worth a calm, direct conversation. Our guide to the [emotionally unavailable partner](/blog/emotionally-unavailable-partner/) covers a closely related pattern.
 

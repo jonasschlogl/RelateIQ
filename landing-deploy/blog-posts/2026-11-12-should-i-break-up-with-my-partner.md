@@ -65,7 +65,7 @@ The real question is whether you can talk about it without it getting worse ever
 
 ### 6. Do we want the same big things?
 
-Children, where to live, marriage, faith, how to spend money, how much time to spend together. Love matters, but big life goals that really clash rarely disappear on their own. Sometimes one person compromises and is happy with it. Sometimes the compromise turns into resentment. Be honest about which one it would be for you.
+Children, where to live, marriage, faith, how to spend money, how much time to spend together. Love matters, but big life goals that really clash rarely disappear on their own. Sometimes one person compromises and is happy with it. Sometimes the compromise turns into resentment. Be honest about which one it would be for you. Money is one clash that's easier to judge after a real talk, and our guide on [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) can help you see how far apart you are.
 
 ### 7. If nothing changed, would I be okay in five years?
 

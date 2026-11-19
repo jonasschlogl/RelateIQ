@@ -97,7 +97,7 @@ Some breaches go beyond an argument, like infidelity or a deep betrayal of trust
 | Attune | Both partners rebuild understanding of each other's inner world through regular, honest conversation |
 | Attach | The couple rebuilds closeness, including physical intimacy |
 
-This kind of repair is hard to do alone, and it's usually best done with the support of a couples therapist.
+This kind of repair is hard to do alone, and it's usually best done with the support of a couples therapist. If the breach was cheating, our guide on how to [rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) looks at that situation on its own.
 
 For everyday repair, such as working out what to say after a hard argument, RelationshipAI is an AI relationship coach you can practise with in Partner Practice. It isn't therapy, but it's a calm place to start.
 

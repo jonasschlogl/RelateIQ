@@ -116,13 +116,13 @@ Gottman's research identified four communication patterns that reliably predict 
 | Defensiveness | "It's not my fault, you're the one who..." | Take responsibility for your part |
 | Stonewalling | Going silent, shutting down, leaving | Take a break, calm down and come back |
 
-The Gottman Institute describes contempt as the single biggest predictor of divorce. If you notice it creeping in, it's worth paying attention to early.
+The Gottman Institute describes contempt as the single biggest predictor of divorce. If you notice it creeping in, it's worth paying attention to early. If things already feel stuck, our guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) shows where to start.
 
 ## Beyond arguments: two everyday habits
 
 The way you handle conflict depends a lot on what happens between conflicts.
 
-**Turn toward small bids.** A "bid" is any small attempt to connect: "Look at this", a sigh, a question about your day. Turning toward it (looking up, answering, showing interest) builds trust. In Gottman's six-year follow-up of newlyweds, this was one of the clearest differences between couples who stayed together and those who divorced.
+**Turn toward small bids.** A "bid" is any small attempt to connect: "Look at this", a sigh, a question about your day. Turning toward it (looking up, answering, showing interest) builds trust. In Gottman's six-year follow-up of newlyweds, this was one of the clearest differences between couples who stayed together and those who divorced. Small moments like these are also some of the best ways to [say I love you without words](/blog/how-to-say-i-love-you-without-words/).
 
 **Respond to good news with real enthusiasm.** Psychologist Shelly Gable and her colleagues ran four studies on what happens when people share good news with a partner. When partners responded actively and enthusiastically ("That's amazing, tell me everything!") rather than flatly ("Nice") or by changing the subject, couples reported higher relationship well-being, including more intimacy and greater satisfaction.
 

@@ -65,7 +65,7 @@ Try: "That's amazing! Tell me everything. How did you find out?"
 
 ## What about love languages?
 
-You may have heard that each person has one "love language" and that you need to speak your partner's. It's a popular idea, but the research is more cautious. A review by Emily Impett and colleagues looked at ten studies and found none of them supported the claim that couples do better when they share the same love language. People reported being happier when they received any of the expressions of love, whether that was words, time, touch, help or gifts.
+You may have heard that each person has one "[love language](/blog/love-languages/)" and that you need to speak your partner's. It's a popular idea, but the research is more cautious. A review by Emily Impett and colleagues looked at ten studies and found none of them supported the claim that couples do better when they share the same love language. People reported being happier when they received any of the expressions of love, whether that was words, time, touch, help or gifts.
 
 The researchers suggest thinking of love as a "balanced diet" instead: a mix of different kinds of care, with each of you telling the other what you need more of right now. So don't worry about guessing the one right language. Try several, and ask.
 

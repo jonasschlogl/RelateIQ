@@ -30,7 +30,7 @@ Holidays put a lot of pressure on a small space. Long days together, different f
 
 Most holiday fights between couples aren't really about the family. They're about mismatched expectations. One of you pictures a cosy week at their parents' place, the other pictured two nights and a day trip.
 
-Sit down a week or two before and talk through the basics: how many days, where you'll sleep, which events are a must and which are optional, how much you'll spend on gifts. It sounds unromantic. It saves a lot of arguments in a hallway at 11pm.
+Sit down a week or two before and talk through the basics: how many days, where you'll sleep, which events are a must and which are optional, how much you'll spend on gifts. If money gets tense between you, here's [how to talk about money with your partner](/blog/how-to-talk-about-money-with-your-partner/) calmly. It sounds unromantic. It saves a lot of arguments in a hallway at 11pm.
 
 Try: "Can we talk about the holidays this weekend? I want us to be on the same page before your family is in the room."
 

@@ -34,7 +34,7 @@ A shorter message, a different tone or a tired face feels like proof that someth
 
 ### 4. You hide your needs to keep the peace
 
-You stay quiet about what bothers you because you're afraid speaking up will push them away.
+You stay quiet about what bothers you because you're afraid speaking up will push them away. Over time, this can slide into a [codependent relationship](/blog/codependent-relationship/), where their mood decides yours.
 
 ### 5. You test your partner
 
@@ -55,7 +55,7 @@ Doubts run on repeat, not because of real problems, but because certainty feels 
 
 ## Where it comes from
 
-Relationship anxiety usually has roots, not reasons. Past breakups, being cheated on, growing up with unpredictable care, or simply a more anxious temperament can all play a part.
+Relationship anxiety usually has roots, not reasons. Past breakups, being cheated on, growing up with unpredictable care, or simply a more anxious temperament can all play a part. If the hurt comes from this relationship, our guide on how to [rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) looks at that side.
 
 Fear of being alone can also make it worse. In research led by Stephanie Spielmann, people with a stronger fear of being single were more willing to settle for less responsive partners and to stay in relationships they weren't happy in. That fear affected men and women alike. In other words, anxiety doesn't only make good relationships feel shaky. It can also keep people in the wrong ones.
 
@@ -118,7 +118,7 @@ If anxiety is affecting your sleep, work or daily life, a therapist can help. At
 
 ## Is it anxiety, or is something really wrong?
 
-Sometimes your gut is picking up on something real. If your partner is inconsistent, hides things or regularly makes you feel unwanted, the problem may not be your anxiety. Our guides on [breadcrumbing](/blog/breadcrumbing/) and [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) can help you tell the difference.
+Sometimes your gut is picking up on something real. If your partner is inconsistent, hides things or regularly makes you feel unwanted, the problem may not be your anxiety. Our guides on [breadcrumbing](/blog/breadcrumbing/) and [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) can help you tell the difference. And if something has really changed lately, these [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) can help you look at it calmly.
 
 A useful question is: do I feel this way with this person specifically, or in every relationship? Another is: can I describe a pattern of their behaviour in facts, without interpretation? If yes, that pattern deserves a calm, direct conversation.
 
