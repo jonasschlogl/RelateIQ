@@ -1,203 +1,129 @@
 ---
-title: "Trust issues in a relationship: 8 signs, where they come from and how to heal"
+title: "Trust issues in a relationship: how trust is really built, and the loop that keeps doubt alive"
 date: 2026-11-15
-description: "Trust issues in a relationship: 8 signs like checking their phone or expecting the worst, what causes them and practical steps to heal."
+updated: 2026-11-19
+description: "Trust issues in a relationship explained: what trust is made of, why constant reassurance can backfire, a self-check for past vs present, and what actually builds trust again, based on relationship research."
 tags: trust issues in a relationship, rebuilding trust
 ---
-Your partner is late home and your stomach drops. They laugh at a message and you want to know who it's from. Nothing has happened, and yet part of you is always waiting for something to go wrong.
+Most people with trust issues know the checklist by heart: checking the phone, expecting the worst, needing reassurance, testing the partner. What's less obvious is *why* the usual fixes so often don't work, and why someone can get a hundred reassurances and still not feel safe.
 
-Trust issues in a relationship can come from a betrayal in this relationship, or from something much older. Either way, they're exhausting, for you and for your partner. The good news is that trust is not a fixed trait. It can be rebuilt, step by step.
+This guide explains how trust actually forms, according to decades of relationship research, and the quiet loop that can keep doubt alive even in a loving relationship. Then it gives you a way out of the loop.
 
-This guide covers the signs of trust issues, where they usually come from, what trust is actually made of, and practical things both of you can do.
+## What trust is made of
 
-## What trust actually is
+In a classic study, psychologists John Rempel, John Holmes and Mark Zanna described trust in close relationships as having three layers that build on each other:
 
-Psychologists John Rempel, John Holmes and Mark Zanna described trust in close relationships as having three parts:
+1. **Predictability:** your partner behaves in consistent ways. You know roughly what to expect.
+2. **Dependability:** you can count on them when it matters, especially when it costs them something.
+3. **Faith:** a deeper confidence that they'll be there in the future, even in situations you can't predict.
 
-| Part of trust | What it means | What builds it |
-|---|---|---|
-| Predictability | You can expect how your partner will behave | Consistency over time |
-| Dependability | You believe they'll be there when it matters | Showing up when it's hard |
-| Faith | You feel secure about the future, even without proof | Care and responsiveness, again and again |
+This is useful because trust issues usually sit in one layer more than the others. Some people trust that their partner is faithful (faith) but not that they'll show up on time (predictability). Others can count on daily reliability but still fear being left one day. Knowing which layer is shaky tells you what to work on.
 
-Trust issues usually mean one or more of these feels shaky. Knowing which one helps you know what to work on.
+## How trust actually grows: small sacrifices
 
-## 8 signs of trust issues
+Here's the most practical finding in trust research. In two long-term studies of dating and married couples, Jennifer Wieselquist, Caryl Rusbult and colleagues found that people came to trust their partners when they saw them **put the relationship ahead of their own immediate interests**: staying calm instead of striking back in a fight, giving up something they wanted for the couple's sake.
 
-### 1. You check their phone or social media
+They described a cycle. When one partner makes these small, costly choices, the other notices, trusts more, and becomes more willing to depend on the relationship, which in turn makes them more committed and more likely to make those choices too.
 
-Or you badly want to. The urge comes from needing proof that you're safe.
+Trust, in other words, is not built by promises or by passing tests. It's built by *seeing* care that costs something.
 
-### 2. You expect the worst
+Psychologists Shallcross and Jeffry Simpson tested this in the lab with "strain tests": conversations where one partner asks for something that costs the other, like moving cities for a job. Partners with high trust were more accommodating, and accommodated *more* when the sacrifice asked of them was bigger. Low-trust partners did the opposite.
 
-A late reply means they're losing interest. A new friend means a threat.
+## The loop that keeps trust issues going
 
-### 3. You need constant reassurance
+So why doesn't asking for reassurance fix things? Two studies explain it.
 
-You ask "do you still love me?" often, and the relief fades quickly.
+**Reassurance can lower trust instead of raising it.** In a 2022 daily diary study of 110 couples, Lyndsay Evraire and colleagues found that on days when people sought more excessive reassurance ("Do you still love me? Are you sure?"), they reported *lower* trust. For anxiously attached women in particular, more reassurance-seeking predicted lower trust the next day.
 
-### 4. You struggle to share your feelings
+**Once you show insecurity, you may start doubting the reassurance itself.** In a series of studies, Edward Lemay and Margaret Clark found that people who felt they had shown their partner how insecure they were started to believe their partner saw them as fragile. Then they began to suspect that their partner's kind words weren't sincere, that the partner was just "walking on eggshells" around them. That made them feel less accepted, even when the partner's actual regard was positive.
 
-Opening up feels risky, so you keep things to yourself.
+Put together, it looks like this:
 
-### 5. You test your partner
+| Step | What happens |
+|---|---|
+| 1. Doubt | "What if they're losing interest?" |
+| 2. Ask for reassurance | "Do you still love me?" |
+| 3. Get reassured | "Of course I do." |
+| 4. Short relief | Feels better for an hour or a day |
+| 5. Discount it | "They only said that because I asked" |
+| 6. Doubt returns, often stronger | Back to step 1 |
 
-You pull away to see if they'll follow, or watch how they react to situations you set up.
+Nobody in this loop is doing anything wrong. Your partner is being kind. You're trying to feel safe. The loop is the problem, not either of you.
 
-### 6. You feel jealous easily
+## A quick self-check: past or present?
 
-Even normal friendships or colleagues feel threatening.
+Before working on the loop, it helps to know whether your doubt is about this relationship or something older. Think about the last few times you felt distrust:
 
-### 7. You keep score
+- Did your partner actually do something unreliable, secretive or hurtful? Or did a thought pop up without a clear trigger?
+- Have you felt this way with previous partners or friends, too?
+- Does your partner usually do what they say they'll do?
+- When you've raised concerns, have they been open, or defensive and evasive?
 
-You remember every broken promise, even small ones, and they feel like proof.
+If your partner is mostly reliable and you've felt this way before, the work is likely internal, often related to anxious [attachment](/blog/how-attachment-styles-work-in-relationships/) or [relationship anxiety](/blog/relationship-anxiety/). If your partner has been repeatedly unreliable or dishonest, your distrust may be accurate information, not an issue to "fix" in yourself.
 
-### 8. You hold back from committing
-
-Part of you stays ready to leave, so you never have to be fully hurt.
-
-## Where trust issues come from
-
-Trust issues usually have a history. Common roots include:
-
-- **A betrayal in this relationship**, like cheating, lies or broken promises
-- **Past relationships**, where you were cheated on or let down
-- **Childhood experiences**, especially unpredictable or unreliable care
-- **An anxious [attachment style](/blog/how-attachment-styles-work-in-relationships/)**, where closeness feels important but uncertain
-
-It's worth gently asking yourself: is my partner giving me real reasons not to trust them, or am I reacting to old hurts? Often it's a mix.
-
-> **Example: the late reply**
-> Emma's ex used to "work late" while seeing someone else. Now, whenever her partner Leo doesn't reply for an hour, she feels sick and starts imagining the worst. Leo has never given her a reason to doubt him, but he's starting to feel accused. One evening Emma tells him: "When you go quiet, my brain goes straight back to what happened before. It's not about you, but it would really help if you sent a quick text when you're running late." Leo agrees easily. The fear doesn't vanish overnight, but the pattern starts to change.
-
-## A quick self-check: is it the past or the present?
-
-Before you talk to your partner, it helps to sort out where the fear is coming from. Go through these questions honestly:
-
-- Has my partner actually lied to me, hidden things or broken important promises?
-- Is there something specific they did, or is it more a general feeling?
-- Have I felt this same fear in past relationships, with different people?
-- Does the fear get stronger when I'm tired, stressed or alone?
-- When I check for proof and find nothing, do I feel calm, or do I just look for the next thing?
-
-How to read your answers:
-
-| If you mostly notice... | It may point to... | A good next step |
-|---|---|---|
-| Real lies or broken promises from your partner | A trust problem in this relationship | An honest talk about what happened and what needs to change |
-| The same fear with different partners | Old wounds or an anxious attachment pattern | Working on it yourself, ideally with a therapist |
-| Fear that grows with stress or tiredness | Anxiety more than evidence | Calming your body first, then deciding if you still need to talk |
-| A mix of both | Something very common | Sharing both parts with your partner, without blame |
-
-If the fear feels constant and your thoughts keep looping, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) go deeper into that side.
-
-## How trust is really built
-
-Relationship researcher John Gottman describes "sliding door moments": small, everyday chances to turn towards your partner or away from them. Your partner shares something about their day, asks for help or reaches for your hand. Each time you respond, trust grows a little. Each time you miss it, it shrinks a little. Gottman notes that most missed moments come from "mindlessness, not malice".
-
-> **Why it works this way**
-> Big gestures feel important, but trust is mostly built in boring, repeated moments. Your brain learns from patterns, not promises. Every time your partner does what they said they'd do, replies when they said they would, or listens when you're upset, your nervous system collects a small piece of evidence that you're safe. Over months, those small pieces become predictability, dependability and finally faith. That's also why one dramatic apology rarely fixes trust on its own.
-
-## How to heal trust issues
+## How to break the loop
 
 ### If you're the one struggling to trust
 
-**Name the fear, not the accusation.** "I'm feeling anxious" lands very differently from "what are you hiding?"
+**Swap reassurance questions for observations.** Instead of asking "Do you still love me?", look for the evidence trust research says matters: moments when your partner chose the relationship over their own convenience. Write three down each week. It retrains your attention towards what's real.
 
-Try: "I know this is my stuff, but I'm feeling insecure tonight. Could we spend some time together?"
+**Name the feeling once, then ask for something specific.**
+Instead of: "Are you sure everything's fine with us?"
+Try: "I've been feeling a bit insecure this week. It would really help if we had a proper evening together on Friday."
 
-**Ask for specific, reasonable reassurance.** "Text me if you're running late" is clear and doable. "Prove you're not cheating" is impossible to meet.
+A specific request gives your partner a chance to show dependability. A vague question just restarts the loop.
 
-**Notice the evidence.** Write down the times your partner was reliable. Trust issues tend to remember only the gaps.
+**Notice when you discount kindness.** When the thought "they're only saying that" appears, label it: "That's the discounting thought." You don't have to believe it.
 
-**Work on the old wounds.** If the fear comes from the past, a therapist can help you separate old hurts from your current relationship.
+**Stop checking.** Checking phones or social media gives a moment of relief and then fuels more doubt. Our guide to [jealousy in a relationship](/blog/jealousy-in-a-relationship/) explains why checking backfires.
 
 ### If your partner struggles to trust you
 
-**Be predictable.** Do what you say. Small, consistent actions matter more than big speeches.
+Be predictable in small ways: reply when you said you would, arrive when you said you'd arrive, follow through on small promises. That builds the first layer of trust. And when it's genuinely costly to you, choose the relationship once in a while, visibly but without making a speech about it.
 
-**Be open without being asked.** Sharing plans and small details reduces the space for fear.
-
-**Don't take it as an attack.** Their fear may not be about you. Patience helps more than defending yourself.
-
-Try: "I'm not going anywhere. What would help you feel safer right now?"
+Try: "I can tell you've been feeling unsure. I want you to feel safe with me. What would actually help, apart from me saying it?"
 
 ### If trust was broken in this relationship
 
-Repair needs responsibility, openness and time. The person who broke the trust needs to own it fully and stay consistent for a long while. Our guides on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) explain the steps. If the betrayal was an affair, our step-by-step guide on [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) covers what each partner needs to do. For serious betrayals, a couples therapist can make a real difference.
+When there's been a real betrayal, the loop above isn't the main issue. Trust needs to be rebuilt through transparency, consistency and time. Our guides on [rebuilding trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) and [after a fight](/blog/how-to-rebuild-trust-after-a-fight/) walk through that process, and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) covers the first step.
 
-## What to say: scripts for common moments
+> **Example: three things a week**
+> Lena kept asking Mateo whether he was "sure" about them, and his answers stopped working within hours. She tried something different: every Sunday she wrote down three moments from the week when he'd put them first. He'd cancelled a football night when she was sick. He'd driven her mother to the airport. He'd let her pick the holiday. After a month, she noticed she was asking less. Nothing about Mateo had changed. What changed was what she was looking at.
 
-When fear shows up, your first words often decide whether the talk turns into a fight or a moment of closeness. Here are some common moments and words that tend to help.
-
-| Moment | Instead of | Try |
-|---|---|---|
-| They're late and haven't replied | "Where were you? Why didn't you answer?" | "I got worried when I didn't hear from you. Can we agree on a quick text next time?" |
-| They mention a new colleague | "Who is she? Why do you talk about her so much?" | "I noticed I felt a bit jealous just now. Can you tell me more about your new team?" |
-| You want to look at their phone | "Show me your messages." | "I'm feeling anxious and I want to check, but I'd rather talk. Can you sit with me for a minute?" |
-| You need reassurance | "Do you even love me anymore?" | "I'm having an insecure day. Could you tell me something you like about us?" |
-
-The pattern is simple. Talk about your feeling and what you need, not about what you suspect. Ask for one small, clear thing your partner can actually do.
-
-If you're the partner being doubted, you can use scripts too:
-
-Try: "I can tell you're worried. I'm not upset with you for feeling that. What would help right now?"
-
-And if jealousy is the main thing you're struggling with, our guide on [jealousy in a relationship](/blog/jealousy-in-a-relationship/) has more ideas for those moments.
-
-## What most articles miss
-
-Many articles focus only on the person with trust issues, as if it's their problem to fix alone. In reality, trust is built between two people. The anxious partner can work on their fears, but the other partner's consistency matters just as much.
-
-It's also important not to overcorrect. Constant checking and endless reassurance can feel calming in the moment, but they often keep the anxiety going. The goal is to feel safer over time, not to remove all uncertainty, because no relationship can do that.
-
-If you want to plan how to talk about trust without it turning into a fight, RelationshipAI is an AI relationship coach that can help you prepare. It isn't therapy, but it's a calm place to start.
+If you want to talk through a wave of doubt before it turns into a 1am message, RelationshipAI's Coach Chat can help you separate what you know from what you fear. It isn't therapy, but it can help you pause the loop. If the patterns are long-standing or connected to past hurt, a therapist can help a lot.
 
 ## Quick answers
 
-### What are the signs of trust issues?
-
-Checking your partner's phone, expecting the worst, needing constant reassurance, jealousy, testing your partner and holding back from commitment are common signs.
-
 ### What causes trust issues in a relationship?
 
-Betrayal in the current relationship, being hurt in past relationships, childhood experiences and an anxious attachment style are the most common causes.
+Past betrayals, inconsistent care growing up, anxious attachment, or real unreliability in the current relationship. Often it's a mix.
 
 ### Can trust issues be fixed?
 
-Yes. Trust can be rebuilt through consistent behaviour, honest communication and, when needed, support from a therapist.
+Yes, in many cases. Trust grows when you notice a partner's reliable, caring actions over time, and when both partners break unhelpful loops like constant reassurance-seeking.
 
-### How long does it take to rebuild trust?
+### Does asking for reassurance help with trust issues?
 
-There's no fixed timeline. After a serious betrayal, it often takes many months of consistent behaviour. Old trust issues from the past may take longer and benefit from therapy.
+Occasionally, yes. But frequent reassurance-seeking is linked to lower trust over time. Specific requests and noticing real evidence tend to work better.
 
 ### Is it okay to check my partner's phone?
 
-It may feel calming in the moment, but it usually increases anxiety and damages trust on both sides. Talking about the fear is more helpful than looking for proof.
-
-### How do I support a partner with trust issues?
-
-Be consistent, be open about your plans, stay patient and avoid getting defensive. Ask what kind of reassurance actually helps them.
+It usually makes trust issues worse, and it can damage trust from your side. Talking about what triggered the urge is more helpful.
 
 ### When are trust issues a red flag?
 
-When fear turns into control, like demanding passwords, tracking your location or limiting who you see, it's no longer just insecurity. That's controlling behaviour.
-
-### How do I stop checking my partner's phone?
-
-Notice the urge, pause and name the feeling underneath it, like fear or loneliness. Then tell your partner what you're feeling instead of looking. Each time you don't check, the urge usually gets a little weaker.
-
-### Can trust issues ruin a relationship?
-
-They can if nobody talks about them, because constant doubt wears both partners down. When both of you understand the fear and work on it together, many couples become closer than before.
+When your distrust is a response to repeated lies, secrecy or inconsistency, it's information, not a flaw. And when a partner's "trust issues" are used to control you, that's a safety issue.
 
 ## A note on safety
 
-Insecurity is human. Control is not. If a partner checks your phone, tracks you, limits who you see or makes you afraid, please reach out to a local helpline or support service. And if you feel unsafe with a partner who broke your trust, your safety comes first.
+Distrust is sometimes used to justify controlling behaviour: checking phones, tracking locations, restricting friends. If your partner does this, or makes you afraid, please contact a local domestic abuse helpline or support service.
 
 *This article is general information, not therapy or medical advice.*
 
 ## Sources
 
 - Rempel, J. K., Holmes, J. G., & Zanna, M. P. (1985). Trust in close relationships. *Journal of Personality and Social Psychology*, 49(1), 95-112.
-- Gottman Institute: [What makes love last: sliding door moments](https://www.gottman.com/blog/what-makes-love-last-sliding-door-moments/)
+- Wieselquist, J., Rusbult, C. E., Foster, C. A., & Agnew, C. R. (1999). Commitment, pro-relationship behavior, and trust in close relationships. *Journal of Personality and Social Psychology*, 77(5), 942-966. [Full text (PDF)](https://faculty.wcas.northwestern.edu/eli-finkel/documents/65_WieselquistRusbultFosterAgnew1999_JournalOfPersonalityAndSocialPsychology.pdf)
+- Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Full text (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
+- Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Full text (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
+- Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Read the study](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
