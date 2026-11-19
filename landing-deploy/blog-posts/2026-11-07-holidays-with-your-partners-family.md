@@ -1,15 +1,25 @@
 ---
-title: "Holidays with your partner's family: a game plan from two weeks before to the drive home"
+title: "Holidays with your partner's family: a Thanksgiving and Christmas game plan, from two weeks before to the drive home"
 date: 2026-11-07
 updated: 2026-11-19
-description: "Holidays with your partner's family, step by step: what to agree beforehand, how to handle tense moments at the table, and what research says."
-tags: holidays with your partner's family, in-laws
+description: "Holidays with your partner's family, from Thanksgiving to Christmas: what to agree beforehand, what to say at the table, and how to get home still a team."
+tags: holidays with your partner's family, Thanksgiving with your partner's family
 ---
 Holidays with your partner's family can be lovely. They can also be four days of politeness, unfamiliar rules, comments about your job, and the feeling that your partner turns into a different person the moment they walk through their parents' door.
 
 You're not imagining that it's hard. In the American Psychological Association's 2023 holiday survey, 89% of US adults said something about the holiday season causes them stress. And it matters for the relationship: in a long-term study of couples married around 20 years, Chalandra Bryant and colleagues found that conflict with in-laws predicted lower marital success later on, and one partner's in-law tension affected how the *other* partner felt about the marriage too.
 
-The good news: most holiday stress with a partner's family is predictable, which means it's plannable. Here's a game plan, stage by stage.
+The good news: most holiday stress with a partner's family is predictable, which means it's plannable. Here's a game plan, starting with Thanksgiving and then stage by stage for any family holiday.
+
+## Thanksgiving with your partner's family
+
+Thanksgiving is often the first big family holiday a new couple spends together, and it has its own rhythm. A few things help:
+
+- **Ask how their family does the day.** Is it a midday meal or dinner? Football on TV all afternoon? A round of "what are you thankful for?" at the table? Knowing this ahead of time saves a lot of awkward guessing.
+- **Offer to bring a dish, and ask which one.** Family recipes can be surprisingly sacred. "I'd love to bring something. Is there a side or dessert you'd like?" is safer than turning up with your own stuffing.
+- **Prepare your "thankful" answer.** Keep it warm and simple: "I'm thankful to be here with all of you." If you want to include your partner, a light line works better than a big declaration.
+- **Plan the travel days together.** The day before and the Sunday after are among the busiest travel days of the year in the US, so agree early on when you leave and how long you stay.
+- **Think about the next holiday now.** If you're at their family for Thanksgiving, it's a natural moment to talk about where you'll spend Christmas, before anyone assumes.
 
 ## Two weeks before: the planning talk
 
