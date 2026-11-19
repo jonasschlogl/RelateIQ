@@ -79,7 +79,7 @@ Dingen naast elkaar doen, zoals wandelen, koken of autorijden, voelt vaak makkel
 
 ### 3. Vraag duidelijk en rustig wat je nodig hebt
 
-Vermijdende partners reageren vaak beter op duidelijke, concrete verzoeken dan op emotionele druk.
+Vermijdende partners reageren vaak beter op duidelijke, concrete verzoeken dan op emotionele druk. Onderzoek bevestigt dat. In een studie waarin 180 stellen werden gefilmd terwijl de een de ander vroeg iets te veranderen, zagen Nickola Overall en collega's dat meer vermijdende mensen reageerden met meer boosheid en terugtrekking. Maar als degene die het vroeg het verzoek "verzachtte", door de zelfstandigheid van de partner te respecteren en te laten merken dat diegene gewaardeerd werd, namen boosheid en terugtrekking af en verliepen de gesprekken beter.
 
 Probeer: "Het zou me echt helpen als je even appt wanneer je een rustige avond nodig hebt, dan maak ik me geen zorgen."
 
@@ -146,5 +146,6 @@ Ruimte nodig hebben is niet hetzelfde als controle of straf. Gebruikt je partner
 
 ## Bronnen
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Samenvatting](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

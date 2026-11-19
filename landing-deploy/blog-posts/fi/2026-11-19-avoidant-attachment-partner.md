@@ -79,7 +79,7 @@ Rinnakkain tehtävät asiat, kuten kävely, ruoanlaitto tai autoilu, tuntuvat us
 
 ### 3. Pyydä tarvitsemaasi selkeästi ja rauhallisesti
 
-Välttelevät kumppanit reagoivat usein paremmin selkeisiin ja konkreettisiin pyyntöihin kuin tunnepohjaiseen painostukseen.
+Välttelevät kumppanit reagoivat usein paremmin selkeisiin ja konkreettisiin pyyntöihin kuin tunnepohjaiseen painostukseen. Tutkimus tukee tätä. Tutkimuksessa, jossa kuvattiin 180 paria, kun toinen pyysi toista muuttamaan jotakin, Nickola Overall kollegoineen havaitsivat, että välttelevämmät ihmiset reagoivat vihaisemmin ja vetäytyivät enemmän. Kun pyytäjä kuitenkin "pehmensi" pyyntöään kunnioittamalla kumppanin itsenäisyyttä ja osoittamalla arvostusta, viha ja vetäytyminen vähenivät ja keskustelut sujuivat paremmin.
 
 Kokeile: "Minua auttaisi tosi paljon, jos laittaisit viestin, kun tarvitset rauhallisen illan. Silloin en huolestu."
 
@@ -146,5 +146,6 @@ Tilan tarve ei ole sama asia kuin kontrolli tai rangaistus. Jos kumppani käytt�
 
 ## Lähteet
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Tiivistelmä](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

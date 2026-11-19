@@ -28,7 +28,7 @@
 - [x] 2026-10-26-green-flags-in-a-relationship (refreshed 2026-11-19: 9 flags with how to spot each, 4 sources)
 - [x] 2026-10-26-how-to-rebuild-trust-after-a-fight (refreshed 2026-11-19: tonight/morning/week + 21-minute reappraisal, 4 sources)
 - [x] 2026-11-12-should-i-break-up-with-my-partner (refreshed 2026-11-19: light edit: added 2020 PNAS study of 11,000 couples, fewer template parts)
-- [ ] 2026-11-19-avoidant-attachment-partner (has 5 translations: update them too)
+- [x] 2026-11-19-avoidant-attachment-partner (refreshed 2026-11-19: added Overall 2013 softening study in all 6 languages, specific box titles)
 # Pillar posts last: they rank and have translations. Keep their keywords, H1 keyword and best sections; mainly remove template boxes, vary structure, check sources.
 - [x] 2026-10-08-how-to-apologize-to-your-partner (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
 - [x] 2026-10-04-how-to-fix-a-relationship (refreshed 2026-11-19: pillar: added therapy and online-programme trials, fewer Gottman blog links)

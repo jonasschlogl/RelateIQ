@@ -79,7 +79,7 @@ Saker ni gör sida vid sida, som att promenera, laga mat eller köra bil, känns
 
 ### 3. Be om det du behöver, tydligt och lugnt
 
-Undvikande partners svarar ofta bättre på tydliga, konkreta önskemål än på känslomässig press.
+Undvikande partners svarar ofta bättre på tydliga, konkreta önskemål än på känslomässig press. Forskningen stöder det. I en studie där 180 par filmades medan den ena bad den andra att ändra något fann Nickola Overall och kollegor att mer undvikande personer reagerade med mer ilska och tillbakadragande. Men när den som bad om förändringen "mjukade upp" önskemålet, genom att respektera partnerns självständighet och visa att hen var uppskattad, minskade ilskan och tillbakadragandet och samtalen gick bättre.
 
 Testa: "Det skulle hjälpa mig mycket om du skickade ett sms när du behöver en lugn kväll, så att jag inte oroar mig."
 
@@ -146,5 +146,6 @@ Att behöva utrymme är inte samma sak som kontroll eller straff. Om en partner 
 
 ## Källor
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Sammanfattning](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

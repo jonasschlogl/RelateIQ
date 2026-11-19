@@ -79,7 +79,7 @@ Activitățile făcute unul lângă altul, cum ar fi plimbările, gătitul sau c
 
 ### 3. Cere clar și calm ce ai nevoie
 
-Partenerii evitanți răspund adesea mai bine la cereri clare și concrete decât la presiune emoțională.
+Partenerii evitanți răspund adesea mai bine la cereri clare și concrete decât la presiune emoțională. Cercetările confirmă acest lucru. Într-un studiu cu 180 de cupluri filmate în timp ce unul îi cerea celuilalt să schimbe ceva, Nickola Overall și colegii săi au observat că persoanele mai evitante reacționau cu mai multă furie și retragere. Dar când cel care cerea schimbarea își „înmuia" cererea, respectând independența partenerului și arătându-i că este prețuit, furia și retragerea scădeau, iar discuțiile mergeau mai bine.
 
 Încearcă: „M-ar ajuta mult să-mi scrii când ai nevoie de o seară liniștită, ca să nu-mi fac griji."
 
@@ -146,5 +146,6 @@ Nevoia de spațiu nu este același lucru cu controlul sau pedeapsa. Dacă parten
 
 ## Surse
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Rezumat](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

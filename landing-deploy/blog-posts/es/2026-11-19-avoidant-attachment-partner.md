@@ -79,7 +79,7 @@ Las actividades codo con codo, como pasear, cocinar o conducir, suelen resultar 
 
 ### 3. Pide lo que necesitas con claridad y calma
 
-Las parejas evitativas suelen responder mejor a peticiones claras y concretas que a la presión emocional.
+Las parejas evitativas suelen responder mejor a peticiones claras y concretas que a la presión emocional. La investigación lo respalda. En un estudio con 180 parejas grabadas mientras uno pedía al otro que cambiara algo, Nickola Overall y sus colegas observaron que las personas más evitativas reaccionaban con más enfado y retirada. Pero cuando quien pedía el cambio «suavizaba» la petición, respetando la independencia de su pareja y mostrándole que la valoraba, ese enfado y esa retirada disminuían y la conversación iba mejor.
 
 Prueba: «Me ayudaría mucho que me escribieras cuando necesitas una noche tranquila, así no me preocupo».
 
@@ -146,5 +146,6 @@ Necesitar espacio no es lo mismo que controlar o castigar. Si tu pareja usa el s
 
 ## Fuentes
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Resumen](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.

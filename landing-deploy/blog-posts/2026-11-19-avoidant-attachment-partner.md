@@ -2,6 +2,7 @@
 title: "Avoidant attachment in a partner: 8 signs and how to love someone who needs space"
 date: 2026-11-19
 description: Close one day, distant the next? 8 signs of avoidant attachment in a partner, why they pull away when things get close and how to build closeness without chasing.
+updated: 2026-11-19
 tags: avoidant attachment, needing space
 ---
 You had a lovely weekend together. Then on Monday they go quiet, take longer to reply and seem to need a lot of time alone. You wonder what you did wrong. Nothing, probably. But the pattern keeps repeating.
@@ -79,7 +80,7 @@ Side-by-side activities, like walking, cooking or driving, often feel easier tha
 
 ### 3. Ask for what you need clearly and calmly
 
-Avoidant partners often respond better to clear, specific requests than to emotional pressure.
+Avoidant partners often respond better to clear, specific requests than to emotional pressure. Research backs this up. In a study of 180 couples filmed while one partner asked the other to change something, Nickola Overall and colleagues found that more avoidant partners reacted with more anger and withdrawal. But when the person asking "softened" the request, by respecting their partner's independence and showing they were valued, that anger and withdrawal dropped, and the conversations went better.
 
 Try: "It would really help me if you texted when you need a quiet evening, so I don't worry."
 
@@ -146,5 +147,6 @@ Needing space is not the same as control or punishment. If a partner uses silenc
 
 ## Sources
 
+- Overall, N. C., Simpson, J. A., & Struthers, H. (2013). Buffering attachment-related avoidance: Softening emotional and behavioral defenses during conflict discussions. *Journal of Personality and Social Psychology*, 104(5), 854-871. [University of Minnesota record](https://experts.umn.edu/en/publications/buffering-attachment-related-avoidance-softening-emotional-and-be/)
 - Simpson, J. A., Rholes, W. S., & Nelligan, J. S. (1992). Support seeking and support giving within couples in an anxiety-provoking situation: The role of attachment styles. *Journal of Personality and Social Psychology*, 62(3), 434-446. [Abstract](https://experts.umn.edu/en/publications/support-seeking-and-support-giving-within-couples-in-an-anxiety-p/)
 - Mickelson, K. D., Kessler, R. C., & Shaver, P. R. (1997). Adult attachment in a nationally representative sample. *Journal of Personality and Social Psychology*, 73(5), 1092-1106.
