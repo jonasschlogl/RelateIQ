@@ -113,6 +113,8 @@ De eerste versie legt uit, bagatelliseert en vraagt de partner om verder te gaan
 - **De score bijhouden:** "Ik zei vorige keer sorry, nu ben jij aan de beurt" maakt van herstel een ruilhandel.
 - **Overal sorry voor zeggen:** Als je constant sorry zegt, verliest het woord zijn betekenis, en kan het echte conflicten verbergen waar jullie het nog niet over hebben gehad.
 
+Vaak sorry zeggen is op zich trouwens geen probleem. In twee onderzoeken uit 2023 ontdekten Karina Schumann, Emily Ritchie en Amanda Forest dat mensen die vaak excuses aanbieden als warmer en eerlijker werden gezien, en dat hun excuses niet minder serieus werden genomen. Het risico zit niet in het aantal excuses. Het zit in excuses die gehaast of leeg zijn.
+
 Hier zijn de meest voorkomende misstappen naast wat meestal beter landt:
 
 | In plaats van | Probeer |
@@ -185,6 +187,7 @@ Gaat de pijn dieper dan één ruzie, dan beschrijven onze gidsen over [vertrouwe
 ## Bronnen
 
 - Lewicki, R. J., Polin, B., & Lount, R. B. (2016). An exploration of the structure of effective apologies. *Negotiation and Conflict Management Research*, 9(2), 177-196. Samenvatting van [Ohio State University News](https://news.osu.edu/the-6-elements-of-an-effective-apology-according-to-science/)
+- Schumann, K., Ritchie, E. G., & Forest, A. L. (2023). The social consequences of frequent versus infrequent apologizing. *Personality and Social Psychology Bulletin*. Summary on [PsyPost](https://www.psypost.org/are-you-a-frequent-apologizer-new-research-indicates-you-might-actually-reap-downstream-benefits)
 - Fehr, R., Gelfand, M. J., & Nag, M. (2010). The road to forgiveness: A meta-analytic synthesis of its situational and dispositional correlates. *Psychological Bulletin*, 136(5), 894-914. [Volledige tekst (PDF, Greater Good Science Center)](https://ggsc.berkeley.edu/images/uploads/Fehr_et_al_2010_The_road_to_forgiveness-_A_meta-analytic_synthesis_of_its_situational_and_dispositional_correlates.pdf)
 - Fehr, R., & Gelfand, M. J. (2010). When apologies work: How matching apology components to victims' self-construals facilitates forgiveness. *Organizational Behavior and Human Decision Processes*, 113(1), 37-50. Samenvatting van de [British Psychological Society](https://www.bps.org.uk/research-digest/how-apologise)
 - Gottman Institute: [Physiological self-soothing](https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/)

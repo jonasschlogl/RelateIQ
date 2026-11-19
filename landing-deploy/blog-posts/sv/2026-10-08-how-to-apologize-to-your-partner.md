@@ -113,6 +113,8 @@ Den första versionen förklarar, förminskar och ber partnern gå vidare. Den a
 - **Att föra bok:** "Jag bad om ursäkt förra gången, nu är det din tur" gör reparationen till en byteshandel.
 - **Att be om ursäkt för allt:** Om du säger förlåt hela tiden förlorar ordet sin betydelse, och det kan dölja verkliga konflikter som ni inte har pratat om.
 
+Att säga förlåt ofta är ändå inget problem i sig. I två studier som publicerades 2023 fann Karina Schumann, Emily Ritchie och Amanda Forest att människor som ber om ursäkt ofta uppfattades som varmare och ärligare, och att deras ursäkter inte togs mindre på allvar. Risken ligger inte i antalet ursäkter. Den ligger i ursäkter som är förhastade eller tomma.
+
 Här är de vanligaste misstagen sida vid sida med det som brukar fungera bättre:
 
 | I stället för | Testa |
@@ -185,6 +187,7 @@ Om såret går djupare än ett bråk tar våra guider om [att bygga upp förtroe
 ## Källor
 
 - Lewicki, R. J., Polin, B., & Lount, R. B. (2016). An exploration of the structure of effective apologies. *Negotiation and Conflict Management Research*, 9(2), 177-196. Sammanfattning från [Ohio State University News](https://news.osu.edu/the-6-elements-of-an-effective-apology-according-to-science/)
+- Schumann, K., Ritchie, E. G., & Forest, A. L. (2023). The social consequences of frequent versus infrequent apologizing. *Personality and Social Psychology Bulletin*. Summary on [PsyPost](https://www.psypost.org/are-you-a-frequent-apologizer-new-research-indicates-you-might-actually-reap-downstream-benefits)
 - Fehr, R., Gelfand, M. J., & Nag, M. (2010). The road to forgiveness: A meta-analytic synthesis of its situational and dispositional correlates. *Psychological Bulletin*, 136(5), 894-914. [Fulltext (PDF, Greater Good Science Center)](https://ggsc.berkeley.edu/images/uploads/Fehr_et_al_2010_The_road_to_forgiveness-_A_meta-analytic_synthesis_of_its_situational_and_dispositional_correlates.pdf)
 - Fehr, R., & Gelfand, M. J. (2010). When apologies work: How matching apology components to victims' self-construals facilitates forgiveness. *Organizational Behavior and Human Decision Processes*, 113(1), 37-50. Sammanfattning från [British Psychological Society](https://www.bps.org.uk/research-digest/how-apologise)
 - Gottman Institute: [Physiological self-soothing](https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/)

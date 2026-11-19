@@ -113,6 +113,8 @@ Prima variantă explică, minimizează și îi cere partenerului să treacă pes
 - **Socoteala:** "Data trecută mi-am cerut eu scuze, acum e rândul tău" transformă repararea într-un schimb.
 - **Scuze pentru orice:** Dacă spui "scuze" tot timpul, cuvântul își pierde sensul și poate ascunde un conflict real despre care n-ați vorbit.
 
+Totuși, să-ți ceri scuze des nu e o problemă în sine. În două studii publicate în 2023, Karina Schumann, Emily Ritchie și Amanda Forest au descoperit că oamenii care își cer scuze frecvent erau percepuți ca mai calzi și mai sinceri, iar scuzele lor nu erau luate mai puțin în serios. Riscul nu e numărul de scuze. Sunt scuzele grăbite sau goale.
+
 Iată cele mai frecvente greșeli, alături de ce funcționează de obicei mai bine:
 
 | În loc de | Încearcă |
@@ -185,6 +187,7 @@ Dacă rana e mai adâncă decât o ceartă, ghidurile noastre despre [cum să re
 ## Surse
 
 - Lewicki, R. J., Polin, B., & Lount, R. B. (2016). An exploration of the structure of effective apologies. *Negotiation and Conflict Management Research*, 9(2), 177-196. Rezumat de la [Ohio State University News](https://news.osu.edu/the-6-elements-of-an-effective-apology-according-to-science/)
+- Schumann, K., Ritchie, E. G., & Forest, A. L. (2023). The social consequences of frequent versus infrequent apologizing. *Personality and Social Psychology Bulletin*. Summary on [PsyPost](https://www.psypost.org/are-you-a-frequent-apologizer-new-research-indicates-you-might-actually-reap-downstream-benefits)
 - Fehr, R., Gelfand, M. J., & Nag, M. (2010). The road to forgiveness: A meta-analytic synthesis of its situational and dispositional correlates. *Psychological Bulletin*, 136(5), 894-914. [Text integral (PDF, Greater Good Science Center)](https://ggsc.berkeley.edu/images/uploads/Fehr_et_al_2010_The_road_to_forgiveness-_A_meta-analytic_synthesis_of_its_situational_and_dispositional_correlates.pdf)
 - Fehr, R., & Gelfand, M. J. (2010). When apologies work: How matching apology components to victims' self-construals facilitates forgiveness. *Organizational Behavior and Human Decision Processes*, 113(1), 37-50. Rezumat de la [British Psychological Society](https://www.bps.org.uk/research-digest/how-apologise)
 - Gottman Institute: [Physiological self-soothing](https://www.gottman.com/blog/weekend-homework-assignment-physiological-self-soothing/)

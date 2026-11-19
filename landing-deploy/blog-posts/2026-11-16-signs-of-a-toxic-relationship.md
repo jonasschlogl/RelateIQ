@@ -57,6 +57,8 @@ Signs include:
 - Making you doubt your own memory or sanity ([gaslighting](/blog/gaslighting-in-a-relationship/)).
 - You feel afraid of their reaction, and plan your behaviour around it.
 
+Subtle control is also the kind people most often miss. In a 2025 study of 1,872 American adults, Julie-Ann Jordan and colleagues found that people recognised obvious abuse easily, but rated quieter controlling behaviour as more ordinary and less serious, especially when the person being controlled was a man. If someone tells you it's "just how relationships are", that doesn't make it so.
+
 **What makes it Level 3:** fear and control. If you're changing your life to avoid their anger, that matters more than how often anything happens.
 
 **Next step:** don't confront alone, and don't rely on couples counselling, which isn't recommended when one partner controls or fears the other. Talk to a domestic abuse helpline or support service. They can help you think through options safely, whether or not you want to leave.
@@ -120,5 +122,6 @@ If you're afraid of your partner, are being controlled, threatened or hurt, plea
 - Johnson, M. P. (2008). *A Typology of Domestic Violence: Intimate Terrorism, Violent Resistance, and Situational Couple Violence*. Northeastern University Press. [Summary (US Office of Justice Programs)](https://ojp.gov/ncjrs/virtual-library/abstracts/typology-domestic-violence-intimate-terrorism-violent-resistance)
 - Rusbult, C. E., & Martz, J. M. (1995). Remaining in an abusive relationship: An investment model analysis of nonvoluntary dependence. *Personality and Social Psychology Bulletin*, 21(6), 558-571. [Abstract](https://arch.neicon.ru/xmlui/handle/123456789/3025919)
 - Respect Victoria: [Coercive control, non-physical violence and relationship red flags](https://www.respectvictoria.vic.gov.au/coercive-control-non-physical-violence-and-relationship-red-flags)
+- Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Summary on [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
