@@ -22,7 +22,7 @@
 # Added 19 Nov (Jonas: no article should look like a template). Same rules.
 - [x] 2026-10-26-date-night-questions-for-couples (refreshed 2026-11-19: 5 games + 40 questions, 4 sources)
 - [x] 2026-11-07-holidays-with-your-partners-family (refreshed 2026-11-19: timeline game plan, 5 sources)
-- [ ] 2026-11-09-clear-coding-dating
+- [x] 2026-11-09-clear-coding-dating (refreshed 2026-11-19: 20 messages by stage, 4 sources)
 - [ ] 2026-11-09-how-to-talk-about-money-with-your-partner
 - [ ] 2026-11-13-relationship-anxiety
 - [ ] 2026-10-26-green-flags-in-a-relationship
