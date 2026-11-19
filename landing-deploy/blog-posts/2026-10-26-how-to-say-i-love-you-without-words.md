@@ -21,6 +21,8 @@ So here are 25 ways to say "I love you" without words, sorted by the kind of day
 
 **Responsiveness is the core.** Relationship researchers keep finding the same thing: people feel loved when they feel understood, accepted and cared for. In a large study of newlywed couples, Paula Pietromonaco and colleagues found that a partner's responsiveness even helped protect relationships from the effects of stress and depression. Every idea below is really a way of saying "I see you".
 
+**Quick quiz:** Not sure which gestures your partner would value most? Try the free 2-minute [love language quiz](/quiz/love-language/) together and compare answers.
+
 ## On busy mornings
 
 1. Make their coffee or tea the way they like it, without asking.

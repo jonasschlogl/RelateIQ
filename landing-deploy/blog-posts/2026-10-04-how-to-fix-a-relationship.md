@@ -26,6 +26,8 @@ There are two important exceptions. If you're afraid of your partner, feel contr
 | The spark has faded | Ongoing lying or cheating that continues |
 | Stress has pushed you apart | Addiction that isn't being treated |
 
+**Quick quiz:** Not sure where to start? The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) shows whether your relationship most needs time together, better talks, more fun or more teamwork.
+
 ## Step 1: Decide what "better" looks like
 
 "Fixing it" is too vague to act on. Before you talk to your partner, get clear on what would feel different if things were better. More affection? A fairer split at home? Feeling listened to? Write it down in a sentence or two. It keeps you from arguing about everything and helps you ask for something specific.

@@ -22,6 +22,8 @@ In 2010, Ryan Fehr, Michele Gelfand and Monisha Nag combined 175 studies with mo
 > **What an apology actually repairs**
 > When someone hurts us, part of what hurts is the message behind it: "you don't matter" or "the rules don't apply to me." A real apology sends the opposite message. It says: I see what happened, I see that it affected you, and our relationship matters more to me than being right. That restores something the mistake took away, which is why a good apology can calm a situation in a way that no amount of explaining can.
 
+**Quick quiz:** Not sure what kind of apology you need yourself? Take the free 2-minute [apology style quiz](/quiz/apology-style/) to find out whether feelings, responsibility, repair or change matters most to you.
+
 ## What research says makes an apology effective
 
 In 2016, a team led by Roy Lewicki at Ohio State University (with Beth Polin and Robert Lount) published a study about what makes an apology effective. Across two experiments with 755 participants in total, they looked at six elements an apology can include:

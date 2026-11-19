@@ -26,6 +26,8 @@ In 1987, Cindy Hazan and Phillip Shaver asked a bold question: does the same sys
 
 Two things are worth knowing about those numbers. First, secure was the most common answer, which surprises many people who only know attachment from the internet. Second, people had to choose one box, but later research found that attachment is better described as two sliding scales than as three or four boxes.
 
+**Quick quiz:** Want to know where you lean? The free 2-minute [attachment style quiz](/quiz/attachment-style/) shows whether you're closer to secure, anxious, avoidant or fearful-avoidant, with one thing to try this week.
+
 ## Two dimensions, four styles
 
 In 1990, researcher Kim Bartholomew described adult attachment along two dimensions, and most researchers still measure it this way today:

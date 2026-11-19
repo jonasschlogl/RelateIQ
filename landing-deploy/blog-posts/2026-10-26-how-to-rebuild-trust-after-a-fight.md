@@ -25,6 +25,8 @@ A 2026 study points the same way. Following 378 married couples through ten days
 
 **Leave one small signal.** A goodnight, a glass of water on their side of the bed, a "we'll figure it out". It says: the relationship is still here, even if the conversation isn't over.
 
+**Quick quiz:** Want to see your own pattern in arguments? The free 2-minute [conflict style quiz](/quiz/fight-style/) shows whether you escalate, shut down, people-please or repair.
+
 ## The next morning: repair
 
 ### Own your part, without conditions

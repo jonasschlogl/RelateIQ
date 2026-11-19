@@ -29,6 +29,8 @@ As adults, they often want love and connection, but closeness can also feel unco
 | Sees needing each other as normal | Sees needing others as a weakness |
 | Stays steady after closeness | Pulls back after moments of closeness |
 
+**Quick quiz:** Curious about your own side of the pattern? The free 2-minute [attachment style quiz](/quiz/attachment-style/) shows whether you lean secure, anxious, avoidant or fearful-avoidant.
+
 ## 8 signs of an avoidant partner
 
 ### 1. They pull away after close moments

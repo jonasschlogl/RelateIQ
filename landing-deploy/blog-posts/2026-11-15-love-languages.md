@@ -21,6 +21,8 @@ The quiz forces you to pick: words *or* time, gifts *or* touch. In a 2024 review
 
 **Use it like this:** instead of asking "What's your love language?", ask "Which of these would mean the most to you this week?"
 
+**Quick quiz:** If you want a quick starting point anyway, the free 2-minute [love language quiz](/quiz/love-language/) helps you put words to what makes you feel loved, so you can talk about it with your partner.
+
 ## Belief 2: "There are exactly five"
 
 **What research says: the list leaves important things out.**

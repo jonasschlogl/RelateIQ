@@ -39,6 +39,8 @@ Read each statement and score it: 0 = rarely true, 1 = sometimes, 2 = often. Do 
 
 Add up each pair. The area with the lowest score (0 to 2) is where to start. If two are tied, pick the one that bothers you more. If everything scores 3 or 4, your spark is in decent shape and the 4-week plan below is maintenance, not repair.
 
+**Quick quiz:** Want a second view on what your relationship needs most right now? The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) points to time together, better talks, more fun or more teamwork.
+
 ## If novelty is low: break the rut, not the bank
 
 **What research shows.** In a long-running study of 123 couples, Irene Tsapelas, Arthur Aron and Terri Orbuch asked people in their seventh year of marriage how often the marriage felt like a rut. Those who felt more bored at year 7 were less satisfied nine years later, at year 16. The link ran through closeness: boredom made couples feel less close, and that lowered satisfaction.

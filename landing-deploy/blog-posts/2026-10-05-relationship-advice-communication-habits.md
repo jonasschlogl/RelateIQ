@@ -41,6 +41,8 @@ Here are the seven habits at a glance.
 | Take a break | Pushing through when flooded | "I need twenty minutes, then I want to finish this." |
 | Repair early | Waiting for them to come round | "Can we start that over? That came out wrong." |
 
+**Quick quiz:** Do you escalate, shut down, people-please or repair? The free 2-minute [conflict style quiz](/quiz/fight-style/) shows your pattern in a fight and one thing to say next time.
+
 ## 1. Start soft
 
 How a conversation begins usually decides how it ends. Gottman's research found that a "harsh start-up", opening with criticism or sarcasm, almost always leads to a conversation that ends badly. A softened start-up does the opposite. It says how *you* feel and what you'd like, without an accusation.

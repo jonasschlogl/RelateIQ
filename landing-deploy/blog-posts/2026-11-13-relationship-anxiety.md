@@ -21,6 +21,8 @@ You probably don't need another list of signs. You need something to do when it 
 
 **It can soften over time.** In long-term research following people over decades, William Chopik and colleagues found that attachment anxiety tended to decrease with age, and being in a committed relationship was linked to becoming more secure. Relationship anxiety is a pattern, not a life sentence.
 
+**Quick quiz:** Anxiety in relationships is often linked to attachment. The free 2-minute [attachment style quiz](/quiz/attachment-style/) can show whether that's part of your pattern.
+
 ## The next 2 minutes: when the spiral starts
 
 The moment you notice it (the phone check, the tight chest, the urge to send a message), do this:

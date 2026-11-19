@@ -21,6 +21,8 @@ Why? Being obviously helped can carry a hidden message: *you can't cope on your 
 
 **What this means in practice:** the most useful help is often practical and low-key. Doing the dishes without announcing it. Handling the call to the landlord. Making the evening easy rather than making a speech about how much you're there for them.
 
+**Quick quiz:** Do you comfort by fixing, listening, hugging or lightening the mood? The free 2-minute [comfort style quiz](/quiz/comfort-style/) shows your default and how to adjust it.
+
 ## Stress makes small things feel big
 
 Lisa Neff and Benjamin Karney studied newlywed couples over several years and found that when people were under more stress than usual, their relationship satisfaction swung more with each good or bad day together. Stress seems to use up the mental energy we normally use to keep small problems in perspective.

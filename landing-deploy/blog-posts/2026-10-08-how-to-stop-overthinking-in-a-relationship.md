@@ -22,6 +22,8 @@ When you replay a conversation or imagine every possible reason for a silence, i
 > **Why your brain keeps trying to solve it**
 > Your brain treats uncertainty as a problem to solve, and it's very good at generating possibilities. The trouble is that in relationships, the missing piece is usually something only the other person knows: why they were quiet, what they meant, how they feel. With no new information coming in, your brain can't solve the problem, so it does the next best thing: it keeps rehearsing the worst case so you'll be "prepared". Each round feels like progress and adds a little more anxiety. That's why you can think about a single text for an hour and feel worse, not clearer.
 
+**Quick quiz:** Do you replay, decode or predict the worst? The free 2-minute [overthinking quiz](/quiz/overthinker/) shows which kind of overthinker you are and one calming thing to try.
+
 ## How often do our worries actually come true?
 
 In a study published in *Behavior Therapy* in 2020, psychologists Lucas LaFreniere and Michelle Newman asked 29 people with generalized anxiety disorder to write down their worries whenever they were prompted, over ten days. Then the participants tracked what actually happened over the following 30 days.

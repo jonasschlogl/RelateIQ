@@ -23,6 +23,8 @@ This guide decodes the most common signs, one by one, with the likely explanatio
 
 So the signs worth watching are not dramatic. They're the small daily ones. That's also good news: small things are fixable.
 
+**Quick quiz:** Sometimes distance means a need isn't being met. The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) can help you name which one.
+
 ## The signals, decoded
 
 ### Shorter, slower texts

@@ -22,6 +22,8 @@ The most striking result: about half of the people had strong reasons on both si
 > **Why the "right" answer rarely feels clear**
 > We tend to imagine that a "right" decision would feel clear. But relationships aren't one thing. They're dozens of things at once: the person, the shared life, the history, the future you pictured, the friends, the apartment, the routines. Some of those can be wonderful while others are breaking down. Ambivalence isn't confusion. It's an accurate reading of a mixed situation. The goal isn't to make the mixed feelings disappear. It's to work out which parts matter most to you.
 
+**Quick quiz:** Before a big decision, it can help to see what's missing. The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) shows whether you most need more time together, better talks, more fun or more teamwork.
+
 ## What research says predicts a breakup
 
 In 2010, Benjamin Le and his colleagues combined 137 studies covering 37,761 participants over 33 years of research to find out what best predicts whether unmarried relationships end. Some of the results are surprising.

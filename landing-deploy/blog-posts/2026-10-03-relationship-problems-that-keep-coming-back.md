@@ -28,6 +28,8 @@ Most recurring fights follow a simple pattern. Something small happens (the dish
 | Different needs for closeness | Feeling wanted versus feeling free of pressure |
 | The same fight, again | Fear of losing connection, or fear of being overwhelmed |
 
+**Quick quiz:** If the same fight keeps returning, it helps to know your own role in it. The free 2-minute [conflict style quiz](/quiz/fight-style/) shows whether you tend to escalate, shut down, people-please or repair.
+
 ## 1. Chores and the mental load
 
 It looks like a fight about the dishes. Most of the time it's about fairness, and about feeling like your effort gets noticed. That's not a small thing: in a 2007 Pew Research Center survey, 62% of American adults said sharing household chores was very important for a successful marriage, up from 47% in 1990.
