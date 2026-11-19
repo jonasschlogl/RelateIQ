@@ -2,7 +2,7 @@
 
 - [x] 2026-11-18-codependent-relationship (refreshed 2026-11-19: comparison + three tests, 5 sources)
 - [x] 2026-11-16-jealousy-in-a-relationship (refreshed 2026-11-19: myth vs fact, 5 sources)
-- [ ] 2026-11-12-how-to-support-your-partner-when-stressed (1 source)
+- [x] 2026-11-12-how-to-support-your-partner-when-stressed (refreshed 2026-11-19: scripts by type of stress, 4 sources)
 - [ ] 2026-11-09-breadcrumbing (2 sources)
 - [ ] 2026-11-09-love-bombing (2 sources)
 - [ ] 2026-11-11-meeting-your-partners-parents (2 sources, no table)
