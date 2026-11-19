@@ -17,5 +17,5 @@
 - [ ] 2026-11-19-avoidant-attachment-partner (2 sources)
 - [ ] 2026-10-26-deep-questions-to-ask-your-partner (3 sources)
 - [ ] 2026-10-26-how-to-say-i-love-you-without-words (3 sources)
-- [ ] 2026-11-11-emotionally-unavailable-partner (3 sources)
+- [x] 2026-11-11-emotionally-unavailable-partner (refreshed 2026-11-19: 5 reasons explained, 5 sources)
 - [ ] 2026-11-17-how-to-rebuild-trust-after-cheating (3 sources)
