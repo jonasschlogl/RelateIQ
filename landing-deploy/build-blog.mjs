@@ -913,7 +913,7 @@ function build() {
   for (const c of all) {
     for (const p of c.posts) {
       const t = targetsFor("post", p.key, all);
-      urls.push(`  <url><loc>${SITE}${t[c.lang.code]}</loc><lastmod>${p.date}</lastmod>${alt(t)}</url>`);
+      urls.push(`  <url><loc>${SITE}${t[c.lang.code]}</loc><lastmod>${p.updated || p.date}</lastmod>${alt(t)}</url>`);
     }
   }
   write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`);
