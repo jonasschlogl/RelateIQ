@@ -36,3 +36,13 @@
 - [x] 2026-10-08-how-attachment-styles-work-in-relationships (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
 - [x] 2026-10-08-how-to-stop-overthinking-in-a-relationship (light edit 2026-11-19: topic-specific box titles, fewer blog links; already 5-7 sources)
 - [x] 2026-10-05-relationship-advice-communication-habits (refreshed 2026-11-19: pillar: added Overall 2009 on direct requests, varied boxes, fewer blog links)
+
+## Recent-source pass (19 Nov audit): add ONE verified study from 2021 or later to each, in 1-3 sentences where it fits, plus its source line (update full translations too where they exist)
+- [ ] 2026-10-08-how-attachment-styles-work-in-relationships
+- [ ] 2026-10-03-relationship-problems-that-keep-coming-back
+- [ ] 2026-10-26-green-flags-in-a-relationship
+- [ ] 2026-10-26-how-to-rebuild-trust-after-a-fight
+- [ ] 2026-11-11-meeting-your-partners-parents
+- [ ] 2026-11-12-should-i-break-up-with-my-partner
+- [ ] 2026-11-13-how-to-get-over-a-breakup
+- [ ] 2026-11-14-long-distance-relationship-tips
