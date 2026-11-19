@@ -9,6 +9,9 @@ You see each other most weekends, text daily, maybe sleep over. But nobody has s
 
 You probably already know you're in one. The harder question is what to do about it. This guide helps with exactly that: a short look at what researchers have found, then a decision guide with three paths and the words for each.
 
+> **The short answer:**
+> A situationship is a romantic or sexual connection without a clear label or commitment. To decide what to do, ask what you want and whether you're sliding or deciding. Then either stay and say so out loud, ask to define it, or walk away if your needs won't be met.
+
 ## What research says about situationships
 
 Situationships have only recently become a research topic, and most of the work so far comes from a team led by psychologist Michael Langlais.

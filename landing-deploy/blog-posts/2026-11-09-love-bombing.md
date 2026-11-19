@@ -9,6 +9,9 @@ Love bombing is hard to spot for a simple reason: at the start, it feels exactly
 
 So instead of another list, this guide follows one fictional but very typical relationship from the first week to the third month, the way people describe it afterwards. At each stage you'll see what it feels like, what is actually happening, and what you can do. Then we'll look at how to tell it apart from someone who is simply very keen.
 
+> **The short answer:**
+> Love bombing is intense flattery, gifts and constant contact early on, used to create fast attachment and later control. It often turns into criticism, pressure and hot-and-cold behavior once you're invested. The key difference from real enthusiasm is how they react when you set a boundary or say no.
+
 ## Week 1: "I've never felt like this"
 
 Sam meets Alex on an app. By day three they're talking for hours every night. Alex remembers everything Sam says, likes the same music, has the same plans for the future. By the end of the week Alex says: "I know this sounds crazy, but I think you might be the one."

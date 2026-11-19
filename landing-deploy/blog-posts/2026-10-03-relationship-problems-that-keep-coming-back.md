@@ -9,6 +9,9 @@ If you and your partner keep having the same argument, you're not doing somethin
 
 Five problems come up more than any others. In each case, the real issue is usually something other than the topic on the surface. This guide explains what tends to sit underneath each one, why the same fight keeps coming back, and what you can actually say to break the loop.
 
+> **The short answer:**
+> Most recurring relationship problems come down to five themes: chores and the mental load, time and attention, money, different needs for closeness, and the same fight on repeat. They keep returning because the need underneath stays unspoken. Name that need, talk about one issue at a calm moment, and agree on one small change.
+
 ## Why the same problems keep returning
 
 Most recurring fights follow a simple pattern. Something small happens (the dishes, a late reply, a purchase), it touches a deeper need (to feel respected, supported, safe or free), and the conversation stays on the small thing. Because nobody names the need, the conversation can't resolve it, and the need finds the next small thing a few days later.

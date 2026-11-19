@@ -9,6 +9,9 @@ Being the one who notices, helps and holds things together is not a problem. Man
 
 This guide doesn't hand you a label. It gives you three tests that separate generous care from codependency, explains what the research does and does not show, and gives you words for the first, awkward steps back toward yourself.
 
+> **The short answer:**
+> A codependent relationship is one where caring for your partner has replaced caring for yourself: you silence your needs, feel responsible for their moods, and lose your sense of self. Caring is healthy when you can say no, have a life of your own, and your help is a choice, not a compulsion.
+
 ## Caring and codependency look the same from outside
 
 Two people make their partner a late dinner after a hard day. One does it because they want to and would be fine skipping it tomorrow. The other does it because skipping it feels dangerous: their partner might be disappointed, might pull away, might stop needing them.

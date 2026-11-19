@@ -9,6 +9,9 @@ A bad fight can leave a strange silence afterwards. You've both said things you 
 
 Most advice on rebuilding trust after a fight talks about apologies, and those matter. But research points to three things that get far less attention: *when* you try to repair, *who* leads the recovery, and a short writing exercise that changed how couples experienced their fights over a whole year. This guide is organized by time: tonight, the next morning, and the week after.
 
+> **The short answer:**
+> To rebuild trust after a fight, calm down first and don't force a late-night fix. The next morning, own your part without excuses and listen to how it landed. Over the following week, keep one small promise, reconnect on purpose, and try a short writing exercise that looks at the fight from outside.
+
 ## Tonight: don't try to fix it yet
 
 If the fight was heated, the most useful thing you can do tonight is often nothing more than calming down.

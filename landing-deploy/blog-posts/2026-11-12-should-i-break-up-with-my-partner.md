@@ -9,6 +9,9 @@ Some days you're sure you want to leave. Other days you remember why you fell fo
 
 If you feel torn, you're not weak or indecisive. You're facing one of the hardest decisions there is, and you're facing it with incomplete information, mixed feelings and a lot at stake. This guide won't tell you what to do. Nobody outside your relationship can. What it will do is show you what research has found about this decision, walk you through ten questions that cut through the noise, and help you reach a decision you understand and can stand behind.
 
+> **The short answer:**
+> To decide whether to break up, ask whether you feel safe, still respect your partner, have truly tried to fix things, and want the same big things. A rough patch with mutual effort is different from a long pattern of contempt or disinterest. Fear or control are reasons to get support and leave.
+
 ## Feeling torn is normal
 
 Researchers Samantha Joel, Geoff MacDonald and Elizabeth Page-Gould asked people who were actively deciding whether to break up what was pulling them each way. They found 27 different reasons to stay and 23 reasons to leave. The most common reasons to stay were emotional closeness, what they'd already invested and a sense of obligation. The most common reasons to leave were problems with the partner's personality, a breach of trust and the partner pulling away.

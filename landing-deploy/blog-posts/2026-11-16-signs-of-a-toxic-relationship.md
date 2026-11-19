@@ -9,6 +9,9 @@ tags: signs of a toxic relationship, red flags
 
 So instead of one long list of red flags, this guide sorts the signs of a toxic relationship into three levels. Read through all three, notice which one sounds most like your last month, and then look at the next steps for that level.
 
+> **The short answer:**
+> Signs of a toxic relationship range from unhealthy but fixable patterns, like poor communication, to toxic ones like contempt and constant blame, and finally coercive control: monitoring, isolation, threats and fear. If you feel afraid or controlled, treat it as abuse and contact a support service.
+
 ## Level 1: Unhealthy, but often fixable
 
 These are patterns many couples fall into, especially under stress. They hurt, and they're worth taking seriously, but they're usually two-sided and often change when both people want them to.

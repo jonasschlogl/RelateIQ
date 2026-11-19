@@ -13,6 +13,9 @@ So the spark doesn't have to go. But "the spark" is a vague word, and vague prob
 
 This guide starts with a short check to find which spark is fading for you, then explains what research says actually helps with that one.
 
+> **The short answer:**
+> To keep the spark alive in a long-term relationship, first find which kind of spark has faded: novelty, desire, attention or warmth. Then make one small, repeated change in that area, like trying something new together every two weeks or one real question a week, instead of trying everything at once.
+
 ## The 2-minute spark check
 
 Read each statement and score it: 0 = rarely true, 1 = sometimes, 2 = often. Do it alone first. If you're both up for it, compare answers later.

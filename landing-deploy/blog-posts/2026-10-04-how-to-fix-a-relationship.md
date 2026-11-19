@@ -9,6 +9,9 @@ When a relationship feels broken, the first instinct is to fix everything at onc
 
 What works better is smaller: a few calm steps, taken in a sensible order. This guide is built on decades of couples research, mostly from John Gottman and his colleagues, who filmed and measured couples for years to see what separates relationships that recover from ones that don't. You'll find the six steps, why each one works, and what it sounds like in real life.
 
+> **The short answer:**
+> To fix a relationship, start small and in order: decide what "better" would look like, stop the criticism and contempt first, talk about one issue at a time, rebuild small daily good moments, and ask what each of you needs. If the same fights keep returning after a few weeks, get help early.
+
 ## First: is this a relationship that can be fixed?
 
 Most relationships that feel broken are stuck, not finished. Distance, constant arguments, feeling like roommates, losing the spark: these are common, and they often respond to changes in how you talk and how you spend time together.

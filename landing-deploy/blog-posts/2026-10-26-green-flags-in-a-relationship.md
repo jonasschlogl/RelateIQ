@@ -9,6 +9,9 @@ Red flags get all the attention. But if you've been through a difficult relation
 
 This guide lists nine green flags in a relationship, but with a twist: for each one, there's a simple way to actually notice it, in early dating or years in. Several come from research on what separates thriving couples from the rest.
 
+> **The short answer:**
+> The clearest green flags in a relationship are a partner who is genuinely happy about your good news, supports your goals without taking over, tells you calmly when something is wrong, repairs quickly after conflict, respects your need for a pause, and leaves you feeling calmer and more like yourself.
+
 ## 1. They're genuinely happy about your good news
 
 **Why it matters:** Psychologist Shelly Gable and colleagues found that the way a partner responds when you share something *good* matters a great deal. When partners responded actively and enthusiastically, people reported more intimacy and daily satisfaction. Responses that were flat, dismissive or turned the conversation back to the partner had the opposite effect.

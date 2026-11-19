@@ -9,6 +9,9 @@ Breadcrumbing is when someone gives you just enough attention to keep you intere
 
 These are the ones people ask most, answered as honestly as research allows.
 
+> **The short answer:**
+> Breadcrumbing is when someone gives you just enough attention to keep you interested, with no real intention of a relationship. Signs include sporadic messages, vague plans that never happen, and contact when they're bored. It's best handled by asking once directly, then stepping back if their actions don't change.
+
 ## 1. "Is this actually breadcrumbing, or am I overthinking?"
 
 A useful test is to look at the *pattern over a month*, not at single messages. Breadcrumbing usually has three features together:

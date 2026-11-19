@@ -11,6 +11,9 @@ If that sounds familiar, you're far from alone. Overthinking in a relationship i
 
 This guide explains what's going on in your head and body when you overthink, what research says about how often our worries actually come true, and seven specific things you can do instead of replaying the same thoughts again.
 
+> **The short answer:**
+> To stop overthinking in a relationship, notice the spiral early, name it as anxiety rather than evidence, calm your body first, write down other possible explanations, and wait before sending anything. Most worries never come true. If a worry keeps returning, raise it once, calmly and specifically, with your partner.
+
 ## Why overthinking feels like problem solving (but isn't)
 
 When you replay a conversation or imagine every possible reason for a silence, it feels productive. You're "figuring it out." But researchers who study rumination, including the late psychologist Susan Nolen-Hoeksema, describe repetitive replaying of worries as something that tends to keep distress going rather than produce answers. You go around the same loop and nothing new arrives, because the thing you need (information from your partner) isn't in your head.

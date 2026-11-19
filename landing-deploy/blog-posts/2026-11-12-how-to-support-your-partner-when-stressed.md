@@ -9,6 +9,9 @@ Here is a finding that surprises most people. In a classic study of couples wher
 
 That says a lot about how to help someone who's under pressure. Big, visible rescue missions can backfire. Quiet, well-matched help usually works better. This guide gives you words for the most common kinds of stress, plus the thinking behind them, so you can adapt rather than recite.
 
+> **The short answer:**
+> To support your partner when they're stressed, ask what kind of help they want, listen more than you fix, and offer practical help without making a big deal of it. Research shows support that goes almost unnoticed often helps most, because it doesn't make the stressed person feel weak or in debt.
+
 ## The support paradox
 
 Niall Bolger, Adam Zuckerman and Ronald Kessler followed couples through a stressful period with daily diaries. They found that when the stressed partner was clearly *aware* of receiving support, it didn't always help them feel better, and sometimes went with feeling worse. When support happened without them noticing it as support, it went along with better adjustment.

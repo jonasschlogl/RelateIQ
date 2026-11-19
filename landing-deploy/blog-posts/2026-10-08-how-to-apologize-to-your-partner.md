@@ -9,6 +9,9 @@ Most of us know how to say "sorry." Fewer of us know how to apologize in a way t
 
 The good news is that apologizing is a skill, and researchers have studied what makes an apology work. This guide covers what they found, why it works, a simple structure you can use tonight and real examples for the situations couples run into most often.
 
+> **The short answer:**
+> To apologize to your partner, name exactly what you did, take responsibility without "if" or "but", acknowledge how it affected them, offer a concrete repair and give them time. Research found that taking responsibility and offering to repair matter most, while asking for forgiveness on the spot matters least.
+
 ## Why a good apology matters more than you think
 
 It's tempting to think of an apology as a formality: you say the words, the other person accepts, everyone moves on. Research on forgiveness suggests it's a lot more than that.

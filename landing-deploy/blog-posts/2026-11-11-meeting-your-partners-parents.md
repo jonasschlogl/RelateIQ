@@ -9,6 +9,9 @@ Most advice about meeting your partner's parents says the same things: dress nic
 
 This guide is built around those moments. First, a quick look at why it's worth getting right. Then twelve awkward situations with words you can actually use.
 
+> **The short answer:**
+> When meeting your partner's parents, ask your partner beforehand about family rules and sensitive topics, arrive with a small gift, learn names, offer to help, and keep answers to awkward questions short and friendly. Their approval matters for couples, so aim to be warm and respectful rather than perfect.
+
 ## Why their opinion matters (and the myth it busts)
 
 There's a popular idea, the "Romeo and Juliet effect", that parental disapproval pulls a couple closer. It came from a 1972 study and became a pop psychology classic. When psychologist H. Colleen Sinclair and colleagues tried to replicate it in 2014, they found the opposite. Across their measures, more interference and less approval from friends and family went with *lower* relationship quality, and a meta-analysis pointed the same way. Disapproval was also linked to less trust and more criticism between partners.

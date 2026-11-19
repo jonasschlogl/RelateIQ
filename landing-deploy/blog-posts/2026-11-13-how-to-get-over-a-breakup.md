@@ -9,6 +9,9 @@ Right now it probably feels like this will last forever. Here is something worth
 
 You'll still hurt. But your brain is probably exaggerating how long and how badly. This guide breaks recovery into three stages, because what helps on day two is different from what helps in month two.
 
+> **The short answer:**
+> To get over a breakup, get through the first 48 hours with basic care and support, create distance from your ex online, let the feelings come, then rebuild routines and parts of yourself that went quiet. Most people recover faster than they expect, and writing about the breakup can help.
+
 ## Stage 1: the first 48 hours
 
 The goal here is not to feel better. It's to get through without making things harder for future you.

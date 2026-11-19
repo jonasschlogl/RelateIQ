@@ -9,6 +9,9 @@ A list of date night questions can feel like homework: two people at a restauran
 
 Below are five easy formats, 40 questions to play them with, and a bit of research on why it's worth the effort.
 
+> **The short answer:**
+> The best date night questions mix playful and meaningful ones, and they work even better as games: a question jar, a hot seat round or this-or-that. Shared play and new experiences are linked to closer, happier couples, so the point is to have fun together, not to analyze the relationship.
+
 ## Why date night (and playing) is worth it
 
 **Regular couple time matters.** In a report for the National Marriage Project at the University of Virginia, W. Bradford Wilcox and Jeffrey Dew analyzed large US surveys and found that couples who spent time alone together at least once a week were markedly more likely to report high-quality relationships and lower divorce rates. It's an association, not proof that date nights cause happiness, but it's a consistent pattern. They also noted that novel, active activities went with higher relationship quality.

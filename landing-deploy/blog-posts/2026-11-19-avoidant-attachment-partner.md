@@ -11,6 +11,9 @@ If that sounds familiar, your partner may have an avoidant attachment style. It'
 
 This guide explains what avoidant attachment looks like, why avoidant partners pull away when things get close, and how to build a closer relationship without chasing or losing yourself.
 
+> **The short answer:**
+> An avoidant partner values independence, pulls away after close moments, and finds emotional talks uncomfortable. To love someone with avoidant attachment, don't chase but stay present, make closeness feel safe rather than heavy, ask for what you need clearly, and notice how they show love through actions.
+
 ## What is avoidant attachment?
 
 Attachment styles describe how we tend to handle closeness and dependence in relationships. People with an avoidant style learned, often early in life, that relying on others wasn't safe or wasn't welcome. So they became very self-reliant.

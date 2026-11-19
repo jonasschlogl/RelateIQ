@@ -9,6 +9,9 @@ Relationship anxiety is the constant background question: *are we okay?* A slow 
 
 You probably don't need another list of signs. You need something to do when it hits. So this guide is a toolkit in three time-scales: the next two minutes, the rest of the day, and the next month. First, three research findings that make the toolkit make sense.
 
+> **The short answer:**
+> To manage relationship anxiety, name the feeling, slow your breathing, list other explanations and wait before sending anything. During the day, swap reassurance-seeking for specific requests. Over a month, tell your partner calmly what helps and collect evidence of their care. Persistent anxiety may need a therapist.
+
 ## Three things worth knowing
 
 **Most worries don't come true.** In a 2020 study, psychologists Lucas LaFreniere and Michelle Newman asked people with generalised anxiety disorder to write down their worries for ten days and then track what actually happened. 91.4% of the worries didn't come true. It was a small study, and relationship worries aren't identical. But the lesson fits: the strength of a worry tells you how anxious you are, not how likely the fear is.

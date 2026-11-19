@@ -11,6 +11,9 @@ You're not imagining that it's hard. In the American Psychological Association's
 
 The good news: most holiday stress with a partner's family is predictable, which means it's plannable. Here's a game plan, starting with Thanksgiving and then stage by stage for any family holiday.
 
+> **The short answer:**
+> Holidays with your partner's family go best with a plan: agree beforehand on how long you stay, who handles which family, and a signal for when you need a break. Keep some time just for the two of you, let each partner manage their own parents, and save the debrief for after the drive home.
+
 ## Thanksgiving with your partner's family
 
 Thanksgiving is often the first big family holiday a new couple spends together, and it has its own rhythm. A few things help:

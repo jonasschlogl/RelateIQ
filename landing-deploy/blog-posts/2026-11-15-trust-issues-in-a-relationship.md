@@ -9,6 +9,9 @@ Most people with trust issues know the checklist by heart: checking the phone, e
 
 This guide explains how trust actually forms, according to decades of relationship research, and the quiet loop that can keep doubt alive even in a loving relationship. Then it gives you a way out of the loop.
 
+> **The short answer:**
+> Trust issues often come from past hurt, but they're kept alive by a loop: doubt, reassurance-seeking, short relief, then more doubt. Trust grows through repeated small acts of reliability and care. Check whether the doubt fits your partner's current behavior or older wounds, and work on the loop, not just the feeling.
+
 ## What trust is made of
 
 In a classic study, psychologists John Rempel, John Holmes and Mark Zanna described trust in close relationships as having three layers that build on each other:

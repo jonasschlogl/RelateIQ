@@ -9,6 +9,9 @@ Words of affirmation, quality time, receiving gifts, acts of service, physical t
 
 The core idea, that people feel loved in different ways and it helps to know how your partner does, is genuinely useful. But several of the popular beliefs built on top of it don't hold up well. Here are six of them, checked against what researchers have actually found.
 
+> **The short answer:**
+> The five love languages are a useful conversation starter, but research doesn't support the idea that everyone has one main language or that matching languages makes couples happier. What helps more is showing love in many ways and paying attention to what your partner specifically appreciates.
+
 ## Belief 1: "Everyone has one main love language"
 
 **What research says: mostly not.**

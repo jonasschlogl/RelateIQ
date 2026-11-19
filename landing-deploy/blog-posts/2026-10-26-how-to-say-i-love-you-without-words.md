@@ -9,6 +9,9 @@ tags: show love, love languages
 
 So here are 25 ways to say "I love you" without words, sorted by the kind of day you're having. First, a quick look at what research says about why the small stuff matters so much.
 
+> **The short answer:**
+> You can say "I love you" without words through small, frequent gestures: a warm touch, taking a task off their list, remembering what they mentioned, a thank-you for something ordinary, or full attention when they talk. Small moments repeated often matter more than rare grand gestures.
+
 ## Why small gestures carry so much weight
 
 **Touch helps both of you.** In a study of 102 couples who reported on their days four times a day for a week, Anik Debrot and colleagues found that being touched by a partner when you were feeling low went along with a better mood, partly because it made people feel closer. Touching your partner was linked to a better mood for the person doing the touching too. And couples who touched more had partners with higher well-being six months later.

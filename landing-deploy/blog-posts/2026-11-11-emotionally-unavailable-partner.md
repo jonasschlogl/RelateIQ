@@ -11,6 +11,9 @@ Pushing someone with an avoidant attachment style for a big talk tends to backfi
 
 So this guide doesn't give you a list of signs. It gives you five different reasons people are emotionally unavailable, how to recognize each one, and what tends to help.
 
+> **The short answer:**
+> An emotionally unavailable partner may be avoidant, struggle to name their feelings, have learned that feelings aren't shared, be depleted by stress or depression, or simply not be invested in you. Each reason needs a different response, so watch their patterns and how they react when you ask for closeness.
+
 ## First, what it looks like from your side
 
 Whatever the reason, the experience for the partner is often similar: you know their opinions but not their feelings, hard conversations end in silence or a joke, they're great company for fun but hard to reach when life gets heavy, and you can feel lonely even when you're together.

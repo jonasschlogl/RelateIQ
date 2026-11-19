@@ -11,6 +11,9 @@ It's worth doing better. In a study of more than 4,500 couples, Jeffrey Dew, Son
 
 This guide gives you a simple structure for a calm "money date", a look at what research says about common money set-ups, and words for the four situations couples find hardest.
 
+> **The short answer:**
+> To talk about money with your partner, choose a calm time and start with stories and goals before numbers. Then share the facts honestly and make one or two small decisions, like a no-need-to-ask spending amount. Regular short money dates prevent most money fights.
+
 ## What research says before you start
 
 **Hidden money is more common than you'd think.** In a 2021 Harris Poll for the National Endowment for Financial Education, 43% of US adults who had ever combined finances with a partner admitted to at least one financial deception, most often hiding a purchase, an account, a bill or cash. Of people who'd been involved in one, 85% said it affected their relationship, most often through an argument or less trust.

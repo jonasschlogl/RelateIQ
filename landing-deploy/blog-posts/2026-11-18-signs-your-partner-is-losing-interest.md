@@ -9,6 +9,9 @@ Shorter replies. Fewer plans. Less touch. When you notice your partner pulling b
 
 This guide decodes the most common signs, one by one, with the likely explanations for each. First, what research says actually predicts a relationship fading, because it isn't what most people expect.
 
+> **The short answer:**
+> Signs your partner may be losing interest include shorter replies, less touch, fewer plans and less curiosity about your life. Each can also come from stress, depression or a busy season. Look for a lasting pattern rather than one bad week, check your own anxiety, and then ask calmly.
+
 ## What actually predicts a relationship fading
 
 **It's usually not the fights.** In the PAIR Project, Ted Huston and colleagues followed 168 couples from their wedding day for 13 years. What best predicted distress and divorce wasn't conflict. It was the *loss* of early love and affection, especially in the first two years. Couples don't usually argue their way out of love. They drift.

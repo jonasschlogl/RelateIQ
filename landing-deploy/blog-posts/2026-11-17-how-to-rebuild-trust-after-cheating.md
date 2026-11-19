@@ -11,6 +11,9 @@ First, many couples do stay together. In a large 2026 survey of 3,429 people who
 
 Second, recovery isn't one moment of forgiveness. It's a process with recognizable stages. In a 2023 study, Stephen Fife and colleagues interviewed 16 couples who had stayed together after sexual infidelity and described their healing as meaningful. Their stories followed four stages: **revelation, initial reactions, stabilizing, and revitalising**. This guide walks through each one, with what each partner needs to do.
 
+> **The short answer:**
+> Rebuilding trust after cheating usually goes through four stages: the revelation, intense reactions, stabilizing, and rebuilding a new relationship. The unfaithful partner needs to end the affair, answer questions honestly and stay consistent. The betrayed partner needs time and room to heal. It usually takes many months, often a year or more.
+
 ## Stage 1: Revelation
 
 Whether the affair was discovered or confessed, this is the moment the ground disappears.

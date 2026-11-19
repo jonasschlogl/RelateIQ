@@ -9,6 +9,9 @@ Most advice about jealousy in a relationship treats it as one thing: a bad feeli
 
 Mixing the two up is behind most of the myths below. Sorting them out is the fastest way to know whether your jealousy is telling you something about your relationship, or something about your mind at 1am.
 
+> **The short answer:**
+> Jealousy in a relationship is normal in small doses, but rumination, phone checking and constant questioning make it worse. Reactive jealousy responds to a real event, while suspicious jealousy grows from fear without evidence. What helps is naming the fear, talking about specific needs and building security rather than surveillance.
+
 ## Myth 1: "Jealousy is one feeling"
 
 Psychologists Robert Rydell and Robert Bringle separated jealousy into two kinds:

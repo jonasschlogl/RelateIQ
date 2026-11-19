@@ -11,6 +11,9 @@ Philosopher Kate Abramson, author of *On Gaslighting*, put it simply in a 2026 N
 
 So how do you tell the difference? These five questions help.
 
+> **The short answer:**
+> Gaslighting is a pattern of making someone doubt their own memory, perception or sanity, usually to gain control. Ordinary disagreement leaves room for two versions of events. Gaslighting attacks your mind rather than the event, repeats over time, and leaves you confused and dependent on the other person's version.
+
 ## Question 1: Is there room for two versions?
 
 In a normal disagreement, both people can say "I remember it differently" and leave it there. Memory is imperfect, and couples misremember things all the time.

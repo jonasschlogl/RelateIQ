@@ -9,6 +9,9 @@ Most long distance relationship tips focus on the time apart: video calls, care 
 
 This guide covers all three phases. First, some reassurance, because the data on long distance is better than its reputation.
 
+> **The short answer:**
+> Long distance relationships work best with a shared reason and a rough end date, a contact rhythm that suits you both, sharing everyday life, and always knowing when you'll see each other next. Keep visits relaxed and real, and plan carefully for the move to the same city, which is often the hardest part.
+
 ## The good news: long distance isn't the problem people think
 
 In a nationally representative US study of 870 people, Gretchen Kelmer and colleagues found that people in long-distance relationships reported *higher* relationship quality on several measures, more dedication and less feeling of being "trapped" than people living close to their partner. At follow-up, they had broken up at about the same rate.

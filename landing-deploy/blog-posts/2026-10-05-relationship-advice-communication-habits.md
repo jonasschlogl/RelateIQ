@@ -9,6 +9,9 @@ Most relationship advice sounds obvious until you're in the middle of an argumen
 
 These seven habits come up again and again in the methods couples therapists use, especially the Gottman Method and Nonviolent Communication. For each one, you'll find what the research says, why it works and what it sounds like in a real conversation.
 
+> **The short answer:**
+> The communication habits that change how couples argue are: start soft, describe behavior instead of attacking character, name the need underneath, make one clear request, listen to understand, take a break when flooded and promise to come back, and repair early. Pick one habit and practice it for a week.
+
 ## What decades of couples research found
 
 Psychologist John Gottman and his colleagues spent decades filming couples as they discussed disagreements, measuring everything from their words to their heart rates. A few findings shape almost all the advice below:

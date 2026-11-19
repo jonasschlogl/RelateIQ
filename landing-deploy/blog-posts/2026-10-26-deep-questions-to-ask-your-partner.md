@@ -9,6 +9,9 @@ Most lists of deep questions to ask your partner hand you 100 questions and stop
 
 So this guide gives you 30 well-chosen questions, sorted by how deep they go and where they work best. Then it covers the part most lists skip: how to respond so the conversation actually goes somewhere.
 
+> **The short answer:**
+> Good deep questions to ask your partner start easy and get more personal step by step: memories, hopes, fears, and what you want for your future together. How you respond matters even more than the question, so listen, ask a follow-up, and share something of your own in return.
+
 ## Two things research says before you start
 
 **Deep talk goes better than people expect.** In 12 experiments with more than 1,800 people, Michael Kardas, Amit Kumar and Nicholas Epley found that people consistently expected deep conversations to be more awkward and less enjoyable than they turned out to be, and underestimated how interested the other person would be in what they had to say. Those experiments were mostly between strangers, but the lesson carries over: the awkwardness you're bracing for is usually smaller than you think.

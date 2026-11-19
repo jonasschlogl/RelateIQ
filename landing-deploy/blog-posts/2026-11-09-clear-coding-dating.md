@@ -9,6 +9,9 @@ Clear coding is the dating trend of simply saying what you want: "I'm looking fo
 
 Most people agree with clear coding in principle. The hard part is the actual words, so they don't sound needy, intense or harsh. That's what this guide is for: 20 messages you can adapt, organized by stage.
 
+> **The short answer:**
+> Clear coding in dating means saying what you want, kindly and early: what you're looking for, whether you'd like a second date, and "no, thanks" when it isn't a match. It saves both people time, reduces anxiety, and a clear no is kinder than ghosting.
+
 ## Why clarity works better than playing it cool
 
 **People are more interested than you expect.** In a series of experiments, Michael Kardas, Amit Kumar and Nicholas Epley found that people consistently underestimated how interested others would be in hearing about them, and expected honest, deeper conversation to be more awkward than it turned out. "Playing it cool" is often protection against a reaction that wouldn't have happened anyway.

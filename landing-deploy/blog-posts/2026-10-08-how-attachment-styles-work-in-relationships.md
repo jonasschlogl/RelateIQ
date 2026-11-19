@@ -9,6 +9,9 @@ You've probably seen the terms before: anxious attachment, avoidant attachment, 
 
 This guide explains where attachment styles come from, what the studies actually found, what each style tends to look like in dating and long-term relationships, and why the pattern you have today isn't a life sentence. It also explains the *why* behind each pattern, because once you understand why your body reacts the way it does, it becomes much easier to change what you do next.
 
+> **The short answer:**
+> Attachment styles describe how people handle closeness and fear of losing it. Secure people are comfortable with both, anxious people fear abandonment, avoidant people protect their independence, and fearful-avoidant people want closeness but fear it. Styles are tendencies, not fixed labels, and they can become more secure over time.
+
 ## Where attachment theory comes from
 
 Attachment theory started with British psychiatrist John Bowlby, who wanted to understand why babies separated from their caregivers became so distressed. His answer was that humans are born with an attachment system: a built-in drive to stay close to the people who keep us safe. Psychologist Mary Ainsworth then watched how one-year-olds reacted when their mother left a room and came back. She found consistent patterns. Some babies were upset and then easily comforted (secure). Some acted as if they didn't care (avoidant). Some were upset and hard to settle, clinging and angry at the same time (anxious-ambivalent).
