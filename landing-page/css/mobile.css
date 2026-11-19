@@ -265,3 +265,9 @@ img.fl-ph { display: none; }
   body.hx #trust.acc, body.hx #pricing.acc, body.hx #faq.acc { margin-top: 14px !important; }
   body.hx #faq.acc { margin-bottom: 10px; }
 }
+
+/* ---- privacy & trust: photos are stretched in the narrow 2-column cards, so drop them on phones ---- */
+@media (max-width: 700px) {
+  body.hx #trust .tr-ph { display: none !important; }
+  body.hx #trust .trust-item { min-height: 0 !important; }
+}
