@@ -37,6 +37,8 @@ A newer, even larger analysis points the same way. In 2020, Samantha Joel and mo
 
 What does that mean for you? Not that you should stay because you depend on someone, or leave because you're not satisfied today. It means the questions that matter most are about the relationship's core: do you still feel committed, do you still love this person, and do you still want your lives to be connected? Those are the questions below.
 
+Timing matters too. In a 2025 analysis of four long-running national studies with 11,295 people, Janina Bühler and Ulrich Orth found that relationships that ended went through two phases: years of slow, slight decline, then a turning point about one to two years before the split, after which satisfaction fell fast. The partner who later ended things usually became unhappy earlier. The researchers suggest that trying to repair things during the slow phase, before the steep drop, gives couples the best chance.
+
 ## 10 questions to ask yourself
 
 Take your time with these. Write the answers down if it helps. Notice which ones you avoid, because that often says something too.
@@ -181,3 +183,4 @@ Some situations call for a closer look before you decide: [love bombing](/blog/l
 - Spielmann, S. S., MacDonald, G., Maxwell, J. A., Joel, S., Peragine, D., Muise, A., & Impett, E. A. (2013). Settling for less out of fear of being single. *Journal of Personality and Social Psychology*, 105(6), 1049-1073. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2013/12/131203133728.htm)
 - Gottman Institute: [Everything turns into an argument (on perpetual problems)](https://www.gottman.com/blog/everything-turns-into-an-argument/)
 - American Psychological Association: [Breakups aren't all bad: Coping strategies to promote positive outcomes](https://www.apa.org/topics/marriage-relationships/relationship-breakups)
+- Bühler, J., & Orth, U. (2025). *Journal of Personality and Social Psychology*. [DOI](https://doi.org/10.1037/pspp0000551). Summary on [EurekAlert](https://www.eurekalert.org/news-releases/1077761)

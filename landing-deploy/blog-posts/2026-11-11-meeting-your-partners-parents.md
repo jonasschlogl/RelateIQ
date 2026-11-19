@@ -20,6 +20,8 @@ So, no pressure, but this evening is worth some preparation. The good news: appr
 > **One nuance worth knowing**
 > A 2015 study by Sinclair and colleagues found that people with a strong sense of making their *own* choices were less affected by their circle's disapproval. Parents' opinions matter, but they're not destiny. What matters most over time is how the two of you handle their opinion together.
 
+Involvement is different from approval, though. In a 2024 study of 464 young adults in Slovenia, Timotej Glavač and Melita Puklek Levpušček found that people whose fathers were more intrusive tended to have shorter relationships. Parents who are warm and supportive help a couple. Parents who try to run it usually don't.
+
 ## Before you go: 3 questions to ask your partner
 
 1. **"What are they proud of, and what are they sensitive about?"** This is your map of good and bad topics.
@@ -143,3 +145,4 @@ Give it time. First meetings rarely decide everything. Keep being respectful, le
 - Sinclair, H. C., Felmlee, D., Sprecher, S., & Wright, B. L. (2015). Don't tell me who I can't love: A multimethod investigation of social network and reactance effects on romantic relationships. *Social Psychology Quarterly*, 78(1), 77-99. [Penn State record](https://pure.psu.edu/en/publications/dont-tell-me-who-i-cant-love-a-multimethod-investigation-of-socia/)
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Summary from [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), on Terri Orbuch's long-term study of married couples
+- Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Hrčak record](https://hrcak.srce.hr/en/319709)

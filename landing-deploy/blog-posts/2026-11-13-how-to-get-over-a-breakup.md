@@ -39,6 +39,8 @@ It usually comes at night or after a drink. Have a plan ready:
 2. Write the message to your ex there, not in the chat.
 3. Send it to a friend instead, or sleep on it. You can always send it tomorrow. You almost never will.
 
+It can help to know why the pull is so strong. In a 2021 study of 361 people who had gone through a serious breakup, Morgan Cope and Brent Mattingly found that people with more attachment anxiety wanted their ex back more, and that this was partly explained by feeling less sure of who they were after the split. The urge to get back together can be a sign that you've lost track of yourself, not proof that the relationship should continue.
+
 ### Let the feelings be what they are
 
 Sadness, anger, relief, guilt, all in one afternoon. That's normal. Trying to force yourself to stop loving someone rarely works. Accepting that you still have feelings, and that they will fade, takes away some of their power. If the replaying gets stuck, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has ways to break the loop.
@@ -121,3 +123,4 @@ If your ex is contacting you after you've asked them to stop, threatening you, o
 - Marshall, T. C. (2012). Facebook surveillance of former romantic partners: Associations with postbreakup recovery and personal growth. *Cyberpsychology, Behavior, and Social Networking*, 15(10), 521-526. [Full text (PDF)](https://bura.brunel.ac.uk/bitstream/2438/7014/2/Fulltext.pdf)
 - Larson, G. M., & Sbarra, D. A. (2015). Participating in research on romantic breakups promotes emotional recovery via changes in self-concept clarity. *Social Psychological and Personality Science*, 6(4), 399-406. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2015/01/150106112540.htm)
 - American Psychological Association: [Breakups aren't all bad: Coping strategies to promote positive outcomes](https://www.apa.org/topics/marriage-relationships/relationship-breakups)
+- Cope, M., & Mattingly, B. (2021). *Journal of Social and Personal Relationships*. Summary on [PsyPost](https://www.psypost.org/breakup-induced-confusion-about-ones-self-identity-helps-explain-the-desire-to-get-back-together-with-an-ex-partner/)

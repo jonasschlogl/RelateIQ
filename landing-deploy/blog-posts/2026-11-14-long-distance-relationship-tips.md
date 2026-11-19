@@ -19,6 +19,8 @@ And in a study by Crystal Jiang and Jeffrey Hancock, long-distance couples felt 
 
 So the odds are fine. The question is how to use each phase well.
 
+The same habits seem to keep both kinds of couple happy. In a 2021 study of 232 young adults in long-distance relationships and 263 in geographically close ones, Kaitlyn Goldsmith and Sandra Byers found that maintenance behaviours such as staying in touch, talking about the future and thinking fondly of each other were linked to higher satisfaction in both groups, in much the same way.
+
 ## Phase 1: while you're apart
 
 ### Agree on the "why" and the "until when"
@@ -114,3 +116,4 @@ When you both want it and can make it work practically. Feeling fairly sure you'
 - Dargie, E., Blair, K. L., Goldfinger, C., & Pukall, C. F. (2015). Go long! Predictors of positive relationship outcomes in long-distance dating relationships. *Journal of Sex & Marital Therapy*, 41(2), 181-202. Summary from the [University of Florida](https://smartcouples.ifas.ufl.edu/dating/coping-with-problems-and-challenges/long-distance-relationships-can-it-work/)
 - Stafford, L., & Merolla, A. J. (2007). Idealization, reunions, and stability in long-distance dating relationships. *Journal of Social and Personal Relationships*, 24(1), 37-54. [Abstract](https://www.scilit.net/publications/551be18c02394506e57b1161fee856f0)
 - Jiang, L. C., & Hancock, J. T. (2013). Absence makes the communication grow fonder: Geographic separation, interpersonal media, and intimacy in dating relationships. *Journal of Communication*, 63(3), 556-577. Summary on [ScienceDaily](https://sciencedaily.com/releases/2013/07/130718101232.htm)
+- Goldsmith, K., & Byers, E. S. (2021). *Sexual and Relationship Therapy*. Summary on [PsyPost](https://www.psypost.org/study-identifies-sexual-maintenance-behaviors-that-help-support-satisfying-long-distance-relationships/)

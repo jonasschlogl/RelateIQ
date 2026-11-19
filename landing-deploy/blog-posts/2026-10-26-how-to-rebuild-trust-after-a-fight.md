@@ -17,6 +17,8 @@ If the fight was heated, the most useful thing you can do tonight is often nothi
 
 **Sleep matters more than you'd think.** In studies by Amie Gordon and Serena Chen at UC Berkeley, people reported more conflict with their partners on days after a poor night's sleep, and couples who'd slept badly were worse at resolving disagreements and at reading each other's emotions. A late-night "let's just finish this" conversation often makes things worse. Going to bed angry, but with a plan to talk, is often the wiser choice.
 
+A 2026 study points the same way. Following 378 married couples through ten days of diaries, Asya Saydam and Jaime Hsu found that a better night's sleep generally predicted less marital strain the next day, with the strongest link for women married to men and for people in same-sex marriages.
+
 **Leave one small signal.** A goodnight, a glass of water on their side of the bed, a "we'll figure it out". It says: the relationship is still here, even if the conversation isn't over.
 
 ## The next morning: repair
@@ -118,3 +120,4 @@ Arguments happen in every relationship. Threats, intimidation, breaking things o
 - Salvatore, J. E., Kuo, S. I.-C., Steele, R. D., Simpson, J. A., & Collins, W. A. (2011). Recovering from conflict in romantic relationships: A developmental perspective. *Psychological Science*, 22(3), 376-383. Summary from the [Association for Psychological Science](https://www.psychologicalscience.org/news/releases/how-couples-recover-after-an-argument-stems-from-their-infant-relationships.html)
 - Gordon, A. M., & Chen, S. (2014). The role of sleep in interpersonal conflict: Do sleepless nights mean worse fights? *Social Psychological and Personality Science*, 5(2), 168-175. Summary on [WBUR](https://www.wbur.org/commonhealth/2013/07/09/bad-sleep-relationship-conflict)
 - Lewicki, R. J., Polin, B., & Lount, R. B. (2016). An exploration of the structure of effective apologies. *Negotiation and Conflict Management Research*, 9(2), 177-196. Summary from [Ohio State University News](https://news.osu.edu/the-6-elements-of-an-effective-apology-according-to-science/)
+- Saydam, A., & Hsu, J. (2026). Sleep tight, don't fight? Daily sleep quality and marital strain in same- and different-sex marriages in the United States. *Journal of Health and Social Behavior*. Summary on [PsyPost](https://www.psypost.org/poor-sleep-quality-predicts-marital-strain-especially-for-women-married-to-men/)

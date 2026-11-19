@@ -117,6 +117,8 @@ A few caveats are worth knowing:
 - Many internet quizzes are simplified. A quiz can start a conversation, but it can't label you.
 - Avoid "diagnosing" your partner. Attachment is a way to understand yourself and your patterns, not a way to win arguments.
 
+Good everyday moments seem to matter, not just big life events. In a 2022 study of 151 new dating couples and 168 newlywed couples, Deniz Bayraktaroglu and colleagues found that on days with more positive moments with their partner, people's avoidance went down over the following weeks, partly because those moments lifted their mood. The same positive moments did not reduce attachment anxiety, which may need reassurance that is more consistent and direct.
+
 ## Common myths about attachment styles
 
 | Myth | What the research actually suggests |
@@ -209,3 +211,4 @@ Want to go deeper on a specific pattern? Read about [relationship anxiety](/blog
 - Schrodt, P., Witt, P. L., & Shimkowski, J. R. (2014). A meta-analytical review of the demand/withdraw pattern of interaction. *Communication Monographs*, 81(1), 28-58. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2014/08/140804122903.htm)
 - Chopik, W. J., Edelstein, R. S., & Grimm, K. J. (2019). Longitudinal changes in attachment orientation over a 59-year period. *Journal of Personality and Social Psychology*. Summary by the [British Psychological Society](https://www.bps.org.uk/research-digest/first-study-investigate-how-attachment-style-changes-through-multiple-decades-life)
 - Open textbook, Lifespan Human Development (Baylor University Libraries): [Attachment in adulthood](https://openbooks.library.baylor.edu/lifespanhumandevelopment/?p=875)
+- Bayraktaroglu, D., Gunaydin, G., Selcuk, E., Besken, M., & Karakitapoglu-Aygun, Z. (2022). *Journal of Personality and Social Psychology*. Summary on [PsyPost](https://www.psypost.org/2022/10/psychologists-have-uncovered-a-key-factor-that-helps-to-thwart-romantic-avoidance-64020)

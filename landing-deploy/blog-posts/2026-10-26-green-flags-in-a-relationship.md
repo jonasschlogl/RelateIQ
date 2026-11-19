@@ -21,6 +21,8 @@ This guide lists nine green flags in a relationship, but with a twist: for each 
 
 **How to spot it:** Mention something you want to try: a course, a career change, a marathon. A green-flag partner asks questions, offers help if you want it, and doesn't make you feel silly or selfish for wanting it.
 
+Support also feeds itself when it is noticed. In a 2024 study of 163 long-term Swiss couples, Michelle Roth, Guy Bodenmann and colleagues found that helping a partner through stress made the helper happier with the relationship mainly when it led to gratitude, felt or expressed. A partner who supports you, and a relationship where that support is appreciated, tend to come together.
+
 ## 3. You become more like the person you want to be
 
 **Why it matters:** Researchers call this the *Michelangelo phenomenon*: a close partner who sees you as the person you hope to become, and treats you that way, helps you grow towards that version of yourself. In a study of dating couples, Stephen Drigotas found it was strongly linked to personal well-being, even after accounting for how satisfied people were with the relationship.
@@ -116,3 +118,4 @@ If your partner controls you, threatens you or makes you afraid, green flags els
 - Feeney, B. C. (2004). A secure base: Responsive support of goal strivings and exploration in adult intimate relationships. *Journal of Personality and Social Psychology*, 87(5), 631-648. [DOI](https://doi.org/10.1037/0022-3514.87.5.631)
 - Drigotas, S. M. (2002). The Michelangelo phenomenon and personal well-being. *Journal of Personality*, 70(1), 59-77. [PubMed](https://pubmed.ncbi.nlm.nih.gov/11908536/)
 - Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)
+- Roth, M., Good, N., Ledermann, T., Landolt, S. A., Weitkamp, K., & Bodenmann, G. (2024). Building happier bonds: Gratitude as a mediator between dyadic coping and relationship satisfaction in romantic couples. *Frontiers in Psychology*. Summary on [PsyPost](https://www.psypost.org/study-finds-gratitude-mediates-the-impact-of-support-in-long-term-relationships/)

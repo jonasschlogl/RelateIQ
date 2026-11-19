@@ -81,6 +81,8 @@ Try: "It feels like when I push, you go quiet, and when you go quiet I push hard
 > **Why naming the loop helps**
 > Once the pattern has a name, it becomes something you face together instead of something you do to each other. The pursuer can relax a little because the withdrawer has promised to come back. The withdrawer can come back because they're no longer being chased. Many couples find that agreeing on the rules of a pause matters more than solving the original topic.
 
+Often the loop keeps itself going. In a 2022 study of 175 couples, Ione Bretaña and colleagues found that when one partner withdrew during conflict, the other tended to become more demanding or aggressive, and both reactions went with lower satisfaction. One person pulling back makes the other push harder, which makes the first pull back more, and the original topic gets lost.
+
 ## How to talk about a problem that keeps coming back
 
 Whatever the topic, the same four steps tend to help:
@@ -135,3 +137,4 @@ Two recurring problems deserve their own guides: [jealousy in a relationship](/b
 - Pew Research Center (2007): [Modern marriage](https://www.pewresearch.org/social-trends/2007/07/18/modern-marriage/)
 - Dew, J., Britt, S., & Huston, S. (2012). Examining the relationship between financial issues and divorce. *Family Relations*, 61(4), 615-628. Summary on [ScienceDaily](https://sciencedaily.com/releases/2013/07/130712102438.htm)
 - Schrodt, P., Witt, P. L., & Shimkowski, J. R. (2014). A meta-analytical review of the demand/withdraw pattern of interaction. *Communication Monographs*, 81(1), 28-58. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2014/08/140804122903.htm)
+- Bretaña, I., Alonso-Arbiol, I., Recio, P., & Molero, F. (2022). Avoidant attachment, withdrawal-aggression conflict pattern, and relationship satisfaction: A mediational dyadic model. *Frontiers in Psychology*, 12, 794942. [Full text](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.794942/full)
