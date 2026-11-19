@@ -67,6 +67,19 @@ It's worth listening to, and worth checking calmly rather than assuming.
 > **Why it works this way**
 > When people feel anxious about a relationship, the brain becomes very good at spotting threats and very bad at seeing context. A quiet evening after a long workday can feel like rejection. That's why it helps to look for patterns over weeks, not single moments, and to ask rather than guess. If the overthinking loop is familiar, our guide on [relationship anxiety](/blog/relationship-anxiety/) can help.
 
+## A quick self-check before you talk
+
+When you're worried, everything can look like proof. This short checklist helps you sort facts from fears before you bring it up. Tick what is true for the last few weeks, not just today.
+
+- I can name at least two specific changes, not just a feeling.
+- These changes have lasted more than a couple of weeks.
+- I've thought about what else is happening in their life right now.
+- I've noticed whether they're distant with everyone, or mainly with me.
+- I've checked if I've pulled back too, without meaning to.
+- I'm calm enough to listen, even if the answer is hard.
+
+If you ticked most of these, you're ready for a calm conversation. If you ticked only one or two, give it a little more time and notice what you see. If worry keeps looping in your head, these tips on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help you settle first.
+
 ## What to do if you think they're pulling away
 
 ### 1. Check your own lens first
@@ -97,6 +110,38 @@ Maybe one of you needs more time together, the other more space. That's solvable
 ### 6. Watch what happens next
 
 If your partner engages, even a little, that's a good sign. If they dismiss your feelings repeatedly or say they're unsure about the relationship, you'll need to think about what you want. Our guide [should I break up with my partner](/blog/should-i-break-up-with-my-partner/) may help.
+
+## What to say, and what to avoid
+
+The first words often decide how the whole conversation goes. When you're scared, it's easy to start with blame or a test. Here are some common first lines and calmer ones to use instead.
+
+| Instead of | Try saying |
+|---|---|
+| "You don't love me anymore." | "I've been feeling a bit far from you lately. Can we talk?" |
+| "You're always on your phone." | "I'd love some time with no phones tonight. Just us." |
+| "What's wrong with you?" | "You seem tired or stressed. Is something on your mind?" |
+| "Fine, I'll stop trying then." | "I miss how close we used to feel. What would help us get there again?" |
+| "Are you cheating?" (with no real reason) | "Something feels different between us, and I'd rather ask than guess." |
+
+A few more lines for moments that often come up:
+
+**If they say "I'm fine" but it doesn't feel true:**
+
+Try saying: "Okay. I'm here if that changes. You don't have to have the right words."
+
+**If they say they've felt distant too:**
+
+Try saying: "Thank you for telling me. I'd like to understand. When did it start feeling that way for you?"
+
+**If they say they need space:**
+
+Try saying: "I can give you some space. Can we agree on when we'll talk again, so I'm not left guessing?"
+
+**If they say they're not sure about the relationship:**
+
+Try saying: "That's hard to hear, but I'm glad you told me. What do you need to figure it out, and how can we be honest with each other while you do?"
+
+After the talk, give it a few days. One conversation rarely fixes distance, but it often starts to change the direction. If your partner seems to keep you at arm's length even when things are calm, our guide on [an emotionally unavailable partner](/blog/emotionally-unavailable-partner/) explains what that can look like.
 
 ## What most articles miss
 
@@ -135,6 +180,14 @@ Not necessarily. Distance has many causes, from stress to depression. Only jump 
 ### What if my partner says they don't know how they feel?
 
 Take it seriously. You can ask what they need to figure it out, but also think about how long you're willing to wait in uncertainty.
+
+### How long is too long for a partner to be distant?
+
+There's no exact rule. A few stressful weeks is common. If the distance lasts for months, keeps growing, and they won't talk about it, it's time for an honest conversation and maybe outside support.
+
+### Can stress or depression look like losing interest?
+
+Yes. Stress and low mood can make people quieter, more tired and less affectionate. If you think your partner may be struggling, gently ask how they're doing and encourage them to talk to a doctor or therapist.
 
 ## A note on safety
 

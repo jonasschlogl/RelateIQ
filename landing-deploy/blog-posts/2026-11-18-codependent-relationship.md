@@ -65,6 +65,21 @@ The study was small, so it can't prove causes. But it matches what many people d
 > **Why it works this way**
 > If love once felt conditional, your nervous system learns a rule: keep others happy and you'll stay safe. As an adult, that rule keeps running, even with a partner who would love you anyway. Caring isn't the problem. The problem is when caring becomes the only way you feel worthy, so you can't stop, even when it's hurting you.
 
+## Self-check: is this codependency or just caring?
+
+Everyone does some of these things sometimes. Tick the ones that feel true most weeks, not just on a bad day.
+
+- I check my partner's mood before I decide how I feel.
+- I say yes to things I don't want to do, so they won't be upset.
+- I feel anxious or guilty when I spend time on myself.
+- I find it hard to answer the question "What do you want?"
+- I feel that if I stop helping, things will fall apart.
+- I keep quiet about small hurts so we don't argue.
+- I feel tired, but I don't feel I'm allowed to rest.
+- I feel resentful, and then guilty for feeling resentful.
+
+This isn't a test with a score. If you ticked several, it doesn't mean you're "codependent" as a label. It means some old habits may be taking up more space than you want them to. Start with the line that stung the most.
+
 ## How to care without losing yourself
 
 ### 1. Notice the urge before you act
@@ -97,6 +112,48 @@ You can be supportive without taking responsibility for their emotions. "That so
 ### 6. Get support
 
 Therapy, especially approaches that look at attachment and boundaries, can help a lot. Support groups such as Co-Dependents Anonymous exist in many countries too.
+
+## What to say when the old pattern kicks in
+
+The urge to fix comes fast, so it helps to have a few calm sentences ready. They don't need to be perfect.
+
+### When they're upset and you want to fix it
+
+Try saying: "I can see you're having a hard time. I'm here. Do you want me to listen, or do you want ideas?"
+
+Often people just want to be heard.
+
+### When you want to say no but feel guilty
+
+Try saying: "I'd like to help, but I don't have the energy for that today. Can we look at it together tomorrow?"
+
+A short, kind no is still kind.
+
+### When you notice you've been putting yourself last
+
+Try saying: "I've realised I've stopped doing things for myself. I want to start again, and I'd love your support with that."
+
+### When they push back on your new boundary
+
+Try saying: "I know this is different from how I usually am. I'm not pulling away from you. I'm trying to take better care of myself, so I can show up better for us."
+
+Change can feel strange to a partner who is used to the old roles. Give them time, and keep the boundary anyway.
+
+## What change usually looks like, week by week
+
+Change is slow. Knowing what to expect helps you keep going when it feels uncomfortable.
+
+| Stage | What you might notice | What helps |
+|---|---|---|
+| Noticing | You catch yourself rescuing, but only after you've done it | Be kind to yourself. Noticing late is still noticing |
+| Pausing | You feel the urge and wait a few seconds before acting | Ask: "Is this mine to fix?" |
+| Small changes | You say a few small no's and feel guilty afterwards | Remind yourself guilt is not proof you did wrong |
+| Pushback | Your partner seems confused or upset by the change | Stay calm and explain what you're doing and why |
+| New balance | You feel less tired and more like yourself | Keep the habits that helped, even when things are good |
+
+Some weeks you'll slide back into old habits. That's part of change, not a failure.
+
+It can also help to notice whether the pattern is being fed by the other person. If your partner seems to pull away whenever you need something, our guide on [an emotionally unavailable partner](/blog/emotionally-unavailable-partner/) may help you see what's going on. And if being needed has started to feel like being controlled, these [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) can help you check.
 
 ## What most articles miss
 
@@ -135,6 +192,14 @@ Notice the urge to fix, practise small boundaries, name your own needs, rebuild 
 ### Is codependency the same as being supportive?
 
 No. Support includes looking after yourself. Codependency means caring for others at the cost of your own wellbeing.
+
+### Can two codependent people be in a healthy relationship?
+
+Yes, if both are willing to notice the pattern and work on it. It often helps when each person builds a life of their own and you both practise saying what you need, kindly and clearly.
+
+### How long does it take to stop being codependent?
+
+There's no set timeline. Most people notice small changes within weeks of practising boundaries, but deeper habits can take months or longer. Support from a therapist can make it easier.
 
 ## A note on safety
 

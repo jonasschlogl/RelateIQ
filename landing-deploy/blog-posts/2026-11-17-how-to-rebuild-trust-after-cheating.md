@@ -53,6 +53,17 @@ At the same time, very detailed questions about sex can create painful images th
 
 Transparency helps rebuild predictability. That might mean sharing plans, being reachable, or being open about phone and messages for a while. The goal is to give the hurt partner evidence of safety, not to create a prison. Agree together on what feels reasonable and for how long.
 
+It can help to write your agreement down. Here is a simple checklist to talk through:
+
+- **Contact:** How, and when, will the affair partner be told that contact is over?
+- **Unavoidable contact:** If you must see them, at work for example, how will the hurt partner be told?
+- **Plans:** What will you share about your day, travel and evenings out?
+- **Phone and messages:** Will anything be open to look at, and for how long?
+- **New information:** If something new comes out, how will it be shared, and by whom?
+- **Check-in:** When will you review the agreement, for example every month?
+
+A review date matters. Transparency works best as a temporary bridge back to trust, not as a permanent rule. As safety grows, the hurt partner may need less checking, and that's a good sign.
+
 ## Step 5. Expect setbacks
 
 Anger can return weeks or months later, triggered by a song, a date or a place. That doesn't mean repair has failed. It means healing isn't a straight line.
@@ -73,6 +84,49 @@ Trust isn't only rebuilt by removing the bad. You also need new good moments. Sm
 ## How long does it take?
 
 There's no exact timeline, but it's usually measured in many months, often a year or more, not weeks. It depends on how long the affair lasted, how it was discovered, whether there were lies afterwards, and how committed both partners are to the work.
+
+## The stages of recovery
+
+The Gottman Institute's Trust Revival Method has three phases: atone, attune and attach. Before them, most couples go through a period of shock. Every couple is different and the stages often overlap, but knowing the rough shape of the road can make the hard parts feel less confusing.
+
+| Stage | What it often feels like | What helps most |
+|---|---|---|
+| Shock (first days and weeks) | Numbness, anger, crying, trouble sleeping, many questions | Ending all contact, honest answers, basic self-care, support from a trusted person |
+| Atone | The hurt partner tests whether the remorse is real. Waves of anger come and go | Full responsibility, patience with repeated questions, transparency without defensiveness |
+| Attune | Calmer talks become possible. You start to look at what was missing in the relationship | Listening to each other's feelings and needs, often with a couples therapist |
+| Attach | Closeness slowly returns. Bad days still happen, but less often | New rituals, time together, physical closeness when both feel ready |
+
+There are no fixed dates for each stage. What matters is the overall direction, not a perfect week.
+
+## What to say in the hardest moments
+
+Many couples get stuck because they don't know what to say. These words often help.
+
+**For the partner who cheated**
+
+When your partner is angry again:
+
+Try: "You have every right to be angry. I'm not going to defend myself. I'm listening."
+
+When they ask a question you've already answered:
+
+Try: "I know you need to hear it again. Ask me anything, and I'll answer honestly."
+
+**For the partner who was hurt**
+
+When you need space:
+
+Try: "I can't talk about this right now. I'm not shutting you out. Can we talk tomorrow evening?"
+
+When a trigger hits out of nowhere:
+
+Try: "Something reminded me of it today and I'm hurting again. I just need you to be with me for a bit."
+
+When you want to say what you need:
+
+Try: "It would help me feel safer if you told me when your plans change, even small changes."
+
+If the affair keeps looping in your mind at night, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has some practical ways to calm those thoughts.
 
 ## What most articles miss
 
@@ -112,6 +166,14 @@ For many couples, yes. A trained therapist can help you talk safely, understand 
 
 That's a complex, personal decision. Secrets tend to come out and damage trust even more. A therapist can help you think through how and when to be honest.
 
+### Is it normal to still have trust issues months after the affair?
+
+Yes. Doubt can come back long after things feel better, especially around dates or places linked to the affair. Our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) explains where that fear comes from and how to ease it.
+
+### What should the partner who cheated say to rebuild trust?
+
+Words of full responsibility, without excuses, help most. Then the actions need to match: honest answers, openness about plans and patience when the hurt comes back.
+
 ## A note on safety
 
 If discovering or confessing an affair leads to threats, violence or controlling behaviour, your safety comes first. Please reach out to a local helpline or support service. And if you're struggling to cope emotionally, talk to a doctor or a mental health professional.
@@ -122,3 +184,4 @@ If discovering or confessing an affair leads to threats, violence or controlling
 
 - Knopp, K., Scott, S., Ritchie, L., Rhoades, G. K., Markman, H. J., & Stanley, S. M. (2017). Once a cheater, always a cheater? Serial infidelity across subsequent relationships. *Archives of Sexual Behavior*, 46(8), 2301-2311. Summary on [PsyPost](https://www.psypost.org/cheaters-three-times-more-likely-to-report-cheating-in-their-next-relationship-study-finds/)
 - Wang, W. (2018). [Who cheats more? The demographics of infidelity in America](https://ifstudies.org/blog/who-cheats-more-the-demographics-of-cheating-in-america). Institute for Family Studies.
+- Gottman Institute: [Reviving trust after an affair (part 2)](https://www.gottman.com/blog/reviving-trust-after-betrayal/)

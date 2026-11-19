@@ -76,6 +76,54 @@ Try: "Can we talk about what feels okay for both of us with exes and friends? I'
 > **Example: the new colleague**
 > Hannah noticed her partner Tom mentioning a new colleague, Chloe, a lot. Instead of checking his phone, she told him: "I've noticed I'm feeling a bit jealous about Chloe. I don't think you've done anything wrong, I just wanted to tell you." Tom was surprised but relieved she said it. He invited Hannah to the next work drinks. Meeting Chloe in person made the feeling fade quickly.
 
+## False alarm or real signal? A quick self-check
+
+Jealousy feels the same whether it comes from an old fear or from something real. Looking at the facts around the feeling can help you tell the difference.
+
+| Often an old fear (false alarm) | May point to something real |
+|---|---|
+| The feeling is strong, but you can't name anything that changed | Your partner's behaviour has clearly changed |
+| You've felt the same way in past relationships | They hide their phone or get defensive about simple questions |
+| It often starts after scrolling social media | Plans and stories don't add up |
+| Reassurance helps, at least for a while | They mock or dismiss you when you share the feeling |
+| Your partner is open when you ask | You often leave conversations confused about what's true |
+
+If most of what you notice is on the left, the work is mostly inside you: calming the fear, building your own security and asking for small, specific reassurance.
+
+If more is on the right, your feeling may be pointing to a real problem. That still doesn't mean checking their phone. It means a calm, direct conversation about what you've noticed. And if you often leave talks doubting your own memory, read our guide on [gaslighting in a relationship](/blog/gaslighting-in-a-relationship/).
+
+## What to do in the moment: a short walkthrough
+
+Knowing the steps is easier than using them when the feeling hits. Here's what it can look like in real life.
+
+It's 10 pm. Your partner said they'd be home from a friend's birthday by 9. They haven't replied to your last two messages. Your mind starts writing a story.
+
+**Step 1: Pause.** Notice your body. A tight chest, fast heartbeat, the urge to call again. Say to yourself: "I'm feeling jealous and scared."
+
+**Step 2: Check the facts.** What do you actually know? They're at a party, it's loud, and they're an hour late. What don't you know? Everything else. The worst story is only one of many possible stories.
+
+**Step 3: Write it, don't send it.** Type out what you want to say, then wait 20 minutes. Most angry messages look different after a short break.
+
+**Step 4: Send one calm message.**
+
+Try: "Hey, just checking you're okay. Let me know when you're on your way."
+
+**Step 5: Talk later, not now.** If the late night bothered you, bring it up the next day when you're both rested.
+
+Try: "Last night I got worried when I didn't hear from you. Could you send a quick text next time you're running late?"
+
+If your mind tends to spin stories like this often, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) has more ways to calm it.
+
+## If you already acted on jealousy
+
+Maybe you checked their phone, sent an accusing message or made a scene. Most people have done something they regret when they felt jealous. What matters is what you do next.
+
+Own it clearly, without long excuses and without blaming them for how you felt.
+
+Try: "I looked at your phone last night, and that wasn't okay. I was feeling insecure, but that's mine to deal with. I'm sorry. I'd like to talk about the feeling instead next time."
+
+Then show the change over the next few weeks. Trust comes back through steady actions more than through one perfect apology.
+
 ## What if your partner is the jealous one?
 
 Be patient but clear. Reassure them where it's reasonable, like sharing plans or introducing friends. But don't give up your friendships, privacy or freedom to manage their fear. If jealousy turns into checking, demands or anger, that's control, and it's not okay.
@@ -117,6 +165,14 @@ When it leads to checking, controlling who your partner sees, anger or threats. 
 ### How do I deal with a jealous partner?
 
 Reassure where reasonable, keep your own friendships and boundaries, and talk calmly about what would help them feel more secure.
+
+### Why do I get jealous if I've never been cheated on?
+
+Jealousy doesn't need a past betrayal. Insecurity, an anxious attachment style, stress or comparing yourself to others online can all trigger it.
+
+### Can jealousy go away completely?
+
+Probably not completely, and that's okay. As you feel more secure and trust grows, it usually becomes rarer, weaker and easier to talk about.
 
 ## A note on safety
 

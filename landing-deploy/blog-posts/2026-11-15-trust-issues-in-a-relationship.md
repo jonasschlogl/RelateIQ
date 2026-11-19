@@ -70,6 +70,27 @@ It's worth gently asking yourself: is my partner giving me real reasons not to t
 > **Example: the late reply**
 > Emma's ex used to "work late" while seeing someone else. Now, whenever her partner Leo doesn't reply for an hour, she feels sick and starts imagining the worst. Leo has never given her a reason to doubt him, but he's starting to feel accused. One evening Emma tells him: "When you go quiet, my brain goes straight back to what happened before. It's not about you, but it would really help if you sent a quick text when you're running late." Leo agrees easily. The fear doesn't vanish overnight, but the pattern starts to change.
 
+## A quick self-check: is it the past or the present?
+
+Before you talk to your partner, it helps to sort out where the fear is coming from. Go through these questions honestly:
+
+- Has my partner actually lied to me, hidden things or broken important promises?
+- Is there something specific they did, or is it more a general feeling?
+- Have I felt this same fear in past relationships, with different people?
+- Does the fear get stronger when I'm tired, stressed or alone?
+- When I check for proof and find nothing, do I feel calm, or do I just look for the next thing?
+
+How to read your answers:
+
+| If you mostly notice... | It may point to... | A good next step |
+|---|---|---|
+| Real lies or broken promises from your partner | A trust problem in this relationship | An honest talk about what happened and what needs to change |
+| The same fear with different partners | Old wounds or an anxious attachment pattern | Working on it yourself, ideally with a therapist |
+| Fear that grows with stress or tiredness | Anxiety more than evidence | Calming your body first, then deciding if you still need to talk |
+| A mix of both | Something very common | Sharing both parts with your partner, without blame |
+
+If the fear feels constant and your thoughts keep looping, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) go deeper into that side.
+
 ## How trust is really built
 
 Relationship researcher John Gottman describes "sliding door moments": small, everyday chances to turn towards your partner or away from them. Your partner shares something about their day, asks for help or reaches for your hand. Each time you respond, trust grows a little. Each time you miss it, it shrinks a little. Gottman notes that most missed moments come from "mindlessness, not malice".
@@ -103,7 +124,26 @@ Try: "I'm not going anywhere. What would help you feel safer right now?"
 
 ### If trust was broken in this relationship
 
-Repair needs responsibility, openness and time. The person who broke the trust needs to own it fully and stay consistent for a long while. Our guides on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) explain the steps. For serious betrayals, a couples therapist can make a real difference.
+Repair needs responsibility, openness and time. The person who broke the trust needs to own it fully and stay consistent for a long while. Our guides on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) and [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) explain the steps. If the betrayal was an affair, our step-by-step guide on [how to rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) covers what each partner needs to do. For serious betrayals, a couples therapist can make a real difference.
+
+## What to say: scripts for common moments
+
+When fear shows up, your first words often decide whether the talk turns into a fight or a moment of closeness. Here are some common moments and words that tend to help.
+
+| Moment | Instead of | Try |
+|---|---|---|
+| They're late and haven't replied | "Where were you? Why didn't you answer?" | "I got worried when I didn't hear from you. Can we agree on a quick text next time?" |
+| They mention a new colleague | "Who is she? Why do you talk about her so much?" | "I noticed I felt a bit jealous just now. Can you tell me more about your new team?" |
+| You want to look at their phone | "Show me your messages." | "I'm feeling anxious and I want to check, but I'd rather talk. Can you sit with me for a minute?" |
+| You need reassurance | "Do you even love me anymore?" | "I'm having an insecure day. Could you tell me something you like about us?" |
+
+The pattern is simple. Talk about your feeling and what you need, not about what you suspect. Ask for one small, clear thing your partner can actually do.
+
+If you're the partner being doubted, you can use scripts too:
+
+Try: "I can tell you're worried. I'm not upset with you for feeling that. What would help right now?"
+
+And if jealousy is the main thing you're struggling with, our guide on [jealousy in a relationship](/blog/jealousy-in-a-relationship/) has more ideas for those moments.
 
 ## What most articles miss
 
@@ -142,6 +182,14 @@ Be consistent, be open about your plans, stay patient and avoid getting defensiv
 ### When are trust issues a red flag?
 
 When fear turns into control, like demanding passwords, tracking your location or limiting who you see, it's no longer just insecurity. That's controlling behaviour.
+
+### How do I stop checking my partner's phone?
+
+Notice the urge, pause and name the feeling underneath it, like fear or loneliness. Then tell your partner what you're feeling instead of looking. Each time you don't check, the urge usually gets a little weaker.
+
+### Can trust issues ruin a relationship?
+
+They can if nobody talks about them, because constant doubt wears both partners down. When both of you understand the fear and work on it together, many couples become closer than before.
 
 ## A note on safety
 
