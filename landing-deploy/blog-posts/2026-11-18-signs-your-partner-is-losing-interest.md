@@ -15,7 +15,7 @@ This guide decodes the most common signs, one by one, with the likely explanatio
 
 **It shows up in small moments.** John Gottman's research on newlyweds looked at "bids": small attempts to connect, like a comment, a question or a touch. Couples still together six years later had turned towards each other's bids 86% of the time. Couples who later divorced had done so only 33% of the time.
 
-**The phone plays a part.** In a 2016 study of US adults, James Roberts and Meredith David found that 46% said their partner "phubbed" them (paid attention to their phone instead of them), and that feeling phubbed was linked to more conflict and lower relationship satisfaction.
+**The phone plays a part.** In a 2016 study of US adults, James Roberts and Meredith David found that 46% said their partner "phubbed" them (paid attention to their phone instead of them), and that feeling phubbed was linked to more conflict and lower relationship satisfaction. A 2025 meta-analysis pooling 52 studies and almost 20,000 people confirmed the pattern: partner phubbing went with lower relationship satisfaction and more conflict.
 
 So the signs worth watching are not dramatic. They're the small daily ones. That's also good news: small things are fixable.
 
@@ -84,10 +84,10 @@ Try: "Things have felt a bit distant between us. Is something on your mind, abou
 
 Then listen. Their answer might be about work, health, something you did, or the relationship. Each needs a different response, and you won't know which until you ask.
 
-And turn towards them, on purpose, in small ways: respond to their bids, put your own phone away, suggest something you both used to enjoy. Huston's research suggests that protecting affection is what keeps couples together, so don't wait for them to go first. Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) can help restart real conversations, and our guide to [keeping the spark alive](/blog/how-to-keep-the-spark-alive/) has more ideas.
+And turn towards them, on purpose, in small ways: respond to their bids, put your own phone away, suggest something you both used to enjoy. Huston's research suggests that protecting affection is what keeps couples together, so don't wait for them to go first. Our list of [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/) can help restart real conversations.
 
 > **Example: not about us**
-> For weeks, Ines felt Tom had gone cold: no initiative, short answers, no interest in weekend plans. She'd rehearsed a "where is this going" talk. Instead she opened with: "You've seemed really flat lately. How are you, honestly?" Tom was quiet for a long time, then said work had been crushing him for months and he'd been ashamed to admit how low he felt. The distance was real. The reason wasn't her. He saw a doctor a week later.
+> For weeks, Hana felt Tom had gone cold: no initiative, short answers, no interest in weekend plans. She'd rehearsed a "where is this going" talk. Instead she opened with: "You've seemed really flat lately. How are you, honestly?" Tom was quiet for a long time, then said work had been crushing him for months and he'd been ashamed to admit how low he felt. The distance was real. The reason wasn't her. He saw a doctor a week later.
 
 ## If it really is the relationship
 
@@ -119,5 +119,6 @@ Yes. If they've lost interest in many things, not just you, and seem flat or low
 
 - Huston, T. L., Caughlin, J. P., Houts, R. M., Smith, S. E., & George, L. J. (2001). The connubial crucible: Newlywed years as predictors of marital delight, distress, and divorce. *Journal of Personality and Social Psychology*, 80(2), 237-252. Summary in [Psychology Today](https://www.psychologytoday.com/us/articles/200001/will-your-marriage-last)
 - Roberts, J. A., & David, M. E. (2016). My life has become a major distraction from my cell phone: Partner phubbing and relationship satisfaction among romantic partners. *Computers in Human Behavior*, 54, 134-141. Summary on [ScienceDaily](https://www.sciencedaily.com/releases/2015/09/150929142034.htm)
+- Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Read the study](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Full text (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
