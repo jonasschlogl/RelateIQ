@@ -24,7 +24,7 @@ but KEEP the existing `slug:` of each language (those URLs are already indexed b
 - [x] 2026-11-09-love-bombing (all 5 done 2026-11-20)
 - [x] 2026-11-18-signs-your-partner-is-losing-interest (all 5 done 2026-11-20)
 - [x] 2026-10-26-how-to-rebuild-trust-after-a-fight (all 5 done 2026-11-20)
-- [ ] 2026-10-26-deep-questions-to-ask-your-partner
+- [x] 2026-10-26-deep-questions-to-ask-your-partner (all 5 done 2026-11-20)
 - [ ] 2026-10-26-date-night-questions-for-couples
 - [ ] 2026-11-17-situationship
 - [ ] 2026-11-18-codependent-relationship
