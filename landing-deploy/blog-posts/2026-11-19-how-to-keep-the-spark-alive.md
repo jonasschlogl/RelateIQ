@@ -1,12 +1,9 @@
 ---
 title: "How to keep the spark alive in a long-term relationship: find which spark is fading, then fix that one"
 seo_title: "How to Keep the Spark Alive in a Long-Term Relationship"
-date: 2026-11-19
+date: 2026-11-20
 description: How to keep the spark alive in a long-term relationship: a 2-minute check to find which of 4 sparks is fading, what research says helps, and a 4-week plan.
 tags: keep the spark alive, long-term relationship
-draft: true
-approved: true
-topics: communication, repair
 ---
 In a random sample of Americans who had been married for more than ten years, about 40% said they were still "very intensely in love". That finding, from a study led by Daniel O'Leary with Bianca Acevedo and Arthur Aron, surprises most people, because we're told that passion always fades. In a second sample from New York, the figure was about 29%. Lower, but still far from rare.
 

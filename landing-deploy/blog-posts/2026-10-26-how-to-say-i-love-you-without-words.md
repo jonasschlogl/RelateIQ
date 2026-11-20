@@ -59,6 +59,8 @@ If I had to pick one from the whole list, it would be number 13: quietly taking 
 19. Re-create an early date, or the first meal you ever cooked together.
 20. Say thank you for something ordinary they do every day and you've stopped noticing.
 
+If things are fine but feel a little flat, our guide on [how to keep the spark alive in a long-term relationship](/blog/how-to-keep-the-spark-alive/) can help you find what's missing.
+
 ## From far away
 
 21. Send a photo of something that reminded you of them, with no explanation.

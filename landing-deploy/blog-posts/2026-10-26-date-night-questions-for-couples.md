@@ -120,6 +120,8 @@ Questions work best when the setting feels different from an ordinary Tuesday. W
 - Have a picnic on the living room floor with the lights off and candles on.
 - Go to a free museum night, a quiz, a market.
 
+If date nights feel flat even when you make the effort, our guide on [how to keep the spark alive](/blog/how-to-keep-the-spark-alive/) helps you work out which kind of spark is fading.
+
 > **Example: the guess-my-answer upset**
 > Dana and Mo had been together eight years and were sure they'd ace "guess my answer". Mo guessed Dana's dream holiday was a beach. It was a cooking course in Japan, something she'd mentioned once, years ago. "I felt slightly embarrassed and then completely charmed," Mo said. They booked a cooking class in their city the next month, as a first step.
 >

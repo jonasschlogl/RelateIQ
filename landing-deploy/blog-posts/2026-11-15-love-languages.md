@@ -83,7 +83,7 @@ Put the research together and a simpler, more useful version of the idea emerges
 >
 > *Names and details in this example are invented to show the idea.*
 
-For more ideas, see our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/), and for steady signs that someone shows love well, our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/). If you're apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) cover love from a distance.
+For more ideas, see our guide on [how to say "I love you" without words](/blog/how-to-say-i-love-you-without-words/), and for steady signs that someone shows love well, our list of [green flags in a relationship](/blog/green-flags-in-a-relationship/). If you're apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) cover love from a distance. And if the care is there but the excitement isn't, see [how to keep the spark alive](/blog/how-to-keep-the-spark-alive/).
 
 My take: love languages are a good conversation starter and a bad rulebook. Use them to ask better questions, not to decide what your partner is allowed to need.
 
