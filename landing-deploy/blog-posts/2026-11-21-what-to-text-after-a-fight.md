@@ -6,6 +6,7 @@ description: "What to text after a fight with your boyfriend, girlfriend or part
 tags: what to text after a fight, text after an argument
 topics: conflict, communication
 draft: true
+approved: true
 ---
 In a 2021 experiment, researchers asked 43 couples to work through a real disagreement, either face to face or by text. Both groups made about the same progress toward solving it. The difference was elsewhere: over text, couples showed fewer of the warm, positive moves that soften a fight, like humor and affection.
 
