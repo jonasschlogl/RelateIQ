@@ -2,7 +2,7 @@
 title: "Codependent relationship or just a caring partner? How to tell the difference"
 seo_title: "Codependent Relationship or Just Caring? 3 Simple Tests"
 date: 2026-11-18
-updated: 2026-11-19
+updated: 2026-11-20
 description: "Codependent relationship or healthy care? Three simple tests, what research on codependency and self-silencing shows, and what to say when you speak up."
 tags: codependent relationship, people pleasing
 ---
@@ -103,6 +103,24 @@ If saying these out loud feels scary, you can rehearse them privately in Partner
 Sometimes codependent habits grow around a partner who really is struggling, with addiction, depression or a crisis, and sometimes around a partner who benefits from your self-erasure. If your partner punishes you for having needs, controls who you see, or makes you afraid, this isn't a codependency problem to fix by trying harder. Our guide to the [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) can help you look at it clearly. If you keep pouring care into someone who rarely meets you halfway, read about the [emotionally unavailable partner](/blog/emotionally-unavailable-partner/) too.
 
 It's also worth knowing that the urge to keep someone close at any cost is closely related to anxious [attachment styles](/blog/how-attachment-styles-work-in-relationships/). Understanding your own style can make the pattern feel less like a personal failing and more like something you learned, and can relearn.
+
+## Quick answers
+
+### What are the signs of a codependent relationship?
+
+Common signs include feeling responsible for your partner's moods, struggling to say no, hiding your own needs to keep the peace, losing touch with friends and interests, and feeling anxious or guilty when you do something for yourself.
+
+### Is codependency the same as being in love?
+
+No. Love includes caring about your partner and also about yourself. Codependency is when caring for them has crowded out your own needs, opinions and life, so that the relationship depends on you staying small.
+
+### Can a codependent relationship be fixed?
+
+Often, yes, if both partners are willing. It usually means building a life of your own again, practising small honest no's and sharing needs out loud. Counselling helps many people. Our guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) covers the steps couples take together.
+
+### Is codependency linked to attachment styles?
+
+They overlap. People with anxious attachment may cling to a partner to feel safe, and a common pairing is one anxious and one [avoidant attachment partner](/blog/avoidant-attachment-partner/). Attachment can explain the pull, but it doesn't make the pattern permanent.
 
 ## A note on safety
 

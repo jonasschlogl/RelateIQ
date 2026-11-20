@@ -169,7 +169,7 @@ Not necessarily right away. Feelings in long relationships rise and fall, and th
 
 ### Should I break up before the holidays?
 
-There's no perfect time. If you've already decided, waiting weeks just to get through the holidays can feel dishonest and draining for both of you. If you're still unsure, the holidays aren't a reason to rush.
+There's no perfect time. If you've already decided, waiting weeks just to get through the holidays can feel dishonest and draining for both of you. If you're still unsure, the holidays aren't a reason to rush. If time with family is part of the strain, our guide to [holidays with your partner's family](/blog/holidays-with-your-partners-family/) can help you get through it as a team.
 
 ### Is it wrong to break up with someone you still love?
 

@@ -2,7 +2,7 @@
 title: "Meeting your partner's parents for the first time: what to say in the 12 most awkward moments"
 seo_title: "Meeting Your Partner's Parents: What to Say in 12 Moments"
 date: 2026-11-11
-updated: 2026-11-19
+updated: 2026-11-20
 description: "Meeting your partner's parents for the first time? Ready-to-use answers for the 12 moments people dread most, and why research says their approval matters."
 tags: meeting your partner's parents, meeting the parents
 ---
@@ -122,6 +122,24 @@ If you'll be spending holidays with them soon, our guide on [holidays with your 
 ## If you're the one introducing your partner
 
 Brief both sides. Tell your parents one or two things your partner loves talking about, and tell your partner what to avoid. During the evening, include your partner in the conversation and step in if a question goes too far: "Let's not grill them on the first night, Mom."
+
+## Quick answers
+
+### What should you not say when meeting your partner's parents?
+
+Avoid oversharing about past relationships, criticising your partner (even jokingly), and starting debates on politics or religion. Also avoid complaining about the food, the trip or your own family. When in doubt, ask a question instead of making a statement.
+
+### What should I bring when meeting my partner's parents?
+
+A small, thoughtful gift is enough: flowers, a dessert, a good bottle of something they enjoy, or a local treat. Ask your partner what fits their family, especially if there are cultural or dietary customs.
+
+### How do I make a good first impression on my partner's parents?
+
+Learn their names in advance, greet them warmly, ask about their interests, offer to help and thank them when you leave. Warm and respectful beats trying to be perfect.
+
+### What if my partner's parents don't like me?
+
+Give it time. First meetings are often stiff, and many parents warm up slowly. Stay polite and consistent, and agree with your partner how you will handle it as a team. If you will be seeing them often, our guide to [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers longer visits.
 
 *This article is general information, not therapy or medical advice.*
 

@@ -94,7 +94,7 @@ I think this is the most underrated part of long distance. Couples plan for year
 
 ## Long distance over the holidays
 
-Holidays can be the hardest weeks apart, and the most complicated together, especially with two families involved. Our guide on [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers how to plan it as a team. For call ideas when conversation runs dry, try our [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/).
+Holidays can be the hardest weeks apart, and the most complicated together, especially with two families involved. Our guide on [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers how to plan it as a team. For call ideas when conversation runs dry, try our [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/), or turn a video call into a game night with our [date night questions](/blog/date-night-questions-for-couples/).
 
 ## Quick answers
 

@@ -55,7 +55,7 @@ When their family is the source:
 - "You don't have to defend them to me, and you don't have to attack them either. I'm just on your side."
 - "Do you want me to come with you, or would it be easier if I stayed out of it?"
 
-Skip: piling on with your own criticism of their family. They can criticize their mom. It lands very differently when you do it.
+Skip: piling on with your own criticism of their family. They can criticize their mom. It lands very differently when you do it. If the pressure peaks around visits, our guides on [meeting your partner's parents](/blog/meeting-your-partners-parents/) and [holidays with your partner's family](/blog/holidays-with-your-partners-family/) have words for those moments.
 
 ### Deadlines and exams
 

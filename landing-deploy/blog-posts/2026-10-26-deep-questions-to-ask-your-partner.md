@@ -2,7 +2,7 @@
 title: "Deep questions to ask your partner: 30 questions, and how to answer so they keep talking"
 seo_title: "30 Deep Questions to Ask Your Partner, From Easy to Deep"
 date: 2026-10-26
-updated: 2026-11-19
+updated: 2026-11-20
 description: "30 deep questions to ask your partner, sorted by how deep they go, plus what research says matters even more than the question: how you respond to the answer."
 tags: deep questions to ask your partner, questions for couples
 ---
@@ -106,6 +106,24 @@ If an answer leads to a disagreement, our guide on [communication habits](/blog/
 ## Make it a habit, not a one-off
 
 One deep evening is lovely. A small habit is what actually changes a relationship. Some couples pick one question every Sunday morning, or keep a list on their phone for long drives. For lighter, more playful questions, see our [date night questions for couples](/blog/date-night-questions-for-couples/). If you're far apart, they work beautifully on video calls too, see our [long distance relationship tips](/blog/long-distance-relationship-tips/). And if you're about to meet the family, a few Level 2 questions about their childhood will help you before [meeting your partner's parents](/blog/meeting-your-partners-parents/).
+
+## Quick answers
+
+### What is a good deep question to ask your partner?
+
+A good deep question is open and personal, but not interrogating. For example: "What's something you've changed your mind about in the last few years?" or "When do you feel most like yourself with me?" Start lighter and go deeper as the conversation warms up.
+
+### What are the 36 questions to fall in love?
+
+They come from a 1997 study by psychologist Arthur Aron, in which pairs of strangers took turns asking increasingly personal questions. The pairs felt noticeably closer afterwards. The key was gradual, mutual sharing, which is the same idea this list uses.
+
+### How often should couples have deep conversations?
+
+There is no fixed number, but a small regular habit works better than a rare marathon. One question over Sunday breakfast or on a long walk is plenty. For more ways to keep things fresh, see our guide on how to [keep the spark alive](/blog/how-to-keep-the-spark-alive/).
+
+### What if my partner doesn't like deep questions?
+
+Start with the lighter levels, or make it playful with a game like the ones in our [date night questions](/blog/date-night-questions-for-couples/). Some people open up more while doing something side by side, like cooking or driving, than face to face.
 
 *This article is general information, not therapy or medical advice.*
 
