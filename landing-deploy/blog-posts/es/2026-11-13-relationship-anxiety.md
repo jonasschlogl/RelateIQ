@@ -1,6 +1,6 @@
 ---
 title: "Ansiedad en la relación: qué hacer en los próximos 2 minutos, el resto del día y el próximo mes"
-seo_title: "Ansiedad en la relación: qué hacer en los próximos 2 minutos"
+seo_title: "Ansiedad en la relación: qué hacer en 2 minutos y después"
 slug: ansiedad-en-la-relacion
 description: Ansiedad en la relación de pareja: qué hacer en los primeros 2 minutos de una espiral, durante el día y a lo largo de un mes, con investigación sobre preocupación, respiración y apego.
 tags: ansiedad en la relación, apego
