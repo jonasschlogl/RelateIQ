@@ -9,7 +9,7 @@ but KEEP the existing `slug:` of each language (those URLs are already indexed b
 - [x] 2026-10-04-how-to-fix-a-relationship (RETRANSLATE; all 5 done 2026-11-19)
 - [x] 2026-10-03-relationship-problems-that-keep-coming-back (RETRANSLATE; all 5 done 2026-11-20)
 - [x] 2026-10-08-how-attachment-styles-work-in-relationships (all 5 retranslated 2026-11-20)
-- [ ] 2026-10-08-how-to-stop-overthinking-in-a-relationship (RETRANSLATE)
+- [x] 2026-10-08-how-to-stop-overthinking-in-a-relationship (all 5 retranslated 2026-11-20)
 - [ ] 2026-10-05-relationship-advice-communication-habits (RETRANSLATE)
 - [x] 2026-11-12-should-i-break-up-with-my-partner (all 5 done 2026-11-20)
 - [x] 2026-11-13-how-to-get-over-a-breakup (all 5 done 2026-11-20)
