@@ -1,10 +1,10 @@
 ---
 title: "Anteeksipyyntö kumppanille: näin pyydät anteeksi oikein"
-seo_title: "Anteeksipyyntö kumppanille: näin pyydät anteeksi oikein"
-description: Miten pyytää anteeksi kumppanilta, tyttöystävältä tai poikaystävältä niin, että se toimii: mitä tutkimus sanoo, 5 vaihetta ja esimerkkejä.
+seo_title: "Anteeksipyyntö kumppanille: 5 vaihetta ja esimerkkiviestit"
+description: "Miten pyytää anteeksi kumppanilta, tyttöystävältä tai poikaystävältä? 5 vaihetta, valmiita esimerkkiviestejä ja mitä kannattaa välttää."
 tags: miten pyytää anteeksi, anteeksipyyntö
 slug: anteeksipyynto-kumppanille
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 Useimmat meistä osaavat sanoa "anteeksi". Harvempi osaa pyytää anteeksi kumppanilta niin, että toinen tuntee tulleensa kuulluksi. Kiireinen "sori, okei?" voi saada kumppanin tuntemaan olonsa huonommaksi kuin ennen, ja pitkä, puolusteleva selitys voi tehdä saman. Silloin riitelette toista kertaa, nyt anteeksipyynnöstä, ensimmäisen riidan päälle.
 

@@ -3,8 +3,8 @@ title: "Cómo disculparse con tu pareja (novia o novio): cómo pedir perdón de 
 seo_title: "Cómo disculparse con tu pareja (novia o novio): 5 pasos"
 slug: como-pedir-perdon-a-tu-pareja
 date: 2026-10-08
-updated: 2026-11-18
-description: Cómo disculparse con tu pareja, tu novia o tu novio para que de verdad funcione: qué dice la ciencia, 5 pasos para pedir perdón y ejemplos de qué decir.
+updated: 2026-11-20
+description: "Cómo disculparse con tu pareja, tu novio, tu novia o tu esposo: 5 pasos para pedir perdón de verdad, ejemplos de mensajes y qué evitar."
 tags: cómo disculparse con tu pareja, pedir perdón
 ---
 Casi todos sabemos decir «lo siento». Pocos sabemos disculparnos con nuestra pareja de una forma que haga que la otra persona se sienta escuchada. Un «perdón, ¿vale?» dicho con prisa puede dejar a tu novia o a tu novio peor que antes, y una explicación larga y a la defensiva puede hacer lo mismo. Y entonces acabáis discutiendo por la disculpa, además de por lo que pasó.
@@ -153,6 +153,14 @@ Ante faltas más graves, como mentir, ser infiel o romper una promesa importante
 Si las disculpas no llevan a ninguna parte, o el patrón incluye faltas de respeto, un terapeuta de pareja puede ayudaros a ver qué pasa por debajo. Si quieres practicar qué decir antes de una conversación difícil, RelationshipAI es un coach de pareja con IA que te ayuda a poner en palabras tu disculpa y a ensayarla en Partner Practice. No es terapia, pero te puede ayudar a empezar.
 
 ## Respuestas rápidas
+
+### ¿Cómo pedirle perdón a mi novio o a mi novia?
+
+Igual que a cualquier pareja: di exactamente qué hiciste, asume la responsabilidad sin excusas y reconoce cómo le hizo sentir. Por ejemplo: «Siento haberme reído de lo que contaste delante de mis amigos. Te dejé en ridículo y no fue justo». Después ofrece algo concreto para repararlo.
+
+### ¿Cómo pedirle perdón a mi esposo o a mi esposa?
+
+En un matrimonio suele pesar más la repetición que el error aislado. Además de disculparte por lo que pasó, nombra el patrón y lo que vas a cambiar: «Siento haber vuelto a decidir sin preguntarte. A partir de ahora lo hablamos antes». Y cúmplelo en las semanas siguientes.
 
 ### ¿Está bien pedir perdón por mensaje?
 

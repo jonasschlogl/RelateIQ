@@ -1,10 +1,10 @@
 ---
 title: "Be om ursäkt till din partner: så säger du förlåt så att det känns"
-seo_title: "Be om ursäkt till din partner: 5 steg och exempel"
+seo_title: "Be om ursäkt till din partner: 5 steg + färdiga exempel"
 slug: be-partner-om-ursakt
-description: Så ber du om ursäkt till din partner, pojkvän eller flickvän på ett sätt som fungerar: vad forskningen säger, 5 steg och exempel på vad du kan säga.
+description: "Har du sårat din partner? Så ber du om ursäkt till pojkvän, flickvän eller partner: 5 enkla steg, färdiga exempel och vad du ska undvika."
 tags: be om ursäkt, säga förlåt
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 De flesta av oss vet hur man säger "förlåt". Färre vet hur man ber om ursäkt till sin partner så att den andra känner sig hörd. Ett snabbt "förlåt, okej?" kan få din partner att må sämre än innan, och en lång, försvarande förklaring kan göra samma sak. Då bråkar ni en andra gång, nu om ursäkten, ovanpå det första bråket.
 

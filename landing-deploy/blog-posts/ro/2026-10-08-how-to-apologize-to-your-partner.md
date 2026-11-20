@@ -1,10 +1,10 @@
 ---
 title: "Cum să-ți ceri scuze de la iubită sau iubit: cum ceri iertare corect"
-seo_title: "Cum să-ți ceri scuze de la iubită sau iubit: 5 pași"
-description: Cum să-ți ceri scuze de la iubită, iubit sau partener într-un mod care chiar funcționează: ce spun cercetările, 5 pași și exemple de ce să spui.
+seo_title: "Cum să-ți ceri scuze de la iubită sau iubit: pași + exemple"
+description: "Ai greșit și nu știi cum să-ți ceri scuze? 5 pași simpli, exemple de mesaje pentru iubită sau iubit și ce să nu spui, pe baza cercetărilor."
 tags: cum să-ți ceri scuze, cum să ceri iertare
 slug: cum-sa-iti-ceri-scuze-de-la-partener
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 Cei mai mulți dintre noi știm să spunem "îmi pare rău". Mult mai puțini știu cum să-și ceară scuze de la iubită, iubit sau partener astfel încât celălalt să se simtă cu adevărat auzit. Un "scuze, bine?" spus în grabă îl poate face pe partener să se simtă mai rău decât înainte, iar o explicație lungă și defensivă poate face același lucru. Și atunci ajungeți la o a doua ceartă, despre scuze, peste prima.
 
