@@ -78,7 +78,7 @@ You don't need to overhaul your relationship. Change here starts very small, bec
 **Put one thing in your calendar that is only yours.** A class, a run, a friend. Keep it even if they seem a bit low that evening.
 
 > **Example: the travel plans**
-> Priya always planned their holidays around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realized I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The holiday wasn't the point. The point was that she was in it.
+> Priya always planned their vacations around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realized I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The vacation wasn't the point. The point was that she was in it.
 >
 > *Names and details in this example are invented to show the idea.*
 
