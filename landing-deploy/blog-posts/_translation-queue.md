@@ -13,7 +13,7 @@ but KEEP the existing `slug:` of each language (those URLs are already indexed b
 - [ ] 2026-10-05-relationship-advice-communication-habits (RETRANSLATE)
 - [x] 2026-11-12-should-i-break-up-with-my-partner (all 5 done 2026-11-20)
 - [x] 2026-11-13-how-to-get-over-a-breakup (all 5 done 2026-11-20)
-- [ ] 2026-11-13-relationship-anxiety
+- [x] 2026-11-13-relationship-anxiety (all 5 done 2026-11-20)
 - [ ] 2026-11-14-gaslighting-in-a-relationship
 - [ ] 2026-11-16-signs-of-a-toxic-relationship
 - [ ] 2026-11-17-how-to-rebuild-trust-after-cheating
