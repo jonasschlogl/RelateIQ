@@ -116,7 +116,7 @@ No. Love includes caring about your partner and also about yourself. Codependenc
 
 ### Can a codependent relationship be fixed?
 
-Often, yes, if both partners are willing. It usually means building a life of your own again, practising small honest no's and sharing needs out loud. Counselling helps many people. Our guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) covers the steps couples take together.
+Often, yes, if both partners are willing. It usually means building a life of your own again, practicing small honest no's and sharing needs out loud. Counseling helps many people. Our guide on [how to fix a relationship](/blog/how-to-fix-a-relationship/) covers the steps couples take together.
 
 ### Is codependency linked to attachment styles?
 

@@ -127,7 +127,7 @@ Brief both sides. Tell your parents one or two things your partner loves talking
 
 ### What should you not say when meeting your partner's parents?
 
-Avoid oversharing about past relationships, criticising your partner (even jokingly), and starting debates on politics or religion. Also avoid complaining about the food, the trip or your own family. When in doubt, ask a question instead of making a statement.
+Avoid oversharing about past relationships, criticizing your partner (even jokingly), and starting debates on politics or religion. Also avoid complaining about the food, the trip or your own family. When in doubt, ask a question instead of making a statement.
 
 ### What should I bring when meeting my partner's parents?
 
