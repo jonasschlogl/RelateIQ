@@ -209,7 +209,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
   </url>
-  <url><loc>https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/blog/meeting-your-partners-parents/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://relationshipaiadvice.com/blog/breadcrumbing/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://relationshipaiadvice.com/blog/love-bombing/</loc><lastmod>2026-11-19</lastmod>
@@ -441,6 +449,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
   </url>
+  <url><loc>https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/</loc><lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/sv/blog/love-bombing-tecken/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/love-bombing/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/love-bombing-tecken/"/>
@@ -665,6 +682,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/moet-ik-het-uitmaken/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
+  </url>
+  <url><loc>https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/</loc><lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
   </url>
   <url><loc>https://relationshipaiadvice.com/fi/blog/love-bombing-merkit/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/love-bombing/"/>
@@ -891,6 +917,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
   </url>
+  <url><loc>https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/</loc><lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/es/blog/love-bombing-senales/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/love-bombing/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/love-bombing-tecken/"/>
@@ -1116,6 +1151,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
   </url>
+  <url><loc>https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/</loc><lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/nl/blog/love-bombing-signalen/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/love-bombing/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/love-bombing-tecken/"/>
@@ -1340,6 +1384,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/moet-ik-het-uitmaken/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
+  </url>
+  <url><loc>https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/</loc><lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/tunnetasolla-tavoittamaton-kumppani/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/pareja-emocionalmente-no-disponible/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/emotioneel-onbereikbare-partner/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
   </url>
   <url><loc>https://relationshipaiadvice.com/ro/blog/love-bombing-semne/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/love-bombing/"/>
