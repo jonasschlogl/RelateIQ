@@ -2,7 +2,7 @@
 title: "Gaslighting în relație sau doar o neînțelegere? 5 întrebări care le deosebesc"
 seo_title: "Gaslighting în relație sau neînțelegere? 5 întrebări"
 slug: gaslighting-in-relatie
-description: "Gaslightingul în relație e real, dar termenul e folosit prea des. 5 întrebări care îl deosebesc de o simplă neînțelegere, ce arată studiile și cum te vindeci."
+description: "Gaslightingul în relație e real, dar termenul e folosit prea des. 5 întrebări care îl deosebesc de o neînțelegere, ce arată studiile și cum te vindeci."
 tags: gaslighting în relație, manipulare emoțională
 ---
 "Gaslighting" a fost cuvântul anului 2022 la Merriam-Webster, iar de atunci e folosit pentru aproape orice: un partener care își amintește altfel o cină, un prieten care nu e de acord, un șef care se răzgândește. Asta creează două probleme. Oamenii aflați în certuri obișnuite încep să-și vadă partenerul ca pe un abuzator. Iar cei care chiar sunt victime ale gaslightingului descoperă că termenul și-a pierdut greutatea.
