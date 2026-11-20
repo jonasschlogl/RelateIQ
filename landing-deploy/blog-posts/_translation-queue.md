@@ -11,7 +11,7 @@ but KEEP the existing `slug:` of each language (those URLs are already indexed b
 - [ ] 2026-10-08-how-attachment-styles-work-in-relationships (RETRANSLATE)
 - [ ] 2026-10-08-how-to-stop-overthinking-in-a-relationship (RETRANSLATE)
 - [ ] 2026-10-05-relationship-advice-communication-habits (RETRANSLATE)
-- [ ] 2026-11-12-should-i-break-up-with-my-partner
+- [x] 2026-11-12-should-i-break-up-with-my-partner (all 5 done 2026-11-20)
 - [ ] 2026-11-13-how-to-get-over-a-breakup
 - [ ] 2026-11-13-relationship-anxiety
 - [ ] 2026-11-14-gaslighting-in-a-relationship
