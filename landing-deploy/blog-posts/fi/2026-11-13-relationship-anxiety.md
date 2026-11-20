@@ -2,7 +2,7 @@
 title: "Parisuhdeahdistus: mitä tehdä seuraavat 2 minuuttia, loppupäivä ja seuraava kuukausi"
 seo_title: "Parisuhdeahdistus: mitä tehdä seuraavat 2 minuuttia"
 slug: parisuhdeahdistus
-description: Parisuhdeahdistus: mitä tehdä kierteen ensimmäisten 2 minuutin aikana, päivän mittaan ja kuukauden aikana, tutkimusten valossa huolesta, hengityksestä ja kiintymyksestä.
+description: Parisuhdeahdistus: mitä tehdä kierteen ensimmäisten 2 minuutin aikana, päivän mittaan ja kuukauden aikana, tutkimusten valossa huolesta ja hengityksestä.
 tags: parisuhdeahdistus, kiintymyssuhde
 ---
 Parisuhdeahdistus on se taustalla jatkuvasti pyörivä kysymys: *onko meillä kaikki hyvin?* Myöhästynyt vastaus muuttuu merkiksi. Lyhyt "ok" muuttuu tuomioksi. Hyvää iltaa seuraa pelko, ettei se kestä. Voit rakastaa kumppaniasi ja silti tuntea, että valmistaudut iskuun.

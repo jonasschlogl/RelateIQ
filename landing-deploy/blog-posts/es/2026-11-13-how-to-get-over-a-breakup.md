@@ -2,7 +2,7 @@
 title: "Cómo superar una ruptura: un plan para las primeras 48 horas, 2 semanas y 3 meses"
 seo_title: "Cómo superar una ruptura: 48 horas, 2 semanas, 3 meses"
 slug: como-superar-una-ruptura
-description: Cómo superar una ruptura amorosa paso a paso: las primeras 48 horas, las dos primeras semanas y los meses siguientes, y por qué te recuperarás antes de lo que temes.
+description: Cómo superar una ruptura paso a paso: las primeras 48 horas, las primeras semanas y los meses siguientes, y por qué te recuperarás antes de lo que temes.
 tags: cómo superar una ruptura, desamor
 ---
 Ahora mismo seguramente parece que esto va a durar para siempre. Aquí tienes algo a lo que agarrarte: en un estudio que siguió a parejas de novios cada dos semanas durante nueve meses, investigadores dirigidos por Paul Eastwick pidieron a las personas que predijeran cuánto les afectaría que su relación terminara. Cuando las rupturas ocurrieron de verdad, las personas sufrieron menos de lo que habían predicho, y las que estaban más enamoradas fueron las que más sobrestimaron su dolor futuro.

@@ -2,7 +2,7 @@
 title: "Cum să treci peste o despărțire: un plan pentru primele 48 de ore, 2 săptămâni și 3 luni"
 seo_title: "Cum să treci peste o despărțire: 48 de ore, 2 săptămâni"
 slug: cum-sa-treci-peste-o-despartire
-description: Cum să treci peste o despărțire, pas cu pas: primele 48 de ore, primele două săptămâni și lunile de după, și de ce probabil îți vei reveni mai repede decât te temi.
+description: Cum să treci peste o despărțire, pas cu pas: primele 48 de ore, primele săptămâni și lunile de după, și de ce îți vei reveni probabil mai repede decât te temi.
 tags: cum să treci peste o despărțire, inimă frântă
 ---
 Acum probabil pare că starea asta va dura la nesfârșit. Iată ceva de care să te ții: într-un studiu care a urmărit cupluri de iubiți la fiecare două săptămâni, timp de nouă luni, cercetători conduși de Paul Eastwick le-au cerut oamenilor să prezică cât de afectați ar fi dacă relația s-ar termina. Când despărțirile chiar au avut loc, oamenii au suferit mai puțin decât preziseseră, iar cei mai îndrăgostiți și-au supraestimat cel mai mult durerea viitoare.

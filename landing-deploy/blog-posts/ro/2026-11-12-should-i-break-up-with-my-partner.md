@@ -2,7 +2,7 @@
 title: "Ar trebui să mă despart? 10 întrebări sincere care te ajută să decizi"
 seo_title: "Ar trebui să mă despart? 10 întrebări care te ajută"
 slug: ar-trebui-sa-ma-despart
-description: Ar trebui să mă despart de partener? 10 întrebări sincere care te ajută să decizi și ce arată cercetările pe peste 37.000 de oameni despre de ce se termină relațiile.
+description: Ar trebui să mă despart de partener? 10 întrebări sincere care te ajută să decizi și ce arată studiile pe peste 37.000 de oameni despre finalul relațiilor.
 tags: ar trebui să mă despart, îndoieli în relație
 ---
 În unele zile ești sigur că vrei să pleci. În altele îți amintești de ce te-ai îndrăgostit și nu-ți poți imagina viața fără acea persoană. Ai făcut liste în minte, ai întrebat prietenii și poate ai scris "ar trebui să mă despart" în Google la două noaptea.

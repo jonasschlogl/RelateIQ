@@ -2,7 +2,7 @@
 title: "Atașamentul evitant la partener: 8 semne și cum să iubești pe cineva care are nevoie de spațiu"
 seo_title: "Atașamentul evitant la partener: 8 semne și ce să faci"
 slug: atasament-evitant-partener
-description: Apropiat într-o zi, distant în următoarea? 8 semne de atașament evitant la partener, de ce se retrage când apare apropierea și cum construiești apropiere fără să alergi după el.
+description: Apropiat într-o zi, distant în următoarea? 8 semne de atașament evitant la partener, de ce se retrage după apropiere și cum creezi apropiere fără să alergi.
 tags: atașament evitant, nevoie de spațiu
 ---
 Ați avut un weekend minunat împreună. Apoi, luni, partenerul tău devine tăcut, răspunde mai greu și pare să aibă nevoie de mult timp singur. Te întrebi ce ai greșit. Probabil nimic. Dar tiparul se tot repetă.

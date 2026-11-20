@@ -2,7 +2,7 @@
 title: "Vermijdende hechting bij je partner: 8 signalen en hoe je houdt van iemand die ruimte nodig heeft"
 seo_title: "Vermijdende hechting bij je partner: 8 signalen"
 slug: vermijdende-hechting-partner
-description: De ene dag dichtbij, de volgende afstandelijk? 8 signalen van vermijdende hechting bij je partner, waarom diegene afstand neemt bij nabijheid en hoe je verbinding opbouwt zonder te jagen.
+description: De ene dag dichtbij, de volgende afstandelijk? 8 signalen van vermijdende hechting bij je partner, waarom diegene afstand neemt en hoe je verbinding opbouwt.
 tags: vermijdende hechting, ruimte nodig hebben
 ---
 Jullie hadden samen een heerlijk weekend. En dan wordt je partner op maandag stil, reageert later en lijkt veel tijd alleen nodig te hebben. Je vraagt je af wat je fout hebt gedaan. Waarschijnlijk niets. Maar het patroon herhaalt zich steeds.

@@ -2,7 +2,7 @@
 title: "Over een breuk heen komen: een plan voor de eerste 48 uur, 2 weken en 3 maanden"
 seo_title: "Over een breuk heen komen: 48 uur, 2 weken, 3 maanden"
 slug: over-een-breuk-heen-komen
-description: Zo kom je over een breuk heen, stap voor stap: de eerste 48 uur, de eerste twee weken en de maanden daarna, en waarom je waarschijnlijk sneller herstelt dan je vreest.
+description: Zo kom je over een breuk heen, stap voor stap: de eerste 48 uur, de eerste weken en de maanden daarna, en waarom je waarschijnlijk sneller herstelt dan je denkt.
 tags: over een breuk heen komen, liefdesverdriet
 ---
 Op dit moment voelt het waarschijnlijk alsof dit eeuwig gaat duren. Hier is iets om aan vast te houden: in een onderzoek dat datende stellen negen maanden lang elke twee weken volgde, vroegen onderzoekers onder leiding van Paul Eastwick mensen te voorspellen hoe verdrietig ze zouden zijn als hun relatie eindigde. Toen er echt breuken kwamen, hadden mensen minder verdriet dan ze hadden voorspeld, en wie het meest verliefd was, overschatte de toekomstige pijn het sterkst.

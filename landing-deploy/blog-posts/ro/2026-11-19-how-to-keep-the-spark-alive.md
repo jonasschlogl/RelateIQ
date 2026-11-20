@@ -2,7 +2,7 @@
 title: "Cum să păstrezi scânteia în relație: află care scânteie se stinge și începe cu ea"
 seo_title: "Cum să păstrezi scânteia în relație după ani"
 slug: scanteia-in-relatie
-description: Cum să păstrezi scânteia în relație după ani: un test de 2 minute care arată care dintre cele 4 scântei se stinge, ce spune cercetarea și un plan de 4 săptămâni.
+description: Cum să păstrezi scânteia în relație după ani: un test de 2 minute care arată care dintre cele 4 scântei se stinge, ce spun studiile și un plan de 4 săptămâni.
 tags: scânteia în relație, relație de lungă durată
 ---
 Într-un eșantion aleatoriu de americani căsătoriți de peste zece ani, aproximativ 40% au spus că sunt încă "foarte intens îndrăgostiți". Rezultatul vine dintr-un studiu condus de Daniel O'Leary, alături de Bianca Acevedo și Arthur Aron, și îi surprinde pe cei mai mulți, pentru că auzim mereu că pasiunea se stinge inevitabil. Într-un al doilea eșantion, din New York, procentul a fost de aproximativ 29%. Mai mic, dar departe de a fi rar.

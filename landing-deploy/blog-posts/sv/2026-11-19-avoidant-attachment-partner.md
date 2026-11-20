@@ -2,7 +2,7 @@
 title: "Undvikande anknytning hos en partner: 8 tecken och hur du älskar någon som behöver utrymme"
 seo_title: "Undvikande anknytning hos partner: 8 tecken"
 slug: undvikande-anknytning-partner
-description: Nära ena dagen, distanserad nästa? 8 tecken på undvikande anknytning hos din partner, varför hen drar sig undan vid närhet och hur ni skapar närhet utan att du jagar.
+description: Nära ena dagen, distanserad nästa? 8 tecken på undvikande anknytning hos din partner, varför hen drar sig undan vid närhet och hur ni skapar närhet utan jakt.
 tags: undvikande anknytning, behöva utrymme
 ---
 Ni hade en underbar helg tillsammans. Sedan på måndagen blir hen tyst, svarar långsammare och verkar behöva mycket tid för sig själv. Du undrar vad du har gjort fel. Förmodligen ingenting. Men mönstret upprepar sig.

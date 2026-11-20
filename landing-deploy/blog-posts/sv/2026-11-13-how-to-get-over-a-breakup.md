@@ -2,7 +2,7 @@
 title: "Komma över ett uppbrott: en plan för de första 48 timmarna, 2 veckorna och 3 månaderna"
 seo_title: "Komma över ett uppbrott: 48 timmar, 2 veckor, 3 månader"
 slug: komma-over-ett-uppbrott
-description: Så kommer du över ett uppbrott steg för steg: de första 48 timmarna, de första två veckorna och månaderna efter, och varför du troligen återhämtar dig snabbare än du tror.
+description: Så kommer du över ett uppbrott steg för steg: de första 48 timmarna, de första veckorna och månaderna efter, och varför du återhämtar dig snabbare än du tror.
 tags: komma över ett uppbrott, hjärtesorg
 ---
 Just nu känns det säkert som att det här aldrig kommer att ta slut. Här är något att hålla fast vid: i en studie som följde dejtande par varannan vecka i nio månader bad forskare under ledning av Paul Eastwick deltagarna att förutsäga hur ledsna de skulle bli om förhållandet tog slut. När uppbrotten väl hände mådde de mindre dåligt än de hade trott, och de som var mest förälskade var de som mest överskattade hur ont det skulle göra.

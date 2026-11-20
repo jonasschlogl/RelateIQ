@@ -2,7 +2,7 @@
 title: "Erosta toipuminen: suunnitelma ensimmäisille 48 tunnille, 2 viikolle ja 3 kuukaudelle"
 seo_title: "Erosta toipuminen: 48 tuntia, 2 viikkoa, 3 kuukautta"
 slug: erosta-toipuminen
-description: Miten päästä yli erosta vaihe vaiheelta: ensimmäiset 48 tuntia, ensimmäiset kaksi viikkoa ja sitä seuraavat kuukaudet, ja miksi toivut todennäköisesti nopeammin kuin pelkäät.
+description: Miten päästä yli erosta vaihe vaiheelta: ensimmäiset 48 tuntia, kaksi ensimmäistä viikkoa ja seuraavat kuukaudet, ja miksi toivut nopeammin kuin pelkäät.
 tags: erosta toipuminen, sydänsuru
 ---
 Juuri nyt tuntuu varmasti siltä, että tämä kestää ikuisesti. Tässä on jotain, mihin tarttua: tutkimuksessa, jossa seurusteluparia seurattiin kahden viikon välein yhdeksän kuukauden ajan, Paul Eastwickin johtamat tutkijat pyysivät osallistujia arvioimaan, kuinka pahalta suhteen loppuminen tuntuisi. Kun erot sitten tapahtuivat, ihmiset kärsivät vähemmän kuin olivat ennustaneet, ja kaikkein rakastuneimmat yliarvioivat tulevan kipunsa eniten.

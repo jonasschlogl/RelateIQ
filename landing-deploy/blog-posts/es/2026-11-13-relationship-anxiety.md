@@ -2,7 +2,7 @@
 title: "Ansiedad en la relación: qué hacer en los próximos 2 minutos, el resto del día y el próximo mes"
 seo_title: "Ansiedad en la relación: qué hacer en 2 minutos y después"
 slug: ansiedad-en-la-relacion
-description: Ansiedad en la relación de pareja: qué hacer en los primeros 2 minutos de una espiral, durante el día y a lo largo de un mes, con investigación sobre preocupación, respiración y apego.
+description: Ansiedad en la relación: qué hacer en los primeros 2 minutos de una espiral, durante el día y a lo largo de un mes, según la ciencia de la preocupación.
 tags: ansiedad en la relación, apego
 ---
 La ansiedad en la relación es esa pregunta de fondo que no se va: *¿estamos bien?* Una respuesta lenta se convierte en una señal. Un "ok" seco se convierte en un veredicto. Una buena noche viene seguida del miedo a que no dure. Puedes querer a tu pareja y aun así sentir que estás preparándote para un golpe.

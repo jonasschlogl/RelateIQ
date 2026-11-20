@@ -2,7 +2,7 @@
 title: "Ska jag göra slut? 10 ärliga frågor som hjälper dig att bestämma dig"
 seo_title: "Ska jag göra slut? 10 ärliga frågor som hjälper dig"
 slug: ska-jag-gora-slut
-description: Ska jag göra slut med min partner? 10 ärliga frågor som hjälper dig att bestämma dig, och vad forskning med över 37 000 personer säger om varför relationer tar slut.
+description: Ska jag göra slut med min partner? 10 ärliga frågor som hjälper dig att bestämma dig, och vad forskning med 37 000 personer säger om varför relationer tar slut.
 tags: ska jag göra slut, tvivel i förhållandet
 ---
 Vissa dagar är du säker på att du vill gå. Andra dagar minns du varför du föll för hen och kan inte föreställa dig livet utan hen. Du har gjort listor i huvudet, frågat vänner och kanske skrivit "ska jag göra slut" i Google klockan två på natten.
