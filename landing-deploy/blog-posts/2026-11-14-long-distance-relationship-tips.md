@@ -6,7 +6,7 @@ updated: 2026-11-19
 description: "Long distance relationship tips for all three phases: staying close apart, making visits work, and the risky part most guides skip, finally living together."
 tags: long distance relationship tips, LDR
 ---
-Most long distance relationship tips focus on the time apart: video calls, care packages, watching films in sync. That matters. But research points to a part of long distance that gets far less attention and causes a surprising number of breakups: the moment you finally live in the same place.
+Most long distance relationship tips focus on the time apart: video calls, care packages, watching movies in sync. That matters. But research points to a part of long distance that gets far less attention and causes a surprising number of breakups: the moment you finally live in the same place.
 
 This guide covers all three phases. First, some reassurance, because the data on long distance is better than its reputation.
 
@@ -83,7 +83,7 @@ How to make the landing softer:
 **Expect a dip, and name it.**
 You could say: "This is harder than I thought it'd be. I don't think it means we're wrong for each other. I think we're just adjusting."
 
-**Keep some long-distance habits.** The weekly proper conversation, the small shared rituals. They don't have to stop just because you share a postcode.
+**Keep some long-distance habits.** The weekly proper conversation, the small shared rituals. They don't have to stop just because you share a zip code.
 
 > **Example: the first winter**
 > After two years between Manchester and Lisbon, Inês moved in with Daniel. They'd planned it for months, and the first weeks were wonderful. By December she felt flat. She had no job yet and no friends of her own, and they were arguing about dishes. Daniel thought it meant she regretted moving. One evening she said: "I don't regret us. I just don't have a life here yet." They agreed she'd take an evening class and he'd introduce her to his colleagues' partners. By spring the arguments were back to normal-couple size.
