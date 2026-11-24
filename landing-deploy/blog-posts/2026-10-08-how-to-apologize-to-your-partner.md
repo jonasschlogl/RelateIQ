@@ -72,7 +72,7 @@ You don't need all six elements every time. Here is a short structure built on t
 
 **3. Acknowledge the impact.** "That probably made you feel dismissed and embarrassed." You don't have to agree with every detail of how they feel, but you do want them to see you're trying to understand it. This is the empathy component.
 
-**4. Offer to repair.** What will you do now, or differently? "Next time I'll message you if I'm running late, and tonight I'd like to make us dinner." Keep the promise small and realistic. A big promise you break next week does more damage than a small one you keep.
+**4. Offer to repair.** What will you do now, or differently? "Next time I'll message you if I'm running late, and tonight I'd like to make us dinner." Keep the promise small and realistic. A big promise you break next week does more damage than a small one you keep. If you have to start by text, our list of [what to text after a fight](/blog/what-to-text-after-a-fight/) shows how to open the door without replacing the real apology.
 
 **5. Give them room.** Don't demand forgiveness on the spot. "Take the time you need" tells your partner you respect their pace. Remember that asking for forgiveness was the least effective element in the research.
 

@@ -22,7 +22,7 @@ Om grälet var hett är det mest användbara du kan göra i kväll ofta inget me
 
 En studie från 2026 pekar åt samma håll. Asya Saydam och Jaime Hsu följde 378 gifta par genom tio dagars dagböcker och fann att bättre sömn generellt förutsade mindre spänning i äktenskapet dagen efter, med starkast samband för kvinnor gifta med män och för personer i samkönade äktenskap.
 
-**Lämna en liten signal.** Ett godnatt, ett glas vatten på hens sida av sängen, ett "vi löser det". Det säger: förhållandet finns kvar, även om samtalet inte är över.
+**Lämna en liten signal.** Ett godnatt, ett glas vatten på hens sida av sängen, ett "vi löser det". Det säger: förhållandet finns kvar, även om samtalet inte är över. Om ni inte är på samma ställe har vår lista över [vad man kan skriva efter ett bråk](/blog/what-to-text-after-a-fight/) de exakta orden.
 
 **Snabbtest:** vill du se ditt eget mönster i gräl? Det kostnadsfria [testet om konfliktstil](/quiz/fight-style/), på engelska och på 2 minuter, visar om du trappar upp, stänger av, försöker blidka eller reparerar.
 

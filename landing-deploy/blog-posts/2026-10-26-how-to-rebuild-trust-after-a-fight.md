@@ -23,7 +23,7 @@ If the fight was heated, the most useful thing you can do tonight is often nothi
 
 A 2026 study points the same way. Following 378 married couples through ten days of diaries, Asya Saydam and Jaime Hsu found that a better night's sleep generally predicted less marital strain the next day, with the strongest link for women married to men and for people in same-sex marriages.
 
-**Leave one small signal.** A goodnight, a glass of water on their side of the bed, a "we'll figure it out". It says: the relationship is still here, even if the conversation isn't over.
+**Leave one small signal.** A goodnight, a glass of water on their side of the bed, a "we'll figure it out". It says: the relationship is still here, even if the conversation isn't over. If you're apart, our list of [what to text after a fight](/blog/what-to-text-after-a-fight/) has the exact words.
 
 **Quick quiz:** Want to see your own pattern in arguments? The free 2-minute [conflict style quiz](/quiz/fight-style/) shows whether you escalate, shut down, people-please or repair.
 

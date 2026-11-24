@@ -45,7 +45,7 @@ Jiang and Hancock's finding is useful: closeness at a distance comes from sharin
 
 ### Have hard conversations on a call
 
-Text strips out tone and invites worst-case readings. If something bothers you, say "Can we talk about something tonight?" and do it with voices, ideally faces. If worries tend to grow in the silence between messages, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [trust issues](/blog/trust-issues-in-a-relationship/) can help.
+Text strips out tone and invites worst-case readings. If something bothers you, say "Can we talk about something tonight?" and do it with voices, ideally faces. After a fight, our list of [what to text after a fight](/blog/what-to-text-after-a-fight/) helps you keep messages to a bridge, not round two. If worries tend to grow in the silence between messages, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [trust issues](/blog/trust-issues-in-a-relationship/) can help.
 
 ### Always know when you'll see each other next
 

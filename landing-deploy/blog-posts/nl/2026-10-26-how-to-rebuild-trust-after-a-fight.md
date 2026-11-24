@@ -22,7 +22,7 @@ Was de ruzie heftig, dan is het nuttigste wat je vanavond kunt doen vaak niets m
 
 Een studie uit 2026 wijst dezelfde kant op. Asya Saydam en Jaime Hsu volgden 378 getrouwde stellen tien dagen lang via dagboeken en vonden dat beter slapen over het algemeen minder spanning in het huwelijk de volgende dag voorspelde, met het sterkste verband bij vrouwen die met een man getrouwd zijn en bij mensen in een huwelijk met iemand van hetzelfde geslacht.
 
-**Laat een klein signaal achter.** Een welterusten, een glas water aan zijn of haar kant van het bed, een "we komen er wel uit". Het zegt: de relatie is er nog, ook al is het gesprek niet af.
+**Laat een klein signaal achter.** Een welterusten, een glas water aan zijn of haar kant van het bed, een "we komen er wel uit". Het zegt: de relatie is er nog, ook al is het gesprek niet af. Zijn jullie niet bij elkaar, dan geeft onze lijst met [wat je stuurt na ruzie](/blog/what-to-text-after-a-fight/) de precieze woorden.
 
 **Snelle test:** wil je je eigen patroon in ruzies zien? De gratis [test over je ruziestijl](/quiz/fight-style/), in het Engels en in 2 minuten, laat zien of je escaleert, je afsluit, het iedereen naar de zin wilt maken of herstelt.
 

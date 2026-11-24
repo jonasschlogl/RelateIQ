@@ -22,7 +22,7 @@ Si la pelea fue acalorada, lo más útil que puedes hacer esta noche a menudo no
 
 Un estudio de 2026 apunta en la misma dirección. Siguiendo a 378 matrimonios durante diez días de diarios, Asya Saydam y Jaime Hsu encontraron que dormir mejor predecía en general menos tensión matrimonial al día siguiente, con la relación más fuerte en las mujeres casadas con hombres y en las personas en matrimonios del mismo sexo.
 
-**Deja una pequeña señal.** Un buenas noches, un vaso de agua en su lado de la cama, un "ya lo arreglaremos". Dice: la relación sigue aquí, aunque la conversación no haya terminado.
+**Deja una pequeña señal.** Un buenas noches, un vaso de agua en su lado de la cama, un "ya lo arreglaremos". Dice: la relación sigue aquí, aunque la conversación no haya terminado. Si estáis separados, nuestra lista de [qué escribirle a tu pareja después de una pelea](/blog/what-to-text-after-a-fight/) te da las palabras exactas.
 
 **Test rápido:** ¿quieres ver tu propio patrón en las discusiones? El [test gratuito sobre tu estilo en los conflictos](/quiz/fight-style/), en inglés y de 2 minutos, muestra si escalas, te cierras, intentas complacer o reparas.
 

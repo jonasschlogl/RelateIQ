@@ -22,7 +22,7 @@ Jos riita oli kiivas, hyödyllisintä, mitä voit tänä iltana tehdä, on usein
 
 Vuoden 2026 tutkimus osoittaa samaan suuntaan. Seuratessaan 378 avioparia kymmenen päivän päiväkirjojen avulla Asya Saydam ja Jaime Hsu havaitsivat, että parempi uni ennusti yleensä vähäisempää jännitettä avioliitossa seuraavana päivänä, ja yhteys oli vahvin miehen kanssa naimisissa olevilla naisilla ja samaa sukupuolta olevien avioliitoissa.
 
-**Jätä pieni merkki.** Hyvää yötä, vesilasi hänen puolelleen sänkyä, "kyllä me tämä selvitetään". Se sanoo: suhde on yhä tässä, vaikka keskustelu ei ole ohi.
+**Jätä pieni merkki.** Hyvää yötä, vesilasi hänen puolelleen sänkyä, "kyllä me tämä selvitetään". Se sanoo: suhde on yhä tässä, vaikka keskustelu ei ole ohi. Jos olette erillään, listamme siitä, [mitä kirjoittaa riidan jälkeen](/blog/what-to-text-after-a-fight/), antaa tarkat sanat.
 
 **Pikatesti:** haluatko nähdä oman kaavasi riidoissa? Ilmainen [riitatyylitesti](/quiz/fight-style/), englanniksi ja 2 minuutin mittainen, näyttää, kärjistätkö, suljetko itsesi, mielisteletkö vai korjaatko.
 

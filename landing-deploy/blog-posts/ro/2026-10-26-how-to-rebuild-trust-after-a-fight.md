@@ -22,7 +22,7 @@ Dacă cearta a fost aprinsă, cel mai util lucru pe care îl poți face în sear
 
 Un studiu din 2026 arată în aceeași direcție. Urmărind 378 de cupluri căsătorite prin jurnale pe zece zile, Asya Saydam și Jaime Hsu au descoperit că un somn mai bun prezicea în general mai puțină tensiune în căsnicie a doua zi, legătura fiind cea mai puternică la femeile căsătorite cu bărbați și la persoanele din căsătorii între persoane de același sex.
 
-**Lasă un semn mic.** Un noapte bună, un pahar cu apă pe partea lui de pat, un "o să rezolvăm". Spune: relația e încă aici, chiar dacă discuția nu s-a terminat.
+**Lasă un semn mic.** Un noapte bună, un pahar cu apă pe partea lui de pat, un "o să rezolvăm". Spune: relația e încă aici, chiar dacă discuția nu s-a terminat. Dacă nu sunteți împreună, lista noastră cu [ce să-i scrii după o ceartă](/blog/what-to-text-after-a-fight/) îți dă cuvintele exacte.
 
 **Test rapid:** vrei să-ți vezi propriul tipar în certuri? [Testul gratuit despre stilul tău în conflicte](/quiz/fight-style/), în engleză și de 2 minute, arată dacă escaladezi, te închizi, încerci să mulțumești pe toată lumea sau repari.
 
