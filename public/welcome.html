@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/style.css?v=65" />
   <link rel="stylesheet" href="css/app-theme.css?v=24" />
   <script src="js/i18n.js?v=1"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 </head>
 <body class="welcome-body">
 
@@ -53,6 +54,19 @@
       var local = u && u.email ? String(u.email).split("@")[0].toLowerCase() : "";
       if (first && first.toLowerCase() !== local) document.getElementById("welcome-name").textContent = ", " + first;
     } catch (e) {}
+  </script>
+  <script>
+    /* count a finished sign-up once per browser session (Umami: "register-success") */
+    window.addEventListener("load", function () {
+      try {
+        if (sessionStorage.getItem("rai_reg_tracked")) return;
+        sessionStorage.setItem("rai_reg_tracked", "1");
+        var t = 0, iv = setInterval(function () {
+          if (window.umami && window.umami.track) { clearInterval(iv); window.umami.track("register-success"); }
+          else if (++t > 20) clearInterval(iv);
+        }, 250);
+      } catch (e) {}
+    });
   </script>
 </body>
 </html>
