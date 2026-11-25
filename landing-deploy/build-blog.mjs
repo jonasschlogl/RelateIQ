@@ -501,6 +501,9 @@ function page(ctx, { title, description, path: pagePath, type = "website", body,
   let h = shellPage({ title, description, path: pagePath, type, body, jsonld, image, cls: "sp-blog" });
   // language of the page + hreflang links to the same page in the other languages
   h = h.replace(/<html lang="[^"]*"/, `<html lang="${ctx.lang.htmlLang}"`);
+  // the mobile app card must sit outside <main class="sp-main"> (its stacking context is below the footer), so it can stay pinned on screen
+  const mob = h.match(/\n\s*<div class="ad-card ad-mobile">[\s\S]*?<\/small>\s*<\/div>\s*<\/div>/);
+  if (mob) { h = h.replace(mob[0], ""); const i = h.lastIndexOf("</main>"); h = h.slice(0, i + 7) + "\n" + mob[0] + h.slice(i + 7); }
   const alts = altTargets ? alternatesHtml(altTargets) : "";
   if (alts && alts.split("\n").length > 2) h = h.replace(/(<link rel="canonical"[^>]*>)/, `$1\n  ${alts}`);
   return h;
@@ -653,7 +656,7 @@ function adCard(ctx, p, extra = "") {
             <span class="ad-ic" aria-hidden="true"></span>
             <h3>${title}</h3>
             <p>${text}</p>
-            <a href="https://app.relationshipaiadvice.com/register.html" class="btn btn-gradient" data-umami-event="cta-blog-sidebar">${T(EN.cta)}</a>
+            <a href="https://app.relationshipaiadvice.com/register.html" class="btn btn-gradient" data-umami-event="cta-blog-${extra ? "mobile-bar" : "sidebar"}">${T(EN.cta)}</a>
             <small>${T(EN.adNote)}</small>
           </div>
         </div>`;
@@ -708,7 +711,6 @@ ${withImages(p)}
           ${ctaBox(ctx, "cta-blog-article")}
           ${shareBar(p, url)}
           <p class="article-note">${T(EN.articleNote)}</p>
-          ${adCard(ctx, p, "ad-mobile")}
         </div>
         <aside class="article-aside">
           ${toc.length > 2 ? `<nav class="toc" aria-label="${attr(T(EN.tocTitle))}"><p class="toc-title">${T(EN.tocTitle)}</p><ol>${tocList}</ol></nav>` : ""}
@@ -725,7 +727,8 @@ ${withImages(p)}
         <div class="post-grid">${others.map((x) => card(ctx, x)).join("\n")}</div>
       </div>
     </section>` : ""}
-  </main>`,
+  </main>
+  ${adCard(ctx, p, "ad-mobile")}`,
     jsonld: { "@context": "https://schema.org", "@graph": [articleLd(ctx, p, url, ogPng), breadcrumbLd(ctx, p, url), ...(enh.faq.length ? [{ "@type": "FAQPage", mainEntity: enh.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : [])] },
   });
 }

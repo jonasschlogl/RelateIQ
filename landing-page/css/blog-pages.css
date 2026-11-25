@@ -260,3 +260,22 @@ body.spg .author-box-name span { display: block; font-size: .85rem; opacity: .7;
 body.spg .author-box-check { font-size: .88rem !important; opacity: .85; }
 body.spg .author-box-check a { color: #c2185b; font-weight: 600; }
 @media (max-width: 560px) { body.spg .author-box { flex-direction: column; } }
+
+/* Mobile: the app card stays pinned to the bottom of the screen the whole time */
+@media (max-width: 1050px) {
+  body.hx.spg.sp-blog .hx-foot::after { content: ""; display: block; height: 96px; }
+  body.hx.spg .ad-card.ad-mobile {
+    display: block !important; position: fixed; z-index: 60; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    margin: 0 !important; border-radius: 22px !important; overflow: hidden; isolation: isolate;
+    box-shadow: 0 14px 34px -12px rgba(59, 34, 24, .55);
+  }
+  body.hx.spg .ad-card.ad-mobile::before, body.hx.spg .ad-card.ad-mobile::after { display: none; }
+  body.hx.spg .ad-card.ad-mobile .ad-body {
+    padding: 10px 10px 10px 12px !important; flex-direction: row !important; align-items: center !important; gap: 10px;
+  }
+  body.hx.spg .ad-card.ad-mobile .ad-ic { flex: none; width: 42px; height: 42px; border-radius: 14px; background-size: 30px; margin: 0; }
+  body.hx.spg .ad-card.ad-mobile h3 { flex: 1; min-width: 0; font-size: 16px !important; line-height: 1.2 !important; }
+  body.hx.spg .ad-card.ad-mobile p, body.hx.spg .ad-card.ad-mobile small { display: none !important; }
+  body.hx.spg .ad-card.ad-mobile .btn { flex: none; width: auto !important; margin: 0 !important; padding: 11px 16px !important; font-size: 14px !important; white-space: nowrap; }
+  body.hx.spg .ad-card.ad-mobile .btn::after { margin-left: 6px; }
+}
