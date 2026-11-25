@@ -79,7 +79,7 @@ The Olson study suggests fully merging may help couples feel more united, but wh
 ### 1. You have debt your partner doesn't know about
 
 Tell them sooner rather than later, with a plan.
-"There's something I need to tell you that I've been embarrassed about. I have about $4,000 in credit card debt. I've made a plan to pay it off by next autumn, and I'd like you to know so there's nothing hidden between us."
+"There's something I need to tell you that I've been embarrassed about. I have about $4,000 in credit card debt. I've made a plan to pay it off by next fall, and I'd like you to know so there's nothing hidden between us."
 
 ### 2. One of you earns much more
 
