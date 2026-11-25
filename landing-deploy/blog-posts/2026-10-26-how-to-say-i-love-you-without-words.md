@@ -65,7 +65,7 @@ If things are fine but feel a little flat, our guide on [how to keep the spark a
 
 21. Send a photo of something that reminded you of them, with no explanation.
 22. Order their favorite food to their door after a long day.
-23. Watch the same film at the same time and text during it.
+23. Watch the same movie at the same time and text during it.
 24. Record a voice note instead of a text. Hearing your voice matters.
 
 More ideas in our [long distance relationship tips](/blog/long-distance-relationship-tips/).
