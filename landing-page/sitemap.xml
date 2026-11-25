@@ -225,7 +225,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/anxietate-in-relatie/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/relationship-anxiety/"/>
   </url>
-  <url><loc>https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/ska-jag-gora-slut/"/>
@@ -526,6 +534,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
   </url>
+  <url><loc>https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/kanslomassigt-otillganglig-partner/"/>
@@ -804,6 +821,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/relatieangst/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/anxietate-in-relatie/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/relationship-anxiety/"/>
+  </url>
+  <url><loc>https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
   </url>
   <url><loc>https://relationshipaiadvice.com/fi/blog/pitaisiko-minun-erota/</loc><lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
@@ -1093,6 +1119,15 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-treci-peste-o-despartire/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-get-over-a-breakup/"/>
   </url>
+  <url><loc>https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+  </url>
   <url><loc>https://relationshipaiadvice.com/es/blog/deberia-dejar-a-mi-pareja/</loc><lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/ska-jag-gora-slut/"/>
@@ -1380,6 +1415,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/relatieangst/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/anxietate-in-relatie/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/relationship-anxiety/"/>
+  </url>
+  <url><loc>https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
   </url>
   <url><loc>https://relationshipaiadvice.com/nl/blog/moet-ik-het-uitmaken/</loc><lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
@@ -1677,6 +1721,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/moet-ik-het-uitmaken/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/ar-trebui-sa-ma-despart/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/should-i-break-up-with-my-partner/"/>
+  </url>
+  <url><loc>https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://relationshipaiadvice.com/sv/blog/stotta-partnern-vid-stress/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://relationshipaiadvice.com/fi/blog/miten-tukea-stressaantunutta-kumppania/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://relationshipaiadvice.com/es/blog/como-apoyar-a-tu-pareja-cuando-esta-estresada/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://relationshipaiadvice.com/nl/blog/je-partner-steunen-bij-stress/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://relationshipaiadvice.com/ro/blog/cum-sa-iti-sprijini-partenerul-cand-e-stresat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relationshipaiadvice.com/blog/how-to-support-your-partner-when-stressed/"/>
   </url>
   <url><loc>https://relationshipaiadvice.com/ro/blog/partener-indisponibil-emotional/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://relationshipaiadvice.com/blog/emotionally-unavailable-partner/"/>

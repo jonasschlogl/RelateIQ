@@ -98,7 +98,7 @@ But "positive" looks different for different people. Some people want to talk it
 Then remember the answer. That one conversation will make you a better support than any list.
 
 > **Example: the wrong kind of help**
-> When Tomás was stressed about a work launch, Elena kept sending him articles about productivity and asking how she could help. He grew short with her and she felt rejected. On a quieter weekend they talked about it, and he said: "When I'm stressed, I don't want to talk about it. I want normal. Make me laugh, put a film on, don't ask how work is." The next crunch, she did exactly that. He told her afterwards it was the first busy period he hadn't ended up feeling guilty about.
+> When Tomás was stressed about a work launch, Elena kept sending him articles about productivity and asking how she could help. He grew short with her and she felt rejected. On a quieter weekend they talked about it, and he said: "When I'm stressed, I don't want to talk about it. I want normal. Make me laugh, put a movie on, don't ask how work is." The next crunch, she did exactly that. He told her afterwards it was the first busy period he hadn't ended up feeling guilty about.
 >
 > *Names and details in this example are invented to show the idea.*
 
