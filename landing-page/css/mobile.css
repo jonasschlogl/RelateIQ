@@ -105,7 +105,6 @@ img.fl-ph { display: none; }
   .f-st .f-lead { font-size: 27px !important; line-height: 1.14; max-width: none; }
   body.hx .f-st .lw { color: rgba(255,243,226,.32) !important; } body.hx .f-st .lw.on { color: #fff3e2 !important; }
   body.hx .f-st .lw.on.pk, body.hx .f-st .f-lead em { color: #f58fab !important; }
-  body.hx .hx-sticky { display: none !important; }
   body.hx .ts-sec { padding-bottom: 0 !important; }
   body.hx .f-st { margin-top: 20px !important; }
 

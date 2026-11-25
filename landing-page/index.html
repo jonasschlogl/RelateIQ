@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="css/hero-quotes.css?v=8" />
   <link rel="stylesheet" href="css/testers.css?v=2" />
   <link rel="stylesheet" href="css/light.css?v=10" />
-  <link rel="stylesheet" href="css/mobile.css?v=43" />
+  <link rel="stylesheet" href="css/mobile.css?v=44" />
   <link rel="stylesheet" href="css/mobile-acc.css?v=4" />
   <link rel="stylesheet" href="css/mobile-sheet.css?v=6" />
   <link rel="stylesheet" href="css/polish.css?v=6" />
@@ -53,6 +53,15 @@
   <script>(function(){var m={'#about':'/about/','#learn-practice':'/partner-practice/','#learn-coach':'/coach-chat/','#learn-message':'/message-check/','#learn-more':'/other-tools/','#learn-support':'/contact/','#learn-blog-all':'/blog/','#learn-blog-attachment':'/blog/topic/attachment-styles/','#learn-blog-communication':'/blog/topic/communication/','#learn-blog-conflict':'/blog/topic/conflict/','#learn-blog-repair':'/blog/topic/repairing-a-relationship/','#learn-blog-overthinking':'/blog/topic/overthinking/'};if(m[location.hash])location.replace(m[location.hash])})();</script>
 <style id="hx-mcta-css">
 .hx-mcta{display:none}
+@media (min-width:961px){
+  body.hx .hx-hero .hx-mcta{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:34px}
+  body.hx .hx-hero .hx-mcta .hx-mcta-btn{padding:19px 34px;font-size:18px;gap:12px;background:var(--f-pink,#f58fab);color:#3b2218;border:0;border-radius:999px;box-shadow:0 18px 32px -14px rgba(0,0,0,.65),inset 0 -3px 0 rgba(59,34,24,.18);transition:transform .2s ease,box-shadow .2s ease}
+  body.hx .hx-hero .hx-mcta .hx-mcta-btn:hover{transform:translateY(-2px)}
+  body.hx .hx-hero .hx-mcta .hx-mcta-btn svg{flex:none;transition:transform .2s ease}
+  body.hx .hx-hero .hx-mcta .hx-mcta-btn:hover svg{transform:translateX(4px)}
+  body.hx .hx-hero .hx-mcta-note{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:600 14px/1.3 var(--font-body,'DM Sans',sans-serif);color:rgba(255,243,226,.82)}
+  body.hx .hx-hero .hx-mcta-note i{width:4px;height:4px;border-radius:50%;background:#f9d98a;flex:none}
+}
 @media (max-width:960px){
   body.hx .hx-hero .hx-mcta{display:flex;flex-direction:column;align-items:stretch;gap:14px;margin-top:26px;max-width:440px}
   body.hx .hx-hero .hx-mcta .hx-mcta-btn{width:100%;padding:20px 28px;font-size:19px;letter-spacing:.005em;gap:12px;background:var(--f-pink,#f58fab);color:#3b2218;border:0;border-radius:999px;
@@ -65,6 +74,9 @@
 }
 @keyframes hxMctaRing{0%,100%{box-shadow:0 18px 32px -14px rgba(0,0,0,.65),inset 0 -3px 0 rgba(59,34,24,.18),0 0 0 0 rgba(245,143,171,.55)}55%{box-shadow:0 18px 32px -14px rgba(0,0,0,.65),inset 0 -3px 0 rgba(59,34,24,.18),0 0 0 12px rgba(245,143,171,0)}}
 @media (prefers-reduced-motion:reduce){body.hx .hx-hero .hx-mcta .hx-mcta-btn{animation:none}}
+.hx-sticky#sticky{position:fixed;left:50%;bottom:20px;z-index:45;display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;background:#3b2218;color:#fff3e2;border:0;font-weight:700;box-shadow:0 14px 30px -12px rgba(59,34,24,.55)}
+.hx-sticky#sticky svg{flex:none}
+@media (max-width:700px){body.hx .hx-sticky#sticky{display:inline-flex!important;bottom:max(16px,env(safe-area-inset-bottom))}}
 </style>
 </head>
 
@@ -524,7 +536,7 @@ function tog(id){var x=all[id];set(id,x[0].classList.contains('acc-closed'))}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);if(all[id]&&window.matchMedia('(max-width:760px)').matches){set(id,true);setTimeout(function(){all[id][0].scrollIntoView({behavior:'smooth',block:'start'})},60)}},true);
 if(location.hash&&all[location.hash.slice(1)])set(location.hash.slice(1),true);})();</script><script>(function(){function fit(){var d=document.documentElement,w=window.innerWidth;if(d.scrollWidth>w+1){var m=document.querySelector('meta[name=viewport]');if(m){m.setAttribute('content','width='+w+', initial-scale=1');setTimeout(function(){m.setAttribute('content','width=device-width, initial-scale=1.0')},60)}window.scrollTo(0,window.scrollY)}}window.addEventListener('load',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300)});setTimeout(fit,1200)})();</script><script>(function(){var pb=document.querySelector('body > .page-bg'),f=document.querySelector('body > footer.hx-foot');if(!pb||!f)return;function fit(){pb.style.bottom='auto';pb.style.height=Math.max(0,f.getBoundingClientRect().top+window.scrollY)+'px'}fit();addEventListener('load',fit);addEventListener('resize',fit);if(window.ResizeObserver)new ResizeObserver(fit).observe(document.body);setTimeout(fit,600);setTimeout(fit,2000)})();(function(){[].forEach.call(document.querySelectorAll('.fm-wrap,.about-wrap'),function(w){var pb=w.querySelector(':scope > .page-bg'),site=w.querySelector('.fm-site');if(!pb||!site)return;function fit(){var h=site.getBoundingClientRect().top-w.getBoundingClientRect().top;if(h>0){pb.style.bottom='auto';pb.style.height=h+'px'}}if(window.ResizeObserver)new ResizeObserver(fit).observe(w);fit()})})();</script>
 
-  <a href="https://app.relationshipaiadvice.com/register.html" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Try it free</a>
+  <a href="/start/" class="hx-btn sm hx-sticky" id="sticky" data-umami-event="cta-floating">Get started free<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <script src="js/home.js?v=8"></script><script defer src="js/hero-quotes.js?v=1"></script><script defer src="js/testers.js?v=1"></script><script defer src="js/carousel-dots.js?v=3"></script><script defer src="js/mobile-motion.js?v=7"></script><script defer src="js/mobile-acc.js?v=1"></script><script defer src="js/alive.js?v=4"></script><script defer src="js/f.js?v=12"></script>
 <script defer src="js/start.js?v=7"></script>
 </body>
