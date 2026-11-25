@@ -104,7 +104,7 @@ For a full guide to apologies that land, see [how to apologize to your partner](
 
 ## Moving from text to talk
 
-The goal of every text on this list is to get you into a real conversation, calmer than the fight. When you get there, start gently, talk about one thing, and listen until your partner feels understood before you make your case. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) shows how, and [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) walks you through the next day and the week after.
+The goal of every text on this list is to get you into a real conversation, calmer than the fight. When you get there, start gently, talk about one thing, and listen until your partner feels understood before you make your case. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) shows how, and [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) walks you through the next day and the week after. If your partner tells you in person that something you said really hurt, our guide on [what to say when you hurt your partner's feelings](/blog/what-to-say-when-you-hurt-your-partners-feelings/) gives you the words for the first five minutes.
 
 If I had to pick one text from this list, it's the one that names a time to talk. It turns a tense silence into a plan, and it tells your partner the relationship isn't in question.
 

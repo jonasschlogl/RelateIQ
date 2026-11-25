@@ -4,9 +4,6 @@ seo_title: "What to Say When Your Partner Says You Hurt Their Feelings"
 date: 2026-11-25
 description: "What to say when your partner says you hurt their feelings: a 6-step guide for the first five minutes, with exact words, and what to do if you didn't mean it."
 tags: what to say when you hurt your partner's feelings, partner hurt feelings
-topics: repair, communication
-draft: true
-approved: true
 ---
 When psychologist Mark Leary and his colleagues asked 164 people about a time their feelings were hurt, one pattern stood out. What hurt most wasn't the words themselves. It was what the words seemed to say about the relationship: that the person mattered less than they had thought. Leary called this *relational devaluation*.
 

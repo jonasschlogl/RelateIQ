@@ -37,6 +37,8 @@ Say exactly what you did and how it might have felt, with no "but" and no "if".
 
 For example: "I'm sorry I raised my voice and called your idea stupid. That wasn't fair, and I can imagine it felt humiliating."
 
+If your partner is the one who raises it first, start by listening before you explain. Our guide on [what to say when you hurt your partner's feelings](/blog/what-to-say-when-you-hurt-your-partners-feelings/) shows how to handle those first few minutes.
+
 Research on apologies by Roy Lewicki and colleagues found that taking responsibility was the most important element of an effective apology, followed by offering to repair. Our full guide on [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) goes into this in detail.
 
 ### Listen to the impact, not just the intent

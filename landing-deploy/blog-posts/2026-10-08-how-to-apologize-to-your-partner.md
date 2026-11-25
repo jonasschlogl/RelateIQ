@@ -140,7 +140,7 @@ The one I'd watch for most is "but". It's so tempting to add it: "I'm sorry, but
 
 An apology works better when both of you can actually listen. John Gottman's research on couples describes "flooding": during a heated conflict, heart rate can climb above 100 beats per minute, sometimes as high as 165, and at that point people struggle to take in what the other person is saying. His guidance is to take a break of around twenty minutes to calm down before returning to the conversation.
 
-If you're both still heated, say: "I want to apologize properly, and I want to do it when we're calmer. Can we talk in an hour?" Then actually come back. Gottman's work also found that couples whose repair attempts keep failing tend to be heading for an unhappy future, so it's worth making sure your repair arrives at a moment when it can be heard.
+If you're both still heated, say: "I want to apologize properly, and I want to do it when we're calmer. Can we talk in an hour?" Then actually come back. Gottman's work also found that couples whose repair attempts keep failing tend to be heading for an unhappy future, so it's worth making sure your repair arrives at a moment when it can be heard. And if your partner is the one who brings it up, telling you that something you said hurt them, our guide on [what to say when you hurt your partner's feelings](/blog/what-to-say-when-you-hurt-your-partners-feelings/) walks you through the first five minutes of that conversation.
 
 ## Receiving an apology
 
