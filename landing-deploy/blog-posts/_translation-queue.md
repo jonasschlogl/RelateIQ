@@ -34,6 +34,6 @@ but KEEP the existing `slug:` of each language (those URLs are already indexed b
 - [x] 2026-11-09-how-to-talk-about-money-with-your-partner (all 5 done 2026-11-25)
 - [x] 2026-10-26-how-to-say-i-love-you-without-words (all 5 done 2026-11-25)
 - [x] 2026-11-12-how-to-support-your-partner-when-stressed (all 5 done 2026-11-25)
-- [ ] 2026-11-11-meeting-your-partners-parents
+- [x] 2026-11-11-meeting-your-partners-parents (all 5 done 2026-11-25)
 - [ ] 2026-11-07-holidays-with-your-partners-family
 - [ ] 2026-11-09-clear-coding-dating

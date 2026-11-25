@@ -113,7 +113,7 @@ A short message afterwards via your partner ("Please thank your mom again for di
 
 ## Afterwards: the debrief
 
-Ask your partner how they think it went, and listen to the answer without spiralling. If there was tension, separate *style* from *rejection*. Some families are reserved with everyone at first.
+Ask your partner how they think it went, and listen to the answer without spiraling. If there was tension, separate *style* from *rejection*. Some families are reserved with everyone at first.
 
 It also helps to hear about long-term research from psychologist Terri Orbuch, who followed married couples for 26 years. She found that when husbands felt close to their wife's parents, the couple's divorce risk was lower, but when wives were very close to their husband's parents, the risk was higher, possibly because closeness made boundaries harder. The goal isn't to become best friends overnight. It's warmth and respect with healthy boundaries.
 
