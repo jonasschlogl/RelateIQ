@@ -59,7 +59,7 @@ When things get serious, they may suddenly notice everything that's "wrong" with
 
 ### 7. They seem cool after conflict
 
-Instead of repairing, they shut down and wait for it to pass.
+Instead of repairing, they shut down and wait for it to pass. If you can't tell whether that quiet is a need for room or something colder, our guide to [silent treatment vs needing space](/blog/silent-treatment-vs-needing-space/) walks through the difference.
 
 ### 8. They show love through actions more than words
 

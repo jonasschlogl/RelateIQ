@@ -123,6 +123,7 @@ const EN = {
 const AUTHOR = "Jonáš Schlögl";
 // which tool the sidebar card promotes, per article (default: Coach Chat)
 const AD_BY_POST = {
+  "2026-11-26-silent-treatment-vs-needing-space": "practice",
   "2026-10-08-how-to-apologize-to-your-partner": "check",
   "2026-10-05-relationship-advice-communication-habits": "check",
   "2026-10-03-relationship-problems-that-keep-coming-back": "practice",

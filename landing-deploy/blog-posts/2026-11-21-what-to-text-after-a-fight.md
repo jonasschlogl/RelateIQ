@@ -45,7 +45,7 @@ Put together: a short, warm text after a fight helps. A long text that tries to 
 
 ### When you need space
 
-1. **"I need a bit of time to calm down so I don't say something I don't mean. Can we talk at 8?"** Fits right after a heated moment. The time matters: a pause with an end point feels safe, an open-ended silence doesn't.
+1. **"I need a bit of time to calm down so I don't say something I don't mean. Can we talk at 8?"** Fits right after a heated moment. The time matters: a pause with an end point feels safe, an open-ended silence doesn't. That end point is also one of the clearest differences between [the silent treatment and needing space](/blog/silent-treatment-vs-needing-space/).
 2. **"I'm still upset, but I'm not leaving. I just need tonight to think."** For when you need longer. It answers the fear many people have during silence: is this over?
 3. **"Taking a walk to clear my head. Back by 6."** Short and practical. Good for partners who worry when you go quiet.
 

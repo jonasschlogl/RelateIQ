@@ -82,7 +82,7 @@ Talk about it at a calm moment, and stay curious. Say what feels good as well as
 
 This one sits behind many of the others. A very common version is pursue and withdraw: one person pushes for a conversation, the other goes quiet to avoid a blow-up, and each reaction makes the other's behavior stronger. In a 2014 meta-analysis of 74 studies with more than 14,000 participants, couples caught in this demand and withdraw pattern reported lower satisfaction, less intimacy and poorer communication.
 
-Attachment theory gives a useful way to look at it. The person pushing is often afraid of losing the connection. The person withdrawing is often trying not to get overwhelmed. Both are trying to protect the relationship, in opposite ways.
+Attachment theory gives a useful way to look at it. The person pushing is often afraid of losing the connection. The person withdrawing is often trying not to get overwhelmed. Both are trying to protect the relationship, in opposite ways. If the quiet side of this pattern feels more like punishment than a pause, see [silent treatment vs needing space](/blog/silent-treatment-vs-needing-space/).
 
 Naming the pattern out loud helps more than fighting inside it. A time-out with a set time to come back is a good thing to agree on before you need it.
 
