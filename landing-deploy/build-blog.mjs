@@ -116,8 +116,8 @@ const EN = {
   shareTitle: "Found this useful? Share it",
   authorRole: "Founder of RelationshipAI",
   authorBio: "I started RelationshipAI after seeing how much a calm second perspective helped in my own relationship. Most of what goes wrong between two people who care about each other isn't a lack of love. It's the wrong words at the wrong moment, and that part can be learned. That's what I build the app for, and what I write about here.",
-  authorHow: "Every guide starts from peer-reviewed research and the methods couples therapists use. It's drafted with AI assistance, every number is checked against its source ({n} in this guide), the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
-  authorHowNoN: "Every guide starts from peer-reviewed research and the methods couples therapists use. It's drafted with AI assistance, every number is checked against its source, the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
+  authorHow: "Every guide starts from peer-reviewed research and the methods couples therapists use. Every number is checked against its source ({n} in this guide), the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
+  authorHowNoN: "Every guide starts from peer-reviewed research and the methods couples therapists use. Every number is checked against its source, the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
   howWeWrite: "How we write and check our articles",
   aboutAuthor: "About the author",
 };
