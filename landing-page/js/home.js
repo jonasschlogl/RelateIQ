@@ -272,7 +272,7 @@
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (en) {
       en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("stg-in"); io.unobserve(x.target); } });
-    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -6% 0px" }); // threshold 0: tall grids (blog index) can never reach 10% visible on a phone
     els.forEach(function (e) { io.observe(e); });
   } else { els.forEach(function (e) { e.classList.add("stg-in"); }); }
 })();
