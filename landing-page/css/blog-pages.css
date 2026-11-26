@@ -309,3 +309,6 @@ body.spg .author-box-check a { color: #c2185b; font-weight: 600; }
   .article-body .rb-bar { grid-template-columns: 1fr auto; row-gap: 6px; }
   .article-body .rb-bar .rb-t { grid-column: 1 / -1; grid-row: 2; }
 }
+body.spg .author-box-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin-top: 14px !important; padding-top: 12px; border-top: 1px solid rgba(59,34,24,.1); font-size: .85rem !important; }
+body.spg .author-box-foot span { opacity: .7; }
+body.spg .author-box-foot a { color: #c2185b; font-weight: 700; text-decoration: none; }

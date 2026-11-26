@@ -115,8 +115,9 @@ const EN = {
   faqTitle: "Quick answers",
   shareTitle: "Found this useful? Share it",
   authorRole: "Founder of RelationshipAI",
-  authorBio: "Jonáš built RelationshipAI after seeing how much a calm second perspective helped in his own relationship. He writes about communication, conflict and attachment, drawing on peer-reviewed research and the methods couples therapists use.",
-  authorChecked: "Every source in this article was checked before publishing, and the article is updated when the research changes.",
+  authorBio: "I started RelationshipAI after seeing how much a calm second perspective helped in my own relationship. Most of what goes wrong between two people who care about each other isn't a lack of love. It's the wrong words at the wrong moment, and that part can be learned. That's what I build the app for, and what I write about here.",
+  authorHow: "Every guide starts from peer-reviewed research and the methods couples therapists use. It's drafted with AI assistance, every number is checked against its source ({n} in this guide), the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
+  authorHowNoN: "Every guide starts from peer-reviewed research and the methods couples therapists use. It's drafted with AI assistance, every number is checked against its source, the examples are invented to illustrate, and where I add my own opinion, I say so. I'm not a therapist, and when a topic needs one, I'll tell you.",
   howWeWrite: "How we write and check our articles",
   aboutAuthor: "About the author",
 };
@@ -570,14 +571,19 @@ const card = (ctx, p) => `<a class="post-card" href="${ctx.prefix}/blog/${p.slug
   <span class="post-more">${ctx.T(EN.readArticle)} <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
 </a>`;
 
-const authorBox = (ctx, avatar) => {
+// one author box under every article: who writes, how, and how it is checked (Jonas, 26 Nov 2026: one box, personal and trustworthy)
+const authorBox = (ctx, avatar, p) => {
   const { T } = ctx;
+  const nSrc = (p.html.match(/<h2 id="sources">[\s\S]*$/i)?.[0].match(/<li>/g) || []).length;
+  const when = fmtDate(p.updated || p.date, ctx.locale);
+  const how = nSrc ? T(EN.authorHow).replace("{n}", nSrc) : T(EN.authorHowNoN);
   return `<aside class="author-box" aria-label="${attr(T(EN.aboutAuthor))}">
             <a href="/about/" class="author-box-img" aria-hidden="true" tabindex="-1">${avatar}</a>
             <div>
               <p class="author-box-name"><a href="/about/" rel="author">${AUTHOR}</a><span>${T(EN.authorRole)}</span></p>
               <p>${T(EN.authorBio)}</p>
-              <p class="author-box-check">${T(EN.authorChecked)} <a href="/method/#how-we-write">${T(EN.howWeWrite)} →</a></p>
+              <p class="author-box-check">${how}</p>
+              <p class="author-box-foot"><span>${p.updated ? T("Last reviewed") : T("Published")} ${when}</span><a href="/method/#how-we-write" data-umami-event="blog-method-link">${T(EN.howWeWrite)} \u2192</a></p>
             </div>
           </aside>`;
 };
@@ -760,8 +766,7 @@ function postPage(ctx, p0, all) {
           <div class="article-body">
 ${withChecker(ctx, p, withImages(p))}
           </div>
-          ${authorBox(ctx, avatar)}
-          ${methodBox(ctx, p)}
+          ${authorBox(ctx, avatar, p)}
           ${ctaBox(ctx, "cta-blog-article")}
           ${shareBar(p, url)}
           <p class="article-note">${T(EN.articleNote)}</p>
