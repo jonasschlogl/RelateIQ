@@ -105,7 +105,7 @@ body.hx .tw-in .f-tag { font-size: 12px; }
 body.hx .tw-in p.tw-in-h { font-family: "Fraunces", Georgia, serif; font-weight: 520; font-size: clamp(25px, 3.2vw, 33px); line-height: 1.08; letter-spacing: -.02em; margin: 12px 0 8px; max-width: none; opacity: 1; }
 body.hx .tw-in p.tw-in-sub { font-size: 16px; line-height: 1.5; max-width: 56ch; margin: 0; }
 .tw-in .tw-ex { margin: 16px 0 16px; }
-body.hx .tw-in .tw-scr { height: 440px; border-radius: 22px; padding: 14px 12px 12px; box-shadow: 0 18px 40px -24px rgba(59,34,24,.6); }
+body.hx .tw-in .tw-scr { height: 520px; border-radius: 22px; padding: 14px 12px 12px; box-shadow: 0 18px 40px -24px rgba(59,34,24,.6); }
 .tw-in .tw-b { font-size: 14.5px; }
 .tw-in .tw-b .t { font-size: 15px; }
 .tw-in .tw-bar textarea { font-size: 15px; }
@@ -114,7 +114,7 @@ body.hx .tw-in p.tw-in-foot a { color: #3b2218; font-weight: 700; text-decoratio
 .article-body #try-card.tw-in p, .article-body #try-card.tw-in button { margin-top: 0; }
 @media (max-width: 640px) {
   body.hx #try-card.tw-in { padding: 20px 16px 16px; border-radius: 24px; margin: 24px -4px 30px; }
-  body.hx .tw-in .tw-scr { height: 400px; }
+  body.hx .tw-in .tw-scr { height: 480px; }
   .tw-in .tw-ex button { font-size: 13.5px; }
 }
 
@@ -141,3 +141,19 @@ body.hx .tl-lead { font-size: 19px; line-height: 1.55; color: #5a4036; margin: 1
 .article-body #try-card.tw-in p, .article-body #try-card.tw-in .tw-ex span { color: #3b2218; }
 .article-body #try-card.tw-in p.tw-in-h { margin-top: 12px; }
 .article-body ol.tl-steps { padding-left: 0; margin-left: 0; }
+
+/* richer result (tool modes): what they may hear, checklist, likely reply, tip */
+.tw-b.tw-sub { background: #fff3e2; }
+.tw-b.tw-sub .t { font-style: italic; }
+.tw-b.tw-checks { max-width: 100%; }
+.tw-b.tw-checks ul { list-style: none; padding: 0; margin: 6px 0 0; display: grid; gap: 7px; font-size: 13.5px; }
+.tw-b.tw-checks li { position: relative; padding-left: 26px; line-height: 1.35; }
+.tw-b.tw-checks li::before { position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; }
+.tw-b.tw-checks li.ok::before { content: "\2713"; background: #bfe3b4; }
+.tw-b.tw-checks li.no::before { content: "\2715"; background: #f4a0a0; }
+.tw-b.tw-checks li b { display: block; font-weight: 700; }
+.tw-b.tw-checks li span { display: block; opacity: .75; font-size: 12.5px; }
+.tw-b.them { align-self: flex-start; background: #e9e4f5; border-bottom-left-radius: 5px; }
+.tw-b.tip { background: #3b2218; color: #fff3e2; max-width: 100%; }
+.tw-b.tip small { opacity: .7; }
+.tw-in .tw-checks ul { font-size: 14.5px; } .tw-in .tw-checks li span { font-size: 13.5px; }

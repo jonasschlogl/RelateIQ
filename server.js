@@ -3739,6 +3739,40 @@ function tryRoll() {
 }
 const tryLeft = (ip) => Math.max(0, TRY_PER_IP_PER_DAY - (tryState.ips.get(ip) || 0));
 
+// Focused modes for the free tool pages (/tools/...) and blog widgets: same check, plus a
+// mode-specific checklist, what the other person will hear between the lines, their likely
+// reply and one tip. Without a mode the public check behaves exactly as before.
+const TRY_MODES = {
+  tone: {
+    labels: ["Calmer", "More direct"],
+    focus: "General tone check of a personal text.",
+    checks: ["Clear about what you mean or want", "Warm enough for this moment", "No blame or absolutes (always, never)", "Hard to read as sarcastic or cold", "Easy for them to reply to"],
+  },
+  apology: {
+    labels: ["Sincere", "Short and simple"],
+    focus: "This is an apology. Judge it against what research finds makes apologies work: acknowledging responsibility matters most, then an offer of repair; asking for forgiveness matters least. Watch for 'but', 'if', 'you feel', and explanations that read as excuses.",
+    checks: ["Names what you actually did", "Takes responsibility with no 'but' or 'if'", "Shows you understand how it affected them", "Offers a repair or a next step", "No excuses or blame on them", "Does not pressure them to forgive now"],
+  },
+  fight: {
+    labels: ["Gentle opener", "Clear and direct"],
+    focus: "This is the first text after an argument. Its job is to open the door to repair, not to win or restart the fight.",
+    checks: ["Opens the door instead of reopening the fight", "No blame or scorekeeping", "Says how you feel, not what they did wrong", "Suggests a next step or a time to talk", "Gives them room if they need space"],
+  },
+  passive: {
+    labels: ["Direct and kind", "Light and warm"],
+    focus: "Check whether this text is passive-aggressive: annoyance or criticism hidden inside polite or neutral words, sarcasm, guilt-tripping, pointed punctuation or one-word replies.",
+    checks: ["Says the real feeling out loud", "Makes a clear request", "No sarcasm or pointed thanks", "No guilt-trip", "Can't easily be read as a jab"],
+  },
+};
+const tryModePrompt = (m) => `
+
+FOCUS for this check: ${m.focus}
+Also add these keys to the same JSON object:
+"subtext": "<what the other person is likely to hear between the lines, 1 short sentence in their voice, e.g. 'You're still blaming me.'>",
+"reply": "<the reply they would most likely send back to the ORIGINAL draft, 1 short realistic text message>",
+"checks": [{"label": "<label exactly as given>", "ok": <true|false>, "note": "<max 12 words: why, pointing at their words>"}] for exactly these labels in this order: ${JSON.stringify(m.checks)} (translate the labels and notes into the language of the draft),
+"tip": "<one concrete, specific tip for this exact situation, max 30 words, e.g. whether to send it now, wait, or say it in person>"`;
+
 app.get("/api/public/message-check", (req, res) => {
   tryRoll();
   res.json({ remaining: tryState.global >= TRY_GLOBAL_PER_DAY ? 0 : tryLeft(req.ip || "unknown") });
@@ -3760,11 +3794,12 @@ app.post("/api/public/message-check", async (req, res) => {
     // Count the attempt up front so parallel requests cannot bypass the limit.
     tryState.global += 1;
     tryState.ips.set(ip, (tryState.ips.get(ip) || 0) + 1);
-    const labels = ["Calmer", "More direct"];
+    const mode = Object.prototype.hasOwnProperty.call(TRY_MODES, b.mode) ? TRY_MODES[b.mode] : null;
+    const labels = mode ? mode.labels : ["Calmer", "More direct"];
     let raw;
     try {
       raw = await aiJson(
-        MESSAGE_CHECK_PROMPT,
+        MESSAGE_CHECK_PROMPT + (mode ? tryModePrompt(mode) : ""),
         [`Version labels to produce, in order: ${labels.join(", ")}`, `The message they are thinking of sending:\n"""\n${draft}\n"""`].join("\n\n"),
         0.6,
         STANDARD_MODEL
@@ -3783,7 +3818,16 @@ app.post("/api/public/message-check", async (req, res) => {
     const risk = ["low", "medium", "high"].includes(String(raw.risk).toLowerCase()) ? String(raw.risk).toLowerCase() : "medium";
     const anonId = typeof b.anonId === "string" ? b.anonId.replace(/[^a-z0-9_-]/gi, "").slice(0, 40) : null;
     track("try_check", null, null, anonId);
-    res.json({ read: asStr(raw.read, 400), risk, flags: asList(raw.flags, 3, 200), versions, remaining: tryLeft(ip) });
+    const out = { read: asStr(raw.read, 400), risk, flags: asList(raw.flags, 3, 200), versions, remaining: tryLeft(ip) };
+    if (mode) {
+      out.subtext = asStr(raw.subtext, 200);
+      out.reply = asStr(raw.reply, 240);
+      out.tip = asStr(raw.tip, 260);
+      out.checks = (Array.isArray(raw.checks) ? raw.checks : []).slice(0, mode.checks.length)
+        .map((c) => ({ label: asStr(c?.label, 80), ok: c?.ok === true || c?.ok === "true", note: asStr(c?.note, 140) }))
+        .filter((c) => c.label);
+    }
+    res.json(out);
   } catch (err) {
     console.error("Public message check error:", err.message);
     res.status(500).json({ error: "Couldn't check that right now. Please try again." });

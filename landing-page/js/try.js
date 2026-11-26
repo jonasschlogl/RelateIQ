@@ -5,6 +5,7 @@
   var local = /^(localhost|127\.)/.test(location.hostname);
   var API = local ? "http://localhost:3010" : "https://app.relationshipaiadvice.com";
   var WHERE = card.getAttribute("data-where") || "landing";
+  var MODE = card.getAttribute("data-mode") || "";
   var REG = "https://app.relationshipaiadvice.com/register.html?src=" + (WHERE === "landing" ? "landing-try" : "try-" + WHERE);
   var draft = document.getElementById("try-draft"), go = document.getElementById("try-go"), err = document.getElementById("try-err"),
       msgs = document.getElementById("try-msgs"), left = document.getElementById("try-left");
@@ -56,6 +57,15 @@
     read.appendChild(el("p", "t", d.read));
     if ((d.flags || []).length) { var ul = el("ul"); d.flags.forEach(function (f) { ul.appendChild(el("li", "", f)); }); read.appendChild(ul); }
     first = add(read);
+    if (d.subtext) { var st = el("div", "tw-b ai tw-sub"); st.appendChild(el("small", "", "What they may hear")); st.appendChild(el("p", "t", "\u201c" + d.subtext + "\u201d")); add(st); }
+    if ((d.checks || []).length) {
+      var ck = el("div", "tw-b ai tw-checks"), ok = d.checks.filter(function (c) { return c.ok; }).length;
+      ck.appendChild(el("small", "", "Checklist \u00b7 " + ok + " of " + d.checks.length));
+      var cl = el("ul");
+      d.checks.forEach(function (c) { var li = el("li", c.ok ? "ok" : "no"); li.appendChild(el("b", "", c.label)); if (c.note) li.appendChild(el("span", "", c.note)); cl.appendChild(li); });
+      ck.appendChild(cl); add(ck);
+    }
+    if (d.reply) { var rp = el("div", "tw-b them"); rp.appendChild(el("small", "", "Their likely reply")); rp.appendChild(el("p", "t", d.reply)); add(rp); }
     d.versions.forEach(function (v, i) {
       var b = el("div", "tw-b note" + (i ? " rose" : "")), head = el("div", "tw-head");
       head.appendChild(el("small", "", v.label));
@@ -63,6 +73,7 @@
       cp.addEventListener("click", function () { try { navigator.clipboard.writeText(v.text).then(function () { cp.textContent = "Copied"; setTimeout(function () { cp.textContent = "Copy"; }, 1500); }); } catch (e) {} });
       head.appendChild(cp); b.appendChild(head); b.appendChild(el("p", "t", v.text)); add(b);
     });
+    if (d.tip) { var tp = el("div", "tw-b tip"); tp.appendChild(el("small", "", "Tip")); tp.appendChild(el("p", "t", d.tip)); add(tp); }
     var lock = el("div", "tw-b lock"); lock.appendChild(el("small", "", "Tailored to them · free account"));
     lock.appendChild(el("p", "t", "Say who it is for and get a version that fits how they react.")); add(lock);
     add(ctaBubble("Want this every time?", "Create a free account (no card): more checks, a coach that remembers your story, and a place to rehearse the hard talk.", "after"));
@@ -77,7 +88,7 @@
     card.classList.add("used");
     add(el("div", "tw-b me", text)); draft.value = ""; autosize();
     var typing = el("div", "tw-b ai"); var dots = el("span", "tw-dots"); dots.innerHTML = "<i></i><i></i><i></i>"; typing.appendChild(dots); add(typing);
-    fetch(API + "/api/public/message-check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ draft: text, anonId: anon() }) })
+    fetch(API + "/api/public/message-check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(MODE ? { draft: text, anonId: anon(), mode: MODE } : { draft: text, anonId: anon() }) })
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
       .then(function (res) {
         var d = res.d || {};

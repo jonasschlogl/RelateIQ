@@ -26,7 +26,7 @@ const TOOLS = [
     lead: "You know what you meant. The problem is they only get the words. Paste your text below and see how it is likely to land, before you hit send.",
     body: `
 <h2>How to use the text tone checker</h2>
-${steps(["Paste the text you are about to send, or tap one of the examples.", "Read how it is likely to come across, with a risk level and the exact words that could backfire.", "Copy a calmer or more direct version, or keep yours if it already says what you mean."])}
+${steps(["Paste the text you are about to send, or tap one of the examples.", "Read how it is likely to come across: a risk level, what they may hear between the lines, a five-point tone checklist and the reply you would most likely get back.", "Copy a calmer or more direct version, and read one tip for your exact situation, like whether to send it now or say it in person."])}
 <p>It works for any personal message: a partner, a date, a friend, a family member. It answers in the language you write in.</p>
 
 <h2>Why texts get misread so often</h2>
@@ -86,7 +86,7 @@ ${swap([
     lead: "Most apology texts fail on one word: \"but\". Paste yours below, to your girlfriend, boyfriend or anyone else, and see if it sounds sincere before you send it.",
     body: `
 <h2>How to use the apology text checker</h2>
-${steps(["Paste your apology as you would send it, or start from one of the examples.", "See how it is likely to land: sincere, half-hearted or defensive, and which words cause it.", "Copy a version that keeps your words but takes clear responsibility."])}
+${steps(["Paste your apology as you would send it, or start from one of the examples.", "See how it is likely to land, checked against the six parts research links to apologies that work, plus what they may hear between the lines and how they would likely reply.", "Copy a version that keeps your words but takes clear responsibility."])}
 
 <h2>What makes an apology work, according to research</h2>
 <p>Researchers at Ohio State University, led by Roy Lewicki, tested six parts of an apology with 755 people: expressing regret, explaining what went wrong, acknowledging responsibility, declaring repentance, offering to repair, and asking for forgiveness.</p>
@@ -134,7 +134,7 @@ ${swap([
     lead: "Passive-aggressive texts usually are not planned. You are annoyed, you try to sound fine, and it leaks out anyway. Paste your message and see how it reads.",
     body: `
 <h2>How to use the passive-aggressive checker</h2>
-${steps(["Paste the message, or try one of the examples.", "See whether it reads as calm or as a jab, and which words tip it over.", "Copy a version that says the real thing directly and kindly."])}
+${steps(["Paste the message, or try one of the examples.", "See whether it reads as calm or as a jab, which words tip it over, what they may hear between the lines and how they would likely reply.", "Copy a version that says the real thing directly and kindly."])}
 
 <h2>Common passive-aggressive phrases, and what to say instead</h2>
 ${swap([
@@ -176,6 +176,21 @@ ${swap([
   },
 ];
 
+const AD = {
+  tone: ["Get it tailored to them", "The app remembers who you are writing to and how they react, with more checks and three rewrites."],
+  apology: ["Rehearse the apology first", "Say it out loud to an AI that plays your partner, and see how they might respond. Completely private."],
+  passive: ["Say the hard thing calmly", "Talk it through with a coach that remembers your story, then find the words that won't start a fight."],
+};
+const adCard = (kind, extra = "") => `<div class="ad-card ${extra}">
+          <div class="ad-body">
+            <span class="ad-ic" aria-hidden="true"></span>
+            <h3>${AD[kind][0]}</h3>
+            <p>${AD[kind][1]}</p>
+            <a href="${REG}?src=tool-${kind}" class="btn btn-gradient" data-umami-event="cta-tool-${kind}-${extra ? "mobile-bar" : "sidebar"}">Get started free</a>
+            <small>Free to start · No card needed</small>
+          </div>
+        </div>`;
+
 const others = (slug) => [
   ...TOOLS.filter((t) => t.slug !== slug).map((t) => [`/tools/${t.slug}/`, t.card[0]]),
   ["/quiz/", "Free relationship quizzes"],
@@ -187,7 +202,7 @@ for (const t of TOOLS) {
   const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   let body = t.body.replace(/<h2>([^<]+)<\/h2>/g, (m, h) => `<h2 id="${slugify(h)}">${h}</h2>`);
   body += `\n<h2 id="sources">Sources</h2>\n<ul class="sources">${t.sources.map((k) => `<li>${SRC[k]}</li>`).join("")}</ul>`;
-  write(`tools/${t.slug}/index.html`, page({
+  let html = page({
     title: t.title, description: t.desc, path: `/tools/${t.slug}/`, cls: "sp-blog tl-page",
     jsonld: { "@context": "https://schema.org", "@graph": [
       { "@type": "WebApplication", name: t.card[0], url, applicationCategory: "LifestyleApplication", operatingSystem: "Any", description: t.desc, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "RelationshipAI", url: SITE } },
@@ -212,6 +227,7 @@ ${body}
             <p class="toc-title">On this page</p>
             <ol>${toc.map((h) => `<li><a href="#${slugify(h)}">${esc(h)}</a></li>`).join("")}</ol>
           </nav>
+          ${adCard(t.kind)}
           <nav class="toc" aria-label="More free tools">
             <p class="toc-title">More free tools</p>
             <ol>${others(t.slug).map(([u, n]) => `<li><a href="${u}">${esc(n)}</a></li>`).join("")}</ol>
@@ -220,7 +236,11 @@ ${body}
       </div>
     </article>
   </main>`,
-  }));
+  });
+  // mobile: the same card pinned to the bottom of the screen; it must sit outside <main class="sp-main">
+  const i = html.lastIndexOf("</main>");
+  html = html.slice(0, i + 7) + "\n  " + adCard(t.kind, "ad-mobile") + html.slice(i + 7);
+  write(`tools/${t.slug}/index.html`, html);
 }
 
 // hub

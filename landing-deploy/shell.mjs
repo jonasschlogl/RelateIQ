@@ -114,7 +114,7 @@ export const CHECKERS = {
 export function checker(kind, where) {
   const c = CHECKERS[kind] || CHECKERS.tone;
   const ex = c.examples.map((e) => `<button type="button" data-ex="${esc(e)}">&ldquo;${esc(e)}&rdquo;</button>`).join("");
-  return `<div class="tw tw-in" id="try-card" data-where="${esc(where)}">
+  return `<div class="tw tw-in" id="try-card" data-where="${esc(where)}" data-mode="${esc(kind)}">
   <div class="tw-in-head"><span class="f-tag"><b>${esc(c.kicker)}</b></span>
     <p class="tw-in-h">${esc(c.title)}</p>
     <p class="tw-in-sub">${esc(c.sub)}</p></div>
@@ -129,6 +129,6 @@ export function checker(kind, where) {
     </div>
   </div>
   <p class="tw-in-foot">Want it tailored to the person, with more checks? <a href="https://app.relationshipaiadvice.com/register.html?src=try-${esc(where)}" data-umami-event="try-${esc(where)}-foot">Create a free account</a></p>
-  <script defer src="/js/try.js?v=4"></script>
+  <script defer src="/js/try.js?v=5"></script>
 </div>`;
 }
