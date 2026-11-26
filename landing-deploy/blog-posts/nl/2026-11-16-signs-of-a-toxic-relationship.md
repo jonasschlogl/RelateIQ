@@ -1,6 +1,6 @@
 ---
 title: "Signalen van een toxische relatie: een check in 3 niveaus voor ongezond, toxisch en controlerend"
-seo_title: "Signalen van een toxische relatie: zelftest in 3 niveaus"
+seo_title: "Toxische relatie herkennen: signalen en zelftest"
 slug: signalen-van-een-toxische-relatie
 description: "Signalen van een toxische relatie in drie niveaus: ongezond maar te herstellen, toxische patronen en dwingende controle, met een zelftest en veilige stappen."
 tags: signalen van een toxische relatie, rode vlaggen
@@ -101,6 +101,10 @@ Bij situaties op niveau 1 en 2 kan het helpen om een moeilijk gesprek eerst te o
 Besluit je ermee te stoppen, dan kunnen onze gidsen over [of je het moet uitmaken](/blog/should-i-break-up-with-my-partner/) en [over een breuk heen komen](/blog/how-to-get-over-a-breakup/) helpen, en onze gids over [codependentie](/blog/codependent-relationship/) legt uit waarom zorgen soms juist kan maken dat je vast blijft zitten.
 
 ## Snelle antwoorden
+
+### Wat is een toxische relatie?
+
+Een toxische relatie is een relatie waarin je je structureel slechter voelt dan je zou willen: je loopt op eieren, wordt vaak gekleineerd of gecontroleerd, en ruzies lossen niets op. Eén slechte periode maakt een relatie nog niet toxisch. Het gaat om een patroon dat blijft terugkomen.
 
 ### Wat zijn de signalen van een toxische relatie?
 

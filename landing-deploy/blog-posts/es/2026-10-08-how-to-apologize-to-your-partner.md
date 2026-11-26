@@ -110,6 +110,27 @@ La primera versión explica, quita importancia y le pide a la otra persona que p
 **Contar algo privado a los amigos**
 «Siento haberles contado a mis amigos nuestra discusión. Era algo entre nosotros, y te dejé mal sin que estuvieras delante. No volveré a contar nuestras cosas privadas, y si quieres, les diré que me pasé».
 
+## Mensajes cortos para pedirle perdón a tu novio, a tu novia o a tu esposo
+
+A veces lo primero que puedes hacer es un mensaje. Que sea corto, que nombre lo que hiciste y que abra la puerta a hablar en persona. Puedes adaptar estos:
+
+**Para pedirle perdón a tu novio**
+- «Siento cómo te hablé anoche. Te lo merecías mejor. ¿Podemos hablar cuando salgas del trabajo?»
+- «Tenías razón en enfadarte. Fallé yo, no tú. Quiero arreglarlo, ¿me dejas invitarte a cenar mañana?»
+- «No quiero que esto se quede así. Siento lo que dije. Cuando estés listo, aquí estoy.»
+
+**Para pedirle perdón a tu novia**
+- «Perdón por no haberte escuchado ayer. Estabas contándome algo importante y yo no estaba. ¿Me lo vuelves a contar esta noche?»
+- «Siento haberte hecho sentir que no te tomaba en serio. No es lo que siento por ti.»
+- «Me equivoqué y lo sé. No te pido que lo olvides ya, solo que me dejes demostrarte que voy a cambiarlo.»
+
+**Para pedirle perdón a tu esposo o a tu esposa**
+- «Siento haberlo pagado contigo. Fue un mal día, pero tú no tenías la culpa. ¿Hablamos cuando acostemos a los niños?»
+- «Llevamos años juntos y aun así a veces no te escucho como mereces. Hoy fue una de esas veces. Lo siento.»
+- «Sé que te prometí encargarme y no lo hice. Es culpa mía. Mañana lo resuelvo a primera hora.»
+
+Fíjate en que ninguno lleva «pero» ni «si te molestó». En cuanto aparece un «pero», la otra persona deja de oír la disculpa y empieza a oír una excusa.
+
 ## Qué evitar al pedir perdón
 
 - **La falsa disculpa:** «Siento que te sientas así». Pone el problema en sus sentimientos, no en lo que tú hiciste.

@@ -91,6 +91,14 @@ Bij een partner die dichtklapt, maakt je woordkeuze veel uit. In Partner Practic
 
 ## Snelle antwoorden
 
+### Wat is de oorzaak van emotionele onbereikbaarheid?
+
+Er is niet één oorzaak. Vaak gaat het om een vermijdende hechtingsstijl, moeite om gevoelens te herkennen, een opvoeding waarin gevoelens niet gedeeld werden, uitputting of stress, of het feit dat iemand zich bij jou niet (meer) veilig of betrokken voelt. Welke het is, bepaalt wat helpt.
+
+### Is een emotioneel onbereikbare man anders dan een emotioneel onbereikbare vrouw?
+
+Het patroon ziet er bij mannen en vrouwen grotendeels hetzelfde uit: weinig delen, gesprekken over gevoelens ontwijken, afstand nemen als het dichtbij komt. Mannen hebben vaker geleerd dat ze gevoelens moeten wegstoppen, maar de vijf redenen in dit artikel gelden voor iedereen.
+
 ### Kan een emotioneel onbereikbaar persoon veranderen?
 
 Vaak wel, vooral als de reden hechting, aangeleerde normen of tijdelijke uitputting is, en als de persoon het zelf wil. Verandering gaat langzamer als de ander simpelweg niet betrokken is bij de relatie.

@@ -11,7 +11,7 @@ Als je relatie kapot voelt, is de eerste neiging om alles in één keer te herst
 
 Wat beter werkt, is kleiner: een paar rustige stappen in een logische volgorde. Deze gids om je relatie te herstellen is gebaseerd op tientallen jaren relatieonderzoek, vooral van John Gottman en zijn collega's, die stellen jarenlang filmden en maten om te zien wat relaties die herstellen onderscheidt van relaties die dat niet doen. Je vindt hier de zes stappen, waarom elke stap werkt en hoe het klinkt in het echte leven.
 
-## Eerst: kan deze relatie gered worden?
+## Eerst: is je relatie nog te redden?
 
 De meeste relaties die kapot voelen, zitten vast, maar zijn niet voorbij. Afstand, constante ruzies, het gevoel huisgenoten te zijn, de vonk kwijt: dat komt veel voor en wordt vaak beter als jullie veranderen hoe jullie praten en hoe jullie tijd samen doorbrengen.
 
