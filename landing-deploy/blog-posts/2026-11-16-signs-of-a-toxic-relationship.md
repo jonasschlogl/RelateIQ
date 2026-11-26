@@ -13,6 +13,8 @@ So instead of one long list of red flags, this guide sorts the signs of a toxic 
 > **The short answer:**
 > Signs of a toxic relationship range from unhealthy but fixable patterns, like poor communication, to toxic ones like contempt and constant blame, and finally coercive control: monitoring, isolation, threats and fear. If you feel afraid or controlled, treat it as abuse and contact a support service.
 
+**Quick quiz:** Not sure where your relationship falls? The free 2-minute [toxic relationship quiz](/quiz/toxic-relationship/) shows whether it looks healthy, like a rough patch, an unhealthy pattern or signs of control.
+
 ## Level 1: Unhealthy, but often fixable
 
 These are patterns many couples fall into, especially under stress. They hurt, and they're worth taking seriously, but they're usually two-sided and often change when both people want them to.

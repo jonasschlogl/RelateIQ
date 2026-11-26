@@ -158,7 +158,7 @@
       if (navigator.share) { navigator.share({ title: document.title, text: "I got " + R.name + ". What do you get?", url: url }).catch(function () {}); }
       else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { share.textContent = "Link copied"; }); }
     };
-    shareRow.appendChild(shareImg); shareRow.appendChild(share);
+    shareRow.appendChild(shareImg); if (!R.noPartnerShare) shareRow.appendChild(share);
     r.appendChild(shareRow);
     r.appendChild(el("p", "qz-r-text", esc(R.text)));
     if (second >= 0) r.appendChild(el("p", "qz-r-mix", "You also scored high on <b>" + esc(D.results[second].name) + "</b>. Most people are a mix, so read both."));

@@ -13,6 +13,8 @@ This guide doesn't hand you a label. It gives you three tests that separate gene
 > **The short answer:**
 > A codependent relationship is one where caring for your partner has replaced caring for yourself: you silence your needs, feel responsible for their moods, and lose your sense of self. Caring is healthy when you can say no, have a life of your own, and your help is a choice, not a compulsion.
 
+**Quick quiz:** Wondering how much of yourself goes into your relationship? The free 2-minute [codependency quiz](/quiz/codependency/) shows if you're balanced, a people-pleaser, a rescuer or losing yourself.
+
 ## Caring and codependency look the same from outside
 
 Two people make their partner a late dinner after a hard day. One does it because they want to and would be fine skipping it tomorrow. The other does it because skipping it feels dangerous: their partner might be disappointed, might pull away, might stop needing them.

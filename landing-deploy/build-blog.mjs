@@ -50,7 +50,7 @@ const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
-  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "start/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/", "quiz/", "quiz/attachment-style/", "quiz/love-language/", "quiz/fight-style/", "quiz/overthinker/", "quiz/relationship-needs/", "quiz/comfort-style/", "quiz/apology-style/", "tools/", "tools/text-tone-checker/", "tools/apology-text-checker/", "tools/passive-aggressive-text-checker/"],
+  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "start/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/", "quiz/", "quiz/attachment-style/", "quiz/love-language/", "quiz/fight-style/", "quiz/overthinker/", "quiz/relationship-needs/", "quiz/comfort-style/", "quiz/apology-style/", "quiz/toxic-relationship/", "quiz/losing-interest/", "quiz/codependency/", "tools/", "tools/text-tone-checker/", "tools/apology-text-checker/", "tools/passive-aggressive-text-checker/"],
   cssVersion: "26",
   jsVersion: "21",
 };

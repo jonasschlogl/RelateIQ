@@ -23,7 +23,7 @@ This guide decodes the most common signs, one by one, with the likely explanatio
 
 So the signs worth watching are not dramatic. They're the small daily ones. That's also good news: small things are fixable.
 
-**Quick quiz:** Sometimes distance means a need isn't being met. The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) can help you name which one.
+**Quick quiz:** Want a calmer read of the signs? The free 2-minute [is my partner losing interest quiz](/quiz/losing-interest/) shows if they look still invested, busy, drifting or pulling away.
 
 ## The signals, decoded
 
