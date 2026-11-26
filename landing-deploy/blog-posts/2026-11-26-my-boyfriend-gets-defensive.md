@@ -13,9 +13,9 @@ Twenty minutes later you're arguing about something else entirely, and the origi
 > **The short answer:**
 > Most defensiveness is self-protection: he hears your concern as a verdict on who he is, not a request about one behavior. It usually softens when you start gently, talk about one specific moment, say what you need instead of what he is, and make it clear you're on the same side.
 
-## If you only read one part, read this
+## Three things to say the next time it happens
 
-Three lines that work better than most of what people usually say. Copy them, change the words, use them tonight:
+These work better than most of what people reach for in the moment. Copy them, put them in your own words, and keep them ready for the next time you need to bring something up:
 
 - "Can I bring up one small thing? I'm not mad, I just want us to sort it out."
 - "I'm not saying you're a bad boyfriend. It's this one moment that bothered me."
