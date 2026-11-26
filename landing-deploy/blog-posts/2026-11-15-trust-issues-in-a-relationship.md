@@ -23,6 +23,16 @@ In a classic study, psychologists John Rempel, John Holmes and Mark Zanna descri
 
 This is useful because trust issues usually sit in one layer more than the others. Some people trust that their partner is faithful (faith) but not that they'll show up on time (predictability). Others can count on daily reliability but still fear being left one day. Knowing which layer is shaky tells you what to work on.
 
+My take: trust isn't something you decide to feel. It's something you collect, one kept promise at a time, which is why it can't be rushed.
+
+:::stats Trust and the phone
+34% | of partnered US adults say they've looked through their partner's phone without their knowledge
+23% | of those whose partner uses social media say it has made them jealous or unsure about the relationship
+source: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4,860 US adults, October 2019
+:::
+
+**Quick quiz:** Trust issues are often tied to attachment. The 2-minute [attachment style quiz](/quiz/attachment-style/) can show you your own pattern.
+
 ## How trust actually grows: small sacrifices
 
 Here's the most practical finding in trust research. In two long-term studies of dating and married couples, Jennifer Wieselquist, Caryl Rusbult and colleagues found that people came to trust their partners when they saw them **put the relationship ahead of their own immediate interests**: staying calm instead of striking back in a fight, giving up something they wanted for the couple's sake.
@@ -32,6 +42,12 @@ They described a cycle. When one partner makes these small, costly choices, the 
 Trust, in other words, is not built by promises or by passing tests. It's built by *seeing* care that costs something.
 
 Psychologists Shallcross and Jeffry Simpson tested this in the lab with "strain tests": conversations where one partner asks for something that costs the other, like moving cities for a job. Partners with high trust were more accommodating, and accommodated *more* when the sacrifice asked of them was bigger. Low-trust partners did the opposite.
+
+:::read Related reading
+/blog/jealousy-in-a-relationship/ | Is jealousy normal in a relationship? | 7 myths that make it worse
+/blog/how-to-rebuild-trust-after-cheating/ | How to rebuild trust after cheating | The 4 stages couples go through
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | When the doubt isn't about them
+:::
 
 ## The loop that keeps trust issues going
 
@@ -67,6 +83,10 @@ If your partner is mostly reliable and you've felt this way before, the work is 
 
 This check is the part I'd spend the most time on. So much of the advice about trust assumes the problem is the current partner. Often it's an old one.
 
+:::tool coach
+About to ask for reassurance again? Talk it through first
+:::
+
 ## How to break the loop
 
 ### If you're the one struggling to trust
@@ -99,6 +119,8 @@ When there's been a real betrayal, the loop above isn't the main issue. Trust ne
 > *Names and details in this example are invented to show the idea.*
 
 When a wave of doubt hits late at night, writing it out first, in a journal or in Coach Chat, can help you pause the loop. If the patterns are long-standing or connected to past hurt, a therapist can help a lot.
+
+My take: checking their phone feels like it will settle the doubt, and it almost never does. If anything, it teaches your brain that the doubt needed checking.
 
 ## Quick answers
 

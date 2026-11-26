@@ -15,6 +15,13 @@ So how do you tell the difference? These five questions help.
 > **The short answer:**
 > Gaslighting is a pattern of making someone doubt their own memory, perception or sanity, usually to gain control. Ordinary disagreement leaves room for two versions of events. Gaslighting attacks your mind rather than the event, repeats over time, and leaves you confused and dependent on the other person's version.
 
+:::stats How common psychological aggression is
+20.4% | of US women have experienced expressive aggression from a partner, such as name-calling, insults or humiliation
+13.1% | of US men say the same
+27.2% | of women and 19.5% of men have experienced coercive control, which can include making someone doubt their own memory
+source: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), data collected 2023 to 2024
+:::
+
 ## Question 1: Is there room for two versions?
 
 In a normal disagreement, both people can say "I remember it differently" and leave it there. Memory is imperfect, and couples misremember things all the time.
@@ -28,6 +35,10 @@ In gaslighting, only one version of reality is allowed, and it's never yours. Ev
 | "I didn't mean it that way, sorry it hurt." | "You're way too sensitive. Nobody else would be upset." |
 | You both sometimes concede | You always end up apologizing |
 
+My take: two people remembering the same evening differently is completely normal. The question isn't whose memory is right. It's whether your version is allowed to exist at all.
+
+**Quick quiz:** If you're not sure how worried to be, the 2-minute [toxic relationship check-up](/quiz/toxic-relationship/) gives you a calmer, wider view.
+
 ## Question 2: Is it about the event, or about your mind?
 
 Disagreements are about *what happened*. Gaslighting slides into *what's wrong with you*: your memory, your stability, your sanity.
@@ -35,6 +46,12 @@ Disagreements are about *what happened*. Gaslighting slides into *what's wrong w
 In a 2023 study, psychologist Willis Klein and colleagues asked 65 people who believed they had been gaslit by a romantic partner to describe it. Every single participant said their partner insulted and demeaned them, often implying their grip on reality was weak, calling them crazy, stupid or overly emotional. Sociologist Paige Sweet, who has studied gaslighting in abusive relationships, summed it up in the same NPR piece: gaslighting is "someone trying to make you seem or feel crazy."
 
 If your arguments regularly end with a verdict on your mental state, notice that.
+
+:::read Related reading
+/blog/signs-of-a-toxic-relationship/ | Is my relationship toxic? | A 3-level check for unhealthy, toxic and controlling
+/blog/my-boyfriend-gets-defensive/ | My boyfriend gets defensive when I bring something up | Defensiveness vs something more
+/blog/trust-issues-in-a-relationship/ | How to get over trust issues | When doubt keeps coming back
+:::
 
 ## Question 3: Does it come in a pattern?
 
@@ -62,6 +79,12 @@ If you only answer one of the five questions, I'd make it this one. Your memory 
 Sweet's research adds a useful lens. In life-story interviews with 43 women who had survived domestic violence, she found that gaslighting often draws on existing stereotypes and vulnerabilities, like the idea that women are "emotional", or someone's past mental health history or immigration status, to make one person's version seem more believable to others. Ask: does doubting myself always happen to suit the other person? Do they gain control, avoid responsibility or get their way when I doubt myself?
 
 Not all denial is calculated. Some people deny things because they feel ashamed or defensive. The effect can still hurt, and it's still worth addressing. But a pattern that consistently benefits one person and costs the other deserves to be taken seriously.
+
+My take: I think "who benefits" is the most useful of these questions. Ordinary disagreements don't usually leave one person consistently winning and the other consistently doubting themselves.
+
+:::tool coach
+Second-guessing yourself? Talk it through somewhere neutral
+:::
 
 ## What to do if you think you're being gaslit
 

@@ -31,6 +31,13 @@ In their studies, the two had different roots. Reactive jealousy went together w
 
 So the first useful question is not "Am I jealous?" but "Did something happen, or am I reacting to a story in my head?"
 
+:::stats Jealousy in the age of phones
+40% | of partnered US adults are at least sometimes bothered by how much time their partner spends on their phone
+34% | have looked through their partner's phone without their knowledge
+23% | say a partner's social media has made them jealous or unsure about the relationship
+source: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4,860 US adults, October 2019
+:::
+
 ## Myth 2: "If you weren't jealous, you wouldn't care"
 
 There's a grain of truth here, which is why the myth survives. A flash of reactive jealousy often shows you value the relationship. But the line breaks down with the suspicious kind. Constant suspicion isn't proof of love. It's proof of fear, and fear tends to make people controlling rather than closer.
@@ -46,6 +53,14 @@ In other words, the replaying is not the cure. It's often the mechanism that tur
 > **Try this when the loop starts**
 > Write the worry down in one sentence. Then write one sentence for what you actually know. "He hasn't replied in three hours" is a fact. "He's talking to someone else" is a story. Set a 15-minute "worry slot" for later in the day, and when the thought comes back before then, tell yourself: "Later, not now." It sounds small. It works because it breaks the replaying, not the feeling.
 
+:::read Related reading
+/blog/trust-issues-in-a-relationship/ | How to get over trust issues | Why doubt keeps coming back
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | When the feeling isn't about them
+/blog/how-to-stop-overthinking-in-a-relationship/ | How to stop overthinking | For the what-if spiral
+:::
+
+**Quick quiz:** The 2-minute [attachment style quiz](/quiz/attachment-style/) can help explain why jealousy hits you harder than it seems to hit others.
+
 ## Myth 4: "Checking their phone will settle it"
 
 Checking rarely settles anything. If you find nothing, the relief lasts minutes and the doubt returns ("maybe they deleted it"). If you find something ambiguous, you now have a fight *and* a breach of trust on your side.
@@ -55,6 +70,8 @@ Interestingly, the same Elphinston study found that checking-up behaviors had a 
 It's also worth knowing what can trigger the urge. A 2022 study of 346 people in relationships by Janneke Schokkenbroek and colleagues found that people whose partners often ignored them for their phones ("phubbing") were somewhat more likely to look through their partner's messages or online activity. The effect was small, but the message is useful: snooping sometimes grows out of feeling ignored, not only out of suspicion. That's something you can talk about.
 
 I'd say this is the most important myth on the list. Checking feels like it will end the doubt. It almost never does. It just moves the doubt to the next thing.
+
+My take: if you find nothing, the relief lasts about a day. If you find something ambiguous, it gets worse. That's why I'd rather have one honest conversation than ten secret checks.
 
 ## Myth 5: "Social media just shows what's already there"
 
@@ -73,6 +90,12 @@ The practical takeout: don't assume you know what will hurt your partner because
 Sometimes it does. Often it doesn't. Suspicious jealousy tends to travel with the person from relationship to relationship, because it's rooted in insecurity and attachment rather than in what the current partner does. If you notice the same fears with every partner, our guides on [relationship anxiety](/blog/relationship-anxiety/) and [attachment styles](/blog/how-attachment-styles-work-in-relationships/) are a better starting point than investigating your partner.
 
 But if your partner is regularly secretive, inconsistent or dismissive when you raise concerns, your jealousy may be pointing at something real. Our guide on [trust issues in a relationship](/blog/trust-issues-in-a-relationship/) helps you tell the difference.
+
+My take: a flash of jealousy is just information. It's what you do in the next ten minutes that decides whether it helps or hurts.
+
+:::tool coach
+Feeling jealous right now? Talk it through before you react
+:::
 
 ## What actually helps
 

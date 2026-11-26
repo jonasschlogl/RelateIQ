@@ -28,6 +28,13 @@ There are two important exceptions. If you're afraid of your partner, feel contr
 
 **Quick quiz:** Not sure where to start? The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) shows whether your relationship most needs time together, better talks, more fun or more teamwork.
 
+:::stats What Gottman's research found
+96% | of the time, the first three minutes of a conversation predicted how it would end
+5 to 1 | the ratio of positive to negative interactions stable couples keep during conflict
+86% | of small bids for attention were met warmly by couples still together six years later, compared with 33% for couples who divorced
+source: Research by John Gottman and colleagues (see sources below)
+:::
+
 ## Step 1: Decide what "better" looks like
 
 "Fixing it" is too vague to act on. Before you talk to your partner, get clear on what would feel different if things were better. More affection? A fairer split at home? Feeling listened to? Write it down in a sentence or two. It keeps you from arguing about everything and helps you ask for something specific.
@@ -55,6 +62,14 @@ You don't have to be perfect. Just notice which one you slip into most, and prac
 
 I'd put more weight on this step than on any of the others. Most people want to jump straight to the big talk, and that's exactly where it falls apart. Get the contempt out first. Then talk.
 
+My take: if you only manage one step, make it this one. You can't fix anything in the middle of a fight, so learning to pause is what makes every other step possible.
+
+:::read Related reading
+/blog/relationship-advice-communication-habits/ | How to communicate better in a relationship | 7 habits that change how you argue
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | Tonight, tomorrow and the week after
+/blog/relationship-problems-that-keep-coming-back/ | Why do we keep having the same fight? | What's usually underneath
+:::
+
 ## Step 3: Have one small conversation about one thing
 
 Skip the "state of the relationship" talk. Pick one topic and a calm moment, not right after work and not in the middle of a fight. How you open matters more than almost anything else: in Gottman's research, the first three minutes of a conversation predicted how it would end 96% of the time.
@@ -74,6 +89,10 @@ A practical way to start:
 - **Say one specific thank-you a day.** "Thanks for sorting the car, that took a weight off me."
 - **Take ten minutes each evening to really talk.** Not about logistics. About how the day actually felt.
 - **Plan one thing a week that has nothing to do with problems.** A walk, a meal, a film. Our [date night questions](/blog/date-night-questions-for-couples/) can help it feel like a date again.
+
+:::tool practice
+Want to rehearse a hard conversation before you have it?
+:::
 
 ## Step 5: Ask what each of you needs
 
@@ -105,6 +124,8 @@ It's very common for one partner to be more motivated than the other, at least a
 But a relationship needs two people in the long run. If you've been trying alone for a long time and nothing is changing, say so clearly and calmly. Their response to that conversation is important information.
 
 For example: "I've been really trying to make things better between us, and I need to know you want that too. What are you willing to do?"
+
+My take: one person can change the tone of a relationship more than they think, but not forever on their own. If you're the only one trying after months, that's worth saying out loud.
 
 ## How long does it take?
 

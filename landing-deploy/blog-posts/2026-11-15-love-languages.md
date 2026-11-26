@@ -31,6 +31,15 @@ The same review argued that some of the most important ways partners show love a
 
 **Use it like this:** add your own categories. "When I'm stressed, what helps most is when you just sit with me" is a love language too. Our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/) covers that one in depth.
 
+:::chart Americans' top love language for receiving love
+Quality time | 38 | 38%
+Physical touch | 24 | 24%
+Words of affirmation | 19 | 19%
+Acts of service | 13 | 13%
+Receiving gifts | 7 | 7%
+source: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1,000 US adults, January 2022
+:::
+
 ## Belief 3: "Couples with matching love languages are happier"
 
 **What research says: weak evidence.**
@@ -38,6 +47,12 @@ The same review argued that some of the most important ways partners show love a
 In a 2017 study of 67 couples, researchers Bunt and Hazelwood tested exactly this. Having the same primary love language made little difference to satisfaction. What mattered more was *self-regulation*: each partner's ability to manage their own reactions and keep putting effort into the relationship.
 
 **Use it like this:** don't worry if your "types" don't match. Different preferences just mean you'll have to pay a bit more attention, which is good for a relationship anyway.
+
+:::read Related reading
+/blog/how-to-say-i-love-you-without-words/ | How to show love without saying it | 25 small ways, for every kind of day
+/blog/how-to-keep-the-spark-alive/ | How to keep the spark alive | Find which spark is fading, then fix that one
+/blog/long-distance-relationship-tips/ | How to make a long distance relationship work | When love has to travel through a screen
+:::
 
 ## Belief 4: "Speaking your partner's language makes a real difference"
 
@@ -65,6 +80,12 @@ There's no strong evidence that love languages are fixed traits. Common sense an
 The Mostova study found that even empathetic partners weren't automatically good at responding to their partner's preferences. Love doesn't give people telepathy. Asking clearly is not unromantic. It saves months of quiet disappointment.
 
 Try: "It means a lot to me when you tell me what you appreciate about me. I don't need big speeches, just the occasional sentence."
+
+My take: expecting someone to guess is the fastest way to feel unloved by a person who's actually trying. Telling them what lands for you isn't unromantic. It's generous.
+
+:::tool coach
+Not sure what your partner needs from you? Talk it through
+:::
 
 ## What actually helps
 

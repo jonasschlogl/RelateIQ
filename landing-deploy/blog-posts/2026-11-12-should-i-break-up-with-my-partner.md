@@ -22,6 +22,8 @@ The most striking result: about half of the people had strong reasons on both si
 > **Why the "right" answer rarely feels clear**
 > We tend to imagine that a "right" decision would feel clear. But relationships aren't one thing. They're dozens of things at once: the person, the shared life, the history, the future you pictured, the friends, the apartment, the routines. Some of those can be wonderful while others are breaking down. Ambivalence isn't confusion. It's an accurate reading of a mixed situation. The goal isn't to make the mixed feelings disappear. It's to work out which parts matter most to you.
 
+My take: feeling torn doesn't mean you're bad at deciding. It usually means there are real reasons on both sides, and that deserves time, not a snap decision.
+
 **Quick quiz:** Before a big decision, it can help to see what's missing. The free 2-minute [relationship check-up quiz](/quiz/relationship-needs/) shows whether you most need more time together, better talks, more fun or more teamwork.
 
 ## What research says predicts a breakup
@@ -44,6 +46,12 @@ A newer, even larger analysis points the same way. In 2020, Samantha Joel and mo
 What does that mean for you? Not that you should stay because you depend on someone, or leave because you're not satisfied today. It means the questions that matter most are about the relationship's core: do you still feel committed, do you still love this person, and do you still want your lives to be connected? Those are the questions below.
 
 Timing matters too. In a 2025 analysis of four long-running national studies with 11,295 people, Janina Bühler and Ulrich Orth found that relationships that ended went through two phases: years of slow, slight decline, then a turning point about one to two years before the split, after which satisfaction fell fast. The partner who later ended things usually became unhappy earlier. The researchers suggest that trying to repair things during the slow phase, before the steep drop, gives couples the best chance.
+
+:::stats What research says about deciding
+69% | of relationship conflicts are about perpetual problems that may never be fully resolved, according to the Gottman Institute
+27 vs 23 | different reasons to stay and to leave, found among people actively deciding whether to break up
+source: The Gottman Institute; Joel, MacDonald & Page-Gould (see sources below)
+:::
 
 ## 10 questions to ask yourself
 
@@ -95,6 +103,12 @@ We're often clearer about other people's lives than our own. Imagine your best f
 
 If I had to pick one question from the ten, it would be number 7. Not "is it bad right now?" but "if nothing changed, would I be okay in five years?" It cuts through a lot.
 
+:::read Related reading
+/blog/how-to-fix-a-relationship/ | Is my relationship worth saving? | How to tell, and where to start
+/blog/signs-your-partner-is-losing-interest/ | Signs your partner is losing interest | What each signal can really mean
+/blog/how-to-get-over-a-breakup/ | How to get over a breakup | If you decide to leave
+:::
+
 ## Three situations, three different answers
 
 These examples are illustrative, not real people, but they show how the same question ("should I leave?") can have very different answers.
@@ -125,6 +139,12 @@ These examples are illustrative, not real people, but they show how the same que
 A lot of articles treat breaking up as a test you pass or fail. Count the red flags, add up the score, done. Real life is messier. You can love someone and still not be right together. You can have real problems and still have a relationship worth fighting for.
 
 The goal isn't to find the "right" answer in one night. It's to make a decision you understand and can stand behind, whichever way it goes.
+
+My take: one question I find more useful than any list is "do I like who I am in this relationship?" The answer tends to be clearer than the pros and cons.
+
+:::tool coach
+Going round in circles? Talk it through without judgement
+:::
 
 ## A calmer way to decide
 

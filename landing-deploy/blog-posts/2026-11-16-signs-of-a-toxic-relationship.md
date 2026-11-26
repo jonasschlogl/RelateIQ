@@ -29,6 +29,15 @@ These are patterns many couples fall into, especially under stress. They hurt, a
 
 **Next step:** a calm, specific conversation, and maybe couples counseling. Our guides to [communication habits](/blog/relationship-advice-communication-habits/) and [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) are good starting points.
 
+My take: most relationships go through Level 1 stretches. What matters is whether both of you can name it and work on it. A rough patch you can talk about is very different from one you're afraid to mention.
+
+:::stats How common controlling behavior is
+27.2% | of US women have experienced coercive control or entrapment by an intimate partner in their lifetime
+19.5% | of US men say the same
+30.2% | of women have experienced psychological aggression from a partner
+source: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), data collected 2023 to 2024
+:::
+
 ## Level 2: Toxic patterns
 
 Here the problem is no longer just how you argue. It's how you're treated. Couples researcher John Gottman identified four communication patterns that predicted divorce in his studies, and singled out **contempt** (mockery, eye-rolling, sarcasm, treating a partner as beneath you) as the most damaging. Level 2 is where contempt and its relatives become normal.
@@ -71,6 +80,12 @@ Subtle control is also the kind people most often miss. In a 2025 study of 1,872
 
 I want to be very direct about this level: an app, an article or a better way of talking won't fix it. If this section sounds familiar, the helplines below are the next step.
 
+:::read Related reading
+/blog/gaslighting-in-a-relationship/ | Is my partner gaslighting me? | 5 questions that tell it apart from a disagreement
+/blog/love-bombing/ | Love bombing | How it unfolds week by week
+/blog/codependent-relationship/ | Am I codependent or just caring? | When helping turns into losing yourself
+:::
+
 ## A quick self-check: the last month
 
 Think about the last four weeks, not the best or worst day. Which statements are true?
@@ -94,6 +109,12 @@ In other words, staying often has more to do with money, children, housing and s
 > For two years, Yuki told herself Ben was "just stressed" when he mocked her cooking in front of friends. When he started reading her messages and asking why she'd texted her sister, she wrote down a month of what happened, as a counselor at a helpline had suggested. Seeing it on paper changed something. "I'd been treating every incident as separate," she said later. "Written down, it was obviously one thing."
 >
 > *Names and details in this example are invented to show the idea.*
+
+My take: if you've been explaining your partner's behavior to yourself for months, that effort is information too. Healthy relationships rarely need that much defending.
+
+:::tool coach
+Want to think this through privately first?
+:::
 
 ## Am I the toxic one?
 

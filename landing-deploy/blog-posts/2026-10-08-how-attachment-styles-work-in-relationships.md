@@ -51,6 +51,13 @@ Researchers usually measure these dimensions with questionnaires such as the Exp
 >
 > Neither strategy is stupid. Each one made sense somewhere. They just clash badly when two people use opposite ones at the same moment.
 
+:::chart How adults described themselves in Hazan and Shaver's original study
+Secure | 56 | 56%
+Avoidant | 25 | 25%
+Anxious | 19 | 19%
+source: Hazan & Shaver (1987), 620 respondents (see sources below)
+:::
+
 ## The four attachment styles in everyday life
 
 ### Secure attachment
@@ -98,6 +105,12 @@ High anxiety, high avoidance. People in this group want closeness and fear it at
 
 This can be the hardest style to live with, especially for the person who has it. It's often linked to earlier experiences where the people who were supposed to be safe weren't always safe. Steady, patient relationships and support from a therapist trained in attachment or trauma work can help a lot.
 
+:::read Related reading
+/blog/avoidant-attachment-partner/ | Avoidant attachment in a partner | How to love someone who needs space
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | The anxious side of the loop
+/blog/how-to-stop-overthinking-in-a-relationship/ | How to stop overthinking | When your brain fills the silence
+:::
+
 ## When styles meet: the pursue and withdraw loop
 
 One of the best studied patterns in couples research is called demand and withdraw. One partner moves toward the other to talk ("We need to sort this out"), and the other moves away to cool down ("I can't do this right now"). The more one pursues, the more the other retreats. The more the other retreats, the more the first one pursues.
@@ -133,6 +146,8 @@ A few caveats are worth knowing:
 
 Good everyday moments seem to matter, not just big life events. In a 2022 study of 151 new dating couples and 168 newlywed couples, Deniz Bayraktaroglu and colleagues found that on days with more positive moments with their partner, people's avoidance went down over the following weeks, partly because those moments lifted their mood. The same positive moments did not reduce attachment anxiety, which may need reassurance that is more consistent and direct.
 
+My take: I find this the most hopeful part of attachment research. Your style is a starting point, not a sentence, and a steady relationship can slowly change it.
+
 ## Common myths about attachment styles
 
 | Myth | What the research actually suggests |
@@ -145,6 +160,12 @@ Good everyday moments seem to matter, not just big life events. In a 2022 study 
 | "Two insecure people can't make it work." | Many do, especially when both understand the pattern and own their part. |
 
 The myth I'd most like to retire is the idea that your style is a verdict. People often use "I'm avoidant" or "he's anxious" as the end of the conversation. It works much better as the start of one.
+
+My take: the label is less useful than the pattern. Knowing "I'm anxious" helps far less than knowing "when they go quiet, I chase."
+
+:::tool coach
+Recognize the loop in your relationship? Talk it through
+:::
 
 ## How to use this in everyday life
 

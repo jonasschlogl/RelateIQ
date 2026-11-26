@@ -21,6 +21,16 @@ Whatever the reason, the experience for the partner is often similar: you know t
 
 It also tends to create a loop. A large review by Paul Schrodt and colleagues found that the *demand/withdraw* pattern, one partner pushing to talk while the other pulls away, is linked to lower relationship satisfaction for both people. The more you push, the more they withdraw, and the more they withdraw, the more you push. Understanding *why* they withdraw is the first step out of that loop.
 
+My take: the most painful part usually isn't the distance itself. It's not knowing whether it's about you. That's why working out which reason fits matters so much.
+
+:::stats One reason that's more common than people think
+7.5% | of men in a study of 155 married couples had high alexithymia, real difficulty identifying and describing feelings
+6.5% | of women did, similar to general population estimates
+source: Frye-Cox & Hesse, study of 155 married couples (see sources below)
+:::
+
+**Quick quiz:** Want to see where you both might sit? The 2-minute [attachment style quiz](/quiz/attachment-style/) is a good starting point.
+
 ## Reason 1: Avoidant attachment
 
 **What it looks like:** closeness followed by distance. A wonderful weekend, then a quiet week. Strong independence. Discomfort with "where is this going" talks. Often affectionate in practical ways.
@@ -38,6 +48,12 @@ It also tends to create a loop. A large review by Paul Schrodt and colleagues fo
 **What's underneath:** *alexithymia*, a personality trait that makes it hard to recognize and describe emotions. In a study of 155 married couples, Nick Frye-Cox and Colin Hesse found it in about 7.5% of men and 6.5% of women, similar to general population estimates. Alexithymia was linked to lower marital quality, largely through loneliness and difficulty with intimate communication.
 
 **What helps:** smaller, more concrete questions. Instead of "How do you feel about your dad?", try "On a scale of 1 to 10, how stressed were you after that call?" or "Was that more annoying or more upsetting?" Notice their care in actions. And know that therapy can help people build an emotional vocabulary.
+
+:::read Related reading
+/blog/avoidant-attachment-partner/ | Avoidant attachment in a partner | 8 signs and how to love someone who needs space
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | 6 ways to tell them apart
+/blog/signs-your-partner-is-losing-interest/ | Signs your partner is losing interest | What each signal can really mean
+:::
 
 ## Reason 3: They learned that feelings aren't for sharing
 
@@ -65,6 +81,10 @@ One way to put it: "You don't have to explain it perfectly. Even 'today was roug
 
 **What helps:** clarity, not patience. Ask directly what they want. If the answer, or their behavior over the next weeks, says they're not invested, believe it. Our guides on [situationships](/blog/situationship/), [signs your partner is losing interest](/blog/signs-your-partner-is-losing-interest/) and [whether to break up](/blog/should-i-break-up-with-my-partner/) may help.
 
+:::tool coach
+Trying to work out which one fits? Talk it through
+:::
+
 ## Which one is it?
 
 | If they... | It may be... |
@@ -89,6 +109,8 @@ My honest take: reason 5 is the one people least want to consider, and the one w
 Whatever the reason, you're allowed to have needs. If you're always the one reaching, it can slide into exhaustion or [codependency](/blog/codependent-relationship/). Keep friends you can be open with, notice whether things are slowly improving, and decide what you need long term. And if you notice the anxiety is mostly yours, our guide on [how to stop overthinking in a relationship](/blog/how-to-stop-overthinking-in-a-relationship/) can help.
 
 With a partner who shuts down, the wording matters a lot. Partner Practice lets you try different openings with an AI playing your partner, so you can find the ones that invite instead of pressure.
+
+My take: you can be patient with someone's reasons and still decide the relationship doesn't give you enough. Understanding why isn't the same as agreeing to wait forever.
 
 ## Quick answers
 

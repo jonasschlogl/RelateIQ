@@ -55,6 +55,14 @@ Count how many times last week you swallowed a small "actually, I'd prefer..." t
 
 Of the three, I'd start with the "no" test. If saying no to your partner feels dangerous rather than just uncomfortable, that tells you more than any label.
 
+My take: the "would I be okay if they said no?" test is the one I'd start with. Care survives a no. Codependency usually doesn't.
+
+:::read Related reading
+/blog/how-to-support-your-partner-when-stressed/ | How to help your partner with stress | Support without carrying it all
+/blog/signs-of-a-toxic-relationship/ | Is my relationship toxic? | When it's more than over-caring
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | When fear of losing them drives the helping
+:::
+
 ## What the research actually says (and what it doesn't)
 
 Codependency is a popular word, but a messy scientific concept. It's not a diagnosis, there's no agreed definition, and much of what you read online goes beyond the evidence. Here is what is reasonably well supported.
@@ -83,6 +91,12 @@ You don't need to overhaul your relationship. Change here starts very small, bec
 > Priya always planned their vacations around what Sam wanted, then felt quietly resentful the whole trip. This year she tried test 3 and counted how often she'd swallowed a preference. Eleven times in one weekend of planning. So she said, a little shakily: "I've realized I always go along with your picks and then sulk about it, which isn't fair on either of us. I'd really like a city trip this time." Sam laughed and said he'd assumed she loved beaches. The vacation wasn't the point. The point was that she was in it.
 >
 > *Names and details in this example are invented to show the idea.*
+
+My take: start smaller than you think. Saying "I'll let you handle that one" once this week does more than a big promise to change everything.
+
+:::tool practice
+Want to practise saying no kindly? Rehearse it first
+:::
 
 ## Words for when it feels hard
 
