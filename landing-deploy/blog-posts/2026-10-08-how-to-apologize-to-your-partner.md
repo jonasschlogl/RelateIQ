@@ -40,6 +40,14 @@ They found that acknowledging responsibility was the most important element, and
 
 There's a caution worth keeping in mind: this was an experiment where people rated written apologies, and real life, with real hurt and history, is messier. Still, it matches what many couples therapists see. The apologies that work are about the other person's experience and what you'll do next, not about getting relief for yourself.
 
+My take: the part most people skip is the repair offer. "I'm sorry" closes the moment, but "here's what I'll do differently" is what rebuilds trust over the next few weeks.
+
+:::read Related reading
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | What to say when your partner says you hurt their feelings | The first five minutes, step by step
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | Tonight, tomorrow morning and the week after
+/blog/my-boyfriend-gets-defensive/ | My boyfriend gets defensive when I bring something up | If the apology keeps turning into a debate
+:::
+
 ## Different people need different apologies
 
 There's another layer most advice misses. In separate research, Ryan Fehr and Michele Gelfand looked at three components of an apology:
@@ -79,6 +87,10 @@ You don't need all six elements every time. Here is a short structure built on t
 
 > **The five silent questions**
 > Each step answers a question your partner is silently asking. Do you understand what you did? (specific). Are you going to defend it? (no conditions). Do you understand what it did to me? (impact). Will it happen again? (repair). Am I allowed to still be upset? (room). When all five questions are answered, there's much less left to argue about.
+
+:::tool practice
+Want to rehearse your apology before you say it?
+:::
 
 ## A full example, start to finish
 
@@ -158,6 +170,8 @@ If the same thing keeps happening, the apology isn't the missing piece. Change i
 For bigger breaches, like lying, cheating or breaking a major promise, one good conversation is the start, not the end. Trust is rebuilt through consistent actions over time. Our guide on [how to rebuild trust after a fight](/blog/how-to-rebuild-trust-after-a-fight/) goes into that process step by step.
 
 If apologies keep going nowhere, or the pattern involves disrespect, a couples therapist can help you both see what's happening underneath. And if you just can't find the words, you can draft the apology in Coach Chat first and say it out loud in Partner Practice before the real thing.
+
+My take: an apology that comes with the same behavior a week later slowly teaches your partner that sorry means nothing. Fewer apologies with real change beat many apologies without it.
 
 ## Quick answers
 

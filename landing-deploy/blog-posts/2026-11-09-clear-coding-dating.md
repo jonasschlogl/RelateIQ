@@ -22,6 +22,17 @@ Most people agree with clear coding in principle. The hard part is the actual wo
 
 **A clear "no" is kinder than vanishing.** In a 2023 experiment, psychologists led by C. M. Leckfor found that people who recalled being ghosted reported feeling worse, less in control and less sure of their own worth, than people who recalled being directly rejected. Clear coding applies to "no, thanks" too.
 
+My take: playing it cool mostly protects you from a no you'd rather hear early. Clarity feels riskier in the moment and saves months later.
+
+:::stats Why young daters want more clarity
+64% | of actively dating 18 to 25 year olds say emotional honesty is what dating needs most
+60% | want clearer communication about intentions
+50% | of US 18 to 34 year olds say they've been in a situationship
+source: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4,000 daters aged 18 to 25; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024
+:::
+
+**Quick quiz:** If being direct feels scary, your attachment style may be part of it. Try the 2-minute [attachment style quiz](/quiz/attachment-style/).
+
 ## Stage 1: Your profile and first messages
 
 Say the basics up front, briefly. You're not writing a contract.
@@ -42,6 +53,12 @@ Interest doesn't need to be hidden for three days.
 
 Notice message 6: a specific day turns "we should hang out" into an actual plan. Vague plans are where mixed signals start.
 
+:::read Related reading
+/blog/situationship/ | Should I stay in a situationship? | When nobody has said what this is
+/blog/breadcrumbing/ | Am I being breadcrumbed? | The opposite of clear coding
+/blog/love-bombing/ | Love bombing | When intensity is a strategy, not clarity
+:::
+
 ## Stage 3: A few dates in
 
 This is the stage where people start guessing. Don't.
@@ -50,6 +67,10 @@ This is the stage where people start guessing. Don't.
 10. "I've stopped using the apps because I'd like to see where this goes. No pressure on you, I just wanted to be open."
 11. "I really like spending time with you. I'm not in a rush, but I'm hoping this could turn into something."
 12. *If they've gone quiet:* "Hey, I've noticed we haven't talked much this week. Are you still interested? It's okay if not."
+
+:::tool check
+Worried your message sounds too intense? Check it before you send
+:::
 
 ## Stage 4: Defining it
 
@@ -75,6 +96,8 @@ This is the part of clear coding people skip, and the part that matters most to 
 > *Names and details in this example are invented to show the idea.*
 
 This is the stage I'd most like people to take seriously. A two-line "I don't think we're a match" costs you a minute and saves the other person days of wondering.
+
+My take: a kind no is one of the most generous things you can give someone you've dated. It costs you a minute and saves them days of wondering.
 
 ## What clear coding is not
 

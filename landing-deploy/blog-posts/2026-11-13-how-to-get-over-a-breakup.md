@@ -25,6 +25,16 @@ The goal here is not to feel better. It's to get through without making things h
 
 **Write one sentence for later.** On your phone: "Remember why this ended: ___." You'll need it in week two.
 
+My take: the first two days are not the time to understand anything. Eat, sleep, call a friend. Making sense of it can wait.
+
+:::read Related reading
+/blog/should-i-break-up-with-my-partner/ | How do you know when to break up? | If you're still deciding
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | For when it shows up in the next relationship
+/blog/how-to-stop-overthinking-in-a-relationship/ | How to stop overthinking | When your mind keeps replaying it
+:::
+
+**Quick quiz:** Some people find breakups harder because of how they attach. The 2-minute [attachment style quiz](/quiz/attachment-style/) can help you understand your reaction.
+
 ## Stage 2: the first two weeks
 
 This is often the hardest stretch. The shock wears off and the missing kicks in.
@@ -53,6 +63,10 @@ Sadness, anger, relief, guilt, all in one afternoon. That's normal. Trying to fo
 > In three studies, Erica Slotter, Wendi Gardner and Eli Finkel found that after a breakup people's sense of who they are became less clear. Their sense of self felt, as they put it, "less clear and even smaller", and that loss of clarity contributed to the distress. In a relationship, your routines, plans and even your taste in films get shared. When it ends, you have to sort out which parts were *you*. That sorting is a big part of what healing is.
 
 If you take one thing from this stage, mute them. Not as a statement, just as basic self-care. Every check resets the clock.
+
+:::tool coach
+Tempted to text them at 2am? Talk it through here first
+:::
 
 ## Stage 3: weeks three to twelve
 
@@ -87,6 +101,8 @@ There's no fixed number, and anyone who promises one is guessing. Many people no
 | You can see both good and bad in the relationship | You feel hopeless or think about hurting yourself |
 
 If anything in the right column sounds like you, please talk to a doctor or counselor. If you're thinking about ending your life, contact emergency services or a crisis line right away.
+
+My take: there's no deadline for being over someone. If you're slowly having more okay days than bad ones, you're doing it right, even if it's taking longer than you hoped.
 
 ## If you're the one who ended it
 

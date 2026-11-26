@@ -21,7 +21,13 @@ You probably don't need another list of signs. You need something to do when it 
 
 **It can soften over time.** In long-term research following people over decades, William Chopik and colleagues found that attachment anxiety tended to decrease with age, and being in a committed relationship was linked to becoming more secure. Relationship anxiety is a pattern, not a life sentence.
 
+My take: the most useful thing to remember is that anxiety feels exactly the same whether something is wrong or not. The feeling is real, but it isn't evidence.
+
 **Quick quiz:** Anxiety in relationships is often linked to attachment. The free 2-minute [attachment style quiz](/quiz/attachment-style/) can show whether that's part of your pattern.
+
+:::stats What worry predicts, and what it doesn't
+91.4% | of the worries people wrote down over a month didn't come true, in a study by Lucas LaFreniere and Michelle Newman
+:::
 
 ## The next 2 minutes: when the spiral starts
 
@@ -36,6 +42,12 @@ The moment you notice it (the phone check, the tight chest, the urge to send a m
 **4. Don't send anything yet.** Give it ten minutes. If the message still feels important after that, send it once, calmly.
 
 Step 4 is the one I'd underline. Ten minutes doesn't sound like much, but a message you'd regret sending usually looks very different ten minutes later.
+
+:::read Related reading
+/blog/how-to-stop-overthinking-in-a-relationship/ | How to stop overthinking in a relationship | A calmer way to handle the what-if spiral
+/blog/how-attachment-styles-work-in-relationships/ | What is my attachment style? | Why some of us feel distance more sharply
+/blog/jealousy-in-a-relationship/ | Is jealousy normal in a relationship? | When anxiety shows up as suspicion
+:::
 
 ## The rest of the day: stopping the loop from growing
 
@@ -57,6 +69,10 @@ For example: "I'm feeling a bit wobbly today. Could we have dinner together toni
 | You want to test them | Say the need directly |
 | A good moment feels scary | Notice it, and let yourself enjoy it anyway |
 
+:::tool coach
+Spiralling right now? Talk it through before you text
+:::
+
 ## The next month: changing the pattern
 
 **Tell your partner once, calmly.** Not as an accusation, as information.
@@ -76,6 +92,8 @@ A partner who understands what's going on can help without being on call 24/7.
 > Every Friday, when Elif's partner Jonah went out with his soccer team, she'd spend the evening checking her phone and sending "having fun?" messages. One month she tried the toolkit. When the urge came, she named it, did two minutes of breathing, and wrote her three explanations on a sticky note. She told Jonah once: "I get anxious on Fridays. A single text when you get to the bar would help." He was happy to. By the fourth Friday she noticed she'd watched an entire film without checking her phone.
 >
 > *Names and details in this example are invented to show the idea.*
+
+My take: asking for reassurance isn't the problem, asking for it in a way your partner can actually give is. "Can you text me when you land?" works. "Promise you'll never leave" doesn't, because no answer will ever be enough.
 
 ## Is it anxiety, or is something really wrong?
 

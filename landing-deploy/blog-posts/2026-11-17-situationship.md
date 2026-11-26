@@ -23,6 +23,13 @@ Situationships have only recently become a research topic, and most of the work 
 
 **Why that matters for you:** a situationship can feel good enough to stay in, because some needs really are met. But "good enough for now" can quietly become months. That's where an older idea from relationship research helps.
 
+:::stats How common situationships are
+39% | of US adults say they've been in a situationship
+50% | of 18 to 34 year olds say the same
+29% | of situationships among 18 to 34 year olds started on social media
+source: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1,110 US adults, January 2024
+:::
+
 ## Sliding versus deciding
 
 Psychologists Scott Stanley, Galena Rhoades and Howard Markman described the difference between *sliding* and *deciding* in relationships. Sliding is when things just happen: you start sleeping over more, then you're spending holidays together, without ever choosing it. Deciding is when you consciously make a choice together.
@@ -30,6 +37,16 @@ Psychologists Scott Stanley, Galena Rhoades and Howard Markman described the dif
 Their work was about couples sliding into living together, but the idea fits situationships perfectly. A situationship is, almost by definition, a relationship nobody has decided on. The guide below is simply a way of turning sliding into deciding, whichever way you decide.
 
 This idea is the one I'd keep. Most situationships aren't anyone's plan. They're a series of small "sure, why not" moments that nobody stopped to question.
+
+My take: I don't think situationships are the problem. Staying in one by default is. If you've actually chosen it and it works for both of you, that's fine. If you're waiting for it to turn into something, it's time to ask.
+
+:::read Related reading
+/blog/clear-coding-dating/ | Clear coding in dating | 20 ready-to-send messages for saying what you want
+/blog/breadcrumbing/ | Am I being breadcrumbed? | When "we'll see" turns into months
+/blog/how-attachment-styles-work-in-relationships/ | What is my attachment style? | Why the uncertainty hits some people harder
+:::
+
+**Quick quiz:** The 2-minute [attachment style quiz](/quiz/attachment-style/) can explain why not knowing where you stand feels so hard.
 
 ## The decision guide
 
@@ -61,6 +78,10 @@ Say it simply: "I'm enjoying this the way it is, and I'm not looking for anythin
 
 And agree on the basics, such as whether you're seeing other people and how you'll handle it if one of you starts wanting more. Then check in again in a couple of months, because feelings move.
 
+:::tool practice
+Ready for the "what are we" talk? Rehearse it first
+:::
+
 ## Path 2: Define it
 
 Pick a calm moment, not straight after a jealous spiral or at 1am by text. Keep it short, say what you want, and give them room to answer honestly.
@@ -86,6 +107,8 @@ You don't need their agreement, and you don't need a long explanation. Then give
 > For six months, Jules and Ari spent most weekends together, but Ari changed the subject whenever "us" came up. Jules finally asked, calmly, over coffee. Ari said he "didn't want to ruin it with labels". Jules went home and did the three questions. Want: a relationship. Feeling: anxious most weeks. His behavior: no plans beyond Saturday, never met his friends. The table said walk away. It took two more weeks to actually do it, and a month to stop checking his stories. Three months later, Jules said the hardest part had been the deciding, not the leaving.
 >
 > *Names and details in this example are invented to show the idea.*
+
+My take: walking away from something undefined still counts as a breakup, and it's allowed to hurt like one. Don't let anyone tell you it "wasn't even a real relationship."
 
 ## If you're the one who doesn't want more
 

@@ -23,7 +23,21 @@ This guide decodes the most common signs, one by one, with the likely explanatio
 
 So the signs worth watching are not dramatic. They're the small daily ones. That's also good news: small things are fixable.
 
+My take: one quiet week means very little. A slow drift over months means a lot more. I'd look at the trend, not at any single day.
+
 **Quick quiz:** Want a calmer read of the signs? The free 2-minute [is my partner losing interest quiz](/quiz/losing-interest/) shows if they look still invested, busy, drifting or pulling away.
+
+:::chart How often partners turned toward each other's small bids for attention
+Couples still together after 6 years | 86 | 86%
+Couples who later divorced | 33 | 33%
+source: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), newlywed study with a six-year follow-up
+:::
+
+:::stats The phone factor
+46% | of US adults in a 2016 study said their partner "phubbed" them, paying attention to their phone instead of them
+52 studies | and almost 20,000 people in a 2025 meta-analysis linked partner phubbing with lower satisfaction and more conflict
+source: Roberts & David (2016), *Computers in Human Behavior*; 2025 meta-analysis cited in the sources below
+:::
 
 ## The signals, decoded
 
@@ -74,11 +88,21 @@ So the signs worth watching are not dramatic. They're the small daily ones. That
 | Warmth intact, less sex | Health, stress or a mismatch | A gentle, private conversation |
 | Turning away from most bids, little warmth | Real emotional distance | An honest conversation about the relationship |
 
+:::read Related reading
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | When the distance follows an argument
+/blog/avoidant-attachment-partner/ | Avoidant attachment in a partner | When closeness makes them pull back
+/blog/should-i-break-up-with-my-partner/ | How do you know when to break up? | If you're asking a bigger question
+:::
+
 ## Before you talk: check your own lens
 
 If you lean toward anxiety in relationships, a normal busy week can feel like rejection. Ask yourself: have *they* changed, or has my worry level changed? Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [how to stop overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) help you separate the two.
 
 I'd spend real time on this step. A busy month and a fading relationship can look identical from the inside, especially if you're already worried.
+
+:::tool practice
+Not sure how to start this conversation? Rehearse it first
+:::
 
 ## What to say
 
@@ -104,6 +128,8 @@ And turn toward them, on purpose, in small ways: respond to their bids, put your
 Sometimes the honest answer is that they've drifted, or that they're unsure. That hurts, but it's information you can work with. Many couples find their way back with effort on both sides, sometimes with a couples therapist. If your partner says they don't know how they feel, give it a little time, but not unlimited time. Our guides on [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) and [whether to break up](/blog/should-i-break-up-with-my-partner/) may help you decide what you need.
 
 If you're dreading that first conversation, you can plan it in Coach Chat and rehearse it in Partner Practice first.
+
+My take: asking "are you still in this?" is scary, but not asking is usually worse. Months of guessing cost more than one honest conversation.
 
 ## Quick answers
 

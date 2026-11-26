@@ -23,6 +23,8 @@ Sam meets Alex on an app. By day three they're talking for hours every night. Al
 
 **What to do now:** Nothing dramatic. Just keep your normal life going and notice how they respond when you're not available.
 
+**Quick quiz:** Wondering whether what you're seeing is just a rough patch or something more worrying? The 2-minute [toxic relationship check-up](/quiz/toxic-relationship/) gives you a clearer picture.
+
 ## Weeks 2 to 4: the gifts and the constant contact
 
 Flowers arrive at Sam's work. A weekend trip is booked "as a surprise". Alex texts good morning, good night and many times in between, and seems hurt when Sam takes a few hours to reply.
@@ -37,6 +39,12 @@ In a 2024 survey of 225 university students in Turkey, researchers Duman and Naz
 
 For example: "I'm really enjoying this, and I'd like to take it a bit slower. Can we keep the trip for later?"
 
+:::read Related reading
+/blog/breadcrumbing/ | Am I being breadcrumbed? | When attention comes in small, unpredictable doses
+/blog/signs-of-a-toxic-relationship/ | Is my relationship toxic? | A 3-level check for unhealthy, toxic and controlling
+/blog/clear-coding-dating/ | Clear coding in dating | What healthy enthusiasm sounds like
+:::
+
 ## Month 2: the first "no"
 
 Sam wants a Friday night with old friends. Alex is warm about it on the surface, then quiet and wounded all evening by text: "I just miss you. I thought we were special." The next week it happens again, with a hint that Sam's friends "don't really get us".
@@ -46,6 +54,8 @@ Sam wants a Friday night with old friends. Alex is warm about it on the surface,
 **What may be happening:** This is the stage that matters most. A partner who loves you can feel disappointed and still respect your plans. In love bombing, the warmth starts to depend on you doing what they want. Early isolation from friends is one of the most consistent warning signs that domestic abuse organizations describe.
 
 **What to do now:** Keep the plans. Tell a friend honestly what's going on, not the polished version.
+
+My take: if I could give one test for love bombing, it would be this one. Say a small, reasonable no and watch what happens. Someone who really likes you can be disappointed and still respect it.
 
 ## Month 3: hot and cold
 
@@ -65,6 +75,10 @@ There isn't much research yet, but what exists points in one direction. In a 201
 
 That's useful because it moves the focus. The intensity often says more about the other person's needs (for control, for admiration, for reassurance) than about how special you are. The Turkish study found something else worth knowing: people who had experienced love bombing reported lower confidence in handling their own romantic relationships. If you've been through it, a dip in trusting your own judgment is a common after-effect, not a personal failing.
 
+:::tool coach
+Not sure what you're dealing with? Talk it through privately
+:::
+
 ## Love bombing or someone who's just very keen?
 
 | Question | Keen and genuine | Love bombing |
@@ -82,6 +96,8 @@ If you're unsure whether you're overthinking, our guide to [green flags in a rel
 Saying "let's slow down" to someone who's showering you with attention is hard. If it helps, you can rehearse it privately in Partner Practice first.
 
 If you only test one thing, test the "no". Say no to something small and watch what happens. Real interest survives a no. Love bombing usually doesn't.
+
+My take: being swept off your feet isn't a red flag on its own. The warning sign is speed plus pressure. Real enthusiasm can wait for you to catch up.
 
 ## Quick answers
 

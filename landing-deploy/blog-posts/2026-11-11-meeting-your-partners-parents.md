@@ -26,6 +26,15 @@ So, no pressure, but this evening is worth some preparation. The good news: appr
 
 Involvement is different from approval, though. In a 2024 study of 464 young adults in Slovenia, Timotej Glavač and Melita Puklek Levpušček found that people whose fathers were more intrusive tended to have shorter relationships. Parents who are warm and supportive help a couple. Parents who try to run it usually don't.
 
+My take: I'd stop trying to impress them and focus on being easy to be around. Most parents mainly want to see that their kid is treated well, and you can show that without a single perfect answer.
+
+:::stats Why meeting the family feels like a big deal
+72% | say bringing a partner home for the holidays makes a relationship feel official
+36% | say their family has told embarrassing stories about them to a partner
+23% | say their family asked their partner inappropriate questions
+source: [Tawkify survey](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) of 1,000 Americans, reported by DatingNews
+:::
+
 ## Before you go: 3 questions to ask your partner
 
 1. **"What are they proud of, and what are they sensitive about?"** This is your map of good and bad topics.
@@ -33,6 +42,14 @@ Involvement is different from approval, though. In a 2024 study of 464 young adu
 3. **"If it gets awkward, what's our signal?"** A word, a look, a hand on the back. It helps more than you'd think.
 
 I'd say this short briefing matters more than anything you say on the day. Most awkward moments come from not knowing the rules everyone else knows.
+
+:::read Related reading
+/blog/holidays-with-your-partners-family/ | Holidays with your partner's family | A game plan for Thanksgiving and Christmas
+/blog/relationship-advice-communication-habits/ | How to communicate better in a relationship | Habits that help in any tense moment
+/blog/how-to-apologize-to-your-partner/ | How to apologize to your partner sincerely | If something you said lands badly
+:::
+
+**Quick quiz:** Not sure what you need from your partner on the day? The 2-minute [relationship needs quiz](/quiz/relationship-needs/) helps you put it into words before you go.
 
 ## The 12 moments, and what to say
 
@@ -111,6 +128,10 @@ Thank them by name, mention one specific thing you enjoyed.
 
 A short message afterwards via your partner ("Please thank your mom again for dinner") adds a nice finish.
 
+:::tool practice
+Nervous about a specific question? Practise your answer first
+:::
+
 ## What to talk about when meeting your boyfriend's or girlfriend's parents
 
 Most people do not dread a specific moment. They dread running out of things to say. The fix is to arrive with a few easy topics and a few questions that get parents talking about something they enjoy.
@@ -143,6 +164,8 @@ Ask your partner how they think it went, and listen to the answer without spiral
 It also helps to hear about long-term research from psychologist Terri Orbuch, who followed married couples for 26 years. She found that when husbands felt close to their wife's parents, the couple's divorce risk was lower, but when wives were very close to their husband's parents, the risk was higher, possibly because closeness made boundaries harder. The goal isn't to become best friends overnight. It's warmth and respect with healthy boundaries.
 
 If you'll be spending holidays with them soon, our guide on [holidays with your partner's family](/blog/holidays-with-your-partners-family/) covers longer visits. And if you'd like to understand your partner better before the big day, try a few of our [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/), especially the ones about their childhood.
+
+My take: the debrief matters more than the visit. One awkward dinner is easy to laugh off together, but only if you talk about it kindly on the way home instead of replaying it alone.
 
 ## If you're the one introducing your partner
 

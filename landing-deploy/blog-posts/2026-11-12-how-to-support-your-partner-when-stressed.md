@@ -25,6 +25,15 @@ Why? Being obviously helped can carry a hidden message: *you can't cope on your 
 
 This is the finding I'd most want people to know about support. The urge is to make it visible, to show you care. Often the kindest thing is the help they barely notice.
 
+My take: the best support often doesn't look like support at all. Making dinner without being asked can do more than a long pep talk, especially on the worst days.
+
+:::stats How much support people are missing
+69% | of US adults say they needed more emotional support in the past year than they received
+54% | say they often or sometimes feel isolated
+92% | say relationships are a key source of meaning in their lives
+source: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), Stress in America survey of 3,199 US adults, August 2025
+:::
+
 ## Stress makes small things feel big
 
 Lisa Neff and Benjamin Karney studied newlywed couples over several years and found that when people were under more stress than usual, their relationship satisfaction swung more with each good or bad day together. Stress seems to use up the mental energy we normally use to keep small problems in perspective.
@@ -32,6 +41,12 @@ Lisa Neff and Benjamin Karney studied newlywed couples over several years and fo
 So if your stressed partner snaps about the towel on the floor, it probably isn't about the towel. Knowing this makes it much easier not to take it personally, and not to start a fight about tone at the worst possible moment.
 
 The good news comes from a 2021 study by Paula Pietromonaco, Nickola Overall and Sally Powers. Following more than 200 newlywed couples, they found that stress was linked to relationship quality dropping over time, *except* when the partner was highly responsive: listening, trying to understand, and recognizing what was needed. With a responsive partner, the stressed person's relationship looked much like that of people with low stress.
+
+:::read Related reading
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | When their stress turns into your worry
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | If they go quiet when they're overwhelmed
+/blog/relationship-advice-communication-habits/ | How to communicate better in a relationship | 7 habits that change how you argue
+:::
 
 ## What to say, by type of stress
 
@@ -87,6 +102,10 @@ Support doesn't mean absorbing everything. You can be kind and clear at the same
 
 The "no need to reply" matters. It gives comfort without adding a task.
 
+:::tool coach
+Not sure what your partner needs right now? Think it through first
+:::
+
 ## Match the support to the person
 
 Couples researchers who study *dyadic coping* (how partners deal with stress together) have found that the way a couple handles stress is closely tied to how satisfied they are overall. A large review by Mariana Falconier and colleagues, combining data from dozens of studies, found that positive ways of coping together went with higher relationship satisfaction, and negative ones, like dismissive or hostile reactions, with lower.
@@ -107,6 +126,8 @@ Then remember the answer. That one conversation will make you a better support t
 Stress spreads. If you absorb every bad mood and drop your own life to manage theirs, you'll run out too. Keep your own friends, sleep and routines. Being a steady presence helps them more than being a worn-out one.
 
 If you notice you've started to feel responsible for their every feeling, our guide on [the difference between caring and codependency](/blog/codependent-relationship/) may be useful.
+
+My take: you can't carry someone's stress and your own forever. Being supportive includes saying "I need an evening off tonight" without feeling guilty about it.
 
 ## When it's your stress
 

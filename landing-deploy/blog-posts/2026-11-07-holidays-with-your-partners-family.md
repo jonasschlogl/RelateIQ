@@ -25,6 +25,15 @@ Thanksgiving is often the first big family holiday a new couple spends together,
 - **Plan the travel days together.** The day before and the Sunday after are among the busiest travel days of the year in the US, so agree early on when you leave and how long you stay.
 - **Think about the next holiday now.** If you're at their family for Thanksgiving, it's a natural moment to talk about where you'll spend Christmas, before anyone assumes.
 
+:::stats What makes the holidays stressful
+89% | of US adults say something about the holiday season causes them stress
+58% | name spending too much, or not having enough to spend
+41% | say their stress goes up during the holidays compared with the rest of the year
+source: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), survey of 2,061 US adults by The Harris Poll, November 2023
+:::
+
+**Quick quiz:** Do you tend to go quiet or speak up when family tension rises? The 2-minute [fight style quiz](/quiz/fight-style/) helps you both know what to expect from each other.
+
 ## Two weeks before: the planning talk
 
 Most holiday fights between partners start with mismatched expectations, not with the family itself. Have one calm conversation before you go, ideally over a walk or a coffee, not the night before.
@@ -42,6 +51,14 @@ Say it simply: "I want this to go well for both of us. What's the one thing you'
 Psychologist Terri Apter, who has studied in-law relationships extensively, found that over 60% of women, compared with about 15% of men, described a difficult relationship with their partner's mother. If that's you, say so before the visit, not halfway through it.
 
 If you only do one thing from this guide, do this talk. So many holiday blow-ups start with two people who had quietly assumed different plans.
+
+My take: the planning talk is the whole game. I'd have it even if you think you already agree on everything, because the assumptions nobody says out loud are the ones that blow up on day three.
+
+:::read Related reading
+/blog/meeting-your-partners-parents/ | Meeting your partner's parents for the first time | What to say in the 12 most awkward moments
+/blog/how-to-support-your-partner-when-stressed/ | How to help your partner with stress | For when the visit gets to them
+/blog/what-to-text-after-a-fight/ | What to text after a fight | If the drive home turns into an argument
+:::
 
 ## The day before: the briefing
 
@@ -66,6 +83,10 @@ Expect your partner to change a bit. Many people slip back into family roles at 
 **Pick your battles.** Most holiday irritations aren't worth a stand: how the turkey is cooked, the TV volume, a great-aunt's opinions. Save your energy for the one or two things that genuinely matter.
 
 **When you feel flooded, step out.** If you notice your heart racing and your patience going, take a 20-minute break before you say anything. The Gottman Institute recommends this kind of pause because it's very hard to listen or speak calmly when your body is in fight-or-flight mode.
+
+:::tool practice
+Dreading a specific conversation with their family? Rehearse it first
+:::
 
 ## The tense moments: what to say at the table
 
@@ -109,6 +130,8 @@ There's no single fair way. Couples commonly:
 What matters most is that you decide together, and that neither of you feels permanently second.
 
 If you're bringing your partner home for the first time, see our guide on [meeting your partner's parents](/blog/meeting-your-partners-parents/), and if you're spending the holidays apart, our [long distance relationship tips](/blog/long-distance-relationship-tips/) include ideas for the holidays. When tension spills over between the two of you, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) and our guide on [communication habits](/blog/relationship-advice-communication-habits/) can help.
+
+My take: fair doesn't have to mean equal every single year. What matters is that both of you feel the plan was made together, not that the calendar balances to the day.
 
 ## Quick answers
 
