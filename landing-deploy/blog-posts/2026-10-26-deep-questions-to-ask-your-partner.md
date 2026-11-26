@@ -1,6 +1,6 @@
 ---
-title: "Deep questions to ask your partner: 30 questions, and how to answer so they keep talking"
-seo_title: "30 Deep Questions to Ask Your Partner, From Easy to Deep"
+title: "Deep questions to ask your boyfriend or girlfriend: 30 questions, and how to answer so they keep talking"
+seo_title: "30 Deep Questions to Ask Your Boyfriend or Girlfriend"
 date: 2026-10-26
 updated: 2026-11-20
 description: "30 deep questions to ask your partner, sorted by how deep they go, plus what research says matters even more than the question: how you respond to the answer."

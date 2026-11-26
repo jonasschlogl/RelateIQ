@@ -1,6 +1,6 @@
 ---
-title: "Jealousy in a relationship: 7 myths that make it worse (and what research shows)"
-seo_title: "Jealousy in a Relationship: 7 Myths That Make It Worse"
+title: "Is jealousy normal in a relationship? 7 myths that make it worse, and what research shows"
+seo_title: "Is Jealousy Normal in a Relationship? 7 Myths, Debunked"
 date: 2026-11-16
 updated: 2026-11-19
 description: "Jealousy in a relationship isn't one feeling. 7 common myths checked against research on suspicion, rumination and phone checking, and what calms it."

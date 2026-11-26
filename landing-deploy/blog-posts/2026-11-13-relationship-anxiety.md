@@ -1,6 +1,6 @@
 ---
-title: "Relationship anxiety: a toolkit for the next 2 minutes, the next day and the next month"
-seo_title: "Relationship Anxiety: What to Do in the Next 2 Minutes"
+title: "Relationship anxiety for no reason: why it shows up when things are good, and what to do in the next 2 minutes"
+seo_title: "Relationship Anxiety for No Reason? What to Do Right Now"
 date: 2026-11-13
 updated: 2026-11-19
 description: "Relationship anxiety toolkit: what to do in the first 2 minutes of a spiral, through the day and over a month, with research on worry, breathing and attachment."

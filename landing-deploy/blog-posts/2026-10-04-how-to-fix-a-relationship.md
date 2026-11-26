@@ -1,6 +1,6 @@
 ---
-title: How to fix a relationship: where to start when it feels broken
-seo_title: "How to Fix a Relationship: Where to Start, Step by Step"
+title: "Is my relationship worth saving? How to tell, and where to start fixing it"
+seo_title: "Is My Relationship Worth Saving? How to Tell and Fix It"
 date: 2026-10-04
 description: "How to fix a relationship that feels distant or stuck: a calm, research-based plan in 6 steps, from stopping the escalation to rebuilding closeness."
 tags: how to fix a relationship, relationship problems
@@ -13,7 +13,7 @@ What works better is smaller: a few calm steps, taken in a sensible order. This 
 > **The short answer:**
 > To fix a relationship, start small and in order: decide what "better" would look like, stop the criticism and contempt first, talk about one issue at a time, rebuild small daily good moments, and ask what each of you needs. If the same fights keep returning after a few weeks, get help early.
 
-## First: is this a relationship that can be fixed?
+## First: is your relationship worth saving?
 
 Most relationships that feel broken are stuck, not finished. Distance, constant arguments, feeling like roommates, losing the spark: these are common, and they often respond to changes in how you talk and how you spend time together.
 

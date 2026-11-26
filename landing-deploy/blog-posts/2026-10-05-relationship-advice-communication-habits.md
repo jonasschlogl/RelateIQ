@@ -1,6 +1,6 @@
 ---
-title: "Relationship advice: 7 communication habits that change how you argue"
-seo_title: "Relationship Advice: 7 Habits That Change How You Argue"
+title: "How to communicate better in a relationship: 7 habits that change how you argue"
+seo_title: "How to Communicate Better in a Relationship: 7 Habits"
 date: 2026-10-05
 description: "Relationship advice that changes how you argue: 7 research-based communication habits, from softer starts to taking breaks, with lines to use tonight."
 checker: tone

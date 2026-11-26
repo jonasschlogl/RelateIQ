@@ -1,6 +1,6 @@
 ---
-title: How to apologize to your partner (and what makes an apology actually work)
-seo_title: "How to Apologize to Your Partner: 5 Steps + Examples"
+title: "How to apologize to your partner sincerely: 5 steps, real examples and what not to say"
+seo_title: "How to Apologize to Your Partner Sincerely (With Examples)"
 date: 2026-10-08
 description: "How to apologize to your partner so it actually lands: a simple 5-step structure based on apology research, real examples and what to avoid saying."
 checker: apology

@@ -1,6 +1,6 @@
 ---
-title: "Trust issues in a relationship: how trust is really built, and the loop that keeps doubt alive"
-seo_title: "Trust Issues in a Relationship: Why They Stay and What Helps"
+title: "How to get over trust issues in a relationship: why doubt keeps coming back, and what actually helps"
+seo_title: "How to Get Over Trust Issues in a Relationship"
 date: 2026-11-15
 updated: 2026-11-19
 description: "Trust issues in a relationship: what trust is made of, why constant reassurance backfires, a self-check for past vs present hurt, and what rebuilds trust."

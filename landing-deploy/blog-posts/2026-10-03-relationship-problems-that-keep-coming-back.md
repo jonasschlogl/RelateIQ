@@ -1,6 +1,6 @@
 ---
-title: 5 relationship problems that keep coming back (and what's usually underneath)
-seo_title: "5 Relationship Problems That Keep Coming Back (and Why)"
+title: "Why do we keep having the same fight? 5 relationship problems that keep coming back, and what's underneath"
+seo_title: "Why Do We Keep Having the Same Fight? 5 Real Reasons"
 date: 2026-10-03
 description: "Relationship problems that keep coming back: chores, time, money, closeness and the endless fight. What's usually underneath and how to talk about each one."
 checker: passive

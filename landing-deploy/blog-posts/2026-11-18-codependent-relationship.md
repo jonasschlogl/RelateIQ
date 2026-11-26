@@ -1,6 +1,6 @@
 ---
-title: "Codependent relationship or just a caring partner? How to tell the difference"
-seo_title: "Codependent Relationship or Just Caring? 3 Simple Tests"
+title: "Am I codependent or just a caring partner? How to tell the difference"
+seo_title: "Am I Codependent or Just Caring? 3 Simple Tests"
 date: 2026-11-18
 updated: 2026-11-20
 description: "Codependent relationship or healthy care? Three simple tests, what research on codependency and self-silencing shows, and what to say when you speak up."

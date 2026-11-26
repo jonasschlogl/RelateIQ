@@ -1,6 +1,6 @@
 ---
-title: "Love languages: 6 popular beliefs, checked against the research"
-seo_title: "Love Languages: 6 Popular Beliefs Checked Against Research"
+title: "Are love languages real? 6 popular beliefs, checked against the research"
+seo_title: "Are Love Languages Real? What the Research Actually Says"
 date: 2026-11-15
 updated: 2026-11-20
 description: "Love languages are everywhere, but what holds up? 6 popular beliefs about the 5 love languages checked against recent studies, and a better way to use them."

@@ -1,6 +1,6 @@
 ---
-title: "How to say \"I love you\" without words: 25 small ways, for every kind of day"
-seo_title: "How to Say I Love You Without Words: 25 Small Ways"
+title: "How to show love without saying it: 25 small ways, for every kind of day"
+seo_title: "25 Ways to Show Love Without Saying It"
 date: 2026-10-26
 updated: 2026-11-20
 description: "How to say \"I love you\" without words: 25 small gestures for busy mornings, hard days and long distance, and what research shows actually lands."
