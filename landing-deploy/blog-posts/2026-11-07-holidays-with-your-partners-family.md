@@ -2,7 +2,7 @@
 title: "Holidays with your partner's family: a Thanksgiving and Christmas game plan, from two weeks before to the drive home"
 seo_title: "Christmas & Holidays With Your Partner's Family: A Plan"
 date: 2026-11-07
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Holidays with your partner's family, from Thanksgiving to Christmas: what to agree beforehand, what to say at the table, and how to get home still a team."
 tags: holidays with your partner's family, Thanksgiving with your partner's family
 ---

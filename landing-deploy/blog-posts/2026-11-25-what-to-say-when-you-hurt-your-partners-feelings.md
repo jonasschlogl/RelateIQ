@@ -2,6 +2,7 @@
 title: "What to say when your partner says you hurt their feelings: the first five minutes, step by step"
 seo_title: "What to Say When Your Partner Says You Hurt Their Feelings"
 date: 2026-11-25
+updated: 2026-11-26
 description: "What to say when your partner says you hurt their feelings: a 6-step guide for the first five minutes, with exact words, and what to do if you didn't mean it."
 checker: apology
 tags: what to say when you hurt your partner's feelings, partner hurt feelings

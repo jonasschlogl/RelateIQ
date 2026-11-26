@@ -2,7 +2,7 @@
 title: "Questions to ask on date night: 40 fun and deep questions for couples, plus 5 games"
 seo_title: "40 Questions to Ask on Date Night (Fun, Deep + 5 Games)"
 date: 2026-10-26
-updated: 2026-11-20
+updated: 2026-11-26
 description: "Questions to ask on date night: 40 fun and deep questions for couples, turned into 5 easy games, from the question jar to hot seat. Pick one and start tonight."
 tags: date night questions, questions for couples
 ---

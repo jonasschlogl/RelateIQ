@@ -2,7 +2,7 @@
 title: "Am I codependent or just a caring partner? How to tell the difference"
 seo_title: "Am I Codependent or Just Caring? 3 Simple Tests"
 date: 2026-11-18
-updated: 2026-11-20
+updated: 2026-11-26
 description: "Am I codependent or just a caring partner? Three simple tests, what research on codependency and self-silencing shows, and what to say when you speak up."
 tags: codependent relationship, people pleasing
 ---

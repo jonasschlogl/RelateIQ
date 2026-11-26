@@ -4,7 +4,7 @@ seo_title: "What Is My Attachment Style? The 4 Types Explained"
 date: 2026-10-08
 description: "What is my attachment style? How secure, anxious, avoidant and fearful-avoidant attachment show up in dating, what research found and how to feel more secure."
 tags: attachment styles, anxious attachment
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 You've probably seen the terms before: anxious attachment, avoidant attachment, secure attachment. They show up in memes, podcasts and TikTok videos about why someone "left you on read". Underneath the internet version there are decades of real research, and it's more useful and more hopeful than most of the posts suggest.
 

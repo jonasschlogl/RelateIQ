@@ -2,6 +2,7 @@
 title: "What to text after a fight: 20 messages for every moment, from cooling off to making up"
 seo_title: "What to Text After a Fight: 20 Messages That Actually Help"
 date: 2026-11-24
+updated: 2026-11-26
 description: "What to text after a fight with your boyfriend, girlfriend or partner: 20 messages sorted by situation, when to send them, and what research says text can't do."
 checker: fight
 tags: what to text after a fight, text after an argument

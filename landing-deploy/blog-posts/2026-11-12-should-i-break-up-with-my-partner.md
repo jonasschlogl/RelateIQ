@@ -4,7 +4,7 @@ seo_title: "How Do You Know When to Break Up? 10 Honest Questions"
 date: 2026-11-12
 description: "How do you know when to break up? 10 honest questions to help you decide, and what research on more than 37,000 people says about why relationships end."
 tags: should I break up, relationship doubts
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 Some days you're sure you want to leave. Other days you remember why you fell for them and can't imagine life without them. You've made mental lists, asked friends, maybe typed "should I break up with my partner" into Google at 2am.
 

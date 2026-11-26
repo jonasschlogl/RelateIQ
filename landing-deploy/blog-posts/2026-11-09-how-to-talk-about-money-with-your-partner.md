@@ -2,7 +2,7 @@
 title: "How to talk about money in a relationship without fighting: a 'money date' agenda and what to say in 4 tricky situations"
 seo_title: "How to Talk About Money in a Relationship Without Fighting"
 date: 2026-11-09
-updated: 2026-11-20
+updated: 2026-11-26
 description: "How to talk about money in a relationship without fighting: a 4-round money date agenda, what research says about joint accounts, and calm words for debt."
 tags: talk about money with your partner, money and relationships
 ---

@@ -5,7 +5,7 @@ date: 2026-10-03
 description: "Why do we keep having the same fight? Chores, time, money, closeness: what usually sits underneath the 5 fights couples repeat, and how to break the loop."
 checker: passive
 tags: relationship problems, relationship tips
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 If you and your partner keep having the same argument, you're not doing something uniquely wrong. According to the Gottman Institute, 69% of relationship conflicts are about "perpetual problems": lasting differences in personality, needs and habits that may never fully go away. What separates couples who do well from couples who struggle is mostly how they handle those differences, not whether they have them.
 

@@ -5,7 +5,7 @@ date: 2026-10-08
 description: "How to apologize to your partner sincerely: a 5-step structure based on apology research, real example apologies, and the phrases that make it worse."
 checker: apology
 tags: how to apologize to your partner, apology
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 Most of us know how to say "sorry." Fewer of us know how to apologize in a way that makes the other person feel heard. A rushed "sorry, okay?" can leave your partner feeling worse than before, and a long, defensive explanation can do the same. Then you're having a second argument about the apology, on top of the first one. If you're the one waiting for an apology and every attempt to talk turns into a defence, see [why some partners get defensive, and what to say instead](/blog/my-boyfriend-gets-defensive/).
 

@@ -2,7 +2,7 @@
 title: "How to get over trust issues in a relationship: why doubt keeps coming back, and what actually helps"
 seo_title: "How to Get Over Trust Issues in a Relationship"
 date: 2026-11-15
-updated: 2026-11-19
+updated: 2026-11-26
 description: "How to get over trust issues in a relationship: why constant reassurance backfires, a self-check for past vs present hurt, and what actually rebuilds trust."
 tags: trust issues in a relationship, rebuilding trust
 ---

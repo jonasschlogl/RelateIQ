@@ -2,6 +2,7 @@
 title: "How to keep the spark alive in a long-term relationship: find which spark is fading, then fix that one"
 seo_title: "How to Keep the Spark Alive in a Long-Term Relationship"
 date: 2026-11-20
+updated: 2026-11-26
 description: How to keep the spark alive in a long-term relationship: a 2-minute check to find which of 4 sparks is fading, what research says helps, and a 4-week plan.
 tags: keep the spark alive, long-term relationship
 ---

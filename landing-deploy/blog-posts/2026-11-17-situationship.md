@@ -2,7 +2,7 @@
 title: "Should I stay in a situationship? How to decide whether to stay, define it or walk away"
 seo_title: "Should I Stay in a Situationship? How to Decide"
 date: 2026-11-17
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Should I stay in a situationship? What new research found, a simple guide to decide whether to stay, define it or walk away, and the exact words for each."
 tags: situationship, undefined relationship
 ---

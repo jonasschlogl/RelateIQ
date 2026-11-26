@@ -4,7 +4,7 @@ seo_title: "Is My Relationship Worth Saving? How to Tell and Fix It"
 date: 2026-10-04
 description: "Is my relationship worth saving? How to tell if it can be fixed, then a calm 6-step plan from stopping the escalation to rebuilding closeness."
 tags: how to fix a relationship, relationship problems
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 When a relationship feels broken, the first instinct is to fix everything at once. Have the big talk, settle every old argument, change how you both behave. It almost always backfires. You end up arguing about the whole relationship instead of one thing you could actually change, and both of you walk away more hopeless than before.
 

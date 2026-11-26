@@ -2,7 +2,7 @@
 title: "Am I being breadcrumbed? 9 real questions about being kept on the hook, answered"
 seo_title: "Am I Being Breadcrumbed? 9 Questions, Answered"
 date: 2026-11-10
-updated: 2026-11-20
+updated: 2026-11-26
 description: "Am I being breadcrumbed? How to tell it from someone who's just busy, why it hurts more than a clear no, and what to say. 9 real questions, answered."
 tags: breadcrumbing, mixed signals
 ---

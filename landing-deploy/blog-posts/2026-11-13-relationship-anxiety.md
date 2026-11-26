@@ -2,7 +2,7 @@
 title: "Relationship anxiety for no reason: why it shows up when things are good, and what to do in the next 2 minutes"
 seo_title: "Relationship Anxiety for No Reason? What to Do Right Now"
 date: 2026-11-13
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Relationship anxiety for no reason, even when things are good? Why it happens, what to do in the next 2 minutes, and what helps over the next month."
 tags: relationship anxiety, attachment
 ---

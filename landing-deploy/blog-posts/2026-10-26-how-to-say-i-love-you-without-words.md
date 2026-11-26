@@ -2,7 +2,7 @@
 title: "How to show love without saying it: 25 small ways, for every kind of day"
 seo_title: "25 Ways to Show Love Without Saying It"
 date: 2026-10-26
-updated: 2026-11-20
+updated: 2026-11-26
 description: "How to show love without saying it: 25 small gestures for busy mornings, hard days and long distance, and what research shows people actually notice."
 tags: show love, love languages
 ---

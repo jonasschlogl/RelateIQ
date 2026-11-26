@@ -4,7 +4,7 @@ seo_title: "How to Stop Overthinking in a Relationship: 7 Steps"
 date: 2026-10-08
 description: "How to stop overthinking in a relationship: why the what-if spiral feels so convincing and 7 practical steps to break the loop and talk to your partner."
 tags: overthinking in a relationship, relationship anxiety
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 It's 11 pm. Your partner hasn't replied for three hours. You reread the last message, check if they were online, and by midnight your mind has written a whole story about how they're losing interest.
 

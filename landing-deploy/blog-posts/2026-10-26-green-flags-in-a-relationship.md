@@ -2,7 +2,7 @@
 title: "Relationship green flags checklist: 9 signs you've found a good partner, and how to spot each one"
 seo_title: "Green Flags Checklist: 9 Signs of a Healthy Partner"
 date: 2026-10-26
-updated: 2026-11-19
+updated: 2026-11-26
 description: "A relationship green flags checklist: 9 signs of a good partner, a simple way to spot each one in real life, and what research says matters most."
 tags: green flags in a relationship, healthy relationship
 ---

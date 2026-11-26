@@ -2,7 +2,7 @@
 title: "How to help your partner with stress: what to say, what to do and what to skip"
 seo_title: "How to Help Your Partner With Stress: What to Say and Do"
 date: 2026-11-12
-updated: 2026-11-19
+updated: 2026-11-26
 description: "How to help your partner with stress: what to say for work stress, family pressure and burnout, what to skip, and why the best support often goes unnoticed."
 tags: support your partner when stressed, stress in relationships
 ---

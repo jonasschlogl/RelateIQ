@@ -2,7 +2,7 @@
 title: "Is jealousy normal in a relationship? 7 myths that make it worse, and what research shows"
 seo_title: "Is Jealousy Normal in a Relationship? 7 Myths, Debunked"
 date: 2026-11-16
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Is jealousy normal in a relationship? Some is. 7 myths that make it worse, checked against research on suspicion and phone checking, and what calms it."
 tags: jealousy in a relationship, insecurity
 ---

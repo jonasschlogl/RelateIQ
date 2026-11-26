@@ -2,7 +2,7 @@
 title: "Is my relationship toxic? A 3-level check for unhealthy, toxic and controlling"
 seo_title: "Is My Relationship Toxic? A 3-Level Self-Check"
 date: 2026-11-16
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Is my relationship toxic? A 3-level self-check: unhealthy but fixable, toxic patterns, or coercive control, with clear signs and safe next steps for each."
 tags: signs of a toxic relationship, red flags
 ---

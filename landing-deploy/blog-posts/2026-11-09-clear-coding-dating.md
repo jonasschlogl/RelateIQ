@@ -2,7 +2,7 @@
 title: "Clear coding in dating: 20 ready-to-send messages for saying what you want"
 seo_title: "Clear Coding in Dating: 20 Ready-to-Send Messages"
 date: 2026-11-09
-updated: 2026-11-20
+updated: 2026-11-26
 description: "Clear coding in dating means saying what you want, kindly and early. 20 ready-to-send messages for every stage, from the first chat to \"what are we?\""
 checker: tone
 tags: clear coding, mixed signals

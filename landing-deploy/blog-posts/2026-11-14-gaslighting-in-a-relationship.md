@@ -2,7 +2,7 @@
 title: "Is my partner gaslighting me, or is it just a disagreement? 5 questions that tell them apart"
 seo_title: "Is My Partner Gaslighting Me or Is It a Disagreement?"
 date: 2026-11-14
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Is my partner gaslighting me, or is it just a disagreement? 5 questions that tell them apart, what new research found, and what to do if it is gaslighting."
 tags: gaslighting in a relationship, emotional manipulation
 ---

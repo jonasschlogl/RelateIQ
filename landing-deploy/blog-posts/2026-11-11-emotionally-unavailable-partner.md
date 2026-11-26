@@ -2,7 +2,7 @@
 title: "Why is my partner emotionally unavailable? The 5 different reasons behind it, and what helps with each"
 seo_title: "Why Is My Partner Emotionally Unavailable? 5 Reasons"
 date: 2026-11-11
-updated: 2026-11-19
+updated: 2026-11-26
 description: "Why is my partner emotionally unavailable? It isn't always avoidance. 5 different reasons people shut down, how to tell which one it is, and what helps."
 tags: emotionally unavailable, attachment
 ---

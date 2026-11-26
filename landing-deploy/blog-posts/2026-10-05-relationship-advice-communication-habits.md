@@ -5,7 +5,7 @@ date: 2026-10-05
 description: "How to communicate better in a relationship: 7 research-based habits that change how you argue, from softer starts to taking breaks, with lines to use tonight."
 checker: tone
 tags: relationship advice, communication
-updated: 2026-11-19
+updated: 2026-11-26
 ---
 Most relationship advice sounds obvious until you're in the middle of an argument. Then the obvious parts (stay calm, listen, don't say the thing you'll regret) turn out to be the hardest. The good news is that communicating well is a skill, and skills improve through small, specific habits rather than big resolutions.
 
