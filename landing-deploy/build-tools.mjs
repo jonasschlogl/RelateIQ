@@ -223,10 +223,6 @@ ${body}
           </div>
         </div>
         <aside class="article-aside">
-          <nav class="toc" aria-label="On this page">
-            <p class="toc-title">On this page</p>
-            <ol>${toc.map((h) => `<li><a href="#${slugify(h)}">${esc(h)}</a></li>`).join("")}</ol>
-          </nav>
           ${adCard(t.kind)}
           <nav class="toc" aria-label="More free tools">
             <p class="toc-title">More free tools</p>
