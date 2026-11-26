@@ -45,12 +45,12 @@ const I18N_DIR = path.join(HERE, "i18n");
 
 const INSTAGRAM = "https://www.instagram.com/relationshipai_/";
 
-import { page as shellPage } from "./shell.mjs";
+import { page as shellPage, checker as checkerWidget } from "./shell.mjs";
 const CONFIG = {
   domain: "relationshipaiadvice.com",
   siteName: "RelationshipAI",
   umami: "62eda2bd-4092-439e-9668-755fa2ca5aea",
-  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "start/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/", "quiz/", "quiz/attachment-style/", "quiz/love-language/", "quiz/fight-style/", "quiz/overthinker/", "quiz/relationship-needs/", "quiz/comfort-style/", "quiz/apology-style/"],
+  staticPages: ["", "partner-practice/", "coach-chat/", "message-check/", "other-tools/", "about/", "contact/", "pricing/", "faq/", "early-access/", "start/", "method/", "privacy/", "terms/", "blog/topic/attachment-styles/", "blog/topic/communication/", "blog/topic/conflict/", "blog/topic/repairing-a-relationship/", "blog/topic/overthinking/", "quiz/", "quiz/attachment-style/", "quiz/love-language/", "quiz/fight-style/", "quiz/overthinker/", "quiz/relationship-needs/", "quiz/comfort-style/", "quiz/apology-style/", "tools/", "tools/text-tone-checker/", "tools/apology-text-checker/", "tools/passive-aggressive-text-checker/"],
   cssVersion: "26",
   jsVersion: "21",
 };
@@ -353,6 +353,14 @@ const FIG_ALTS = (() => { try { return JSON.parse(fs.readFileSync(path.join(POST
 const figAlt = (key, n) => String(FIG_ALTS[`${key}-${n}`] || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const figure = (key, n) => `<figure class="article-fig"><img src="${imgFile(key, n)}" alt="${figAlt(key, n)}" width="800" height="450" loading="lazy" decoding="async" /></figure>`;
 // put illustration 2 and 3 before the headings at one third and two thirds of the article
+// free checker widget (English posts with `checker: <tone|apology|fight|passive>`), placed before the first H2
+function withChecker(ctx, p, html) {
+  if (!p.checker || ctx.prefix) return html;
+  html = html.replace(/<aside class="tool-card tc-check">[\s\S]*?<\/aside>\n?/g, ""); // the live widget replaces the static Message check card
+  const i = html.search(/<h2[\s>]/);
+  if (i < 0) return html;
+  return html.slice(0, i) + checkerWidget(p.checker.trim(), `blog-${p.checker.trim()}`) + "\n" + html.slice(i);
+}
 function withImages(p) {
   if (!hasImgs(p.key)) return p.html;
   const at = [...p.html.matchAll(/<h2[\s>]/g)].map((m) => m.index);
@@ -388,7 +396,7 @@ function loadPosts(dir, englishByKey) {
       const tags = (meta.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
       const description = meta.description || body.replace(/[#*_>`\[\]()-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 155);
       const updated = /^\d{4}-\d{2}-\d{2}$/.test(meta.updated || "") ? meta.updated : null;
-      posts.push({ key, slug, title: meta.title, seoTitle: meta.seo_title || null, date, updated, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
+      posts.push({ key, slug, title: meta.title, seoTitle: meta.seo_title || null, checker: meta.checker || null, date, updated, description, tags, html, minutes: Math.max(1, Math.round(words / 210)) });
     } catch (e) {
       console.warn(`WARNING: skipped ${dir}/${file}: ${e.message}`);
     }
@@ -705,7 +713,7 @@ function postPage(ctx, p0, all) {
           ${toc.length > 2 ? `<details class="toc-mobile"><summary>${T(EN.tocTitle)}</summary><ol>${tocList}</ol></details>` : ""}
           ${hasImgs(p.key) ? `<figure class="article-fig article-hero"><img src="${imgFile(p.key, 1)}" alt="${figAlt(p.key, 1) || attr(p.title)}" width="800" height="450" decoding="async" fetchpriority="high" /></figure>` : ""}
           <div class="article-body">
-${withImages(p)}
+${withChecker(ctx, p, withImages(p))}
           </div>
           ${authorBox(ctx, avatar)}
           ${methodBox(ctx, p)}

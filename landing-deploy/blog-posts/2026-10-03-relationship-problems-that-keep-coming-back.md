@@ -3,6 +3,7 @@ title: 5 relationship problems that keep coming back (and what's usually underne
 seo_title: "5 Relationship Problems That Keep Coming Back (and Why)"
 date: 2026-10-03
 description: "Relationship problems that keep coming back: chores, time, money, closeness and the endless fight. What's usually underneath and how to talk about each one."
+checker: passive
 tags: relationship problems, relationship tips
 updated: 2026-11-19
 ---

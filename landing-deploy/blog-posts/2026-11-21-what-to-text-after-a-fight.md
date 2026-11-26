@@ -3,6 +3,7 @@ title: "What to text after a fight: 20 messages for every moment, from cooling o
 seo_title: "What to Text After a Fight: 20 Messages That Actually Help"
 date: 2026-11-24
 description: "What to text after a fight with your boyfriend, girlfriend or partner: 20 messages sorted by situation, when to send them, and what research says text can't do."
+checker: fight
 tags: what to text after a fight, text after an argument
 ---
 In a 2021 experiment, researchers asked 43 couples to work through a real disagreement, either face to face or by text. Both groups made about the same progress toward solving it. The difference was elsewhere: over text, couples showed fewer of the warm, positive moves that soften a fight, like humor and affection.

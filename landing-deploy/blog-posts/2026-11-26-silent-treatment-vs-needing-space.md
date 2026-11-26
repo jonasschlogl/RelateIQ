@@ -3,6 +3,7 @@ title: "Silent treatment vs needing space: 6 differences, and what to say on eit
 seo_title: "Silent Treatment vs Needing Space: 6 Ways to Tell"
 date: 2026-11-26
 description: "Silent treatment vs needing space: 6 clear differences, a side-by-side table and the words to use whether you're the one going quiet or the one left waiting."
+checker: tone
 tags: silent treatment vs needing space, silent treatment in a relationship
 ---
 Two people can go quiet after the same argument and be doing completely different things. One is walking around the block so they don't say something they'll regret. The other is making a point: you'll hear from me when you've figured out what you did.

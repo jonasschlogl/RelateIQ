@@ -63,7 +63,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/mobile-sheet.css?v=6" />
   <link rel="stylesheet" href="/css/mobile-acc.css?v=4" />
   <link rel="stylesheet" href="/css/blog-pages.css?v=10" />
-  <link rel="stylesheet" href="/css/try.css?v=7" />
+  <link rel="stylesheet" href="/css/try.css?v=8" />
   <meta name="theme-color" content="#3b2218" />${head ? "\n" + head : ""}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
@@ -80,4 +80,55 @@ ${body}
 </body>
 </html>
 `;
+}
+
+// ------------------------------------------------------------ free checker widget
+// The free Message check (no account) as an inline card, for tool pages and blog posts.
+// It talks to the public endpoint through /js/try.js; one widget per page (fixed ids).
+export const CHECKERS = {
+  tone: {
+    kicker: "Text tone checker", title: "Not sure how your text sounds?",
+    sub: "Paste it here. See how it may land and get a calmer or clearer version. Free, no sign-up, nothing saved.",
+    intro: "Paste the text you're about to send. I'll read it the way they will.",
+    examples: ["Fine. Do whatever you want.", "K.", "We need to talk."],
+  },
+  apology: {
+    kicker: "Apology text checker", title: "Check your apology before you send it",
+    sub: "Paste your sorry text. See if it sounds sincere or defensive, and get a version that owns it. Free, no sign-up.",
+    intro: "Paste your apology. I'll tell you how it may land and suggest a version that sounds like you mean it.",
+    examples: ["I'm sorry you feel that way.", "Sorry, but you overreacted too.", "I'm sorry I snapped at you last night. That wasn't fair to you."],
+  },
+  fight: {
+    kicker: "After-a-fight text check", title: "Check the first text after the fight",
+    sub: "The first message after an argument sets the tone. Paste yours and see if it opens the door or starts round two.",
+    intro: "Paste the text you want to send after the fight. I'll read it the way they will.",
+    examples: ["Are you still mad?", "Can we talk later? I hate how we left it.", "I'm not apologizing for being upset."],
+  },
+  passive: {
+    kicker: "Passive-aggressive checker", title: "Is your text passive-aggressive?",
+    sub: "Paste it in. See if it reads as calm or as a jab, which words do it, and get a version that says what you mean.",
+    intro: "Paste the text. I'll tell you if it reads as passive-aggressive and why.",
+    examples: ["Thanks for finally replying.", "No worries, I'll just do it myself.", "Per my last message..."],
+  },
+};
+export function checker(kind, where) {
+  const c = CHECKERS[kind] || CHECKERS.tone;
+  const ex = c.examples.map((e) => `<button type="button" data-ex="${esc(e)}">&ldquo;${esc(e)}&rdquo;</button>`).join("");
+  return `<div class="tw tw-in" id="try-card" data-where="${esc(where)}">
+  <div class="tw-in-head"><span class="f-tag"><b>${esc(c.kicker)}</b></span>
+    <p class="tw-in-h">${esc(c.title)}</p>
+    <p class="tw-in-sub">${esc(c.sub)}</p></div>
+  <div class="tw-ex" role="group" aria-label="Example messages"><span>Or try one</span>${ex}</div>
+  <div class="tw-scr">
+    <div class="tw-top"><span class="tw-pt"><i></i>${esc(c.kicker)}</span><span class="tw-left" id="try-left"></span></div>
+    <div class="tw-msgs" id="try-msgs" aria-live="polite"><div class="tw-b ai">${esc(c.intro)}</div></div>
+    <p class="tw-err" id="try-err" role="alert" hidden></p>
+    <div class="tw-bar">
+      <textarea id="try-draft" maxlength="800" rows="1" placeholder="Type or paste your message&hellip;" aria-label="The message you are thinking of sending"></textarea>
+      <button type="button" id="try-go" class="tw-send" aria-label="Check my message"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p class="tw-in-foot">Want it tailored to the person, with more checks? <a href="https://app.relationshipaiadvice.com/register.html?src=try-${esc(where)}" data-umami-event="try-${esc(where)}-foot">Create a free account</a></p>
+  <script defer src="/js/try.js?v=4"></script>
+</div>`;
 }

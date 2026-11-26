@@ -4,6 +4,7 @@ seo_title: "How to Rebuild Trust After a Fight: Tonight to Next Week"
 date: 2026-10-26
 updated: 2026-11-19
 description: "How to rebuild trust after a fight: what to do that night, the next morning and the week after, plus a 21-minute exercise that kept couples happier."
+checker: fight
 tags: rebuild trust, after an argument
 ---
 A bad fight can leave a strange silence afterwards. You've both said things you didn't quite mean, and now even passing the salt feels careful. The fight is over, but the trust hasn't come back yet.

@@ -72,3 +72,6 @@ console.log(`pages: ${PAGES.length + 1 + Object.keys(LEGAL).length + 3} pages wr
 
 // free quizzes (/quiz/)
 await import("./build-quiz.mjs");
+
+// free tool pages (/tools/)
+await import("./build-tools.mjs");

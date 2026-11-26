@@ -4,6 +4,7 @@ seo_title: "Clear Coding in Dating: 20 Ready-to-Send Messages"
 date: 2026-11-09
 updated: 2026-11-20
 description: "Clear coding in dating means saying what you want, kindly and early. 20 ready-to-send messages for every stage, from the first chat to \"what are we?\""
+checker: tone
 tags: clear coding, mixed signals
 ---
 Clear coding is the dating trend of simply saying what you want: "I'm looking for something serious", "I'd like to see you again", "I don't think we're a match". Tinder named it one of the defining trends for 2026 and described it as "when intentions finally come with subtitles". In its international survey of 4,000 actively dating 18 to 25 year olds, 64% said emotional honesty is what dating needs most, and 60% wanted clearer communication about intentions.

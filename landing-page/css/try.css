@@ -97,3 +97,47 @@ body.hx #try-card.tw-min::before { animation: twGlow 5s ease-in-out infinite alt
 .mo .tw-min.in .tw-ex { animation: twUp .9s cubic-bezier(.2,.8,.2,1) .35s both; }
 .mo .tw-min.in .tw-ph { animation: twRise 1.2s cubic-bezier(.2,.8,.2,1) .2s both; }
 @media (prefers-reduced-motion: reduce) { body.hx #try-card.tw-min::before, .mo .tw-min.in h2, .mo .tw-min.in h2 em, .mo .tw-min.in .tw-ex, .mo .tw-min.in .tw-ph, .tw-meter i { animation: none; } .tw-meter i { width: var(--v, 60%); } }
+
+/* Inline variant (tool pages + blog posts): one pink card, chat screen inside, no phone frame */
+body.hx #try-card.tw-in { display: block; max-width: none; margin: 30px 0 38px; padding: 26px 26px 20px; border-radius: 30px; background: #f58fab; color: #3b2218; overflow: hidden; }
+.tw-in .tw-in-head { margin-bottom: 4px; }
+body.hx .tw-in .f-tag { font-size: 12px; }
+body.hx .tw-in p.tw-in-h { font-family: "Fraunces", Georgia, serif; font-weight: 520; font-size: clamp(25px, 3.2vw, 33px); line-height: 1.08; letter-spacing: -.02em; margin: 12px 0 8px; max-width: none; opacity: 1; }
+body.hx .tw-in p.tw-in-sub { font-size: 16px; line-height: 1.5; max-width: 56ch; margin: 0; }
+.tw-in .tw-ex { margin: 16px 0 16px; }
+body.hx .tw-in .tw-scr { height: 440px; border-radius: 22px; padding: 14px 12px 12px; box-shadow: 0 18px 40px -24px rgba(59,34,24,.6); }
+.tw-in .tw-b { font-size: 14.5px; }
+.tw-in .tw-b .t { font-size: 15px; }
+.tw-in .tw-bar textarea { font-size: 15px; }
+body.hx .tw-in p.tw-in-foot { font-size: 14px; margin: 14px 2px 0; max-width: none; }
+body.hx .tw-in p.tw-in-foot a { color: #3b2218; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.article-body #try-card.tw-in p, .article-body #try-card.tw-in button { margin-top: 0; }
+@media (max-width: 640px) {
+  body.hx #try-card.tw-in { padding: 20px 16px 16px; border-radius: 24px; margin: 24px -4px 30px; }
+  body.hx .tw-in .tw-scr { height: 400px; }
+  .tw-in .tw-ex button { font-size: 13.5px; }
+}
+
+/* tool pages */
+body.hx .tl-lead { font-size: 19px; line-height: 1.55; color: #5a4036; margin: 10px 0 0; max-width: 62ch; }
+.tl-steps { counter-reset: s; list-style: none; padding: 0; margin: 18px 0 8px; display: grid; gap: 12px; }
+.tl-steps li { counter-increment: s; position: relative; padding: 14px 16px 14px 56px; background: #fff7ec; border-radius: 18px; line-height: 1.5; }
+.tl-steps li::before { content: counter(s); position: absolute; left: 14px; top: 13px; width: 30px; height: 30px; border-radius: 50%; background: #f9d98a; color: #3b2218; font-weight: 800; display: grid; place-items: center; font-size: 15px; }
+.tl-swap { display: grid; gap: 12px; margin: 18px 0 8px; }
+.tl-swap div { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tl-swap p { margin: 0 !important; padding: 12px 14px; border-radius: 16px; line-height: 1.45; font-size: 15.5px; }
+.tl-swap p small { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 800; opacity: .6; margin-bottom: 3px; }
+.tl-swap .b { background: #f6dede; } .tl-swap .g { background: #e3f1dc; }
+@media (max-width: 560px) { .tl-swap div { grid-template-columns: 1fr; } }
+.tl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; margin: 26px 0; }
+.tl-card { display: block; background: #fff7ec; border-radius: 24px; padding: 22px; text-decoration: none; color: #3b2218; transition: transform .2s, box-shadow .2s; }
+.tl-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px -20px rgba(59,34,24,.5); }
+.tl-card b { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 520; font-size: 22px; line-height: 1.15; margin: 8px 0 6px; }
+.tl-card span { font-size: 15px; line-height: 1.45; opacity: .85; }
+.tl-card i { font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: #f9d98a; border-radius: 99px; padding: 4px 10px; }
+.tl-others { list-style: none; padding: 0; margin: 10px 0 0; }
+.tl-others li { margin: 0 0 8px; }
+.tl-others a { color: #3b2218; font-weight: 600; }
+.article-body #try-card.tw-in p, .article-body #try-card.tw-in .tw-ex span { color: #3b2218; }
+.article-body #try-card.tw-in p.tw-in-h { margin-top: 12px; }
+.article-body ol.tl-steps { padding-left: 0; margin-left: 0; }

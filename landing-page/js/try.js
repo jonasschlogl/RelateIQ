@@ -4,7 +4,8 @@
   if (!card) return;
   var local = /^(localhost|127\.)/.test(location.hostname);
   var API = local ? "http://localhost:3010" : "https://app.relationshipaiadvice.com";
-  var REG = "https://app.relationshipaiadvice.com/register.html?src=landing-try";
+  var WHERE = card.getAttribute("data-where") || "landing";
+  var REG = "https://app.relationshipaiadvice.com/register.html?src=" + (WHERE === "landing" ? "landing-try" : "try-" + WHERE);
   var draft = document.getElementById("try-draft"), go = document.getElementById("try-go"), err = document.getElementById("try-err"),
       msgs = document.getElementById("try-msgs"), left = document.getElementById("try-left");
   var busy = false, remaining = null;
@@ -32,13 +33,13 @@
   function ctaBubble(title, text, where) {
     var box = el("div", "tw-cta"); box.appendChild(el("b", "", title)); box.appendChild(el("span", "", text));
     var a = el("a", "", "Create free account"); a.href = REG;
-    a.addEventListener("click", function () { beacon("try_cta_click", where); umami("try-landing-cta-" + where); });
+    a.addEventListener("click", function () { beacon("try_cta_click", WHERE + "-" + where); umami("try-" + WHERE + "-cta-" + where); });
     box.appendChild(a); return box;
   }
   function autosize() { draft.style.height = "auto"; draft.style.height = Math.min(draft.scrollHeight, 96) + "px"; }
 
   var seen = false;
-  function onView() { if (seen) return; seen = true; beacon("try_view", "landing"); }
+  function onView() { if (seen) return; seen = true; beacon("try_view", WHERE); umami("try-" + WHERE + "-view"); }
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { onView(); o.disconnect(); } }); }, { threshold: 0.3 }).observe(card);
   } else onView();
@@ -72,7 +73,7 @@
     if (busy) return;
     text = (text || draft.value).trim();
     if (text.length < 3) { setErr("Paste the message you're thinking of sending."); return; }
-    setErr(""); busy = true; go.disabled = true; umami("try-landing-check");
+    setErr(""); busy = true; go.disabled = true; umami("try-" + WHERE + "-check");
     card.classList.add("used");
     add(el("div", "tw-b me", text)); draft.value = ""; autosize();
     var typing = el("div", "tw-b ai"); var dots = el("span", "tw-dots"); dots.innerHTML = "<i></i><i></i><i></i>"; typing.appendChild(dots); add(typing);
