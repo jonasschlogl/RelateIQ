@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Analytics off for this browser</title>
+<style>:root{color-scheme:light}body{margin:0;background:#fff7ec;color:#3b2218;font:17px/1.5 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;padding:16px;box-sizing:border-box}main{max-width:420px;text-align:center}h1{font:600 28px Georgia,serif;margin:0 0 10px}a{color:#3b2218;font-weight:700}</style></head>
+<body><main><h1 id="h">Turning analytics off…</h1><p id="p">One moment.</p></main>
+<script>
+(function () {
+  var on = /[?&]on\b/.test(location.search);
+  try { if (on) localStorage.removeItem("umami.disabled"); else localStorage.setItem("umami.disabled", "1"); } catch (e) {}
+  var back = /[?&]done\b/.test(location.search);
+  if (!back) { location.replace("https://app.relationshipaiadvice.com/notrack.html" + (on ? "?on" : "")); return; }
+  document.getElementById("h").textContent = on ? "Analytics are on again" : "Your visits are no longer counted";
+  document.getElementById("p").innerHTML = (on ? "Umami counts this browser again, on the site and in the app." : "Umami ignores this browser on the site and in the app. Do this once on every phone and computer you use.") + ' <a href="/notrack/' + (on ? "" : "?on") + '">' + (on ? "Turn off again" : "Undo") + "</a>";
+})();
+</script></body></html>

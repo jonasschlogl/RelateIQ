@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Analytics</title></head>
+<body><script>
+(function () {
+  var on = /[?&]on\b/.test(location.search);
+  try { if (on) localStorage.removeItem("umami.disabled"); else localStorage.setItem("umami.disabled", "1"); } catch (e) {}
+  location.replace("https://relationshipaiadvice.com/notrack/?done" + (on ? "&on" : ""));
+})();
+</script></body></html>
