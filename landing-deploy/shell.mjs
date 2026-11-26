@@ -63,7 +63,7 @@ export function page({ title, description, path: p, type = "website", body, json
   <link rel="stylesheet" href="/css/mobile-sheet.css?v=6" />
   <link rel="stylesheet" href="/css/mobile-acc.css?v=4" />
   <link rel="stylesheet" href="/css/blog-pages.css?v=10" />
-  <link rel="stylesheet" href="/css/try.css?v=8" />
+  <link rel="stylesheet" href="/css/try.css?v=9" />
   <meta name="theme-color" content="#3b2218" />${head ? "\n" + head : ""}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="62eda2bd-4092-439e-9668-755fa2ca5aea"></script>
 ${jsonld ? `  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>\n` : ""}</head>
@@ -128,7 +128,7 @@ export function checker(kind, where) {
       <button type="button" id="try-go" class="tw-send" aria-label="Check my message"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
-  <p class="tw-in-foot">Want it tailored to the person, with more checks? <a href="https://app.relationshipaiadvice.com/register.html?src=try-${esc(where)}" data-umami-event="try-${esc(where)}-foot">Create a free account</a></p>
-  <script defer src="/js/try.js?v=5"></script>
+  <p class="tw-in-foot">The full check, with their likely reply and a tip, is in the app. <a href="https://app.relationshipaiadvice.com/register.html?src=try-${esc(where)}" data-umami-event="try-${esc(where)}-foot">Create a free account</a></p>
+  <script defer src="/js/try.js?v=6"></script>
 </div>`;
 }

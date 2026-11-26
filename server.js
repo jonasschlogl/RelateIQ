@@ -3726,7 +3726,7 @@ app.post("/api/events", (req, res) => {
 // prompt, the fast model, two rewrites, nothing stored. Limited per IP per day
 // and globally per day so it cannot be used to run up the AI bill.
 // ---------------------------------------------------------------------------
-const TRY_PER_IP_PER_DAY = Number(process.env.TRY_PER_IP_PER_DAY) || 2;
+const TRY_PER_IP_PER_DAY = Number(process.env.TRY_PER_IP_PER_DAY) || 1;
 const TRY_GLOBAL_PER_DAY = Number(process.env.TRY_GLOBAL_PER_DAY) || 300;
 const tryState = { day: "", global: 0, ips: new Map() };
 function tryRoll() {
@@ -3764,14 +3764,19 @@ const TRY_MODES = {
     checks: ["Says the real feeling out loud", "Makes a clear request", "No sarcasm or pointed thanks", "No guilt-trip", "Can't easily be read as a jab"],
   },
 };
-const tryModePrompt = (m) => `
+// full = in the app (every plan): checklist, subtext, likely reply and tip.
+// teaser = free public tools: checklist and subtext only; the rest is shown locked and lives in the app.
+const tryModePrompt = (m, full) => `
 
 FOCUS for this check: ${m.focus}
 Also add these keys to the same JSON object:
 "subtext": "<what the other person is likely to hear between the lines, 1 short sentence in their voice, e.g. 'You're still blaming me.'>",
+"checks": [{"label": "<label exactly as given>", "ok": <true|false>, "note": "<max 12 words: why, pointing at their words>"}] for exactly these labels in this order: ${JSON.stringify(m.checks)} (translate the labels and notes into the language of the draft)${full ? `,
 "reply": "<the reply they would most likely send back to the ORIGINAL draft, 1 short realistic text message>",
-"checks": [{"label": "<label exactly as given>", "ok": <true|false>, "note": "<max 12 words: why, pointing at their words>"}] for exactly these labels in this order: ${JSON.stringify(m.checks)} (translate the labels and notes into the language of the draft),
-"tip": "<one concrete, specific tip for this exact situation, max 30 words, e.g. whether to send it now, wait, or say it in person>"`;
+"tip": "<one concrete, specific tip for this exact situation, max 30 words, e.g. whether to send it now, wait, or say it in person>"` : ""}`;
+const modeChecks = (raw, m) => (Array.isArray(raw.checks) ? raw.checks : []).slice(0, m.checks.length)
+  .map((c) => ({ label: asStr(c?.label, 80), ok: c?.ok === true || c?.ok === "true", note: asStr(c?.note, 140) }))
+  .filter((c) => c.label);
 
 app.get("/api/public/message-check", (req, res) => {
   tryRoll();
@@ -3795,11 +3800,11 @@ app.post("/api/public/message-check", async (req, res) => {
     tryState.global += 1;
     tryState.ips.set(ip, (tryState.ips.get(ip) || 0) + 1);
     const mode = Object.prototype.hasOwnProperty.call(TRY_MODES, b.mode) ? TRY_MODES[b.mode] : null;
-    const labels = mode ? mode.labels : ["Calmer", "More direct"];
+    const labels = mode ? mode.labels.slice(0, 1) : ["Calmer", "More direct"];
     let raw;
     try {
       raw = await aiJson(
-        MESSAGE_CHECK_PROMPT + (mode ? tryModePrompt(mode) : ""),
+        MESSAGE_CHECK_PROMPT + (mode ? tryModePrompt(mode, false) : ""),
         [`Version labels to produce, in order: ${labels.join(", ")}`, `The message they are thinking of sending:\n"""\n${draft}\n"""`].join("\n\n"),
         0.6,
         STANDARD_MODEL
@@ -3821,11 +3826,8 @@ app.post("/api/public/message-check", async (req, res) => {
     const out = { read: asStr(raw.read, 400), risk, flags: asList(raw.flags, 3, 200), versions, remaining: tryLeft(ip) };
     if (mode) {
       out.subtext = asStr(raw.subtext, 200);
-      out.reply = asStr(raw.reply, 240);
-      out.tip = asStr(raw.tip, 260);
-      out.checks = (Array.isArray(raw.checks) ? raw.checks : []).slice(0, mode.checks.length)
-        .map((c) => ({ label: asStr(c?.label, 80), ok: c?.ok === true || c?.ok === "true", note: asStr(c?.note, 140) }))
-        .filter((c) => c.label);
+      out.checks = modeChecks(raw, mode);
+      out.locked = { versionLabel: mode.labels[1] }; // shown blurred: second version, likely reply, tip
     }
     res.json(out);
   } catch (err) {
@@ -4194,12 +4196,13 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
     if (isOverDailyLimit(user, res, { skipFreeDaily: user.plan === "free" })) return;
 
     const labels = premium ? ["Calmer", "More direct", "Warmer"] : ["Calmer", "More direct"];
+    const mcMode = TRY_MODES[Object.prototype.hasOwnProperty.call(TRY_MODES, b.mode) ? b.mode : "tone"];
     const partner = premium && b.partnerProfileId ? req.db.partnerProfiles.find((p) => p.id === b.partnerProfileId && p.userId === user.id) : null;
     const partnerBlock = partner ? buildPartnerContextBlock(partner) : "";
     const playbook = premium ? buildPlaybookContext(user.id) : "";
 
     const raw = await aiJson(
-      MESSAGE_CHECK_PROMPT,
+      MESSAGE_CHECK_PROMPT + tryModePrompt(mcMode, true),
       [
         `Version labels to produce, in order: ${labels.join(", ")}`,
         partner ? `The message is for: ${partner.name}` : "",
@@ -4230,6 +4233,10 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
       risk,
       flags: asList(raw.flags, 3, 200),
       versions,
+      subtext: asStr(raw.subtext, 200),
+      reply: asStr(raw.reply, 240),
+      tip: asStr(raw.tip, 260),
+      checks: modeChecks(raw, mcMode),
       tailored: !!(premium && (partner || playbook || user.relationshipMemory)),
       usage: messageCheckUsage(user),
     });

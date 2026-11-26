@@ -26,7 +26,7 @@ const TOOLS = [
     lead: "You know what you meant. The problem is they only get the words. Paste your text below and see how it is likely to land, before you hit send.",
     body: `
 <h2>How to use the text tone checker</h2>
-${steps(["Paste the text you are about to send, or tap one of the examples.", "Read how it is likely to come across: a risk level, what they may hear between the lines, a five-point tone checklist and the reply you would most likely get back.", "Copy a calmer or more direct version, and read one tip for your exact situation, like whether to send it now or say it in person."])}
+${steps(["Paste the text you are about to send, or tap one of the examples.", "Read how it is likely to come across: a risk level, what they may hear between the lines, and a five-point tone checklist.", "Copy a better version. With a free account you also see their likely reply, a second version and a tip for your exact situation."])}
 <p>It works for any personal message: a partner, a date, a friend, a family member. It answers in the language you write in.</p>
 
 <h2>Why texts get misread so often</h2>
@@ -55,7 +55,7 @@ ${swap([
 
 <h2>Quick answers</h2>
 <h3>Is the text tone checker free?</h3>
-<p>Yes. You can check a couple of messages a day without an account. A free account gives you more checks and versions tailored to the person you are writing to.</p>
+<p>Yes. You get one free check a day without an account. A free account adds their likely reply, a second version and a tip for your situation.</p>
 <h3>Is my message saved?</h3>
 <p>No. The text you paste is not stored. Only a usage counter is kept, so the free checks can be limited per day.</p>
 <h3>How is this different from Grammarly's tone detector?</h3>
@@ -71,7 +71,7 @@ ${swap([
 </ul>`,
     sources: ["kruger", "klin"],
     faq: [
-      ["Is the text tone checker free?", "Yes. You can check a couple of messages a day without an account. A free account gives you more checks and versions tailored to the person you are writing to."],
+      ["Is the text tone checker free?", "Yes. You get one free check a day without an account. A free account adds their likely reply, a second version and a tip for your situation."],
       ["Is my message saved?", "No. The text you paste is not stored. Only a usage counter is kept, so the free checks can be limited per day."],
       ["How is this different from Grammarly's tone detector?", "Grammarly's tone detector is a general writing tool, used mostly for work and school. This checker is built for personal messages: it reads how a text may make the other person feel, and how they might react."],
       ["Does it work in other languages?", "Yes. Write in your language and the read and the new versions come back in the same language."],
@@ -86,7 +86,7 @@ ${swap([
     lead: "Most apology texts fail on one word: \"but\". Paste yours below, to your girlfriend, boyfriend or anyone else, and see if it sounds sincere before you send it.",
     body: `
 <h2>How to use the apology text checker</h2>
-${steps(["Paste your apology as you would send it, or start from one of the examples.", "See how it is likely to land, checked against the six parts research links to apologies that work, plus what they may hear between the lines and how they would likely reply.", "Copy a version that keeps your words but takes clear responsibility."])}
+${steps(["Paste your apology as you would send it, or start from one of the examples.", "See how it is likely to land, checked against the six parts research links to apologies that work, plus what they may hear between the lines.", "Copy a version that keeps your words but takes clear responsibility. A free account adds their likely reply, a second version and a tip."])}
 
 <h2>What makes an apology work, according to research</h2>
 <p>Researchers at Ohio State University, led by Roy Lewicki, tested six parts of an apology with 755 people: expressing regret, explaining what went wrong, acknowledging responsibility, declaring repentance, offering to repair, and asking for forgiveness.</p>
@@ -110,7 +110,7 @@ ${swap([
 <h3>Should I apologize over text or in person?</h3>
 <p>For small things, a text is fine. For something that really hurt, use a text to say you are sorry and ask for a time to talk, then apologize in person.</p>
 <h3>Is the apology checker free and private?</h3>
-<p>Yes. A couple of checks a day are free without an account, and the text you paste is not saved.</p>
+<p>Yes. One check a day is free without an account, and the text you paste is not saved. A free account adds their likely reply, a second version and a tip.</p>
 
 <h2>Read next</h2>
 <ul class="tl-others">
@@ -122,7 +122,7 @@ ${swap([
     faq: [
       ["How do I apologize over text to my girlfriend or boyfriend?", "Keep it short, name what you did, take responsibility without \"but\", and offer something concrete, like talking tonight. Avoid long explanations in the first message."],
       ["Should I apologize over text or in person?", "For small things, a text is fine. For something that really hurt, use a text to say you are sorry and ask for a time to talk, then apologize in person."],
-      ["Is the apology checker free and private?", "Yes. A couple of checks a day are free without an account, and the text you paste is not saved."],
+      ["Is the apology checker free and private?", "Yes. One check a day is free without an account, and the text you paste is not saved. A free account adds their likely reply, a second version and a tip."],
     ],
   },
   {
@@ -134,7 +134,7 @@ ${swap([
     lead: "Passive-aggressive texts usually are not planned. You are annoyed, you try to sound fine, and it leaks out anyway. Paste your message and see how it reads.",
     body: `
 <h2>How to use the passive-aggressive checker</h2>
-${steps(["Paste the message, or try one of the examples.", "See whether it reads as calm or as a jab, which words tip it over, what they may hear between the lines and how they would likely reply.", "Copy a version that says the real thing directly and kindly."])}
+${steps(["Paste the message, or try one of the examples.", "See whether it reads as calm or as a jab, which words tip it over and what they may hear between the lines.", "Copy a version that says the real thing directly and kindly. A free account adds their likely reply, a second version and a tip."])}
 
 <h2>Common passive-aggressive phrases, and what to say instead</h2>
 ${swap([
@@ -159,7 +159,7 @@ ${swap([
 <h3>Is "K" or "Fine." passive-aggressive?</h3>
 <p>Often it is read that way, especially in a tense moment, even if you did not mean it. A few more words, or an exclamation mark, usually fixes it.</p>
 <h3>Is the checker free?</h3>
-<p>Yes. A couple of checks a day are free without an account, and the text you paste is not saved.</p>
+<p>Yes. One check a day is free without an account, and the text you paste is not saved. A free account adds their likely reply, a second version and a tip.</p>
 
 <h2>Read next</h2>
 <ul class="tl-others">
@@ -171,7 +171,7 @@ ${swap([
     faq: [
       ["What makes a text passive-aggressive?", "A text is passive-aggressive when it hides annoyance or criticism inside a polite or neutral sentence, for example \"Thanks for finally replying\". The other person feels the jab but can't easily respond to it."],
       ["Is \"K\" or \"Fine.\" passive-aggressive?", "Often it is read that way, especially in a tense moment, even if you did not mean it. A few more words, or an exclamation mark, usually fixes it."],
-      ["Is the checker free?", "Yes. A couple of checks a day are free without an account, and the text you paste is not saved."],
+      ["Is the checker free?", "Yes. One check a day is free without an account, and the text you paste is not saved. A free account adds their likely reply, a second version and a tip."],
     ],
   },
 ];

@@ -65,7 +65,6 @@
       d.checks.forEach(function (c) { var li = el("li", c.ok ? "ok" : "no"); li.appendChild(el("b", "", c.label)); if (c.note) li.appendChild(el("span", "", c.note)); cl.appendChild(li); });
       ck.appendChild(cl); add(ck);
     }
-    if (d.reply) { var rp = el("div", "tw-b them"); rp.appendChild(el("small", "", "Their likely reply")); rp.appendChild(el("p", "t", d.reply)); add(rp); }
     d.versions.forEach(function (v, i) {
       var b = el("div", "tw-b note" + (i ? " rose" : "")), head = el("div", "tw-head");
       head.appendChild(el("small", "", v.label));
@@ -73,11 +72,30 @@
       cp.addEventListener("click", function () { try { navigator.clipboard.writeText(v.text).then(function () { cp.textContent = "Copied"; setTimeout(function () { cp.textContent = "Copy"; }, 1500); }); } catch (e) {} });
       head.appendChild(cp); b.appendChild(head); b.appendChild(el("p", "t", v.text)); add(b);
     });
-    if (d.tip) { var tp = el("div", "tw-b tip"); tp.appendChild(el("small", "", "Tip")); tp.appendChild(el("p", "t", d.tip)); add(tp); }
+    if (d.locked) { renderLocked(d.locked); return; }
     var lock = el("div", "tw-b lock"); lock.appendChild(el("small", "", "Tailored to them · free account"));
     lock.appendChild(el("p", "t", "Say who it is for and get a version that fits how they react.")); add(lock);
     add(ctaBubble("Want this every time?", "Create a free account (no card): more checks, a coach that remembers your story, and a place to rehearse the hard talk.", "after"));
     msgs.scrollTop = Math.max(0, first.offsetTop - 10);
+  }
+
+  // Tool pages: the rest of the check lives in the app. Show it, blurred, so it's clear what's missing.
+  function lockedBubble(cls, label, fake) {
+    var b = el("div", "tw-b tw-locked " + cls); var h = el("div", "tw-head");
+    h.appendChild(el("small", "", label)); h.appendChild(el("span", "tw-lk", "Free account"));
+    b.appendChild(h); b.appendChild(el("p", "t tw-blur", fake)); b.setAttribute("aria-label", label + ": available with a free account");
+    return add(b);
+  }
+  function renderLocked(l) {
+    lockedBubble("note rose", l.versionLabel || "Second version", "A second version in a different tone, written so it is easy to send as it is.");
+    lockedBubble("them", "Their likely reply", "What they would most likely text back, so you know what you are walking into.");
+    lockedBubble("tip", "Tip for your situation", "Whether to send it now, wait, or say it in person, and what to do if they go quiet.");
+    var box = el("div", "tw-cta");
+    box.appendChild(el("b", "", "See the full check in the app"));
+    box.appendChild(el("span", "", "Free account, no card: their likely reply, a second version and a tip for your situation. Pro also tailors it to the person."));
+    var a = el("a", "", "Unlock with a free account"); a.href = REG;
+    a.addEventListener("click", function () { beacon("try_cta_click", WHERE + "-unlock"); umami("try-" + WHERE + "-unlock"); });
+    box.appendChild(a); add(box);
   }
 
   function submit(text) {

@@ -655,6 +655,20 @@ body { overscroll-behavior-y: none; }
 #message-page .mc-version .btn-ghost:hover { background: #4d2f22; }
 #message-page .mc-version-locked { opacity: 1; background: transparent; border: 2px dashed rgba(59, 34, 24, .4); border-left-width: 2px; box-shadow: none; }
 #message-page .mc-version-locked p { color: var(--cocoa); }
+#message-page #mc-mode { width: 100%; margin-bottom: 14px; }
+#message-page .mc-sub, #message-page .mc-checks, #message-page .mc-reply, #message-page .mc-tip { border-radius: 22px; padding: 18px 22px; color: var(--cocoa); }
+#message-page .mc-sub small, #message-page .mc-checks small, #message-page .mc-reply small, #message-page .mc-tip small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
+#message-page .mc-sub { background: #fff3e2; } #message-page .mc-sub p { font-style: italic; font-size: 17px; margin: 6px 0 0; }
+#message-page .mc-checks { background: #fff; box-shadow: 0 14px 28px -18px rgba(59, 34, 24, .45); }
+#message-page .mc-checks ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
+#message-page .mc-checks li { position: relative; padding-left: 32px; line-height: 1.4; }
+#message-page .mc-checks li::before { position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 800; }
+#message-page .mc-checks li.ok::before { content: "\2713"; background: #9fdcb0; }
+#message-page .mc-checks li.no::before { content: "\2715"; background: #f4a095; }
+#message-page .mc-checks li b { display: block; font-weight: 700; font-size: 15px; }
+#message-page .mc-checks li span { display: block; font-size: 14px; opacity: .75; }
+#message-page .mc-reply { background: #e9e4f5; } #message-page .mc-reply p { font-size: 16.5px; margin: 6px 0 0; }
+#message-page .mc-tip { background: var(--cocoa); } #message-page .mc-tip p, #message-page .mc-tip small { color: var(--cream); } #message-page .mc-tip p { font-size: 16px; margin: 6px 0 0; }
 
 .practice-more .practice-setup-field-label { font: 700 14.5px var(--font-body); margin: 4px 0 10px; }
 

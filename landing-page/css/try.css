@@ -157,3 +157,14 @@ body.hx .tl-lead { font-size: 19px; line-height: 1.55; color: #5a4036; margin: 1
 .tw-b.tip { background: #3b2218; color: #fff3e2; max-width: 100%; }
 .tw-b.tip small { opacity: .7; }
 .tw-in .tw-checks ul { font-size: 14.5px; } .tw-in .tw-checks li span { font-size: 13.5px; }
+
+/* locked parts of the free tool check (full version in the app) */
+.tw-b.tw-locked { position: relative; }
+.tw-b.tw-locked .tw-blur { filter: blur(5px); user-select: none; opacity: .8; }
+.tw-lk { font-size: 10.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: #3b2218; color: #f9d98a; border-radius: 99px; padding: 3px 9px 3px 22px; position: relative; white-space: nowrap; }
+.tw-lk::before { content: ""; position: absolute; left: 8px; top: 50%; width: 8px; height: 7px; margin-top: -2px; border-radius: 2px; background: #f9d98a; }
+.tw-lk::after { content: ""; position: absolute; left: 9px; top: 50%; width: 4px; height: 5px; margin-top: -7px; border: 1.5px solid #f9d98a; border-bottom: 0; border-radius: 4px 4px 0 0; }
+.tw-b.tip.tw-locked .tw-lk { background: #f9d98a; color: #3b2218; }
+.tw-b.tip.tw-locked .tw-lk::before { background: #3b2218; } .tw-b.tip.tw-locked .tw-lk::after { border-color: #3b2218; }
+.tw-b.them.tw-locked, .tw-b.note.tw-locked { max-width: 100%; }
+.tw-b.tip p, .tw-b.tip small { color: #fff3e2; }

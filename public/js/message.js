@@ -50,6 +50,13 @@ function renderForm() {
     <section class="dashboard-card mc-card">
       <label class="practice-setup-field-label" for="mc-draft">The message you're thinking of sending</label>
       <textarea id="mc-draft" rows="4" maxlength="1500" placeholder="e.g. You always do this. I'm tired of having to ask for everything."></textarea>
+      <label class="practice-setup-field-label" for="mc-mode">What kind of message is it?</label>
+      <select id="mc-mode">
+        <option value="tone">A normal message</option>
+        <option value="apology">An apology</option>
+        <option value="fight">The first text after a fight</option>
+        <option value="passive">Something I'm annoyed about</option>
+      </select>
       <details class="mc-theirs">
         <summary>What did they write? <span class="text-muted">(optional, helps a lot)</span></summary>
         <textarea id="mc-theirs" rows="3" maxlength="1500" placeholder="Paste their message here"></textarea>
@@ -68,6 +75,10 @@ function renderForm() {
     </ul>
     <div id="mc-result"></div>`;
 
+  try {
+    const m = new URLSearchParams(location.search).get("mode");
+    if (m && document.querySelector(`#mc-mode option[value="${m.replace(/[^a-z]/g, "")}"]`)) document.getElementById("mc-mode").value = m;
+  } catch (e) { /* ignore */ }
   document.getElementById("mc-go").addEventListener("click", runCheck);
   document.getElementById("mc-see-premium")?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -113,6 +124,7 @@ async function runCheck() {
         draft,
         theirMessage: document.getElementById("mc-theirs").value.trim(),
         partnerProfileId: document.getElementById("mc-partner")?.value || null,
+        mode: document.getElementById("mc-mode")?.value || "tone",
       }),
     });
     const data = await safeJson(res);
@@ -153,6 +165,11 @@ function renderResult(d) {
       <div class="mc-read"><span class="mc-risk mc-risk-${escapeHtml(d.risk)}">${escapeHtml(RISK_LABEL[d.risk] || "")}</span>
         <p>${escapeHtml(d.read)}</p>${d.tailored ? '<p class="text-muted mc-tailored">Tailored to them and to what has worked for you.</p>' : ""}</div>
       ${flags}
+      ${d.subtext ? `<div class="mc-sub"><small>What they may hear</small><p>&ldquo;${escapeHtml(d.subtext)}&rdquo;</p></div>` : ""}
+      ${(d.checks || []).length ? `<div class="mc-checks"><small>Checklist &middot; ${d.checks.filter((c) => c.ok).length} of ${d.checks.length}</small><ul>${d.checks
+        .map((c) => `<li class="${c.ok ? "ok" : "no"}"><b>${escapeHtml(c.label)}</b>${c.note ? `<span>${escapeHtml(c.note)}</span>` : ""}</li>`)
+        .join("")}</ul></div>` : ""}
+      ${d.reply ? `<div class="mc-reply"><small>Their likely reply</small><p>${escapeHtml(d.reply)}</p></div>` : ""}
       <h2 class="pb-h">Versions you can send</h2>
       <div class="mc-versions">
         ${d.versions
@@ -163,6 +180,7 @@ function renderResult(d) {
           .join("")}
         ${lockedCard}
       </div>
+      ${d.tip ? `<div class="mc-tip"><small>Tip</small><p>${escapeHtml(d.tip)}</p></div>` : ""}
     </section>`;
   out.querySelectorAll("button[data-i]").forEach((b) =>
     b.addEventListener("click", async () => {
