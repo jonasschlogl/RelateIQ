@@ -2,6 +2,38 @@
 
 These rules apply to every new article and every refresh. They override the format notes in older prompts.
 
+## 0. Jonas, 26 Nov 2026: the rules that matter most (override anything below that conflicts)
+1. **Photos only from Unsplash, never Pexels.** Jonas doesn't like Pexels photos. Log every photo in `_unsplash-used.json` and never reuse one.
+2. **Not AI-sounding.** Every article contains Jonas's own opinion in first person (at least 2 short "My take" style passages, opinions and priorities only, never invented experiences). Natural rhythm, varied sentence length, no stock phrases ("navigate", "it's important to note", "in today's world", "let's dive in"), no symmetrical lists of three everywhere. Original and authentic: say something the top 5 results don't.
+3. **Titles from the newest findings.** Pick the keyword where the site has the best chance of impressions: long-tail first-person questions people type ("My boyfriend gets defensive...", "My girlfriend says I don't care..."), checked against the top 10 (forums and weak pages = go; big health publishers with exact titles = skip). Check Search Console queries first when possible. H2s are the questions people ask.
+4. **Trust.** Real numbers with named sources, honest limits of the research, a safety section where relevant, no hype, no overpromising, the product mentioned only where it genuinely helps.
+5. **Value, not plain text.** Every article has at least 2 visual value blocks besides the photos: a `:::stats` card with 2 to 3 key numbers, a `:::chart` with real data from a named source, a table, an infographic image (`![alt](/img/blog/...png "caption")`) or an example box. Statistics can come from different sites (Pew, YouGov, APA, Gottman, dating-app reports, peer-reviewed studies), always verified and quoted exactly.
+6. **Front-load the value.** Most readers never reach the end. The short answer box, the most useful numbers and the first ready-to-use lines must be in the first screen or two. Then spread value evenly: every section has something concrete. Never save the best part for the end.
+7. **Links throughout, not at the end.** Every article links to 4 to 7 other blog posts and to the app features, spread through the body: inline links in the text, one `:::read` box with 2 to 3 related articles in the first half, and one `:::tool <check|practice|coach>` card in the middle where it fits the section. The ending stays short.
+
+Rich block syntax (built by build-blog.mjs):
+```
+:::stats Optional heading
+64% | of 18-25 year olds want more honesty in dating
+60% | want clearer intentions
+source: Tinder Year in Swipe 2025
+:::
+
+:::chart Heading of the chart
+Label one | 64 | 64%
+Label two | 41 | 41%
+source: [Name](https://link), year
+:::
+
+:::read Related reading
+/blog/slug/ | Article title | optional one-line note
+:::
+
+:::tool practice
+Optional custom card title
+:::
+```
+
 ## 1. Pick a format that fits the search intent
 Rotate formats. Never use the same format as the previous published post or the previous draft.
 

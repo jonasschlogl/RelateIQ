@@ -247,6 +247,36 @@ function sayInline(para, depth = 0) {
   return (before ? `<p>${inline(before)}</p>` : "") + card + (after ? sayInline(after, depth + 1) : "");
 }
 
+// ----- rich blocks inside articles
+// :::chart Title            :::stats              :::tool practice         :::read
+// Label | 64 | 64%          64% | of daters ...    Optional custom title    /blog/slug/ | Title | note
+// source: Name, year        source: Name, year     :::                      :::
+// :::                       :::
+function richBlock(kind, arg, body) {
+  const SRC_RE = /^(source|sources|fuente|fuentes|k\u00e4lla|k\u00e4llor|sursa|surse|l\u00e4hde|l\u00e4hteet|bron|bronnen)\s*:/i;
+  const src = body.find((l) => SRC_RE.test(l));
+  const rows = body.filter((l) => !SRC_RE.test(l)).map((l) => l.split("|").map((c) => c.trim()));
+  const srcHtml = src ? `<figcaption class="rb-src">${inline(src.charAt(0).toUpperCase() + src.slice(1))}</figcaption>` : "";
+  if (kind === "chart") {
+    const max = Math.max(...rows.map((r) => parseFloat(r[1]) || 0), 1);
+    const bars = rows.map((r) => {
+      const v = parseFloat(r[1]) || 0;
+      return `<div class="rb-bar"><span class="rb-l">${inline(r[0])}</span><span class="rb-t"><span class="rb-f" style="width:${Math.max(2, Math.round((v / max) * 100))}%"></span></span><b class="rb-v">${esc(r[2] || r[1])}</b></div>`;
+    }).join("");
+    return `<figure class="rb rb-chart">${arg ? `<p class="rb-h">${inline(arg)}</p>` : ""}<div class="rb-bars">${bars}</div>${srcHtml}</figure>`;
+  }
+  if (kind === "stats") {
+    return `<figure class="rb rb-stats">${arg ? `<p class="rb-h">${inline(arg)}</p>` : ""}<div class="rb-grid">${rows.map((r) => `<div class="rb-stat"><b>${esc(r[0])}</b><span>${inline(r.slice(1).join(" | "))}</span></div>`).join("")}</div>${srcHtml}</figure>`;
+  }
+  if (kind === "tool") {
+    const k = TOOL[arg] ? arg : "coach", t = TOOL[k];
+    const title = body[0] ? inline(body[0]) : t.title;
+    return `<aside class="tool-card tc-${k} tc-mid"><div class="tc-copy"><span class="tc-k">${t.k} · Free</span><p class="tc-h">${title}</p><p class="tc-p">${t.text}</p><a class="btn btn-gradient" href="${APP_SIGNUP}" data-umami-event="cta-blog-mid-${k}">Try it free</a><small>No card needed</small></div><div class="tc-demo" aria-hidden="true">${t.demo}</div></aside>`;
+  }
+  // read: related articles, placed mid-article
+  return `<aside class="rb rb-read"><p class="rb-h">${inline(arg || "Related")}</p><ul>${rows.map((r) => `<li><a href="${attr(r[0])}">${inline(r[1] || r[0])}</a>${r[2] ? `<span>${inline(r[2])}</span>` : ""}</li>`).join("")}</ul></aside>`;
+}
+
 function markdown(src) {
   const lines = src.replace(/\r\n/g, "\n").split("\n");
   const out = [];
@@ -255,6 +285,21 @@ function markdown(src) {
   while (i < lines.length) {
     const line = lines[i];
     if (!line.trim()) { i++; continue; }
+    // rich blocks: :::chart, :::stats, :::tool, :::read (closed by a line with only :::)
+    const bk = line.match(/^:::(chart|stats|tool|read)\s*(.*)$/);
+    if (bk) {
+      const body = []; i++;
+      while (i < lines.length && !/^:::\s*$/.test(lines[i])) { if (lines[i].trim()) body.push(lines[i].trim()); i++; }
+      i++;
+      out.push(richBlock(bk[1], bk[2].trim(), body));
+      continue;
+    }
+    // ![alt](src "caption") on its own line becomes a figure (photo, infographic or chart image)
+    const im = line.match(/^!\[([^\]]*)\]\((\S+?)(?:\s+"([^"]*)")?\)\s*$/);
+    if (im) {
+      out.push(`<figure class="article-fig article-img"><img src="${attr(im[2])}" alt="${attr(im[1])}" loading="lazy" decoding="async" />${im[3] ? `<figcaption>${inline(im[3])}</figcaption>` : ""}</figure>`);
+      i++; continue;
+    }
     if (/^```/.test(line)) {
       const buf = []; i++;
       while (i < lines.length && !/^```/.test(lines[i])) buf.push(lines[i++]);
