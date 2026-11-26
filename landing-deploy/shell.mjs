@@ -129,6 +129,6 @@ export function checker(kind, where) {
     </div>
   </div>
   <p class="tw-in-foot">The full check, with their likely reply and a tip, is in the app. <a href="https://app.relationshipaiadvice.com/register.html?src=try-${esc(where)}" data-umami-event="try-${esc(where)}-foot">Create a free account</a></p>
-  <script defer src="/js/try.js?v=6"></script>
+  <script defer src="/js/try.js?v=7"></script>
 </div>`;
 }

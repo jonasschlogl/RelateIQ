@@ -4135,13 +4135,13 @@ app.post("/api/billing/portal", authMiddleware, async (req, res) => {
 
 // ---------------------------------------------------------------------------
 // Message check: paste a text before you send it and see how it may land,
-// with rewrites. Plans: Free 3 checks in total (a taste), Pro 10 a day with
+// with rewrites. Plans: Free 2 checks a day (the public tools give 1 a day as a teaser), Pro 10 a day with
 // 2 rewrites (legacy), the single paid plan 40 a day with 3 rewrites on the advanced
 // model, tailored to the person (their profile) and what has worked before.
 // Only a counter marker is stored (doc kind "mcheck"), never the text itself.
 // ---------------------------------------------------------------------------
 
-const MESSAGE_CHECK_LIMITS = { free: { lifetime: 3 }, pro: { perDay: 10 }, premium: { perDay: 40 } };
+const MESSAGE_CHECK_LIMITS = { free: { perDay: 2 }, pro: { perDay: 10 }, premium: { perDay: 40 } };
 
 function messageCheckUsage(user) {
   const docs = listDocs(user.id, "mcheck");
@@ -4186,7 +4186,7 @@ app.post("/api/message-check", authMiddleware, async (req, res) => {
       return res.status(403).json({
         error:
           user.plan === "free"
-            ? `The Free plan includes ${usage.limit} message checks. Pro gives you ${MESSAGE_CHECK_LIMITS.premium.perDay} a day.`
+            ? `You've used today's ${usage.limit} free message checks. They reset tomorrow. Pro gives you ${MESSAGE_CHECK_LIMITS.premium.perDay} a day.`
             : `You've used today's ${usage.limit} message checks. They reset tomorrow.`,
         messageCheckLimit: true,
         upgradeRequired: true,

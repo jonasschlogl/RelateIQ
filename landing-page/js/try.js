@@ -114,7 +114,7 @@
         left.textContent = leftText();
         typing.remove();
         if (!res.ok) {
-          if (d.needAccount) add(ctaBubble("That's your free checks for today", "Create a free account (no card) to keep checking messages and get replies that fit you.", "gate"));
+          if (d.needAccount) add(ctaBubble("That's your free checks for today", "Create a free account (no card): 2 full checks a day, with their likely reply and a tip.", "gate"));
           else add(el("div", "tw-b ai", d.error || "Couldn't check that right now. Please try again."));
           return;
         }

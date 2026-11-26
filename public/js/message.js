@@ -31,7 +31,7 @@ function usageText() {
   const u = mcState.usage;
   if (!u) return "";
   const left = Math.max(0, u.limit - u.used);
-  if (mcState.plan === "free") return `${left} of ${u.limit} free checks left`;
+  if (mcState.plan === "free") return `${left} of ${u.limit} checks left today`;
   return `${left} of ${u.limit} checks left today`;
   return "";
 }
@@ -99,7 +99,7 @@ async function limitDialog(data) {
     return;
   }
   const go = await showAppConfirm(
-    "You've used your 3 free message checks. Pro gives you 40 a day, three rewrites each, tailored to the person. Try it free for 7 days.",
+    "You've used today's 2 free message checks. They reset tomorrow. Pro gives you 40 a day, three rewrites each, tailored to the person. Try it free for 7 days.",
     { confirmLabel: "Try Pro free", cancelLabel: "Not now" }
   );
   if (go) startCheckout("pro");
