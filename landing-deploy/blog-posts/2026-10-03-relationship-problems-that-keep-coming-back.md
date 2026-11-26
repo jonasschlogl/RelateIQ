@@ -2,14 +2,14 @@
 title: "Why do we keep having the same fight? 5 relationship problems that keep coming back, and what's underneath"
 seo_title: "Why Do We Keep Having the Same Fight? 5 Real Reasons"
 date: 2026-10-03
-description: "Relationship problems that keep coming back: chores, time, money, closeness and the endless fight. What's usually underneath and how to talk about each one."
+description: "Why do we keep having the same fight? Chores, time, money, closeness: what usually sits underneath the 5 fights couples repeat, and how to break the loop."
 checker: passive
 tags: relationship problems, relationship tips
 updated: 2026-11-19
 ---
 If you and your partner keep having the same argument, you're not doing something uniquely wrong. According to the Gottman Institute, 69% of relationship conflicts are about "perpetual problems": lasting differences in personality, needs and habits that may never fully go away. What separates couples who do well from couples who struggle is mostly how they handle those differences, not whether they have them.
 
-Five problems come up more than any others. In each case, the real issue is usually something other than the topic on the surface. This guide explains what tends to sit underneath each one, why the same fight keeps coming back, and what you can actually say to break the loop.
+Five problems come up more than any others. In each case, the real issue is usually something other than the topic on the surface. This guide explains what tends to sit underneath each one, why the same fight keeps coming back, and what you can actually say to break the loop. If one of you shuts these conversations down by getting defensive, see [how to talk to a partner who gets defensive](/blog/my-boyfriend-gets-defensive/).
 
 > **The short answer:**
 > Most recurring relationship problems come down to five themes: chores and the mental load, time and attention, money, different needs for closeness, and the same fight on repeat. They keep returning because the need underneath stays unspoken. Name that need, talk about one issue at a calm moment, and agree on one small change.

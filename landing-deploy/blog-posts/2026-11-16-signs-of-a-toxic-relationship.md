@@ -3,7 +3,7 @@ title: "Is my relationship toxic? A 3-level check for unhealthy, toxic and contr
 seo_title: "Is My Relationship Toxic? A 3-Level Self-Check"
 date: 2026-11-16
 updated: 2026-11-19
-description: "Signs of a toxic relationship in three levels: unhealthy but fixable, toxic patterns and coercive control, with a clear self-check and safe next steps."
+description: "Is my relationship toxic? A 3-level self-check: unhealthy but fixable, toxic patterns, or coercive control, with clear signs and safe next steps for each."
 tags: signs of a toxic relationship, red flags
 ---
 "Toxic" has become an everyday word for anything from a partner who forgets your birthday to one who controls your money. That's a problem, because those situations need completely different responses. A relationship going through a rough patch might need a better conversation. A controlling one might need a safety plan.

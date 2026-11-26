@@ -3,10 +3,10 @@ title: "Why is my partner emotionally unavailable? The 5 different reasons behin
 seo_title: "Why Is My Partner Emotionally Unavailable? 5 Reasons"
 date: 2026-11-11
 updated: 2026-11-19
-description: "An emotionally unavailable partner isn't always avoidant. 5 different reasons people shut down, how to tell which one you're facing, and what actually helps."
+description: "Why is my partner emotionally unavailable? It isn't always avoidance. 5 different reasons people shut down, how to tell which one it is, and what helps."
 tags: emotionally unavailable, attachment
 ---
-"Emotionally unavailable" is usually treated as one thing: a partner who won't open up, full stop. But the same behavior, changing the subject, going quiet in hard moments, keeping things light, can come from very different places. And what helps depends completely on which one it is.
+"Emotionally unavailable" is usually treated as one thing: a partner who won't open up, full stop. But the same behavior, changing the subject, going quiet in hard moments, keeping things light, can come from very different places. And what helps depends completely on which one it is. If the quiet comes right after an argument, it's worth checking whether it's [the silent treatment or a need for space](/blog/silent-treatment-vs-needing-space/), because the two call for different responses.
 
 Pushing someone with an avoidant attachment style for a big talk tends to backfire. Asking someone with alexithymia "how do you feel?" may genuinely stump them. Waiting patiently for someone who isn't invested can cost you years.
 

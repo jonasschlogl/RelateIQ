@@ -3,7 +3,7 @@ title: "How to make up after a fight: the 21-minute exercise, the next morning a
 seo_title: "How to Make Up After a Fight: Tonight to Next Week"
 date: 2026-10-26
 updated: 2026-11-19
-description: "How to rebuild trust after a fight: what to do that night, the next morning and the week after, plus a 21-minute exercise that kept couples happier."
+description: "How to make up after a fight: what to do that night, the next morning and the week after, plus a 21-minute exercise that kept couples happier for longer."
 checker: fight
 tags: rebuild trust, after an argument
 ---

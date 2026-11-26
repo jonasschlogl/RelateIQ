@@ -3,7 +3,7 @@ title: "Deep questions to ask your boyfriend or girlfriend: 30 questions, and ho
 seo_title: "30 Deep Questions to Ask Your Boyfriend or Girlfriend"
 date: 2026-10-26
 updated: 2026-11-20
-description: "30 deep questions to ask your partner, sorted by how deep they go, plus what research says matters even more than the question: how you respond to the answer."
+description: "30 deep questions to ask your boyfriend or girlfriend, from easy to deep, plus what research says matters more than the question: how you respond."
 tags: deep questions to ask your partner, questions for couples
 ---
 Most lists of deep questions to ask your partner hand you 100 questions and stop there. But anyone who has tried one over dinner knows the question is the easy part. What happens in the next ten seconds, how you react to the answer, decides whether your partner opens up further or quietly closes the door.

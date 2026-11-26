@@ -3,7 +3,7 @@ title: "Questions to ask on date night: 40 fun and deep questions for couples, p
 seo_title: "40 Questions to Ask on Date Night (Fun, Deep + 5 Games)"
 date: 2026-10-26
 updated: 2026-11-20
-description: "Date night questions for couples, turned into 5 easy games, from the question jar to hot seat, with 40 playful-to-deep questions and the research behind them."
+description: "Questions to ask on date night: 40 fun and deep questions for couples, turned into 5 easy games, from the question jar to hot seat. Pick one and start tonight."
 tags: date night questions, questions for couples
 ---
 A list of date night questions can feel like homework: two people at a restaurant, one reading from a phone, the other wondering what's going on. The fix is simple. Turn the questions into a game. Games lower the pressure, add laughter, and somehow make the bigger questions easier to answer.

@@ -2,7 +2,7 @@
 title: "How to communicate better in a relationship: 7 habits that change how you argue"
 seo_title: "How to Communicate Better in a Relationship: 7 Habits"
 date: 2026-10-05
-description: "Relationship advice that changes how you argue: 7 research-based communication habits, from softer starts to taking breaks, with lines to use tonight."
+description: "How to communicate better in a relationship: 7 research-based habits that change how you argue, from softer starts to taking breaks, with lines to use tonight."
 checker: tone
 tags: relationship advice, communication
 updated: 2026-11-19
@@ -46,7 +46,7 @@ Here are the seven habits at a glance.
 
 ## 1. Start soft
 
-How a conversation begins usually decides how it ends. Gottman's research found that a "harsh start-up", opening with criticism or sarcasm, almost always leads to a conversation that ends badly. A softened start-up does the opposite. It says how *you* feel and what you'd like, without an accusation.
+How a conversation begins usually decides how it ends. Gottman's research found that a "harsh start-up", opening with criticism or sarcasm, almost always leads to a conversation that ends badly. A softened start-up does the opposite. It says how *you* feel and what you'd like, without an accusation. And if you're the one who started badly, here's [what to say when your partner says you hurt their feelings](/blog/what-to-say-when-you-hurt-your-partners-feelings/).
 
 A simple formula: **I feel** (emotion) **about** (specific situation) **and I need** (positive request).
 
@@ -92,7 +92,7 @@ And don't be too afraid of being direct. In a study of 61 couples videotaped whi
 
 In a tense moment, try repeating back what you heard before you respond. "So you've had two weeks of late work, and the chores felt like one more demand. Is that right?" You don't have to agree. You only have to show you understood. Most arguments soften once both people feel heard.
 
-This is also the antidote to defensiveness, another of Gottman's "four horsemen". Defensiveness ("That's not true, you're the one who...") tells your partner their concern doesn't count. Taking responsibility for even a small part ("You're right, I did forget to call") changes the temperature of the conversation.
+This is also the antidote to defensiveness, another of Gottman's "four horsemen". Defensiveness ("That's not true, you're the one who...") tells your partner their concern doesn't count. Taking responsibility for even a small part ("You're right, I did forget to call") changes the temperature of the conversation. If you're on the other side, and your partner gets defensive every time you raise something, our guide on [what to do when your boyfriend gets defensive](/blog/my-boyfriend-gets-defensive/) has lines that lower the temperature.
 
 For example: "Before I answer, let me check I've got it. You felt like I didn't take your plans seriously?"
 

@@ -149,7 +149,7 @@ There's no single rule, but a break after a fight is usually measured in minutes
 
 ### Should I keep texting during the silent treatment?
 
-One calm message saying you're open to talking is enough. More messages tend to raise the pressure and make it easier for the other person to stay withdrawn. After that, look after yourself, and bring up the pattern once things are calm.
+One calm message saying you're open to talking is enough. More messages tend to raise the pressure and make it easier for the other person to stay withdrawn. After that, look after yourself, and bring up the pattern once things are calm. When you do bring it up and it turns into a defence, our guide on [what to say when he gets defensive](/blog/my-boyfriend-gets-defensive/) can help.
 
 ### Is it okay to need space after every argument?
 

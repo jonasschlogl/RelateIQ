@@ -3,7 +3,7 @@ title: "Are love languages real? 6 popular beliefs, checked against the research
 seo_title: "Are Love Languages Real? What the Research Actually Says"
 date: 2026-11-15
 updated: 2026-11-20
-description: "Love languages are everywhere, but what holds up? 6 popular beliefs about the 5 love languages checked against recent studies, and a better way to use them."
+description: "Are love languages real? 6 popular beliefs about the 5 love languages, checked against recent studies, and a more useful way to use the idea in your relationship."
 tags: love languages, showing love
 ---
 Words of affirmation, quality time, receiving gifts, acts of service, physical touch. Gary Chapman's five love languages, first published in 1992, have become one of the most quoted relationship ideas in the world. Dating profiles list them. Couples take the quiz on the second date.

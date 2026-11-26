@@ -2,7 +2,7 @@
 title: "Is my relationship worth saving? How to tell, and where to start fixing it"
 seo_title: "Is My Relationship Worth Saving? How to Tell and Fix It"
 date: 2026-10-04
-description: "How to fix a relationship that feels distant or stuck: a calm, research-based plan in 6 steps, from stopping the escalation to rebuilding closeness."
+description: "Is my relationship worth saving? How to tell if it can be fixed, then a calm 6-step plan from stopping the escalation to rebuilding closeness."
 tags: how to fix a relationship, relationship problems
 updated: 2026-11-19
 ---

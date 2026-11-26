@@ -3,7 +3,7 @@ title: "Am I codependent or just a caring partner? How to tell the difference"
 seo_title: "Am I Codependent or Just Caring? 3 Simple Tests"
 date: 2026-11-18
 updated: 2026-11-20
-description: "Codependent relationship or healthy care? Three simple tests, what research on codependency and self-silencing shows, and what to say when you speak up."
+description: "Am I codependent or just a caring partner? Three simple tests, what research on codependency and self-silencing shows, and what to say when you speak up."
 tags: codependent relationship, people pleasing
 ---
 Being the one who notices, helps and holds things together is not a problem. Many good relationships run on exactly that. The question people search for when they type "codependent relationship" is usually a quieter one: *when did caring start to cost me this much?*

@@ -3,7 +3,7 @@ title: "Should I stay in a situationship? How to decide whether to stay, define 
 seo_title: "Should I Stay in a Situationship? How to Decide"
 date: 2026-11-17
 updated: 2026-11-19
-description: "Situationship decision guide: what new research on situationships found, how to decide whether to stay, define it or walk away, and the exact words for each."
+description: "Should I stay in a situationship? What new research found, a simple guide to decide whether to stay, define it or walk away, and the exact words for each."
 tags: situationship, undefined relationship
 ---
 You see each other most weekends, text daily, maybe sleep over. But nobody has said what this is, and asking feels risky. That's a situationship, and in a 2024 YouGov poll, half of Americans aged 18 to 34 said they'd been in one.

@@ -3,7 +3,7 @@ title: "How to get over trust issues in a relationship: why doubt keeps coming b
 seo_title: "How to Get Over Trust Issues in a Relationship"
 date: 2026-11-15
 updated: 2026-11-19
-description: "Trust issues in a relationship: what trust is made of, why constant reassurance backfires, a self-check for past vs present hurt, and what rebuilds trust."
+description: "How to get over trust issues in a relationship: why constant reassurance backfires, a self-check for past vs present hurt, and what actually rebuilds trust."
 tags: trust issues in a relationship, rebuilding trust
 ---
 Most people with trust issues know the checklist by heart: checking the phone, expecting the worst, needing reassurance, testing the partner. What's less obvious is *why* the usual fixes so often don't work, and why someone can get a hundred reassurances and still not feel safe.

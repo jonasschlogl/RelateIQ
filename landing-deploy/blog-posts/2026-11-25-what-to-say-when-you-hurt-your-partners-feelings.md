@@ -153,7 +153,7 @@ Listen first anyway. Ask what the comment touched for them. Often there's a reas
 
 ### How do I stop getting defensive when my partner is hurt?
 
-Notice the urge to explain and give yourself one job instead: make them feel understood. Breathing slowly, sitting down and repeating back what you heard all help. Defensiveness usually fades once you stop treating the conversation as a verdict on you.
+Notice the urge to explain and give yourself one job instead: make them feel understood. Breathing slowly, sitting down and repeating back what you heard all help. Defensiveness usually fades once you stop treating the conversation as a verdict on you. (If you're usually on the other side of this conversation, see [how to bring something up with a partner who gets defensive](/blog/my-boyfriend-gets-defensive/).)
 
 ## A note on safety
 

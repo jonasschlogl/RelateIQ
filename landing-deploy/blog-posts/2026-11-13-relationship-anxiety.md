@@ -3,7 +3,7 @@ title: "Relationship anxiety for no reason: why it shows up when things are good
 seo_title: "Relationship Anxiety for No Reason? What to Do Right Now"
 date: 2026-11-13
 updated: 2026-11-19
-description: "Relationship anxiety toolkit: what to do in the first 2 minutes of a spiral, through the day and over a month, with research on worry, breathing and attachment."
+description: "Relationship anxiety for no reason, even when things are good? Why it happens, what to do in the next 2 minutes, and what helps over the next month."
 tags: relationship anxiety, attachment
 ---
 Relationship anxiety is the constant background question: *are we okay?* A slow reply becomes a sign. A flat "ok" becomes a verdict. A good evening is followed by a fear that it won't last. You may love your partner and still feel like you're bracing for something.
@@ -93,7 +93,7 @@ Yes, some worry is very common, especially early in a relationship or after past
 
 ### Can relationship anxiety ruin a relationship?
 
-It can strain one, mostly through behaviors like constant reassurance-seeking, testing or checking. Working on those behaviors makes a big difference.
+It can strain one, mostly through behaviors like constant reassurance-seeking, testing or checking. Working on those behaviors makes a big difference. If your anxiety mostly shows up as jealousy, our guide to [whether jealousy is normal in a relationship](/blog/jealousy-in-a-relationship/) covers the myths that make it worse.
 
 ### Is relationship anxiety a sign I'm with the wrong person?
 

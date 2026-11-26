@@ -5,7 +5,7 @@ date: 2026-11-20
 description: How to keep the spark alive in a long-term relationship: a 2-minute check to find which of 4 sparks is fading, what research says helps, and a 4-week plan.
 tags: keep the spark alive, long-term relationship
 ---
-In a random sample of Americans who had been married for more than ten years, about 40% said they were still "very intensely in love". That finding, from a study led by Daniel O'Leary with Bianca Acevedo and Arthur Aron, surprises most people, because we're told that passion always fades. In a second sample from New York, the figure was about 29%. Lower, but still far from rare.
+In a random sample of Americans who had been married for more than ten years, about 40% said they were still "very intensely in love". That finding, from a study led by Daniel O'Leary with Bianca Acevedo and Arthur Aron, surprises most people, because we're told that passion always fades. In a second sample from New York, the figure was about 29%. Lower, but still far from rare. If you're not sure how your partner prefers to receive affection, our look at [whether love languages are real](/blog/love-languages/) is a useful starting point.
 
 So the spark doesn't have to go. But "the spark" is a vague word, and vague problems get vague advice: more date nights, more surprises, more lingerie. Most lists of tips miss that couples usually lose one *kind* of spark, not all of them at once. A couple can still laugh together every day and feel no desire at all. Another can have plenty of sex and feel like roommates the rest of the week.
 

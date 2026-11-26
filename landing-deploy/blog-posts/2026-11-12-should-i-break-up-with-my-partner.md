@@ -2,7 +2,7 @@
 title: "How do you know when to break up? 10 honest questions to help you decide"
 seo_title: "How Do You Know When to Break Up? 10 Honest Questions"
 date: 2026-11-12
-description: Should I break up with my partner? 10 honest questions to help you decide, what research on 37,000+ people says about why relationships end.
+description: "How do you know when to break up? 10 honest questions to help you decide, and what research on more than 37,000 people says about why relationships end."
 tags: should I break up, relationship doubts
 updated: 2026-11-19
 ---
@@ -15,7 +15,7 @@ If you feel torn, you're not weak or indecisive. You're facing one of the hardes
 
 ## Feeling torn is normal
 
-Researchers Samantha Joel, Geoff MacDonald and Elizabeth Page-Gould asked people who were actively deciding whether to break up what was pulling them each way. They found 27 different reasons to stay and 23 reasons to leave. The most common reasons to stay were emotional closeness, what they'd already invested and a sense of obligation. The most common reasons to leave were problems with the partner's personality, a breach of trust and the partner pulling away.
+Researchers Samantha Joel, Geoff MacDonald and Elizabeth Page-Gould asked people who were actively deciding whether to break up what was pulling them each way. They found 27 different reasons to stay and 23 reasons to leave. The most common reasons to stay were emotional closeness, what they'd already invested and a sense of obligation. The most common reasons to leave were problems with the partner's personality, a breach of trust and the partner pulling away. If trust was broken by an affair and you're deciding whether to stay, read [how couples rebuild trust after cheating](/blog/how-to-rebuild-trust-after-cheating/) first.
 
 The most striking result: about half of the people had strong reasons on both sides at the same time. Feeling torn isn't a sign you're doing it wrong. It's what this decision usually feels like.
 
