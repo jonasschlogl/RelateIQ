@@ -781,7 +781,6 @@ ${withChecker(ctx, p, withImages(p))}
       <div class="container">
         <div class="more-head">
           <h2>${T(EN.moreArticles)}</h2>
-          ${shareRow(ctx, p, url)}
         </div>
         <div class="post-grid">${others.map((x) => card(ctx, x)).join("\n")}</div>
       </div>
