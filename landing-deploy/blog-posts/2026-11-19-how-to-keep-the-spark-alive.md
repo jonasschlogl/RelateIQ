@@ -40,6 +40,8 @@ Add up each pair. The area with the lowest score (0 to 2) is where to start. If 
 
 I like this check because it turns a vague, slightly scary feeling into something you can actually work on. "We've lost the spark" is hard to fix. "We haven't tried anything new in months" isn't.
 
+My take: I like this check because "the spark is gone" is too vague to fix. "We never try anything new" or "we stopped asking each other questions" is something you can actually work on this week.
+
 ## If novelty is low: break the rut, not the bank
 
 **What research shows.** In a long-running study of 123 couples, Irene Tsapelas, Arthur Aron and Terri Orbuch asked people in their seventh year of marriage how often the marriage felt like a rut. Those who felt more bored at year 7 were less satisfied nine years later, at year 16. The link ran through closeness: boredom made couples feel less close, and that lowered satisfaction.
@@ -59,6 +61,12 @@ How you think about desire matters too. In six studies with almost 1,900 people,
 **What most advice gets wrong.** Many people expect desire to arrive out of nowhere, like it did at the start. Sex therapists often point out that in long relationships desire tends to be more *responsive*: it shows up once you're already close, relaxed and touching, not before. Waiting to "be in the mood" first can mean waiting for months.
 
 **Try this:** have one low-stakes conversation, not in bed. Try: "What's something that used to make you feel wanted by me, that I've stopped doing?" Just listen. No defending, no immediate plan.
+
+:::read Related reading
+/blog/deep-questions-to-ask-your-partner/ | Deep questions to ask your partner | 30 questions by depth
+/blog/date-night-questions-for-couples/ | Date night questions for couples | 5 games and 40 questions
+/blog/how-to-say-i-love-you-without-words/ | How to show love without saying it | 25 small daily signals
+:::
 
 ## If attention is low: get curious again
 
@@ -83,6 +91,10 @@ How you think about desire matters too. In six studies with almost 1,900 people,
 | Attention | Talking only about logistics | One real question a week |
 | Warmth | Touch only before sex, or not at all | One daily ritual of affection |
 
+:::tool coach
+Not sure which spark is fading for you two? Talk it through
+:::
+
 ## A 4-week plan
 
 Pick your lowest area and give it four weeks. One change at a time works better than nine at once.
@@ -104,6 +116,8 @@ Sometimes a fading spark is a symptom. Resentment from fights that never get res
 It's also fine for a relationship to have quieter seasons. What matters is that you notice, and come back to each other when life allows.
 
 Bringing this up can feel awkward, especially the desire part. If you want to work out what you're actually asking for first, Coach Chat can help, and you can rehearse the conversation in Partner Practice.
+
+My take: sometimes a fading spark is just a tired season, a new baby, a hard job, a move. I'd be gentle with yourselves before deciding it means something bigger.
 
 ## Quick answers
 

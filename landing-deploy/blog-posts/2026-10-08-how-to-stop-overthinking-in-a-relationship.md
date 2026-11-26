@@ -32,11 +32,19 @@ The result: 91.4% of the worries did not come true. And of the worries that did 
 
 This was a small study with people who have an anxiety disorder, so it doesn't prove that 91% of *your* relationship worries are wrong. But it shows something useful: worry feels like a prediction, and it's usually a poor one. The feeling of certainty that comes with a 2 am spiral says much more about your anxiety level than about what's actually happening.
 
+My take: I don't think the lesson is "your worries are always wrong." It's that your brain is a much louder narrator than it is an accurate one. Knowing that makes it a little easier to wait before reacting.
+
 ## Overthinking and attachment anxiety
 
 For some people overthinking is tied to what psychologists call attachment anxiety: a stronger worry that a partner might pull away or reject you. It's one of the two main dimensions researchers use to describe adult attachment, alongside avoidance. People higher in attachment anxiety tend to notice small signs of distance faster and read them more negatively.
 
 If you want to understand that part better, we explain it in our guide to [attachment styles in relationships](/blog/how-attachment-styles-work-in-relationships/). It isn't a diagnosis, just a useful way to spot a pattern. And the hopeful part: attachment anxiety tends to decrease over adulthood, and it responds well to the kind of practice described below.
+
+:::read Related reading
+/blog/relationship-anxiety/ | Relationship anxiety for no reason | When the doubt isn't really about them
+/blog/trust-issues-in-a-relationship/ | How to get over trust issues | Why reassurance doesn't stick
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | For when silence starts the spiral
+:::
 
 ## What an overthinking spiral looks like
 
@@ -125,6 +133,10 @@ This is a request, not a rule for your partner's behavior. If you notice you're 
 
 Of the seven, step three is the one I'd start with. Writing down three other explanations feels silly the first time. It's also one of the simplest tools in this whole article, and one of the most effective.
 
+:::tool coach
+Caught in a spiral right now? Talk it through before you text
+:::
+
 ## A full example: from spiral to conversation
 
 > **Example: Jacob's Friday night**
@@ -143,6 +155,8 @@ Of the seven, step three is the one I'd start with. Writing down three other exp
 It's worth saying plainly: overthinking and good instincts are not the same thing. If your partner is regularly dishonest, disappears without explanation, or makes you feel small, your discomfort may be information, not anxiety.
 
 The test isn't "do I feel worried?" It's "is there a repeated pattern of behavior I can describe in facts?" One late reply is not a pattern. Three broken promises in a month, described without interpretation, is. If you can describe a pattern, the next step is a clear conversation about that pattern, not more silent analysis.
+
+My take: a worry that turns out to be right still deserves a calm conversation, not a perfect case file. You don't need to collect evidence to be allowed to ask a question.
 
 ## How to tell your partner you overthink
 

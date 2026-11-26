@@ -21,6 +21,10 @@ Below are five easy formats, 40 questions to play them with, and a bit of resear
 
 **Conversations go better than you expect.** Research by Michael Kardas, Amit Kumar and Nicholas Epley found that people consistently overestimate how awkward a deeper conversation will be. So if a question feels a bit much in your head, it'll probably land better than you think.
 
+My take: I think the point of these questions isn't the answers. It's the half hour where you're both curious about each other again, which is something busy couples quietly lose.
+
+**Quick quiz:** Want a warm-up before the questions? Take the 2-minute [love language quiz](/quiz/love-language/) together and compare your answers.
+
 ## 5 games to play with the questions
 
 ### 1. The question jar
@@ -54,6 +58,12 @@ Instead of questions, use prompts that start with "Tell me about a time...". Eac
 **Best for:** a slow evening, a long walk, a night with a bottle of wine.
 
 My favorite is the hot seat, mostly because it's the one people are most nervous about and end up enjoying the most.
+
+:::read Related reading
+/blog/deep-questions-to-ask-your-partner/ | Deep questions to ask your partner | 30 questions that go one level deeper
+/blog/how-to-say-i-love-you-without-words/ | How to show love without saying it | 25 small gestures for every kind of day
+/blog/long-distance-relationship-tips/ | How to make a long distance relationship work | These questions work over video too
+:::
 
 ## 40 date night questions
 
@@ -111,6 +121,10 @@ My favorite is the hot seat, mostly because it's the one people are most nervous
 
 For more serious, vulnerable questions, see our full guide to [deep questions to ask your partner](/blog/deep-questions-to-ask-your-partner/), which also covers how to respond to a heavy answer.
 
+:::tool coach
+Planning a date night and stuck for ideas? Ask the coach
+:::
+
 ## Make the evening itself a little different
 
 Questions work best when the setting feels different from an ordinary Tuesday. Wilcox and Dew's report and older experiments by Arthur Aron and colleagues both point in the same direction: doing something new together goes with feeling better about the relationship. It doesn't have to be expensive:
@@ -132,6 +146,8 @@ If date nights feel flat even when you make the effort, our guide on [how to kee
 Not everyone loves questions. Start with this-or-that, which needs almost no effort, and let your partner pick the game. If they prefer doing things to talking, combine the two: questions during a walk, a board game, or while cooking. Side-by-side activities often make conversation easier than sitting face to face.
 
 If you're apart, every game here works on a video call. More ideas in our [long distance relationship tips](/blog/long-distance-relationship-tips/). And if the evening turns into a conversation about something that's been bothering one of you, our guide to [communication habits](/blog/relationship-advice-communication-habits/) helps keep it kind.
+
+My take: if your partner rolls their eyes at "questions," skip the format and keep the spirit. Ask one good question on a walk. Curiosity doesn't need a card deck.
 
 ## Quick answers
 

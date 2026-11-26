@@ -29,6 +29,8 @@ As adults, they often want love and connection, but closeness can also feel unco
 | Sees needing each other as normal | Sees needing others as a weakness |
 | Stays steady after closeness | Pulls back after moments of closeness |
 
+My take: the most helpful shift for me was seeing avoidance as protection, not rejection. Your partner isn't pulling away from you. They're pulling away from a feeling that once wasn't safe.
+
 **Quick quiz:** Curious about your own side of the pattern? The free 2-minute [attachment style quiz](/quiz/attachment-style/) shows whether you lean secure, anxious, avoidant or fearful-avoidant.
 
 ## 8 signs of an avoidant partner
@@ -64,6 +66,12 @@ Instead of repairing, they shut down and wait for it to pass. If you can't tell 
 ### 8. They show love through actions more than words
 
 Fixing your bike or booking a trip might be how they say "I care". It's real, even if it's quieter.
+
+:::read Related reading
+/blog/emotionally-unavailable-partner/ | Emotionally unavailable partner | 5 reasons they shut down
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | How to tell them apart
+/blog/how-to-stop-overthinking-in-a-relationship/ | How to stop overthinking | When their distance starts a spiral
+:::
 
 ## Why avoidant partners pull away
 
@@ -111,6 +119,10 @@ One way to put it: "You don't have to answer now. Can we talk about it tomorrow 
 
 If you're more anxious in relationships, an avoidant partner can trigger your fears strongly. Keep your own friendships, hobbies and support. Our guides on [relationship anxiety](/blog/relationship-anxiety/) and [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) may help.
 
+:::tool practice
+Want to practice asking for closeness without pressure?
+:::
+
 ## Avoidant does not mean cold
 
 Many articles treat avoidant people as cold or incapable of love. That's unfair and usually wrong. Avoidant partners can be deeply loyal, steady and caring. They just show it differently and need more room.
@@ -120,6 +132,8 @@ Attachment styles can also change. Research suggests that secure, consistent rel
 Talking about needs and space without it turning into a fight takes practice. You can plan the conversation in Coach Chat first.
 
 This is the section I'd want every anxious partner to read. Pulling away isn't proof they don't care. It's often proof that caring feels risky to them.
+
+My take: be patient, but not endlessly. Understanding someone's style doesn't mean giving up your own needs. Both of you get to have them.
 
 ## Quick answers
 

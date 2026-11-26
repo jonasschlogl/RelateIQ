@@ -42,6 +42,8 @@ Here are the seven habits at a glance.
 | Take a break | Pushing through when flooded | "I need twenty minutes, then I want to finish this." |
 | Repair early | Waiting for them to come round | "Can we start that over? That came out wrong." |
 
+My take: if I had to pick one number from all of this, it would be the 96%. It means the first sentence matters more than how clever your arguments are. That's good news, because a first sentence is easy to practice.
+
 **Quick quiz:** Do you escalate, shut down, people-please or repair? The free 2-minute [conflict style quiz](/quiz/fight-style/) shows your pattern in a fight and one thing to say next time.
 
 ## 1. Start soft
@@ -62,6 +64,12 @@ Something like: "I've been missing time with you lately. Could we put our phones
 "You're being selfish" is a verdict. "You said you'd be home at six and it's now eight" is an observation. Nonviolent Communication, the method developed by psychologist Marshall Rosenberg, starts with observations because it's hard to argue with a fact and very easy to argue with a label.
 
 This also avoids what Gottman calls criticism: attacking your partner's character ("You're so lazy") rather than complaining about a specific behavior ("The trash didn't go out again"). A complaint can be fixed. A character attack can only be defended.
+
+:::read Related reading
+/blog/what-to-text-after-a-fight/ | What to text after a fight | 20 messages for different situations
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | How to take a break the healthy way
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | Tonight, tomorrow and the week after
+:::
 
 ## 3. Name the need underneath
 
@@ -95,6 +103,10 @@ In a tense moment, try repeating back what you heard before you respond. "So you
 This is also the antidote to defensiveness, another of Gottman's "four horsemen". Defensiveness ("That's not true, you're the one who...") tells your partner their concern doesn't count. Taking responsibility for even a small part ("You're right, I did forget to call") changes the temperature of the conversation. If you're on the other side, and your partner gets defensive every time you raise something, our guide on [what to do when your boyfriend gets defensive](/blog/my-boyfriend-gets-defensive/) has lines that lower the temperature.
 
 For example: "Before I answer, let me check I've got it. You felt like I didn't take your plans seriously?"
+
+:::tool practice
+Want to try a soft start-up before the real conversation?
+:::
 
 ## 6. Take a break when you're flooded
 
@@ -150,6 +162,8 @@ Don't try all seven at once. Pick one, maybe the soft start, and use it for a we
 This is honestly the reason Coach Chat exists. You paste in the angry first draft, it helps you turn it into a soft start, and you can rehearse the actual conversation in Partner Practice before you have it.
 
 My own pick would be habit 6, the break with a promise to come back. It sounds the least impressive of the seven, but it's the one that stops a bad argument from turning into a bad week.
+
+My take: don't try all seven at once. Pick the one that made you wince a little when you read it. That's usually the one that will change the most.
 
 ## Quick answers
 

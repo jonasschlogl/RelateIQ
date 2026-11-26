@@ -30,6 +30,8 @@ A 2026 study points the same way. Following 378 married couples through ten days
 
 I'll be honest, this is the advice people push back on most. Going to bed without fixing it feels wrong. But a calm conversation at breakfast beats a third round at 1 am almost every time.
 
+My take: going to bed angry gets a bad reputation. I'd rather you sleep on it and talk calmly in the morning than force a 1 a.m. resolution that neither of you will remember well.
+
 ## The next morning: repair
 
 ### Own your part, without conditions
@@ -53,6 +55,12 @@ One way to put it: "Tell me what that was like for you. I want to understand."
 In a long-running study at the University of Minnesota, Jessica Salvatore and colleagues watched couples recover after a conflict discussion. People who struggled to recover from conflict, often because of difficult early experiences, were more likely to stay together when their *partner* recovered well. The researchers suggested that one partner who can lead the cool-down can protect the relationship for both.
 
 In practice: if you're the calmer one this time, go first. Offer a hug, a coffee, a light comment, a "shall we start over?" Leading the repair isn't admitting it was all your fault. It's taking care of the relationship.
+
+:::read Related reading
+/blog/what-to-text-after-a-fight/ | What to text after a fight | If you're apart the morning after
+/blog/how-to-apologize-to-your-partner/ | How to apologize to your partner sincerely | What a real apology includes
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | How to take a break without punishing
+:::
 
 ## The week after: rebuild
 
@@ -87,6 +95,10 @@ After a fight, couples often avoid each other a little, even when it's resolved.
 >
 > *Names and details in this example are invented to show the idea.*
 
+:::tool practice
+Want to rehearse the repair conversation first?
+:::
+
 ## If you're the one who was hurt
 
 You're allowed to need time. Trust after a hurtful fight doesn't come back because someone said sorry once. It comes back as their behavior matches their words. Tell your partner what would help you.
@@ -96,6 +108,8 @@ Try: "I appreciate the apology. What would really help me is seeing that the nex
 ## How long does it take?
 
 After a single fight, often days. After repeated hurtful fights, it can take weeks or months of consistent behavior. If the same fight keeps coming back, our guide on [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) can help you find the pattern underneath, and our [communication habits](/blog/relationship-advice-communication-habits/) guide helps prevent the next escalation.
+
+My take: trust after a fight usually comes back through small, boring proof, not big gestures. Doing what you said you'd do, three days in a row, says more than flowers.
 
 ## When it's more than a fight
 

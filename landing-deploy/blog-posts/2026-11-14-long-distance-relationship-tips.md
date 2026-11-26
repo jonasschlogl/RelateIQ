@@ -25,6 +25,10 @@ So the odds are fine. The question is how to use each phase well.
 
 The same habits seem to keep both kinds of couple happy. In a 2021 study of 232 young adults in long-distance relationships and 263 in geographically close ones, Kaitlyn Goldsmith and Sandra Byers found that maintenance behaviors such as staying in touch, talking about the future and thinking fondly of each other were linked to higher satisfaction in both groups, in much the same way.
 
+My take: the most useful finding here is about belief. Couples who expect it to work, and have a rough idea of when the distance ends, seem to do better. That's worth talking about early.
+
+**Quick quiz:** What makes your partner feel loved from far away? Take the 2-minute [love language quiz](/quiz/love-language/) together and compare.
+
 ## Phase 1: while you're apart
 
 ### Agree on the "why" and the "until when"
@@ -51,6 +55,12 @@ Text strips out tone and invites worst-case readings. If something bothers you, 
 
 A date on the calendar turns "I miss you" from a weight into a countdown.
 
+:::read Related reading
+/blog/what-to-text-after-a-fight/ | What to text after a fight | When you can't make up in person
+/blog/trust-issues-in-a-relationship/ | How to get over trust issues | When distance feeds the doubt
+/blog/how-to-say-i-love-you-without-words/ | How to show love without saying it | Ideas that work from far away
+:::
+
 ## Phase 2: during visits
 
 ### Lower the pressure on "perfect"
@@ -64,6 +74,10 @@ In a study of long-distance dating couples, Laura Stafford and Andy Merolla foun
 ### Don't save every problem for the visit
 
 If you've been holding a difficult conversation for "when we're together", the visit becomes tense before it even starts. Deal with the main issues on calls, and use visits for connection.
+
+:::tool check
+Not sure how a text will land from miles away? Check it first
+:::
 
 ## Phase 3: when you close the gap
 
@@ -91,6 +105,8 @@ You could say: "This is harder than I thought it'd be. I don't think it means we
 > *Names and details in this example are invented to show the idea.*
 
 I think this is the most underrated part of long distance. Couples plan for years to be in the same city and then spend almost no time planning what that will actually look like. Once you're in the same place, the next challenge is keeping it fun, and our guide on [how to keep the spark alive](/blog/how-to-keep-the-spark-alive/) helps with that.
+
+My take: people plan the move and forget the adjustment. I'd schedule a check-in a month after you start living close, just to ask each other what's different from what you expected.
 
 ## Long distance over the holidays
 

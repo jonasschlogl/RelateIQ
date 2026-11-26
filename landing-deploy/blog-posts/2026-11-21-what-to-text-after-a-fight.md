@@ -25,6 +25,8 @@ A few studies have looked at what happens when couples handle conflict by text, 
 
 Put together: a short, warm text after a fight helps. A long text that tries to settle the disagreement usually doesn't, because it carries the argument without the tone of voice, the face and the small signals that make it land gently.
 
+My take: my rule of thumb is simple. Text to reconnect, talk to resolve. If your message has more than three sentences, it probably belongs in a conversation.
+
 **Quick quiz:** Want to know how you tend to act in a fight? Try our 2-minute [conflict style quiz](/quiz/fight-style/).
 
 ## Before you type: a 3-question check
@@ -41,6 +43,12 @@ Put together: a short, warm text after a fight helps. A long text that tries to 
 | "I'm sorry I raised my voice." | "I'm sorry I raised my voice, but you were being impossible." |
 | "Can we talk tonight after dinner?" | "Also, while we're at it, about last weekend..." |
 | "I love you, even when we fight." | A six-paragraph message about everything that's wrong |
+
+:::read Related reading
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | Tonight, tomorrow and the week after
+/blog/how-to-apologize-to-your-partner/ | How to apologize to your partner sincerely | When the text needs to be an apology
+/blog/silent-treatment-vs-needing-space/ | Silent treatment vs needing space | If they're not replying
+:::
 
 ## 20 texts to send after a fight, by situation
 
@@ -90,6 +98,10 @@ For a full guide to apologies that land, see [how to apologize to your partner](
 > **Why the bridge works and the essay doesn't**
 > A bridge text does one job: it tells your partner that you're still on the same team. An essay asks them to read your whole case, alone, with no tone of voice to soften it, and decide how to respond. Most people respond to that the way they would to an attack: by defending themselves.
 
+:::tool check
+Written something already? Check it before you hit send
+:::
+
 ## What not to send after a fight
 
 - **"We need to talk."** With no context, it sounds like a breakup warning. Add what and when: "Can we talk tonight about this morning?"
@@ -110,6 +122,8 @@ The goal of every text on this list is to get you into a real conversation, calm
 If I had to pick one text from this list, it's the one that names a time to talk. It turns a tense silence into a plan, and it tells your partner the relationship isn't in question.
 
 If you've typed and deleted the same message five times, Message check can show you how it's likely to come across before you hit send, and suggest a gentler version if it reads as cold or defensive.
+
+My take: the best post-fight text often just sets up the talk: "Can we talk tonight? I miss you." It doesn't fix anything, and it doesn't need to.
 
 ## Quick answers
 

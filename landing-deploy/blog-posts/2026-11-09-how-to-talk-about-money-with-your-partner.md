@@ -23,6 +23,10 @@ This guide gives you a simple structure for a calm "money date", a look at what 
 
 **How you set up accounts may matter.** In an experiment with 230 engaged or newly married couples, Jenny Olson and colleagues randomly assigned couples to open a joint account, keep separate accounts, or do what they liked. Over two years, couples who merged into a joint account maintained their relationship quality, while the other groups showed declines. The researchers caution that a joint account isn't right for everyone, especially where there's financial instability or a risk of control.
 
+My take: the hidden-spending number doesn't surprise me. Most people don't hide money because they're dishonest. They hide it because the conversation feels harder than the secret. Making the conversation easier is the real fix.
+
+**Quick quiz:** Do you go quiet or push harder when money talk gets tense? The 2-minute [fight style quiz](/quiz/fight-style/) helps you both know what to expect.
+
 ## The money date: a 4-round agenda
 
 Pick a relaxed time, not the day a bill arrives. Make it pleasant: coffee, a walk, snacks. Plan for 45 minutes, not a whole evening.
@@ -64,6 +68,12 @@ Don't try to solve everything. Make one or two small decisions:
 
 I'd resist the urge to skip round 1. Talking about how money worked in your families feels like small talk. It's usually where the real explanation for your arguments is hiding.
 
+:::read Related reading
+/blog/relationship-problems-that-keep-coming-back/ | Why do we keep having the same fight? | When money is the fight on repeat
+/blog/relationship-advice-communication-habits/ | How to communicate better in a relationship | 7 habits that change how you argue
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | If the money talk went badly
+:::
+
 ## Which money set-up suits you?
 
 | Set-up | How it works | Can suit couples who... |
@@ -73,6 +83,10 @@ I'd resist the urge to skip round 1. Talking about how money worked in your fami
 | Fully separate | Each pays an agreed share of costs | ...are early in the relationship, or have very different situations |
 
 The Olson study suggests fully merging may help couples feel more united, but what matters most is that both of you genuinely agree, and that neither of you is left without access to money.
+
+:::tool practice
+Want to practice the money talk before you have it?
+:::
 
 ## What to say in 4 tricky situations
 
@@ -104,6 +118,8 @@ Lead with the feeling, not the accusation.
 ## If the talk still turns into a fight
 
 Take a break when either of you feels flooded, and come back to it later. Our guide to [communication habits](/blog/relationship-advice-communication-habits/) has ways to keep arguments from escalating, and if something hurtful was said, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) can help. If money is part of a bigger stress, see our guide on [supporting your partner when they're stressed](/blog/how-to-support-your-partner-when-stressed/). And if you're about to move in together after long distance, money is one of the big topics to cover first, see our [long distance relationship tips](/blog/long-distance-relationship-tips/).
+
+My take: if you only agree on one thing in your first money date, make it the no-need-to-ask amount. It removes a surprising number of small fights.
 
 ## Quick answers
 

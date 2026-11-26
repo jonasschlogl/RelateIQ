@@ -21,6 +21,8 @@ So here are 25 ways to say "I love you" without words, sorted by the kind of day
 
 **Responsiveness is the core.** Relationship researchers keep finding the same thing: people feel loved when they feel understood, accepted and cared for. In a large study of newlywed couples, Paula Pietromonaco and colleagues found that a partner's responsiveness even helped protect relationships from the effects of stress and depression. Every idea below is really a way of saying "I see you".
 
+My take: the gratitude finding is my favorite here. It means the gesture is only half of it. The other half is your partner noticing, so it's worth saying "I saw that, thank you" out loud.
+
 **Quick quiz:** Not sure which gestures your partner would value most? Try the free 2-minute [love language quiz](/quiz/love-language/) together and compare answers.
 
 ## On busy mornings
@@ -38,6 +40,12 @@ So here are 25 ways to say "I love you" without words, sorted by the kind of day
 8. Do the chore they hate, without announcing it.
 9. Sit close on the sofa instead of at opposite ends.
 10. When they share something, turn toward it: look up, ask a question, react.
+
+:::read Related reading
+/blog/love-languages/ | Are love languages real? | What research actually says
+/blog/how-to-keep-the-spark-alive/ | How to keep the spark alive | Find which spark is fading
+/blog/how-to-support-your-partner-when-stressed/ | How to help your partner with stress | What to say and what to skip
+:::
 
 ## On hard days
 
@@ -60,6 +68,10 @@ If I had to pick one from the whole list, it would be number 13: quietly taking 
 20. Say thank you for something ordinary they do every day and you've stopped noticing.
 
 If things are fine but feel a little flat, our guide on [how to keep the spark alive in a long-term relationship](/blog/how-to-keep-the-spark-alive/) can help you find what's missing.
+
+:::tool coach
+Not sure what would mean the most to your partner? Talk it through
+:::
 
 ## From far away
 
@@ -92,6 +104,8 @@ Then notice what lights them up. And remember Algoe's finding: when *your* partn
 ## When showing love feels hard
 
 If you grew up in a family where affection wasn't shown, gestures can feel awkward at first. Start with the smallest ones: a coffee, a text, a hand on the shoulder. They get easier with practice. If your partner struggles to show affection, our guide on [emotionally unavailable partners](/blog/emotionally-unavailable-partner/) explains some of the reasons why, and what helps.
+
+My take: if gestures don't come naturally to you, pick one small thing and repeat it. Consistency is more romantic than creativity, at least after the first year.
 
 ## Quick answers
 

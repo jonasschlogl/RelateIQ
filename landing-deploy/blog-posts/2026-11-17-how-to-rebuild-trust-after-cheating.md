@@ -25,6 +25,10 @@ Whether the affair was discovered or confessed, this is the moment the ground di
 
 One way to put it: "I did this. It's my responsibility, not yours. I'll answer your questions honestly."
 
+My take: how the truth comes out matters a lot. If you're the one who cheated, telling the whole story once is painful, but drip-feeding it over months is usually what makes trust impossible to rebuild.
+
+**Quick quiz:** If you're the partner who cheated, the 2-minute [apology style quiz](/quiz/apology-style/) shows how you tend to apologize, and what might be missing.
+
 ## Stage 2: Initial reactions
 
 The first weeks and months are usually the most chaotic: anger, grief, questions at 2am, wanting details, not wanting details, wanting closeness, wanting distance, sometimes all in one day.
@@ -37,6 +41,12 @@ The first weeks and months are usually the most chaotic: anger, grief, questions
 
 > **Why repeated questions aren't a failure**
 > Betrayed partners often ask the same questions many times. It can feel to the unfaithful partner like the conversation is going in circles. It isn't. Each time the answer is the same, and given without irritation, the betrayed partner's mind gets a little more evidence that the truth is stable now. Consistency is how the first layer of trust, predictability, starts to grow back.
+
+:::read Related reading
+/blog/trust-issues-in-a-relationship/ | How to get over trust issues | When doubt keeps coming back
+/blog/how-to-apologize-to-your-partner/ | How to apologize to your partner sincerely | What a real apology includes
+/blog/should-i-break-up-with-my-partner/ | Should I break up with my partner? | If you're not sure staying is right
+:::
 
 ## Stage 3: Stabilizing
 
@@ -54,6 +64,10 @@ Try (betrayed partner): "I'm having a hard day about it. I don't need you to fix
 Try (unfaithful partner): "Thank you for telling me. What would help right now?"
 
 The thing I'd want both partners to hear is that this stage is slow on purpose. Trust doesn't come back from one great conversation. It comes back from a hundred boring, consistent days.
+
+:::tool coach
+Need somewhere private to think this through?
+:::
 
 ## Stage 4: Revitalising
 
@@ -75,6 +89,8 @@ Usually many months, often a year or more. It depends on how long the affair las
 Rebuilding trust requires the unfaithful partner to take full responsibility and the betrayed partner to choose, freely, to try. If the affair continues, if there's ongoing lying, or if you're being pressured or blamed for the betrayal, staying may not be safe or healthy. Our guides on [whether to break up](/blog/should-i-break-up-with-my-partner/) and [how to get over a breakup](/blog/how-to-get-over-a-breakup/) can help you if leaving is the right choice.
 
 A therapist experienced with infidelity can help either way. If you're stuck on what to say, [how to apologize to your partner](/blog/how-to-apologize-to-your-partner/) covers the first apology. For the doubt that lingers afterwards, see [trust issues in a relationship](/blog/trust-issues-in-a-relationship/).
+
+My take: deciding to leave after an affair isn't failing at recovery. Rebuilding is one good outcome, and a clean, honest ending is another.
 
 ## Quick answers
 

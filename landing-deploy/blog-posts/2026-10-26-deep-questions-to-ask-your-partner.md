@@ -21,6 +21,10 @@ So this guide gives you 30 well-chosen questions, sorted by how deep they go and
 
 And yes, the idea of building closeness through gradually deeper questions has a famous origin: Arthur Aron's "36 questions" study, in which pairs of strangers who took turns answering increasingly personal questions felt much closer afterwards. The questions below use the same principle: start lighter, go deeper step by step.
 
+My take: the second finding matters more to me than the first. A great question followed by a distracted answer does more harm than no question at all, so put the phone away before you start.
+
+**Quick quiz:** How does your partner like to be supported when they open up? The 2-minute [comfort style quiz](/quiz/comfort-style/) can help you respond in the way that lands.
+
 ## Level 1: Easy and warm
 
 Good for: a walk, a long drive, the first time you try this.
@@ -46,6 +50,12 @@ Good for: a relaxed evening, a dinner without phones.
 14. When do you feel most appreciated by me?
 15. What's something we used to do that you miss?
 
+:::read Related reading
+/blog/date-night-questions-for-couples/ | Date night questions for couples | Lighter questions and games for a fun evening
+/blog/how-to-say-i-love-you-without-words/ | How to show love without saying it | What to do after a talk like this
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | What to say when you hurt your partner's feelings | If an answer stings
+:::
+
 ## Level 3: Vulnerable
 
 Good for: a calm, private moment when you both have time. Not in the middle of a conflict.
@@ -70,6 +80,10 @@ Good for: a quiet weekend morning, an anniversary, the start of a new year.
 28. If we could have one honest conversation we've been avoiding, what would it be about?
 29. What would make this year feel meaningful for you?
 30. What's one thing about us you never want to take for granted?
+
+:::tool practice
+Nervous about asking the bigger questions? Practice first
+:::
 
 ## How to respond so they keep talking
 
@@ -102,6 +116,8 @@ Sometimes a deep question uncovers something painful: a need that isn't being me
 Something like: "I'm really glad you told me. I need a little while to think about it. Can we come back to it tomorrow?"
 
 If an answer leads to a disagreement, our guide on [communication habits](/blog/relationship-advice-communication-habits/) can help keep it from escalating.
+
+My take: a hard answer is a sign the question worked. If your partner trusted you with something difficult, the most important thing you can say is "thank you for telling me."
 
 ## Make it a habit, not a one-off
 

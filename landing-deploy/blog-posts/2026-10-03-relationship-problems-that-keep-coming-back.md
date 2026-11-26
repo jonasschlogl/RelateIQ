@@ -29,7 +29,16 @@ Most recurring fights follow a simple pattern. Something small happens (the dish
 | Different needs for closeness | Feeling wanted versus feeling free of pressure |
 | The same fight, again | Fear of losing connection, or fear of being overwhelmed |
 
+My take: I find the 69% figure freeing rather than depressing. If most fights never fully get solved, the goal stops being "never argue about this again" and becomes "argue about it without hurting each other." That's a goal you can actually reach.
+
 **Quick quiz:** If the same fight keeps returning, it helps to know your own role in it. The free 2-minute [conflict style quiz](/quiz/fight-style/) shows whether you tend to escalate, shut down, people-please or repair.
+
+:::stats Why the same fights keep coming back
+69% | of relationship conflicts are about perpetual problems that may never fully go away, according to the Gottman Institute
+62% | of US adults said sharing household chores was very important for a successful marriage in 2007, up from 47% in 1990
+86% vs 33% | how often couples who stayed married turned toward each other's small bids, compared with couples who divorced
+source: The Gottman Institute; Pew Research Center (see sources below)
+:::
 
 ## 1. Chores and the mental load
 
@@ -55,6 +64,12 @@ Gottman's research gives this a solid basis. In a study that followed newlyweds 
 Instead of: "You care more about your phone than about me."
 
 You could say: "I miss talking to you in the evenings. Could we keep phones away during dinner this week?"
+
+:::read Related reading
+/blog/how-to-rebuild-trust-after-a-fight/ | How to make up after a fight | Tonight, tomorrow and the week after
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | What to say when your partner says you hurt their feelings | The first five minutes, step by step
+/blog/how-to-keep-the-spark-alive/ | How to keep the spark alive | When the fights have pushed the fun out
+:::
 
 ## 3. Money
 
@@ -93,6 +108,12 @@ For example: "It feels like when I push, you go quiet, and when you go quiet I p
 > Once the pattern has a name, it becomes something you face together instead of something you do to each other. The pursuer can relax a little because the withdrawer has promised to come back. The withdrawer can come back because they're no longer being chased. Many couples find that agreeing on the rules of a pause matters more than solving the original topic.
 
 Often the loop keeps itself going. In a 2022 study of 175 couples, Ione Bretaña and colleagues found that when one partner withdrew during conflict, the other tended to become more demanding or aggressive, and both reactions went with lower satisfaction. One person pulling back makes the other push harder, which makes the first pull back more, and the original topic gets lost.
+
+My take: when a fight repeats word for word, I'd stop debating the topic and ask a different question: "What is this one really about for you?" The answer is usually smaller and softer than the argument.
+
+:::tool practice
+Want to rehearse this conversation before you have it?
+:::
 
 ## How to talk about a problem that keeps coming back
 

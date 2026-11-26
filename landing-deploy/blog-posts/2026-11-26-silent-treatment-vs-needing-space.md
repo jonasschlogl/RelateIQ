@@ -23,6 +23,8 @@ The silent treatment sits at the far end of that second kind. A 2026 systematic 
 
 But the same review makes a point most articles skip: in adult relationships, going quiet often starts as a way to manage overwhelming emotion, not as a plan to hurt anyone. In one of the interview studies it includes, silence was often driven by emotional overwhelm rather than intentional manipulation. So the honest answer to "Is my partner punishing me?" is: sometimes, and sometimes they're drowning and haven't learned to say so.
 
+My take: I don't think the length of the silence is what matters most. It's whether the other person knows you're coming back. That single detail turns a punishment into a pause.
+
 **Quick quiz:** Curious what you tend to do when an argument heats up? Try the 2-minute [fight style quiz](/quiz/fight-style/).
 
 ## 6 differences between needing space and the silent treatment
@@ -52,6 +54,12 @@ When space ends, the person who left is the one who reopens the conversation. Wi
 ### 6. Space leaves you a bit uneasy. The silent treatment leaves you walking on eggshells.
 
 Waiting through someone's break can be uncomfortable, especially if you're anxious by nature. But over time, it should feel predictable. A pattern of punishing silence tends to change how you behave: you rehearse sentences, avoid topics and apologize just to make the cold stop.
+
+:::read Related reading
+/blog/avoidant-attachment-partner/ | Avoidant attachment in a partner | When space is their default
+/blog/what-to-text-after-a-fight/ | What to text after a fight | A message that ends the silence kindly
+/blog/my-boyfriend-gets-defensive/ | My boyfriend gets defensive when I bring something up | If talking turns into shutting down
+:::
 
 ## Side by side
 
@@ -101,6 +109,10 @@ The difference between space and the silent treatment is often one or two senten
 
 > **Why it works**
 > Silence without words leaves your partner to fill the gap, and an anxious mind rarely fills it kindly. A return time turns an open-ended threat into a short, survivable wait. The Gottman Institute also suggests agreeing on a signal in advance, because simply walking off can read as an even bigger shutdown.
+
+:::tool practice
+Want to practice saying "I need a break" calmly?
+:::
 
 ## What to say if you're on the receiving end
 

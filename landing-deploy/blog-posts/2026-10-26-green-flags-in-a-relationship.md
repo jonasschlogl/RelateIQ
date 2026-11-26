@@ -19,6 +19,10 @@ This guide lists nine green flags in a relationship, but with a twist: for each 
 
 **How to spot it:** Share a small win and watch. "That's amazing, tell me everything" is the green flag. "Nice" (back to the phone), "Won't that mean longer hours?" or "Guess what happened to me today" are not.
 
+My take: this is the green flag I'd look for first. How someone reacts to your good news tells you more about them than how they act on a perfect date.
+
+**Quick quiz:** Curious what you bring to the relationship yourself? The 2-minute [attachment style quiz](/quiz/attachment-style/) shows whether you lean secure, anxious or avoidant.
+
 ## 2. They support your goals without taking over
 
 **Why it matters:** In a study where couples talked about their personal goals, Brooke Feeney found that *responsive, non-intrusive* support (encouraging without controlling) was linked to the partner feeling happier, having higher self-esteem and feeling more confident about reaching their goals. Pushing, criticizing or taking over the plan didn't help.
@@ -38,6 +42,12 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 **Why it matters:** Problems you can name are problems you can fix. Silence, sulking or sudden explosions leave you guessing.
 
 **How to spot it:** After something goes wrong, do they say "That bothered me, can we talk?" or do you find out three days later, from their mood?
+
+:::read Related reading
+/blog/signs-of-a-toxic-relationship/ | Is my relationship toxic? | The other side of the list
+/blog/love-bombing/ | Love bombing | When early intensity isn't a green flag
+/blog/situationship/ | Situationship | When you're not sure what you are yet
+:::
 
 ## 5. They can lose an argument
 
@@ -74,6 +84,10 @@ Support also feeds itself when it is noticed. In a 2024 study of 163 long-term S
 >
 > *Names and details in this example are invented to show the idea.*
 
+:::tool coach
+Not sure what you're seeing in your relationship? Talk it through
+:::
+
 ## Green flags in early dating
 
 In the first weeks, you can't see how someone handles years of stress, but you can notice:
@@ -89,6 +103,8 @@ In the first weeks, you can't see how someone handles years of stress, but you c
 Nobody shows all nine all the time. Everyone has bad days, old habits and moments they're not proud of. Look for patterns over months, not perfection in a single week. And remember that a relationship can have green flags and red flags at the same time. If you're unsure about the red ones, our guides on [signs of a toxic relationship](/blog/signs-of-a-toxic-relationship/) and [gaslighting](/blog/gaslighting-in-a-relationship/) can help you think it through.
 
 Personally, I'd look hardest at number 9. A partner can tick every other box and still leave you anxious after every conversation. How you feel afterwards is data.
+
+My take: nobody shows all nine every day, including you. I'd look at the direction instead: are these things getting more common between you, or less?
 
 ## How to be a green flag partner
 
