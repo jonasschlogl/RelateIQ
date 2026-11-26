@@ -3,6 +3,7 @@ title: "My girlfriend says I don't care about her feelings: what she usually mea
 seo_title: "My Girlfriend Says I Don't Care: What She Really Means"
 date: 2026-11-27
 draft: true
+approved: true
 topics: communication
 checker: tone
 description: "My girlfriend says I don't care about her feelings, but I do. What she usually means, why fixing things can backfire, and what to say the next time."
