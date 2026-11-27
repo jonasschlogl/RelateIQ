@@ -25,7 +25,7 @@ Why? Being obviously helped can carry a hidden message: *you can't cope on your 
 
 This is the finding I'd most want people to know about support. The urge is to make it visible, to show you care. Often the kindest thing is the help they barely notice.
 
-My take: the best support often doesn't look like support at all. Making dinner without being asked can do more than a long pep talk, especially on the worst days.
+My take: the best support often doesn't look like support at all. Making dinner without being asked can do more than a long pep talk, especially on the worst days. Practical help works best alongside a few words that name how they feel, though. If you do a lot and still hear "you don't care", see [my girlfriend says I don't care about her feelings](/blog/my-girlfriend-says-i-dont-care/).
 
 :::stats How much support people are missing
 69% | of US adults say they needed more emotional support in the past year than they received

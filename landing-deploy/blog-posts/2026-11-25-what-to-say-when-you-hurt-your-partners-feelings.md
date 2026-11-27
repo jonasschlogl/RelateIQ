@@ -144,7 +144,7 @@ Want to practice what you'll say before the conversation?
 
 ## If it keeps happening
 
-One hurt is a conversation. The same hurt again and again is a pattern worth looking at together. Our guide to [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) can help you work out what's underneath, and [communication habits](/blog/relationship-advice-communication-habits/) covers the daily side.
+One hurt is a conversation. The same hurt again and again is a pattern worth looking at together. Our guide to [relationship problems that keep coming back](/blog/relationship-problems-that-keep-coming-back/) can help you work out what's underneath, and [communication habits](/blog/relationship-advice-communication-habits/) covers the daily side. If the hurt has turned into "you never care about my feelings", our guide on [what to do when your girlfriend says you don't care](/blog/my-girlfriend-says-i-dont-care/) looks at that bigger complaint.
 
 If I had to keep only one step from this guide, it would be step 2. Repeating back what you heard feels almost too simple, but it changes the whole temperature of the conversation.
 

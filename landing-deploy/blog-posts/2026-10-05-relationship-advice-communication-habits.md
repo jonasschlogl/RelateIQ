@@ -98,7 +98,7 @@ And don't be too afraid of being direct. In a study of 61 couples videotaped whi
 
 ## 5. Listen to understand, not to reply
 
-In a tense moment, try repeating back what you heard before you respond. "So you've had two weeks of late work, and the chores felt like one more demand. Is that right?" You don't have to agree. You only have to show you understood. Most arguments soften once both people feel heard.
+In a tense moment, try repeating back what you heard before you respond. "So you've had two weeks of late work, and the chores felt like one more demand. Is that right?" You don't have to agree. You only have to show you understood. Most arguments soften once both people feel heard. If your partner has ever told you that you don't care about their feelings, this habit is usually the missing piece, as our guide on [what she means when your girlfriend says you don't care](/blog/my-girlfriend-says-i-dont-care/) explains.
 
 This is also the antidote to defensiveness, another of Gottman's "four horsemen". Defensiveness ("That's not true, you're the one who...") tells your partner their concern doesn't count. Taking responsibility for even a small part ("You're right, I did forget to call") changes the temperature of the conversation. If you're on the other side, and your partner gets defensive every time you raise something, our guide on [what to do when your boyfriend gets defensive](/blog/my-boyfriend-gets-defensive/) has lines that lower the temperature.
 
