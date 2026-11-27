@@ -389,7 +389,7 @@ function markdown(src) {
 // Each post has three illustrations: /img/blog/<file-name>-1.svg (also the card thumbnail and the share image),
 // -2.svg and -3.svg (placed inside the article). Translated posts use the same images (same file name).
 const IMG_DIR = path.join(LANDING, "img", "blog");
-const IMG_V = "6"; // bump when the illustrations change (cache busting)
+const IMG_V = "7"; // bump when the illustrations change (cache busting)
 // photos (.jpg, from Pexels) win over the older illustrations (.svg) when both exist
 const imgExt = (key) => (fs.existsSync(path.join(IMG_DIR, `${key}-1.jpg`)) ? "jpg" : "svg");
 const imgFile = (key, n, ext = imgExt(key)) => `/img/blog/${key}-${n}.${ext}${ext === "png" ? "" : `?v=${IMG_V}`}`;
