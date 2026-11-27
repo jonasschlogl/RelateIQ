@@ -30,6 +30,13 @@ Heidän tutkimuksissaan näillä kahdella oli eri juuret. Reaktiivinen mustasukk
 
 Ensimmäinen hyödyllinen kysymys ei siis ole "Olenko mustasukkainen?" vaan "Tapahtuiko jotain, vai reagoinko päässäni olevaan tarinaan?"
 
+:::stats Mustasukkaisuus puhelinten aikakaudella
+40 % | parisuhteessa olevista yhdysvaltalaisista aikuisista häiriintyy ainakin joskus siitä, kuinka paljon aikaa kumppani viettää puhelimella
+34 % | on käynyt kumppaninsa puhelimen läpi tämän tietämättä
+23 % | sanoo kumppanin somen tehneen heistä mustasukkaisia tai epävarmoja suhteesta
+lähde: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4 860 yhdysvaltalaista aikuista, lokakuu 2019
+:::
+
 ## Myytti 2: "Jos et olisi mustasukkainen, et välittäisi"
 
 Tässä on totuuden siemen, ja siksi myytti elää. Reaktiivisen mustasukkaisuuden välähdys kertoo usein, että arvostat suhdetta. Mutta ajatus ei päde epäluuloiseen lajiin. Jatkuva epäluulo ei ole todiste rakkaudesta. Se on todiste pelosta, ja pelko tekee ihmisistä yleensä kontrolloivia eikä läheisempiä.
@@ -45,6 +52,14 @@ Toisin sanoen pyörittely ei ole lääke. Se on usein mekanismi, joka muuttaa oh
 > **Kokeile tätä, kun kierre alkaa**
 > Kirjoita huoli yhdellä lauseella. Kirjoita sitten yksi lause siitä, mitä oikeasti tiedät. "Hän ei ole vastannut kolmeen tuntiin" on tosiasia. "Hän puhuu jonkun toisen kanssa" on tarina. Varaa myöhemmäksi päivään 15 minuutin "huoliaika", ja kun ajatus palaa sitä ennen, sano itsellesi: "Myöhemmin, ei nyt." Se kuulostaa pieneltä. Se toimii, koska se katkaisee pyörittelyn, ei tunnetta.
 
+:::read Lue myös
+/blog/trust-issues-in-a-relationship/ | Näin pääset yli luottamusongelmista | Miksi epäily palaa yhä uudelleen
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun tunne ei koske kumppania
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin | Entä jos -kierteeseen
+:::
+
+**Pikatesti:** Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, voi auttaa ymmärtämään, miksi mustasukkaisuus osuu sinuun kovemmin kuin näyttää osuvan muihin.
+
 ## Myytti 4: "Hänen puhelimensa tarkistaminen ratkaisee asian"
 
 Tarkistaminen ratkaisee harvoin mitään. Jos et löydä mitään, helpotus kestää minuutteja ja epäily palaa ("ehkä hän poisti sen"). Jos löydät jotain monitulkintaista, sinulla on nyt riita *ja* oma luottamusrikkomuksesi.
@@ -54,6 +69,8 @@ Kiinnostavaa kyllä, sama Elphinstonin tutkimus havaitsi, että tarkistuskäytö
 On myös hyvä tietää, mikä halun voi laukaista. Janneke Schokkenbroekin ja kollegoiden vuoden 2022 tutkimus, jossa oli 346 parisuhteessa olevaa ihmistä, havaitsi, että ne, joiden kumppani usein sivuutti heidät puhelimen takia ("phubbing"), katselivat hieman todennäköisemmin kumppaninsa viestejä tai verkkotoimintaa. Vaikutus oli pieni, mutta viesti on hyödyllinen: nuuskiminen kasvaa joskus sivuutetuksi tulemisen tunteesta eikä vain epäluulosta. Siitä voi puhua.
 
 Sanoisin, että tämä on listan tärkein myytti. Tarkistaminen tuntuu siltä, että se lopettaa epäilyn. Se ei melkein koskaan tee niin. Se vain siirtää epäilyn seuraavaan asiaan.
+
+Minun näkemykseni: jos et löydä mitään, helpotus kestää noin päivän. Jos löydät jotain epäselvää, tilanne pahenee. Siksi valitsen mieluummin yhden rehellisen keskustelun kuin kymmenen salaista tarkistusta.
 
 ## Myytti 5: "Some vain näyttää sen, mikä on jo olemassa"
 
@@ -72,6 +89,12 @@ Käytännön johtopäätös: älä oleta tietäväsi kumppanisi sukupuolen perus
 Joskus tarkoittaa. Usein ei. Epäluuloinen mustasukkaisuus kulkee yleensä ihmisen mukana suhteesta toiseen, koska sen juuret ovat epävarmuudessa ja kiintymyksessä eivätkä siinä, mitä nykyinen kumppani tekee. Jos huomaat samat pelot jokaisen kumppanin kanssa, oppaamme [parisuhdeahdistuksesta](/blog/relationship-anxiety/) ja [kiintymystyyleistä](/blog/how-attachment-styles-work-in-relationships/) ovat parempi lähtökohta kuin kumppanisi tutkiminen.
 
 Mutta jos kumppanisi on usein salaileva, epäjohdonmukainen tai torjuva, kun otat huolesi puheeksi, mustasukkaisuutesi voi osoittaa johonkin todelliseen. Oppaamme [luottamusongelmista parisuhteessa](/blog/trust-issues-in-a-relationship/) auttaa näkemään eron.
+
+Minun näkemykseni: mustasukkaisuuden välähdys on pelkkää tietoa. Se, mitä teet seuraavien kymmenen minuutin aikana, ratkaisee, auttaako se vai satuttaako.
+
+:::tool coach
+Oletko juuri nyt mustasukkainen? Puhu se läpi ennen kuin reagoit
+:::
 
 ## Mikä oikeasti auttaa
 
@@ -134,3 +157,4 @@ Mustasukkaisuus on yksi yleisimmistä perusteluista kontrolloivalle ja väkivalt
 - Schokkenbroek, J. M., Hardyns, W., & Ponnet, K. (2022). Phubbed and curious: The relation between partner phubbing and electronic partner surveillance. *Computers in Human Behavior*. Tiivistelmä: [PsyPost](https://www.psypost.org/romantic-partners-who-get-phubbed-are-more-likely-to-spy-on-digital-communications-study-finds/)
 - DeSteno, D., Bartlett, M. Y., Braverman, J., & Salovey, P. (2002). Sex differences in jealousy: Evolutionary mechanism or artifact of measurement? *Journal of Personality and Social Psychology*, 83(4). Tiivistelmä: [APA Monitor](https://www.apa.org/monitor/oct02/planet)
 - Muise, A., Christofides, E., & Desmarais, S. (2009). More information than you ever wanted: Does Facebook bring out the green-eyed monster of jealousy? *CyberPsychology & Behavior*, 12(4), 441-444. Tiivistelmä: [EurekAlert](https://www.eurekalert.org/news-releases/588514)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

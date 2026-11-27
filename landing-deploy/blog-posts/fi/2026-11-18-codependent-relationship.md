@@ -52,6 +52,14 @@ Laske, kuinka monta kertaa viime viikolla nielaisit pienen "itse asiassa haluais
 
 Kolmesta aloittaisin ei-testistä. Jos ei-sanan sanominen kumppanille tuntuu vaaralliselta eikä vain epämukavalta, se kertoo enemmän kuin mikään leima.
 
+Minun näkemykseni: testi "pärjäisinkö, jos hän sanoisi ei?" on se, josta aloittaisin. Välittäminen kestää kiellon. Läheisriippuvuus ei yleensä kestä.
+
+:::read Lue myös
+/blog/how-to-support-your-partner-when-stressed/ | Näin tuet kumppaniasi stressin keskellä | Tukea kantamatta kaikkea
+/blog/signs-of-a-toxic-relationship/ | Onko suhteeni myrkyllinen? | Kun kyse on muustakin kuin liiasta huolenpidosta
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun auttamista ohjaa pelko menettää hänet
+:::
+
 ## Mitä tutkimus oikeasti sanoo (ja mitä ei)
 
 Läheisriippuvuus on suosittu sana mutta sekava tieteellinen käsite. Se ei ole diagnoosi, sille ei ole yhteisesti sovittua määritelmää, ja suuri osa siitä, mitä verkossa luet, menee näyttöä pidemmälle. Tässä on se, mille on kohtuullisen hyvä tuki.
@@ -80,6 +88,12 @@ Sinun ei tarvitse uudistaa koko suhdettasi. Muutos alkaa tässä hyvin pienestä
 > Priya suunnitteli heidän lomansa aina Samin toiveiden mukaan ja tunsi sitten hiljaista katkeruutta koko matkan. Tänä vuonna hän kokeili testiä 3 ja laski, kuinka usein hän oli nielaissut oman toiveensa. Yksitoista kertaa yhden suunnitteluviikonlopun aikana. Niinpä hän sanoi hieman vapisevalla äänellä: "Olen huomannut, että suostun aina sinun valintoihisi ja sitten mökötän, mikä ei ole reilua kummallekaan. Tällä kertaa haluaisin tosi mielelläni kaupunkilomalle." Sam nauroi ja sanoi luulleensa, että Priya rakastaa rantoja. Loma ei ollut pääasia. Pääasia oli, että Priya oli itse siinä mukana.
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
+
+Minun näkemykseni: aloita pienemmin kuin luulet. Kun sanot tällä viikolla kerran "hoida sinä tuo", se tekee enemmän kuin iso lupaus muuttaa kaikki.
+
+:::tool practice
+Haluatko harjoitella ystävällistä kieltäytymistä? Harjoittele ensin
+:::
 
 ## Sanoja hetkiin, jolloin se tuntuu vaikealta
 

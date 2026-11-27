@@ -23,6 +23,8 @@ Silmiinpistävin tulos: noin puolella oli vahvoja syitä molempiin suuntiin yht�
 
 **Pikatesti:** ennen suurta päätöstä voi auttaa nähdä, mitä puuttuu. Ilmainen [parisuhteen tarkistustesti](/quiz/relationship-needs/), englanniksi ja 2 minuutissa, näyttää, tarvitsetteko eniten enemmän yhteistä aikaa, parempia keskusteluja, enemmän hauskaa vai enemmän tiimityötä.
 
+Minun näkemykseni: se, että olet kahden vaiheilla, ei tarkoita, että olisit huono tekemään päätöksiä. Yleensä se tarkoittaa, että molemmilla puolilla on todellisia syitä, ja se ansaitsee aikaa, ei hätäistä päätöstä.
+
 ## Mitä tutkimus kertoo eron ennustajista
 
 Vuonna 2010 Benjamin Le kollegoineen yhdisti 137 tutkimusta, joissa oli 37 761 osallistujaa 33 vuoden ajalta, selvittääkseen, mikä ennustaa parhaiten avoliittojen ja seurustelusuhteiden päättymistä. Osa tuloksista yllättää.
@@ -43,6 +45,12 @@ Uudempi ja vielä laajempi analyysi osoittaa samaan suuntaan. Vuonna 2020 Samant
 Mitä tämä tarkoittaa sinulle? Ei sitä, että sinun pitäisi jäädä, koska olet riippuvainen jostakusta, tai lähteä, koska et ole tänään tyytyväinen. Se tarkoittaa, että tärkeimmät kysymykset koskevat suhteen ydintä: tunnetko yhä sitoutumista, rakastatko yhä tätä ihmistä ja haluatko yhä, että elämänne ovat yhteydessä toisiinsa? Ne ovat alla olevat kysymykset.
 
 Myös ajoitus merkitsee. Vuonna 2025 tehdyssä neljän kansallisen pitkäaikaistutkimuksen analyysissa, jossa oli 11 295 ihmistä, Janina Bühler ja Ulrich Orth havaitsivat, että päättyneet suhteet kulkivat kahden vaiheen läpi: vuosien hitaan, lievän laskun ja sitten käännekohdan noin vuosi tai kaksi ennen eroa, minkä jälkeen tyytyväisyys romahti nopeasti. Myöhemmin eron tehnyt osapuoli tuli yleensä onnettomaksi aiemmin. Tutkijat ehdottavat, että asioiden korjaaminen hitaassa vaiheessa, ennen jyrkkää pudotusta, antaa pareille parhaan mahdollisuuden.
+
+:::stats Mitä tutkimus sanoo päättämisestä
+69 % | parisuhteen ristiriidoista koskee pysyviä ongelmia, jotka eivät ehkä koskaan ratkea kokonaan, Gottman Instituten mukaan
+27 vs. 23 | eri syytä jäädä ja lähteä, joita löytyi ihmisiltä, jotka parhaillaan pohtivat eroa
+lähde: The Gottman Institute; Joel, MacDonald ja Page-Gould (ks. lähteet alla)
+:::
 
 ## 10 kysymystä itsellesi
 
@@ -94,6 +102,12 @@ Näemme usein muiden elämän selkeämmin kuin oman. Kuvittele, että paras yst�
 
 Jos minun pitäisi valita yksi kysymys kymmenestä, se olisi numero 7. Ei "onko nyt huono?", vaan "jos mikään ei muuttuisi, voisinko hyvin viiden vuoden päästä?" Se selkeyttää todella paljon.
 
+:::read Lue myös
+/blog/how-to-fix-a-relationship/ | Onko suhteeni pelastamisen arvoinen? | Miten sen tietää ja mistä aloittaa
+/blog/signs-your-partner-is-losing-interest/ | Merkit, että kumppani menettää kiinnostuksensa | Mitä kukin merkki voi tarkoittaa
+/blog/how-to-get-over-a-breakup/ | Näin pääset yli erosta | Jos päätät lähteä
+:::
+
 ## Kolme tilannetta, kolme eri vastausta
 
 Nämä esimerkit ovat havainnollistuksia eivätkä oikeita ihmisiä, mutta ne näyttävät, miten samaan kysymykseen ("pitäisikö minun lähteä?") voi olla hyvin erilaisia vastauksia.
@@ -124,6 +138,12 @@ Nämä esimerkit ovat havainnollistuksia eivätkä oikeita ihmisiä, mutta ne n�
 Moni artikkeli käsittelee eroa kokeena, jonka joko läpäisee tai ei. Lasketaan punaiset liput, summataan pisteet, valmis. Oikea elämä on sotkuisempaa. Voit rakastaa jotakuta etkä silti sopia hänen kanssaan yhteen. Voi olla todellisia ongelmia ja silti suhde, jonka puolesta kannattaa taistella.
 
 Tavoite ei ole löytää "oikeaa" vastausta yhdessä yössä. Tavoite on tehdä päätös, jonka ymmärrät ja jonka takana voit seistä, kumpaan suuntaan tahansa se menee.
+
+Minun näkemykseni: yksi kysymys, joka on mielestäni hyödyllisempi kuin mikään lista, on "pidänkö siitä, kuka olen tässä suhteessa?". Vastaus on yleensä selkeämpi kuin hyvät ja huonot puolet.
+
+:::tool coach
+Kierrätkö kehää? Puhu se läpi ilman arvostelua
+:::
 
 ## Rauhallisempi tapa päättää
 

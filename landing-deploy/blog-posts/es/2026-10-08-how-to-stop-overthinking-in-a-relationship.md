@@ -33,11 +33,19 @@ El resultado: el 91,4% de las preocupaciones no se cumplieron. Y de las que sí 
 
 Fue un estudio pequeño con personas que tienen un trastorno de ansiedad, así que no demuestra que el 91% de *tus* preocupaciones de pareja sean erróneas. Pero muestra algo útil: la preocupación parece una predicción, y suele ser una predicción mala. La sensación de certeza que acompaña a una espiral a las 2 de la madrugada dice mucho más de tu nivel de ansiedad que de lo que está pasando de verdad.
 
+Mi opinión: no creo que la lección sea "tus preocupaciones siempre están equivocadas". Es que tu cerebro es un narrador mucho más ruidoso que preciso. Saberlo hace un poco más fácil esperar antes de reaccionar.
+
 ## Pensar demasiado y ansiedad de apego
 
 En algunas personas, pensar demasiado está ligado a lo que los psicólogos llaman ansiedad de apego: una preocupación más fuerte de que la pareja se aleje o te rechace. Es una de las dos dimensiones principales que usan los investigadores para describir el apego adulto, junto con la evitación. Las personas con más ansiedad de apego tienden a notar antes las pequeñas señales de distancia y a interpretarlas de forma más negativa.
 
 Si quieres entender mejor esa parte, la explicamos en nuestra guía sobre los [tipos de apego en la pareja](/blog/how-attachment-styles-work-in-relationships/). No es un diagnóstico, solo una forma útil de detectar un patrón. Y la parte esperanzadora: la ansiedad de apego tiende a disminuir en la edad adulta y responde bien al tipo de práctica que se describe más abajo.
+
+:::read Lecturas relacionadas
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | Cuando la duda no tiene que ver con tu pareja
+/blog/trust-issues-in-a-relationship/ | Cómo superar los problemas de confianza | Por qué la tranquilidad no dura
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Cuando el silencio dispara la espiral
+:::
 
 ## Cómo es una espiral de pensar demasiado
 
@@ -126,6 +134,10 @@ Esto es una petición, no una norma sobre el comportamiento de tu pareja. Si not
 
 De los siete, el paso tres es por el que yo empezaría. Apuntar otras tres explicaciones parece una tontería la primera vez. También es una de las herramientas más sencillas de todo este artículo, y una de las más eficaces.
 
+:::tool coach
+¿Estás en plena espiral? Háblalo antes de escribirle
+:::
+
 ## Un ejemplo completo: de la espiral a la conversación
 
 > **Ejemplo: el viernes por la noche de Jacob**
@@ -144,6 +156,8 @@ De los siete, el paso tres es por el que yo empezaría. Apuntar otras tres expli
 Conviene decirlo claramente: darle vueltas a todo y tener buen instinto no son lo mismo. Si tu pareja es a menudo deshonesta, desaparece sin explicación o te hace sentir pequeño, tu malestar puede ser información, no ansiedad.
 
 La prueba no es "¿me siento preocupado?". Es "¿hay un patrón repetido de comportamiento que pueda describir con hechos?". Una respuesta tardía no es un patrón. Tres promesas rotas en un mes, descritas sin interpretación, sí lo son. Si puedes describir un patrón, el siguiente paso es una conversación clara sobre ese patrón, no más análisis en silencio.
+
+Mi opinión: una preocupación que resulta ser cierta también merece una conversación tranquila, no un expediente perfecto. No necesitas reunir pruebas para tener derecho a hacer una pregunta.
 
 ## Cómo decirle a tu pareja que le das muchas vueltas a todo
 

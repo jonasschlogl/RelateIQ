@@ -22,6 +22,8 @@ Tässä siis 25 tapaa sanoa "rakastan sinua" ilman sanoja päivän tyypin mukaan
 
 **Pikatesti:** Etkö ole varma, mitä eleitä kumppanisi arvostaisi eniten? Tehkää yhdessä maksuton [rakkauden kielten testi](/quiz/love-language/), englanniksi ja 2 minuutin mittainen, ja vertailkaa vastauksia.
 
+Minun näkemykseni: kiitollisuutta koskeva löydös on suosikkini. Se tarkoittaa, että ele on vain puolet. Toinen puoli on se, että kumppanisi huomaa sen, joten kannattaa sanoa ääneen "huomasin, kiitos".
+
 ## Kiireisinä aamuina
 
 1. Tee hänen kahvinsa tai teensä juuri niin kuin hän sen haluaa, kysymättä.
@@ -37,6 +39,12 @@ Tässä siis 25 tapaa sanoa "rakastan sinua" ilman sanoja päivän tyypin mukaan
 8. Tee se kotityö, jota hän inhoaa, ilmoittamatta siitä.
 9. Istu sohvalla lähellä äläkä sen toisessa päässä.
 10. Kun hän kertoo jotain, käänny sitä kohti: nosta katseesi, kysy jotain, reagoi.
+
+:::read Lue myös
+/blog/love-languages/ | Ovatko rakkauden kielet totta? | Mitä tutkimus oikeasti sanoo
+/blog/how-to-keep-the-spark-alive/ | Näin pidätte kipinän elossa | Selvitä, mikä kipinä hiipuu
+/blog/how-to-support-your-partner-when-stressed/ | Näin tuet kumppaniasi stressin keskellä | Mitä sanoa ja mitä jättää sanomatta
+:::
 
 ## Raskaina päivinä
 
@@ -59,6 +67,10 @@ Jos saisin valita koko listalta yhden, se olisi numero 13: yhden tehtävän hilj
 20. Kiitä jostain arkisesta, jota hän tekee joka päivä ja jota et enää huomaa.
 
 Jos kaikki on hyvin mutta tuntuu vähän lattealta, oppaamme siitä, [miten pitää kipinä yllä pitkässä suhteessa](/blog/how-to-keep-the-spark-alive/), voi auttaa löytämään, mitä puuttuu.
+
+:::tool coach
+Etkö tiedä, mikä merkitsisi kumppanillesi eniten? Puhu se läpi
+:::
 
 ## Kaukaa
 
@@ -91,6 +103,8 @@ Huomaa sitten, mikä saa hänet syttymään. Ja muista Algoen löydös: kun *sin
 ## Kun rakkauden näyttäminen tuntuu vaikealta
 
 Jos kasvoit perheessä, jossa hellyyttä ei näytetty, eleet voivat aluksi tuntua kömpelöiltä. Aloita pienimmistä: kahvi, viesti, käsi olalla. Ne helpottuvat harjoittelemalla. Jos kumppanisi on vaikea näyttää hellyyttä, oppaamme [tunnetasolla tavoittamattomasta kumppanista](/blog/emotionally-unavailable-partner/) selittää joitakin syitä ja sen, mikä auttaa.
+
+Minun näkemykseni: jos eleet eivät tule sinulta luonnostaan, valitse yksi pieni asia ja toista sitä. Johdonmukaisuus on romanttisempaa kuin luovuus, ainakin ensimmäisen vuoden jälkeen.
 
 ## Nopeat vastaukset
 

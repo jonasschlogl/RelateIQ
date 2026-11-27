@@ -20,6 +20,10 @@ Så den här guiden ger dig 30 väl valda frågor, sorterade efter hur djupt de 
 
 Och ja, idén att bygga närhet genom allt djupare frågor har ett berömt ursprung: Arthur Arons studie med "36 frågor", där par av främlingar som turades om att svara på allt mer personliga frågor kände sig mycket närmare varandra efteråt. Frågorna nedan bygger på samma princip: börja lättare och gå djupare steg för steg.
 
+Min åsikt: det andra fyndet betyder mer för mig än det första. En bra fråga följd av ett distraherat svar gör mer skada än ingen fråga alls, så lägg undan mobilen innan ni börjar.
+
+**Snabbtest:** Hur vill din partner bli stöttad när hen öppnar sig? Det 2 minuter långa [testet om tröststil](/quiz/comfort-style/), på engelska, kan hjälpa dig att svara på ett sätt som når fram.
+
 ## Nivå 1: Lätta och varma
 
 Passar för: en promenad, en lång bilresa, första gången ni testar.
@@ -45,6 +49,12 @@ Passar för: en avslappnad kväll, en middag utan mobiler.
 14. När känner du dig mest uppskattad av mig?
 15. Vad gjorde vi förut som du saknar?
 
+:::read Läs också
+/blog/date-night-questions-for-couples/ | Frågor till dejtkvällen | Lättare frågor och lekar för en rolig kväll
+/blog/how-to-say-i-love-you-without-words/ | Så visar du kärlek utan ord | Vad du kan göra efter ett sådant samtal
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Vad du säger när du har sårat din partner | Om ett svar svider
+:::
+
 ## Nivå 3: Sårbara
 
 Passar för: en lugn, privat stund när ni båda har tid. Inte mitt i en konflikt.
@@ -69,6 +79,10 @@ Passar för: en lugn helgmorgon, en årsdag, början på ett nytt år.
 28. Om vi kunde ha ett ärligt samtal som vi har undvikit, vad skulle det handla om?
 29. Vad skulle få det här året att kännas meningsfullt för dig?
 30. Vad med oss vill du aldrig ta för givet?
+
+:::tool practice
+Nervös för de större frågorna? Öva först
+:::
 
 ## Så svarar du så att hen fortsätter prata
 
@@ -101,6 +115,8 @@ Ibland gräver en djup fråga fram något smärtsamt: ett behov som inte blir ti
 Något i stil med: "Jag är verkligen glad att du berättade. Jag behöver en stund att tänka på det. Kan vi ta upp det igen i morgon?"
 
 Om ett svar leder till en oenighet kan vår guide om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) hjälpa er att inte låta det trappas upp.
+
+Min åsikt: ett svårt svar är ett tecken på att frågan fungerade. Om din partner har anförtrott dig något svårt är det viktigaste du kan säga "tack för att du berättade".
 
 ## Gör det till en vana, inte en engångsgrej
 

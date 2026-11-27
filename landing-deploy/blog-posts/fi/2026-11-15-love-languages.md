@@ -30,6 +30,15 @@ Sama katsaus esitti, että osa tärkeimmistä tavoista, joilla kumppanit osoitta
 
 **Käytä sitä näin:** lisää omia luokkiasi. "Kun olen stressaantunut, eniten auttaa, kun vain istut vierelläni" on myös rakkauden kieli. Oppaamme [kumppanin tukemisesta stressin keskellä](/blog/how-to-support-your-partner-when-stressed/) käsittelee sitä perusteellisesti.
 
+:::chart Yhdysvaltalaisten yleisin rakkauden kieli rakkauden vastaanottamiseen
+Yhteinen laatuaika | 38 | 38 %
+Fyysinen kosketus | 24 | 24 %
+Kannustavat sanat | 19 | 19 %
+Palvelukset | 13 | 13 %
+Lahjojen saaminen | 7 | 7 %
+lähde: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1 000 yhdysvaltalaista aikuista, tammikuu 2022
+:::
+
 ## Uskomus 3: "Parit, joilla on sama rakkauden kieli, ovat onnellisempia"
 
 **Mitä tutkimus sanoo: heikkoa näyttöä.**
@@ -37,6 +46,12 @@ Sama katsaus esitti, että osa tärkeimmistä tavoista, joilla kumppanit osoitta
 Vuoden 2017 tutkimuksessa, jossa oli 67 paria, tutkijat Bunt ja Hazelwood testasivat juuri tätä. Saman pääasiallisen rakkauden kielen jakamisella oli vain vähän merkitystä tyytyväisyyden kannalta. Enemmän merkitsi *itsesäätely*: kummankin kyky hallita omia reaktioitaan ja jatkaa panostamista suhteeseen.
 
 **Käytä sitä näin:** älä huolestu, jos "tyyppinne" eivät täsmää. Erilaiset mieltymykset tarkoittavat vain, että teidän täytyy olla vähän tarkkaavaisempia, mikä tekee suhteelle hyvää joka tapauksessa.
+
+:::read Lue myös
+/blog/how-to-say-i-love-you-without-words/ | Näin osoitat rakkautta ilman sanoja | 25 pientä tapaa kaikenlaisiin päiviin
+/blog/how-to-keep-the-spark-alive/ | Näin pidätte kipinän elossa | Löydä hiipuva kipinä ja korjaa juuri se
+/blog/long-distance-relationship-tips/ | Näin etäsuhde toimii | Kun rakkauden täytyy kulkea ruudun läpi
+:::
 
 ## Uskomus 4: "Kumppanin kielen puhuminen tekee todellisen eron"
 
@@ -64,6 +79,12 @@ Ei ole vahvaa näyttöä siitä, että rakkauden kielet olisivat pysyviä piirte
 Mostovan tutkimus havaitsi, etteivät edes empaattiset kumppanit osanneet automaattisesti vastata kumppaninsa mieltymyksiin. Rakkaus ei anna ihmisille telepatiaa. Selkeä pyytäminen ei ole epäromanttista. Se säästää kuukausien hiljaiselta pettymykseltä.
 
 Kokeile: "Minulle merkitsee paljon, kun kerrot, mitä arvostat minussa. En tarvitse isoja puheita, vain lauseen silloin tällöin."
+
+Minun näkemykseni: sen odottaminen, että toinen arvaa, on nopein tapa tuntea itsensä rakastamattomaksi ihmisen rinnalla, joka oikeasti yrittää. Sen kertominen, mikä menee sinulla perille, ei ole epäromanttista. Se on anteliasta.
+
+:::tool coach
+Etkö ole varma, mitä kumppanisi tarvitsee sinulta? Puhu se läpi
+:::
 
 ## Mikä oikeasti auttaa
 
@@ -95,3 +116,4 @@ Oma näkemykseni: rakkauden kielet ovat hyvä keskustelun avaus ja huono säänt
 - Bunt, S., & Hazelwood, Z. J. (2017). Walking the walk, talking the talk: Love languages, self-regulation, and relationship satisfaction. *Personal Relationships*, 24(2), 280-290. [Tiivistelmä](https://metatoc.com/papers/100052-walking-the-walk-talking-the-talk-love-languages-self-regulation-and-relationship-satisfaction)
 - University of Florida, SMART Couples: [Do you speak your partner's love language? Does it matter?](https://smartcouples.ifas.ufl.edu/dating/communicating-with-your-partner/do-you-speak-your-partners-love-language)
 - Chapman, G. (1992). *The Five Love Languages: How to Express Heartfelt Commitment to Your Mate*. Northfield Publishing.
+- YouGov (2022): [What are Americans' love languages?](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), survey of 1,000 US adults, January 2022

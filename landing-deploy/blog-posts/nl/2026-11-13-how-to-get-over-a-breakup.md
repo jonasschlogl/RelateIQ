@@ -24,6 +24,16 @@ Het doel is hier niet om je beter te voelen. Het is om erdoorheen te komen zonde
 
 **Schrijf één zin voor later.** In je telefoon: "Onthoud waarom het voorbij is: ___." Die heb je in week twee nodig.
 
+Mijn mening: de eerste twee dagen zijn niet het moment om iets te begrijpen. Eet, slaap, bel een vriendin. Het begrijpen kan wachten.
+
+:::read Lees ook
+/blog/should-i-break-up-with-my-partner/ | Hoe weet je wanneer het tijd is om uit elkaar te gaan? | Als je nog aan het beslissen bent
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Voor als het opduikt in de volgende relatie
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken | Als je hoofd het steeds opnieuw afspeelt
+:::
+
+**Snelle quiz:** Sommige mensen vinden een breuk moeilijker door hoe ze zich hechten. De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, kan je helpen je reactie te begrijpen.
+
 ## Fase 2: de eerste twee weken
 
 Dit is vaak het zwaarste stuk. De schok zakt en het gemis komt.
@@ -52,6 +62,10 @@ Verdriet, boosheid, opluchting en schuld, allemaal op één middag. Dat is norma
 > In drie onderzoeken ontdekten Erica Slotter, Wendi Gardner en Eli Finkel dat het beeld dat mensen van zichzelf hadden na een breuk minder helder werd. Hun zelf voelde, zoals zij het zeiden, "minder helder en zelfs kleiner", en dat verlies aan helderheid droeg bij aan het verdriet. In een relatie worden routines, plannen en zelfs je filmsmaak gedeeld. Als het eindigt, moet je uitzoeken welke delen van *jou* waren. Dat uitzoeken is een groot deel van het helen.
 
 Als je één ding uit deze fase meeneemt: demp je ex. Niet als statement, maar als basiszorg voor jezelf. Elke keer kijken zet de klok weer op nul.
+
+:::tool coach
+Wil je die persoon om 2 uur 's nachts appen? Praat het hier eerst door
+:::
 
 ## Fase 3: week drie tot twaalf
 
@@ -86,6 +100,8 @@ Er is geen vast getal, en wie je er een belooft, gokt. Veel mensen merken dat he
 | Je ziet zowel het goede als het slechte in de relatie | Je voelt je hopeloos of denkt erover jezelf iets aan te doen |
 
 Klinkt iets uit de rechterkolom als jij, praat dan met een huisarts of psycholoog. Denk je erover een einde aan je leven te maken, neem dan meteen contact op met de hulpdiensten of een crisislijn.
+
+Mijn mening: er is geen deadline om over iemand heen te komen. Als je langzaam meer oké dagen hebt dan slechte, doe je het goed, ook als het langer duurt dan je hoopte.
 
 ## Als jij het uitmaakte
 

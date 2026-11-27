@@ -20,6 +20,10 @@ Alla on viisi helppoa muotoa, 40 kysymystä niiden pelaamiseen ja vähän tutkim
 
 **Keskustelut sujuvat paremmin kuin odotat.** Michael Kardasin, Amit Kumarin ja Nicholas Epleyn tutkimus osoitti, että ihmiset yliarvioivat johdonmukaisesti, kuinka kiusallinen syvällisempi keskustelu on. Jos kysymys tuntuu päässäsi vähän liialliselta, se luultavasti otetaan vastaan paremmin kuin luulet.
 
+Minun näkemykseni: näiden kysymysten tarkoitus ei mielestäni ole vastaukset. Se on se puolituntinen, jolloin olette taas uteliaita toisistanne, mikä kiireisiltä pareilta katoaa huomaamatta.
+
+**Pikatesti:** Haluatteko lämmitellä ennen kysymyksiä? Tehkää yhdessä kahden minuutin [rakkauden kielen testi](/quiz/love-language/), englanniksi, ja vertailkaa vastauksianne.
+
 ## 5 peliä kysymysten kanssa
 
 ### 1. Kysymyspurkki
@@ -53,6 +57,12 @@ Käytä kysymysten sijaan kehotuksia, jotka alkavat sanoilla "Kerro jostain kerr
 **Parhaimmillaan:** rauhalliseen iltaan, pitkälle kävelylle, illalle viinipullon kanssa.
 
 Oma suosikkini on kuuma tuoli, lähinnä koska se jännittää ihmisiä eniten ja on lopulta se, josta he pitävät eniten.
+
+:::read Lue myös
+/blog/deep-questions-to-ask-your-partner/ | Syvällisiä kysymyksiä kumppanille | 30 kysymystä, jotka menevät askeleen syvemmälle
+/blog/how-to-say-i-love-you-without-words/ | Näin osoitat rakkautta ilman sanoja | 25 pientä elettä kaikenlaisiin päiviin
+/blog/long-distance-relationship-tips/ | Näin etäsuhde toimii | Kysymykset toimivat myös videopuhelussa
+:::
 
 ## 40 kysymystä treffi-iltaan
 
@@ -110,6 +120,10 @@ Oma suosikkini on kuuma tuoli, lähinnä koska se jännittää ihmisiä eniten j
 
 Vakavampia ja haavoittuvampia kysymyksiä löydät kattavasta oppaastamme [syvällisistä kysymyksistä kumppanille](/blog/deep-questions-to-ask-your-partner/), jossa kerrotaan myös, miten reagoida raskaaseen vastaukseen.
 
+:::tool coach
+Suunnitteletko treffi-iltaa etkä keksi mitään? Kysy coachilta
+:::
+
 ## Tee itse illasta vähän erilainen
 
 Kysymykset toimivat parhaiten, kun ympäristö tuntuu erilaiselta kuin tavallinen tiistai. Wilcoxin ja Dew'n raportti ja Arthur Aronin ja kollegoiden vanhemmat kokeet osoittavat samaan suuntaan: uuden tekeminen yhdessä kulkee käsi kädessä paremman suhdetyytyväisyyden kanssa. Sen ei tarvitse olla kallista:
@@ -133,6 +147,8 @@ Kaikki eivät rakasta kysymyksiä. Aloittakaa tämä vai tuo -pelillä, joka ei 
 Jos olette erillään, kaikki nämä pelit toimivat videopuhelussa. Lisää ideoita löytyy [etäsuhdevinkeistämme](/blog/long-distance-relationship-tips/). Ja jos ilta muuttuu keskusteluksi jostain, mikä on vaivannut toista, oppaamme [viestintätavoista](/blog/relationship-advice-communication-habits/) auttaa pitämään sävyn ystävällisenä.
 
 *Tämä artikkeli on yleistä tietoa, ei terapiaa eikä lääketieteellistä neuvontaa.*
+
+Minun näkemykseni: jos kumppanisi pyörittelee silmiään "kysymyksille", jätä muoto pois ja pidä henki. Kysy yksi hyvä kysymys kävelyllä. Uteliaisuus ei tarvitse korttipakkaa.
 
 ## Lähteet
 

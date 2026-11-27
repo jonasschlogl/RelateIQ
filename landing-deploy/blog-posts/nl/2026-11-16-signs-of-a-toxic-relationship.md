@@ -26,6 +26,15 @@ Dit zijn patronen waar veel stellen in terechtkomen, vooral onder stress. Ze doe
 
 **Volgende stap:** een rustig, concreet gesprek en misschien relatietherapie. Onze gidsen over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) en [relatieproblemen die steeds terugkomen](/blog/relationship-problems-that-keep-coming-back/) zijn een goed begin.
 
+Mijn mening: de meeste relaties gaan door periodes van niveau 1. Waar het om gaat, is of jullie het allebei kunnen benoemen en eraan kunnen werken. Een moeilijke periode waar je over kunt praten, is heel anders dan een die je niet durft aan te kaarten.
+
+:::stats Hoe vaak controlerend gedrag voorkomt
+27,2% | van de Amerikaanse vrouwen heeft in haar leven dwingende controle of insluiting door een partner meegemaakt
+19,5% | van de Amerikaanse mannen zegt hetzelfde
+30,2% | van de vrouwen heeft psychologische agressie van een partner meegemaakt
+bron: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), gegevens verzameld in 2023 en 2024
+:::
+
 ## Niveau 2: Toxische patronen
 
 Hier gaat het probleem niet meer alleen over hoe jullie ruzie maken. Het gaat over hoe je behandeld wordt. Relatieonderzoeker John Gottman ontdekte in zijn studies vier communicatiepatronen die een scheiding voorspelden, en noemde **minachting** (spot, met de ogen rollen, sarcasme, je partner behandelen alsof die minder is) het schadelijkst. Op niveau 2 worden minachting en zijn familieleden normaal.
@@ -68,6 +77,12 @@ Subtiele controle is ook de vorm die mensen het vaakst missen. In een studie uit
 
 Ik wil heel duidelijk zijn over dit niveau: een app, een artikel of een betere manier van praten lost het niet op. Als dit deel bekend klinkt, zijn de hulplijnen hieronder de volgende stap.
 
+:::read Lees ook
+/blog/gaslighting-in-a-relationship/ | Gaslight mijn partner mij? | 5 vragen die het onderscheiden van een meningsverschil
+/blog/love-bombing/ | Love bombing | Hoe het zich week na week ontvouwt
+/blog/codependent-relationship/ | Ben ik codependent of gewoon zorgzaam? | Als helpen verandert in jezelf verliezen
+:::
+
 ## Een snelle zelftest: de afgelopen maand
 
 Denk aan de afgelopen vier weken, niet aan de beste of slechtste dag. Welke uitspraken kloppen?
@@ -91,6 +106,12 @@ Met andere woorden: blijven heeft vaak meer te maken met geld, kinderen, huisves
 > Twee jaar lang hield Yuki zichzelf voor dat Ben "gewoon gestrest" was als hij haar kookkunsten belachelijk maakte waar vrienden bij waren. Toen hij haar berichten begon te lezen en vroeg waarom ze haar zus had geappt, schreef ze een maand lang op wat er gebeurde, zoals een hulpverlener van een hulplijn had voorgesteld. Het op papier zien veranderde iets. "Ik had elk incident los behandeld", zei ze later. "Opgeschreven was het overduidelijk één ding."
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
+
+Mijn mening: als je jezelf al maanden het gedrag van je partner uitlegt, is die moeite ook informatie. Gezonde relaties hebben zelden zoveel verdediging nodig.
+
+:::tool coach
+Wil je hier eerst in alle rust over nadenken?
+:::
 
 ## Ben ik zelf de toxische?
 
@@ -136,3 +157,4 @@ Ben je bang voor je partner, of word je gecontroleerd, bedreigd of pijn gedaan, 
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Samenvatting op [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

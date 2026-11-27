@@ -44,6 +44,8 @@ Hier zijn de zeven gewoontes in één oogopslag.
 
 **Snelle test:** escaleer je, sluit je je af, wil je het iedereen naar de zin maken of herstel je? De gratis [test over je ruziestijl](/quiz/fight-style/), in het Engels en in 2 minuten, laat je patroon in een ruzie zien en één ding om de volgende keer te zeggen.
 
+Mijn mening: als ik één getal uit dit alles zou moeten kiezen, zou het 96% zijn. Het betekent dat de eerste zin belangrijker is dan hoe slim je argumenten zijn. Dat is goed nieuws, want een eerste zin kun je makkelijk oefenen.
+
 ## 1. Begin zacht
 
 Hoe een gesprek begint, bepaalt meestal hoe het eindigt. Gottmans onderzoek liet zien dat een "harde start", openen met kritiek of sarcasme, bijna altijd leidt tot een gesprek dat slecht afloopt. Een zachtere start doet het tegenovergestelde. Die zegt hoe *jij* je voelt en wat je graag zou willen, zonder beschuldiging.
@@ -62,6 +64,12 @@ Iets als: "Ik mis de laatste tijd tijd met jou. Zullen we na het eten onze telef
 "Je bent egoïstisch" is een oordeel. "Je zei dat je om zes uur thuis zou zijn en nu is het acht uur" is een observatie. Geweldloze Communicatie, de methode die psycholoog Marshall Rosenberg ontwikkelde, begint met observaties, omdat het moeilijk is om tegen een feit in te gaan en heel makkelijk om tegen een label in te gaan.
 
 Dit voorkomt ook wat Gottman kritiek noemt: het karakter van je partner aanvallen ("Je bent zo lui") in plaats van te klagen over specifiek gedrag ("Het vuilnis is weer niet buitengezet"). Een klacht kun je oplossen. Een aanval op iemands karakter kun je alleen verdedigen.
+
+:::read Lees ook
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | 20 berichten voor verschillende situaties
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Zo neem je op een gezonde manier een pauze
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Vanavond, morgen en de week erna
+:::
 
 ## 3. Benoem de behoefte eronder
 
@@ -95,6 +103,10 @@ Probeer in een gespannen moment te herhalen wat je hoorde voordat je reageert. "
 Dit is ook het tegengif voor verdediging, nog een van Gottmans "vier ruiters". Verdediging ("Dat is niet waar, jij bent degene die...") vertelt je partner dat zijn of haar zorg niet telt. Verantwoordelijkheid nemen voor zelfs een klein deel ("Je hebt gelijk, ik vergat te bellen") verandert de temperatuur van het gesprek.
 
 Bijvoorbeeld: "Voordat ik antwoord, wil ik even checken of ik het goed begrijp. Had je het gevoel dat ik je plannen niet serieus nam?"
+
+:::tool practice
+Wil je een zachte start uitproberen vóór het echte gesprek?
+:::
 
 ## 6. Neem een pauze als je overspoeld raakt
 
@@ -150,6 +162,8 @@ Probeer niet alle zeven tegelijk. Kies er één, misschien de zachte start, en g
 Eerlijk gezegd is dit precies waarom Coach Chat bestaat. Je plakt de boze eerste versie erin, krijgt hulp om er een zachte start van te maken en kunt het echte gesprek oefenen in Partner Practice voordat je het voert.
 
 Mijn eigen keuze zou gewoonte 6 zijn, de pauze met de belofte om terug te komen. Die klinkt het minst indrukwekkend van de zeven, maar het is de gewoonte die voorkomt dat een slechte ruzie een slechte week wordt.
+
+Mijn mening: probeer niet alle zeven tegelijk. Kies degene waarbij je even ineenkromp toen je hem las. Dat is meestal degene die het meest zal veranderen.
 
 ## Snelle antwoorden
 

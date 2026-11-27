@@ -52,6 +52,14 @@ Numără de câte ori săptămâna trecută ai înghițit un mic „de fapt, aș
 
 Dintre cele trei, eu aș începe cu testul lui „nu”. Dacă să-i spui nu partenerului ți se pare periculos, nu doar incomod, asta îți spune mai mult decât orice etichetă.
 
+Părerea mea: testul "aș fi ok dacă mi-ar spune nu?" e cel cu care aș începe. Grija supraviețuiește unui "nu". Codependența, de obicei, nu.
+
+:::read Citește și
+/blog/how-to-support-your-partner-when-stressed/ | Cum să-ți ajuți partenerul când e stresat | Sprijin fără să cari totul
+/blog/signs-of-a-toxic-relationship/ | Este relația mea toxică? | Când e mai mult decât grijă excesivă
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Când frica de a-l pierde stă în spatele ajutorului
+:::
+
 ## Ce spun de fapt cercetările (și ce nu spun)
 
 Codependența e un cuvânt popular, dar un concept științific încurcat. Nu e un diagnostic, nu există o definiție acceptată de toți și mare parte din ce citești online merge dincolo de dovezi. Iată ce e destul de bine susținut.
@@ -80,6 +88,12 @@ Nu trebuie să-ți refaci toată relația. Schimbarea începe aici foarte mic, p
 > Priya plănuia mereu vacanțele lor după ce voia Sam, apoi simțea un resentiment tăcut pe toată durata călătoriei. Anul acesta a încercat testul 3 și a numărat de câte ori și-a înghițit o preferință. De unsprezece ori într-un singur weekend de planificare. Așa că a spus, cu vocea puțin tremurândă: „Mi-am dat seama că mereu accept ce alegi tu și apoi mă bosumflu, ceea ce nu e corect pentru niciunul dintre noi. De data asta mi-ar plăcea mult o vacanță într-un oraș.” Sam a râs și a spus că presupusese că ea iubește plajele. Vacanța nu era ideea. Ideea era că ea era prezentă în ea.
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
+
+Părerea mea: începe mai mic decât crezi. Să spui o dată săptămâna asta "pe asta te las pe tine s-o rezolvi" face mai mult decât o promisiune mare că schimbi totul.
+
+:::tool practice
+Vrei să exersezi cum să spui nu cu blândețe? Repetă mai întâi
+:::
 
 ## Cuvinte pentru când e greu
 

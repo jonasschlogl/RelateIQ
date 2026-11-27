@@ -14,6 +14,13 @@ Miten eron sitten huomaa? Nämä viisi kysymystä auttavat.
 > **Lyhyt vastaus:**
 > Gaslighting on toimintamalli, jossa joku saa sinut epäilemään omaa muistiasi, havaintojasi tai mielenterveyttäsi, yleensä saadakseen kontrollia. Tavallinen erimielisyys jättää tilaa kahdelle versiolle tapahtumista. Gaslighting hyökkää mieltäsi eikä tapahtumaa vastaan, toistuu ajan myötä ja jättää sinut hämmentyneeksi ja riippuvaiseksi toisen versiosta.
 
+:::stats Kuinka yleistä henkinen aggressio on
+20,4 % | yhdysvaltalaisista naisista on kokenut kumppaninsa taholta ilmaisevaa aggressiota, kuten nimittelyä, solvauksia tai nöyryyttämistä
+13,1 % | yhdysvaltalaisista miehistä sanoo samaa
+27,2 % | naisista ja 19,5 % miehistä on kokenut pakottavaa kontrollia, johon voi kuulua toisen saaminen epäilemään omaa muistiaan
+lähde: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), aineisto kerätty 2023–2024
+:::
+
 ## Kysymys 1: Onko tilaa kahdelle versiolle?
 
 Tavallisessa erimielisyydessä molemmat voivat sanoa "minä muistan sen toisin" ja jättää asian siihen. Muisti on epätäydellinen, ja pariskunnat muistavat asioita väärin jatkuvasti.
@@ -27,6 +34,10 @@ Gaslightingissa sallitaan vain yksi versio todellisuudesta, eikä se ole koskaan
 | "En tarkoittanut sitä niin, anteeksi että se satutti." | "Olet aivan liian herkkä. Kukaan muu ei pahastuisi." |
 | Kumpikin joustaa joskus | Sinä päädyt aina pyytämään anteeksi |
 
+Minun näkemykseni: on täysin normaalia, että kaksi ihmistä muistaa saman illan eri tavoin. Kysymys ei ole siitä, kenen muisti on oikeassa. Se on siitä, saako sinun versiosi edes olla olemassa.
+
+**Pikatesti:** Jos et tiedä, kuinka huolissasi pitäisi olla, kahden minuutin [myrkyllisen suhteen tarkistus](/quiz/toxic-relationship/), englanniksi, antaa rauhallisemman ja laajemman kuvan.
+
 ## Kysymys 2: Onko kyse tapahtumasta vai mielestäsi?
 
 Erimielisyydet koskevat sitä, *mitä tapahtui*. Gaslighting liukuu siihen, *mikä sinussa on vialla*: muistisi, tasapainosi, mielenterveytesi.
@@ -34,6 +45,12 @@ Erimielisyydet koskevat sitä, *mitä tapahtui*. Gaslighting liukuu siihen, *mik
 Vuonna 2023 tehdyssä tutkimuksessa psykologi Willis Klein kollegoineen pyysi 65:tä ihmistä, jotka uskoivat joutuneensa kumppaninsa gaslightingin kohteeksi, kuvailemaan kokemustaan. Jokainen osallistuja kertoi kumppanin loukanneen ja vähätelleen heitä, usein vihjaten heidän todellisuudentajunsa olevan heikko ja kutsuen heitä hulluiksi, tyhmiksi tai liian tunteellisiksi. Sosiologi Paige Sweet, joka on tutkinut gaslightingia väkivaltaisissa suhteissa, tiivisti saman NPR-jutun yhteydessä: gaslighting on sitä, että joku yrittää saada sinut näyttämään tai tuntemaan itsesi hulluksi.
 
 Jos riitanne päättyvät usein tuomioon mielentilastasi, pane se merkille.
+
+:::read Lue myös
+/blog/signs-of-a-toxic-relationship/ | Onko suhteeni myrkyllinen? | 3-tasoinen tarkistus: epäterve, myrkyllinen ja kontrolloiva
+/blog/my-boyfriend-gets-defensive/ | Poikaystäväni menee puolustuskannalle, kun otan jotain puheeksi | Puolustautumista vai jotain enemmän
+/blog/trust-issues-in-a-relationship/ | Näin pääset yli luottamusongelmista | Kun epäily palaa yhä uudelleen
+:::
 
 ## Kysymys 3: Toistuuko se kaavana?
 
@@ -61,6 +78,12 @@ Jos vastaat vain yhteen viidestä kysymyksestä, valitsisin tämän. Muististasi
 Sweetin tutkimus tarjoaa hyödyllisen näkökulman. Haastatellessaan 43:a lähisuhdeväkivallasta selviytynyttä naista heidän elämäntarinoistaan hän havaitsi, että gaslighting nojaa usein olemassa oleviin stereotypioihin ja haavoittuvuuksiin, kuten ajatukseen naisista "tunteellisina", tai jonkun aiempaan mielenterveyshistoriaan tai maahanmuuttajataustaan, jotta toisen versio vaikuttaisi muiden silmissä uskottavammalta. Kysy itseltäsi: sopiiko se aina toiselle, kun epäilen itseäni? Saako hän kontrollia, välttyykö vastuulta tai saako tahtonsa läpi, kun epäilen?
 
 Kaikki kieltäminen ei ole laskelmoitua. Jotkut kieltävät asioita, koska häpeävät tai menevät puolustuskannalle. Vaikutus voi silti satuttaa, ja siihen kannattaa puuttua. Mutta kaava, joka hyödyttää jatkuvasti toista ja maksaa toiselle, ansaitsee tulla otetuksi vakavasti.
+
+Minun näkemykseni: mielestäni "kuka hyötyy?" on näistä kysymyksistä hyödyllisin. Tavalliset erimielisyydet eivät yleensä jätä toista aina voittajaksi ja toista aina epäilemään itseään.
+
+:::tool coach
+Epäiletkö itseäsi? Puhu se läpi neutraalissa paikassa
+:::
 
 ## Mitä tehdä, jos epäilet joutuvasi gaslightingin kohteeksi
 
@@ -111,3 +134,4 @@ Gaslightingiin liittyy usein muita kontrollin muotoja. Jos kumppanisi eristää 
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Tiivistelmä: [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
 - NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), mukana Robin Stern, Paige Sweet ja Kate Abramson
 - Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

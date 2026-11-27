@@ -28,6 +28,8 @@ Vuoden 2026 tutkimus osoittaa samaan suuntaan. Seuratessaan 378 avioparia kymmen
 
 Rehellisesti sanottuna tämä on neuvo, jota vastaan ihmiset panevat eniten hanttiin. Nukkumaan meneminen selvittämättä tuntuu väärältä. Mutta rauhallinen keskustelu aamiaisella voittaa kolmannen erän kello yhdeltä yöllä lähes joka kerta.
 
+Minun näkemykseni: vihaisena nukkumaan meneminen on saanut huonon maineen. Mieluummin nukutte yön yli ja puhutte rauhassa aamulla kuin pakotatte kello yhdeltä yöllä ratkaisun, jota kumpikaan ei muista kunnolla.
+
 ## Seuraava aamu: korjaa
 
 ### Ota vastuu omasta osuudestasi ilman ehtoja
@@ -49,6 +51,12 @@ Yksi tapa sanoa se: "Kerro, miltä se sinusta tuntui. Haluan ymmärtää."
 Pitkäaikaisessa tutkimuksessa University of Minnesotassa Jessica Salvatore kollegoineen tarkkaili, miten parit toipuivat ristiriitakeskustelun jälkeen. Ihmiset, joiden oli vaikea toipua ristiriidoista, usein vaikeiden varhaisten kokemusten vuoksi, pysyivät todennäköisemmin yhdessä, kun heidän *kumppaninsa* toipui hyvin. Tutkijat ehdottivat, että kumppani, joka pystyy johtamaan rauhoittumista, voi suojella suhdetta molempien puolesta.
 
 Käytännössä: jos sinä olet tällä kertaa rauhallisempi, ota ensimmäinen askel. Tarjoa halaus, kahvi, kevyt kommentti, "aloitetaanko alusta?" Korjaamisen johtaminen ei tarkoita sen myöntämistä, että kaikki oli sinun vikasi. Se tarkoittaa suhteesta huolehtimista.
+
+:::read Lue myös
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | Jos ette ole yhdessä seuraavana aamuna
+/blog/how-to-apologize-to-your-partner/ | Näin pyydät kumppaniltasi anteeksi vilpittömästi | Mitä aito anteeksipyyntö sisältää
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Näin pidät tauon rankaisematta
+:::
 
 ## Seuraava viikko: rakenna uudelleen
 
@@ -83,6 +91,10 @@ Riidan jälkeen parit usein välttelevät toisiaan vähän, vaikka asia olisi jo
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
+:::tool practice
+Haluatko harjoitella sovittelukeskustelua ensin?
+:::
+
 ## Jos sinä olet se, joka loukkaantui
 
 Saat tarvita aikaa. Luottamus loukkaavan riidan jälkeen ei palaa siksi, että joku pyysi anteeksi kerran. Se palaa sitä mukaa, kun hänen käytöksensä vastaa hänen sanojaan. Kerro kumppanillesi, mikä auttaisi sinua.
@@ -92,6 +104,8 @@ Kokeile: "Arvostan anteeksipyyntöä. Minua auttaisi oikeasti se, että näkisin
 ## Kuinka kauan se kestää?
 
 Yksittäisen riidan jälkeen usein muutaman päivän. Toistuvien loukkaavien riitojen jälkeen se voi viedä viikkoja tai kuukausia johdonmukaista käytöstä. Jos sama riita palaa yhä uudelleen, oppaamme [toistuvista parisuhdeongelmista](/blog/relationship-problems-that-keep-coming-back/) voi auttaa löytämään taustalla olevan kaavan, ja oppaamme [viestintätavoista](/blog/relationship-advice-communication-habits/) auttaa ehkäisemään seuraavan kärjistymisen.
+
+Minun näkemykseni: riidan jälkeen luottamus palaa yleensä pienten ja tylsien todisteiden kautta, ei suurten eleiden. Se, että teet sen, minkä sanoit tekeväsi, kolmena päivänä peräkkäin, kertoo enemmän kuin kukat.
 
 ## Kun kyse on muusta kuin riidasta
 

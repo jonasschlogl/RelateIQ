@@ -22,6 +22,8 @@ Así que aquí tienes 25 formas de decir «te quiero» sin palabras, ordenadas s
 
 **Test rápido:** ¿no sabes qué gestos valoraría más tu pareja? Haced juntos el [test de los lenguajes del amor](/quiz/love-language/), gratuito, en inglés y de 2 minutos, y comparad las respuestas.
 
+Mi opinión: el hallazgo sobre la gratitud es mi favorito. Significa que el gesto es solo la mitad. La otra mitad es que tu pareja lo note, así que merece la pena decir en voz alta "lo he visto, gracias".
+
 ## En las mañanas con prisa
 
 1. Prepárale el café o el té como le gusta, sin preguntar.
@@ -37,6 +39,12 @@ Así que aquí tienes 25 formas de decir «te quiero» sin palabras, ordenadas s
 8. Haz la tarea de casa que más odia, sin anunciarlo.
 9. Siéntate cerca en el sofá, no cada uno en una punta.
 10. Cuando te cuente algo, gírate hacia ello: levanta la vista, haz una pregunta, reacciona.
+
+:::read Lecturas relacionadas
+/blog/love-languages/ | ¿Son reales los lenguajes del amor? | Lo que dice de verdad la investigación
+/blog/how-to-keep-the-spark-alive/ | Cómo mantener viva la chispa | Descubre qué chispa se está apagando
+/blog/how-to-support-your-partner-when-stressed/ | Cómo ayudar a tu pareja con el estrés | Qué decir y qué evitar
+:::
 
 ## En los días difíciles
 
@@ -59,6 +67,10 @@ Si tuviera que elegir uno de toda la lista, sería el número 13: quitarle en si
 20. Dale las gracias por algo cotidiano que hace cada día y que ya no notas.
 
 Si las cosas van bien pero se sienten un poco planas, nuestra guía sobre [cómo mantener la chispa en una relación larga](/blog/how-to-keep-the-spark-alive/) puede ayudarte a encontrar lo que falta.
+
+:::tool coach
+¿No sabes qué significaría más para tu pareja? Háblalo
+:::
 
 ## Desde lejos
 
@@ -91,6 +103,8 @@ Después fíjate en lo que le ilumina la cara. Y recuerda el hallazgo de Algoe: 
 ## Cuando demostrar amor cuesta
 
 Si creciste en una familia donde no se mostraba el cariño, los gestos pueden resultarte raros al principio. Empieza por los más pequeños: un café, un mensaje, una mano en el hombro. Con la práctica se hacen más fáciles. Si a tu pareja le cuesta mostrar cariño, nuestra guía sobre la [pareja emocionalmente no disponible](/blog/emotionally-unavailable-partner/) explica algunas de las razones y qué ayuda.
+
+Mi opinión: si los gestos no te salen de forma natural, elige una cosa pequeña y repítela. La constancia es más romántica que la creatividad, al menos después del primer año.
 
 ## Respuestas rápidas
 

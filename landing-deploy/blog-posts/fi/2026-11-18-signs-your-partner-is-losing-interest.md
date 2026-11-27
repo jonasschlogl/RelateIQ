@@ -24,6 +24,20 @@ Tarkkailemisen arvoiset merkit eivät siis ole dramaattisia. Ne ovat pieniä ja 
 
 **Pikatesti:** joskus etäisyys tarkoittaa, että jokin tarve jää täyttymättä. Ilmainen [parisuhteen tarpeiden testi](/quiz/relationship-needs/), englanniksi ja 2 minuutin mittainen, voi auttaa nimeämään, mikä.
 
+Minun näkemykseni: yksi hiljainen viikko merkitsee hyvin vähän. Hidas etääntyminen kuukausien aikana merkitsee paljon enemmän. Katsoisin suuntausta, en yksittäistä päivää.
+
+:::chart Kuinka usein kumppanit vastasivat toistensa pieniin huomionpyyntöihin
+Yhä yhdessä 6 vuoden jälkeen olleet parit | 86 | 86 %
+Myöhemmin eronneet parit | 33 | 33 %
+lähde: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), vastavihittyjen tutkimus kuuden vuoden seurannalla
+:::
+
+:::stats Puhelintekijä
+46 % | yhdysvaltalaisista aikuisista vuoden 2016 tutkimuksessa sanoi kumppaninsa "phubbaavan" heitä eli keskittyvän puhelimeen heidän sijastaan
+52 tutkimusta | ja lähes 20 000 ihmistä vuoden 2025 meta-analyysissä yhdistivät kumppanin phubbingin heikompaan tyytyväisyyteen ja useampiin riitoihin
+lähde: Roberts ja David (2016), *Computers in Human Behavior*; vuoden 2025 meta-analyysi, mainittu alla olevissa lähteissä
+:::
+
 ## Merkit avattuina
 
 ### Lyhyemmät ja hitaammat viestit
@@ -73,11 +87,21 @@ Tarkkailemisen arvoiset merkit eivät siis ole dramaattisia. Ne ovat pieniä ja 
 | Lämpö tallella, vähemmän seksiä | Terveydestä, stressistä tai erilaisista tarpeista | Lempeällä, kahdenkeskisellä keskustelulla |
 | Kääntyy pois useimmista yhteydenotoista, vähän lämpöä | Todellisesta tunne-etäisyydestä | Rehellisellä keskustelulla suhteesta |
 
+:::read Lue myös
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Kun etäisyys seuraa riitaa
+/blog/avoidant-attachment-partner/ | Välttelevä kiintymystyyli kumppanilla | Kun läheisyys saa hänet vetäytymään
+/blog/should-i-break-up-with-my-partner/ | Mistä tietää, milloin on aika erota? | Jos kysyt isompaa kysymystä
+:::
+
 ## Ennen kuin puhutte: tarkista omat lasisi
 
 Jos sinulla on taipumusta parisuhdeahdistukseen, tavallinen kiireinen viikko voi tuntua torjunnalta. Kysy itseltäsi: onko *hän* muuttunut, vai onko oma huolestuneisuuteni muuttunut? Oppaamme [parisuhdeahdistuksesta](/blog/relationship-anxiety/) ja [ylianalysoinnin lopettamisesta](/blog/how-to-stop-overthinking-in-a-relationship/) auttavat erottamaan nämä kaksi.
 
 Käyttäisin tähän vaiheeseen kunnolla aikaa. Kiireinen kuukausi ja hiipuva suhde voivat näyttää sisältä päin samalta, varsinkin jos olet jo valmiiksi huolissasi.
+
+:::tool practice
+Etkö tiedä, miten aloittaa tämä keskustelu? Harjoittele se ensin
+:::
 
 ## Mitä sanoa
 
@@ -103,6 +127,8 @@ Ja käänny kumppaniasi kohti, tarkoituksella, pienillä tavoilla: vastaa hänen
 Joskus rehellinen vastaus on, että kumppani on ajautunut kauemmas tai että hän on epävarma. Se sattuu, mutta se on tietoa, jonka kanssa voi työskennellä. Moni pari löytää tiensä takaisin molempien ponnistelulla, joskus pariterapeutin avulla. Jos kumppanisi sanoo, ettei tiedä, mitä tuntee, anna vähän aikaa, mutta älä rajattomasti. Oppaamme [tunnetasolla tavoittamattomista kumppaneista](/blog/emotionally-unavailable-partner/) ja siitä, [pitäisikö sinun erota](/blog/should-i-break-up-with-my-partner/), voivat auttaa päättämään, mitä tarvitset.
 
 Jos ensimmäinen keskustelu jännittää, voit suunnitella sen Coach Chatissa ja harjoitella sitä ensin Partner Practicessa.
+
+Minun näkemykseni: kysyminen "oletko vielä mukana tässä?" pelottaa, mutta kysymättä jättäminen on yleensä pahempaa. Kuukausien arvailu maksaa enemmän kuin yksi rehellinen keskustelu.
 
 ## Nopeat vastaukset
 
@@ -131,3 +157,4 @@ Kyllä. Jos hän on menettänyt kiinnostuksensa moneen asiaan, ei vain sinuun, j
 - Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Lue tutkimus](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Koko teksti (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
+- The Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)

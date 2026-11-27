@@ -24,6 +24,16 @@ Tavoite ei tässä ole voida paremmin. Tavoite on selvitä niin, ettet tee asioi
 
 **Kirjoita yksi lause myöhemmäksi.** Puhelimeesi: "Muista, miksi tämä loppui: ___." Tarvitset sitä toisella viikolla.
 
+Minun näkemykseni: kaksi ensimmäistä päivää eivät ole aikaa ymmärtää mitään. Syö, nuku, soita ystävälle. Asian järkeistäminen voi odottaa.
+
+:::read Lue myös
+/blog/should-i-break-up-with-my-partner/ | Mistä tietää, milloin on aika erota? | Jos vielä mietit
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun se näkyy seuraavassa suhteessa
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin | Kun mieli toistaa sitä yhä uudelleen
+:::
+
+**Pikatesti:** Joillekin erot ovat vaikeampia kiintymistavan vuoksi. Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, voi auttaa ymmärtämään reaktiotasi.
+
 ## Vaihe 2: ensimmäiset kaksi viikkoa
 
 Tämä on usein raskain jakso. Shokki hellittää ja ikävä iskee.
@@ -52,6 +62,10 @@ Surua, vihaa, helpotusta ja syyllisyyttä, kaikki samana iltapäivänä. Se on n
 > Kolmessa tutkimuksessa Erica Slotter, Wendi Gardner ja Eli Finkel havaitsivat, että eron jälkeen ihmisten käsitys itsestään muuttui epäselvemmäksi. Minä tuntui heidän sanojensa mukaan "epäselvemmältä ja jopa pienemmältä", ja tämä selkeyden menetys lisäsi kärsimystä. Suhteessa rutiinit, suunnitelmat ja jopa elokuvamaku jaetaan. Kun suhde loppuu, sinun on lajiteltava, mitkä osat olivat *sinua*. Tuo lajittelu on iso osa paranemista.
 
 Jos otat tästä vaiheesta mukaan vain yhden asian, mykistä ex. Ei kannanottona, vaan perusitsestä huolehtimisena. Jokainen vilkaisu nollaa kellon.
+
+:::tool coach
+Houkuttaako kirjoittaa hänelle kello kahdelta yöllä? Puhu se täällä ensin läpi
+:::
 
 ## Vaihe 3: viikot kolmesta kahteentoista
 
@@ -86,6 +100,8 @@ Kiinteää lukua ei ole, ja joka sellaisen lupaa, arvaa. Moni huomaa pahimman he
 | Näet suhteessa sekä hyvää että huonoa | Tunnet itsesi toivottomaksi tai ajattelet itsesi satuttamista |
 
 Jos jokin oikeanpuoleisesta sarakkeesta kuulostaa sinulta, puhu lääkärin tai terapeutin kanssa. Jos ajattelet elämäsi päättämistä, ota heti yhteyttä hätänumeroon tai kriisipuhelimeen.
+
+Minun näkemykseni: jonkun yli pääsemiselle ei ole määräaikaa. Jos sinulla on vähitellen enemmän ihan hyviä päiviä kuin huonoja, teet asian oikein, vaikka se kestäisi kauemmin kuin toivoit.
 
 ## Jos sinä päätit suhteen
 

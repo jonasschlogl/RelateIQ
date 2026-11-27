@@ -24,6 +24,15 @@ Komt je partner uit de Verenigde Staten, dan is Thanksgiving vaak het eerste gro
 - **Plan de reisdagen samen.** De dag ervoor en de zondag erna horen in de VS bij de drukste reisdagen van het jaar, dus spreek op tijd af wanneer jullie vertrekken en hoe lang jullie blijven.
 - **Denk nu al aan het volgende feest.** Zijn jullie met Thanksgiving bij zijn of haar familie, dan is dat een natuurlijk moment om te bespreken waar jullie kerst vieren, voordat iemand iets aanneemt.
 
+:::stats Wat de feestdagen stressvol maakt
+89% | van de Amerikaanse volwassenen zegt dat iets aan de feestdagen hen stress bezorgt
+58% | noemt te veel uitgeven, of niet genoeg hebben om uit te geven
+41% | zegt dat hun stress tijdens de feestdagen toeneemt in vergelijking met de rest van het jaar
+bron: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), enquête onder 2.061 Amerikaanse volwassenen door The Harris Poll, november 2023
+:::
+
+**Snelle quiz:** Word je meestal stil of zeg je er iets van als de spanning in de familie oploopt? De [quiz over je conflictstijl](/quiz/fight-style/) van 2 minuten, in het Engels, helpt jullie te weten wat je van elkaar kunt verwachten.
+
 ## Twee weken van tevoren: het plangesprek
 
 De meeste ruzies tussen partners rond de feestdagen beginnen met verschillende verwachtingen, niet met de familie zelf. Voer één rustig gesprek voordat je gaat, het liefst tijdens een wandeling of bij een kop koffie, niet de avond ervoor.
@@ -41,6 +50,14 @@ Zeg het simpel: "Ik wil dat dit voor ons allebei goed gaat. Waar maak jij je het
 Psycholoog Terri Apter, die veel onderzoek deed naar relaties met de schoonfamilie, ontdekte dat meer dan 60% van de vrouwen, tegenover zo'n 15% van de mannen, een moeizame relatie met de moeder van hun partner beschreef. Herken je dat, zeg het dan vóór het bezoek, niet halverwege.
 
 Als je maar één ding uit deze gids doet, voer dan dit gesprek. Ontzettend veel ontploffingen rond de feestdagen beginnen bij twee mensen die stilletjes van verschillende plannen uitgingen.
+
+Mijn mening: het plangesprek is alles. Ik zou het voeren, zelfs als je denkt dat jullie het al overal over eens zijn, want de aannames die niemand hardop uitspreekt, zijn degene die op dag drie ontploffen.
+
+:::read Lees ook
+/blog/meeting-your-partners-parents/ | Voor het eerst de ouders van je partner ontmoeten | Wat je zegt op de 12 ongemakkelijkste momenten
+/blog/how-to-support-your-partner-when-stressed/ | Zo steun je je partner bij stress | Als het bezoek hem of haar zwaar valt
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | Als de rit naar huis een ruzie wordt
+:::
 
 ## De dag ervoor: de briefing
 
@@ -65,6 +82,10 @@ Reken erop dat je partner een beetje verandert. Veel mensen vallen thuis terug i
 **Kies je gevechten.** De meeste ergernissen tijdens de feestdagen zijn het niet waard om een punt van te maken: hoe de kalkoen wordt bereid, het volume van de tv, de meningen van een oudtante. Bewaar je energie voor die een of twee dingen die er echt toe doen.
 
 **Als je overspoeld raakt, ga dan even naar buiten.** Merk je dat je hart tekeergaat en je geduld opraakt, neem dan 20 minuten pauze voordat je iets zegt. Het Gottman Institute raadt zo'n pauze aan omdat het heel moeilijk is om rustig te luisteren of te praten als je lichaam in vecht-of-vluchtstand staat.
+
+:::tool practice
+Zie je op tegen een bepaald gesprek met de familie? Oefen het eerst
+:::
 
 ## De gespannen momenten: wat je zegt aan tafel
 
@@ -108,6 +129,8 @@ Er is niet één eerlijke manier. Stellen doen vaak het volgende:
 Het belangrijkste is dat jullie het samen beslissen, en dat niemand zich altijd de tweede voelt.
 
 Neem je je partner voor het eerst mee naar huis, lees dan onze gids over [de ouders van je partner ontmoeten](/blog/meeting-your-partners-parents/), en vieren jullie de feestdagen apart, dan staan er in onze [tips voor een relatie op afstand](/blog/long-distance-relationship-tips/) ideeën voor deze dagen. Als de spanning tussen jullie tweeën overslaat, kunnen [sorry zeggen tegen je partner](/blog/how-to-apologize-to-your-partner/) en onze gids over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) helpen.
+
+Mijn mening: eerlijk hoeft niet elk jaar precies gelijk te betekenen. Het belangrijkste is dat jullie allebei het gevoel hebben dat het plan samen is gemaakt, niet dat de kalender tot op de dag klopt.
 
 ## Snelle antwoorden
 

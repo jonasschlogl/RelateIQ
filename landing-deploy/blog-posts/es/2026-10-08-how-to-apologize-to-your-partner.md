@@ -35,6 +35,14 @@ Descubrieron que reconocer la responsabilidad era el elemento más importante, y
 
 Conviene tener en cuenta un matiz: era un experimento en el que la gente valoraba disculpas escritas, y la vida real, con dolor real e historia compartida, es más complicada. Aun así, coincide con lo que ven muchos terapeutas de pareja. Las disculpas que funcionan tratan de la experiencia de la otra persona y de lo que vas a hacer después, no de quitarte tú el mal rato.
 
+Mi opinión: la parte que casi todo el mundo se salta es la propuesta de reparación. "Lo siento" cierra el momento, pero "esto es lo que voy a hacer distinto" es lo que reconstruye la confianza en las semanas siguientes.
+
+:::read Lecturas relacionadas
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Qué decir cuando tu pareja dice que le has hecho daño | Los primeros cinco minutos, paso a paso
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Esta noche, mañana por la mañana y la semana siguiente
+/blog/my-boyfriend-gets-defensive/ | Mi novio se pone a la defensiva cuando saco un tema | Si la disculpa siempre acaba en debate
+:::
+
 ## Cada persona necesita una disculpa distinta
 
 Hay otra capa que la mayoría de consejos pasan por alto. En otra investigación, Ryan Fehr y Michele Gelfand estudiaron tres componentes de una disculpa:
@@ -74,6 +82,10 @@ No necesitas los seis elementos cada vez. Esta es una estructura corta basada en
 
 > **Las cinco preguntas silenciosas**
 > Cada paso responde a una pregunta que tu pareja se hace en silencio. ¿Entiendes lo que hiciste? (concreto). ¿Vas a defenderlo? (sin condiciones). ¿Entiendes lo que me hizo? (impacto). ¿Volverá a pasar? (reparación). ¿Puedo seguir molesta? (espacio). Cuando las cinco preguntas tienen respuesta, queda mucho menos por lo que discutir.
+
+:::tool practice
+¿Quieres ensayar tu disculpa antes de decirla?
+:::
 
 ## Un ejemplo completo, de principio a fin
 
@@ -172,6 +184,8 @@ Si lo mismo se repite una y otra vez, lo que falta no es la disculpa. Es un camb
 Ante faltas más graves, como mentir, ser infiel o romper una promesa importante, una buena conversación es el principio, no el final. La confianza se reconstruye con actos constantes a lo largo del tiempo. Nuestra guía sobre [cómo recuperar la confianza después de una pelea](/blog/how-to-rebuild-trust-after-a-fight/) explica ese proceso paso a paso.
 
 Si las disculpas no llevan a ninguna parte, o el patrón incluye faltas de respeto, un terapeuta de pareja puede ayudaros a ver qué pasa por debajo. Si quieres practicar qué decir antes de una conversación difícil, RelationshipAI es un coach de pareja con IA que te ayuda a poner en palabras tu disculpa y a ensayarla en Partner Practice. No es terapia, pero te puede ayudar a empezar.
+
+Mi opinión: una disculpa que llega con el mismo comportamiento una semana después enseña poco a poco a tu pareja que el perdón no significa nada. Menos disculpas con un cambio real valen más que muchas sin él.
 
 ## Respuestas rápidas
 

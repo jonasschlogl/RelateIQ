@@ -52,6 +52,13 @@ Forskare mäter oftast dimensionerna med frågeformulär som Experiences in Clos
 >
 > Ingen av strategierna är dum. Var och en var vettig någonstans. De krockar bara illa när två personer använder motsatta strategier i samma ögonblick.
 
+:::chart Hur vuxna beskrev sig själva i Hazan och Shavers ursprungliga studie
+Trygg | 56 | 56 %
+Undvikande | 25 | 25 %
+Ängslig | 19 | 19 %
+källa: Hazan och Shaver (1987), 620 deltagare (se källor nedan)
+:::
+
 ## De fyra anknytningsstilarna i vardagen
 
 ### Trygg anknytning
@@ -99,6 +106,12 @@ Hög ångest, högt undvikande. Personer i den här gruppen vill ha närhet och 
 
 Det kan vara den svåraste stilen att leva med, särskilt för den som har den. Den hänger ofta ihop med tidiga erfarenheter där de som skulle vara trygga inte alltid var det. Stabila, tålmodiga relationer och stöd från en terapeut med utbildning i anknytning eller trauma kan hjälpa mycket.
 
+:::read Läs också
+/blog/avoidant-attachment-partner/ | Undvikande anknytning hos en partner | Så älskar du någon som behöver utrymme
+/blog/relationship-anxiety/ | Relationsångest utan anledning | Den ängsliga sidan av mönstret
+/blog/how-to-stop-overthinking-in-a-relationship/ | Så slutar du övertänka | När hjärnan fyller ut tystnaden
+:::
+
 ## När stilarna möts: jaga-och-dra-sig-undan-loopen
 
 Ett av de mest studerade mönstren i parforskningen kallas krav och tillbakadragande. Den ena partnern närmar sig den andra för att prata ("Vi måste reda ut det här"), och den andra drar sig undan för att lugna ner sig ("Jag orkar inte det här nu"). Ju mer den ena jagar, desto mer drar sig den andra tillbaka. Ju mer den andra drar sig tillbaka, desto mer jagar den första.
@@ -134,6 +147,8 @@ Några förbehåll är bra att känna till:
 
 Fina vardagsstunder verkar spela roll, inte bara stora livshändelser. I en studie från 2022 med 151 nyblivna dejtande par och 168 nygifta par fann Deniz Bayraktaroglu och kollegor att på dagar med fler positiva stunder med partnern minskade människors undvikande under de följande veckorna, delvis för att stunderna lyfte deras humör. Samma positiva stunder minskade inte anknytningsångest, som kanske behöver bekräftelse som är mer konsekvent och direkt.
 
+Min åsikt: det här tycker jag är den mest hoppfulla delen av anknytningsforskningen. Din stil är en startpunkt, inte en dom, och en stabil relation kan sakta förändra den.
+
 ## Vanliga myter om anknytningsstilar
 
 | Myt | Vad forskningen faktiskt tyder på |
@@ -146,6 +161,12 @@ Fina vardagsstunder verkar spela roll, inte bara stora livshändelser. I en stud
 | "Två otrygga personer kan inte få det att fungera." | Många gör det, särskilt när båda förstår mönstret och tar ansvar för sin del. |
 
 Myten jag helst vill pensionera är idén att din stil är en dom. Folk använder ofta "jag är undvikande" eller "han är ängslig" som slutet på samtalet. Det fungerar mycket bättre som början på ett.
+
+Min åsikt: etiketten är mindre användbar än mönstret. Att veta "jag är ängslig" hjälper mycket mindre än att veta "när hen blir tyst jagar jag".
+
+:::tool coach
+Känner du igen mönstret i er relation? Prata igenom det
+:::
 
 ## Så använder du det här i vardagen
 

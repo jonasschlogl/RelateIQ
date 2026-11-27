@@ -20,6 +20,17 @@ Cei mai mulți oameni sunt de acord cu clear coding în principiu. Partea grea s
 
 **Un „nu” clar e mai blând decât să dispari.** Într-un experiment din 2023, o echipă de psihologi condusă de C. M. Leckfor a descoperit că oamenii care își aminteau că au fost victimele ghostingului se simțeau mai rău, cu mai puțin control și mai puțin siguri pe propria valoare decât cei care își aminteau o respingere directă. Clear coding se aplică și la „nu, mulțumesc”.
 
+Părerea mea: să faci pe indiferentul te protejează mai ales de un "nu" pe care ar fi mai bine să-l auzi devreme. Claritatea pare mai riscantă pe moment și te scutește de luni de zile mai târziu.
+
+:::stats De ce tinerii vor mai multă claritate la întâlniri
+64% | dintre tinerii de 18–25 de ani care ies activ la întâlniri spun că emoțiile sincere sunt ce le lipsește cel mai mult întâlnirilor
+60% | vor o comunicare mai clară despre intenții
+50% | dintre americanii de 18–34 de ani spun că au fost într-un situationship
+sursa: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4.000 de persoane între 18 și 25 de ani; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), ianuarie 2024
+:::
+
+**Test rapid:** Dacă să fii directă te sperie, stilul tău de atașament poate avea un rol. Încearcă [testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute.
+
 ## Etapa 1: profilul și primele mesaje
 
 Spune de la început lucrurile de bază, pe scurt. Nu scrii un contract.
@@ -40,6 +51,12 @@ Interesul nu trebuie ascuns trei zile.
 
 Observă mesajul 6: o zi concretă transformă „ar trebui să ne vedem cândva” într-un plan adevărat. Planurile vagi sunt locul în care încep semnalele amestecate.
 
+:::read Citește și
+/blog/situationship/ | Ar trebui să rămân într-un situationship? | Când nimeni n-a spus ce e asta
+/blog/breadcrumbing/ | Mi se face breadcrumbing? | Opusul clear coding-ului
+/blog/love-bombing/ | Love bombing | Când intensitatea e o strategie, nu claritate
+:::
+
 ## Etapa 3: după câteva întâlniri
 
 Aceasta e etapa în care oamenii încep să ghicească. Nu o face.
@@ -48,6 +65,10 @@ Aceasta e etapa în care oamenii încep să ghicească. Nu o face.
 10. „Am renunțat la aplicații pentru că vreau să văd unde duce asta. Fără presiune pentru tine, am vrut doar să fiu deschis.”
 11. „Îmi place mult să petrec timp cu tine. Nu mă grăbesc, dar sper că asta se poate transforma în ceva.”
 12. *Dacă a tăcut:* „Hei, am observat că săptămâna asta nu prea am vorbit. Mai ești interesat? E în regulă dacă nu.”
+
+:::tool check
+Îți faci griji că mesajul sună prea intens? Verifică-l înainte să-l trimiți
+:::
 
 ## Etapa 4: definirea relației
 
@@ -73,6 +94,8 @@ Aceasta e partea din clear coding pe care oamenii o sar și partea care conteaz�
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 Aceasta e etapa pe care mi-aș dori cel mai mult ca oamenii s-o ia în serios. Un „nu cred că ne potrivim” de două rânduri te costă un minut și o scutește pe cealaltă persoană de zile întregi de întrebări.
+
+Părerea mea: un "nu" spus cu blândețe e unul dintre cele mai generoase lucruri pe care le poți oferi cuiva cu care ai ieșit. Pe tine te costă un minut, pe el îl scutește de zile de întrebări.
 
 ## Ce nu este clear coding
 
@@ -113,3 +136,4 @@ Fii scurt, spune ce vrei tu, nu ce ar trebui să simtă celălalt, și lasă loc
 - Leckfor, C. M., Wood, N. R., Slatcher, R. B., & Hales, A. H. (2023). From close to ghost: Examining the relationship between the need for closure, intentions to ghost, and reactions to being ghosted. *Journal of Social and Personal Relationships*. Rezumat pe [PsyPost](https://www.psypost.org/people-with-a-high-need-for-closure-are-more-likely-ghost-yet-also-feel-more-distressed-when-they-are-ghosted/)
 - Kardas, M., Kumar, A., & Epley, N. (2022). Overly shallow? Miscalibrated expectations create a barrier to deeper conversation. *Journal of Personality and Social Psychology*, 122(3), 367-398. Rezumat de la [American Psychological Association](https://www.apa.org/news/press/releases/2021/09/deep-conversations-strangers)
 - Knobloch, L. K., & Solomon, D. H. (2003). Responses to changes in relational uncertainty within dating relationships: Emotions and communication strategies. *Communication Studies*, 54(3), 282-305. [Fișa Penn State](https://pure.psu.edu/en/publications/responses-to-changes-in-relational-uncertainty-within-dating-rela/)
+- YouGov (2024): [Half of 18- to 34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024

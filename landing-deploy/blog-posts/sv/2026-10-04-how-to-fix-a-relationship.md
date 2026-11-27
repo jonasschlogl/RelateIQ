@@ -24,6 +24,13 @@ Det finns två viktiga undantag. Om du är rädd för din partner, känner dig k
 | Gnistan har falnat | Lögner eller otrohet som fortsätter |
 | Stress har drivit isär er | Ett beroende som inte behandlas |
 
+:::stats Det här fann Gottmans forskning
+96 % | av gångerna förutsade de tre första minuterna av ett samtal hur det skulle sluta
+5 till 1 | förhållandet mellan positiva och negativa samspel som stabila par håller under en konflikt
+86 % | av de små försöken att få uppmärksamhet möttes med värme hos par som fortfarande var tillsammans sex år senare, jämfört med 33 % hos par som skilde sig
+källa: forskning av John Gottman och kollegor (se källor nedan)
+:::
+
 ## Steg 1: Bestäm vad "bättre" betyder
 
 "Rädda det" är för vagt för att agera på. Innan du pratar med din partner, bli tydlig med vad som skulle kännas annorlunda om det var bättre. Mer ömhet? En rättvisare fördelning hemma? Att känna sig lyssnad på? Skriv ner det i en eller två meningar. Då undviker du att bråka om allt och kan be om något konkret.
@@ -49,6 +56,14 @@ Du behöver inte vara perfekt. Lägg bara märke till vilken du oftast hamnar i 
 > **Varför de ska bort först**
 > Varje ryttare får den andra att gå i försvar, och när någon försvarar sig kan hen inte lyssna. Det är därför par kan bråka om samma sak i åratal utan att komma någonstans. Att ta bort ryttarna löser inte problemet i sig. Det skapar förutsättningarna för att problemet ska gå att lösa.
 
+Min åsikt: om du bara klarar ett steg, låt det vara det här. Man kan inte laga något mitt i ett bråk, så att lära sig pausa är det som gör alla andra steg möjliga.
+
+:::read Läs också
+/blog/relationship-advice-communication-habits/ | Så kommunicerar ni bättre i relationen | 7 vanor som ändrar hur ni bråkar
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | I kväll, i morgon och veckan efter
+/blog/relationship-problems-that-keep-coming-back/ | Varför har vi samma bråk hela tiden? | Vad som oftast ligger under
+:::
+
 ## Steg 3: Ta ett litet samtal om en enda sak
 
 Hoppa över samtalet om "hur det står till med relationen". Välj ett ämne och ett lugnt ögonblick, inte direkt efter jobbet och inte mitt i ett bråk. Hur du börjar spelar större roll än nästan allt annat: i Gottmans forskning förutsade de första tre minuterna av ett samtal hur det skulle sluta i 96% av fallen.
@@ -68,6 +83,10 @@ Ett praktiskt sätt att börja:
 - **Säg ett konkret tack om dagen.** "Tack för att du fixade bilen, det lättade verkligen."
 - **Ta tio minuter varje kväll till att verkligen prata.** Inte om logistik. Om hur dagen faktiskt kändes.
 - **Planera en sak i veckan som inte har med problem att göra.** En promenad, en middag, en film. Våra [frågor till dejtkvällen](/blog/date-night-questions-for-couples/) kan få det att kännas som en dejt igen.
+
+:::tool practice
+Vill du öva på ett svårt samtal innan du tar det?
+:::
 
 ## Steg 5: Fråga vad ni var och en behöver
 
@@ -99,6 +118,8 @@ Det är mycket vanligt att den ena är mer motiverad än den andra, åtminstone 
 Men i längden behöver en relation två personer. Om du har försökt ensam länge och inget förändras, säg det tydligt och lugnt. Hur din partner reagerar på det samtalet är viktig information.
 
 Testa: "Jag har verkligen försökt göra det bättre mellan oss, och jag behöver veta att du också vill det. Vad är du beredd att göra?"
+
+Min åsikt: en person kan ändra tonen i en relation mer än hen tror, men inte för alltid på egen hand. Om du efter flera månader är den enda som försöker är det värt att säga högt.
 
 ## Hur lång tid tar det?
 

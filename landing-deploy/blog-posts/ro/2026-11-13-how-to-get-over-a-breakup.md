@@ -24,6 +24,16 @@ Scopul aici nu e să te simți mai bine. E să treci prin ele fără să-i faci 
 
 **Scrie o propoziție pentru mai târziu.** În telefon: "Amintește-ți de ce s-a terminat: ___." O să ai nevoie de ea în a doua săptămână.
 
+Părerea mea: primele două zile nu sunt momentul să înțelegi ceva. Mănâncă, dormi, sună o prietenă. Explicațiile pot aștepta.
+
+:::read Citește și
+/blog/should-i-break-up-with-my-partner/ | Cum știi când e momentul să te desparți? | Dacă încă te hotărăști
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Pentru când apare în următoarea relație
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cum să nu mai analizezi totul excesiv | Când mintea tot derulează totul din nou
+:::
+
+**Test rapid:** Unora le e mai greu cu despărțirile din cauza felului în care se atașează. [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, te poate ajuta să-ți înțelegi reacția.
+
 ## Etapa 2: primele două săptămâni
 
 E adesea cea mai grea porțiune. Șocul trece și începe dorul.
@@ -52,6 +62,10 @@ Tristețe, furie, ușurare și vinovăție, toate într-o după-amiază. E norma
 > În trei studii, Erica Slotter, Wendi Gardner și Eli Finkel au descoperit că după o despărțire imaginea oamenilor despre ei înșiși devenea mai puțin clară. Își simțeau sinele, cum au spus chiar ei, "mai puțin clar și chiar mai mic", iar pierderea clarității contribuia la suferință. Într-o relație, rutinele, planurile și chiar gusturile în filme devin comune. Când se termină, trebuie să alegi care părți erau *ale tale*. Această triere e o mare parte din vindecare.
 
 Dacă reții un singur lucru din etapa asta, fie acesta: dezactivează-i notificările. Nu ca gest, ci ca grijă de bază față de tine. Fiecare verificare resetează ceasul.
+
+:::tool coach
+Ai tentația să-i scrii la 2 noaptea? Vorbește mai întâi aici
+:::
 
 ## Etapa 3: săptămânile trei până la douăsprezece
 
@@ -86,6 +100,8 @@ Nu există un număr fix, iar cine îți promite unul ghicește. Mulți oameni o
 | Vezi și binele, și răul din relație | Te simți fără speranță sau te gândești să-ți faci rău |
 
 Dacă ceva din coloana din dreapta ți se potrivește, te rugăm să vorbești cu un medic sau un psiholog. Dacă te gândești să-ți iei viața, contactează imediat serviciile de urgență sau o linie de criză.
+
+Părerea mea: nu există un termen limită ca să treci peste cineva. Dacă încet-încet ai mai multe zile ok decât rele, faci totul bine, chiar dacă durează mai mult decât ai sperat.
 
 ## Dacă tu ai pus capăt relației
 

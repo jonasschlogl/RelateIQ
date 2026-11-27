@@ -26,6 +26,15 @@ Son patrones en los que caen muchas parejas, sobre todo bajo estrés. Duelen y m
 
 **Siguiente paso:** una conversación tranquila y concreta, y quizá terapia de pareja. Nuestras guías sobre [hábitos de comunicación](/blog/relationship-advice-communication-habits/) y [problemas de pareja que siempre vuelven](/blog/relationship-problems-that-keep-coming-back/) son un buen punto de partida.
 
+Mi opinión: la mayoría de las relaciones pasan por rachas de nivel 1. Lo que importa es si los dos podéis nombrarlo y trabajarlo. Una mala racha de la que podéis hablar es muy distinta de una que te da miedo mencionar.
+
+:::stats Lo común que es el comportamiento controlador
+27,2 % | de las mujeres estadounidenses han sufrido a lo largo de su vida control coercitivo o atrapamiento por parte de una pareja
+19,5 % | de los hombres estadounidenses dicen lo mismo
+30,2 % | de las mujeres han sufrido agresión psicológica por parte de una pareja
+fuente: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), datos recogidos entre 2023 y 2024
+:::
+
 ## Nivel 2: Patrones tóxicos
 
 Aquí el problema ya no es solo cómo discutís. Es cómo te tratan. El investigador de parejas John Gottman identificó cuatro patrones de comunicación que predecían el divorcio en sus estudios, y señaló el **desprecio** (burlas, poner los ojos en blanco, sarcasmo, tratar a la pareja como si fuera inferior) como el más dañino. El nivel 2 es donde el desprecio y sus parientes se vuelven normales.
@@ -68,6 +77,12 @@ El control sutil es también el que más se pasa por alto. En un estudio de 2025
 
 Quiero ser muy directo con este nivel: una app, un artículo o una forma mejor de hablar no lo van a arreglar. Si esta sección te suena, el siguiente paso son las líneas de ayuda de más abajo.
 
+:::read Lecturas relacionadas
+/blog/gaslighting-in-a-relationship/ | ¿Me está haciendo luz de gas mi pareja? | 5 preguntas para distinguirlo de un desacuerdo
+/blog/love-bombing/ | Love bombing | Cómo se desarrolla semana a semana
+/blog/codependent-relationship/ | ¿Soy codependiente o solo cariñosa? | Cuando ayudar se convierte en perderte a ti misma
+:::
+
 ## Una autoevaluación rápida: el último mes
 
 Piensa en las últimas cuatro semanas, no en el mejor ni en el peor día. ¿Qué afirmaciones son ciertas?
@@ -91,6 +106,12 @@ En otras palabras, quedarse suele tener más que ver con el dinero, los hijos, l
 > Durante dos años, Yuki se dijo que Ben estaba "solo estresado" cuando se burlaba de su comida delante de amigos. Cuando empezó a leer sus mensajes y a preguntarle por qué había escrito a su hermana, ella apuntó un mes de lo que pasaba, como le había sugerido una orientadora de una línea de ayuda. Verlo en papel cambió algo. "Había estado tratando cada incidente por separado", dijo después. "Escrito, era claramente una sola cosa."
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
+
+Mi opinión: si llevas meses explicándote a ti misma el comportamiento de tu pareja, ese esfuerzo también es información. Las relaciones sanas rara vez necesitan tanta defensa.
+
+:::tool coach
+¿Quieres pensarlo primero en privado?
+:::
 
 ## ¿Soy yo la persona tóxica?
 
@@ -132,3 +153,4 @@ Si tienes miedo de tu pareja, o te controla, te amenaza o te hace daño, contact
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Resumen en [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

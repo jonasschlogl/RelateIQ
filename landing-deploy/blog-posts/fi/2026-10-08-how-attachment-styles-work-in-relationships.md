@@ -52,6 +52,13 @@ Tutkijat mittaavat näitä ulottuvuuksia yleensä kyselyillä, kuten Experiences
 >
 > Kumpikaan strategia ei ole tyhmä. Kumpikin on ollut jossain järkevä. Ne vain törmäävät pahasti, kun kaksi ihmistä käyttää vastakkaisia strategioita samalla hetkellä.
 
+:::chart Miten aikuiset kuvasivat itseään Hazanin ja Shaverin alkuperäisessä tutkimuksessa
+Turvallinen | 56 | 56 %
+Välttelevä | 25 | 25 %
+Ahdistunut | 19 | 19 %
+lähde: Hazan ja Shaver (1987), 620 vastaajaa (ks. lähteet alla)
+:::
+
 ## Neljä kiintymystyyliä arjessa
 
 ### Turvallinen kiintymys
@@ -99,6 +106,12 @@ Korkea ahdistus, korkea välttely. Tämän ryhmän ihmiset haluavat läheisyytt�
 
 Tämä voi olla vaikein tyyli elää, erityisesti sille, jolla se on. Se liittyy usein varhaisiin kokemuksiin, joissa ihmiset, joiden piti olla turvallisia, eivät aina olleet. Vakaat, kärsivälliset suhteet ja kiintymykseen tai traumaan perehtyneen terapeutin tuki voivat auttaa paljon.
 
+:::read Lue myös
+/blog/avoidant-attachment-partner/ | Välttelevä kiintymystyyli kumppanilla | Näin rakastat ihmistä, joka tarvitsee tilaa
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kehän ahdistunut puoli
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin | Kun mieli täyttää hiljaisuuden
+:::
+
 ## Kun tyylit kohtaavat: takaa-ajon ja vetäytymisen kierre
 
 Yksi parisuhdetutkimuksen tutkituimmista kaavoista on vaatimisen ja vetäytymisen kaava. Toinen kumppani lähestyy toista puhuakseen ("Meidän pitää selvittää tämä"), ja toinen vetäytyy rauhoittuakseen ("En jaksa tätä nyt"). Mitä enemmän toinen jahtaa, sitä enemmän toinen vetäytyy. Mitä enemmän toinen vetäytyy, sitä enemmän ensimmäinen jahtaa.
@@ -134,6 +147,8 @@ Muutama varaus on hyvä tietää:
 
 Hyvät arjen hetket näyttävät merkitsevän, eivät vain suuret elämäntapahtumat. Vuonna 2022 tehdyssä tutkimuksessa, jossa oli 151 vastikään seurustelemaan alkanutta paria ja 168 vastanainutta paria, Deniz Bayraktaroglu kollegoineen havaitsi, että päivinä, joina kumppanin kanssa oli enemmän myönteisiä hetkiä, ihmisten välttely väheni seuraavien viikkojen aikana, osittain koska hetket kohensivat mielialaa. Samat myönteiset hetket eivät vähentäneet kiintymysahdistusta, joka saattaa tarvita johdonmukaisempaa ja suorempaa rauhoittelua.
 
+Minun näkemykseni: tämä on minusta kiintymystutkimuksen toiveikkain osa. Tyylisi on lähtökohta, ei tuomio, ja vakaa suhde voi hitaasti muuttaa sitä.
+
 ## Yleisiä myyttejä kiintymystyyleistä
 
 | Myytti | Mitä tutkimus oikeasti viittaa |
@@ -146,6 +161,12 @@ Hyvät arjen hetket näyttävät merkitsevän, eivät vain suuret elämäntapaht
 | "Kaksi turvatonta ihmistä ei voi saada suhdetta toimimaan." | Moni saa, varsinkin kun molemmat ymmärtävät kaavan ja ottavat vastuun omasta osuudestaan. |
 
 Myytti, jonka haluaisin eniten eläköittää, on ajatus siitä, että tyylisi on tuomio. Ihmiset käyttävät usein lauseita "olen välttelevä" tai "hän on ahdistunut" keskustelun lopettamiseen. Se toimii paljon paremmin keskustelun aloituksena.
+
+Minun näkemykseni: nimilappu on vähemmän hyödyllinen kuin kaava. Tieto "olen ahdistunut" auttaa paljon vähemmän kuin tieto "kun hän hiljenee, minä alan jahdata".
+
+:::tool coach
+Tunnistatko kehän suhteessanne? Puhu se läpi
+:::
 
 ## Miten käyttää tätä arjessa
 

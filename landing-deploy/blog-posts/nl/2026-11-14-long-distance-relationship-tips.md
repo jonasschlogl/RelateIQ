@@ -24,6 +24,10 @@ De kansen zijn dus goed. De vraag is hoe je elke fase goed benut.
 
 Dezelfde gewoontes lijken beide soorten stellen gelukkig te houden. In een studie uit 2021 onder 232 jongvolwassenen met een relatie op afstand en 263 met een relatie dichtbij, ontdekten Kaitlyn Goldsmith en Sandra Byers dat onderhoudend gedrag, zoals contact houden, over de toekomst praten en liefdevol aan elkaar denken, in beide groepen op vrijwel dezelfde manier samenhing met meer tevredenheid.
 
+Mijn mening: de nuttigste bevinding hier gaat over geloof. Stellen die verwachten dat het werkt en een globaal idee hebben van wanneer de afstand eindigt, lijken het beter te doen. Daar loont het om vroeg over te praten.
+
+**Snelle quiz:** Waardoor voelt je partner zich geliefd op afstand? Doe samen de [liefdestaalquiz](/quiz/love-language/) van 2 minuten, in het Engels, en vergelijk.
+
 ## Fase 1: als je uit elkaar bent
 
 ### Spreek het "waarom" en het "tot wanneer" af
@@ -50,6 +54,12 @@ Tekst haalt de toon weg en nodigt uit tot de slechtste interpretaties. Zit je ie
 
 Een datum in de agenda maakt van "ik mis je" geen last maar een aftelling.
 
+:::read Lees ook
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | Als jullie het niet in het echt kunnen bijleggen
+/blog/trust-issues-in-a-relationship/ | Zo overwin je vertrouwensproblemen | Als afstand de twijfel voedt
+/blog/how-to-say-i-love-you-without-words/ | Zo laat je liefde zien zonder woorden | Ideeën die werken op afstand
+:::
+
 ## Fase 2: tijdens bezoeken
 
 ### Haal de druk van "perfect" af
@@ -63,6 +73,10 @@ In een studie onder datende stellen op afstand ontdekten Laura Stafford en Andy 
 ### Bewaar niet alle problemen voor het bezoek
 
 Heb je een moeilijk gesprek bewaard voor "als we bij elkaar zijn", dan wordt het bezoek al gespannen voordat het begint. Bespreek de grote dingen via een call en gebruik bezoeken voor verbinding.
+
+:::tool check
+Weet je niet hoe een bericht overkomt op honderden kilometers afstand? Check het eerst
+:::
 
 ## Fase 3: als de afstand verdwijnt
 
@@ -90,6 +104,8 @@ Je zou kunnen zeggen: "Dit is moeilijker dan ik dacht. Ik denk niet dat het bete
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 Ik denk dat dit het meest onderschatte deel van een relatie op afstand is. Stellen plannen jarenlang om in dezelfde stad te wonen, en besteden daarna bijna geen tijd aan plannen hoe dat er echt uit gaat zien.
+
+Mijn mening: mensen plannen de verhuizing en vergeten de aanpassing. Ik zou een maand nadat jullie dicht bij elkaar zijn gaan wonen een gesprekje inplannen, gewoon om elkaar te vragen wat anders is dan jullie verwachtten.
 
 ## Afstand tijdens de feestdagen
 

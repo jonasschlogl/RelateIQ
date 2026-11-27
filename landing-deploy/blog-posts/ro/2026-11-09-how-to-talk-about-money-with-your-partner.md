@@ -22,6 +22,10 @@ Ghidul acesta îți dă o structură simplă ca să vorbești despre bani cu par
 
 **Felul în care vă organizați conturile poate conta.** Într-un experiment cu 230 de cupluri logodite sau proaspăt căsătorite, Jenny Olson și colegii ei au repartizat aleatoriu cuplurile să deschidă un cont comun, să păstreze conturi separate sau să facă ce vor. Pe parcursul a doi ani, cuplurile care și-au unit banii într-un cont comun și-au păstrat calitatea relației, în timp ce la celelalte grupuri ea a scăzut. Cercetătorii avertizează că un cont comun nu e potrivit pentru oricine, mai ales unde există instabilitate financiară sau risc de control.
 
+Părerea mea: cifra despre cheltuielile ascunse nu mă surprinde. Majoritatea oamenilor nu ascund bani pentru că sunt necinstiți. Îi ascund pentru că discuția li se pare mai grea decât secretul. Adevărata soluție e să faceți discuția mai ușoară.
+
+**Test rapid:** Taci sau insiști mai tare când discuția despre bani devine tensionată? [Testul despre stilul în conflict](/quiz/fight-style/), în engleză și de 2 minute, vă ajută să știți la ce să vă așteptați.
+
 ## Întâlnirea despre bani: o ordine de zi în 4 runde
 
 Alege un moment relaxat, nu ziua în care vine o factură. Fă-l plăcut: o cafea, o plimbare, ceva bun de ronțăit. Socotește 45 de minute, nu o seară întreagă.
@@ -63,6 +67,12 @@ Nu încercați să rezolvați totul. Luați una sau două decizii mici:
 
 Eu aș rezista tentației de a sări peste runda 1. Să vorbiți despre cum funcționau banii în familiile voastre pare o discuție de umplutură. De obicei, acolo se ascunde adevărata explicație a certurilor voastre.
 
+:::read Citește și
+/blog/relationship-problems-that-keep-coming-back/ | De ce avem mereu aceeași ceartă? | Când banii sunt cearta care se repetă
+/blog/relationship-advice-communication-habits/ | Cum să comunicați mai bine în cuplu | 7 obiceiuri care schimbă felul în care vă certați
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | Dacă discuția despre bani a mers prost
+:::
+
 ## Ce mod de organizare vi se potrivește?
 
 | Mod | Cum funcționează | Se poate potrivi cuplurilor care... |
@@ -72,6 +82,10 @@ Eu aș rezista tentației de a sări peste runda 1. Să vorbiți despre cum func
 | Totul separat | Fiecare plătește o parte stabilită din cheltuieli | ...sunt la începutul relației sau au situații foarte diferite |
 
 Studiul lui Olson sugerează că unirea completă îi poate ajuta pe parteneri să se simtă mai uniți, dar ce contează cel mai mult e să fiți cu adevărat de acord amândoi și ca niciunul să nu rămână fără acces la bani.
+
+:::tool practice
+Vrei să exersezi discuția despre bani înainte s-o ai?
+:::
 
 ## Ce să spui în 4 situații delicate
 
@@ -103,6 +117,8 @@ Numește diferența fără să pui o etichetă persoanei.
 ## Dacă discuția tot se transformă în ceartă
 
 Luați o pauză când unul dintre voi se simte copleșit și reveniți mai târziu. Ghidul nostru despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) are metode prin care certurile să nu escaladeze, iar dacă s-a spus ceva rănitor, [cum să-ți ceri scuze de la partener](/blog/how-to-apologize-to-your-partner/) te poate ajuta. Dacă banii fac parte dintr-un stres mai mare, citește ghidul nostru despre [cum să-ți sprijini partenerul când e stresat](/blog/how-to-support-your-partner-when-stressed/). Iar dacă urmează să vă mutați împreună după o relație la distanță, banii sunt unul dintre marile subiecte de discutat primele, citește [sfaturile noastre pentru o relație la distanță](/blog/long-distance-relationship-tips/).
+
+Părerea mea: dacă la prima voastră întâlnire despre bani cădeți de acord asupra unui singur lucru, să fie suma pe care o poate cheltui fiecare fără să întrebe. Elimină un număr surprinzător de certuri mărunte.
 
 ## Răspunsuri rapide
 

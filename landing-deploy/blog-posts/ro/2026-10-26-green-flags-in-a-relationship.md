@@ -18,6 +18,10 @@ Ghidul acesta enumeră nouă semnale verzi într-o relație, dar cu o diferenț�
 
 **Cum îl recunoști:** împărtășește o mică reușită și urmărește. "E grozav, povestește-mi tot!" e semnalul verde. "Fain" (și înapoi la telefon), "Asta nu înseamnă mai multe ore?" sau "Ghici ce mi s-a întâmplat mie azi" nu sunt.
 
+Părerea mea: acesta e semnalul verde pe care l-aș căuta primul. Felul în care cineva reacționează la veștile tale bune spune mai mult despre el decât felul în care se poartă la o întâlnire perfectă.
+
+**Test rapid:** Ești curioasă ce aduci tu în relație? [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, arată dacă tinzi spre securizant, anxios sau evitant.
+
 ## 2. Îți susține scopurile fără să preia controlul
 
 **De ce contează:** într-un studiu în care cuplurile vorbeau despre scopurile lor personale, Brooke Feeney a descoperit că sprijinul *atent și neintruziv* (încurajare fără control) era legat de faptul că partenerul susținut se simțea mai fericit, avea o stimă de sine mai mare și se simțea mai încrezător că își va atinge scopurile. Presiunea, critica sau preluarea planului nu ajutau.
@@ -37,6 +41,12 @@ Sprijinul se și hrănește singur când e observat. Într-un studiu din 2024 cu
 **De ce contează:** problemele pe care le poți numi sunt probleme pe care le poți rezolva. Tăcerea, bosumflarea sau exploziile bruște te lasă să ghicești.
 
 **Cum îl recunoști:** când ceva nu merge bine, spune "M-a deranjat asta, putem vorbi?" sau afli trei zile mai târziu, din starea lui?
+
+:::read Citește și
+/blog/signs-of-a-toxic-relationship/ | Este relația mea toxică? | Cealaltă față a listei
+/blog/love-bombing/ | Love bombing | Când intensitatea de la început nu e un semnal verde
+/blog/situationship/ | Situationship | Când nu știți încă ce sunteți
+:::
 
 ## 5. Poate pierde o ceartă
 
@@ -73,6 +83,10 @@ Sprijinul se și hrănește singur când e observat. Într-un studiu din 2024 cu
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
+:::tool coach
+Nu știi sigur ce vezi în relația ta? Vorbește despre asta
+:::
+
 ## Semnale verzi la început de relație
 
 În primele săptămâni nu poți vedea cum face cineva față la ani de stres, dar poți observa:
@@ -88,6 +102,8 @@ Sprijinul se și hrănește singur când e observat. Într-un studiu din 2024 cu
 Nimeni nu le arată pe toate nouă tot timpul. Toată lumea are zile proaste, obiceiuri vechi și momente de care nu e mândră. Caută tipare de-a lungul lunilor, nu perfecțiune într-o singură săptămână. Și amintește-ți că o relație poate avea în același timp semnale verzi și roșii. Dacă nu ești sigur în privința celor roșii, ghidurile noastre despre [semnele unei relații toxice](/blog/signs-of-a-toxic-relationship/) și [gaslighting](/blog/gaslighting-in-a-relationship/) te pot ajuta să te gândești.
 
 Personal, m-aș uita cel mai atent la numărul 9. Un partener poate bifa toate celelalte căsuțe și totuși să te lase anxios după fiecare discuție. Cum te simți după e o informație.
+
+Părerea mea: nimeni nu le arată pe toate nouă în fiecare zi, nici tu. Eu m-aș uita la direcție: devin lucrurile astea mai frecvente între voi, sau mai rare?
 
 ## Cum să fii un partener cu semnal verde
 

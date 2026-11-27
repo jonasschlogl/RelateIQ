@@ -24,6 +24,8 @@ Dar aceeași analiză subliniază ceva ce majoritatea articolelor sar: în rela�
 
 **Test rapid:** ești curios ce faci de obicei când o ceartă se aprinde? Încearcă [testul despre stilul în certuri](/quiz/fight-style/), de 2 minute.
 
+Părerea mea: nu cred că durata tăcerii contează cel mai mult. Contează dacă celălalt știe că te întorci. Detaliul ăsta transformă o pedeapsă într-o pauză.
+
 ## 6 diferențe între nevoia de spațiu și tratamentul tăcerii
 
 ### 1. Spațiul se anunță. Tratamentul tăcerii pur și simplu se întâmplă.
@@ -51,6 +53,12 @@ Când spațiul se termină, cel care a plecat e cel care redeschide discuția. �
 ### 6. Spațiul te lasă puțin neliniștit. Tratamentul tăcerii te face să umbli ca pe ouă.
 
 Să aștepți cât celălalt are nevoie de o pauză poate fi neplăcut, mai ales dacă ești o fire anxioasă. Dar, în timp, ar trebui să devină previzibil. Un tipar de tăcere punitivă tinde să-ți schimbe comportamentul: îți repeți propozițiile în minte, eviți anumite subiecte și îți ceri scuze doar ca să se termine răceala.
+
+:::read Citește și
+/blog/avoidant-attachment-partner/ | Atașamentul evitant la partener | Când spațiul e punctul lui de plecare
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | Un mesaj care rupe tăcerea cu blândețe
+/blog/my-boyfriend-gets-defensive/ | Iubitul meu se pune în defensivă când îi spun ceva | Dacă vorbitul se transformă în închidere
+:::
 
 ## Față în față
 
@@ -100,6 +108,10 @@ Diferența dintre spațiu și tratamentul tăcerii ține adesea de una sau două
 
 > **De ce funcționează**
 > Tăcerea fără cuvinte îl lasă pe partener să umple golul, iar o minte anxioasă rareori îl umple cu blândețe. Un moment de revenire transformă o amenințare fără sfârșit într-o așteptare scurtă, pe care o poți duce. Gottman Institute sugerează și să vă înțelegeți dinainte asupra unui semnal, pentru că simplul fapt de a pleca poate fi citit ca o închidere și mai mare.
+
+:::tool practice
+Vrei să exersezi cum să spui calm "am nevoie de o pauză"?
+:::
 
 ## Ce să spui dacă tu ești cel care așteaptă
 

@@ -52,6 +52,13 @@ Los investigadores suelen medir estas dimensiones con cuestionarios como la esca
 >
 > Ninguna de las dos estrategias es tonta. Cada una tuvo sentido en algún momento. Simplemente chocan mucho cuando dos personas usan las contrarias en el mismo momento.
 
+:::chart Cómo se describían los adultos en el estudio original de Hazan y Shaver
+Seguro | 56 | 56 %
+Evitativo | 25 | 25 %
+Ansioso | 19 | 19 %
+fuente: Hazan y Shaver (1987), 620 participantes (ver fuentes abajo)
+:::
+
 ## Los cuatro estilos de apego en el día a día
 
 ### Apego seguro
@@ -99,6 +106,12 @@ Ansiedad alta, evitación alta. Las personas de este grupo desean la cercanía y
 
 Puede ser el estilo más difícil de llevar, sobre todo para quien lo tiene. A menudo está ligado a experiencias tempranas en las que las personas que debían dar seguridad no siempre la daban. Las relaciones estables y pacientes y el apoyo de un terapeuta formado en apego o trauma pueden ayudar mucho.
 
+:::read Lecturas relacionadas
+/blog/avoidant-attachment-partner/ | Apego evitativo en la pareja | Cómo querer a alguien que necesita espacio
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | El lado ansioso del círculo
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cómo dejar de pensar demasiado | Cuando tu cabeza rellena el silencio
+:::
+
 ## Cuando los estilos se encuentran: el círculo de perseguir y retirarse
 
 Uno de los patrones más estudiados en la investigación sobre parejas se llama exigencia y retirada. Uno de los dos se acerca al otro para hablar ("Tenemos que arreglar esto") y el otro se aleja para calmarse ("Ahora no puedo con esto"). Cuanto más persigue uno, más se retira el otro. Cuanto más se retira el otro, más persigue el primero.
@@ -134,6 +147,8 @@ Conviene tener en cuenta algunas advertencias:
 
 Los buenos momentos del día a día parecen importar, no solo los grandes acontecimientos. En un estudio de 2022 con 151 parejas que acababan de empezar a salir y 168 parejas recién casadas, Deniz Bayraktaroglu y sus colegas vieron que los días con más momentos positivos con la pareja, la evitación de las personas bajaba en las semanas siguientes, en parte porque esos momentos mejoraban su ánimo. Esos mismos momentos positivos no reducían la ansiedad de apego, que puede necesitar una tranquilidad más constante y directa.
 
+Mi opinión: me parece la parte más esperanzadora de la investigación sobre el apego. Tu estilo es un punto de partida, no una condena, y una relación estable puede cambiarlo poco a poco.
+
 ## Mitos comunes sobre los estilos de apego
 
 | Mito | Lo que sugiere de verdad la investigación |
@@ -146,6 +161,12 @@ Los buenos momentos del día a día parecen importar, no solo los grandes aconte
 | "Dos personas inseguras no pueden funcionar." | Muchas funcionan, sobre todo cuando las dos entienden el patrón y asumen su parte. |
 
 El mito que más me gustaría jubilar es la idea de que tu estilo es un veredicto. La gente suele usar "soy evitativo" o "él es ansioso" como el final de la conversación. Funciona mucho mejor como el principio.
+
+Mi opinión: la etiqueta sirve menos que el patrón. Saber "soy ansiosa" ayuda mucho menos que saber "cuando se queda callado, le persigo".
+
+:::tool coach
+¿Reconoces este círculo en tu relación? Háblalo
+:::
 
 ## Cómo usar esto en el día a día
 

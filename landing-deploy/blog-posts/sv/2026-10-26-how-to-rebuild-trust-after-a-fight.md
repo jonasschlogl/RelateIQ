@@ -28,6 +28,8 @@ En studie från 2026 pekar åt samma håll. Asya Saydam och Jaime Hsu följde 37
 
 Jag ska vara ärlig, det här är rådet folk protesterar mest mot. Att gå och lägga sig utan att ha löst det känns fel. Men ett lugnt samtal vid frukosten slår en tredje rond klockan ett på natten nästan varje gång.
 
+Min åsikt: att gå och lägga sig arg har dåligt rykte. Jag vill hellre att ni sover på saken och pratar lugnt på morgonen än att ni tvingar fram en lösning klockan ett på natten som ingen av er minns särskilt väl.
+
 ## Morgonen efter: reparera
 
 ### Ta ansvar för din del, utan villkor
@@ -49,6 +51,12 @@ Ett sätt att säga det: "Berätta hur det var för dig. Jag vill förstå."
 I en långvarig studie vid University of Minnesota såg Jessica Salvatore och kollegor hur par återhämtade sig efter ett konfliktsamtal. Personer som hade svårt att återhämta sig efter konflikter, ofta på grund av svåra tidiga erfarenheter, var mer benägna att hålla ihop när deras *partner* återhämtade sig väl. Forskarna föreslog att en partner som kan leda nedvarvningen kan skydda förhållandet för båda.
 
 I praktiken: om du är den lugnare den här gången, ta första steget. Erbjud en kram, en kaffe, en lätt kommentar, ett "ska vi börja om?" Att leda reparationen är inte att erkänna att allt var ditt fel. Det är att ta hand om förhållandet.
+
+:::read Läs också
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | Om ni inte är tillsammans morgonen efter
+/blog/how-to-apologize-to-your-partner/ | Så ber du din partner om ursäkt på riktigt | Vad en äkta ursäkt innehåller
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | Så tar du en paus utan att straffa
+:::
 
 ## Veckan efter: bygg upp igen
 
@@ -83,6 +91,10 @@ Efter ett gräl undviker par ofta varandra lite, även när det är löst. Gör 
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
+:::tool practice
+Vill du öva på försoningssamtalet först?
+:::
+
 ## Om det är du som blev sårad
 
 Du får behöva tid. Tillit efter ett sårande gräl kommer inte tillbaka för att någon sa förlåt en gång. Den kommer tillbaka när beteendet stämmer med orden. Berätta för din partner vad som skulle hjälpa dig.
@@ -92,6 +104,8 @@ Testa: "Jag uppskattar ursäkten. Det som verkligen skulle hjälpa mig är att s
 ## Hur lång tid tar det?
 
 Efter ett enstaka gräl ofta några dagar. Efter upprepade sårande gräl kan det ta veckor eller månader av konsekvent beteende. Om samma gräl kommer tillbaka gång på gång kan vår guide om [relationsproblem som alltid kommer tillbaka](/blog/relationship-problems-that-keep-coming-back/) hjälpa dig att hitta mönstret under, och vår guide om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) hjälper till att förhindra nästa upptrappning.
+
+Min åsikt: tilliten efter ett bråk kommer oftast tillbaka genom små, tråkiga bevis, inte stora gester. Att göra det du sa att du skulle göra tre dagar i rad säger mer än blommor.
 
 ## När det är mer än ett gräl
 

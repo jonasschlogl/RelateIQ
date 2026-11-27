@@ -25,6 +25,15 @@ Ei siis paineita, mutta tämä ilta ansaitsee vähän valmistautumista. Hyvä uu
 
 Osallistuminen ei kuitenkaan ole sama asia kuin hyväksyntä. Vuoden 2024 tutkimuksessa, jossa oli 464 nuorta aikuista Sloveniasta, Timotej Glavač ja Melita Puklek Levpušček havaitsivat, että ihmisillä, joiden isät olivat tungettelevampia, oli yleensä lyhyempiä suhteita. Lämpimät ja tukevat vanhemmat auttavat paria. Vanhemmat, jotka yrittävät johtaa suhdetta, yleensä eivät.
 
+Minun näkemykseni: lopettaisin yrittämästä tehdä vaikutusta ja keskittyisin olemaan helppo seuraa. Useimmat vanhemmat haluavat lähinnä nähdä, että heidän lastaan kohdellaan hyvin, ja sen voit näyttää ilman yhtään täydellistä vastausta.
+
+:::stats Miksi perheen tapaaminen tuntuu niin isolta
+72 % | sanoo, että kumppanin tuominen kotiin juhlapyhinä tekee suhteesta virallisen tuntuisen
+36 % | sanoo perheensä kertoneen heistä noloja tarinoita kumppanille
+23 % | sanoo perheensä esittäneen kumppanille sopimattomia kysymyksiä
+lähde: [Tawkifyn kysely](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) 1 000 yhdysvaltalaiselle, DatingNewsin raportoimana
+:::
+
 ## Ennen kuin lähdet: 3 kysymystä kumppanillesi
 
 1. **"Mistä he ovat ylpeitä ja mille he ovat herkkiä?"** Tämä on karttasi hyviin ja huonoihin aiheisiin.
@@ -32,6 +41,14 @@ Osallistuminen ei kuitenkaan ole sama asia kuin hyväksyntä. Vuoden 2024 tutkim
 3. **"Jos tilanne muuttuu kiusalliseksi, mikä on merkkimme?"** Sana, katse, käsi selällä. Se auttaa enemmän kuin luulisi.
 
 Sanoisin, että tällä lyhyellä valmistelulla on enemmän merkitystä kuin millään, mitä sanot itse päivänä. Useimmat kiusalliset hetket johtuvat siitä, ettei tunne sääntöjä, jotka kaikki muut tuntevat.
+
+:::read Lue myös
+/blog/holidays-with-your-partners-family/ | Juhlapyhät kumppanin perheen kanssa | Suunnitelma jouluun
+/blog/relationship-advice-communication-habits/ | Näin kommunikoitte paremmin parisuhteessa | Tapoja, jotka auttavat kaikissa jännittyneissä hetkissä
+/blog/how-to-apologize-to-your-partner/ | Näin pyydät kumppaniltasi anteeksi vilpittömästi | Jos jokin sanomasi osuu väärin
+:::
+
+**Pikatesti:** Etkö ole varma, mitä tarvitset kumppaniltasi sinä päivänä? Kahden minuutin [testi parisuhteen tarpeista](/quiz/relationship-needs/), englanniksi, auttaa pukemaan sen sanoiksi ennen lähtöä.
 
 ## 12 hetkeä ja mitä sanoa
 
@@ -110,6 +127,10 @@ Kiitä heitä nimeltä ja mainitse yksi asia, josta erityisesti pidit.
 
 Lyhyt viesti jälkeenpäin kumppanisi kautta ("Kiitä äitiäsi vielä kerran illallisesta") on mukava lopetus.
 
+:::tool practice
+Jännittääkö jokin tietty kysymys? Harjoittele vastaustasi ensin
+:::
+
 ## Jälkeenpäin: yhteenveto
 
 Kysy kumppaniltasi, miten hänen mielestään meni, ja kuuntele vastaus jäämättä vatvomaan. Jos ilmassa oli jännitettä, erota *tyyli* *torjunnasta*. Jotkut perheet ovat aluksi pidättyväisiä kaikkien kanssa.
@@ -117,6 +138,8 @@ Kysy kumppaniltasi, miten hänen mielestään meni, ja kuuntele vastaus jäämä
 Auttaa myös tuntea psykologi Terri Orbuchin pitkäaikainen tutkimus, jossa hän seurasi aviopareja 26 vuoden ajan. Hän havaitsi, että kun aviomiehet tunsivat olevansa läheisiä vaimonsa vanhempien kanssa, parin eroriski oli pienempi, mutta kun vaimot olivat hyvin läheisiä miehensä vanhempien kanssa, riski oli suurempi, ehkä siksi, että läheisyys vaikeutti rajojen asettamista. Tavoite ei ole tulla parhaiksi ystäviksi yhdessä yössä. Tavoite on lämpö ja kunnioitus terveiden rajojen kanssa.
 
 Jos vietätte pian juhlapyhiä heidän kanssaan, oppaamme [juhlapyhistä kumppanin perheen kanssa](/blog/holidays-with-your-partners-family/) käsittelee pidempiä vierailuja. Ja jos haluat ymmärtää kumppaniasi paremmin ennen suurta päivää, kokeile muutamia [syvällisiä kysymyksiämme kumppanille](/blog/deep-questions-to-ask-your-partner/), varsinkin lapsuutta koskevia.
+
+Minun näkemykseni: jälkipuinti on tärkeämpi kuin itse vierailu. Kiusalliselle illalliselle on helppo nauraa yhdessä, mutta vain jos puhutte siitä lempeästi kotimatkalla sen sijaan, että märehditte sitä kumpikin yksin.
 
 ## Jos sinä esittelet kumppanisi
 
@@ -149,3 +172,4 @@ Anna aikaa. Ensitapaamiset ovat usein jäykkiä, ja monet vanhemmat lämpenevät
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Tiivistelmä: [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), Terri Orbuchin pitkäaikaistutkimuksesta aviopareista
 - Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Hrčak](https://hrcak.srce.hr/en/319709)
+- DatingNews: [For 72% of daters, bringing a partner home signals commitment](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/), Tawkify survey of 1,000 Americans

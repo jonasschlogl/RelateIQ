@@ -34,6 +34,14 @@ De fann att att ta ansvar var den viktigaste delen, och att erbjuda sig att stä
 
 En reservation är värd att komma ihåg: det var ett experiment där människor bedömde skrivna ursäkter, och verkligheten, med verklig sårbarhet och historia, är rörigare. Ändå stämmer det med vad många parterapeuter ser. De ursäkter som fungerar handlar om den andras upplevelse och vad du gör härnäst, inte om din egen lättnad.
 
+Min åsikt: den del som de flesta hoppar över är erbjudandet om att reparera. "Förlåt" stänger stunden, men "så här kommer jag att göra annorlunda" är det som bygger upp tilliten under veckorna som följer.
+
+:::read Läs också
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Vad du säger när din partner säger att du sårat hen | De första fem minuterna, steg för steg
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | I kväll, i morgon bitti och veckan efter
+/blog/my-boyfriend-gets-defensive/ | Min pojkvän går i försvar när jag tar upp något | Om ursäkten alltid blir en debatt
+:::
+
 ## Olika människor behöver olika ursäkter
 
 Det finns ett lager till som de flesta råd missar. I en separat studie tittade Ryan Fehr och Michele Gelfand på tre delar av en ursäkt:
@@ -73,6 +81,10 @@ Du behöver inte alla sex delar varje gång. Här är en kort struktur byggd på
 
 > **De fem tysta frågorna**
 > Varje steg svarar på en fråga som din partner ställer i tysthet. Förstår du vad du gjorde? (konkret). Tänker du försvara det? (inga villkor). Förstår du vad det gjorde med mig? (påverkan). Kommer det att hända igen? (ställa till rätta). Får jag fortfarande vara upprörd? (utrymme). När alla fem är besvarade finns det mycket mindre kvar att bråka om.
+
+:::tool practice
+Vill du öva på din ursäkt innan du säger den?
+:::
 
 ## Ett helt exempel, från början till slut
 
@@ -150,6 +162,8 @@ Om samma sak händer gång på gång är det inte ursäkten som saknas. Det är 
 Vid större svek, som lögner, otrohet eller ett viktigt brutet löfte, är ett bra samtal början, inte slutet. Förtroende byggs upp igen genom konsekventa handlingar över tid. Vår guide om [att bygga upp förtroendet igen efter ett bråk](/blog/how-to-rebuild-trust-after-a-fight/) går igenom processen steg för steg.
 
 Om ursäkterna inte leder någonstans, eller om mönstret innehåller respektlöshet, kan en parterapeut hjälpa er att se vad som pågår under ytan. Om du vill öva på vad du ska säga inför ett svårt samtal är RelationshipAI en AI-baserad relationscoach som hjälper dig att sätta ord på en ursäkt och öva den i Partner Practice. Det är inte terapi, men det kan hjälpa dig att komma igång.
+
+Min åsikt: en ursäkt som följs av samma beteende en vecka senare lär sakta din partner att förlåt inte betyder något. Färre ursäkter med verklig förändring slår många ursäkter utan.
 
 ## Snabba svar
 

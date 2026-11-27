@@ -25,6 +25,8 @@ Ca adulți, își doresc adesea iubire și conexiune, dar apropierea le poate p�
 | Consideră normal să aveți nevoie unul de altul | Vede nevoia de ceilalți ca pe o slăbiciune |
 | Rămâne stabil după apropiere | Se retrage după momentele de apropiere |
 
+Părerea mea: ce m-a ajutat cel mai mult a fost să văd evitarea ca pe o protecție, nu ca pe o respingere. Partenerul nu se retrage de lângă tine. Se retrage de un sentiment care cândva nu a fost sigur.
+
 ## 8 semne ale unui partener evitant
 
 ### 1. Se retrage după momentele apropiate
@@ -58,6 +60,12 @@ Când lucrurile devin serioase, poate observa brusc tot ce „nu e în regulă" 
 ### 8. Arată iubirea mai mult prin fapte decât prin cuvinte
 
 Să-ți repare bicicleta sau să rezerve o excursie poate fi felul lui de a spune „țin la tine". E real, chiar dacă e mai discret.
+
+:::read Citește și
+/blog/emotionally-unavailable-partner/ | Partener indisponibil emoțional | 5 motive pentru care se închide
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Cum le deosebești
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cum să nu mai analizezi totul excesiv | Când distanța lui pornește o spirală
+:::
 
 ## De ce se retrag partenerii evitanți
 
@@ -105,6 +113,10 @@ S-ar putea să nu poată răspunde pe loc la o întrebare emoțională. Lasă-l 
 
 Dacă tu ești mai anxioasă în relații, un partener evitant îți poate trezi fricile foarte puternic. Păstrează-ți prieteniile, pasiunile și sprijinul. Ghidurile noastre despre [anxietatea în relație](/blog/relationship-anxiety/) și [partenerii indisponibili emoțional](/blog/emotionally-unavailable-partner/) te pot ajuta.
 
+:::tool practice
+Vrei să exersezi cum să ceri apropiere fără presiune?
+:::
+
 ## Evitant nu înseamnă rece
 
 Multe articole îi descriu pe oamenii evitanți ca reci sau incapabili să iubească. E nedrept și de cele mai multe ori fals. Un partener evitant poate fi profund loial, stabil și grijuliu. Doar că arată asta altfel și are nevoie de mai mult spațiu.
@@ -112,6 +124,8 @@ Multe articole îi descriu pe oamenii evitanți ca reci sau incapabili să iubea
 Stilurile de atașament se pot și schimba. Cercetările arată că relațiile sigure și constante, precum și terapia, îi pot ajuta pe oameni să se simtă, în timp, mai în siguranță cu apropierea. Scopul nu e să-ți „repari" partenerul, ci să construiți o relație în care amândoi vă simțiți în siguranță: tu cu suficientă apropiere, iar el cu suficient spațiu.
 
 Dacă vrei să plănuiești cum să vorbești despre nevoi și spațiu fără să ajungeți la ceartă, RelationshipAI este un coach de relații bazat pe AI care te ajută să găsești cuvintele. Nu este terapie, dar e un loc calm de la care să începi.
+
+Părerea mea: ai răbdare, dar nu la nesfârșit. Să înțelegi stilul cuiva nu înseamnă să renunți la propriile nevoi. Amândoi aveți dreptul la ele.
 
 ## Răspunsuri rapide
 

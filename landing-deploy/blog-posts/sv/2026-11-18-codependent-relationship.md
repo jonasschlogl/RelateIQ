@@ -52,6 +52,14 @@ Räkna hur många gånger du förra veckan svalde ett litet "egentligen skulle j
 
 Av de tre skulle jag börja med nej-testet. Om det känns farligt och inte bara obekvämt att säga nej till din partner säger det mer än någon etikett.
 
+Min åsikt: testet "skulle jag klara mig om hen sa nej?" är det jag skulle börja med. Omtanke överlever ett nej. Medberoende gör det oftast inte.
+
+:::read Läs också
+/blog/how-to-support-your-partner-when-stressed/ | Så stöttar du din partner vid stress | Stöd utan att bära allt
+/blog/signs-of-a-toxic-relationship/ | Är min relation destruktiv? | När det är mer än överdriven omtanke
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När rädslan att förlora hen driver hjälpandet
+:::
+
 ## Vad forskningen faktiskt säger (och inte säger)
 
 Medberoende är ett populärt ord men ett rörigt vetenskapligt begrepp. Det är ingen diagnos, det finns ingen överenskommen definition och mycket av det du läser på nätet går längre än forskningen. Det här är någorlunda väl underbyggt.
@@ -80,6 +88,12 @@ Du behöver inte göra om hela relationen. Förändring börjar här i det väld
 > Priya planerade alltid deras semestrar efter vad Sam ville och kände sedan ett tyst agg hela resan. I år provade hon test 3 och räknade hur ofta hon svalt en egen önskan. Elva gånger under en enda helg av planering. Så hon sa, lite skakigt: "Jag har insett att jag alltid går med på det du väljer och sedan surar, och det är inte rättvist mot någon av oss. Den här gången skulle jag verkligen vilja åka på en storstadsresa." Sam skrattade och sa att han hade trott att hon älskade stränder. Semestern var inte poängen. Poängen var att hon fanns med i den.
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
+
+Min åsikt: börja mindre än du tror. Att säga "den där får du sköta" en gång den här veckan gör mer än ett stort löfte om att ändra allt.
+
+:::tool practice
+Vill du öva på att säga nej vänligt? Öva först
+:::
 
 ## Ord för när det känns svårt
 

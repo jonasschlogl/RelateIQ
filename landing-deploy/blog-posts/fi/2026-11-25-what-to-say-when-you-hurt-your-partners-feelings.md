@@ -26,6 +26,8 @@ Yksinkertaisesti: ennen kuin kumppanisi voi kuulla sinun puolesi, hänen täytyy
 
 **Pikatesti:** Haluatko tietää, miten yleensä pyydät anteeksi? [Anteeksipyyntötyylitestimme](/quiz/apology-style/), englanniksi ja 2 minuutin mittainen, voi näyttää sen.
 
+Minun näkemykseni: vaikeinta on olla selittämättä itseään heti. Aikeillasi on väliä, mutta ne menevät paljon paremmin perille sen jälkeen, kun kumppanisi tuntee tulleensa kuulluksi, ei ennen.
+
 ## Ensimmäiset viisi minuuttia vaihe vaiheelta
 
 ### 1. Pysähdy ja käänny häneen päin
@@ -76,6 +78,12 @@ Nyt voit selittää lyhyesti, mitä tarkoitit, ja silti ottaa vastuun vaikutukse
 
 **Miksi:** aikomuksella on kumppanillesi merkitystä, kuten yllä oleva tutkimus osoittaa. Mutta ensimmäisenä sanottuna se kuulostaa puolustukselta. Kun hän tuntee tulleensa ymmärretyksi, se kuulostaa rauhoittelulta. Hyvän anteeksipyynnön koko rakenteen löydät oppaasta [anteeksipyyntö kumppanille](/blog/how-to-apologize-to-your-partner/).
 
+:::read Lue myös
+/blog/how-to-apologize-to-your-partner/ | Näin pyydät kumppaniltasi anteeksi vilpittömästi | Mitä täydellinen anteeksipyyntö sisältää
+/blog/my-boyfriend-gets-defensive/ | Poikaystäväni menee puolustuskannalle, kun otan jotain puheeksi | Jos puolustautuminen on refleksisi
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | Jos ette ole samassa huoneessa
+:::
+
 ## Ensin vaikutus, sitten aikomus
 
 Useimmat meistä aloittavat aikomuksesta, koska sen tunnemme tilanteesta parhaiten. Kumppanisi aloittaa vaikutuksesta, koska sen hän koki. Järjestys, jossa sanot asiat, muuttaa sitä, miten ne osuvat.
@@ -115,6 +123,10 @@ Saat yhä sanoa vasemman sarakkeen asiat tai niiden rehellisen version. Vain my�
 > **Mitä useimmat neuvot eivät kerro**
 > Monet neuvot sanovat, ettei aikomuksella ole väliä, vain vaikutuksella. Tutkimus ei sano ihan niin. Ihmiset vetäytyvät enemmän, kun he uskovat loukkauksen olleen tahallinen, joten aikomuksellasi on oikeasti merkitystä kumppanillesi. Ongelma on ajoitus. Jos aloitat aikomuksesta, se kuulostaa siltä, että "tunteesi ovat väärät". Jos aloitat ymmärtämisestä, sama selitys muuttuu hyväksi uutiseksi: "En halunnut loukata sinua, ja välitän silti siitä, että loukkasin."
 
+:::tool practice
+Haluatko harjoitella, mitä sanot, ennen keskustelua?
+:::
+
 ## Mitä ei kannata sanoa
 
 - **"Olen pahoillani, että sinusta tuntuu siltä."** Se pyytää anteeksi hänen tunteitaan, ei sitä, mitä teit.
@@ -135,6 +147,8 @@ Yksi loukkaantuminen on keskustelu. Sama loukkaantuminen yhä uudelleen on kaava
 Jos saisin pitää tästä oppaasta vain yhden vaiheen, se olisi vaihe 2. Kuulemasi toistaminen tuntuu melkein liian yksinkertaiselta, mutta se muuttaa koko keskustelun lämpötilan.
 
 Kun tiedät, että vaikea keskustelu on tulossa, Partner Practicessa voit harjoitella sitä tekoälyn kanssa, joka esittää kumppaniasi, jotta rauhallinen ja puolustautumaton versio on se, joka tulee ulos, kun sillä on merkitystä.
+
+Minun näkemykseni: jos sama kommentti satuttaa häntä yhä uudelleen, anteeksipyyntö ei ole enää ratkaisu. Tavan muuttaminen on. Se on se osa, joka rakentaa luottamuksen uudelleen.
 
 ## Nopeat vastaukset
 

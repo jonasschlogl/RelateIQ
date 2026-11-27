@@ -26,6 +26,15 @@ Sunt tipare în care cad multe cupluri, mai ales sub stres. Dor și merită luat
 
 **Pasul următor:** o discuție calmă și concretă și poate terapie de cuplu. Ghidurile noastre despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) și [problemele de cuplu care tot revin](/blog/relationship-problems-that-keep-coming-back/) sunt un bun punct de plecare.
 
+Părerea mea: majoritatea relațiilor trec prin perioade de nivel 1. Contează dacă amândoi puteți să le numiți și să lucrați la ele. O perioadă grea despre care puteți vorbi e foarte diferită de una pe care ți-e frică s-o aduci în discuție.
+
+:::stats Cât de frecvent e comportamentul de control
+27,2% | dintre femeile americane au trăit de-a lungul vieții control coercitiv sau încercuire din partea unui partener
+19,5% | dintre bărbații americani spun același lucru
+30,2% | dintre femei au trăit agresiune psihologică din partea unui partener
+sursa: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), date colectate între 2023 și 2024
+:::
+
 ## Nivelul 2: Tipare toxice
 
 Aici problema nu mai e doar cum vă certați. E cum ești tratat. Cercetătorul în domeniul cuplului John Gottman a identificat patru tipare de comunicare care prevesteau divorțul în studiile sale și a numit **disprețul** (batjocura, datul ochilor peste cap, sarcasmul, tratarea partenerului ca inferior) drept cel mai dăunător. Nivelul 2 e locul în care disprețul și rudele lui devin normale.
@@ -68,6 +77,12 @@ Controlul subtil e și cel pe care oamenii îl ratează cel mai des. Într-un st
 
 Vreau să fiu foarte direct în privința acestui nivel: o aplicație, un articol sau un mod mai bun de a vorbi nu îl vor rezolva. Dacă secțiunea asta îți sună cunoscut, liniile de ajutor de mai jos sunt pasul următor.
 
+:::read Citește și
+/blog/gaslighting-in-a-relationship/ | Îmi face partenerul gaslighting? | 5 întrebări care îl deosebesc de o neînțelegere
+/blog/love-bombing/ | Love bombing | Cum se desfășoară săptămână de săptămână
+/blog/codependent-relationship/ | Sunt codependentă sau doar grijulie? | Când ajutorul devine pierderea de sine
+:::
+
 ## O autoevaluare rapidă: ultima lună
 
 Gândește-te la ultimele patru săptămâni, nu la cea mai bună sau cea mai proastă zi. Care afirmații sunt adevărate?
@@ -91,6 +106,12 @@ Cu alte cuvinte, faptul că rămâi ține adesea mai mult de bani, copii, locuin
 > Timp de doi ani, Yuki și-a spus că Ben era "doar stresat" când își bătea joc de mâncarea ei în fața prietenilor. Când a început să-i citească mesajele și să o întrebe de ce i-a scris surorii ei, ea a notat timp de o lună ce se întâmpla, așa cum îi sugerase o consilieră de la o linie de ajutor. Să vadă totul pe hârtie a schimbat ceva. "Tratasem fiecare incident separat", a spus ea mai târziu. "Scris, era evident un singur lucru."
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
+
+Părerea mea: dacă de luni de zile îți tot explici ție însăți comportamentul partenerului, efortul ăsta e și el o informație. Relațiile sănătoase rareori au nevoie de atâta apărare.
+
+:::tool coach
+Vrei să te gândești mai întâi în liniște?
+:::
 
 ## Eu sunt cel toxic?
 
@@ -132,3 +153,4 @@ Dacă ți-e frică de partener, dacă ești controlat, amenințat sau rănit, co
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Rezumat pe [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

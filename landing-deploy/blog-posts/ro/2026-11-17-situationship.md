@@ -22,6 +22,13 @@ Situationship-urile au devenit abia de curând subiect de cercetare, iar cea mai
 
 **De ce contează pentru tine:** un situationship poate părea destul de bun ca să rămâi, pentru că unele nevoi chiar sunt împlinite. Dar "destul de bine deocamdată" poate deveni pe nesimțite luni de zile. Aici ajută o idee mai veche din cercetările despre relații.
 
+:::stats Cât de frecvente sunt situationship-urile
+39% | dintre adulții americani spun că au fost într-un situationship
+50% | dintre tinerii de 18–34 de ani spun același lucru
+29% | dintre situationship-urile tinerilor de 18–34 de ani au început pe rețelele sociale
+sursa: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1.110 adulți din SUA, ianuarie 2024
+:::
+
 ## Să te lași dus de val sau să decizi
 
 Psihologii Scott Stanley, Galena Rhoades și Howard Markman au descris diferența dintre a *te lăsa dus de val* și a *decide* în relații. Să te lași dus de val înseamnă că lucrurile pur și simplu se întâmplă: începi să dormi mai des la el, apoi petreceți sărbătorile împreună, fără ca vreunul să fi ales asta. Să decizi înseamnă să faceți conștient o alegere împreună.
@@ -29,6 +36,16 @@ Psihologii Scott Stanley, Galena Rhoades și Howard Markman au descris diferenț
 Studiile lor se refereau la cupluri care ajungeau să se mute împreună fără să decidă, dar ideea se potrivește perfect situationship-urilor. Un situationship e, aproape prin definiție, o relație pe care n-a decis-o nimeni. Ghidul de mai jos e pur și simplu un mod de a trece de la a te lăsa dus de val la a decide, orice ai decide.
 
 Pe aceasta aș păstra-o. Cele mai multe situationship-uri nu sunt planul nimănui. Sunt un șir de mici momente de "sigur, de ce nu" pe care nimeni nu s-a oprit să le pună la îndoială.
+
+Părerea mea: nu cred că situationship-urile sunt problema. Problema e să rămâi într-unul din inerție. Dacă l-ai ales cu adevărat și vă convine amândurora, e în regulă. Dacă aștepți să devină ceva mai mult, e momentul să întrebi.
+
+:::read Citește și
+/blog/clear-coding-dating/ | Clear coding la întâlniri | 20 de mesaje gata de trimis ca să spui ce vrei
+/blog/breadcrumbing/ | Mi se face breadcrumbing? | Când "vedem" se transformă în luni
+/blog/how-attachment-styles-work-in-relationships/ | Care e stilul meu de atașament? | De ce incertitudinea îi lovește pe unii mai tare
+:::
+
+**Test rapid:** [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, poate explica de ce e atât de greu să nu știi unde te afli.
 
 ## Ghidul de decizie
 
@@ -60,6 +77,10 @@ Spune simplu: "Îmi place cum e acum și nu caut nimic serios în momentul ăsta
 
 Și stabiliți lucrurile de bază, de exemplu dacă vă vedeți și cu alți oameni și ce faceți dacă unul dintre voi începe să vrea mai mult. Apoi mai discutați peste câteva luni, pentru că sentimentele se schimbă.
 
+:::tool practice
+Gata pentru discuția "ce suntem"? Repet-o mai întâi
+:::
+
 ## Drumul 2: definiți relația
 
 Alege un moment calm, nu imediat după o spirală de gelozie sau la unu noaptea pe mesaj. Fii scurt, spune ce vrei și lasă-i loc să răspundă sincer.
@@ -85,6 +106,8 @@ Nu ai nevoie de acordul lui și nici de o explicație lungă. Apoi oferă-ți o 
 > Timp de șase luni, Jules și Ari și-au petrecut împreună majoritatea weekendurilor, dar Ari schimba subiectul de fiecare dată când venea vorba de "noi". În cele din urmă, Jules a întrebat calm, la o cafea. Ari a spus că "nu vrea să strice totul cu etichete". Jules a mers acasă și a trecut prin cele trei întrebări. Ce voia: o relație. Cum se simțea: anxioasă în majoritatea săptămânilor. Comportamentul lui: niciun plan dincolo de sâmbătă, nu-i cunoscuse niciodată prietenii. Tabelul spunea să plece. I-au mai trebuit două săptămâni ca s-o facă de fapt și o lună ca să nu-i mai verifice story-urile. Trei luni mai târziu, Jules a spus că partea cea mai grea fusese decizia, nu plecarea.
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
+
+Părerea mea: să pleci dintr-o relație nedefinită e tot o despărțire și are voie să doară la fel. Nu lăsa pe nimeni să-ți spună că "nici măcar n-a fost o relație adevărată".
 
 ## Dacă tu ești cel care nu vrea mai mult
 

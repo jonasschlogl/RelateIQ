@@ -33,11 +33,19 @@ Resultatet: 91,4% av orostankarna slog inte in. Och av de som slog in blev ungef
 
 Det var en liten studie med personer som har ett ångestsyndrom, så den bevisar inte att 91% av *dina* relationsfarhågor är fel. Men den visar något användbart: oro känns som en förutsägelse, och oftast är den en dålig förutsägelse. Känslan av säkerhet som följer med en spiral klockan två på natten säger mycket mer om din ångestnivå än om vad som faktiskt händer.
 
+Min åsikt: jag tror inte att lärdomen är "dina orosmoln har alltid fel". Det är att din hjärna är en mycket högljuddare berättare än den är träffsäker. Att veta det gör det lite lättare att vänta innan du reagerar.
+
 ## Övertänkande och anknytningsångest
 
 För en del hänger övertänkande ihop med det psykologer kallar anknytningsångest: en starkare oro för att en partner ska dra sig undan eller avvisa en. Det är en av de två huvuddimensioner som forskare använder för att beskriva vuxen anknytning, tillsammans med undvikande. Personer med mer anknytningsångest brukar märka små tecken på avstånd snabbare och tolka dem mer negativt.
 
 Om du vill förstå den delen bättre förklarar vi det i vår guide om [anknytningsstilar i relationer](/blog/how-attachment-styles-work-in-relationships/). Det är ingen diagnos, bara ett användbart sätt att se ett mönster. Och den hoppfulla delen: anknytningsångest brukar minska under vuxenlivet, och den svarar bra på den typ av övning som beskrivs nedan.
+
+:::read Läs också
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När tvivlet egentligen inte handlar om hen
+/blog/trust-issues-in-a-relationship/ | Så kommer du över tillitsproblem | Varför lugnande ord inte räcker länge
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | När tystnaden startar spiralen
+:::
 
 ## Hur en övertänkarspiral ser ut
 
@@ -126,6 +134,10 @@ Det här är ett önskemål, inte en regel för hur din partner ska bete sig. Om
 
 Av de sju är steg tre det jag skulle börja med. Att skriva ner tre andra förklaringar känns fånigt första gången. Det är också ett av de enklaste verktygen i hela artikeln, och ett av de mest effektiva.
 
+:::tool coach
+Fast i en spiral just nu? Prata igenom det innan du skriver
+:::
+
 ## Ett helt exempel: från spiral till samtal
 
 > **Exempel: Jacobs fredagskväll**
@@ -144,6 +156,8 @@ Av de sju är steg tre det jag skulle börja med. Att skriva ner tre andra förk
 Det är värt att säga rakt ut: övertänkande och bra magkänsla är inte samma sak. Om din partner ofta är oärlig, försvinner utan förklaring eller får dig att känna dig liten, kan ditt obehag vara information, inte ångest.
 
 Testet är inte "känner jag mig orolig?". Det är "finns det ett upprepat beteendemönster som jag kan beskriva med fakta?". Ett sent svar är inget mönster. Tre brutna löften på en månad, beskrivna utan tolkning, är det. Om du kan beskriva ett mönster är nästa steg ett tydligt samtal om det mönstret, inte mer tyst analyserande.
+
+Min åsikt: en oro som visar sig stämma förtjänar ändå ett lugnt samtal, inte en perfekt bevisakt. Du behöver inte samla bevis för att få ställa en fråga.
 
 ## Så berättar du för din partner att du övertänker
 

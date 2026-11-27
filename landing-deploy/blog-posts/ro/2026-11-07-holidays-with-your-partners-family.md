@@ -24,6 +24,15 @@ Dacă partenerul tău e din SUA, Ziua Recunoștinței e adesea prima mare sărb�
 - **Planificați împreună zilele de drum.** Ziua dinainte și duminica de după sunt printre cele mai aglomerate zile de călătorie din an în SUA, așa că stabiliți din timp când plecați și cât stați.
 - **Gândiți-vă de acum la următoarea sărbătoare.** Dacă sunteți la familia lui de Ziua Recunoștinței, e un moment firesc să vorbiți despre unde petreceți Crăciunul, înainte să presupună cineva ceva.
 
+:::stats Ce face sărbătorile stresante
+89% | dintre adulții americani spun că ceva legat de sărbători le provoacă stres
+58% | menționează că cheltuie prea mult sau că nu au destui bani de cheltuit
+41% | spun că stresul lor crește în perioada sărbătorilor față de restul anului
+sursa: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), sondaj realizat de The Harris Poll cu 2.061 de adulți din SUA, noiembrie 2023
+:::
+
+**Test rapid:** Tinzi să taci sau să vorbești când crește tensiunea în familie? [Testul despre stilul în conflict](/quiz/fight-style/), în engleză și de 2 minute, vă ajută să știți la ce să vă așteptați unul de la celălalt.
+
 ## Cu două săptămâni înainte: discuția de planificare
 
 Cele mai multe certuri de sărbători între parteneri pornesc de la așteptări diferite, nu de la familia în sine. Aveți o discuție calmă înainte să mergeți, ideal la o plimbare sau la o cafea, nu cu o seară înainte.
@@ -41,6 +50,14 @@ Spune simplu: „Vreau să iasă bine pentru amândoi. Ce te îngrijorează pe t
 Psihologa Terri Apter, care a studiat mult relațiile cu socrii, a descoperit că peste 60% dintre femei, față de aproximativ 15% dintre bărbați, descriau o relație dificilă cu mama partenerului. Dacă e cazul tău, spune-o înainte de vizită, nu la jumătatea ei.
 
 Dacă faci un singur lucru din ghidul acesta, fă discuția asta. Foarte multe explozii de sărbători pornesc de la doi oameni care, pe tăcute, au presupus planuri diferite.
+
+Părerea mea: discuția de planificare e esențială. Aș avea-o chiar dacă credeți că sunteți deja de acord în toate, pentru că presupunerile pe care nu le spune nimeni cu voce tare sunt cele care explodează în a treia zi.
+
+:::read Citește și
+/blog/meeting-your-partners-parents/ | Când îi cunoști pe părinții partenerului prima dată | Ce să spui în cele 12 momente cele mai stânjenitoare
+/blog/how-to-support-your-partner-when-stressed/ | Cum să-ți ajuți partenerul când e stresat | Când vizita îl apasă
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | Dacă drumul spre casă se transformă în ceartă
+:::
 
 ## Cu o zi înainte: instructajul
 
@@ -65,6 +82,10 @@ Așteaptă-te ca partenerul să se schimbe puțin. Mulți oameni alunecă înapo
 **Alege-ți bătăliile.** Cele mai multe iritări de sărbători nu merită o confruntare: cum se gătește friptura, volumul televizorului, părerile unei mătuși. Păstrează-ți energia pentru unul sau două lucruri care chiar contează.
 
 **Când te simți copleșit, ieși puțin.** Dacă observi că-ți bate inima tare și ți se termină răbdarea, ia o pauză de 20 de minute înainte să spui ceva. Gottman Institute recomandă acest tip de pauză pentru că e foarte greu să asculți sau să vorbești calm când corpul e în modul „luptă sau fugi”.
+
+:::tool practice
+Te temi de o anumită discuție cu familia lui? Repet-o mai întâi
+:::
 
 ## Momentele tensionate: ce să spui la masă
 
@@ -108,6 +129,8 @@ Nu există o singură variantă corectă. Cuplurile obișnuiesc să:
 Cel mai mult contează să decideți împreună și ca niciunul să nu se simtă mereu pe locul doi.
 
 Dacă îți aduci partenerul acasă pentru prima dată, citește ghidul nostru despre [cunoașterea părinților partenerului](/blog/meeting-your-partners-parents/), iar dacă petreceți sărbătorile departe unul de altul, [sfaturile noastre pentru o relație la distanță](/blog/long-distance-relationship-tips/) includ idei pentru această perioadă. Când tensiunea se revarsă asupra voastră, [cum să-ți ceri scuze de la partener](/blog/how-to-apologize-to-your-partner/) și ghidul nostru despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) vă pot ajuta.
+
+Părerea mea: corect nu trebuie să însemne egal în fiecare an. Contează ca amândoi să simțiți că planul l-ați făcut împreună, nu ca până la ultima zi calendarul să iasă egal.
 
 ## Răspunsuri rapide
 

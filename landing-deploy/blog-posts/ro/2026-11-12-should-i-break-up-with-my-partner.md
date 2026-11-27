@@ -23,6 +23,8 @@ Rezultatul cel mai izbitor: aproximativ jumătate dintre oameni aveau motive put
 
 **Test rapid:** înaintea unei decizii mari, ajută să vezi ce lipsește. [Testul gratuit de verificare a relației](/quiz/relationship-needs/), în engleză și de 2 minute, arată dacă aveți cel mai mult nevoie de mai mult timp împreună, discuții mai bune, mai multă distracție sau mai mult lucru în echipă.
 
+Părerea mea: să te simți sfâșiată nu înseamnă că nu știi să iei decizii. De obicei înseamnă că există motive reale de ambele părți, iar asta merită timp, nu o decizie pripită.
+
 ## Ce spun cercetările despre ce prezice o despărțire
 
 În 2010, Benjamin Le și colegii săi au combinat 137 de studii cu 37.761 de participanți, din 33 de ani de cercetare, ca să afle ce prezice cel mai bine dacă o relație fără căsătorie se termină. Unele rezultate sunt surprinzătoare.
@@ -43,6 +45,12 @@ O analiză mai nouă și chiar mai mare arată în aceeași direcție. În 2020,
 Ce înseamnă asta pentru tine? Nu că ar trebui să rămâi pentru că depinzi de cineva, sau să pleci pentru că azi nu ești mulțumit. Înseamnă că întrebările care contează cel mai mult țin de miezul relației: te mai simți angajat, mai iubești această persoană și mai vrei ca viețile voastre să fie legate? Acestea sunt întrebările de mai jos.
 
 Contează și momentul. Într-o analiză din 2025 a patru mari studii naționale de lungă durată, cu 11.295 de persoane, Janina Bühler și Ulrich Orth au descoperit că relațiile care s-au terminat au trecut prin două faze: ani de declin lent și ușor, apoi un punct de cotitură cu unu-doi ani înainte de despărțire, după care satisfacția a scăzut rapid. Partenerul care a pus capăt relației devenise de obicei nefericit mai devreme. Cercetătorii sugerează că încercarea de a repara lucrurile în faza lentă, înainte de prăbușire, le oferă cuplurilor cea mai bună șansă.
+
+:::stats Ce spun cercetările despre luarea deciziei
+69% | dintre conflictele din cuplu țin de probleme permanente care s-ar putea să nu se rezolve niciodată complet, potrivit Gottman Institute
+27 față de 23 | motive diferite de a rămâne și de a pleca, găsite la oameni care tocmai decideau dacă să se despartă
+sursa: The Gottman Institute; Joel, MacDonald și Page-Gould (vezi sursele de mai jos)
+:::
 
 ## 10 întrebări pe care să ți le pui
 
@@ -94,6 +102,12 @@ Adesea vedem mai limpede viețile altora decât pe a noastră. Imaginează-ți c
 
 Dacă ar trebui să aleg o singură întrebare din cele zece, ar fi a șaptea. Nu "e rău acum?", ci "dacă nimic nu s-ar schimba, aș fi bine peste cinci ani?". Lămurește foarte mult.
 
+:::read Citește și
+/blog/how-to-fix-a-relationship/ | Merită salvată relația mea? | Cum îți dai seama și de unde să începi
+/blog/signs-your-partner-is-losing-interest/ | Semne că partenerul își pierde interesul | Ce poate însemna fiecare semnal
+/blog/how-to-get-over-a-breakup/ | Cum să treci peste o despărțire | Dacă decizi să pleci
+:::
+
 ## Trei situații, trei răspunsuri diferite
 
 Aceste exemple sunt ilustrative, nu oameni reali, dar arată cum aceeași întrebare ("ar trebui să plec?") poate avea răspunsuri foarte diferite.
@@ -124,6 +138,12 @@ Aceste exemple sunt ilustrative, nu oameni reali, dar arată cum aceeași între
 Multe articole tratează despărțirea ca pe un test pe care îl treci sau îl pici. Numeri semnalele de alarmă, aduni punctele și gata. Viața reală e mai complicată. Poți iubi pe cineva și totuși să nu vă potriviți. Poți avea probleme reale și totuși să ai o relație pentru care merită să lupți.
 
 Scopul nu e să găsești răspunsul "corect" într-o singură noapte. E să iei o decizie pe care o înțelegi și o poți susține, oricare ar fi ea.
+
+Părerea mea: o întrebare care mi se pare mai utilă decât orice listă e "îmi place cine sunt în relația asta?". Răspunsul tinde să fie mai clar decât argumentele pro și contra.
+
+:::tool coach
+Te învârți în cerc? Vorbește despre asta fără să fii judecată
+:::
 
 ## Un mod mai calm de a decide
 

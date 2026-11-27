@@ -22,6 +22,10 @@ Tämä opas antaa sinulle yksinkertaisen rakenteen siihen, miten puhua rahasta k
 
 **Sillä, miten järjestätte tilit, voi olla merkitystä.** Jenny Olson kollegoineen arpoi kokeessa 230 kihlattua tai vastanainutta paria joko avaamaan yhteisen tilin, pitämään erilliset tilit tai toimimaan miten halusivat. Kahden vuoden aikana yhteiselle tilille siirtyneiden parien suhteen laatu säilyi, kun taas muissa ryhmissä se heikkeni. Tutkijat muistuttavat, ettei yhteinen tili sovi kaikille, varsinkaan jos taloustilanne on epävakaa tai on kontrolloinnin riski.
 
+Minun näkemykseni: piilotettuja ostoksia koskeva luku ei yllätä minua. Useimmat eivät piilota rahaa siksi, että olisivat epärehellisiä. He piilottavat sen, koska keskustelu tuntuu vaikeammalta kuin salaisuus. Todellinen ratkaisu on tehdä keskustelusta helpompi.
+
+**Pikatesti:** Hiljenetkö vai painatko kovemmin, kun rahapuhe kiristyy? Kahden minuutin [riitatyylin testi](/quiz/fight-style/), englanniksi, auttaa teitä tietämään, mitä odottaa.
+
 ## Rahatreffit: neljän kierroksen esityslista
 
 Valitse rento hetki, ei päivää, jolloin lasku tulee. Tee siitä mukavaa: kahvia, kävelyä, jotain naposteltavaa. Varaa 45 minuuttia, ei koko iltaa.
@@ -63,6 +67,12 @@ Nyt käytännön osuus. Jakakaa rehellisesti ja tuomitsematta.
 
 Vastustaisin houkutusta ohittaa kierros 1. Puhuminen siitä, miten raha toimi perheissänne, tuntuu jutustelulta. Juuri siellä piilee yleensä riitojenne todellinen selitys.
 
+:::read Lue myös
+/blog/relationship-problems-that-keep-coming-back/ | Miksi riitelemme aina samasta asiasta? | Kun raha on toistuva riita
+/blog/relationship-advice-communication-habits/ | Näin kommunikoitte paremmin parisuhteessa | 7 tapaa, jotka muuttavat tapaanne riidellä
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Jos rahapuhe meni huonosti
+:::
+
 ## Mikä järjestely sopii teille?
 
 | Järjestely | Miten se toimii | Voi sopia pareille, jotka... |
@@ -72,6 +82,10 @@ Vastustaisin houkutusta ohittaa kierros 1. Puhuminen siitä, miten raha toimi pe
 | Kaikki erillään | Kumpikin maksaa sovitun osuuden kuluista | ...ovat suhteen alussa tai hyvin erilaisissa tilanteissa |
 
 Olsonin tutkimuksen mukaan kaiken yhdistäminen voi auttaa pareja tuntemaan itsensä yhtenäisemmiksi, mutta tärkeintä on, että olette molemmat aidosti samaa mieltä eikä kumpikaan jää ilman pääsyä rahaan.
+
+:::tool practice
+Haluatko harjoitella rahakeskustelua ennen kuin käyt sen?
+:::
 
 ## Mitä sanoa neljässä hankalassa tilanteessa
 
@@ -103,6 +117,8 @@ Aloita tunteesta, älä syytöksestä.
 ## Jos keskustelu silti muuttuu riidaksi
 
 Pitäkää tauko, kun jompikumpi tuntee tunteiden tulvivan yli, ja palatkaa asiaan myöhemmin. Oppaassamme [viestintätavoista](/blog/relationship-advice-communication-habits/) on keinoja estää riitojen kärjistyminen, ja jos jotain loukkaavaa sanottiin, [anteeksipyyntö kumppanille](/blog/how-to-apologize-to-your-partner/) voi auttaa. Jos raha on osa suurempaa stressiä, katso oppaamme siitä, [miten tukea stressaantunutta kumppania](/blog/how-to-support-your-partner-when-stressed/). Ja jos olette muuttamassa yhteen etäsuhteen jälkeen, raha on yksi isoista aiheista, joista kannattaa puhua ensin, katso [vinkit etäsuhteeseen](/blog/long-distance-relationship-tips/).
+
+Minun näkemykseni: jos sovitte ensimmäisillä rahatreffeillänne vain yhdestä asiasta, olkoon se summa, jonka saa käyttää kysymättä. Se poistaa yllättävän monta pientä riitaa.
 
 ## Nopeat vastaukset
 

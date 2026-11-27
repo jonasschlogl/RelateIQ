@@ -25,6 +25,8 @@ De adultas, muchas veces quieren amor y conexión, pero la cercanía también pu
 | Ve normal necesitarse el uno al otro | Ve necesitar a otros como una debilidad |
 | Se mantiene estable después de la cercanía | Se retira después de los momentos de cercanía |
 
+Mi opinión: el cambio que más me ayudó fue ver la evitación como protección, no como rechazo. Tu pareja no se está alejando de ti. Se está alejando de un sentimiento que en algún momento no fue seguro.
+
 ## 8 señales de una pareja evitativa
 
 ### 1. Se aleja después de los momentos íntimos
@@ -58,6 +60,12 @@ En lugar de reparar, se cierra y espera a que pase.
 ### 8. Demuestra amor más con hechos que con palabras
 
 Arreglarte la bici o reservar un viaje puede ser su forma de decir «me importas». Es real, aunque sea más silencioso.
+
+:::read Lecturas relacionadas
+/blog/emotionally-unavailable-partner/ | Pareja emocionalmente no disponible | 5 razones por las que se cierra
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Cómo distinguirlas
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cómo dejar de pensar demasiado | Cuando su distancia dispara la espiral
+:::
 
 ## Por qué las parejas evitativas se alejan
 
@@ -105,6 +113,10 @@ Prueba: «No tienes que responder ahora. ¿Lo hablamos mañana por la noche?».
 
 Si en las relaciones tiendes a la ansiedad, una pareja evitativa puede despertar tus miedos con mucha fuerza. Mantén tus amistades, tus aficiones y tu red de apoyo. Nuestras guías sobre [la ansiedad en la relación](/blog/relationship-anxiety/) y [las parejas emocionalmente no disponibles](/blog/emotionally-unavailable-partner/) pueden ayudarte.
 
+:::tool practice
+¿Quieres practicar cómo pedir cercanía sin presionar?
+:::
+
 ## Evitativo no significa frío
 
 Muchos artículos presentan a las personas evitativas como frías o incapaces de amar. Es injusto y casi siempre falso. Una pareja evitativa puede ser muy leal, estable y cariñosa. Simplemente lo demuestra de otra manera y necesita más espacio.
@@ -112,6 +124,8 @@ Muchos artículos presentan a las personas evitativas como frías o incapaces de
 Además, los estilos de apego pueden cambiar. La investigación sugiere que las relaciones seguras y constantes, y la terapia, pueden ayudar a sentirse más a salvo con la cercanía con el tiempo. El objetivo no es «arreglar» a tu pareja, sino construir una relación en la que los dos os sintáis seguros: tú con suficiente cercanía y ella con suficiente espacio.
 
 Si quieres preparar cómo hablar de necesidades y de espacio sin que acabe en discusión, RelationshipAI es un coach de pareja con IA que te ayuda a encontrar las palabras. No es terapia, pero es un lugar tranquilo para empezar.
+
+Mi opinión: ten paciencia, pero no infinita. Entender el estilo de alguien no significa renunciar a tus propias necesidades. Los dos tenéis derecho a tenerlas.
 
 ## Respuestas rápidas
 

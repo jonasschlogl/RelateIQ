@@ -22,6 +22,12 @@ Du behöver förmodligen inte ännu en lista med tecken. Du behöver något att 
 
 **Snabbtest:** ångest i relationer hänger ofta ihop med anknytning. Det kostnadsfria [testet om anknytningsstil](/quiz/attachment-style/), på engelska och på 2 minuter, kan visa om det är en del av ditt mönster.
 
+Min åsikt: det mest användbara att komma ihåg är att ångest känns exakt likadan oavsett om något är fel eller inte. Känslan är verklig, men den är inget bevis.
+
+:::stats Vad oro förutsäger, och vad den inte gör
+91,4 % | av de orosmoln som människor skrev ner under en månad slog inte in, i en studie av Lucas LaFreniere och Michelle Newman
+:::
+
 ## De närmaste 2 minuterna: när spiralen börjar
 
 I samma ögonblick som du märker det (mobilkollen, trycket i bröstet, lusten att skicka ett meddelande), gör så här:
@@ -35,6 +41,12 @@ I samma ögonblick som du märker det (mobilkollen, trycket i bröstet, lusten a
 **4. Skicka ingenting än.** Ge det tio minuter. Om meddelandet fortfarande känns viktigt efter det, skicka det en gång, lugnt.
 
 Steg 4 är det jag skulle stryka under. Tio minuter låter inte mycket, men ett meddelande du skulle ångra ser oftast väldigt annorlunda ut tio minuter senare.
+
+:::read Läs också
+/blog/how-to-stop-overthinking-in-a-relationship/ | Så slutar du övertänka i en relation | Ett lugnare sätt att hantera tänk-om-spiralen
+/blog/how-attachment-styles-work-in-relationships/ | Vilken anknytningsstil har jag? | Varför vissa av oss känner avstånd starkare
+/blog/jealousy-in-a-relationship/ | Är svartsjuka normalt i en relation? | När oro visar sig som misstänksamhet
+:::
 
 ## Resten av dagen: stoppa loopen från att växa
 
@@ -56,6 +68,10 @@ Till exempel: "Jag känner mig lite skör i dag. Kan vi äta middag tillsammans 
 | Du vill testa hen | Säg behovet rakt ut |
 | En fin stund känns läskig | Lägg märke till det och låt dig njuta ändå |
 
+:::tool coach
+Mitt i en spiral just nu? Prata igenom det innan du skriver
+:::
+
 ## Nästa månad: ändra mönstret
 
 **Berätta för din partner en gång, lugnt.** Inte som en anklagelse, utan som information.
@@ -75,6 +91,8 @@ En partner som förstår vad som pågår kan hjälpa utan att vara i beredskap d
 > Varje fredag, när Elifs partner Jonah gick ut med sitt fotbollslag, tillbringade hon kvällen med att kolla mobilen och skicka "har du kul?"-meddelanden. En månad testade hon verktygslådan. När lusten kom satte hon ord på den, andades i två minuter och skrev sina tre förklaringar på en post-it-lapp. Hon sa till Jonah en gång: "Jag blir orolig på fredagar. Ett enda sms när du kommer till baren skulle hjälpa." Det gjorde han gärna. Fjärde fredagen märkte hon att hon hade sett en hel film utan att titta på mobilen.
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
+
+Min åsikt: att be om lugnande ord är inte problemet, men att be om det på ett sätt som din partner faktiskt kan ge är viktigt. "Kan du skriva när du har landat?" fungerar. "Lova att du aldrig lämnar mig" gör det inte, för inget svar kommer någonsin att räcka.
 
 ## Är det ångest, eller är något verkligen fel?
 

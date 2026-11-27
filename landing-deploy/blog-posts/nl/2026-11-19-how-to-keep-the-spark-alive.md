@@ -33,6 +33,8 @@ Lees elke uitspraak en geef een score: 0 = zelden waar, 1 = soms, 2 = vaak. Doe 
 
 Tel elk paar op. Het gebied met de laagste score (0 tot 2) is waar je begint. Staan er twee gelijk, kies dan het gebied dat je het meest dwarszit. Scoort alles 3 of 4, dan is jullie vonk in goede vorm en is het plan van 4 weken hieronder onderhoud, geen reparatie.
 
+Mijn mening: ik vind deze check fijn omdat "de vonk is weg" te vaag is om op te lossen. "We proberen nooit iets nieuws" of "we stellen elkaar geen vragen meer" is iets waar jullie deze week echt aan kunnen werken.
+
 ## Als nieuwheid laag scoort: doorbreek de sleur, niet je budget
 
 **Wat onderzoek laat zien.** In een langlopend onderzoek met 123 stellen vroegen Irene Tsapelas, Arthur Aron en Terri Orbuch mensen in hun zevende huwelijksjaar hoe vaak hun huwelijk voelde als een sleur. Wie zich in jaar 7 meer verveelde, was negen jaar later, in jaar 16, minder tevreden. Het verband liep via nabijheid: verveling zorgde dat stellen zich minder verbonden voelden, en dat verlaagde de tevredenheid.
@@ -52,6 +54,12 @@ Ook hoe je over verlangen denkt, maakt uit. In zes onderzoeken met bijna 1.900 m
 **Wat de meeste adviezen missen.** Veel mensen verwachten dat verlangen uit het niets komt, zoals in het begin. Seksuologen wijzen er vaak op dat verlangen in lange relaties eerder *responsief* is: het komt op als jullie al dichtbij, ontspannen en in contact zijn, niet daarvoor. Wachten tot je eerst "in de stemming" bent, kan betekenen dat je maanden wacht.
 
 **Probeer dit:** voer één rustig gesprek, niet in bed. Bijvoorbeeld: "Waardoor voelde jij je vroeger begeerd door mij, wat ik niet meer doe?" Luister alleen. Niet verdedigen, geen meteen plan.
+
+:::read Lees ook
+/blog/deep-questions-to-ask-your-partner/ | Diepe vragen om je partner te stellen | 30 vragen per diepte
+/blog/date-night-questions-for-couples/ | Vragen voor een date night | 5 spelletjes en 40 vragen
+/blog/how-to-say-i-love-you-without-words/ | Zo laat je liefde zien zonder woorden | 25 kleine signalen voor elke dag
+:::
 
 ## Als aandacht laag scoort: word weer nieuwsgierig
 
@@ -76,6 +84,10 @@ Ook hoe je over verlangen denkt, maakt uit. In zes onderzoeken met bijna 1.900 m
 | Aandacht | Alleen praten over logistiek | Eén echte vraag per week |
 | Warmte | Aanraking alleen voor seks, of helemaal niet | Eén dagelijks ritueel van genegenheid |
 
+:::tool coach
+Weet je niet welke vonk bij jullie dooft? Praat het door
+:::
+
 ## Een plan van 4 weken
 
 Kies je laagste gebied en geef het vier weken. Eén verandering tegelijk werkt beter dan negen tegelijk.
@@ -97,6 +109,8 @@ Soms is een dovende vonk een symptoom. Wrok over ruzies die nooit worden opgelos
 Het is ook prima dat een relatie rustigere periodes heeft. Waar het om gaat, is dat je het merkt en weer naar elkaar toe komt als het leven dat toelaat.
 
 Vind je het lastig om het aan te kaarten? Met Partner Practice van RelationshipAI kun je het gesprek oefenen met een AI die je partner speelt, en Coach Chat helpt je uitzoeken wat je eigenlijk wilt vragen. Het is geen therapie, maar wel een rustige plek om te beginnen.
+
+Mijn mening: soms is een dovende vonk gewoon een vermoeide periode: een baby, een zware baan, een verhuizing. Ik zou mild zijn voor jezelf en elkaar voordat je besluit dat het iets groters betekent.
 
 ## Snelle antwoorden
 

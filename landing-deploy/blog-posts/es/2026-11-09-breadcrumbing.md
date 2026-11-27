@@ -12,6 +12,14 @@ Estas son las que más se pregunta la gente, respondidas con toda la sinceridad 
 > **La respuesta corta:**
 > El breadcrumbing es cuando alguien te da la atención justa para mantener tu interés, sin ninguna intención real de tener una relación. Entre las señales están los mensajes esporádicos, los planes vagos que nunca se concretan y el contacto cuando se aburre. Lo mejor es preguntar directamente una vez y dar un paso atrás si sus actos no cambian.
 
+:::stats Lo común que es el breadcrumbing
+36 % | de los adultos de un estudio español dijeron haber sufrido breadcrumbing al menos una vez en el último año
+37 % | admitieron haberle hecho breadcrumbing a otra persona
+fuente: Navarro y sus colegas, 626 adultos en España (ver fuentes abajo)
+:::
+
+**Test rápido:** ¿Te preguntas por qué las señales contradictorias te afectan tanto? El [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, puede ayudarte a entenderlo.
+
 ## 1. «¿Esto es breadcrumbing de verdad o le estoy dando demasiadas vueltas?»
 
 Una prueba útil es fijarte en el *patrón de un mes*, no en mensajes sueltos. El breadcrumbing suele tener tres rasgos a la vez:
@@ -44,6 +52,14 @@ El breadcrumbing es incertidumbre a cuentagotas. Cada migaja reaviva la esperanz
 > **Por qué un «no» claro puede sentar mejor que un quizá**
 > Un «no» duele una vez, y luego puedes hacer el duelo y seguir adelante. Un quizá nunca te da ese final. Tu atención se queda en la otra persona porque la historia no ha terminado. No es debilidad. Es como reacciona casi todo el mundo ante algo que queda abierto.
 
+Mi opinión: creo que el breadcrumbing duele porque la esperanza cansa. No te molesta un mensaje que llega tarde. Te molestan meses de espera para saber dónde estás.
+
+:::read Lecturas relacionadas
+/blog/situationship/ | Situationship | Quedarte, definirla o irte
+/blog/signs-your-partner-is-losing-interest/ | Señales de que tu pareja está perdiendo el interés | Lo que puede significar cada señal
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cómo dejar de pensar demasiado | Cuando analizas cada mensaje
+:::
+
 ## 4. «¿Por qué la gente hace breadcrumbing?»
 
 Normalmente no es un plan maestro. En un estudio de 2023 en el que jóvenes adultos describían cómo les habían hecho breadcrumbing, los participantes creían que quienes lo hacían a menudo buscaban atención, tenían miedo a estar solos, baja autoestima o querían sentir que tenían el control. Otras razones habituales: mantener las opciones abiertas, disfrutar de sentirse validado o evitar un incómodo «no me interesas».
@@ -55,6 +71,10 @@ Su razón lo explica. No te obliga a seguir aceptándolo.
 En el mismo estudio de 2023, las personas que habían sufrido breadcrumbing describían bien ese tirón: casi la mitad esperaba que se convirtiera en algo, algunas confiaban en que los sentimientos del otro acabarían alcanzando a los suyos, y a otras les costaba poner un límite.
 
 Si tiendes a un [estilo de apego](/blog/how-attachment-styles-work-in-relationships/) ansioso, el tirón puede ser aún más fuerte, porque la propia incertidumbre parece un motivo para esforzarte más. Darte cuenta de eso es el primer paso para no actuar en automático.
+
+:::tool check
+¿Le estás escribiendo un mensaje? Revísalo antes de enviarlo
+:::
 
 ## 6. «¿Debería preguntarle directamente?»
 
@@ -73,6 +93,8 @@ No le debes un discurso a alguien que te ha dado migajas. Basta con un mensaje c
 «Me he dado cuenta de que quiero algo más constante que esto. Voy a dar un paso atrás. Cuídate».
 
 Después silencia, archiva o deja de seguir, lo que sea que impida que las migajas te lleguen. No es mezquino. Protege lo que has avanzado del próximo «hola, desaparecido».
+
+Mi opinión: no le debes a nadie un discurso de despedida por una conexión en la que nunca se implicó del todo. Responder menos, y más despacio, es una respuesta perfectamente justa.
 
 ## 8. «¿Puede haber breadcrumbing en una relación, no solo en las citas?»
 

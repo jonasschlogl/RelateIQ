@@ -24,6 +24,10 @@ Así que las probabilidades están bien. La pregunta es cómo aprovechar bien ca
 
 Los mismos hábitos parecen mantener felices a los dos tipos de pareja. En un estudio de 2021 con 232 jóvenes adultos en relaciones a distancia y 263 en relaciones cercanas, Kaitlyn Goldsmith y Sandra Byers encontraron que los comportamientos de mantenimiento, como seguir en contacto, hablar del futuro y pensar con cariño en el otro, se asociaban con una mayor satisfacción en ambos grupos, de forma muy parecida.
 
+Mi opinión: el hallazgo más útil aquí tiene que ver con creer en ello. Las parejas que esperan que funcione, y tienen una idea aproximada de cuándo termina la distancia, parecen ir mejor. Merece la pena hablarlo pronto.
+
+**Test rápido:** ¿Qué hace que tu pareja se sienta querida desde lejos? Haced juntos el [test del lenguaje del amor](/quiz/love-language/), en inglés y de 2 minutos, y comparad.
+
 ## Fase 1: mientras estáis separados
 
 ### Acordad el «por qué» y el «hasta cuándo»
@@ -50,6 +54,12 @@ El texto le quita el tono a lo que dices e invita a imaginar lo peor. Si algo te
 
 Una fecha en el calendario convierte el «te echo de menos» de un peso en una cuenta atrás.
 
+:::read Lecturas relacionadas
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | Cuando no podéis reconciliaros en persona
+/blog/trust-issues-in-a-relationship/ | Cómo superar los problemas de confianza | Cuando la distancia alimenta la duda
+/blog/how-to-say-i-love-you-without-words/ | Cómo demostrar amor sin decirlo | Ideas que funcionan desde lejos
+:::
+
 ## Fase 2: durante las visitas
 
 ### Quitadle presión a lo «perfecto»
@@ -63,6 +73,10 @@ En un estudio con parejas de novios a distancia, Laura Stafford y Andy Merolla e
 ### No guardéis todos los problemas para la visita
 
 Si llevas tiempo guardando una conversación difícil para «cuando estemos juntos», la visita se vuelve tensa antes de empezar. Tratad los temas principales por llamada y usad las visitas para conectar.
+
+:::tool check
+¿No sabes cómo sonará un mensaje a kilómetros de distancia? Revísalo primero
+:::
 
 ## Fase 3: cuando por fin vivís en el mismo sitio
 
@@ -90,6 +104,8 @@ Podrías decir: «Esto está siendo más difícil de lo que pensaba. No creo que
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 Creo que esta es la parte más infravalorada de la distancia. Las parejas planean durante años vivir en la misma ciudad y luego apenas dedican tiempo a planear cómo será eso en realidad.
+
+Mi opinión: la gente planifica la mudanza y se olvida de la adaptación. Yo reservaría una charla un mes después de empezar a vivir cerca, solo para preguntaros qué es distinto de lo que esperabais.
 
 ## La distancia en las fiestas
 

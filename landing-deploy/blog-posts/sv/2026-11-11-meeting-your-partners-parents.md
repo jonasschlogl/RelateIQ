@@ -25,6 +25,15 @@ Så, ingen press, men den här kvällen är värd lite förberedelse. De goda ny
 
 Inblandning är dock inte samma sak som gillande. I en studie från 2024 av 464 unga vuxna i Slovenien fann Timotej Glavač och Melita Puklek Levpušček att personer vars pappor var mer påträngande tenderade att ha kortare relationer. Föräldrar som är varma och stöttande hjälper ett par. Föräldrar som försöker styra det gör det oftast inte.
 
+Min åsikt: jag skulle sluta försöka imponera på dem och fokusera på att vara lätt att umgås med. De flesta föräldrar vill främst se att deras barn blir väl behandlat, och det kan du visa utan ett enda perfekt svar.
+
+:::stats Därför känns det så stort att träffa familjen
+72 % | säger att ta med en partner hem över högtiderna får relationen att kännas officiell
+36 % | säger att deras familj har berättat pinsamma historier om dem för en partner
+23 % | säger att deras familj ställt olämpliga frågor till partnern
+källa: [Undersökning från Tawkify](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) bland 1 000 amerikaner, rapporterad av DatingNews
+:::
+
 ## Innan du går: 3 frågor till din partner
 
 1. **"Vad är de stolta över, och vad är de känsliga för?"** Det här är din karta över bra och dåliga ämnen.
@@ -32,6 +41,14 @@ Inblandning är dock inte samma sak som gillande. I en studie från 2024 av 464 
 3. **"Om det blir pinsamt, vad är vår signal?"** Ett ord, en blick, en hand på ryggen. Det hjälper mer än man tror.
 
 Jag skulle säga att den här korta genomgången betyder mer än något du säger på själva dagen. De flesta pinsamma stunder kommer av att man inte känner till reglerna som alla andra känner till.
+
+:::read Läs också
+/blog/holidays-with-your-partners-family/ | Högtider med din partners familj | En plan för julen
+/blog/relationship-advice-communication-habits/ | Så kommunicerar ni bättre i relationen | Vanor som hjälper i alla spända stunder
+/blog/how-to-apologize-to-your-partner/ | Så ber du din partner om ursäkt på riktigt | Om något du sa landar fel
+:::
+
+**Snabbtest:** Osäker på vad du behöver av din partner den dagen? Det 2 minuter långa [testet om behov i relationen](/quiz/relationship-needs/), på engelska, hjälper dig att sätta ord på det innan ni åker.
 
 ## De 12 stunderna, och vad du kan säga
 
@@ -110,6 +127,10 @@ Tacka dem med namn och nämn en sak du uppskattade särskilt.
 
 Ett kort meddelande efteråt via din partner ("Tacka din mamma igen för middagen") blir en fin avslutning.
 
+:::tool practice
+Nervös för en viss fråga? Öva på ditt svar först
+:::
+
 ## Efteråt: genomgången
 
 Fråga din partner hur hen tycker att det gick, och lyssna på svaret utan att börja älta. Om det fanns spänningar, skilj på *stil* och *avvisande*. Vissa familjer är reserverade mot alla i början.
@@ -117,6 +138,8 @@ Fråga din partner hur hen tycker att det gick, och lyssna på svaret utan att b
 Det hjälper också att känna till långtidsforskningen från psykologen Terri Orbuch, som följde gifta par i 26 år. Hon fann att när männen kände sig nära sin frus föräldrar var parets skilsmässorisk lägre, men när kvinnorna stod sin mans föräldrar mycket nära var risken högre, kanske för att närheten gjorde det svårare att sätta gränser. Målet är inte att bli bästa vänner över en natt. Det är värme och respekt med sunda gränser.
 
 Om ni snart ska fira högtider med dem tar vår guide om [högtider med partnerns familj](/blog/holidays-with-your-partners-family/) upp längre besök. Och om du vill förstå din partner bättre före den stora dagen, prova några av våra [djupa frågor till din partner](/blog/deep-questions-to-ask-your-partner/), särskilt de om barndomen.
+
+Min åsikt: genomgången efteråt betyder mer än besöket. En pinsam middag är lätt att skratta åt tillsammans, men bara om ni pratar vänligt om den på vägen hem i stället för att älta den var för sig.
 
 ## Om det är du som presenterar din partner
 
@@ -149,3 +172,4 @@ Ge det tid. Första mötet är ofta stelt, och många föräldrar tinar upp lån
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Sammanfattning från [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), om Terri Orbuchs långtidsstudie av gifta par
 - Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Hrčak](https://hrcak.srce.hr/en/319709)
+- DatingNews: [For 72% of daters, bringing a partner home signals commitment](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/), Tawkify survey of 1,000 Americans

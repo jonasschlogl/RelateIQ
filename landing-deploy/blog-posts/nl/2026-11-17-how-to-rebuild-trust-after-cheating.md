@@ -24,6 +24,10 @@ Of de affaire nu ontdekt of opgebiecht werd, dit is het moment waarop de grond o
 
 Een manier om het te zeggen: "Ik heb dit gedaan. Het is mijn verantwoordelijkheid, niet de jouwe. Ik zal je vragen eerlijk beantwoorden."
 
+Mijn mening: hoe de waarheid uitkomt, maakt veel uit. Als jij degene bent die vreemdging, doet het pijn om het hele verhaal in één keer te vertellen, maar het maandenlang mondjesmaat prijsgeven maakt vertrouwen meestal onmogelijk om te herstellen.
+
+**Snelle quiz:** Als jij de partner bent die vreemdging, laat de [quiz over je excuusstijl](/quiz/apology-style/) van 2 minuten, in het Engels, zien hoe je meestal excuses aanbiedt en wat er misschien ontbreekt.
+
 ## Fase 2: De eerste reacties
 
 De eerste weken en maanden zijn meestal het chaotischst: woede, verdriet, vragen om twee uur 's nachts, details willen, geen details willen, nabijheid willen, afstand willen, soms allemaal op één dag.
@@ -36,6 +40,12 @@ De eerste weken en maanden zijn meestal het chaotischst: woede, verdriet, vragen
 
 > **Waarom herhaalde vragen geen mislukking zijn**
 > Bedrogen partners stellen vaak dezelfde vragen vele keren. Voor de partner die vreemdging kan het voelen alsof het gesprek in rondjes draait. Dat is niet zo. Elke keer dat het antwoord hetzelfde is, en zonder irritatie wordt gegeven, krijgt het hoofd van de bedrogen partner een beetje meer bewijs dat de waarheid nu stabiel is. Consistentie is hoe de eerste laag van vertrouwen, voorspelbaarheid, weer begint te groeien.
+
+:::read Lees ook
+/blog/trust-issues-in-a-relationship/ | Zo overwin je vertrouwensproblemen | Als de twijfel steeds terugkomt
+/blog/how-to-apologize-to-your-partner/ | Zo bied je je partner oprecht excuses aan | Wat een echt excuus inhoudt
+/blog/should-i-break-up-with-my-partner/ | Moet ik het uitmaken met mijn partner? | Als je niet zeker weet of blijven goed is
+:::
 
 ## Fase 3: Stabiliseren
 
@@ -53,6 +63,10 @@ Probeer (bedrogen partner): "Ik heb er vandaag een zware dag mee. Je hoeft het n
 Probeer (partner die vreemdging): "Dank je dat je het me vertelt. Wat zou nu helpen?"
 
 Wat ik allebei zou willen laten horen, is dat deze fase met opzet langzaam is. Vertrouwen komt niet terug door één geweldig gesprek. Het komt terug door honderd saaie, consequente dagen.
+
+:::tool coach
+Heb je een rustige plek nodig om hierover na te denken?
+:::
 
 ## Fase 4: Vernieuwen
 
@@ -74,6 +88,8 @@ Meestal vele maanden, vaak een jaar of langer. Het hangt af van hoe lang de affa
 Vertrouwen herstellen vraagt dat de partner die vreemdging volledige verantwoordelijkheid neemt en dat de bedrogen partner er vrijwillig voor kiest het te proberen. Gaat de affaire door, blijven de leugens doorgaan of word je onder druk gezet of de schuld gegeven van het bedrog, dan is blijven misschien niet veilig of gezond. Onze gidsen over [of je het moet uitmaken](/blog/should-i-break-up-with-my-partner/) en [over een breuk heen komen](/blog/how-to-get-over-a-breakup/) kunnen je helpen als weggaan de juiste keuze is.
 
 Een therapeut met ervaring met ontrouw kan in beide gevallen helpen. Weet je niet wat je moet zeggen, dan behandelt [sorry zeggen tegen je partner](/blog/how-to-apologize-to-your-partner/) de eerste excuses. Voor de twijfel die daarna blijft hangen, lees over [vertrouwensproblemen in een relatie](/blog/trust-issues-in-a-relationship/).
+
+Mijn mening: besluiten te gaan na vreemdgaan is geen falen in herstel. Opnieuw opbouwen is één goede uitkomst, een schoon en eerlijk einde is een andere.
 
 ## Snelle antwoorden
 

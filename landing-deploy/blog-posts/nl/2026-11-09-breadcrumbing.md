@@ -12,6 +12,14 @@ Dit zijn de vragen die mensen het vaakst stellen, zo eerlijk beantwoord als het 
 > **Het korte antwoord:**
 > Breadcrumbing is als iemand je net genoeg aandacht geeft om je interesse vast te houden, zonder echte bedoeling om een relatie te beginnen. Signalen zijn sporadische berichten, vage plannen die nooit doorgaan en contact als de ander zich verveelt. Je kunt het best één keer direct vragen en een stap terug doen als het gedrag niet verandert.
 
+:::stats Hoe vaak breadcrumbing voorkomt
+36% | van de volwassenen in een Spaans onderzoek zei het afgelopen jaar minstens één keer gebreadcrumbd te zijn
+37% | gaf toe zelf iemand gebreadcrumbd te hebben
+bron: Navarro en collega's, 626 volwassenen in Spanje (zie bronnen hieronder)
+:::
+
+**Snelle quiz:** Vraag je je af waarom gemengde signalen je zo hard raken? De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, kan het helpen verklaren.
+
 ## 1. "Is dit echt breadcrumbing, of denk ik te veel na?"
 
 Een handige test is kijken naar het *patroon over een maand*, niet naar losse berichten. Breadcrumbing heeft meestal drie kenmerken tegelijk:
@@ -44,6 +52,14 @@ Breadcrumbing is onzekerheid druppelsgewijs. Elk kruimeltje wekt de hoop weer op
 > **Waarom een duidelijk "nee" beter kan voelen dan een misschien**
 > Een "nee" doet één keer pijn, en daarna kun je rouwen en verder. Een misschien geeft je dat einde nooit. Je aandacht blijft bij de ander, omdat het verhaal niet af is. Dat is geen zwakte. Zo reageert bijna iedereen op iets wat open blijft.
 
+Mijn mening: ik denk dat breadcrumbing pijn doet omdat hoop vermoeiend is. Je bent niet van slag door één laat bericht. Je bent van slag door maanden wachten om te weten waar je staat.
+
+:::read Lees ook
+/blog/situationship/ | Situationship | Blijven, benoemen of weggaan
+/blog/signs-your-partner-is-losing-interest/ | Signalen dat je partner zijn interesse verliest | Wat elk signaal echt kan betekenen
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken | Als elk bericht geanalyseerd wordt
+:::
+
 ## 4. "Waarom doen mensen aan breadcrumbing?"
 
 Meestal niet als doordacht plan. In een studie uit 2023 waarin jongvolwassenen beschreven hoe ze waren gebreadcrumbd, dachten deelnemers dat de breadcrumbers vaak aandacht zochten, bang waren om alleen te zijn, een laag zelfbeeld hadden of het gevoel van controle wilden. Andere veelvoorkomende redenen: opties openhouden, genieten van de bevestiging of een ongemakkelijk "ik heb geen interesse" vermijden.
@@ -55,6 +71,10 @@ Hun reden verklaart het. Het verplicht je niet om het te blijven accepteren.
 In dezelfde studie uit 2023 beschreven de mensen die waren gebreadcrumbd de aantrekkingskracht duidelijk: bijna de helft hoopte dat het iets zou worden, sommigen verwachtten dat de gevoelens van de ander die van hen zouden inhalen, en sommigen vonden het moeilijk om een grens te stellen.
 
 Neig je naar een angstige [hechtingsstijl](/blog/how-attachment-styles-work-in-relationships/), dan kan de aantrekkingskracht nog sterker zijn, omdat de onzekerheid zelf aanvoelt als een reden om harder je best te doen. Dat opmerken is de eerste stap om er niet automatisch naar te handelen.
+
+:::tool check
+Schrijf je een bericht aan die persoon? Check het voordat je het verstuurt
+:::
 
 ## 6. "Moet ik het gewoon direct vragen?"
 
@@ -73,6 +93,8 @@ Je bent iemand die je kruimels heeft gegeven geen speech verschuldigd. Een kort,
 "Ik besef dat ik iets wil wat consequenter is dan dit. Ik doe een stap terug. Het ga je goed."
 
 Demp, archiveer of ontvolg daarna, wat er ook voor zorgt dat de kruimels niet meer binnenkomen. Dat is niet kinderachtig. Het beschermt je vooruitgang tegen de volgende "hé vreemdeling".
+
+Mijn mening: je bent niemand een afscheidsspeech verschuldigd voor een contact waar die persoon nooit echt voor ging. Minder en langzamer reageren is een volkomen eerlijk antwoord.
 
 ## 8. "Kan breadcrumbing ook in een relatie gebeuren, niet alleen bij daten?"
 

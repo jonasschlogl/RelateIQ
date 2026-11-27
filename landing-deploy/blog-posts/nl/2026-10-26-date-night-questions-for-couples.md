@@ -20,6 +20,10 @@ Hieronder vind je vijf makkelijke vormen, 40 vragen om ze mee te spelen en wat o
 
 **Gesprekken gaan beter dan je verwacht.** Onderzoek van Michael Kardas, Amit Kumar en Nicholas Epley liet zien dat mensen steeds overschatten hoe ongemakkelijk een dieper gesprek zal zijn. Dus als een vraag in je hoofd wat te veel voelt, valt die waarschijnlijk beter dan je denkt.
 
+Mijn mening: ik denk dat het bij deze vragen niet om de antwoorden gaat. Het gaat om dat halfuur waarin jullie allebei weer nieuwsgierig zijn naar elkaar, iets wat drukke stellen ongemerkt kwijtraken.
+
+**Snelle quiz:** Willen jullie opwarmen voor de vragen? Doe samen de [liefdestaalquiz](/quiz/love-language/) van 2 minuten, in het Engels, en vergelijk jullie antwoorden.
+
 ## 5 spelletjes om met de vragen te spelen
 
 ### 1. De vragenpot
@@ -53,6 +57,12 @@ Gebruik in plaats van vragen zinnen die beginnen met "Vertel eens over een keer 
 **Het best voor:** een rustige avond, een lange wandeling, een avond met een fles wijn.
 
 Mijn favoriet is de hete stoel, vooral omdat mensen daar het zenuwachtigst voor zijn en er uiteindelijk het meest van genieten.
+
+:::read Lees ook
+/blog/deep-questions-to-ask-your-partner/ | Diepe vragen om je partner te stellen | 30 vragen die een laag dieper gaan
+/blog/how-to-say-i-love-you-without-words/ | Zo laat je liefde zien zonder woorden | 25 kleine gebaren voor elke soort dag
+/blog/long-distance-relationship-tips/ | Zo laat je een LAT-relatie op afstand werken | Deze vragen werken ook via video
+:::
 
 ## 40 vragen voor een date night
 
@@ -110,6 +120,10 @@ Mijn favoriet is de hete stoel, vooral omdat mensen daar het zenuwachtigst voor 
 
 Voor serieuzere, kwetsbare vragen, zie onze volledige gids met [diepe vragen om aan je partner te stellen](/blog/deep-questions-to-ask-your-partner/), die ook uitlegt hoe je op een zwaar antwoord reageert.
 
+:::tool coach
+Plan je een date night en heb je geen ideeën? Vraag het de coach
+:::
+
 ## Maak de avond zelf een beetje anders
 
 Vragen werken het best als de setting anders voelt dan een gewone dinsdag. Het rapport van Wilcox en Dew en oudere experimenten van Arthur Aron en collega's wijzen dezelfde kant op: samen iets nieuws doen gaat samen met je beter voelen over de relatie. Het hoeft niet duur te zijn:
@@ -133,6 +147,8 @@ Niet iedereen houdt van vragen. Begin met dit of dat, wat bijna geen moeite kost
 Zijn jullie van elkaar gescheiden, dan werken alle spelletjes hier ook via videobellen. Meer ideeën in onze [tips voor een relatie op afstand](/blog/long-distance-relationship-tips/). En verandert de avond in een gesprek over iets wat een van jullie dwarszat, dan helpt onze gids over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) om het vriendelijk te houden.
 
 *Dit artikel is algemene informatie, geen therapie of medisch advies.*
+
+Mijn mening: als je partner met zijn of haar ogen rolt bij "vragen", laat dan het format los en houd de geest vast. Stel één goede vraag tijdens een wandeling. Nieuwsgierigheid heeft geen kaartspel nodig.
 
 ## Bronnen
 

@@ -22,6 +22,8 @@ Sam conoce a Alex en una app. Al tercer día ya hablan durante horas cada noche.
 
 **Qué hacer ahora:** nada dramático. Sigue con tu vida normal y fíjate en cómo responde cuando no estás disponible.
 
+**Test rápido:** ¿Te preguntas si lo que estás viendo es solo una mala racha o algo más preocupante? El [chequeo de relación tóxica](/quiz/toxic-relationship/), en inglés y de 2 minutos, te da una imagen más clara.
+
 ## Semanas 2 a 4: los regalos y el contacto constante
 
 Llegan flores al trabajo de Sam. Alex reserva un viaje de fin de semana "por sorpresa". Le escribe buenos días, buenas noches y muchas veces entre medias, y parece dolido cuando Sam tarda unas horas en contestar.
@@ -36,6 +38,12 @@ En una encuesta de 2024 con 225 estudiantes universitarios de Turquía, los inve
 
 Por ejemplo: "Me lo estoy pasando muy bien y me gustaría ir un poco más despacio. ¿Dejamos el viaje para más adelante?"
 
+:::read Lecturas relacionadas
+/blog/breadcrumbing/ | ¿Me están haciendo breadcrumbing? | Cuando la atención llega en dosis pequeñas e impredecibles
+/blog/signs-of-a-toxic-relationship/ | ¿Es tóxica mi relación? | Un chequeo en 3 niveles: poco sana, tóxica y controladora
+/blog/clear-coding-dating/ | Clear coding al ligar | Cómo suena el entusiasmo sano
+:::
+
 ## Mes 2: el primer "no"
 
 Sam quiere una noche de viernes con viejos amigos. Por fuera, Alex se muestra comprensivo, pero luego pasa toda la noche callado y dolido por mensajes: "Solo te echo de menos. Pensaba que lo nuestro era especial." A la semana siguiente vuelve a pasar, con una insinuación de que los amigos de Sam "no nos entienden de verdad".
@@ -45,6 +53,8 @@ Sam quiere una noche de viernes con viejos amigos. Por fuera, Alex se muestra co
 **Lo que puede estar pasando:** esta es la etapa que más importa. Una pareja que te quiere puede sentirse decepcionada y aun así respetar tus planes. En el love bombing, el cariño empieza a depender de que hagas lo que la otra persona quiere. El aislamiento temprano de los amigos es una de las señales de alarma más constantes que describen las organizaciones contra el maltrato.
 
 **Qué hacer ahora:** mantén los planes. Cuéntale a un amigo con sinceridad lo que está pasando, no la versión pulida.
+
+Mi opinión: si tuviera que dar una sola prueba para detectar el love bombing, sería esta. Di un no pequeño y razonable y observa qué pasa. Alguien a quien le gustas de verdad puede decepcionarse y aun así respetarlo.
 
 ## Mes 3: frío y calor
 
@@ -64,6 +74,10 @@ Todavía no hay mucha investigación, pero la que existe apunta en una direcció
 
 Esto es útil porque cambia el foco. La intensidad a menudo dice más de las necesidades de la otra persona (de control, de admiración, de que la tranquilicen) que de lo especial que eres tú. El estudio turco encontró otra cosa que conviene saber: las personas que habían vivido love bombing decían tener menos confianza en su capacidad para manejar sus propias relaciones amorosas. Si has pasado por ello, que te cueste fiarte de tu propio criterio es una secuela habitual, no un fallo personal.
 
+:::tool coach
+¿No sabes bien con qué estás tratando? Háblalo en privado
+:::
+
 ## ¿Love bombing o alguien que simplemente está muy ilusionado?
 
 | Pregunta | Ilusión genuina | Love bombing |
@@ -81,6 +95,8 @@ Si no sabes si estás pensando demasiado, nuestra guía sobre las [banderas verd
 Decirle "vamos más despacio" a alguien que te colma de atenciones es difícil. Si te ayuda, puedes ensayarlo antes en privado en Partner Practice.
 
 Si solo pruebas una cosa, prueba el "no". Di que no a algo pequeño y observa qué pasa. El interés real sobrevive a un no. El love bombing normalmente no.
+
+Mi opinión: que te enamoren con fuerza no es una señal de alarma por sí sola. La señal de alarma es la velocidad más la presión. El entusiasmo real puede esperar a que tú también llegues.
 
 ## Respuestas rápidas
 

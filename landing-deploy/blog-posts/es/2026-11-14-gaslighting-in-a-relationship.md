@@ -14,6 +14,13 @@ Entonces, ¿cómo se distingue? Estas cinco preguntas ayudan.
 > **La respuesta corta:**
 > El gaslighting es un patrón de hacer que alguien dude de su propia memoria, percepción o cordura, normalmente para ganar control. Un desacuerdo normal deja espacio para dos versiones de los hechos. El gaslighting ataca tu mente en lugar del hecho, se repite con el tiempo y te deja confundido y dependiente de la versión de la otra persona.
 
+:::stats Lo común que es la agresión psicológica
+20,4 % | de las mujeres estadounidenses han sufrido agresión expresiva por parte de una pareja, como insultos o humillaciones
+13,1 % | de los hombres estadounidenses dicen lo mismo
+27,2 % | de las mujeres y el 19,5 % de los hombres han sufrido control coercitivo, que puede incluir hacer que alguien dude de su propia memoria
+fuente: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), datos recogidos entre 2023 y 2024
+:::
+
 ## Pregunta 1: ¿Hay espacio para dos versiones?
 
 En un desacuerdo normal, las dos personas pueden decir "yo lo recuerdo de otra manera" y dejarlo ahí. La memoria es imperfecta y las parejas recuerdan mal las cosas constantemente.
@@ -27,6 +34,10 @@ En el gaslighting solo se permite una versión de la realidad, y nunca es la tuy
 | "No lo dije con esa intención, siento que te doliera." | "Eres demasiado sensible. Nadie más se molestaría." |
 | Los dos ceden a veces | Siempre acabas pidiendo perdón tú |
 
+Mi opinión: que dos personas recuerden la misma noche de forma distinta es completamente normal. La pregunta no es qué memoria tiene razón. Es si tu versión tiene derecho a existir.
+
+**Test rápido:** Si no sabes cuánto preocuparte, el [chequeo de relación tóxica](/quiz/toxic-relationship/), en inglés y de 2 minutos, te da una visión más tranquila y amplia.
+
 ## Pregunta 2: ¿Se trata del hecho o de tu mente?
 
 Los desacuerdos tratan sobre *qué pasó*. El gaslighting se desliza hacia *qué te pasa a ti*: tu memoria, tu estabilidad, tu cordura.
@@ -34,6 +45,12 @@ Los desacuerdos tratan sobre *qué pasó*. El gaslighting se desliza hacia *qué
 En un estudio de 2023, el psicólogo Willis Klein y sus colegas pidieron a 65 personas que creían haber sufrido gaslighting por parte de una pareja que lo describieran. Todos los participantes, sin excepción, dijeron que su pareja los insultaba y menospreciaba, a menudo insinuando que su contacto con la realidad era débil, llamándolos locos, tontos o demasiado emocionales. La socióloga Paige Sweet, que ha estudiado el gaslighting en relaciones abusivas, lo resumió en el mismo reportaje de NPR: el gaslighting es alguien que intenta que parezcas o te sientas loco.
 
 Si vuestras discusiones terminan a menudo con un veredicto sobre tu estado mental, fíjate en ello.
+
+:::read Lecturas relacionadas
+/blog/signs-of-a-toxic-relationship/ | ¿Es tóxica mi relación? | Un chequeo en 3 niveles: poco sana, tóxica y controladora
+/blog/my-boyfriend-gets-defensive/ | Mi novio se pone a la defensiva cuando saco un tema | Actitud defensiva o algo más
+/blog/trust-issues-in-a-relationship/ | Cómo superar los problemas de confianza | Cuando la duda vuelve una y otra vez
+:::
 
 ## Pregunta 3: ¿Aparece como un patrón?
 
@@ -61,6 +78,12 @@ Si solo respondes a una de las cinco preguntas, yo elegiría esta. Se puede disc
 La investigación de Sweet añade una perspectiva útil. En entrevistas sobre la historia de vida de 43 mujeres que habían sobrevivido a la violencia doméstica, encontró que el gaslighting a menudo se apoya en estereotipos y vulnerabilidades existentes, como la idea de que las mujeres son "emocionales", o en el historial de salud mental o la situación migratoria de alguien, para que la versión de una persona parezca más creíble ante los demás. Pregúntate: ¿dudar de mí mismo siempre le viene bien a la otra persona? ¿Gana control, evita responsabilidades o se sale con la suya cuando dudo de mí?
 
 No toda negación es calculada. Algunas personas niegan cosas porque sienten vergüenza o se ponen a la defensiva. El efecto puede doler igual y merece la pena abordarlo. Pero un patrón que beneficia siempre a una persona y le cuesta a la otra merece tomarse en serio.
+
+Mi opinión: creo que "¿quién sale ganando?" es la más útil de estas preguntas. Los desacuerdos normales no suelen dejar a una persona ganando siempre y a la otra dudando siempre de sí misma.
+
+:::tool coach
+¿Dudas de ti misma? Háblalo en un espacio neutral
+:::
 
 ## Qué hacer si crees que sufres gaslighting
 
@@ -111,3 +134,4 @@ El gaslighting a menudo va acompañado de otras formas de control. Si tu pareja 
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Resumen en [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
 - NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), con Robin Stern, Paige Sweet y Kate Abramson
 - Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

@@ -22,6 +22,13 @@ Las situationships se han convertido hace poco en tema de investigación, y la m
 
 **Por qué te importa esto:** una situationship puede parecer lo bastante buena como para quedarse, porque algunas necesidades se cubren de verdad. Pero "lo bastante bueno por ahora" puede convertirse en meses sin que te des cuenta. Ahí ayuda una idea más antigua de la investigación sobre relaciones.
 
+:::stats Lo comunes que son las situationships
+39 % | de los adultos estadounidenses dicen haber estado en una situationship
+50 % | de las personas de 18 a 34 años dicen lo mismo
+29 % | de las situationships entre personas de 18 a 34 años empezaron en redes sociales
+fuente: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1.110 adultos de EE. UU., enero de 2024
+:::
+
 ## Dejarse llevar frente a decidir
 
 Los psicólogos Scott Stanley, Galena Rhoades y Howard Markman describieron la diferencia entre *dejarse llevar* y *decidir* en las relaciones. Dejarse llevar es cuando las cosas simplemente pasan: empiezas a quedarte a dormir más, luego pasáis las fiestas juntos, sin haberlo elegido nunca. Decidir es cuando tomáis una decisión juntos de forma consciente.
@@ -29,6 +36,16 @@ Los psicólogos Scott Stanley, Galena Rhoades y Howard Markman describieron la d
 Su trabajo trataba de parejas que se dejaban llevar hasta irse a vivir juntas, pero la idea encaja perfectamente con las situationships. Una situationship es, casi por definición, una relación que nadie ha decidido. La guía de abajo es simplemente una forma de pasar de dejarte llevar a decidir, decidas lo que decidas.
 
 Esta es la idea con la que yo me quedaría. La mayoría de las situationships no son el plan de nadie. Son una serie de pequeños "vale, ¿por qué no?" que nadie se paró a cuestionar.
+
+Mi opinión: no creo que las situationships sean el problema. Quedarse en una por inercia, sí. Si de verdad la has elegido y os funciona a los dos, está bien. Si estás esperando a que se convierta en algo más, es momento de preguntar.
+
+:::read Lecturas relacionadas
+/blog/clear-coding-dating/ | Clear coding al ligar | 20 mensajes listos para decir lo que quieres
+/blog/breadcrumbing/ | ¿Me están haciendo breadcrumbing? | Cuando el "ya veremos" se convierte en meses
+/blog/how-attachment-styles-work-in-relationships/ | ¿Cuál es mi estilo de apego? | Por qué la incertidumbre afecta más a algunas personas
+:::
+
+**Test rápido:** El [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, puede explicar por qué no saber dónde estás resulta tan difícil.
 
 ## La guía para decidir
 
@@ -60,6 +77,10 @@ Dilo de forma sencilla: "Me gusta esto tal como está, y ahora mismo no busco na
 
 Y acordad lo básico, como si os veis con otras personas y qué haréis si uno de los dos empieza a querer más. Después volved a hablarlo en un par de meses, porque los sentimientos cambian.
 
+:::tool practice
+¿Lista para la charla de "qué somos"? Ensáyala primero
+:::
+
 ## Camino 2: definirla
 
 Elige un momento tranquilo, no justo después de una espiral de celos ni a la una de la madrugada por mensaje. Sé breve, di lo que quieres y dale espacio para responder con sinceridad.
@@ -85,6 +106,8 @@ No necesitas su acuerdo ni una explicación larga. Después date una distancia r
 > Durante seis meses, Jules y Ari pasaron juntos casi todos los fines de semana, pero Ari cambiaba de tema cada vez que salía el "nosotros". Al final Jules preguntó, con calma, tomando un café. Ari dijo que "no quería estropearlo con etiquetas". Jules se fue a casa e hizo las tres preguntas. Lo que quería: una relación. Cómo se sentía: ansiosa casi todas las semanas. El comportamiento de él: ningún plan más allá del sábado, nunca había conocido a sus amigos. La tabla decía irse. Tardó dos semanas más en hacerlo de verdad, y un mes en dejar de mirar sus historias. Tres meses después, Jules dijo que lo más difícil había sido decidir, no irse.
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
+
+Mi opinión: alejarse de algo sin definir también cuenta como una ruptura, y puede doler como tal. No dejes que nadie te diga que "ni siquiera era una relación de verdad".
 
 ## Si eres tú quien no quiere más
 

@@ -22,6 +22,16 @@ I en klassisk studie beskrev psykologerna John Rempel, John Holmes och Mark Zann
 
 Det här är användbart eftersom tillitsproblem oftast sitter mer i ett lager än i de andra. Vissa litar på att partnern är trogen (tilltro) men inte på att hen kommer i tid (förutsägbarhet). Andra kan räkna med vardaglig pålitlighet men är ändå rädda att bli lämnade en dag. Att veta vilket lager som är skakigt säger vad du ska jobba med.
 
+Min åsikt: tillit är inget man bestämmer sig för att känna. Det är något man samlar, ett hållet löfte i taget, och därför går det inte att skynda på.
+
+:::stats Tillit och mobilen
+34 % | av amerikanska vuxna i en relation säger att de har gått igenom partnerns mobil utan partnerns vetskap
+23 % | av dem vars partner använder sociala medier säger att det har gjort dem svartsjuka eller osäkra i relationen
+källa: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4 860 vuxna amerikaner, oktober 2019
+:::
+
+**Snabbtest:** Tillitsproblem hänger ofta ihop med anknytning. Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, kan visa ditt eget mönster.
+
 ## Hur tillit faktiskt växer: små uppoffringar
 
 Här är det mest praktiska resultatet i tillitsforskningen. I två långtidsstudier av dejtande och gifta par fann Jennifer Wieselquist, Caryl Rusbult och kollegor att människor började lita på sin partner när de såg hen **sätta förhållandet före sina egna omedelbara intressen**: att hålla sig lugn i stället för att slå tillbaka i ett gräl, att avstå från något hen ville ha för parets skull.
@@ -31,6 +41,12 @@ De beskrev en cykel. När den ena partnern gör de här små, kostsamma valen m�
 Tillit byggs med andra ord inte av löften eller av att klara tester. Den byggs av att *se* omtanke som kostar något.
 
 Psykologerna Shallcross och Jeffry Simpson testade det här i labbet med "belastningstester": samtal där den ena partnern ber om något som kostar den andra, som att flytta till en annan stad för ett jobb. Partner med hög tillit var mer tillmötesgående, och mötte den andra *mer* ju större uppoffringen var. Partner med låg tillit gjorde tvärtom.
+
+:::read Läs också
+/blog/jealousy-in-a-relationship/ | Är svartsjuka normalt i en relation? | 7 myter som gör det värre
+/blog/how-to-rebuild-trust-after-cheating/ | Så bygger ni upp tilliten efter otrohet | De 4 faserna som par går igenom
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När tvivlet inte handlar om hen
+:::
 
 ## Loopen som håller tillitsproblemen igång
 
@@ -66,6 +82,10 @@ Om din partner oftast är pålitlig och du har känt så här förut ligger arbe
 
 Det här testet är den del jag skulle lägga mest tid på. Så mycket av råden om tillit utgår från att problemet är den nuvarande partnern. Ofta är det en gammal.
 
+:::tool coach
+På väg att be om lugnande ord igen? Prata igenom det först
+:::
+
 ## Så bryter du loopen
 
 ### Om det är du som har svårt att lita
@@ -98,6 +118,8 @@ När det har skett ett verkligt svek är loopen ovan inte huvudproblemet. Tillit
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 När en våg av tvivel slår till sent på kvällen kan det hjälpa att först skriva ner det, i en dagbok eller i Coach Chat, för att pausa loopen. Om mönstren är gamla eller hänger ihop med tidigare sår kan en terapeut hjälpa mycket.
+
+Min åsikt: att kolla partnerns mobil känns som att det ska stilla tvivlet, och det gör det nästan aldrig. Snarare lär det din hjärna att tvivlet behövde kontrolleras.
 
 ## Snabba svar
 
@@ -134,3 +156,4 @@ Misstro används ibland för att rättfärdiga kontrollerande beteende: kolla mo
 - Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Fulltext (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
 - Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Fulltext (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
 - Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Läs studien](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

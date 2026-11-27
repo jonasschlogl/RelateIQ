@@ -44,6 +44,8 @@ Aquí tienes los siete hábitos de un vistazo.
 
 **Test rápido:** ¿escalas, te cierras, intentas complacer o reparas? El [test gratuito sobre tu estilo en los conflictos](/quiz/fight-style/), en inglés y de 2 minutos, muestra tu patrón en una pelea y una cosa que decir la próxima vez.
 
+Mi opinión: si tuviera que quedarme con un solo número de todo esto, sería el 96 %. Significa que la primera frase importa más que lo brillantes que sean tus argumentos. Es una buena noticia, porque una primera frase es fácil de practicar.
+
 ## 1. Empieza con suavidad
 
 Cómo empieza una conversación suele decidir cómo termina. La investigación de Gottman encontró que un "comienzo duro", abrir con críticas o sarcasmo, casi siempre lleva a una conversación que acaba mal. Un comienzo suavizado hace lo contrario. Dice cómo te sientes *tú* y qué te gustaría, sin acusaciones.
@@ -62,6 +64,12 @@ Algo como: "Últimamente echo de menos pasar tiempo contigo. ¿Podríamos dejar 
 "Estás siendo egoísta" es un veredicto. "Dijiste que estarías en casa a las seis y ya son las ocho" es una observación. La Comunicación No Violenta, el método desarrollado por el psicólogo Marshall Rosenberg, empieza por las observaciones porque es difícil discutir un hecho y muy fácil discutir una etiqueta.
 
 Esto también evita lo que Gottman llama crítica: atacar el carácter de tu pareja ("Eres un vago") en lugar de quejarte de un comportamiento concreto ("Otra vez no se ha sacado la basura"). Una queja se puede arreglar. Un ataque al carácter solo se puede defender.
+
+:::read Lecturas relacionadas
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | 20 mensajes para distintas situaciones
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Cómo tomarse un descanso de forma sana
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Esta noche, mañana y la semana siguiente
+:::
 
 ## 3. Nombra la necesidad de fondo
 
@@ -95,6 +103,10 @@ En un momento tenso, prueba a repetir lo que has oído antes de responder. "Ento
 Esto también es el antídoto contra la actitud defensiva, otro de los "cuatro jinetes" de Gottman. Ponerse a la defensiva ("Eso no es verdad, eres tú quien...") le dice a tu pareja que su preocupación no cuenta. Asumir la responsabilidad aunque sea de una parte pequeña ("Tienes razón, se me olvidó llamar") cambia la temperatura de la conversación.
 
 Por ejemplo: "Antes de responder, déjame comprobar si lo he entendido. ¿Sentiste que no me tomé en serio tus planes?"
+
+:::tool practice
+¿Quieres probar un inicio suave antes de la conversación real?
+:::
 
 ## 6. Haz una pausa cuando te desbordes
 
@@ -150,6 +162,8 @@ No intentes los siete a la vez. Elige uno, quizá el comienzo suave, y úsalo du
 Sinceramente, para esto existe Coach Chat. Pegas el primer borrador enfadado, te ayuda a convertirlo en un comienzo suave y puedes ensayar la conversación real en Partner Practice antes de tenerla.
 
 Mi elección personal sería el hábito 6, la pausa con la promesa de volver. Parece el menos impresionante de los siete, pero es el que evita que una mala discusión se convierta en una mala semana.
+
+Mi opinión: no intentes aplicar los siete a la vez. Elige el que te hizo torcer un poco el gesto al leerlo. Suele ser el que más va a cambiar.
 
 ## Respuestas rápidas
 

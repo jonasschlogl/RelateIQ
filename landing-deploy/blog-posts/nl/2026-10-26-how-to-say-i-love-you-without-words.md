@@ -22,6 +22,8 @@ Dus hier zijn 25 manieren om "ik hou van je" te zeggen zonder woorden, ingedeeld
 
 **Snelle test:** weet je niet zeker welke gebaren je partner het meest zou waarderen? Doe samen de gratis [liefdestalentest](/quiz/love-language/), in het Engels en in 2 minuten, en vergelijk jullie antwoorden.
 
+Mijn mening: de bevinding over dankbaarheid is mijn favoriet. Het betekent dat het gebaar maar de helft is. De andere helft is dat je partner het opmerkt, dus het is de moeite waard om hardop te zeggen "ik zag het, dank je".
+
 ## Op drukke ochtenden
 
 1. Zet koffie of thee voor je partner zoals hij of zij het lekker vindt, zonder te vragen.
@@ -37,6 +39,12 @@ Dus hier zijn 25 manieren om "ik hou van je" te zeggen zonder woorden, ingedeeld
 8. Doe het klusje waar je partner een hekel aan heeft, zonder het aan te kondigen.
 9. Ga dicht bij elkaar op de bank zitten in plaats van ieder aan een uiteinde.
 10. Als je partner iets deelt, draai je ernaartoe: kijk op, stel een vraag, reageer.
+
+:::read Lees ook
+/blog/love-languages/ | Bestaan liefdestalen echt? | Wat onderzoek echt zegt
+/blog/how-to-keep-the-spark-alive/ | Zo houd je de vonk levend | Ontdek welke vonk aan het doven is
+/blog/how-to-support-your-partner-when-stressed/ | Zo steun je je partner bij stress | Wat je zegt en wat je overslaat
+:::
 
 ## Op zware dagen
 
@@ -59,6 +67,10 @@ Als ik er één van de hele lijst moest kiezen, zou het nummer 13 zijn: stilletj
 20. Bedank je partner voor iets alledaags wat hij of zij elke dag doet en wat jij niet meer opmerkt.
 
 Gaat het prima maar voelt het wat vlak, dan kan onze gids over [de vonk levend houden in een lange relatie](/blog/how-to-keep-the-spark-alive/) helpen ontdekken wat er ontbreekt.
+
+:::tool coach
+Weet je niet wat het meest zou betekenen voor je partner? Praat het door
+:::
 
 ## Van ver weg
 
@@ -91,6 +103,8 @@ Let daarna op wat je partner laat opfleuren. En onthoud de bevinding van Algoe: 
 ## Als liefde tonen moeilijk voelt
 
 Ben je opgegroeid in een gezin waar genegenheid niet werd getoond, dan kunnen gebaren in het begin onwennig voelen. Begin met de kleinste: een kop koffie, een appje, een hand op de schouder. Met oefening worden ze makkelijker. Vindt je partner het moeilijk om genegenheid te tonen, dan legt onze gids over de [emotioneel onbereikbare partner](/blog/emotionally-unavailable-partner/) een paar redenen uit, en wat helpt.
+
+Mijn mening: als gebaren je niet vanzelf afgaan, kies dan één klein ding en herhaal het. Consistentie is romantischer dan creativiteit, in elk geval na het eerste jaar.
 
 ## Snelle antwoorden
 

@@ -33,11 +33,19 @@ Tulos: 91,4 % huolista ei toteutunut. Ja niistä, jotka toteutuivat, noin 30 % p
 
 Tutkimus oli pieni ja koski ihmisiä, joilla on ahdistuneisuushäiriö, joten se ei todista, että 91 % *sinun* parisuhdehuolistasi olisi väärässä. Mutta se näyttää jotain hyödyllistä: huoli tuntuu ennusteelta, ja yleensä se on huono ennuste. Varmuuden tunne, joka liittyy kello kahden yöllä pyörivään kierteeseen, kertoo paljon enemmän ahdistuksesi tasosta kuin siitä, mitä oikeasti tapahtuu.
 
+Minun näkemykseni: en usko, että opetus on "huolesi ovat aina väärässä". Se on, että aivosi ovat paljon äänekkäämpi kertoja kuin tarkka. Sen tietäminen tekee vähän helpommaksi odottaa ennen kuin reagoi.
+
 ## Ylianalysointi ja kiintymysahdistus
 
 Joillakin ylianalysointi liittyy siihen, mitä psykologit kutsuvat kiintymysahdistukseksi: voimakkaampaan huoleen siitä, että kumppani saattaa vetäytyä tai torjua sinut. Se on toinen kahdesta pääulottuvuudesta, joilla tutkijat kuvaavat aikuisten kiintymystä, välttelyn ohella. Ihmiset, joilla on enemmän kiintymysahdistusta, huomaavat pienet etäisyyden merkit yleensä nopeammin ja tulkitsevat ne kielteisemmin.
 
 Jos haluat ymmärtää tämän osan paremmin, selitämme sen oppaassamme [kiintymystyyleistä parisuhteessa](/blog/how-attachment-styles-work-in-relationships/). Se ei ole diagnoosi, vain hyödyllinen tapa huomata toimintamalli. Ja toiveikas osa: kiintymysahdistus yleensä vähenee aikuisiässä, ja se reagoi hyvin alla kuvattuun harjoitteluun.
+
+:::read Lue myös
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun epäily ei oikeastaan koske kumppania
+/blog/trust-issues-in-a-relationship/ | Näin pääset yli luottamusongelmista | Miksi rauhoittelu ei kestä
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Kun hiljaisuus käynnistää kierteen
+:::
 
 ## Miltä ylianalysoinnin kierre näyttää
 
@@ -126,6 +134,10 @@ Tämä on pyyntö, ei sääntö kumppanisi käytökselle. Jos huomaat pyytäväs
 
 Seitsemästä askeleesta aloittaisin kolmannesta. Kolmen muun selityksen kirjoittaminen tuntuu ensimmäisellä kerralla hölmöltä. Se on myös yksi tämän artikkelin yksinkertaisimmista työkaluista ja yksi tehokkaimmista.
 
+:::tool coach
+Juuri nyt kierteessä? Puhu se läpi ennen kuin kirjoitat
+:::
+
 ## Kokonainen esimerkki: kierteestä keskusteluun
 
 > **Esimerkki: Jacobin perjantai-ilta**
@@ -144,6 +156,8 @@ Seitsemästä askeleesta aloittaisin kolmannesta. Kolmen muun selityksen kirjoit
 Se kannattaa sanoa suoraan: ylianalysointi ja hyvä vaisto eivät ole sama asia. Jos kumppanisi on usein epärehellinen, katoaa selittämättä tai saa sinut tuntemaan itsesi pieneksi, epämukava olosi voi olla tietoa eikä ahdistusta.
 
 Testi ei ole "tunnenko oloni huolestuneeksi?". Se on "onko olemassa toistuva käyttäytymismalli, jonka voin kuvata tosiasioilla?". Yksi myöhästynyt vastaus ei ole kaava. Kolme rikottua lupausta kuukaudessa, tulkitsematta kuvattuna, on. Jos pystyt kuvaamaan kaavan, seuraava askel on selkeä keskustelu siitä kaavasta, ei lisää hiljaista analysointia.
+
+Minun näkemykseni: oikeaksi osoittautuva huoli ansaitsee silti rauhallisen keskustelun, ei täydellistä todisteaineistoa. Sinun ei tarvitse kerätä todisteita saadaksesi kysyä jotain.
 
 ## Miten kertoa kumppanille, että ylianalysoit
 

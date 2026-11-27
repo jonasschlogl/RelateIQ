@@ -24,6 +24,10 @@ Oddsen är alltså bra. Frågan är hur ni använder varje fas väl.
 
 Samma vanor verkar hålla båda sortens par lyckliga. I en studie från 2021 av 232 unga vuxna i distansförhållanden och 263 i förhållanden på nära håll fann Kaitlyn Goldsmith och Sandra Byers att underhållande beteenden, som att hålla kontakten, prata om framtiden och tänka kärleksfullt på varandra, hängde ihop med högre nöjdhet i båda grupperna, på ungefär samma sätt.
 
+Min åsikt: det mest användbara fyndet här handlar om tro. Par som räknar med att det ska fungera, och har en ungefärlig bild av när avståndet tar slut, verkar klara sig bättre. Det är värt att prata om tidigt.
+
+**Snabbtest:** Vad får din partner att känna sig älskad på avstånd? Gör det 2 minuter långa [kärleksspråkstestet](/quiz/love-language/), på engelska, tillsammans och jämför.
+
 ## Fas 1: när ni är isär
 
 ### Kom överens om "varför" och "hur länge"
@@ -50,6 +54,12 @@ Text tar bort tonfallet och bjuder in till de värsta tolkningarna. Om något st
 
 Ett datum i kalendern gör "jag saknar dig" från en tyngd till en nedräkning.
 
+:::read Läs också
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | När ni inte kan bli sams öga mot öga
+/blog/trust-issues-in-a-relationship/ | Så kommer du över tillitsproblem | När avståndet göder tvivlet
+/blog/how-to-say-i-love-you-without-words/ | Så visar du kärlek utan ord | Idéer som fungerar på avstånd
+:::
+
 ## Fas 2: under besöken
 
 ### Sänk pressen på det "perfekta"
@@ -63,6 +73,10 @@ I en studie av dejtande par på distans fann Laura Stafford och Andy Merolla att
 ### Spara inte alla problem till besöket
 
 Om du har sparat ett svårt samtal till "när vi ses" blir besöket spänt redan innan det börjat. Ta de stora frågorna i telefon och använd besöken till närhet.
+
+:::tool check
+Osäker på hur ett sms landar på flera mils avstånd? Kolla det först
+:::
 
 ## Fas 3: när ni slutar bo isär
 
@@ -90,6 +104,8 @@ Du kan säga: "Det här är svårare än jag trodde. Jag tror inte att det betyd
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 Jag tror att det här är den mest underskattade delen av distansförhållanden. Par planerar i flera år för att bo i samma stad och lägger sedan nästan ingen tid på att planera hur det faktiskt ska se ut.
+
+Min åsikt: man planerar flytten och glömmer omställningen. Jag skulle boka in ett avstämningssamtal en månad efter att ni börjat bo nära, bara för att fråga varandra vad som skiljer sig från det ni förväntade er.
 
 ## Distans under högtiderna
 

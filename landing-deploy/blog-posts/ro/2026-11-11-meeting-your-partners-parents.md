@@ -25,6 +25,15 @@ Așadar, fără presiune, dar seara asta merită puțină pregătire. Vestea bun
 
 Implicarea nu e totuși același lucru cu aprobarea. Într-un studiu din 2024 cu 464 de tineri adulți din Slovenia, Timotej Glavač și Melita Puklek Levpušček au descoperit că cei ai căror tați erau mai intruzivi tindeau să aibă relații mai scurte. Părinții calzi și care sprijină ajută un cuplu. Părinții care încearcă să-l conducă, de obicei nu.
 
+Părerea mea: aș înceta să încerc să-i impresionez și m-aș concentra să fiu o persoană cu care e ușor să stai. Majoritatea părinților vor mai ales să vadă că copilul lor e tratat bine, iar asta poți arăta fără niciun răspuns perfect.
+
+:::stats De ce cunoașterea familiei pare un pas atât de mare
+72% | spun că să-ți aduci partenerul acasă de sărbători face relația să pară oficială
+36% | spun că familia lor i-a povestit partenerului întâmplări jenante despre ei
+23% | spun că familia i-a pus partenerului întrebări nepotrivite
+sursa: [Sondaj Tawkify](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) cu 1.000 de americani, prezentat de DatingNews
+:::
+
 ## Înainte să mergi: 3 întrebări pentru partener
 
 1. **„Cu ce se mândresc și la ce sunt sensibili?”** E harta ta cu subiectele bune și cele proaste.
@@ -32,6 +41,14 @@ Implicarea nu e totuși același lucru cu aprobarea. Într-un studiu din 2024 cu
 3. **„Dacă devine stânjenitor, care e semnalul nostru?”** Un cuvânt, o privire, o mână pe spate. Ajută mai mult decât ai crede.
 
 Aș spune că această scurtă pregătire contează mai mult decât orice spui în ziua respectivă. Cele mai multe momente stânjenitoare vin din faptul că nu cunoști regulile pe care toți ceilalți le cunosc.
+
+:::read Citește și
+/blog/holidays-with-your-partners-family/ | Sărbătorile cu familia partenerului | Un plan pentru Crăciun
+/blog/relationship-advice-communication-habits/ | Cum să comunicați mai bine în cuplu | Obiceiuri care ajută în orice moment tensionat
+/blog/how-to-apologize-to-your-partner/ | Cum să îți ceri scuze sincer partenerului | Dacă ceva ce ai spus a picat prost
+:::
+
+**Test rapid:** Nu știi sigur de ce ai nevoie de la partener în ziua aceea? [Testul despre nevoile din relație](/quiz/relationship-needs/), în engleză și de 2 minute, te ajută să pui asta în cuvinte înainte să mergeți.
 
 ## Cele 12 momente și ce să spui
 
@@ -110,6 +127,10 @@ Mulțumește-le pe nume și menționează un lucru anume care ți-a plăcut.
 
 Un mesaj scurt după aceea, prin partener („Mai mulțumește-i o dată mamei tale pentru cină”), e un final frumos.
 
+:::tool practice
+Te emoționează o anumită întrebare? Exersează-ți mai întâi răspunsul
+:::
+
 ## După aceea: discuția în doi
 
 Întreabă-ți partenerul cum crede că a mers și ascultă răspunsul fără să intri în spirală. Dacă a existat tensiune, separă *stilul* de *respingere*. Unele familii sunt rezervate la început cu toată lumea.
@@ -117,6 +138,8 @@ Un mesaj scurt după aceea, prin partener („Mai mulțumește-i o dată mamei t
 Ajută și să știi ce a descoperit psihologa Terri Orbuch, care a urmărit cupluri căsătorite timp de 26 de ani. A constatat că, atunci când soții se simțeau apropiați de părinții soției, riscul de divorț al cuplului era mai mic, dar când soțiile erau foarte apropiate de părinții soțului, riscul era mai mare, posibil pentru că apropierea făcea limitele mai greu de pus. Scopul nu e să deveniți cei mai buni prieteni peste noapte. E căldură și respect, cu limite sănătoase.
 
 Dacă urmează să petreceți sărbătorile cu ei, ghidul nostru despre [sărbătorile cu familia partenerului](/blog/holidays-with-your-partners-family/) acoperă vizitele mai lungi. Iar dacă vrei să-ți înțelegi mai bine partenerul înainte de ziua cea mare, încearcă câteva dintre [întrebările noastre profunde pentru partener](/blog/deep-questions-to-ask-your-partner/), mai ales cele despre copilărie.
+
+Părerea mea: discuția de după contează mai mult decât vizita. O cină stânjenitoare e ușor de luat în râs împreună, dar doar dacă vorbiți despre ea cu blândețe pe drumul spre casă, în loc să o întoarceți pe toate fețele fiecare de unul singur.
 
 ## Dacă tu ești cel care își prezintă partenerul
 
@@ -149,3 +172,4 @@ Dă-i timp. Primele întâlniri sunt adesea rigide, iar mulți părinți se desc
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Rezumat de la [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), despre studiul pe termen lung al lui Terri Orbuch cu cupluri căsătorite
 - Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Hrčak](https://hrcak.srce.hr/en/319709)
+- DatingNews: [For 72% of daters, bringing a partner home signals commitment](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/), Tawkify survey of 1,000 Americans

@@ -22,6 +22,8 @@ Sam îl cunoaște pe Alex pe o aplicație. A treia zi vorbesc deja ore întregi 
 
 **Ce poți face acum:** nimic dramatic. Continuă-ți viața obișnuită și observă cum reacționează când nu ești disponibil.
 
+**Test rapid:** Te întrebi dacă ce vezi e doar o perioadă grea sau ceva mai îngrijorător? [Verificarea relației toxice](/quiz/toxic-relationship/), în engleză și de 2 minute, îți oferă o imagine mai clară.
+
 ## Săptămânile 2-4: cadourile și contactul constant
 
 Sam primește flori la serviciu. O excursie de weekend e rezervată "ca surpriză". Alex îi scrie bună dimineața, noapte bună și de multe ori între ele și pare rănit când Sam răspunde după câteva ore.
@@ -36,6 +38,12 @@ Sam primește flori la serviciu. O excursie de weekend e rezervată "ca surpriz�
 
 De exemplu: "Îmi place mult ce se întâmplă și aș vrea să mergem puțin mai încet. Putem lăsa excursia pentru mai târziu?"
 
+:::read Citește și
+/blog/breadcrumbing/ | Mi se face breadcrumbing? | Când atenția vine în doze mici și imprevizibile
+/blog/signs-of-a-toxic-relationship/ | Este relația mea toxică? | O verificare în 3 niveluri: nesănătoasă, toxică și controlantă
+/blog/clear-coding-dating/ | Clear coding la întâlniri | Cum sună entuziasmul sănătos
+:::
+
 ## Luna 2: primul "nu"
 
 Sam vrea o seară de vineri cu prieteni vechi. La suprafață, Alex pare înțelegător, apoi e tăcut și rănit toată seara prin mesaje: "Doar mi-e dor de tine. Credeam că noi suntem speciali." Săptămâna următoare se întâmplă din nou, cu o aluzie că prietenii lui Sam "nu ne înțeleg cu adevărat".
@@ -45,6 +53,8 @@ Sam vrea o seară de vineri cu prieteni vechi. La suprafață, Alex pare înțel
 **Ce s-ar putea întâmpla:** aceasta e etapa care contează cel mai mult. Un partener care te iubește poate fi dezamăgit și totuși să-ți respecte planurile. În love bombing, căldura începe să depindă de faptul că faci ce vrea celălalt. Izolarea timpurie de prieteni e unul dintre cele mai constante semnale de alarmă descrise de organizațiile împotriva violenței domestice.
 
 **Ce poți face acum:** păstrează-ți planurile. Spune-i sincer unui prieten ce se întâmplă, nu versiunea cosmetizată.
+
+Părerea mea: dacă aș putea da un singur test pentru love bombing, ar fi acesta. Spune un "nu" mic și rezonabil și vezi ce se întâmplă. Cineva care chiar te place poate fi dezamăgit și totuși să respecte asta.
 
 ## Luna 3: cald și rece
 
@@ -64,6 +74,10 @@ Nu toți cei care fac love bombing devin abuzivi și nu orice idilă fulgerătoa
 
 Asta e util pentru că mută atenția. Intensitatea spune adesea mai mult despre nevoile celuilalt (de control, de admirație, de liniștire) decât despre cât de special ești tu. Studiul turc a găsit încă ceva ce merită știut: oamenii care trecuseră prin love bombing raportau o încredere mai mică în capacitatea de a-și gestiona propriile relații romantice. Dacă ai trecut prin asta, o scădere a încrederii în propria judecată e un efect frecvent, nu un eșec personal.
 
+:::tool coach
+Nu știi sigur cu ce ai de-a face? Vorbește despre asta în privat
+:::
+
 ## Love bombing sau cineva care e doar foarte entuziasmat?
 
 | Întrebare | Entuziasm sincer | Love bombing |
@@ -81,6 +95,8 @@ Dacă nu ești sigur dacă nu cumva te gândești prea mult, ghidul nostru despr
 E greu să-i spui "hai să mergem mai încet" cuiva care te copleșește cu atenție. Dacă te ajută, poți exersa întâi în privat în Partner Practice.
 
 Dacă testezi un singur lucru, testează "nu"-ul. Spune nu la ceva mic și urmărește ce se întâmplă. Interesul real supraviețuiește unui nu. Love bombingul de obicei nu.
+
+Părerea mea: să fii cucerită pe loc nu e în sine un semnal de alarmă. Semnalul de alarmă e viteza plus presiunea. Entuziasmul adevărat poate aștepta să-l ajungi din urmă.
 
 ## Răspunsuri rapide
 

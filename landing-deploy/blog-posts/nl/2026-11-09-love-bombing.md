@@ -22,6 +22,8 @@ Sam ontmoet Alex via een app. Op dag drie praten ze al elke avond urenlang. Alex
 
 **Wat je nu kunt doen:** Niets dramatisch. Ga gewoon door met je normale leven en let op hoe de ander reageert als je niet beschikbaar bent.
 
+**Snelle quiz:** Vraag je je af of wat je ziet gewoon een moeilijke periode is of iets zorgwekkenders? De [toxische-relatiecheck](/quiz/toxic-relationship/) van 2 minuten, in het Engels, geeft je een duidelijker beeld.
+
 ## Week 2 tot 4: de cadeaus en het constante contact
 
 Er worden bloemen bezorgd op Sams werk. Er wordt "als verrassing" een weekendje weg geboekt. Alex appt goedemorgen, welterusten en heel vaak daartussen, en lijkt gekwetst als Sam een paar uur nodig heeft om te reageren.
@@ -36,6 +38,12 @@ In een enquête uit 2024 onder 225 studenten in Turkije vonden onderzoekers Duma
 
 Bijvoorbeeld: "Ik geniet hier echt van, en ik wil het graag wat rustiger aan doen. Zullen we het weekendje weg voor later bewaren?"
 
+:::read Lees ook
+/blog/breadcrumbing/ | Word ik gebreadcrumbd? | Als aandacht in kleine, onvoorspelbare porties komt
+/blog/signs-of-a-toxic-relationship/ | Is mijn relatie toxisch? | Een check in 3 niveaus: ongezond, toxisch en controlerend
+/blog/clear-coding-dating/ | Clear coding bij daten | Hoe gezond enthousiasme klinkt
+:::
+
 ## Maand 2: het eerste "nee"
 
 Sam wil een vrijdagavond met oude vrienden. Aan de buitenkant reageert Alex warm, maar daarna de hele avond stil en gekwetst via appjes: "Ik mis je gewoon. Ik dacht dat wij bijzonder waren." De week erna gebeurt het weer, met een hint dat Sams vrienden "ons niet echt snappen".
@@ -45,6 +53,8 @@ Sam wil een vrijdagavond met oude vrienden. Aan de buitenkant reageert Alex warm
 **Wat er misschien gebeurt:** Dit is de fase die er het meest toe doet. Een partner die van je houdt, kan teleurgesteld zijn en toch je plannen respecteren. Bij love bombing gaat de warmte afhangen van of je doet wat de ander wil. Vroege isolatie van vrienden is een van de meest consistente waarschuwingssignalen die organisaties tegen huiselijk geweld beschrijven.
 
 **Wat je nu kunt doen:** Houd je plannen aan. Vertel een vriend eerlijk wat er speelt, niet de opgepoetste versie.
+
+Mijn mening: als ik één test voor love bombing zou mogen geven, zou het deze zijn. Zeg een klein, redelijk nee en kijk wat er gebeurt. Iemand die je echt leuk vindt, kan teleurgesteld zijn en het toch respecteren.
 
 ## Maand 3: warm en koud
 
@@ -64,6 +74,10 @@ Er is nog niet veel onderzoek, maar wat er is, wijst één kant op. In een studi
 
 Dat is nuttig, omdat het de focus verlegt. De intensiteit zegt vaak meer over de behoeften van de ander (aan controle, bewondering, geruststelling) dan over hoe bijzonder jij bent. De Turkse studie vond nog iets wat goed is om te weten: mensen die love bombing hadden meegemaakt, hadden minder vertrouwen in hun vermogen om hun eigen liefdesrelaties te hanteren. Heb je het meegemaakt, dan is een dip in het vertrouwen in je eigen oordeel een veelvoorkomend gevolg, geen persoonlijk falen.
 
+:::tool coach
+Weet je niet zeker waar je mee te maken hebt? Praat het in alle rust door
+:::
+
 ## Love bombing of iemand die gewoon heel enthousiast is?
 
 | Vraag | Enthousiast en oprecht | Love bombing |
@@ -81,6 +95,8 @@ Twijfel je of je aan het overdenken bent, dan laat onze gids over [groene vlagge
 "Laten we het rustiger aan doen" zeggen tegen iemand die je overlaadt met aandacht, is moeilijk. Als het helpt, kun je het eerst privé oefenen in Partner Practice.
 
 Test je maar één ding, test dan het "nee". Zeg nee tegen iets kleins en kijk wat er gebeurt. Echte interesse overleeft een nee. Love bombing meestal niet.
+
+Mijn mening: van je sokken geblazen worden is op zich geen rode vlag. Het waarschuwingssignaal is snelheid plus druk. Echt enthousiasme kan wachten tot jij bent bijgekomen.
 
 ## Snelle antwoorden
 

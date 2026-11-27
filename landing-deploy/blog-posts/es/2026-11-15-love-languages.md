@@ -30,6 +30,15 @@ La misma revisión sostenía que algunas de las formas más importantes en que l
 
 **Úsalo así:** añade tus propias categorías. "Cuando estoy estresado, lo que más me ayuda es que simplemente te sientes conmigo" también es un lenguaje del amor. Nuestra guía sobre [cómo apoyar a tu pareja cuando está estresada](/blog/how-to-support-your-partner-when-stressed/) trata ese a fondo.
 
+:::chart El lenguaje del amor preferido de los estadounidenses para recibir amor
+Tiempo de calidad | 38 | 38 %
+Contacto físico | 24 | 24 %
+Palabras de afirmación | 19 | 19 %
+Actos de servicio | 13 | 13 %
+Recibir regalos | 7 | 7 %
+fuente: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1.000 adultos de EE. UU., enero de 2022
+:::
+
 ## Creencia 3: "Las parejas con el mismo lenguaje del amor son más felices"
 
 **Lo que dice la investigación: hay poca evidencia.**
@@ -37,6 +46,12 @@ La misma revisión sostenía que algunas de las formas más importantes en que l
 En un estudio de 2017 con 67 parejas, los investigadores Bunt y Hazelwood pusieron a prueba exactamente esto. Tener el mismo lenguaje del amor principal apenas cambiaba la satisfacción. Lo que importaba más era la *autorregulación*: la capacidad de cada uno para manejar sus propias reacciones y seguir poniendo esfuerzo en la relación.
 
 **Úsalo así:** no te preocupes si vuestros "tipos" no coinciden. Tener preferencias distintas solo significa que tendréis que prestar un poco más de atención, algo que de todos modos le sienta bien a una relación.
+
+:::read Lecturas relacionadas
+/blog/how-to-say-i-love-you-without-words/ | Cómo demostrar amor sin decirlo | 25 pequeñas formas para cualquier día
+/blog/how-to-keep-the-spark-alive/ | Cómo mantener viva la chispa | Descubre qué chispa se apaga y arregla esa
+/blog/long-distance-relationship-tips/ | Cómo hacer que funcione una relación a distancia | Cuando el amor tiene que viajar a través de una pantalla
+:::
 
 ## Creencia 4: "Hablar el lenguaje de tu pareja marca una diferencia real"
 
@@ -64,6 +79,12 @@ No hay pruebas sólidas de que los lenguajes del amor sean rasgos fijos. El sent
 El estudio de Mostova encontró que ni siquiera las parejas empáticas respondían bien de forma automática a las preferencias del otro. El amor no da telepatía. Pedir las cosas con claridad no es poco romántico. Ahorra meses de decepción silenciosa.
 
 Prueba: "Significa mucho para mí cuando me dices qué valoras de mí. No necesito grandes discursos, solo una frase de vez en cuando."
+
+Mi opinión: esperar que la otra persona lo adivine es la forma más rápida de sentirte poco querida por alguien que de verdad lo está intentando. Decirle lo que te llega no es poco romántico. Es generoso.
+
+:::tool coach
+¿No tienes claro qué necesita tu pareja de ti? Háblalo
+:::
 
 ## Lo que ayuda de verdad
 
@@ -95,3 +116,4 @@ Mi opinión: los lenguajes del amor son un buen comienzo de conversación y un m
 - Bunt, S., & Hazelwood, Z. J. (2017). Walking the walk, talking the talk: Love languages, self-regulation, and relationship satisfaction. *Personal Relationships*, 24(2), 280-290. [Resumen](https://metatoc.com/papers/100052-walking-the-walk-talking-the-talk-love-languages-self-regulation-and-relationship-satisfaction)
 - University of Florida, SMART Couples: [Do you speak your partner's love language? Does it matter?](https://smartcouples.ifas.ufl.edu/dating/communicating-with-your-partner/do-you-speak-your-partners-love-language)
 - Chapman, G. (1992). *The Five Love Languages: How to Express Heartfelt Commitment to Your Mate*. Northfield Publishing.
+- YouGov (2022): [What are Americans' love languages?](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), survey of 1,000 US adults, January 2022

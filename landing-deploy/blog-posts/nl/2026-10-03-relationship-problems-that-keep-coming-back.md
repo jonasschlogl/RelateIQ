@@ -31,6 +31,15 @@ De meeste terugkerende ruzies volgen een eenvoudig patroon. Er gebeurt iets klei
 
 **Snelle test:** als dezelfde ruzie steeds terugkomt, helpt het om je eigen rol erin te kennen. De gratis [test over je conflictstijl](/quiz/fight-style/), in het Engels en in 2 minuten, laat zien of je eerder escaleert, dichtklapt, pleaset of herstelt.
 
+Mijn mening: ik vind dat cijfer van 69% eerder bevrijdend dan deprimerend. Als de meeste ruzies nooit helemaal worden opgelost, is het doel niet meer "hier nooit meer ruzie over maken", maar "erover ruziën zonder elkaar pijn te doen". Dat is een doel dat jullie echt kunnen halen.
+
+:::stats Waarom dezelfde ruzies steeds terugkomen
+69% | van de conflicten in een relatie gaat over blijvende problemen die misschien nooit helemaal verdwijnen, volgens het Gottman Institute
+62% | van de Amerikaanse volwassenen vond in 2007 het delen van huishoudelijke taken heel belangrijk voor een goed huwelijk, tegenover 47% in 1990
+86% tegenover 33% | hoe vaak stellen die getrouwd bleven reageerden op elkaars kleine pogingen tot contact, vergeleken met stellen die scheidden
+bron: The Gottman Institute; Pew Research Center (zie bronnen hieronder)
+:::
+
 ## 1. Het huishouden en de mentale belasting
 
 Het lijkt een ruzie over de afwas. Meestal gaat het over eerlijkheid, en over het gevoel dat je inzet opgemerkt wordt. Dat is niet niks: in een enquête van het Pew Research Center uit 2007 zei 62% van de Amerikaanse volwassenen dat het delen van huishoudelijke taken heel belangrijk is voor een geslaagd huwelijk, tegenover 47% in 1990.
@@ -55,6 +64,12 @@ Gottmans onderzoek geeft dit een stevige basis. In een onderzoek dat pasgetrouwd
 In plaats van: "Je telefoon is belangrijker dan ik."
 
 Je kunt zeggen: "Ik mis het om 's avonds met je te praten. Zullen we deze week de telefoons weglaten tijdens het eten?"
+
+:::read Lees ook
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Vanavond, morgen en de week erna
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Wat je zegt als je partner zegt dat je hem of haar hebt gekwetst | De eerste vijf minuten, stap voor stap
+/blog/how-to-keep-the-spark-alive/ | Zo houd je de vonk levend | Als de ruzies het plezier hebben verdreven
+:::
 
 ## 3. Geld
 
@@ -93,6 +108,12 @@ Probeer bijvoorbeeld: "Het voelt alsof jij stil wordt als ik aandring, en als ji
 > Zodra het patroon een naam heeft, wordt het iets waar jullie samen tegenover staan in plaats van iets wat jullie elkaar aandoen. Wie achtervolgt, kan een beetje ontspannen omdat wie zich terugtrekt beloofd heeft terug te komen. Wie zich terugtrekt, kan terugkomen omdat hij of zij niet meer achtervolgd wordt. Veel stellen merken dat afspraken over een pauze belangrijker zijn dan het oorspronkelijke onderwerp oplossen.
 
 Vaak houdt de cirkel zichzelf in stand. In een onderzoek uit 2022 met 175 stellen ontdekten Ione Bretaña en collega's dat wanneer de een zich tijdens een conflict terugtrok, de ander vaak veeleisender of agressiever werd, en beide reacties gingen samen met minder tevredenheid. Doordat de een zich terugtrekt, duwt de ander harder, waardoor de eerste zich nog verder terugtrekt, en het oorspronkelijke onderwerp raakt uit beeld.
+
+Mijn mening: als een ruzie zich woord voor woord herhaalt, zou ik stoppen met discussiëren over het onderwerp en een andere vraag stellen: "Waar gaat dit eigenlijk over voor jou?" Het antwoord is meestal kleiner en zachter dan de ruzie.
+
+:::tool practice
+Wil je dit gesprek oefenen voordat je het voert?
+:::
 
 ## Zo praat je over een probleem dat steeds terugkomt
 

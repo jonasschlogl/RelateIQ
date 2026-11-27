@@ -24,6 +24,20 @@ Así que las señales que merece la pena vigilar no son dramáticas. Son las peq
 
 **Test rápido:** a veces la distancia significa que hay una necesidad sin cubrir. El [test gratuito de chequeo de la relación](/quiz/relationship-needs/), en inglés y de 2 minutos, puede ayudarte a ponerle nombre.
 
+Mi opinión: una semana tranquila significa muy poco. Un alejamiento lento durante meses significa mucho más. Yo miraría la tendencia, no un día concreto.
+
+:::chart Con qué frecuencia las parejas respondían a los pequeños intentos de atención del otro
+Parejas que seguían juntas a los 6 años | 86 | 86 %
+Parejas que acabaron divorciándose | 33 | 33 %
+fuente: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), estudio con recién casados y seguimiento a seis años
+:::
+
+:::stats El factor móvil
+46 % | de los adultos estadounidenses de un estudio de 2016 dijeron que su pareja les hacía "phubbing", prestando atención al móvil en lugar de a ellos
+52 estudios | y casi 20.000 personas en un metaanálisis de 2025 relacionaron el phubbing de la pareja con menos satisfacción y más conflictos
+fuente: Roberts y David (2016), *Computers in Human Behavior*; metaanálisis de 2025 citado en las fuentes de abajo
+:::
+
 ## Las señales, descifradas
 
 ### Mensajes más cortos y más lentos
@@ -73,11 +87,21 @@ Así que las señales que merece la pena vigilar no son dramáticas. Son las peq
 | La calidez intacta, menos sexo | Salud, estrés o un desajuste | Una conversación suave y en privado |
 | Se aleja de casi todos los intentos de conexión, poca calidez | Distancia emocional real | Una conversación sincera sobre la relación |
 
+:::read Lecturas relacionadas
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Cuando la distancia llega tras una discusión
+/blog/avoidant-attachment-partner/ | Apego evitativo en la pareja | Cuando la cercanía le hace retroceder
+/blog/should-i-break-up-with-my-partner/ | ¿Cómo saber cuándo romper? | Si te estás haciendo una pregunta más grande
+:::
+
 ## Antes de hablar: revisa tus propias gafas
 
 Si tiendes a la ansiedad en las relaciones, una semana normal de mucho trabajo puede sentirse como un rechazo. Pregúntate: ¿ha cambiado *tu pareja*, o ha cambiado mi nivel de preocupación? Nuestras guías sobre la [ansiedad en la relación](/blog/relationship-anxiety/) y [cómo dejar de pensar demasiado](/blog/how-to-stop-overthinking-in-a-relationship/) te ayudan a separar las dos cosas.
 
 Yo dedicaría tiempo de verdad a este paso. Un mes de mucho trabajo y una relación que se apaga pueden verse idénticos desde dentro, sobre todo si ya estás preocupado.
+
+:::tool practice
+¿No sabes cómo empezar esta conversación? Ensáyala primero
+:::
 
 ## Qué decir
 
@@ -103,6 +127,8 @@ Y gírate hacia tu pareja, a propósito, en cosas pequeñas: responde a sus inte
 A veces la respuesta sincera es que tu pareja se ha ido alejando, o que no lo tiene claro. Duele, pero es información con la que se puede trabajar. Muchas parejas encuentran el camino de vuelta con esfuerzo por ambas partes, a veces con un terapeuta de pareja. Si tu pareja dice que no sabe lo que siente, dale un poco de tiempo, pero no un tiempo ilimitado. Nuestras guías sobre las [parejas emocionalmente no disponibles](/blog/emotionally-unavailable-partner/) y sobre [si deberías dejar a tu pareja](/blog/should-i-break-up-with-my-partner/) pueden ayudarte a decidir qué necesitas.
 
 Si te da miedo esa primera conversación, puedes planearla en Coach Chat y ensayarla antes en Partner Practice.
+
+Mi opinión: preguntar "¿sigues en esto?" da miedo, pero no preguntarlo suele ser peor. Meses de suposiciones cuestan más que una conversación sincera.
 
 ## Respuestas rápidas
 
@@ -131,3 +157,4 @@ Sí. Si ha perdido el interés por muchas cosas, no solo por ti, y se le ve apag
 - Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Leer el estudio](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Texto completo (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
+- The Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)

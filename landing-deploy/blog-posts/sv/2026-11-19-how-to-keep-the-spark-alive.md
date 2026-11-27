@@ -33,6 +33,8 @@ Läs varje påstående och ge det poäng: 0 = stämmer sällan, 1 = ibland, 2 = 
 
 Lägg ihop varje par. Området med lägst poäng (0 till 2) är där ni börjar. Om två ligger lika, välj det som stör dig mest. Om allt ger 3 eller 4 är er gnista i gott skick, och planen på fyra veckor nedan är underhåll, inte reparation.
 
+Min åsikt: jag gillar den här kollen eftersom "gnistan är borta" är för vagt för att laga. "Vi testar aldrig något nytt" eller "vi har slutat ställa frågor till varandra" är något ni faktiskt kan jobba med den här veckan.
+
 ## Om nyheten är låg: bryt rutinen, inte budgeten
 
 **Vad forskningen visar.** I en långtidsstudie med 123 par frågade Irene Tsapelas, Arthur Aron och Terri Orbuch personer i sitt sjunde äktenskapsår hur ofta äktenskapet kändes som att ha fastnat i gamla hjulspår. De som var mer uttråkade år 7 var mindre nöjda nio år senare, år 16. Kopplingen gick via närhet: tristessen fick paren att känna sig mindre nära, och det sänkte tillfredsställelsen.
@@ -52,6 +54,12 @@ Hur man tänker om lust spelar också roll. I sex studier med nästan 1 900 pers
 **Vad de flesta råd missar.** Många väntar sig att lusten ska komma från ingenstans, som i början. Sexologer påpekar ofta att lust i långa förhållanden tenderar att vara mer *responsiv*: den dyker upp när ni redan är nära, avslappnade och rör vid varandra, inte innan. Att vänta på att "vara på humör" först kan betyda att vänta i månader.
 
 **Testa det här:** ta ett lugnt samtal, inte i sängen. Till exempel: "Vad brukade få dig att känna dig åtrådd av mig, som jag har slutat göra?" Lyssna bara. Inget försvar, ingen plan direkt.
+
+:::read Läs också
+/blog/deep-questions-to-ask-your-partner/ | Djupa frågor att ställa till din partner | 30 frågor efter djup
+/blog/date-night-questions-for-couples/ | Frågor till dejtkvällen | 5 lekar och 40 frågor
+/blog/how-to-say-i-love-you-without-words/ | Så visar du kärlek utan ord | 25 små vardagliga signaler
+:::
 
 ## Om uppmärksamheten är låg: bli nyfiken igen
 
@@ -76,6 +84,10 @@ Hur man tänker om lust spelar också roll. I sex studier med nästan 1 900 pers
 | Uppmärksamhet | Ni pratar bara logistik | En äkta fråga i veckan |
 | Värme | Beröring bara före sex, eller inte alls | En daglig ritual av ömhet |
 
+:::tool coach
+Osäker på vilken gnista som falnar hos er? Prata igenom det
+:::
+
 ## En plan på 4 veckor
 
 Välj ditt lägsta område och ge det fyra veckor. En förändring åt gången fungerar bättre än nio på en gång.
@@ -97,6 +109,8 @@ Ibland är en falnande gnista ett symptom. Bitterhet efter bråk som aldrig lös
 Det är också okej att ett förhållande har lugnare perioder. Det viktiga är att ni märker det och hittar tillbaka till varandra när livet tillåter.
 
 Om det känns svårt att ta upp kan du med RelationshipAI:s Partner Practice öva samtalet med en AI som spelar din partner, och Coach Chat hjälper dig att reda ut vad du faktiskt vill be om. Det är inte terapi, men ett lugnt ställe att börja.
+
+Min åsikt: ibland är en falnande gnista bara en trött period: ett nytt barn, ett tufft jobb, en flytt. Jag skulle vara snäll mot er själva innan ni bestämmer att det betyder något större.
 
 ## Snabba svar
 

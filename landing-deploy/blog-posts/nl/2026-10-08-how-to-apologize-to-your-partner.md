@@ -34,6 +34,14 @@ Ze ontdekten dat verantwoordelijkheid nemen het belangrijkste onderdeel was, en 
 
 Eén kanttekening is goed om te onthouden: dit was een experiment waarin mensen geschreven excuses beoordeelden, en het echte leven, met echte pijn en een gedeelde geschiedenis, is rommeliger. Toch past het bij wat veel relatietherapeuten zien. Excuses die werken gaan over de ervaring van de ander en wat je hierna gaat doen, niet over je eigen opluchting.
 
+Mijn mening: het deel dat de meeste mensen overslaan, is het herstelaanbod. "Sorry" sluit het moment af, maar "dit ga ik anders doen" is wat het vertrouwen de weken erna weer opbouwt.
+
+:::read Lees ook
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Wat je zegt als je partner zegt dat je hem of haar hebt gekwetst | De eerste vijf minuten, stap voor stap
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Vanavond, morgenochtend en de week erna
+/blog/my-boyfriend-gets-defensive/ | Mijn vriend wordt defensief als ik iets aankaart | Als het excuus steeds een discussie wordt
+:::
+
 ## Verschillende mensen hebben verschillende excuses nodig
 
 Er is nog een laag die de meeste adviezen missen. In apart onderzoek keken Ryan Fehr en Michele Gelfand naar drie onderdelen van excuses:
@@ -73,6 +81,10 @@ Je hebt niet elke keer alle zes onderdelen nodig. Hier is een korte structuur ge
 
 > **De vijf stille vragen**
 > Elke stap beantwoordt een vraag die je partner in stilte stelt. Begrijp je wat je deed? (specifiek). Ga je het verdedigen? (geen voorwaarden). Begrijp je wat het met mij deed? (impact). Gaat het weer gebeuren? (goedmaken). Mag ik nog boos zijn? (ruimte). Als alle vijf beantwoord zijn, valt er veel minder te ruziën.
+
+:::tool practice
+Wil je je excuses oefenen voordat je ze aanbiedt?
+:::
 
 ## Een volledig voorbeeld, van begin tot eind
 
@@ -150,6 +162,8 @@ Als hetzelfde steeds opnieuw gebeurt, zijn het niet de excuses die ontbreken. He
 Bij grotere breuken, zoals liegen, vreemdgaan of een belangrijke belofte breken, is één goed gesprek het begin, niet het einde. Vertrouwen wordt opnieuw opgebouwd door consequent gedrag in de loop van de tijd. Onze gids over [vertrouwen herstellen na een ruzie](/blog/how-to-rebuild-trust-after-a-fight/) gaat stap voor stap door dat proces.
 
 Als excuses steeds nergens toe leiden, of het patroon gebrek aan respect bevat, kan een relatietherapeut jullie helpen zien wat er onder de oppervlakte speelt. Wil je oefenen wat je gaat zeggen voor een moeilijk gesprek? RelationshipAI is een AI-relatiecoach die je helpt om je excuses onder woorden te brengen en ze te oefenen in Partner Practice. Het is geen therapie, maar het kan je helpen beginnen.
+
+Mijn mening: een excuus dat een week later gevolgd wordt door hetzelfde gedrag, leert je partner langzaam dat sorry niets betekent. Minder excuses met echte verandering zijn beter dan veel excuses zonder.
 
 ## Snelle antwoorden
 

@@ -26,6 +26,8 @@ Yhteenvetona: lyhyt ja lämmin viesti riidan jälkeen auttaa. Pitkä viesti, jok
 
 **Pikatesti:** Haluatko tietää, miten yleensä toimit riidassa? Kokeile [riitatyylitestiämme](/quiz/fight-style/), englanniksi ja 2 minuutin mittainen.
 
+Minun näkemykseni: nyrkkisääntöni on yksinkertainen. Kirjoita palauttaaksesi yhteyden, puhu ratkaistaksesi. Jos viestissäsi on yli kolme lausetta, se kuuluu luultavasti keskusteluun.
+
 ## Ennen kuin kirjoitat: 3 kysymyksen tarkistus
 
 **1. Olemmeko molemmat rauhoittuneet?** Kun tunteet tulvivat yli, kehosi on taistelutilassa etkä kuule kunnolla. Julie Schwartz Gottman ehdottaa taukoa, joka voi kestää noin 20 minuutista 24 tuntiin, ja ajankohtaa, josta sovitte yhdessä. Jos sydän hakkaa yhä, paras viesti on lyhyt viesti, joka antaa sinulle aikaa.
@@ -40,6 +42,12 @@ Yhteenvetona: lyhyt ja lämmin viesti riidan jälkeen auttaa. Pitkä viesti, jok
 | "Anteeksi, että korotin ääntäni." | "Anteeksi, että korotin ääntäni, mutta olit mahdoton." |
 | "Voidaanko puhua tänään illallisen jälkeen?" | "Ja kun kerran ollaan tässä, se viime viikonlopun juttu..." |
 | "Rakastan sinua, silloinkin kun riitelemme." | Kuuden kappaleen viesti kaikesta, mikä on pielessä |
+
+:::read Lue myös
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Tänä iltana, huomenna ja seuraavalla viikolla
+/blog/how-to-apologize-to-your-partner/ | Näin pyydät kumppaniltasi anteeksi vilpittömästi | Kun viestin täytyy olla anteeksipyyntö
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Jos hän ei vastaa
+:::
 
 ## 20 viestiä riidan jälkeen tilanteen mukaan
 
@@ -89,6 +97,10 @@ Kattavan oppaan toimivista anteeksipyynnöistä löydät artikkelista [anteeksip
 > **Miksi silta toimii ja essee ei**
 > Siltaviestillä on yksi tehtävä: se kertoo kumppanille, että olette yhä samassa joukkueessa. Pitkä essee pyytää häntä lukemaan koko puolustuspuheesi yksin, ilman äänensävyä, joka pehmentäisi sitä, ja päättämään, miten vastata. Useimmat reagoivat siihen kuin hyökkäykseen: puolustautumalla.
 
+:::tool check
+Kirjoititko jo jotain? Tarkista se ennen kuin painat lähetä
+:::
+
 ## Mitä ei kannata lähettää riidan jälkeen
 
 - **"Meidän pitää puhua."** Ilman asiayhteyttä se kuulostaa eron enteeltä. Lisää mistä ja milloin: "Voidaanko puhua illalla tämän aamun jutusta?"
@@ -109,6 +121,8 @@ Jokaisen tämän listan viestin tavoite on saada teidät oikeaan keskusteluun, j
 Jos minun pitäisi valita listalta yksi viesti, se olisi se, joka ehdottaa aikaa puhua. Se muuttaa jännittyneen hiljaisuuden suunnitelmaksi ja kertoo kumppanille, ettei suhde ole kyseenalainen.
 
 Jos olet kirjoittanut ja poistanut saman viestin viisi kertaa, Message check voi näyttää, miten se todennäköisesti otetaan vastaan, ennen kuin painat lähetä, ja ehdottaa lempeämpää versiota, jos se kuulostaa kylmältä tai puolustelevalta.
+
+Minun näkemykseni: paras viesti riidan jälkeen usein vain pohjustaa keskustelua: "Voidaanko puhua tänä iltana? Minulla on ikävä sinua." Se ei ratkaise mitään, eikä sen tarvitsekaan.
 
 ## Nopeat vastaukset
 

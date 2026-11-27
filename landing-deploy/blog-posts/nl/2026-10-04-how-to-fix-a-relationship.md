@@ -24,6 +24,13 @@ Er zijn twee belangrijke uitzonderingen. Ben je bang voor je partner, voel je je
 | De vonk is gedoofd | Liegen of vreemdgaan dat doorgaat |
 | Stress heeft jullie uit elkaar gedreven | Een verslaving die niet behandeld wordt |
 
+:::stats Wat het onderzoek van Gottman ontdekte
+96% | van de keren voorspelden de eerste drie minuten van een gesprek hoe het zou eindigen
+5 op 1 | de verhouding tussen positieve en negatieve interacties die stabiele stellen tijdens een conflict aanhouden
+86% | van de kleine pogingen tot aandacht werd warm ontvangen door stellen die zes jaar later nog samen waren, tegenover 33% bij stellen die scheidden
+bron: onderzoek van John Gottman en collega's (zie bronnen hieronder)
+:::
+
 ## Stap 1: Bepaal wat "beter" betekent
 
 "Het herstellen" is te vaag om mee aan de slag te gaan. Maak voordat je met je partner praat voor jezelf duidelijk wat er anders zou voelen als het beter ging. Meer genegenheid? Een eerlijkere verdeling thuis? Je gehoord voelen? Schrijf het op in een of twee zinnen. Zo voorkom je dat jullie over alles ruziën en kun je om iets concreets vragen.
@@ -49,6 +56,14 @@ Je hoeft niet perfect te zijn. Merk alleen op in welke je het vaakst vervalt en 
 > **Waarom ze eerst weg moeten**
 > Elke ruiter duwt de ander in de verdediging, en wie zich verdedigt, kan niet luisteren. Daarom kunnen stellen jarenlang over hetzelfde ruziën zonder verder te komen. De ruiters weghalen lost het probleem op zich niet op. Het schept de voorwaarden waaronder een probleem opgelost kan worden.
 
+Mijn mening: als je maar één stap lukt, laat het deze zijn. Je kunt niets oplossen midden in een ruzie, dus leren pauzeren is wat alle andere stappen mogelijk maakt.
+
+:::read Lees ook
+/blog/relationship-advice-communication-habits/ | Zo communiceer je beter in je relatie | 7 gewoontes die veranderen hoe jullie ruziemaken
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Vanavond, morgen en de week erna
+/blog/relationship-problems-that-keep-coming-back/ | Waarom hebben we steeds dezelfde ruzie? | Wat er meestal onder zit
+:::
+
 ## Stap 3: Voer één klein gesprek over één ding
 
 Sla het gesprek over "hoe het met de relatie staat" over. Kies één onderwerp en een rustig moment, niet direct na het werk en niet midden in een ruzie. Hoe je begint, is belangrijker dan bijna al het andere: in Gottmans onderzoek voorspelden de eerste drie minuten van een gesprek in 96% van de gevallen hoe het zou aflopen.
@@ -68,6 +83,10 @@ Een praktische manier om te beginnen:
 - **Zeg elke dag één concreet bedankje.** "Bedankt dat je de auto hebt geregeld, dat scheelt me echt."
 - **Neem elke avond tien minuten om echt te praten.** Niet over logistiek. Over hoe de dag echt voelde.
 - **Plan één ding per week dat niets met problemen te maken heeft.** Een wandeling, een etentje, een film. Onze [vragen voor een date-avond](/blog/date-night-questions-for-couples/) kunnen helpen om het weer als een date te laten voelen.
+
+:::tool practice
+Wil je een moeilijk gesprek oefenen voordat je het voert?
+:::
 
 ## Stap 5: Vraag wat ieder van jullie nodig heeft
 
@@ -99,6 +118,8 @@ Het komt heel vaak voor dat de een gemotiveerder is dan de ander, zeker in het b
 Maar op de lange termijn heeft een relatie twee mensen nodig. Probeer je het al lang alleen en verandert er niets, zeg dat dan duidelijk en rustig. Hoe je partner op dat gesprek reageert, is belangrijke informatie.
 
 Probeer: "Ik doe echt mijn best om het beter te maken tussen ons, en ik moet weten dat jij dat ook wilt. Wat ben jij bereid te doen?"
+
+Mijn mening: één persoon kan de toon van een relatie meer veranderen dan hij of zij denkt, maar niet eeuwig in z'n eentje. Als jij na maanden de enige bent die het probeert, is dat de moeite waard om hardop te zeggen.
 
 ## Hoe lang duurt het?
 

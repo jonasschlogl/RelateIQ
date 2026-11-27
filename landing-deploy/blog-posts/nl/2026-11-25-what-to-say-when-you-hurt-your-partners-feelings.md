@@ -26,6 +26,8 @@ Simpel gezegd: voordat je partner jouw kant kan horen, moet hij of zij zich geho
 
 **Snelle test:** wil je weten hoe jij meestal sorry zegt? Onze [test over je excuusstijl](/quiz/apology-style/), in het Engels en in 2 minuten, kan het je laten zien.
 
+Mijn mening: het moeilijkste is jezelf niet meteen uitleggen. Je bedoelingen doen ertoe, maar ze komen veel beter aan nadat je partner zich gehoord voelt, niet ervoor.
+
 ## De eerste vijf minuten, stap voor stap
 
 ### 1. Stop en draai je naar je partner toe
@@ -76,6 +78,12 @@ Nu kun je kort uitleggen wat je bedoelde, en het effect toch op je nemen.
 
 **Waarom:** je bedoeling doet ertoe voor je partner, zoals het onderzoek hierboven laat zien. Maar als je ermee begint, klinkt het als verdediging. Als je partner zich eerst begrepen voelt, klinkt het als geruststelling. Voor de complete opbouw van goede excuses, lees [sorry zeggen tegen je partner](/blog/how-to-apologize-to-your-partner/).
 
+:::read Lees ook
+/blog/how-to-apologize-to-your-partner/ | Zo bied je je partner oprecht excuses aan | Wat een volledig excuus inhoudt
+/blog/my-boyfriend-gets-defensive/ | Mijn vriend wordt defensief als ik iets aankaart | Als defensief worden jouw reflex is
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | Als jullie niet in dezelfde kamer zijn
+:::
+
 ## Eerst het effect, dan de bedoeling
 
 De meesten van ons beginnen met de bedoeling, omdat we die het best kennen. Je partner begint met het effect, omdat hij of zij dat heeft meegemaakt. De volgorde waarin je dingen zegt, verandert hoe ze aankomen.
@@ -115,6 +123,10 @@ Je mag nog steeds zeggen wat in de linkerkolom staat, of de eerlijke versie erva
 > **Wat de meeste adviezen missen**
 > Veel adviezen zeggen dat je bedoeling niet uitmaakt, alleen het effect. Dat zegt het onderzoek niet helemaal. Mensen nemen meer afstand als ze denken dat de kwetsuur opzettelijk was, dus je bedoeling doet er voor je partner echt toe. Het probleem is de timing. Begin je met je bedoeling, dan klinkt het als "je gevoelens kloppen niet". Begin je met begrip, dan wordt dezelfde uitleg goed nieuws: "Ik wilde je geen pijn doen, en het raakt me toch dat het gebeurde."
 
+:::tool practice
+Wil je oefenen wat je gaat zeggen voor het gesprek?
+:::
+
 ## Wat je beter niet zegt
 
 - **"Sorry dat je het zo voelt."** Het verontschuldigt zich voor de gevoelens van je partner, niet voor wat jij deed.
@@ -135,6 +147,8 @@ Eén kwetsuur is een gesprek. Steeds dezelfde kwetsuur is een patroon dat het wa
 Als ik maar één stap uit deze gids mocht houden, zou het stap 2 zijn. Terugzeggen wat je hoorde voelt bijna te simpel, maar het verandert de hele temperatuur van het gesprek.
 
 Weet je dat er een moeilijk gesprek aankomt? In Partner Practice kun je het oefenen met een AI die je partner speelt, zodat de rustige, niet-defensieve versie eruit komt als het ertoe doet.
+
+Mijn mening: als dezelfde opmerking de ander blijft kwetsen, is het excuus niet langer de oplossing. De gewoonte veranderen wel. Dat is het deel dat vertrouwen herstelt.
 
 ## Snelle antwoorden
 

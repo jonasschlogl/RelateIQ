@@ -33,11 +33,19 @@ Rezultatul: 91,4% dintre griji nu s-au adeverit. Iar dintre cele care s-au adeve
 
 A fost un studiu mic, cu oameni care au o tulburare de anxietate, așa că nu dovedește că 91% dintre grijile *tale* din relație sunt greșite. Dar arată ceva util: grija se simte ca o predicție, iar de obicei e o predicție proastă. Senzația de certitudine care vine cu o spirală la 2 noaptea spune mult mai multe despre nivelul tău de anxietate decât despre ce se întâmplă de fapt.
 
+Părerea mea: nu cred că lecția e "grijile tale sunt mereu greșite". E că mintea ta e un narator mult mai zgomotos decât e de precis. Să știi asta face puțin mai ușor să aștepți înainte să reacționezi.
+
 ## Overthinkingul și anxietatea de atașament
 
 La unii oameni, overthinkingul e legat de ceea ce psihologii numesc anxietate de atașament: o îngrijorare mai puternică că partenerul s-ar putea îndepărta sau te-ar putea respinge. E una dintre cele două dimensiuni principale pe care le folosesc cercetătorii ca să descrie atașamentul adult, alături de evitare. Oamenii cu mai multă anxietate de atașament tind să observe mai repede micile semne de distanță și să le interpreteze mai negativ.
 
 Dacă vrei să înțelegi mai bine partea asta, o explicăm în ghidul nostru despre [stilurile de atașament în relație](/blog/how-attachment-styles-work-in-relationships/). Nu e un diagnostic, doar un mod util de a observa un tipar. Iar partea plină de speranță: anxietatea de atașament tinde să scadă la vârsta adultă și răspunde bine la genul de exersare descris mai jos.
+
+:::read Citește și
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Când îndoiala nu ține de fapt de partener
+/blog/trust-issues-in-a-relationship/ | Cum să depășești problemele de încredere | De ce liniștirea nu ține
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Când tăcerea pornește spirala
+:::
 
 ## Cum arată o spirală de overthinking
 
@@ -126,6 +134,10 @@ E o rugăminte, nu o regulă pentru comportamentul partenerului. Dacă observi c
 
 Dintre cele șapte, cu pasul trei aș începe eu. Să notezi alte trei explicații pare caraghios prima dată. E și unul dintre cele mai simple instrumente din tot articolul, și unul dintre cele mai eficiente.
 
+:::tool coach
+Ești prinsă într-o spirală chiar acum? Vorbește despre asta înainte să-i scrii
+:::
+
 ## Un exemplu complet: de la spirală la discuție
 
 > **Exemplu: vinerea seara a lui Jacob**
@@ -144,6 +156,8 @@ Dintre cele șapte, cu pasul trei aș începe eu. Să notezi alte trei explicaț
 Merită spus clar: overthinkingul și o intuiție bună nu sunt același lucru. Dacă partenerul e des necinstit, dispare fără explicații sau te face să te simți mic, disconfortul tău poate fi informație, nu anxietate.
 
 Testul nu e "mă simt îngrijorat?". E "există un tipar repetat de comportament pe care îl pot descrie prin fapte?". Un răspuns întârziat nu e un tipar. Trei promisiuni încălcate într-o lună, descrise fără interpretare, sunt. Dacă poți descrie un tipar, pasul următor e o discuție clară despre acel tipar, nu mai multă analiză în tăcere.
+
+Părerea mea: o grijă care se dovedește întemeiată merită totuși o discuție calmă, nu un dosar perfect. Nu ai nevoie să strângi dovezi ca să ai voie să pui o întrebare.
 
 ## Cum îi spui partenerului că te gândești prea mult
 

@@ -158,3 +158,4 @@ In the US, you can reach the National Domestic Violence Hotline at 1-800-799-723
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Summary on [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

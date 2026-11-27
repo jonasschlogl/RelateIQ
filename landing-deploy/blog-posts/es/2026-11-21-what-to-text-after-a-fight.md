@@ -26,6 +26,8 @@ En resumen: un mensaje breve y cálido después de una pelea ayuda. Un mensaje l
 
 **Test rápido:** ¿quieres saber cómo sueles actuar en una pelea? Prueba nuestro [test sobre tu estilo en los conflictos](/quiz/fight-style/), en inglés y de 2 minutos.
 
+Mi opinión: mi regla es sencilla. Escribe para reconectar, habla para resolver. Si tu mensaje tiene más de tres frases, probablemente debería ser una conversación.
+
 ## Antes de escribir: una comprobación en 3 preguntas
 
 **1. ¿Nos hemos calmado los dos?** Cuando estás desbordado, tu cuerpo está en modo pelea y no escuchas bien. Julie Schwartz Gottman sugiere una pausa de entre unos 20 minutos y 24 horas, con un momento que acordéis juntos. Si el corazón todavía te va a mil, el mejor mensaje es uno corto que te dé tiempo.
@@ -40,6 +42,12 @@ En resumen: un mensaje breve y cálido después de una pelea ayuda. Un mensaje l
 | «Siento haber levantado la voz.» | «Siento haber levantado la voz, pero estabas imposible.» |
 | «¿Hablamos esta noche después de cenar?» | «Y ya que estamos, lo del fin de semana pasado...» |
 | «Te quiero, incluso cuando discutimos.» | Un mensaje de seis párrafos sobre todo lo que va mal |
+
+:::read Lecturas relacionadas
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Esta noche, mañana y la semana siguiente
+/blog/how-to-apologize-to-your-partner/ | Cómo pedir perdón a tu pareja de forma sincera | Cuando el mensaje tiene que ser una disculpa
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Si no te contesta
+:::
 
 ## 20 mensajes para después de una pelea, según la situación
 
@@ -89,6 +97,10 @@ Para una guía completa sobre disculpas que funcionan, lee [cómo pedir perdón 
 > **Por qué funciona el puente y no la carta larga**
 > Un mensaje puente hace una sola cosa: le dice a tu pareja que seguís en el mismo equipo. Una carta larga le pide que lea todo tu alegato, a solas, sin tono de voz que lo suavice, y que decida cómo responder. La mayoría reacciona como ante un ataque: defendiéndose.
 
+:::tool check
+¿Ya has escrito algo? Revísalo antes de enviarlo
+:::
+
 ## Qué no enviar después de una pelea
 
 - **«Tenemos que hablar.»** Sin contexto, suena a aviso de ruptura. Añade de qué y cuándo: «¿Hablamos esta noche de lo de esta mañana?»
@@ -109,6 +121,8 @@ El objetivo de cada mensaje de esta lista es llevaros a una conversación de ver
 Si tuviera que quedarme con un mensaje de esta lista, sería el que propone un momento para hablar. Convierte un silencio tenso en un plan y le dice a tu pareja que la relación no está en duda.
 
 Si has escrito y borrado el mismo mensaje cinco veces, Message check puede mostrarte cómo es probable que suene antes de enviarlo, y sugerirte una versión más suave si parece frío o a la defensiva.
+
+Mi opinión: el mejor mensaje después de una pelea muchas veces solo prepara la conversación: "¿Hablamos esta noche? Te echo de menos." No arregla nada, y no le hace falta.
 
 ## Respuestas rápidas
 

@@ -25,6 +25,15 @@ Dus, geen druk, maar deze avond is wat voorbereiding waard. Het goede nieuws: go
 
 Betrokkenheid is wel iets anders dan goedkeuring. In een studie uit 2024 onder 464 jongvolwassenen in Slovenië vonden Timotej Glavač en Melita Puklek Levpušček dat mensen met een meer opdringerige vader vaak kortere relaties hadden. Ouders die warm en steunend zijn, helpen een stel. Ouders die het willen sturen, meestal niet.
 
+Mijn mening: ik zou stoppen met proberen indruk te maken en me richten op prettig gezelschap zijn. De meeste ouders willen vooral zien dat hun kind goed behandeld wordt, en dat kun je laten zien zonder één perfect antwoord.
+
+:::stats Waarom de familie ontmoeten zo'n grote stap voelt
+72% | zegt dat een partner meenemen naar huis met de feestdagen een relatie officieel laat voelen
+36% | zegt dat hun familie gênante verhalen over hen aan een partner heeft verteld
+23% | zegt dat hun familie hun partner ongepaste vragen stelde
+bron: [Enquête van Tawkify](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) onder 1.000 Amerikanen, gerapporteerd door DatingNews
+:::
+
 ## Voordat je gaat: 3 vragen aan je partner
 
 1. **"Waar zijn ze trots op, en waar zijn ze gevoelig voor?"** Dit is je kaart met goede en slechte onderwerpen.
@@ -32,6 +41,14 @@ Betrokkenheid is wel iets anders dan goedkeuring. In een studie uit 2024 onder 4
 3. **"Als het ongemakkelijk wordt, wat is dan ons teken?"** Een woord, een blik, een hand op de rug. Het helpt meer dan je denkt.
 
 Ik zou zeggen dat deze korte voorbespreking meer uitmaakt dan alles wat je op de dag zelf zegt. De meeste ongemakkelijke momenten komen doordat je de regels niet kent die iedereen anders wel kent.
+
+:::read Lees ook
+/blog/holidays-with-your-partners-family/ | De feestdagen met de familie van je partner | Een plan voor kerst
+/blog/relationship-advice-communication-habits/ | Zo communiceer je beter in je relatie | Gewoontes die helpen in elk gespannen moment
+/blog/how-to-apologize-to-your-partner/ | Zo bied je je partner oprecht excuses aan | Als iets wat je zei verkeerd valt
+:::
+
+**Snelle quiz:** Weet je niet zeker wat je die dag van je partner nodig hebt? De [quiz over behoeften in je relatie](/quiz/relationship-needs/) van 2 minuten, in het Engels, helpt je het te verwoorden voordat je gaat.
 
 ## De 12 momenten, en wat je zegt
 
@@ -110,6 +127,10 @@ Bedank hen bij naam en noem één ding dat je echt leuk vond.
 
 Een kort berichtje achteraf via je partner ("Bedank je moeder nog even voor het eten") is een mooie afsluiting.
 
+:::tool practice
+Zenuwachtig voor een bepaalde vraag? Oefen eerst je antwoord
+:::
+
 ## Achteraf: de nabespreking
 
 Vraag je partner hoe het volgens hem of haar ging, en luister naar het antwoord zonder te gaan malen. Was er spanning, maak dan onderscheid tussen *stijl* en *afwijzing*. Sommige families zijn in het begin tegen iedereen gereserveerd.
@@ -117,6 +138,8 @@ Vraag je partner hoe het volgens hem of haar ging, en luister naar het antwoord 
 Het helpt ook om het langetermijnonderzoek van psycholoog Terri Orbuch te kennen, die getrouwde stellen 26 jaar volgde. Ze vond dat als mannen zich dicht bij de ouders van hun vrouw voelden, het scheidingsrisico van het stel lager was, maar als vrouwen heel close waren met de ouders van hun man, het risico juist hoger was, mogelijk omdat de nabijheid het moeilijker maakte om grenzen te stellen. Het doel is niet om van de ene op de andere dag beste vrienden te worden. Het is warmte en respect met gezonde grenzen.
 
 Breng je binnenkort de feestdagen met hen door, dan gaat onze gids over [de feestdagen met de familie van je partner](/blog/holidays-with-your-partners-family/) over langere bezoeken. En wil je je partner vóór de grote dag beter leren kennen, probeer dan een paar van onze [diepe vragen voor je partner](/blog/deep-questions-to-ask-your-partner/), vooral die over de jeugd.
+
+Mijn mening: de nabespreking is belangrijker dan het bezoek. Een ongemakkelijk etentje is makkelijk samen om te lachen, maar alleen als jullie er op weg naar huis lief over praten in plaats van het ieder voor zich te herkauwen.
 
 ## Als jij degene bent die je partner voorstelt
 
@@ -149,3 +172,4 @@ Geef het tijd. Eerste ontmoetingen zijn vaak stroef, en veel ouders ontdooien la
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Samenvatting van [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), over het langetermijnonderzoek van Terri Orbuch onder getrouwde stellen
 - Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Hrčak](https://hrcak.srce.hr/en/319709)
+- DatingNews: [For 72% of daters, bringing a partner home signals commitment](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/), Tawkify survey of 1,000 Americans

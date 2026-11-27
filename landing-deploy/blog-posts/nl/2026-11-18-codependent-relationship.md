@@ -52,6 +52,14 @@ Tel hoe vaak je vorige week een klein "eigenlijk heb ik liever..." hebt ingeslik
 
 Van de drie zou ik beginnen met de nee-test. Als nee zeggen tegen je partner gevaarlijk voelt in plaats van alleen ongemakkelijk, zegt dat meer dan welk label ook.
 
+Mijn mening: de test "zou ik het oké vinden als die ander nee zei?" is waar ik mee zou beginnen. Zorgzaamheid overleeft een nee. Codependentie meestal niet.
+
+:::read Lees ook
+/blog/how-to-support-your-partner-when-stressed/ | Zo steun je je partner bij stress | Steunen zonder alles te dragen
+/blog/signs-of-a-toxic-relationship/ | Is mijn relatie toxisch? | Als het meer is dan te veel zorgen
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Als de angst om je partner te verliezen het helpen aandrijft
+:::
+
 ## Wat onderzoek echt zegt (en wat niet)
 
 Codependentie is een populair woord, maar een rommelig wetenschappelijk begrip. Het is geen diagnose, er is geen afgesproken definitie en veel van wat je online leest, gaat verder dan het bewijs. Dit is redelijk goed onderbouwd.
@@ -80,6 +88,12 @@ Je hoeft je relatie niet helemaal om te gooien. Verandering begint hier heel kle
 > Priya plande hun vakanties altijd rond wat Sam wilde, en voelde dan de hele reis stille wrok. Dit jaar probeerde ze test 3 en telde ze hoe vaak ze een eigen voorkeur had ingeslikt. Elf keer in één weekend plannen. Dus zei ze, een beetje bibberig: "Ik besef dat ik altijd meega met wat jij kiest en dan ga mokken, en dat is voor ons allebei niet eerlijk. Deze keer zou ik heel graag een stedentrip doen." Sam lachte en zei dat hij had gedacht dat ze dol was op stranden. De vakantie was niet het punt. Het punt was dat zij er zelf in voorkwam.
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
+
+Mijn mening: begin kleiner dan je denkt. Deze week één keer zeggen "die laat ik aan jou over" doet meer dan een grote belofte om alles te veranderen.
+
+:::tool practice
+Wil je oefenen om vriendelijk nee te zeggen? Oefen eerst
+:::
 
 ## Woorden voor als het moeilijk voelt
 

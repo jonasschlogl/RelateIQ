@@ -20,6 +20,10 @@ Här nedan hittar du fem enkla format, 40 frågor att leka dem med och lite fors
 
 **Samtal går bättre än du tror.** Forskning av Michael Kardas, Amit Kumar och Nicholas Epley visade att människor genomgående överskattar hur pinsamt ett djupare samtal kommer att bli. Så om en fråga känns lite mycket i huvudet kommer den förmodligen att landa bättre än du tror.
 
+Min åsikt: jag tror inte att poängen med de här frågorna är svaren. Det är halvtimmen när ni båda blir nyfikna på varandra igen, något som upptagna par tyst tappar bort.
+
+**Snabbtest:** Vill ni värma upp före frågorna? Gör det 2 minuter långa [kärleksspråkstestet](/quiz/love-language/), på engelska, tillsammans och jämför era svar.
+
 ## 5 lekar att leka med frågorna
 
 ### 1. Frågeburken
@@ -53,6 +57,12 @@ I stället för frågor, använd uppmaningar som börjar med "Berätta om en gå
 **Passar bäst för:** en lugn kväll, en lång promenad, en kväll med en flaska vin.
 
 Min favorit är heta stolen, mest för att det är den folk är mest nervösa för och sedan tycker mest om.
+
+:::read Läs också
+/blog/deep-questions-to-ask-your-partner/ | Djupa frågor att ställa till din partner | 30 frågor som går en nivå djupare
+/blog/how-to-say-i-love-you-without-words/ | Så visar du kärlek utan ord | 25 små gester för alla sorters dagar
+/blog/long-distance-relationship-tips/ | Så får ni ett distansförhållande att fungera | Frågorna fungerar också över video
+:::
 
 ## 40 frågor till dejtkvällen
 
@@ -110,6 +120,10 @@ Min favorit är heta stolen, mest för att det är den folk är mest nervösa f�
 
 För mer allvarliga, sårbara frågor, se vår fullständiga guide med [djupa frågor att ställa till din partner](/blog/deep-questions-to-ask-your-partner/), som också tar upp hur du bemöter ett tungt svar.
 
+:::tool coach
+Planerar du en dejtkväll och har fastnat? Fråga coachen
+:::
+
 ## Gör själva kvällen lite annorlunda
 
 Frågorna fungerar bäst när miljön känns annorlunda än en vanlig tisdag. Wilcox och Dews rapport och äldre experiment av Arthur Aron och kollegor pekar åt samma håll: att göra något nytt tillsammans går ihop med att känna sig mer nöjd med förhållandet. Det behöver inte vara dyrt:
@@ -133,6 +147,8 @@ Alla älskar inte frågor. Börja med det här eller det där, som nästan inte 
 Om ni är isär fungerar alla lekarna här i ett videosamtal. Fler idéer finns i våra [tips för distansförhållanden](/blog/long-distance-relationship-tips/). Och om kvällen blir ett samtal om något som har stört en av er hjälper vår guide om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) er att hålla tonen vänlig.
 
 *Den här artikeln är allmän information, inte terapi eller medicinsk rådgivning.*
+
+Min åsikt: om din partner himlar med ögonen åt "frågor", hoppa över formatet och behåll andan. Ställ en bra fråga på en promenad. Nyfikenhet behöver ingen kortlek.
 
 ## Källor
 

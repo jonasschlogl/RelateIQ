@@ -24,6 +24,10 @@ Oavsett om otroheten upptäcktes eller erkändes är det här ögonblicket då m
 
 Ett sätt att säga det: "Jag gjorde det här. Det är mitt ansvar, inte ditt. Jag kommer att svara ärligt på dina frågor."
 
+Min åsikt: hur sanningen kommer fram spelar stor roll. Om det är du som var otrogen gör det ont att berätta hela historien på en gång, men att droppa ut den under flera månader är oftast det som gör tilliten omöjlig att bygga upp igen.
+
+**Snabbtest:** Om det är du som var otrogen visar det 2 minuter långa [testet om ursäktsstil](/quiz/apology-style/), på engelska, hur du brukar be om ursäkt och vad som kanske saknas.
+
 ## Steg 2: De första reaktionerna
 
 De första veckorna och månaderna är oftast de mest kaotiska: ilska, sorg, frågor klockan två på natten, att vilja ha detaljer, att inte vilja ha detaljer, att vilja ha närhet, att vilja ha avstånd, ibland allt på samma dag.
@@ -36,6 +40,12 @@ De första veckorna och månaderna är oftast de mest kaotiska: ilska, sorg, fr�
 
 > **Varför upprepade frågor inte är ett misslyckande**
 > Den som blivit sviken ställer ofta samma frågor många gånger. För den otrogna partnern kan det kännas som att samtalet går i cirklar. Det gör det inte. Varje gång svaret är detsamma, och ges utan irritation, får den sviknas hjärna lite mer bevis för att sanningen nu är stabil. Konsekvens är sättet som förtroendets första lager, förutsägbarhet, börjar växa tillbaka.
+
+:::read Läs också
+/blog/trust-issues-in-a-relationship/ | Så kommer du över tillitsproblem | När tvivlet kommer tillbaka
+/blog/how-to-apologize-to-your-partner/ | Så ber du din partner om ursäkt på riktigt | Vad en äkta ursäkt innehåller
+/blog/should-i-break-up-with-my-partner/ | Ska jag göra slut med min partner? | Om du inte är säker på att stanna är rätt
+:::
 
 ## Steg 3: Stabiliseringen
 
@@ -53,6 +63,10 @@ Testa (den svikna): "Jag har en tung dag med det här. Jag behöver inte att du 
 Testa (den otrogna): "Tack för att du berättar. Vad skulle hjälpa just nu?"
 
 Det jag skulle vilja att båda hörde är att det här steget är långsamt med flit. Förtroende kommer inte tillbaka av ett enda fantastiskt samtal. Det kommer tillbaka av hundra tråkiga, konsekventa dagar.
+
+:::tool coach
+Behöver du ett privat ställe att tänka igenom det här?
+:::
 
 ## Steg 4: Nystarten
 
@@ -74,6 +88,8 @@ Oftast många månader, ofta ett år eller mer. Det beror på hur länge otrohet
 Att bygga upp förtroendet kräver att den otrogna partnern tar fullt ansvar och att den svikna partnern fritt väljer att försöka. Om affären fortsätter, om lögnerna fortsätter eller om du pressas eller får skulden för sveket kan det vara varken tryggt eller sunt att stanna. Våra guider om [huruvida du ska göra slut](/blog/should-i-break-up-with-my-partner/) och [att komma över ett uppbrott](/blog/how-to-get-over-a-breakup/) kan hjälpa dig om det är rätt att gå.
 
 En terapeut med erfarenhet av otrohet kan hjälpa i båda fallen. Om du inte vet vad du ska säga tar [hur du ber din partner om ursäkt](/blog/how-to-apologize-to-your-partner/) upp den första ursäkten. För tvivlet som dröjer sig kvar efteråt, läs om [tillitsproblem i förhållandet](/blog/trust-issues-in-a-relationship/).
+
+Min åsikt: att bestämma sig för att gå efter en otrohet är inte att misslyckas med att läka. Att bygga upp igen är ett bra utfall, och ett rent, ärligt avslut är ett annat.
 
 ## Snabba svar
 

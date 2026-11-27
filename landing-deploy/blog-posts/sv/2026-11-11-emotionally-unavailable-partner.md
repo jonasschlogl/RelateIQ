@@ -20,6 +20,16 @@ Oavsett orsak är upplevelsen för partnern ofta liknande: du känner till hens 
 
 Det skapar också ofta en loop. En stor översikt av Paul Schrodt och kollegor fann att mönstret *krav/tillbakadragande*, där den ena trycker på för att prata medan den andra drar sig undan, hänger ihop med lägre nöjdhet i relationen för båda. Ju mer du trycker på, desto mer drar hen sig undan, och ju mer hen drar sig undan, desto mer trycker du på. Att förstå *varför* hen drar sig undan är första steget ut ur den loopen.
 
+Min åsikt: det mest smärtsamma är oftast inte avståndet i sig. Det är att inte veta om det handlar om dig. Därför är det så viktigt att lista ut vilket skäl som passar.
+
+:::stats Ett skäl som är vanligare än många tror
+7,5 % | av männen i en studie med 155 gifta par hade hög alexitymi, verkliga svårigheter att identifiera och beskriva känslor
+6,5 % | av kvinnorna hade det, i linje med uppskattningar för befolkningen i stort
+källa: Frye-Cox och Hesse, studie med 155 gifta par (se källor nedan)
+:::
+
+**Snabbtest:** Vill du se var ni båda kan befinna er? Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, är en bra början.
+
 ## Orsak 1: Undvikande anknytning
 
 **Hur det ser ut:** närhet följd av avstånd. En underbar helg, sedan en tyst vecka. Stark självständighet. Obehag inför "vart är det här på väg"-samtal. Ofta kärleksfull på praktiska sätt.
@@ -37,6 +47,12 @@ Det skapar också ofta en loop. En stor översikt av Paul Schrodt och kollegor f
 **Vad som ligger under:** *alexitymi*, ett personlighetsdrag som gör det svårt att känna igen och beskriva känslor. I en studie av 155 gifta par fann Nick Frye-Cox och Colin Hesse det hos ungefär 7,5 % av männen och 6,5 % av kvinnorna, i linje med uppskattningar för befolkningen i stort. Alexitymi hängde ihop med lägre kvalitet i äktenskapet, till stor del via ensamhet och svårigheter med nära kommunikation.
 
 **Vad som hjälper:** mindre, mer konkreta frågor. I stället för "Hur känner du inför din pappa?", prova "På en skala från 1 till 10, hur stressad var du efter det samtalet?" eller "Var det mer irriterande eller mer sårande?" Lägg märke till hens omtanke i handling. Och vet att terapi kan hjälpa människor att bygga upp ett känsloordförråd.
+
+:::read Läs också
+/blog/avoidant-attachment-partner/ | Undvikande anknytning hos en partner | 8 tecken och hur du älskar någon som behöver utrymme
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | 6 sätt att skilja dem åt
+/blog/signs-your-partner-is-losing-interest/ | Tecken på att din partner tappar intresset | Vad varje signal kan betyda
+:::
 
 ## Orsak 3: Hen har lärt sig att känslor inte ska delas
 
@@ -64,6 +80,10 @@ Ett sätt att säga det: "Du behöver inte förklara det perfekt. Även 'i dag v
 
 **Vad som hjälper:** klarhet, inte tålamod. Fråga rakt ut vad hen vill. Om svaret, eller hens beteende de kommande veckorna, säger att hen inte är engagerad, tro på det. Våra guider om [situationships](/blog/situationship/), [tecken på att din partner tappar intresset](/blog/signs-your-partner-is-losing-interest/) och [om du ska göra slut](/blog/should-i-break-up-with-my-partner/) kan hjälpa.
 
+:::tool coach
+Försöker du lista ut vilken som passar? Prata igenom det
+:::
+
 ## Vilken är det?
 
 | Om hen... | Kan det vara... |
@@ -88,6 +108,8 @@ Min ärliga åsikt: orsak 5 är den folk minst vill överväga, och den som är 
 Oavsett orsak får du ha behov. Om det alltid är du som sträcker dig ut kan det glida över i utmattning eller [medberoende](/blog/codependent-relationship/). Behåll vänner du kan vara öppen med, lägg märke till om saker långsamt blir bättre och bestäm vad du behöver på lång sikt. Och om du märker att oron mest är din egen kan vår guide om att [sluta övertänka i relationen](/blog/how-to-stop-overthinking-in-a-relationship/) hjälpa.
 
 Med en partner som stänger av spelar ordvalet stor roll. I Partner Practice kan du prova olika sätt att inleda samtalet med en AI som spelar din partner, så att du hittar de som bjuder in i stället för att pressa.
+
+Min åsikt: du kan ha tålamod med någons skäl och ändå bestämma att relationen inte ger dig tillräckligt. Att förstå varför är inte samma sak som att gå med på att vänta för evigt.
 
 ## Snabba svar
 

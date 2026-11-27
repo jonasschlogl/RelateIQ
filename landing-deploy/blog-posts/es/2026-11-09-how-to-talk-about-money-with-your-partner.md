@@ -22,6 +22,10 @@ Esta guía te da una estructura sencilla para hablar de dinero con tu pareja en 
 
 **Cómo organizáis las cuentas puede importar.** En un experimento con 230 parejas comprometidas o recién casadas, Jenny Olson y sus colegas asignaron al azar a las parejas a abrir una cuenta conjunta, mantener cuentas separadas o hacer lo que quisieran. A lo largo de dos años, las parejas que unieron su dinero en una cuenta conjunta mantuvieron la calidad de su relación, mientras que en los otros grupos bajó. Los investigadores advierten de que una cuenta conjunta no es para todo el mundo, sobre todo cuando hay inestabilidad económica o riesgo de control.
 
+Mi opinión: el dato sobre los gastos ocultos no me sorprende. La mayoría de la gente no oculta dinero por deshonesta. Lo oculta porque la conversación le parece más difícil que el secreto. Hacer la conversación más fácil es la verdadera solución.
+
+**Test rápido:** ¿Te callas o insistes más cuando la conversación sobre dinero se pone tensa? El [test de estilo en los conflictos](/quiz/fight-style/), en inglés y de 2 minutos, os ayuda a saber qué esperar.
+
 ## La cita del dinero: un orden del día en 4 rondas
 
 Elige un momento relajado, no el día en que llega una factura. Hazlo agradable: un café, un paseo, algo de picar. Calcula 45 minutos, no una tarde entera.
@@ -63,6 +67,12 @@ No intentéis resolverlo todo. Tomad una o dos decisiones pequeñas:
 
 Yo resistiría la tentación de saltarte la ronda 1. Hablar de cómo funcionaba el dinero en vuestras familias parece una charla trivial. Suele ser donde se esconde la explicación real de vuestras discusiones.
 
+:::read Lecturas relacionadas
+/blog/relationship-problems-that-keep-coming-back/ | ¿Por qué tenemos siempre la misma pelea? | Cuando el dinero es la pelea que se repite
+/blog/relationship-advice-communication-habits/ | Cómo comunicarse mejor en pareja | 7 hábitos que cambian cómo discutís
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Si la charla sobre dinero salió mal
+:::
+
 ## ¿Qué forma de organizar el dinero os va?
 
 | Forma | Cómo funciona | Puede ir bien a parejas que... |
@@ -72,6 +82,10 @@ Yo resistiría la tentación de saltarte la ronda 1. Hablar de cómo funcionaba 
 | Todo separado | Cada uno paga una parte acordada de los gastos | ...están al principio de la relación o tienen situaciones muy distintas |
 
 El estudio de Olson sugiere que unirlo todo puede ayudar a las parejas a sentirse más unidas, pero lo que más importa es que los dos estéis realmente de acuerdo, y que ninguno se quede sin acceso al dinero.
+
+:::tool practice
+¿Quieres practicar la conversación sobre dinero antes de tenerla?
+:::
 
 ## Qué decir en 4 situaciones difíciles
 
@@ -103,6 +117,8 @@ Empieza por el sentimiento, no por la acusación.
 ## Si la conversación acaba en pelea
 
 Haced una pausa cuando alguno de los dos se sienta desbordado, y retomadlo más tarde. Nuestra guía sobre [hábitos de comunicación](/blog/relationship-advice-communication-habits/) tiene formas de evitar que las discusiones vayan a más, y si se dijo algo hiriente, [cómo pedir perdón a tu pareja](/blog/how-to-apologize-to-your-partner/) puede ayudar. Si el dinero forma parte de un estrés más grande, lee nuestra guía sobre [cómo apoyar a tu pareja cuando está estresada](/blog/how-to-support-your-partner-when-stressed/). Y si estáis a punto de iros a vivir juntos después de una relación a distancia, el dinero es uno de los grandes temas que conviene tratar primero, lee nuestros [consejos para una relación a distancia](/blog/long-distance-relationship-tips/).
+
+Mi opinión: si en vuestra primera cita sobre dinero solo os ponéis de acuerdo en una cosa, que sea la cantidad que cada uno puede gastar sin preguntar. Elimina una cantidad sorprendente de pequeñas peleas.
 
 ## Respuestas rápidas
 

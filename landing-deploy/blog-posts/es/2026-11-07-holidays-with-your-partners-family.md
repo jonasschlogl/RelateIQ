@@ -24,6 +24,15 @@ Si tu pareja es de Estados Unidos, Acción de Gracias suele ser la primera gran 
 - **Planificad juntos los días de viaje.** El día antes y el domingo después están entre los días con más viajes del año en Estados Unidos, así que acordad pronto cuándo salís y cuánto os quedáis.
 - **Pensad ya en la siguiente fiesta.** Si estáis con su familia en Acción de Gracias, es un momento natural para hablar de dónde pasaréis la Navidad, antes de que nadie lo dé por hecho.
 
+:::stats Lo que hace estresantes las fiestas
+89 % | de los adultos estadounidenses dicen que algo de las fiestas les causa estrés
+58 % | mencionan gastar demasiado o no tener suficiente para gastar
+41 % | dicen que su estrés aumenta en las fiestas en comparación con el resto del año
+fuente: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), encuesta a 2.061 adultos de EE. UU. realizada por The Harris Poll, noviembre de 2023
+:::
+
+**Test rápido:** ¿Tiendes a callarte o a hablar cuando sube la tensión familiar? El [test de estilo en los conflictos](/quiz/fight-style/), en inglés y de 2 minutos, os ayuda a saber qué esperar el uno del otro.
+
 ## Dos semanas antes: la conversación para planificar
 
 La mayoría de las peleas de pareja en las fiestas empiezan por expectativas distintas, no por la familia en sí. Tened una conversación tranquila antes de ir, a ser posible dando un paseo o tomando un café, no la noche anterior.
@@ -41,6 +50,14 @@ Dilo de forma sencilla: «Quiero que esto salga bien para los dos. ¿Qué es lo 
 La psicóloga Terri Apter, que ha estudiado a fondo la relación con la familia política, encontró que más del 60 % de las mujeres, frente a alrededor del 15 % de los hombres, describía una relación difícil con la madre de su pareja. Si es tu caso, dilo antes de la visita, no a mitad de ella.
 
 Si solo haces una cosa de esta guía, que sea esta conversación. Muchísimas explosiones navideñas empiezan con dos personas que habían dado por hechos, en silencio, planes distintos.
+
+Mi opinión: la conversación para planificar lo es todo. Yo la tendría aunque creáis que estáis de acuerdo en todo, porque las suposiciones que nadie dice en voz alta son las que explotan al tercer día.
+
+:::read Lecturas relacionadas
+/blog/meeting-your-partners-parents/ | Conocer a los padres de tu pareja por primera vez | Qué decir en los 12 momentos más incómodos
+/blog/how-to-support-your-partner-when-stressed/ | Cómo ayudar a tu pareja con el estrés | Para cuando la visita le pasa factura
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | Si el viaje de vuelta acaba en discusión
+:::
 
 ## El día antes: la reunión informativa
 
@@ -65,6 +82,10 @@ Cuenta con que tu pareja cambie un poco. Mucha gente vuelve a su papel familiar 
 **Elige tus batallas.** La mayoría de las molestias de las fiestas no merecen plantarse: cómo se hace el pavo, el volumen de la tele, las opiniones de una tía abuela. Guarda tu energía para las una o dos cosas que de verdad importan.
 
 **Cuando te sientas desbordado, sal un momento.** Si notas el corazón acelerado y que se te acaba la paciencia, tómate 20 minutos antes de decir nada. El Gottman Institute recomienda este tipo de pausa porque es muy difícil escuchar o hablar con calma cuando el cuerpo está en modo de lucha o huida.
+
+:::tool practice
+¿Te da miedo una conversación concreta con su familia? Ensáyala primero
+:::
 
 ## Los momentos tensos: qué decir en la mesa
 
@@ -108,6 +129,8 @@ No hay una única forma justa. Las parejas suelen:
 Lo que más importa es que lo decidáis juntos, y que ninguno de los dos se sienta siempre en segundo lugar.
 
 Si vas a llevar a tu pareja a casa por primera vez, lee nuestra guía sobre [conocer a los padres de tu pareja](/blog/meeting-your-partners-parents/), y si vais a pasar las fiestas separados, nuestros [consejos para una relación a distancia](/blog/long-distance-relationship-tips/) incluyen ideas para estas fechas. Cuando la tensión os salpica a los dos, [cómo pedir perdón a tu pareja](/blog/how-to-apologize-to-your-partner/) y nuestra guía sobre [hábitos de comunicación](/blog/relationship-advice-communication-habits/) pueden ayudar.
+
+Mi opinión: justo no tiene por qué significar igual cada año. Lo importante es que los dos sintáis que el plan lo hicisteis juntos, no que el calendario cuadre al día.
 
 ## Respuestas rápidas
 

@@ -22,6 +22,8 @@ Så här kommer 25 sätt att säga "jag älskar dig" utan ord, sorterade efter v
 
 **Snabbtest:** Osäker på vilka gester din partner skulle uppskatta mest? Gör det kostnadsfria [testet om kärleksspråk](/quiz/love-language/) tillsammans, på engelska och på 2 minuter, och jämför svaren.
 
+Min åsikt: fyndet om tacksamhet är min favorit här. Det betyder att gesten bara är halva saken. Den andra halvan är att din partner lägger märke till den, så det är värt att säga "jag såg det, tack" högt.
+
 ## Stressiga morgnar
 
 1. Gör hens kaffe eller te precis som hen vill ha det, utan att fråga.
@@ -37,6 +39,12 @@ Så här kommer 25 sätt att säga "jag älskar dig" utan ord, sorterade efter v
 8. Gör hushållssysslan hen hatar, utan att påpeka det.
 9. Sätt dig nära i soffan i stället för i var sin ände.
 10. När hen delar något, vänd dig mot det: titta upp, ställ en fråga, reagera.
+
+:::read Läs också
+/blog/love-languages/ | Finns kärleksspråk på riktigt? | Vad forskningen faktiskt säger
+/blog/how-to-keep-the-spark-alive/ | Så håller ni gnistan vid liv | Ta reda på vilken gnista som falnar
+/blog/how-to-support-your-partner-when-stressed/ | Så stöttar du din partner vid stress | Vad du kan säga och vad du kan hoppa över
+:::
 
 ## Tunga dagar
 
@@ -59,6 +67,10 @@ Om jag fick välja en från hela listan skulle det vara nummer 13: att i tysthet
 20. Säg tack för något vardagligt hen gör varje dag och som du har slutat lägga märke till.
 
 Om allt är okej men känns lite platt kan vår guide om hur man [håller gnistan vid liv i ett långt förhållande](/blog/how-to-keep-the-spark-alive/) hjälpa dig att hitta det som saknas.
+
+:::tool coach
+Osäker på vad som skulle betyda mest för din partner? Prata igenom det
+:::
 
 ## På avstånd
 
@@ -91,6 +103,8 @@ Lägg sedan märke till vad som får hen att lysa upp. Och kom ihåg Algoes fynd
 ## När det känns svårt att visa kärlek
 
 Om du växte upp i en familj där man inte visade ömhet kan gester kännas konstiga i början. Börja med de minsta: en kaffe, ett sms, en hand på axeln. De blir lättare med övning. Om din partner har svårt att visa ömhet förklarar vår guide om [känslomässigt otillgängliga partner](/blog/emotionally-unavailable-partner/) några av orsakerna och vad som hjälper.
+
+Min åsikt: om gester inte kommer naturligt för dig, välj en liten sak och upprepa den. Kontinuitet är mer romantiskt än kreativitet, åtminstone efter första året.
 
 ## Snabba svar
 

@@ -30,6 +30,13 @@ In hun studies hadden die twee verschillende wortels. Reactieve jaloezie ging sa
 
 De eerste nuttige vraag is dus niet "Ben ik jaloers?" maar "Is er iets gebeurd, of reageer ik op een verhaal in mijn hoofd?"
 
+:::stats Jaloezie in het tijdperk van de telefoon
+40% | van de Amerikaanse volwassenen met een partner ergert zich op zijn minst soms aan hoeveel tijd hun partner op de telefoon doorbrengt
+34% | heeft de telefoon van de partner doorzocht zonder dat die het wist
+23% | zegt dat de sociale media van de partner hen jaloers of onzeker over de relatie hebben gemaakt
+bron: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4.860 Amerikaanse volwassenen, oktober 2019
+:::
+
 ## Mythe 2: "Als je niet jaloers was, zou het je niets kunnen schelen"
 
 Er zit een kern van waarheid in, en daarom blijft de mythe bestaan. Een flits van reactieve jaloezie laat vaak zien dat je de relatie waardeert. Maar bij de wantrouwige soort klopt de redenering niet meer. Constant wantrouwen is geen bewijs van liefde. Het is bewijs van angst, en angst maakt mensen eerder controlerend dan hechter.
@@ -45,6 +52,14 @@ Met andere woorden: het herhalen is niet het medicijn. Het is vaak het mechanism
 > **Probeer dit als de cirkel begint**
 > Schrijf de zorg op in één zin. Schrijf daarna één zin op met wat je echt weet. "Hij heeft al drie uur niet gereageerd" is een feit. "Hij praat met iemand anders" is een verhaal. Plan een "piekermoment" van 15 minuten later op de dag, en als de gedachte eerder terugkomt, zeg dan tegen jezelf: "Straks, niet nu." Het klinkt klein. Het werkt omdat het het herhalen doorbreekt, niet het gevoel.
 
+:::read Lees ook
+/blog/trust-issues-in-a-relationship/ | Zo overwin je vertrouwensproblemen | Waarom de twijfel steeds terugkomt
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Als het gevoel niet over je partner gaat
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken | Voor de wat-als-spiraal
+:::
+
+**Snelle quiz:** De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, kan helpen verklaren waarom jaloezie jou harder raakt dan anderen.
+
 ## Mythe 4: "Als ik zijn telefoon check, weet ik het zeker"
 
 Checken lost zelden iets op. Vind je niets, dan duurt de opluchting een paar minuten en komt de twijfel terug ("misschien heeft hij het verwijderd"). Vind je iets dubbelzinnigs, dan heb je nu een ruzie *en* een vertrouwensbreuk van jouw kant.
@@ -54,6 +69,8 @@ Interessant genoeg vond hetzelfde onderzoek van Elphinston dat controlegedrag ee
 Het is ook goed om te weten wat de neiging kan oproepen. Een studie uit 2022 onder 346 mensen met een relatie, van Janneke Schokkenbroek en collega's, vond dat mensen van wie de partner hen vaak negeerde voor de telefoon ("phubbing") iets vaker de berichten of online activiteit van hun partner doorzochten. Het effect was klein, maar de boodschap is nuttig: snuffelen komt soms voort uit je genegeerd voelen, niet alleen uit wantrouwen. Daar kun je over praten.
 
 Ik zou zeggen dat dit de belangrijkste mythe van de lijst is. Checken voelt alsof het de twijfel gaat beëindigen. Dat doet het bijna nooit. Het verplaatst de twijfel alleen naar het volgende ding.
+
+Mijn mening: als je niets vindt, duurt de opluchting ongeveer een dag. Als je iets dubbelzinnigs vindt, wordt het erger. Daarom heb ik liever één eerlijk gesprek dan tien stiekeme checks.
 
 ## Mythe 5: "Social media laat alleen zien wat er al is"
 
@@ -72,6 +89,12 @@ De praktische les: ga er niet van uit dat je weet wat je partner pijn zal doen o
 Soms wel. Vaak niet. Wantrouwige jaloezie reist meestal met de persoon mee van relatie naar relatie, omdat die geworteld is in onzekerheid en hechting in plaats van in wat de huidige partner doet. Merk je bij elke partner dezelfde angsten op, dan zijn onze gidsen over [relatieangst](/blog/relationship-anxiety/) en [hechtingsstijlen](/blog/how-attachment-styles-work-in-relationships/) een beter startpunt dan je partner onderzoeken.
 
 Maar is je partner regelmatig geheimzinnig, inconsequent of afwijzend als je je zorgen uit, dan kan je jaloezie op iets echts wijzen. Onze gids over [vertrouwensproblemen in een relatie](/blog/trust-issues-in-a-relationship/) helpt je het verschil te zien.
+
+Mijn mening: een vlaag van jaloezie is gewoon informatie. Wat je de tien minuten daarna doet, bepaalt of het helpt of schaadt.
+
+:::tool coach
+Voel je je nu jaloers? Praat het door voordat je reageert
+:::
 
 ## Wat echt helpt
 
@@ -134,3 +157,4 @@ Jaloezie is een van de meest gebruikte rechtvaardigingen voor controlerend en ge
 - Schokkenbroek, J. M., Hardyns, W., & Ponnet, K. (2022). Phubbed and curious: The relation between partner phubbing and electronic partner surveillance. *Computers in Human Behavior*. Samenvatting op [PsyPost](https://www.psypost.org/romantic-partners-who-get-phubbed-are-more-likely-to-spy-on-digital-communications-study-finds/)
 - DeSteno, D., Bartlett, M. Y., Braverman, J., & Salovey, P. (2002). Sex differences in jealousy: Evolutionary mechanism or artifact of measurement? *Journal of Personality and Social Psychology*, 83(4). Samenvatting in de [APA Monitor](https://www.apa.org/monitor/oct02/planet)
 - Muise, A., Christofides, E., & Desmarais, S. (2009). More information than you ever wanted: Does Facebook bring out the green-eyed monster of jealousy? *CyberPsychology & Behavior*, 12(4), 441-444. Samenvatting op [EurekAlert](https://www.eurekalert.org/news-releases/588514)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

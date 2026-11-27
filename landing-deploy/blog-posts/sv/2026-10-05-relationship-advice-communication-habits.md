@@ -44,6 +44,8 @@ Här är de sju vanorna i en överblick.
 
 **Snabbtest:** trappar du upp, stänger du av, försöker du blidka eller reparerar du? Det kostnadsfria [testet om konfliktstil](/quiz/fight-style/), på engelska och på 2 minuter, visar ditt mönster i ett gräl och en sak att säga nästa gång.
 
+Min åsikt: om jag fick välja en enda siffra av allt det här skulle det bli 96 %. Den betyder att den första meningen spelar större roll än hur smarta dina argument är. Det är goda nyheter, för en första mening är lätt att öva på.
+
 ## 1. Börja mjukt
 
 Hur ett samtal börjar avgör oftast hur det slutar. Gottmans forskning visade att en "hård start", att öppna med kritik eller sarkasm, nästan alltid leder till ett samtal som slutar illa. En mjukare start gör motsatsen. Den säger hur *du* känner och vad du skulle vilja, utan anklagelser.
@@ -62,6 +64,12 @@ Något i stil med: "Jag har saknat tid med dig på sistone. Kan vi lägga undan 
 "Du är självisk" är en dom. "Du sa att du skulle vara hemma klockan sex och nu är den åtta" är en iakttagelse. Nonviolent Communication, metoden som psykologen Marshall Rosenberg utvecklade, börjar med iakttagelser eftersom det är svårt att argumentera mot ett faktum och väldigt lätt att argumentera mot en etikett.
 
 Det undviker också det Gottman kallar kritik: att angripa partnerns karaktär ("Du är så lat") i stället för att klaga på ett specifikt beteende ("Soporna kom inte ut igen"). Ett klagomål går att åtgärda. Ett angrepp på karaktären går bara att försvara sig mot.
+
+:::read Läs också
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | 20 meddelanden för olika situationer
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | Så tar ni en paus på ett sunt sätt
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | I kväll, i morgon och veckan efter
+:::
 
 ## 3. Sätt ord på behovet bakom
 
@@ -95,6 +103,10 @@ I ett spänt läge, testa att upprepa vad du hörde innan du svarar. "Så du har
 Det här är också motgiftet mot försvar, en annan av Gottmans "fyra ryttare". Att gå i försvar ("Det är inte sant, det är du som...") säger till din partner att hens oro inte räknas. Att ta ansvar för även en liten del ("Du har rätt, jag glömde ringa") ändrar temperaturen i samtalet.
 
 Till exempel: "Innan jag svarar, låt mig kolla att jag har förstått. Du kände att jag inte tog dina planer på allvar?"
+
+:::tool practice
+Vill du testa en mjuk inledning innan det riktiga samtalet?
+:::
 
 ## 6. Ta en paus när du blir översvämmad
 
@@ -150,6 +162,8 @@ Försök inte med alla sju på en gång. Välj en, kanske den mjuka starten, och
 Det är ärligt talat därför Coach Chat finns. Du klistrar in det arga första utkastet, får hjälp att göra det till en mjuk start och kan öva på det riktiga samtalet i Partner Practice innan du har det.
 
 Mitt eget val skulle vara vana 6, pausen med löftet att komma tillbaka. Den låter minst imponerande av de sju, men det är den som hindrar att ett dåligt gräl blir en dålig vecka.
+
+Min åsikt: försök inte med alla sju på en gång. Välj den som fick dig att grimasera lite när du läste den. Det är oftast den som kommer att förändra mest.
 
 ## Snabba svar
 

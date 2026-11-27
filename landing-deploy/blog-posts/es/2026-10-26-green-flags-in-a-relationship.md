@@ -18,6 +18,10 @@ Esta guía recoge nueve banderas verdes en una relación, pero con un giro: para
 
 **Cómo detectarla:** comparte un pequeño logro y observa. "¡Qué pasada, cuéntamelo todo!" es la bandera verde. "Qué bien" (y vuelta al móvil), "¿Eso no significa más horas?" o "Pues adivina lo que me ha pasado hoy a mí" no lo son.
 
+Mi opinión: esta es la señal verde que yo buscaría primero. Cómo reacciona alguien a tus buenas noticias dice más de esa persona que cómo se comporta en una cita perfecta.
+
+**Test rápido:** ¿Te da curiosidad qué aportas tú a la relación? El [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, muestra si tiendes al apego seguro, ansioso o evitativo.
+
 ## 2. Apoya tus objetivos sin apropiárselos
 
 **Por qué importa:** en un estudio en el que las parejas hablaban de sus objetivos personales, Brooke Feeney encontró que el apoyo *atento y no invasivo* (animar sin controlar) se asociaba con que la persona apoyada se sintiera más feliz, tuviera más autoestima y se sintiera más segura de alcanzar sus objetivos. Presionar, criticar o apoderarse del plan no ayudaba.
@@ -37,6 +41,12 @@ El apoyo también se alimenta a sí mismo cuando se nota. En un estudio de 2024 
 **Por qué importa:** los problemas que se pueden nombrar son problemas que se pueden arreglar. El silencio, los morros o las explosiones repentinas te dejan adivinando.
 
 **Cómo detectarla:** cuando algo sale mal, ¿dice "Eso me ha molestado, ¿podemos hablarlo?", o te enteras tres días después por su humor?
+
+:::read Lecturas relacionadas
+/blog/signs-of-a-toxic-relationship/ | ¿Es tóxica mi relación? | La otra cara de la lista
+/blog/love-bombing/ | Love bombing | Cuando la intensidad del principio no es una señal verde
+/blog/situationship/ | Situationship | Cuando no sabéis todavía qué sois
+:::
 
 ## 5. Sabe perder una discusión
 
@@ -73,6 +83,10 @@ El apoyo también se alimenta a sí mismo cuando se nota. En un estudio de 2024 
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
+:::tool coach
+¿No tienes claro lo que estás viendo en tu relación? Háblalo
+:::
+
 ## Banderas verdes al empezar a salir
 
 En las primeras semanas no puedes ver cómo alguien lleva años de estrés, pero sí puedes fijarte en:
@@ -88,6 +102,8 @@ En las primeras semanas no puedes ver cómo alguien lleva años de estrés, pero
 Nadie muestra las nueve todo el tiempo. Todo el mundo tiene días malos, viejas costumbres y momentos de los que no está orgulloso. Busca patrones a lo largo de meses, no la perfección en una sola semana. Y recuerda que una relación puede tener banderas verdes y rojas a la vez. Si tienes dudas sobre las rojas, nuestras guías sobre las [señales de una relación tóxica](/blog/signs-of-a-toxic-relationship/) y el [gaslighting](/blog/gaslighting-in-a-relationship/) pueden ayudarte a pensarlo.
 
 Personalmente, yo miraría sobre todo la número 9. Una pareja puede cumplir todas las demás casillas y aun así dejarte ansioso después de cada conversación. Cómo te sientes después es un dato.
+
+Mi opinión: nadie muestra las nueve cada día, tú tampoco. Yo me fijaría en la dirección: ¿son cada vez más habituales entre vosotros, o menos?
 
 ## Cómo ser una pareja bandera verde
 

@@ -20,6 +20,10 @@ Aquí tienes cinco formatos fáciles, 40 preguntas para jugar con ellos y un poc
 
 **Las conversaciones salen mejor de lo que esperas.** La investigación de Michael Kardas, Amit Kumar y Nicholas Epley encontró que la gente sobrestima sistemáticamente lo incómoda que será una conversación más profunda. Así que si una pregunta te parece demasiado en tu cabeza, probablemente caerá mejor de lo que crees.
 
+Mi opinión: creo que lo importante de estas preguntas no son las respuestas. Es esa media hora en la que los dos volvéis a sentir curiosidad el uno por el otro, algo que las parejas ocupadas pierden sin darse cuenta.
+
+**Test rápido:** ¿Queréis calentar antes de las preguntas? Haced juntos el [test del lenguaje del amor](/quiz/love-language/), en inglés y de 2 minutos, y comparad vuestras respuestas.
+
 ## 5 juegos para jugar con las preguntas
 
 ### 1. El bote de preguntas
@@ -53,6 +57,12 @@ En lugar de preguntas, usad frases que empiecen por "Cuéntame una vez que...". 
 **Ideal para:** una noche tranquila, un paseo largo, una noche con una botella de vino.
 
 Mi favorito es la silla caliente, sobre todo porque es el que más nervios da al principio y el que más acaba gustando.
+
+:::read Lecturas relacionadas
+/blog/deep-questions-to-ask-your-partner/ | Preguntas profundas para tu pareja | 30 preguntas que van un nivel más allá
+/blog/how-to-say-i-love-you-without-words/ | Cómo demostrar amor sin decirlo | 25 pequeños gestos para cualquier día
+/blog/long-distance-relationship-tips/ | Cómo hacer que funcione una relación a distancia | Estas preguntas también funcionan por videollamada
+:::
 
 ## 40 preguntas para una cita
 
@@ -110,6 +120,10 @@ Mi favorito es la silla caliente, sobre todo porque es el que más nervios da al
 
 Para preguntas más serias y vulnerables, mira nuestra guía completa de [preguntas profundas para hacerle a tu pareja](/blog/deep-questions-to-ask-your-partner/), que también explica cómo responder a una respuesta difícil.
 
+:::tool coach
+¿Estás planeando una cita y te faltan ideas? Pregúntale al coach
+:::
+
 ## Haz que la propia noche sea un poco distinta
 
 Las preguntas funcionan mejor cuando el ambiente es distinto al de un martes cualquiera. El informe de Wilcox y Dew y experimentos más antiguos de Arthur Aron y sus colegas apuntan en la misma dirección: hacer algo nuevo juntos va unido a sentirse mejor con la relación. No tiene por qué ser caro:
@@ -133,6 +147,8 @@ No a todo el mundo le encantan las preguntas. Empezad con "esto o aquello", que 
 Si estáis lejos, todos estos juegos funcionan en una videollamada. Más ideas en nuestros [consejos para relaciones a distancia](/blog/long-distance-relationship-tips/). Y si la noche se convierte en una conversación sobre algo que le preocupaba a uno de los dos, nuestra guía sobre los [hábitos de comunicación](/blog/relationship-advice-communication-habits/) ayuda a que siga siendo amable.
 
 *Este artículo es información general, no terapia ni consejo médico.*
+
+Mi opinión: si tu pareja pone los ojos en blanco al oír "preguntas", olvida el formato y quédate con la idea. Haz una buena pregunta durante un paseo. La curiosidad no necesita una baraja de cartas.
 
 ## Fuentes
 

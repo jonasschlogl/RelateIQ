@@ -31,6 +31,15 @@ La mayoría de las peleas que se repiten siguen un patrón sencillo. Pasa algo p
 
 **Test rápido:** si siempre vuelve la misma pelea, ayuda conocer tu propio papel en ella. El [test gratuito de estilo de conflicto](/quiz/fight-style/), en inglés y de 2 minutos, muestra si tiendes a escalar, cerrarte, complacer o reparar.
 
+Mi opinión: el dato del 69 % me parece liberador más que deprimente. Si la mayoría de las peleas nunca se resuelven del todo, el objetivo deja de ser "no volver a discutir por esto nunca" y pasa a ser "discutirlo sin hacernos daño". Y ese sí es un objetivo que podéis alcanzar.
+
+:::stats Por qué vuelven siempre las mismas peleas
+69 % | de los conflictos de pareja tratan sobre problemas perpetuos que quizá nunca desaparezcan del todo, según el Gottman Institute
+62 % | de los adultos estadounidenses dijeron en 2007 que repartir las tareas del hogar era muy importante para un buen matrimonio, frente al 47 % en 1990
+86 % frente a 33 % | la frecuencia con la que las parejas que siguieron casadas respondían a los pequeños gestos del otro, frente a las que se divorciaron
+fuente: The Gottman Institute; Pew Research Center (ver fuentes abajo)
+:::
+
 ## 1. Las tareas y la carga mental
 
 Parece una pelea por los platos. La mayoría de las veces trata de la justicia y de sentir que tu esfuerzo se nota. No es poca cosa: en una encuesta del Pew Research Center de 2007, el 62% de los adultos estadounidenses dijo que repartirse las tareas de casa era muy importante para que un matrimonio funcione, frente al 47% en 1990.
@@ -55,6 +64,12 @@ La investigación de Gottman le da una base sólida. En un estudio que siguió a
 En lugar de: "Te importa más el móvil que yo."
 
 Podrías decir: "Echo de menos hablar contigo por las noches. ¿Podemos dejar los móviles lejos durante la cena esta semana?"
+
+:::read Lecturas relacionadas
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Esta noche, mañana y la semana siguiente
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Qué decir cuando tu pareja dice que le has hecho daño | Los primeros cinco minutos, paso a paso
+/blog/how-to-keep-the-spark-alive/ | Cómo mantener viva la chispa | Cuando las peleas se han llevado la diversión
+:::
 
 ## 3. El dinero
 
@@ -93,6 +108,12 @@ Prueba con: "Siento que cuando yo insisto, tú te callas, y cuando tú te callas
 > En cuanto el patrón tiene nombre, se convierte en algo a lo que os enfrentáis juntos y no en algo que os hacéis el uno al otro. Quien persigue puede relajarse un poco porque quien se retira ha prometido volver. Quien se retira puede volver porque ya no le persiguen. Muchas parejas descubren que acordar las reglas de una pausa importa más que resolver el tema original.
 
 A menudo el círculo se alimenta solo. En un estudio de 2022 con 175 parejas, Ione Bretaña y sus colegas vieron que cuando uno de los dos se retiraba durante un conflicto, el otro tendía a volverse más exigente o agresivo, y las dos reacciones iban unidas a una menor satisfacción. Que uno se aleje hace que el otro presione más, lo que hace que el primero se aleje todavía más, y el tema original se pierde.
+
+Mi opinión: cuando una pelea se repite palabra por palabra, yo dejaría de debatir el tema y haría otra pregunta: "¿De qué va esto realmente para ti?". La respuesta suele ser más pequeña y más suave que la discusión.
+
+:::tool practice
+¿Quieres ensayar esta conversación antes de tenerla?
+:::
 
 ## Cómo hablar de un problema que siempre vuelve
 

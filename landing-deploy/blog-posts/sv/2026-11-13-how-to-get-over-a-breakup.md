@@ -24,6 +24,16 @@ Målet här är inte att må bättre. Det är att ta sig igenom utan att göra d
 
 **Skriv en mening till senare.** I mobilen: "Kom ihåg varför det tog slut: ___." Du kommer att behöva den vecka två.
 
+Min åsikt: de två första dagarna är inte rätt tid att förstå något. Ät, sov, ring en vän. Att begripa det kan vänta.
+
+:::read Läs också
+/blog/should-i-break-up-with-my-partner/ | Hur vet man när det är dags att göra slut? | Om du fortfarande bestämmer dig
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När den dyker upp i nästa relation
+/blog/how-to-stop-overthinking-in-a-relationship/ | Så slutar du övertänka | När tankarna spelar upp det om och om igen
+:::
+
+**Snabbtest:** Vissa har svårare med uppbrott på grund av hur de knyter an. Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, kan hjälpa dig att förstå din reaktion.
+
 ## Steg 2: de första två veckorna
 
 Det här är ofta den tuffaste sträckan. Chocken lägger sig och saknaden slår till.
@@ -52,6 +62,10 @@ Sorg, ilska, lättnad och skuld, allt på en eftermiddag. Det är normalt. Att f
 > I tre studier fann Erica Slotter, Wendi Gardner och Eli Finkel att människors bild av sig själva blev mindre tydlig efter ett uppbrott. Jaget kändes, som de uttryckte det, "mindre tydligt och till och med mindre", och den förlorade tydligheten bidrog till smärtan. I ett förhållande delas rutiner, planer och till och med filmsmak. När det tar slut måste du sortera ut vilka delar som var *du*. Den sorteringen är en stor del av läkningen.
 
 Om du bara tar med dig en sak från det här steget: tysta ditt ex. Inte som en markering, utan som grundläggande omtanke om dig själv. Varje titt nollställer klockan.
+
+:::tool coach
+Frestad att skriva till hen klockan två på natten? Prata igenom det här först
+:::
 
 ## Steg 3: vecka tre till tolv
 
@@ -86,6 +100,8 @@ Det finns inget fast antal, och den som lovar dig ett gissar. Många märker att
 | Du kan se både det bra och det dåliga i förhållandet | Du känner dig hopplös eller tänker på att skada dig själv |
 
 Om något i högra kolumnen låter som du, prata med en läkare eller kurator. Om du tänker på att ta ditt liv, kontakta akutsjukvården eller en kris- och stödlinje direkt.
+
+Min åsikt: det finns ingen deadline för att komma över någon. Om du sakta får fler okej dagar än dåliga gör du rätt, även om det tar längre tid än du hoppats.
 
 ## Om det var du som gjorde slut
 

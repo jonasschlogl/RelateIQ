@@ -24,6 +24,8 @@ Men samma översikt tar upp något som de flesta artiklar hoppar över: i vuxna 
 
 **Snabbtest:** Nyfiken på vad du brukar göra när ett bråk blir hett? Gör vårt [test om bråkstil](/quiz/fight-style/), på engelska och på 2 minuter.
 
+Min åsikt: jag tror inte att tystnadens längd är det viktigaste. Det viktiga är om den andra vet att du kommer tillbaka. Den enda detaljen förvandlar ett straff till en paus.
+
 ## 6 skillnader mellan att behöva utrymme och tyst behandling
 
 ### 1. Utrymme sägs högt. Tyst behandling bara händer.
@@ -51,6 +53,12 @@ När utrymmet tar slut är det den som gick som öppnar samtalet igen. Med tyst 
 ### 6. Utrymme gör dig lite orolig. Tyst behandling får dig att gå på äggskal.
 
 Att vänta ut någons paus kan vara obehagligt, särskilt om du är orolig av naturen. Men med tiden bör det kännas förutsägbart. Ett mönster av straffande tystnad brukar förändra hur du beter dig: du övar meningar i huvudet, undviker ämnen och ber om ursäkt bara för att kylan ska upphöra.
+
+:::read Läs också
+/blog/avoidant-attachment-partner/ | Undvikande anknytning hos en partner | När utrymme är hens utgångsläge
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | Ett meddelande som bryter tystnaden vänligt
+/blog/my-boyfriend-gets-defensive/ | Min pojkvän går i försvar när jag tar upp något | Om samtal blir till att stänga av
+:::
 
 ## Sida vid sida
 
@@ -100,6 +108,10 @@ Skillnaden mellan utrymme och tyst behandling är ofta en eller två meningar. S
 
 > **Därför fungerar det**
 > Tystnad utan ord lämnar åt din partner att fylla tomrummet, och ett oroligt sinne fyller det sällan vänligt. En tid för att komma tillbaka gör ett hot utan slut till en kort väntan som går att stå ut med. Gottman Institute föreslår också att ni kommer överens om en signal i förväg, eftersom det kan uppfattas som en ännu större avstängning att bara gå därifrån.
+
+:::tool practice
+Vill du öva på att säga "jag behöver en paus" lugnt?
+:::
 
 ## Vad du kan säga om du är den som får tystnaden
 

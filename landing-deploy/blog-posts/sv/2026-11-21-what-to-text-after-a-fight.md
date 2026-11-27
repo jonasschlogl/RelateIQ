@@ -26,6 +26,8 @@ Sammantaget: ett kort, varmt meddelande efter ett bråk hjälper. Ett långt med
 
 **Snabbtest:** Vill du veta hur du brukar agera i ett bråk? Gör vårt [test om konfliktstil](/quiz/fight-style/), på engelska och på 2 minuter.
 
+Min åsikt: min tumregel är enkel. Skriv för att återknyta, prata för att lösa. Om ditt meddelande har mer än tre meningar hör det förmodligen hemma i ett samtal.
+
 ## Innan du skriver: en koll i 3 frågor
 
 **1. Har vi båda lugnat ner oss?** När du är översvämmad av känslor är kroppen i kampläge och du hör dåligt. Julie Schwartz Gottman föreslår en paus på allt från ungefär 20 minuter till 24 timmar, med en tid ni bestämmer tillsammans. Om hjärtat fortfarande rusar är det bästa meddelandet ett kort som köper dig tid.
@@ -40,6 +42,12 @@ Sammantaget: ett kort, varmt meddelande efter ett bråk hjälper. Ett långt med
 | "Förlåt att jag höjde rösten." | "Förlåt att jag höjde rösten, men du var omöjlig." |
 | "Kan vi prata i kväll efter middagen?" | "Och när vi ändå håller på, det där i helgen..." |
 | "Jag älskar dig, även när vi bråkar." | Ett meddelande på sex stycken om allt som är fel |
+
+:::read Läs också
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | I kväll, i morgon och veckan efter
+/blog/how-to-apologize-to-your-partner/ | Så ber du din partner om ursäkt på riktigt | När sms:et behöver vara en ursäkt
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | Om hen inte svarar
+:::
 
 ## 20 sms att skicka efter ett bråk, efter situation
 
@@ -89,6 +97,10 @@ En fullständig guide till ursäkter som når fram hittar du i [be om ursäkt ti
 > **Varför bron fungerar och uppsatsen inte gör det**
 > Ett brosms gör en enda sak: det säger till din partner att ni fortfarande är i samma lag. En lång uppsats ber hen läsa hela din argumentation, ensam, utan tonfall som mjukar upp den, och bestämma hur hen ska svara. De flesta reagerar som på en attack: genom att försvara sig.
 
+:::tool check
+Har du redan skrivit något? Kolla det innan du trycker på skicka
+:::
+
 ## Vad du inte ska skicka efter ett bråk
 
 - **"Vi måste prata."** Utan sammanhang låter det som en varning om uppbrott. Lägg till vad och när: "Kan vi prata i kväll om det i morse?"
@@ -109,6 +121,8 @@ Målet med varje sms på den här listan är att få er till ett riktigt samtal,
 Om jag fick välja ett sms från listan blir det det som föreslår en tid att prata. Det gör en spänd tystnad till en plan och säger till din partner att relationen inte är ifrågasatt.
 
 Om du har skrivit och raderat samma meddelande fem gånger kan Message check visa hur det troligen tas emot innan du trycker på skicka, och föreslå en mjukare version om det låter kallt eller defensivt.
+
+Min åsikt: det bästa sms:et efter ett bråk förbereder ofta bara samtalet: "Kan vi prata i kväll? Jag saknar dig." Det löser ingenting, och det behöver det inte heller.
 
 ## Snabba svar
 

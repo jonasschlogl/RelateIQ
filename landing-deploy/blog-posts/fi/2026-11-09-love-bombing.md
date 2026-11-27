@@ -22,6 +22,8 @@ Sam tapaa Alexin sovelluksessa. Kolmantena päivänä he puhuvat jo tuntikausia 
 
 **Mitä tehdä nyt:** Ei mitään dramaattista. Jatka vain tavallista elämääsi ja huomaa, miten hän reagoi, kun et ole tavoitettavissa.
 
+**Pikatesti:** Mietitkö, onko näkemäsi vain huono jakso vai jotain huolestuttavampaa? Kahden minuutin [myrkyllisen suhteen tarkistus](/quiz/toxic-relationship/), englanniksi, antaa selkeämmän kuvan.
+
 ## Viikot 2-4: lahjat ja jatkuva yhteydenpito
 
 Samin työpaikalle tulee kukkia. Viikonloppumatka varataan "yllätyksenä". Alex laittaa hyvän huomenen, hyvän yön ja monta viestiä niiden välissä ja vaikuttaa loukkaantuneelta, kun Samilla kestää muutama tunti vastata.
@@ -36,6 +38,12 @@ Vuoden 2024 kyselyssä, johon osallistui 225 yliopisto-opiskelijaa Turkissa, tut
 
 Esimerkiksi: "Nautin tästä tosi paljon, ja haluaisin edetä vähän hitaammin. Voitaisiinko säästää matka myöhemmäksi?"
 
+:::read Lue myös
+/blog/breadcrumbing/ | Onko minulle tehty breadcrumbingia? | Kun huomio tulee pieninä, arvaamattomina annoksina
+/blog/signs-of-a-toxic-relationship/ | Onko suhteeni myrkyllinen? | 3-tasoinen tarkistus: epäterve, myrkyllinen ja kontrolloiva
+/blog/clear-coding-dating/ | Clear coding deittailussa | Miltä terve innostus kuulostaa
+:::
+
 ## Kuukausi 2: ensimmäinen "ei"
 
 Sam haluaa viettää perjantai-illan vanhojen ystävien kanssa. Alex on pinnalta ymmärtäväinen, mutta sitten hiljainen ja loukkaantunut koko illan viesteissä: "Minulla on vain ikävä sinua. Luulin, että olemme jotain erityistä." Seuraavalla viikolla sama toistuu, ja mukana on vihjaus, etteivät Samin ystävät "oikein ymmärrä meitä".
@@ -45,6 +53,8 @@ Sam haluaa viettää perjantai-illan vanhojen ystävien kanssa. Alex on pinnalta
 **Mitä saattaa olla meneillään:** Tämä on vaihe, jolla on eniten merkitystä. Rakastava kumppani voi pettyä ja silti kunnioittaa suunnitelmiasi. Love bombingissa lämpö alkaa riippua siitä, teetkö niin kuin toinen haluaa. Varhainen eristäminen ystävistä on yksi johdonmukaisimmista varoitusmerkeistä, joita lähisuhdeväkivaltaa vastaan toimivat järjestöt kuvaavat.
 
 **Mitä tehdä nyt:** Pidä suunnitelmasi. Kerro ystävälle rehellisesti, mitä on meneillään, älä siloteltua versiota.
+
+Minun näkemykseni: jos saisin antaa vain yhden testin love bombingiin, se olisi tämä. Sano pieni, kohtuullinen ei ja katso, mitä tapahtuu. Joku, joka oikeasti pitää sinusta, voi pettyä ja silti kunnioittaa sitä.
 
 ## Kuukausi 3: kuumaa ja kylmää
 
@@ -64,6 +74,10 @@ Tutkimusta ei ole vielä paljon, mutta se, mitä on, osoittaa yhteen suuntaan. V
 
 Tämä on hyödyllistä, koska se siirtää huomion. Intensiteetti kertoo usein enemmän toisen tarpeista (kontrolliin, ihailuun, rauhoitteluun) kuin siitä, kuinka erityinen sinä olet. Turkkilainen tutkimus löysi vielä yhden asian, joka kannattaa tietää: love bombingia kokeneet kertoivat luottavansa vähemmän kykyynsä hoitaa omia romanttisia suhteitaan. Jos olet kokenut sen, notkahdus luottamuksessa omaan arvostelukykyyn on yleinen jälkivaikutus eikä henkilökohtainen epäonnistuminen.
 
+:::tool coach
+Etkö ole varma, mistä on kyse? Puhu se läpi kahden kesken
+:::
+
 ## Love bombing vai joku, joka on vain hyvin innostunut?
 
 | Kysymys | Innostunut ja aito | Love bombing |
@@ -81,6 +95,8 @@ Jos et ole varma, ylianalysoitko, oppaamme [vihreistä lipuista parisuhteessa](/
 On vaikeaa sanoa "otetaan rauhallisemmin" ihmiselle, joka hukuttaa sinut huomioon. Jos se auttaa, voit harjoitella sitä ensin yksityisesti Partner Practicessa.
 
 Jos testaat vain yhden asian, testaa "ei". Sano ei johonkin pieneen ja katso, mitä tapahtuu. Aito kiinnostus kestää ein. Love bombing ei yleensä kestä.
+
+Minun näkemykseni: se, että joku vie jalat alta, ei ole itsessään varoitusmerkki. Varoitusmerkki on vauhti yhdistettynä painostukseen. Aito innostus jaksaa odottaa, että ehdit mukaan.
 
 ## Nopeat vastaukset
 

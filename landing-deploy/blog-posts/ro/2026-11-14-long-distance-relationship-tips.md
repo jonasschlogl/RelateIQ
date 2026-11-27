@@ -24,6 +24,10 @@ Așadar, șansele sunt bune. Întrebarea e cum să folosiți bine fiecare etapă
 
 Aceleași obiceiuri par să-i facă fericiți pe ambele tipuri de cupluri. Într-un studiu din 2021 cu 232 de tineri adulți în relații la distanță și 263 în relații de aproape, Kaitlyn Goldsmith și Sandra Byers au descoperit că gesturile de întreținere a relației, cum ar fi să păstrați legătura, să vorbiți despre viitor și să vă gândiți cu drag unul la altul, erau legate de o satisfacție mai mare în ambele grupuri, aproape în același fel.
 
+Părerea mea: cea mai utilă descoperire de aici ține de încredere. Cuplurile care se așteaptă să meargă și au o idee aproximativă despre când se termină distanța par să se descurce mai bine. Merită vorbit despre asta devreme.
+
+**Test rapid:** Ce îl face pe partener să se simtă iubit de departe? Faceți împreună [testul limbajului iubirii](/quiz/love-language/), în engleză și de 2 minute, și comparați.
+
 ## Etapa 1: cât sunteți departe
 
 ### Stabiliți „de ce” și „până când”
@@ -50,6 +54,12 @@ Textul îți șterge tonul și invită la cele mai rele interpretări. Dacă te 
 
 O dată în calendar transformă „mi-e dor de tine” dintr-o greutate într-o numărătoare inversă.
 
+:::read Citește și
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | Când nu vă puteți împăca față în față
+/blog/trust-issues-in-a-relationship/ | Cum să depășești problemele de încredere | Când distanța hrănește îndoiala
+/blog/how-to-say-i-love-you-without-words/ | Cum să arăți iubire fără cuvinte | Idei care merg de la distanță
+:::
+
 ## Etapa 2: în timpul vizitelor
 
 ### Reduceți presiunea pe „perfect”
@@ -63,6 +73,10 @@ Când aveți doar trei zile, fiecare oră pare că trebuie să fie minunată. Pr
 ### Nu păstrați toate problemele pentru vizită
 
 Dacă ai tot amânat o discuție grea pentru „când suntem împreună”, vizita devine tensionată înainte să înceapă. Rezolvați subiectele importante la telefon și folosiți vizitele pentru apropiere.
+
+:::tool check
+Nu știi cum va suna un mesaj de la sute de kilometri? Verifică-l mai întâi
+:::
 
 ## Etapa 3: când nu mai sunteți la distanță
 
@@ -90,6 +104,8 @@ Ai putea spune: „E mai greu decât credeam. Nu cred că înseamnă că nu sunt
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 Cred că asta e partea cea mai subestimată a distanței. Cuplurile plănuiesc ani întregi să locuiască în același oraș și apoi nu petrec aproape deloc timp plănuind cum va arăta asta de fapt.
+
+Părerea mea: oamenii plănuiesc mutarea și uită de adaptare. Aș programa o discuție la o lună după ce începeți să locuiți aproape, doar ca să vă întrebați ce e diferit față de ce vă așteptați.
 
 ## Distanța de sărbători
 

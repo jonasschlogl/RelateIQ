@@ -20,6 +20,10 @@ Por eso esta guía te da 30 preguntas bien elegidas, ordenadas por lo profundo q
 
 Y sí, la idea de construir cercanía con preguntas cada vez más profundas tiene un origen famoso: el estudio de las "36 preguntas" de Arthur Aron, en el que parejas de desconocidos que se turnaban para responder preguntas cada vez más personales se sentían mucho más cerca después. Las preguntas de abajo usan el mismo principio: empezar con algo ligero e ir más hondo paso a paso.
 
+Mi opinión: el segundo hallazgo me importa más que el primero. Una gran pregunta seguida de una respuesta distraída hace más daño que no preguntar nada, así que guarda el móvil antes de empezar.
+
+**Test rápido:** ¿Cómo le gusta a tu pareja que la apoyen cuando se abre? El [test de estilo de consuelo](/quiz/comfort-style/), en inglés y de 2 minutos, puede ayudarte a responder de una forma que llegue.
+
 ## Nivel 1: fáciles y cálidas
 
 Ideales para: un paseo, un viaje largo en coche, la primera vez que lo probáis.
@@ -45,6 +49,12 @@ Ideales para: una noche tranquila, una cena sin móviles.
 14. ¿Cuándo te sientes más valorado por mí?
 15. ¿Qué hacíamos antes que echas de menos?
 
+:::read Lecturas relacionadas
+/blog/date-night-questions-for-couples/ | Preguntas para una cita en pareja | Preguntas más ligeras y juegos para una noche divertida
+/blog/how-to-say-i-love-you-without-words/ | Cómo demostrar amor sin decirlo | Qué hacer después de una conversación así
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Qué decir cuando has herido a tu pareja | Si una respuesta escuece
+:::
+
 ## Nivel 3: vulnerables
 
 Ideales para: un momento tranquilo y privado en el que los dos tengáis tiempo. No en mitad de un conflicto.
@@ -69,6 +79,10 @@ Ideales para: una mañana tranquila de fin de semana, un aniversario, el comienz
 28. Si pudiéramos tener una conversación sincera que llevamos tiempo evitando, ¿de qué trataría?
 29. ¿Qué haría que este año fuera significativo para ti?
 30. ¿Qué cosa de lo nuestro no quieres dar nunca por sentada?
+
+:::tool practice
+¿Te dan nervios las preguntas más profundas? Practica primero
+:::
 
 ## Cómo responder para que siga hablando
 
@@ -101,6 +115,8 @@ A veces una pregunta profunda destapa algo doloroso: una necesidad que no se est
 Algo como: "Me alegro mucho de que me lo hayas contado. Necesito un rato para pensarlo. ¿Podemos retomarlo mañana?"
 
 Si una respuesta lleva a un desacuerdo, nuestra guía sobre los [hábitos de comunicación](/blog/relationship-advice-communication-habits/) puede ayudar a que no escale.
+
+Mi opinión: una respuesta difícil es señal de que la pregunta funcionó. Si tu pareja te ha confiado algo duro, lo más importante que puedes decir es "gracias por contármelo".
 
 ## Que sea una costumbre, no algo de una vez
 

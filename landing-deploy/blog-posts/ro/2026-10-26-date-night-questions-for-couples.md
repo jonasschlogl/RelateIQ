@@ -20,6 +20,10 @@ Mai jos găsești cinci formate ușoare, 40 de întrebări cu care să le jucaț
 
 **Discuțiile merg mai bine decât te aștepți.** Cercetările lui Michael Kardas, Amit Kumar și Nicholas Epley au arătat că oamenii supraestimează constant cât de stânjenitoare va fi o discuție mai profundă. Așa că, dacă o întrebare ți se pare cam mult în minte, probabil va fi primită mai bine decât crezi.
 
+Părerea mea: cred că rostul acestor întrebări nu sunt răspunsurile. E jumătatea de oră în care amândoi deveniți din nou curioși unul față de celălalt, ceva ce cuplurile ocupate pierd fără să observe.
+
+**Test rapid:** Vreți o încălzire înainte de întrebări? Faceți împreună [testul limbajului iubirii](/quiz/love-language/), în engleză și de 2 minute, și comparați răspunsurile.
+
 ## 5 jocuri cu întrebările
 
 ### 1. Borcanul cu întrebări
@@ -53,6 +57,12 @@ Alegeri rapide fără explicații până la final. Apoi fiecare alege răspunsul
 **Cel mai bun pentru:** o seară liniștită, o plimbare lungă, o seară cu o sticlă de vin.
 
 Preferatul meu e scaunul fierbinte, mai ales pentru că e jocul de care oamenii se tem cel mai mult și care le place cel mai mult la final.
+
+:::read Citește și
+/blog/deep-questions-to-ask-your-partner/ | Întrebări profunde pentru partener | 30 de întrebări care merg cu un nivel mai adânc
+/blog/how-to-say-i-love-you-without-words/ | Cum să arăți iubire fără cuvinte | 25 de gesturi mici pentru orice zi
+/blog/long-distance-relationship-tips/ | Cum să meargă o relație la distanță | Întrebările merg și prin video
+:::
 
 ## 40 de întrebări pentru o seară în doi
 
@@ -110,6 +120,10 @@ Preferatul meu e scaunul fierbinte, mai ales pentru că e jocul de care oamenii 
 
 Pentru întrebări mai serioase și mai vulnerabile, vezi ghidul nostru complet de [întrebări profunde pentru partener](/blog/deep-questions-to-ask-your-partner/), care explică și cum să răspunzi la un răspuns greu.
 
+:::tool coach
+Plănuiești o seară în doi și nu ai idei? Întreabă coach-ul
+:::
+
 ## Fă și seara în sine puțin diferită
 
 Întrebările funcționează cel mai bine când cadrul pare diferit de o marți obișnuită. Raportul lui Wilcox și Dew și experimente mai vechi ale lui Arthur Aron și colegilor săi arată în aceeași direcție: să faceți ceva nou împreună merge mână în mână cu o stare mai bună în relație. Nu trebuie să fie scump:
@@ -133,6 +147,8 @@ Nu tuturor le plac întrebările. Începeți cu asta sau aia, care aproape că n
 Dacă sunteți departe unul de altul, toate jocurile de aici merg și într-un apel video. Mai multe idei găsești în [sfaturile noastre pentru relațiile la distanță](/blog/long-distance-relationship-tips/). Iar dacă seara se transformă într-o discuție despre ceva ce îl deranja pe unul dintre voi, ghidul nostru despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) vă ajută să păstrați un ton blând.
 
 *Acest articol oferă informații generale, nu terapie sau sfaturi medicale.*
+
+Părerea mea: dacă partenerul dă ochii peste cap la "întrebări", renunță la format și păstrează ideea. Pune o întrebare bună la o plimbare. Curiozitatea nu are nevoie de un pachet de cărți.
 
 ## Surse
 

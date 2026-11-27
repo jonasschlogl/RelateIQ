@@ -20,6 +20,10 @@ Daarom geeft deze gids je 30 zorgvuldig gekozen vragen, gesorteerd op hoe diep z
 
 En ja, het idee om nabijheid op te bouwen met steeds diepere vragen heeft een beroemde oorsprong: de "36 vragen"-studie van Arthur Aron, waarin paren vreemden die om de beurt steeds persoonlijkere vragen beantwoordden, zich daarna veel dichter bij elkaar voelden. De vragen hieronder gebruiken hetzelfde principe: begin luchtiger en ga stap voor stap dieper.
 
+Mijn mening: de tweede bevinding vind ik belangrijker dan de eerste. Een mooie vraag gevolgd door een afgeleid antwoord doet meer kwaad dan helemaal geen vraag, dus leg je telefoon weg voordat je begint.
+
+**Snelle quiz:** Hoe wil je partner gesteund worden als hij of zij zich openstelt? De [quiz over troosttaal](/quiz/comfort-style/) van 2 minuten, in het Engels, helpt je te reageren op een manier die aankomt.
+
 ## Niveau 1: Luchtig en warm
 
 Goed voor: een wandeling, een lange autorit, de eerste keer dat je dit probeert.
@@ -45,6 +49,12 @@ Goed voor: een ontspannen avond, een etentje zonder telefoons.
 14. Wanneer voel je je het meest gewaardeerd door mij?
 15. Wat deden we vroeger dat je mist?
 
+:::read Lees ook
+/blog/date-night-questions-for-couples/ | Vragen voor een date night | Lichtere vragen en spelletjes voor een leuke avond
+/blog/how-to-say-i-love-you-without-words/ | Zo laat je liefde zien zonder woorden | Wat je doet na zo'n gesprek
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Wat je zegt als je je partner hebt gekwetst | Als een antwoord pijn doet
+:::
+
 ## Niveau 3: Kwetsbaar
 
 Goed voor: een rustig moment onder vier ogen als jullie allebei tijd hebben. Niet midden in een conflict.
@@ -69,6 +79,10 @@ Goed voor: een rustige weekendochtend, een jubileum, het begin van een nieuw jaa
 28. Als we één eerlijk gesprek konden voeren dat we steeds uit de weg gaan, waar zou het dan over gaan?
 29. Wat zou dit jaar betekenisvol voor je maken?
 30. Wat aan ons wil je nooit als vanzelfsprekend beschouwen?
+
+:::tool practice
+Zenuwachtig voor de grotere vragen? Oefen eerst
+:::
 
 ## Hoe je reageert zodat je partner blijft praten
 
@@ -101,6 +115,8 @@ Soms brengt een diepe vraag iets pijnlijks naar boven: een behoefte die niet ver
 Iets als: "Ik ben echt blij dat je me dit vertelt. Ik heb even tijd nodig om erover na te denken. Kunnen we er morgen op terugkomen?"
 
 Leidt een antwoord tot een meningsverschil, dan kan onze gids over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) helpen voorkomen dat het escaleert.
+
+Mijn mening: een moeilijk antwoord is een teken dat de vraag werkte. Als je partner je iets moeilijks toevertrouwt, is het belangrijkste wat je kunt zeggen "dank je dat je het me vertelt".
 
 ## Maak er een gewoonte van, geen eenmalig iets
 

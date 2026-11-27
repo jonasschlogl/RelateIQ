@@ -20,6 +20,16 @@ Wat de reden ook is, de ervaring van de partner is vaak vergelijkbaar: je kent d
 
 Het zorgt ook vaak voor een vicieuze cirkel. Een grote overzichtsstudie van Paul Schrodt en collega's vond dat het patroon *eisen/terugtrekken*, waarbij de een aandringt op praten en de ander zich terugtrekt, samenhangt met minder tevredenheid in de relatie voor allebei. Hoe meer je aandringt, hoe meer de ander zich terugtrekt, en hoe meer de ander zich terugtrekt, hoe meer je aandringt. Begrijpen *waarom* de ander zich terugtrekt, is de eerste stap uit die cirkel.
 
+Mijn mening: het pijnlijkste is meestal niet de afstand zelf. Het is niet weten of het aan jou ligt. Daarom is het zo belangrijk om uit te zoeken welke reden past.
+
+:::stats Een reden die vaker voorkomt dan mensen denken
+7,5% | van de mannen in een onderzoek onder 155 getrouwde stellen had sterke alexithymie, echte moeite om gevoelens te herkennen en te beschrijven
+6,5% | van de vrouwen ook, vergelijkbaar met schattingen voor de algemene bevolking
+bron: Frye-Cox en Hesse, onderzoek onder 155 getrouwde stellen (zie bronnen hieronder)
+:::
+
+**Snelle quiz:** Wil je zien waar jullie allebei zouden kunnen staan? De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, is een goed begin.
+
 ## Reden 1: vermijdende hechting
 
 **Hoe het eruitziet:** nabijheid gevolgd door afstand. Een heerlijk weekend, dan een stille week. Sterke onafhankelijkheid. Ongemak bij gesprekken als "waar gaat dit naartoe?". Vaak liefdevol op praktische manieren.
@@ -37,6 +47,12 @@ Het zorgt ook vaak voor een vicieuze cirkel. Een grote overzichtsstudie van Paul
 **Wat eronder zit:** *alexithymie*, een persoonlijkheidskenmerk waardoor het moeilijk is om emoties te herkennen en te beschrijven. In een studie onder 155 getrouwde stellen vonden Nick Frye-Cox en Colin Hesse het bij ongeveer 7,5% van de mannen en 6,5% van de vrouwen, vergelijkbaar met schattingen voor de algemene bevolking. Alexithymie hing samen met een lagere kwaliteit van het huwelijk, grotendeels via eenzaamheid en moeite met intieme communicatie.
 
 **Wat helpt:** kleinere, concretere vragen. In plaats van "Hoe voel je je over je vader?", probeer "Op een schaal van 1 tot 10, hoe gestrest was je na dat telefoontje?" of "Was dat meer irritant of meer pijnlijk?" Let op de zorg in daden. En weet dat therapie mensen kan helpen een woordenschat voor emoties op te bouwen.
+
+:::read Lees ook
+/blog/avoidant-attachment-partner/ | Vermijdende hechting bij je partner | 8 signalen en hoe je houdt van iemand die ruimte nodig heeft
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | 6 manieren om ze te onderscheiden
+/blog/signs-your-partner-is-losing-interest/ | Signalen dat je partner zijn interesse verliest | Wat elk signaal echt kan betekenen
+:::
 
 ## Reden 3: de ander heeft geleerd dat gevoelens niet gedeeld worden
 
@@ -64,6 +80,10 @@ Een manier om het te zeggen: "Je hoeft het niet perfect uit te leggen. Zelfs 'he
 
 **Wat helpt:** duidelijkheid, geen geduld. Vraag direct wat de ander wil. Als het antwoord, of het gedrag in de weken daarna, zegt dat de ander niet betrokken is, geloof het dan. Onze gidsen over [situationships](/blog/situationship/), [signalen dat je partner interesse verliest](/blog/signs-your-partner-is-losing-interest/) en [of je het moet uitmaken](/blog/should-i-break-up-with-my-partner/) kunnen helpen.
 
+:::tool coach
+Probeer je uit te zoeken welke past? Praat het door
+:::
+
 ## Welke is het?
 
 | Als je partner... | Kan het zijn... |
@@ -88,6 +108,8 @@ Mijn eerlijke mening: reden 5 is degene waar mensen het minst aan willen denken,
 Wat de reden ook is, je mag behoeften hebben. Als jij altijd degene bent die de ander opzoekt, kan dat overgaan in uitputting of [codependentie](/blog/codependent-relationship/). Houd vrienden bij wie je open kunt zijn, let op of het langzaam beter wordt en bepaal wat je op de lange termijn nodig hebt. En merk je dat de onrust vooral van jou is, dan kan onze gids over [stoppen met piekeren in je relatie](/blog/how-to-stop-overthinking-in-a-relationship/) helpen.
 
 Bij een partner die dichtklapt, maakt je woordkeuze veel uit. In Partner Practice kun je verschillende openingszinnen uitproberen met een AI die je partner speelt, zodat je de zinnen vindt die uitnodigen in plaats van onder druk zetten.
+
+Mijn mening: je kunt geduld hebben met iemands redenen en toch besluiten dat de relatie je niet genoeg geeft. Begrijpen waarom is niet hetzelfde als akkoord gaan met eeuwig wachten.
 
 ## Snelle antwoorden
 

@@ -20,6 +20,16 @@ Syystä riippumatta kumppanin kokemus on usein samankaltainen: tiedät hänen mi
 
 Se luo usein myös kehän. Paul Schrodtin ja kollegoiden laaja katsaus havaitsi, että *vaatimus–vetäytyminen*-kaava, jossa toinen painostaa puhumaan ja toinen vetäytyy, liittyy heikompaan tyytyväisyyteen suhteessa kummallakin. Mitä enemmän painostat, sitä enemmän hän vetäytyy, ja mitä enemmän hän vetäytyy, sitä enemmän painostat. Sen ymmärtäminen, *miksi* hän vetäytyy, on ensimmäinen askel ulos kehästä.
 
+Minun näkemykseni: kipein osa ei yleensä ole etäisyys itsessään. Se on se, ettei tiedä, liittyykö se sinuun. Siksi on niin tärkeää selvittää, mikä syy sopii.
+
+:::stats Syy, joka on yleisempi kuin luullaan
+7,5 % | miehistä 155 avioparin tutkimuksessa oli voimakas aleksitymia eli todellisia vaikeuksia tunnistaa ja kuvata tunteita
+6,5 % | naisista oli samoin, mikä vastaa koko väestön arvioita
+lähde: Frye-Cox ja Hesse, tutkimus 155 avioparista (ks. lähteet alla)
+:::
+
+**Pikatesti:** Haluatko nähdä, missä te molemmat voisitte olla? Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, on hyvä lähtökohta.
+
 ## Syy 1: Välttelevä kiintymys
 
 **Miltä se näyttää:** läheisyyttä ja sen perään etäisyyttä. Ihana viikonloppu, sitten hiljainen viikko. Vahva itsenäisyys. Epämukavuus "mihin tämä on menossa" -keskusteluissa. Usein hellä käytännön tavoin.
@@ -37,6 +47,12 @@ Se luo usein myös kehän. Paul Schrodtin ja kollegoiden laaja katsaus havaitsi,
 **Mitä on pinnan alla:** *aleksitymia*, persoonallisuuden piirre, joka vaikeuttaa tunteiden tunnistamista ja kuvaamista. Tutkimuksessa, jossa oli 155 avioparia, Nick Frye-Cox ja Colin Hesse löysivät sitä noin 7,5 prosentilta miehistä ja 6,5 prosentilta naisista, mikä vastaa koko väestöä koskevia arvioita. Aleksitymia liittyi heikompaan avioliiton laatuun, suurelta osin yksinäisyyden ja läheisen viestinnän vaikeuksien kautta.
 
 **Mikä auttaa:** pienemmät, konkreettisemmat kysymykset. Sen sijaan että kysyisit "Miltä isäsi tilanne sinusta tuntuu?", kokeile "Asteikolla 1–10, kuinka stressaantunut olit sen puhelun jälkeen?" tai "Oliko se enemmän ärsyttävää vai enemmän surullista?" Huomaa hänen välittämisensä teoissa. Ja tiedä, että terapia voi auttaa rakentamaan tunnesanastoa.
+
+:::read Lue myös
+/blog/avoidant-attachment-partner/ | Välttelevä kiintymystyyli kumppanilla | 8 merkkiä ja miten rakastaa tilaa tarvitsevaa
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | 6 tapaa erottaa ne
+/blog/signs-your-partner-is-losing-interest/ | Merkit, että kumppani menettää kiinnostuksensa | Mitä kukin merkki voi tarkoittaa
+:::
 
 ## Syy 3: Hän on oppinut, ettei tunteita jaeta
 
@@ -64,6 +80,10 @@ Yksi tapa sanoa se: "Sinun ei tarvitse selittää sitä täydellisesti. Pelkkä 
 
 **Mikä auttaa:** selkeys, ei kärsivällisyys. Kysy suoraan, mitä hän haluaa. Jos vastaus tai hänen käytöksensä seuraavien viikkojen aikana kertoo, ettei hän ole sitoutunut, usko se. Oppaamme [situationshipeistä](/blog/situationship/), [merkeistä, että kumppani menettää kiinnostuksensa](/blog/signs-your-partner-is-losing-interest/), ja siitä, [pitäisikö erota](/blog/should-i-break-up-with-my-partner/), voivat auttaa.
 
+:::tool coach
+Yritätkö selvittää, mikä sopii? Puhu se läpi
+:::
+
 ## Mistä on kyse?
 
 | Jos kumppani... | Kyse voi olla... |
@@ -88,6 +108,8 @@ Rehellinen näkemykseni: syy 5 on se, jota ihmiset haluavat vähiten harkita, ja
 Syystä riippumatta sinulla saa olla tarpeita. Jos olet aina se, joka kurottaa kohti toista, se voi liukua uupumukseksi tai [läheisriippuvuudeksi](/blog/codependent-relationship/). Pidä kiinni ystävistä, joille voit avautua, seuraa, paranevatko asiat hitaasti, ja päätä, mitä tarvitset pitkällä aikavälillä. Ja jos huomaat, että ahdistus on enimmäkseen omaasi, oppaamme [ylianalysoinnista parisuhteessa](/blog/how-to-stop-overthinking-in-a-relationship/) voi auttaa.
 
 Sulkeutuvan kumppanin kanssa sanavalinnoilla on suuri merkitys. Partner Practicessa voit kokeilla erilaisia keskustelun aloituksia tekoälyn kanssa, joka esittää kumppaniasi, ja löytää ne, jotka kutsuvat mukaan painostamisen sijaan.
+
+Minun näkemykseni: voit olla kärsivällinen jonkun syiden kanssa ja silti päättää, ettei suhde anna sinulle tarpeeksi. Syyn ymmärtäminen ei ole sama kuin suostuminen odottamaan ikuisesti.
 
 ## Nopeat vastaukset
 

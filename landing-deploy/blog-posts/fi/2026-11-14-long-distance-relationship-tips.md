@@ -24,6 +24,10 @@ Mahdollisuudet ovat siis hyvät. Kysymys on siitä, miten käytätte jokaisen va
 
 Samat tavat näyttävät pitävän molemmat parityypit onnellisina. Vuoden 2021 tutkimuksessa, jossa oli 232 etäsuhteessa ja 263 lähisuhteessa olevaa nuorta aikuista, Kaitlyn Goldsmith ja Sandra Byers havaitsivat, että suhdetta ylläpitävä käytös, kuten yhteydenpito, tulevaisuudesta puhuminen ja toisen ajatteleminen lämmöllä, liittyi suurempaan tyytyväisyyteen kummassakin ryhmässä, hyvin samalla tavalla.
 
+Minun näkemykseni: hyödyllisin löydös tässä liittyy uskoon. Parit, jotka odottavat suhteen toimivan ja joilla on karkea käsitys siitä, milloin etäisyys päättyy, näyttävät pärjäävän paremmin. Siitä kannattaa puhua aikaisin.
+
+**Pikatesti:** Mikä saa kumppanisi tuntemaan itsensä rakastetuksi kaukaa? Tehkää yhdessä kahden minuutin [rakkauden kielen testi](/quiz/love-language/), englanniksi, ja vertailkaa.
+
 ## Vaihe 1: kun olette erossa
 
 ### Sopikaa "miksi" ja "mihin asti"
@@ -50,6 +54,12 @@ Teksti vie äänensävyn ja houkuttelee pahimpiin tulkintoihin. Jos jokin vaivaa
 
 Päivämäärä kalenterissa muuttaa "ikävä sinua" -tunteen taakasta lähtölaskennaksi.
 
+:::read Lue myös
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | Kun ette voi sopia kasvokkain
+/blog/trust-issues-in-a-relationship/ | Näin pääset yli luottamusongelmista | Kun etäisyys ruokkii epäilyä
+/blog/how-to-say-i-love-you-without-words/ | Näin osoitat rakkautta ilman sanoja | Ideoita, jotka toimivat kaukaa
+:::
+
 ## Vaihe 2: vierailujen aikana
 
 ### Vähentäkää "täydellisyyden" painetta
@@ -63,6 +73,10 @@ Laura Staffordin ja Andy Merollan tutkimuksessa etänä seurustelevista pareista
 ### Älkää säästäkö kaikkia ongelmia vierailuun
 
 Jos olet säästänyt vaikeaa keskustelua siihen "kun ollaan yhdessä", vierailu muuttuu jännittyneeksi jo ennen kuin se alkaa. Hoitakaa isoimmat asiat puhelimessa ja käyttäkää vierailut läheisyyteen.
+
+:::tool check
+Etkö tiedä, miten viesti kuulostaa satojen kilometrien päähän? Tarkista se ensin
+:::
 
 ## Vaihe 3: kun välimatka päättyy
 
@@ -90,6 +104,8 @@ Voisit sanoa: "Tämä on vaikeampaa kuin luulin. En usko, että se tarkoittaa, e
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 Minusta tämä on etäsuhteen aliarvostetuin osa. Parit suunnittelevat vuosia asumista samassa kaupungissa ja käyttävät sitten tuskin lainkaan aikaa sen suunnitteluun, miltä se oikeasti näyttää.
+
+Minun näkemykseni: ihmiset suunnittelevat muuton ja unohtavat sopeutumisen. Varaisin juttutuokion kuukausi sen jälkeen, kun alatte asua lähekkäin, ihan vain kysyäkseni toisiltanne, mikä on erilaista kuin odotitte.
 
 ## Etäsuhde juhlapyhinä
 

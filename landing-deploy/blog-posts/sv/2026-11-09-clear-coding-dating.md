@@ -20,6 +20,17 @@ De flesta håller med om clear coding i princip. Det svåra är själva orden, s
 
 **Ett tydligt "nej" är snällare än att försvinna.** I ett experiment från 2023 fann psykologer under ledning av C. M. Leckfor att personer som mindes att de blivit ghostade mådde sämre, kände mindre kontroll och var mindre säkra på sitt eget värde än personer som mindes att de blivit direkt avvisade. Clear coding gäller också "nej tack".
 
+Min åsikt: att spela ointresserad skyddar dig mest från ett nej som du hellre borde höra tidigt. Tydlighet känns mer riskabelt i stunden och sparar månader senare.
+
+:::stats Därför vill unga som dejtar ha mer tydlighet
+64 % | av aktivt dejtande 18–25-åringar säger att det dejtingen behöver mest är känslomässig ärlighet
+60 % | vill ha tydligare kommunikation om avsikter
+50 % | av amerikanska 18–34-åringar säger att de har varit i en situationship
+källa: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4 000 dejtare i åldern 18–25; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), januari 2024
+:::
+
+**Snabbtest:** Om det känns läskigt att vara rak kan din anknytningsstil spela in. Prova det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska.
+
 ## Steg 1: Din profil och de första meddelandena
 
 Säg grunderna direkt, kort. Du skriver inget kontrakt.
@@ -40,6 +51,12 @@ Intresse behöver inte gömmas i tre dagar.
 
 Lägg märke till meddelande 6: en bestämd dag gör "vi borde hänga" till en riktig plan. Det är i vaga planer som blandade signaler börjar.
 
+:::read Läs också
+/blog/situationship/ | Ska jag stanna i en situationship? | När ingen har sagt vad det här är
+/blog/breadcrumbing/ | Blir jag breadcrumbad? | Motsatsen till clear coding
+/blog/love-bombing/ | Love bombing | När intensitet är en strategi, inte tydlighet
+:::
+
 ## Steg 3: Några dejter in
 
 Det här är steget där folk börjar gissa. Gör inte det.
@@ -48,6 +65,10 @@ Det här är steget där folk börjar gissa. Gör inte det.
 10. "Jag har slutat använda apparna eftersom jag vill se vart det här leder. Ingen press på dig, jag ville bara vara öppen."
 11. "Jag tycker verkligen om att vara med dig. Jag har ingen brådska, men jag hoppas att det här kan bli något."
 12. *Om hen har blivit tyst:* "Hej, jag har märkt att vi inte har pratat så mycket den här veckan. Är du fortfarande intresserad? Det är okej om inte."
+
+:::tool check
+Orolig att ditt meddelande låter för intensivt? Kolla det innan du skickar
+:::
 
 ## Steg 4: Att definiera det
 
@@ -73,6 +94,8 @@ Det här är delen av clear coding som folk hoppar över, och den del som betyde
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
 Det här är det steg jag helst vill att folk tar på allvar. Ett "jag tror inte att vi matchar" på två rader kostar dig en minut och sparar den andra personen dagar av undran.
+
+Min åsikt: ett vänligt nej är något av det generösaste du kan ge någon du har dejtat. Det kostar dig en minut och sparar hen dagar av undran.
 
 ## Vad clear coding inte är
 
@@ -113,3 +136,4 @@ Håll det kort, säg vad du vill i stället för vad den andra borde känna, och
 - Leckfor, C. M., Wood, N. R., Slatcher, R. B., & Hales, A. H. (2023). From close to ghost: Examining the relationship between the need for closure, intentions to ghost, and reactions to being ghosted. *Journal of Social and Personal Relationships*. Sammanfattning på [PsyPost](https://www.psypost.org/people-with-a-high-need-for-closure-are-more-likely-ghost-yet-also-feel-more-distressed-when-they-are-ghosted/)
 - Kardas, M., Kumar, A., & Epley, N. (2022). Overly shallow? Miscalibrated expectations create a barrier to deeper conversation. *Journal of Personality and Social Psychology*, 122(3), 367-398. Sammanfattning från [American Psychological Association](https://www.apa.org/news/press/releases/2021/09/deep-conversations-strangers)
 - Knobloch, L. K., & Solomon, D. H. (2003). Responses to changes in relational uncertainty within dating relationships: Emotions and communication strategies. *Communication Studies*, 54(3), 282-305. [Penn State-post](https://pure.psu.edu/en/publications/responses-to-changes-in-relational-uncertainty-within-dating-rela/)
+- YouGov (2024): [Half of 18- to 34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024

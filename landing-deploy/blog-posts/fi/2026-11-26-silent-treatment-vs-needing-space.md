@@ -24,6 +24,8 @@ Sama katsaus nostaa kuitenkin esiin asian, jonka useimmat artikkelit ohittavat: 
 
 **Pikatesti:** Kiinnostaako, mitä yleensä teet, kun riita kuumenee? Kokeile 2 minuutin [riitatyylitestiä](/quiz/fight-style/), englanniksi.
 
+Minun näkemykseni: en usko, että hiljaisuuden pituus on tärkeintä. Tärkeintä on se, tietääkö toinen, että palaat. Tuo yksi yksityiskohta muuttaa rangaistuksen tauoksi.
+
 ## 6 eroa oman tilan tarpeen ja mykkäkoulun välillä
 
 ### 1. Omasta tilasta kerrotaan. Mykkäkoulu vain alkaa.
@@ -51,6 +53,12 @@ Kun tauko päättyy, keskustelun avaa uudelleen se, joka lähti. Mykkäkoulussa 
 ### 6. Oma tila jättää sinut hieman levottomaksi. Mykkäkoulu saa sinut kulkemaan varpaillasi.
 
 Toisen tauon odottaminen voi olla epämukavaa, varsinkin jos olet luonteeltasi ahdistuvaa tyyppiä. Ajan mittaan sen pitäisi kuitenkin tuntua ennustettavalta. Rankaisevan hiljaisuuden kaava taas yleensä muuttaa sitä, miten käyttäydyt: harjoittelet lauseita etukäteen, vältät aiheita ja pyydät anteeksi vain saadaksesi kylmyyden loppumaan.
+
+:::read Lue myös
+/blog/avoidant-attachment-partner/ | Välttelevä kiintymystyyli kumppanilla | Kun tila on hänen oletuksensa
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | Viesti, joka päättää hiljaisuuden lempeästi
+/blog/my-boyfriend-gets-defensive/ | Poikaystäväni menee puolustuskannalle, kun otan jotain puheeksi | Jos puhuminen muuttuu sulkeutumiseksi
+:::
 
 ## Rinnakkain
 
@@ -100,6 +108,10 @@ Ero oman tilan ja mykkäkoulun välillä on usein yksi tai kaksi lausetta. Sano 
 
 > **Miksi se toimii**
 > Sanaton hiljaisuus jättää kumppanisi täyttämään aukon, ja ahdistunut mieli täyttää sen harvoin ystävällisesti. Paluuaika muuttaa avoimen uhan lyhyeksi odotukseksi, josta selviää. Gottman Institute ehdottaa myös, että sovitte merkistä etukäteen, koska pelkkä pois käveleminen voi näyttää vielä isommalta sulkeutumiselta.
+
+:::tool practice
+Haluatko harjoitella sanomaan rauhallisesti "tarvitsen tauon"?
+:::
 
 ## Mitä sanoa, jos olet vastaanottavana osapuolena
 

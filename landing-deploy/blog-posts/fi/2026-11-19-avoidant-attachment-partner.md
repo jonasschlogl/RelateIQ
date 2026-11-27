@@ -25,6 +25,8 @@ Aikuisina he usein haluavat rakkautta ja yhteyttä, mutta läheisyys voi tuntua 
 | Pitää toisen tarvitsemista normaalina | Pitää toisten tarvitsemista heikkoutena |
 | Pysyy vakaana läheisyyden jälkeen | Vetäytyy läheisten hetkien jälkeen |
 
+Minun näkemykseni: eniten minua auttoi se, että aloin nähdä välttelyn suojautumisena, en torjuntana. Kumppanisi ei vetäydy sinusta. Hän vetäytyy tunteesta, joka joskus ei ollut turvallinen.
+
 ## 8 merkkiä välttelevästä kumppanista
 
 ### 1. Hän vetäytyy läheisten hetkien jälkeen
@@ -58,6 +60,12 @@ Korjaamisen sijaan hän sulkeutuu ja odottaa, että tilanne menee ohi.
 ### 8. Hän näyttää rakkautta enemmän teoilla kuin sanoilla
 
 Pyöräsi korjaaminen tai matkan varaaminen voi olla hänen tapansa sanoa "välitän sinusta". Se on aitoa, vaikka se onkin hiljaisempaa.
+
+:::read Lue myös
+/blog/emotionally-unavailable-partner/ | Tunnetasolla tavoittamaton kumppani | 5 syytä, miksi hän sulkeutuu
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Miten ne erottaa
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin | Kun hänen etäisyytensä käynnistää kierteen
+:::
 
 ## Miksi välttelevät kumppanit vetäytyvät
 
@@ -105,6 +113,10 @@ Kokeile: "Sinun ei tarvitse vastata nyt. Voitaisiinko puhua tästä huomenna ill
 
 Jos olet itse suhteissa ahdistuneempi, välttelevä kumppani voi herättää pelkosi voimakkaasti. Pidä kiinni ystävistäsi, harrastuksistasi ja tukiverkostostasi. Oppaamme [parisuhdeahdistuksesta](/blog/relationship-anxiety/) ja [tunnetasolla tavoittamattomista kumppaneista](/blog/emotionally-unavailable-partner/) voivat auttaa.
 
+:::tool practice
+Haluatko harjoitella läheisyyden pyytämistä painostamatta?
+:::
+
 ## Välttelevä ei tarkoita kylmää
 
 Monet artikkelit kuvaavat välttelevät ihmiset kylminä tai kyvyttöminä rakastamaan. Se on epäreilua ja yleensä väärin. Välttelevä kumppani voi olla syvästi lojaali, vakaa ja välittävä. Hän vain näyttää sen eri tavalla ja tarvitsee enemmän tilaa.
@@ -112,6 +124,8 @@ Monet artikkelit kuvaavat välttelevät ihmiset kylminä tai kyvyttöminä rakas
 Kiintymystyylit voivat myös muuttua. Tutkimusten mukaan turvalliset, johdonmukaiset suhteet ja terapia voivat ajan myötä auttaa ihmisiä tuntemaan olonsa turvallisemmaksi läheisyydessä. Tavoite ei ole "korjata" kumppaniasi vaan rakentaa suhde, jossa te molemmat tunnette olonne turvalliseksi: sinä saat tarpeeksi läheisyyttä ja hän tarpeeksi tilaa.
 
 Jos haluat suunnitella, miten puhua tarpeista ja tilasta ilman että siitä tulee riita, RelationshipAI on tekoälyä hyödyntävä parisuhdevalmentaja, joka auttaa sinua löytämään sanat. Se ei ole terapiaa, mutta se on rauhallinen paikka aloittaa.
+
+Minun näkemykseni: ole kärsivällinen, mutta ei loputtomiin. Toisen tyylin ymmärtäminen ei tarkoita omista tarpeista luopumista. Teillä molemmilla on oikeus niihin.
 
 ## Nopeat vastaukset
 

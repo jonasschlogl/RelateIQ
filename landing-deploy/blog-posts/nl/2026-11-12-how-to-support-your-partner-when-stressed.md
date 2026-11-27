@@ -24,6 +24,15 @@ Waarom? Zichtbaar geholpen worden kan een verborgen boodschap hebben: *je redt h
 
 Dit is de bevinding over steun die ik het liefst zou willen dat mensen kennen. De neiging is om steun zichtbaar te maken, om te laten zien dat je erom geeft. Vaak is het liefste de hulp die je partner nauwelijks opmerkt.
 
+Mijn mening: de beste steun lijkt vaak helemaal niet op steun. Ongevraagd koken kan meer doen dan een lange peptalk, vooral op de zwaarste dagen. Praktische hulp werkt wel het best samen met een paar woorden die benoemen hoe de ander zich voelt. Als je veel doet en toch hoort "het kan je niet schelen", lees dan [mijn vriendin zegt dat haar gevoelens me niets kunnen schelen](/blog/my-girlfriend-says-i-dont-care/).
+
+:::stats Hoeveel steun mensen missen
+69% | van de Amerikaanse volwassenen zegt het afgelopen jaar meer emotionele steun nodig te hebben gehad dan ze kregen
+54% | zegt zich vaak of soms geïsoleerd te voelen
+92% | zegt dat relaties een belangrijke bron van betekenis in hun leven zijn
+bron: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), Stress in America-enquête onder 3.199 Amerikaanse volwassenen, augustus 2025
+:::
+
 ## Stress maakt kleine dingen groot
 
 Lisa Neff en Benjamin Karney volgden pasgetrouwde stellen een aantal jaren en ontdekten dat als mensen meer stress hadden dan normaal, hun tevredenheid met de relatie sterker schommelde met elke goede of slechte dag samen. Stress lijkt de mentale energie op te maken die we normaal gebruiken om kleine problemen in verhouding te houden.
@@ -31,6 +40,12 @@ Lisa Neff en Benjamin Karney volgden pasgetrouwde stellen een aantal jaren en on
 Dus als je gestreste partner snauwt over de handdoek op de grond, gaat het waarschijnlijk niet over de handdoek. Dat weten maakt het veel makkelijker om het niet persoonlijk op te vatten, en om niet op het slechtst denkbare moment ruzie te beginnen over de toon.
 
 Het goede nieuws komt uit een studie uit 2021 van Paula Pietromonaco, Nickola Overall en Sally Powers. Ze volgden meer dan 200 pasgetrouwde stellen en ontdekten dat stress samenhing met een dalende relatiekwaliteit in de loop van de tijd, *behalve* als de partner heel responsief was: luisterde, probeerde te begrijpen en zag wat er nodig was. Met een responsieve partner leek de relatie van de gestreste persoon sterk op die van mensen met weinig stress.
+
+:::read Lees ook
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Als zijn of haar stress jouw zorg wordt
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Als je partner stil wordt bij overbelasting
+/blog/relationship-advice-communication-habits/ | Zo communiceer je beter in je relatie | 7 gewoontes die veranderen hoe jullie ruziemaken
+:::
 
 ## Wat je zegt, per soort stress
 
@@ -86,6 +101,10 @@ Steunen betekent niet alles over je heen laten komen. Je kunt tegelijk vriendeli
 
 Het "je hoeft niet te antwoorden" doet ertoe. Het geeft troost zonder er een taak bij te leggen.
 
+:::tool coach
+Weet je niet wat je partner nu nodig heeft? Denk het eerst door
+:::
+
 ## Stem de steun af op de persoon
 
 Onderzoekers die *dyadische coping* bestuderen (hoe partners samen met stress omgaan), hebben ontdekt dat de manier waarop een stel met stress omgaat nauw samenhangt met hoe tevreden ze in het algemeen zijn. Een grote overzichtsstudie van Mariana Falconier en collega's, die gegevens uit tientallen studies combineerde, vond dat positieve manieren om samen met stress om te gaan samengingen met meer tevredenheid in de relatie, en negatieve, zoals afwijzende of vijandige reacties, met minder.
@@ -106,6 +125,8 @@ Onthoud daarna het antwoord. Dat ene gesprek maakt je een betere steun dan welke
 Stress is besmettelijk. Als je elk slecht humeur opvangt en je eigen leven laat vallen om dat van je partner te managen, raak jij ook op. Houd je eigen vrienden, je slaap en je routines vast. Een stabiele aanwezigheid helpt je partner meer dan een uitgeputte.
 
 Merk je dat je je verantwoordelijk bent gaan voelen voor elk gevoel van je partner, dan kan onze gids over [het verschil tussen zorgzaamheid en codependentie](/blog/codependent-relationship/) nuttig zijn.
+
+Mijn mening: je kunt niet eeuwig de stress van een ander én die van jezelf dragen. Steunen betekent ook zeggen "ik heb vanavond een avondje voor mezelf nodig" zonder je schuldig te voelen.
 
 ## Als jij de stress hebt
 
@@ -153,3 +174,4 @@ Stress kan een slecht humeur verklaren. Het rechtvaardigt nooit dreigementen, in
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Volledige tekst (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Pietromonaco, P. R., Overall, N. C., & Powers, S. I. (2021). *Social Psychological and Personality Science*. [DOI](https://doi.org/10.1177/19485506211001687), samenvatting van [UMass Amherst](https://www.umass.edu/news/article/supportive-partners-protect-relationship)
 - Falconier, M. K., Jackson, J. B., Hilpert, P., & Bodenmann, G. (2015). Dyadic coping and relationship satisfaction: A meta-analysis. *Clinical Psychology Review*, 42, 28-46. [Lees het artikel](https://www.researchgate.net/profile/Guy-Bodenmann/publication/281109389_Dyadic_Coping_and_Relationship_Satisfaction_A_Meta-Analysis/links/56d2dfe408ae85c8234c575e/Dyadic-Coping-and-Relationship-Satisfaction-A-Meta-Analysis.pdf)
+- American Psychological Association (2025): [Stress in America 2025](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), survey of 3,199 US adults, August 2025

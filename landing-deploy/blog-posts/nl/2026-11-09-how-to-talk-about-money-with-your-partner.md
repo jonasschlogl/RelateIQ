@@ -22,6 +22,10 @@ Deze gids geeft je een simpele structuur om met je partner over geld te praten t
 
 **Hoe je je rekeningen regelt, kan uitmaken.** In een experiment met 230 verloofde of pasgetrouwde stellen deelden Jenny Olson en collega's stellen willekeurig in: een gezamenlijke rekening openen, aparte rekeningen houden of doen wat ze wilden. Over twee jaar bleef de relatiekwaliteit gelijk bij stellen die naar een gezamenlijke rekening gingen, terwijl die in de andere groepen daalde. De onderzoekers waarschuwen dat een gezamenlijke rekening niet voor iedereen geschikt is, vooral niet bij financiële instabiliteit of een risico op controle.
 
+Mijn mening: het cijfer over verborgen uitgaven verrast me niet. De meeste mensen verbergen geld niet omdat ze oneerlijk zijn. Ze verbergen het omdat het gesprek moeilijker voelt dan het geheim. Het gesprek makkelijker maken is de echte oplossing.
+
+**Snelle quiz:** Word je stil of ga je harder duwen als het geldgesprek gespannen wordt? De [quiz over je conflictstijl](/quiz/fight-style/) van 2 minuten, in het Engels, helpt jullie te weten wat je kunt verwachten.
+
 ## De geld-date: een agenda in 4 rondes
 
 Kies een ontspannen moment, niet de dag dat er een rekening binnenkomt. Maak het gezellig: koffie, een wandeling, iets lekkers. Reken op 45 minuten, niet op een hele avond.
@@ -63,6 +67,12 @@ Probeer niet alles op te lossen. Neem een of twee kleine beslissingen:
 
 Ik zou de neiging weerstaan om ronde 1 over te slaan. Praten over hoe geld in jullie families werkte, voelt als koetjes en kalfjes. Daar zit meestal de echte verklaring voor jullie ruzies verstopt.
 
+:::read Lees ook
+/blog/relationship-problems-that-keep-coming-back/ | Waarom hebben we steeds dezelfde ruzie? | Als geld de ruzie is die zich herhaalt
+/blog/relationship-advice-communication-habits/ | Zo communiceer je beter in je relatie | 7 gewoontes die veranderen hoe jullie ruziemaken
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Als het geldgesprek slecht ging
+:::
+
 ## Welke opzet past bij jullie?
 
 | Opzet | Hoe het werkt | Kan passen bij stellen die... |
@@ -72,6 +82,10 @@ Ik zou de neiging weerstaan om ronde 1 over te slaan. Praten over hoe geld in ju
 | Alles apart | Ieder betaalt een afgesproken deel van de kosten | ...net samen zijn, of in heel verschillende situaties zitten |
 
 De studie van Olson suggereert dat alles samenvoegen stellen kan helpen zich meer verbonden te voelen, maar het belangrijkste is dat jullie het er allebei echt mee eens zijn en dat niemand zonder toegang tot geld komt te zitten.
+
+:::tool practice
+Wil je het geldgesprek oefenen voordat je het voert?
+:::
 
 ## Wat je zegt in 4 lastige situaties
 
@@ -103,6 +117,8 @@ Begin met het gevoel, niet met de beschuldiging.
 ## Als het gesprek toch ruzie wordt
 
 Neem een pauze als een van jullie overspoeld raakt, en kom er later op terug. Onze gids over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) heeft manieren om te voorkomen dat ruzies escaleren, en als er iets kwetsends is gezegd, kan [sorry zeggen tegen je partner](/blog/how-to-apologize-to-your-partner/) helpen. Is geld onderdeel van een grotere stress, lees dan onze gids over [je partner steunen bij stress](/blog/how-to-support-your-partner-when-stressed/). En gaan jullie na een relatie op afstand samenwonen, dan is geld een van de grote onderwerpen om eerst te bespreken, lees onze [tips voor een relatie op afstand](/blog/long-distance-relationship-tips/).
+
+Mijn mening: als jullie het op je eerste geld-date maar over één ding eens worden, laat het dan het bedrag zijn dat je zonder overleg mag uitgeven. Het scheelt verrassend veel kleine ruzies.
 
 ## Snelle antwoorden
 

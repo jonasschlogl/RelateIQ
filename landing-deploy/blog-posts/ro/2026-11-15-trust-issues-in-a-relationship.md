@@ -22,6 +22,16 @@ Ghidul acesta explică cum se formează de fapt încrederea, potrivit unor decen
 
 Asta e util pentru că problemele de încredere stau de obicei mai mult într-un strat decât în celelalte. Unii au încredere că partenerul le e fidel (credință), dar nu și că va ajunge la timp (previzibilitate). Alții se pot baza pe seriozitatea de zi cu zi, dar tot se tem că vor fi părăsiți într-o zi. Să știi care strat se clatină îți spune la ce să lucrezi.
 
+Părerea mea: încrederea nu e ceva ce decizi să simți. E ceva ce aduni, câte o promisiune ținută pe rând, și de aceea nu poate fi grăbită.
+
+:::stats Încrederea și telefonul
+34% | dintre adulții americani dintr-o relație spun că s-au uitat prin telefonul partenerului fără știrea lui
+23% | dintre cei al căror partener folosește rețelele sociale spun că acestea i-au făcut geloși sau nesiguri în relație
+sursa: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4.860 de adulți din SUA, octombrie 2019
+:::
+
+**Test rapid:** Problemele de încredere sunt adesea legate de atașament. [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, îți poate arăta propriul tipar.
+
 ## Cum crește de fapt încrederea: sacrificii mici
 
 Iată cea mai practică descoperire din cercetările despre încredere. În două studii de lungă durată cu cupluri care ieșeau împreună și cupluri căsătorite, Jennifer Wieselquist, Caryl Rusbult și colegii lor au descoperit că oamenii ajungeau să aibă încredere în partener când îl vedeau **punând relația înaintea propriilor interese imediate**: rămânând calm în loc să riposteze într-o ceartă, renunțând la ceva ce își dorea de dragul cuplului.
@@ -31,6 +41,12 @@ Ei au descris un ciclu. Când un partener face aceste alegeri mici și costisito
 Cu alte cuvinte, încrederea nu se construiește prin promisiuni sau prin trecerea unor teste. Se construiește *văzând* o grijă care costă ceva.
 
 Psihologii Shallcross și Jeffry Simpson au testat asta în laborator cu "teste de tensiune": discuții în care un partener cere ceva ce îl costă pe celălalt, cum ar fi mutarea în alt oraș pentru un job. Partenerii cu încredere mare erau mai îngăduitori și cedau *mai mult* cu cât sacrificiul cerut era mai mare. Partenerii cu încredere mică făceau opusul.
+
+:::read Citește și
+/blog/jealousy-in-a-relationship/ | Este gelozia normală într-o relație? | 7 mituri care o înrăutățesc
+/blog/how-to-rebuild-trust-after-cheating/ | Cum să reconstruiești încrederea după o infidelitate | Cele 4 etape prin care trec cuplurile
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Când îndoiala nu ține de partener
+:::
 
 ## Cercul care întreține problemele de încredere
 
@@ -66,6 +82,10 @@ Dacă partenerul e în general de încredere și te-ai mai simțit așa înainte
 
 Testul acesta e partea căreia i-aș acorda cel mai mult timp. Atât de multe sfaturi despre încredere presupun că problema e partenerul actual. Adesea e unul vechi.
 
+:::tool coach
+Ești pe cale să ceri din nou liniștire? Vorbește mai întâi despre asta
+:::
+
 ## Cum rupi cercul
 
 ### Dacă tu ești cel căruia îi e greu să aibă încredere
@@ -98,6 +118,8 @@ Când a existat o trădare reală, cercul de mai sus nu e problema principală. 
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
 Când te lovește un val de îndoială noaptea târziu, să scrii întâi ce simți, într-un jurnal sau în Coach Chat, te poate ajuta să pui cercul pe pauză. Dacă tiparele sunt vechi sau legate de răni din trecut, un terapeut te poate ajuta mult.
+
+Părerea mea: să te uiți în telefonul lui pare că va potoli îndoiala, dar aproape niciodată nu se întâmplă asta. Mai degrabă îi arată creierului tău că îndoiala trebuia verificată.
 
 ## Răspunsuri rapide
 
@@ -134,3 +156,4 @@ Neîncrederea e folosită uneori pentru a justifica un comportament de control: 
 - Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Text integral (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
 - Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Text integral (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
 - Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Citește studiul](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

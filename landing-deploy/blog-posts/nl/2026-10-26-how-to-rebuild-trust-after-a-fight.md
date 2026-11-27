@@ -28,6 +28,8 @@ Een studie uit 2026 wijst dezelfde kant op. Asya Saydam en Jaime Hsu volgden 378
 
 Ik zal eerlijk zijn: tegen dit advies sputteren mensen het meest. Naar bed gaan zonder het opgelost te hebben, voelt verkeerd. Maar een rustig gesprek aan het ontbijt wint bijna altijd van een derde ronde om één uur 's nachts.
 
+Mijn mening: boos gaan slapen heeft een slechte naam. Ik heb liever dat jullie er een nachtje over slapen en 's ochtends rustig praten dan dat jullie om één uur 's nachts een oplossing forceren die geen van beiden zich goed herinnert.
+
 ## De ochtend erna: herstellen
 
 ### Neem verantwoordelijkheid voor jouw deel, zonder voorwaarden
@@ -49,6 +51,12 @@ Een manier om het te zeggen: "Vertel eens hoe het voor jou was. Ik wil het begri
 In een langlopende studie aan de University of Minnesota keken Jessica Salvatore en collega's hoe stellen herstelden na een gesprek over een conflict. Mensen die moeite hadden om van een conflict te herstellen, vaak door moeilijke ervaringen in hun jeugd, bleven vaker bij elkaar als hun *partner* goed herstelde. De onderzoekers suggereerden dat één partner die het afkoelen kan leiden, de relatie voor allebei kan beschermen.
 
 In de praktijk: ben jij deze keer de rustigste, zet dan de eerste stap. Bied een knuffel aan, een kop koffie, een luchtige opmerking, een "zullen we opnieuw beginnen?" Het herstel leiden is niet toegeven dat alles jouw schuld was. Het is zorgen voor de relatie.
+
+:::read Lees ook
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | Als jullie de ochtend erna niet samen zijn
+/blog/how-to-apologize-to-your-partner/ | Zo bied je je partner oprecht excuses aan | Wat een echt excuus inhoudt
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Zo neem je een pauze zonder te straffen
+:::
 
 ## De week daarna: opnieuw opbouwen
 
@@ -83,6 +91,10 @@ Na een ruzie ontlopen stellen elkaar vaak een beetje, ook als het is opgelost. D
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
+:::tool practice
+Wil je eerst het verzoeningsgesprek oefenen?
+:::
+
 ## Als jij degene bent die gekwetst is
 
 Je mag tijd nodig hebben. Vertrouwen na een kwetsende ruzie komt niet terug omdat iemand één keer sorry heeft gezegd. Het komt terug naarmate het gedrag klopt met de woorden. Vertel je partner wat jou zou helpen.
@@ -92,6 +104,8 @@ Probeer: "Ik waardeer je excuses. Wat me echt zou helpen, is zien dat het volgen
 ## Hoe lang duurt het?
 
 Na één ruzie vaak een paar dagen. Na herhaalde kwetsende ruzies kan het weken of maanden van consequent gedrag kosten. Komt dezelfde ruzie steeds terug, dan kan onze gids over [relatieproblemen die steeds terugkomen](/blog/relationship-problems-that-keep-coming-back/) je helpen het patroon eronder te vinden, en onze gids over [communicatiegewoontes](/blog/relationship-advice-communication-habits/) helpt de volgende escalatie te voorkomen.
+
+Mijn mening: vertrouwen na een ruzie komt meestal terug via klein, saai bewijs, niet via grote gebaren. Drie dagen achter elkaar doen wat je zei dat je zou doen, zegt meer dan bloemen.
 
 ## Als het meer is dan een ruzie
 

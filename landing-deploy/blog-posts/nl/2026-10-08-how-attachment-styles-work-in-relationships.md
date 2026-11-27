@@ -52,6 +52,13 @@ Onderzoekers meten deze dimensies meestal met vragenlijsten zoals de Experiences
 >
 > Geen van beide strategieën is dom. Elke strategie was ergens zinvol. Ze botsen alleen flink als twee mensen op hetzelfde moment de tegenovergestelde gebruiken.
 
+:::chart Hoe volwassenen zichzelf beschreven in het oorspronkelijke onderzoek van Hazan en Shaver
+Veilig | 56 | 56%
+Vermijdend | 25 | 25%
+Angstig | 19 | 19%
+bron: Hazan en Shaver (1987), 620 respondenten (zie bronnen hieronder)
+:::
+
 ## De vier hechtingsstijlen in het dagelijks leven
 
 ### Veilige hechting
@@ -99,6 +106,12 @@ Hoge angst, hoge vermijding. Mensen in deze groep willen nabijheid en zijn er te
 
 Dit kan de moeilijkste stijl zijn om mee te leven, vooral voor degene die hem heeft. Hij hangt vaak samen met vroege ervaringen waarin de mensen die veilig hadden moeten zijn dat niet altijd waren. Stabiele, geduldige relaties en steun van een therapeut die is opgeleid in hechting of trauma kunnen veel helpen.
 
+:::read Lees ook
+/blog/avoidant-attachment-partner/ | Vermijdende hechting bij je partner | Zo houd je van iemand die ruimte nodig heeft
+/blog/relationship-anxiety/ | Relatieangst zonder reden | De angstige kant van de cirkel
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken | Als je hoofd de stilte opvult
+:::
+
 ## Als stijlen elkaar ontmoeten: de cirkel van achtervolgen en terugtrekken
 
 Een van de best onderzochte patronen in relatieonderzoek heet eisen en terugtrekken. De ene partner beweegt naar de ander toe om te praten ("We moeten dit uitpraten"), en de ander beweegt weg om af te koelen ("Ik kan dit nu niet"). Hoe meer de een achtervolgt, hoe meer de ander zich terugtrekt. Hoe meer de ander zich terugtrekt, hoe meer de eerste achtervolgt.
@@ -134,6 +147,8 @@ Een paar kanttekeningen zijn goed om te kennen:
 
 Goede momenten in het dagelijks leven lijken ertoe te doen, niet alleen grote levensgebeurtenissen. In een studie uit 2022 onder 151 net datende stellen en 168 pasgetrouwde stellen vonden Deniz Bayraktaroglu en collega's dat op dagen met meer positieve momenten met hun partner de vermijding van mensen in de weken daarna afnam, deels omdat die momenten hun stemming verbeterden. Dezelfde positieve momenten verminderden de hechtingsangst niet, die misschien geruststelling nodig heeft die consequenter en directer is.
 
+Mijn mening: dit vind ik het meest hoopvolle deel van het hechtingsonderzoek. Je stijl is een beginpunt, geen vonnis, en een stabiele relatie kan hem langzaam veranderen.
+
 ## Veelvoorkomende mythes over hechtingsstijlen
 
 | Mythe | Wat onderzoek echt suggereert |
@@ -146,6 +161,12 @@ Goede momenten in het dagelijks leven lijken ertoe te doen, niet alleen grote le
 | "Twee onveilig gehechte mensen kunnen het niet laten werken." | Veel kunnen het wel, vooral als ze allebei het patroon begrijpen en hun eigen deel nemen. |
 
 De mythe die ik het liefst met pensioen zou sturen, is het idee dat je stijl een vonnis is. Mensen gebruiken "ik ben vermijdend" of "hij is angstig" vaak als einde van het gesprek. Het werkt veel beter als begin.
+
+Mijn mening: het label is minder nuttig dan het patroon. Weten "ik ben angstig" helpt veel minder dan weten "als hij stil wordt, ga ik erachteraan".
+
+:::tool coach
+Herken je de cirkel in je relatie? Praat het door
+:::
 
 ## Hoe je dit in het dagelijks leven gebruikt
 

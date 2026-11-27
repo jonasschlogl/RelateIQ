@@ -18,6 +18,10 @@ Tässä oppaassa on yhdeksän vihreää lippua parisuhteessa, mutta erityisellä
 
 **Miten sen huomaa:** Kerro pienestä onnistumisesta ja katso, mitä tapahtuu. "Mahtavaa, kerro kaikki!" on vihreä lippu. "Kiva" (ja takaisin puhelimeen), "Eikö se tarkoita pidempiä päiviä?" tai "Arvaa, mitä minulle tänään tapahtui" eivät ole.
 
+Minun näkemykseni: tätä vihreää lippua etsisin ensimmäisenä. Se, miten joku reagoi hyviin uutisiisi, kertoo hänestä enemmän kuin se, miten hän käyttäytyy täydellisillä treffeillä.
+
+**Pikatesti:** Kiinnostaako, mitä sinä itse tuot suhteeseen? Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, näyttää, kallistutko turvalliseen, ahdistuneeseen vai välttelevään.
+
 ## 2. Hän tukee tavoitteitasi ottamatta niitä haltuunsa
 
 **Miksi sillä on merkitystä:** Tutkimuksessa, jossa parit puhuivat henkilökohtaisista tavoitteistaan, Brooke Feeney havaitsi, että *herkkä mutta tunkeilematon* tuki (kannustaminen kontrolloimatta) oli yhteydessä siihen, että tuettu kumppani tunsi itsensä onnellisemmaksi, hänen itsetuntonsa oli parempi ja hän luotti enemmän tavoitteidensa saavuttamiseen. Painostaminen, arvostelu tai suunnitelman haltuun ottaminen eivät auttaneet.
@@ -37,6 +41,12 @@ Tuki myös ruokkii itseään, kun se huomataan. Vuonna 2024 tehdyssä tutkimukse
 **Miksi sillä on merkitystä:** Ongelmat, jotka voi nimetä, ovat ongelmia, jotka voi korjata. Hiljaisuus, mököttäminen tai äkilliset purkaukset jättävät sinut arvailemaan.
 
 **Miten sen huomaa:** Kun jokin menee pieleen, sanooko hän "Tuo häiritsi minua, voidaanko puhua?" vai saatko tietää siitä kolme päivää myöhemmin hänen mielialastaan?
+
+:::read Lue myös
+/blog/signs-of-a-toxic-relationship/ | Onko suhteeni myrkyllinen? | Listan toinen puoli
+/blog/love-bombing/ | Love bombing | Kun alun intensiivisyys ei ole vihreä lippu
+/blog/situationship/ | Situationship | Kun ette vielä tiedä, mitä olette
+:::
 
 ## 5. Hän osaa hävitä väittelyn
 
@@ -73,6 +83,10 @@ Tuki myös ruokkii itseään, kun se huomataan. Vuonna 2024 tehdyssä tutkimukse
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
+:::tool coach
+Etkö ole varma, mitä suhteessasi näet? Puhu se läpi
+:::
+
 ## Vihreät liput deittailun alussa
 
 Ensimmäisinä viikkoina et näe, miten joku kestää vuosien stressin, mutta voit huomata:
@@ -88,6 +102,8 @@ Ensimmäisinä viikkoina et näe, miten joku kestää vuosien stressin, mutta vo
 Kukaan ei näytä kaikkia yhdeksää koko ajan. Jokaisella on huonoja päiviä, vanhoja tapoja ja hetkiä, joista ei ole ylpeä. Etsi kaavoja kuukausien ajalta, älä täydellisyyttä yhdeltä viikolta. Ja muista, että suhteessa voi olla vihreitä ja punaisia lippuja samaan aikaan. Jos olet epävarma punaisista, oppaamme [myrkyllisen parisuhteen merkeistä](/blog/signs-of-a-toxic-relationship/) ja [gaslightingista](/blog/gaslighting-in-a-relationship/) voivat auttaa miettimään.
 
 Itse katsoisin tarkimmin numeroa 9. Kumppani voi täyttää kaikki muut kohdat ja silti jättää sinut ahdistuneeksi jokaisen keskustelun jälkeen. Se, miltä sinusta tuntuu jälkeenpäin, on tietoa.
+
+Minun näkemykseni: kukaan ei näytä kaikkia yhdeksää joka päivä, et sinäkään. Katsoisin mieluummin suuntaa: yleistyvätkö nämä asiat välillänne vai harvinaistuvatko?
 
 ## Miten olla vihreän lipun kumppani
 

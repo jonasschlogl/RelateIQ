@@ -31,6 +31,15 @@ Cele mai multe certuri repetate urmează un tipar simplu. Se întâmplă ceva mi
 
 **Test rapid:** dacă revine mereu aceeași ceartă, ajută să-ți știi propriul rol în ea. [Testul gratuit despre stilul în conflict](/quiz/fight-style/), în engleză și de 2 minute, arată dacă tinzi să escaladezi, să te închizi, să mulțumești pe toată lumea sau să repari.
 
+Părerea mea: cifra de 69% mi se pare mai degrabă eliberatoare decât deprimantă. Dacă majoritatea certurilor nu se rezolvă niciodată complet, scopul nu mai e "să nu ne mai certăm niciodată pe tema asta", ci "să ne certăm pe tema asta fără să ne rănim". Iar ăsta e un scop pe care chiar îl puteți atinge.
+
+:::stats De ce revin mereu aceleași certuri
+69% | dintre conflictele din cuplu țin de probleme permanente care s-ar putea să nu dispară niciodată complet, potrivit Gottman Institute
+62% | dintre adulții americani spuneau în 2007 că împărțirea treburilor casnice e foarte importantă pentru o căsnicie reușită, față de 47% în 1990
+86% față de 33% | cât de des cuplurile care au rămas căsătorite răspundeau micilor încercări de conectare ale celuilalt, față de cele care au divorțat
+sursa: The Gottman Institute; Pew Research Center (vezi sursele de mai jos)
+:::
+
 ## 1. Treburile casei și încărcătura mentală
 
 Pare o ceartă despre vase. De cele mai multe ori e despre corectitudine și despre sentimentul că efortul tău e observat. Nu e puțin lucru: într-un sondaj Pew Research Center din 2007, 62% dintre adulții americani au spus că împărțirea treburilor casei e foarte importantă pentru o căsnicie reușită, față de 47% în 1990.
@@ -55,6 +64,12 @@ Cercetarea lui Gottman îi dă o bază solidă. Într-un studiu care a urmărit 
 În loc de: "Îți pasă mai mult de telefon decât de mine."
 
 Ai putea spune: "Mi-e dor să vorbim seara. Putem lăsa telefoanele deoparte la cină săptămâna asta?"
+
+:::read Citește și
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | În seara asta, mâine și săptămâna următoare
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Ce să spui când partenerul îți spune că l-ai rănit | Primele cinci minute, pas cu pas
+/blog/how-to-keep-the-spark-alive/ | Cum să păstrezi scânteia vie | Când certurile au alungat distracția
+:::
 
 ## 3. Banii
 
@@ -93,6 +108,12 @@ O variantă: "Simt că atunci când eu insist, tu taci, iar când tu taci, eu in
 > Odată ce tiparul are un nume, devine ceva cu care vă confruntați împreună, nu ceva ce vă faceți unul altuia. Cel care urmărește se poate relaxa puțin, pentru că cel care se retrage a promis că revine. Cel care se retrage poate reveni, pentru că nu mai e urmărit. Multe cupluri descoperă că stabilirea regulilor unei pauze contează mai mult decât rezolvarea subiectului inițial.
 
 Adesea cercul se alimentează singur. Într-un studiu din 2022 cu 175 de cupluri, Ione Bretaña și colegii săi au descoperit că, atunci când un partener se retrăgea în timpul unui conflict, celălalt tindea să devină mai insistent sau mai agresiv, iar ambele reacții mergeau mână în mână cu o satisfacție mai mică. Faptul că unul se retrage îl face pe celălalt să insiste mai tare, ceea ce îl face pe primul să se retragă și mai mult, iar subiectul inițial se pierde.
+
+Părerea mea: când o ceartă se repetă cuvânt cu cuvânt, aș înceta să dezbat subiectul și aș pune o altă întrebare: "Despre ce e de fapt asta pentru tine?" Răspunsul e de obicei mai mic și mai blând decât cearta.
+
+:::tool practice
+Vrei să repeți discuția asta înainte s-o ai?
+:::
 
 ## Cum vorbești despre o problemă care revine mereu
 

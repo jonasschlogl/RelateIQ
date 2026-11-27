@@ -34,6 +34,14 @@ Au descoperit că asumarea responsabilității era cel mai important element, ia
 
 Merită ținut cont de o rezervă: a fost un experiment în care oamenii au evaluat scuze scrise, iar viața reală, cu răni reale și cu istorie, e mai complicată. Totuși, rezultatul se potrivește cu ce văd mulți terapeuți de cuplu. Scuzele care funcționează sunt despre trăirea celuilalt și despre ce vei face mai departe, nu despre ușurarea ta.
 
+Părerea mea: partea pe care majoritatea o sar e oferta de reparare. "Îmi pare rău" închide momentul, dar "uite ce o să fac altfel" e ce reconstruiește încrederea în săptămânile următoare.
+
+:::read Citește și
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Ce să spui când partenerul îți spune că l-ai rănit | Primele cinci minute, pas cu pas
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | În seara asta, mâine dimineață și săptămâna următoare
+/blog/my-boyfriend-gets-defensive/ | Iubitul meu se pune în defensivă când îi spun ceva | Dacă scuzele se transformă mereu în dezbatere
+:::
+
 ## Oameni diferiți au nevoie de scuze diferite
 
 Mai există un nivel pe care majoritatea sfaturilor îl ratează. Într-o cercetare separată, Ryan Fehr și Michele Gelfand au analizat trei componente ale scuzelor:
@@ -73,6 +81,10 @@ Nu ai nevoie de toate cele șase elemente de fiecare dată. Iată o structură s
 
 > **Cele cinci întrebări nespuse**
 > Fiecare pas răspunde la o întrebare pe care partenerul ți-o pune în tăcere. Înțelegi ce ai făcut? (concret). O să te aperi? (fără condiții). Înțelegi ce mi-a făcut mie? (efectul). Se va mai întâmpla? (repararea). Am voie să fiu încă supărat? (spațiu). Când toate cinci au primit răspuns, rămâne mult mai puțin de certat.
+
+:::tool practice
+Vrei să-ți repeți scuzele înainte să le spui?
+:::
 
 ## Un exemplu complet, de la început până la sfârșit
 
@@ -150,6 +162,8 @@ Dacă același lucru se tot repetă, nu scuzele lipsesc. Lipsește schimbarea co
 Pentru încălcări mai mari, cum ar fi minciuna, înșelatul sau o promisiune importantă încălcată, o discuție bună este începutul, nu sfârșitul. Încrederea se reconstruiește prin fapte consecvente, în timp. Ghidul nostru despre [cum să reconstruiești încrederea după o ceartă](/blog/how-to-rebuild-trust-after-a-fight/) explică procesul pas cu pas.
 
 Dacă scuzele nu duc nicăieri sau tiparul include lipsă de respect, un terapeut de cuplu vă poate ajuta să vedeți ce se întâmplă dedesubt. Dacă vrei să exersezi ce să spui înaintea unei discuții grele, RelationshipAI este un coach de relații bazat pe AI care te ajută să pui scuzele în cuvinte și să le repeți în Partner Practice. Nu e terapie, dar te poate ajuta să începi.
+
+Părerea mea: o scuză urmată de același comportament o săptămână mai târziu îl învață încet pe partener că "îmi pare rău" nu înseamnă nimic. Mai puține scuze cu o schimbare reală valorează mai mult decât multe fără ea.
 
 ## Răspunsuri rapide
 

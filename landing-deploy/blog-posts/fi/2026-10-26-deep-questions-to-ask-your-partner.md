@@ -20,6 +20,10 @@ Siksi tämä opas antaa sinulle 30 tarkkaan valittua kysymystä, jotka on järje
 
 Ja kyllä, ajatuksella läheisyyden rakentamisesta yhä syvemmillä kysymyksillä on kuuluisa alkuperä: Arthur Aronin "36 kysymyksen" tutkimus, jossa vuorotellen yhä henkilökohtaisempiin kysymyksiin vastanneet tuntemattomien parit tunsivat itsensä paljon läheisemmiksi jälkeenpäin. Alla olevat kysymykset käyttävät samaa periaatetta: aloita kevyemmin ja mene syvemmälle askel kerrallaan.
 
+Minun näkemykseni: toinen löydös merkitsee minulle enemmän kuin ensimmäinen. Hieno kysymys, jota seuraa hajamielinen vastaus, tekee enemmän vahinkoa kuin se, ettei kysy mitään, joten laita puhelin pois ennen kuin aloitatte.
+
+**Pikatesti:** Miten kumppanisi haluaa tulla tuetuksi, kun hän avautuu? Kahden minuutin [lohdutustyylin testi](/quiz/comfort-style/), englanniksi, voi auttaa sinua vastaamaan tavalla, joka menee perille.
+
 ## Taso 1: Helpot ja lämpimät
 
 Sopivat: kävelylle, pitkälle automatkalle, ensimmäiselle kokeilukerralle.
@@ -45,6 +49,12 @@ Sopivat: rentoon iltaan, illalliselle ilman puhelimia.
 14. Milloin tunnet minun arvostavan sinua eniten?
 15. Mitä teimme ennen, mitä kaipaat?
 
+:::read Lue myös
+/blog/date-night-questions-for-couples/ | Kysymyksiä treffi-iltaan | Kevyempiä kysymyksiä ja leikkejä hauskaan iltaan
+/blog/how-to-say-i-love-you-without-words/ | Näin osoitat rakkautta ilman sanoja | Mitä tehdä tällaisen keskustelun jälkeen
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Mitä sanoa, kun olet loukannut kumppaniasi | Jos vastaus kirvelee
+:::
+
 ## Taso 3: Haavoittuvat
 
 Sopivat: rauhalliseen, kahdenkeskiseen hetkeen, kun kummallakin on aikaa. Ei kesken riidan.
@@ -69,6 +79,10 @@ Sopivat: rauhalliseen viikonloppuaamuun, vuosipäivään, uuden vuoden alkuun.
 28. Jos voisimme käydä yhden rehellisen keskustelun, jota olemme välttäneet, mistä se olisi?
 29. Mikä tekisi tästä vuodesta sinulle merkityksellisen?
 30. Mitä meissä et halua koskaan pitää itsestäänselvyytenä?
+
+:::tool practice
+Jännittävätkö isommat kysymykset? Harjoittele ensin
+:::
 
 ## Miten vastata, jotta hän jatkaa puhumista
 
@@ -101,6 +115,8 @@ Joskus syvällinen kysymys tuo esiin jotain kipeää: tarpeen, joka jää täytt
 Jotain tällaista: "Olen tosi iloinen, että kerroit. Tarvitsen vähän aikaa miettiä tätä. Voidaanko palata siihen huomenna?"
 
 Jos vastaus johtaa erimielisyyteen, oppaamme [viestintätavoista](/blog/relationship-advice-communication-habits/) voi auttaa estämään sitä kärjistymästä.
+
+Minun näkemykseni: vaikea vastaus on merkki siitä, että kysymys toimi. Jos kumppanisi uskoi sinulle jotain vaikeaa, tärkein asia, jonka voit sanoa, on "kiitos, että kerroit".
 
 ## Tee siitä tapa, älä kertaluonteista
 

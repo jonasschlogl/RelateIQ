@@ -22,6 +22,16 @@ In een klassieke studie beschreven psychologen John Rempel, John Holmes en Mark 
 
 Dit is nuttig omdat vertrouwensproblemen meestal meer in de ene laag zitten dan in de andere. Sommige mensen vertrouwen erop dat hun partner trouw is (geloof), maar niet dat die op tijd komt (voorspelbaarheid). Anderen kunnen rekenen op dagelijkse betrouwbaarheid maar zijn toch bang om ooit verlaten te worden. Weten welke laag wankelt, vertelt je waar je aan moet werken.
 
+Mijn mening: vertrouwen is niet iets wat je besluit te voelen. Het is iets wat je verzamelt, één nagekomen belofte tegelijk, en daarom kun je het niet versnellen.
+
+:::stats Vertrouwen en de telefoon
+34% | van de Amerikaanse volwassenen met een partner zegt de telefoon van hun partner te hebben doorzocht zonder dat die het wist
+23% | van degenen van wie de partner sociale media gebruikt, zegt dat die hen jaloers of onzeker over de relatie heeft gemaakt
+bron: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4.860 Amerikaanse volwassenen, oktober 2019
+:::
+
+**Snelle quiz:** Vertrouwensproblemen hangen vaak samen met hechting. De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, kan je eigen patroon laten zien.
+
 ## Hoe vertrouwen echt groeit: kleine offers
 
 Dit is de meest praktische bevinding uit onderzoek naar vertrouwen. In twee langlopende studies onder datende en getrouwde stellen vonden Jennifer Wieselquist, Caryl Rusbult en collega's dat mensen hun partner gingen vertrouwen als ze zagen dat die **de relatie boven de eigen directe belangen stelde**: rustig blijven in plaats van terugslaan in een ruzie, iets opgeven wat je zelf wilde ten behoeve van het stel.
@@ -31,6 +41,12 @@ Ze beschreven een cyclus. Als de ene partner deze kleine, kostbare keuzes maakt,
 Vertrouwen wordt met andere woorden niet opgebouwd door beloftes of door tests te doorstaan. Het wordt opgebouwd door zorg te *zien* die iets kost.
 
 Psychologen Shallcross en Jeffry Simpson testten dit in het lab met "belastingtests": gesprekken waarin de ene partner om iets vraagt wat de ander iets kost, zoals verhuizen naar een andere stad voor een baan. Partners met veel vertrouwen waren toegeeflijker, en gaven *meer* toe naarmate het gevraagde offer groter was. Partners met weinig vertrouwen deden het tegenovergestelde.
+
+:::read Lees ook
+/blog/jealousy-in-a-relationship/ | Is jaloezie normaal in een relatie? | 7 mythes die het erger maken
+/blog/how-to-rebuild-trust-after-cheating/ | Zo herstel je vertrouwen na vreemdgaan | De 4 fases waar stellen doorheen gaan
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Als de twijfel niet over je partner gaat
+:::
 
 ## De cirkel die vertrouwensproblemen in stand houdt
 
@@ -66,6 +82,10 @@ Is je partner meestal betrouwbaar en heb je je eerder zo gevoeld, dan ligt het w
 
 Aan deze check zou ik zelf de meeste tijd besteden. Zoveel advies over vertrouwen gaat ervan uit dat het probleem de huidige partner is. Vaak is het een oude.
 
+:::tool coach
+Sta je op het punt weer om geruststelling te vragen? Praat het eerst door
+:::
+
 ## Hoe je de cirkel doorbreekt
 
 ### Als jij moeite hebt met vertrouwen
@@ -98,6 +118,8 @@ Is er echt verraad geweest, dan is de cirkel hierboven niet het hoofdprobleem. V
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 Als er 's avonds laat een golf van twijfel toeslaat, kan het helpen om het eerst op te schrijven, in een dagboek of in Coach Chat, om de cirkel even stil te zetten. Zijn de patronen hardnekkig of hangen ze samen met oude pijn, dan kan een therapeut veel helpen.
+
+Mijn mening: zijn of haar telefoon checken voelt alsof het de twijfel zal wegnemen, en dat doet het bijna nooit. Eerder leert het je brein dat de twijfel gecontroleerd moest worden.
 
 ## Snelle antwoorden
 
@@ -134,3 +156,4 @@ Wantrouwen wordt soms gebruikt om controlerend gedrag te rechtvaardigen: telefoo
 - Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Volledige tekst (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
 - Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Volledige tekst (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
 - Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Lees de studie](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

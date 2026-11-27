@@ -20,6 +20,17 @@ De meeste mensen zijn het in principe eens met clear coding. Het lastige zijn de
 
 **Een duidelijk "nee" is vriendelijker dan verdwijnen.** In een experiment uit 2023 ontdekten psychologen onder leiding van C. M. Leckfor dat mensen die terugdachten aan een keer dat ze geghost werden zich slechter voelden, minder controle ervoeren en minder zeker waren van hun eigen waarde dan mensen die terugdachten aan een directe afwijzing. Clear coding geldt ook voor "nee, dank je".
 
+Mijn mening: je cool voordoen beschermt je vooral tegen een nee dat je liever vroeg hoort. Duidelijkheid voelt op het moment zelf riskanter en scheelt je later maanden.
+
+:::stats Waarom jonge daters meer duidelijkheid willen
+64% | van de actief datende 18- tot 25-jarigen zegt dat emotionele eerlijkheid is wat daten het meest nodig heeft
+60% | wil duidelijkere communicatie over intenties
+50% | van de Amerikaanse 18- tot 34-jarigen zegt in een situationship te hebben gezeten
+bron: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4.000 daters van 18 tot 25 jaar; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), januari 2024
+:::
+
+**Snelle quiz:** Als direct zijn eng voelt, kan je hechtingsstijl daar een rol in spelen. Probeer de [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels.
+
 ## Fase 1: je profiel en de eerste berichten
 
 Zeg de basis meteen, kort. Je schrijft geen contract.
@@ -40,6 +51,12 @@ Interesse hoeft niet drie dagen verstopt te worden.
 
 Let op bericht 6: een concrete dag maakt van "we moeten eens afspreken" een echt plan. Bij vage plannen beginnen gemengde signalen.
 
+:::read Lees ook
+/blog/situationship/ | Moet ik in een situationship blijven? | Als niemand heeft gezegd wat dit is
+/blog/breadcrumbing/ | Word ik gebreadcrumbd? | Het tegenovergestelde van clear coding
+/blog/love-bombing/ | Love bombing | Als intensiteit een strategie is, geen duidelijkheid
+:::
+
 ## Fase 3: een paar dates verder
 
 Dit is de fase waarin mensen gaan gissen. Doe dat niet.
@@ -48,6 +65,10 @@ Dit is de fase waarin mensen gaan gissen. Doe dat niet.
 10. "Ik ben gestopt met de apps omdat ik wil zien waar dit naartoe gaat. Geen druk voor jou, ik wilde gewoon open zijn."
 11. "Ik vind het echt fijn om tijd met je door te brengen. Ik heb geen haast, maar ik hoop dat dit iets kan worden."
 12. *Als het stil is geworden:* "Hé, ik merk dat we deze week weinig gepraat hebben. Heb je nog interesse? Het is oké als dat niet zo is."
+
+:::tool check
+Bang dat je bericht te intens klinkt? Check het voordat je het verstuurt
+:::
 
 ## Fase 4: het benoemen
 
@@ -73,6 +94,8 @@ Dit is het deel van clear coding dat mensen overslaan, en het deel dat het meest
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
 Dit is de fase waarvan ik het liefst zou willen dat mensen hem serieus nemen. Een "ik denk niet dat we bij elkaar passen" van twee regels kost je een minuut en bespaart de ander dagen van twijfel.
+
+Mijn mening: een vriendelijk nee is een van de gulste dingen die je kunt geven aan iemand met wie je hebt gedate. Het kost jou een minuut en bespaart die ander dagen van twijfel.
 
 ## Wat clear coding niet is
 
@@ -113,3 +136,4 @@ Houd het kort, zeg wat jij wilt in plaats van wat de ander zou moeten voelen, en
 - Leckfor, C. M., Wood, N. R., Slatcher, R. B., & Hales, A. H. (2023). From close to ghost: Examining the relationship between the need for closure, intentions to ghost, and reactions to being ghosted. *Journal of Social and Personal Relationships*. Samenvatting op [PsyPost](https://www.psypost.org/people-with-a-high-need-for-closure-are-more-likely-ghost-yet-also-feel-more-distressed-when-they-are-ghosted/)
 - Kardas, M., Kumar, A., & Epley, N. (2022). Overly shallow? Miscalibrated expectations create a barrier to deeper conversation. *Journal of Personality and Social Psychology*, 122(3), 367-398. Samenvatting van de [American Psychological Association](https://www.apa.org/news/press/releases/2021/09/deep-conversations-strangers)
 - Knobloch, L. K., & Solomon, D. H. (2003). Responses to changes in relational uncertainty within dating relationships: Emotions and communication strategies. *Communication Studies*, 54(3), 282-305. [Penn State-record](https://pure.psu.edu/en/publications/responses-to-changes-in-relational-uncertainty-within-dating-rela/)
+- YouGov (2024): [Half of 18- to 34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024

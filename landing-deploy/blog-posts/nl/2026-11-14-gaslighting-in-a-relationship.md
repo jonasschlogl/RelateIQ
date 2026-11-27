@@ -14,6 +14,13 @@ Hoe zie je dan het verschil? Deze vijf vragen helpen.
 > **Het korte antwoord:**
 > Gaslighting is een patroon waarbij iemand je laat twijfelen aan je eigen geheugen, waarneming of verstand, meestal om controle te krijgen. Gewone onenigheid laat ruimte voor twee versies van wat er gebeurde. Gaslighting valt je verstand aan in plaats van de gebeurtenis, herhaalt zich in de loop van de tijd en laat je verward en afhankelijk van de versie van de ander achter.
 
+:::stats Hoe vaak psychologische agressie voorkomt
+20,4% | van de Amerikaanse vrouwen heeft expressieve agressie van een partner meegemaakt, zoals schelden, beledigen of vernederen
+13,1% | van de Amerikaanse mannen zegt hetzelfde
+27,2% | van de vrouwen en 19,5% van de mannen heeft dwingende controle meegemaakt, waartoe ook kan horen dat iemand gaat twijfelen aan zijn of haar eigen geheugen
+bron: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), gegevens verzameld in 2023 en 2024
+:::
+
 ## Vraag 1: Is er ruimte voor twee versies?
 
 Bij gewone onenigheid kunnen allebei zeggen "ik herinner het me anders" en het daarbij laten. Het geheugen is onvolmaakt, en stellen herinneren zich dingen voortdurend verkeerd.
@@ -27,6 +34,10 @@ Bij gaslighting mag er maar één versie van de werkelijkheid bestaan, en die is
 | "Zo bedoelde ik het niet, sorry dat het pijn deed." | "Je bent veel te gevoelig. Niemand anders zou boos worden." |
 | Jullie geven allebei weleens toe | Jij biedt altijd je excuses aan |
 
+Mijn mening: dat twee mensen dezelfde avond anders herinneren, is volkomen normaal. De vraag is niet wiens geheugen klopt. De vraag is of jouw versie überhaupt mag bestaan.
+
+**Snelle quiz:** Als je niet weet hoe ongerust je moet zijn, geeft de [toxische-relatiecheck](/quiz/toxic-relationship/) van 2 minuten, in het Engels, je een rustiger en breder beeld.
+
 ## Vraag 2: Gaat het om de gebeurtenis, of om jouw verstand?
 
 Onenigheid gaat over *wat er gebeurde*. Gaslighting glijdt af naar *wat er mis is met jou*: je geheugen, je stabiliteit, je verstand.
@@ -34,6 +45,12 @@ Onenigheid gaat over *wat er gebeurde*. Gaslighting glijdt af naar *wat er mis i
 In een studie uit 2023 vroegen psycholoog Willis Klein en collega's 65 mensen die dachten dat ze door een partner gegaslight waren om het te beschrijven. Elke deelnemer zei dat de partner hen beledigde en kleineerde, vaak met de suggestie dat ze het contact met de werkelijkheid kwijt waren, en hen gek, dom of overdreven emotioneel noemde. Socioloog Paige Sweet, die gaslighting in gewelddadige relaties heeft onderzocht, vatte het in hetzelfde NPR-stuk samen: gaslighting is iemand die probeert je gek te laten lijken of je gek te laten voelen.
 
 Eindigen jullie ruzies vaak met een oordeel over je mentale toestand, let daar dan op.
+
+:::read Lees ook
+/blog/signs-of-a-toxic-relationship/ | Is mijn relatie toxisch? | Een check in 3 niveaus: ongezond, toxisch en controlerend
+/blog/my-boyfriend-gets-defensive/ | Mijn vriend wordt defensief als ik iets aankaart | Defensief of iets meer
+/blog/trust-issues-in-a-relationship/ | Zo overwin je vertrouwensproblemen | Als de twijfel steeds terugkomt
+:::
 
 ## Vraag 3: Komt het als patroon?
 
@@ -61,6 +78,12 @@ Als je maar één van de vijf vragen beantwoordt, zou ik deze kiezen. Over je ge
 Het onderzoek van Sweet voegt een handige blik toe. In levensverhaalinterviews met 43 vrouwen die huiselijk geweld hadden overleefd, ontdekte ze dat gaslighting vaak leunt op bestaande stereotypen en kwetsbaarheden, zoals het idee dat vrouwen "emotioneel" zijn, of iemands psychische voorgeschiedenis of verblijfsstatus, om de versie van de een geloofwaardiger te laten lijken voor anderen. Vraag jezelf af: komt het de ander altijd goed uit als ik aan mezelf twijfel? Krijgt hij of zij controle, ontloopt hij of zij verantwoordelijkheid of krijgt hij of zij zijn zin als ik twijfel?
 
 Niet elke ontkenning is berekend. Sommige mensen ontkennen dingen omdat ze zich schamen of in de verdediging schieten. Het effect kan alsnog pijn doen en het is de moeite waard om het aan te kaarten. Maar een patroon dat steeds de een bevoordeelt en de ander iets kost, verdient het om serieus genomen te worden.
+
+Mijn mening: ik denk dat "wie heeft er baat bij?" de nuttigste van deze vragen is. Gewone meningsverschillen laten meestal niet de ene persoon steeds winnen en de andere steeds aan zichzelf twijfelen.
+
+:::tool coach
+Twijfel je aan jezelf? Praat het door op neutraal terrein
+:::
 
 ## Wat je kunt doen als je denkt dat je gegaslight wordt
 
@@ -111,3 +134,4 @@ Gaslighting gaat vaak samen met andere vormen van controle. Als je partner je is
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Samenvatting op [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
 - NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), met Robin Stern, Paige Sweet en Kate Abramson
 - Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

@@ -24,6 +24,15 @@ Varför? Att uppenbart bli hjälpt kan bära ett dolt budskap: *du klarar inte d
 
 Det här är fyndet om stöd som jag helst vill att folk ska känna till. Impulsen är att göra det synligt, att visa att man bryr sig. Ofta är det vänligaste den hjälp hen knappt märker.
 
+Min åsikt: det bästa stödet ser ofta inte ut som stöd alls. Att laga middag utan att bli ombedd kan göra mer än ett långt peppande tal, särskilt de värsta dagarna. Praktisk hjälp fungerar ändå bäst tillsammans med några ord som sätter ord på hur hen mår. Om du gör mycket och ändå hör "du bryr dig inte", läs [min flickvän säger att jag inte bryr mig om hennes känslor](/blog/my-girlfriend-says-i-dont-care/).
+
+:::stats Hur mycket stöd människor saknar
+69 % | av vuxna amerikaner säger att de behövde mer känslomässigt stöd det senaste året än de fick
+54 % | säger att de ofta eller ibland känner sig isolerade
+92 % | säger att relationer är en viktig källa till mening i livet
+källa: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), Stress in America-undersökningen bland 3 199 vuxna amerikaner, augusti 2025
+:::
+
 ## Stress gör små saker stora
 
 Lisa Neff och Benjamin Karney följde nygifta par under flera år och fann att när människor var mer stressade än vanligt svängde deras nöjdhet med relationen mer med varje bra eller dålig dag tillsammans. Stress verkar förbruka den mentala energi vi normalt använder för att hålla små problem i rätt proportion.
@@ -31,6 +40,12 @@ Lisa Neff och Benjamin Karney följde nygifta par under flera år och fann att n
 Så om din stressade partner fräser åt handduken på golvet handlar det förmodligen inte om handduken. Att veta det gör det mycket lättare att inte ta det personligt, och att inte starta ett bråk om tonläget i sämsta tänkbara ögonblick.
 
 De goda nyheterna kommer från en studie från 2021 av Paula Pietromonaco, Nickola Overall och Sally Powers. När de följde mer än 200 nygifta par fann de att stress hängde ihop med att relationskvaliteten sjönk över tid, *utom* när partnern var mycket lyhörd: lyssnade, försökte förstå och såg vad som behövdes. Med en lyhörd partner såg den stressades relation ut ungefär som hos personer med lite stress.
+
+:::read Läs också
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När hens stress blir din oro
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | Om hen blir tyst när det blir för mycket
+/blog/relationship-advice-communication-habits/ | Så kommunicerar ni bättre i relationen | 7 vanor som ändrar hur ni bråkar
+:::
 
 ## Vad du kan säga, efter typ av stress
 
@@ -86,6 +101,10 @@ Stöd betyder inte att du ska ta emot allt. Du kan vara vänlig och tydlig samti
 
 "Du behöver inte svara" spelar roll. Det ger tröst utan att lägga till en uppgift.
 
+:::tool coach
+Osäker på vad din partner behöver just nu? Tänk igenom det först
+:::
+
 ## Anpassa stödet efter personen
 
 Forskare som studerar *dyadisk coping* (hur partner hanterar stress tillsammans) har funnit att sättet ett par hanterar stress på hänger nära ihop med hur nöjda de är överlag. En stor översikt av Mariana Falconier och kollegor, som slog ihop data från dussintals studier, fann att positiva sätt att hantera stress tillsammans hängde ihop med högre nöjdhet i relationen, och negativa, som avfärdande eller fientliga reaktioner, med lägre.
@@ -106,6 +125,8 @@ Kom sedan ihåg svaret. Det enda samtalet gör dig till ett bättre stöd än vi
 Stress smittar. Om du tar emot varje dåligt humör och släpper ditt eget liv för att hantera hens tar du också slut. Behåll dina egna vänner, din sömn och dina rutiner. Att vara en stadig närvaro hjälper hen mer än att vara en utsliten.
 
 Om du märker att du har börjat känna dig ansvarig för hens alla känslor kan vår guide om [skillnaden mellan omtanke och medberoende](/blog/codependent-relationship/) vara användbar.
+
+Min åsikt: du kan inte bära någon annans stress och din egen för alltid. Att vara stöttande inkluderar att säga "jag behöver en ledig kväll i kväll" utan att känna skuld.
 
 ## När det är du som är stressad
 
@@ -153,3 +174,4 @@ Stress kan förklara ett dåligt humör. Den ursäktar aldrig hot, skrämsel ell
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Fulltext (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Pietromonaco, P. R., Overall, N. C., & Powers, S. I. (2021). *Social Psychological and Personality Science*. [DOI](https://doi.org/10.1177/19485506211001687), sammanfattning från [UMass Amherst](https://www.umass.edu/news/article/supportive-partners-protect-relationship)
 - Falconier, M. K., Jackson, J. B., Hilpert, P., & Bodenmann, G. (2015). Dyadic coping and relationship satisfaction: A meta-analysis. *Clinical Psychology Review*, 42, 28-46. [Läs artikeln](https://www.researchgate.net/profile/Guy-Bodenmann/publication/281109389_Dyadic_Coping_and_Relationship_Satisfaction_A_Meta-Analysis/links/56d2dfe408ae85c8234c575e/Dyadic-Coping-and-Relationship-Satisfaction-A-Meta-Analysis.pdf)
+- American Psychological Association (2025): [Stress in America 2025](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), survey of 3,199 US adults, August 2025

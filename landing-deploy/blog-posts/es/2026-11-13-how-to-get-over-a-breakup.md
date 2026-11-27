@@ -24,6 +24,16 @@ El objetivo aquí no es sentirte mejor. Es pasar este tiempo sin ponerle las cos
 
 **Escribe una frase para más adelante.** En el móvil: "Recuerda por qué terminó: ___." La vas a necesitar en la segunda semana.
 
+Mi opinión: los dos primeros días no son el momento de entender nada. Come, duerme, llama a una amiga. Darle sentido puede esperar.
+
+:::read Lecturas relacionadas
+/blog/should-i-break-up-with-my-partner/ | ¿Cómo saber cuándo romper? | Si todavía lo estás decidiendo
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | Para cuando aparece en la siguiente relación
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cómo dejar de pensar demasiado | Cuando tu mente no para de repetirlo
+:::
+
+**Test rápido:** A algunas personas las rupturas les cuestan más por su forma de vincularse. El [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, puede ayudarte a entender tu reacción.
+
 ## Etapa 2: las dos primeras semanas
 
 Suele ser el tramo más duro. Se pasa el shock y llega la añoranza.
@@ -52,6 +62,10 @@ Tristeza, rabia, alivio y culpa, todo en una tarde. Es normal. Intentar obligart
 > En tres estudios, Erica Slotter, Wendi Gardner y Eli Finkel vieron que tras una ruptura la idea que las personas tenían de sí mismas se volvía menos clara. Sentían su identidad, como dijeron ellos, "menos clara e incluso más pequeña", y esa pérdida de claridad contribuía al malestar. En una relación, las rutinas, los planes e incluso el gusto por las películas se comparten. Cuando termina, tienes que separar qué partes eran *tuyas*. Esa separación es una gran parte de sanar.
 
 Si te quedas con una sola cosa de esta etapa, que sea esta: silencia a tu ex. No como gesto, sino como cuidado básico. Cada vistazo pone el contador a cero.
+
+:::tool coach
+¿Tienes ganas de escribirle a las 2 de la mañana? Háblalo aquí primero
+:::
 
 ## Etapa 3: de la tercera a la duodécima semana
 
@@ -86,6 +100,8 @@ No hay un número fijo, y quien te prometa uno está adivinando. Mucha gente not
 | Ves lo bueno y lo malo de la relación | Te sientes sin esperanza o piensas en hacerte daño |
 
 Si algo de la columna derecha se parece a lo que te pasa, habla con un médico o un psicólogo. Si estás pensando en quitarte la vida, contacta ya con los servicios de emergencia o una línea de crisis.
+
+Mi opinión: no hay fecha límite para superar a alguien. Si poco a poco tienes más días buenos que malos, lo estás haciendo bien, aunque esté tardando más de lo que esperabas.
 
 ## Si fuiste tú quien terminó
 

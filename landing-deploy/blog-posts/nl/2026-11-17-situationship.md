@@ -22,6 +22,13 @@ Situationships zijn pas sinds kort een onderzoeksonderwerp, en het meeste werk t
 
 **Waarom dat voor jou belangrijk is:** een situationship kan goed genoeg voelen om in te blijven, omdat sommige behoeften echt vervuld worden. Maar "goed genoeg voor nu" kan ongemerkt maanden worden. Daar helpt een ouder idee uit relatieonderzoek.
 
+:::stats Hoe vaak situationships voorkomen
+39% | van de Amerikaanse volwassenen zegt in een situationship te hebben gezeten
+50% | van de 18- tot 34-jarigen zegt hetzelfde
+29% | van de situationships onder 18- tot 34-jarigen begon op sociale media
+bron: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1.110 Amerikaanse volwassenen, januari 2024
+:::
+
 ## Glijden of beslissen
 
 Psychologen Scott Stanley, Galena Rhoades en Howard Markman beschreven het verschil tussen *glijden* en *beslissen* in relaties. Glijden is als dingen gewoon gebeuren: je blijft vaker slapen, daarna vieren jullie de feestdagen samen, zonder dat iemand daar ooit voor koos. Beslissen is als jullie samen bewust een keuze maken.
@@ -29,6 +36,16 @@ Psychologen Scott Stanley, Galena Rhoades en Howard Markman beschreven het versc
 Hun werk ging over stellen die erin gleden om samen te gaan wonen, maar het idee past perfect bij situationships. Een situationship is bijna per definitie een relatie waar niemand voor heeft gekozen. De gids hieronder is gewoon een manier om van glijden naar beslissen te gaan, wat je ook besluit.
 
 Dit idee zou ik onthouden. De meeste situationships zijn niemands plan. Ze zijn een reeks kleine "prima, waarom niet"-momenten die niemand heeft bevraagd.
+
+Mijn mening: ik denk niet dat situationships het probleem zijn. Er standaard in blijven hangen wel. Als je er echt voor gekozen hebt en het werkt voor jullie allebei, prima. Als je wacht tot het iets meer wordt, is het tijd om het te vragen.
+
+:::read Lees ook
+/blog/clear-coding-dating/ | Clear coding bij daten | 20 kant-en-klare berichten om te zeggen wat je wilt
+/blog/breadcrumbing/ | Word ik gebreadcrumbd? | Als "we zien wel" maanden wordt
+/blog/how-attachment-styles-work-in-relationships/ | Wat is mijn hechtingsstijl? | Waarom onzekerheid sommige mensen harder raakt
+:::
+
+**Snelle quiz:** De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, kan verklaren waarom niet weten waar je staat zo moeilijk voelt.
 
 ## De beslisgids
 
@@ -60,6 +77,10 @@ Zeg het simpel: "Ik vind het fijn zoals het nu is, en ik zoek op dit moment niet
 
 En spreek de basis af, zoals of jullie ook met anderen daten en wat jullie doen als een van jullie meer begint te willen. Check daarna over een paar maanden opnieuw, want gevoelens veranderen.
 
+:::tool practice
+Klaar voor het "wat zijn we"-gesprek? Oefen het eerst
+:::
+
 ## Route 2: Het benoemen
 
 Kies een rustig moment, niet meteen na een jaloerse spiraal of om één uur 's nachts via een appje. Houd het kort, zeg wat je wilt en geef de ander ruimte om eerlijk te antwoorden.
@@ -85,6 +106,8 @@ Je hebt geen toestemming van de ander nodig en geen lange uitleg. Geef jezelf da
 > Zes maanden lang brachten Jules en Ari de meeste weekenden samen door, maar Ari begon over iets anders zodra "wij" ter sprake kwam. Uiteindelijk vroeg Jules het, rustig, bij een kop koffie. Ari zei dat hij "het niet wilde verpesten met labels". Jules ging naar huis en liep de drie vragen door. Wat ze wilde: een relatie. Hoe ze zich voelde: de meeste weken angstig. Zijn gedrag: geen plannen verder dan zaterdag, ze had zijn vrienden nooit ontmoet. De tabel zei weggaan. Het duurde nog twee weken voordat ze het echt deed, en een maand voordat ze stopte met zijn stories bekijken. Drie maanden later zei Jules dat het beslissen het moeilijkste was geweest, niet het weggaan.
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
+
+Mijn mening: weggaan uit iets wat nooit benoemd is, telt ook als een breuk, en het mag net zoveel pijn doen. Laat niemand je vertellen dat het "niet eens een echte relatie was".
 
 ## Als jij degene bent die niet meer wil
 

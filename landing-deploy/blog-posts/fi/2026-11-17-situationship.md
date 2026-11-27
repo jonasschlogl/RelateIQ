@@ -22,6 +22,13 @@ Situationshipit ovat tulleet tutkimuksen kohteeksi vasta äskettäin, ja suurin 
 
 **Miksi sillä on merkitystä sinulle:** situationship voi tuntua tarpeeksi hyvältä jäädäkseen, koska osa tarpeista todella täyttyy. Mutta "tarpeeksi hyvä toistaiseksi" voi huomaamatta venyä kuukausiksi. Siinä auttaa vanhempi ajatus parisuhdetutkimuksesta.
 
+:::stats Kuinka yleisiä situationshipit ovat
+39 % | yhdysvaltalaisista aikuisista sanoo olleensa situationshipissä
+50 % | 18–34-vuotiaista sanoo samaa
+29 % | 18–34-vuotiaiden situationshipeistä alkoi somessa
+lähde: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1 110 yhdysvaltalaista aikuista, tammikuu 2024
+:::
+
 ## Ajelehtiminen vai päättäminen
 
 Psykologit Scott Stanley, Galena Rhoades ja Howard Markman kuvasivat eroa *ajelehtimisen* ja *päättämisen* välillä suhteissa. Ajelehtiminen tarkoittaa, että asiat vain tapahtuvat: alat yöpyä useammin, sitten vietätte juhlapyhät yhdessä, eikä kukaan koskaan valinnut sitä. Päättäminen tarkoittaa, että teette tietoisesti valinnan yhdessä.
@@ -29,6 +36,16 @@ Psykologit Scott Stanley, Galena Rhoades ja Howard Markman kuvasivat eroa *ajele
 Heidän tutkimuksensa koski pareja, jotka ajelehtivat yhteen muuttamiseen, mutta ajatus sopii täydellisesti situationshipeihin. Situationship on lähes määritelmänsä mukaan suhde, josta kukaan ei ole päättänyt. Alla oleva opas on yksinkertaisesti tapa siirtyä ajelehtimisesta päättämiseen, päätitpä mitä tahansa.
 
 Tämän ajatuksen pitäisin itse. Useimmat situationshipit eivät ole kenenkään suunnitelma. Ne ovat sarja pieniä "joo, miksei" -hetkiä, joita kukaan ei pysähtynyt kyseenalaistamaan.
+
+Minun näkemykseni: en usko, että situationshipit ovat ongelma. Ongelma on se, että jää sellaiseen vain vanhasta tottumuksesta. Jos olet oikeasti valinnut sen ja se sopii teille molemmille, hyvä niin. Jos odotat sen muuttuvan joksikin muuksi, on aika kysyä.
+
+:::read Lue myös
+/blog/clear-coding-dating/ | Clear coding deittailussa | 20 valmista viestiä, joilla sanot mitä haluat
+/blog/breadcrumbing/ | Onko minulle tehty breadcrumbingia? | Kun "katsotaan" venyy kuukausiksi
+/blog/how-attachment-styles-work-in-relationships/ | Mikä on kiintymystyylini? | Miksi epävarmuus osuu joihinkin kovemmin
+:::
+
+**Pikatesti:** Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, voi selittää, miksi on niin vaikeaa olla tietämättä, missä mennään.
 
 ## Päätösopas
 
@@ -60,6 +77,10 @@ Sano se yksinkertaisesti: "Nautin tästä tällaisena, enkä etsi juuri nyt mit�
 
 Ja sopikaa perusasioista, kuten tapailetteko muita ja miten toimitte, jos toinen alkaa haluta enemmän. Palatkaa asiaan parin kuukauden päästä, koska tunteet muuttuvat.
 
+:::tool practice
+Valmis "mitä me olemme" -keskusteluun? Harjoittele se ensin
+:::
+
 ## Polku 2: Määrittele suhde
 
 Valitse rauhallinen hetki, älä heti mustasukkaisuuskierteen jälkeen tai kello yhdeltä yöllä viestillä. Pidä se lyhyenä, sano mitä haluat ja anna hänelle tilaa vastata rehellisesti.
@@ -85,6 +106,8 @@ Et tarvitse hänen hyväksyntäänsä etkä pitkää selitystä. Ota sitten itse
 > Puolen vuoden ajan Jules ja Ari viettivät useimmat viikonloput yhdessä, mutta Ari vaihtoi puheenaihetta aina, kun "me" tuli puheeksi. Lopulta Jules kysyi rauhallisesti kahvin äärellä. Ari sanoi, ettei "halunnut pilata tätä nimeämällä". Jules meni kotiin ja kävi läpi kolme kysymystä. Mitä hän halusi: suhteen. Miltä tuntui: ahdistuneelta useimpina viikkoina. Arin käytös: ei suunnitelmia lauantaita pidemmälle, Jules ei ollut koskaan tavannut hänen ystäviään. Taulukko sanoi lähde. Kesti vielä kaksi viikkoa ennen kuin hän oikeasti teki sen, ja kuukauden ennen kuin hän lakkasi katsomasta Arin tarinoita. Kolmen kuukauden päästä Jules sanoi, että vaikeinta oli ollut päättäminen, ei lähteminen.
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
+
+Minun näkemykseni: määrittelemättömästä lähteminen on silti ero, ja se saa sattua kuin ero. Älä anna kenenkään sanoa, ettei se "ollut edes oikea suhde".
 
 ## Jos sinä olet se, joka ei halua enempää
 

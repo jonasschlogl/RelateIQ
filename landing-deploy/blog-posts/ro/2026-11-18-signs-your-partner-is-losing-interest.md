@@ -24,6 +24,20 @@ Așadar semnele care merită urmărite nu sunt dramatice. Sunt cele mici, de zi 
 
 **Test rapid:** uneori distanța înseamnă că o nevoie nu e împlinită. [Testul gratuit de verificare a relației](/quiz/relationship-needs/), în engleză și de 2 minute, te poate ajuta să-i dai un nume.
 
+Părerea mea: o săptămână liniștită înseamnă foarte puțin. O îndepărtare lentă de-a lungul lunilor înseamnă mult mai mult. M-aș uita la tendință, nu la o singură zi.
+
+:::chart Cât de des răspundeau partenerii micilor încercări ale celuilalt de a-i atrage atenția
+Cupluri încă împreună după 6 ani | 86 | 86%
+Cupluri care au divorțat ulterior | 33 | 33%
+sursa: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), studiu cu proaspăt căsătoriți și urmărire după șase ani
+:::
+
+:::stats Factorul telefon
+46% | dintre adulții americani dintr-un studiu din 2016 au spus că partenerul le face "phubbing", fiind atent la telefon în loc de ei
+52 de studii | cu aproape 20.000 de persoane, într-o meta-analiză din 2025, au legat phubbingul partenerului de o mulțumire mai mică și mai multe conflicte
+sursa: Roberts și David (2016), *Computers in Human Behavior*; meta-analiza din 2025 citată în sursele de mai jos
+:::
+
 ## Semnalele, descifrate
 
 ### Mesaje mai scurte și mai rare
@@ -73,11 +87,21 @@ Așadar semnele care merită urmărite nu sunt dramatice. Sunt cele mici, de zi 
 | Căldura păstrată, mai puțin sex | Sănătate, stres sau nepotrivire | O discuție blândă, între patru ochi |
 | Se întoarce de la majoritatea încercărilor de conectare, puțină căldură | Distanță emoțională reală | O discuție sinceră despre relație |
 
+:::read Citește și
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Când distanța vine după o ceartă
+/blog/avoidant-attachment-partner/ | Atașamentul evitant la partener | Când apropierea îl face să se retragă
+/blog/should-i-break-up-with-my-partner/ | Cum știi când e momentul să te desparți? | Dacă îți pui o întrebare mai mare
+:::
+
 ## Înainte să vorbiți: verifică-ți propria lentilă
 
 Dacă înclini spre anxietate în relații, o săptămână aglomerată obișnuită poate părea o respingere. Întreabă-te: s-a schimbat *el* sau s-a schimbat nivelul meu de îngrijorare? Ghidurile noastre despre [anxietatea în relație](/blog/relationship-anxiety/) și [overthinking](/blog/how-to-stop-overthinking-in-a-relationship/) te ajută să le deosebești.
 
 Aș acorda timp serios acestui pas. O lună aglomerată și o relație care se stinge pot arăta identic din interior, mai ales dacă ești deja îngrijorat.
+
+:::tool practice
+Nu știi cum să începi discuția asta? Repet-o mai întâi
+:::
 
 ## Ce să spui
 
@@ -103,6 +127,8 @@ Apoi ascultă. Răspunsul poate fi despre muncă, sănătate, ceva ce ai făcut 
 Uneori răspunsul sincer e că partenerul s-a îndepărtat sau că nu e sigur. Doare, dar e o informație cu care puteți lucra. Multe cupluri își găsesc drumul înapoi cu efort din ambele părți, uneori cu ajutorul unui terapeut de cuplu. Dacă partenerul spune că nu știe ce simte, dă-i puțin timp, dar nu timp nelimitat. Ghidurile noastre despre [partenerii indisponibili emoțional](/blog/emotionally-unavailable-partner/) și despre [dacă ar trebui să te desparți](/blog/should-i-break-up-with-my-partner/) te pot ajuta să decizi de ce ai nevoie.
 
 Dacă te temi de prima discuție, o poți plănui în Coach Chat și o poți repeta mai întâi în Partner Practice.
+
+Părerea mea: să întrebi "mai ești implicat în asta?" e înfricoșător, dar să nu întrebi e de obicei mai rău. Lunile de ghicit costă mai mult decât o discuție sinceră.
 
 ## Răspunsuri rapide
 
@@ -131,3 +157,4 @@ Da. Dacă și-a pierdut interesul pentru multe lucruri, nu doar pentru tine, și
 - Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Citește studiul](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Text integral (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
+- The Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)

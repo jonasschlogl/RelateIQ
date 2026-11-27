@@ -24,6 +24,15 @@ Niall Bolger, Adam Zuckerman y Ronald Kessler siguieron a parejas durante una et
 
 Este es el hallazgo sobre el apoyo que más me gustaría que la gente conociera. El impulso es hacerlo visible, demostrar que te importa. A menudo lo más amable es la ayuda que casi ni nota.
 
+Mi opinión: el mejor apoyo muchas veces ni siquiera parece apoyo. Hacer la cena sin que te lo pidan puede hacer más que una larga charla motivadora, sobre todo en los peores días. Aun así, la ayuda práctica funciona mejor junto a unas pocas palabras que nombren cómo se siente. Si haces mucho y aun así oyes "no te importa", lee [mi novia dice que no me importan sus sentimientos](/blog/my-girlfriend-says-i-dont-care/).
+
+:::stats Cuánto apoyo le falta a la gente
+69 % | de los adultos estadounidenses dicen que el año pasado necesitaron más apoyo emocional del que recibieron
+54 % | dicen sentirse aislados a menudo o a veces
+92 % | dicen que las relaciones son una fuente clave de sentido en su vida
+fuente: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), encuesta Stress in America a 3.199 adultos de EE. UU., agosto de 2025
+:::
+
 ## El estrés hace grandes las cosas pequeñas
 
 Lisa Neff y Benjamin Karney estudiaron a parejas de recién casados durante varios años y encontraron que, cuando la gente estaba más estresada de lo normal, su satisfacción con la relación subía y bajaba más con cada día bueno o malo juntos. El estrés parece gastar la energía mental que solemos usar para mantener los pequeños problemas en su justa medida.
@@ -31,6 +40,12 @@ Lisa Neff y Benjamin Karney estudiaron a parejas de recién casados durante vari
 Así que si tu pareja estresada salta por la toalla en el suelo, probablemente no se trata de la toalla. Saberlo hace mucho más fácil no tomárselo como algo personal, y no empezar una discusión sobre el tono en el peor momento posible.
 
 La buena noticia viene de un estudio de 2021 de Paula Pietromonaco, Nickola Overall y Sally Powers. Siguiendo a más de 200 parejas de recién casados, encontraron que el estrés iba unido a que la calidad de la relación bajara con el tiempo, *excepto* cuando la pareja respondía de verdad: escuchaba, intentaba entender y reconocía lo que hacía falta. Con una pareja así, la relación de la persona estresada se parecía mucho a la de las personas con poco estrés.
+
+:::read Lecturas relacionadas
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | Cuando su estrés se convierte en tu preocupación
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Si se calla cuando está desbordado
+/blog/relationship-advice-communication-habits/ | Cómo comunicarse mejor en pareja | 7 hábitos que cambian cómo discutís
+:::
 
 ## Qué decir, según el tipo de estrés
 
@@ -86,6 +101,10 @@ Apoyar no significa aguantarlo todo. Puedes ser amable y claro a la vez.
 
 Lo de «no hace falta que contestes» importa. Da consuelo sin añadir una tarea.
 
+:::tool coach
+¿No sabes qué necesita tu pareja ahora mismo? Piénsalo primero
+:::
+
 ## Ajusta el apoyo a la persona
 
 Los investigadores que estudian el *afrontamiento diádico* (cómo gestiona la pareja el estrés en conjunto) han encontrado que la forma en que una pareja maneja el estrés está muy ligada a lo satisfechos que están en general. Una gran revisión de Mariana Falconier y sus colegas, que combinó datos de decenas de estudios, encontró que las formas positivas de afrontar juntos iban unidas a más satisfacción en la relación, y las negativas, como las reacciones despectivas u hostiles, a menos.
@@ -106,6 +125,8 @@ Y después recuerda la respuesta. Esa sola conversación te hará mejor apoyo qu
 El estrés se contagia. Si absorbes cada mal humor y dejas tu propia vida para gestionar la suya, tú también te quedarás sin fuerzas. Mantén a tus amigos, tu sueño y tus rutinas. Ser una presencia estable le ayuda más que ser una presencia agotada.
 
 Si notas que has empezado a sentirte responsable de cada una de sus emociones, nuestra guía sobre [la diferencia entre cuidar y la codependencia](/blog/codependent-relationship/) puede serte útil.
+
+Mi opinión: no puedes cargar para siempre con el estrés de otra persona y con el tuyo. Apoyar también incluye decir "esta noche necesito un rato para mí" sin sentirte culpable.
 
 ## Cuando el estrés es tuyo
 
@@ -153,3 +174,4 @@ El estrés puede explicar un mal humor. Nunca justifica las amenazas, la intimid
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Texto completo (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Pietromonaco, P. R., Overall, N. C., & Powers, S. I. (2021). *Social Psychological and Personality Science*. [DOI](https://doi.org/10.1177/19485506211001687), resumen de [UMass Amherst](https://www.umass.edu/news/article/supportive-partners-protect-relationship)
 - Falconier, M. K., Jackson, J. B., Hilpert, P., & Bodenmann, G. (2015). Dyadic coping and relationship satisfaction: A meta-analysis. *Clinical Psychology Review*, 42, 28-46. [Leer el artículo](https://www.researchgate.net/profile/Guy-Bodenmann/publication/281109389_Dyadic_Coping_and_Relationship_Satisfaction_A_Meta-Analysis/links/56d2dfe408ae85c8234c575e/Dyadic-Coping-and-Relationship-Satisfaction-A-Meta-Analysis.pdf)
+- American Psychological Association (2025): [Stress in America 2025](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), survey of 3,199 US adults, August 2025

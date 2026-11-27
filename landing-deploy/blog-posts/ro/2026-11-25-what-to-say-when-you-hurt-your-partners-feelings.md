@@ -26,6 +26,8 @@ Pe scurt: înainte ca partenerul să-ți poată auzi partea, are nevoie să se s
 
 **Test rapid:** vrei să afli cum îți ceri de obicei scuze? [Testul nostru despre stilul de scuze](/quiz/apology-style/), în engleză și de 2 minute, îți poate arăta.
 
+Părerea mea: cel mai greu e să nu te explici imediat. Intențiile tale contează, dar ajung mult mai bine după ce partenerul se simte ascultat, nu înainte.
+
 ## Primele cinci minute, pas cu pas
 
 ### 1. Oprește-te și întoarce-te spre el
@@ -76,6 +78,12 @@ Acum poți explica ce ai vrut să spui, pe scurt, și să-ți asumi totuși efec
 
 **De ce:** intenția contează pentru partener, cum arată cercetările de mai sus. Dar spusă prima, sună a apărare. Spusă după ce se simte înțeles, sună a liniștire. Pentru structura completă a unor scuze bune, citește [cum să-ți ceri scuze de la partener](/blog/how-to-apologize-to-your-partner/).
 
+:::read Citește și
+/blog/how-to-apologize-to-your-partner/ | Cum să îți ceri scuze sincer partenerului | Ce conține o scuză completă
+/blog/my-boyfriend-gets-defensive/ | Iubitul meu se pune în defensivă când îi spun ceva | Dacă defensiva e reflexul tău
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | Dacă nu sunteți în aceeași cameră
+:::
+
 ## Întâi efectul, apoi intenția
 
 Cei mai mulți dintre noi începem cu intenția, pentru că e ce știm cel mai bine despre situație. Partenerul începe cu efectul, pentru că asta a trăit. Ordinea în care spui lucrurile schimbă felul în care ajung.
@@ -115,6 +123,10 @@ Poți spune în continuare ce e în coloana din stânga, sau varianta sinceră a
 > **Ce scapă majoritatea sfaturilor**
 > Multe sfaturi spun că intenția nu contează, doar efectul. Cercetările nu spun chiar asta. Oamenii se îndepărtează mai mult când cred că rana a fost deliberată, deci intenția ta chiar contează pentru partener. Problema e momentul. Dacă începi cu intenția, sună a „sentimentele tale sunt greșite”. Dacă începi cu înțelegerea, aceeași explicație devine o veste bună: „N-am vrut să te rănesc și tot îmi pasă că am făcut-o.”
 
+:::tool practice
+Vrei să exersezi ce vei spune înainte de discuție?
+:::
+
 ## Ce să nu spui
 
 - **„Îmi pare rău că simți așa.”** Îți ceri scuze pentru sentimentele lui, nu pentru ce ai făcut.
@@ -135,6 +147,8 @@ O rană e o discuție. Aceeași rană iar și iar e un tipar la care merită să
 Dacă ar fi să păstrez un singur pas din ghidul ăsta, ar fi pasul 2. Să repeți ce ai auzit pare aproape prea simplu, dar schimbă toată temperatura discuției.
 
 Când știi că urmează o discuție grea, Partner Practice te lasă s-o repeți cu o inteligență artificială care joacă rolul partenerului, ca varianta calmă și nedefensivă să fie cea care iese atunci când contează.
+
+Părerea mea: dacă același comentariu continuă să-l rănească, scuzele nu mai sunt soluția. Schimbarea obiceiului este. Asta e partea care reconstruiește încrederea.
 
 ## Răspunsuri rapide
 

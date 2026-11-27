@@ -24,6 +24,8 @@ Maar dezelfde review maakt een punt dat de meeste artikelen overslaan: in relati
 
 **Snelle test:** benieuwd wat jij meestal doet als een ruzie oploopt? Doe onze [test over je ruziestijl](/quiz/fight-style/), in het Engels en in 2 minuten.
 
+Mijn mening: ik denk niet dat de lengte van de stilte het belangrijkst is. Het gaat erom of de ander weet dat je terugkomt. Dat ene detail maakt van een straf een pauze.
+
 ## 6 verschillen tussen ruimte nodig hebben en doodzwijgen
 
 ### 1. Ruimte wordt aangekondigd. Doodzwijgen gebeurt gewoon.
@@ -51,6 +53,12 @@ Als de ruimte voorbij is, is degene die wegging ook degene die het gesprek weer 
 ### 6. Ruimte maakt je een beetje onrustig. Doodzwijgen laat je op eieren lopen.
 
 Wachten tot iemands pauze voorbij is, kan ongemakkelijk zijn, zeker als je van nature snel angstig bent. Maar na verloop van tijd hoort het voorspelbaar te voelen. Een patroon van straffende stilte verandert meestal hoe je je gedraagt: je oefent zinnen in je hoofd, vermijdt onderwerpen en zegt sorry alleen om de kou te laten stoppen.
+
+:::read Lees ook
+/blog/avoidant-attachment-partner/ | Vermijdende hechting bij je partner | Als ruimte het uitgangspunt is
+/blog/what-to-text-after-a-fight/ | Wat je appt na een ruzie | Een bericht dat de stilte vriendelijk doorbreekt
+/blog/my-boyfriend-gets-defensive/ | Mijn vriend wordt defensief als ik iets aankaart | Als praten verandert in dichtklappen
+:::
 
 ## Naast elkaar
 
@@ -100,6 +108,10 @@ Het verschil tussen ruimte en doodzwijgen is vaak één of twee zinnen. Zeg ze v
 
 > **Waarom het werkt**
 > Stilte zonder woorden laat je partner het gat zelf invullen, en een angstig hoofd vult het zelden vriendelijk in. Een terugkeermoment maakt van een dreiging zonder einde een korte wachttijd die je wel aankunt. Het Gottman Institute raadt ook aan om van tevoren een signaal af te spreken, omdat gewoon weglopen kan overkomen als een nog grotere afsluiting.
+
+:::tool practice
+Wil je oefenen om rustig te zeggen "ik heb even een pauze nodig"?
+:::
 
 ## Wat je zegt als jij degene bent die wordt doodgezwegen
 

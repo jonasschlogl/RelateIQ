@@ -137,3 +137,4 @@ In the US, you can reach the National Domestic Violence Hotline at 1-800-799-723
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Summary on [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
 - NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), with Robin Stern, Paige Sweet and Kate Abramson
 - Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

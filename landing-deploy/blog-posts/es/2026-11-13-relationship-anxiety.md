@@ -22,6 +22,12 @@ Seguramente no necesitas otra lista de señales. Necesitas algo que hacer cuando
 
 **Test rápido:** la ansiedad en la pareja suele estar relacionada con el apego. El [test gratuito de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, puede mostrarte si eso forma parte de tu patrón.
 
+Mi opinión: lo más útil que puedes recordar es que la ansiedad se siente exactamente igual tanto si algo va mal como si no. El sentimiento es real, pero no es una prueba.
+
+:::stats Lo que predice la preocupación, y lo que no
+91,4 % | de las preocupaciones que las personas anotaron durante un mes no se cumplieron, en un estudio de Lucas LaFreniere y Michelle Newman
+:::
+
 ## Los próximos 2 minutos: cuando empieza la espiral
 
 En cuanto lo notes (mirar el móvil, el pecho apretado, las ganas de mandar un mensaje), haz esto:
@@ -35,6 +41,12 @@ En cuanto lo notes (mirar el móvil, el pecho apretado, las ganas de mandar un m
 **4. No envíes nada todavía.** Date diez minutos. Si después el mensaje te sigue pareciendo importante, envíalo una vez, con calma.
 
 El paso 4 es el que yo subrayaría. Diez minutos no parecen mucho, pero un mensaje del que te arrepentirías suele verse muy distinto diez minutos después.
+
+:::read Lecturas relacionadas
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cómo dejar de pensar demasiado en una relación | Una forma más tranquila de manejar la espiral del "y si"
+/blog/how-attachment-styles-work-in-relationships/ | ¿Cuál es mi estilo de apego? | Por qué a algunos nos pesa más la distancia
+/blog/jealousy-in-a-relationship/ | ¿Son normales los celos en una relación? | Cuando la ansiedad se convierte en sospecha
+:::
 
 ## El resto del día: que el círculo no crezca
 
@@ -56,6 +68,10 @@ Por ejemplo: "Hoy estoy un poco inestable. ¿Podemos cenar juntos esta noche?"
 | Quieres ponerle a prueba | Di la necesidad directamente |
 | Un buen momento te da miedo | Fíjate en ello y permítete disfrutarlo igualmente |
 
+:::tool coach
+¿Estás en plena espiral? Háblalo antes de escribirle
+:::
+
 ## El próximo mes: cambiar el patrón
 
 **Cuéntaselo a tu pareja una vez, con calma.** No como una acusación, sino como información.
@@ -75,6 +91,8 @@ Una pareja que entiende lo que pasa puede ayudar sin estar de guardia las 24 hor
 > Cada viernes, cuando Jonah, la pareja de Elif, salía con su equipo de fútbol, ella pasaba la noche mirando el móvil y enviando mensajes de "¿te lo estás pasando bien?". Un mes probó la caja de herramientas. Cuando llegaban las ganas, lo nombraba, respiraba dos minutos y escribía sus tres explicaciones en un pósit. Se lo dijo a Jonah una vez: "Los viernes me pongo ansiosa. Me ayudaría un solo mensaje cuando llegues al bar." A él no le importó. Para el cuarto viernes se dio cuenta de que había visto una película entera sin mirar el móvil.
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
+
+Mi opinión: pedir tranquilidad no es el problema; pedirla de una forma que tu pareja pueda darte, sí. "¿Me escribes cuando aterrices?" funciona. "Prométeme que nunca te irás" no, porque ninguna respuesta será nunca suficiente.
 
 ## ¿Es ansiedad, o pasa algo de verdad?
 

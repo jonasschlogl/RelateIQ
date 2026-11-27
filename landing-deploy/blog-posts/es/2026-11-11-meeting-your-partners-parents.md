@@ -25,6 +25,15 @@ Así que, sin presión, pero esta noche merece algo de preparación. La buena no
 
 Eso sí, implicarse no es lo mismo que aprobar. En un estudio de 2024 con 464 jóvenes adultos en Eslovenia, Timotej Glavač y Melita Puklek Levpušček encontraron que las personas cuyos padres eran más intrusivos tendían a tener relaciones más cortas. Los padres cálidos y que apoyan ayudan a la pareja. Los que intentan dirigirla, normalmente no.
 
+Mi opinión: yo dejaría de intentar impresionarles y me centraría en ser alguien con quien se está a gusto. La mayoría de los padres solo quieren ver que tratan bien a su hijo o hija, y eso puedes demostrarlo sin una sola respuesta perfecta.
+
+:::stats Por qué conocer a la familia parece algo tan importante
+72 % | dicen que llevar a la pareja a casa en las fiestas hace que la relación parezca oficial
+36 % | dicen que su familia ha contado historias vergonzosas sobre ellos a su pareja
+23 % | dicen que su familia le hizo preguntas inapropiadas a su pareja
+fuente: [Encuesta de Tawkify](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/) a 1.000 estadounidenses, publicada por DatingNews
+:::
+
 ## Antes de ir: 3 preguntas para tu pareja
 
 1. **«¿De qué están orgullosos y con qué son sensibles?»** Es tu mapa de temas buenos y malos.
@@ -32,6 +41,14 @@ Eso sí, implicarse no es lo mismo que aprobar. En un estudio de 2024 con 464 j�
 3. **«Si la cosa se pone incómoda, ¿cuál es nuestra señal?»** Una palabra, una mirada, una mano en la espalda. Ayuda más de lo que crees.
 
 Yo diría que esta pequeña reunión previa importa más que cualquier cosa que digas ese día. La mayoría de los momentos incómodos vienen de no conocer las normas que todos los demás conocen.
+
+:::read Lecturas relacionadas
+/blog/holidays-with-your-partners-family/ | Las fiestas con la familia de tu pareja | Un plan para Navidad
+/blog/relationship-advice-communication-habits/ | Cómo comunicarse mejor en pareja | Hábitos que ayudan en cualquier momento tenso
+/blog/how-to-apologize-to-your-partner/ | Cómo pedir perdón a tu pareja de forma sincera | Si algo que dijiste sienta mal
+:::
+
+**Test rápido:** ¿No tienes claro qué necesitas de tu pareja ese día? El [test de necesidades en la relación](/quiz/relationship-needs/), en inglés y de 2 minutos, te ayuda a ponerlo en palabras antes de ir.
 
 ## Los 12 momentos, y qué decir
 
@@ -110,6 +127,10 @@ Dales las gracias por su nombre y menciona algo concreto que te gustó.
 
 Un mensaje corto después a través de tu pareja («Dale otra vez las gracias a tu madre por la cena») pone un buen broche.
 
+:::tool practice
+¿Te pone nerviosa una pregunta concreta? Practica tu respuesta primero
+:::
+
 ## Después: el repaso
 
 Pregúntale a tu pareja cómo cree que fue y escucha la respuesta sin entrar en bucle. Si hubo tensión, separa el *estilo* del *rechazo*. Algunas familias son reservadas con todo el mundo al principio.
@@ -117,6 +138,8 @@ Pregúntale a tu pareja cómo cree que fue y escucha la respuesta sin entrar en 
 También ayuda conocer la investigación a largo plazo de la psicóloga Terri Orbuch, que siguió a matrimonios durante 26 años. Encontró que, cuando los maridos se sentían cerca de los padres de su mujer, el riesgo de divorcio de la pareja era menor, pero cuando las mujeres estaban muy unidas a los padres de su marido, el riesgo era mayor, posiblemente porque esa cercanía dificultaba poner límites. El objetivo no es haceros íntimos de la noche a la mañana. Es calidez y respeto con límites sanos.
 
 Si pronto vas a pasar las fiestas con ellos, nuestra guía sobre [las fiestas con la familia de tu pareja](/blog/holidays-with-your-partners-family/) trata las visitas largas. Y si quieres conocer mejor a tu pareja antes del gran día, prueba algunas de nuestras [preguntas profundas para tu pareja](/blog/deep-questions-to-ask-your-partner/), sobre todo las de su infancia.
+
+Mi opinión: el repaso de después importa más que la visita. Una cena incómoda es fácil de tomarse a risa juntos, pero solo si habláis de ella con cariño de camino a casa en lugar de darle vueltas cada uno por su lado.
 
 ## Si eres tú quien presenta a tu pareja
 
@@ -149,3 +172,4 @@ Dale tiempo. Los primeros encuentros suelen ser algo rígidos, y muchos padres s
 - Sprecher, S., & Felmlee, D. (1992). The influence of parents and friends on the quality and stability of romantic relationships: A three-wave longitudinal investigation. *Journal of Marriage and the Family*, 54(4), 888-900. Resumen de [UC Davis](https://www.ucdavis.edu/news/support-family-friends-strong-influence-relationships)
 - WBUR (2012): [The outsized power of the son-in-law](https://www.wbur.org/news/2012/11/27/the-outsized-power-of-the-son-in-law), sobre el estudio a largo plazo de Terri Orbuch con matrimonios
 - Glavač, T., & Puklek Levpušček, M. (2024). Romantic experiences in emerging adults: How they relate to the importance of romantic relationships and the quality of relationships with parents. *Društvena istraživanja*, 33(2), 223-245. [Registro de Hrčak](https://hrcak.srce.hr/en/319709)
+- DatingNews: [For 72% of daters, bringing a partner home signals commitment](https://www.datingnews.com/apps-and-sites/for-72-of-daters-bringing-a-partner-home-signals-commitment-and-risk/), Tawkify survey of 1,000 Americans

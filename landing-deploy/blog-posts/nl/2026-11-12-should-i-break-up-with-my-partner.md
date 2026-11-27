@@ -23,6 +23,8 @@ Het opvallendste resultaat: ongeveer de helft van de mensen had tegelijk sterke 
 
 **Snelle test:** voor een grote beslissing kan het helpen om te zien wat er mist. De gratis [relatie-check](/quiz/relationship-needs/), in het Engels en in 2 minuten, laat zien of jullie vooral meer tijd samen, betere gesprekken, meer plezier of meer teamwork nodig hebben.
 
+Mijn mening: je verscheurd voelen betekent niet dat je slecht bent in beslissen. Meestal betekent het dat er aan beide kanten echte redenen zijn, en dat verdient tijd, geen snelle beslissing.
+
 ## Wat onderzoek zegt over wat een breuk voorspelt
 
 In 2010 combineerden Benjamin Le en zijn collega's 137 onderzoeken met 37.761 deelnemers uit 33 jaar onderzoek om uit te zoeken wat het best voorspelt of ongehuwde relaties eindigen. Sommige uitkomsten zijn verrassend.
@@ -43,6 +45,12 @@ Een nieuwere en nog grotere analyse wijst dezelfde kant op. In 2020 pasten Saman
 Wat betekent dat voor jou? Niet dat je moet blijven omdat je afhankelijk bent van iemand, of moet gaan omdat je vandaag niet tevreden bent. Het betekent dat de belangrijkste vragen over de kern van de relatie gaan: voel je je nog toegewijd, hou je nog van deze persoon en wil je nog dat jullie levens met elkaar verbonden zijn? Dat zijn de vragen hieronder.
 
 Ook timing speelt mee. In een analyse uit 2025 van vier grote nationale langlopende onderzoeken met 11.295 mensen ontdekten Janina Bühler en Ulrich Orth dat relaties die eindigden twee fases doorliepen: jaren van langzame, lichte achteruitgang en daarna een kantelpunt zo'n één tot twee jaar voor de breuk, waarna de tevredenheid snel daalde. De partner die het later uitmaakte, werd meestal eerder ongelukkig. De onderzoekers denken dat stellen de beste kans hebben als ze proberen te herstellen tijdens de langzame fase, voor de steile daling.
+
+:::stats Wat onderzoek zegt over beslissen
+69% | van de conflicten in een relatie gaat over blijvende problemen die misschien nooit helemaal opgelost worden, volgens het Gottman Institute
+27 tegenover 23 | verschillende redenen om te blijven en om te gaan, gevonden bij mensen die aan het beslissen waren of ze uit elkaar zouden gaan
+bron: The Gottman Institute; Joel, MacDonald en Page-Gould (zie bronnen hieronder)
+:::
 
 ## 10 vragen om jezelf te stellen
 
@@ -94,6 +102,12 @@ We zien het leven van anderen vaak helderder dan dat van onszelf. Stel je voor d
 
 Als ik één vraag van de tien moest kiezen, zou het nummer 7 zijn. Niet "is het nu slecht?", maar "als er niets veranderde, zou ik dan over vijf jaar oké zijn?" Die snijdt door heel veel heen.
 
+:::read Lees ook
+/blog/how-to-fix-a-relationship/ | Is mijn relatie het redden waard? | Hoe je het weet en waar je begint
+/blog/signs-your-partner-is-losing-interest/ | Signalen dat je partner zijn interesse verliest | Wat elk signaal echt kan betekenen
+/blog/how-to-get-over-a-breakup/ | Zo kom je over een breuk heen | Als je besluit te gaan
+:::
+
 ## Drie situaties, drie verschillende antwoorden
 
 Deze voorbeelden zijn illustraties, geen echte mensen, maar ze laten zien hoe dezelfde vraag ("moet ik weggaan?") heel verschillende antwoorden kan hebben.
@@ -124,6 +138,12 @@ Deze voorbeelden zijn illustraties, geen echte mensen, maar ze laten zien hoe de
 Veel artikelen behandelen het uitmaken als een toets waarvoor je slaagt of zakt. Tel de rode vlaggen, tel de punten op, klaar. Het echte leven is rommeliger. Je kunt van iemand houden en toch niet goed bij elkaar passen. Je kunt echte problemen hebben en toch een relatie hebben die het waard is om voor te vechten.
 
 Het doel is niet om in één nacht het "juiste" antwoord te vinden. Het is een beslissing nemen die je begrijpt en waar je achter kunt staan, welke kant die ook op gaat.
+
+Mijn mening: een vraag die ik nuttiger vind dan welke lijst ook, is "vind ik mezelf leuk in deze relatie?". Het antwoord is meestal duidelijker dan de voor- en nadelen.
+
+:::tool coach
+Draai je in cirkels? Praat het door zonder oordeel
+:::
 
 ## Een rustigere manier om te beslissen
 

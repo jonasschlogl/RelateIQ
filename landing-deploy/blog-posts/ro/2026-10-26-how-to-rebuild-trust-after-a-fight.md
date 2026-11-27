@@ -28,6 +28,8 @@ Un studiu din 2026 arată în aceeași direcție. Urmărind 378 de cupluri căs�
 
 Sincer, acesta e sfatul cu care oamenii sunt cel mai des în dezacord. Să te culci fără să fi rezolvat pare greșit. Dar o discuție calmă la micul-dejun bate aproape de fiecare dată o a treia rundă la unu noaptea.
 
+Părerea mea: să te culci supărat are o reputație proastă. Prefer să dormiți pe ea și să vorbiți calm dimineața decât să forțați o rezolvare la unu noaptea, pe care niciunul nu și-o va aminti bine.
+
 ## A doua zi dimineață: repară
 
 ### Asumă-ți partea, fără condiții
@@ -49,6 +51,12 @@ Un mod de a spune: "Spune-mi cum a fost pentru tine. Vreau să înțeleg."
 Într-un studiu de lungă durată de la University of Minnesota, Jessica Salvatore și colegii ei au urmărit cum își revin cuplurile după o discuție despre un conflict. Oamenii cărora le era greu să-și revină după conflicte, adesea din cauza unor experiențe grele timpurii, erau mai predispuși să rămână împreună când *partenerul* lor își revenea bine. Cercetătorii au sugerat că un partener capabil să conducă liniștirea poate proteja relația pentru amândoi.
 
 În practică: dacă de data asta tu ești cel mai calm, fă primul pas. Oferă o îmbrățișare, o cafea, un comentariu ușor, un "o luăm de la capăt?". Să conduci repararea nu înseamnă să recunoști că totul a fost vina ta. Înseamnă să ai grijă de relație.
+
+:::read Citește și
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | Dacă dimineața nu sunteți împreună
+/blog/how-to-apologize-to-your-partner/ | Cum să îți ceri scuze sincer partenerului | Ce conține o scuză adevărată
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Cum iei o pauză fără să pedepsești
+:::
 
 ## Săptămâna următoare: reconstruiește
 
@@ -83,6 +91,10 @@ După o ceartă, cuplurile se evită adesea puțin, chiar și când lucrurile s-
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
 
+:::tool practice
+Vrei să repeți mai întâi discuția de împăcare?
+:::
+
 ## Dacă tu ești cel rănit
 
 Ai voie să ai nevoie de timp. Încrederea după o ceartă dureroasă nu revine pentru că cineva și-a cerut scuze o dată. Revine pe măsură ce comportamentul lui se potrivește cu vorbele. Spune-i partenerului ce te-ar ajuta.
@@ -92,6 +104,8 @@ Ai voie să ai nevoie de timp. Încrederea după o ceartă dureroasă nu revine 
 ## Cât durează?
 
 După o singură ceartă, adesea câteva zile. După certuri dureroase repetate, pot fi necesare săptămâni sau luni de comportament constant. Dacă aceeași ceartă tot revine, ghidul nostru despre [problemele de cuplu care tot revin](/blog/relationship-problems-that-keep-coming-back/) te poate ajuta să găsești tiparul de dedesubt, iar ghidul despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) ajută la prevenirea următoarei escaladări.
+
+Părerea mea: după o ceartă, încrederea revine de obicei prin dovezi mici și plictisitoare, nu prin gesturi mari. Să faci ce ai spus că vei face, trei zile la rând, spune mai mult decât niște flori.
 
 ## Când e mai mult decât o ceartă
 

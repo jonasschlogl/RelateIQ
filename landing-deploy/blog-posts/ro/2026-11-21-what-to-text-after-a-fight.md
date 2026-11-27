@@ -26,6 +26,8 @@ Pe scurt: un mesaj scurt și cald după o ceartă ajută. Un mesaj lung care în
 
 **Test rapid:** vrei să afli cum reacționezi de obicei într-o ceartă? Încearcă [testul nostru despre stilul tău în conflicte](/quiz/fight-style/), în engleză și de 2 minute.
 
+Părerea mea: regula mea e simplă. Scrie ca să vă reconectați, vorbește ca să rezolvați. Dacă mesajul tău are mai mult de trei propoziții, probabil locul lui e într-o discuție.
+
 ## Înainte să scrii: o verificare în 3 întrebări
 
 **1. Ne-am calmat amândoi?** Când ești copleșit, corpul tău e în modul de luptă și nu mai auzi bine. Julie Schwartz Gottman sugerează o pauză de la aproximativ 20 de minute până la 24 de ore, cu un moment stabilit împreună. Dacă inima încă îți bate tare, cel mai bun mesaj e unul scurt care îți câștigă timp.
@@ -40,6 +42,12 @@ Pe scurt: un mesaj scurt și cald după o ceartă ajută. Un mesaj lung care în
 | „Îmi pare rău că am ridicat vocea.” | „Îmi pare rău că am ridicat vocea, dar erai imposibil.” |
 | „Vorbim diseară după cină?” | „Și dacă tot suntem aici, chestia de weekendul trecut...” |
 | „Te iubesc, chiar și când ne certăm.” | Un mesaj de șase paragrafe despre tot ce nu merge |
+
+:::read Citește și
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | În seara asta, mâine și săptămâna următoare
+/blog/how-to-apologize-to-your-partner/ | Cum să îți ceri scuze sincer partenerului | Când mesajul trebuie să fie o scuză
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Dacă nu răspunde
+:::
 
 ## 20 de mesaje de trimis după o ceartă, în funcție de situație
 
@@ -89,6 +97,10 @@ Pentru un ghid complet despre scuze care chiar ajung la celălalt, citește [cum
 > **De ce merge podul și nu eseul**
 > Un mesaj-pod face un singur lucru: îi spune partenerului că sunteți în continuare în aceeași echipă. Un eseu lung îi cere să-ți citească toată pledoaria, singur, fără un ton care s-o îndulcească, și să decidă cum răspunde. Cei mai mulți reacționează ca la un atac: apărându-se.
 
+:::tool check
+Ai scris deja ceva? Verifică înainte să apeși pe trimite
+:::
+
 ## Ce să nu trimiți după o ceartă
 
 - **„Trebuie să vorbim.”** Fără context, sună a avertisment de despărțire. Adaugă despre ce și când: „Vorbim diseară despre ce s-a întâmplat azi-dimineață?”
@@ -109,6 +121,8 @@ Scopul fiecărui mesaj de pe listă e să vă aducă la o discuție adevărată,
 Dacă ar fi să aleg un singur mesaj de pe listă, ar fi cel care propune un moment pentru discuție. Transformă o tăcere tensionată într-un plan și îi spune partenerului că relația nu e pusă sub semnul întrebării.
 
 Dacă ai scris și ai șters același mesaj de cinci ori, Message check îți poate arăta cum va fi probabil primit înainte să-l trimiți și îți poate sugera o variantă mai blândă dacă sună rece sau defensiv.
+
+Părerea mea: cel mai bun mesaj după o ceartă de multe ori doar pregătește discuția: "Putem vorbi diseară? Mi-e dor de tine." Nu rezolvă nimic și nici nu trebuie.
 
 ## Răspunsuri rapide
 

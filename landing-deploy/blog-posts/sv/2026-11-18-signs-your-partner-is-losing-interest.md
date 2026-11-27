@@ -24,6 +24,20 @@ Så tecknen som är värda att hålla koll på är inte dramatiska. Det är de s
 
 **Snabbtest:** ibland betyder avstånd att ett behov inte blir tillgodosett. Det kostnadsfria [testet om relationens behov](/quiz/relationship-needs/), på engelska och på 2 minuter, kan hjälpa dig att sätta ord på vilket.
 
+Min åsikt: en tyst vecka betyder väldigt lite. En långsam glidning under flera månader betyder mycket mer. Jag skulle titta på trenden, inte på en enskild dag.
+
+:::chart Hur ofta partner svarade på varandras små försök att få uppmärksamhet
+Par som fortfarande var tillsammans efter 6 år | 86 | 86 %
+Par som senare skilde sig | 33 | 33 %
+källa: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), studie av nygifta med uppföljning efter sex år
+:::
+
+:::stats Mobilfaktorn
+46 % | av vuxna amerikaner i en studie från 2016 sa att deras partner "phubbade" dem, alltså ägnade mobilen uppmärksamhet i stället för dem
+52 studier | med nästan 20 000 personer i en metaanalys från 2025 kopplade partnerns phubbing till lägre nöjdhet och fler konflikter
+källa: Roberts och David (2016), *Computers in Human Behavior*; metaanalys från 2025 som anges i källorna nedan
+:::
+
 ## Signalerna, tolkade
 
 ### Kortare och långsammare sms
@@ -73,11 +87,21 @@ Så tecknen som är värda att hålla koll på är inte dramatiska. Det är de s
 | Värmen kvar, mindre sex | Hälsa, stress eller olika behov | Ett försiktigt samtal i enrum |
 | Vänder sig bort från de flesta kontaktförsök, lite värme | Verkligt känslomässigt avstånd | Ett ärligt samtal om förhållandet |
 
+:::read Läs också
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | När avståndet kommer efter ett gräl
+/blog/avoidant-attachment-partner/ | Undvikande anknytning hos en partner | När närhet får hen att dra sig undan
+/blog/should-i-break-up-with-my-partner/ | Hur vet man när det är dags att göra slut? | Om du ställer en större fråga
+:::
+
 ## Innan ni pratar: kolla din egen lins
 
 Om du lutar åt oro i relationer kan en vanlig hektisk vecka kännas som avvisning. Fråga dig själv: har *hen* förändrats, eller har min orosnivå förändrats? Våra guider om [relationsångest](/blog/relationship-anxiety/) och att [sluta övertänka](/blog/how-to-stop-overthinking-in-a-relationship/) hjälper dig att skilja de två åt.
 
 Jag skulle lägga ordentligt med tid på det här steget. En hektisk månad och ett förhållande som falnar kan se identiska ut inifrån, särskilt om du redan är orolig.
+
+:::tool practice
+Osäker på hur du ska börja samtalet? Öva på det först
+:::
 
 ## Vad du kan säga
 
@@ -103,6 +127,8 @@ Och vänd dig mot din partner, med flit, på små sätt: svara på hens kontaktf
 Ibland är det ärliga svaret att hen har glidit iväg, eller att hen är osäker. Det gör ont, men det är information ni kan arbeta med. Många par hittar tillbaka med ansträngning från båda håll, ibland med hjälp av en parterapeut. Om din partner säger att hen inte vet vad hen känner, ge det lite tid, men inte obegränsat med tid. Våra guider om [känslomässigt otillgängliga partner](/blog/emotionally-unavailable-partner/) och om [huruvida du ska göra slut](/blog/should-i-break-up-with-my-partner/) kan hjälpa dig att bestämma vad du behöver.
 
 Om du bävar inför det första samtalet kan du planera det i Coach Chat och öva på det i Partner Practice först.
+
+Min åsikt: att fråga "är du fortfarande med i det här?" är läskigt, men att låta bli är oftast värre. Månader av gissningar kostar mer än ett ärligt samtal.
 
 ## Snabba svar
 
@@ -131,3 +157,4 @@ Ja. Om hen har tappat intresset för många saker, inte bara dig, och verkar pla
 - Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Läs studien](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Fulltext (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
+- The Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)

@@ -24,6 +24,8 @@ Pero la misma revisión señala algo que la mayoría de los artículos se saltan
 
 **Test rápido:** ¿te da curiosidad saber qué sueles hacer cuando una discusión se calienta? Prueba nuestro [test sobre tu estilo de discutir](/quiz/fight-style/), en inglés y de 2 minutos.
 
+Mi opinión: no creo que lo que más importe sea cuánto dura el silencio. Es si la otra persona sabe que vas a volver. Ese único detalle convierte un castigo en una pausa.
+
 ## 6 diferencias entre necesitar espacio y la ley del hielo
 
 ### 1. El espacio se anuncia. La ley del hielo simplemente ocurre.
@@ -51,6 +53,12 @@ Cuando termina el espacio, quien se fue es quien retoma la conversación. Con la
 ### 6. El espacio te deja algo inquieto. La ley del hielo te hace ir pisando huevos.
 
 Esperar mientras alguien se toma una pausa puede ser incómodo, sobre todo si eres una persona ansiosa por naturaleza. Pero con el tiempo debería sentirse predecible. Un patrón de silencios de castigo tiende a cambiar cómo te comportas: ensayas frases, evitas temas y pides perdón solo para que se acabe la frialdad.
+
+:::read Lecturas relacionadas
+/blog/avoidant-attachment-partner/ | Apego evitativo en la pareja | Cuando el espacio es su punto de partida
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | Un mensaje que rompe el silencio con cariño
+/blog/my-boyfriend-gets-defensive/ | Mi novio se pone a la defensiva cuando saco un tema | Si hablar acaba en cerrarse
+:::
 
 ## Cara a cara
 
@@ -100,6 +108,10 @@ La diferencia entre espacio y ley del hielo suele estar en una o dos frases. Dil
 
 > **Por qué funciona**
 > El silencio sin palabras obliga a tu pareja a llenar el vacío, y una mente ansiosa rara vez lo llena con amabilidad. Una hora de vuelta convierte una amenaza sin final en una espera corta y llevadera. El Gottman Institute también sugiere acordar una señal de antemano, porque marcharse sin más puede interpretarse como un bloqueo todavía mayor.
+
+:::tool practice
+¿Quieres practicar cómo decir "necesito un descanso" con calma?
+:::
 
 ## Qué decir si eres quien recibe el silencio
 

@@ -18,6 +18,10 @@ Den här guiden listar nio gröna flaggor i ett förhållande, men med en twist:
 
 **Så känner du igen den:** Dela en liten framgång och se vad som händer. "Vad fantastiskt, berätta allt!" är den gröna flaggan. "Vad bra" (tillbaka till mobilen), "Betyder inte det längre dagar?" eller "Gissa vad som hände mig i dag" är det inte.
 
+Min åsikt: det här är den gröna flaggan jag skulle leta efter först. Hur någon reagerar på dina goda nyheter säger mer om hen än hur hen beter sig på en perfekt dejt.
+
+**Snabbtest:** Nyfiken på vad du själv tar med dig in i relationen? Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, visar om du lutar åt trygg, ängslig eller undvikande.
+
 ## 2. Hen stöttar dina mål utan att ta över
 
 **Varför det spelar roll:** I en studie där par pratade om sina personliga mål fann Brooke Feeney att *lyhört stöd som inte tränger sig på* (att uppmuntra utan att kontrollera) hängde ihop med att den stöttade partnern kände sig lyckligare, hade högre självkänsla och kände sig säkrare på att nå sina mål. Att pressa, kritisera eller ta över planen hjälpte inte.
@@ -37,6 +41,12 @@ Stöd föder också sig självt när det uppmärksammas. I en studie från 2024 
 **Varför det spelar roll:** Problem som går att sätta ord på är problem som går att lösa. Tystnad, surande eller plötsliga utbrott lämnar dig att gissa.
 
 **Så känner du igen den:** När något går fel, säger hen "Det där störde mig, kan vi prata?" eller får du veta det tre dagar senare, genom hens humör?
+
+:::read Läs också
+/blog/signs-of-a-toxic-relationship/ | Är min relation destruktiv? | Den andra sidan av listan
+/blog/love-bombing/ | Love bombing | När intensiteten i början inte är en grön flagga
+/blog/situationship/ | Situationship | När ni inte vet vad ni är än
+:::
 
 ## 5. Hen kan förlora ett gräl
 
@@ -73,6 +83,10 @@ Stöd föder också sig självt när det uppmärksammas. I en studie från 2024 
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
 
+:::tool coach
+Osäker på vad du ser i din relation? Prata igenom det
+:::
+
 ## Gröna flaggor i början av dejtandet
 
 De första veckorna kan du inte se hur någon hanterar år av stress, men du kan lägga märke till:
@@ -88,6 +102,8 @@ De första veckorna kan du inte se hur någon hanterar år av stress, men du kan
 Ingen visar alla nio hela tiden. Alla har dåliga dagar, gamla vanor och stunder de inte är stolta över. Leta efter mönster över månader, inte perfektion under en enda vecka. Och kom ihåg att ett förhållande kan ha gröna och röda flaggor samtidigt. Om du är osäker på de röda kan våra guider om [tecken på en giftig relation](/blog/signs-of-a-toxic-relationship/) och [gaslighting](/blog/gaslighting-in-a-relationship/) hjälpa dig att tänka igenom det.
 
 Personligen skulle jag titta närmast på nummer 9. En partner kan bocka av alla andra rutor och ändå lämna dig orolig efter varje samtal. Hur du känner dig efteråt är information.
+
+Min åsikt: ingen visar alla nio varje dag, inte du heller. Jag skulle titta på riktningen i stället: blir de här sakerna vanligare mellan er, eller ovanligare?
 
 ## Så blir du en grön-flagga-partner
 

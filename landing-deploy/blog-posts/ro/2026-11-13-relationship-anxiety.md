@@ -22,6 +22,12 @@ Probabil nu ai nevoie de încă o listă de semne. Ai nevoie de ceva de făcut c
 
 **Test rapid:** anxietatea în relație e adesea legată de atașament. [Testul gratuit despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, îți poate arăta dacă asta face parte din tiparul tău.
 
+Părerea mea: cel mai util lucru de ținut minte e că anxietatea se simte exact la fel, fie că ceva e în neregulă, fie că nu. Sentimentul e real, dar nu e o dovadă.
+
+:::stats Ce prezic grijile și ce nu
+91,4% | dintre grijile notate de participanți timp de o lună nu s-au adeverit, într-un studiu realizat de Lucas LaFreniere și Michelle Newman
+:::
+
 ## Următoarele 2 minute: când începe spirala
 
 În clipa în care observi (verificatul telefonului, pieptul strâns, impulsul de a trimite un mesaj), fă asta:
@@ -35,6 +41,12 @@ Probabil nu ai nevoie de încă o listă de semne. Ai nevoie de ceva de făcut c
 **4. Nu trimite încă nimic.** Dă-ți zece minute. Dacă după asta mesajul încă ți se pare important, trimite-l o dată, calm.
 
 Pasul 4 e cel pe care l-aș sublinia. Zece minute nu par mult, dar un mesaj pe care l-ai regreta arată de obicei cu totul altfel după zece minute.
+
+:::read Citește și
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cum să nu mai analizezi totul excesiv în relație | Un mod mai calm de a gestiona spirala lui "și dacă"
+/blog/how-attachment-styles-work-in-relationships/ | Care e stilul meu de atașament? | De ce unii dintre noi simt distanța mai acut
+/blog/jealousy-in-a-relationship/ | Este gelozia normală într-o relație? | Când anxietatea apare sub formă de suspiciune
+:::
 
 ## Restul zilei: oprește cercul din creștere
 
@@ -56,6 +68,10 @@ De exemplu: "Azi mă simt cam vulnerabilă. Putem lua cina împreună diseară?"
 | Vrei să-l testezi | Spune nevoia direct |
 | Un moment frumos te sperie | Observă-l și lasă-te să te bucuri totuși de el |
 
+:::tool coach
+Ești în spirală chiar acum? Vorbește despre asta înainte să-i scrii
+:::
+
 ## Luna viitoare: schimbă tiparul
 
 **Spune-i partenerului o dată, calm.** Nu ca o acuzație, ci ca informație.
@@ -75,6 +91,8 @@ Un partener care înțelege ce se întâmplă poate ajuta fără să fie de gard
 > În fiecare vineri, când partenerul lui Elif, Jonah, ieșea cu echipa lui de fotbal, ea își petrecea seara verificând telefonul și trimițând mesaje de tip "te distrezi?". Într-o lună a încercat trusa de instrumente. Când venea impulsul, îl numea, respira două minute și își scria cele trei explicații pe un post-it. I-a spus lui Jonah o dată: "Vinerea devin anxioasă. M-ar ajuta un singur mesaj când ajungi la bar." Lui nu i-a fost greu deloc. În a patra vineri și-a dat seama că văzuse un film întreg fără să se uite la telefon.
 >
 > *Numele și detaliile din acest exemplu sunt inventate pentru a ilustra ideea.*
+
+Părerea mea: problema nu e că ceri liniștire, ci felul în care o ceri, iar el trebuie să fie unul pe care partenerul chiar îl poate oferi. "Îmi scrii când aterizezi?" funcționează. "Promite-mi că nu pleci niciodată" nu, pentru că niciun răspuns nu va fi vreodată de ajuns.
 
 ## E anxietate sau chiar e ceva în neregulă?
 

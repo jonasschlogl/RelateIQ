@@ -24,6 +24,13 @@ On kaksi tärkeää poikkeusta. Jos pelkäät kumppaniasi, tunnet itsesi kontrol
 | Kipinä on hiipunut | Jatkuva valehtelu tai pettäminen |
 | Stressi on ajanut teidät erilleen | Hoitamaton riippuvuus |
 
+:::stats Mitä Gottmanin tutkimus löysi
+96 % | tapauksista keskustelun kolme ensimmäistä minuuttia ennustivat, miten se päättyy
+5:1 | myönteisten ja kielteisten vuorovaikutusten suhde, jonka vakaat parit säilyttävät riidan aikana
+86 % | pienistä huomionpyynnöistä otettiin lämpimästi vastaan pareilla, jotka olivat yhä yhdessä kuusi vuotta myöhemmin, kun eronneilla pareilla luku oli 33 %
+lähde: John Gottmanin ja hänen kollegoidensa tutkimus (ks. lähteet alla)
+:::
+
 ## Askel 1: Päätä, mitä "parempi" tarkoittaa
 
 "Korjaaminen" on liian epämääräistä, jotta sen perusteella voisi toimia. Ennen kuin puhut kumppanisi kanssa, selvitä itsellesi, mikä tuntuisi erilaiselta, jos asiat olisivat paremmin. Enemmän hellyyttä? Reilumpi työnjako kotona? Tunne siitä, että sinua kuunnellaan? Kirjoita se ylös parilla lauseella. Silloin ette riitele kaikesta, ja voit pyytää jotain konkreettista.
@@ -49,6 +56,14 @@ Sinun ei tarvitse olla täydellinen. Huomaa vain, mihin niistä lipsut useimmin,
 > **Miksi ne pitää poistaa ensin**
 > Jokainen ratsumies pakottaa toisen puolustautumaan, ja kun ihminen puolustautuu, hän ei pysty kuuntelemaan. Siksi parit voivat riidellä samasta asiasta vuosia pääsemättä mihinkään. Ratsumiesten poistaminen ei yksin ratkaise ongelmaa. Se luo olosuhteet, joissa ongelman voi ratkaista.
 
+Minun näkemykseni: jos ehdit tehdä vain yhden askeleen, tee tämä. Mitään ei voi korjata kesken riidan, joten tauon pitämisen oppiminen tekee kaikki muut askeleet mahdollisiksi.
+
+:::read Lue myös
+/blog/relationship-advice-communication-habits/ | Näin kommunikoitte paremmin parisuhteessa | 7 tapaa, jotka muuttavat tapaanne riidellä
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Tänä iltana, huomenna ja seuraavalla viikolla
+/blog/relationship-problems-that-keep-coming-back/ | Miksi riitelemme aina samasta asiasta? | Mitä pinnan alla yleensä on
+:::
+
 ## Askel 3: Käykää pieni keskustelu yhdestä asiasta
 
 Jätä väliin keskustelu "suhteen tilasta". Valitse yksi aihe ja rauhallinen hetki, ei heti töiden jälkeen eikä kesken riidan. Se, miten aloitat, on tärkeämpää kuin melkein mikään muu: Gottmanin tutkimuksessa keskustelun kolme ensimmäistä minuuttia ennustivat sen lopputuloksen 96 prosentissa tapauksista.
@@ -68,6 +83,10 @@ Käytännöllinen tapa aloittaa:
 - **Sano yksi konkreettinen kiitos päivässä.** "Kiitos, että hoidit auton, se vei ison huolen pois."
 - **Ottakaa joka ilta kymmenen minuuttia aitoon juttelemiseen.** Ei logistiikasta. Siitä, miltä päivä oikeasti tuntui.
 - **Suunnitelkaa kerran viikossa jotain, millä ei ole mitään tekemistä ongelmien kanssa.** Kävely, ateria, elokuva. [Kysymyksemme treffi-iltaan](/blog/date-night-questions-for-couples/) voivat auttaa, että se tuntuu taas treffeiltä.
+
+:::tool practice
+Haluatko harjoitella vaikeaa keskustelua ennen kuin käyt sen?
+:::
 
 ## Askel 5: Kysykää, mitä kumpikin tarvitsee
 
@@ -99,6 +118,8 @@ On hyvin tavallista, että toinen on motivoituneempi kuin toinen, ainakin aluksi
 Mutta pitkällä aikavälillä suhde tarvitsee kaksi ihmistä. Jos olet yrittänyt yksin pitkään eikä mikään muutu, sano se selkeästi ja rauhallisesti. Se, miten kumppanisi reagoi siihen keskusteluun, on tärkeää tietoa.
 
 Kokeile: "Olen todella yrittänyt saada asiat meidän välillämme paremmiksi, ja minun täytyy tietää, että sinäkin haluat sitä. Mitä olet valmis tekemään?"
+
+Minun näkemykseni: yksi ihminen voi muuttaa suhteen sävyä enemmän kuin luulee, mutta ei loputtomiin yksin. Jos olet kuukausien jälkeen ainoa, joka yrittää, se kannattaa sanoa ääneen.
 
 ## Kuinka kauan se kestää?
 

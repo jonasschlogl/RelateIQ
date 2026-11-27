@@ -20,6 +20,10 @@ Așa că ghidul acesta îți dă 30 de întrebări bine alese, ordonate după c�
 
 Și da, ideea de a construi apropierea prin întrebări tot mai profunde are o origine celebră: studiul "celor 36 de întrebări" al lui Arthur Aron, în care perechi de necunoscuți care răspundeau pe rând la întrebări tot mai personale se simțeau mult mai apropiați după aceea. Întrebările de mai jos folosesc același principiu: începi mai ușor și mergi mai adânc pas cu pas.
 
+Părerea mea: a doua descoperire contează mai mult pentru mine decât prima. O întrebare grozavă urmată de un răspuns distrat face mai mult rău decât nicio întrebare, așa că lasă telefonul deoparte înainte să începeți.
+
+**Test rapid:** Cum îi place partenerului să fie susținut când se deschide? [Testul despre stilul de consolare](/quiz/comfort-style/), în engleză și de 2 minute, te poate ajuta să răspunzi într-un fel care ajunge la el.
+
 ## Nivelul 1: ușoare și calde
 
 Bune pentru: o plimbare, un drum lung cu mașina, prima dată când încercați.
@@ -45,6 +49,12 @@ Bune pentru: o seară relaxată, o cină fără telefoane.
 14. Când te simți cel mai apreciat de mine?
 15. Ce făceam înainte și îți lipsește?
 
+:::read Citește și
+/blog/date-night-questions-for-couples/ | Întrebări pentru o seară în doi | Întrebări mai ușoare și jocuri pentru o seară distractivă
+/blog/how-to-say-i-love-you-without-words/ | Cum să arăți iubire fără cuvinte | Ce să faci după o astfel de discuție
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Ce să spui când ți-ai rănit partenerul | Dacă un răspuns ustură
+:::
+
 ## Nivelul 3: vulnerabile
 
 Bune pentru: un moment liniștit, între patru ochi, când aveți amândoi timp. Nu în mijlocul unui conflict.
@@ -69,6 +79,10 @@ Bune pentru: o dimineață liniștită de weekend, o aniversare, începutul unui
 28. Dacă am putea avea o discuție sinceră pe care o tot evităm, despre ce ar fi?
 29. Ce ar face ca anul acesta să aibă un sens pentru tine?
 30. Ce lucru despre noi nu vrei să-l iei niciodată ca de la sine înțeles?
+
+:::tool practice
+Emoționată de întrebările mai mari? Exersează mai întâi
+:::
 
 ## Cum să răspunzi ca să continue să vorbească
 
@@ -101,6 +115,8 @@ Uneori o întrebare profundă scoate la iveală ceva dureros: o nevoie neîmplin
 Ceva de genul: "Mă bucur mult că mi-ai spus. Am nevoie de puțin timp să mă gândesc. Putem reveni mâine?"
 
 Dacă un răspuns duce la o neînțelegere, ghidul nostru despre [obiceiurile de comunicare](/blog/relationship-advice-communication-habits/) vă poate ajuta să nu escaladeze.
+
+Părerea mea: un răspuns greu e semn că întrebarea a funcționat. Dacă partenerul ți-a încredințat ceva dificil, cel mai important lucru pe care îl poți spune e "mulțumesc că mi-ai spus".
 
 ## Fă din asta un obicei, nu o întâmplare
 

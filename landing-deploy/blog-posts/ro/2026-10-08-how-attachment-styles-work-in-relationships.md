@@ -52,6 +52,13 @@ Cercetătorii măsoară de obicei aceste dimensiuni cu chestionare precum scala 
 >
 > Niciuna dintre strategii nu e proastă. Fiecare a avut sens undeva. Doar că se ciocnesc rău când doi oameni le folosesc pe cele opuse în același moment.
 
+:::chart Cum s-au descris adulții în studiul original al lui Hazan și Shaver
+Securizant | 56 | 56%
+Evitant | 25 | 25%
+Anxios | 19 | 19%
+sursa: Hazan și Shaver (1987), 620 de respondenți (vezi sursele de mai jos)
+:::
+
 ## Cele patru stiluri de atașament în viața de zi cu zi
 
 ### Atașamentul sigur
@@ -99,6 +106,12 @@ Anxietate ridicată, evitare ridicată. Oamenii din acest grup își doresc apro
 
 Poate fi stilul cel mai greu de trăit, mai ales pentru cel care îl are. E legat adesea de experiențe timpurii în care oamenii care ar fi trebuit să fie siguri nu au fost mereu siguri. Relațiile stabile și răbdătoare și sprijinul unui terapeut format în atașament sau traumă pot ajuta mult.
 
+:::read Citește și
+/blog/avoidant-attachment-partner/ | Atașamentul evitant la partener | Cum să iubești pe cineva care are nevoie de spațiu
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Partea anxioasă a cercului
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cum să nu mai analizezi totul excesiv | Când mintea umple tăcerea
+:::
+
 ## Când stilurile se întâlnesc: cercul urmărire și retragere
 
 Unul dintre cele mai studiate tipare din cercetările despre cuplu se numește cerere și retragere. Un partener se apropie de celălalt ca să vorbească ("Trebuie să lămurim asta"), iar celălalt se îndepărtează ca să se calmeze ("Nu pot acum"). Cu cât unul urmărește mai mult, cu atât celălalt se retrage mai mult. Cu cât celălalt se retrage mai mult, cu atât primul urmărește mai mult.
@@ -134,6 +147,8 @@ Câteva precizări merită știute:
 
 Momentele bune de zi cu zi par să conteze, nu doar marile evenimente din viață. Într-un studiu din 2022 cu 151 de cupluri care abia începuseră să iasă împreună și 168 de cupluri proaspăt căsătorite, Deniz Bayraktaroglu și colegii săi au descoperit că în zilele cu mai multe momente pozitive cu partenerul, evitarea oamenilor scădea în săptămânile următoare, în parte pentru că acele momente le îmbunătățeau starea. Aceleași momente pozitive nu reduceau anxietatea de atașament, care poate avea nevoie de o liniștire mai constantă și mai directă.
 
+Părerea mea: asta mi se pare partea cea mai încurajatoare din cercetarea despre atașament. Stilul tău e un punct de plecare, nu o sentință, iar o relație stabilă îl poate schimba încet.
+
 ## Mituri frecvente despre stilurile de atașament
 
 | Mit | Ce sugerează de fapt cercetările |
@@ -146,6 +161,12 @@ Momentele bune de zi cu zi par să conteze, nu doar marile evenimente din viaț�
 | "Doi oameni nesiguri nu pot funcționa împreună." | Mulți pot, mai ales când amândoi înțeleg tiparul și își asumă partea. |
 
 Mitul pe care mi-ar plăcea cel mai mult să-l pensionez e ideea că stilul tău e un verdict. Oamenii folosesc des "sunt evitant" sau "el e anxios" ca pe finalul discuției. Funcționează mult mai bine ca început.
+
+Părerea mea: eticheta e mai puțin utilă decât tiparul. Să știi "sunt anxioasă" ajută mult mai puțin decât să știi "când el tace, eu alerg după el".
+
+:::tool coach
+Recunoști cercul în relația ta? Vorbește despre asta
+:::
 
 ## Cum folosești asta în viața de zi cu zi
 

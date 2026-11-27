@@ -26,6 +26,8 @@ En pocas palabras: antes de que tu pareja pueda escuchar tu versión, necesita s
 
 **Test rápido:** ¿quieres saber cómo sueles pedir perdón? Nuestro [test sobre tu estilo de disculpa](/quiz/apology-style/), en inglés y de 2 minutos, puede mostrártelo.
 
+Mi opinión: lo más difícil es no explicarte enseguida. Tus intenciones importan, pero llegan mucho mejor después de que tu pareja se sienta escuchada, no antes.
+
 ## Los primeros cinco minutos, paso a paso
 
 ### 1. Para y gírate hacia tu pareja
@@ -76,6 +78,12 @@ Ahora puedes explicar qué querías decir, brevemente, y asumir el efecto de tod
 
 **Por qué:** la intención le importa a tu pareja, como muestra la investigación anterior. Pero dicha primero suena a defensa. Dicha cuando ya se siente comprendida, suena a tranquilidad. Para la estructura completa de una buena disculpa, lee [cómo pedir perdón a tu pareja](/blog/how-to-apologize-to-your-partner/).
 
+:::read Lecturas relacionadas
+/blog/how-to-apologize-to-your-partner/ | Cómo pedir perdón a tu pareja de forma sincera | Qué incluye una disculpa completa
+/blog/my-boyfriend-gets-defensive/ | Mi novio se pone a la defensiva cuando saco un tema | Si ponerte a la defensiva es tu reflejo
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | Si no estáis en la misma habitación
+:::
+
 ## Primero el efecto, después la intención
 
 La mayoría empezamos por la intención porque es lo que mejor conocemos de la situación. Tu pareja empieza por el efecto, porque es lo que vivió. El orden en que dices las cosas cambia cómo llegan.
@@ -115,6 +123,10 @@ Puedes seguir diciendo lo de la columna izquierda, o su versión sincera. Solo q
 > **Lo que la mayoría de los consejos no cuentan**
 > Muchos consejos dicen que la intención no importa, que solo importa el efecto. La investigación no dice exactamente eso. La gente se aleja más cuando cree que el daño fue deliberado, así que tu intención sí le importa a tu pareja. El problema es el momento. Si empiezas por la intención, suena a «tus sentimientos están mal». Si empiezas por la comprensión, la misma explicación se convierte en una buena noticia: «No quería hacerte daño, y aun así me importa haberlo hecho».
 
+:::tool practice
+¿Quieres practicar lo que vas a decir antes de la conversación?
+:::
+
 ## Qué no decir
 
 - **«Siento que te sientas así.»** Pide perdón por sus sentimientos, no por lo que hiciste.
@@ -135,6 +147,8 @@ Un daño es una conversación. El mismo daño una y otra vez es un patrón que c
 Si tuviera que quedarme con un solo paso de esta guía, sería el paso 2. Repetir lo que has oído parece casi demasiado simple, pero cambia toda la temperatura de la conversación.
 
 Cuando sabes que se acerca una conversación difícil, Partner Practice te permite ensayarla con una IA que hace de tu pareja, para que la versión tranquila y no defensiva sea la que salga cuando importa.
+
+Mi opinión: si el mismo comentario le sigue haciendo daño, la disculpa ya no es la solución. Cambiar el hábito, sí. Esa es la parte que reconstruye la confianza.
 
 ## Respuestas rápidas
 

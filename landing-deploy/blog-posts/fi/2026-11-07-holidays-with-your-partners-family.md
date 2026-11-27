@@ -24,6 +24,15 @@ Jos kumppanisi on Yhdysvalloista, kiitospäivä on usein ensimmäinen iso perhej
 - **Suunnitelkaa matkapäivät yhdessä.** Edeltävä päivä ja sitä seuraava sunnuntai ovat Yhdysvalloissa vuoden ruuhkaisimpia matkustuspäiviä, joten sopikaa ajoissa, milloin lähdette ja kuinka kauan viivytte.
 - **Miettikää seuraavaa juhlaa jo nyt.** Jos olette hänen perheensä luona kiitospäivänä, on luontevaa puhua siitä, missä vietätte joulua, ennen kuin kukaan olettaa mitään.
 
+:::stats Mikä tekee juhlapyhistä stressaavia
+89 % | yhdysvaltalaisista aikuisista sanoo, että jokin juhlakaudessa stressaa heitä
+58 % | mainitsee liiallisen rahankäytön tai sen, ettei rahaa ole tarpeeksi
+41 % | sanoo stressinsä kasvavan juhlapyhinä muuhun vuoteen verrattuna
+lähde: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), The Harris Pollin kysely 2 061 yhdysvaltalaiselle aikuiselle, marraskuu 2023
+:::
+
+**Pikatesti:** Hiljenetkö vai puhutko, kun perheen jännite nousee? Kahden minuutin [riitatyylin testi](/quiz/fight-style/), englanniksi, auttaa teitä tietämään, mitä toisiltanne voi odottaa.
+
 ## Kaksi viikkoa ennen: suunnittelukeskustelu
 
 Useimmat parien juhlapyhäriidat alkavat erilaisista odotuksista, eivät itse perheestä. Käykää yksi rauhallinen keskustelu ennen lähtöä, mieluiten kävelyllä tai kahvilla, ei edellisenä iltana.
@@ -41,6 +50,14 @@ Sano se yksinkertaisesti: "Haluan, että tämä menee hyvin meille molemmille. M
 Psykologi Terri Apter, joka on tutkinut paljon suhteita appivanhempiin, havaitsi, että yli 60 prosenttia naisista mutta vain noin 15 prosenttia miehistä kuvasi vaikeaa suhdetta kumppaninsa äitiin. Jos tämä koskee sinua, sano se ennen vierailua, älä sen puolivälissä.
 
 Jos teet tästä oppaasta vain yhden asian, käy tämä keskustelu. Valtavan moni juhlapyhien räjähdys alkaa kahdesta ihmisestä, jotka olivat hiljaa olettaneet erilaiset suunnitelmat.
+
+Minun näkemykseni: suunnittelukeskustelu on kaiken ydin. Kävisin sen, vaikka luulisitte olevanne jo kaikesta samaa mieltä, koska oletukset, joita kukaan ei sano ääneen, räjähtävät kolmantena päivänä.
+
+:::read Lue myös
+/blog/meeting-your-partners-parents/ | Kumppanin vanhempien tapaaminen ensimmäistä kertaa | Mitä sanoa 12 kiusallisimmassa hetkessä
+/blog/how-to-support-your-partner-when-stressed/ | Näin tuet kumppaniasi stressin keskellä | Kun vierailu käy hänen voimilleen
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | Jos kotimatka muuttuu riidaksi
+:::
 
 ## Edellisenä päivänä: tilannekatsaus
 
@@ -65,6 +82,10 @@ Varaudu siihen, että kumppanisi muuttuu vähän. Moni palaa kotona perherooliin
 **Valitse taistelusi.** Useimmat juhlapyhien ärsytykset eivät ole kannanoton arvoisia: miten kinkku valmistetaan, television äänenvoimakkuus, isotädin mielipiteet. Säästä energiasi niihin yhteen tai kahteen asiaan, joilla on oikeasti merkitystä.
 
 **Kun tunteet tulvivat yli, lähde hetkeksi ulos.** Jos huomaat sydämesi hakkaavan ja kärsivällisyytesi loppuvan, pidä 20 minuutin tauko ennen kuin sanot mitään. Gottman Institute suosittelee tällaista taukoa, koska on hyvin vaikeaa kuunnella tai puhua rauhallisesti, kun keho on taistele tai pakene -tilassa.
+
+:::tool practice
+Jännittääkö jokin tietty keskustelu hänen perheensä kanssa? Harjoittele se ensin
+:::
 
 ## Jännittyneet hetket: mitä sanoa pöydässä
 
@@ -108,6 +129,8 @@ Ei ole yhtä reilua tapaa. Parit tyypillisesti:
 Tärkeintä on, että päätätte yhdessä eikä kumpikaan tunne olevansa aina toisella sijalla.
 
 Jos olet viemässä kumppaniasi kotiin ensimmäistä kertaa, lue oppaamme [kumppanin vanhempien tapaamisesta](/blog/meeting-your-partners-parents/), ja jos vietätte juhlapyhät erillään, [vinkeissämme etäsuhteeseen](/blog/long-distance-relationship-tips/) on ideoita juhlakauteen. Kun jännitteet valuvat teidän kahden välille, [anteeksipyyntö kumppanille](/blog/how-to-apologize-to-your-partner/) ja oppaamme [viestintätavoista](/blog/relationship-advice-communication-habits/) voivat auttaa.
+
+Minun näkemykseni: reilu ei tarkoita samaa joka vuosi. Tärkeää on, että kumpikin tuntee suunnitelman tehdyn yhdessä, ei että kalenteri menee päivälleen tasan.
 
 ## Nopeat vastaukset
 

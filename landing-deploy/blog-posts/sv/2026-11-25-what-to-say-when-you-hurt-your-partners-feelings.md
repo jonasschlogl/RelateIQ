@@ -26,6 +26,8 @@ Enkelt uttryckt: innan din partner kan höra din sida behöver hen känna sig h�
 
 **Snabbtest:** Vill du veta hur du brukar be om ursäkt? Vårt [test om ursäktsstil](/quiz/apology-style/), på engelska och på 2 minuter, kan visa dig.
 
+Min åsikt: det svåraste är att inte förklara sig direkt. Dina avsikter spelar roll, men de landar mycket bättre efter att din partner känt sig hörd, inte före.
+
 ## De första fem minuterna, steg för steg
 
 ### 1. Stanna upp och vänd dig mot hen
@@ -76,6 +78,12 @@ Nu kan du förklara vad du menade, kort, och ändå ta ansvar för effekten.
 
 **Varför:** avsikten spelar roll för din partner, som forskningen ovan visar. Men sagd först låter den som ett försvar. Sagd när hen känner sig förstådd låter den som en försäkran. För hela strukturen i en bra ursäkt, se [be om ursäkt till din partner](/blog/how-to-apologize-to-your-partner/).
 
+:::read Läs också
+/blog/how-to-apologize-to-your-partner/ | Så ber du din partner om ursäkt på riktigt | Vad en fullständig ursäkt innehåller
+/blog/my-boyfriend-gets-defensive/ | Min pojkvän går i försvar när jag tar upp något | Om försvar är din reflex
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | Om ni inte är i samma rum
+:::
+
 ## Effekten först, avsikten sedan
 
 De flesta av oss börjar med avsikten, eftersom det är det vi känner till bäst. Din partner börjar med effekten, eftersom det är det hen upplevde. Ordningen du säger saker i förändrar hur de landar.
@@ -115,6 +123,10 @@ Du får fortfarande säga det i vänstra kolumnen, eller den ärliga versionen a
 > **Det de flesta råd missar**
 > Många råd säger att avsikten inte spelar någon roll, bara effekten. Forskningen säger inte riktigt det. Människor drar sig undan mer när de tror att det sårande var avsiktligt, så din avsikt betyder verkligen något för din partner. Problemet är tajmingen. Börjar du med avsikten låter det som "dina känslor är fel". Börjar du med förståelse blir samma förklaring goda nyheter: "Jag ville inte såra dig, och jag bryr mig ändå om att jag gjorde det."
 
+:::tool practice
+Vill du öva på vad du ska säga innan samtalet?
+:::
+
 ## Vad du inte ska säga
 
 - **"Förlåt att du känner så."** Det ber om ursäkt för hens känslor, inte för det du gjorde.
@@ -135,6 +147,8 @@ En sårad känsla är ett samtal. Samma sårade känsla om och om igen är ett m
 Om jag bara fick behålla ett steg från guiden skulle det vara steg 2. Att säga tillbaka det du hörde känns nästan för enkelt, men det ändrar hela temperaturen i samtalet.
 
 När du vet att ett svårt samtal är på väg kan du öva på det i Partner Practice med en AI som spelar din partner, så att den lugna, icke-defensiva versionen är den som kommer ut när det gäller.
+
+Min åsikt: om samma kommentar fortsätter att såra hen är ursäkten inte längre lösningen. Att ändra vanan är det. Det är den delen som bygger upp tilliten igen.
 
 ## Snabba svar
 

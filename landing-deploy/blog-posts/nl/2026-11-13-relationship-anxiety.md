@@ -22,6 +22,12 @@ Je hebt waarschijnlijk niet nog een lijst met signalen nodig. Je hebt iets nodig
 
 **Snelle test:** relatieangst hangt vaak samen met hechting. De gratis [test over hechtingsstijl](/quiz/attachment-style/), in het Engels en in 2 minuten, kan laten zien of dat deel uitmaakt van jouw patroon.
 
+Mijn mening: het nuttigste om te onthouden is dat angst precies hetzelfde voelt, of er nu iets mis is of niet. Het gevoel is echt, maar het is geen bewijs.
+
+:::stats Wat piekeren voorspelt, en wat niet
+91,4% | van de zorgen die mensen een maand lang opschreven, kwam niet uit, in een onderzoek van Lucas LaFreniere en Michelle Newman
+:::
+
 ## De komende 2 minuten: als de spiraal begint
 
 Zodra je het merkt (op je telefoon kijken, een strak gevoel op je borst, de neiging om een bericht te sturen), doe dit:
@@ -35,6 +41,12 @@ Zodra je het merkt (op je telefoon kijken, een strak gevoel op je borst, de neig
 **4. Stuur nog niets.** Geef het tien minuten. Voelt het bericht daarna nog steeds belangrijk, stuur het dan één keer, rustig.
 
 Stap 4 is degene die ik zou onderstrepen. Tien minuten klinkt niet als veel, maar een bericht waar je spijt van zou krijgen, ziet er tien minuten later meestal heel anders uit.
+
+:::read Lees ook
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken in een relatie | Een rustigere manier om met de wat-als-spiraal om te gaan
+/blog/how-attachment-styles-work-in-relationships/ | Wat is mijn hechtingsstijl? | Waarom sommigen van ons afstand scherper voelen
+/blog/jealousy-in-a-relationship/ | Is jaloezie normaal in een relatie? | Als angst zich voordoet als argwaan
+:::
 
 ## De rest van de dag: voorkom dat de cirkel groeit
 
@@ -56,6 +68,10 @@ Bijvoorbeeld: "Ik voel me vandaag een beetje wankel. Kunnen we vanavond samen et
 | Je wilt je partner testen | Zeg de behoefte rechtstreeks |
 | Een fijn moment voelt eng | Merk het op en geniet er toch van |
 
+:::tool coach
+Zit je nu in een spiraal? Praat het door voordat je appt
+:::
+
 ## De komende maand: verander het patroon
 
 **Vertel het je partner één keer, rustig.** Niet als beschuldiging, maar als informatie.
@@ -75,6 +91,8 @@ Een partner die begrijpt wat er speelt, kan helpen zonder dag en nacht stand-by 
 > Elke vrijdag, als Elifs partner Jonah met zijn voetbalteam op stap ging, bracht zij de avond door met op haar telefoon kijken en "heb je het leuk?"-appjes sturen. Een maand lang probeerde ze de gereedschapskist. Als de neiging kwam, benoemde ze die, ademde twee minuten en schreef haar drie verklaringen op een post-it. Ze zei één keer tegen Jonah: "Op vrijdag word ik angstig. Eén appje als je bij de kroeg bent zou helpen." Dat vond hij geen probleem. Op de vierde vrijdag merkte ze dat ze een hele film had gekeken zonder op haar telefoon te kijken.
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
+
+Mijn mening: om geruststelling vragen is niet het probleem, maar je moet erom vragen op een manier die je partner echt kan geven. "Stuur je een berichtje als je geland bent?" werkt. "Beloof dat je nooit weggaat" niet, want geen enkel antwoord zal ooit genoeg zijn.
 
 ## Is het angst, of is er echt iets mis?
 

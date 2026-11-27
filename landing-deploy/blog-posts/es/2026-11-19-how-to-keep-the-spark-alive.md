@@ -33,6 +33,8 @@ Lee cada frase y puntúala: 0 = casi nunca es cierto, 1 = a veces, 2 = a menudo.
 
 Suma cada pareja de frases. El área con la puntuación más baja (de 0 a 2) es por donde empezar. Si hay empate, elige la que más te preocupe. Si todo puntúa 3 o 4, vuestra chispa está bien y el plan de 4 semanas de abajo es mantenimiento, no reparación.
 
+Mi opinión: me gusta este chequeo porque "se ha perdido la chispa" es demasiado vago para arreglarlo. "Nunca probamos nada nuevo" o "hemos dejado de hacernos preguntas" es algo en lo que sí podéis trabajar esta semana.
+
 ## Si la novedad está baja: rompe la rutina, no la cartera
 
 **Lo que muestra la investigación.** En un estudio de larga duración con 123 parejas, Irene Tsapelas, Arthur Aron y Terri Orbuch preguntaron a personas en su séptimo año de matrimonio con qué frecuencia sentían que su matrimonio estaba estancado en la rutina. Quienes se aburrían más en el año 7 estaban menos satisfechos nueve años después, en el año 16. La conexión pasaba por la cercanía: el aburrimiento hacía que las parejas se sintieran menos unidas, y eso reducía la satisfacción.
@@ -52,6 +54,12 @@ También importa cómo pensamos sobre el deseo. En seis estudios con casi 1.900 
 **Lo que la mayoría de los consejos no dicen.** Mucha gente espera que el deseo aparezca de la nada, como al principio. Los terapeutas sexuales suelen explicar que en las relaciones largas el deseo tiende a ser más *receptivo*: aparece cuando ya estáis cerca, relajados y en contacto, no antes. Esperar a "estar de humor" primero puede significar esperar meses.
 
 **Prueba esto:** tened una conversación tranquila, fuera de la cama. Por ejemplo: "¿Qué es algo que antes te hacía sentir deseado o deseada por mí y que he dejado de hacer?" Solo escucha. Sin defenderte y sin un plan inmediato.
+
+:::read Lecturas relacionadas
+/blog/deep-questions-to-ask-your-partner/ | Preguntas profundas para tu pareja | 30 preguntas por niveles
+/blog/date-night-questions-for-couples/ | Preguntas para una cita en pareja | 5 juegos y 40 preguntas
+/blog/how-to-say-i-love-you-without-words/ | Cómo demostrar amor sin decirlo | 25 pequeñas señales diarias
+:::
 
 ## Si la atención está baja: vuelve a sentir curiosidad
 
@@ -76,6 +84,10 @@ También importa cómo pensamos sobre el deseo. En seis estudios con casi 1.900 
 | Atención | Hablar solo de logística | Una pregunta de verdad a la semana |
 | Calidez | Contacto solo antes del sexo, o nada | Un ritual diario de cariño |
 
+:::tool coach
+¿No sabes qué chispa se está apagando entre vosotros? Háblalo
+:::
+
 ## Un plan de 4 semanas
 
 Elige tu área más baja y dale cuatro semanas. Un cambio cada vez funciona mejor que nueve a la vez.
@@ -97,6 +109,8 @@ A veces una chispa que se apaga es un síntoma. El resentimiento por peleas que 
 También está bien que una relación tenga temporadas más tranquilas. Lo importante es darse cuenta y volver el uno al otro cuando la vida lo permita.
 
 Si te cuesta sacar el tema, Partner Practice de RelationshipAI te deja ensayar la conversación con una IA que hace de tu pareja, y Coach Chat te ayuda a aclarar qué quieres pedir. No es terapia, pero es un lugar tranquilo para empezar.
+
+Mi opinión: a veces una chispa que se apaga es solo una etapa cansada: un bebé, un trabajo duro, una mudanza. Yo sería amable con vosotros antes de decidir que significa algo más grande.
 
 ## Respuestas rápidas
 

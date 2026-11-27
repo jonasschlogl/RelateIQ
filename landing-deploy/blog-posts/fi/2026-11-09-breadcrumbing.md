@@ -12,6 +12,14 @@ Tässä ne, joita ihmiset kysyvät useimmin, vastattuina niin rehellisesti kuin 
 > **Lyhyt vastaus:**
 > Breadcrumbing tarkoittaa, että joku antaa sinulle juuri sen verran huomiota, että kiinnostuksesi säilyy, ilman todellista aikomusta suhteeseen. Merkkejä ovat satunnaiset viestit, epämääräiset suunnitelmat, jotka eivät koskaan toteudu, ja yhteydenotot silloin, kun hänellä on tylsää. Paras tapa toimia on kysyä suoraan kerran ja astua sitten taaksepäin, jos teot eivät muutu.
 
+:::stats Kuinka yleistä breadcrumbing on
+36 % | espanjalaisen tutkimuksen aikuisista sanoi joutuneensa breadcrumbingin kohteeksi ainakin kerran viimeisen vuoden aikana
+37 % | myönsi itse tehneensä niin jollekulle
+lähde: Navarro ja kollegat, 626 aikuista Espanjassa (ks. lähteet alla)
+:::
+
+**Pikatesti:** Mietitkö, miksi ristiriitaiset signaalit osuvat sinuun niin kovaa? Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, voi auttaa ymmärtämään sitä.
+
 ## 1. "Onko tämä oikeasti breadcrumbingia, vai ylianalysoinko?"
 
 Hyvä testi on katsoa *kuukauden mittaista kaavaa*, ei yksittäisiä viestejä. Breadcrumbingissa on yleensä kolme piirrettä yhtä aikaa:
@@ -44,6 +52,14 @@ Breadcrumbing on epävarmuutta tippa kerrallaan. Jokainen muru herättää toivo
 > **Miksi selvä "ei" voi tuntua paremmalta kuin ehkä**
 > "Ei" sattuu kerran, ja sitten voit surra ja päästä eteenpäin. Ehkä ei koskaan anna sitä loppua. Huomiosi jää toiseen ihmiseen, koska tarina ei ole päättynyt. Se ei ole heikkoutta. Niin melkein kuka tahansa reagoi asiaan, joka jää auki.
 
+Minun näkemykseni: luulen, että breadcrumbing sattuu, koska toivo väsyttää. Et ole pahoillasi yhdestä myöhäisestä viestistä. Olet pahoillasi kuukausien odottamisesta, jotta tietäisit, missä mennään.
+
+:::read Lue myös
+/blog/situationship/ | Situationship | Jää, määrittele tai lähde
+/blog/signs-your-partner-is-losing-interest/ | Merkit, että kumppani menettää kiinnostuksensa | Mitä kukin merkki voi tarkoittaa
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin | Kun jokainen viesti analysoidaan
+:::
+
 ## 4. "Miksi ihmiset tekevät breadcrumbingia?"
 
 Yleensä ei osana suurta suunnitelmaa. Vuoden 2023 tutkimuksessa, jossa nuoret aikuiset kuvasivat joutumistaan breadcrumbingin kohteeksi, osallistujat ajattelivat, että breadcrumbingin tekijät hakivat usein huomiota, pelkäsivät yksin jäämistä, heillä oli heikko itsetunto tai he halusivat tuntea hallitsevansa tilannetta. Muita yleisiä syitä: vaihtoehtojen pitäminen auki, vahvistuksesta nauttiminen tai kiusallisen "en ole kiinnostunut" -lauseen välttely.
@@ -55,6 +71,10 @@ Heidän syynsä selittää asian. Se ei velvoita sinua hyväksymään sitä jatk
 Samassa vuoden 2023 tutkimuksessa breadcrumbingin kohteeksi joutuneet kuvasivat vetoa selkeästi: lähes puolet toivoi, että siitä tulisi jotain, osa odotti toisen tunteiden saavuttavan heidän omansa, ja osan oli vaikea asettaa rajaa.
 
 Jos kallistut ahdistuneeseen [kiintymystyyliin](/blog/how-attachment-styles-work-in-relationships/), veto voi olla vielä vahvempi, koska epävarmuus itsessään tuntuu syyltä yrittää kovemmin. Sen huomaaminen on ensimmäinen askel siihen, ettet toimi automaattisesti.
+
+:::tool check
+Kirjoitatko hänelle viestiä? Tarkista se ennen lähettämistä
+:::
 
 ## 6. "Pitäisikö minun kysyä häneltä suoraan?"
 
@@ -73,6 +93,8 @@ Et ole velkaa puhetta ihmiselle, joka on antanut sinulle murusia. Lyhyt ja ystä
 "Olen tajunnut, että haluan jotain johdonmukaisempaa kuin tämä. Otan askeleen taaksepäin. Pidä huolta itsestäsi."
 
 Mykistä, arkistoi tai lopeta seuraaminen sitten, mikä tahansa estää murusia tavoittamasta sinua. Se ei ole pikkumaista. Se suojaa edistystäsi seuraavalta "moi, mitä kuuluu" -viestiltä.
+
+Minun näkemykseni: et ole kenellekään velkaa loppupuhetta yhteydestä, johon hän ei koskaan kunnolla sitoutunut. Vastaaminen harvemmin ja hitaammin on täysin reilu vastaus.
 
 ## 8. "Voiko breadcrumbingia tapahtua parisuhteessa, eikä vain deittaillessa?"
 

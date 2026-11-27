@@ -30,6 +30,15 @@ Samma översikt hävdade att några av de viktigaste sätten partner visar kärl
 
 **Använd det så här:** lägg till dina egna kategorier. "När jag är stressad hjälper det mest när du bara sitter med mig" är också ett kärleksspråk. Vår guide om att [stötta din partner när hen är stressad](/blog/how-to-support-your-partner-when-stressed/) går igenom det på djupet.
 
+:::chart Amerikanernas vanligaste kärleksspråk för att ta emot kärlek
+Kvalitetstid | 38 | 38 %
+Fysisk beröring | 24 | 24 %
+Bekräftande ord | 19 | 19 %
+Tjänster | 13 | 13 %
+Att få presenter | 7 | 7 %
+källa: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1 000 vuxna amerikaner, januari 2022
+:::
+
 ## Föreställning 3: "Par med samma kärleksspråk är lyckligare"
 
 **Vad forskningen säger: svagt stöd.**
@@ -37,6 +46,12 @@ Samma översikt hävdade att några av de viktigaste sätten partner visar kärl
 I en studie från 2017 med 67 par testade forskarna Bunt och Hazelwood just det här. Att ha samma huvudsakliga kärleksspråk gjorde liten skillnad för nöjdheten. Det som spelade större roll var *självreglering*: varje partners förmåga att hantera sina egna reaktioner och fortsätta lägga ner energi på förhållandet.
 
 **Använd det så här:** oroa dig inte om era "typer" inte matchar. Olika preferenser betyder bara att ni behöver vara lite mer uppmärksamma, vilket är bra för ett förhållande ändå.
+
+:::read Läs också
+/blog/how-to-say-i-love-you-without-words/ | Så visar du kärlek utan ord | 25 små sätt för alla sorters dagar
+/blog/how-to-keep-the-spark-alive/ | Så håller ni gnistan vid liv | Hitta gnistan som falnar och fixa just den
+/blog/long-distance-relationship-tips/ | Så får ni ett distansförhållande att fungera | När kärleken måste färdas genom en skärm
+:::
 
 ## Föreställning 4: "Att tala din partners språk gör verklig skillnad"
 
@@ -64,6 +79,12 @@ Det finns inga starka belägg för att kärleksspråk är fasta egenskaper. Sunt
 Mostovas studie fann att inte ens empatiska partner automatiskt var bra på att svara på sin partners preferenser. Kärlek ger inte människor telepati. Att be tydligt är inte oromantiskt. Det sparar månader av tyst besvikelse.
 
 Testa: "Det betyder mycket för mig när du säger vad du uppskattar hos mig. Jag behöver inga stora tal, bara en mening ibland."
+
+Min åsikt: att förvänta sig att någon ska gissa är det snabbaste sättet att känna sig oälskad av någon som faktiskt försöker. Att berätta vad som når fram till dig är inte oromantiskt. Det är generöst.
+
+:::tool coach
+Osäker på vad din partner behöver av dig? Prata igenom det
+:::
 
 ## Det som faktiskt hjälper
 
@@ -95,3 +116,4 @@ Min syn: kärleksspråk är en bra samtalsstartare och en dålig regelbok. Anvä
 - Bunt, S., & Hazelwood, Z. J. (2017). Walking the walk, talking the talk: Love languages, self-regulation, and relationship satisfaction. *Personal Relationships*, 24(2), 280-290. [Abstrakt](https://metatoc.com/papers/100052-walking-the-walk-talking-the-talk-love-languages-self-regulation-and-relationship-satisfaction)
 - University of Florida, SMART Couples: [Do you speak your partner's love language? Does it matter?](https://smartcouples.ifas.ufl.edu/dating/communicating-with-your-partner/do-you-speak-your-partners-love-language)
 - Chapman, G. (1992). *The Five Love Languages: How to Express Heartfelt Commitment to Your Mate*. Northfield Publishing.
+- YouGov (2022): [What are Americans' love languages?](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), survey of 1,000 US adults, January 2022

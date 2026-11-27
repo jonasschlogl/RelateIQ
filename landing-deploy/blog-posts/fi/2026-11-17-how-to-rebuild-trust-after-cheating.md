@@ -24,6 +24,10 @@ Paljastuipa pettäminen tai tunnustettiinpa se, tämä on hetki, jolloin maa kat
 
 Yksi tapa sanoa se: "Minä tein tämän. Se on minun vastuullani, ei sinun. Vastaan kysymyksiisi rehellisesti."
 
+Minun näkemykseni: sillä, miten totuus tulee esiin, on paljon merkitystä. Jos sinä petit, koko tarinan kertominen kerralla sattuu, mutta sen tihkuttaminen kuukausien ajan on yleensä se, mikä tekee luottamuksen rakentamisesta mahdotonta.
+
+**Pikatesti:** Jos sinä olet se, joka petti, kahden minuutin [anteeksipyyntötyylin testi](/quiz/apology-style/), englanniksi, näyttää, miten yleensä pyydät anteeksi ja mitä saattaa puuttua.
+
 ## Vaihe 2: Ensireaktiot
 
 Ensimmäiset viikot ja kuukaudet ovat yleensä kaoottisimpia: vihaa, surua, kysymyksiä kello kahdelta yöllä, halua tietää yksityiskohtia, haluttomuutta tietää niitä, halua läheisyyteen, halua etäisyyteen, joskus kaikkea samana päivänä.
@@ -36,6 +40,12 @@ Ensimmäiset viikot ja kuukaudet ovat yleensä kaoottisimpia: vihaa, surua, kysy
 
 > **Miksi toistuvat kysymykset eivät ole epäonnistumista**
 > Petetyt kumppanit kysyvät usein samoja kysymyksiä monta kertaa. Pettäneestä kumppanista voi tuntua, että keskustelu kiertää kehää. Niin ei ole. Joka kerta, kun vastaus on sama ja se annetaan ärtymättä, petetyn kumppanin mieli saa vähän lisää todisteita siitä, että totuus on nyt pysyvä. Johdonmukaisuus on tapa, jolla luottamuksen ensimmäinen kerros, ennustettavuus, alkaa kasvaa takaisin.
+
+:::read Lue myös
+/blog/trust-issues-in-a-relationship/ | Näin pääset yli luottamusongelmista | Kun epäily palaa yhä uudelleen
+/blog/how-to-apologize-to-your-partner/ | Näin pyydät kumppaniltasi anteeksi vilpittömästi | Mitä aito anteeksipyyntö sisältää
+/blog/should-i-break-up-with-my-partner/ | Pitäisikö minun erota kumppanistani? | Jos et ole varma, onko jääminen oikein
+:::
 
 ## Vaihe 3: Vakiintuminen
 
@@ -53,6 +63,10 @@ Kokeile (petetty): "Minulla on tänään tämän kanssa raskas päivä. En tarvi
 Kokeile (pettänyt): "Kiitos, että kerroit. Mikä auttaisi juuri nyt?"
 
 Haluaisin molempien kuulevan, että tämä vaihe on hidas tarkoituksella. Luottamus ei palaa yhdestä upeasta keskustelusta. Se palaa sadasta tylsästä, johdonmukaisesta päivästä.
+
+:::tool coach
+Tarvitsetko yksityisen paikan miettiä tätä?
+:::
 
 ## Vaihe 4: Uudistuminen
 
@@ -74,6 +88,8 @@ Yleensä monta kuukautta, usein vuoden tai enemmän. Se riippuu siitä, kuinka k
 Luottamuksen palauttaminen vaatii, että pettänyt kumppani ottaa täyden vastuun ja petetty kumppani valitsee vapaasti yrittää. Jos suhde jatkuu, jos valehtelu jatkuu tai jos sinua painostetaan tai syytetään pettämisestä, jääminen ei ehkä ole turvallista eikä tervettä. Oppaamme siitä, [pitäisikö sinun erota](/blog/should-i-break-up-with-my-partner/), ja [erosta toipumisesta](/blog/how-to-get-over-a-breakup/) voivat auttaa, jos lähteminen on oikea ratkaisu.
 
 Pettämiseen perehtynyt terapeutti voi auttaa kummassakin tapauksessa. Jos et tiedä, mitä sanoa, opas [anteeksipyynnöstä kumppanille](/blog/how-to-apologize-to-your-partner/) käsittelee ensimmäistä anteeksipyyntöä. Myöhemmin jäävään epäilyyn auttaa opas [luottamusongelmista parisuhteessa](/blog/trust-issues-in-a-relationship/).
+
+Minun näkemykseni: lähteminen pettämisen jälkeen ei ole epäonnistumista toipumisessa. Uudelleen rakentaminen on yksi hyvä lopputulos, ja siisti, rehellinen loppu on toinen.
 
 ## Nopeat vastaukset
 

@@ -30,6 +30,13 @@ I deras studier hade de två olika rötter. Reaktiv svartsjuka hängde ihop med 
 
 Så den första användbara frågan är inte "Är jag svartsjuk?" utan "Hände något, eller reagerar jag på en historia i mitt huvud?"
 
+:::stats Svartsjuka i mobilens tidevarv
+40 % | av amerikanska vuxna i en relation störs åtminstone ibland av hur mycket tid partnern lägger på mobilen
+34 % | har gått igenom partnerns mobil utan partnerns vetskap
+23 % | säger att partnerns sociala medier har gjort dem svartsjuka eller osäkra i relationen
+källa: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4 860 vuxna amerikaner, oktober 2019
+:::
+
 ## Myt 2: "Om du inte var svartsjuk skulle du inte bry dig"
 
 Det finns ett korn av sanning här, och därför lever myten kvar. En blixt av reaktiv svartsjuka visar ofta att du värdesätter förhållandet. Men resonemanget faller med den misstänksamma sorten. Ständig misstänksamhet är inget bevis på kärlek. Det är ett bevis på rädsla, och rädsla brukar göra människor kontrollerande snarare än närmare.
@@ -45,6 +52,14 @@ Med andra ord är ältandet inte botemedlet. Det är ofta mekanismen som gör en
 > **Testa det här när loopen startar**
 > Skriv ner oron i en mening. Skriv sedan en mening om vad du faktiskt vet. "Han har inte svarat på tre timmar" är ett faktum. "Han pratar med någon annan" är en historia. Avsätt 15 minuters "orostid" senare under dagen, och när tanken kommer tillbaka innan dess, säg till dig själv: "Sen, inte nu." Det låter litet. Det fungerar för att det bryter ältandet, inte känslan.
 
+:::read Läs också
+/blog/trust-issues-in-a-relationship/ | Så kommer du över tillitsproblem | Varför tvivlet kommer tillbaka
+/blog/relationship-anxiety/ | Relationsångest utan anledning | När känslan inte handlar om hen
+/blog/how-to-stop-overthinking-in-a-relationship/ | Så slutar du övertänka | För tänk-om-spiralen
+:::
+
+**Snabbtest:** Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, kan hjälpa dig att förstå varför svartsjukan drabbar dig hårdare än den verkar drabba andra.
+
 ## Myt 4: "Att kolla hens mobil löser saken"
 
 Att kolla löser sällan något. Om du inte hittar något varar lättnaden i några minuter och tvivlet kommer tillbaka ("hen kanske raderade det"). Om du hittar något tvetydigt har du nu ett gräl *och* ett tillitsbrott från din sida.
@@ -54,6 +69,8 @@ Intressant nog fann samma studie av Elphinston att kontrollbeteenden hade ett bl
 Det är också värt att veta vad som kan utlösa lusten. En studie från 2022 med 346 personer i förhållanden, av Janneke Schokkenbroek och kollegor, fann att personer vars partner ofta ignorerade dem för mobilen ("phubbing") var något mer benägna att gå igenom partnerns meddelanden eller aktivitet på nätet. Effekten var liten, men budskapet är användbart: snokande växer ibland ur en känsla av att bli ignorerad, inte bara ur misstänksamhet. Det är något ni kan prata om.
 
 Jag skulle säga att det här är den viktigaste myten på listan. Att kolla känns som att det ska få slut på tvivlet. Det gör det nästan aldrig. Det flyttar bara tvivlet till nästa sak.
+
+Min åsikt: om du inte hittar något varar lättnaden ungefär en dag. Om du hittar något tvetydigt blir det värre. Därför tar jag hellre ett ärligt samtal än tio hemliga kontroller.
 
 ## Myt 5: "Sociala medier visar bara det som redan finns"
 
@@ -72,6 +89,12 @@ Den praktiska slutsatsen: anta inte att du vet vad som kommer att såra din part
 Ibland gör den det. Ofta inte. Misstänksam svartsjuka brukar följa med personen från förhållande till förhållande, eftersom den har sina rötter i osäkerhet och anknytning snarare än i vad den nuvarande partnern gör. Om du märker samma rädslor med varje partner är våra guider om [relationsångest](/blog/relationship-anxiety/) och [anknytningsstilar](/blog/how-attachment-styles-work-in-relationships/) en bättre startpunkt än att utreda din partner.
 
 Men om din partner ofta är hemlighetsfull, inkonsekvent eller avfärdande när du tar upp din oro kan din svartsjuka peka på något verkligt. Vår guide om [tillitsproblem i förhållandet](/blog/trust-issues-in-a-relationship/) hjälper dig att se skillnaden.
+
+Min åsikt: ett stick av svartsjuka är bara information. Det är vad du gör de närmaste tio minuterna som avgör om det hjälper eller skadar.
+
+:::tool coach
+Känner du dig svartsjuk just nu? Prata igenom det innan du reagerar
+:::
 
 ## Det som faktiskt hjälper
 
@@ -134,3 +157,4 @@ Svartsjuka är en av de vanligaste ursäkterna för kontrollerande beteende och 
 - Schokkenbroek, J. M., Hardyns, W., & Ponnet, K. (2022). Phubbed and curious: The relation between partner phubbing and electronic partner surveillance. *Computers in Human Behavior*. Sammanfattning på [PsyPost](https://www.psypost.org/romantic-partners-who-get-phubbed-are-more-likely-to-spy-on-digital-communications-study-finds/)
 - DeSteno, D., Bartlett, M. Y., Braverman, J., & Salovey, P. (2002). Sex differences in jealousy: Evolutionary mechanism or artifact of measurement? *Journal of Personality and Social Psychology*, 83(4). Sammanfattning i [APA Monitor](https://www.apa.org/monitor/oct02/planet)
 - Muise, A., Christofides, E., & Desmarais, S. (2009). More information than you ever wanted: Does Facebook bring out the green-eyed monster of jealousy? *CyberPsychology & Behavior*, 12(4), 441-444. Sammanfattning på [EurekAlert](https://www.eurekalert.org/news-releases/588514)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

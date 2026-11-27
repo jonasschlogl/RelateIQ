@@ -22,6 +22,13 @@ Situationships har bara nyligen blivit ett forskningsområde, och det mesta arbe
 
 **Varför det spelar roll för dig:** en situationship kan kännas tillräckligt bra för att stanna i, eftersom vissa behov verkligen blir mötta. Men "tillräckligt bra för nu" kan tyst bli månader. Där hjälper en äldre idé från relationsforskningen.
 
+:::stats Hur vanliga situationships är
+39 % | av vuxna amerikaner säger att de har varit i en situationship
+50 % | av 18–34-åringar säger detsamma
+29 % | av situationships bland 18–34-åringar började i sociala medier
+källa: [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), 1 110 vuxna amerikaner, januari 2024
+:::
+
 ## Att glida eller att bestämma
 
 Psykologerna Scott Stanley, Galena Rhoades och Howard Markman beskrev skillnaden mellan att *glida* och att *bestämma* i relationer. Att glida är när saker bara händer: du börjar sova över oftare, sedan firar ni högtider tillsammans, utan att någon någonsin har valt det. Att bestämma är när ni medvetet gör ett val tillsammans.
@@ -29,6 +36,16 @@ Psykologerna Scott Stanley, Galena Rhoades och Howard Markman beskrev skillnaden
 Deras forskning handlade om par som gled in i att flytta ihop, men idén passar perfekt för situationships. En situationship är nästan per definition en relation som ingen har bestämt sig för. Guiden nedan är helt enkelt ett sätt att gå från att glida till att bestämma, vad du än bestämmer dig för.
 
 Det är den här idén jag skulle behålla. De flesta situationships är inte någons plan. De är en rad små "visst, varför inte"-stunder som ingen stannade upp och ifrågasatte.
+
+Min åsikt: jag tror inte att situationships är problemet. Att stanna i en av bara farten är det. Om du verkligen har valt det och det fungerar för er båda är det okej. Om du väntar på att det ska bli något mer är det dags att fråga.
+
+:::read Läs också
+/blog/clear-coding-dating/ | Clear coding i dejting | 20 färdiga meddelanden för att säga vad du vill
+/blog/breadcrumbing/ | Blir jag breadcrumbad? | När "vi får se" blir månader
+/blog/how-attachment-styles-work-in-relationships/ | Vilken anknytningsstil har jag? | Varför ovissheten drabbar vissa hårdare
+:::
+
+**Snabbtest:** Det 2 minuter långa [testet om anknytningsstil](/quiz/attachment-style/), på engelska, kan förklara varför det är så svårt att inte veta var du står.
 
 ## Guiden för att bestämma dig
 
@@ -60,6 +77,10 @@ Säg det enkelt: "Jag tycker om det här som det är, och jag letar inte efter n
 
 Och kom överens om grunderna, som om ni träffar andra och hur ni hanterar det om en av er börjar vilja ha mer. Stäm sedan av igen om ett par månader, för känslor förändras.
 
+:::tool practice
+Redo för "vad är vi"-samtalet? Öva på det först
+:::
+
 ## Väg 2: Definiera det
 
 Välj ett lugnt tillfälle, inte direkt efter en svartsjukespiral eller klockan ett på natten i ett sms. Håll det kort, säg vad du vill och ge hen utrymme att svara ärligt.
@@ -85,6 +106,8 @@ Du behöver inte hens medgivande och ingen lång förklaring. Ge dig sedan verkl
 > I sex månader tillbringade Jules och Ari de flesta helger tillsammans, men Ari bytte ämne så fort "vi" kom på tal. Till slut frågade Jules, lugnt, över en kaffe. Ari sa att han "inte ville förstöra det med etiketter". Jules gick hem och gick igenom de tre frågorna. Det hon ville: ett förhållande. Hur hon kände sig: orolig de flesta veckor. Hans beteende: inga planer bortom lördagen, hon hade aldrig träffat hans vänner. Tabellen sa gå. Det tog två veckor till innan hon faktiskt gjorde det, och en månad innan hon slutade kolla hans stories. Tre månader senare sa Jules att det svåraste hade varit att bestämma sig, inte att gå.
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
+
+Min åsikt: att lämna något odefinierat räknas också som ett uppbrott, och det får göra lika ont. Låt ingen säga till dig att det "inte ens var en riktig relation".
 
 ## Om det är du som inte vill ha mer
 

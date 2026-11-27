@@ -31,6 +31,15 @@ De flesta återkommande bråk följer ett enkelt mönster. Något litet händer 
 
 **Snabbtest:** om samma bråk hela tiden kommer tillbaka hjälper det att känna till sin egen roll i det. Det kostnadsfria [testet om konfliktstil](/quiz/fight-style/), på engelska och på 2 minuter, visar om du brukar trappa upp, stänga av, vara till lags eller reparera.
 
+Min åsikt: jag tycker att siffran 69 % är befriande snarare än deprimerande. Om de flesta bråk aldrig blir helt lösta slutar målet vara "vi ska aldrig bråka om det här igen" och blir "vi kan bråka om det utan att såra varandra". Det är ett mål ni faktiskt kan nå.
+
+:::stats Därför kommer samma bråk tillbaka
+69 % | av konflikterna i en relation handlar om bestående problem som kanske aldrig helt försvinner, enligt Gottman Institute
+62 % | av vuxna amerikaner sa 2007 att det var mycket viktigt för ett lyckat äktenskap att dela på hushållssysslorna, jämfört med 47 % år 1990
+86 % mot 33 % | hur ofta par som förblev gifta svarade på varandras små inviter, jämfört med par som skilde sig
+källa: The Gottman Institute; Pew Research Center (se källor nedan)
+:::
+
 ## 1. Hushållet och den mentala lasten
 
 Det ser ut som ett bråk om disken. Oftast handlar det om rättvisa, och om att känna att ens insats märks. Det är ingen småsak: i en undersökning från Pew Research Center 2007 sa 62% av vuxna amerikaner att det var mycket viktigt för ett lyckat äktenskap att dela på hushållsarbetet, jämfört med 47% år 1990.
@@ -55,6 +64,12 @@ Gottmans forskning ger det här en stabil grund. I en studie som följde nygifta
 I stället för: "Du bryr dig mer om mobilen än om mig."
 
 Du kan säga: "Jag saknar att prata med dig på kvällarna. Kan vi lägga undan mobilerna under middagen den här veckan?"
+
+:::read Läs också
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | I kväll, i morgon och veckan efter
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Vad du säger när din partner säger att du sårat hen | De första fem minuterna, steg för steg
+/blog/how-to-keep-the-spark-alive/ | Så håller ni gnistan vid liv | När bråken har trängt undan det roliga
+:::
 
 ## 3. Pengar
 
@@ -93,6 +108,12 @@ Ett sätt att säga det: "Det känns som att när jag trycker på blir du tyst, 
 > När mönstret har ett namn blir det något ni möter tillsammans i stället för något ni gör mot varandra. Den som jagar kan slappna av lite eftersom den som drar sig undan har lovat att komma tillbaka. Den som drar sig undan kan komma tillbaka eftersom hen inte längre blir jagad. Många par märker att det betyder mer att komma överens om reglerna för en paus än att lösa det ursprungliga ämnet.
 
 Ofta håller cirkeln igång sig själv. I en studie från 2022 med 175 par fann Ione Bretaña och kollegor att när den ena drog sig undan under en konflikt blev den andra ofta mer krävande eller aggressiv, och båda reaktionerna hängde ihop med lägre nöjdhet. Att den ena drar sig undan får den andra att trycka på mer, vilket får den första att dra sig undan ännu mer, och det ursprungliga ämnet försvinner.
+
+Min åsikt: när ett bråk upprepas ord för ord skulle jag sluta debattera ämnet och ställa en annan fråga: "Vad handlar det här egentligen om för dig?" Svaret är oftast mindre och mjukare än grälet.
+
+:::tool practice
+Vill du öva på det här samtalet innan du tar det?
+:::
 
 ## Så pratar ni om ett problem som hela tiden kommer tillbaka
 

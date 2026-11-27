@@ -22,6 +22,16 @@ Klassisessa tutkimuksessa psykologit John Rempel, John Holmes ja Mark Zanna kuva
 
 Tämä on hyödyllistä, koska luottamusongelmat ovat yleensä yhdessä kerroksessa enemmän kuin muissa. Jotkut luottavat siihen, että kumppani on uskollinen (usko), mutta eivät siihen, että hän tulee ajoissa (ennustettavuus). Toiset voivat luottaa arjen luotettavuuteen mutta pelkäävät silti, että heidät jätetään jonain päivänä. Kun tiedät, mikä kerros horjuu, tiedät, mitä työstää.
 
+Minun näkemykseni: luottamusta ei päätetä tuntea. Sitä kerätään, yksi pidetty lupaus kerrallaan, ja siksi sitä ei voi kiirehtiä.
+
+:::stats Luottamus ja puhelin
+34 % | parisuhteessa olevista yhdysvaltalaisista aikuisista sanoo käyneensä kumppaninsa puhelimen läpi tämän tietämättä
+23 % | niistä, joiden kumppani käyttää somea, sanoo sen tehneen heistä mustasukkaisia tai epävarmoja suhteesta
+lähde: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4 860 yhdysvaltalaista aikuista, lokakuu 2019
+:::
+
+**Pikatesti:** Luottamusongelmat liittyvät usein kiintymykseen. Kahden minuutin [kiintymystyylitesti](/quiz/attachment-style/), englanniksi, voi näyttää oman kaavasi.
+
 ## Miten luottamus oikeasti kasvaa: pienet uhraukset
 
 Tässä on luottamustutkimuksen käytännöllisin löydös. Kahdessa pitkäaikaisessa tutkimuksessa seurustelevista ja naimisissa olevista pareista Jennifer Wieselquist, Caryl Rusbult ja kollegat havaitsivat, että ihmiset alkoivat luottaa kumppaniinsa, kun he näkivät tämän **asettavan suhteen omien välittömien etujensa edelle**: pysyvän rauhallisena riidassa sen sijaan, että iskisi takaisin, ja luopuvan jostain haluamastaan parin hyväksi.
@@ -31,6 +41,12 @@ He kuvasivat kehän. Kun toinen kumppani tekee näitä pieniä, kalliita valinto
 Toisin sanoen luottamusta ei rakenneta lupauksilla eikä testeistä selviämällä. Se rakentuu siitä, että *näkee* välittämistä, joka maksaa jotain.
 
 Psykologit Shallcross ja Jeffry Simpson testasivat tätä laboratoriossa "kuormitustesteillä": keskusteluilla, joissa toinen kumppani pyytää jotain, mikä maksaa toiselle, kuten muuttoa toiseen kaupunkiin työn perässä. Kumppanit, joiden luottamus oli korkea, joustivat enemmän, ja joustivat sitä *enemmän*, mitä suurempaa uhrausta heiltä pyydettiin. Kumppanit, joiden luottamus oli matala, toimivat päinvastoin.
+
+:::read Lue myös
+/blog/jealousy-in-a-relationship/ | Onko mustasukkaisuus normaalia parisuhteessa? | 7 myyttiä, jotka pahentavat sitä
+/blog/how-to-rebuild-trust-after-cheating/ | Näin rakennatte luottamuksen uudelleen pettämisen jälkeen | Neljä vaihetta, jotka parit käyvät läpi
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun epäily ei koske kumppania
+:::
 
 ## Kierre, joka pitää luottamusongelmat käynnissä
 
@@ -66,6 +82,10 @@ Jos kumppanisi on enimmäkseen luotettava ja olet tuntenut näin ennenkin, työ 
 
 Tähän tarkistukseen käyttäisin itse eniten aikaa. Niin moni luottamusneuvo olettaa, että ongelma on nykyinen kumppani. Usein se on joku vanha.
 
+:::tool coach
+Aiotko taas pyytää rauhoittelua? Puhu se ensin läpi
+:::
+
 ## Miten kierre katkaistaan
 
 ### Jos sinun on vaikea luottaa
@@ -98,6 +118,8 @@ Kun on tapahtunut todellinen petos, yllä kuvattu kierre ei ole pääongelma. Lu
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 Kun epäilyn aalto iskee myöhään illalla, sen kirjoittaminen ensin ylös, päiväkirjaan tai Coach Chatiin, voi auttaa pysäyttämään kierteen. Jos kaavat ovat pitkäaikaisia tai liittyvät vanhoihin haavoihin, terapeutti voi auttaa paljon.
+
+Minun näkemykseni: hänen puhelimensa tarkistaminen tuntuu siltä, että se rauhoittaisi epäilyn, mutta niin käy tuskin koskaan. Pikemminkin se opettaa aivoillesi, että epäily piti tarkistaa.
 
 ## Nopeat vastaukset
 
@@ -134,3 +156,4 @@ Epäluottamusta käytetään joskus perusteluna kontrolloivalle käytökselle: p
 - Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Koko teksti (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
 - Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Koko teksti (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
 - Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Lue tutkimus](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

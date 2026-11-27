@@ -28,6 +28,8 @@ Un estudio de 2026 apunta en la misma dirección. Siguiendo a 378 matrimonios du
 
 Seré sincero, este es el consejo con el que más gente no está de acuerdo. Irse a dormir sin arreglarlo parece un error. Pero una conversación tranquila en el desayuno gana casi siempre a un tercer asalto a la una de la madrugada.
 
+Mi opinión: irse a dormir enfadados tiene mala fama. Prefiero que lo consultéis con la almohada y habléis con calma por la mañana a forzar una solución a la una de la madrugada que ninguno recordará bien.
+
 ## La mañana siguiente: reparar
 
 ### Asume tu parte, sin condiciones
@@ -49,6 +51,12 @@ Una forma de decirlo: "Cuéntame cómo fue para ti. Quiero entenderlo."
 En un estudio de larga duración en la Universidad de Minnesota, Jessica Salvatore y sus colegas observaron cómo se recuperaban las parejas después de hablar de un conflicto. Las personas a las que les costaba recuperarse de un conflicto, a menudo por experiencias difíciles en la infancia, tenían más probabilidades de seguir en pareja cuando era su *pareja* quien se recuperaba bien. Los investigadores sugirieron que una persona capaz de liderar la calma puede proteger la relación de los dos.
 
 En la práctica: si esta vez eres tú quien está más tranquilo, da el primer paso. Ofrece un abrazo, un café, un comentario ligero, un "¿empezamos de nuevo?". Liderar la reparación no es admitir que todo fue culpa tuya. Es cuidar la relación.
+
+:::read Lecturas relacionadas
+/blog/what-to-text-after-a-fight/ | Qué escribir después de una pelea | Si a la mañana siguiente no estáis juntos
+/blog/how-to-apologize-to-your-partner/ | Cómo pedir perdón a tu pareja de forma sincera | Qué incluye una disculpa de verdad
+/blog/silent-treatment-vs-needing-space/ | Ley del hielo o necesidad de espacio | Cómo tomarse un descanso sin castigar
+:::
 
 ## La semana después: reconstruir
 
@@ -83,6 +91,10 @@ Después de una pelea, las parejas a menudo se evitan un poco, incluso cuando ya
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
+:::tool practice
+¿Quieres ensayar antes la conversación para hacer las paces?
+:::
+
 ## Si eres tú quien salió herido
 
 Tienes derecho a necesitar tiempo. La confianza después de una pelea dolorosa no vuelve porque alguien haya pedido perdón una vez. Vuelve a medida que su comportamiento coincide con sus palabras. Dile a tu pareja qué te ayudaría.
@@ -92,6 +104,8 @@ Prueba: "Agradezco la disculpa. Lo que de verdad me ayudaría es ver que el pró
 ## ¿Cuánto tiempo lleva?
 
 Después de una sola pelea, a menudo unos días. Después de peleas dolorosas repetidas, pueden hacer falta semanas o meses de comportamiento constante. Si la misma pelea vuelve una y otra vez, nuestra guía sobre los [problemas de pareja que siempre vuelven](/blog/relationship-problems-that-keep-coming-back/) puede ayudarte a encontrar el patrón de fondo, y nuestra guía de [hábitos de comunicación](/blog/relationship-advice-communication-habits/) ayuda a evitar la próxima escalada.
+
+Mi opinión: después de una pelea, la confianza suele volver con pruebas pequeñas y aburridas, no con grandes gestos. Hacer lo que dijiste que harías, tres días seguidos, dice más que unas flores.
 
 ## Cuando es algo más que una pelea
 

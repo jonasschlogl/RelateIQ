@@ -24,6 +24,15 @@ Miksi? Ilmeinen auttaminen voi kantaa piilotettua viestiä: *et selviä tästä 
 
 Tämä on tukemiseen liittyvä löydös, josta haluaisin ihmisten tietävän eniten. Halu on tehdä tuesta näkyvää, näyttää välittävänsä. Usein ystävällisintä on apu, jota hän tuskin huomaa.
 
+Minun näkemykseni: paras tuki ei usein näytä tuelta lainkaan. Illallisen tekeminen pyytämättä voi auttaa enemmän kuin pitkä kannustuspuhe, varsinkin pahimpina päivinä. Käytännön apu toimii silti parhaiten yhdessä muutaman sanan kanssa, jotka nimeävät hänen tunteensa. Jos teet paljon ja kuulet silti "et välitä", lue [tyttöystäväni sanoo, etten välitä hänen tunteistaan](/blog/my-girlfriend-says-i-dont-care/).
+
+:::stats Kuinka paljon tukea ihmisiltä puuttuu
+69 % | yhdysvaltalaisista aikuisista sanoo tarvinneensa viime vuonna enemmän henkistä tukea kuin sai
+54 % | sanoo tuntevansa itsensä usein tai joskus eristäytyneeksi
+92 % | sanoo ihmissuhteiden olevan tärkeä merkityksen lähde elämässään
+lähde: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), Stress in America -kysely 3 199 yhdysvaltalaiselle aikuiselle, elokuu 2025
+:::
+
 ## Stressi tekee pienistä asioista isoja
 
 Lisa Neff ja Benjamin Karney tutkivat vastanaineita pareja useiden vuosien ajan ja havaitsivat, että kun ihmiset olivat tavallista stressaantuneempia, heidän tyytyväisyytensä suhteeseen heilahteli enemmän jokaisen hyvän tai huonon yhteisen päivän mukana. Stressi näyttää kuluttavan sen henkisen energian, jota normaalisti käytämme pienten ongelmien pitämiseen oikeissa mittasuhteissa.
@@ -31,6 +40,12 @@ Lisa Neff ja Benjamin Karney tutkivat vastanaineita pareja useiden vuosien ajan 
 Jos siis stressaantunut kumppanisi tiuskaisee lattialla olevasta pyyhkeestä, kyse ei luultavasti ole pyyhkeestä. Kun tiedät tämän, on paljon helpompaa olla ottamatta sitä henkilökohtaisesti ja olla aloittamatta riitaa äänensävystä pahimmalla mahdollisella hetkellä.
 
 Hyvä uutinen tulee Paula Pietromonacon, Nickola Overallin ja Sally Powersin vuoden 2021 tutkimuksesta. Seuratessaan yli 200 vastanainutta paria he havaitsivat, että stressi liittyi suhteen laadun heikkenemiseen ajan myötä, *paitsi* silloin, kun kumppani oli hyvin vastaanottavainen: kuunteli, yritti ymmärtää ja tunnisti, mitä tarvittiin. Vastaanottavaisen kumppanin kanssa stressaantuneen suhde näytti hyvin samanlaiselta kuin vähän stressaantuneilla.
+
+:::read Lue myös
+/blog/relationship-anxiety/ | Parisuhdeahdistus ilman syytä | Kun hänen stressinsä muuttuu sinun huoleksesi
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Jos hän hiljenee ollessaan ylikuormittunut
+/blog/relationship-advice-communication-habits/ | Näin kommunikoitte paremmin parisuhteessa | 7 tapaa, jotka muuttavat tapaanne riidellä
+:::
 
 ## Mitä sanoa stressin tyypin mukaan
 
@@ -86,6 +101,10 @@ Tukeminen ei tarkoita, että sinun pitää ottaa kaikki vastaan. Voit olla ystä
 
 "Ei tarvitse vastata" on tärkeä. Se lohduttaa lisäämättä tehtävää.
 
+:::tool coach
+Etkö tiedä, mitä kumppanisi juuri nyt tarvitsee? Mieti se ensin läpi
+:::
+
 ## Sovita tuki ihmiseen
 
 Tutkijat, jotka tutkivat *dyadista selviytymistä* (miten kumppanit käsittelevät stressiä yhdessä), ovat havainneet, että tapa, jolla pari käsittelee stressiä, liittyy läheisesti siihen, kuinka tyytyväisiä he ovat ylipäätään. Mariana Falconierin ja kollegoiden laaja katsaus, joka yhdisti kymmenien tutkimusten aineistoja, osoitti, että myönteiset yhteiset selviytymistavat liittyivät suurempaan tyytyväisyyteen suhteessa ja kielteiset, kuten vähättelevät tai vihamieliset reaktiot, pienempään.
@@ -106,6 +125,8 @@ Muista sitten vastaus. Tuo yksi keskustelu tekee sinusta paremman tukijan kuin m
 Stressi tarttuu. Jos imet itseesi jokaisen huonon tuulen ja jätät oman elämäsi hoitaaksesi hänen elämäänsä, sinultakin loppuvat voimat. Pidä kiinni omista ystävistäsi, unestasi ja rutiineistasi. Vakaa läsnäolo auttaa häntä enemmän kuin uupunut.
 
 Jos huomaat alkaneesi tuntea olevasi vastuussa jokaisesta hänen tunteestaan, oppaamme [huolenpidon ja läheisriippuvuuden erosta](/blog/codependent-relationship/) voi olla hyödyllinen.
+
+Minun näkemykseni: et voi kantaa toisen stressiä ja omaasi loputtomiin. Tukena oleminen sisältää myös sen, että sanot "tarvitsen tänään vapaan illan" tuntematta syyllisyyttä.
 
 ## Kun stressi on sinun
 
@@ -153,3 +174,4 @@ Stressi voi selittää huonon tuulen. Se ei koskaan oikeuta uhkailua, pelottelua
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Koko teksti (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Pietromonaco, P. R., Overall, N. C., & Powers, S. I. (2021). *Social Psychological and Personality Science*. [DOI](https://doi.org/10.1177/19485506211001687), tiivistelmä: [UMass Amherst](https://www.umass.edu/news/article/supportive-partners-protect-relationship)
 - Falconier, M. K., Jackson, J. B., Hilpert, P., & Bodenmann, G. (2015). Dyadic coping and relationship satisfaction: A meta-analysis. *Clinical Psychology Review*, 42, 28-46. [Lue artikkeli](https://www.researchgate.net/profile/Guy-Bodenmann/publication/281109389_Dyadic_Coping_and_Relationship_Satisfaction_A_Meta-Analysis/links/56d2dfe408ae85c8234c575e/Dyadic-Coping-and-Relationship-Satisfaction-A-Meta-Analysis.pdf)
+- American Psychological Association (2025): [Stress in America 2025](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), survey of 3,199 US adults, August 2025

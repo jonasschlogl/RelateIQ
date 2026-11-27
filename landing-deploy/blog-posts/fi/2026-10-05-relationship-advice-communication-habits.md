@@ -44,6 +44,8 @@ Tässä seitsemän tapaa yhdellä silmäyksellä.
 
 **Pikatesti:** kärjistätkö, suljetko itsesi, mielisteletkö vai korjaatko? Ilmainen [riitatyylitesti](/quiz/fight-style/), englanniksi ja 2 minuutin mittainen, näyttää toimintamallisi riidassa ja yhden asian, jonka voit sanoa ensi kerralla.
 
+Minun näkemykseni: jos saisin valita tästä kaikesta yhden luvun, se olisi 96 %. Se tarkoittaa, että ensimmäinen lause merkitsee enemmän kuin se, kuinka fiksuja argumenttisi ovat. Hyvä uutinen, sillä ensimmäistä lausetta on helppo harjoitella.
+
 ## 1. Aloita pehmeästi
 
 Se, miten keskustelu alkaa, ratkaisee yleensä sen, miten se päättyy. Gottmanin tutkimus osoitti, että "kova aloitus", eli arvostelulla tai sarkasmilla aloittaminen, johtaa lähes aina huonosti päättyvään keskusteluun. Pehmennetty aloitus tekee päinvastoin. Se kertoo, miltä *sinusta* tuntuu ja mitä toivoisit, ilman syytöksiä.
@@ -62,6 +64,12 @@ Jotain tällaista: "Olen viime aikoina kaivannut yhteistä aikaa kanssasi. Voita
 "Olet itsekäs" on tuomio. "Sanoit olevasi kotona kuudelta, ja nyt kello on kahdeksan" on havainto. Väkivallaton vuorovaikutus, psykologi Marshall Rosenbergin kehittämä menetelmä, aloittaa havainnoista, koska tosiasiaa vastaan on vaikea väittää ja leimaa vastaan hyvin helppo.
 
 Näin vältät myös sen, mitä Gottman kutsuu arvosteluksi: kumppanin luonteeseen hyökkäämisen ("Olet niin laiska") sen sijaan, että valittaisit tietystä käytöksestä ("Roskat jäivät taas viemättä"). Valituksen voi korjata. Luonteeseen kohdistuvaa hyökkäystä vastaan voi vain puolustautua.
+
+:::read Lue myös
+/blog/what-to-text-after-a-fight/ | Mitä kirjoittaa riidan jälkeen | 20 viestiä eri tilanteisiin
+/blog/silent-treatment-vs-needing-space/ | Mykkäkoulu vai tilan tarve | Näin pidätte tauon terveellä tavalla
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Tänä iltana, huomenna ja seuraavalla viikolla
+:::
 
 ## 3. Nimeä taustalla oleva tarve
 
@@ -95,6 +103,10 @@ Kireässä hetkessä kokeile toistaa, mitä kuulit, ennen kuin vastaat. "Eli ole
 Tämä on myös vastalääke puolustautumiselle, joka on yksi Gottmanin "neljästä ratsumiehestä". Puolustautuminen ("Ei pidä paikkaansa, sinähän se...") kertoo kumppanillesi, ettei hänen huolensa merkitse. Vastuun ottaminen pienestäkin osasta ("Olet oikeassa, unohdin soittaa") muuttaa keskustelun lämpötilaa.
 
 Esimerkiksi: "Ennen kuin vastaan, tarkistan, ymmärsinkö oikein. Sinusta tuntui, etten ottanut suunnitelmiasi vakavasti?"
+
+:::tool practice
+Haluatko kokeilla pehmeää aloitusta ennen varsinaista keskustelua?
+:::
 
 ## 6. Pidä tauko, kun tunteet tulvivat yli
 
@@ -150,6 +162,8 @@ Sano se yksinkertaisesti: "Hetkinen, saitko sen? Sehän on tosi iso juttu. Miten
 Rehellisesti sanottuna juuri tätä varten Coach Chat on olemassa. Liität vihaisen ensimmäisen luonnoksen, saat apua sen muuttamiseen pehmeäksi aloitukseksi ja voit harjoitella varsinaista keskustelua Partner Practicessa ennen kuin käyt sen.
 
 Oma valintani olisi tapa 6, tauko ja lupaus palata. Se kuulostaa seitsemästä vähiten vaikuttavalta, mutta juuri se estää huonoa riitaa muuttumasta huonoksi viikoksi.
+
+Minun näkemykseni: älä yritä kaikkia seitsemää kerralla. Valitse se, joka sai sinut irvistämään vähän lukiessasi. Se on yleensä se, joka muuttaa eniten.
 
 ## Nopeat vastaukset
 

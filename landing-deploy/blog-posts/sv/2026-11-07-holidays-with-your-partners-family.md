@@ -24,6 +24,15 @@ Om din partner är från USA är Thanksgiving ofta den första stora familjehög
 - **Planera resdagarna tillsammans.** Dagen före och söndagen efter hör till årets mest trafikerade resdagar i USA, så bestäm tidigt när ni åker och hur länge ni stannar.
 - **Tänk på nästa högtid redan nu.** Om ni är hos hens familj på Thanksgiving är det ett naturligt tillfälle att prata om var ni firar jul, innan någon tar något för givet.
 
+:::stats Det som gör högtiderna stressiga
+89 % | av vuxna amerikaner säger att något med högtiderna stressar dem
+58 % | nämner att de spenderar för mycket eller inte har tillräckligt att spendera
+41 % | säger att stressen ökar under högtiderna jämfört med resten av året
+källa: [American Psychological Association](https://www.apa.org/news/press/releases/2023/11/holiday-season-stress), undersökning bland 2 061 vuxna amerikaner av The Harris Poll, november 2023
+:::
+
+**Snabbtest:** Brukar du bli tyst eller säga ifrån när spänningen i familjen stiger? Det 2 minuter långa [testet om konfliktstil](/quiz/fight-style/), på engelska, hjälper er att veta vad ni kan vänta er av varandra.
+
 ## Två veckor före: planeringssamtalet
 
 De flesta högtidsbråk mellan partner börjar med olika förväntningar, inte med själva familjen. Ha ett lugnt samtal innan ni åker, gärna under en promenad eller över en kaffe, inte kvällen före.
@@ -41,6 +50,14 @@ Säg det enkelt: "Jag vill att det här ska bli bra för oss båda. Vad är det 
 Psykologen Terri Apter, som har forskat mycket om relationer till svärfamiljen, fann att över 60 % av kvinnorna, jämfört med ungefär 15 % av männen, beskrev en svår relation till partnerns mamma. Om det gäller dig, säg det före besöket, inte mitt i det.
 
 Om du bara gör en sak från den här guiden, gör det här samtalet. Väldigt många högtidsexplosioner börjar med två personer som i tysthet utgått från olika planer.
+
+Min åsikt: planeringssamtalet är hela grejen. Jag skulle ta det även om ni tror att ni redan är överens om allt, för det är antagandena som ingen säger högt som exploderar på dag tre.
+
+:::read Läs också
+/blog/meeting-your-partners-parents/ | Träffa din partners föräldrar för första gången | Vad du säger i de 12 mest pinsamma stunderna
+/blog/how-to-support-your-partner-when-stressed/ | Så stöttar du din partner vid stress | När besöket tar på hen
+/blog/what-to-text-after-a-fight/ | Vad du kan skriva efter ett bråk | Om hemresan blir ett gräl
+:::
 
 ## Dagen före: genomgången
 
@@ -65,6 +82,10 @@ Räkna med att din partner förändras lite. Många faller tillbaka i sina famil
 **Välj dina strider.** De flesta högtidsirritationer är inte värda att ta strid om: hur skinkan tillagas, volymen på tv:n, en gammelfasters åsikter. Spara din energi till de en eller två saker som verkligen spelar roll.
 
 **När du känner dig översvämmad, gå ut en stund.** Om du märker att hjärtat rusar och tålamodet tar slut, ta en paus på 20 minuter innan du säger något. Gottman Institute rekommenderar den här sortens paus eftersom det är väldigt svårt att lyssna eller prata lugnt när kroppen är i kamp- eller flyktläge.
+
+:::tool practice
+Bävar du inför ett visst samtal med deras familj? Öva på det först
+:::
 
 ## De spända stunderna: vad du kan säga vid bordet
 
@@ -108,6 +129,8 @@ Det finns inget enda rättvist sätt. Par brukar:
 Det viktigaste är att ni bestämmer tillsammans, och att ingen av er känner sig ständigt på andra plats.
 
 Om du ska ta med din partner hem för första gången, läs vår guide om att [träffa partnerns föräldrar](/blog/meeting-your-partners-parents/), och om ni firar högtiderna på var sitt håll har våra [tips för distansförhållande](/blog/long-distance-relationship-tips/) idéer för helgerna. När spänningarna smittar av sig mellan er två kan [be om ursäkt till din partner](/blog/how-to-apologize-to-your-partner/) och vår guide om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) hjälpa.
+
+Min åsikt: rättvist behöver inte betyda lika varje år. Det viktiga är att ni båda känner att planen gjordes tillsammans, inte att kalendern går jämnt ut på dagen.
 
 ## Snabba svar
 

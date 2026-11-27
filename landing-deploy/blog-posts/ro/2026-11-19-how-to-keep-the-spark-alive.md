@@ -33,6 +33,8 @@ Citește fiecare afirmație și dă-i un punctaj: 0 = rareori adevărat, 1 = une
 
 Adună fiecare pereche. Zona cu cel mai mic punctaj (0 până la 2) este punctul de plecare. Dacă două sunt la egalitate, alege-o pe cea care te deranjează mai mult. Dacă totul are 3 sau 4, scânteia voastră e într-o formă bună, iar planul de 4 săptămâni de mai jos e întreținere, nu reparație.
 
+Părerea mea: îmi place verificarea asta pentru că "a dispărut scânteia" e prea vag ca să se poată repara. "Nu mai încercăm nimic nou" sau "nu ne mai punem întrebări" e ceva la care chiar puteți lucra săptămâna asta.
+
 ## Dacă noutatea e scăzută: rupe rutina, nu bugetul
 
 **Ce arată cercetarea.** Într-un studiu de lungă durată cu 123 de cupluri, Irene Tsapelas, Arthur Aron și Terri Orbuch i-au întrebat pe soți, în al șaptelea an de căsnicie, cât de des simt că mariajul lor a intrat în rutină. Cei care se plictiseau mai mult în anul 7 erau mai puțin mulțumiți nouă ani mai târziu, în anul 16. Legătura trecea prin apropiere: plictiseala îi făcea pe parteneri să se simtă mai puțin apropiați, iar asta scădea satisfacția.
@@ -52,6 +54,12 @@ Contează și felul în care gândim despre dorință. În șase studii cu aproa
 **Ce scapă majorității sfaturilor.** Mulți se așteaptă ca dorința să apară din senin, ca la început. Sexologii explică adesea că, în relațiile lungi, dorința tinde să fie mai *receptivă*: apare când sunteți deja apropiați, relaxați și vă atingeți, nu înainte. Să aștepți mai întâi să "ai chef" poate însemna să aștepți luni întregi.
 
 **Încearcă asta:** aveți o discuție liniștită, nu în pat. De exemplu: "Ce te făcea înainte să te simți dorit de mine și am încetat să mai fac?" Doar ascultă. Fără să te aperi și fără un plan imediat.
+
+:::read Citește și
+/blog/deep-questions-to-ask-your-partner/ | Întrebări profunde pentru partener | 30 de întrebări pe niveluri
+/blog/date-night-questions-for-couples/ | Întrebări pentru o seară în doi | 5 jocuri și 40 de întrebări
+/blog/how-to-say-i-love-you-without-words/ | Cum să arăți iubire fără cuvinte | 25 de semnale mici de zi cu zi
+:::
 
 ## Dacă atenția e scăzută: redevino curios
 
@@ -76,6 +84,10 @@ Contează și felul în care gândim despre dorință. În șase studii cu aproa
 | Atenție | Vorbiți doar despre logistică | O întrebare adevărată pe săptămână |
 | Căldură | Atingere doar înainte de sex, sau deloc | Un ritual zilnic de afecțiune |
 
+:::tool coach
+Nu știi ce scânteie se stinge între voi? Vorbește despre asta
+:::
+
 ## Un plan de 4 săptămâni
 
 Alege zona cu cel mai mic punctaj și dă-i patru săptămâni. O schimbare pe rând funcționează mai bine decât nouă deodată.
@@ -97,6 +109,8 @@ Uneori, o scânteie care se stinge e un simptom. Resentimentele din certuri nere
 E în regulă și ca o relație să aibă perioade mai liniștite. Important e să observați și să vă întoarceți unul spre celălalt când viața vă permite.
 
 Dacă ți-e greu să deschizi subiectul, Partner Practice din RelationshipAI te lasă să repeți discuția cu un AI care joacă rolul partenerului tău, iar Coach Chat te ajută să lămurești ce vrei de fapt să ceri. Nu e terapie, dar e un loc liniștit de unde să începi.
+
+Părerea mea: uneori o scânteie care se stinge e doar o perioadă obositoare: un bebeluș, un job greu, o mutare. Aș fi blândă cu voi înainte să decideți că înseamnă ceva mai mare.
 
 ## Răspunsuri rapide
 

@@ -30,6 +30,13 @@ Psihologii Robert Rydell și Robert Bringle au împărțit gelozia în două tip
 
 Deci prima întrebare utilă nu e "Sunt gelos?", ci "S-a întâmplat ceva sau reacționez la o poveste din capul meu?"
 
+:::stats Gelozia în era telefonului
+40% | dintre adulții americani dintr-o relație sunt deranjați măcar uneori de cât timp petrece partenerul pe telefon
+34% | s-au uitat prin telefonul partenerului fără știrea lui
+23% | spun că rețelele sociale ale partenerului i-au făcut geloși sau nesiguri în relație
+sursa: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4.860 de adulți din SUA, octombrie 2019
+:::
+
 ## Mitul 2: "Dacă n-ai fi gelos, nu ți-ar păsa"
 
 E un sâmbure de adevăr aici, de aceea mitul supraviețuiește. O scânteie de gelozie reactivă arată adesea că ții la relație. Dar logica se rupe la gelozia suspicioasă. Suspiciunea constantă nu e o dovadă de iubire. E o dovadă de frică, iar frica îi face pe oameni mai degrabă controlatori decât mai apropiați.
@@ -45,6 +52,14 @@ Cu alte cuvinte, derularea nu e leacul. E adesea mecanismul care transformă o g
 > **Încearcă asta când pornește cercul**
 > Scrie grija într-o propoziție. Apoi scrie o propoziție cu ce știi de fapt. "Nu mi-a răspuns de trei ore" e un fapt. "Vorbește cu altcineva" e o poveste. Stabilește un "interval pentru griji" de 15 minute mai târziu în zi, iar când gândul revine înainte, spune-ți: "Mai târziu, nu acum." Pare puțin. Funcționează pentru că rupe derularea, nu emoția.
 
+:::read Citește și
+/blog/trust-issues-in-a-relationship/ | Cum să depășești problemele de încredere | De ce îndoiala tot revine
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Când sentimentul nu ține de partener
+/blog/how-to-stop-overthinking-in-a-relationship/ | Cum să nu mai analizezi totul excesiv | Pentru spirala lui "și dacă"
+:::
+
+**Test rapid:** [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, te poate ajuta să înțelegi de ce gelozia te lovește mai tare decât pare să-i lovească pe alții.
+
 ## Mitul 4: "Dacă îi verific telefonul, se lămurește totul"
 
 Verificatul lămurește rar ceva. Dacă nu găsești nimic, ușurarea durează câteva minute și îndoiala revine ("poate a șters"). Dacă găsești ceva ambiguu, acum ai o ceartă *și* o încălcare a încrederii din partea ta.
@@ -54,6 +69,8 @@ Interesant e că același studiu al lui Elphinston a arătat că verificările a
 Merită să știi și ce poate declanșa impulsul. Un studiu din 2022 cu 346 de oameni aflați într-o relație, realizat de Janneke Schokkenbroek și colegii ei, a arătat că oamenii ai căror parteneri îi ignorau des pentru telefon ("phubbing") erau ceva mai predispuși să se uite prin mesajele sau activitatea online a partenerului. Efectul era mic, dar mesajul e util: scotocitul vine uneori din senzația că ești ignorat, nu doar din suspiciune. Și despre asta puteți vorbi.
 
 Aș spune că acesta e cel mai important mit de pe listă. Verificatul pare că va pune capăt îndoielii. Aproape niciodată nu o face. Doar mută îndoiala la următorul lucru.
+
+Părerea mea: dacă nu găsești nimic, ușurarea ține cam o zi. Dacă găsești ceva ambiguu, e și mai rău. De aceea prefer o discuție sinceră decât zece verificări pe ascuns.
 
 ## Mitul 5: "Rețelele sociale doar arată ce există deja"
 
@@ -72,6 +89,12 @@ Concluzia practică: nu presupune că știi ce îl va răni pe partener după ge
 Uneori da. Adesea nu. Gelozia suspicioasă tinde să călătorească împreună cu persoana de la o relație la alta, pentru că are rădăcini în nesiguranță și atașament, nu în ce face partenerul actual. Dacă observi aceleași frici la fiecare partener, ghidurile noastre despre [anxietatea în relație](/blog/relationship-anxiety/) și [stilurile de atașament](/blog/how-attachment-styles-work-in-relationships/) sunt un punct de plecare mai bun decât să-ți investighezi partenerul.
 
 Dar dacă partenerul tău e des secretos, inconsecvent sau disprețuitor când îți exprimi îngrijorările, gelozia ta poate indica ceva real. Ghidul nostru despre [problemele de încredere în relație](/blog/trust-issues-in-a-relationship/) te ajută să vezi diferența.
+
+Părerea mea: un val de gelozie e doar informație. Ce faci în următoarele zece minute decide dacă ajută sau rănește.
+
+:::tool coach
+Ești geloasă chiar acum? Vorbește despre asta înainte să reacționezi
+:::
 
 ## Ce ajută de fapt
 
@@ -134,3 +157,4 @@ Gelozia e una dintre cele mai frecvente justificări pentru comportamentul contr
 - Schokkenbroek, J. M., Hardyns, W., & Ponnet, K. (2022). Phubbed and curious: The relation between partner phubbing and electronic partner surveillance. *Computers in Human Behavior*. Rezumat pe [PsyPost](https://www.psypost.org/romantic-partners-who-get-phubbed-are-more-likely-to-spy-on-digital-communications-study-finds/)
 - DeSteno, D., Bartlett, M. Y., Braverman, J., & Salovey, P. (2002). Sex differences in jealousy: Evolutionary mechanism or artifact of measurement? *Journal of Personality and Social Psychology*, 83(4). Rezumat în [APA Monitor](https://www.apa.org/monitor/oct02/planet)
 - Muise, A., Christofides, E., & Desmarais, S. (2009). More information than you ever wanted: Does Facebook bring out the green-eyed monster of jealousy? *CyberPsychology & Behavior*, 12(4), 441-444. Rezumat pe [EurekAlert](https://www.eurekalert.org/news-releases/588514)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

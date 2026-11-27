@@ -23,6 +23,8 @@ El resultado más llamativo: alrededor de la mitad de las personas tenía razone
 
 **Test rápido:** antes de una gran decisión, puede ayudar ver qué falta. El [chequeo gratuito de la relación](/quiz/relationship-needs/), en inglés y de 2 minutos, muestra si lo que más necesitáis es más tiempo juntos, mejores conversaciones, más diversión o más trabajo en equipo.
 
+Mi opinión: sentirte dividida no significa que se te dé mal decidir. Normalmente significa que hay razones reales en los dos lados, y eso merece tiempo, no una decisión precipitada.
+
 ## Qué dice la investigación sobre lo que predice una ruptura
 
 En 2010, Benjamin Le y sus colegas combinaron 137 estudios con 37.761 participantes a lo largo de 33 años de investigación para averiguar qué predice mejor que una relación de pareja sin matrimonio termine. Algunos resultados sorprenden.
@@ -43,6 +45,12 @@ Un análisis más reciente y todavía más grande apunta en la misma dirección.
 ¿Qué significa esto para ti? No que debas quedarte porque dependes de alguien, ni irte porque hoy no estás satisfecho. Significa que las preguntas que más importan tienen que ver con el núcleo de la relación: ¿sigues sintiendo compromiso?, ¿sigues queriendo a esta persona?, ¿sigues queriendo que vuestras vidas estén unidas? Esas son las preguntas de abajo.
 
 El momento también cuenta. En un análisis de 2025 de cuatro grandes estudios nacionales con 11.295 personas, Janina Bühler y Ulrich Orth vieron que las relaciones que terminaban pasaban por dos fases: años de un descenso lento y leve, y luego un punto de inflexión uno o dos años antes de la ruptura, a partir del cual la satisfacción caía rápido. La persona que acababa dejando la relación solía empezar a estar descontenta antes. Los investigadores sugieren que intentar arreglar las cosas durante la fase lenta, antes de la caída brusca, da a las parejas la mejor oportunidad.
+
+:::stats Lo que dice la investigación sobre decidir
+69 % | de los conflictos de pareja tratan sobre problemas perpetuos que quizá nunca se resuelvan del todo, según el Gottman Institute
+27 frente a 23 | razones distintas para quedarse y para irse, encontradas en personas que estaban decidiendo si romper
+fuente: The Gottman Institute; Joel, MacDonald y Page-Gould (ver fuentes abajo)
+:::
 
 ## 10 preguntas que puedes hacerte
 
@@ -94,6 +102,12 @@ A menudo vemos más claras las vidas de los demás que la nuestra. Imagina que t
 
 Si tuviera que elegir una pregunta de las diez, sería la 7. No "¿va mal ahora mismo?", sino "si nada cambiara, ¿estaría bien dentro de cinco años?". Aclara muchísimo.
 
+:::read Lecturas relacionadas
+/blog/how-to-fix-a-relationship/ | ¿Merece la pena salvar mi relación? | Cómo saberlo y por dónde empezar
+/blog/signs-your-partner-is-losing-interest/ | Señales de que tu pareja está perdiendo el interés | Lo que puede significar cada señal
+/blog/how-to-get-over-a-breakup/ | Cómo superar una ruptura | Si decides irte
+:::
+
 ## Tres situaciones, tres respuestas distintas
 
 Estos ejemplos son ilustrativos, no personas reales, pero muestran cómo la misma pregunta ("¿debería irme?") puede tener respuestas muy diferentes.
@@ -124,6 +138,12 @@ Estos ejemplos son ilustrativos, no personas reales, pero muestran cómo la mism
 Muchos artículos tratan la ruptura como un examen que se aprueba o se suspende. Cuenta las señales de alarma, suma la puntuación y listo. La vida real es más complicada. Puedes querer a alguien y aun así no ser buenos el uno para el otro. Puedes tener problemas reales y aun así tener una relación por la que merece la pena luchar.
 
 El objetivo no es encontrar la respuesta "correcta" en una noche. Es tomar una decisión que entiendas y puedas sostener, sea cual sea.
+
+Mi opinión: una pregunta que me parece más útil que cualquier lista es "¿me gusta quién soy en esta relación?". La respuesta suele ser más clara que los pros y los contras.
+
+:::tool coach
+¿Das vueltas en círculo? Háblalo sin que nadie te juzgue
+:::
 
 ## Una forma más tranquila de decidir
 

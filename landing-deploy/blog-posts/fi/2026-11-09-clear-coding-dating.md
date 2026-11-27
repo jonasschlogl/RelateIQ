@@ -20,6 +20,17 @@ Useimmat ovat periaatteessa samaa mieltä clear codingista. Vaikeinta ovat itse 
 
 **Selkeä "ei" on ystävällisempi kuin katoaminen.** Vuoden 2023 kokeessa C. M. Leckforin johtamat psykologit havaitsivat, että ihmiset, jotka muistelivat tulleensa ghostatuiksi, kertoivat voivansa huonommin, kokevansa vähemmän hallintaa ja olevansa epävarmempia omasta arvostaan kuin ne, jotka muistelivat tulleensa suoraan torjutuiksi. Clear coding koskee myös "ei kiitos" -vastausta.
 
+Minun näkemykseni: välinpitämättömänä esiintyminen suojaa sinua lähinnä kieltävältä vastaukselta, joka olisi parempi kuulla aikaisin. Selkeys tuntuu hetkessä riskialttiimmalta ja säästää kuukausia myöhemmin.
+
+:::stats Miksi nuoret deittailijat haluavat enemmän selkeyttä
+64 % | aktiivisesti deittailevista 18–25-vuotiaista sanoo, että deittailu kaipaa eniten tunnepitoista rehellisyyttä
+60 % | haluaa selkeämpää viestintää aikeista
+50 % | yhdysvaltalaisista 18–34-vuotiaista sanoo olleensa situationshipissä
+lähde: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4 000 deittailijaa 18–25-vuotiaista; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), tammikuu 2024
+:::
+
+**Pikatesti:** Jos suoruus pelottaa, kiintymystyylisi voi vaikuttaa siihen. Kokeile kahden minuutin [kiintymystyylitestiä](/quiz/attachment-style/), englanniksi.
+
 ## Vaihe 1: profiilisi ja ensimmäiset viestit
 
 Sano perusasiat heti alussa, lyhyesti. Et kirjoita sopimusta.
@@ -40,6 +51,12 @@ Kiinnostusta ei tarvitse piilotella kolmea päivää.
 
 Huomaa viesti 6: tietty päivä muuttaa "pitäis joskus nähdä" -lauseen oikeaksi suunnitelmaksi. Ristiriitaiset signaalit alkavat epämääräisistä suunnitelmista.
 
+:::read Lue myös
+/blog/situationship/ | Pitäisikö minun jäädä situationshipiin? | Kun kukaan ei ole sanonut, mitä tämä on
+/blog/breadcrumbing/ | Onko minulle tehty breadcrumbingia? | Clear codingin vastakohta
+/blog/love-bombing/ | Love bombing | Kun intensiivisyys on strategia, ei selkeyttä
+:::
+
 ## Vaihe 3: muutamien treffien jälkeen
 
 Tässä vaiheessa ihmiset alkavat arvailla. Älä arvaile.
@@ -48,6 +65,10 @@ Tässä vaiheessa ihmiset alkavat arvailla. Älä arvaile.
 10. "Lopetin sovellusten käytön, koska haluan nähdä, mihin tämä johtaa. Ei paineita sinulle, halusin vain olla avoin."
 11. "Tykkään todella viettää aikaa kanssasi. Minulla ei ole kiire, mutta toivon, että tästä voisi tulla jotain."
 12. *Jos hän on hiljentynyt:* "Hei, huomasin, ettemme ole jutelleet paljon tällä viikolla. Oletko vielä kiinnostunut? Se on ok, jos et."
+
+:::tool check
+Pelkäätkö, että viestisi kuulostaa liian intensiiviseltä? Tarkista se ennen lähettämistä
+:::
 
 ## Vaihe 4: suhteen määrittely
 
@@ -73,6 +94,8 @@ Tämä on se clear codingin osa, jonka ihmiset ohittavat, ja se, jolla on eniten
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
 
 Tämä on se vaihe, jonka toivoisin ihmisten ottavan kaikkein vakavimmin. Kahden rivin "en usko, että sovimme yhteen" maksaa sinulle minuutin ja säästää toiselta päiviä pohdintaa.
+
+Minun näkemykseni: ystävällinen ei on yksi anteliaimmista asioista, joita voit antaa jollekulle, jota olet tapaillut. Se maksaa sinulle minuutin ja säästää häneltä päiviä arvailua.
 
 ## Mitä clear coding ei ole
 
@@ -113,3 +136,4 @@ Pidä se lyhyenä, sano mitä sinä haluat sen sijaan, mitä toisen pitäisi tun
 - Leckfor, C. M., Wood, N. R., Slatcher, R. B., & Hales, A. H. (2023). From close to ghost: Examining the relationship between the need for closure, intentions to ghost, and reactions to being ghosted. *Journal of Social and Personal Relationships*. Tiivistelmä: [PsyPost](https://www.psypost.org/people-with-a-high-need-for-closure-are-more-likely-ghost-yet-also-feel-more-distressed-when-they-are-ghosted/)
 - Kardas, M., Kumar, A., & Epley, N. (2022). Overly shallow? Miscalibrated expectations create a barrier to deeper conversation. *Journal of Personality and Social Psychology*, 122(3), 367-398. Tiivistelmä: [American Psychological Association](https://www.apa.org/news/press/releases/2021/09/deep-conversations-strangers)
 - Knobloch, L. K., & Solomon, D. H. (2003). Responses to changes in relational uncertainty within dating relationships: Emotions and communication strategies. *Communication Studies*, 54(3), 282-305. [Penn Staten tietue](https://pure.psu.edu/en/publications/responses-to-changes-in-relational-uncertainty-within-dating-rela/)
+- YouGov (2024): [Half of 18- to 34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024

@@ -24,6 +24,15 @@ De ce? Să fii ajutat în mod evident poate purta un mesaj ascuns: *nu te descur
 
 Asta e descoperirea despre sprijin pe care mi-aș dori cel mai mult să o cunoască oamenii. Impulsul e să-l faci vizibil, să arăți că îți pasă. Adesea, cel mai blând lucru e ajutorul pe care abia îl observă.
 
+Părerea mea: cel mai bun sprijin de multe ori nici nu arată a sprijin. Să faci cina fără să ți se ceară poate face mai mult decât un discurs motivațional lung, mai ales în cele mai grele zile. Totuși, ajutorul practic merge cel mai bine împreună cu câteva cuvinte care numesc ce simte. Dacă faci multe și tot auzi "nu-ți pasă", citește [iubita mea spune că nu-mi pasă de sentimentele ei](/blog/my-girlfriend-says-i-dont-care/).
+
+:::stats Cât sprijin le lipsește oamenilor
+69% | dintre adulții americani spun că în ultimul an au avut nevoie de mai mult sprijin emoțional decât au primit
+54% | spun că se simt des sau uneori izolați
+92% | spun că relațiile sunt o sursă importantă de sens în viața lor
+sursa: [American Psychological Association](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), sondajul Stress in America cu 3.199 de adulți din SUA, august 2025
+:::
+
 ## Stresul face lucrurile mici să pară mari
 
 Lisa Neff și Benjamin Karney au studiat cupluri proaspăt căsătorite timp de mai mulți ani și au descoperit că, atunci când oamenii erau mai stresați decât de obicei, satisfacția lor față de relație oscila mai mult cu fiecare zi bună sau proastă petrecută împreună. Stresul pare să consume energia mentală pe care o folosim în mod normal ca să păstrăm problemele mici în proporțiile lor.
@@ -31,6 +40,12 @@ Lisa Neff și Benjamin Karney au studiat cupluri proaspăt căsătorite timp de 
 Așa că, dacă partenerul stresat se răstește din cauza prosopului de pe jos, probabil nu e vorba de prosop. Să știi asta face mult mai ușor să nu iei lucrurile personal și să nu începi o ceartă despre ton în cel mai prost moment posibil.
 
 Vestea bună vine dintr-un studiu din 2021 al Paulei Pietromonaco, al lui Nickola Overall și al lui Sally Powers. Urmărind peste 200 de cupluri proaspăt căsătorite, au descoperit că stresul era legat de scăderea calității relației în timp, *cu excepția* cazurilor în care partenerul era foarte receptiv: asculta, încerca să înțeleagă și recunoștea de ce era nevoie. Cu un partener receptiv, relația celui stresat arăta foarte asemănător cu cea a oamenilor cu puțin stres.
+
+:::read Citește și
+/blog/relationship-anxiety/ | Anxietate în relație fără motiv | Când stresul lui devine grija ta
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Dacă tace când e copleșit
+/blog/relationship-advice-communication-habits/ | Cum să comunicați mai bine în cuplu | 7 obiceiuri care schimbă felul în care vă certați
+:::
 
 ## Ce să spui, în funcție de tipul de stres
 
@@ -86,6 +101,10 @@ Sprijinul nu înseamnă să înghiți tot. Poți fi blând și clar în același
 
 „Nu trebuie să răspunzi” contează. Oferă alinare fără să adauge o sarcină.
 
+:::tool coach
+Nu știi de ce are nevoie partenerul acum? Gândește-te mai întâi
+:::
+
 ## Potrivește sprijinul cu persoana
 
 Cercetătorii care studiază *copingul diadic* (cum gestionează partenerii stresul împreună) au descoperit că felul în care un cuplu face față stresului e strâns legat de cât de mulțumiți sunt în general. O analiză amplă a Marianei Falconier și a colegilor ei, care a combinat date din zeci de studii, a arătat că modurile pozitive de a face față împreună mergeau cu o satisfacție mai mare în relație, iar cele negative, cum ar fi reacțiile disprețuitoare sau ostile, cu una mai mică.
@@ -106,6 +125,8 @@ Apoi ține minte răspunsul. Discuția asta te va face un sprijin mai bun decât
 Stresul se transmite. Dacă absorbi fiecare stare proastă și îți lași viața deoparte ca să o gestionezi pe a lui, rămâi și tu fără puteri. Păstrează-ți prietenii, somnul și rutinele. O prezență stabilă îl ajută mai mult decât una epuizată.
 
 Dacă observi că ai început să te simți responsabil pentru fiecare emoție a lui, ghidul nostru despre [diferența dintre grijă și codependență](/blog/codependent-relationship/) îți poate fi util.
+
+Părerea mea: nu poți căra la nesfârșit și stresul altcuiva, și pe al tău. A fi un sprijin înseamnă și să spui "diseară am nevoie de o seară liberă" fără să te simți vinovată.
 
 ## Când stresul e al tău
 
@@ -153,3 +174,4 @@ Stresul poate explica o stare proastă. Nu scuză niciodată amenințările, int
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Text integral (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Pietromonaco, P. R., Overall, N. C., & Powers, S. I. (2021). *Social Psychological and Personality Science*. [DOI](https://doi.org/10.1177/19485506211001687), rezumat de la [UMass Amherst](https://www.umass.edu/news/article/supportive-partners-protect-relationship)
 - Falconier, M. K., Jackson, J. B., Hilpert, P., & Bodenmann, G. (2015). Dyadic coping and relationship satisfaction: A meta-analysis. *Clinical Psychology Review*, 42, 28-46. [Citește articolul](https://www.researchgate.net/profile/Guy-Bodenmann/publication/281109389_Dyadic_Coping_and_Relationship_Satisfaction_A_Meta-Analysis/links/56d2dfe408ae85c8234c575e/Dyadic-Coping-and-Relationship-Satisfaction-A-Meta-Analysis.pdf)
+- American Psychological Association (2025): [Stress in America 2025](https://www.apa.org/news/press/releases/2025/11/nation-suffering-division-loneliness), survey of 3,199 US adults, August 2025

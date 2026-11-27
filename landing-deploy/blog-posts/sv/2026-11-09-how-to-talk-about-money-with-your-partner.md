@@ -22,6 +22,10 @@ Den här guiden ger dig en enkel struktur för att prata om pengar med din partn
 
 **Hur ni ordnar kontona kan spela roll.** I ett experiment med 230 förlovade eller nygifta par lottade Jenny Olson och kollegor paren till att öppna ett gemensamt konto, behålla separata konton eller göra som de ville. Under två år behöll paren som slog ihop till ett gemensamt konto sin relationskvalitet, medan den sjönk i de andra grupperna. Forskarna varnar för att ett gemensamt konto inte passar alla, särskilt inte när det finns ekonomisk instabilitet eller risk för kontroll.
 
+Min åsikt: siffran om dolda utgifter förvånar mig inte. De flesta döljer inte pengar för att de är oärliga. De döljer dem för att samtalet känns svårare än hemligheten. Att göra samtalet lättare är den verkliga lösningen.
+
+**Snabbtest:** Blir du tyst eller trycker du på mer när pengasamtalet blir spänt? Det 2 minuter långa [testet om konfliktstil](/quiz/fight-style/), på engelska, hjälper er att veta vad ni kan vänta er.
+
 ## Pengadejten: en dagordning i 4 rundor
 
 Välj en avslappnad stund, inte dagen då en räkning kommer. Gör det trevligt: kaffe, en promenad, något gott att äta. Räkna med 45 minuter, inte en hel kväll.
@@ -63,6 +67,12 @@ Försök inte lösa allt. Fatta ett eller två små beslut:
 
 Jag skulle stå emot frestelsen att hoppa över runda 1. Att prata om hur pengar fungerade i era familjer känns som småprat. Det är oftast där den verkliga förklaringen till era bråk gömmer sig.
 
+:::read Läs också
+/blog/relationship-problems-that-keep-coming-back/ | Varför har vi samma bråk hela tiden? | När pengar är bråket som upprepas
+/blog/relationship-advice-communication-habits/ | Så kommunicerar ni bättre i relationen | 7 vanor som ändrar hur ni bråkar
+/blog/how-to-rebuild-trust-after-a-fight/ | Så blir ni sams efter ett bråk | Om pengasamtalet gick dåligt
+:::
+
 ## Vilket upplägg passar er?
 
 | Upplägg | Hur det fungerar | Kan passa par som... |
@@ -72,6 +82,10 @@ Jag skulle stå emot frestelsen att hoppa över runda 1. Att prata om hur pengar
 | Helt separat | Var och en betalar en överenskommen del av kostnaderna | ...är tidigt i relationen eller har väldigt olika situationer |
 
 Olsons studie tyder på att det kan hjälpa par att känna sig mer enade om de slår ihop allt, men det viktigaste är att ni båda verkligen är överens och att ingen av er står utan tillgång till pengar.
+
+:::tool practice
+Vill du öva på pengasamtalet innan du tar det?
+:::
 
 ## Vad du kan säga i 4 knepiga lägen
 
@@ -103,6 +117,8 @@ Börja med känslan, inte med anklagelsen.
 ## Om samtalet ändå blir ett bråk
 
 Ta en paus när någon av er känner sig översvämmad av känslor, och kom tillbaka till det senare. Vår guide om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) har sätt att hindra gräl från att trappas upp, och om något sårande sades kan [be om ursäkt till din partner](/blog/how-to-apologize-to-your-partner/) hjälpa. Om pengar är en del av en större stress, se vår guide om att [stötta din partner när hen är stressad](/blog/how-to-support-your-partner-when-stressed/). Och om ni ska flytta ihop efter ett distansförhållande är pengar ett av de stora ämnena att ta först, se våra [tips för distansförhållande](/blog/long-distance-relationship-tips/).
+
+Min åsikt: om ni bara blir överens om en sak på er första pengadejt, låt det vara beloppet man inte behöver fråga om. Det tar bort förvånansvärt många småbråk.
 
 ## Snabba svar
 

@@ -34,6 +34,14 @@ He havaitsivat, että vastuun ottaminen oli tärkein osa ja tarjous korjata tila
 
 Yksi varaus kannattaa pitää mielessä: kyseessä oli koe, jossa ihmiset arvioivat kirjoitettuja anteeksipyyntöjä, ja oikea elämä todellisine loukkauksineen ja historioineen on sotkuisempaa. Silti tulos vastaa sitä, mitä moni pariterapeutti näkee. Toimivat anteeksipyynnöt koskevat toisen kokemusta ja sitä, mitä teet seuraavaksi, eivät omaa helpotustasi.
 
+Minun näkemykseni: useimmat ohittavat korjaustarjouksen. "Anteeksi" sulkee hetken, mutta "tämän teen jatkossa toisin" on se, mikä rakentaa luottamusta seuraavien viikkojen aikana.
+
+:::read Lue myös
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Mitä sanoa, kun kumppani sanoo sinun loukanneen häntä | Ensimmäiset viisi minuuttia askel askeleelta
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Tänä iltana, huomisaamuna ja seuraavalla viikolla
+/blog/my-boyfriend-gets-defensive/ | Poikaystäväni menee puolustuskannalle, kun otan jotain puheeksi | Jos anteeksipyyntö muuttuu aina väittelyksi
+:::
+
 ## Eri ihmiset tarvitsevat erilaisen anteeksipyynnön
 
 On vielä yksi taso, jonka useimmat neuvot ohittavat. Erillisessä tutkimuksessa Ryan Fehr ja Michele Gelfand tarkastelivat anteeksipyynnön kolmea osaa:
@@ -73,6 +81,10 @@ Kaikkia kuutta osaa ei tarvita joka kerta. Tässä on lyhyt rakenne tärkeimpien
 
 > **Viisi hiljaista kysymystä**
 > Jokainen vaihe vastaa kysymykseen, jota kumppanisi kysyy hiljaa. Ymmärrätkö mitä teit? (tarkkuus). Aiotko puolustella sitä? (ei ehtoja). Ymmärrätkö mitä se teki minulle? (vaikutus). Tapahtuuko se uudelleen? (korjaus). Saanko olla vielä harmissani? (tila). Kun kaikkiin viiteen on vastattu, riideltävää jää paljon vähemmän.
+
+:::tool practice
+Haluatko harjoitella anteeksipyyntöäsi ennen kuin sanot sen?
+:::
 
 ## Kokonainen esimerkki alusta loppuun
 
@@ -150,6 +162,8 @@ Jos sama asia toistuu yhä uudelleen, puuttuva palanen ei ole anteeksipyyntö. S
 Suuremmissa loukkauksissa, kuten valehtelussa, pettämisessä tai tärkeän lupauksen rikkomisessa, yksi hyvä keskustelu on alku, ei loppu. Luottamus rakennetaan uudelleen johdonmukaisilla teoilla ajan myötä. Oppaamme [luottamuksen palauttamisesta riidan jälkeen](/blog/how-to-rebuild-trust-after-a-fight/) käy prosessin läpi vaihe vaiheelta.
 
 Jos anteeksipyynnöt eivät johda mihinkään tai kuvioon liittyy epäkunnioitusta, pariterapeutti voi auttaa teitä näkemään, mitä pinnan alla tapahtuu. Jos haluat harjoitella, mitä sanoa ennen vaikeaa keskustelua, RelationshipAI on tekoälypohjainen parisuhdevalmentaja, joka auttaa pukemaan anteeksipyynnön sanoiksi ja harjoittelemaan sitä Partner Practicessa. Se ei ole terapiaa, mutta se voi auttaa alkuun.
+
+Minun näkemykseni: anteeksipyyntö, jota seuraa sama käytös viikkoa myöhemmin, opettaa kumppanillesi hitaasti, ettei anteeksi tarkoita mitään. Harvemmat anteeksipyynnöt todellisen muutoksen kanssa ovat parempia kuin monet ilman sitä.
 
 ## Nopeat vastaukset
 

@@ -22,6 +22,8 @@ Sam träffar Alex på en app. Den tredje dagen pratar de i timmar varje kväll. 
 
 **Vad du kan göra nu:** Inget dramatiskt. Fortsätt bara ditt vanliga liv och lägg märke till hur hen reagerar när du inte är tillgänglig.
 
+**Snabbtest:** Undrar du om det du ser bara är en jobbig period eller något mer oroande? Den 2 minuter långa [kollen av destruktiva relationer](/quiz/toxic-relationship/), på engelska, ger dig en tydligare bild.
+
 ## Vecka 2 till 4: presenterna och den ständiga kontakten
 
 Blommor levereras till Sams jobb. En weekendresa bokas "som en överraskning". Alex skickar god morgon, god natt och många meddelanden däremellan, och verkar sårad när Sam tar några timmar på sig att svara.
@@ -36,6 +38,12 @@ I en enkät från 2024 med 225 universitetsstudenter i Turkiet fann forskarna Du
 
 Till exempel: "Jag tycker verkligen om det här, och jag vill ta det lite lugnare. Kan vi spara resan till senare?"
 
+:::read Läs också
+/blog/breadcrumbing/ | Blir jag breadcrumbad? | När uppmärksamheten kommer i små, oförutsägbara doser
+/blog/signs-of-a-toxic-relationship/ | Är min relation destruktiv? | En kontroll i 3 nivåer: osund, destruktiv och kontrollerande
+/blog/clear-coding-dating/ | Clear coding i dejting | Hur sund entusiasm låter
+:::
+
 ## Månad 2: det första "nej"
 
 Sam vill ha en fredagskväll med gamla vänner. Alex är varm på ytan, men sedan tyst och sårad hela kvällen i sms: "Jag saknar dig bara. Jag trodde att vi var speciella." Veckan efter händer det igen, med en antydan om att Sams vänner "inte riktigt förstår oss".
@@ -45,6 +53,8 @@ Sam vill ha en fredagskväll med gamla vänner. Alex är varm på ytan, men seda
 **Vad som kanske händer:** Det här är steget som betyder mest. En partner som älskar dig kan bli besviken och ändå respektera dina planer. Vid love bombing börjar värmen bero på att du gör som hen vill. Tidig isolering från vänner är en av de mest återkommande varningssignalerna som organisationer mot våld i nära relationer beskriver.
 
 **Vad du kan göra nu:** Håll fast vid planerna. Berätta ärligt för en vän vad som pågår, inte den polerade versionen.
+
+Min åsikt: om jag fick ge ett enda test för love bombing skulle det vara det här. Säg ett litet, rimligt nej och se vad som händer. Någon som verkligen gillar dig kan bli besviken och ändå respektera det.
 
 ## Månad 3: varmt och kallt
 
@@ -64,6 +74,10 @@ Det finns inte så mycket forskning än, men den som finns pekar åt ett håll. 
 
 Det är användbart eftersom det flyttar fokus. Intensiteten säger ofta mer om den andras behov (av kontroll, beundran, bekräftelse) än om hur speciell du är. Den turkiska studien fann en sak till som är värd att veta: personer som hade upplevt love bombing rapporterade lägre tilltro till sin förmåga att hantera sina egna kärleksrelationer. Om du har varit med om det är en svacka i tilliten till ditt eget omdöme en vanlig efterverkan, inte ett personligt misslyckande.
 
+:::tool coach
+Osäker på vad du har att göra med? Prata igenom det i lugn och ro
+:::
+
 ## Love bombing eller någon som bara är väldigt entusiastisk?
 
 | Fråga | Entusiastisk och äkta | Love bombing |
@@ -81,6 +95,8 @@ Om du är osäker på om du övertänker visar vår guide om [gröna flaggor i e
 Att säga "låt oss ta det lugnare" till någon som öser uppmärksamhet över dig är svårt. Om det hjälper kan du öva på det privat i Partner Practice först.
 
 Om du bara testar en sak, testa "nej". Säg nej till något litet och se vad som händer. Äkta intresse överlever ett nej. Love bombing gör det oftast inte.
+
+Min åsikt: att bli helt tagen med storm är ingen varningssignal i sig. Varningssignalen är fart plus press. Äkta entusiasm kan vänta tills du hinner ikapp.
 
 ## Snabba svar
 

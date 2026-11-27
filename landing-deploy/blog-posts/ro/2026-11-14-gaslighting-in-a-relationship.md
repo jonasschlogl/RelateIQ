@@ -14,6 +14,13 @@ Deci cum faci diferența? Aceste cinci întrebări te ajută.
 > **Pe scurt:**
 > Gaslightingul e un tipar prin care cineva te face să te îndoiești de propria memorie, percepție sau sănătate mintală, de obicei ca să obțină control. O neînțelegere obișnuită lasă loc pentru două versiuni ale faptelor. Gaslightingul îți atacă mintea, nu evenimentul, se repetă în timp și te lasă confuz și dependent de versiunea celuilalt.
 
+:::stats Cât de frecventă e agresiunea psihologică
+20,4% | dintre femeile americane au trăit agresiune expresivă din partea unui partener, cum ar fi jigniri, insulte sau umilire
+13,1% | dintre bărbații americani spun același lucru
+27,2% | dintre femei și 19,5% dintre bărbați au trăit control coercitiv, care poate include să faci pe cineva să se îndoiască de propria memorie
+sursa: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), date colectate între 2023 și 2024
+:::
+
 ## Întrebarea 1: Există loc pentru două versiuni?
 
 Într-o neînțelegere obișnuită, ambii pot spune "eu îmi amintesc altfel" și pot lăsa lucrurile așa. Memoria e imperfectă, iar cuplurile își amintesc greșit lucruri tot timpul.
@@ -27,6 +34,10 @@ Deci cum faci diferența? Aceste cinci întrebări te ajută.
 | "N-am vrut să sune așa, îmi pare rău că te-a rănit." | "Ești mult prea sensibilă. Nimeni altcineva nu s-ar supăra." |
 | Amândoi cedați uneori | Tu ajungi mereu să-ți ceri scuze |
 
+Părerea mea: e complet normal ca doi oameni să-și amintească diferit aceeași seară. Întrebarea nu e a cui memorie are dreptate. E dacă versiunea ta are măcar voie să existe.
+
+**Test rapid:** Dacă nu știi cât de îngrijorată să fii, [verificarea relației toxice](/quiz/toxic-relationship/), în engleză și de 2 minute, îți oferă o imagine mai calmă și mai largă.
+
 ## Întrebarea 2: E vorba de eveniment sau de mintea ta?
 
 Neînțelegerile sunt despre *ce s-a întâmplat*. Gaslightingul alunecă spre *ce e în neregulă cu tine*: memoria ta, stabilitatea ta, sănătatea ta mintală.
@@ -34,6 +45,12 @@ Neînțelegerile sunt despre *ce s-a întâmplat*. Gaslightingul alunecă spre *
 Într-un studiu din 2023, psihologul Willis Klein și colegii săi au rugat 65 de oameni care credeau că au fost victime ale gaslightingului din partea unui partener să descrie experiența. Absolut toți participanții au spus că partenerul îi insulta și îi umilea, sugerând adesea că nu mai au contact cu realitatea și numindu-i nebuni, proști sau prea emotivi. Sociologa Paige Sweet, care a studiat gaslightingul în relațiile abuzive, a rezumat în același material NPR: gaslightingul înseamnă că cineva încearcă să te facă să pari sau să te simți nebun.
 
 Dacă certurile voastre se termină des cu un verdict despre starea ta mintală, ia aminte.
+
+:::read Citește și
+/blog/signs-of-a-toxic-relationship/ | Este relația mea toxică? | O verificare în 3 niveluri: nesănătoasă, toxică și controlantă
+/blog/my-boyfriend-gets-defensive/ | Iubitul meu se pune în defensivă când îi spun ceva | Defensivă sau ceva mai mult
+/blog/trust-issues-in-a-relationship/ | Cum să depășești problemele de încredere | Când îndoiala tot revine
+:::
 
 ## Întrebarea 3: Apare ca un tipar?
 
@@ -61,6 +78,12 @@ Dacă răspunzi doar la una dintre cele cinci întrebări, eu aș alege-o pe ace
 Cercetările lui Sweet adaugă o perspectivă utilă. În interviuri despre povestea vieții cu 43 de femei care supraviețuiseră violenței domestice, ea a descoperit că gaslightingul se sprijină adesea pe stereotipuri și vulnerabilități existente, precum ideea că femeile sunt "emotive", sau pe istoricul de sănătate mintală ori statutul de imigrant al cuiva, ca versiunea unei persoane să pară mai credibilă în ochii celorlalți. Întreabă-te: îi convine mereu celuilalt când mă îndoiesc de mine? Obține control, scapă de responsabilitate sau face cum vrea când eu mă îndoiesc?
 
 Nu orice negare e calculată. Unii oameni neagă lucruri pentru că le e rușine sau se pun în defensivă. Efectul poate răni oricum și merită abordat. Dar un tipar care avantajează constant o persoană și o costă pe cealaltă merită luat în serios.
+
+Părerea mea: cred că "cine are de câștigat?" e cea mai utilă dintre aceste întrebări. Neînțelegerile obișnuite nu lasă de obicei o persoană să câștige mereu și pe cealaltă să se îndoiască mereu de ea însăși.
+
+:::tool coach
+Te îndoiești de tine? Vorbește despre asta într-un spațiu neutru
+:::
 
 ## Ce poți face dacă crezi că ești victima gaslightingului
 
@@ -111,3 +134,4 @@ Gaslightingul vine adesea împreună cu alte forme de control. Dacă partenerul 
 - Sweet, P. L. (2019). The sociology of gaslighting. *American Sociological Review*, 84(5), 851-875. Rezumat pe [The Society Pages](https://thesocietypages.org/discoveries/2020/01/06/the-social-basis-of-psychological-abuse/)
 - NPR (2026): [Are you sure you know what gaslighting is?](https://www.kunc.org/npr-news/2026-03-25/are-you-sure-you-know-what-gaslighting-is), cu Robin Stern, Paige Sweet și Kate Abramson
 - Merriam-Webster: [Word of the Year 2022: gaslighting](https://merriam-webster.com/wordplay/word-of-the-year-2022)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

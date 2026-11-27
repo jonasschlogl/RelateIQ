@@ -31,6 +31,15 @@ Useimmat toistuvat riidat noudattavat yksinkertaista kaavaa. Tapahtuu jotain pie
 
 **Pikatesti:** jos sama riita palaa jatkuvasti, auttaa tuntea oma roolinsa siinä. Ilmainen [konfliktityylitesti](/quiz/fight-style/), englanniksi ja 2 minuutissa, näyttää, kärjistätkö, suljetko itsesi, myötäiletkö vai korjaatko.
 
+Minun näkemykseni: 69 prosentin luku tuntuu minusta pikemminkin vapauttavalta kuin masentavalta. Jos useimmat riidat eivät koskaan ratkea kokonaan, tavoitteeksi ei enää tule "emme riitele tästä enää ikinä" vaan "osaamme riidellä tästä satuttamatta toisiamme". Se on tavoite, jonka voitte oikeasti saavuttaa.
+
+:::stats Miksi samat riidat palaavat
+69 % | parisuhteen ristiriidoista koskee pysyviä ongelmia, jotka eivät ehkä koskaan katoa kokonaan, Gottman Instituten mukaan
+62 % | yhdysvaltalaisista aikuisista piti vuonna 2007 kotitöiden jakamista erittäin tärkeänä onnistuneelle avioliitolle, kun vuonna 1990 luku oli 47 %
+86 % vs. 33 % | kuinka usein naimisissa pysyneet parit vastasivat toistensa pieniin yhteydenottoyrityksiin verrattuna eronneisiin pareihin
+lähde: The Gottman Institute; Pew Research Center (ks. lähteet alla)
+:::
+
 ## 1. Kotityöt ja henkinen kuorma
 
 Se näyttää riidalta tiskeistä. Useimmiten se kertoo reiluudesta ja siitä, huomataanko oma panos. Se ei ole pieni asia: Pew Research Centerin vuoden 2007 kyselyssä 62 % amerikkalaisista aikuisista sanoi kotitöiden jakamisen olevan erittäin tärkeää onnistuneelle avioliitolle, kun vuonna 1990 osuus oli 47 %.
@@ -55,6 +64,12 @@ Gottmanin tutkimus antaa tälle vankan pohjan. Tutkimuksessa, jossa vastanaineit
 Sen sijaan että sanot: "Puhelin on sinulle tärkeämpi kuin minä."
 
 Voisit sanoa: "Kaipaan iltaisin juttelemista kanssasi. Voisimmeko pitää puhelimet pois ruokapöydästä tällä viikolla?"
+
+:::read Lue myös
+/blog/how-to-rebuild-trust-after-a-fight/ | Näin sovitte riidan jälkeen | Tänä iltana, huomenna ja seuraavalla viikolla
+/blog/what-to-say-when-you-hurt-your-partners-feelings/ | Mitä sanoa, kun kumppani sanoo sinun loukanneen häntä | Ensimmäiset viisi minuuttia askel askeleelta
+/blog/how-to-keep-the-spark-alive/ | Näin pidätte kipinän elossa | Kun riidat ovat vieneet hauskuuden
+:::
 
 ## 3. Raha
 
@@ -93,6 +108,12 @@ Voisit sanoa vaikka: "Tuntuu, että kun minä painostan, sinä hiljenet, ja kun 
 > Kun kuviolla on nimi, siitä tulee jotain, mitä kohtaatte yhdessä, eikä jotain, mitä teette toisillenne. Takaa-ajaja voi rentoutua vähän, koska vetäytyjä on luvannut palata. Vetäytyjä voi palata, koska häntä ei enää ajeta takaa. Moni pari huomaa, että tauon säännöistä sopiminen on tärkeämpää kuin alkuperäisen aiheen ratkaiseminen.
 
 Usein kierre pitää itse itseään yllä. Vuoden 2022 tutkimuksessa, jossa oli 175 paria, Ione Bretaña kollegoineen havaitsi, että kun toinen vetäytyi riidan aikana, toinen muuttui usein vaativammaksi tai aggressiivisemmaksi, ja molemmat reaktiot liittyivät heikompaan tyytyväisyyteen. Toisen vetäytyminen saa toisen painostamaan enemmän, mikä saa ensimmäisen vetäytymään vielä lisää, ja alkuperäinen aihe katoaa.
+
+Minun näkemykseni: kun riita toistuu sanasta sanaan, lopettaisin aiheesta väittelemisen ja kysyisin toisen kysymyksen: "Mistä tässä oikeasti on kyse sinulle?" Vastaus on yleensä pienempi ja pehmeämpi kuin riita.
+
+:::tool practice
+Haluatko harjoitella tätä keskustelua ennen kuin käyt sen?
+:::
 
 ## Miten puhua ongelmasta, joka palaa aina
 

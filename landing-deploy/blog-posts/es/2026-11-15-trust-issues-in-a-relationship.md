@@ -22,6 +22,16 @@ En un estudio clásico, los psicólogos John Rempel, John Holmes y Mark Zanna de
 
 Esto es útil porque los problemas de confianza suelen estar más en una capa que en las otras. Hay quien confía en que su pareja es fiel (fe) pero no en que llegue a la hora (previsibilidad). Otros pueden contar con la fiabilidad diaria pero siguen temiendo que algún día les dejen. Saber qué capa flojea te dice en qué trabajar.
 
+Mi opinión: la confianza no es algo que decidas sentir. Es algo que vas reuniendo, promesa cumplida a promesa cumplida, y por eso no se puede acelerar.
+
+:::stats La confianza y el móvil
+34 % | de los adultos estadounidenses con pareja dicen haber mirado el móvil de su pareja sin que lo supiera
+23 % | de quienes tienen una pareja que usa redes sociales dicen que estas les han hecho sentir celos o inseguridad en la relación
+fuente: [Pew Research Center](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), 4.860 adultos de EE. UU., octubre de 2019
+:::
+
+**Test rápido:** Los problemas de confianza suelen estar ligados al apego. El [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos, puede mostrarte tu propio patrón.
+
 ## Cómo crece de verdad la confianza: pequeños sacrificios
 
 Este es el hallazgo más práctico de la investigación sobre la confianza. En dos estudios de larga duración con parejas que salían juntas y matrimonios, Jennifer Wieselquist, Caryl Rusbult y sus colegas encontraron que la gente llegaba a confiar en su pareja cuando la veía **poner la relación por delante de sus propios intereses inmediatos**: mantener la calma en lugar de devolver el golpe en una pelea, renunciar a algo que quería por el bien de la pareja.
@@ -31,6 +41,12 @@ Describieron un ciclo. Cuando uno de los dos toma estas decisiones pequeñas y c
 Dicho de otro modo, la confianza no se construye con promesas ni superando pruebas. Se construye *viendo* un cuidado que cuesta algo.
 
 Los psicólogos Shallcross y Jeffry Simpson lo pusieron a prueba en el laboratorio con "pruebas de tensión": conversaciones en las que uno de los dos pide algo que le cuesta al otro, como mudarse de ciudad por un trabajo. Las parejas con mucha confianza eran más complacientes, y lo eran *más* cuanto mayor era el sacrificio que se les pedía. Las parejas con poca confianza hacían lo contrario.
+
+:::read Lecturas relacionadas
+/blog/jealousy-in-a-relationship/ | ¿Son normales los celos en una relación? | 7 mitos que los empeoran
+/blog/how-to-rebuild-trust-after-cheating/ | Cómo recuperar la confianza tras una infidelidad | Las 4 etapas por las que pasan las parejas
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | Cuando la duda no tiene que ver con tu pareja
+:::
 
 ## El círculo que mantiene los problemas de confianza
 
@@ -66,6 +82,10 @@ Si tu pareja es fiable en general y ya te has sentido así antes, el trabajo pro
 
 Esta comprobación es la parte a la que yo dedicaría más tiempo. Muchísimos consejos sobre la confianza dan por hecho que el problema es la pareja actual. A menudo es una antigua.
 
+:::tool coach
+¿Vas a volver a pedirle que te tranquilice? Háblalo primero
+:::
+
 ## Cómo romper el círculo
 
 ### Si eres tú quien tiene dificultades para confiar
@@ -98,6 +118,8 @@ Cuando ha habido una traición real, el círculo de arriba no es el problema pri
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 Cuando te llega una ola de duda de noche, escribirlo primero, en un diario o en Coach Chat, puede ayudarte a pausar el círculo. Si los patrones vienen de lejos o están ligados a heridas pasadas, un terapeuta puede ayudar mucho.
+
+Mi opinión: mirar su móvil parece que va a calmar la duda, y casi nunca lo hace. Si acaso, le enseña a tu cerebro que la duda necesitaba comprobarse.
 
 ## Respuestas rápidas
 
@@ -134,3 +156,4 @@ A veces la desconfianza se usa para justificar conductas de control: revisar el 
 - Shallcross, S. L., & Simpson, J. A. (2012). Trust and responsiveness in strain-test situations: A dyadic perspective. *Journal of Personality and Social Psychology*, 102(5), 1031-1044. [Texto completo (PDF)](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/files/2012/2012/Shallcross%2520%2526%2520Simpson%2520%2528JPSP%252C%25202012%2529.pdf)
 - Lemay, E. P., Jr., & Clark, M. S. (2008). "Walking on eggshells": How expressing relationship insecurities perpetuates them. *Journal of Personality and Social Psychology*, 95(2), 420-441. [Texto completo (PDF)](https://clarkrelationshiplab.yale.edu/sites/default/files/files/Walking%20on%20eggshells_%20How%20expressing%20relationship%20insecurities%20perpetuates%20them(1).pdf)
 - Evraire, L. E., Dozois, D. J. A., & Wilde, J. L. (2022). The contribution of attachment styles and reassurance seeking to trust in romantic couples. *Europe's Journal of Psychology*, 18(1), 19-39. [Leer el estudio](https://ejop.psychopen.eu/index.php/ejop/article/view/3059)
+- Pew Research Center (2020): [Dating and relationships in the digital age](https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/), survey of 4,860 US adults, October 2019

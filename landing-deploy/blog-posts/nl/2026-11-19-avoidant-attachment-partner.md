@@ -25,6 +25,8 @@ Als volwassene willen ze vaak wel liefde en verbinding, maar nabijheid kan ook o
 | Vindt het normaal om elkaar nodig te hebben | Ziet anderen nodig hebben als zwakte |
 | Blijft stabiel na momenten van nabijheid | Trekt zich terug na momenten van nabijheid |
 
+Mijn mening: wat mij het meest hielp, was vermijding zien als bescherming, niet als afwijzing. Je partner trekt zich niet terug van jou. Hij of zij trekt zich terug van een gevoel dat ooit niet veilig was.
+
 ## 8 signalen van een vermijdende partner
 
 ### 1. Afstand na dichtbije momenten
@@ -58,6 +60,12 @@ In plaats van het goed te maken, sluit je partner zich af en wacht tot het overw
 ### 8. Liefde tonen met daden in plaats van woorden
 
 Je fiets maken of een reisje boeken kan de manier zijn om te zeggen "je bent belangrijk voor me". Het is echt, ook al is het stiller.
+
+:::read Lees ook
+/blog/emotionally-unavailable-partner/ | Emotioneel onbereikbare partner | 5 redenen waarom je partner dichtklapt
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Hoe je ze onderscheidt
+/blog/how-to-stop-overthinking-in-a-relationship/ | Zo stop je met overdenken | Als de afstand van je partner een spiraal start
+:::
 
 ## Waarom vermijdende partners afstand nemen
 
@@ -105,6 +113,10 @@ Probeer: "Je hoeft nu niet te antwoorden. Zullen we het er morgenavond over hebb
 
 Als je zelf angstiger bent in relaties, kan een vermijdende partner je angsten sterk triggeren. Houd je vriendschappen, hobby's en steun vast. Onze gidsen over [relatieangst](/blog/relationship-anxiety/) en [emotioneel onbeschikbare partners](/blog/emotionally-unavailable-partner/) kunnen helpen.
 
+:::tool practice
+Wil je oefenen om om nabijheid te vragen zonder druk te zetten?
+:::
+
 ## Vermijdend betekent niet kil
 
 Veel artikelen beschrijven vermijdende mensen als kil of niet in staat om lief te hebben. Dat is oneerlijk en meestal onjuist. Een vermijdende partner kan heel loyaal, stabiel en zorgzaam zijn. Diegene laat het alleen anders zien en heeft meer ruimte nodig.
@@ -112,6 +124,8 @@ Veel artikelen beschrijven vermijdende mensen als kil of niet in staat om lief t
 Hechtingsstijlen kunnen ook veranderen. Onderzoek laat zien dat veilige, stabiele relaties en therapie mensen na verloop van tijd kunnen helpen zich veiliger te voelen bij nabijheid. Het doel is niet om je partner te "repareren", maar om een relatie op te bouwen waarin jullie je allebei veilig voelen: jij met genoeg nabijheid en je partner met genoeg ruimte.
 
 Wil je voorbereiden hoe je over behoeften en ruimte praat zonder dat het ruzie wordt? RelationshipAI is een AI-relatiecoach die je helpt de juiste woorden te vinden. Het is geen therapie, maar wel een rustige plek om te beginnen.
+
+Mijn mening: heb geduld, maar niet eindeloos. Iemands stijl begrijpen betekent niet dat je je eigen behoeften opgeeft. Jullie mogen ze allebei hebben.
 
 ## Snelle antwoorden
 

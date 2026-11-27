@@ -24,6 +24,13 @@ Există două excepții importante. Dacă îți e frică de partener, te simți 
 | Scânteia s-a stins | Minciuni sau infidelitate care continuă |
 | Stresul v-a îndepărtat | O dependență netratată |
 
+:::stats Ce a descoperit cercetarea lui Gottman
+96% | din cazuri, primele trei minute ale unei discuții au prezis cum se va termina
+5 la 1 | raportul dintre interacțiunile pozitive și cele negative pe care îl păstrează cuplurile stabile în timpul unui conflict
+86% | dintre micile încercări de a atrage atenția primeau un răspuns cald la cuplurile încă împreună după șase ani, față de 33% la cele care au divorțat
+sursa: cercetările lui John Gottman și ale colegilor săi (vezi sursele de mai jos)
+:::
+
 ## Pasul 1: Decide ce înseamnă "mai bine"
 
 "Să repar relația" e prea vag ca să poți acționa. Înainte să vorbești cu partenerul, lămurește-ți ce ar fi diferit dacă lucrurile ar merge mai bine. Mai multă afecțiune? O împărțire mai corectă a treburilor casei? Să te simți ascultat? Scrie asta în una sau două propoziții. Așa nu ajungeți să vă certați despre tot și poți cere ceva concret.
@@ -49,6 +56,14 @@ Nu trebuie să fii perfect. Observă doar în care dintre ele aluneci cel mai de
 > **De ce trebuie eliminați mai întâi**
 > Fiecare călăreț îl împinge pe celălalt să se apere, iar cine se apără nu mai poate asculta. De aceea unele cupluri se ceartă pe același lucru ani la rând fără să ajungă nicăieri. Eliminarea călăreților nu rezolvă problema în sine. Creează condițiile în care problema poate fi rezolvată.
 
+Părerea mea: dacă reușești un singur pas, să fie acesta. Nu poți repara nimic în mijlocul unei certe, așa că a învăța să faci o pauză e ce face posibili toți ceilalți pași.
+
+:::read Citește și
+/blog/relationship-advice-communication-habits/ | Cum să comunicați mai bine în cuplu | 7 obiceiuri care schimbă felul în care vă certați
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | În seara asta, mâine și săptămâna următoare
+/blog/relationship-problems-that-keep-coming-back/ | De ce avem mereu aceeași ceartă? | Ce se află de obicei dedesubt
+:::
+
 ## Pasul 3: Aveți o discuție scurtă despre un singur lucru
 
 Sari peste discuția despre "starea relației". Alege un subiect și un moment liniștit, nu imediat după muncă și nu în mijlocul unei certe. Felul în care începi contează mai mult decât aproape orice altceva: în cercetarea lui Gottman, primele trei minute ale unei discuții au prezis cum se va termina în 96% din cazuri.
@@ -68,6 +83,10 @@ Un mod practic de a începe:
 - **Spune un mulțumesc concret pe zi.** "Mersi că te-ai ocupat de mașină, mi-ai luat o grijă de pe cap."
 - **Luați-vă zece minute în fiecare seară ca să vorbiți cu adevărat.** Nu despre logistică. Despre cum a fost de fapt ziua.
 - **Plănuiți un lucru pe săptămână care n-are legătură cu problemele.** O plimbare, o cină, un film. [Întrebările noastre pentru o întâlnire în doi](/blog/date-night-questions-for-couples/) vă pot ajuta să simțiți din nou că e o întâlnire.
+
+:::tool practice
+Vrei să repeți o discuție grea înainte s-o ai?
+:::
 
 ## Pasul 5: Întrebați-vă ce are nevoie fiecare
 
@@ -99,6 +118,8 @@ E foarte frecvent ca unul dintre parteneri să fie mai motivat decât celălalt,
 Dar pe termen lung o relație are nevoie de doi oameni. Dacă încerci singur de mult timp și nimic nu se schimbă, spune-o clar și calm. Felul în care partenerul reacționează la discuția asta este o informație importantă.
 
 Încearcă: "Chiar mă străduiesc să meargă mai bine între noi și am nevoie să știu că și tu îți dorești asta. Ce ești dispus să faci?"
+
+Părerea mea: o singură persoană poate schimba tonul unei relații mai mult decât crede, dar nu pentru totdeauna de una singură. Dacă după luni de zile ești singurul care încearcă, merită spus cu voce tare.
 
 ## Cât durează?
 

@@ -30,6 +30,15 @@ Aceeași analiză a susținut că unele dintre cele mai importante feluri în ca
 
 **Folosește-o așa:** adaugă-ți propriile categorii. "Când sunt stresat, cel mai mult mă ajută să stai pur și simplu lângă mine" e și ăsta un limbaj al iubirii. Ghidul nostru despre [cum îți sprijini partenerul când e stresat](/blog/how-to-support-your-partner-when-stressed/) îl tratează în detaliu.
 
+:::chart Limbajul iubirii preferat de americani pentru a primi iubire
+Timp de calitate | 38 | 38%
+Atingere fizică | 24 | 24%
+Cuvinte de apreciere | 19 | 19%
+Fapte de serviciu | 13 | 13%
+Primirea de cadouri | 7 | 7%
+sursa: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1.000 de adulți din SUA, ianuarie 2022
+:::
+
 ## Credința 3: "Cuplurile cu același limbaj al iubirii sunt mai fericite"
 
 **Ce spun cercetările: dovezi slabe.**
@@ -37,6 +46,12 @@ Aceeași analiză a susținut că unele dintre cele mai importante feluri în ca
 Într-un studiu din 2017 cu 67 de cupluri, cercetătorii Bunt și Hazelwood au testat exact asta. Faptul că aveau același limbaj principal al iubirii conta foarte puțin pentru satisfacție. Mai mult conta *autoreglarea*: capacitatea fiecărui partener de a-și gestiona propriile reacții și de a continua să investească efort în relație.
 
 **Folosește-o așa:** nu-ți face griji dacă "tipurile" voastre nu se potrivesc. Preferințele diferite înseamnă doar că va trebui să fiți puțin mai atenți, ceea ce oricum face bine unei relații.
+
+:::read Citește și
+/blog/how-to-say-i-love-you-without-words/ | Cum să arăți iubire fără cuvinte | 25 de moduri mici pentru orice zi
+/blog/how-to-keep-the-spark-alive/ | Cum să păstrezi scânteia vie | Găsește scânteia care se stinge și repar-o pe aceea
+/blog/long-distance-relationship-tips/ | Cum să meargă o relație la distanță | Când iubirea trebuie să călătorească printr-un ecran
+:::
 
 ## Credința 4: "Să vorbești limbajul partenerului face o diferență reală"
 
@@ -64,6 +79,12 @@ Nu există dovezi solide că limbajele iubirii ar fi trăsături fixe. Bunul-sim
 Studiul lui Mostova a arătat că nici partenerii empatici nu erau automat buni la a răspunde preferințelor celuilalt. Iubirea nu le dă oamenilor telepatie. Să ceri clar nu e neromantic. Te scutește de luni de dezamăgire tăcută.
 
 Încearcă: "Înseamnă mult pentru mine când îmi spui ce apreciezi la mine. Nu am nevoie de discursuri mari, doar de o propoziție din când în când."
+
+Părerea mea: să te aștepți ca celălalt să ghicească e cel mai rapid mod de a te simți neiubită de cineva care chiar încearcă. Să-i spui ce ajunge la tine nu e neromantic. E generos.
+
+:::tool coach
+Nu știi de ce are nevoie partenerul de la tine? Vorbește despre asta
+:::
 
 ## Ce ajută de fapt
 
@@ -95,3 +116,4 @@ Părerea mea: limbajele iubirii sunt un început bun de discuție și un regulam
 - Bunt, S., & Hazelwood, Z. J. (2017). Walking the walk, talking the talk: Love languages, self-regulation, and relationship satisfaction. *Personal Relationships*, 24(2), 280-290. [Rezumat](https://metatoc.com/papers/100052-walking-the-walk-talking-the-talk-love-languages-self-regulation-and-relationship-satisfaction)
 - University of Florida, SMART Couples: [Do you speak your partner's love language? Does it matter?](https://smartcouples.ifas.ufl.edu/dating/communicating-with-your-partner/do-you-speak-your-partners-love-language)
 - Chapman, G. (1992). *The Five Love Languages: How to Express Heartfelt Commitment to Your Mate*. Northfield Publishing.
+- YouGov (2022): [What are Americans' love languages?](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), survey of 1,000 US adults, January 2022

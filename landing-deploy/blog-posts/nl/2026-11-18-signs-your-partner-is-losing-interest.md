@@ -24,6 +24,20 @@ De signalen die het waard zijn om op te letten, zijn dus niet dramatisch. Het zi
 
 **Snelle test:** soms betekent afstand dat er een behoefte niet vervuld wordt. De gratis [relatie-check-up](/quiz/relationship-needs/), in het Engels en in 2 minuten, kan je helpen te benoemen welke.
 
+Mijn mening: één stille week betekent heel weinig. Een langzame verwijdering over maanden betekent veel meer. Ik zou naar de trend kijken, niet naar één dag.
+
+:::chart Hoe vaak partners reageerden op elkaars kleine pogingen tot aandacht
+Stellen die na 6 jaar nog samen waren | 86 | 86%
+Stellen die later scheidden | 33 | 33%
+bron: [The Gottman Institute](https://www.gottman.com/blog/turn-toward-instead-of-away/), onderzoek onder pasgetrouwden met een follow-up na zes jaar
+:::
+
+:::stats De telefoonfactor
+46% | van de Amerikaanse volwassenen in een onderzoek uit 2016 zei dat hun partner hen "phubde", dus aandacht aan de telefoon gaf in plaats van aan hen
+52 onderzoeken | met bijna 20.000 mensen in een meta-analyse uit 2025 koppelden phubbing door de partner aan minder tevredenheid en meer conflict
+bron: Roberts en David (2016), *Computers in Human Behavior*; meta-analyse uit 2025, vermeld in de bronnen hieronder
+:::
+
 ## De signalen, ontcijferd
 
 ### Kortere, tragere appjes
@@ -73,11 +87,21 @@ De signalen die het waard zijn om op te letten, zijn dus niet dramatisch. Het zi
 | Warmte intact, minder seks | Gezondheid, stress of verschillende behoeften | Een zacht gesprek onder vier ogen |
 | Keert zich af van de meeste pogingen tot contact, weinig warmte | Echte emotionele afstand | Een eerlijk gesprek over de relatie |
 
+:::read Lees ook
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Als de afstand na een ruzie komt
+/blog/avoidant-attachment-partner/ | Vermijdende hechting bij je partner | Als nabijheid je partner doet terugtrekken
+/blog/should-i-break-up-with-my-partner/ | Hoe weet je wanneer het tijd is om uit elkaar te gaan? | Als je een grotere vraag stelt
+:::
+
 ## Voordat je praat: check je eigen bril
 
 Neig je naar angst in relaties, dan kan een gewone drukke week voelen als afwijzing. Vraag jezelf: is *je partner* veranderd, of is mijn zorgniveau veranderd? Onze gidsen over [relatieangst](/blog/relationship-anxiety/) en [stoppen met overdenken](/blog/how-to-stop-overthinking-in-a-relationship/) helpen je die twee uit elkaar te houden.
 
 Ik zou echt tijd aan deze stap besteden. Een drukke maand en een relatie die wegebt, kunnen er van binnenuit precies hetzelfde uitzien, vooral als je al ongerust bent.
+
+:::tool practice
+Weet je niet hoe je dit gesprek begint? Oefen het eerst
+:::
 
 ## Wat je kunt zeggen
 
@@ -103,6 +127,8 @@ En keer je bewust naar je partner toe, in kleine dingen: reageer op de pogingen 
 Soms is het eerlijke antwoord dat je partner is weggedreven, of dat die twijfelt. Dat doet pijn, maar het is informatie waarmee je verder kunt. Veel stellen vinden de weg terug met inzet van beide kanten, soms met een relatietherapeut. Zegt je partner niet te weten wat die voelt, geef het dan wat tijd, maar geen onbeperkte tijd. Onze gidsen over [emotioneel onbereikbare partners](/blog/emotionally-unavailable-partner/) en over [of je het moet uitmaken](/blog/should-i-break-up-with-my-partner/) kunnen je helpen bepalen wat je nodig hebt.
 
 Zie je op tegen dat eerste gesprek, dan kun je het voorbereiden in Coach Chat en eerst oefenen in Partner Practice.
+
+Mijn mening: vragen "zit je hier nog in?" is eng, maar het niet vragen is meestal erger. Maanden gissen kost meer dan één eerlijk gesprek.
 
 ## Snelle antwoorden
 
@@ -131,3 +157,4 @@ Ja. Heeft je partner in veel dingen de interesse verloren, niet alleen in jou, e
 - Ni, N., Ahrari, S., Zaremohzzabieh, Z., Zarean, M., & Roslan, S. (2025). A meta-analytic study of partner phubbing and its antecedents and consequences. *Frontiers in Psychology*, 16, 1561159. [Lees de studie](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1561159/full)
 - Neff, L. A., & Karney, B. R. (2009). Stress and reactivity to daily relationship experiences: How stress hinders adaptive processes in marriage. *Journal of Personality and Social Psychology*, 97(3), 435-450. [Volledige tekst (PDF)](https://sites.lifesci.ucla.edu/psych-marriagelab/wp-content/uploads/sites/213/2020/05/Neff__Karney_2009.220154529.pdf)
 - Gottman Institute: [An introduction to emotional bids and trust](https://www.gottman.com/blog/an-introduction-to-emotional-bids-and-trust/)
+- The Gottman Institute: [Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)

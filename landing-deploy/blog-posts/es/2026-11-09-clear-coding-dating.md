@@ -20,6 +20,17 @@ La mayoría está de acuerdo con el clear coding en teoría. Lo difícil son las
 
 **Un «no» claro es más amable que desaparecer.** En un experimento de 2023, un equipo de psicólogos dirigido por C. M. Leckfor encontró que las personas que recordaban haber sufrido ghosting decían sentirse peor, con menos control y menos seguras de su propio valor que las que recordaban un rechazo directo. El clear coding también vale para el «no, gracias».
 
+Mi opinión: hacerse la persona interesante sobre todo te protege de un no que preferirías oír pronto. La claridad parece más arriesgada en el momento y te ahorra meses después.
+
+:::stats Por qué los jóvenes quieren más claridad al ligar
+64 % | de las personas de 18 a 25 años que están conociendo gente dicen que lo que más necesitan las citas es honestidad emocional
+60 % | quieren una comunicación más clara sobre las intenciones
+50 % | de los estadounidenses de 18 a 34 años dicen haber estado en una situationship
+fuente: [Tinder Year in Swipe 2025](https://filecache.mediaroom.com/mr5mr_tinder_uk/180600/download/Year%20In%20Swipe%202025%20-%20UK%20Press%20Release.pdf), 4.000 personas de 18 a 25 años; [YouGov](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), enero de 2024
+:::
+
+**Test rápido:** Si ser directa te da miedo, tu estilo de apego puede tener que ver. Prueba el [test de estilo de apego](/quiz/attachment-style/), en inglés y de 2 minutos.
+
 ## Etapa 1: tu perfil y los primeros mensajes
 
 Di lo básico desde el principio, en pocas palabras. No estás redactando un contrato.
@@ -40,6 +51,12 @@ El interés no tiene por qué esconderse tres días.
 
 Fíjate en el mensaje 6: un día concreto convierte «a ver si quedamos» en un plan de verdad. Los planes vagos son donde empiezan las señales confusas.
 
+:::read Lecturas relacionadas
+/blog/situationship/ | ¿Debería seguir en una situationship? | Cuando nadie ha dicho qué es esto
+/blog/breadcrumbing/ | ¿Me están haciendo breadcrumbing? | Lo contrario del clear coding
+/blog/love-bombing/ | Love bombing | Cuando la intensidad es una estrategia, no claridad
+:::
+
 ## Etapa 3: tras unas cuantas citas
 
 Esta es la etapa en la que la gente empieza a adivinar. No lo hagas.
@@ -48,6 +65,10 @@ Esta es la etapa en la que la gente empieza a adivinar. No lo hagas.
 10. «He dejado de usar las apps porque me gustaría ver adónde va esto. Sin presión para ti, solo quería ser sincero.»
 11. «Me gusta mucho pasar tiempo contigo. No tengo prisa, pero tengo la esperanza de que esto se convierta en algo.»
 12. *Si se ha quedado en silencio:* «Oye, he notado que esta semana apenas hemos hablado. ¿Sigues interesado? No pasa nada si no.»
+
+:::tool check
+¿Te preocupa que tu mensaje suene demasiado intenso? Revísalo antes de enviarlo
+:::
 
 ## Etapa 4: ponerle nombre
 
@@ -73,6 +94,8 @@ Esta es la parte del clear coding que la gente se salta, y la que más le import
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
 
 Esta es la etapa que más me gustaría que la gente se tomara en serio. Un «no creo que encajemos» de dos líneas te cuesta un minuto y le ahorra a la otra persona días de dudas.
+
+Mi opinión: un no amable es una de las cosas más generosas que puedes darle a alguien con quien has salido. A ti te cuesta un minuto y a esa persona le ahorra días de dudas.
 
 ## Lo que no es el clear coding
 
@@ -113,3 +136,4 @@ Sé breve, di lo que quieres en lugar de lo que la otra persona debería sentir,
 - Leckfor, C. M., Wood, N. R., Slatcher, R. B., & Hales, A. H. (2023). From close to ghost: Examining the relationship between the need for closure, intentions to ghost, and reactions to being ghosted. *Journal of Social and Personal Relationships*. Resumen en [PsyPost](https://www.psypost.org/people-with-a-high-need-for-closure-are-more-likely-ghost-yet-also-feel-more-distressed-when-they-are-ghosted/)
 - Kardas, M., Kumar, A., & Epley, N. (2022). Overly shallow? Miscalibrated expectations create a barrier to deeper conversation. *Journal of Personality and Social Psychology*, 122(3), 367-398. Resumen de la [American Psychological Association](https://www.apa.org/news/press/releases/2021/09/deep-conversations-strangers)
 - Knobloch, L. K., & Solomon, D. H. (2003). Responses to changes in relational uncertainty within dating relationships: Emotions and communication strategies. *Communication Studies*, 54(3), 282-305. [Registro de Penn State](https://pure.psu.edu/en/publications/responses-to-changes-in-relational-uncertainty-within-dating-rela/)
+- YouGov (2024): [Half of 18- to 34-year-old Americans have been in a situationship](https://yougov.com/en-us/articles/48492-half-of-18-to-34-aged-americans-have-been-in-a-situationship), January 2024

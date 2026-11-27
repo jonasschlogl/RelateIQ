@@ -18,6 +18,10 @@ Deze gids zet negen groene vlaggen in een relatie op een rij, maar met een twist
 
 **Zo herken je het:** Deel een klein succes en kijk wat er gebeurt. "Wat geweldig, vertel me alles!" is de groene vlag. "Leuk" (en weer terug naar de telefoon), "Betekent dat niet langere dagen?" of "Raad eens wat mij vandaag overkwam" zijn dat niet.
 
+Mijn mening: dit is de groene vlag waar ik als eerste naar zou kijken. Hoe iemand reageert op jouw goede nieuws zegt meer over die persoon dan hoe hij of zij zich gedraagt op een perfecte date.
+
+**Snelle quiz:** Benieuwd wat jij zelf meebrengt in de relatie? De [hechtingsstijlquiz](/quiz/attachment-style/) van 2 minuten, in het Engels, laat zien of je neigt naar veilig, angstig of vermijdend.
+
 ## 2. Je partner steunt je doelen zonder ze over te nemen
 
 **Waarom het belangrijk is:** In een studie waarin stellen over hun persoonlijke doelen praatten, vond Brooke Feeney dat *betrokken, niet-opdringerige* steun (aanmoedigen zonder te controleren) samenhing met een gesteunde partner die zich gelukkiger voelde, een hoger zelfbeeld had en meer vertrouwen had in het halen van die doelen. Pushen, bekritiseren of het plan overnemen hielp niet.
@@ -37,6 +41,12 @@ Steun voedt zichzelf ook als die wordt opgemerkt. In een studie uit 2024 onder 1
 **Waarom het belangrijk is:** Problemen die je kunt benoemen, kun je oplossen. Stilte, mokken of plotselinge uitbarstingen laten je raden.
 
 **Zo herken je het:** Als er iets misgaat, zegt je partner dan "Dat zat me dwars, kunnen we praten?" of merk je het drie dagen later aan zijn of haar humeur?
+
+:::read Lees ook
+/blog/signs-of-a-toxic-relationship/ | Is mijn relatie toxisch? | De andere kant van de lijst
+/blog/love-bombing/ | Love bombing | Als de intensiteit in het begin geen groene vlag is
+/blog/situationship/ | Situationship | Als je nog niet weet wat jullie zijn
+:::
 
 ## 5. Je partner kan een discussie verliezen
 
@@ -73,6 +83,10 @@ Steun voedt zichzelf ook als die wordt opgemerkt. In een studie uit 2024 onder 1
 >
 > *Namen en details in dit voorbeeld zijn verzonnen om het idee te laten zien.*
 
+:::tool coach
+Weet je niet zeker wat je ziet in je relatie? Praat het door
+:::
+
 ## Groene vlaggen aan het begin van het daten
 
 In de eerste weken kun je niet zien hoe iemand omgaat met jaren stress, maar je kunt wel letten op:
@@ -88,6 +102,8 @@ In de eerste weken kun je niet zien hoe iemand omgaat met jaren stress, maar je 
 Niemand laat alle negen altijd zien. Iedereen heeft slechte dagen, oude gewoontes en momenten waar die niet trots op is. Zoek naar patronen over maanden, niet naar perfectie in één week. En onthoud dat een relatie tegelijk groene en rode vlaggen kan hebben. Twijfel je over de rode, dan kunnen onze gidsen over [signalen van een toxische relatie](/blog/signs-of-a-toxic-relationship/) en [gaslighting](/blog/gaslighting-in-a-relationship/) je helpen erover na te denken.
 
 Zelf zou ik het best naar nummer 9 kijken. Een partner kan alle andere vakjes aanvinken en je toch na elk gesprek angstig achterlaten. Hoe je je daarna voelt, is informatie.
+
+Mijn mening: niemand laat alle negen elke dag zien, jij ook niet. Ik zou liever naar de richting kijken: worden deze dingen tussen jullie vaker zichtbaar, of minder vaak?
 
 ## Hoe je zelf een groene-vlag-partner wordt
 

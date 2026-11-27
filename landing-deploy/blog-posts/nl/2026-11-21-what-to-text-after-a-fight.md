@@ -26,6 +26,8 @@ Kort gezegd: een kort, warm bericht na een ruzie helpt. Een lang bericht dat het
 
 **Snelle test:** wil je weten hoe jij je meestal gedraagt in een ruzie? Doe onze [test over je ruziestijl](/quiz/fight-style/), in het Engels en in 2 minuten.
 
+Mijn mening: mijn vuistregel is simpel. Appen om weer contact te maken, praten om iets op te lossen. Als je bericht meer dan drie zinnen heeft, hoort het waarschijnlijk in een gesprek thuis.
+
 ## Voordat je typt: een check in 3 vragen
 
 **1. Zijn we allebei afgekoeld?** Als je overspoeld bent, staat je lichaam in vechtstand en hoor je slecht. Julie Schwartz Gottman raadt een pauze aan van ongeveer 20 minuten tot 24 uur, met een tijdstip dat je samen afspreekt. Gaat je hart nog tekeer, dan is het beste bericht een kort bericht dat je tijd geeft.
@@ -40,6 +42,12 @@ Kort gezegd: een kort, warm bericht na een ruzie helpt. Een lang bericht dat het
 | "Sorry dat ik mijn stem verhief." | "Sorry dat ik mijn stem verhief, maar je deed onmogelijk." |
 | "Zullen we vanavond na het eten praten?" | "En nu we toch bezig zijn, dat van vorig weekend..." |
 | "Ik hou van je, ook als we ruzie hebben." | Een bericht van zes alinea's over alles wat er mis is |
+
+:::read Lees ook
+/blog/how-to-rebuild-trust-after-a-fight/ | Zo maak je het goed na een ruzie | Vanavond, morgen en de week erna
+/blog/how-to-apologize-to-your-partner/ | Zo bied je je partner oprecht excuses aan | Als het bericht een excuus moet zijn
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Als je partner niet reageert
+:::
 
 ## 20 berichten om te sturen na een ruzie, per situatie
 
@@ -89,6 +97,10 @@ Een complete gids over excuses die aankomen vind je in [sorry zeggen tegen je pa
 > **Waarom de brug werkt en het essay niet**
 > Een brugbericht doet maar één ding: het vertelt je partner dat jullie nog steeds in hetzelfde team zitten. Een lang essay vraagt je partner om je hele pleidooi te lezen, alleen, zonder stem die het verzacht, en te bedenken hoe te reageren. De meeste mensen reageren daarop zoals op een aanval: door zich te verdedigen.
 
+:::tool check
+Al iets geschreven? Check het voordat je op verzenden drukt
+:::
+
 ## Wat je beter niet stuurt na een ruzie
 
 - **"We moeten praten."** Zonder context klinkt het als een aankondiging van een breuk. Voeg toe waarover en wanneer: "Zullen we vanavond praten over vanochtend?"
@@ -109,6 +121,8 @@ Het doel van elk bericht op deze lijst is jullie in een echt gesprek te krijgen,
 Als ik één bericht van deze lijst moest kiezen, zou het het bericht zijn dat een moment voorstelt om te praten. Het maakt van een gespannen stilte een plan en vertelt je partner dat de relatie niet ter discussie staat.
 
 Heb je hetzelfde bericht vijf keer getypt en weer gewist? Message check laat zien hoe het waarschijnlijk overkomt voordat je op versturen drukt, en stelt een zachtere versie voor als het kil of defensief klinkt.
+
+Mijn mening: het beste bericht na een ruzie zet vaak alleen het gesprek klaar: "Zullen we vanavond praten? Ik mis je." Het lost niets op, en dat hoeft ook niet.
 
 ## Snelle antwoorden
 

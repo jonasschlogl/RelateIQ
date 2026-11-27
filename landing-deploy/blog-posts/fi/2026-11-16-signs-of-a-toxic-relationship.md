@@ -26,6 +26,15 @@ Näihin kaavoihin moni pari ajautuu, erityisesti stressin alla. Ne satuttavat ja
 
 **Seuraava askel:** rauhallinen, konkreettinen keskustelu ja ehkä pariterapia. Oppaamme [viestintätavoista](/blog/relationship-advice-communication-habits/) ja [toistuvista parisuhdeongelmista](/blog/relationship-problems-that-keep-coming-back/) ovat hyviä lähtökohtia.
 
+Minun näkemykseni: useimmat suhteet käyvät läpi tason 1 jaksoja. Ratkaisevaa on, pystyttekö molemmat nimeämään sen ja työstämään sitä. Huono jakso, josta voitte puhua, on hyvin erilainen kuin sellainen, jota pelkäät ottaa puheeksi.
+
+:::stats Kuinka yleistä kontrolloiva käytös on
+27,2 % | yhdysvaltalaisista naisista on elämänsä aikana kokenut kumppaninsa taholta pakottavaa kontrollia tai ansaan sulkemista
+19,5 % | yhdysvaltalaisista miehistä sanoo samaa
+30,2 % | naisista on kokenut kumppanin henkistä aggressiota
+lähde: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), aineisto kerätty 2023–2024
+:::
+
 ## Taso 2: Myrkylliset kaavat
 
 Tässä ongelma ei ole enää vain se, miten riitelette. Kyse on siitä, miten sinua kohdellaan. Parisuhdetutkija John Gottman tunnisti tutkimuksissaan neljä viestintäkaavaa, jotka ennustivat eroa, ja nosti **halveksunnan** (pilkka, silmien pyörittely, sarkasmi, kumppanin kohtelu alempiarvoisena) vahingollisimmaksi. Tasolla 2 halveksunnasta ja sen sukulaisista tulee normaalia.
@@ -68,6 +77,12 @@ Hienovarainen kontrolli on myös se, joka jää useimmiten huomaamatta. Vuonna 2
 
 Haluan olla tästä tasosta hyvin suora: sovellus, artikkeli tai parempi tapa puhua ei korjaa sitä. Jos tämä osio kuulostaa tutulta, alla mainitut auttavat puhelimet ovat seuraava askel.
 
+:::read Lue myös
+/blog/gaslighting-in-a-relationship/ | Tekeekö kumppanini minulle kaasuvalotusta? | 5 kysymystä, joilla sen erottaa erimielisyydestä
+/blog/love-bombing/ | Love bombing | Miten se etenee viikko viikolta
+/blog/codependent-relationship/ | Olenko läheisriippuvainen vai vain välittävä? | Kun auttaminen muuttuu itsensä kadottamiseksi
+:::
+
 ## Nopea itsearvio: viime kuukausi
 
 Mieti viimeistä neljää viikkoa, älä parasta tai huonointa päivää. Mitkä väitteet pitävät paikkansa?
@@ -91,6 +106,12 @@ Toisin sanoen jääminen liittyy usein enemmän rahaan, lapsiin, asumiseen ja yh
 > Kahden vuoden ajan Yuki sanoi itselleen, että Ben oli "vain stressaantunut", kun tämä pilkkasi hänen ruoanlaittoaan kavereiden edessä. Kun Ben alkoi lukea hänen viestejään ja kysellä, miksi hän oli viestitellyt siskolleen, Yuki kirjasi kuukauden ajan ylös, mitä tapahtui, kuten auttavan puhelimen neuvoja oli ehdottanut. Sen näkeminen paperilla muutti jotain. "Olin käsitellyt jokaista tapausta erikseen", hän sanoi myöhemmin. "Kirjoitettuna se oli selvästi yksi ja sama asia."
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
+
+Minun näkemykseni: jos olet kuukausia selittänyt kumppanisi käytöstä itsellesi, sekin vaiva on tietoa. Terveet suhteet tarvitsevat harvoin niin paljon puolustelua.
+
+:::tool coach
+Haluatko miettiä tätä ensin rauhassa?
+:::
 
 ## Olenko minä se myrkyllinen?
 
@@ -132,3 +153,4 @@ Jos pelkäät kumppaniasi tai sinua kontrolloidaan, uhkaillaan tai satutetaan, o
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Tiivistelmä: [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

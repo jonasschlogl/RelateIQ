@@ -20,6 +20,16 @@ Oricare ar fi motivul, experiența partenerului e adesea asemănătoare: îi șt
 
 Tinde să creeze și o buclă. O analiză amplă a lui Paul Schrodt și a colegilor săi a descoperit că tiparul *cerere/retragere*, în care unul insistă să vorbească în timp ce celălalt se retrage, e legat de o satisfacție mai mică în relație pentru amândoi. Cu cât insiști mai mult, cu atât se retrage mai mult, iar cu cât se retrage mai mult, cu atât insiști mai mult. Să înțelegi *de ce* se retrage e primul pas spre ieșirea din buclă.
 
+Părerea mea: cea mai dureroasă parte nu e de obicei distanța în sine. E faptul că nu știi dacă are legătură cu tine. De aceea contează atât de mult să afli care motiv se potrivește.
+
+:::stats Un motiv mai frecvent decât cred oamenii
+7,5% | dintre bărbații dintr-un studiu cu 155 de cupluri căsătorite aveau alexitimie ridicată, o dificultate reală de a identifica și descrie sentimentele
+6,5% | dintre femei aveau și ele, în linie cu estimările pentru populația generală
+sursa: Frye-Cox și Hesse, studiu cu 155 de cupluri căsătorite (vezi sursele de mai jos)
+:::
+
+**Test rapid:** Vrei să vezi unde v-ați putea situa amândoi? [Testul despre stilul de atașament](/quiz/attachment-style/), în engleză și de 2 minute, e un bun punct de plecare.
+
 ## Motivul 1: atașamentul evitant
 
 **Cum arată:** apropiere urmată de distanță. Un weekend minunat, apoi o săptămână tăcută. O independență puternică. Disconfort la discuțiile de tipul „unde merge asta?”. Adesea afectuos în moduri practice.
@@ -37,6 +47,12 @@ Tinde să creeze și o buclă. O analiză amplă a lui Paul Schrodt și a colegi
 **Ce e dedesubt:** *alexitimia*, o trăsătură de personalitate care face dificilă recunoașterea și descrierea emoțiilor. Într-un studiu cu 155 de cupluri căsătorite, Nick Frye-Cox și Colin Hesse au găsit-o la aproximativ 7,5% dintre bărbați și 6,5% dintre femei, cifre apropiate de estimările pentru populația generală. Alexitimia era legată de o calitate mai scăzută a căsniciei, în mare parte prin singurătate și dificultăți în comunicarea intimă.
 
 **Ce ajută:** întrebări mai mici și mai concrete. În loc de „Ce simți în legătură cu tatăl tău?”, încearcă „Pe o scară de la 1 la 10, cât de stresat ai fost după telefonul ăla?” sau „A fost mai degrabă enervant sau mai degrabă dureros?”. Observă-i grija în fapte. Și să știi că terapia îi poate ajuta pe oameni să-și construiască un vocabular emoțional.
+
+:::read Citește și
+/blog/avoidant-attachment-partner/ | Atașamentul evitant la partener | 8 semne și cum să iubești pe cineva care are nevoie de spațiu
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | 6 moduri de a le deosebi
+/blog/signs-your-partner-is-losing-interest/ | Semne că partenerul își pierde interesul | Ce poate însemna fiecare semnal
+:::
 
 ## Motivul 3: a învățat că sentimentele nu se împărtășesc
 
@@ -64,6 +80,10 @@ Un mod de a o spune: „Nu trebuie să explici perfect. Chiar și un «azi a fos
 
 **Ce ajută:** claritate, nu răbdare. Întreabă-l direct ce vrea. Dacă răspunsul sau comportamentul lui în săptămânile următoare spune că nu e implicat, crede-l. Ghidurile noastre despre [situationship](/blog/situationship/), [semnele că partenerul își pierde interesul](/blog/signs-your-partner-is-losing-interest/) și [dacă ar trebui să vă despărțiți](/blog/should-i-break-up-with-my-partner/) te pot ajuta.
 
+:::tool coach
+Încerci să-ți dai seama care se potrivește? Vorbește despre asta
+:::
+
 ## Care dintre ele e?
 
 | Dacă partenerul... | Poate fi vorba de... |
@@ -88,6 +108,8 @@ Părerea mea sinceră: motivul 5 e cel la care oamenii vor cel mai puțin să se
 Oricare ar fi motivul, ai voie să ai nevoi. Dacă tu ești mereu cel care se întinde spre celălalt, poate aluneca spre epuizare sau [codependență](/blog/codependent-relationship/). Păstrează-ți prietenii cu care poți fi deschis, observă dacă lucrurile se îmbunătățesc încet și decide de ce ai nevoie pe termen lung. Iar dacă observi că anxietatea e mai ales a ta, ghidul nostru despre [overthinking în relație](/blog/how-to-stop-overthinking-in-a-relationship/) te poate ajuta.
 
 Cu un partener care se închide, formularea contează mult. Partner Practice te lasă să încerci diferite feluri de a începe discuția cu o inteligență artificială care joacă rolul partenerului, ca să le găsești pe cele care invită în loc să preseze.
+
+Părerea mea: poți avea răbdare cu motivele cuiva și totuși să decizi că relația nu îți oferă destul. Să înțelegi de ce nu înseamnă să accepți să aștepți la nesfârșit.
 
 ## Răspunsuri rapide
 

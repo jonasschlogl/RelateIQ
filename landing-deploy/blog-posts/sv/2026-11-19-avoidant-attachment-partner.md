@@ -25,6 +25,8 @@ Som vuxna vill de ofta ha kärlek och kontakt, men närhet kan också kännas ob
 | Ser det som normalt att behöva varandra | Ser det som en svaghet att behöva andra |
 | Är stabil efter närhet | Drar sig undan efter stunder av närhet |
 
+Min åsikt: det som hjälpte mig mest var att se undvikande som skydd, inte avvisning. Din partner drar sig inte undan från dig. Hen drar sig undan från en känsla som en gång inte var trygg.
+
 ## 8 tecken på en undvikande partner
 
 ### 1. Hen drar sig undan efter nära stunder
@@ -58,6 +60,12 @@ I stället för att reparera stänger hen av och väntar på att det ska gå öv
 ### 8. Hen visar kärlek mer med handlingar än med ord
 
 Att laga din cykel eller boka en resa kan vara hens sätt att säga "jag bryr mig". Det är äkta, även om det är tystare.
+
+:::read Läs också
+/blog/emotionally-unavailable-partner/ | Känslomässigt otillgänglig partner | 5 skäl till att hen stänger av
+/blog/silent-treatment-vs-needing-space/ | Tyst behandling eller behov av utrymme | Så skiljer du dem åt
+/blog/how-to-stop-overthinking-in-a-relationship/ | Så slutar du övertänka | När hens avstånd startar en spiral
+:::
 
 ## Varför undvikande partners drar sig undan
 
@@ -105,6 +113,10 @@ Testa: "Du behöver inte svara nu. Kan vi prata om det i morgon kväll?"
 
 Om du själv är mer orolig i relationer kan en undvikande partner väcka dina rädslor starkt. Behåll dina vänskaper, intressen och ditt stöd. Våra guider om [relationsångest](/blog/relationship-anxiety/) och [känslomässigt otillgängliga partners](/blog/emotionally-unavailable-partner/) kan hjälpa.
 
+:::tool practice
+Vill du öva på att be om närhet utan att pressa?
+:::
+
 ## Undvikande betyder inte kall
 
 Många artiklar beskriver undvikande personer som kalla eller oförmögna att älska. Det är orättvist och oftast fel. En undvikande partner kan vara djupt lojal, stabil och omtänksam. Hen visar det bara på ett annat sätt och behöver mer utrymme.
@@ -112,6 +124,8 @@ Många artiklar beskriver undvikande personer som kalla eller oförmögna att ä
 Anknytningsstilar kan också förändras. Forskning tyder på att trygga, stabila relationer och terapi med tiden kan hjälpa människor att känna sig tryggare med närhet. Målet är inte att "laga" din partner, utan att bygga en relation där ni båda känner er trygga: du med tillräckligt mycket närhet och hen med tillräckligt mycket utrymme.
 
 Om du vill planera hur du pratar om behov och utrymme utan att det blir bråk är RelationshipAI en AI-relationscoach som kan hjälpa dig att hitta orden. Det är inte terapi, men det är en lugn plats att börja på.
+
+Min åsikt: ha tålamod, men inte i oändlighet. Att förstå någons stil betyder inte att du ger upp dina egna behov. Ni får båda ha dem.
 
 ## Snabba svar
 

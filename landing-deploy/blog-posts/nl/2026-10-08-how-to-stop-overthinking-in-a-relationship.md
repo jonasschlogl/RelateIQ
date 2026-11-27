@@ -33,11 +33,19 @@ Het resultaat: 91,4% van de zorgen kwam niet uit. En van de zorgen die wel uitkw
 
 Het was een kleine studie met mensen die een angststoornis hebben, dus het bewijst niet dat 91% van *jouw* relatiezorgen onterecht is. Maar het laat iets nuttigs zien: piekeren voelt als een voorspelling, en meestal is het een slechte. Het gevoel van zekerheid dat bij een spiraal om twee uur 's nachts hoort, zegt veel meer over je angstniveau dan over wat er echt gebeurt.
 
+Mijn mening: ik denk niet dat de les is "je zorgen kloppen nooit". Het is dat je brein een veel luidere verteller is dan een nauwkeurige. Dat weten maakt het iets makkelijker om te wachten voordat je reageert.
+
 ## Overdenken en hechtingsangst
 
 Bij sommige mensen hangt overdenken samen met wat psychologen hechtingsangst noemen: een sterkere zorg dat een partner zich terugtrekt of je afwijst. Het is een van de twee hoofddimensies die onderzoekers gebruiken om hechting bij volwassenen te beschrijven, naast vermijding. Mensen met meer hechtingsangst merken kleine tekenen van afstand meestal sneller op en lezen ze negatiever.
 
 Wil je dat deel beter begrijpen, dan leggen we het uit in onze gids over [hechtingsstijlen in relaties](/blog/how-attachment-styles-work-in-relationships/). Het is geen diagnose, alleen een handige manier om een patroon te herkennen. En het hoopvolle deel: hechtingsangst neemt in de volwassenheid meestal af en reageert goed op het soort oefening dat hieronder staat.
+
+:::read Lees ook
+/blog/relationship-anxiety/ | Relatieangst zonder reden | Als de twijfel eigenlijk niet over je partner gaat
+/blog/trust-issues-in-a-relationship/ | Zo overwin je vertrouwensproblemen | Waarom geruststelling niet blijft hangen
+/blog/silent-treatment-vs-needing-space/ | Silent treatment of behoefte aan ruimte | Als stilte de spiraal in gang zet
+:::
 
 ## Hoe een piekerspiraal eruitziet
 
@@ -126,6 +134,10 @@ Dit is een verzoek, geen regel voor het gedrag van je partner. Merk je dat je om
 
 Van de zeven zou ik met stap drie beginnen. Drie andere verklaringen opschrijven voelt de eerste keer een beetje gek. Het is ook een van de eenvoudigste hulpmiddelen in dit hele artikel, en een van de meest effectieve.
 
+:::tool coach
+Zit je nu in een spiraal? Praat het door voordat je appt
+:::
+
 ## Een volledig voorbeeld: van spiraal naar gesprek
 
 > **Voorbeeld: Jacobs vrijdagavond**
@@ -144,6 +156,8 @@ Van de zeven zou ik met stap drie beginnen. Drie andere verklaringen opschrijven
 Het is goed om het duidelijk te zeggen: overdenken en een goed onderbuikgevoel zijn niet hetzelfde. Als je partner regelmatig oneerlijk is, zonder uitleg verdwijnt of je een klein gevoel geeft, kan je ongemak informatie zijn in plaats van angst.
 
 De test is niet "voel ik me bezorgd?". Het is "is er een herhaald gedragspatroon dat ik in feiten kan beschrijven?". Eén laat antwoord is geen patroon. Drie gebroken beloftes in een maand, beschreven zonder interpretatie, wel. Kun je een patroon beschrijven, dan is de volgende stap een duidelijk gesprek over dat patroon, niet nog meer stil analyseren.
+
+Mijn mening: een zorg die terecht blijkt, verdient nog steeds een rustig gesprek, geen perfect dossier. Je hoeft geen bewijs te verzamelen om een vraag te mogen stellen.
 
 ## Hoe je je partner vertelt dat je overdenkt
 

@@ -23,6 +23,8 @@ Det mest slående resultatet: ungefär hälften hade starka skäl åt båda hål
 
 **Snabbtest:** inför ett stort beslut kan det hjälpa att se vad som saknas. Den kostnadsfria [hälsokollen för förhållandet](/quiz/relationship-needs/), på engelska och på 2 minuter, visar om ni mest behöver mer tid tillsammans, bättre samtal, mer roligt eller mer lagarbete.
 
+Min åsikt: att känna sig kluven betyder inte att du är dålig på att bestämma dig. Oftast betyder det att det finns verkliga skäl på båda sidor, och det förtjänar tid, inte ett snabbt beslut.
+
 ## Vad forskningen säger förutspår ett uppbrott
 
 År 2010 sammanställde Benjamin Le och hans kollegor 137 studier med 37 761 deltagare från 33 års forskning för att ta reda på vad som bäst förutspår om ogifta förhållanden tar slut. En del resultat är förvånande.
@@ -43,6 +45,12 @@ En nyare och ännu större analys pekar åt samma håll. År 2020 använde Saman
 Vad betyder det för dig? Inte att du ska stanna för att du är beroende av någon, eller gå för att du inte är nöjd i dag. Det betyder att de viktigaste frågorna handlar om relationens kärna: känner du dig fortfarande engagerad, älskar du fortfarande den här personen och vill du fortfarande att era liv ska höra ihop? Det är frågorna nedan.
 
 Tidpunkten spelar också roll. I en analys från 2025 av fyra stora nationella långtidsstudier med 11 295 personer fann Janina Bühler och Ulrich Orth att förhållanden som tog slut gick igenom två faser: år av långsam, lätt nedgång och sedan en vändpunkt ungefär ett till två år före uppbrottet, varefter nöjdheten sjönk snabbt. Den som senare gjorde slut blev oftast olycklig tidigare. Forskarna menar att det ger paren bäst chans att försöka reparera under den långsamma fasen, innan det branta fallet.
+
+:::stats Vad forskningen säger om att bestämma sig
+69 % | av konflikterna i en relation handlar om bestående problem som kanske aldrig blir helt lösta, enligt Gottman Institute
+27 mot 23 | olika skäl att stanna och att gå, hos människor som höll på att bestämma sig för om de skulle göra slut
+källa: The Gottman Institute; Joel, MacDonald och Page-Gould (se källor nedan)
+:::
 
 ## 10 frågor att ställa dig själv
 
@@ -94,6 +102,12 @@ Vi ser ofta andras liv tydligare än vårt eget. Föreställ dig att din bästa 
 
 Om jag fick välja en fråga av de tio skulle det vara nummer 7. Inte "är det dåligt just nu?" utan "om ingenting förändrades, skulle jag må bra om fem år?" Den skär igenom väldigt mycket.
 
+:::read Läs också
+/blog/how-to-fix-a-relationship/ | Är min relation värd att rädda? | Hur du vet, och var du börjar
+/blog/signs-your-partner-is-losing-interest/ | Tecken på att din partner tappar intresset | Vad varje signal kan betyda
+/blog/how-to-get-over-a-breakup/ | Så kommer du över ett uppbrott | Om du bestämmer dig för att gå
+:::
+
 ## Tre situationer, tre olika svar
 
 De här exemplen är illustrationer, inte verkliga personer, men de visar hur samma fråga ("ska jag gå?") kan ha väldigt olika svar.
@@ -124,6 +138,12 @@ De här exemplen är illustrationer, inte verkliga personer, men de visar hur sa
 Många artiklar behandlar ett uppbrott som ett prov man klarar eller inte. Räkna de röda flaggorna, summera poängen, klart. Verkligheten är rörigare. Du kan älska någon och ändå inte passa ihop. Du kan ha verkliga problem och ändå ha ett förhållande som är värt att kämpa för.
 
 Målet är inte att hitta det "rätta" svaret på en natt. Det är att fatta ett beslut som du förstår och kan stå för, vilket håll det än går åt.
+
+Min åsikt: en fråga som jag tycker är mer användbar än alla listor är "gillar jag den jag är i den här relationen?". Svaret brukar vara tydligare än för- och nackdelarna.
+
+:::tool coach
+Går du i cirklar? Prata igenom det utan att bli dömd
+:::
 
 ## Ett lugnare sätt att bestämma sig
 

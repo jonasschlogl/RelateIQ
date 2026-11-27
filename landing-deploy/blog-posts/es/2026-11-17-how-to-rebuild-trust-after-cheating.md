@@ -24,6 +24,10 @@ Tanto si la infidelidad se descubrió como si se confesó, este es el momento en
 
 Una forma de decirlo: "Lo hice yo. Es mi responsabilidad, no la tuya. Voy a responder a tus preguntas con sinceridad."
 
+Mi opinión: cómo sale a la luz la verdad importa mucho. Si fuiste tú quien fue infiel, contar toda la historia de una vez duele, pero ir soltándola a cuentagotas durante meses suele ser lo que hace imposible recuperar la confianza.
+
+**Test rápido:** Si fuiste tú quien fue infiel, el [test de estilo de disculpa](/quiz/apology-style/), en inglés y de 2 minutos, muestra cómo sueles disculparte y qué podría faltar.
+
 ## Etapa 2: Las primeras reacciones
 
 Las primeras semanas y meses suelen ser los más caóticos: rabia, dolor, preguntas a las 2 de la madrugada, querer detalles, no querer detalles, querer cercanía, querer distancia, a veces todo en el mismo día.
@@ -36,6 +40,12 @@ Las primeras semanas y meses suelen ser los más caóticos: rabia, dolor, pregun
 
 > **Por qué las preguntas repetidas no son un fracaso**
 > Las personas traicionadas suelen hacer las mismas preguntas muchas veces. A quien fue infiel puede parecerle que la conversación da vueltas en círculo. No es así. Cada vez que la respuesta es la misma, y se da sin irritación, la mente de la persona traicionada recibe un poco más de pruebas de que la verdad ahora es estable. La constancia es la forma en que empieza a crecer de nuevo la primera capa de la confianza: la previsibilidad.
+
+:::read Lecturas relacionadas
+/blog/trust-issues-in-a-relationship/ | Cómo superar los problemas de confianza | Cuando la duda vuelve una y otra vez
+/blog/how-to-apologize-to-your-partner/ | Cómo pedir perdón a tu pareja de forma sincera | Qué incluye una disculpa de verdad
+/blog/should-i-break-up-with-my-partner/ | ¿Debería romper con mi pareja? | Si no tienes claro que quedarte sea lo correcto
+:::
 
 ## Etapa 3: La estabilización
 
@@ -53,6 +63,10 @@ Prueba (quien fue traicionado): "Hoy estoy teniendo un día difícil con esto. N
 Prueba (quien fue infiel): "Gracias por decírmelo. ¿Qué te ayudaría ahora mismo?"
 
 Lo que me gustaría que escucharan los dos es que esta etapa es lenta a propósito. La confianza no vuelve con una gran conversación. Vuelve con cien días aburridos y constantes.
+
+:::tool coach
+¿Necesitas un lugar privado para pensarlo?
+:::
 
 ## Etapa 4: La revitalización
 
@@ -74,6 +88,8 @@ Normalmente muchos meses, a menudo un año o más. Depende de cuánto duró la i
 Recuperar la confianza exige que quien fue infiel asuma toda la responsabilidad y que quien fue traicionado elija, libremente, intentarlo. Si la aventura continúa, si las mentiras siguen o si te presionan o te culpan de la traición, quedarte puede no ser seguro ni sano. Nuestras guías sobre [si deberías dejar a tu pareja](/blog/should-i-break-up-with-my-partner/) y [cómo superar una ruptura](/blog/how-to-get-over-a-breakup/) pueden ayudarte si irte es la decisión correcta.
 
 Un terapeuta con experiencia en infidelidades puede ayudar en cualquiera de los dos casos. Si no sabes qué decir, [cómo pedir perdón a tu pareja](/blog/how-to-apologize-to-your-partner/) trata la primera disculpa. Para la duda que queda después, mira los [problemas de confianza en la pareja](/blog/trust-issues-in-a-relationship/).
+
+Mi opinión: decidir irte después de una infidelidad no es fracasar en la recuperación. Reconstruir es un buen desenlace, y un final limpio y sincero es otro.
 
 ## Respuestas rápidas
 

@@ -24,6 +24,10 @@ Fie că infidelitatea a fost descoperită, fie că a fost mărturisită, acesta 
 
 Un mod de a spune: "Eu am făcut asta. E responsabilitatea mea, nu a ta. O să-ți răspund sincer la întrebări."
 
+Părerea mea: felul în care iese adevărul la iveală contează mult. Dacă tu ai fost cel infidel, să spui toată povestea o dată doare, dar să o dezvălui cu picătura timp de luni de zile e de obicei ce face imposibilă reconstruirea încrederii.
+
+**Test rapid:** Dacă tu ai fost partenerul infidel, [testul despre stilul de a-ți cere scuze](/quiz/apology-style/), în engleză și de 2 minute, arată cum îți ceri de obicei scuze și ce ar putea lipsi.
+
 ## Etapa 2: Primele reacții
 
 Primele săptămâni și luni sunt de obicei cele mai haotice: furie, durere, întrebări la 2 noaptea, să vrei detalii, să nu vrei detalii, să vrei apropiere, să vrei distanță, uneori toate în aceeași zi.
@@ -36,6 +40,12 @@ Primele săptămâni și luni sunt de obicei cele mai haotice: furie, durere, î
 
 > **De ce întrebările repetate nu sunt un eșec**
 > Partenerii trădați pun adesea aceleași întrebări de multe ori. Partenerului infidel i se poate părea că discuția se învârte în cerc. Nu e așa. De fiecare dată când răspunsul e același și e dat fără iritare, mintea partenerului trădat primește încă puțină dovadă că adevărul e acum stabil. Constanța e felul în care primul strat al încrederii, previzibilitatea, începe să crească la loc.
+
+:::read Citește și
+/blog/trust-issues-in-a-relationship/ | Cum să depășești problemele de încredere | Când îndoiala tot revine
+/blog/how-to-apologize-to-your-partner/ | Cum să îți ceri scuze sincer partenerului | Ce conține o scuză adevărată
+/blog/should-i-break-up-with-my-partner/ | Ar trebui să mă despart de partener? | Dacă nu ești sigură că e bine să rămâi
+:::
 
 ## Etapa 3: Stabilizarea
 
@@ -53,6 +63,10 @@ Cu timpul, lucrurile devin mai puțin dureroase. Cuplurile din studiul lui Fife 
 Încearcă (partenerul infidel): "Mulțumesc că mi-ai spus. Ce te-ar ajuta acum?"
 
 Ce aș vrea să audă amândoi e că etapa aceasta e lentă intenționat. Încrederea nu revine dintr-o singură discuție grozavă. Revine din o sută de zile plictisitoare și constante.
+
+:::tool coach
+Ai nevoie de un loc privat în care să te gândești?
+:::
 
 ## Etapa 4: Revitalizarea
 
@@ -74,6 +88,8 @@ De obicei multe luni, adesea un an sau mai mult. Depinde de cât a durat infidel
 Reconstruirea încrederii cere ca partenerul infidel să-și asume întreaga responsabilitate și ca partenerul trădat să aleagă, liber, să încerce. Dacă aventura continuă, dacă minciunile continuă sau dacă ești presat ori învinovățit pentru trădare, să rămâi poate să nu fie nici sigur, nici sănătos. Ghidurile noastre despre [dacă ar trebui să te desparți](/blog/should-i-break-up-with-my-partner/) și [cum să treci peste o despărțire](/blog/how-to-get-over-a-breakup/) te pot ajuta dacă plecarea e alegerea potrivită.
 
 Un terapeut cu experiență în infidelitate poate ajuta în ambele cazuri. Dacă nu știi ce să spui, ghidul despre [cum să-ți ceri scuze de la partener](/blog/how-to-apologize-to-your-partner/) tratează prima scuză. Pentru îndoiala care rămâne după, vezi [problemele de încredere în relație](/blog/trust-issues-in-a-relationship/).
+
+Părerea mea: să decizi să pleci după o infidelitate nu înseamnă că ai eșuat în vindecare. Reconstruirea e un final bun, iar o despărțire curată și sinceră e altul.
 
 ## Răspunsuri rapide
 

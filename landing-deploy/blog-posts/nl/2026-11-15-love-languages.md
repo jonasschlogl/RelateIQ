@@ -30,6 +30,15 @@ Hetzelfde overzichtsartikel stelde dat sommige van de belangrijkste manieren waa
 
 **Gebruik het zo:** voeg je eigen categorieën toe. "Als ik gestrest ben, helpt het het meest als je gewoon bij me komt zitten" is ook een liefdestaal. Onze gids over [je partner steunen bij stress](/blog/how-to-support-your-partner-when-stressed/) gaat daar uitgebreid op in.
 
+:::chart De favoriete liefdestaal van Amerikanen om liefde te ontvangen
+Quality time | 38 | 38%
+Fysieke aanraking | 24 | 24%
+Bevestigende woorden | 19 | 19%
+Hulpvaardigheid | 13 | 13%
+Cadeaus ontvangen | 7 | 7%
+bron: [YouGov](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), 1.000 Amerikaanse volwassenen, januari 2022
+:::
+
 ## Overtuiging 3: "Stellen met dezelfde liefdestaal zijn gelukkiger"
 
 **Wat onderzoek zegt: zwak bewijs.**
@@ -37,6 +46,12 @@ Hetzelfde overzichtsartikel stelde dat sommige van de belangrijkste manieren waa
 In een studie uit 2017 onder 67 stellen testten onderzoekers Bunt en Hazelwood precies dit. Dezelfde belangrijkste liefdestaal hebben maakte weinig verschil voor de tevredenheid. Wat meer uitmaakte, was *zelfregulatie*: het vermogen van elke partner om de eigen reacties te hanteren en moeite in de relatie te blijven steken.
 
 **Gebruik het zo:** maak je geen zorgen als jullie "types" niet overeenkomen. Verschillende voorkeuren betekenen alleen dat je iets beter moet opletten, en dat is sowieso goed voor een relatie.
+
+:::read Lees ook
+/blog/how-to-say-i-love-you-without-words/ | Zo laat je liefde zien zonder woorden | 25 kleine manieren voor elke soort dag
+/blog/how-to-keep-the-spark-alive/ | Zo houd je de vonk levend | Vind de vonk die dooft en pak die aan
+/blog/long-distance-relationship-tips/ | Zo laat je een LAT-relatie op afstand werken | Als liefde door een scherm moet reizen
+:::
 
 ## Overtuiging 4: "De taal van je partner spreken maakt echt verschil"
 
@@ -64,6 +79,12 @@ Er is geen sterk bewijs dat liefdestalen vaste eigenschappen zijn. Gezond versta
 Het onderzoek van Mostova liet zien dat zelfs empathische partners niet automatisch goed waren in reageren op de voorkeuren van hun partner. Liefde geeft mensen geen telepathie. Duidelijk vragen is niet onromantisch. Het bespaart maanden van stille teleurstelling.
 
 Probeer: "Het betekent veel voor me als je zegt wat je in mij waardeert. Ik heb geen grote speeches nodig, gewoon af en toe een zin."
+
+Mijn mening: verwachten dat de ander het raadt, is de snelste manier om je onbemind te voelen door iemand die het echt probeert. Vertellen wat bij jou aankomt is niet onromantisch. Het is gul.
+
+:::tool coach
+Weet je niet wat je partner van je nodig heeft? Praat het door
+:::
 
 ## Wat echt helpt
 
@@ -95,3 +116,4 @@ Mijn kijk: liefdestalen zijn een goede gespreksopener en een slecht regelboek. G
 - Bunt, S., & Hazelwood, Z. J. (2017). Walking the walk, talking the talk: Love languages, self-regulation, and relationship satisfaction. *Personal Relationships*, 24(2), 280-290. [Samenvatting](https://metatoc.com/papers/100052-walking-the-walk-talking-the-talk-love-languages-self-regulation-and-relationship-satisfaction)
 - University of Florida, SMART Couples: [Do you speak your partner's love language? Does it matter?](https://smartcouples.ifas.ufl.edu/dating/communicating-with-your-partner/do-you-speak-your-partners-love-language)
 - Chapman, G. (1992). *The Five Love Languages: How to Express Heartfelt Commitment to Your Mate*. Northfield Publishing.
+- YouGov (2022): [What are Americans' love languages?](https://yougov.com/en-us/articles/41009-what-are-americans-love-languages), survey of 1,000 US adults, January 2022

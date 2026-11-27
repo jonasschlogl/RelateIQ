@@ -44,6 +44,8 @@ Iată cele șapte obiceiuri pe scurt.
 
 **Test rapid:** escaladezi, te închizi, încerci să mulțumești pe toată lumea sau repari? [Testul gratuit despre stilul tău în conflicte](/quiz/fight-style/), în engleză și de 2 minute, îți arată tiparul într-o ceartă și un lucru de spus data viitoare.
 
+Părerea mea: dacă ar trebui să aleg o singură cifră din toate astea, ar fi 96%. Înseamnă că prima propoziție contează mai mult decât cât de inteligente sunt argumentele tale. E o veste bună, pentru că o primă propoziție se exersează ușor.
+
 ## 1. Începe blând
 
 Felul în care începe o discuție decide de obicei cum se termină. Cercetările lui Gottman au arătat că un "început dur", deschiderea cu critică sau sarcasm, duce aproape mereu la o discuție care se termină prost. Un început îmblânzit face opusul. Spune ce simți *tu* și ce ți-ai dori, fără acuzații.
@@ -62,6 +64,12 @@ Ceva de genul: "Mi-a lipsit timpul petrecut cu tine în ultima vreme. Putem lăs
 "Ești egoist" e un verdict. "Ai spus că vii acasă la șase, iar acum e opt" e o observație. Comunicarea Nonviolentă, metoda dezvoltată de psihologul Marshall Rosenberg, pornește de la observații pentru că e greu să contești un fapt și foarte ușor să contești o etichetă.
 
 Asta evită și ceea ce Gottman numește critică: atacarea caracterului partenerului ("Ești atât de leneș") în loc să te plângi de un comportament anume ("Iar n-a fost dus gunoiul"). O plângere poate fi rezolvată. Un atac la caracter poate fi doar apărat.
+
+:::read Citește și
+/blog/what-to-text-after-a-fight/ | Ce să scrii după o ceartă | 20 de mesaje pentru situații diferite
+/blog/silent-treatment-vs-needing-space/ | Tratamentul tăcerii sau nevoie de spațiu | Cum să luați o pauză sănătoasă
+/blog/how-to-rebuild-trust-after-a-fight/ | Cum vă împăcați după o ceartă | În seara asta, mâine și săptămâna următoare
+:::
 
 ## 3. Numește nevoia de dedesubt
 
@@ -95,6 +103,10 @@ Vino cu o singură cerere pe discuție. Trei cereri deodată sună ca o listă d
 Acesta e și antidotul pentru defensivă, încă unul dintre "cei patru călăreți" ai lui Gottman. Defensiva ("Nu e adevărat, tu ești cel care...") îi spune partenerului că îngrijorarea lui nu contează. Să-ți asumi responsabilitatea chiar și pentru o parte mică ("Ai dreptate, am uitat să sun") schimbă temperatura discuției.
 
 De exemplu: "Înainte să răspund, lasă-mă să verific dacă am înțeles. Ai simțit că nu ți-am luat planurile în serios?"
+
+:::tool practice
+Vrei să încerci un început blând înainte de discuția adevărată?
+:::
 
 ## 6. Ia o pauză când te copleșește
 
@@ -150,6 +162,8 @@ Nu le încerca pe toate șapte deodată. Alege unul, poate începutul blând, ș
 Sincer, de aceea există Coach Chat. Lipești prima ciornă furioasă, te ajută s-o transformi într-un început blând și poți repeta discuția reală în Partner Practice înainte s-o ai.
 
 Alegerea mea ar fi obiceiul 6, pauza cu promisiunea că revii. Pare cel mai puțin impresionant dintre cele șapte, dar e cel care împiedică o ceartă proastă să devină o săptămână proastă.
+
+Părerea mea: nu încerca toate cele șapte deodată. Alege-l pe cel care te-a făcut să te strâmbi puțin când l-ai citit. De obicei, acela va schimba cel mai mult.
 
 ## Răspunsuri rapide
 

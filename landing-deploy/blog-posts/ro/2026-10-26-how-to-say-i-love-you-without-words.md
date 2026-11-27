@@ -22,6 +22,8 @@ Așa că iată 25 de moduri de a spune „te iubesc” fără cuvinte, ordonate 
 
 **Test rapid:** nu știi sigur ce gesturi ar prețui cel mai mult partenerul? Faceți împreună [testul gratuit despre limbajele iubirii](/quiz/love-language/), în engleză și de 2 minute, și comparați răspunsurile.
 
+Părerea mea: descoperirea despre recunoștință e preferata mea aici. Înseamnă că gestul e doar jumătate. Cealaltă jumătate e ca partenerul să-l observe, așa că merită să spui cu voce tare "am văzut, mulțumesc".
+
 ## În diminețile grăbite
 
 1. Fă-i cafeaua sau ceaiul exact cum îi place, fără să-l întrebi.
@@ -37,6 +39,12 @@ Așa că iată 25 de moduri de a spune „te iubesc” fără cuvinte, ordonate 
 8. Fă treaba casei pe care o urăște, fără să anunți.
 9. Stai aproape pe canapea, nu fiecare la un capăt.
 10. Când îți povestește ceva, întoarce-te spre el: ridică privirea, pune o întrebare, reacționează.
+
+:::read Citește și
+/blog/love-languages/ | Sunt reale limbajele iubirii? | Ce spun de fapt cercetările
+/blog/how-to-keep-the-spark-alive/ | Cum să păstrezi scânteia vie | Află ce scânteie se stinge
+/blog/how-to-support-your-partner-when-stressed/ | Cum să-ți ajuți partenerul când e stresat | Ce să spui și ce să eviți
+:::
 
 ## În zilele grele
 
@@ -59,6 +67,10 @@ Dacă ar fi să aleg unul din toată lista, ar fi numărul 13: să-i iei în lin
 20. Mulțumește-i pentru ceva obișnuit pe care îl face în fiecare zi și pe care nu-l mai observi.
 
 Dacă lucrurile merg bine, dar par puțin plate, ghidul nostru despre [cum să păstrezi scânteia într-o relație lungă](/blog/how-to-keep-the-spark-alive/) te poate ajuta să găsești ce lipsește.
+
+:::tool coach
+Nu știi ce ar însemna cel mai mult pentru partenerul tău? Vorbește despre asta
+:::
 
 ## De la distanță
 
@@ -91,6 +103,8 @@ Apoi observă ce îl face să se lumineze la față. Și amintește-ți descoper
 ## Când e greu să-ți arăți iubirea
 
 Dacă ai crescut într-o familie în care afecțiunea nu se arăta, gesturile ți se pot părea ciudate la început. Începe cu cele mai mici: o cafea, un mesaj, o mână pe umăr. Cu exercițiu devin mai ușoare. Dacă partenerului îi e greu să-și arate afecțiunea, ghidul nostru despre [partenerul indisponibil emoțional](/blog/emotionally-unavailable-partner/) explică unele dintre motive și ce ajută.
+
+Părerea mea: dacă gesturile nu-ți vin natural, alege un lucru mic și repetă-l. Constanța e mai romantică decât creativitatea, cel puțin după primul an.
 
 ## Răspunsuri rapide
 

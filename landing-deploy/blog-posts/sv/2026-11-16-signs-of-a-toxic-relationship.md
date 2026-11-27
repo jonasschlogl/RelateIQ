@@ -26,6 +26,15 @@ Det här är mönster som många par hamnar i, särskilt under stress. De gör o
 
 **Nästa steg:** ett lugnt, konkret samtal och kanske parterapi. Våra guider om [kommunikationsvanor](/blog/relationship-advice-communication-habits/) och [relationsproblem som alltid kommer tillbaka](/blog/relationship-problems-that-keep-coming-back/) är bra startpunkter.
 
+Min åsikt: de flesta relationer går igenom perioder på nivå 1. Det viktiga är om ni båda kan sätta ord på det och jobba med det. En svacka ni kan prata om är något helt annat än en du är rädd att nämna.
+
+:::stats Hur vanligt kontrollerande beteende är
+27,2 % | av amerikanska kvinnor har någon gång utsatts för tvingande kontroll eller instängning av en partner
+19,5 % | av amerikanska män säger detsamma
+30,2 % | av kvinnorna har utsatts för psykisk aggression från en partner
+källa: [CDC National Intimate Partner and Sexual Violence Survey](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), data insamlade 2023–2024
+:::
+
 ## Nivå 2: Giftiga mönster
 
 Här handlar problemet inte längre bara om hur ni grälar. Det handlar om hur du blir behandlad. Parforskaren John Gottman identifierade fyra kommunikationsmönster som förutsåg skilsmässa i hans studier, och pekade ut **förakt** (hån, himlande med ögonen, sarkasm, att behandla partnern som underlägsen) som det mest skadliga. Nivå 2 är där förakt och dess släktingar blir normala.
@@ -68,6 +77,12 @@ Subtil kontroll är också den som oftast missas. I en studie från 2025 med 1 8
 
 Jag vill vara väldigt rak om den här nivån: en app, en artikel eller ett bättre sätt att prata löser det inte. Om det här avsnittet låter bekant är stödlinjerna nedan nästa steg.
 
+:::read Läs också
+/blog/gaslighting-in-a-relationship/ | Gaslightar min partner mig? | 5 frågor som skiljer det från en oenighet
+/blog/love-bombing/ | Love bombing | Hur det utvecklas vecka för vecka
+/blog/codependent-relationship/ | Är jag medberoende eller bara omtänksam? | När hjälpen blir att du förlorar dig själv
+:::
+
 ## Ett snabbt självtest: den senaste månaden
 
 Tänk på de senaste fyra veckorna, inte den bästa eller sämsta dagen. Vilka påståenden stämmer?
@@ -91,6 +106,12 @@ Med andra ord har det att stanna ofta mer att göra med pengar, barn, boende och
 > I två år sa Yuki till sig själv att Ben "bara var stressad" när han hånade hennes matlagning inför vänner. När han började läsa hennes meddelanden och fråga varför hon hade sms:at sin syster skrev hon ner en månad av det som hände, som en rådgivare på en stödlinje hade föreslagit. Att se det på papper ändrade något. "Jag hade behandlat varje händelse för sig", sa hon senare. "Nedskrivet var det uppenbart en och samma sak."
 >
 > *Namn och detaljer i exemplet är påhittade för att visa idén.*
+
+Min åsikt: om du i månader har förklarat din partners beteende för dig själv är den ansträngningen också information. Sunda relationer behöver sällan så mycket försvar.
+
+:::tool coach
+Vill du tänka igenom det här i lugn och ro först?
+:::
 
 ## Är det jag som är giftig?
 
@@ -132,3 +153,4 @@ Om du är rädd för din partner, blir kontrollerad, hotad eller skadad, kontakt
 - Jordan, J.-A., Hurst, N., McCartan, C., McFadden, D., Shannon, C., Dyer, K. F. W., & Lagdon, S. (2025). *Sex Roles*. [DOI](https://doi.org/10.1007/s11199-025-01616-z). Sammanfattning på [PsyPost](https://www.psypost.org/people-view-coercive-control-in-relationships-as-less-harmful-when-the-victim-is-a-man/)
 - Gottman Institute: [The four horsemen: the antidotes](https://www.gottman.com/blog/the-four-horsemen-the-antidotes/)
 - Centers for Disease Control and Prevention: [About intimate partner violence](https://www.cdc.gov/intimate-partner-violence/about/)
+- Centers for Disease Control and Prevention: [Intimate partner violence data brief](https://cdc.gov/nisvs/media/pdfs/intimatepartnerviolence-brief.pdf), National Intimate Partner and Sexual Violence Survey, 2023 to 2024

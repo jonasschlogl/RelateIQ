@@ -52,6 +52,14 @@ Cuenta cuántas veces la semana pasada te tragaste un pequeño «en realidad, pr
 
 De las tres, yo empezaría por la prueba del «no». Si decirle que no a tu pareja te parece peligroso y no solo incómodo, eso te dice más que cualquier etiqueta.
 
+Mi opinión: la prueba de "¿estaría bien si me dijera que no?" es por la que yo empezaría. El cariño sobrevive a un no. La codependencia normalmente no.
+
+:::read Lecturas relacionadas
+/blog/how-to-support-your-partner-when-stressed/ | Cómo ayudar a tu pareja con el estrés | Apoyar sin cargar con todo
+/blog/signs-of-a-toxic-relationship/ | ¿Es tóxica mi relación? | Cuando es algo más que cuidar en exceso
+/blog/relationship-anxiety/ | Ansiedad en la relación sin motivo | Cuando el miedo a perderle es lo que impulsa la ayuda
+:::
+
 ## Lo que dice de verdad la investigación (y lo que no)
 
 Codependencia es una palabra popular, pero un concepto científico confuso. No es un diagnóstico, no hay una definición acordada y mucho de lo que se lee en internet va más allá de la evidencia. Esto es lo que está razonablemente respaldado.
@@ -80,6 +88,12 @@ No necesitas rehacer tu relación entera. El cambio aquí empieza muy pequeño, 
 > Priya siempre organizaba las vacaciones según lo que quería Sam, y luego pasaba todo el viaje con un resentimiento callado. Este año probó la prueba 3 y contó cuántas veces se había tragado una preferencia. Once veces en un solo fin de semana de planes. Así que dijo, con la voz algo temblorosa: «Me he dado cuenta de que siempre acepto lo que eliges y luego me enfurruño, y eso no es justo para ninguno de los dos. Esta vez me encantaría un viaje a una ciudad». Sam se rió y dijo que suponía que a ella le encantaban las playas. Las vacaciones no eran lo importante. Lo importante era que ella estaba en ellas.
 >
 > *Los nombres y detalles de este ejemplo son inventados para ilustrar la idea.*
+
+Mi opinión: empieza más pequeño de lo que crees. Decir "esta te la dejo a ti" una vez esta semana hace más que una gran promesa de cambiarlo todo.
+
+:::tool practice
+¿Quieres practicar cómo decir que no con amabilidad? Ensáyalo primero
+:::
 
 ## Palabras para cuando cuesta
 

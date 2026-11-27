@@ -33,6 +33,8 @@ Lue jokainen väite ja pisteytä se: 0 = harvoin totta, 1 = joskus, 2 = usein. T
 
 Laske kunkin parin pisteet yhteen. Alue, jolla on pienimmät pisteet (0 tai 2), on paikka, josta aloittaa. Jos kaksi on tasoissa, valitse se, joka vaivaa sinua enemmän. Jos kaikki saavat 3 tai 4, kipinänne voi hyvin, ja alla oleva neljän viikon suunnitelma on ylläpitoa, ei korjausta.
 
+Minun näkemykseni: pidän tästä tarkistuksesta, koska "kipinä on poissa" on liian epämääräinen korjattavaksi. "Emme koskaan kokeile mitään uutta" tai "olemme lakanneet kyselemästä toisiltamme" on jotain, minkä parissa voitte oikeasti tehdä töitä tällä viikolla.
+
 ## Jos uutuus on vähissä: riko rutiini, ei budjettia
 
 **Mitä tutkimus näyttää.** Pitkässä seurantatutkimuksessa, jossa oli 123 paria, Irene Tsapelas, Arthur Aron ja Terri Orbuch kysyivät seitsemättä vuotta naimisissa olleilta, kuinka usein liitto tuntui jämähtäneen samaan rutiiniin. Ne, jotka tylsistyivät enemmän vuonna 7, olivat tyytymättömämpiä yhdeksän vuotta myöhemmin, vuonna 16. Yhteys kulki läheisyyden kautta: tylsyys sai parit tuntemaan itsensä etäisemmiksi, ja se laski tyytyväisyyttä.
@@ -52,6 +54,12 @@ Myös se, miten haluun suhtautuu, vaikuttaa. Kuudessa tutkimuksessa, joissa oli 
 **Mitä useimmat neuvot ohittavat.** Moni odottaa halun syntyvän tyhjästä, kuten alussa. Seksuaaliterapeutit huomauttavat usein, että pitkissä suhteissa halu on usein *reagoivaa*: se herää, kun olette jo lähellä, rentoina ja kosketuksissa, ei ennen sitä. Jos odottaa ensin olevansa "tunnelmassa", voi joutua odottamaan kuukausia.
 
 **Kokeile tätä:** käykää yksi rauhallinen keskustelu, ei sängyssä. Esimerkiksi: "Mikä sai sinut ennen tuntemaan, että haluan sinua, ja mitä olen lakannut tekemästä?" Kuuntele vain. Älä puolustaudu äläkä tee heti suunnitelmaa.
+
+:::read Lue myös
+/blog/deep-questions-to-ask-your-partner/ | Syvällisiä kysymyksiä kumppanille | 30 kysymystä syvyyden mukaan
+/blog/date-night-questions-for-couples/ | Kysymyksiä treffi-iltaan | 5 leikkiä ja 40 kysymystä
+/blog/how-to-say-i-love-you-without-words/ | Näin osoitat rakkautta ilman sanoja | 25 pientä arjen merkkiä
+:::
 
 ## Jos huomio on vähissä: ole taas utelias
 
@@ -76,6 +84,10 @@ Myös se, miten haluun suhtautuu, vaikuttaa. Kuudessa tutkimuksessa, joissa oli 
 | Huomio | Puhutte vain logistiikasta | Yksi aito kysymys viikossa |
 | Lämpö | Kosketusta vain ennen seksiä, tai ei lainkaan | Yksi päivittäinen hellyysrituaali |
 
+:::tool coach
+Etkö tiedä, mikä kipinä teillä hiipuu? Puhu se läpi
+:::
+
 ## Neljän viikon suunnitelma
 
 Valitse heikoin alueesi ja anna sille neljä viikkoa. Yksi muutos kerrallaan toimii paremmin kuin yhdeksän yhtä aikaa.
@@ -97,6 +109,8 @@ Joskus hiipuva kipinä on oire. Katkeruus riidoista, jotka eivät koskaan ratkea
 On myös ihan hyvä, että suhteessa on hiljaisempia kausia. Tärkeintä on huomata se ja palata toistenne luo, kun elämä antaa tilaa.
 
 Jos asian ottaminen puheeksi tuntuu vaikealta, RelationshipAI:n Partner Practice antaa sinun harjoitella keskustelua tekoälyn kanssa, joka esittää kumppaniasi, ja Coach Chat auttaa selvittämään, mitä oikeastaan haluat pyytää. Se ei ole terapiaa, mutta rauhallinen paikka aloittaa.
+
+Minun näkemykseni: joskus hiipuva kipinä on vain väsynyt jakso: uusi vauva, raskas työ, muutto. Olisin lempeä itsellenne ennen kuin päätätte sen tarkoittavan jotain isompaa.
 
 ## Nopeat vastaukset
 

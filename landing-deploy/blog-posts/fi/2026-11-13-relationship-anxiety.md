@@ -22,6 +22,12 @@ Et luultavasti tarvitse taas uutta merkkilistaa. Tarvitset jotain tehtävää, k
 
 **Pikatesti:** parisuhdeahdistus liittyy usein kiintymykseen. Ilmainen [kiintymystyylitesti](/quiz/attachment-style/), englanniksi ja 2 minuutin mittainen, voi näyttää, onko se osa sinun toimintamalliasi.
 
+Minun näkemykseni: hyödyllisintä on muistaa, että ahdistus tuntuu täsmälleen samalta riippumatta siitä, onko jokin vialla vai ei. Tunne on todellinen, mutta se ei ole todiste.
+
+:::stats Mitä huoli ennustaa ja mitä ei
+91,4 % | huolista, jotka ihmiset kirjasivat kuukauden ajan, ei toteutunut Lucas LaFrenieren ja Michelle Newmanin tutkimuksessa
+:::
+
 ## Seuraavat 2 minuuttia: kun kierre alkaa
 
 Heti kun huomaat sen (puhelimen vilkuilu, puristus rinnassa, halu lähettää viesti), tee näin:
@@ -35,6 +41,12 @@ Heti kun huomaat sen (puhelimen vilkuilu, puristus rinnassa, halu lähettää vi
 **4. Älä lähetä vielä mitään.** Anna sille kymmenen minuuttia. Jos viesti tuntuu sen jälkeenkin tärkeältä, lähetä se kerran, rauhallisesti.
 
 Kohta 4 on se, jonka minä alleviivaisin. Kymmenen minuuttia ei kuulosta paljolta, mutta viesti, jota katuisit, näyttää yleensä aivan erilaiselta kymmenen minuuttia myöhemmin.
+
+:::read Lue myös
+/blog/how-to-stop-overthinking-in-a-relationship/ | Näin lopetat ylianalysoinnin parisuhteessa | Rauhallisempi tapa käsitellä entä jos -kierrettä
+/blog/how-attachment-styles-work-in-relationships/ | Mikä on kiintymystyylini? | Miksi jotkut tuntevat etäisyyden terävämmin
+/blog/jealousy-in-a-relationship/ | Onko mustasukkaisuus normaalia parisuhteessa? | Kun ahdistus näyttäytyy epäluulona
+:::
 
 ## Loppupäivä: estä kierrettä kasvamasta
 
@@ -56,6 +68,10 @@ Esimerkiksi: "Oloni on tänään vähän epävarma. Voitaisiinko syödä illalla
 | Haluat testata häntä | Sano tarpeesi suoraan |
 | Hyvä hetki tuntuu pelottavalta | Huomaa se ja anna itsesi nauttia siitä silti |
 
+:::tool coach
+Kierteessä juuri nyt? Puhu se läpi ennen kuin kirjoitat
+:::
+
 ## Seuraava kuukausi: muuta toimintamallia
 
 **Kerro kumppanillesi kerran, rauhallisesti.** Ei syytöksenä vaan tietona.
@@ -75,6 +91,8 @@ Kumppani, joka ymmärtää mitä tapahtuu, voi auttaa ilman, että hänen täyty
 > Joka perjantai, kun Elifin kumppani Jonah lähti jalkapallojoukkueensa kanssa ulos, Elif vietti illan puhelinta vilkuillen ja lähetellen "onko kivaa?" -viestejä. Yhden kuukauden ajan hän kokeili työkalupakkia. Kun halu tuli, hän nimesi sen, hengitti kaksi minuuttia ja kirjoitti kolme selitystään post-it-lapulle. Hän sanoi Jonahille kerran: "Ahdistun perjantaisin. Yksi viesti, kun pääset baariin, auttaisi." Jonah teki sen mielellään. Neljäntenä perjantaina Elif huomasi katsoneensa kokonaisen elokuvan vilkaisematta puhelinta.
 >
 > *Esimerkin nimet ja yksityiskohdat on keksitty havainnollistamaan ajatusta.*
+
+Minun näkemykseni: rauhoittelun pyytäminen ei ole ongelma, vaan se, pyydätkö sitä tavalla, jonka kumppanisi oikeasti pystyy antamaan. "Laitatko viestin, kun laskeudut?" toimii. "Lupaa, ettet koskaan lähde" ei, koska mikään vastaus ei koskaan riitä.
 
 ## Onko se ahdistusta, vai onko jokin oikeasti vialla?
 

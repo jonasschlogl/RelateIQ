@@ -24,6 +24,13 @@ Hay dos excepciones importantes. Si tienes miedo de tu pareja, te sientes contro
 | La chispa se ha apagado | Mentiras o infidelidad que continúan |
 | El estrés os ha separado | Una adicción que no se está tratando |
 
+:::stats Lo que descubrió la investigación de Gottman
+96 % | de las veces, los tres primeros minutos de una conversación predijeron cómo terminaría
+5 a 1 | la proporción de interacciones positivas frente a negativas que mantienen las parejas estables durante un conflicto
+86 % | de los pequeños intentos de llamar la atención recibían una respuesta cálida en las parejas que seguían juntas seis años después, frente al 33 % en las que se divorciaron
+fuente: investigación de John Gottman y sus colegas (ver fuentes abajo)
+:::
+
 ## Paso 1: Decide qué significa "mejor"
 
 "Arreglarlo" es demasiado vago para actuar. Antes de hablar con tu pareja, aclara qué sería diferente si las cosas fueran mejor. ¿Más cariño? ¿Un reparto más justo en casa? ¿Sentirte escuchado o escuchada? Escríbelo en una o dos frases. Así evitas discutir sobre todo y puedes pedir algo concreto.
@@ -49,6 +56,14 @@ No tienes que ser perfecto. Solo fíjate en cuál de ellos aparece más en ti y 
 > **Por qué hay que quitarlos primero**
 > Cada jinete empuja a la otra persona a defenderse, y cuando alguien se está defendiendo, no puede escuchar. Por eso hay parejas que discuten sobre lo mismo durante años sin avanzar. Quitar los jinetes no resuelve el problema por sí solo. Crea las condiciones para que el problema se pueda resolver.
 
+Mi opinión: si solo consigues hacer un paso, que sea este. No se puede arreglar nada en mitad de una pelea, así que aprender a parar es lo que hace posibles todos los demás pasos.
+
+:::read Lecturas relacionadas
+/blog/relationship-advice-communication-habits/ | Cómo comunicarse mejor en pareja | 7 hábitos que cambian cómo discutís
+/blog/how-to-rebuild-trust-after-a-fight/ | Cómo reconciliarse después de una pelea | Esta noche, mañana y la semana siguiente
+/blog/relationship-problems-that-keep-coming-back/ | ¿Por qué tenemos siempre la misma pelea? | Lo que suele haber debajo
+:::
+
 ## Paso 3: Ten una conversación pequeña sobre una sola cosa
 
 Olvídate de la charla sobre "el estado de la relación". Elige un tema y un momento tranquilo, no justo después del trabajo ni en mitad de una pelea. Cómo empiezas importa más que casi cualquier otra cosa: en la investigación de Gottman, los tres primeros minutos de una conversación predijeron cómo terminaría en el 96% de los casos.
@@ -68,6 +83,10 @@ Una forma práctica de empezar:
 - **Da un gracias concreto al día.** "Gracias por encargarte del coche, me has quitado un peso de encima."
 - **Dedicad diez minutos cada noche a hablar de verdad.** No de logística. De cómo os ha ido el día de verdad.
 - **Planead una cosa a la semana que no tenga nada que ver con los problemas.** Un paseo, una cena, una película. Nuestras [preguntas para una cita en pareja](/blog/date-night-questions-for-couples/) pueden ayudar a que vuelva a parecer una cita.
+
+:::tool practice
+¿Quieres ensayar una conversación difícil antes de tenerla?
+:::
 
 ## Paso 5: Preguntad qué necesita cada uno
 
@@ -99,6 +118,8 @@ Es muy habitual que uno de los dos esté más motivado que el otro, al menos al 
 Pero a largo plazo una relación necesita a dos personas. Si llevas mucho tiempo intentándolo solo o sola y nada cambia, dilo de forma clara y tranquila. Cómo responda a esa conversación es una información importante.
 
 Por ejemplo: "Me estoy esforzando mucho para que las cosas vayan mejor entre nosotros, y necesito saber que tú también lo quieres. ¿Qué estás dispuesto a hacer?"
+
+Mi opinión: una sola persona puede cambiar el tono de una relación más de lo que cree, pero no para siempre ella sola. Si después de meses eres la única persona que lo intenta, merece la pena decirlo en voz alta.
 
 ## ¿Cuánto tiempo lleva?
 
